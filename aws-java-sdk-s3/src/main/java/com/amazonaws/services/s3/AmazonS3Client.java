@@ -46,6 +46,7 @@ import com.amazonaws.arn.Arn;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.Presigner;
+import com.amazonaws.auth.ServiceAwareSigner;
 import com.amazonaws.auth.Signer;
 import com.amazonaws.auth.SignerFactory;
 import com.amazonaws.client.builder.AwsClientBuilder;
@@ -3414,6 +3415,13 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         addResponseHeaderParameters(request, req.getResponseHeaders());
 
         Signer signer = createSigner(request, bucketName, key);
+
+        if (request.getHandlerContext(HandlerContextKey.SIGNING_NAME) != null) {
+            String signingName = request.getHandlerContext(HandlerContextKey.SIGNING_NAME);
+            if (signer instanceof ServiceAwareSigner) {
+                ((ServiceAwareSigner) signer).setServiceName(signingName);
+            }
+        }
 
         if (signer instanceof Presigner) {
             // If we have a signer which knows how to presign requests,

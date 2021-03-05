@@ -65837,7 +65837,7 @@
       "packageName" : "com.amazonaws.services.licensemanager.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
-      "required" : [ "ProductInformationFilterName", "ProductInformationFilterValue", "ProductInformationFilterComparator" ],
+      "required" : [ "ProductInformationFilterName", "ProductInformationFilterComparator" ],
       "shapeName" : "ProductInformationFilter",
       "signerAware" : false,
       "signerType" : null,

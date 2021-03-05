@@ -87,11 +87,6 @@ import com.amazonaws.services.networkfirewall.model.*;
  * </li>
  * <li>
  * <p>
- * Rate limit traffic going from AWS to on-premises IP destinations.
- * </p>
- * </li>
- * <li>
- * <p>
  * Use stateful protocol detection to filter protocols like HTTPS, regardless of the port used.
  * </p>
  * </li>
@@ -245,6 +240,8 @@ public interface AWSNetworkFirewall {
      * @throws InvalidOperationException
      *         The operation failed because it's not valid. For example, you might have tried to delete a rule group or
      *         firewall policy that's in use.
+     * @throws InsufficientCapacityException
+     *         AWS doesn't currently have enough available capacity to fulfill your request. Try your request later.
      * @sample AWSNetworkFirewall.AssociateSubnets
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/AssociateSubnets"
      *      target="_top">AWS API Documentation</a>
@@ -512,6 +509,25 @@ public interface AWSNetworkFirewall {
      * 
      * @param deleteResourcePolicyRequest
      * @return Result of the DeleteResourcePolicy operation returned by the service.
+     * @throws InvalidRequestException
+     *         The operation failed because of a problem with your request. Examples include: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You specified an unsupported parameter name or value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a property with a value that isn't among the available types.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the
+     *         context of the request.
+     *         </p>
+     *         </li>
      * @throws InternalServerErrorException
      *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
      *         Retry your request.
@@ -693,6 +709,25 @@ public interface AWSNetworkFirewall {
      * 
      * @param describeResourcePolicyRequest
      * @return Result of the DescribeResourcePolicy operation returned by the service.
+     * @throws InvalidRequestException
+     *         The operation failed because of a problem with your request. Examples include: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You specified an unsupported parameter name or value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a property with a value that isn't among the available types.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the
+     *         context of the request.
+     *         </p>
+     *         </li>
      * @throws InternalServerErrorException
      *         Your request is valid, but Network Firewall couldn’t perform the operation because of a system problem.
      *         Retry your request.
@@ -924,6 +959,25 @@ public interface AWSNetworkFirewall {
      * @return Result of the ListTagsForResource operation returned by the service.
      * @throws ResourceNotFoundException
      *         Unable to locate a resource using the parameters that you provided.
+     * @throws InvalidRequestException
+     *         The operation failed because of a problem with your request. Examples include: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You specified an unsupported parameter name or value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You tried to update a property with a value that isn't among the available types.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your request references an ARN that is malformed, or corresponds to a resource that isn't valid in the
+     *         context of the request.
+     *         </p>
+     *         </li>
      * @sample AWSNetworkFirewall.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListTagsForResource"
      *      target="_top">AWS API Documentation</a>

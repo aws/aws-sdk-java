@@ -42,6 +42,8 @@ public class SubscriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProactiveEngagementStatus").build();
     private static final MarshallingInfo<StructuredPojo> SUBSCRIPTIONLIMITS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubscriptionLimits").build();
+    private static final MarshallingInfo<String> SUBSCRIPTIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubscriptionArn").build();
 
     private static final SubscriptionMarshaller instance = new SubscriptionMarshaller();
 
@@ -66,6 +68,7 @@ public class SubscriptionMarshaller {
             protocolMarshaller.marshall(subscription.getLimits(), LIMITS_BINDING);
             protocolMarshaller.marshall(subscription.getProactiveEngagementStatus(), PROACTIVEENGAGEMENTSTATUS_BINDING);
             protocolMarshaller.marshall(subscription.getSubscriptionLimits(), SUBSCRIPTIONLIMITS_BINDING);
+            protocolMarshaller.marshall(subscription.getSubscriptionArn(), SUBSCRIPTIONARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

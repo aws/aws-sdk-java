@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * The properties that are applied when Amazon Honeycode is used as a destination.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/HoneycodeDestinationProperties"
  *      target="_top">AWS API Documentation</a>
@@ -25,12 +28,22 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class HoneycodeDestinationProperties implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The object specified in the Amazon Honeycode flow destination.
+     * </p>
+     */
     private String object;
 
     private ErrorHandlingConfig errorHandlingConfig;
 
     /**
+     * <p>
+     * The object specified in the Amazon Honeycode flow destination.
+     * </p>
+     * 
      * @param object
+     *        The object specified in the Amazon Honeycode flow destination.
      */
 
     public void setObject(String object) {
@@ -38,7 +51,11 @@ public class HoneycodeDestinationProperties implements Serializable, Cloneable, 
     }
 
     /**
-     * @return
+     * <p>
+     * The object specified in the Amazon Honeycode flow destination.
+     * </p>
+     * 
+     * @return The object specified in the Amazon Honeycode flow destination.
      */
 
     public String getObject() {
@@ -46,7 +63,12 @@ public class HoneycodeDestinationProperties implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * The object specified in the Amazon Honeycode flow destination.
+     * </p>
+     * 
      * @param object
+     *        The object specified in the Amazon Honeycode flow destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

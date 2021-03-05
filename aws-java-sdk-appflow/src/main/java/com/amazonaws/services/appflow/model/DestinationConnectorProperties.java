@@ -58,7 +58,11 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
      * </p>
      */
     private EventBridgeDestinationProperties eventBridge;
-
+    /**
+     * <p>
+     * The properties required to query Amazon Lookout for Metrics.
+     * </p>
+     */
     private LookoutMetricsDestinationProperties lookoutMetrics;
     /**
      * <p>
@@ -66,9 +70,17 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
      * </p>
      */
     private UpsolverDestinationProperties upsolver;
-
+    /**
+     * <p>
+     * The properties required to query Amazon Honeycode.
+     * </p>
+     */
     private HoneycodeDestinationProperties honeycode;
-
+    /**
+     * <p>
+     * The properties required to query Amazon Connect Customer Profiles.
+     * </p>
+     */
     private CustomerProfilesDestinationProperties customerProfiles;
 
     /**
@@ -272,7 +284,12 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * The properties required to query Amazon Lookout for Metrics.
+     * </p>
+     * 
      * @param lookoutMetrics
+     *        The properties required to query Amazon Lookout for Metrics.
      */
 
     public void setLookoutMetrics(LookoutMetricsDestinationProperties lookoutMetrics) {
@@ -280,7 +297,11 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
     }
 
     /**
-     * @return
+     * <p>
+     * The properties required to query Amazon Lookout for Metrics.
+     * </p>
+     * 
+     * @return The properties required to query Amazon Lookout for Metrics.
      */
 
     public LookoutMetricsDestinationProperties getLookoutMetrics() {
@@ -288,7 +309,12 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * The properties required to query Amazon Lookout for Metrics.
+     * </p>
+     * 
      * @param lookoutMetrics
+     *        The properties required to query Amazon Lookout for Metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -338,7 +364,12 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * The properties required to query Amazon Honeycode.
+     * </p>
+     * 
      * @param honeycode
+     *        The properties required to query Amazon Honeycode.
      */
 
     public void setHoneycode(HoneycodeDestinationProperties honeycode) {
@@ -346,7 +377,11 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
     }
 
     /**
-     * @return
+     * <p>
+     * The properties required to query Amazon Honeycode.
+     * </p>
+     * 
+     * @return The properties required to query Amazon Honeycode.
      */
 
     public HoneycodeDestinationProperties getHoneycode() {
@@ -354,7 +389,12 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * The properties required to query Amazon Honeycode.
+     * </p>
+     * 
      * @param honeycode
+     *        The properties required to query Amazon Honeycode.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -364,7 +404,12 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * The properties required to query Amazon Connect Customer Profiles.
+     * </p>
+     * 
      * @param customerProfiles
+     *        The properties required to query Amazon Connect Customer Profiles.
      */
 
     public void setCustomerProfiles(CustomerProfilesDestinationProperties customerProfiles) {
@@ -372,7 +417,11 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
     }
 
     /**
-     * @return
+     * <p>
+     * The properties required to query Amazon Connect Customer Profiles.
+     * </p>
+     * 
+     * @return The properties required to query Amazon Connect Customer Profiles.
      */
 
     public CustomerProfilesDestinationProperties getCustomerProfiles() {
@@ -380,7 +429,12 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * The properties required to query Amazon Connect Customer Profiles.
+     * </p>
+     * 
      * @param customerProfiles
+     *        The properties required to query Amazon Connect Customer Profiles.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

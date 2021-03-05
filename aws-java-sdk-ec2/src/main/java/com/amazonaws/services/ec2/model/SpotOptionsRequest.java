@@ -40,8 +40,15 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
      * Instance pools that you specify.
      * </p>
      * <p>
-     * If the allocation strategy is <code>capacity-optimized</code>, EC2 Fleet launches instances from Spot Instance
-     * pools with optimal capacity for the number of instances that are launching.
+     * If the allocation strategy is <code>capacity-optimized</code> (recommended), EC2 Fleet launches instances from
+     * Spot Instance pools with optimal capacity for the number of instances that are launching. To give certain
+     * instance types a higher chance of launching first, use <code>capacity-optimized-prioritized</code>. Set a
+     * priority for each instance type by using the <code>Priority</code> parameter for
+     * <code>LaunchTemplateOverrides</code>. You can assign the same priority to different
+     * <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort basis, but optimizes for
+     * capacity first. <code>capacity-optimized-prioritized</code> is supported only if your fleet uses a launch
+     * template. Note that if the On-Demand <code>AllocationStrategy</code> is set to <code>prioritized</code>, the same
+     * priority is applied when fulfilling On-Demand capacity.
      * </p>
      */
     private String allocationStrategy;
@@ -107,8 +114,15 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
      * Instance pools that you specify.
      * </p>
      * <p>
-     * If the allocation strategy is <code>capacity-optimized</code>, EC2 Fleet launches instances from Spot Instance
-     * pools with optimal capacity for the number of instances that are launching.
+     * If the allocation strategy is <code>capacity-optimized</code> (recommended), EC2 Fleet launches instances from
+     * Spot Instance pools with optimal capacity for the number of instances that are launching. To give certain
+     * instance types a higher chance of launching first, use <code>capacity-optimized-prioritized</code>. Set a
+     * priority for each instance type by using the <code>Priority</code> parameter for
+     * <code>LaunchTemplateOverrides</code>. You can assign the same priority to different
+     * <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort basis, but optimizes for
+     * capacity first. <code>capacity-optimized-prioritized</code> is supported only if your fleet uses a launch
+     * template. Note that if the On-Demand <code>AllocationStrategy</code> is set to <code>prioritized</code>, the same
+     * priority is applied when fulfilling On-Demand capacity.
      * </p>
      * 
      * @param allocationStrategy
@@ -123,8 +137,15 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
      *        Instance pools that you specify.
      *        </p>
      *        <p>
-     *        If the allocation strategy is <code>capacity-optimized</code>, EC2 Fleet launches instances from Spot
-     *        Instance pools with optimal capacity for the number of instances that are launching.
+     *        If the allocation strategy is <code>capacity-optimized</code> (recommended), EC2 Fleet launches instances
+     *        from Spot Instance pools with optimal capacity for the number of instances that are launching. To give
+     *        certain instance types a higher chance of launching first, use <code>capacity-optimized-prioritized</code>
+     *        . Set a priority for each instance type by using the <code>Priority</code> parameter for
+     *        <code>LaunchTemplateOverrides</code>. You can assign the same priority to different
+     *        <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort basis, but optimizes
+     *        for capacity first. <code>capacity-optimized-prioritized</code> is supported only if your fleet uses a
+     *        launch template. Note that if the On-Demand <code>AllocationStrategy</code> is set to
+     *        <code>prioritized</code>, the same priority is applied when fulfilling On-Demand capacity.
      * @see SpotAllocationStrategy
      */
 
@@ -146,8 +167,15 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
      * Instance pools that you specify.
      * </p>
      * <p>
-     * If the allocation strategy is <code>capacity-optimized</code>, EC2 Fleet launches instances from Spot Instance
-     * pools with optimal capacity for the number of instances that are launching.
+     * If the allocation strategy is <code>capacity-optimized</code> (recommended), EC2 Fleet launches instances from
+     * Spot Instance pools with optimal capacity for the number of instances that are launching. To give certain
+     * instance types a higher chance of launching first, use <code>capacity-optimized-prioritized</code>. Set a
+     * priority for each instance type by using the <code>Priority</code> parameter for
+     * <code>LaunchTemplateOverrides</code>. You can assign the same priority to different
+     * <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort basis, but optimizes for
+     * capacity first. <code>capacity-optimized-prioritized</code> is supported only if your fleet uses a launch
+     * template. Note that if the On-Demand <code>AllocationStrategy</code> is set to <code>prioritized</code>, the same
+     * priority is applied when fulfilling On-Demand capacity.
      * </p>
      * 
      * @return Indicates how to allocate the target Spot Instance capacity across the Spot Instance pools specified by
@@ -161,8 +189,16 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
      *         Instance pools that you specify.
      *         </p>
      *         <p>
-     *         If the allocation strategy is <code>capacity-optimized</code>, EC2 Fleet launches instances from Spot
-     *         Instance pools with optimal capacity for the number of instances that are launching.
+     *         If the allocation strategy is <code>capacity-optimized</code> (recommended), EC2 Fleet launches instances
+     *         from Spot Instance pools with optimal capacity for the number of instances that are launching. To give
+     *         certain instance types a higher chance of launching first, use
+     *         <code>capacity-optimized-prioritized</code>. Set a priority for each instance type by using the
+     *         <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You can assign the same
+     *         priority to different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a
+     *         best-effort basis, but optimizes for capacity first. <code>capacity-optimized-prioritized</code> is
+     *         supported only if your fleet uses a launch template. Note that if the On-Demand
+     *         <code>AllocationStrategy</code> is set to <code>prioritized</code>, the same priority is applied when
+     *         fulfilling On-Demand capacity.
      * @see SpotAllocationStrategy
      */
 
@@ -184,8 +220,15 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
      * Instance pools that you specify.
      * </p>
      * <p>
-     * If the allocation strategy is <code>capacity-optimized</code>, EC2 Fleet launches instances from Spot Instance
-     * pools with optimal capacity for the number of instances that are launching.
+     * If the allocation strategy is <code>capacity-optimized</code> (recommended), EC2 Fleet launches instances from
+     * Spot Instance pools with optimal capacity for the number of instances that are launching. To give certain
+     * instance types a higher chance of launching first, use <code>capacity-optimized-prioritized</code>. Set a
+     * priority for each instance type by using the <code>Priority</code> parameter for
+     * <code>LaunchTemplateOverrides</code>. You can assign the same priority to different
+     * <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort basis, but optimizes for
+     * capacity first. <code>capacity-optimized-prioritized</code> is supported only if your fleet uses a launch
+     * template. Note that if the On-Demand <code>AllocationStrategy</code> is set to <code>prioritized</code>, the same
+     * priority is applied when fulfilling On-Demand capacity.
      * </p>
      * 
      * @param allocationStrategy
@@ -200,8 +243,15 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
      *        Instance pools that you specify.
      *        </p>
      *        <p>
-     *        If the allocation strategy is <code>capacity-optimized</code>, EC2 Fleet launches instances from Spot
-     *        Instance pools with optimal capacity for the number of instances that are launching.
+     *        If the allocation strategy is <code>capacity-optimized</code> (recommended), EC2 Fleet launches instances
+     *        from Spot Instance pools with optimal capacity for the number of instances that are launching. To give
+     *        certain instance types a higher chance of launching first, use <code>capacity-optimized-prioritized</code>
+     *        . Set a priority for each instance type by using the <code>Priority</code> parameter for
+     *        <code>LaunchTemplateOverrides</code>. You can assign the same priority to different
+     *        <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort basis, but optimizes
+     *        for capacity first. <code>capacity-optimized-prioritized</code> is supported only if your fleet uses a
+     *        launch template. Note that if the On-Demand <code>AllocationStrategy</code> is set to
+     *        <code>prioritized</code>, the same priority is applied when fulfilling On-Demand capacity.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SpotAllocationStrategy
      */
@@ -225,8 +275,15 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
      * Instance pools that you specify.
      * </p>
      * <p>
-     * If the allocation strategy is <code>capacity-optimized</code>, EC2 Fleet launches instances from Spot Instance
-     * pools with optimal capacity for the number of instances that are launching.
+     * If the allocation strategy is <code>capacity-optimized</code> (recommended), EC2 Fleet launches instances from
+     * Spot Instance pools with optimal capacity for the number of instances that are launching. To give certain
+     * instance types a higher chance of launching first, use <code>capacity-optimized-prioritized</code>. Set a
+     * priority for each instance type by using the <code>Priority</code> parameter for
+     * <code>LaunchTemplateOverrides</code>. You can assign the same priority to different
+     * <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort basis, but optimizes for
+     * capacity first. <code>capacity-optimized-prioritized</code> is supported only if your fleet uses a launch
+     * template. Note that if the On-Demand <code>AllocationStrategy</code> is set to <code>prioritized</code>, the same
+     * priority is applied when fulfilling On-Demand capacity.
      * </p>
      * 
      * @param allocationStrategy
@@ -241,8 +298,15 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
      *        Instance pools that you specify.
      *        </p>
      *        <p>
-     *        If the allocation strategy is <code>capacity-optimized</code>, EC2 Fleet launches instances from Spot
-     *        Instance pools with optimal capacity for the number of instances that are launching.
+     *        If the allocation strategy is <code>capacity-optimized</code> (recommended), EC2 Fleet launches instances
+     *        from Spot Instance pools with optimal capacity for the number of instances that are launching. To give
+     *        certain instance types a higher chance of launching first, use <code>capacity-optimized-prioritized</code>
+     *        . Set a priority for each instance type by using the <code>Priority</code> parameter for
+     *        <code>LaunchTemplateOverrides</code>. You can assign the same priority to different
+     *        <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort basis, but optimizes
+     *        for capacity first. <code>capacity-optimized-prioritized</code> is supported only if your fleet uses a
+     *        launch template. Note that if the On-Demand <code>AllocationStrategy</code> is set to
+     *        <code>prioritized</code>, the same priority is applied when fulfilling On-Demand capacity.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SpotAllocationStrategy
      */

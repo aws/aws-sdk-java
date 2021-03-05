@@ -31,7 +31,7 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The protocol to inspect for. To match with any protocol, specify <code>ANY</code>.
+     * The protocol to inspect for.
      * </p>
      */
     private String protocol;
@@ -122,11 +122,11 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The protocol to inspect for. To match with any protocol, specify <code>ANY</code>.
+     * The protocol to inspect for.
      * </p>
      * 
      * @param protocol
-     *        The protocol to inspect for. To match with any protocol, specify <code>ANY</code>.
+     *        The protocol to inspect for.
      * @see StatefulRuleProtocol
      */
 
@@ -136,10 +136,10 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The protocol to inspect for. To match with any protocol, specify <code>ANY</code>.
+     * The protocol to inspect for.
      * </p>
      * 
-     * @return The protocol to inspect for. To match with any protocol, specify <code>ANY</code>.
+     * @return The protocol to inspect for.
      * @see StatefulRuleProtocol
      */
 
@@ -149,11 +149,11 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The protocol to inspect for. To match with any protocol, specify <code>ANY</code>.
+     * The protocol to inspect for.
      * </p>
      * 
      * @param protocol
-     *        The protocol to inspect for. To match with any protocol, specify <code>ANY</code>.
+     *        The protocol to inspect for.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatefulRuleProtocol
      */
@@ -165,11 +165,11 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The protocol to inspect for. To match with any protocol, specify <code>ANY</code>.
+     * The protocol to inspect for.
      * </p>
      * 
      * @param protocol
-     *        The protocol to inspect for. To match with any protocol, specify <code>ANY</code>.
+     *        The protocol to inspect for.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatefulRuleProtocol
      */

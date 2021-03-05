@@ -29,6 +29,8 @@ public class PerObjectStatusMarshaller {
 
     private static final MarshallingInfo<String> SYNCSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SyncStatus").build();
+    private static final MarshallingInfo<String> UPDATETOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpdateToken").build();
 
     private static final PerObjectStatusMarshaller instance = new PerObjectStatusMarshaller();
 
@@ -47,6 +49,7 @@ public class PerObjectStatusMarshaller {
 
         try {
             protocolMarshaller.marshall(perObjectStatus.getSyncStatus(), SYNCSTATUS_BINDING);
+            protocolMarshaller.marshall(perObjectStatus.getUpdateToken(), UPDATETOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

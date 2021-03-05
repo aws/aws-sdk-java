@@ -48,6 +48,11 @@ public class AbstractAmazonAthena implements AmazonAthena {
     }
 
     @Override
+    public CreatePreparedStatementResult createPreparedStatement(CreatePreparedStatementRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateWorkGroupResult createWorkGroup(CreateWorkGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -59,6 +64,11 @@ public class AbstractAmazonAthena implements AmazonAthena {
 
     @Override
     public DeleteNamedQueryResult deleteNamedQuery(DeleteNamedQueryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeletePreparedStatementResult deletePreparedStatement(DeletePreparedStatementRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -79,6 +89,11 @@ public class AbstractAmazonAthena implements AmazonAthena {
 
     @Override
     public GetNamedQueryResult getNamedQuery(GetNamedQueryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetPreparedStatementResult getPreparedStatement(GetPreparedStatementRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -119,6 +134,11 @@ public class AbstractAmazonAthena implements AmazonAthena {
 
     @Override
     public ListNamedQueriesResult listNamedQueries(ListNamedQueriesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListPreparedStatementsResult listPreparedStatements(ListPreparedStatementsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -164,6 +184,11 @@ public class AbstractAmazonAthena implements AmazonAthena {
 
     @Override
     public UpdateDataCatalogResult updateDataCatalog(UpdateDataCatalogRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdatePreparedStatementResult updatePreparedStatement(UpdatePreparedStatementRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

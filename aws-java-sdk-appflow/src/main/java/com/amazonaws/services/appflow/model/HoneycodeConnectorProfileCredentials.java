@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * The connector-specific credentials required when using Amazon Honeycode.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/HoneycodeConnectorProfileCredentials"
  *      target="_top">AWS API Documentation</a>
@@ -25,14 +28,28 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class HoneycodeConnectorProfileCredentials implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The credentials used to access protected Amazon Honeycode resources.
+     * </p>
+     */
     private String accessToken;
-
+    /**
+     * <p>
+     * The credentials used to acquire new access tokens.
+     * </p>
+     */
     private String refreshToken;
 
     private ConnectorOAuthRequest oAuthRequest;
 
     /**
+     * <p>
+     * The credentials used to access protected Amazon Honeycode resources.
+     * </p>
+     * 
      * @param accessToken
+     *        The credentials used to access protected Amazon Honeycode resources.
      */
 
     public void setAccessToken(String accessToken) {
@@ -40,7 +57,11 @@ public class HoneycodeConnectorProfileCredentials implements Serializable, Clone
     }
 
     /**
-     * @return
+     * <p>
+     * The credentials used to access protected Amazon Honeycode resources.
+     * </p>
+     * 
+     * @return The credentials used to access protected Amazon Honeycode resources.
      */
 
     public String getAccessToken() {
@@ -48,7 +69,12 @@ public class HoneycodeConnectorProfileCredentials implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * The credentials used to access protected Amazon Honeycode resources.
+     * </p>
+     * 
      * @param accessToken
+     *        The credentials used to access protected Amazon Honeycode resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -58,7 +84,12 @@ public class HoneycodeConnectorProfileCredentials implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * The credentials used to acquire new access tokens.
+     * </p>
+     * 
      * @param refreshToken
+     *        The credentials used to acquire new access tokens.
      */
 
     public void setRefreshToken(String refreshToken) {
@@ -66,7 +97,11 @@ public class HoneycodeConnectorProfileCredentials implements Serializable, Clone
     }
 
     /**
-     * @return
+     * <p>
+     * The credentials used to acquire new access tokens.
+     * </p>
+     * 
+     * @return The credentials used to acquire new access tokens.
      */
 
     public String getRefreshToken() {
@@ -74,7 +109,12 @@ public class HoneycodeConnectorProfileCredentials implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * The credentials used to acquire new access tokens.
+     * </p>
+     * 
      * @param refreshToken
+     *        The credentials used to acquire new access tokens.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

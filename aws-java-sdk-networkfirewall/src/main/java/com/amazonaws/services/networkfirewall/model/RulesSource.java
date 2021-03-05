@@ -38,11 +38,6 @@ public class RulesSource implements Serializable, Cloneable, StructuredPojo {
      * These rules contain the inspection criteria and the action to take for traffic that matches the criteria, so this
      * type of rule group doesn't have a separate action setting.
      * </p>
-     * <p>
-     * You can provide the rules from a file that you've stored in an Amazon S3 bucket, or by providing the rules in a
-     * Suricata rules string. To import from Amazon S3, provide the fully qualified name of the file that contains the
-     * rules definitions. To provide a Suricata rule string, provide the complete, Suricata compatible rule.
-     * </p>
      */
     private String rulesString;
     /**
@@ -74,11 +69,6 @@ public class RulesSource implements Serializable, Cloneable, StructuredPojo {
      * These rules contain the inspection criteria and the action to take for traffic that matches the criteria, so this
      * type of rule group doesn't have a separate action setting.
      * </p>
-     * <p>
-     * You can provide the rules from a file that you've stored in an Amazon S3 bucket, or by providing the rules in a
-     * Suricata rules string. To import from Amazon S3, provide the fully qualified name of the file that contains the
-     * rules definitions. To provide a Suricata rule string, provide the complete, Suricata compatible rule.
-     * </p>
      * 
      * @param rulesString
      *        Stateful inspection criteria, provided in Suricata compatible intrusion prevention system (IPS) rules.
@@ -87,12 +77,6 @@ public class RulesSource implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        These rules contain the inspection criteria and the action to take for traffic that matches the criteria,
      *        so this type of rule group doesn't have a separate action setting.
-     *        </p>
-     *        <p>
-     *        You can provide the rules from a file that you've stored in an Amazon S3 bucket, or by providing the rules
-     *        in a Suricata rules string. To import from Amazon S3, provide the fully qualified name of the file that
-     *        contains the rules definitions. To provide a Suricata rule string, provide the complete, Suricata
-     *        compatible rule.
      */
 
     public void setRulesString(String rulesString) {
@@ -108,11 +92,6 @@ public class RulesSource implements Serializable, Cloneable, StructuredPojo {
      * These rules contain the inspection criteria and the action to take for traffic that matches the criteria, so this
      * type of rule group doesn't have a separate action setting.
      * </p>
-     * <p>
-     * You can provide the rules from a file that you've stored in an Amazon S3 bucket, or by providing the rules in a
-     * Suricata rules string. To import from Amazon S3, provide the fully qualified name of the file that contains the
-     * rules definitions. To provide a Suricata rule string, provide the complete, Suricata compatible rule.
-     * </p>
      * 
      * @return Stateful inspection criteria, provided in Suricata compatible intrusion prevention system (IPS) rules.
      *         Suricata is an open-source network IPS that includes a standard rule-based language for network traffic
@@ -120,12 +99,6 @@ public class RulesSource implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         These rules contain the inspection criteria and the action to take for traffic that matches the criteria,
      *         so this type of rule group doesn't have a separate action setting.
-     *         </p>
-     *         <p>
-     *         You can provide the rules from a file that you've stored in an Amazon S3 bucket, or by providing the
-     *         rules in a Suricata rules string. To import from Amazon S3, provide the fully qualified name of the file
-     *         that contains the rules definitions. To provide a Suricata rule string, provide the complete, Suricata
-     *         compatible rule.
      */
 
     public String getRulesString() {
@@ -141,11 +114,6 @@ public class RulesSource implements Serializable, Cloneable, StructuredPojo {
      * These rules contain the inspection criteria and the action to take for traffic that matches the criteria, so this
      * type of rule group doesn't have a separate action setting.
      * </p>
-     * <p>
-     * You can provide the rules from a file that you've stored in an Amazon S3 bucket, or by providing the rules in a
-     * Suricata rules string. To import from Amazon S3, provide the fully qualified name of the file that contains the
-     * rules definitions. To provide a Suricata rule string, provide the complete, Suricata compatible rule.
-     * </p>
      * 
      * @param rulesString
      *        Stateful inspection criteria, provided in Suricata compatible intrusion prevention system (IPS) rules.
@@ -154,12 +122,6 @@ public class RulesSource implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        These rules contain the inspection criteria and the action to take for traffic that matches the criteria,
      *        so this type of rule group doesn't have a separate action setting.
-     *        </p>
-     *        <p>
-     *        You can provide the rules from a file that you've stored in an Amazon S3 bucket, or by providing the rules
-     *        in a Suricata rules string. To import from Amazon S3, provide the fully qualified name of the file that
-     *        contains the rules definitions. To provide a Suricata rule string, provide the complete, Suricata
-     *        compatible rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

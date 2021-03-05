@@ -882,6 +882,78 @@ public interface AWSShield {
 
     /**
      * <p>
+     * Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS Shield.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @throws InvalidResourceException
+     *         Exception that indicates that the resource is invalid. You might not have access to the resource, or the
+     *         resource might not exist.
+     * @throws ResourceNotFoundException
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
+     * @sample AWSShield.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Adds or updates tags for a resource in AWS Shield.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @throws InvalidResourceException
+     *         Exception that indicates that the resource is invalid. You might not have access to the resource, or the
+     *         resource might not exist.
+     * @throws InvalidParameterException
+     *         Exception that indicates that the parameters passed to the API are invalid. If available, this exception
+     *         includes details in additional properties.
+     * @throws ResourceNotFoundException
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
+     * @sample AWSShield.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes tags from a resource in AWS Shield.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InternalErrorException
+     *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
+     *         request.
+     * @throws InvalidResourceException
+     *         Exception that indicates that the resource is invalid. You might not have access to the resource, or the
+     *         resource might not exist.
+     * @throws InvalidParameterException
+     *         Exception that indicates that the parameters passed to the API are invalid. If available, this exception
+     *         includes details in additional properties.
+     * @throws ResourceNotFoundException
+     *         Exception indicating the specified resource does not exist. If available, this exception includes details
+     *         in additional properties.
+     * @sample AWSShield.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
      * Updates the details of the list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to
      * contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive
      * customer support.

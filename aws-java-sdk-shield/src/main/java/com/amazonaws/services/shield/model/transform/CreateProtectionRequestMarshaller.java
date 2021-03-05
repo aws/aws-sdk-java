@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.shield.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class CreateProtectionRequestMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> RESOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceArn").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateProtectionRequestMarshaller instance = new CreateProtectionRequestMarshaller();
 
@@ -50,6 +53,7 @@ public class CreateProtectionRequestMarshaller {
         try {
             protocolMarshaller.marshall(createProtectionRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createProtectionRequest.getResourceArn(), RESOURCEARN_BINDING);
+            protocolMarshaller.marshall(createProtectionRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

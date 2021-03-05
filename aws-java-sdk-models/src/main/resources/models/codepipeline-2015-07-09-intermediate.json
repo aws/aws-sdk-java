@@ -71775,7 +71775,7 @@
       "packageName" : "com.amazonaws.services.codepipeline.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
-      "required" : null,
+      "required" : [ "actionType" ],
       "shapeName" : "UpdateActionTypeRequest",
       "signerAware" : false,
       "signerType" : null,

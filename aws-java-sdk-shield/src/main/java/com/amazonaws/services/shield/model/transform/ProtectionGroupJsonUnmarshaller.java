@@ -70,6 +70,10 @@ public class ProtectionGroupJsonUnmarshaller implements Unmarshaller<ProtectionG
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("ProtectionGroupArn", targetDepth)) {
+                    context.nextToken();
+                    protectionGroup.setProtectionGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -145,6 +145,24 @@ public interface AmazonAthena {
 
     /**
      * <p>
+     * Creates a prepared statement for use with SQL queries in Athena.
+     * </p>
+     * 
+     * @param createPreparedStatementRequest
+     * @return Result of the CreatePreparedStatement operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.CreatePreparedStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreatePreparedStatement" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreatePreparedStatementResult createPreparedStatement(CreatePreparedStatementRequest createPreparedStatementRequest);
+
+    /**
+     * <p>
      * Creates a workgroup with the specified name.
      * </p>
      * 
@@ -201,6 +219,26 @@ public interface AmazonAthena {
      *      Documentation</a>
      */
     DeleteNamedQueryResult deleteNamedQuery(DeleteNamedQueryRequest deleteNamedQueryRequest);
+
+    /**
+     * <p>
+     * Deletes the prepared statement with the specified name from the specified workgroup.
+     * </p>
+     * 
+     * @param deletePreparedStatementRequest
+     * @return Result of the DeletePreparedStatement operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws ResourceNotFoundException
+     *         A resource, such as a workgroup, was not found.
+     * @sample AmazonAthena.DeletePreparedStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeletePreparedStatement" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeletePreparedStatementResult deletePreparedStatement(DeletePreparedStatementRequest deletePreparedStatementRequest);
 
     /**
      * <p>
@@ -279,6 +317,26 @@ public interface AmazonAthena {
      *      Documentation</a>
      */
     GetNamedQueryResult getNamedQuery(GetNamedQueryRequest getNamedQueryRequest);
+
+    /**
+     * <p>
+     * Retrieves the prepared statement with the specified name from the specified workgroup.
+     * </p>
+     * 
+     * @param getPreparedStatementRequest
+     * @return Result of the GetPreparedStatement operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws ResourceNotFoundException
+     *         A resource, such as a workgroup, was not found.
+     * @sample AmazonAthena.GetPreparedStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetPreparedStatement" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetPreparedStatementResult getPreparedStatement(GetPreparedStatementRequest getPreparedStatementRequest);
 
     /**
      * <p>
@@ -457,6 +515,24 @@ public interface AmazonAthena {
      *      Documentation</a>
      */
     ListNamedQueriesResult listNamedQueries(ListNamedQueriesRequest listNamedQueriesRequest);
+
+    /**
+     * <p>
+     * Lists the prepared statements in the specfied workgroup.
+     * </p>
+     * 
+     * @param listPreparedStatementsRequest
+     * @return Result of the ListPreparedStatements operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.ListPreparedStatements
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListPreparedStatements" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListPreparedStatementsResult listPreparedStatements(ListPreparedStatementsRequest listPreparedStatementsRequest);
 
     /**
      * <p>
@@ -657,6 +733,26 @@ public interface AmazonAthena {
      *      Documentation</a>
      */
     UpdateDataCatalogResult updateDataCatalog(UpdateDataCatalogRequest updateDataCatalogRequest);
+
+    /**
+     * <p>
+     * Updates a prepared statement.
+     * </p>
+     * 
+     * @param updatePreparedStatementRequest
+     * @return Result of the UpdatePreparedStatement operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws ResourceNotFoundException
+     *         A resource, such as a workgroup, was not found.
+     * @sample AmazonAthena.UpdatePreparedStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdatePreparedStatement" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdatePreparedStatementResult updatePreparedStatement(UpdatePreparedStatementRequest updatePreparedStatementRequest);
 
     /**
      * <p>

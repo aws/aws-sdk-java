@@ -87,6 +87,12 @@ public class ProtectionGroup implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.List<String> members;
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the protection group.
+     * </p>
+     */
+    private String protectionGroupArn;
 
     /**
      * <p>
@@ -598,6 +604,46 @@ public class ProtectionGroup implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the protection group.
+     * </p>
+     * 
+     * @param protectionGroupArn
+     *        The ARN (Amazon Resource Name) of the protection group.
+     */
+
+    public void setProtectionGroupArn(String protectionGroupArn) {
+        this.protectionGroupArn = protectionGroupArn;
+    }
+
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the protection group.
+     * </p>
+     * 
+     * @return The ARN (Amazon Resource Name) of the protection group.
+     */
+
+    public String getProtectionGroupArn() {
+        return this.protectionGroupArn;
+    }
+
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the protection group.
+     * </p>
+     * 
+     * @param protectionGroupArn
+     *        The ARN (Amazon Resource Name) of the protection group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProtectionGroup withProtectionGroupArn(String protectionGroupArn) {
+        setProtectionGroupArn(protectionGroupArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -618,7 +664,9 @@ public class ProtectionGroup implements Serializable, Cloneable, StructuredPojo 
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getMembers() != null)
-            sb.append("Members: ").append(getMembers());
+            sb.append("Members: ").append(getMembers()).append(",");
+        if (getProtectionGroupArn() != null)
+            sb.append("ProtectionGroupArn: ").append(getProtectionGroupArn());
         sb.append("}");
         return sb.toString();
     }
@@ -653,6 +701,10 @@ public class ProtectionGroup implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getMembers() != null && other.getMembers().equals(this.getMembers()) == false)
             return false;
+        if (other.getProtectionGroupArn() == null ^ this.getProtectionGroupArn() == null)
+            return false;
+        if (other.getProtectionGroupArn() != null && other.getProtectionGroupArn().equals(this.getProtectionGroupArn()) == false)
+            return false;
         return true;
     }
 
@@ -666,6 +718,7 @@ public class ProtectionGroup implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getPattern() == null) ? 0 : getPattern().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getMembers() == null) ? 0 : getMembers().hashCode());
+        hashCode = prime * hashCode + ((getProtectionGroupArn() == null) ? 0 : getProtectionGroupArn().hashCode());
         return hashCode;
     }
 

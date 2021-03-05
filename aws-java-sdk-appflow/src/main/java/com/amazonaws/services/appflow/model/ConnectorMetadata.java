@@ -137,9 +137,17 @@ public class ConnectorMetadata implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private UpsolverMetadata upsolver;
-
+    /**
+     * <p>
+     * The connector metadata specific to Amazon Connect Customer Profiles.
+     * </p>
+     */
     private CustomerProfilesMetadata customerProfiles;
-
+    /**
+     * <p>
+     * The connector metadata specific to Amazon Honeycode.
+     * </p>
+     */
     private HoneycodeMetadata honeycode;
 
     /**
@@ -863,7 +871,12 @@ public class ConnectorMetadata implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The connector metadata specific to Amazon Connect Customer Profiles.
+     * </p>
+     * 
      * @param customerProfiles
+     *        The connector metadata specific to Amazon Connect Customer Profiles.
      */
 
     public void setCustomerProfiles(CustomerProfilesMetadata customerProfiles) {
@@ -871,7 +884,11 @@ public class ConnectorMetadata implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * <p>
+     * The connector metadata specific to Amazon Connect Customer Profiles.
+     * </p>
+     * 
+     * @return The connector metadata specific to Amazon Connect Customer Profiles.
      */
 
     public CustomerProfilesMetadata getCustomerProfiles() {
@@ -879,7 +896,12 @@ public class ConnectorMetadata implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The connector metadata specific to Amazon Connect Customer Profiles.
+     * </p>
+     * 
      * @param customerProfiles
+     *        The connector metadata specific to Amazon Connect Customer Profiles.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -889,7 +911,12 @@ public class ConnectorMetadata implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The connector metadata specific to Amazon Honeycode.
+     * </p>
+     * 
      * @param honeycode
+     *        The connector metadata specific to Amazon Honeycode.
      */
 
     public void setHoneycode(HoneycodeMetadata honeycode) {
@@ -897,7 +924,11 @@ public class ConnectorMetadata implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * <p>
+     * The connector metadata specific to Amazon Honeycode.
+     * </p>
+     * 
+     * @return The connector metadata specific to Amazon Honeycode.
      */
 
     public HoneycodeMetadata getHoneycode() {
@@ -905,7 +936,12 @@ public class ConnectorMetadata implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The connector metadata specific to Amazon Honeycode.
+     * </p>
+     * 
      * @param honeycode
+     *        The connector metadata specific to Amazon Honeycode.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

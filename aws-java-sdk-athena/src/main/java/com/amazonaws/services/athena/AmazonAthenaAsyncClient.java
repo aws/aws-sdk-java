@@ -221,6 +221,39 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<CreatePreparedStatementResult> createPreparedStatementAsync(CreatePreparedStatementRequest request) {
+
+        return createPreparedStatementAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePreparedStatementResult> createPreparedStatementAsync(final CreatePreparedStatementRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreatePreparedStatementRequest, CreatePreparedStatementResult> asyncHandler) {
+        final CreatePreparedStatementRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreatePreparedStatementResult>() {
+            @Override
+            public CreatePreparedStatementResult call() throws Exception {
+                CreatePreparedStatementResult result = null;
+
+                try {
+                    result = executeCreatePreparedStatement(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateWorkGroupResult> createWorkGroupAsync(CreateWorkGroupRequest request) {
 
         return createWorkGroupAsync(request, null);
@@ -304,6 +337,39 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
 
                 try {
                     result = executeDeleteNamedQuery(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePreparedStatementResult> deletePreparedStatementAsync(DeletePreparedStatementRequest request) {
+
+        return deletePreparedStatementAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePreparedStatementResult> deletePreparedStatementAsync(final DeletePreparedStatementRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeletePreparedStatementRequest, DeletePreparedStatementResult> asyncHandler) {
+        final DeletePreparedStatementRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeletePreparedStatementResult>() {
+            @Override
+            public DeletePreparedStatementResult call() throws Exception {
+                DeletePreparedStatementResult result = null;
+
+                try {
+                    result = executeDeletePreparedStatement(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -436,6 +502,39 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
 
                 try {
                     result = executeGetNamedQuery(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPreparedStatementResult> getPreparedStatementAsync(GetPreparedStatementRequest request) {
+
+        return getPreparedStatementAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPreparedStatementResult> getPreparedStatementAsync(final GetPreparedStatementRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetPreparedStatementRequest, GetPreparedStatementResult> asyncHandler) {
+        final GetPreparedStatementRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetPreparedStatementResult>() {
+            @Override
+            public GetPreparedStatementResult call() throws Exception {
+                GetPreparedStatementResult result = null;
+
+                try {
+                    result = executeGetPreparedStatement(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -700,6 +799,39 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
 
                 try {
                     result = executeListNamedQueries(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPreparedStatementsResult> listPreparedStatementsAsync(ListPreparedStatementsRequest request) {
+
+        return listPreparedStatementsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPreparedStatementsResult> listPreparedStatementsAsync(final ListPreparedStatementsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPreparedStatementsRequest, ListPreparedStatementsResult> asyncHandler) {
+        final ListPreparedStatementsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPreparedStatementsResult>() {
+            @Override
+            public ListPreparedStatementsResult call() throws Exception {
+                ListPreparedStatementsResult result = null;
+
+                try {
+                    result = executeListPreparedStatements(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -997,6 +1129,39 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
 
                 try {
                     result = executeUpdateDataCatalog(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePreparedStatementResult> updatePreparedStatementAsync(UpdatePreparedStatementRequest request) {
+
+        return updatePreparedStatementAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePreparedStatementResult> updatePreparedStatementAsync(final UpdatePreparedStatementRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdatePreparedStatementRequest, UpdatePreparedStatementResult> asyncHandler) {
+        final UpdatePreparedStatementRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdatePreparedStatementResult>() {
+            @Override
+            public UpdatePreparedStatementResult call() throws Exception {
+                UpdatePreparedStatementResult result = null;
+
+                try {
+                    result = executeUpdatePreparedStatement(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

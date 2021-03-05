@@ -84,6 +84,12 @@ public class CreateProtectionGroupRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private java.util.List<String> members;
+    /**
+     * <p>
+     * One or more tag key-value pairs for the protection group.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -603,6 +609,76 @@ public class CreateProtectionGroupRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * One or more tag key-value pairs for the protection group.
+     * </p>
+     * 
+     * @return One or more tag key-value pairs for the protection group.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * One or more tag key-value pairs for the protection group.
+     * </p>
+     * 
+     * @param tags
+     *        One or more tag key-value pairs for the protection group.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * One or more tag key-value pairs for the protection group.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        One or more tag key-value pairs for the protection group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateProtectionGroupRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more tag key-value pairs for the protection group.
+     * </p>
+     * 
+     * @param tags
+     *        One or more tag key-value pairs for the protection group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateProtectionGroupRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -623,7 +699,9 @@ public class CreateProtectionGroupRequest extends com.amazonaws.AmazonWebService
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getMembers() != null)
-            sb.append("Members: ").append(getMembers());
+            sb.append("Members: ").append(getMembers()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -658,6 +736,10 @@ public class CreateProtectionGroupRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getMembers() != null && other.getMembers().equals(this.getMembers()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -671,6 +753,7 @@ public class CreateProtectionGroupRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getPattern() == null) ? 0 : getPattern().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getMembers() == null) ? 0 : getMembers().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

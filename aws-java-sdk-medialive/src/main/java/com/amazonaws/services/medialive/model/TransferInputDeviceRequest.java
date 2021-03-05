@@ -30,6 +30,8 @@ public class TransferInputDeviceRequest extends com.amazonaws.AmazonWebServiceRe
     private String inputDeviceId;
     /** The AWS account ID (12 digits) for the recipient of the device transfer. */
     private String targetCustomerId;
+    /** The target AWS region to transfer the device. */
+    private String targetRegion;
     /** An optional message for the recipient. Maximum 280 characters. */
     private String transferMessage;
 
@@ -102,6 +104,40 @@ public class TransferInputDeviceRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * The target AWS region to transfer the device.
+     * 
+     * @param targetRegion
+     *        The target AWS region to transfer the device.
+     */
+
+    public void setTargetRegion(String targetRegion) {
+        this.targetRegion = targetRegion;
+    }
+
+    /**
+     * The target AWS region to transfer the device.
+     * 
+     * @return The target AWS region to transfer the device.
+     */
+
+    public String getTargetRegion() {
+        return this.targetRegion;
+    }
+
+    /**
+     * The target AWS region to transfer the device.
+     * 
+     * @param targetRegion
+     *        The target AWS region to transfer the device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TransferInputDeviceRequest withTargetRegion(String targetRegion) {
+        setTargetRegion(targetRegion);
+        return this;
+    }
+
+    /**
      * An optional message for the recipient. Maximum 280 characters.
      * 
      * @param transferMessage
@@ -151,6 +187,8 @@ public class TransferInputDeviceRequest extends com.amazonaws.AmazonWebServiceRe
             sb.append("InputDeviceId: ").append(getInputDeviceId()).append(",");
         if (getTargetCustomerId() != null)
             sb.append("TargetCustomerId: ").append(getTargetCustomerId()).append(",");
+        if (getTargetRegion() != null)
+            sb.append("TargetRegion: ").append(getTargetRegion()).append(",");
         if (getTransferMessage() != null)
             sb.append("TransferMessage: ").append(getTransferMessage());
         sb.append("}");
@@ -175,6 +213,10 @@ public class TransferInputDeviceRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getTargetCustomerId() != null && other.getTargetCustomerId().equals(this.getTargetCustomerId()) == false)
             return false;
+        if (other.getTargetRegion() == null ^ this.getTargetRegion() == null)
+            return false;
+        if (other.getTargetRegion() != null && other.getTargetRegion().equals(this.getTargetRegion()) == false)
+            return false;
         if (other.getTransferMessage() == null ^ this.getTransferMessage() == null)
             return false;
         if (other.getTransferMessage() != null && other.getTransferMessage().equals(this.getTransferMessage()) == false)
@@ -189,6 +231,7 @@ public class TransferInputDeviceRequest extends com.amazonaws.AmazonWebServiceRe
 
         hashCode = prime * hashCode + ((getInputDeviceId() == null) ? 0 : getInputDeviceId().hashCode());
         hashCode = prime * hashCode + ((getTargetCustomerId() == null) ? 0 : getTargetCustomerId().hashCode());
+        hashCode = prime * hashCode + ((getTargetRegion() == null) ? 0 : getTargetRegion().hashCode());
         hashCode = prime * hashCode + ((getTransferMessage() == null) ? 0 : getTransferMessage().hashCode());
         return hashCode;
     }

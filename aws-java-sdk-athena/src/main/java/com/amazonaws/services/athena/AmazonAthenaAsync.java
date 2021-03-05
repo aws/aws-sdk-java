@@ -203,6 +203,37 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
+     * Creates a prepared statement for use with SQL queries in Athena.
+     * </p>
+     * 
+     * @param createPreparedStatementRequest
+     * @return A Java Future containing the result of the CreatePreparedStatement operation returned by the service.
+     * @sample AmazonAthenaAsync.CreatePreparedStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreatePreparedStatement" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePreparedStatementResult> createPreparedStatementAsync(CreatePreparedStatementRequest createPreparedStatementRequest);
+
+    /**
+     * <p>
+     * Creates a prepared statement for use with SQL queries in Athena.
+     * </p>
+     * 
+     * @param createPreparedStatementRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreatePreparedStatement operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.CreatePreparedStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreatePreparedStatement" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePreparedStatementResult> createPreparedStatementAsync(CreatePreparedStatementRequest createPreparedStatementRequest,
+            com.amazonaws.handlers.AsyncHandler<CreatePreparedStatementRequest, CreatePreparedStatementResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a workgroup with the specified name.
      * </p>
      * 
@@ -303,6 +334,37 @@ public interface AmazonAthenaAsync extends AmazonAthena {
      */
     java.util.concurrent.Future<DeleteNamedQueryResult> deleteNamedQueryAsync(DeleteNamedQueryRequest deleteNamedQueryRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteNamedQueryRequest, DeleteNamedQueryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the prepared statement with the specified name from the specified workgroup.
+     * </p>
+     * 
+     * @param deletePreparedStatementRequest
+     * @return A Java Future containing the result of the DeletePreparedStatement operation returned by the service.
+     * @sample AmazonAthenaAsync.DeletePreparedStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeletePreparedStatement" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePreparedStatementResult> deletePreparedStatementAsync(DeletePreparedStatementRequest deletePreparedStatementRequest);
+
+    /**
+     * <p>
+     * Deletes the prepared statement with the specified name from the specified workgroup.
+     * </p>
+     * 
+     * @param deletePreparedStatementRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePreparedStatement operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.DeletePreparedStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeletePreparedStatement" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePreparedStatementResult> deletePreparedStatementAsync(DeletePreparedStatementRequest deletePreparedStatementRequest,
+            com.amazonaws.handlers.AsyncHandler<DeletePreparedStatementRequest, DeletePreparedStatementResult> asyncHandler);
 
     /**
      * <p>
@@ -429,6 +491,37 @@ public interface AmazonAthenaAsync extends AmazonAthena {
      */
     java.util.concurrent.Future<GetNamedQueryResult> getNamedQueryAsync(GetNamedQueryRequest getNamedQueryRequest,
             com.amazonaws.handlers.AsyncHandler<GetNamedQueryRequest, GetNamedQueryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the prepared statement with the specified name from the specified workgroup.
+     * </p>
+     * 
+     * @param getPreparedStatementRequest
+     * @return A Java Future containing the result of the GetPreparedStatement operation returned by the service.
+     * @sample AmazonAthenaAsync.GetPreparedStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetPreparedStatement" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetPreparedStatementResult> getPreparedStatementAsync(GetPreparedStatementRequest getPreparedStatementRequest);
+
+    /**
+     * <p>
+     * Retrieves the prepared statement with the specified name from the specified workgroup.
+     * </p>
+     * 
+     * @param getPreparedStatementRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPreparedStatement operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.GetPreparedStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetPreparedStatement" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetPreparedStatementResult> getPreparedStatementAsync(GetPreparedStatementRequest getPreparedStatementRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPreparedStatementRequest, GetPreparedStatementResult> asyncHandler);
 
     /**
      * <p>
@@ -725,6 +818,37 @@ public interface AmazonAthenaAsync extends AmazonAthena {
      */
     java.util.concurrent.Future<ListNamedQueriesResult> listNamedQueriesAsync(ListNamedQueriesRequest listNamedQueriesRequest,
             com.amazonaws.handlers.AsyncHandler<ListNamedQueriesRequest, ListNamedQueriesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the prepared statements in the specfied workgroup.
+     * </p>
+     * 
+     * @param listPreparedStatementsRequest
+     * @return A Java Future containing the result of the ListPreparedStatements operation returned by the service.
+     * @sample AmazonAthenaAsync.ListPreparedStatements
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListPreparedStatements" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPreparedStatementsResult> listPreparedStatementsAsync(ListPreparedStatementsRequest listPreparedStatementsRequest);
+
+    /**
+     * <p>
+     * Lists the prepared statements in the specfied workgroup.
+     * </p>
+     * 
+     * @param listPreparedStatementsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListPreparedStatements operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.ListPreparedStatements
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListPreparedStatements" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPreparedStatementsResult> listPreparedStatementsAsync(ListPreparedStatementsRequest listPreparedStatementsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPreparedStatementsRequest, ListPreparedStatementsResult> asyncHandler);
 
     /**
      * <p>
@@ -1054,6 +1178,37 @@ public interface AmazonAthenaAsync extends AmazonAthena {
      */
     java.util.concurrent.Future<UpdateDataCatalogResult> updateDataCatalogAsync(UpdateDataCatalogRequest updateDataCatalogRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateDataCatalogRequest, UpdateDataCatalogResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a prepared statement.
+     * </p>
+     * 
+     * @param updatePreparedStatementRequest
+     * @return A Java Future containing the result of the UpdatePreparedStatement operation returned by the service.
+     * @sample AmazonAthenaAsync.UpdatePreparedStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdatePreparedStatement" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePreparedStatementResult> updatePreparedStatementAsync(UpdatePreparedStatementRequest updatePreparedStatementRequest);
+
+    /**
+     * <p>
+     * Updates a prepared statement.
+     * </p>
+     * 
+     * @param updatePreparedStatementRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdatePreparedStatement operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.UpdatePreparedStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdatePreparedStatement" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePreparedStatementResult> updatePreparedStatementAsync(UpdatePreparedStatementRequest updatePreparedStatementRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdatePreparedStatementRequest, UpdatePreparedStatementResult> asyncHandler);
 
     /**
      * <p>

@@ -52,7 +52,11 @@ public class ConnectorProfileCredentials implements Serializable, Cloneable, Str
      * </p>
      */
     private GoogleAnalyticsConnectorProfileCredentials googleAnalytics;
-
+    /**
+     * <p>
+     * The connector-specific credentials required when using Amazon Honeycode.
+     * </p>
+     */
     private HoneycodeConnectorProfileCredentials honeycode;
     /**
      * <p>
@@ -282,7 +286,12 @@ public class ConnectorProfileCredentials implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * The connector-specific credentials required when using Amazon Honeycode.
+     * </p>
+     * 
      * @param honeycode
+     *        The connector-specific credentials required when using Amazon Honeycode.
      */
 
     public void setHoneycode(HoneycodeConnectorProfileCredentials honeycode) {
@@ -290,7 +299,11 @@ public class ConnectorProfileCredentials implements Serializable, Cloneable, Str
     }
 
     /**
-     * @return
+     * <p>
+     * The connector-specific credentials required when using Amazon Honeycode.
+     * </p>
+     * 
+     * @return The connector-specific credentials required when using Amazon Honeycode.
      */
 
     public HoneycodeConnectorProfileCredentials getHoneycode() {
@@ -298,7 +311,12 @@ public class ConnectorProfileCredentials implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * The connector-specific credentials required when using Amazon Honeycode.
+     * </p>
+     * 
      * @param honeycode
+     *        The connector-specific credentials required when using Amazon Honeycode.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

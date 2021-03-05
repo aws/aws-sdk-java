@@ -1,3 +1,36 @@
+# __1.11.969__ __2021-03-05__
+## __AWS CodePipeline__
+  - ### Features
+    - Updated the parameters to make actionType required for UpdateActionType
+
+## __AWS Elemental MediaLive__
+  - ### Features
+    - Medialive now supports the ability to transfer AWS Elemental Link devices to another region.
+
+## __AWS License Manager__
+  - ### Features
+    - License Manager Automated Discovery now supports Exclusion Filters.
+
+## __AWS Network Firewall__
+  - ### Features
+    - Added a new UpdateToken output field to the PerObjectStatus as part of firewall sync state. This is added to track which version of the object the firewall is in sync or pending synchronization.
+
+## __AWS Shield__
+  - ### Features
+    - Add support for tagging of Shield protection and protection group resources.
+
+## __Amazon Appflow__
+  - ### Features
+    - Documentation updates for arn:aws:trebuchet:::service:v1:decb008d-e0d8-44a4-b93c-092f0355d523
+
+## __Amazon Athena__
+  - ### Features
+    - Adds APIs to create, list, update, and delete prepared SQL statements that have optional placeholder parameters. A prepared statement can use different values for these parameters each time it is run.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Expands EC2/Spot Fleet capacity-optimized allocation strategy to allow users to prioritize instance pools. Fleet attempts to fulfill priorities on a best-effort basis but optimizes for capacity first.
+
 # __1.11.968__ __2021-03-04__
 ## __AWS Cloud Map__
   - ### Features

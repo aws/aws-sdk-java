@@ -38,6 +38,8 @@ public class ProtectionGroupMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceType").build();
     private static final MarshallingInfo<List> MEMBERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Members").build();
+    private static final MarshallingInfo<String> PROTECTIONGROUPARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProtectionGroupArn").build();
 
     private static final ProtectionGroupMarshaller instance = new ProtectionGroupMarshaller();
 
@@ -60,6 +62,7 @@ public class ProtectionGroupMarshaller {
             protocolMarshaller.marshall(protectionGroup.getPattern(), PATTERN_BINDING);
             protocolMarshaller.marshall(protectionGroup.getResourceType(), RESOURCETYPE_BINDING);
             protocolMarshaller.marshall(protectionGroup.getMembers(), MEMBERS_BINDING);
+            protocolMarshaller.marshall(protectionGroup.getProtectionGroupArn(), PROTECTIONGROUPARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

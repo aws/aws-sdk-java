@@ -52,7 +52,11 @@ public class ConnectorProfileProperties implements Serializable, Cloneable, Stru
      * </p>
      */
     private GoogleAnalyticsConnectorProfileProperties googleAnalytics;
-
+    /**
+     * <p>
+     * The connector-specific properties required by Amazon Honeycode.
+     * </p>
+     */
     private HoneycodeConnectorProfileProperties honeycode;
     /**
      * <p>
@@ -282,7 +286,12 @@ public class ConnectorProfileProperties implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * The connector-specific properties required by Amazon Honeycode.
+     * </p>
+     * 
      * @param honeycode
+     *        The connector-specific properties required by Amazon Honeycode.
      */
 
     public void setHoneycode(HoneycodeConnectorProfileProperties honeycode) {
@@ -290,7 +299,11 @@ public class ConnectorProfileProperties implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * <p>
+     * The connector-specific properties required by Amazon Honeycode.
+     * </p>
+     * 
+     * @return The connector-specific properties required by Amazon Honeycode.
      */
 
     public HoneycodeConnectorProfileProperties getHoneycode() {
@@ -298,7 +311,12 @@ public class ConnectorProfileProperties implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * The connector-specific properties required by Amazon Honeycode.
+     * </p>
+     * 
      * @param honeycode
+     *        The connector-specific properties required by Amazon Honeycode.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

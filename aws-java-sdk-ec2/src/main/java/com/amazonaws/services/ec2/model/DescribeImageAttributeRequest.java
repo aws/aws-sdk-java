@@ -33,9 +33,9 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
      * The AMI attribute.
      * </p>
      * <p>
-     * <b>Note</b>: Depending on your account privileges, the <code>blockDeviceMapping</code> attribute may return a
-     * <code>Client.AuthFailure</code> error. If this happens, use <a>DescribeImages</a> to get information about the
-     * block device mapping for the AMI.
+     * <b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the
+     * <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use the
+     * <a>DescribeImages</a> action.
      * </p>
      */
     private String attribute;
@@ -62,9 +62,9 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
      * @param attribute
      *        The AMI attribute.</p>
      *        <p>
-     *        <b>Note</b>: Depending on your account privileges, the <code>blockDeviceMapping</code> attribute may
-     *        return a <code>Client.AuthFailure</code> error. If this happens, use <a>DescribeImages</a> to get
-     *        information about the block device mapping for the AMI.
+     *        <b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the
+     *        <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use
+     *        the <a>DescribeImages</a> action.
      */
     public DescribeImageAttributeRequest(String imageId, String attribute) {
         setImageId(imageId);
@@ -80,9 +80,9 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
      * @param attribute
      *        The AMI attribute.</p>
      *        <p>
-     *        <b>Note</b>: Depending on your account privileges, the <code>blockDeviceMapping</code> attribute may
-     *        return a <code>Client.AuthFailure</code> error. If this happens, use <a>DescribeImages</a> to get
-     *        information about the block device mapping for the AMI.
+     *        <b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the
+     *        <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use
+     *        the <a>DescribeImages</a> action.
      */
     public DescribeImageAttributeRequest(String imageId, ImageAttributeName attribute) {
         setImageId(imageId);
@@ -94,17 +94,17 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
      * The AMI attribute.
      * </p>
      * <p>
-     * <b>Note</b>: Depending on your account privileges, the <code>blockDeviceMapping</code> attribute may return a
-     * <code>Client.AuthFailure</code> error. If this happens, use <a>DescribeImages</a> to get information about the
-     * block device mapping for the AMI.
+     * <b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the
+     * <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use the
+     * <a>DescribeImages</a> action.
      * </p>
      * 
      * @param attribute
      *        The AMI attribute.</p>
      *        <p>
-     *        <b>Note</b>: Depending on your account privileges, the <code>blockDeviceMapping</code> attribute may
-     *        return a <code>Client.AuthFailure</code> error. If this happens, use <a>DescribeImages</a> to get
-     *        information about the block device mapping for the AMI.
+     *        <b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the
+     *        <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use
+     *        the <a>DescribeImages</a> action.
      * @see ImageAttributeName
      */
 
@@ -117,16 +117,16 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
      * The AMI attribute.
      * </p>
      * <p>
-     * <b>Note</b>: Depending on your account privileges, the <code>blockDeviceMapping</code> attribute may return a
-     * <code>Client.AuthFailure</code> error. If this happens, use <a>DescribeImages</a> to get information about the
-     * block device mapping for the AMI.
+     * <b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the
+     * <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use the
+     * <a>DescribeImages</a> action.
      * </p>
      * 
      * @return The AMI attribute.</p>
      *         <p>
-     *         <b>Note</b>: Depending on your account privileges, the <code>blockDeviceMapping</code> attribute may
-     *         return a <code>Client.AuthFailure</code> error. If this happens, use <a>DescribeImages</a> to get
-     *         information about the block device mapping for the AMI.
+     *         <b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns
+     *         the <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI,
+     *         use the <a>DescribeImages</a> action.
      * @see ImageAttributeName
      */
 
@@ -139,17 +139,17 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
      * The AMI attribute.
      * </p>
      * <p>
-     * <b>Note</b>: Depending on your account privileges, the <code>blockDeviceMapping</code> attribute may return a
-     * <code>Client.AuthFailure</code> error. If this happens, use <a>DescribeImages</a> to get information about the
-     * block device mapping for the AMI.
+     * <b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the
+     * <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use the
+     * <a>DescribeImages</a> action.
      * </p>
      * 
      * @param attribute
      *        The AMI attribute.</p>
      *        <p>
-     *        <b>Note</b>: Depending on your account privileges, the <code>blockDeviceMapping</code> attribute may
-     *        return a <code>Client.AuthFailure</code> error. If this happens, use <a>DescribeImages</a> to get
-     *        information about the block device mapping for the AMI.
+     *        <b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the
+     *        <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use
+     *        the <a>DescribeImages</a> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImageAttributeName
      */
@@ -164,17 +164,17 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
      * The AMI attribute.
      * </p>
      * <p>
-     * <b>Note</b>: Depending on your account privileges, the <code>blockDeviceMapping</code> attribute may return a
-     * <code>Client.AuthFailure</code> error. If this happens, use <a>DescribeImages</a> to get information about the
-     * block device mapping for the AMI.
+     * <b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the
+     * <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use the
+     * <a>DescribeImages</a> action.
      * </p>
      * 
      * @param attribute
      *        The AMI attribute.</p>
      *        <p>
-     *        <b>Note</b>: Depending on your account privileges, the <code>blockDeviceMapping</code> attribute may
-     *        return a <code>Client.AuthFailure</code> error. If this happens, use <a>DescribeImages</a> to get
-     *        information about the block device mapping for the AMI.
+     *        <b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the
+     *        <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use
+     *        the <a>DescribeImages</a> action.
      * @see ImageAttributeName
      */
 
@@ -187,17 +187,17 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest imple
      * The AMI attribute.
      * </p>
      * <p>
-     * <b>Note</b>: Depending on your account privileges, the <code>blockDeviceMapping</code> attribute may return a
-     * <code>Client.AuthFailure</code> error. If this happens, use <a>DescribeImages</a> to get information about the
-     * block device mapping for the AMI.
+     * <b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the
+     * <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use the
+     * <a>DescribeImages</a> action.
      * </p>
      * 
      * @param attribute
      *        The AMI attribute.</p>
      *        <p>
-     *        <b>Note</b>: Depending on your account privileges, the <code>blockDeviceMapping</code> attribute may
-     *        return a <code>Client.AuthFailure</code> error. If this happens, use <a>DescribeImages</a> to get
-     *        information about the block device mapping for the AMI.
+     *        <b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this attribute returns the
+     *        <code>Client.AuthFailure</code> error. To get information about the block device mappings for an AMI, use
+     *        the <a>DescribeImages</a> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImageAttributeName
      */

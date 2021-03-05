@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * The connector metadata specific to Amazon Honeycode.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/HoneycodeMetadata" target="_top">AWS API
  *      Documentation</a>
@@ -25,10 +28,19 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class HoneycodeMetadata implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The desired authorization scope for the Amazon Honeycode account.
+     * </p>
+     */
     private java.util.List<String> oAuthScopes;
 
     /**
-     * @return
+     * <p>
+     * The desired authorization scope for the Amazon Honeycode account.
+     * </p>
+     * 
+     * @return The desired authorization scope for the Amazon Honeycode account.
      */
 
     public java.util.List<String> getOAuthScopes() {
@@ -36,7 +48,12 @@ public class HoneycodeMetadata implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The desired authorization scope for the Amazon Honeycode account.
+     * </p>
+     * 
      * @param oAuthScopes
+     *        The desired authorization scope for the Amazon Honeycode account.
      */
 
     public void setOAuthScopes(java.util.Collection<String> oAuthScopes) {
@@ -50,12 +67,16 @@ public class HoneycodeMetadata implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
+     * The desired authorization scope for the Amazon Honeycode account.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setOAuthScopes(java.util.Collection)} or {@link #withOAuthScopes(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param oAuthScopes
+     *        The desired authorization scope for the Amazon Honeycode account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -70,7 +91,12 @@ public class HoneycodeMetadata implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The desired authorization scope for the Amazon Honeycode account.
+     * </p>
+     * 
      * @param oAuthScopes
+     *        The desired authorization scope for the Amazon Honeycode account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -59,8 +59,9 @@ public class FirewallPolicy implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> statelessDefaultActions;
     /**
      * <p>
-     * The actions to take on a fragmented packet if it doesn't match any of the stateless rules in the policy. If you
-     * want non-matching fragmented packets to be forwarded for stateful inspection, specify
+     * The actions to take on a fragmented UDP packet if it doesn't match any of the stateless rules in the policy.
+     * Network Firewall only manages UDP packet fragments and silently drops packet fragments for other protocols. If
+     * you want non-matching fragmented UDP packets to be forwarded for stateful inspection, specify
      * <code>aws:forward_to_sfe</code>.
      * </p>
      * <p>
@@ -329,8 +330,9 @@ public class FirewallPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The actions to take on a fragmented packet if it doesn't match any of the stateless rules in the policy. If you
-     * want non-matching fragmented packets to be forwarded for stateful inspection, specify
+     * The actions to take on a fragmented UDP packet if it doesn't match any of the stateless rules in the policy.
+     * Network Firewall only manages UDP packet fragments and silently drops packet fragments for other protocols. If
+     * you want non-matching fragmented UDP packets to be forwarded for stateful inspection, specify
      * <code>aws:forward_to_sfe</code>.
      * </p>
      * <p>
@@ -344,9 +346,10 @@ public class FirewallPolicy implements Serializable, Cloneable, StructuredPojo {
      * descriptions under <a>CustomAction</a>.
      * </p>
      * 
-     * @return The actions to take on a fragmented packet if it doesn't match any of the stateless rules in the policy.
-     *         If you want non-matching fragmented packets to be forwarded for stateful inspection, specify
-     *         <code>aws:forward_to_sfe</code>. </p>
+     * @return The actions to take on a fragmented UDP packet if it doesn't match any of the stateless rules in the
+     *         policy. Network Firewall only manages UDP packet fragments and silently drops packet fragments for other
+     *         protocols. If you want non-matching fragmented UDP packets to be forwarded for stateful inspection,
+     *         specify <code>aws:forward_to_sfe</code>. </p>
      *         <p>
      *         You must specify one of the standard actions: <code>aws:pass</code>, <code>aws:drop</code>, or
      *         <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions that are compatible with
@@ -364,8 +367,9 @@ public class FirewallPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The actions to take on a fragmented packet if it doesn't match any of the stateless rules in the policy. If you
-     * want non-matching fragmented packets to be forwarded for stateful inspection, specify
+     * The actions to take on a fragmented UDP packet if it doesn't match any of the stateless rules in the policy.
+     * Network Firewall only manages UDP packet fragments and silently drops packet fragments for other protocols. If
+     * you want non-matching fragmented UDP packets to be forwarded for stateful inspection, specify
      * <code>aws:forward_to_sfe</code>.
      * </p>
      * <p>
@@ -380,9 +384,10 @@ public class FirewallPolicy implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param statelessFragmentDefaultActions
-     *        The actions to take on a fragmented packet if it doesn't match any of the stateless rules in the policy.
-     *        If you want non-matching fragmented packets to be forwarded for stateful inspection, specify
-     *        <code>aws:forward_to_sfe</code>. </p>
+     *        The actions to take on a fragmented UDP packet if it doesn't match any of the stateless rules in the
+     *        policy. Network Firewall only manages UDP packet fragments and silently drops packet fragments for other
+     *        protocols. If you want non-matching fragmented UDP packets to be forwarded for stateful inspection,
+     *        specify <code>aws:forward_to_sfe</code>. </p>
      *        <p>
      *        You must specify one of the standard actions: <code>aws:pass</code>, <code>aws:drop</code>, or
      *        <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions that are compatible with your
@@ -405,8 +410,9 @@ public class FirewallPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The actions to take on a fragmented packet if it doesn't match any of the stateless rules in the policy. If you
-     * want non-matching fragmented packets to be forwarded for stateful inspection, specify
+     * The actions to take on a fragmented UDP packet if it doesn't match any of the stateless rules in the policy.
+     * Network Firewall only manages UDP packet fragments and silently drops packet fragments for other protocols. If
+     * you want non-matching fragmented UDP packets to be forwarded for stateful inspection, specify
      * <code>aws:forward_to_sfe</code>.
      * </p>
      * <p>
@@ -426,9 +432,10 @@ public class FirewallPolicy implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param statelessFragmentDefaultActions
-     *        The actions to take on a fragmented packet if it doesn't match any of the stateless rules in the policy.
-     *        If you want non-matching fragmented packets to be forwarded for stateful inspection, specify
-     *        <code>aws:forward_to_sfe</code>. </p>
+     *        The actions to take on a fragmented UDP packet if it doesn't match any of the stateless rules in the
+     *        policy. Network Firewall only manages UDP packet fragments and silently drops packet fragments for other
+     *        protocols. If you want non-matching fragmented UDP packets to be forwarded for stateful inspection,
+     *        specify <code>aws:forward_to_sfe</code>. </p>
      *        <p>
      *        You must specify one of the standard actions: <code>aws:pass</code>, <code>aws:drop</code>, or
      *        <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions that are compatible with your
@@ -453,8 +460,9 @@ public class FirewallPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The actions to take on a fragmented packet if it doesn't match any of the stateless rules in the policy. If you
-     * want non-matching fragmented packets to be forwarded for stateful inspection, specify
+     * The actions to take on a fragmented UDP packet if it doesn't match any of the stateless rules in the policy.
+     * Network Firewall only manages UDP packet fragments and silently drops packet fragments for other protocols. If
+     * you want non-matching fragmented UDP packets to be forwarded for stateful inspection, specify
      * <code>aws:forward_to_sfe</code>.
      * </p>
      * <p>
@@ -469,9 +477,10 @@ public class FirewallPolicy implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param statelessFragmentDefaultActions
-     *        The actions to take on a fragmented packet if it doesn't match any of the stateless rules in the policy.
-     *        If you want non-matching fragmented packets to be forwarded for stateful inspection, specify
-     *        <code>aws:forward_to_sfe</code>. </p>
+     *        The actions to take on a fragmented UDP packet if it doesn't match any of the stateless rules in the
+     *        policy. Network Firewall only manages UDP packet fragments and silently drops packet fragments for other
+     *        protocols. If you want non-matching fragmented UDP packets to be forwarded for stateful inspection,
+     *        specify <code>aws:forward_to_sfe</code>. </p>
      *        <p>
      *        You must specify one of the standard actions: <code>aws:pass</code>, <code>aws:drop</code>, or
      *        <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions that are compatible with your

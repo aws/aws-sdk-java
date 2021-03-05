@@ -18,7 +18,12 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * Provides configuration status for a single policy or rule group that is used for a firewall endpoint. Network
+ * Firewall provides each endpoint with the rules that are configured in the firewall policy. Each time you add a subnet
+ * or modify the associated firewall policy, Network Firewall synchronizes the rules in the endpoint, so it can properly
+ * filter network traffic. This is part of a <a>SyncState</a> for a firewall.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/PerObjectStatus" target="_top">AWS
  *      API Documentation</a>
@@ -26,13 +31,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PerObjectStatus implements Serializable, Cloneable, StructuredPojo {
 
-    /** <p/> */
+    /**
+     * <p>
+     * Indicates whether this object is in sync with the version indicated in the update token.
+     * </p>
+     */
     private String syncStatus;
+    /**
+     * <p>
+     * The current version of the object that is either in sync or pending synchronization.
+     * </p>
+     */
+    private String updateToken;
 
     /**
-     * <p/>
+     * <p>
+     * Indicates whether this object is in sync with the version indicated in the update token.
+     * </p>
      * 
      * @param syncStatus
+     *        Indicates whether this object is in sync with the version indicated in the update token.
      * @see PerObjectSyncStatus
      */
 
@@ -41,9 +59,11 @@ public class PerObjectStatus implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * Indicates whether this object is in sync with the version indicated in the update token.
+     * </p>
      * 
-     * @return
+     * @return Indicates whether this object is in sync with the version indicated in the update token.
      * @see PerObjectSyncStatus
      */
 
@@ -52,9 +72,12 @@ public class PerObjectStatus implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * Indicates whether this object is in sync with the version indicated in the update token.
+     * </p>
      * 
      * @param syncStatus
+     *        Indicates whether this object is in sync with the version indicated in the update token.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PerObjectSyncStatus
      */
@@ -65,15 +88,58 @@ public class PerObjectStatus implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * Indicates whether this object is in sync with the version indicated in the update token.
+     * </p>
      * 
      * @param syncStatus
+     *        Indicates whether this object is in sync with the version indicated in the update token.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PerObjectSyncStatus
      */
 
     public PerObjectStatus withSyncStatus(PerObjectSyncStatus syncStatus) {
         this.syncStatus = syncStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current version of the object that is either in sync or pending synchronization.
+     * </p>
+     * 
+     * @param updateToken
+     *        The current version of the object that is either in sync or pending synchronization.
+     */
+
+    public void setUpdateToken(String updateToken) {
+        this.updateToken = updateToken;
+    }
+
+    /**
+     * <p>
+     * The current version of the object that is either in sync or pending synchronization.
+     * </p>
+     * 
+     * @return The current version of the object that is either in sync or pending synchronization.
+     */
+
+    public String getUpdateToken() {
+        return this.updateToken;
+    }
+
+    /**
+     * <p>
+     * The current version of the object that is either in sync or pending synchronization.
+     * </p>
+     * 
+     * @param updateToken
+     *        The current version of the object that is either in sync or pending synchronization.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PerObjectStatus withUpdateToken(String updateToken) {
+        setUpdateToken(updateToken);
         return this;
     }
 
@@ -90,7 +156,9 @@ public class PerObjectStatus implements Serializable, Cloneable, StructuredPojo 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSyncStatus() != null)
-            sb.append("SyncStatus: ").append(getSyncStatus());
+            sb.append("SyncStatus: ").append(getSyncStatus()).append(",");
+        if (getUpdateToken() != null)
+            sb.append("UpdateToken: ").append(getUpdateToken());
         sb.append("}");
         return sb.toString();
     }
@@ -109,6 +177,10 @@ public class PerObjectStatus implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getSyncStatus() != null && other.getSyncStatus().equals(this.getSyncStatus()) == false)
             return false;
+        if (other.getUpdateToken() == null ^ this.getUpdateToken() == null)
+            return false;
+        if (other.getUpdateToken() != null && other.getUpdateToken().equals(this.getUpdateToken()) == false)
+            return false;
         return true;
     }
 
@@ -118,6 +190,7 @@ public class PerObjectStatus implements Serializable, Cloneable, StructuredPojo 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getSyncStatus() == null) ? 0 : getSyncStatus().hashCode());
+        hashCode = prime * hashCode + ((getUpdateToken() == null) ? 0 : getUpdateToken().hashCode());
         return hashCode;
     }
 

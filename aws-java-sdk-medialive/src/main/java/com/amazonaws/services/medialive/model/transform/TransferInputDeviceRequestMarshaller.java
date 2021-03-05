@@ -31,6 +31,8 @@ public class TransferInputDeviceRequestMarshaller {
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("inputDeviceId").build();
     private static final MarshallingInfo<String> TARGETCUSTOMERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("targetCustomerId").build();
+    private static final MarshallingInfo<String> TARGETREGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("targetRegion").build();
     private static final MarshallingInfo<String> TRANSFERMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("transferMessage").build();
 
@@ -52,6 +54,7 @@ public class TransferInputDeviceRequestMarshaller {
         try {
             protocolMarshaller.marshall(transferInputDeviceRequest.getInputDeviceId(), INPUTDEVICEID_BINDING);
             protocolMarshaller.marshall(transferInputDeviceRequest.getTargetCustomerId(), TARGETCUSTOMERID_BINDING);
+            protocolMarshaller.marshall(transferInputDeviceRequest.getTargetRegion(), TARGETREGION_BINDING);
             protocolMarshaller.marshall(transferInputDeviceRequest.getTransferMessage(), TRANSFERMESSAGE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

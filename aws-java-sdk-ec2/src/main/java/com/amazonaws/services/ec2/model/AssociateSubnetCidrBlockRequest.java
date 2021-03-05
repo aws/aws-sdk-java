@@ -28,56 +28,16 @@ public class AssociateSubnetCidrBlockRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix length.
-     * </p>
-     */
-    private String ipv6CidrBlock;
-    /**
-     * <p>
      * The ID of your subnet.
      * </p>
      */
     private String subnetId;
-
     /**
      * <p>
      * The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix length.
      * </p>
-     * 
-     * @param ipv6CidrBlock
-     *        The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix length.
      */
-
-    public void setIpv6CidrBlock(String ipv6CidrBlock) {
-        this.ipv6CidrBlock = ipv6CidrBlock;
-    }
-
-    /**
-     * <p>
-     * The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix length.
-     * </p>
-     * 
-     * @return The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix length.
-     */
-
-    public String getIpv6CidrBlock() {
-        return this.ipv6CidrBlock;
-    }
-
-    /**
-     * <p>
-     * The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix length.
-     * </p>
-     * 
-     * @param ipv6CidrBlock
-     *        The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix length.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AssociateSubnetCidrBlockRequest withIpv6CidrBlock(String ipv6CidrBlock) {
-        setIpv6CidrBlock(ipv6CidrBlock);
-        return this;
-    }
+    private String ipv6CidrBlock;
 
     /**
      * <p>
@@ -120,6 +80,46 @@ public class AssociateSubnetCidrBlockRequest extends AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix length.
+     * </p>
+     * 
+     * @param ipv6CidrBlock
+     *        The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix length.
+     */
+
+    public void setIpv6CidrBlock(String ipv6CidrBlock) {
+        this.ipv6CidrBlock = ipv6CidrBlock;
+    }
+
+    /**
+     * <p>
+     * The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix length.
+     * </p>
+     * 
+     * @return The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix length.
+     */
+
+    public String getIpv6CidrBlock() {
+        return this.ipv6CidrBlock;
+    }
+
+    /**
+     * <p>
+     * The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix length.
+     * </p>
+     * 
+     * @param ipv6CidrBlock
+     *        The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix length.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociateSubnetCidrBlockRequest withIpv6CidrBlock(String ipv6CidrBlock) {
+        setIpv6CidrBlock(ipv6CidrBlock);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -142,10 +142,10 @@ public class AssociateSubnetCidrBlockRequest extends AmazonWebServiceRequest imp
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getIpv6CidrBlock() != null)
-            sb.append("Ipv6CidrBlock: ").append(getIpv6CidrBlock()).append(",");
         if (getSubnetId() != null)
-            sb.append("SubnetId: ").append(getSubnetId());
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
+        if (getIpv6CidrBlock() != null)
+            sb.append("Ipv6CidrBlock: ").append(getIpv6CidrBlock());
         sb.append("}");
         return sb.toString();
     }
@@ -160,13 +160,13 @@ public class AssociateSubnetCidrBlockRequest extends AmazonWebServiceRequest imp
         if (obj instanceof AssociateSubnetCidrBlockRequest == false)
             return false;
         AssociateSubnetCidrBlockRequest other = (AssociateSubnetCidrBlockRequest) obj;
-        if (other.getIpv6CidrBlock() == null ^ this.getIpv6CidrBlock() == null)
-            return false;
-        if (other.getIpv6CidrBlock() != null && other.getIpv6CidrBlock().equals(this.getIpv6CidrBlock()) == false)
-            return false;
         if (other.getSubnetId() == null ^ this.getSubnetId() == null)
             return false;
         if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
+            return false;
+        if (other.getIpv6CidrBlock() == null ^ this.getIpv6CidrBlock() == null)
+            return false;
+        if (other.getIpv6CidrBlock() != null && other.getIpv6CidrBlock().equals(this.getIpv6CidrBlock()) == false)
             return false;
         return true;
     }
@@ -176,8 +176,8 @@ public class AssociateSubnetCidrBlockRequest extends AmazonWebServiceRequest imp
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getIpv6CidrBlock() == null) ? 0 : getIpv6CidrBlock().hashCode());
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
+        hashCode = prime * hashCode + ((getIpv6CidrBlock() == null) ? 0 : getIpv6CidrBlock().hashCode());
         return hashCode;
     }
 

@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * The properties that are applied when Amazon Connect Customer Profiles is used as a destination.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/CustomerProfilesDestinationProperties"
  *      target="_top">AWS API Documentation</a>
@@ -25,12 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CustomerProfilesDestinationProperties implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The unique name of the Amazon Connect Customer Profiles domain.
+     * </p>
+     */
     private String domainName;
-
+    /**
+     * <p>
+     * The object specified in the Amazon Connect Customer Profiles flow destination.
+     * </p>
+     */
     private String objectTypeName;
 
     /**
+     * <p>
+     * The unique name of the Amazon Connect Customer Profiles domain.
+     * </p>
+     * 
      * @param domainName
+     *        The unique name of the Amazon Connect Customer Profiles domain.
      */
 
     public void setDomainName(String domainName) {
@@ -38,7 +55,11 @@ public class CustomerProfilesDestinationProperties implements Serializable, Clon
     }
 
     /**
-     * @return
+     * <p>
+     * The unique name of the Amazon Connect Customer Profiles domain.
+     * </p>
+     * 
+     * @return The unique name of the Amazon Connect Customer Profiles domain.
      */
 
     public String getDomainName() {
@@ -46,7 +67,12 @@ public class CustomerProfilesDestinationProperties implements Serializable, Clon
     }
 
     /**
+     * <p>
+     * The unique name of the Amazon Connect Customer Profiles domain.
+     * </p>
+     * 
      * @param domainName
+     *        The unique name of the Amazon Connect Customer Profiles domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +82,12 @@ public class CustomerProfilesDestinationProperties implements Serializable, Clon
     }
 
     /**
+     * <p>
+     * The object specified in the Amazon Connect Customer Profiles flow destination.
+     * </p>
+     * 
      * @param objectTypeName
+     *        The object specified in the Amazon Connect Customer Profiles flow destination.
      */
 
     public void setObjectTypeName(String objectTypeName) {
@@ -64,7 +95,11 @@ public class CustomerProfilesDestinationProperties implements Serializable, Clon
     }
 
     /**
-     * @return
+     * <p>
+     * The object specified in the Amazon Connect Customer Profiles flow destination.
+     * </p>
+     * 
+     * @return The object specified in the Amazon Connect Customer Profiles flow destination.
      */
 
     public String getObjectTypeName() {
@@ -72,7 +107,12 @@ public class CustomerProfilesDestinationProperties implements Serializable, Clon
     }
 
     /**
+     * <p>
+     * The object specified in the Amazon Connect Customer Profiles flow destination.
+     * </p>
+     * 
      * @param objectTypeName
+     *        The object specified in the Amazon Connect Customer Profiles flow destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

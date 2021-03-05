@@ -21,6 +21,17 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Stateful inspection criteria for a domain list rule group.
  * </p>
+ * <p>
+ * For HTTPS traffic, domain filtering is SNI-based. It uses the server name indicator extension of the TLS handshake.
+ * </p>
+ * <p>
+ * By default, Network Firewall domain list inspection only includes traffic coming from the VPC where you deploy the
+ * firewall. To inspect traffic from IP addresses outside of the deployment VPC, you set the <code>HOME_NET</code> rule
+ * variable to include the CIDR range of the deployment VPC plus the other CIDR ranges. For more information, see
+ * <a>RuleVariables</a> in this guide and <a
+ * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/stateful-rule-groups-domain-names.html"
+ * >Stateful domain list rule groups in AWS Network Firewall</a> in the <i>Network Firewall Developer Guide</i>
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/RulesSourceList" target="_top">AWS
  *      API Documentation</a>
@@ -31,11 +42,30 @@ public class RulesSourceList implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The domains that you want to inspect for in your traffic flows. To provide multiple domains, separate them with
-     * commas.
+     * commas. Valid domain specifications are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Explicit names. For example, <code>abc.example.com</code> matches only the domain <code>abc.example.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,
+     * <code>.example.com</code> matches <code>example.com</code> and matches all subdomains of <code>example.com</code>
+     * , such as <code>abc.example.com</code> and <code>www.example.com</code>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.List<String> targets;
-    /** <p/> */
+    /**
+     * <p>
+     * The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>. Specity
+     * <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both.
+     * </p>
+     */
     private java.util.List<String> targetTypes;
     /**
      * <p>
@@ -47,11 +77,39 @@ public class RulesSourceList implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The domains that you want to inspect for in your traffic flows. To provide multiple domains, separate them with
-     * commas.
+     * commas. Valid domain specifications are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Explicit names. For example, <code>abc.example.com</code> matches only the domain <code>abc.example.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,
+     * <code>.example.com</code> matches <code>example.com</code> and matches all subdomains of <code>example.com</code>
+     * , such as <code>abc.example.com</code> and <code>www.example.com</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The domains that you want to inspect for in your traffic flows. To provide multiple domains, separate
-     *         them with commas.
+     *         them with commas. Valid domain specifications are the following:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Explicit names. For example, <code>abc.example.com</code> matches only the domain
+     *         <code>abc.example.com</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,
+     *         <code>.example.com</code> matches <code>example.com</code> and matches all subdomains of
+     *         <code>example.com</code>, such as <code>abc.example.com</code> and <code>www.example.com</code>.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<String> getTargets() {
@@ -61,12 +119,40 @@ public class RulesSourceList implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The domains that you want to inspect for in your traffic flows. To provide multiple domains, separate them with
-     * commas.
+     * commas. Valid domain specifications are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Explicit names. For example, <code>abc.example.com</code> matches only the domain <code>abc.example.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,
+     * <code>.example.com</code> matches <code>example.com</code> and matches all subdomains of <code>example.com</code>
+     * , such as <code>abc.example.com</code> and <code>www.example.com</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param targets
      *        The domains that you want to inspect for in your traffic flows. To provide multiple domains, separate them
-     *        with commas.
+     *        with commas. Valid domain specifications are the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Explicit names. For example, <code>abc.example.com</code> matches only the domain
+     *        <code>abc.example.com</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,
+     *        <code>.example.com</code> matches <code>example.com</code> and matches all subdomains of
+     *        <code>example.com</code>, such as <code>abc.example.com</code> and <code>www.example.com</code>.
+     *        </p>
+     *        </li>
      */
 
     public void setTargets(java.util.Collection<String> targets) {
@@ -81,8 +167,22 @@ public class RulesSourceList implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The domains that you want to inspect for in your traffic flows. To provide multiple domains, separate them with
-     * commas.
+     * commas. Valid domain specifications are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Explicit names. For example, <code>abc.example.com</code> matches only the domain <code>abc.example.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,
+     * <code>.example.com</code> matches <code>example.com</code> and matches all subdomains of <code>example.com</code>
+     * , such as <code>abc.example.com</code> and <code>www.example.com</code>.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTargets(java.util.Collection)} or {@link #withTargets(java.util.Collection)} if you want to override
@@ -91,7 +191,21 @@ public class RulesSourceList implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param targets
      *        The domains that you want to inspect for in your traffic flows. To provide multiple domains, separate them
-     *        with commas.
+     *        with commas. Valid domain specifications are the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Explicit names. For example, <code>abc.example.com</code> matches only the domain
+     *        <code>abc.example.com</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,
+     *        <code>.example.com</code> matches <code>example.com</code> and matches all subdomains of
+     *        <code>example.com</code>, such as <code>abc.example.com</code> and <code>www.example.com</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,12 +222,40 @@ public class RulesSourceList implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The domains that you want to inspect for in your traffic flows. To provide multiple domains, separate them with
-     * commas.
+     * commas. Valid domain specifications are the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Explicit names. For example, <code>abc.example.com</code> matches only the domain <code>abc.example.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,
+     * <code>.example.com</code> matches <code>example.com</code> and matches all subdomains of <code>example.com</code>
+     * , such as <code>abc.example.com</code> and <code>www.example.com</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param targets
      *        The domains that you want to inspect for in your traffic flows. To provide multiple domains, separate them
-     *        with commas.
+     *        with commas. Valid domain specifications are the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Explicit names. For example, <code>abc.example.com</code> matches only the domain
+     *        <code>abc.example.com</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,
+     *        <code>.example.com</code> matches <code>example.com</code> and matches all subdomains of
+     *        <code>example.com</code>, such as <code>abc.example.com</code> and <code>www.example.com</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,9 +265,13 @@ public class RulesSourceList implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>. Specity
+     * <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both.
+     * </p>
      * 
-     * @return
+     * @return The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>. Specity
+     *         <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both.
      * @see TargetType
      */
 
@@ -134,9 +280,14 @@ public class RulesSourceList implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>. Specity
+     * <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both.
+     * </p>
      * 
      * @param targetTypes
+     *        The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>. Specity
+     *        <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both.
      * @see TargetType
      */
 
@@ -150,7 +301,10 @@ public class RulesSourceList implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>. Specity
+     * <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTargetTypes(java.util.Collection)} or {@link #withTargetTypes(java.util.Collection)} if you want to
@@ -158,6 +312,8 @@ public class RulesSourceList implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param targetTypes
+     *        The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>. Specity
+     *        <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetType
      */
@@ -173,9 +329,14 @@ public class RulesSourceList implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>. Specity
+     * <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both.
+     * </p>
      * 
      * @param targetTypes
+     *        The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>. Specity
+     *        <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetType
      */
@@ -186,9 +347,14 @@ public class RulesSourceList implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p/>
+     * <p>
+     * The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>. Specity
+     * <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both.
+     * </p>
      * 
      * @param targetTypes
+     *        The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>. Specity
+     *        <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetType
      */

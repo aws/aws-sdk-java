@@ -31,24 +31,24 @@ public class PrefixConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines the level of granularity that's included in the prefix.
+     * Determines the format of the prefix, and whether it applies to the file name, file path, or both.
      * </p>
      */
     private String prefixType;
     /**
      * <p>
-     * Determines the format of the prefix, and whether it applies to the file name, file path, or both.
+     * Determines the level of granularity that's included in the prefix.
      * </p>
      */
     private String prefixFormat;
 
     /**
      * <p>
-     * Determines the level of granularity that's included in the prefix.
+     * Determines the format of the prefix, and whether it applies to the file name, file path, or both.
      * </p>
      * 
      * @param prefixType
-     *        Determines the level of granularity that's included in the prefix.
+     *        Determines the format of the prefix, and whether it applies to the file name, file path, or both.
      * @see PrefixType
      */
 
@@ -58,10 +58,10 @@ public class PrefixConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines the level of granularity that's included in the prefix.
+     * Determines the format of the prefix, and whether it applies to the file name, file path, or both.
      * </p>
      * 
-     * @return Determines the level of granularity that's included in the prefix.
+     * @return Determines the format of the prefix, and whether it applies to the file name, file path, or both.
      * @see PrefixType
      */
 
@@ -71,11 +71,11 @@ public class PrefixConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines the level of granularity that's included in the prefix.
+     * Determines the format of the prefix, and whether it applies to the file name, file path, or both.
      * </p>
      * 
      * @param prefixType
-     *        Determines the level of granularity that's included in the prefix.
+     *        Determines the format of the prefix, and whether it applies to the file name, file path, or both.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PrefixType
      */
@@ -87,11 +87,11 @@ public class PrefixConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines the level of granularity that's included in the prefix.
+     * Determines the format of the prefix, and whether it applies to the file name, file path, or both.
      * </p>
      * 
      * @param prefixType
-     *        Determines the level of granularity that's included in the prefix.
+     *        Determines the format of the prefix, and whether it applies to the file name, file path, or both.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PrefixType
      */
@@ -103,11 +103,11 @@ public class PrefixConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines the format of the prefix, and whether it applies to the file name, file path, or both.
+     * Determines the level of granularity that's included in the prefix.
      * </p>
      * 
      * @param prefixFormat
-     *        Determines the format of the prefix, and whether it applies to the file name, file path, or both.
+     *        Determines the level of granularity that's included in the prefix.
      * @see PrefixFormat
      */
 
@@ -117,10 +117,10 @@ public class PrefixConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines the format of the prefix, and whether it applies to the file name, file path, or both.
+     * Determines the level of granularity that's included in the prefix.
      * </p>
      * 
-     * @return Determines the format of the prefix, and whether it applies to the file name, file path, or both.
+     * @return Determines the level of granularity that's included in the prefix.
      * @see PrefixFormat
      */
 
@@ -130,11 +130,11 @@ public class PrefixConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines the format of the prefix, and whether it applies to the file name, file path, or both.
+     * Determines the level of granularity that's included in the prefix.
      * </p>
      * 
      * @param prefixFormat
-     *        Determines the format of the prefix, and whether it applies to the file name, file path, or both.
+     *        Determines the level of granularity that's included in the prefix.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PrefixFormat
      */
@@ -146,11 +146,11 @@ public class PrefixConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines the format of the prefix, and whether it applies to the file name, file path, or both.
+     * Determines the level of granularity that's included in the prefix.
      * </p>
      * 
      * @param prefixFormat
-     *        Determines the format of the prefix, and whether it applies to the file name, file path, or both.
+     *        Determines the level of granularity that's included in the prefix.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PrefixFormat
      */

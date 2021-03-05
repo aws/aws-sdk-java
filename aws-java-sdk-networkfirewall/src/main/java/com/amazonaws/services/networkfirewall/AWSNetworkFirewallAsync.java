@@ -86,11 +86,6 @@ import com.amazonaws.services.networkfirewall.model.*;
  * </li>
  * <li>
  * <p>
- * Rate limit traffic going from AWS to on-premises IP destinations.
- * </p>
- * </li>
- * <li>
- * <p>
  * Use stateful protocol detection to filter protocols like HTTPS, regardless of the port used.
  * </p>
  * </li>

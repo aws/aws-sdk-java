@@ -68,7 +68,11 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
      * </p>
      */
     private Long scheduleOffset;
-
+    /**
+     * <p>
+     * Specifies the date range for the records to import from the connector in the first flow run.
+     * </p>
+     */
     private java.util.Date firstExecutionFrom;
 
     /**
@@ -351,7 +355,12 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Specifies the date range for the records to import from the connector in the first flow run.
+     * </p>
+     * 
      * @param firstExecutionFrom
+     *        Specifies the date range for the records to import from the connector in the first flow run.
      */
 
     public void setFirstExecutionFrom(java.util.Date firstExecutionFrom) {
@@ -359,7 +368,11 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies the date range for the records to import from the connector in the first flow run.
+     * </p>
+     * 
+     * @return Specifies the date range for the records to import from the connector in the first flow run.
      */
 
     public java.util.Date getFirstExecutionFrom() {
@@ -367,7 +380,12 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Specifies the date range for the records to import from the connector in the first flow run.
+     * </p>
+     * 
      * @param firstExecutionFrom
+     *        Specifies the date range for the records to import from the connector in the first flow run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
