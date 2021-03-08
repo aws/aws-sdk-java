@@ -21,10 +21,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * The range of timestamps for which to return fragments.
  * </p>
- * <p>
- * The values in the ClipTimestampRange are <code>inclusive</code>. Fragments that begin before the start time but
- * continue past it, or fragments that begin before the end time but continue past it, are included in the session.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/ClipTimestampRange"
  *      target="_top">AWS API Documentation</a>
@@ -37,9 +33,10 @@ public class ClipTimestampRange implements Serializable, Cloneable, StructuredPo
      * The starting timestamp in the range of timestamps for which to return fragments.
      * </p>
      * <p>
-     * This value is inclusive. Fragments that start before the <code>StartTimestamp</code> and continue past it are
-     * included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the
-     * <code>StartTimestamp</code> must be later than the stream head.
+     * Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session. Fragments
+     * that start before <code>StartTimestamp</code> and continue past it aren't included in the session. If
+     * <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later
+     * than the stream head.
      * </p>
      */
     private java.util.Date startTimestamp;
@@ -48,7 +45,7 @@ public class ClipTimestampRange implements Serializable, Cloneable, StructuredPo
      * The end of the timestamp range for the requested media.
      * </p>
      * <p>
-     * This value must be within 3 hours of the specified <code>StartTimestamp</code>, and it must be later than the
+     * This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the
      * <code>StartTimestamp</code> value. If <code>FragmentSelectorType</code> for the request is
      * <code>SERVER_TIMESTAMP</code>, this value must be in the past.
      * </p>
@@ -64,16 +61,18 @@ public class ClipTimestampRange implements Serializable, Cloneable, StructuredPo
      * The starting timestamp in the range of timestamps for which to return fragments.
      * </p>
      * <p>
-     * This value is inclusive. Fragments that start before the <code>StartTimestamp</code> and continue past it are
-     * included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the
-     * <code>StartTimestamp</code> must be later than the stream head.
+     * Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session. Fragments
+     * that start before <code>StartTimestamp</code> and continue past it aren't included in the session. If
+     * <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later
+     * than the stream head.
      * </p>
      * 
      * @param startTimestamp
      *        The starting timestamp in the range of timestamps for which to return fragments. </p>
      *        <p>
-     *        This value is inclusive. Fragments that start before the <code>StartTimestamp</code> and continue past it
-     *        are included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the
+     *        Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session.
+     *        Fragments that start before <code>StartTimestamp</code> and continue past it aren't included in the
+     *        session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the
      *        <code>StartTimestamp</code> must be later than the stream head.
      */
 
@@ -86,15 +85,17 @@ public class ClipTimestampRange implements Serializable, Cloneable, StructuredPo
      * The starting timestamp in the range of timestamps for which to return fragments.
      * </p>
      * <p>
-     * This value is inclusive. Fragments that start before the <code>StartTimestamp</code> and continue past it are
-     * included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the
-     * <code>StartTimestamp</code> must be later than the stream head.
+     * Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session. Fragments
+     * that start before <code>StartTimestamp</code> and continue past it aren't included in the session. If
+     * <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later
+     * than the stream head.
      * </p>
      * 
      * @return The starting timestamp in the range of timestamps for which to return fragments. </p>
      *         <p>
-     *         This value is inclusive. Fragments that start before the <code>StartTimestamp</code> and continue past it
-     *         are included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the
+     *         Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session.
+     *         Fragments that start before <code>StartTimestamp</code> and continue past it aren't included in the
+     *         session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the
      *         <code>StartTimestamp</code> must be later than the stream head.
      */
 
@@ -107,16 +108,18 @@ public class ClipTimestampRange implements Serializable, Cloneable, StructuredPo
      * The starting timestamp in the range of timestamps for which to return fragments.
      * </p>
      * <p>
-     * This value is inclusive. Fragments that start before the <code>StartTimestamp</code> and continue past it are
-     * included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the
-     * <code>StartTimestamp</code> must be later than the stream head.
+     * Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session. Fragments
+     * that start before <code>StartTimestamp</code> and continue past it aren't included in the session. If
+     * <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later
+     * than the stream head.
      * </p>
      * 
      * @param startTimestamp
      *        The starting timestamp in the range of timestamps for which to return fragments. </p>
      *        <p>
-     *        This value is inclusive. Fragments that start before the <code>StartTimestamp</code> and continue past it
-     *        are included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the
+     *        Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session.
+     *        Fragments that start before <code>StartTimestamp</code> and continue past it aren't included in the
+     *        session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the
      *        <code>StartTimestamp</code> must be later than the stream head.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -131,7 +134,7 @@ public class ClipTimestampRange implements Serializable, Cloneable, StructuredPo
      * The end of the timestamp range for the requested media.
      * </p>
      * <p>
-     * This value must be within 3 hours of the specified <code>StartTimestamp</code>, and it must be later than the
+     * This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the
      * <code>StartTimestamp</code> value. If <code>FragmentSelectorType</code> for the request is
      * <code>SERVER_TIMESTAMP</code>, this value must be in the past.
      * </p>
@@ -143,7 +146,7 @@ public class ClipTimestampRange implements Serializable, Cloneable, StructuredPo
      * @param endTimestamp
      *        The end of the timestamp range for the requested media.</p>
      *        <p>
-     *        This value must be within 3 hours of the specified <code>StartTimestamp</code>, and it must be later than
+     *        This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than
      *        the <code>StartTimestamp</code> value. If <code>FragmentSelectorType</code> for the request is
      *        <code>SERVER_TIMESTAMP</code>, this value must be in the past.
      *        </p>
@@ -162,7 +165,7 @@ public class ClipTimestampRange implements Serializable, Cloneable, StructuredPo
      * The end of the timestamp range for the requested media.
      * </p>
      * <p>
-     * This value must be within 3 hours of the specified <code>StartTimestamp</code>, and it must be later than the
+     * This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the
      * <code>StartTimestamp</code> value. If <code>FragmentSelectorType</code> for the request is
      * <code>SERVER_TIMESTAMP</code>, this value must be in the past.
      * </p>
@@ -173,8 +176,8 @@ public class ClipTimestampRange implements Serializable, Cloneable, StructuredPo
      * 
      * @return The end of the timestamp range for the requested media.</p>
      *         <p>
-     *         This value must be within 3 hours of the specified <code>StartTimestamp</code>, and it must be later than
-     *         the <code>StartTimestamp</code> value. If <code>FragmentSelectorType</code> for the request is
+     *         This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later
+     *         than the <code>StartTimestamp</code> value. If <code>FragmentSelectorType</code> for the request is
      *         <code>SERVER_TIMESTAMP</code>, this value must be in the past.
      *         </p>
      *         <p>
@@ -192,7 +195,7 @@ public class ClipTimestampRange implements Serializable, Cloneable, StructuredPo
      * The end of the timestamp range for the requested media.
      * </p>
      * <p>
-     * This value must be within 3 hours of the specified <code>StartTimestamp</code>, and it must be later than the
+     * This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the
      * <code>StartTimestamp</code> value. If <code>FragmentSelectorType</code> for the request is
      * <code>SERVER_TIMESTAMP</code>, this value must be in the past.
      * </p>
@@ -204,7 +207,7 @@ public class ClipTimestampRange implements Serializable, Cloneable, StructuredPo
      * @param endTimestamp
      *        The end of the timestamp range for the requested media.</p>
      *        <p>
-     *        This value must be within 3 hours of the specified <code>StartTimestamp</code>, and it must be later than
+     *        This value must be within 24 hours of the specified <code>StartTimestamp</code>, and it must be later than
      *        the <code>StartTimestamp</code> value. If <code>FragmentSelectorType</code> for the request is
      *        <code>SERVER_TIMESTAMP</code>, this value must be in the past.
      *        </p>

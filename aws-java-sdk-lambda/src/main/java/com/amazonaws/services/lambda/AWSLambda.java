@@ -1175,8 +1175,15 @@ public interface AWSLambda {
      * </p>
      * <p>
      * Set <code>FunctionVersion</code> to <code>ALL</code> to include all published versions of each function in
-     * addition to the unpublished version. To get more information about a function or version, use <a>GetFunction</a>.
+     * addition to the unpublished version.
      * </p>
+     * <note>
+     * <p>
+     * The <code>ListFunctions</code> action returns a subset of the <a>FunctionConfiguration</a> fields. To get the
+     * additional fields (State, StateReasonCode, StateReason, LastUpdateStatus, LastUpdateStatusReason,
+     * LastUpdateStatusReasonCode) for a function or version, use <a>GetFunction</a>.
+     * </p>
+     * </note>
      * 
      * @param listFunctionsRequest
      * @return Result of the ListFunctions operation returned by the service.

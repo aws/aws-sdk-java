@@ -13,7 +13,7 @@
 
 /**
  * <p>
- * AWS S3 Control provides access to Amazon S3 control plane operations.
+ * AWS S3 Control provides access to Amazon S3 control plane actions.
  * </p>
  */
 package com.amazonaws.services.s3control;

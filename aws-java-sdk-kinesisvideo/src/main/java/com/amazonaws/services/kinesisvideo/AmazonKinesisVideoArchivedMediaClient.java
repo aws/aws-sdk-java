@@ -221,8 +221,10 @@ public class AmazonKinesisVideoArchivedMediaClient extends AmazonWebServiceClien
      * @throws InvalidArgumentException
      *         A specified parameter exceeds its restrictions, is not supported, or can't be used.
      * @throws ClientLimitExceededException
-     *         Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client
-     *         calls. Try making the call later.
+     *         Kinesis Video Streams has throttled the request because you have exceeded a limit. Try making the call
+     *         later. For information about limits, see <a
+     *         href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams
+     *         Limits</a>.
      * @throws NotAuthorizedException
      *         Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token
      *         has expired.
@@ -355,8 +357,8 @@ public class AmazonKinesisVideoArchivedMediaClient extends AmazonWebServiceClien
      * </p>
      * <note>
      * <p>
-     * Don't share or store this token where an unauthorized entity could access it. The token provides access to the
-     * content of the stream. Safeguard the token with the same measures that you would use with your AWS credentials.
+     * Don't share or store this token where an unauthorized entity can access it. The token provides access to the
+     * content of the stream. Safeguard the token with the same measures that you use with your AWS credentials.
      * </p>
      * </note>
      * <p>
@@ -421,30 +423,9 @@ public class AmazonKinesisVideoArchivedMediaClient extends AmazonWebServiceClien
      * </ol>
      * <note>
      * <p>
-     * The following restrictions apply to MPEG-DASH sessions:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * A streaming session URL should not be shared between players. The service might throttle a session if multiple
-     * media players are sharing it. For connection limits, see <a
+     * For restrictions that apply to MPEG-DASH sessions, see <a
      * href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams Limits</a>.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * A Kinesis video stream can have a maximum of ten active MPEG-DASH streaming sessions. If a new session is created
-     * when the maximum number of sessions is already active, the oldest (earliest created) session is closed. The
-     * number of active <code>GetMedia</code> connections on a Kinesis video stream does not count against this limit,
-     * and the number of active MPEG-DASH sessions does not count against the active <code>GetMedia</code> connection
-     * limit.
-     * </p>
-     * <note>
-     * <p>
-     * The maximum limits for active HLS and MPEG-DASH streaming sessions are independent of each other.
-     * </p>
-     * </note></li>
-     * </ul>
      * </note>
      * <p>
      * You can monitor the amount of data that the media player consumes by monitoring the
@@ -503,8 +484,10 @@ public class AmazonKinesisVideoArchivedMediaClient extends AmazonWebServiceClien
      * @throws InvalidArgumentException
      *         A specified parameter exceeds its restrictions, is not supported, or can't be used.
      * @throws ClientLimitExceededException
-     *         Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client
-     *         calls. Try making the call later.
+     *         Kinesis Video Streams has throttled the request because you have exceeded a limit. Try making the call
+     *         later. For information about limits, see <a
+     *         href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams
+     *         Limits</a>.
      * @throws NotAuthorizedException
      *         Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token
      *         has expired.
@@ -732,32 +715,11 @@ public class AmazonKinesisVideoArchivedMediaClient extends AmazonWebServiceClien
      * </ul>
      * </li>
      * </ol>
-     * <note>
      * <p>
-     * The following restrictions apply to HLS sessions:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * A streaming session URL should not be shared between players. The service might throttle a session if multiple
+     * A streaming session URL must not be shared between players. The service might throttle a session if multiple
      * media players are sharing it. For connection limits, see <a
      * href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams Limits</a>.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * A Kinesis video stream can have a maximum of ten active HLS streaming sessions. If a new session is created when
-     * the maximum number of sessions is already active, the oldest (earliest created) session is closed. The number of
-     * active <code>GetMedia</code> connections on a Kinesis video stream does not count against this limit, and the
-     * number of active HLS sessions does not count against the active <code>GetMedia</code> connection limit.
-     * </p>
-     * <note>
-     * <p>
-     * The maximum limits for active HLS and MPEG-DASH streaming sessions are independent of each other.
-     * </p>
-     * </note></li>
-     * </ul>
-     * </note>
      * <p>
      * You can monitor the amount of data that the media player consumes by monitoring the
      * <code>GetMP4MediaFragment.OutgoingBytes</code> Amazon CloudWatch metric. For information about using CloudWatch
@@ -815,8 +777,10 @@ public class AmazonKinesisVideoArchivedMediaClient extends AmazonWebServiceClien
      * @throws InvalidArgumentException
      *         A specified parameter exceeds its restrictions, is not supported, or can't be used.
      * @throws ClientLimitExceededException
-     *         Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client
-     *         calls. Try making the call later.
+     *         Kinesis Video Streams has throttled the request because you have exceeded a limit. Try making the call
+     *         later. For information about limits, see <a
+     *         href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams
+     *         Limits</a>.
      * @throws NotAuthorizedException
      *         Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token
      *         has expired.
@@ -896,21 +860,9 @@ public class AmazonKinesisVideoArchivedMediaClient extends AmazonWebServiceClien
      * </p>
      * </note>
      * <p>
-     * The following limits apply when using the <code>GetMediaForFragmentList</code> API:
+     * For limits, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video
+     * Streams Limits</a>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * A client can call <code>GetMediaForFragmentList</code> up to five times per second per stream.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Kinesis Video Streams sends media data at a rate of up to 25 megabytes per second (or 200 megabits per second)
-     * during a <code>GetMediaForFragmentList</code> session.
-     * </p>
-     * </li>
-     * </ul>
      * <important>
      * <p>
      * If an error is thrown after invoking a Kinesis Video Streams archived media API, in addition to the HTTP status
@@ -955,8 +907,10 @@ public class AmazonKinesisVideoArchivedMediaClient extends AmazonWebServiceClien
      * @throws InvalidArgumentException
      *         A specified parameter exceeds its restrictions, is not supported, or can't be used.
      * @throws ClientLimitExceededException
-     *         Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client
-     *         calls. Try making the call later.
+     *         Kinesis Video Streams has throttled the request because you have exceeded a limit. Try making the call
+     *         later. For information about limits, see <a
+     *         href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams
+     *         Limits</a>.
      * @throws NotAuthorizedException
      *         Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token
      *         has expired.
@@ -1074,8 +1028,10 @@ public class AmazonKinesisVideoArchivedMediaClient extends AmazonWebServiceClien
      * @throws InvalidArgumentException
      *         A specified parameter exceeds its restrictions, is not supported, or can't be used.
      * @throws ClientLimitExceededException
-     *         Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client
-     *         calls. Try making the call later.
+     *         Kinesis Video Streams has throttled the request because you have exceeded a limit. Try making the call
+     *         later. For information about limits, see <a
+     *         href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams
+     *         Limits</a>.
      * @throws NotAuthorizedException
      *         Status Code: 403, The caller is not authorized to perform an operation on the given stream, or the token
      *         has expired.

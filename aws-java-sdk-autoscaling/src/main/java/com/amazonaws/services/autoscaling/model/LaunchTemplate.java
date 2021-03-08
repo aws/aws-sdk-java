@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Describes a launch template and overrides.
  * </p>
  * <p>
- * You specify these parameters as part of a mixed instances policy.
+ * You specify these properties as part of a mixed instances policy.
  * </p>
  * <p>
  * When you update the launch template or overrides, existing Amazon EC2 instances continue to run. When scale out
@@ -42,7 +42,7 @@ public class LaunchTemplate implements Serializable, Cloneable {
     private LaunchTemplateSpecification launchTemplateSpecification;
     /**
      * <p>
-     * Any parameters that you specify override the same parameters in the launch template. If not provided, Amazon EC2
+     * Any properties that you specify override the same properties in the launch template. If not provided, Amazon EC2
      * Auto Scaling uses the instance type specified in the launch template when it launches an instance.
      * </p>
      */
@@ -90,11 +90,11 @@ public class LaunchTemplate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any parameters that you specify override the same parameters in the launch template. If not provided, Amazon EC2
+     * Any properties that you specify override the same properties in the launch template. If not provided, Amazon EC2
      * Auto Scaling uses the instance type specified in the launch template when it launches an instance.
      * </p>
      * 
-     * @return Any parameters that you specify override the same parameters in the launch template. If not provided,
+     * @return Any properties that you specify override the same properties in the launch template. If not provided,
      *         Amazon EC2 Auto Scaling uses the instance type specified in the launch template when it launches an
      *         instance.
      */
@@ -108,12 +108,12 @@ public class LaunchTemplate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any parameters that you specify override the same parameters in the launch template. If not provided, Amazon EC2
+     * Any properties that you specify override the same properties in the launch template. If not provided, Amazon EC2
      * Auto Scaling uses the instance type specified in the launch template when it launches an instance.
      * </p>
      * 
      * @param overrides
-     *        Any parameters that you specify override the same parameters in the launch template. If not provided,
+     *        Any properties that you specify override the same properties in the launch template. If not provided,
      *        Amazon EC2 Auto Scaling uses the instance type specified in the launch template when it launches an
      *        instance.
      */
@@ -129,7 +129,7 @@ public class LaunchTemplate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any parameters that you specify override the same parameters in the launch template. If not provided, Amazon EC2
+     * Any properties that you specify override the same properties in the launch template. If not provided, Amazon EC2
      * Auto Scaling uses the instance type specified in the launch template when it launches an instance.
      * </p>
      * <p>
@@ -139,7 +139,7 @@ public class LaunchTemplate implements Serializable, Cloneable {
      * </p>
      * 
      * @param overrides
-     *        Any parameters that you specify override the same parameters in the launch template. If not provided,
+     *        Any properties that you specify override the same properties in the launch template. If not provided,
      *        Amazon EC2 Auto Scaling uses the instance type specified in the launch template when it launches an
      *        instance.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -157,12 +157,12 @@ public class LaunchTemplate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any parameters that you specify override the same parameters in the launch template. If not provided, Amazon EC2
+     * Any properties that you specify override the same properties in the launch template. If not provided, Amazon EC2
      * Auto Scaling uses the instance type specified in the launch template when it launches an instance.
      * </p>
      * 
      * @param overrides
-     *        Any parameters that you specify override the same parameters in the launch template. If not provided,
+     *        Any properties that you specify override the same properties in the launch template. If not provided,
      *        Amazon EC2 Auto Scaling uses the instance type specified in the launch template when it launches an
      *        instance.
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -26,7 +26,7 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * AWS S3 Control provides access to Amazon S3 control plane operations.
+ * AWS S3 Control provides access to Amazon S3 control plane actions.
  * </p>
  */
 @ThreadSafe

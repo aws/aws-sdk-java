@@ -36,21 +36,27 @@ public class OnDemandProvisioningSpecification implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Specifies the strategy to use in launching On-Demand Instance fleets. Currently, the only option is lowest-price
-     * (the default), which launches the lowest price first.
+     * Specifies the strategy to use in launching On-Demand instance fleets. Currently, the only option is
+     * <code>lowest-price</code> (the default), which launches the lowest price first.
      * </p>
      */
     private String allocationStrategy;
+    /**
+     * <p>
+     * The launch specification for On-Demand instances in the instance fleet, which determines the allocation strategy.
+     * </p>
+     */
+    private OnDemandCapacityReservationOptions capacityReservationOptions;
 
     /**
      * <p>
-     * Specifies the strategy to use in launching On-Demand Instance fleets. Currently, the only option is lowest-price
-     * (the default), which launches the lowest price first.
+     * Specifies the strategy to use in launching On-Demand instance fleets. Currently, the only option is
+     * <code>lowest-price</code> (the default), which launches the lowest price first.
      * </p>
      * 
      * @param allocationStrategy
-     *        Specifies the strategy to use in launching On-Demand Instance fleets. Currently, the only option is
-     *        lowest-price (the default), which launches the lowest price first.
+     *        Specifies the strategy to use in launching On-Demand instance fleets. Currently, the only option is
+     *        <code>lowest-price</code> (the default), which launches the lowest price first.
      * @see OnDemandProvisioningAllocationStrategy
      */
 
@@ -60,12 +66,12 @@ public class OnDemandProvisioningSpecification implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Specifies the strategy to use in launching On-Demand Instance fleets. Currently, the only option is lowest-price
-     * (the default), which launches the lowest price first.
+     * Specifies the strategy to use in launching On-Demand instance fleets. Currently, the only option is
+     * <code>lowest-price</code> (the default), which launches the lowest price first.
      * </p>
      * 
-     * @return Specifies the strategy to use in launching On-Demand Instance fleets. Currently, the only option is
-     *         lowest-price (the default), which launches the lowest price first.
+     * @return Specifies the strategy to use in launching On-Demand instance fleets. Currently, the only option is
+     *         <code>lowest-price</code> (the default), which launches the lowest price first.
      * @see OnDemandProvisioningAllocationStrategy
      */
 
@@ -75,13 +81,13 @@ public class OnDemandProvisioningSpecification implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Specifies the strategy to use in launching On-Demand Instance fleets. Currently, the only option is lowest-price
-     * (the default), which launches the lowest price first.
+     * Specifies the strategy to use in launching On-Demand instance fleets. Currently, the only option is
+     * <code>lowest-price</code> (the default), which launches the lowest price first.
      * </p>
      * 
      * @param allocationStrategy
-     *        Specifies the strategy to use in launching On-Demand Instance fleets. Currently, the only option is
-     *        lowest-price (the default), which launches the lowest price first.
+     *        Specifies the strategy to use in launching On-Demand instance fleets. Currently, the only option is
+     *        <code>lowest-price</code> (the default), which launches the lowest price first.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OnDemandProvisioningAllocationStrategy
      */
@@ -93,19 +99,62 @@ public class OnDemandProvisioningSpecification implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Specifies the strategy to use in launching On-Demand Instance fleets. Currently, the only option is lowest-price
-     * (the default), which launches the lowest price first.
+     * Specifies the strategy to use in launching On-Demand instance fleets. Currently, the only option is
+     * <code>lowest-price</code> (the default), which launches the lowest price first.
      * </p>
      * 
      * @param allocationStrategy
-     *        Specifies the strategy to use in launching On-Demand Instance fleets. Currently, the only option is
-     *        lowest-price (the default), which launches the lowest price first.
+     *        Specifies the strategy to use in launching On-Demand instance fleets. Currently, the only option is
+     *        <code>lowest-price</code> (the default), which launches the lowest price first.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OnDemandProvisioningAllocationStrategy
      */
 
     public OnDemandProvisioningSpecification withAllocationStrategy(OnDemandProvisioningAllocationStrategy allocationStrategy) {
         this.allocationStrategy = allocationStrategy.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The launch specification for On-Demand instances in the instance fleet, which determines the allocation strategy.
+     * </p>
+     * 
+     * @param capacityReservationOptions
+     *        The launch specification for On-Demand instances in the instance fleet, which determines the allocation
+     *        strategy.
+     */
+
+    public void setCapacityReservationOptions(OnDemandCapacityReservationOptions capacityReservationOptions) {
+        this.capacityReservationOptions = capacityReservationOptions;
+    }
+
+    /**
+     * <p>
+     * The launch specification for On-Demand instances in the instance fleet, which determines the allocation strategy.
+     * </p>
+     * 
+     * @return The launch specification for On-Demand instances in the instance fleet, which determines the allocation
+     *         strategy.
+     */
+
+    public OnDemandCapacityReservationOptions getCapacityReservationOptions() {
+        return this.capacityReservationOptions;
+    }
+
+    /**
+     * <p>
+     * The launch specification for On-Demand instances in the instance fleet, which determines the allocation strategy.
+     * </p>
+     * 
+     * @param capacityReservationOptions
+     *        The launch specification for On-Demand instances in the instance fleet, which determines the allocation
+     *        strategy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OnDemandProvisioningSpecification withCapacityReservationOptions(OnDemandCapacityReservationOptions capacityReservationOptions) {
+        setCapacityReservationOptions(capacityReservationOptions);
         return this;
     }
 
@@ -122,7 +171,9 @@ public class OnDemandProvisioningSpecification implements Serializable, Cloneabl
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAllocationStrategy() != null)
-            sb.append("AllocationStrategy: ").append(getAllocationStrategy());
+            sb.append("AllocationStrategy: ").append(getAllocationStrategy()).append(",");
+        if (getCapacityReservationOptions() != null)
+            sb.append("CapacityReservationOptions: ").append(getCapacityReservationOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -141,6 +192,10 @@ public class OnDemandProvisioningSpecification implements Serializable, Cloneabl
             return false;
         if (other.getAllocationStrategy() != null && other.getAllocationStrategy().equals(this.getAllocationStrategy()) == false)
             return false;
+        if (other.getCapacityReservationOptions() == null ^ this.getCapacityReservationOptions() == null)
+            return false;
+        if (other.getCapacityReservationOptions() != null && other.getCapacityReservationOptions().equals(this.getCapacityReservationOptions()) == false)
+            return false;
         return true;
     }
 
@@ -150,6 +205,7 @@ public class OnDemandProvisioningSpecification implements Serializable, Cloneabl
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAllocationStrategy() == null) ? 0 : getAllocationStrategy().hashCode());
+        hashCode = prime * hashCode + ((getCapacityReservationOptions() == null) ? 0 : getCapacityReservationOptions().hashCode());
         return hashCode;
     }
 

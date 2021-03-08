@@ -52,6 +52,11 @@ public class OnDemandProvisioningSpecificationJsonUnmarshaller implements Unmars
                     context.nextToken();
                     onDemandProvisioningSpecification.setAllocationStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CapacityReservationOptions", targetDepth)) {
+                    context.nextToken();
+                    onDemandProvisioningSpecification.setCapacityReservationOptions(OnDemandCapacityReservationOptionsJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

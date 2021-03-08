@@ -29,6 +29,8 @@ public class OnDemandProvisioningSpecificationMarshaller {
 
     private static final MarshallingInfo<String> ALLOCATIONSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllocationStrategy").build();
+    private static final MarshallingInfo<StructuredPojo> CAPACITYRESERVATIONOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CapacityReservationOptions").build();
 
     private static final OnDemandProvisioningSpecificationMarshaller instance = new OnDemandProvisioningSpecificationMarshaller();
 
@@ -47,6 +49,7 @@ public class OnDemandProvisioningSpecificationMarshaller {
 
         try {
             protocolMarshaller.marshall(onDemandProvisioningSpecification.getAllocationStrategy(), ALLOCATIONSTRATEGY_BINDING);
+            protocolMarshaller.marshall(onDemandProvisioningSpecification.getCapacityReservationOptions(), CAPACITYRESERVATIONOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

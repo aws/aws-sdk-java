@@ -42,10 +42,10 @@ public class InstancesDistribution implements Serializable, Cloneable {
      * <p>
      * Indicates how to allocate instance types to fulfill On-Demand capacity. The only valid value is
      * <code>prioritized</code>, which is also the default value. This strategy uses the order of instance types in the
-     * overrides to define the launch priority of each instance type. The first instance type in the array is
-     * prioritized higher than the last. If all your On-Demand capacity cannot be fulfilled using your highest priority
-     * instance, then the Auto Scaling groups launches the remaining capacity using the second priority instance type,
-     * and so on.
+     * <code>LaunchTemplateOverrides</code> to define the launch priority of each instance type. The first instance type
+     * in the array is prioritized higher than the last. If all your On-Demand capacity cannot be fulfilled using your
+     * highest priority instance, then the Auto Scaling groups launches the remaining capacity using the second priority
+     * instance type, and so on.
      * </p>
      */
     private String onDemandAllocationStrategy;
@@ -68,12 +68,19 @@ public class InstancesDistribution implements Serializable, Cloneable {
     private Integer onDemandPercentageAboveBaseCapacity;
     /**
      * <p>
-     * Indicates how to allocate instances across Spot Instance pools. If the allocation strategy is
-     * <code>capacity-optimized</code> (recommended), the Auto Scaling group launches instances using Spot pools that
-     * are optimally chosen based on the available Spot capacity. If the allocation strategy is
-     * <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot pools with the lowest price,
-     * and evenly allocates your instances across the number of Spot pools that you specify. Defaults to
-     * <code>lowest-price</code> if not specified.
+     * Indicates how to allocate instances across Spot Instance pools.
+     * </p>
+     * <p>
+     * If the allocation strategy is <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot
+     * pools with the lowest price, and evenly allocates your instances across the number of Spot pools that you
+     * specify. Defaults to <code>lowest-price</code> if not specified.
+     * </p>
+     * <p>
+     * If the allocation strategy is <code>capacity-optimized</code> (recommended), the Auto Scaling group launches
+     * instances using Spot pools that are optimally chosen based on the available Spot capacity. Alternatively, you can
+     * use <code>capacity-optimized-prioritized</code> and set the order of instance types in the list of launch
+     * template overrides from highest to lowest priority (from first to last in the list). Amazon EC2 Auto Scaling
+     * honors the instance type priorities on a best-effort basis but optimizes for capacity first.
      * </p>
      */
     private String spotAllocationStrategy;
@@ -98,19 +105,19 @@ public class InstancesDistribution implements Serializable, Cloneable {
      * <p>
      * Indicates how to allocate instance types to fulfill On-Demand capacity. The only valid value is
      * <code>prioritized</code>, which is also the default value. This strategy uses the order of instance types in the
-     * overrides to define the launch priority of each instance type. The first instance type in the array is
-     * prioritized higher than the last. If all your On-Demand capacity cannot be fulfilled using your highest priority
-     * instance, then the Auto Scaling groups launches the remaining capacity using the second priority instance type,
-     * and so on.
+     * <code>LaunchTemplateOverrides</code> to define the launch priority of each instance type. The first instance type
+     * in the array is prioritized higher than the last. If all your On-Demand capacity cannot be fulfilled using your
+     * highest priority instance, then the Auto Scaling groups launches the remaining capacity using the second priority
+     * instance type, and so on.
      * </p>
      * 
      * @param onDemandAllocationStrategy
      *        Indicates how to allocate instance types to fulfill On-Demand capacity. The only valid value is
      *        <code>prioritized</code>, which is also the default value. This strategy uses the order of instance types
-     *        in the overrides to define the launch priority of each instance type. The first instance type in the array
-     *        is prioritized higher than the last. If all your On-Demand capacity cannot be fulfilled using your highest
-     *        priority instance, then the Auto Scaling groups launches the remaining capacity using the second priority
-     *        instance type, and so on.
+     *        in the <code>LaunchTemplateOverrides</code> to define the launch priority of each instance type. The first
+     *        instance type in the array is prioritized higher than the last. If all your On-Demand capacity cannot be
+     *        fulfilled using your highest priority instance, then the Auto Scaling groups launches the remaining
+     *        capacity using the second priority instance type, and so on.
      */
 
     public void setOnDemandAllocationStrategy(String onDemandAllocationStrategy) {
@@ -121,18 +128,18 @@ public class InstancesDistribution implements Serializable, Cloneable {
      * <p>
      * Indicates how to allocate instance types to fulfill On-Demand capacity. The only valid value is
      * <code>prioritized</code>, which is also the default value. This strategy uses the order of instance types in the
-     * overrides to define the launch priority of each instance type. The first instance type in the array is
-     * prioritized higher than the last. If all your On-Demand capacity cannot be fulfilled using your highest priority
-     * instance, then the Auto Scaling groups launches the remaining capacity using the second priority instance type,
-     * and so on.
+     * <code>LaunchTemplateOverrides</code> to define the launch priority of each instance type. The first instance type
+     * in the array is prioritized higher than the last. If all your On-Demand capacity cannot be fulfilled using your
+     * highest priority instance, then the Auto Scaling groups launches the remaining capacity using the second priority
+     * instance type, and so on.
      * </p>
      * 
      * @return Indicates how to allocate instance types to fulfill On-Demand capacity. The only valid value is
      *         <code>prioritized</code>, which is also the default value. This strategy uses the order of instance types
-     *         in the overrides to define the launch priority of each instance type. The first instance type in the
-     *         array is prioritized higher than the last. If all your On-Demand capacity cannot be fulfilled using your
-     *         highest priority instance, then the Auto Scaling groups launches the remaining capacity using the second
-     *         priority instance type, and so on.
+     *         in the <code>LaunchTemplateOverrides</code> to define the launch priority of each instance type. The
+     *         first instance type in the array is prioritized higher than the last. If all your On-Demand capacity
+     *         cannot be fulfilled using your highest priority instance, then the Auto Scaling groups launches the
+     *         remaining capacity using the second priority instance type, and so on.
      */
 
     public String getOnDemandAllocationStrategy() {
@@ -143,19 +150,19 @@ public class InstancesDistribution implements Serializable, Cloneable {
      * <p>
      * Indicates how to allocate instance types to fulfill On-Demand capacity. The only valid value is
      * <code>prioritized</code>, which is also the default value. This strategy uses the order of instance types in the
-     * overrides to define the launch priority of each instance type. The first instance type in the array is
-     * prioritized higher than the last. If all your On-Demand capacity cannot be fulfilled using your highest priority
-     * instance, then the Auto Scaling groups launches the remaining capacity using the second priority instance type,
-     * and so on.
+     * <code>LaunchTemplateOverrides</code> to define the launch priority of each instance type. The first instance type
+     * in the array is prioritized higher than the last. If all your On-Demand capacity cannot be fulfilled using your
+     * highest priority instance, then the Auto Scaling groups launches the remaining capacity using the second priority
+     * instance type, and so on.
      * </p>
      * 
      * @param onDemandAllocationStrategy
      *        Indicates how to allocate instance types to fulfill On-Demand capacity. The only valid value is
      *        <code>prioritized</code>, which is also the default value. This strategy uses the order of instance types
-     *        in the overrides to define the launch priority of each instance type. The first instance type in the array
-     *        is prioritized higher than the last. If all your On-Demand capacity cannot be fulfilled using your highest
-     *        priority instance, then the Auto Scaling groups launches the remaining capacity using the second priority
-     *        instance type, and so on.
+     *        in the <code>LaunchTemplateOverrides</code> to define the launch priority of each instance type. The first
+     *        instance type in the array is prioritized higher than the last. If all your On-Demand capacity cannot be
+     *        fulfilled using your highest priority instance, then the Auto Scaling groups launches the remaining
+     *        capacity using the second priority instance type, and so on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -282,21 +289,35 @@ public class InstancesDistribution implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates how to allocate instances across Spot Instance pools. If the allocation strategy is
-     * <code>capacity-optimized</code> (recommended), the Auto Scaling group launches instances using Spot pools that
-     * are optimally chosen based on the available Spot capacity. If the allocation strategy is
-     * <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot pools with the lowest price,
-     * and evenly allocates your instances across the number of Spot pools that you specify. Defaults to
-     * <code>lowest-price</code> if not specified.
+     * Indicates how to allocate instances across Spot Instance pools.
+     * </p>
+     * <p>
+     * If the allocation strategy is <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot
+     * pools with the lowest price, and evenly allocates your instances across the number of Spot pools that you
+     * specify. Defaults to <code>lowest-price</code> if not specified.
+     * </p>
+     * <p>
+     * If the allocation strategy is <code>capacity-optimized</code> (recommended), the Auto Scaling group launches
+     * instances using Spot pools that are optimally chosen based on the available Spot capacity. Alternatively, you can
+     * use <code>capacity-optimized-prioritized</code> and set the order of instance types in the list of launch
+     * template overrides from highest to lowest priority (from first to last in the list). Amazon EC2 Auto Scaling
+     * honors the instance type priorities on a best-effort basis but optimizes for capacity first.
      * </p>
      * 
      * @param spotAllocationStrategy
-     *        Indicates how to allocate instances across Spot Instance pools. If the allocation strategy is
-     *        <code>capacity-optimized</code> (recommended), the Auto Scaling group launches instances using Spot pools
-     *        that are optimally chosen based on the available Spot capacity. If the allocation strategy is
-     *        <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot pools with the lowest
-     *        price, and evenly allocates your instances across the number of Spot pools that you specify. Defaults to
-     *        <code>lowest-price</code> if not specified.
+     *        Indicates how to allocate instances across Spot Instance pools. </p>
+     *        <p>
+     *        If the allocation strategy is <code>lowest-price</code>, the Auto Scaling group launches instances using
+     *        the Spot pools with the lowest price, and evenly allocates your instances across the number of Spot pools
+     *        that you specify. Defaults to <code>lowest-price</code> if not specified.
+     *        </p>
+     *        <p>
+     *        If the allocation strategy is <code>capacity-optimized</code> (recommended), the Auto Scaling group
+     *        launches instances using Spot pools that are optimally chosen based on the available Spot capacity.
+     *        Alternatively, you can use <code>capacity-optimized-prioritized</code> and set the order of instance types
+     *        in the list of launch template overrides from highest to lowest priority (from first to last in the list).
+     *        Amazon EC2 Auto Scaling honors the instance type priorities on a best-effort basis but optimizes for
+     *        capacity first.
      */
 
     public void setSpotAllocationStrategy(String spotAllocationStrategy) {
@@ -305,20 +326,34 @@ public class InstancesDistribution implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates how to allocate instances across Spot Instance pools. If the allocation strategy is
-     * <code>capacity-optimized</code> (recommended), the Auto Scaling group launches instances using Spot pools that
-     * are optimally chosen based on the available Spot capacity. If the allocation strategy is
-     * <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot pools with the lowest price,
-     * and evenly allocates your instances across the number of Spot pools that you specify. Defaults to
-     * <code>lowest-price</code> if not specified.
+     * Indicates how to allocate instances across Spot Instance pools.
+     * </p>
+     * <p>
+     * If the allocation strategy is <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot
+     * pools with the lowest price, and evenly allocates your instances across the number of Spot pools that you
+     * specify. Defaults to <code>lowest-price</code> if not specified.
+     * </p>
+     * <p>
+     * If the allocation strategy is <code>capacity-optimized</code> (recommended), the Auto Scaling group launches
+     * instances using Spot pools that are optimally chosen based on the available Spot capacity. Alternatively, you can
+     * use <code>capacity-optimized-prioritized</code> and set the order of instance types in the list of launch
+     * template overrides from highest to lowest priority (from first to last in the list). Amazon EC2 Auto Scaling
+     * honors the instance type priorities on a best-effort basis but optimizes for capacity first.
      * </p>
      * 
-     * @return Indicates how to allocate instances across Spot Instance pools. If the allocation strategy is
-     *         <code>capacity-optimized</code> (recommended), the Auto Scaling group launches instances using Spot pools
-     *         that are optimally chosen based on the available Spot capacity. If the allocation strategy is
-     *         <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot pools with the lowest
-     *         price, and evenly allocates your instances across the number of Spot pools that you specify. Defaults to
-     *         <code>lowest-price</code> if not specified.
+     * @return Indicates how to allocate instances across Spot Instance pools. </p>
+     *         <p>
+     *         If the allocation strategy is <code>lowest-price</code>, the Auto Scaling group launches instances using
+     *         the Spot pools with the lowest price, and evenly allocates your instances across the number of Spot pools
+     *         that you specify. Defaults to <code>lowest-price</code> if not specified.
+     *         </p>
+     *         <p>
+     *         If the allocation strategy is <code>capacity-optimized</code> (recommended), the Auto Scaling group
+     *         launches instances using Spot pools that are optimally chosen based on the available Spot capacity.
+     *         Alternatively, you can use <code>capacity-optimized-prioritized</code> and set the order of instance
+     *         types in the list of launch template overrides from highest to lowest priority (from first to last in the
+     *         list). Amazon EC2 Auto Scaling honors the instance type priorities on a best-effort basis but optimizes
+     *         for capacity first.
      */
 
     public String getSpotAllocationStrategy() {
@@ -327,21 +362,35 @@ public class InstancesDistribution implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates how to allocate instances across Spot Instance pools. If the allocation strategy is
-     * <code>capacity-optimized</code> (recommended), the Auto Scaling group launches instances using Spot pools that
-     * are optimally chosen based on the available Spot capacity. If the allocation strategy is
-     * <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot pools with the lowest price,
-     * and evenly allocates your instances across the number of Spot pools that you specify. Defaults to
-     * <code>lowest-price</code> if not specified.
+     * Indicates how to allocate instances across Spot Instance pools.
+     * </p>
+     * <p>
+     * If the allocation strategy is <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot
+     * pools with the lowest price, and evenly allocates your instances across the number of Spot pools that you
+     * specify. Defaults to <code>lowest-price</code> if not specified.
+     * </p>
+     * <p>
+     * If the allocation strategy is <code>capacity-optimized</code> (recommended), the Auto Scaling group launches
+     * instances using Spot pools that are optimally chosen based on the available Spot capacity. Alternatively, you can
+     * use <code>capacity-optimized-prioritized</code> and set the order of instance types in the list of launch
+     * template overrides from highest to lowest priority (from first to last in the list). Amazon EC2 Auto Scaling
+     * honors the instance type priorities on a best-effort basis but optimizes for capacity first.
      * </p>
      * 
      * @param spotAllocationStrategy
-     *        Indicates how to allocate instances across Spot Instance pools. If the allocation strategy is
-     *        <code>capacity-optimized</code> (recommended), the Auto Scaling group launches instances using Spot pools
-     *        that are optimally chosen based on the available Spot capacity. If the allocation strategy is
-     *        <code>lowest-price</code>, the Auto Scaling group launches instances using the Spot pools with the lowest
-     *        price, and evenly allocates your instances across the number of Spot pools that you specify. Defaults to
-     *        <code>lowest-price</code> if not specified.
+     *        Indicates how to allocate instances across Spot Instance pools. </p>
+     *        <p>
+     *        If the allocation strategy is <code>lowest-price</code>, the Auto Scaling group launches instances using
+     *        the Spot pools with the lowest price, and evenly allocates your instances across the number of Spot pools
+     *        that you specify. Defaults to <code>lowest-price</code> if not specified.
+     *        </p>
+     *        <p>
+     *        If the allocation strategy is <code>capacity-optimized</code> (recommended), the Auto Scaling group
+     *        launches instances using Spot pools that are optimally chosen based on the available Spot capacity.
+     *        Alternatively, you can use <code>capacity-optimized-prioritized</code> and set the order of instance types
+     *        in the list of launch template overrides from highest to lowest priority (from first to last in the list).
+     *        Amazon EC2 Auto Scaling honors the instance type priorities on a best-effort basis but optimizes for
+     *        capacity first.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

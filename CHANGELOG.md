@@ -1,3 +1,28 @@
+# __1.11.970__ __2021-03-08__
+## __AWS Lambda__
+  - ### Features
+    - Documentation updates for Lambda. Constraint updates to AddLayerVersionPermission's Action and OrganizationId parameters, and AddPermission's Principal and SourceAccount parameters.
+
+## __AWS S3 Control__
+  - ### Features
+    - Documentation updates for Amazon S3
+
+## __Amazon Elastic MapReduce__
+  - ### Features
+    - Amazon EMR customers can now specify how EC2 On-Demand Capacity Reservations are used in their EMR clusters with instance fleets using allocation strategy.
+
+## __Amazon Kinesis Video Streams Archived Media__
+  - ### Features
+    - Increase the maximum HLS and MPEG-DASH manifest size from 1,000 to 5,000 fragments.
+
+## __Amazon Simple Storage Service__
+  - ### Features
+    - Amazon S3 Documentation updates
+
+## __Auto Scaling__
+  - ### Features
+    - Documentation updates for autoscaling for capacity-optimized-prioritized SpotAllocationStrategy
+
 # __1.11.969__ __2021-03-05__
 ## __AWS CodePipeline__
   - ### Features

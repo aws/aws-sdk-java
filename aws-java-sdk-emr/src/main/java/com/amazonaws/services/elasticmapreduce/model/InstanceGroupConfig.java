@@ -48,9 +48,9 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
     private String instanceRole;
     /**
      * <p>
-     * The bid price for each EC2 Spot Instance as defined by <code>InstanceType</code>. Expressed in USD. If neither
-     * <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
-     * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.
+     * If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to
+     * pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or
+     * specify an amount in USD.
      * </p>
      */
     private String bidPrice;
@@ -322,15 +322,15 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The bid price for each EC2 Spot Instance as defined by <code>InstanceType</code>. Expressed in USD. If neither
-     * <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
-     * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.
+     * If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to
+     * pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or
+     * specify an amount in USD.
      * </p>
      * 
      * @param bidPrice
-     *        The bid price for each EC2 Spot Instance as defined by <code>InstanceType</code>. Expressed in USD. If
-     *        neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
-     *        <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.
+     *        If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are
+     *        willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the
+     *        On-Demand price, or specify an amount in USD.
      */
 
     public void setBidPrice(String bidPrice) {
@@ -339,14 +339,14 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The bid price for each EC2 Spot Instance as defined by <code>InstanceType</code>. Expressed in USD. If neither
-     * <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
-     * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.
+     * If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to
+     * pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or
+     * specify an amount in USD.
      * </p>
      * 
-     * @return The bid price for each EC2 Spot Instance as defined by <code>InstanceType</code>. Expressed in USD. If
-     *         neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
-     *         <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.
+     * @return If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are
+     *         willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the
+     *         On-Demand price, or specify an amount in USD.
      */
 
     public String getBidPrice() {
@@ -355,15 +355,15 @@ public class InstanceGroupConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The bid price for each EC2 Spot Instance as defined by <code>InstanceType</code>. Expressed in USD. If neither
-     * <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
-     * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.
+     * If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to
+     * pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the On-Demand price, or
+     * specify an amount in USD.
      * </p>
      * 
      * @param bidPrice
-     *        The bid price for each EC2 Spot Instance as defined by <code>InstanceType</code>. Expressed in USD. If
-     *        neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
-     *        <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.
+     *        If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are
+     *        willing to pay for Spot Instances. Specify <code>OnDemandPrice</code> to set the amount equal to the
+     *        On-Demand price, or specify an amount in USD.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

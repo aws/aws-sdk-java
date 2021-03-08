@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Contains the configuration for an S3 Object Lock legal hold operation that an S3 Batch Operations job passes every
  * object to the underlying <code>PutObjectLegalHold</code> API. For more information, see <a
  * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-legal-hold.html">Using S3 Object Lock legal hold with
- * S3 Batch Operations</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+ * S3 Batch Operations</a> in the <i>Amazon Simple Storage Service User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3SetObjectLegalHoldOperation"

@@ -83,9 +83,9 @@ public class GetDASHStreamingSessionURLRequest extends com.amazonaws.AmazonWebSe
      * <li>
      * <p>
      * <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the MPEG-DASH manifest contains all the fragments for
-     * the session, up to the number that is specified in <code>MaxMediaPlaylistFragmentResults</code>. The manifest
-     * must be retrieved only once for each session. When this type of session is played in a media player, the user
-     * interface typically displays a scrubber control for choosing the position in the playback window to display.
+     * the session, up to the number that is specified in <code>MaxManifestFragmentResults</code>. The manifest must be
+     * retrieved only once for each session. When this type of session is played in a media player, the user interface
+     * typically displays a scrubber control for choosing the position in the playback window to display.
      * </p>
      * </li>
      * </ul>
@@ -333,9 +333,9 @@ public class GetDASHStreamingSessionURLRequest extends com.amazonaws.AmazonWebSe
      * <li>
      * <p>
      * <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the MPEG-DASH manifest contains all the fragments for
-     * the session, up to the number that is specified in <code>MaxMediaPlaylistFragmentResults</code>. The manifest
-     * must be retrieved only once for each session. When this type of session is played in a media player, the user
-     * interface typically displays a scrubber control for choosing the position in the playback window to display.
+     * the session, up to the number that is specified in <code>MaxManifestFragmentResults</code>. The manifest must be
+     * retrieved only once for each session. When this type of session is played in a media player, the user interface
+     * typically displays a scrubber control for choosing the position in the playback window to display.
      * </p>
      * </li>
      * </ul>
@@ -389,10 +389,10 @@ public class GetDASHStreamingSessionURLRequest extends com.amazonaws.AmazonWebSe
      *        <li>
      *        <p>
      *        <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the MPEG-DASH manifest contains all the
-     *        fragments for the session, up to the number that is specified in
-     *        <code>MaxMediaPlaylistFragmentResults</code>. The manifest must be retrieved only once for each session.
-     *        When this type of session is played in a media player, the user interface typically displays a scrubber
-     *        control for choosing the position in the playback window to display.
+     *        fragments for the session, up to the number that is specified in <code>MaxManifestFragmentResults</code>.
+     *        The manifest must be retrieved only once for each session. When this type of session is played in a media
+     *        player, the user interface typically displays a scrubber control for choosing the position in the playback
+     *        window to display.
      *        </p>
      *        </li>
      *        </ul>
@@ -451,9 +451,9 @@ public class GetDASHStreamingSessionURLRequest extends com.amazonaws.AmazonWebSe
      * <li>
      * <p>
      * <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the MPEG-DASH manifest contains all the fragments for
-     * the session, up to the number that is specified in <code>MaxMediaPlaylistFragmentResults</code>. The manifest
-     * must be retrieved only once for each session. When this type of session is played in a media player, the user
-     * interface typically displays a scrubber control for choosing the position in the playback window to display.
+     * the session, up to the number that is specified in <code>MaxManifestFragmentResults</code>. The manifest must be
+     * retrieved only once for each session. When this type of session is played in a media player, the user interface
+     * typically displays a scrubber control for choosing the position in the playback window to display.
      * </p>
      * </li>
      * </ul>
@@ -506,10 +506,10 @@ public class GetDASHStreamingSessionURLRequest extends com.amazonaws.AmazonWebSe
      *         <li>
      *         <p>
      *         <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the MPEG-DASH manifest contains all the
-     *         fragments for the session, up to the number that is specified in
-     *         <code>MaxMediaPlaylistFragmentResults</code>. The manifest must be retrieved only once for each session.
-     *         When this type of session is played in a media player, the user interface typically displays a scrubber
-     *         control for choosing the position in the playback window to display.
+     *         fragments for the session, up to the number that is specified in <code>MaxManifestFragmentResults</code>.
+     *         The manifest must be retrieved only once for each session. When this type of session is played in a media
+     *         player, the user interface typically displays a scrubber control for choosing the position in the
+     *         playback window to display.
      *         </p>
      *         </li>
      *         </ul>
@@ -568,9 +568,9 @@ public class GetDASHStreamingSessionURLRequest extends com.amazonaws.AmazonWebSe
      * <li>
      * <p>
      * <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the MPEG-DASH manifest contains all the fragments for
-     * the session, up to the number that is specified in <code>MaxMediaPlaylistFragmentResults</code>. The manifest
-     * must be retrieved only once for each session. When this type of session is played in a media player, the user
-     * interface typically displays a scrubber control for choosing the position in the playback window to display.
+     * the session, up to the number that is specified in <code>MaxManifestFragmentResults</code>. The manifest must be
+     * retrieved only once for each session. When this type of session is played in a media player, the user interface
+     * typically displays a scrubber control for choosing the position in the playback window to display.
      * </p>
      * </li>
      * </ul>
@@ -624,10 +624,10 @@ public class GetDASHStreamingSessionURLRequest extends com.amazonaws.AmazonWebSe
      *        <li>
      *        <p>
      *        <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the MPEG-DASH manifest contains all the
-     *        fragments for the session, up to the number that is specified in
-     *        <code>MaxMediaPlaylistFragmentResults</code>. The manifest must be retrieved only once for each session.
-     *        When this type of session is played in a media player, the user interface typically displays a scrubber
-     *        control for choosing the position in the playback window to display.
+     *        fragments for the session, up to the number that is specified in <code>MaxManifestFragmentResults</code>.
+     *        The manifest must be retrieved only once for each session. When this type of session is played in a media
+     *        player, the user interface typically displays a scrubber control for choosing the position in the playback
+     *        window to display.
      *        </p>
      *        </li>
      *        </ul>
@@ -688,9 +688,9 @@ public class GetDASHStreamingSessionURLRequest extends com.amazonaws.AmazonWebSe
      * <li>
      * <p>
      * <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the MPEG-DASH manifest contains all the fragments for
-     * the session, up to the number that is specified in <code>MaxMediaPlaylistFragmentResults</code>. The manifest
-     * must be retrieved only once for each session. When this type of session is played in a media player, the user
-     * interface typically displays a scrubber control for choosing the position in the playback window to display.
+     * the session, up to the number that is specified in <code>MaxManifestFragmentResults</code>. The manifest must be
+     * retrieved only once for each session. When this type of session is played in a media player, the user interface
+     * typically displays a scrubber control for choosing the position in the playback window to display.
      * </p>
      * </li>
      * </ul>
@@ -744,10 +744,10 @@ public class GetDASHStreamingSessionURLRequest extends com.amazonaws.AmazonWebSe
      *        <li>
      *        <p>
      *        <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the MPEG-DASH manifest contains all the
-     *        fragments for the session, up to the number that is specified in
-     *        <code>MaxMediaPlaylistFragmentResults</code>. The manifest must be retrieved only once for each session.
-     *        When this type of session is played in a media player, the user interface typically displays a scrubber
-     *        control for choosing the position in the playback window to display.
+     *        fragments for the session, up to the number that is specified in <code>MaxManifestFragmentResults</code>.
+     *        The manifest must be retrieved only once for each session. When this type of session is played in a media
+     *        player, the user interface typically displays a scrubber control for choosing the position in the playback
+     *        window to display.
      *        </p>
      *        </li>
      *        </ul>

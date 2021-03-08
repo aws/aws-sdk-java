@@ -40,10 +40,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private Boolean confirmationRequired;
     /**
      * <p>
-     * The operation that you want this job to perform on every object listed in the manifest. For more information
-     * about the available operations, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Operations</a> in the <i>Amazon
-     * Simple Storage Service Developer Guide</i>.
+     * The action that you want this job to perform on every object listed in the manifest. For more information about
+     * the available actions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the <i>Amazon
+     * Simple Storage Service User Guide</i>.
      * </p>
      */
     private JobOperation operation;
@@ -82,7 +82,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that Batch Operations will
-     * use to run this job's operation on every object in the manifest.
+     * use to run this job's action on every object in the manifest.
      * </p>
      */
     private String roleArn;
@@ -195,17 +195,17 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The operation that you want this job to perform on every object listed in the manifest. For more information
-     * about the available operations, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Operations</a> in the <i>Amazon
-     * Simple Storage Service Developer Guide</i>.
+     * The action that you want this job to perform on every object listed in the manifest. For more information about
+     * the available actions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the <i>Amazon
+     * Simple Storage Service User Guide</i>.
      * </p>
      * 
      * @param operation
-     *        The operation that you want this job to perform on every object listed in the manifest. For more
-     *        information about the available operations, see <a
-     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Operations</a> in the
-     *        <i>Amazon Simple Storage Service Developer Guide</i>.
+     *        The action that you want this job to perform on every object listed in the manifest. For more information
+     *        about the available actions, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the
+     *        <i>Amazon Simple Storage Service User Guide</i>.
      */
 
     public void setOperation(JobOperation operation) {
@@ -214,16 +214,16 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The operation that you want this job to perform on every object listed in the manifest. For more information
-     * about the available operations, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Operations</a> in the <i>Amazon
-     * Simple Storage Service Developer Guide</i>.
+     * The action that you want this job to perform on every object listed in the manifest. For more information about
+     * the available actions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the <i>Amazon
+     * Simple Storage Service User Guide</i>.
      * </p>
      * 
-     * @return The operation that you want this job to perform on every object listed in the manifest. For more
-     *         information about the available operations, see <a
-     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Operations</a> in the
-     *         <i>Amazon Simple Storage Service Developer Guide</i>.
+     * @return The action that you want this job to perform on every object listed in the manifest. For more information
+     *         about the available actions, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the
+     *         <i>Amazon Simple Storage Service User Guide</i>.
      */
 
     public JobOperation getOperation() {
@@ -232,17 +232,17 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The operation that you want this job to perform on every object listed in the manifest. For more information
-     * about the available operations, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Operations</a> in the <i>Amazon
-     * Simple Storage Service Developer Guide</i>.
+     * The action that you want this job to perform on every object listed in the manifest. For more information about
+     * the available actions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the <i>Amazon
+     * Simple Storage Service User Guide</i>.
      * </p>
      * 
      * @param operation
-     *        The operation that you want this job to perform on every object listed in the manifest. For more
-     *        information about the available operations, see <a
-     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Operations</a> in the
-     *        <i>Amazon Simple Storage Service Developer Guide</i>.
+     *        The action that you want this job to perform on every object listed in the manifest. For more information
+     *        about the available actions, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the
+     *        <i>Amazon Simple Storage Service User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -466,12 +466,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that Batch Operations will
-     * use to run this job's operation on every object in the manifest.
+     * use to run this job's action on every object in the manifest.
      * </p>
      * 
      * @param roleArn
      *        The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that Batch Operations
-     *        will use to run this job's operation on every object in the manifest.
+     *        will use to run this job's action on every object in the manifest.
      */
 
     public void setRoleArn(String roleArn) {
@@ -481,11 +481,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that Batch Operations will
-     * use to run this job's operation on every object in the manifest.
+     * use to run this job's action on every object in the manifest.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that Batch
-     *         Operations will use to run this job's operation on every object in the manifest.
+     *         Operations will use to run this job's action on every object in the manifest.
      */
 
     public String getRoleArn() {
@@ -495,12 +495,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that Batch Operations will
-     * use to run this job's operation on every object in the manifest.
+     * use to run this job's action on every object in the manifest.
      * </p>
      * 
      * @param roleArn
      *        The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that Batch Operations
-     *        will use to run this job's operation on every object in the manifest.
+     *        will use to run this job's action on every object in the manifest.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

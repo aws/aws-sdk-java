@@ -25,7 +25,7 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * You can create a mixed instances policy for a new Auto Scaling group, or you can create it for an existing group by
- * updating the group to specify <code>MixedInstancesPolicy</code> as the top-level parameter instead of a launch
+ * updating the group to specify <code>MixedInstancesPolicy</code> as the top-level property instead of a launch
  * configuration or launch template.
  * </p>
  * 
@@ -44,7 +44,7 @@ public class MixedInstancesPolicy implements Serializable, Cloneable {
     private LaunchTemplate launchTemplate;
     /**
      * <p>
-     * Specifies the instances distribution. If not provided, the value for each parameter in
+     * Specifies the instances distribution. If not provided, the value for each property in
      * <code>InstancesDistribution</code> uses a default value.
      * </p>
      */
@@ -101,12 +101,12 @@ public class MixedInstancesPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the instances distribution. If not provided, the value for each parameter in
+     * Specifies the instances distribution. If not provided, the value for each property in
      * <code>InstancesDistribution</code> uses a default value.
      * </p>
      * 
      * @param instancesDistribution
-     *        Specifies the instances distribution. If not provided, the value for each parameter in
+     *        Specifies the instances distribution. If not provided, the value for each property in
      *        <code>InstancesDistribution</code> uses a default value.
      */
 
@@ -116,11 +116,11 @@ public class MixedInstancesPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the instances distribution. If not provided, the value for each parameter in
+     * Specifies the instances distribution. If not provided, the value for each property in
      * <code>InstancesDistribution</code> uses a default value.
      * </p>
      * 
-     * @return Specifies the instances distribution. If not provided, the value for each parameter in
+     * @return Specifies the instances distribution. If not provided, the value for each property in
      *         <code>InstancesDistribution</code> uses a default value.
      */
 
@@ -130,12 +130,12 @@ public class MixedInstancesPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the instances distribution. If not provided, the value for each parameter in
+     * Specifies the instances distribution. If not provided, the value for each property in
      * <code>InstancesDistribution</code> uses a default value.
      * </p>
      * 
      * @param instancesDistribution
-     *        Specifies the instances distribution. If not provided, the value for each parameter in
+     *        Specifies the instances distribution. If not provided, the value for each property in
      *        <code>InstancesDistribution</code> uses a default value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

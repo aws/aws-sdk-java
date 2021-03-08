@@ -33,7 +33,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String clusterId;
     /**
      * <p>
-     * The number of steps that can be executed concurrently. You can specify a maximum of 256 steps.
+     * The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256
+     * steps.
      * </p>
      */
     private Integer stepConcurrencyLevel;
@@ -80,11 +81,13 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The number of steps that can be executed concurrently. You can specify a maximum of 256 steps.
+     * The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256
+     * steps.
      * </p>
      * 
      * @param stepConcurrencyLevel
-     *        The number of steps that can be executed concurrently. You can specify a maximum of 256 steps.
+     *        The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum
+     *        of 256 steps.
      */
 
     public void setStepConcurrencyLevel(Integer stepConcurrencyLevel) {
@@ -93,10 +96,12 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The number of steps that can be executed concurrently. You can specify a maximum of 256 steps.
+     * The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256
+     * steps.
      * </p>
      * 
-     * @return The number of steps that can be executed concurrently. You can specify a maximum of 256 steps.
+     * @return The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum
+     *         of 256 steps.
      */
 
     public Integer getStepConcurrencyLevel() {
@@ -105,11 +110,13 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The number of steps that can be executed concurrently. You can specify a maximum of 256 steps.
+     * The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256
+     * steps.
      * </p>
      * 
      * @param stepConcurrencyLevel
-     *        The number of steps that can be executed concurrently. You can specify a maximum of 256 steps.
+     *        The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum
+     *        of 256 steps.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

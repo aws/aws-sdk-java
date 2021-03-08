@@ -91,8 +91,8 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * </ul>
      * <p>
      * In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are
-     * multiple fragments with the same start timestamp, the fragment that has the larger fragment number (that is, the
-     * newer fragment) is included in the HLS media playlist. The other fragments are not included. Fragments that have
+     * multiple fragments with the same start timestamp, the fragment that has the largest fragment number (that is, the
+     * newest fragment) is included in the HLS media playlist. The other fragments are not included. Fragments that have
      * different timestamps but have overlapping durations are still included in the HLS media playlist. This can lead
      * to unexpected behavior in the media player.
      * </p>
@@ -222,8 +222,8 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>.
      * </p>
      * <p>
-     * The maximum value of 1,000 fragments corresponds to more than 16 minutes of video on streams with 1-second
-     * fragments, and more than 2 1/2 hours of video on streams with 10-second fragments.
+     * The maximum value of 5,000 fragments corresponds to more than 80 minutes of video on streams with 1-second
+     * fragments, and more than 13 hours of video on streams with 10-second fragments.
      * </p>
      */
     private Long maxMediaPlaylistFragmentResults;
@@ -385,8 +385,8 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * </ul>
      * <p>
      * In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are
-     * multiple fragments with the same start timestamp, the fragment that has the larger fragment number (that is, the
-     * newer fragment) is included in the HLS media playlist. The other fragments are not included. Fragments that have
+     * multiple fragments with the same start timestamp, the fragment that has the largest fragment number (that is, the
+     * newest fragment) is included in the HLS media playlist. The other fragments are not included. Fragments that have
      * different timestamps but have overlapping durations are still included in the HLS media playlist. This can lead
      * to unexpected behavior in the media player.
      * </p>
@@ -442,8 +442,8 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *        </ul>
      *        <p>
      *        In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if
-     *        there are multiple fragments with the same start timestamp, the fragment that has the larger fragment
-     *        number (that is, the newer fragment) is included in the HLS media playlist. The other fragments are not
+     *        there are multiple fragments with the same start timestamp, the fragment that has the largest fragment
+     *        number (that is, the newest fragment) is included in the HLS media playlist. The other fragments are not
      *        included. Fragments that have different timestamps but have overlapping durations are still included in
      *        the HLS media playlist. This can lead to unexpected behavior in the media player.
      *        </p>
@@ -503,8 +503,8 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * </ul>
      * <p>
      * In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are
-     * multiple fragments with the same start timestamp, the fragment that has the larger fragment number (that is, the
-     * newer fragment) is included in the HLS media playlist. The other fragments are not included. Fragments that have
+     * multiple fragments with the same start timestamp, the fragment that has the largest fragment number (that is, the
+     * newest fragment) is included in the HLS media playlist. The other fragments are not included. Fragments that have
      * different timestamps but have overlapping durations are still included in the HLS media playlist. This can lead
      * to unexpected behavior in the media player.
      * </p>
@@ -559,8 +559,8 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *         </ul>
      *         <p>
      *         In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if
-     *         there are multiple fragments with the same start timestamp, the fragment that has the larger fragment
-     *         number (that is, the newer fragment) is included in the HLS media playlist. The other fragments are not
+     *         there are multiple fragments with the same start timestamp, the fragment that has the largest fragment
+     *         number (that is, the newest fragment) is included in the HLS media playlist. The other fragments are not
      *         included. Fragments that have different timestamps but have overlapping durations are still included in
      *         the HLS media playlist. This can lead to unexpected behavior in the media player.
      *         </p>
@@ -620,8 +620,8 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * </ul>
      * <p>
      * In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are
-     * multiple fragments with the same start timestamp, the fragment that has the larger fragment number (that is, the
-     * newer fragment) is included in the HLS media playlist. The other fragments are not included. Fragments that have
+     * multiple fragments with the same start timestamp, the fragment that has the largest fragment number (that is, the
+     * newest fragment) is included in the HLS media playlist. The other fragments are not included. Fragments that have
      * different timestamps but have overlapping durations are still included in the HLS media playlist. This can lead
      * to unexpected behavior in the media player.
      * </p>
@@ -677,8 +677,8 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *        </ul>
      *        <p>
      *        In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if
-     *        there are multiple fragments with the same start timestamp, the fragment that has the larger fragment
-     *        number (that is, the newer fragment) is included in the HLS media playlist. The other fragments are not
+     *        there are multiple fragments with the same start timestamp, the fragment that has the largest fragment
+     *        number (that is, the newest fragment) is included in the HLS media playlist. The other fragments are not
      *        included. Fragments that have different timestamps but have overlapping durations are still included in
      *        the HLS media playlist. This can lead to unexpected behavior in the media player.
      *        </p>
@@ -740,8 +740,8 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * </ul>
      * <p>
      * In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are
-     * multiple fragments with the same start timestamp, the fragment that has the larger fragment number (that is, the
-     * newer fragment) is included in the HLS media playlist. The other fragments are not included. Fragments that have
+     * multiple fragments with the same start timestamp, the fragment that has the largest fragment number (that is, the
+     * newest fragment) is included in the HLS media playlist. The other fragments are not included. Fragments that have
      * different timestamps but have overlapping durations are still included in the HLS media playlist. This can lead
      * to unexpected behavior in the media player.
      * </p>
@@ -797,8 +797,8 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *        </ul>
      *        <p>
      *        In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if
-     *        there are multiple fragments with the same start timestamp, the fragment that has the larger fragment
-     *        number (that is, the newer fragment) is included in the HLS media playlist. The other fragments are not
+     *        there are multiple fragments with the same start timestamp, the fragment that has the largest fragment
+     *        number (that is, the newest fragment) is included in the HLS media playlist. The other fragments are not
      *        included. Fragments that have different timestamps but have overlapping durations are still included in
      *        the HLS media playlist. This can lead to unexpected behavior in the media player.
      *        </p>
@@ -1611,8 +1611,8 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>.
      * </p>
      * <p>
-     * The maximum value of 1,000 fragments corresponds to more than 16 minutes of video on streams with 1-second
-     * fragments, and more than 2 1/2 hours of video on streams with 10-second fragments.
+     * The maximum value of 5,000 fragments corresponds to more than 80 minutes of video on streams with 1-second
+     * fragments, and more than 13 hours of video on streams with 10-second fragments.
      * </p>
      * 
      * @param maxMediaPlaylistFragmentResults
@@ -1633,8 +1633,8 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *        and 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>.
      *        </p>
      *        <p>
-     *        The maximum value of 1,000 fragments corresponds to more than 16 minutes of video on streams with 1-second
-     *        fragments, and more than 2 1/2 hours of video on streams with 10-second fragments.
+     *        The maximum value of 5,000 fragments corresponds to more than 80 minutes of video on streams with 1-second
+     *        fragments, and more than 13 hours of video on streams with 10-second fragments.
      */
 
     public void setMaxMediaPlaylistFragmentResults(Long maxMediaPlaylistFragmentResults) {
@@ -1661,8 +1661,8 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>.
      * </p>
      * <p>
-     * The maximum value of 1,000 fragments corresponds to more than 16 minutes of video on streams with 1-second
-     * fragments, and more than 2 1/2 hours of video on streams with 10-second fragments.
+     * The maximum value of 5,000 fragments corresponds to more than 80 minutes of video on streams with 1-second
+     * fragments, and more than 13 hours of video on streams with 10-second fragments.
      * </p>
      * 
      * @return The maximum number of fragments that are returned in the HLS media playlists.</p>
@@ -1682,8 +1682,8 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *         and 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>.
      *         </p>
      *         <p>
-     *         The maximum value of 1,000 fragments corresponds to more than 16 minutes of video on streams with
-     *         1-second fragments, and more than 2 1/2 hours of video on streams with 10-second fragments.
+     *         The maximum value of 5,000 fragments corresponds to more than 80 minutes of video on streams with
+     *         1-second fragments, and more than 13 hours of video on streams with 10-second fragments.
      */
 
     public Long getMaxMediaPlaylistFragmentResults() {
@@ -1710,8 +1710,8 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>.
      * </p>
      * <p>
-     * The maximum value of 1,000 fragments corresponds to more than 16 minutes of video on streams with 1-second
-     * fragments, and more than 2 1/2 hours of video on streams with 10-second fragments.
+     * The maximum value of 5,000 fragments corresponds to more than 80 minutes of video on streams with 1-second
+     * fragments, and more than 13 hours of video on streams with 10-second fragments.
      * </p>
      * 
      * @param maxMediaPlaylistFragmentResults
@@ -1732,8 +1732,8 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *        and 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>.
      *        </p>
      *        <p>
-     *        The maximum value of 1,000 fragments corresponds to more than 16 minutes of video on streams with 1-second
-     *        fragments, and more than 2 1/2 hours of video on streams with 10-second fragments.
+     *        The maximum value of 5,000 fragments corresponds to more than 80 minutes of video on streams with 1-second
+     *        fragments, and more than 13 hours of video on streams with 10-second fragments.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
