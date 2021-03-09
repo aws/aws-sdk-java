@@ -56,6 +56,12 @@ public class DBProxy implements Serializable, Cloneable {
     private String engineFamily;
     /**
      * <p>
+     * Provides the VPC ID of the DB proxy.
+     * </p>
+     */
+    private String vpcId;
+    /**
+     * <p>
      * Provides a list of VPC security groups that the proxy belongs to.
      * </p>
      */
@@ -81,7 +87,7 @@ public class DBProxy implements Serializable, Cloneable {
     private String roleArn;
     /**
      * <p>
-     * The endpoint that you can use to connect to the proxy. You include the endpoint value in the connection string
+     * The endpoint that you can use to connect to the DB proxy. You include the endpoint value in the connection string
      * for a database client application.
      * </p>
      */
@@ -323,6 +329,46 @@ public class DBProxy implements Serializable, Cloneable {
 
     public DBProxy withEngineFamily(String engineFamily) {
         setEngineFamily(engineFamily);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides the VPC ID of the DB proxy.
+     * </p>
+     * 
+     * @param vpcId
+     *        Provides the VPC ID of the DB proxy.
+     */
+
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+
+    /**
+     * <p>
+     * Provides the VPC ID of the DB proxy.
+     * </p>
+     * 
+     * @return Provides the VPC ID of the DB proxy.
+     */
+
+    public String getVpcId() {
+        return this.vpcId;
+    }
+
+    /**
+     * <p>
+     * Provides the VPC ID of the DB proxy.
+     * </p>
+     * 
+     * @param vpcId
+     *        Provides the VPC ID of the DB proxy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBProxy withVpcId(String vpcId) {
+        setVpcId(vpcId);
         return this;
     }
 
@@ -595,12 +641,12 @@ public class DBProxy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The endpoint that you can use to connect to the proxy. You include the endpoint value in the connection string
+     * The endpoint that you can use to connect to the DB proxy. You include the endpoint value in the connection string
      * for a database client application.
      * </p>
      * 
      * @param endpoint
-     *        The endpoint that you can use to connect to the proxy. You include the endpoint value in the connection
+     *        The endpoint that you can use to connect to the DB proxy. You include the endpoint value in the connection
      *        string for a database client application.
      */
 
@@ -610,12 +656,12 @@ public class DBProxy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The endpoint that you can use to connect to the proxy. You include the endpoint value in the connection string
+     * The endpoint that you can use to connect to the DB proxy. You include the endpoint value in the connection string
      * for a database client application.
      * </p>
      * 
-     * @return The endpoint that you can use to connect to the proxy. You include the endpoint value in the connection
-     *         string for a database client application.
+     * @return The endpoint that you can use to connect to the DB proxy. You include the endpoint value in the
+     *         connection string for a database client application.
      */
 
     public String getEndpoint() {
@@ -624,12 +670,12 @@ public class DBProxy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The endpoint that you can use to connect to the proxy. You include the endpoint value in the connection string
+     * The endpoint that you can use to connect to the DB proxy. You include the endpoint value in the connection string
      * for a database client application.
      * </p>
      * 
      * @param endpoint
-     *        The endpoint that you can use to connect to the proxy. You include the endpoint value in the connection
+     *        The endpoint that you can use to connect to the DB proxy. You include the endpoint value in the connection
      *        string for a database client application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -960,6 +1006,8 @@ public class DBProxy implements Serializable, Cloneable {
             sb.append("Status: ").append(getStatus()).append(",");
         if (getEngineFamily() != null)
             sb.append("EngineFamily: ").append(getEngineFamily()).append(",");
+        if (getVpcId() != null)
+            sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getVpcSecurityGroupIds() != null)
             sb.append("VpcSecurityGroupIds: ").append(getVpcSecurityGroupIds()).append(",");
         if (getVpcSubnetIds() != null)
@@ -1009,6 +1057,10 @@ public class DBProxy implements Serializable, Cloneable {
         if (other.getEngineFamily() == null ^ this.getEngineFamily() == null)
             return false;
         if (other.getEngineFamily() != null && other.getEngineFamily().equals(this.getEngineFamily()) == false)
+            return false;
+        if (other.getVpcId() == null ^ this.getVpcId() == null)
+            return false;
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
         if (other.getVpcSecurityGroupIds() == null ^ this.getVpcSecurityGroupIds() == null)
             return false;
@@ -1062,6 +1114,7 @@ public class DBProxy implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDBProxyArn() == null) ? 0 : getDBProxyArn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getEngineFamily() == null) ? 0 : getEngineFamily().hashCode());
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         hashCode = prime * hashCode + ((getVpcSecurityGroupIds() == null) ? 0 : getVpcSecurityGroupIds().hashCode());
         hashCode = prime * hashCode + ((getVpcSubnetIds() == null) ? 0 : getVpcSubnetIds().hashCode());
         hashCode = prime * hashCode + ((getAuth() == null) ? 0 : getAuth().hashCode());

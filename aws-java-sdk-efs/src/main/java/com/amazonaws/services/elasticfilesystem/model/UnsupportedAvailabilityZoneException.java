@@ -15,7 +15,9 @@ package com.amazonaws.services.elasticfilesystem.model;
 import javax.annotation.Generated;
 
 /**
- * <p/>
+ * <p>
+ * Returned if the requested Amazon EFS functionality is not available in the specified Availability Zone.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UnsupportedAvailabilityZoneException extends com.amazonaws.services.elasticfilesystem.model.AmazonElasticFileSystemException {

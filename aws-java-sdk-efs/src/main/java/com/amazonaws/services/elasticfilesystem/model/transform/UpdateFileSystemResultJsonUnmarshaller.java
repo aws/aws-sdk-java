@@ -104,6 +104,14 @@ public class UpdateFileSystemResultJsonUnmarshaller implements Unmarshaller<Upda
                     context.nextToken();
                     updateFileSystemResult.setProvisionedThroughputInMibps(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
+                if (context.testExpression("AvailabilityZoneName", targetDepth)) {
+                    context.nextToken();
+                    updateFileSystemResult.setAvailabilityZoneName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AvailabilityZoneId", targetDepth)) {
+                    context.nextToken();
+                    updateFileSystemResult.setAvailabilityZoneId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
                     updateFileSystemResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())

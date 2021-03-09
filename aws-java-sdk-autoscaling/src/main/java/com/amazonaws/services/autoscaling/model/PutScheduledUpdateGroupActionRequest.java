@@ -59,21 +59,23 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
     private java.util.Date startTime;
     /**
      * <p>
-     * The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling does not perform the action after
-     * this time.
+     * The date and time for the recurring schedule to end, in UTC.
      * </p>
      */
     private java.util.Date endTime;
     /**
      * <p>
-     * The recurring schedule for this action, in Unix cron syntax format. This format consists of five fields separated
-     * by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for
-     * example, <code>"30 0 1 1,6,12 *"</code>). For more information about this format, see <a
+     * The recurring schedule for this action. This format consists of five fields separated by white spaces: [Minute]
+     * [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for example,
+     * <code>"30 0 1 1,6,12 *"</code>). For more information about this format, see <a
      * href="http://crontab.org">Crontab</a>.
      * </p>
      * <p>
      * When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the
      * boundaries of when the recurring action starts and stops.
+     * </p>
+     * <p>
+     * Cron expressions use Universal Coordinated Time (UTC) by default.
      * </p>
      */
     private String recurrence;
@@ -96,6 +98,18 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
      * </p>
      */
     private Integer desiredCapacity;
+    /**
+     * <p>
+     * Specifies the time zone for a cron expression. If a time zone is not provided, UTC is used by default.
+     * </p>
+     * <p>
+     * Valid values are the canonical names of the IANA time zones, derived from the IANA Time Zone Database (such as
+     * <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information, see <a
+     * href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones"
+     * >https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.
+     * </p>
+     */
+    private String timeZone;
 
     /**
      * <p>
@@ -304,13 +318,11 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling does not perform the action after
-     * this time.
+     * The date and time for the recurring schedule to end, in UTC.
      * </p>
      * 
      * @param endTime
-     *        The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling does not perform the action
-     *        after this time.
+     *        The date and time for the recurring schedule to end, in UTC.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -319,12 +331,10 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling does not perform the action after
-     * this time.
+     * The date and time for the recurring schedule to end, in UTC.
      * </p>
      * 
-     * @return The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling does not perform the action
-     *         after this time.
+     * @return The date and time for the recurring schedule to end, in UTC.
      */
 
     public java.util.Date getEndTime() {
@@ -333,13 +343,11 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling does not perform the action after
-     * this time.
+     * The date and time for the recurring schedule to end, in UTC.
      * </p>
      * 
      * @param endTime
-     *        The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling does not perform the action
-     *        after this time.
+     *        The date and time for the recurring schedule to end, in UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -350,24 +358,30 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The recurring schedule for this action, in Unix cron syntax format. This format consists of five fields separated
-     * by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for
-     * example, <code>"30 0 1 1,6,12 *"</code>). For more information about this format, see <a
+     * The recurring schedule for this action. This format consists of five fields separated by white spaces: [Minute]
+     * [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for example,
+     * <code>"30 0 1 1,6,12 *"</code>). For more information about this format, see <a
      * href="http://crontab.org">Crontab</a>.
      * </p>
      * <p>
      * When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the
      * boundaries of when the recurring action starts and stops.
      * </p>
+     * <p>
+     * Cron expressions use Universal Coordinated Time (UTC) by default.
+     * </p>
      * 
      * @param recurrence
-     *        The recurring schedule for this action, in Unix cron syntax format. This format consists of five fields
-     *        separated by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be
-     *        in quotes (for example, <code>"30 0 1 1,6,12 *"</code>). For more information about this format, see <a
+     *        The recurring schedule for this action. This format consists of five fields separated by white spaces:
+     *        [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for example,
+     *        <code>"30 0 1 1,6,12 *"</code>). For more information about this format, see <a
      *        href="http://crontab.org">Crontab</a>.</p>
      *        <p>
      *        When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form
      *        the boundaries of when the recurring action starts and stops.
+     *        </p>
+     *        <p>
+     *        Cron expressions use Universal Coordinated Time (UTC) by default.
      */
 
     public void setRecurrence(String recurrence) {
@@ -376,23 +390,29 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The recurring schedule for this action, in Unix cron syntax format. This format consists of five fields separated
-     * by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for
-     * example, <code>"30 0 1 1,6,12 *"</code>). For more information about this format, see <a
+     * The recurring schedule for this action. This format consists of five fields separated by white spaces: [Minute]
+     * [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for example,
+     * <code>"30 0 1 1,6,12 *"</code>). For more information about this format, see <a
      * href="http://crontab.org">Crontab</a>.
      * </p>
      * <p>
      * When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the
      * boundaries of when the recurring action starts and stops.
      * </p>
+     * <p>
+     * Cron expressions use Universal Coordinated Time (UTC) by default.
+     * </p>
      * 
-     * @return The recurring schedule for this action, in Unix cron syntax format. This format consists of five fields
-     *         separated by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must
-     *         be in quotes (for example, <code>"30 0 1 1,6,12 *"</code>). For more information about this format, see
-     *         <a href="http://crontab.org">Crontab</a>.</p>
+     * @return The recurring schedule for this action. This format consists of five fields separated by white spaces:
+     *         [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for example,
+     *         <code>"30 0 1 1,6,12 *"</code>). For more information about this format, see <a
+     *         href="http://crontab.org">Crontab</a>.</p>
      *         <p>
      *         When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they
      *         form the boundaries of when the recurring action starts and stops.
+     *         </p>
+     *         <p>
+     *         Cron expressions use Universal Coordinated Time (UTC) by default.
      */
 
     public String getRecurrence() {
@@ -401,24 +421,30 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The recurring schedule for this action, in Unix cron syntax format. This format consists of five fields separated
-     * by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for
-     * example, <code>"30 0 1 1,6,12 *"</code>). For more information about this format, see <a
+     * The recurring schedule for this action. This format consists of five fields separated by white spaces: [Minute]
+     * [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for example,
+     * <code>"30 0 1 1,6,12 *"</code>). For more information about this format, see <a
      * href="http://crontab.org">Crontab</a>.
      * </p>
      * <p>
      * When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form the
      * boundaries of when the recurring action starts and stops.
      * </p>
+     * <p>
+     * Cron expressions use Universal Coordinated Time (UTC) by default.
+     * </p>
      * 
      * @param recurrence
-     *        The recurring schedule for this action, in Unix cron syntax format. This format consists of five fields
-     *        separated by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be
-     *        in quotes (for example, <code>"30 0 1 1,6,12 *"</code>). For more information about this format, see <a
+     *        The recurring schedule for this action. This format consists of five fields separated by white spaces:
+     *        [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for example,
+     *        <code>"30 0 1 1,6,12 *"</code>). For more information about this format, see <a
      *        href="http://crontab.org">Crontab</a>.</p>
      *        <p>
      *        When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>, they form
      *        the boundaries of when the recurring action starts and stops.
+     *        </p>
+     *        <p>
+     *        Cron expressions use Universal Coordinated Time (UTC) by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -557,6 +583,82 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * Specifies the time zone for a cron expression. If a time zone is not provided, UTC is used by default.
+     * </p>
+     * <p>
+     * Valid values are the canonical names of the IANA time zones, derived from the IANA Time Zone Database (such as
+     * <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information, see <a
+     * href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones"
+     * >https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.
+     * </p>
+     * 
+     * @param timeZone
+     *        Specifies the time zone for a cron expression. If a time zone is not provided, UTC is used by default.
+     *        </p>
+     *        <p>
+     *        Valid values are the canonical names of the IANA time zones, derived from the IANA Time Zone Database
+     *        (such as <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information, see <a
+     *        href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones"
+     *        >https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.
+     */
+
+    public void setTimeZone(String timeZone) {
+        this.timeZone = timeZone;
+    }
+
+    /**
+     * <p>
+     * Specifies the time zone for a cron expression. If a time zone is not provided, UTC is used by default.
+     * </p>
+     * <p>
+     * Valid values are the canonical names of the IANA time zones, derived from the IANA Time Zone Database (such as
+     * <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information, see <a
+     * href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones"
+     * >https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.
+     * </p>
+     * 
+     * @return Specifies the time zone for a cron expression. If a time zone is not provided, UTC is used by default.
+     *         </p>
+     *         <p>
+     *         Valid values are the canonical names of the IANA time zones, derived from the IANA Time Zone Database
+     *         (such as <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information, see <a
+     *         href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones"
+     *         >https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.
+     */
+
+    public String getTimeZone() {
+        return this.timeZone;
+    }
+
+    /**
+     * <p>
+     * Specifies the time zone for a cron expression. If a time zone is not provided, UTC is used by default.
+     * </p>
+     * <p>
+     * Valid values are the canonical names of the IANA time zones, derived from the IANA Time Zone Database (such as
+     * <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information, see <a
+     * href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones"
+     * >https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.
+     * </p>
+     * 
+     * @param timeZone
+     *        Specifies the time zone for a cron expression. If a time zone is not provided, UTC is used by default.
+     *        </p>
+     *        <p>
+     *        Valid values are the canonical names of the IANA time zones, derived from the IANA Time Zone Database
+     *        (such as <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information, see <a
+     *        href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones"
+     *        >https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutScheduledUpdateGroupActionRequest withTimeZone(String timeZone) {
+        setTimeZone(timeZone);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -585,7 +687,9 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
         if (getMaxSize() != null)
             sb.append("MaxSize: ").append(getMaxSize()).append(",");
         if (getDesiredCapacity() != null)
-            sb.append("DesiredCapacity: ").append(getDesiredCapacity());
+            sb.append("DesiredCapacity: ").append(getDesiredCapacity()).append(",");
+        if (getTimeZone() != null)
+            sb.append("TimeZone: ").append(getTimeZone());
         sb.append("}");
         return sb.toString();
     }
@@ -636,6 +740,10 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
             return false;
         if (other.getDesiredCapacity() != null && other.getDesiredCapacity().equals(this.getDesiredCapacity()) == false)
             return false;
+        if (other.getTimeZone() == null ^ this.getTimeZone() == null)
+            return false;
+        if (other.getTimeZone() != null && other.getTimeZone().equals(this.getTimeZone()) == false)
+            return false;
         return true;
     }
 
@@ -653,6 +761,7 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
         hashCode = prime * hashCode + ((getMinSize() == null) ? 0 : getMinSize().hashCode());
         hashCode = prime * hashCode + ((getMaxSize() == null) ? 0 : getMaxSize().hashCode());
         hashCode = prime * hashCode + ((getDesiredCapacity() == null) ? 0 : getDesiredCapacity().hashCode());
+        hashCode = prime * hashCode + ((getTimeZone() == null) ? 0 : getTimeZone().hashCode());
         return hashCode;
     }
 

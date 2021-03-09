@@ -20,11 +20,11 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum AgentParameterField {
 
-    MaxStackDepth("MaxStackDepth"),
-    MemoryUsageLimitPercent("MemoryUsageLimitPercent"),
-    MinimumTimeForReportingInMilliseconds("MinimumTimeForReportingInMilliseconds"),
+    SamplingIntervalInMilliseconds("SamplingIntervalInMilliseconds"),
     ReportingIntervalInMilliseconds("ReportingIntervalInMilliseconds"),
-    SamplingIntervalInMilliseconds("SamplingIntervalInMilliseconds");
+    MinimumTimeForReportingInMilliseconds("MinimumTimeForReportingInMilliseconds"),
+    MemoryUsageLimitPercent("MemoryUsageLimitPercent"),
+    MaxStackDepth("MaxStackDepth");
 
     private String value;
 

@@ -34,7 +34,8 @@ public class CreateMountTargetRequest extends com.amazonaws.AmazonWebServiceRequ
     private String fileSystemId;
     /**
      * <p>
-     * The ID of the subnet to add the mount target in.
+     * The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use the
+     * subnet that is associated with the file system's Availability Zone.
      * </p>
      */
     private String subnetId;
@@ -94,11 +95,13 @@ public class CreateMountTargetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ID of the subnet to add the mount target in.
+     * The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use the
+     * subnet that is associated with the file system's Availability Zone.
      * </p>
      * 
      * @param subnetId
-     *        The ID of the subnet to add the mount target in.
+     *        The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use
+     *        the subnet that is associated with the file system's Availability Zone.
      */
 
     public void setSubnetId(String subnetId) {
@@ -107,10 +110,12 @@ public class CreateMountTargetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ID of the subnet to add the mount target in.
+     * The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use the
+     * subnet that is associated with the file system's Availability Zone.
      * </p>
      * 
-     * @return The ID of the subnet to add the mount target in.
+     * @return The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use
+     *         the subnet that is associated with the file system's Availability Zone.
      */
 
     public String getSubnetId() {
@@ -119,11 +124,13 @@ public class CreateMountTargetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ID of the subnet to add the mount target in.
+     * The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use the
+     * subnet that is associated with the file system's Availability Zone.
      * </p>
      * 
      * @param subnetId
-     *        The ID of the subnet to add the mount target in.
+     *        The ID of the subnet to add the mount target in. For file systems that use One Zone storage classes, use
+     *        the subnet that is associated with the file system's Availability Zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

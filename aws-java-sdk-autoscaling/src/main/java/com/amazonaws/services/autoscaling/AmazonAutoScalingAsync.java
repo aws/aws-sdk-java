@@ -308,8 +308,7 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
 
     /**
      * <p>
-     * Creates or updates one or more scheduled scaling actions for an Auto Scaling group. If you leave a parameter
-     * unspecified when updating a scheduled scaling action, the corresponding value remains unchanged.
+     * Creates or updates one or more scheduled scaling actions for an Auto Scaling group.
      * </p>
      * 
      * @param batchPutScheduledUpdateGroupActionRequest
@@ -324,8 +323,7 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
 
     /**
      * <p>
-     * Creates or updates one or more scheduled scaling actions for an Auto Scaling group. If you leave a parameter
-     * unspecified when updating a scheduled scaling action, the corresponding value remains unchanged.
+     * Creates or updates one or more scheduled scaling actions for an Auto Scaling group.
      * </p>
      * 
      * @param batchPutScheduledUpdateGroupActionRequest
@@ -2666,8 +2664,7 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
 
     /**
      * <p>
-     * Creates or updates a scheduled scaling action for an Auto Scaling group. If you leave a parameter unspecified
-     * when updating a scheduled scaling action, the corresponding value remains unchanged.
+     * Creates or updates a scheduled scaling action for an Auto Scaling group.
      * </p>
      * <p>
      * For more information, see <a
@@ -2687,8 +2684,7 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
 
     /**
      * <p>
-     * Creates or updates a scheduled scaling action for an Auto Scaling group. If you leave a parameter unspecified
-     * when updating a scheduled scaling action, the corresponding value remains unchanged.
+     * Creates or updates a scheduled scaling action for an Auto Scaling group.
      * </p>
      * <p>
      * For more information, see <a

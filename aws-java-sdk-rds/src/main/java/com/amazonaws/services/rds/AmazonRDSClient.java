@@ -393,6 +393,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         exceptionUnmarshallers.add(new InvalidDBParameterGroupStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DomainNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StorageQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBProxyEndpointAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AuthorizationNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new OptionGroupAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new OptionGroupQuotaExceededExceptionUnmarshaller());
@@ -400,6 +401,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         exceptionUnmarshallers.add(new DBSnapshotNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubscriptionCategoryNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBProxyTargetGroupNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidDBProxyEndpointStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CustomAvailabilityZoneAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterRoleQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SNSInvalidTopicExceptionUnmarshaller());
@@ -429,6 +431,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         exceptionUnmarshallers.add(new DBSubnetGroupAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SNSNoAuthorizationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterSnapshotNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBProxyEndpointQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterParameterGroupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBProxyQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ExportTaskAlreadyExistsExceptionUnmarshaller());
@@ -444,6 +447,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         exceptionUnmarshallers.add(new DBClusterNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBParameterGroupQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBInstanceRoleAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBProxyEndpointNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSecurityGroupAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SourceNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new EventSubscriptionQuotaExceededExceptionUnmarshaller());
@@ -2212,6 +2216,76 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
+     * Creates a <code>DBProxyEndpoint</code>. Only applies to proxies that are associated with Aurora DB clusters. You
+     * can use DB proxy endpoints to specify read/write or read-only access to the DB cluster. You can also use DB proxy
+     * endpoints to access a DB proxy through a different VPC than the proxy's default VPC.
+     * </p>
+     * 
+     * @param createDBProxyEndpointRequest
+     * @return Result of the CreateDBProxyEndpoint operation returned by the service.
+     * @throws InvalidSubnetException
+     *         The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.
+     * @throws DBProxyNotFoundException
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
+     *         Region.
+     * @throws DBProxyEndpointAlreadyExistsException
+     *         The specified DB proxy endpoint name must be unique for all DB proxy endpoints owned by your AWS account
+     *         in the specified AWS Region.
+     * @throws DBProxyEndpointQuotaExceededException
+     *         The DB proxy already has the maximum number of endpoints.
+     * @throws InvalidDBProxyStateException
+     *         The requested operation can't be performed while the proxy is in this state.
+     * @sample AmazonRDS.CreateDBProxyEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBProxyEndpoint" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateDBProxyEndpointResult createDBProxyEndpoint(CreateDBProxyEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDBProxyEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final CreateDBProxyEndpointResult executeCreateDBProxyEndpoint(CreateDBProxyEndpointRequest createDBProxyEndpointRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createDBProxyEndpointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateDBProxyEndpointRequest> request = null;
+        Response<CreateDBProxyEndpointResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateDBProxyEndpointRequestMarshaller().marshall(super.beforeMarshalling(createDBProxyEndpointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDBProxyEndpoint");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateDBProxyEndpointResult> responseHandler = new StaxResponseHandler<CreateDBProxyEndpointResult>(
+                    new CreateDBProxyEndpointResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new DB security group. DB security groups control access to a DB instance.
      * </p>
      * <note>
@@ -3221,7 +3295,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Deletes an existing proxy.
+     * Deletes an existing DB proxy.
      * </p>
      * 
      * @param deleteDBProxyRequest
@@ -3268,6 +3342,68 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DeleteDBProxyResult> responseHandler = new StaxResponseHandler<DeleteDBProxyResult>(new DeleteDBProxyResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a <code>DBProxyEndpoint</code>. Doing so removes the ability to access the DB proxy using the endpoint
+     * that you defined. The endpoint that you delete might have provided capabilities such as read/write or read-only
+     * operations, or using a different VPC than the DB proxy's default VPC.
+     * </p>
+     * 
+     * @param deleteDBProxyEndpointRequest
+     * @return Result of the DeleteDBProxyEndpoint operation returned by the service.
+     * @throws DBProxyEndpointNotFoundException
+     *         The DB proxy endpoint doesn't exist.
+     * @throws InvalidDBProxyEndpointStateException
+     *         You can't perform this operation while the DB proxy endpoint is in a particular state.
+     * @sample AmazonRDS.DeleteDBProxyEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBProxyEndpoint" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteDBProxyEndpointResult deleteDBProxyEndpoint(DeleteDBProxyEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDBProxyEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDBProxyEndpointResult executeDeleteDBProxyEndpoint(DeleteDBProxyEndpointRequest deleteDBProxyEndpointRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteDBProxyEndpointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteDBProxyEndpointRequest> request = null;
+        Response<DeleteDBProxyEndpointResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteDBProxyEndpointRequestMarshaller().marshall(super.beforeMarshalling(deleteDBProxyEndpointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDBProxyEndpoint");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteDBProxyEndpointResult> responseHandler = new StaxResponseHandler<DeleteDBProxyEndpointResult>(
+                    new DeleteDBProxyEndpointResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -4904,6 +5040,67 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeDBProxiesResult> responseHandler = new StaxResponseHandler<DescribeDBProxiesResult>(
                     new DescribeDBProxiesResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about DB proxy endpoints.
+     * </p>
+     * 
+     * @param describeDBProxyEndpointsRequest
+     * @return Result of the DescribeDBProxyEndpoints operation returned by the service.
+     * @throws DBProxyNotFoundException
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
+     *         Region.
+     * @throws DBProxyEndpointNotFoundException
+     *         The DB proxy endpoint doesn't exist.
+     * @sample AmazonRDS.DescribeDBProxyEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyEndpoints" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeDBProxyEndpointsResult describeDBProxyEndpoints(DescribeDBProxyEndpointsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDBProxyEndpoints(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDBProxyEndpointsResult executeDescribeDBProxyEndpoints(DescribeDBProxyEndpointsRequest describeDBProxyEndpointsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeDBProxyEndpointsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDBProxyEndpointsRequest> request = null;
+        Response<DescribeDBProxyEndpointsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDBProxyEndpointsRequestMarshaller().marshall(super.beforeMarshalling(describeDBProxyEndpointsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBProxyEndpoints");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeDBProxyEndpointsResult> responseHandler = new StaxResponseHandler<DescribeDBProxyEndpointsResult>(
+                    new DescribeDBProxyEndpointsResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -7421,6 +7618,71 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<ModifyDBProxyResult> responseHandler = new StaxResponseHandler<ModifyDBProxyResult>(new ModifyDBProxyResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Changes the settings for an existing DB proxy endpoint.
+     * </p>
+     * 
+     * @param modifyDBProxyEndpointRequest
+     * @return Result of the ModifyDBProxyEndpoint operation returned by the service.
+     * @throws DBProxyEndpointNotFoundException
+     *         The DB proxy endpoint doesn't exist.
+     * @throws DBProxyEndpointAlreadyExistsException
+     *         The specified DB proxy endpoint name must be unique for all DB proxy endpoints owned by your AWS account
+     *         in the specified AWS Region.
+     * @throws InvalidDBProxyEndpointStateException
+     *         You can't perform this operation while the DB proxy endpoint is in a particular state.
+     * @throws InvalidDBProxyStateException
+     *         The requested operation can't be performed while the proxy is in this state.
+     * @sample AmazonRDS.ModifyDBProxyEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxyEndpoint" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ModifyDBProxyEndpointResult modifyDBProxyEndpoint(ModifyDBProxyEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyDBProxyEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final ModifyDBProxyEndpointResult executeModifyDBProxyEndpoint(ModifyDBProxyEndpointRequest modifyDBProxyEndpointRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyDBProxyEndpointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyDBProxyEndpointRequest> request = null;
+        Response<ModifyDBProxyEndpointResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyDBProxyEndpointRequestMarshaller().marshall(super.beforeMarshalling(modifyDBProxyEndpointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDBProxyEndpoint");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyDBProxyEndpointResult> responseHandler = new StaxResponseHandler<ModifyDBProxyEndpointResult>(
+                    new ModifyDBProxyEndpointResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 

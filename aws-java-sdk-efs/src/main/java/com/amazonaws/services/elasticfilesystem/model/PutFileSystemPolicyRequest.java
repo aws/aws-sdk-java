@@ -33,8 +33,9 @@ public class PutFileSystemPolicyRequest extends com.amazonaws.AmazonWebServiceRe
     private String fileSystemId;
     /**
      * <p>
-     * The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON formatted policy definition. To find out
-     * more about the elements that make up a file system policy, see <a href=
+     * The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON formatted policy definition. EFS file
+     * system policies have a 20,000 character limit. To find out more about the elements that make up a file system
+     * policy, see <a href=
      * "https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies"
      * >EFS Resource-based Policies</a>.
      * </p>
@@ -94,15 +95,17 @@ public class PutFileSystemPolicyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON formatted policy definition. To find out
-     * more about the elements that make up a file system policy, see <a href=
+     * The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON formatted policy definition. EFS file
+     * system policies have a 20,000 character limit. To find out more about the elements that make up a file system
+     * policy, see <a href=
      * "https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies"
      * >EFS Resource-based Policies</a>.
      * </p>
      * 
      * @param policy
-     *        The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON formatted policy definition. To
-     *        find out more about the elements that make up a file system policy, see <a href=
+     *        The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON formatted policy definition. EFS
+     *        file system policies have a 20,000 character limit. To find out more about the elements that make up a
+     *        file system policy, see <a href=
      *        "https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies"
      *        >EFS Resource-based Policies</a>.
      */
@@ -113,14 +116,16 @@ public class PutFileSystemPolicyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON formatted policy definition. To find out
-     * more about the elements that make up a file system policy, see <a href=
+     * The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON formatted policy definition. EFS file
+     * system policies have a 20,000 character limit. To find out more about the elements that make up a file system
+     * policy, see <a href=
      * "https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies"
      * >EFS Resource-based Policies</a>.
      * </p>
      * 
-     * @return The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON formatted policy definition. To
-     *         find out more about the elements that make up a file system policy, see <a href=
+     * @return The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON formatted policy definition. EFS
+     *         file system policies have a 20,000 character limit. To find out more about the elements that make up a
+     *         file system policy, see <a href=
      *         "https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies"
      *         >EFS Resource-based Policies</a>.
      */
@@ -131,15 +136,17 @@ public class PutFileSystemPolicyRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON formatted policy definition. To find out
-     * more about the elements that make up a file system policy, see <a href=
+     * The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON formatted policy definition. EFS file
+     * system policies have a 20,000 character limit. To find out more about the elements that make up a file system
+     * policy, see <a href=
      * "https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies"
      * >EFS Resource-based Policies</a>.
      * </p>
      * 
      * @param policy
-     *        The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON formatted policy definition. To
-     *        find out more about the elements that make up a file system policy, see <a href=
+     *        The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON formatted policy definition. EFS
+     *        file system policies have a 20,000 character limit. To find out more about the elements that make up a
+     *        file system policy, see <a href=
      *        "https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies"
      *        >EFS Resource-based Policies</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

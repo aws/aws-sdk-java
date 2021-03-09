@@ -20,8 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum FeedbackType {
 
-    Negative("Negative"),
-    Positive("Positive");
+    Positive("Positive"),
+    Negative("Negative");
 
     private String value;
 

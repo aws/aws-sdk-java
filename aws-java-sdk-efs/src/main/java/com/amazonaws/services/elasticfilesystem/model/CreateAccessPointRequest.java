@@ -56,7 +56,12 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
      * directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS
      * creates it and applies the <code>CreationInfo</code> settings when a client connects to an access point. When
      * specifying a <code>RootDirectory</code>, you need to provide the <code>Path</code>, and the
-     * <code>CreationInfo</code> is optional.
+     * <code>CreationInfo</code>.
+     * </p>
+     * <p>
+     * Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and permissions
+     * for the directory. If you do not provide this information, Amazon EFS does not create the root directory. If the
+     * root directory does not exist, attempts to mount using the access point will fail.
      * </p>
      */
     private RootDirectory rootDirectory;
@@ -261,7 +266,12 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
      * directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS
      * creates it and applies the <code>CreationInfo</code> settings when a client connects to an access point. When
      * specifying a <code>RootDirectory</code>, you need to provide the <code>Path</code>, and the
-     * <code>CreationInfo</code> is optional.
+     * <code>CreationInfo</code>.
+     * </p>
+     * <p>
+     * Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and permissions
+     * for the directory. If you do not provide this information, Amazon EFS does not create the root directory. If the
+     * root directory does not exist, attempts to mount using the access point will fail.
      * </p>
      * 
      * @param rootDirectory
@@ -270,7 +280,11 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
      *        access the root directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code> specified
      *        does not exist, EFS creates it and applies the <code>CreationInfo</code> settings when a client connects
      *        to an access point. When specifying a <code>RootDirectory</code>, you need to provide the
-     *        <code>Path</code>, and the <code>CreationInfo</code> is optional.
+     *        <code>Path</code>, and the <code>CreationInfo</code>.</p>
+     *        <p>
+     *        Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and
+     *        permissions for the directory. If you do not provide this information, Amazon EFS does not create the root
+     *        directory. If the root directory does not exist, attempts to mount using the access point will fail.
      */
 
     public void setRootDirectory(RootDirectory rootDirectory) {
@@ -284,7 +298,12 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
      * directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS
      * creates it and applies the <code>CreationInfo</code> settings when a client connects to an access point. When
      * specifying a <code>RootDirectory</code>, you need to provide the <code>Path</code>, and the
-     * <code>CreationInfo</code> is optional.
+     * <code>CreationInfo</code>.
+     * </p>
+     * <p>
+     * Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and permissions
+     * for the directory. If you do not provide this information, Amazon EFS does not create the root directory. If the
+     * root directory does not exist, attempts to mount using the access point will fail.
      * </p>
      * 
      * @return Specifies the directory on the Amazon EFS file system that the access point exposes as the root directory
@@ -292,7 +311,11 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
      *         access the root directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code> specified
      *         does not exist, EFS creates it and applies the <code>CreationInfo</code> settings when a client connects
      *         to an access point. When specifying a <code>RootDirectory</code>, you need to provide the
-     *         <code>Path</code>, and the <code>CreationInfo</code> is optional.
+     *         <code>Path</code>, and the <code>CreationInfo</code>.</p>
+     *         <p>
+     *         Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and
+     *         permissions for the directory. If you do not provide this information, Amazon EFS does not create the
+     *         root directory. If the root directory does not exist, attempts to mount using the access point will fail.
      */
 
     public RootDirectory getRootDirectory() {
@@ -306,7 +329,12 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
      * directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code> specified does not exist, EFS
      * creates it and applies the <code>CreationInfo</code> settings when a client connects to an access point. When
      * specifying a <code>RootDirectory</code>, you need to provide the <code>Path</code>, and the
-     * <code>CreationInfo</code> is optional.
+     * <code>CreationInfo</code>.
+     * </p>
+     * <p>
+     * Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and permissions
+     * for the directory. If you do not provide this information, Amazon EFS does not create the root directory. If the
+     * root directory does not exist, attempts to mount using the access point will fail.
      * </p>
      * 
      * @param rootDirectory
@@ -315,7 +343,11 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
      *        access the root directory and below. If the <code>RootDirectory</code> &gt; <code>Path</code> specified
      *        does not exist, EFS creates it and applies the <code>CreationInfo</code> settings when a client connects
      *        to an access point. When specifying a <code>RootDirectory</code>, you need to provide the
-     *        <code>Path</code>, and the <code>CreationInfo</code> is optional.
+     *        <code>Path</code>, and the <code>CreationInfo</code>.</p>
+     *        <p>
+     *        Amazon EFS creates a root directory only if you have provided the CreationInfo: OwnUid, OwnGID, and
+     *        permissions for the directory. If you do not provide this information, Amazon EFS does not create the root
+     *        directory. If the root directory does not exist, attempts to mount using the access point will fail.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

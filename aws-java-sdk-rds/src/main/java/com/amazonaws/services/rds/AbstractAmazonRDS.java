@@ -149,6 +149,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public CreateDBProxyEndpointResult createDBProxyEndpoint(CreateDBProxyEndpointRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DBSecurityGroup createDBSecurityGroup(CreateDBSecurityGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -220,6 +225,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
 
     @Override
     public DeleteDBProxyResult deleteDBProxy(DeleteDBProxyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteDBProxyEndpointResult deleteDBProxyEndpoint(DeleteDBProxyEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -385,6 +395,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
 
     @Override
     public DescribeDBProxiesResult describeDBProxies(DescribeDBProxiesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeDBProxyEndpointsResult describeDBProxyEndpoints(DescribeDBProxyEndpointsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -625,6 +640,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
 
     @Override
     public ModifyDBProxyResult modifyDBProxy(ModifyDBProxyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyDBProxyEndpointResult modifyDBProxyEndpoint(ModifyDBProxyEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -104,6 +104,14 @@ public class CreateFileSystemResultJsonUnmarshaller implements Unmarshaller<Crea
                     context.nextToken();
                     createFileSystemResult.setProvisionedThroughputInMibps(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
+                if (context.testExpression("AvailabilityZoneName", targetDepth)) {
+                    context.nextToken();
+                    createFileSystemResult.setAvailabilityZoneName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AvailabilityZoneId", targetDepth)) {
+                    context.nextToken();
+                    createFileSystemResult.setAvailabilityZoneId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
                     createFileSystemResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())

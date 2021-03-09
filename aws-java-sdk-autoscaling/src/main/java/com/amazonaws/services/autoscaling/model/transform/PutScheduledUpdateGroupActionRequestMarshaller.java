@@ -78,6 +78,10 @@ public class PutScheduledUpdateGroupActionRequestMarshaller implements
             request.addParameter("DesiredCapacity", StringUtils.fromInteger(putScheduledUpdateGroupActionRequest.getDesiredCapacity()));
         }
 
+        if (putScheduledUpdateGroupActionRequest.getTimeZone() != null) {
+            request.addParameter("TimeZone", StringUtils.fromString(putScheduledUpdateGroupActionRequest.getTimeZone()));
+        }
+
         return request;
     }
 

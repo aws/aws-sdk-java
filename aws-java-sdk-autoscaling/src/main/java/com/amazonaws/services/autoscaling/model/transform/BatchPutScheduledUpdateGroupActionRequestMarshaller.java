@@ -90,6 +90,11 @@ public class BatchPutScheduledUpdateGroupActionRequestMarshaller implements
                         request.addParameter("ScheduledUpdateGroupActions.member." + scheduledUpdateGroupActionsListIndex + ".DesiredCapacity",
                                 StringUtils.fromInteger(scheduledUpdateGroupActionsListValue.getDesiredCapacity()));
                     }
+
+                    if (scheduledUpdateGroupActionsListValue.getTimeZone() != null) {
+                        request.addParameter("ScheduledUpdateGroupActions.member." + scheduledUpdateGroupActionsListIndex + ".TimeZone",
+                                StringUtils.fromString(scheduledUpdateGroupActionsListValue.getTimeZone()));
+                    }
                 }
                 scheduledUpdateGroupActionsListIndex++;
             }

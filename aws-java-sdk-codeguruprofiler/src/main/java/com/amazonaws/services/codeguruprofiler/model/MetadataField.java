@@ -20,15 +20,15 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum MetadataField {
 
+    ComputePlatform("ComputePlatform"),
     AgentId("AgentId"),
     AwsRequestId("AwsRequestId"),
-    ComputePlatform("ComputePlatform"),
     ExecutionEnvironment("ExecutionEnvironment"),
     LambdaFunctionArn("LambdaFunctionArn"),
     LambdaMemoryLimitInMB("LambdaMemoryLimitInMB"),
-    LambdaPreviousExecutionTimeInMilliseconds("LambdaPreviousExecutionTimeInMilliseconds"),
     LambdaRemainingTimeInMilliseconds("LambdaRemainingTimeInMilliseconds"),
-    LambdaTimeGapBetweenInvokesInMilliseconds("LambdaTimeGapBetweenInvokesInMilliseconds");
+    LambdaTimeGapBetweenInvokesInMilliseconds("LambdaTimeGapBetweenInvokesInMilliseconds"),
+    LambdaPreviousExecutionTimeInMilliseconds("LambdaPreviousExecutionTimeInMilliseconds");
 
     private String value;
 

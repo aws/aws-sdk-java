@@ -113,24 +113,36 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
     private String kmsKeyId;
     /**
      * <p>
-     * The throughput mode for a file system. There are two throughput modes to choose from for your file system:
-     * <code>bursting</code> and <code>provisioned</code>. If you set <code>ThroughputMode</code> to
-     * <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughPutInMibps</code>. You can
-     * decrease your file system's throughput in Provisioned Throughput mode or change between the throughput modes as
-     * long as it’s been more than 24 hours since the last decrease or throughput mode change.
+     * Displays the file system's throughput mode. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a> in the
+     * <i>Amazon EFS User Guide</i>.
      * </p>
      */
     private String throughputMode;
     /**
      * <p>
-     * The throughput, measured in MiB/s, that you want to provision for a file system. Valid values are 1-1024.
-     * Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. The limit on throughput is 1024
-     * MiB/s. You can get these limits increased by contacting AWS Support. For more information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
-     * Increase</a> in the <i>Amazon EFS User Guide.</i>
+     * The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using
+     * <code>ThroughputMode</code> set to <code>provisioned</code>.
      * </p>
      */
     private Double provisionedThroughputInMibps;
+    /**
+     * <p>
+     * Describes the AWS Availability Zone in which the file system is located, and is valid only for file systems using
+     * One Zone storage classes. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the
+     * <i>Amazon EFS User Guide</i>.
+     * </p>
+     */
+    private String availabilityZoneName;
+    /**
+     * <p>
+     * The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage classes
+     * exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 AWS Region, and it has the
+     * same location in every AWS account.
+     * </p>
+     */
+    private String availabilityZoneId;
     /**
      * <p>
      * The tags associated with the file system, presented as an array of <code>Tag</code> objects.
@@ -780,19 +792,15 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The throughput mode for a file system. There are two throughput modes to choose from for your file system:
-     * <code>bursting</code> and <code>provisioned</code>. If you set <code>ThroughputMode</code> to
-     * <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughPutInMibps</code>. You can
-     * decrease your file system's throughput in Provisioned Throughput mode or change between the throughput modes as
-     * long as it’s been more than 24 hours since the last decrease or throughput mode change.
+     * Displays the file system's throughput mode. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a> in the
+     * <i>Amazon EFS User Guide</i>.
      * </p>
      * 
      * @param throughputMode
-     *        The throughput mode for a file system. There are two throughput modes to choose from for your file system:
-     *        <code>bursting</code> and <code>provisioned</code>. If you set <code>ThroughputMode</code> to
-     *        <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughPutInMibps</code>. You can
-     *        decrease your file system's throughput in Provisioned Throughput mode or change between the throughput
-     *        modes as long as it’s been more than 24 hours since the last decrease or throughput mode change.
+     *        Displays the file system's throughput mode. For more information, see <a
+     *        href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a> in
+     *        the <i>Amazon EFS User Guide</i>.
      * @see ThroughputMode
      */
 
@@ -802,19 +810,14 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The throughput mode for a file system. There are two throughput modes to choose from for your file system:
-     * <code>bursting</code> and <code>provisioned</code>. If you set <code>ThroughputMode</code> to
-     * <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughPutInMibps</code>. You can
-     * decrease your file system's throughput in Provisioned Throughput mode or change between the throughput modes as
-     * long as it’s been more than 24 hours since the last decrease or throughput mode change.
+     * Displays the file system's throughput mode. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a> in the
+     * <i>Amazon EFS User Guide</i>.
      * </p>
      * 
-     * @return The throughput mode for a file system. There are two throughput modes to choose from for your file
-     *         system: <code>bursting</code> and <code>provisioned</code>. If you set <code>ThroughputMode</code> to
-     *         <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughPutInMibps</code>. You
-     *         can decrease your file system's throughput in Provisioned Throughput mode or change between the
-     *         throughput modes as long as it’s been more than 24 hours since the last decrease or throughput mode
-     *         change.
+     * @return Displays the file system's throughput mode. For more information, see <a
+     *         href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a>
+     *         in the <i>Amazon EFS User Guide</i>.
      * @see ThroughputMode
      */
 
@@ -824,19 +827,15 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The throughput mode for a file system. There are two throughput modes to choose from for your file system:
-     * <code>bursting</code> and <code>provisioned</code>. If you set <code>ThroughputMode</code> to
-     * <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughPutInMibps</code>. You can
-     * decrease your file system's throughput in Provisioned Throughput mode or change between the throughput modes as
-     * long as it’s been more than 24 hours since the last decrease or throughput mode change.
+     * Displays the file system's throughput mode. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a> in the
+     * <i>Amazon EFS User Guide</i>.
      * </p>
      * 
      * @param throughputMode
-     *        The throughput mode for a file system. There are two throughput modes to choose from for your file system:
-     *        <code>bursting</code> and <code>provisioned</code>. If you set <code>ThroughputMode</code> to
-     *        <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughPutInMibps</code>. You can
-     *        decrease your file system's throughput in Provisioned Throughput mode or change between the throughput
-     *        modes as long as it’s been more than 24 hours since the last decrease or throughput mode change.
+     *        Displays the file system's throughput mode. For more information, see <a
+     *        href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a> in
+     *        the <i>Amazon EFS User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ThroughputMode
      */
@@ -848,19 +847,15 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The throughput mode for a file system. There are two throughput modes to choose from for your file system:
-     * <code>bursting</code> and <code>provisioned</code>. If you set <code>ThroughputMode</code> to
-     * <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughPutInMibps</code>. You can
-     * decrease your file system's throughput in Provisioned Throughput mode or change between the throughput modes as
-     * long as it’s been more than 24 hours since the last decrease or throughput mode change.
+     * Displays the file system's throughput mode. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a> in the
+     * <i>Amazon EFS User Guide</i>.
      * </p>
      * 
      * @param throughputMode
-     *        The throughput mode for a file system. There are two throughput modes to choose from for your file system:
-     *        <code>bursting</code> and <code>provisioned</code>. If you set <code>ThroughputMode</code> to
-     *        <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughPutInMibps</code>. You can
-     *        decrease your file system's throughput in Provisioned Throughput mode or change between the throughput
-     *        modes as long as it’s been more than 24 hours since the last decrease or throughput mode change.
+     *        Displays the file system's throughput mode. For more information, see <a
+     *        href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a> in
+     *        the <i>Amazon EFS User Guide</i>.
      * @see ThroughputMode
      */
 
@@ -870,19 +865,15 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The throughput mode for a file system. There are two throughput modes to choose from for your file system:
-     * <code>bursting</code> and <code>provisioned</code>. If you set <code>ThroughputMode</code> to
-     * <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughPutInMibps</code>. You can
-     * decrease your file system's throughput in Provisioned Throughput mode or change between the throughput modes as
-     * long as it’s been more than 24 hours since the last decrease or throughput mode change.
+     * Displays the file system's throughput mode. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a> in the
+     * <i>Amazon EFS User Guide</i>.
      * </p>
      * 
      * @param throughputMode
-     *        The throughput mode for a file system. There are two throughput modes to choose from for your file system:
-     *        <code>bursting</code> and <code>provisioned</code>. If you set <code>ThroughputMode</code> to
-     *        <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughPutInMibps</code>. You can
-     *        decrease your file system's throughput in Provisioned Throughput mode or change between the throughput
-     *        modes as long as it’s been more than 24 hours since the last decrease or throughput mode change.
+     *        Displays the file system's throughput mode. For more information, see <a
+     *        href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a> in
+     *        the <i>Amazon EFS User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ThroughputMode
      */
@@ -894,19 +885,13 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The throughput, measured in MiB/s, that you want to provision for a file system. Valid values are 1-1024.
-     * Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. The limit on throughput is 1024
-     * MiB/s. You can get these limits increased by contacting AWS Support. For more information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
-     * Increase</a> in the <i>Amazon EFS User Guide.</i>
+     * The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using
+     * <code>ThroughputMode</code> set to <code>provisioned</code>.
      * </p>
      * 
      * @param provisionedThroughputInMibps
-     *        The throughput, measured in MiB/s, that you want to provision for a file system. Valid values are 1-1024.
-     *        Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. The limit on throughput is
-     *        1024 MiB/s. You can get these limits increased by contacting AWS Support. For more information, see <a
-     *        href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
-     *        Increase</a> in the <i>Amazon EFS User Guide.</i>
+     *        The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using
+     *        <code>ThroughputMode</code> set to <code>provisioned</code>.
      */
 
     public void setProvisionedThroughputInMibps(Double provisionedThroughputInMibps) {
@@ -915,18 +900,12 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The throughput, measured in MiB/s, that you want to provision for a file system. Valid values are 1-1024.
-     * Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. The limit on throughput is 1024
-     * MiB/s. You can get these limits increased by contacting AWS Support. For more information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
-     * Increase</a> in the <i>Amazon EFS User Guide.</i>
+     * The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using
+     * <code>ThroughputMode</code> set to <code>provisioned</code>.
      * </p>
      * 
-     * @return The throughput, measured in MiB/s, that you want to provision for a file system. Valid values are 1-1024.
-     *         Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. The limit on throughput is
-     *         1024 MiB/s. You can get these limits increased by contacting AWS Support. For more information, see <a
-     *         href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
-     *         Increase</a> in the <i>Amazon EFS User Guide.</i>
+     * @return The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems
+     *         using <code>ThroughputMode</code> set to <code>provisioned</code>.
      */
 
     public Double getProvisionedThroughputInMibps() {
@@ -935,24 +914,128 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The throughput, measured in MiB/s, that you want to provision for a file system. Valid values are 1-1024.
-     * Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. The limit on throughput is 1024
-     * MiB/s. You can get these limits increased by contacting AWS Support. For more information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
-     * Increase</a> in the <i>Amazon EFS User Guide.</i>
+     * The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using
+     * <code>ThroughputMode</code> set to <code>provisioned</code>.
      * </p>
      * 
      * @param provisionedThroughputInMibps
-     *        The throughput, measured in MiB/s, that you want to provision for a file system. Valid values are 1-1024.
-     *        Required if <code>ThroughputMode</code> is set to <code>provisioned</code>. The limit on throughput is
-     *        1024 MiB/s. You can get these limits increased by contacting AWS Support. For more information, see <a
-     *        href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
-     *        Increase</a> in the <i>Amazon EFS User Guide.</i>
+     *        The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for file systems using
+     *        <code>ThroughputMode</code> set to <code>provisioned</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateFileSystemResult withProvisionedThroughputInMibps(Double provisionedThroughputInMibps) {
         setProvisionedThroughputInMibps(provisionedThroughputInMibps);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the AWS Availability Zone in which the file system is located, and is valid only for file systems using
+     * One Zone storage classes. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the
+     * <i>Amazon EFS User Guide</i>.
+     * </p>
+     * 
+     * @param availabilityZoneName
+     *        Describes the AWS Availability Zone in which the file system is located, and is valid only for file
+     *        systems using One Zone storage classes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the
+     *        <i>Amazon EFS User Guide</i>.
+     */
+
+    public void setAvailabilityZoneName(String availabilityZoneName) {
+        this.availabilityZoneName = availabilityZoneName;
+    }
+
+    /**
+     * <p>
+     * Describes the AWS Availability Zone in which the file system is located, and is valid only for file systems using
+     * One Zone storage classes. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the
+     * <i>Amazon EFS User Guide</i>.
+     * </p>
+     * 
+     * @return Describes the AWS Availability Zone in which the file system is located, and is valid only for file
+     *         systems using One Zone storage classes. For more information, see <a
+     *         href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in
+     *         the <i>Amazon EFS User Guide</i>.
+     */
+
+    public String getAvailabilityZoneName() {
+        return this.availabilityZoneName;
+    }
+
+    /**
+     * <p>
+     * Describes the AWS Availability Zone in which the file system is located, and is valid only for file systems using
+     * One Zone storage classes. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the
+     * <i>Amazon EFS User Guide</i>.
+     * </p>
+     * 
+     * @param availabilityZoneName
+     *        Describes the AWS Availability Zone in which the file system is located, and is valid only for file
+     *        systems using One Zone storage classes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a> in the
+     *        <i>Amazon EFS User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFileSystemResult withAvailabilityZoneName(String availabilityZoneName) {
+        setAvailabilityZoneName(availabilityZoneName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage classes
+     * exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 AWS Region, and it has the
+     * same location in every AWS account.
+     * </p>
+     * 
+     * @param availabilityZoneId
+     *        The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage
+     *        classes exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 AWS Region,
+     *        and it has the same location in every AWS account.
+     */
+
+    public void setAvailabilityZoneId(String availabilityZoneId) {
+        this.availabilityZoneId = availabilityZoneId;
+    }
+
+    /**
+     * <p>
+     * The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage classes
+     * exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 AWS Region, and it has the
+     * same location in every AWS account.
+     * </p>
+     * 
+     * @return The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage
+     *         classes exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 AWS
+     *         Region, and it has the same location in every AWS account.
+     */
+
+    public String getAvailabilityZoneId() {
+        return this.availabilityZoneId;
+    }
+
+    /**
+     * <p>
+     * The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage classes
+     * exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 AWS Region, and it has the
+     * same location in every AWS account.
+     * </p>
+     * 
+     * @param availabilityZoneId
+     *        The unique and consistent identifier of the Availability Zone in which the file system's One Zone storage
+     *        classes exist. For example, <code>use1-az1</code> is an Availability Zone ID for the us-east-1 AWS Region,
+     *        and it has the same location in every AWS account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFileSystemResult withAvailabilityZoneId(String availabilityZoneId) {
+        setAvailabilityZoneId(availabilityZoneId);
         return this;
     }
 
@@ -1069,6 +1152,10 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
             sb.append("ThroughputMode: ").append(getThroughputMode()).append(",");
         if (getProvisionedThroughputInMibps() != null)
             sb.append("ProvisionedThroughputInMibps: ").append(getProvisionedThroughputInMibps()).append(",");
+        if (getAvailabilityZoneName() != null)
+            sb.append("AvailabilityZoneName: ").append(getAvailabilityZoneName()).append(",");
+        if (getAvailabilityZoneId() != null)
+            sb.append("AvailabilityZoneId: ").append(getAvailabilityZoneId()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -1141,6 +1228,14 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getProvisionedThroughputInMibps() != null && other.getProvisionedThroughputInMibps().equals(this.getProvisionedThroughputInMibps()) == false)
             return false;
+        if (other.getAvailabilityZoneName() == null ^ this.getAvailabilityZoneName() == null)
+            return false;
+        if (other.getAvailabilityZoneName() != null && other.getAvailabilityZoneName().equals(this.getAvailabilityZoneName()) == false)
+            return false;
+        if (other.getAvailabilityZoneId() == null ^ this.getAvailabilityZoneId() == null)
+            return false;
+        if (other.getAvailabilityZoneId() != null && other.getAvailabilityZoneId().equals(this.getAvailabilityZoneId()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -1167,6 +1262,8 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getThroughputMode() == null) ? 0 : getThroughputMode().hashCode());
         hashCode = prime * hashCode + ((getProvisionedThroughputInMibps() == null) ? 0 : getProvisionedThroughputInMibps().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZoneName() == null) ? 0 : getAvailabilityZoneName().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZoneId() == null) ? 0 : getAvailabilityZoneId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

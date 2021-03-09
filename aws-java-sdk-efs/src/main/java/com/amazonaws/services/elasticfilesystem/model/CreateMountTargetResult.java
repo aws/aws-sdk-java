@@ -70,22 +70,22 @@ public class CreateMountTargetResult extends com.amazonaws.AmazonWebServiceResul
     private String networkInterfaceId;
     /**
      * <p>
-     * The unique and consistent identifier of the Availability Zone (AZ) that the mount target resides in. For example,
+     * The unique and consistent identifier of the Availability Zone that the mount target resides in. For example,
      * <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every AWS account.
      * </p>
      */
     private String availabilityZoneId;
     /**
      * <p>
-     * The name of the Availability Zone (AZ) that the mount target resides in. AZs are independently mapped to names
-     * for each AWS account. For example, the Availability Zone <code>us-east-1a</code> for your AWS account might not
-     * be the same location as <code>us-east-1a</code> for another AWS account.
+     * The name of the Availability Zone in which the mount target is located. Availability Zones are independently
+     * mapped to names for each AWS account. For example, the Availability Zone <code>us-east-1a</code> for your AWS
+     * account might not be the same location as <code>us-east-1a</code> for another AWS account.
      * </p>
      */
     private String availabilityZoneName;
     /**
      * <p>
-     * The Virtual Private Cloud (VPC) ID that the mount target is configured in.
+     * The virtual private cloud (VPC) ID that the mount target is configured in.
      * </p>
      */
     private String vpcId;
@@ -405,12 +405,12 @@ public class CreateMountTargetResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The unique and consistent identifier of the Availability Zone (AZ) that the mount target resides in. For example,
+     * The unique and consistent identifier of the Availability Zone that the mount target resides in. For example,
      * <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every AWS account.
      * </p>
      * 
      * @param availabilityZoneId
-     *        The unique and consistent identifier of the Availability Zone (AZ) that the mount target resides in. For
+     *        The unique and consistent identifier of the Availability Zone that the mount target resides in. For
      *        example, <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every
      *        AWS account.
      */
@@ -421,11 +421,11 @@ public class CreateMountTargetResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The unique and consistent identifier of the Availability Zone (AZ) that the mount target resides in. For example,
+     * The unique and consistent identifier of the Availability Zone that the mount target resides in. For example,
      * <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every AWS account.
      * </p>
      * 
-     * @return The unique and consistent identifier of the Availability Zone (AZ) that the mount target resides in. For
+     * @return The unique and consistent identifier of the Availability Zone that the mount target resides in. For
      *         example, <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every
      *         AWS account.
      */
@@ -436,12 +436,12 @@ public class CreateMountTargetResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The unique and consistent identifier of the Availability Zone (AZ) that the mount target resides in. For example,
+     * The unique and consistent identifier of the Availability Zone that the mount target resides in. For example,
      * <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every AWS account.
      * </p>
      * 
      * @param availabilityZoneId
-     *        The unique and consistent identifier of the Availability Zone (AZ) that the mount target resides in. For
+     *        The unique and consistent identifier of the Availability Zone that the mount target resides in. For
      *        example, <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every
      *        AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -454,15 +454,16 @@ public class CreateMountTargetResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The name of the Availability Zone (AZ) that the mount target resides in. AZs are independently mapped to names
-     * for each AWS account. For example, the Availability Zone <code>us-east-1a</code> for your AWS account might not
-     * be the same location as <code>us-east-1a</code> for another AWS account.
+     * The name of the Availability Zone in which the mount target is located. Availability Zones are independently
+     * mapped to names for each AWS account. For example, the Availability Zone <code>us-east-1a</code> for your AWS
+     * account might not be the same location as <code>us-east-1a</code> for another AWS account.
      * </p>
      * 
      * @param availabilityZoneName
-     *        The name of the Availability Zone (AZ) that the mount target resides in. AZs are independently mapped to
-     *        names for each AWS account. For example, the Availability Zone <code>us-east-1a</code> for your AWS
-     *        account might not be the same location as <code>us-east-1a</code> for another AWS account.
+     *        The name of the Availability Zone in which the mount target is located. Availability Zones are
+     *        independently mapped to names for each AWS account. For example, the Availability Zone
+     *        <code>us-east-1a</code> for your AWS account might not be the same location as <code>us-east-1a</code> for
+     *        another AWS account.
      */
 
     public void setAvailabilityZoneName(String availabilityZoneName) {
@@ -471,14 +472,15 @@ public class CreateMountTargetResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The name of the Availability Zone (AZ) that the mount target resides in. AZs are independently mapped to names
-     * for each AWS account. For example, the Availability Zone <code>us-east-1a</code> for your AWS account might not
-     * be the same location as <code>us-east-1a</code> for another AWS account.
+     * The name of the Availability Zone in which the mount target is located. Availability Zones are independently
+     * mapped to names for each AWS account. For example, the Availability Zone <code>us-east-1a</code> for your AWS
+     * account might not be the same location as <code>us-east-1a</code> for another AWS account.
      * </p>
      * 
-     * @return The name of the Availability Zone (AZ) that the mount target resides in. AZs are independently mapped to
-     *         names for each AWS account. For example, the Availability Zone <code>us-east-1a</code> for your AWS
-     *         account might not be the same location as <code>us-east-1a</code> for another AWS account.
+     * @return The name of the Availability Zone in which the mount target is located. Availability Zones are
+     *         independently mapped to names for each AWS account. For example, the Availability Zone
+     *         <code>us-east-1a</code> for your AWS account might not be the same location as <code>us-east-1a</code>
+     *         for another AWS account.
      */
 
     public String getAvailabilityZoneName() {
@@ -487,15 +489,16 @@ public class CreateMountTargetResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The name of the Availability Zone (AZ) that the mount target resides in. AZs are independently mapped to names
-     * for each AWS account. For example, the Availability Zone <code>us-east-1a</code> for your AWS account might not
-     * be the same location as <code>us-east-1a</code> for another AWS account.
+     * The name of the Availability Zone in which the mount target is located. Availability Zones are independently
+     * mapped to names for each AWS account. For example, the Availability Zone <code>us-east-1a</code> for your AWS
+     * account might not be the same location as <code>us-east-1a</code> for another AWS account.
      * </p>
      * 
      * @param availabilityZoneName
-     *        The name of the Availability Zone (AZ) that the mount target resides in. AZs are independently mapped to
-     *        names for each AWS account. For example, the Availability Zone <code>us-east-1a</code> for your AWS
-     *        account might not be the same location as <code>us-east-1a</code> for another AWS account.
+     *        The name of the Availability Zone in which the mount target is located. Availability Zones are
+     *        independently mapped to names for each AWS account. For example, the Availability Zone
+     *        <code>us-east-1a</code> for your AWS account might not be the same location as <code>us-east-1a</code> for
+     *        another AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -506,11 +509,11 @@ public class CreateMountTargetResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Virtual Private Cloud (VPC) ID that the mount target is configured in.
+     * The virtual private cloud (VPC) ID that the mount target is configured in.
      * </p>
      * 
      * @param vpcId
-     *        The Virtual Private Cloud (VPC) ID that the mount target is configured in.
+     *        The virtual private cloud (VPC) ID that the mount target is configured in.
      */
 
     public void setVpcId(String vpcId) {
@@ -519,10 +522,10 @@ public class CreateMountTargetResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Virtual Private Cloud (VPC) ID that the mount target is configured in.
+     * The virtual private cloud (VPC) ID that the mount target is configured in.
      * </p>
      * 
-     * @return The Virtual Private Cloud (VPC) ID that the mount target is configured in.
+     * @return The virtual private cloud (VPC) ID that the mount target is configured in.
      */
 
     public String getVpcId() {
@@ -531,11 +534,11 @@ public class CreateMountTargetResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Virtual Private Cloud (VPC) ID that the mount target is configured in.
+     * The virtual private cloud (VPC) ID that the mount target is configured in.
      * </p>
      * 
      * @param vpcId
-     *        The Virtual Private Cloud (VPC) ID that the mount target is configured in.
+     *        The virtual private cloud (VPC) ID that the mount target is configured in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

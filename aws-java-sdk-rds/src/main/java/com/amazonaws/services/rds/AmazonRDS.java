@@ -979,6 +979,33 @@ public interface AmazonRDS {
 
     /**
      * <p>
+     * Creates a <code>DBProxyEndpoint</code>. Only applies to proxies that are associated with Aurora DB clusters. You
+     * can use DB proxy endpoints to specify read/write or read-only access to the DB cluster. You can also use DB proxy
+     * endpoints to access a DB proxy through a different VPC than the proxy's default VPC.
+     * </p>
+     * 
+     * @param createDBProxyEndpointRequest
+     * @return Result of the CreateDBProxyEndpoint operation returned by the service.
+     * @throws InvalidSubnetException
+     *         The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.
+     * @throws DBProxyNotFoundException
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
+     *         Region.
+     * @throws DBProxyEndpointAlreadyExistsException
+     *         The specified DB proxy endpoint name must be unique for all DB proxy endpoints owned by your AWS account
+     *         in the specified AWS Region.
+     * @throws DBProxyEndpointQuotaExceededException
+     *         The DB proxy already has the maximum number of endpoints.
+     * @throws InvalidDBProxyStateException
+     *         The requested operation can't be performed while the proxy is in this state.
+     * @sample AmazonRDS.CreateDBProxyEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBProxyEndpoint" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateDBProxyEndpointResult createDBProxyEndpoint(CreateDBProxyEndpointRequest createDBProxyEndpointRequest);
+
+    /**
+     * <p>
      * Creates a new DB security group. DB security groups control access to a DB instance.
      * </p>
      * <note>
@@ -1395,7 +1422,7 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Deletes an existing proxy.
+     * Deletes an existing DB proxy.
      * </p>
      * 
      * @param deleteDBProxyRequest
@@ -1410,6 +1437,25 @@ public interface AmazonRDS {
      *      Documentation</a>
      */
     DeleteDBProxyResult deleteDBProxy(DeleteDBProxyRequest deleteDBProxyRequest);
+
+    /**
+     * <p>
+     * Deletes a <code>DBProxyEndpoint</code>. Doing so removes the ability to access the DB proxy using the endpoint
+     * that you defined. The endpoint that you delete might have provided capabilities such as read/write or read-only
+     * operations, or using a different VPC than the DB proxy's default VPC.
+     * </p>
+     * 
+     * @param deleteDBProxyEndpointRequest
+     * @return Result of the DeleteDBProxyEndpoint operation returned by the service.
+     * @throws DBProxyEndpointNotFoundException
+     *         The DB proxy endpoint doesn't exist.
+     * @throws InvalidDBProxyEndpointStateException
+     *         You can't perform this operation while the DB proxy endpoint is in a particular state.
+     * @sample AmazonRDS.DeleteDBProxyEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBProxyEndpoint" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteDBProxyEndpointResult deleteDBProxyEndpoint(DeleteDBProxyEndpointRequest deleteDBProxyEndpointRequest);
 
     /**
      * <p>
@@ -1985,6 +2031,24 @@ public interface AmazonRDS {
      *      Documentation</a>
      */
     DescribeDBProxiesResult describeDBProxies(DescribeDBProxiesRequest describeDBProxiesRequest);
+
+    /**
+     * <p>
+     * Returns information about DB proxy endpoints.
+     * </p>
+     * 
+     * @param describeDBProxyEndpointsRequest
+     * @return Result of the DescribeDBProxyEndpoints operation returned by the service.
+     * @throws DBProxyNotFoundException
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
+     *         Region.
+     * @throws DBProxyEndpointNotFoundException
+     *         The DB proxy endpoint doesn't exist.
+     * @sample AmazonRDS.DescribeDBProxyEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyEndpoints" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeDBProxyEndpointsResult describeDBProxyEndpoints(DescribeDBProxyEndpointsRequest describeDBProxyEndpointsRequest);
 
     /**
      * <p>
@@ -2979,6 +3043,28 @@ public interface AmazonRDS {
      *      Documentation</a>
      */
     ModifyDBProxyResult modifyDBProxy(ModifyDBProxyRequest modifyDBProxyRequest);
+
+    /**
+     * <p>
+     * Changes the settings for an existing DB proxy endpoint.
+     * </p>
+     * 
+     * @param modifyDBProxyEndpointRequest
+     * @return Result of the ModifyDBProxyEndpoint operation returned by the service.
+     * @throws DBProxyEndpointNotFoundException
+     *         The DB proxy endpoint doesn't exist.
+     * @throws DBProxyEndpointAlreadyExistsException
+     *         The specified DB proxy endpoint name must be unique for all DB proxy endpoints owned by your AWS account
+     *         in the specified AWS Region.
+     * @throws InvalidDBProxyEndpointStateException
+     *         You can't perform this operation while the DB proxy endpoint is in a particular state.
+     * @throws InvalidDBProxyStateException
+     *         The requested operation can't be performed while the proxy is in this state.
+     * @sample AmazonRDS.ModifyDBProxyEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxyEndpoint" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ModifyDBProxyEndpointResult modifyDBProxyEndpoint(ModifyDBProxyEndpointRequest modifyDBProxyEndpointRequest);
 
     /**
      * <p>

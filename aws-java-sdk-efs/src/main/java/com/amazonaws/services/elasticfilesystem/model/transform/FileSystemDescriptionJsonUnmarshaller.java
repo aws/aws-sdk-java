@@ -104,6 +104,14 @@ public class FileSystemDescriptionJsonUnmarshaller implements Unmarshaller<FileS
                     context.nextToken();
                     fileSystemDescription.setProvisionedThroughputInMibps(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
+                if (context.testExpression("AvailabilityZoneName", targetDepth)) {
+                    context.nextToken();
+                    fileSystemDescription.setAvailabilityZoneName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AvailabilityZoneId", targetDepth)) {
+                    context.nextToken();
+                    fileSystemDescription.setAvailabilityZoneId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
                     fileSystemDescription.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())

@@ -24,7 +24,8 @@ public enum LifeCycleState {
     Available("available"),
     Updating("updating"),
     Deleting("deleting"),
-    Deleted("deleted");
+    Deleted("deleted"),
+    Error("error");
 
     private String value;
 

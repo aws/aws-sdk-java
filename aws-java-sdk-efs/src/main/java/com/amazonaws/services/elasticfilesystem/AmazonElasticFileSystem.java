@@ -104,8 +104,8 @@ public interface AmazonElasticFileSystem {
      * point. The operating system user and group override any identity information provided by the NFS client. The file
      * system path is exposed as the access point's root directory. Applications using the access point can only access
      * data in its own directory and below. To learn more, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting a File System Using EFS Access
-     * Points</a>.
+     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting a file system using EFS access
+     * points</a>.
      * </p>
      * <p>
      * This operation requires permissions for the <code>elasticfilesystem:CreateAccessPoint</code> action.
@@ -170,6 +170,11 @@ public interface AmazonElasticFileSystem {
      * was reset. As long as you use the same creation token, if the initial call had succeeded in creating a file
      * system, the client can learn of its existence from the <code>FileSystemAlreadyExists</code> error.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/creating-using-create-fs.html#creating-using-create-fs-part1"
+     * >Creating a file system</a> in the <i>Amazon EFS User Guide</i>.
+     * </p>
      * <note>
      * <p>
      * The <code>CreateFileSystem</code> call returns while the file system's lifecycle state is still
@@ -178,13 +183,16 @@ public interface AmazonElasticFileSystem {
      * </p>
      * </note>
      * <p>
-     * This operation also takes an optional <code>PerformanceMode</code> parameter that you choose for your file
-     * system. We recommend <code>generalPurpose</code> performance mode for most file systems. File systems using the
+     * This operation accepts an optional <code>PerformanceMode</code> parameter that you choose for your file system.
+     * We recommend <code>generalPurpose</code> performance mode for most file systems. File systems using the
      * <code>maxIO</code> performance mode can scale to higher levels of aggregate throughput and operations per second
      * with a tradeoff of slightly higher latencies for most file operations. The performance mode can't be changed
      * after the file system has been created. For more information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#performancemodes.html">Amazon EFS: Performance
-     * Modes</a>.
+     * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#performancemodes.html">Amazon EFS performance
+     * modes</a>.
+     * </p>
+     * <p>
+     * You can set the throughput mode for the file system using the <code>ThroughputMode</code> parameter.
      * </p>
      * <p>
      * After the file system is fully created, Amazon EFS sets its lifecycle state to <code>available</code>, at which
@@ -213,10 +221,12 @@ public interface AmazonElasticFileSystem {
      *         Returned if there's not enough capacity to provision additional throughput. This value might be returned
      *         when you try to create a file system in provisioned throughput mode, when you attempt to increase the
      *         provisioned throughput of an existing file system, or when you attempt to change an existing file system
-     *         from bursting to provisioned throughput mode.
+     *         from bursting to provisioned throughput mode. Try again later.
      * @throws ThroughputLimitExceededException
      *         Returned if the throughput mode or amount of provisioned throughput can't be changed because the
      *         throughput limit of 1024 MiB/s has been reached.
+     * @throws UnsupportedAvailabilityZoneException
+     *         Returned if the requested Amazon EFS functionality is not available in the specified Availability Zone.
      * @sample AmazonElasticFileSystem.CreateFileSystem
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateFileSystem"
      *      target="_top">AWS API Documentation</a>
@@ -232,32 +242,54 @@ public interface AmazonElasticFileSystem {
      * You can create one mount target in each Availability Zone in your VPC. All EC2 instances in a VPC within a given
      * Availability Zone share a single mount target for a given file system. If you have multiple subnets in an
      * Availability Zone, you create a mount target in one of the subnets. EC2 instances do not need to be in the same
-     * subnet as the mount target in order to access their file system. For more information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon EFS: How it Works</a>.
+     * subnet as the mount target in order to access their file system.
      * </p>
      * <p>
-     * In the request, you also specify a file system ID for which you are creating the mount target and the file
-     * system's lifecycle state must be <code>available</code>. For more information, see <a>DescribeFileSystems</a>.
+     * You can create only one mount target for an EFS file system using One Zone storage classes. You must create that
+     * mount target in the same Availability Zone in which the file system is located. Use the
+     * <code>AvailabilityZoneName</code> and <code>AvailabiltyZoneId</code> properties in the <a>DescribeFileSystems</a>
+     * response object to get this information. Use the <code>subnetId</code> associated with the file system's
+     * Availability Zone when creating the mount target.
      * </p>
      * <p>
-     * In the request, you also provide a subnet ID, which determines the following:
+     * For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon EFS: How
+     * it Works</a>.
+     * </p>
+     * <p>
+     * To create a mount target for a file system, the file system's lifecycle state must be <code>available</code>. For
+     * more information, see <a>DescribeFileSystems</a>.
+     * </p>
+     * <p>
+     * In the request, provide the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * VPC in which Amazon EFS creates the mount target
+     * The file system ID for which you are creating the mount target.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Availability Zone in which Amazon EFS creates the mount target
+     * A subnet ID, which determines the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The VPC in which Amazon EFS creates the mount target
      * </p>
      * </li>
      * <li>
      * <p>
-     * IP address range from which Amazon EFS selects the IP address of the mount target (if you don't specify an IP
+     * The Availability Zone in which Amazon EFS creates the mount target
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The IP address range from which Amazon EFS selects the IP address of the mount target (if you don't specify an IP
      * address in the request)
      * </p>
+     * </li>
+     * </ul>
      * </li>
      * </ul>
      * <p>
@@ -411,6 +443,12 @@ public interface AmazonElasticFileSystem {
      * @throws SecurityGroupNotFoundException
      *         Returned if one of the specified security groups doesn't exist in the subnet's VPC.
      * @throws UnsupportedAvailabilityZoneException
+     *         Returned if the requested Amazon EFS functionality is not available in the specified Availability Zone.
+     * @throws AvailabilityZonesMismatchException
+     *         Returned if the Availability Zone that was specified for a mount target is different from the
+     *         Availability Zone that was specified for One Zone storage classes. For more information, see <a
+     *         href="https://docs.aws.amazon.com/efs/latest/ug/availability-durability.html">Regional and One Zone
+     *         storage redundancy</a>.
      * @sample AmazonElasticFileSystem.CreateMountTarget
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateMountTarget"
      *      target="_top">AWS API Documentation</a>
@@ -662,7 +700,7 @@ public interface AmazonElasticFileSystem {
      * @throws PolicyNotFoundException
      *         Returned if the default file system policy is in effect for the EFS file system specified.
      * @throws ValidationException
-     *         Returned if the AWS Backup service is not available in the region that the request was made.
+     *         Returned if the AWS Backup service is not available in the Region in which the request was made.
      * @sample AmazonElasticFileSystem.DescribeBackupPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeBackupPolicy"
      *      target="_top">AWS API Documentation</a>
@@ -955,7 +993,7 @@ public interface AmazonElasticFileSystem {
      * @throws InternalServerErrorException
      *         Returned if an error occurred on the server side.
      * @throws ValidationException
-     *         Returned if the AWS Backup service is not available in the region that the request was made.
+     *         Returned if the AWS Backup service is not available in the Region in which the request was made.
      * @sample AmazonElasticFileSystem.PutBackupPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutBackupPolicy"
      *      target="_top">AWS API Documentation</a>
@@ -966,11 +1004,14 @@ public interface AmazonElasticFileSystem {
      * <p>
      * Applies an Amazon EFS <code>FileSystemPolicy</code> to an Amazon EFS file system. A file system policy is an IAM
      * resource-based policy and can contain multiple policy statements. A file system always has exactly one file
-     * system policy, which can be the default policy or an explicit policy set or updated using this API operation.
-     * When an explicit policy is set, it overrides the default policy. For more information about the default file
-     * system policy, see <a
+     * system policy, which can be the default policy or an explicit policy set or updated using this API operation. EFS
+     * file system policies have a 20,000 character limit. When an explicit policy is set, it overrides the default
+     * policy. For more information about the default file system policy, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/iam-access-control-nfs-efs.html#default-filesystempolicy">Default
      * EFS File System Policy</a>.
+     * </p>
+     * <p>
+     * EFS file system policies have a 20,000 character limit.
      * </p>
      * <p>
      * This operation requires permissions for the <code>elasticfilesystem:PutFileSystemPolicy</code> action.
@@ -1119,7 +1160,7 @@ public interface AmazonElasticFileSystem {
      *         Returned if there's not enough capacity to provision additional throughput. This value might be returned
      *         when you try to create a file system in provisioned throughput mode, when you attempt to increase the
      *         provisioned throughput of an existing file system, or when you attempt to change an existing file system
-     *         from bursting to provisioned throughput mode.
+     *         from bursting to provisioned throughput mode. Try again later.
      * @throws InternalServerErrorException
      *         Returned if an error occurred on the server side.
      * @throws ThroughputLimitExceededException

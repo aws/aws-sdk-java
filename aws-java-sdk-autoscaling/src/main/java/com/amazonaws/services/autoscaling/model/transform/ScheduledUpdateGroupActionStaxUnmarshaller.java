@@ -92,6 +92,11 @@ public class ScheduledUpdateGroupActionStaxUnmarshaller implements Unmarshaller<
                     scheduledUpdateGroupAction.setDesiredCapacity(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("TimeZone", targetDepth)) {
+                    scheduledUpdateGroupAction.setTimeZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return scheduledUpdateGroupAction;

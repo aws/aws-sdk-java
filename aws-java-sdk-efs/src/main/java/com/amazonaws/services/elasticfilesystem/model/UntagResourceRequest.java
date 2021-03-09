@@ -33,7 +33,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String resourceId;
     /**
      * <p>
-     * The keys of the key:value tag pairs that you want to remove from the specified EFS resource.
+     * The keys of the key-value tag pairs that you want to remove from the specified EFS resource.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> tagKeys;
@@ -80,10 +80,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The keys of the key:value tag pairs that you want to remove from the specified EFS resource.
+     * The keys of the key-value tag pairs that you want to remove from the specified EFS resource.
      * </p>
      * 
-     * @return The keys of the key:value tag pairs that you want to remove from the specified EFS resource.
+     * @return The keys of the key-value tag pairs that you want to remove from the specified EFS resource.
      */
 
     public java.util.List<String> getTagKeys() {
@@ -95,11 +95,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The keys of the key:value tag pairs that you want to remove from the specified EFS resource.
+     * The keys of the key-value tag pairs that you want to remove from the specified EFS resource.
      * </p>
      * 
      * @param tagKeys
-     *        The keys of the key:value tag pairs that you want to remove from the specified EFS resource.
+     *        The keys of the key-value tag pairs that you want to remove from the specified EFS resource.
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -113,7 +113,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The keys of the key:value tag pairs that you want to remove from the specified EFS resource.
+     * The keys of the key-value tag pairs that you want to remove from the specified EFS resource.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +122,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param tagKeys
-     *        The keys of the key:value tag pairs that you want to remove from the specified EFS resource.
+     *        The keys of the key-value tag pairs that you want to remove from the specified EFS resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The keys of the key:value tag pairs that you want to remove from the specified EFS resource.
+     * The keys of the key-value tag pairs that you want to remove from the specified EFS resource.
      * </p>
      * 
      * @param tagKeys
-     *        The keys of the key:value tag pairs that you want to remove from the specified EFS resource.
+     *        The keys of the key-value tag pairs that you want to remove from the specified EFS resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

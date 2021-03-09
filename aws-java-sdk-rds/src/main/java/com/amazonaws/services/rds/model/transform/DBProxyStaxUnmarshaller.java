@@ -65,6 +65,11 @@ public class DBProxyStaxUnmarshaller implements Unmarshaller<DBProxy, StaxUnmars
                     continue;
                 }
 
+                if (context.testExpression("VpcId", targetDepth)) {
+                    dBProxy.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("VpcSecurityGroupIds", targetDepth)) {
                     dBProxy.withVpcSecurityGroupIds(new ArrayList<String>());
                     continue;

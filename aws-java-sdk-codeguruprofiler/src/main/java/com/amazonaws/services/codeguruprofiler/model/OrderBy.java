@@ -20,8 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum OrderBy {
 
-    TimestampAscending("TimestampAscending"),
-    TimestampDescending("TimestampDescending");
+    TimestampDescending("TimestampDescending"),
+    TimestampAscending("TimestampAscending");
 
     private String value;
 

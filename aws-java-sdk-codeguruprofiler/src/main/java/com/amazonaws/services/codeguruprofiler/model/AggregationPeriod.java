@@ -20,9 +20,9 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum AggregationPeriod {
 
-    P1D("P1D"),
+    PT5M("PT5M"),
     PT1H("PT1H"),
-    PT5M("PT5M");
+    P1D("P1D");
 
     private String value;
 

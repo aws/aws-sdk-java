@@ -1332,6 +1332,41 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
+     * Creates a <code>DBProxyEndpoint</code>. Only applies to proxies that are associated with Aurora DB clusters. You
+     * can use DB proxy endpoints to specify read/write or read-only access to the DB cluster. You can also use DB proxy
+     * endpoints to access a DB proxy through a different VPC than the proxy's default VPC.
+     * </p>
+     * 
+     * @param createDBProxyEndpointRequest
+     * @return A Java Future containing the result of the CreateDBProxyEndpoint operation returned by the service.
+     * @sample AmazonRDSAsync.CreateDBProxyEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBProxyEndpoint" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateDBProxyEndpointResult> createDBProxyEndpointAsync(CreateDBProxyEndpointRequest createDBProxyEndpointRequest);
+
+    /**
+     * <p>
+     * Creates a <code>DBProxyEndpoint</code>. Only applies to proxies that are associated with Aurora DB clusters. You
+     * can use DB proxy endpoints to specify read/write or read-only access to the DB cluster. You can also use DB proxy
+     * endpoints to access a DB proxy through a different VPC than the proxy's default VPC.
+     * </p>
+     * 
+     * @param createDBProxyEndpointRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateDBProxyEndpoint operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.CreateDBProxyEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBProxyEndpoint" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateDBProxyEndpointResult> createDBProxyEndpointAsync(CreateDBProxyEndpointRequest createDBProxyEndpointRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateDBProxyEndpointRequest, CreateDBProxyEndpointResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new DB security group. DB security groups control access to a DB instance.
      * </p>
      * <note>
@@ -2038,7 +2073,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Deletes an existing proxy.
+     * Deletes an existing DB proxy.
      * </p>
      * 
      * @param deleteDBProxyRequest
@@ -2051,7 +2086,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Deletes an existing proxy.
+     * Deletes an existing DB proxy.
      * </p>
      * 
      * @param deleteDBProxyRequest
@@ -2066,6 +2101,41 @@ public interface AmazonRDSAsync extends AmazonRDS {
      */
     java.util.concurrent.Future<DeleteDBProxyResult> deleteDBProxyAsync(DeleteDBProxyRequest deleteDBProxyRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteDBProxyRequest, DeleteDBProxyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a <code>DBProxyEndpoint</code>. Doing so removes the ability to access the DB proxy using the endpoint
+     * that you defined. The endpoint that you delete might have provided capabilities such as read/write or read-only
+     * operations, or using a different VPC than the DB proxy's default VPC.
+     * </p>
+     * 
+     * @param deleteDBProxyEndpointRequest
+     * @return A Java Future containing the result of the DeleteDBProxyEndpoint operation returned by the service.
+     * @sample AmazonRDSAsync.DeleteDBProxyEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBProxyEndpoint" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDBProxyEndpointResult> deleteDBProxyEndpointAsync(DeleteDBProxyEndpointRequest deleteDBProxyEndpointRequest);
+
+    /**
+     * <p>
+     * Deletes a <code>DBProxyEndpoint</code>. Doing so removes the ability to access the DB proxy using the endpoint
+     * that you defined. The endpoint that you delete might have provided capabilities such as read/write or read-only
+     * operations, or using a different VPC than the DB proxy's default VPC.
+     * </p>
+     * 
+     * @param deleteDBProxyEndpointRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDBProxyEndpoint operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.DeleteDBProxyEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBProxyEndpoint" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDBProxyEndpointResult> deleteDBProxyEndpointAsync(DeleteDBProxyEndpointRequest deleteDBProxyEndpointRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDBProxyEndpointRequest, DeleteDBProxyEndpointResult> asyncHandler);
 
     /**
      * <p>
@@ -3232,6 +3302,37 @@ public interface AmazonRDSAsync extends AmazonRDS {
      */
     java.util.concurrent.Future<DescribeDBProxiesResult> describeDBProxiesAsync(DescribeDBProxiesRequest describeDBProxiesRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeDBProxiesRequest, DescribeDBProxiesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about DB proxy endpoints.
+     * </p>
+     * 
+     * @param describeDBProxyEndpointsRequest
+     * @return A Java Future containing the result of the DescribeDBProxyEndpoints operation returned by the service.
+     * @sample AmazonRDSAsync.DescribeDBProxyEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyEndpoints" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDBProxyEndpointsResult> describeDBProxyEndpointsAsync(DescribeDBProxyEndpointsRequest describeDBProxyEndpointsRequest);
+
+    /**
+     * <p>
+     * Returns information about DB proxy endpoints.
+     * </p>
+     * 
+     * @param describeDBProxyEndpointsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDBProxyEndpoints operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.DescribeDBProxyEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyEndpoints" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDBProxyEndpointsResult> describeDBProxyEndpointsAsync(DescribeDBProxyEndpointsRequest describeDBProxyEndpointsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDBProxyEndpointsRequest, DescribeDBProxyEndpointsResult> asyncHandler);
 
     /**
      * <p>
@@ -5075,6 +5176,37 @@ public interface AmazonRDSAsync extends AmazonRDS {
      */
     java.util.concurrent.Future<ModifyDBProxyResult> modifyDBProxyAsync(ModifyDBProxyRequest modifyDBProxyRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyDBProxyRequest, ModifyDBProxyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Changes the settings for an existing DB proxy endpoint.
+     * </p>
+     * 
+     * @param modifyDBProxyEndpointRequest
+     * @return A Java Future containing the result of the ModifyDBProxyEndpoint operation returned by the service.
+     * @sample AmazonRDSAsync.ModifyDBProxyEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxyEndpoint" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyDBProxyEndpointResult> modifyDBProxyEndpointAsync(ModifyDBProxyEndpointRequest modifyDBProxyEndpointRequest);
+
+    /**
+     * <p>
+     * Changes the settings for an existing DB proxy endpoint.
+     * </p>
+     * 
+     * @param modifyDBProxyEndpointRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyDBProxyEndpoint operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.ModifyDBProxyEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxyEndpoint" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyDBProxyEndpointResult> modifyDBProxyEndpointAsync(ModifyDBProxyEndpointRequest modifyDBProxyEndpointRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyDBProxyEndpointRequest, ModifyDBProxyEndpointResult> asyncHandler);
 
     /**
      * <p>

@@ -20,8 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ComputePlatform {
 
-    AWSLambda("AWSLambda"),
-    Default("Default");
+    Default("Default"),
+    AWSLambda("AWSLambda");
 
     private String value;
 

@@ -69,6 +69,8 @@ public enum RDSActions implements Action {
     CreateDBParameterGroup("rds:CreateDBParameterGroup"),
     /** Action for the CreateDBProxy operation. */
     CreateDBProxy("rds:CreateDBProxy"),
+    /** Action for the CreateDBProxyEndpoint operation. */
+    CreateDBProxyEndpoint("rds:CreateDBProxyEndpoint"),
     /** Action for the CreateDBSecurityGroup operation. */
     CreateDBSecurityGroup("rds:CreateDBSecurityGroup"),
     /** Action for the CreateDBSnapshot operation. */
@@ -99,6 +101,8 @@ public enum RDSActions implements Action {
     DeleteDBParameterGroup("rds:DeleteDBParameterGroup"),
     /** Action for the DeleteDBProxy operation. */
     DeleteDBProxy("rds:DeleteDBProxy"),
+    /** Action for the DeleteDBProxyEndpoint operation. */
+    DeleteDBProxyEndpoint("rds:DeleteDBProxyEndpoint"),
     /** Action for the DeleteDBSecurityGroup operation. */
     DeleteDBSecurityGroup("rds:DeleteDBSecurityGroup"),
     /** Action for the DeleteDBSnapshot operation. */
@@ -149,6 +153,8 @@ public enum RDSActions implements Action {
     DescribeDBParameters("rds:DescribeDBParameters"),
     /** Action for the DescribeDBProxies operation. */
     DescribeDBProxies("rds:DescribeDBProxies"),
+    /** Action for the DescribeDBProxyEndpoints operation. */
+    DescribeDBProxyEndpoints("rds:DescribeDBProxyEndpoints"),
     /** Action for the DescribeDBProxyTargetGroups operation. */
     DescribeDBProxyTargetGroups("rds:DescribeDBProxyTargetGroups"),
     /** Action for the DescribeDBProxyTargets operation. */
@@ -221,6 +227,8 @@ public enum RDSActions implements Action {
     ModifyDBParameterGroup("rds:ModifyDBParameterGroup"),
     /** Action for the ModifyDBProxy operation. */
     ModifyDBProxy("rds:ModifyDBProxy"),
+    /** Action for the ModifyDBProxyEndpoint operation. */
+    ModifyDBProxyEndpoint("rds:ModifyDBProxyEndpoint"),
     /** Action for the ModifyDBProxyTargetGroup operation. */
     ModifyDBProxyTargetGroup("rds:ModifyDBProxyTargetGroup"),
     /** Action for the ModifyDBSnapshot operation. */

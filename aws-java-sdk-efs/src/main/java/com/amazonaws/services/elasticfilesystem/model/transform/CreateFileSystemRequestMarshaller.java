@@ -43,6 +43,10 @@ public class CreateFileSystemRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ThroughputMode").build();
     private static final MarshallingInfo<Double> PROVISIONEDTHROUGHPUTINMIBPS_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisionedThroughputInMibps").build();
+    private static final MarshallingInfo<String> AVAILABILITYZONENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AvailabilityZoneName").build();
+    private static final MarshallingInfo<Boolean> BACKUP_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Backup").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
 
@@ -68,6 +72,8 @@ public class CreateFileSystemRequestMarshaller {
             protocolMarshaller.marshall(createFileSystemRequest.getKmsKeyId(), KMSKEYID_BINDING);
             protocolMarshaller.marshall(createFileSystemRequest.getThroughputMode(), THROUGHPUTMODE_BINDING);
             protocolMarshaller.marshall(createFileSystemRequest.getProvisionedThroughputInMibps(), PROVISIONEDTHROUGHPUTINMIBPS_BINDING);
+            protocolMarshaller.marshall(createFileSystemRequest.getAvailabilityZoneName(), AVAILABILITYZONENAME_BINDING);
+            protocolMarshaller.marshall(createFileSystemRequest.getBackup(), BACKUP_BINDING);
             protocolMarshaller.marshall(createFileSystemRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

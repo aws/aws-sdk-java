@@ -27,7 +27,8 @@ public class DescribeDBProxiesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the DB proxy.
+     * The name of the DB proxy. If you omit this parameter, the output includes information about all DB proxies owned
+     * by your AWS account ID.
      * </p>
      */
     private String dBProxyName;
@@ -61,11 +62,13 @@ public class DescribeDBProxiesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the DB proxy.
+     * The name of the DB proxy. If you omit this parameter, the output includes information about all DB proxies owned
+     * by your AWS account ID.
      * </p>
      * 
      * @param dBProxyName
-     *        The name of the DB proxy.
+     *        The name of the DB proxy. If you omit this parameter, the output includes information about all DB proxies
+     *        owned by your AWS account ID.
      */
 
     public void setDBProxyName(String dBProxyName) {
@@ -74,10 +77,12 @@ public class DescribeDBProxiesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the DB proxy.
+     * The name of the DB proxy. If you omit this parameter, the output includes information about all DB proxies owned
+     * by your AWS account ID.
      * </p>
      * 
-     * @return The name of the DB proxy.
+     * @return The name of the DB proxy. If you omit this parameter, the output includes information about all DB
+     *         proxies owned by your AWS account ID.
      */
 
     public String getDBProxyName() {
@@ -86,11 +91,13 @@ public class DescribeDBProxiesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the DB proxy.
+     * The name of the DB proxy. If you omit this parameter, the output includes information about all DB proxies owned
+     * by your AWS account ID.
      * </p>
      * 
      * @param dBProxyName
-     *        The name of the DB proxy.
+     *        The name of the DB proxy. If you omit this parameter, the output includes information about all DB proxies
+     *        owned by your AWS account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
