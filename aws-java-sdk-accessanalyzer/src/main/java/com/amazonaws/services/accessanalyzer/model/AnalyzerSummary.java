@@ -71,7 +71,7 @@ public class AnalyzerSummary implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The <code>statusReason</code> provides more details about the current status of the analyzer. For example, if the
-     * creation for the analyzer fails, a <code>Failed</code> status is displayed. For an analyzer with organization as
+     * creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer with organization as
      * the type, this failure can be due to an issue with creating the service-linked roles required in the member
      * accounts of the AWS organization.
      * </p>
@@ -384,14 +384,14 @@ public class AnalyzerSummary implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The <code>statusReason</code> provides more details about the current status of the analyzer. For example, if the
-     * creation for the analyzer fails, a <code>Failed</code> status is displayed. For an analyzer with organization as
+     * creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer with organization as
      * the type, this failure can be due to an issue with creating the service-linked roles required in the member
      * accounts of the AWS organization.
      * </p>
      * 
      * @param statusReason
      *        The <code>statusReason</code> provides more details about the current status of the analyzer. For example,
-     *        if the creation for the analyzer fails, a <code>Failed</code> status is displayed. For an analyzer with
+     *        if the creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer with
      *        organization as the type, this failure can be due to an issue with creating the service-linked roles
      *        required in the member accounts of the AWS organization.
      */
@@ -403,13 +403,13 @@ public class AnalyzerSummary implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The <code>statusReason</code> provides more details about the current status of the analyzer. For example, if the
-     * creation for the analyzer fails, a <code>Failed</code> status is displayed. For an analyzer with organization as
+     * creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer with organization as
      * the type, this failure can be due to an issue with creating the service-linked roles required in the member
      * accounts of the AWS organization.
      * </p>
      * 
      * @return The <code>statusReason</code> provides more details about the current status of the analyzer. For
-     *         example, if the creation for the analyzer fails, a <code>Failed</code> status is displayed. For an
+     *         example, if the creation for the analyzer fails, a <code>Failed</code> status is returned. For an
      *         analyzer with organization as the type, this failure can be due to an issue with creating the
      *         service-linked roles required in the member accounts of the AWS organization.
      */
@@ -421,14 +421,14 @@ public class AnalyzerSummary implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The <code>statusReason</code> provides more details about the current status of the analyzer. For example, if the
-     * creation for the analyzer fails, a <code>Failed</code> status is displayed. For an analyzer with organization as
+     * creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer with organization as
      * the type, this failure can be due to an issue with creating the service-linked roles required in the member
      * accounts of the AWS organization.
      * </p>
      * 
      * @param statusReason
      *        The <code>statusReason</code> provides more details about the current status of the analyzer. For example,
-     *        if the creation for the analyzer fails, a <code>Failed</code> status is displayed. For an analyzer with
+     *        if the creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer with
      *        organization as the type, this failure can be due to an issue with creating the service-linked roles
      *        required in the member accounts of the AWS organization.
      * @return Returns a reference to this object so that method calls can be chained together.

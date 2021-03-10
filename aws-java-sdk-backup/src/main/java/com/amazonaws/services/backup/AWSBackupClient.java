@@ -96,6 +96,9 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                             new JsonErrorShapeMetadata().withErrorCode("DependencyFailureException").withExceptionUnmarshaller(
                                     com.amazonaws.services.backup.model.transform.DependencyFailureExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceStateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.backup.model.transform.InvalidResourceStateExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.backup.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -734,6 +737,10 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
      * <p>
      * Deletes the recovery point specified by a recovery point ID.
      * </p>
+     * <p>
+     * If the recovery point ID belongs to a continuous backup, calling this endpoint deletes the existing continuous
+     * backup and stops future continuous backup.
+     * </p>
      * 
      * @param deleteRecoveryPointRequest
      * @return Result of the DeleteRecoveryPoint operation returned by the service.
@@ -743,6 +750,9 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
      *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
      * @throws MissingParameterValueException
      *         Indicates that a required parameter is missing.
+     * @throws InvalidResourceStateException
+     *         AWS Backup is already performing an action on this recovery point. It can't perform the action you
+     *         requested until the first action finishes. Try again later.
      * @throws ServiceUnavailableException
      *         The request failed due to a temporary failure of the server.
      * @throws InvalidRequestException
@@ -995,6 +1005,9 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
      * 
      * @param describeGlobalSettingsRequest
      * @return Result of the DescribeGlobalSettings operation returned by the service.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong
+     *         type.
      * @throws ServiceUnavailableException
      *         The request failed due to a temporary failure of the server.
      * @sample AWSBackup.DescribeGlobalSettings
@@ -1305,6 +1318,82 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
     /**
      * <p>
+     * Deletes the specified continuous backup recovery point from AWS Backup and releases control of that continuous
+     * backup to the source service, such as Amazon RDS. The source service will continue to create and retain
+     * continuous backups using the lifecycle that you specified in your original backup plan.
+     * </p>
+     * <p>
+     * Does not support snapshot backup recovery points.
+     * </p>
+     * 
+     * @param disassociateRecoveryPointRequest
+     * @return Result of the DisassociateRecoveryPoint operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws InvalidResourceStateException
+     *         AWS Backup is already performing an action on this recovery point. It can't perform the action you
+     *         requested until the first action finishes. Try again later.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong
+     *         type.
+     * @sample AWSBackup.DisassociateRecoveryPoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DisassociateRecoveryPoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateRecoveryPointResult disassociateRecoveryPoint(DisassociateRecoveryPointRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateRecoveryPoint(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateRecoveryPointResult executeDisassociateRecoveryPoint(DisassociateRecoveryPointRequest disassociateRecoveryPointRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateRecoveryPointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateRecoveryPointRequest> request = null;
+        Response<DisassociateRecoveryPointResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateRecoveryPointRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateRecoveryPointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateRecoveryPoint");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateRecoveryPointResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateRecoveryPointResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns the backup plan that is specified by the plan ID as a backup template.
      * </p>
      * 
@@ -1370,8 +1459,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
     /**
      * <p>
-     * Returns <code>BackupPlan</code> details for the specified <code>BackupPlanId</code>. Returns the body of a backup
-     * plan in JSON format, in addition to plan metadata.
+     * Returns <code>BackupPlan</code> details for the specified <code>BackupPlanId</code>. The details are the body of
+     * a backup plan in JSON format, in addition to plan metadata.
      * </p>
      * 
      * @param getBackupPlanRequest
@@ -1885,7 +1974,9 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
     /**
      * <p>
-     * Returns a list of existing backup jobs for an authenticated account.
+     * Returns a list of existing backup jobs for an authenticated account for the last 30 days. For a longer period of
+     * time, consider using these <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">monitoring tools</a>.
      * </p>
      * 
      * @param listBackupJobsRequest
@@ -2851,6 +2942,9 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
      * <p>
      * Starts a job to create a one-time copy of the specified resource.
      * </p>
+     * <p>
+     * Does not support continuous backups.
+     * </p>
      * 
      * @param startCopyJobRequest
      * @return Result of the StartCopyJob operation returned by the service.
@@ -2864,6 +2958,9 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
      *         The request failed due to a temporary failure of the server.
      * @throws LimitExceededException
      *         A limit in the request has been exceeded; for example, a maximum number of items allowed in a request.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong
+     *         type.
      * @sample AWSBackup.StartCopyJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartCopyJob" target="_top">AWS API
      *      Documentation</a>
@@ -3315,6 +3412,9 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
      * </p>
      * <p>
      * Only Amazon EFS file system backups can be transitioned to cold storage.
+     * </p>
+     * <p>
+     * Does not support continuous backups.
      * </p>
      * 
      * @param updateRecoveryPointLifecycleRequest

@@ -30,7 +30,9 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ARN of the analyzer to retrieve findings from.
+     * The <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> to retrieve findings from.
      * </p>
      */
     private String analyzerArn;
@@ -61,11 +63,15 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ARN of the analyzer to retrieve findings from.
+     * The <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> to retrieve findings from.
      * </p>
      * 
      * @param analyzerArn
-     *        The ARN of the analyzer to retrieve findings from.
+     *        The <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources"
+     *        >ARN of the analyzer</a> to retrieve findings from.
      */
 
     public void setAnalyzerArn(String analyzerArn) {
@@ -74,10 +80,14 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ARN of the analyzer to retrieve findings from.
+     * The <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> to retrieve findings from.
      * </p>
      * 
-     * @return The ARN of the analyzer to retrieve findings from.
+     * @return The <a href=
+     *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources"
+     *         >ARN of the analyzer</a> to retrieve findings from.
      */
 
     public String getAnalyzerArn() {
@@ -86,11 +96,15 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ARN of the analyzer to retrieve findings from.
+     * The <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> to retrieve findings from.
      * </p>
      * 
      * @param analyzerArn
-     *        The ARN of the analyzer to retrieve findings from.
+     *        The <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources"
+     *        >ARN of the analyzer</a> to retrieve findings from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

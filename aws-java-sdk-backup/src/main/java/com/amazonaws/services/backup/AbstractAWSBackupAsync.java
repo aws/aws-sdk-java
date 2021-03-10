@@ -248,6 +248,19 @@ public class AbstractAWSBackupAsync extends AbstractAWSBackup implements AWSBack
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateRecoveryPointResult> disassociateRecoveryPointAsync(DisassociateRecoveryPointRequest request) {
+
+        return disassociateRecoveryPointAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateRecoveryPointResult> disassociateRecoveryPointAsync(DisassociateRecoveryPointRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateRecoveryPointRequest, DisassociateRecoveryPointResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ExportBackupPlanTemplateResult> exportBackupPlanTemplateAsync(ExportBackupPlanTemplateRequest request) {
 
         return exportBackupPlanTemplateAsync(request, null);

@@ -30,7 +30,9 @@ public class GetFindingRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ARN of the analyzer that generated the finding.
+     * The <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> that generated the finding.
      * </p>
      */
     private String analyzerArn;
@@ -43,11 +45,15 @@ public class GetFindingRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ARN of the analyzer that generated the finding.
+     * The <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> that generated the finding.
      * </p>
      * 
      * @param analyzerArn
-     *        The ARN of the analyzer that generated the finding.
+     *        The <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources"
+     *        >ARN of the analyzer</a> that generated the finding.
      */
 
     public void setAnalyzerArn(String analyzerArn) {
@@ -56,10 +62,14 @@ public class GetFindingRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ARN of the analyzer that generated the finding.
+     * The <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> that generated the finding.
      * </p>
      * 
-     * @return The ARN of the analyzer that generated the finding.
+     * @return The <a href=
+     *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources"
+     *         >ARN of the analyzer</a> that generated the finding.
      */
 
     public String getAnalyzerArn() {
@@ -68,11 +78,15 @@ public class GetFindingRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ARN of the analyzer that generated the finding.
+     * The <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> that generated the finding.
      * </p>
      * 
      * @param analyzerArn
-     *        The ARN of the analyzer that generated the finding.
+     *        The <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources"
+     *        >ARN of the analyzer</a> that generated the finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

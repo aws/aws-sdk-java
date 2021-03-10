@@ -30,7 +30,9 @@ public class GetAnalyzedResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the analyzer to retrieve information from.
+     * The <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> to retrieve information from.
      * </p>
      */
     private String analyzerArn;
@@ -43,11 +45,15 @@ public class GetAnalyzedResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the analyzer to retrieve information from.
+     * The <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> to retrieve information from.
      * </p>
      * 
      * @param analyzerArn
-     *        The ARN of the analyzer to retrieve information from.
+     *        The <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources"
+     *        >ARN of the analyzer</a> to retrieve information from.
      */
 
     public void setAnalyzerArn(String analyzerArn) {
@@ -56,10 +62,14 @@ public class GetAnalyzedResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the analyzer to retrieve information from.
+     * The <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> to retrieve information from.
      * </p>
      * 
-     * @return The ARN of the analyzer to retrieve information from.
+     * @return The <a href=
+     *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources"
+     *         >ARN of the analyzer</a> to retrieve information from.
      */
 
     public String getAnalyzerArn() {
@@ -68,11 +78,15 @@ public class GetAnalyzedResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the analyzer to retrieve information from.
+     * The <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> to retrieve information from.
      * </p>
      * 
      * @param analyzerArn
-     *        The ARN of the analyzer to retrieve information from.
+     *        The <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources"
+     *        >ARN of the analyzer</a> to retrieve information from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

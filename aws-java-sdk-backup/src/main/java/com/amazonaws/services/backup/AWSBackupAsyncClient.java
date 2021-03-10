@@ -640,6 +640,39 @@ public class AWSBackupAsyncClient extends AWSBackupClient implements AWSBackupAs
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateRecoveryPointResult> disassociateRecoveryPointAsync(DisassociateRecoveryPointRequest request) {
+
+        return disassociateRecoveryPointAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateRecoveryPointResult> disassociateRecoveryPointAsync(final DisassociateRecoveryPointRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateRecoveryPointRequest, DisassociateRecoveryPointResult> asyncHandler) {
+        final DisassociateRecoveryPointRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateRecoveryPointResult>() {
+            @Override
+            public DisassociateRecoveryPointResult call() throws Exception {
+                DisassociateRecoveryPointResult result = null;
+
+                try {
+                    result = executeDisassociateRecoveryPoint(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ExportBackupPlanTemplateResult> exportBackupPlanTemplateAsync(ExportBackupPlanTemplateRequest request) {
 
         return exportBackupPlanTemplateAsync(request, null);

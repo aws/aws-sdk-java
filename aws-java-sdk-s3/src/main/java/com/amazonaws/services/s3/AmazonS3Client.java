@@ -3416,7 +3416,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         Signer signer = createSigner(request, bucketName, key);
 
-        if (request.getHandlerContext(HandlerContextKey.SIGNING_NAME) != null) {
+        if (request.getHandlerContext(HandlerContextKey.SIGNING_NAME) != null && !isSignerOverridden()) {
             String signingName = request.getHandlerContext(HandlerContextKey.SIGNING_NAME);
             if (signer instanceof ServiceAwareSigner) {
                 ((ServiceAwareSigner) signer).setServiceName(signingName);

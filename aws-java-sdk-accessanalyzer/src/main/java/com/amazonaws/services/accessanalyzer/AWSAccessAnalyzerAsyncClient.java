@@ -29,8 +29,9 @@ import java.util.concurrent.ExecutorService;
  * AWS IAM Access Analyzer helps identify potential resource-access risks by enabling you to identify any policies that
  * grant access to an external principal. It does this by using logic-based reasoning to analyze resource-based policies
  * in your AWS environment. An external principal can be another AWS account, a root user, an IAM user or role, a
- * federated user, an AWS service, or an anonymous user. This guide describes the AWS IAM Access Analyzer operations
- * that you can call programmatically. For general information about Access Analyzer, see <a
+ * federated user, an AWS service, or an anonymous user. You can also use Access Analyzer to preview and validate public
+ * and cross-account access to your resources before deploying permissions changes. This guide describes the AWS IAM
+ * Access Analyzer operations that you can call programmatically. For general information about Access Analyzer, see <a
  * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html">AWS IAM Access Analyzer</a> in
  * the <b>IAM User Guide</b>.
  * </p>
@@ -100,6 +101,39 @@ public class AWSAccessAnalyzerAsyncClient extends AWSAccessAnalyzerClient implem
 
                 try {
                     result = executeApplyArchiveRule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAccessPreviewResult> createAccessPreviewAsync(CreateAccessPreviewRequest request) {
+
+        return createAccessPreviewAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAccessPreviewResult> createAccessPreviewAsync(final CreateAccessPreviewRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAccessPreviewRequest, CreateAccessPreviewResult> asyncHandler) {
+        final CreateAccessPreviewRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateAccessPreviewResult>() {
+            @Override
+            public CreateAccessPreviewResult call() throws Exception {
+                CreateAccessPreviewResult result = null;
+
+                try {
+                    result = executeCreateAccessPreview(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -248,6 +282,39 @@ public class AWSAccessAnalyzerAsyncClient extends AWSAccessAnalyzerClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<GetAccessPreviewResult> getAccessPreviewAsync(GetAccessPreviewRequest request) {
+
+        return getAccessPreviewAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAccessPreviewResult> getAccessPreviewAsync(final GetAccessPreviewRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAccessPreviewRequest, GetAccessPreviewResult> asyncHandler) {
+        final GetAccessPreviewRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAccessPreviewResult>() {
+            @Override
+            public GetAccessPreviewResult call() throws Exception {
+                GetAccessPreviewResult result = null;
+
+                try {
+                    result = executeGetAccessPreview(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAnalyzedResourceResult> getAnalyzedResourceAsync(GetAnalyzedResourceRequest request) {
 
         return getAnalyzedResourceAsync(request, null);
@@ -364,6 +431,72 @@ public class AWSAccessAnalyzerAsyncClient extends AWSAccessAnalyzerClient implem
 
                 try {
                     result = executeGetFinding(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessPreviewFindingsResult> listAccessPreviewFindingsAsync(ListAccessPreviewFindingsRequest request) {
+
+        return listAccessPreviewFindingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessPreviewFindingsResult> listAccessPreviewFindingsAsync(final ListAccessPreviewFindingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAccessPreviewFindingsRequest, ListAccessPreviewFindingsResult> asyncHandler) {
+        final ListAccessPreviewFindingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAccessPreviewFindingsResult>() {
+            @Override
+            public ListAccessPreviewFindingsResult call() throws Exception {
+                ListAccessPreviewFindingsResult result = null;
+
+                try {
+                    result = executeListAccessPreviewFindings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessPreviewsResult> listAccessPreviewsAsync(ListAccessPreviewsRequest request) {
+
+        return listAccessPreviewsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessPreviewsResult> listAccessPreviewsAsync(final ListAccessPreviewsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAccessPreviewsRequest, ListAccessPreviewsResult> asyncHandler) {
+        final ListAccessPreviewsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAccessPreviewsResult>() {
+            @Override
+            public ListAccessPreviewsResult call() throws Exception {
+                ListAccessPreviewsResult result = null;
+
+                try {
+                    result = executeListAccessPreviews(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

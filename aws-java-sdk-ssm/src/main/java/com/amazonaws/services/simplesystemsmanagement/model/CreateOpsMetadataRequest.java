@@ -37,6 +37,27 @@ public class CreateOpsMetadataRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private java.util.Map<String, MetadataValue> metadata;
+    /**
+     * <p>
+     * Optional metadata that you assign to a resource. You can specify a maximum of five tags for an OpsMetadata
+     * object. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment.
+     * For example, you might want to tag an OpsMetadata object to identify an environment or target AWS Region. In this
+     * case, you could specify the following key-value pairs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key=Environment,Value=Production</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=Region,Value=us-east-2</code>
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -147,6 +168,195 @@ public class CreateOpsMetadataRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Optional metadata that you assign to a resource. You can specify a maximum of five tags for an OpsMetadata
+     * object. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment.
+     * For example, you might want to tag an OpsMetadata object to identify an environment or target AWS Region. In this
+     * case, you could specify the following key-value pairs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key=Environment,Value=Production</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=Region,Value=us-east-2</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Optional metadata that you assign to a resource. You can specify a maximum of five tags for an
+     *         OpsMetadata object. Tags enable you to categorize a resource in different ways, such as by purpose,
+     *         owner, or environment. For example, you might want to tag an OpsMetadata object to identify an
+     *         environment or target AWS Region. In this case, you could specify the following key-value pairs:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Key=Environment,Value=Production</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Key=Region,Value=us-east-2</code>
+     *         </p>
+     *         </li>
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Optional metadata that you assign to a resource. You can specify a maximum of five tags for an OpsMetadata
+     * object. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment.
+     * For example, you might want to tag an OpsMetadata object to identify an environment or target AWS Region. In this
+     * case, you could specify the following key-value pairs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key=Environment,Value=Production</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=Region,Value=us-east-2</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param tags
+     *        Optional metadata that you assign to a resource. You can specify a maximum of five tags for an OpsMetadata
+     *        object. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or
+     *        environment. For example, you might want to tag an OpsMetadata object to identify an environment or target
+     *        AWS Region. In this case, you could specify the following key-value pairs:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Key=Environment,Value=Production</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Key=Region,Value=us-east-2</code>
+     *        </p>
+     *        </li>
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Optional metadata that you assign to a resource. You can specify a maximum of five tags for an OpsMetadata
+     * object. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment.
+     * For example, you might want to tag an OpsMetadata object to identify an environment or target AWS Region. In this
+     * case, you could specify the following key-value pairs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key=Environment,Value=Production</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=Region,Value=us-east-2</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Optional metadata that you assign to a resource. You can specify a maximum of five tags for an OpsMetadata
+     *        object. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or
+     *        environment. For example, you might want to tag an OpsMetadata object to identify an environment or target
+     *        AWS Region. In this case, you could specify the following key-value pairs:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Key=Environment,Value=Production</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Key=Region,Value=us-east-2</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateOpsMetadataRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Optional metadata that you assign to a resource. You can specify a maximum of five tags for an OpsMetadata
+     * object. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment.
+     * For example, you might want to tag an OpsMetadata object to identify an environment or target AWS Region. In this
+     * case, you could specify the following key-value pairs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key=Environment,Value=Production</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=Region,Value=us-east-2</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param tags
+     *        Optional metadata that you assign to a resource. You can specify a maximum of five tags for an OpsMetadata
+     *        object. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or
+     *        environment. For example, you might want to tag an OpsMetadata object to identify an environment or target
+     *        AWS Region. In this case, you could specify the following key-value pairs:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Key=Environment,Value=Production</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Key=Region,Value=us-east-2</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateOpsMetadataRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -161,7 +371,9 @@ public class CreateOpsMetadataRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getResourceId() != null)
             sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getMetadata() != null)
-            sb.append("Metadata: ").append(getMetadata());
+            sb.append("Metadata: ").append(getMetadata()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -184,6 +396,10 @@ public class CreateOpsMetadataRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getMetadata() != null && other.getMetadata().equals(this.getMetadata()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -194,6 +410,7 @@ public class CreateOpsMetadataRequest extends com.amazonaws.AmazonWebServiceRequ
 
         hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
         hashCode = prime * hashCode + ((getMetadata() == null) ? 0 : getMetadata().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

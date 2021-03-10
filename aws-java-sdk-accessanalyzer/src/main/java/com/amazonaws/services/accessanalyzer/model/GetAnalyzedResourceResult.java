@@ -28,7 +28,7 @@ public class GetAnalyzedResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An <code>AnalyedResource</code> object that contains information that Access Analyzer found when it analyzed the
+     * An <code>AnalyzedResource</code> object that contains information that Access Analyzer found when it analyzed the
      * resource.
      * </p>
      */
@@ -36,12 +36,12 @@ public class GetAnalyzedResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An <code>AnalyedResource</code> object that contains information that Access Analyzer found when it analyzed the
+     * An <code>AnalyzedResource</code> object that contains information that Access Analyzer found when it analyzed the
      * resource.
      * </p>
      * 
      * @param resource
-     *        An <code>AnalyedResource</code> object that contains information that Access Analyzer found when it
+     *        An <code>AnalyzedResource</code> object that contains information that Access Analyzer found when it
      *        analyzed the resource.
      */
 
@@ -51,11 +51,11 @@ public class GetAnalyzedResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An <code>AnalyedResource</code> object that contains information that Access Analyzer found when it analyzed the
+     * An <code>AnalyzedResource</code> object that contains information that Access Analyzer found when it analyzed the
      * resource.
      * </p>
      * 
-     * @return An <code>AnalyedResource</code> object that contains information that Access Analyzer found when it
+     * @return An <code>AnalyzedResource</code> object that contains information that Access Analyzer found when it
      *         analyzed the resource.
      */
 
@@ -65,12 +65,12 @@ public class GetAnalyzedResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An <code>AnalyedResource</code> object that contains information that Access Analyzer found when it analyzed the
+     * An <code>AnalyzedResource</code> object that contains information that Access Analyzer found when it analyzed the
      * resource.
      * </p>
      * 
      * @param resource
-     *        An <code>AnalyedResource</code> object that contains information that Access Analyzer found when it
+     *        An <code>AnalyzedResource</code> object that contains information that Access Analyzer found when it
      *        analyzed the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -41,6 +41,19 @@ public class AbstractAWSAccessAnalyzerAsync extends AbstractAWSAccessAnalyzer im
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAccessPreviewResult> createAccessPreviewAsync(CreateAccessPreviewRequest request) {
+
+        return createAccessPreviewAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAccessPreviewResult> createAccessPreviewAsync(CreateAccessPreviewRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateAccessPreviewRequest, CreateAccessPreviewResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAnalyzerResult> createAnalyzerAsync(CreateAnalyzerRequest request) {
 
         return createAnalyzerAsync(request, null);
@@ -93,6 +106,19 @@ public class AbstractAWSAccessAnalyzerAsync extends AbstractAWSAccessAnalyzer im
     }
 
     @Override
+    public java.util.concurrent.Future<GetAccessPreviewResult> getAccessPreviewAsync(GetAccessPreviewRequest request) {
+
+        return getAccessPreviewAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAccessPreviewResult> getAccessPreviewAsync(GetAccessPreviewRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetAccessPreviewRequest, GetAccessPreviewResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAnalyzedResourceResult> getAnalyzedResourceAsync(GetAnalyzedResourceRequest request) {
 
         return getAnalyzedResourceAsync(request, null);
@@ -140,6 +166,32 @@ public class AbstractAWSAccessAnalyzerAsync extends AbstractAWSAccessAnalyzer im
     @Override
     public java.util.concurrent.Future<GetFindingResult> getFindingAsync(GetFindingRequest request,
             com.amazonaws.handlers.AsyncHandler<GetFindingRequest, GetFindingResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessPreviewFindingsResult> listAccessPreviewFindingsAsync(ListAccessPreviewFindingsRequest request) {
+
+        return listAccessPreviewFindingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessPreviewFindingsResult> listAccessPreviewFindingsAsync(ListAccessPreviewFindingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAccessPreviewFindingsRequest, ListAccessPreviewFindingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessPreviewsResult> listAccessPreviewsAsync(ListAccessPreviewsRequest request) {
+
+        return listAccessPreviewsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessPreviewsResult> listAccessPreviewsAsync(ListAccessPreviewsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAccessPreviewsRequest, ListAccessPreviewsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

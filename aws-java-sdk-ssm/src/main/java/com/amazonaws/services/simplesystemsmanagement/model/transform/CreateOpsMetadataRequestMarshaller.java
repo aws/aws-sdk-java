@@ -13,7 +13,7 @@
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +33,8 @@ public class CreateOpsMetadataRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceId").build();
     private static final MarshallingInfo<Map> METADATA_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Metadata").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateOpsMetadataRequestMarshaller instance = new CreateOpsMetadataRequestMarshaller();
 
@@ -52,6 +54,7 @@ public class CreateOpsMetadataRequestMarshaller {
         try {
             protocolMarshaller.marshall(createOpsMetadataRequest.getResourceId(), RESOURCEID_BINDING);
             protocolMarshaller.marshall(createOpsMetadataRequest.getMetadata(), METADATA_BINDING);
+            protocolMarshaller.marshall(createOpsMetadataRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

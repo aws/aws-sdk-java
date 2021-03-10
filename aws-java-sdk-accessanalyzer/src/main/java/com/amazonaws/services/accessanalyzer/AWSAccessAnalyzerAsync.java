@@ -29,8 +29,9 @@ import com.amazonaws.services.accessanalyzer.model.*;
  * AWS IAM Access Analyzer helps identify potential resource-access risks by enabling you to identify any policies that
  * grant access to an external principal. It does this by using logic-based reasoning to analyze resource-based policies
  * in your AWS environment. An external principal can be another AWS account, a root user, an IAM user or role, a
- * federated user, an AWS service, or an anonymous user. This guide describes the AWS IAM Access Analyzer operations
- * that you can call programmatically. For general information about Access Analyzer, see <a
+ * federated user, an AWS service, or an anonymous user. You can also use Access Analyzer to preview and validate public
+ * and cross-account access to your resources before deploying permissions changes. This guide describes the AWS IAM
+ * Access Analyzer operations that you can call programmatically. For general information about Access Analyzer, see <a
  * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html">AWS IAM Access Analyzer</a> in
  * the <b>IAM User Guide</b>.
  * </p>
@@ -73,6 +74,39 @@ public interface AWSAccessAnalyzerAsync extends AWSAccessAnalyzer {
      */
     java.util.concurrent.Future<ApplyArchiveRuleResult> applyArchiveRuleAsync(ApplyArchiveRuleRequest applyArchiveRuleRequest,
             com.amazonaws.handlers.AsyncHandler<ApplyArchiveRuleRequest, ApplyArchiveRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an access preview that allows you to preview Access Analyzer findings for your resource before deploying
+     * resource permissions.
+     * </p>
+     * 
+     * @param createAccessPreviewRequest
+     * @return A Java Future containing the result of the CreateAccessPreview operation returned by the service.
+     * @sample AWSAccessAnalyzerAsync.CreateAccessPreview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateAccessPreview"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAccessPreviewResult> createAccessPreviewAsync(CreateAccessPreviewRequest createAccessPreviewRequest);
+
+    /**
+     * <p>
+     * Creates an access preview that allows you to preview Access Analyzer findings for your resource before deploying
+     * resource permissions.
+     * </p>
+     * 
+     * @param createAccessPreviewRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAccessPreview operation returned by the service.
+     * @sample AWSAccessAnalyzerAsyncHandler.CreateAccessPreview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateAccessPreview"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAccessPreviewResult> createAccessPreviewAsync(CreateAccessPreviewRequest createAccessPreviewRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAccessPreviewRequest, CreateAccessPreviewResult> asyncHandler);
 
     /**
      * <p>
@@ -211,6 +245,37 @@ public interface AWSAccessAnalyzerAsync extends AWSAccessAnalyzer {
      */
     java.util.concurrent.Future<DeleteArchiveRuleResult> deleteArchiveRuleAsync(DeleteArchiveRuleRequest deleteArchiveRuleRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteArchiveRuleRequest, DeleteArchiveRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves information about an access preview for the specified analyzer.
+     * </p>
+     * 
+     * @param getAccessPreviewRequest
+     * @return A Java Future containing the result of the GetAccessPreview operation returned by the service.
+     * @sample AWSAccessAnalyzerAsync.GetAccessPreview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetAccessPreview"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccessPreviewResult> getAccessPreviewAsync(GetAccessPreviewRequest getAccessPreviewRequest);
+
+    /**
+     * <p>
+     * Retrieves information about an access preview for the specified analyzer.
+     * </p>
+     * 
+     * @param getAccessPreviewRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAccessPreview operation returned by the service.
+     * @sample AWSAccessAnalyzerAsyncHandler.GetAccessPreview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetAccessPreview"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccessPreviewResult> getAccessPreviewAsync(GetAccessPreviewRequest getAccessPreviewRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAccessPreviewRequest, GetAccessPreviewResult> asyncHandler);
 
     /**
      * <p>
@@ -356,6 +421,70 @@ public interface AWSAccessAnalyzerAsync extends AWSAccessAnalyzer {
 
     /**
      * <p>
+     * Retrieves a list of access preview findings generated by the specified access preview.
+     * </p>
+     * 
+     * @param listAccessPreviewFindingsRequest
+     * @return A Java Future containing the result of the ListAccessPreviewFindings operation returned by the service.
+     * @sample AWSAccessAnalyzerAsync.ListAccessPreviewFindings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListAccessPreviewFindings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAccessPreviewFindingsResult> listAccessPreviewFindingsAsync(
+            ListAccessPreviewFindingsRequest listAccessPreviewFindingsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of access preview findings generated by the specified access preview.
+     * </p>
+     * 
+     * @param listAccessPreviewFindingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAccessPreviewFindings operation returned by the service.
+     * @sample AWSAccessAnalyzerAsyncHandler.ListAccessPreviewFindings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListAccessPreviewFindings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAccessPreviewFindingsResult> listAccessPreviewFindingsAsync(
+            ListAccessPreviewFindingsRequest listAccessPreviewFindingsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAccessPreviewFindingsRequest, ListAccessPreviewFindingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a list of access previews for the specified analyzer.
+     * </p>
+     * 
+     * @param listAccessPreviewsRequest
+     * @return A Java Future containing the result of the ListAccessPreviews operation returned by the service.
+     * @sample AWSAccessAnalyzerAsync.ListAccessPreviews
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListAccessPreviews"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAccessPreviewsResult> listAccessPreviewsAsync(ListAccessPreviewsRequest listAccessPreviewsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of access previews for the specified analyzer.
+     * </p>
+     * 
+     * @param listAccessPreviewsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAccessPreviews operation returned by the service.
+     * @sample AWSAccessAnalyzerAsyncHandler.ListAccessPreviews
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListAccessPreviews"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAccessPreviewsResult> listAccessPreviewsAsync(ListAccessPreviewsRequest listAccessPreviewsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAccessPreviewsRequest, ListAccessPreviewsResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves a list of resources of the specified type that have been analyzed by the specified analyzer..
      * </p>
      * 
@@ -458,7 +587,7 @@ public interface AWSAccessAnalyzerAsync extends AWSAccessAnalyzer {
      * Retrieves a list of findings generated by the specified analyzer.
      * </p>
      * <p>
-     * To learn about filter keys that you can use to create an archive rule, see <a
+     * To learn about filter keys that you can use to retrieve a list of findings, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">Access
      * Analyzer filter keys</a> in the <b>IAM User Guide</b>.
      * </p>
@@ -477,7 +606,7 @@ public interface AWSAccessAnalyzerAsync extends AWSAccessAnalyzer {
      * Retrieves a list of findings generated by the specified analyzer.
      * </p>
      * <p>
-     * To learn about filter keys that you can use to create an archive rule, see <a
+     * To learn about filter keys that you can use to retrieve a list of findings, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">Access
      * Analyzer filter keys</a> in the <b>IAM User Guide</b>.
      * </p>

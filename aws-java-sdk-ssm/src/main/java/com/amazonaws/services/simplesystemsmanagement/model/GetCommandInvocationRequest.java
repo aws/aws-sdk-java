@@ -40,11 +40,13 @@ public class GetCommandInvocationRequest extends com.amazonaws.AmazonWebServiceR
     private String instanceId;
     /**
      * <p>
-     * (Optional) The name of the plugin for which you want detailed results. If the document contains only one plugin,
-     * the name can be omitted and the details will be returned.
+     * The name of the plugin for which you want detailed results. If the document contains only one plugin, you can
+     * omit the name and details for that plugin are returned. If the document contains more than one plugin, you must
+     * specify the name of the plugin for which you want to view details.
      * </p>
      * <p>
-     * Plugin names are also referred to as step names in Systems Manager documents.
+     * Plugin names are also referred to as <i>step names</i> in Systems Manager documents. For example,
+     * <code>aws:RunShellScript</code> is a plugin.
      * </p>
      */
     private String pluginName;
@@ -137,18 +139,22 @@ public class GetCommandInvocationRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * (Optional) The name of the plugin for which you want detailed results. If the document contains only one plugin,
-     * the name can be omitted and the details will be returned.
+     * The name of the plugin for which you want detailed results. If the document contains only one plugin, you can
+     * omit the name and details for that plugin are returned. If the document contains more than one plugin, you must
+     * specify the name of the plugin for which you want to view details.
      * </p>
      * <p>
-     * Plugin names are also referred to as step names in Systems Manager documents.
+     * Plugin names are also referred to as <i>step names</i> in Systems Manager documents. For example,
+     * <code>aws:RunShellScript</code> is a plugin.
      * </p>
      * 
      * @param pluginName
-     *        (Optional) The name of the plugin for which you want detailed results. If the document contains only one
-     *        plugin, the name can be omitted and the details will be returned.</p>
+     *        The name of the plugin for which you want detailed results. If the document contains only one plugin, you
+     *        can omit the name and details for that plugin are returned. If the document contains more than one plugin,
+     *        you must specify the name of the plugin for which you want to view details.</p>
      *        <p>
-     *        Plugin names are also referred to as step names in Systems Manager documents.
+     *        Plugin names are also referred to as <i>step names</i> in Systems Manager documents. For example,
+     *        <code>aws:RunShellScript</code> is a plugin.
      */
 
     public void setPluginName(String pluginName) {
@@ -157,17 +163,21 @@ public class GetCommandInvocationRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * (Optional) The name of the plugin for which you want detailed results. If the document contains only one plugin,
-     * the name can be omitted and the details will be returned.
+     * The name of the plugin for which you want detailed results. If the document contains only one plugin, you can
+     * omit the name and details for that plugin are returned. If the document contains more than one plugin, you must
+     * specify the name of the plugin for which you want to view details.
      * </p>
      * <p>
-     * Plugin names are also referred to as step names in Systems Manager documents.
+     * Plugin names are also referred to as <i>step names</i> in Systems Manager documents. For example,
+     * <code>aws:RunShellScript</code> is a plugin.
      * </p>
      * 
-     * @return (Optional) The name of the plugin for which you want detailed results. If the document contains only one
-     *         plugin, the name can be omitted and the details will be returned.</p>
+     * @return The name of the plugin for which you want detailed results. If the document contains only one plugin, you
+     *         can omit the name and details for that plugin are returned. If the document contains more than one
+     *         plugin, you must specify the name of the plugin for which you want to view details.</p>
      *         <p>
-     *         Plugin names are also referred to as step names in Systems Manager documents.
+     *         Plugin names are also referred to as <i>step names</i> in Systems Manager documents. For example,
+     *         <code>aws:RunShellScript</code> is a plugin.
      */
 
     public String getPluginName() {
@@ -176,18 +186,22 @@ public class GetCommandInvocationRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * (Optional) The name of the plugin for which you want detailed results. If the document contains only one plugin,
-     * the name can be omitted and the details will be returned.
+     * The name of the plugin for which you want detailed results. If the document contains only one plugin, you can
+     * omit the name and details for that plugin are returned. If the document contains more than one plugin, you must
+     * specify the name of the plugin for which you want to view details.
      * </p>
      * <p>
-     * Plugin names are also referred to as step names in Systems Manager documents.
+     * Plugin names are also referred to as <i>step names</i> in Systems Manager documents. For example,
+     * <code>aws:RunShellScript</code> is a plugin.
      * </p>
      * 
      * @param pluginName
-     *        (Optional) The name of the plugin for which you want detailed results. If the document contains only one
-     *        plugin, the name can be omitted and the details will be returned.</p>
+     *        The name of the plugin for which you want detailed results. If the document contains only one plugin, you
+     *        can omit the name and details for that plugin are returned. If the document contains more than one plugin,
+     *        you must specify the name of the plugin for which you want to view details.</p>
      *        <p>
-     *        Plugin names are also referred to as step names in Systems Manager documents.
+     *        Plugin names are also referred to as <i>step names</i> in Systems Manager documents. For example,
+     *        <code>aws:RunShellScript</code> is a plugin.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

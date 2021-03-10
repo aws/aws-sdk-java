@@ -1,3 +1,20 @@
+# __1.11.972__ __2021-03-10__
+## __AWS Backup__
+  - ### Features
+    - Added support for enabling continuous backups.
+
+## __Access Analyzer__
+  - ### Features
+    - This release adds support to preview IAM Access Analyzer findings for a resource before deploying resource permission changes.
+
+## __Amazon Simple Storage Service__
+  - ### Features
+    - Adding ID element to the CORSRule schema
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Systems Manager support for tagging OpsMetadata.
+
 # __1.11.971__ __2021-03-09__
 ## __AWS IoT Wireless__
   - ### Features

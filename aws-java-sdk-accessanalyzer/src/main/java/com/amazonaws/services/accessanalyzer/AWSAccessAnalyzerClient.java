@@ -54,8 +54,9 @@ import com.amazonaws.services.accessanalyzer.model.transform.*;
  * AWS IAM Access Analyzer helps identify potential resource-access risks by enabling you to identify any policies that
  * grant access to an external principal. It does this by using logic-based reasoning to analyze resource-based policies
  * in your AWS environment. An external principal can be another AWS account, a root user, an IAM user or role, a
- * federated user, an AWS service, or an anonymous user. This guide describes the AWS IAM Access Analyzer operations
- * that you can call programmatically. For general information about Access Analyzer, see <a
+ * federated user, an AWS service, or an anonymous user. You can also use Access Analyzer to preview and validate public
+ * and cross-account access to your resources before deploying permissions changes. This guide describes the AWS IAM
+ * Access Analyzer operations that you can call programmatically. For general information about Access Analyzer, see <a
  * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html">AWS IAM Access Analyzer</a> in
  * the <b>IAM User Guide</b>.
  * </p>
@@ -87,6 +88,15 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.accessanalyzer.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.accessanalyzer.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.accessanalyzer.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.accessanalyzer.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -96,17 +106,8 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.accessanalyzer.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.accessanalyzer.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.accessanalyzer.model.transform.ValidationExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.accessanalyzer.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.accessanalyzer.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.accessanalyzer.model.AWSAccessAnalyzerException.class));
 
     public static AWSAccessAnalyzerClientBuilder builder() {
@@ -211,6 +212,76 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<ApplyArchiveRuleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ApplyArchiveRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an access preview that allows you to preview Access Analyzer findings for your resource before deploying
+     * resource permissions.
+     * </p>
+     * 
+     * @param createAccessPreviewRequest
+     * @return Result of the CreateAccessPreview operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         A conflict exception error.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws InternalServerException
+     *         Internal server error.
+     * @throws ServiceQuotaExceededException
+     *         Service quote met error.
+     * @throws ThrottlingException
+     *         Throttling limit exceeded error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSAccessAnalyzer.CreateAccessPreview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateAccessPreview"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateAccessPreviewResult createAccessPreview(CreateAccessPreviewRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAccessPreview(request);
+    }
+
+    @SdkInternalApi
+    final CreateAccessPreviewResult executeCreateAccessPreview(CreateAccessPreviewRequest createAccessPreviewRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createAccessPreviewRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateAccessPreviewRequest> request = null;
+        Response<CreateAccessPreviewResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAccessPreviewRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAccessPreviewRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAccessPreview");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAccessPreviewResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateAccessPreviewResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -496,6 +567,71 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Retrieves information about an access preview for the specified analyzer.
+     * </p>
+     * 
+     * @param getAccessPreviewRequest
+     * @return Result of the GetAccessPreview operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws InternalServerException
+     *         Internal server error.
+     * @throws ThrottlingException
+     *         Throttling limit exceeded error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSAccessAnalyzer.GetAccessPreview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetAccessPreview"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetAccessPreviewResult getAccessPreview(GetAccessPreviewRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAccessPreview(request);
+    }
+
+    @SdkInternalApi
+    final GetAccessPreviewResult executeGetAccessPreview(GetAccessPreviewRequest getAccessPreviewRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAccessPreviewRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAccessPreviewRequest> request = null;
+        Response<GetAccessPreviewResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAccessPreviewRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAccessPreviewRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccessPreview");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAccessPreviewResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetAccessPreviewResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves information about a resource that was analyzed.
      * </p>
      * 
@@ -765,6 +901,140 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Retrieves a list of access preview findings generated by the specified access preview.
+     * </p>
+     * 
+     * @param listAccessPreviewFindingsRequest
+     * @return Result of the ListAccessPreviewFindings operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         A conflict exception error.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws InternalServerException
+     *         Internal server error.
+     * @throws ThrottlingException
+     *         Throttling limit exceeded error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSAccessAnalyzer.ListAccessPreviewFindings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListAccessPreviewFindings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListAccessPreviewFindingsResult listAccessPreviewFindings(ListAccessPreviewFindingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAccessPreviewFindings(request);
+    }
+
+    @SdkInternalApi
+    final ListAccessPreviewFindingsResult executeListAccessPreviewFindings(ListAccessPreviewFindingsRequest listAccessPreviewFindingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAccessPreviewFindingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAccessPreviewFindingsRequest> request = null;
+        Response<ListAccessPreviewFindingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAccessPreviewFindingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listAccessPreviewFindingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccessPreviewFindings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAccessPreviewFindingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListAccessPreviewFindingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a list of access previews for the specified analyzer.
+     * </p>
+     * 
+     * @param listAccessPreviewsRequest
+     * @return Result of the ListAccessPreviews operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws InternalServerException
+     *         Internal server error.
+     * @throws ThrottlingException
+     *         Throttling limit exceeded error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSAccessAnalyzer.ListAccessPreviews
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListAccessPreviews"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListAccessPreviewsResult listAccessPreviews(ListAccessPreviewsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAccessPreviews(request);
+    }
+
+    @SdkInternalApi
+    final ListAccessPreviewsResult executeListAccessPreviews(ListAccessPreviewsRequest listAccessPreviewsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAccessPreviewsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAccessPreviewsRequest> request = null;
+        Response<ListAccessPreviewsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAccessPreviewsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAccessPreviewsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccessPreviews");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAccessPreviewsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAccessPreviewsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves a list of resources of the specified type that have been analyzed by the specified analyzer..
      * </p>
      * 
@@ -963,7 +1233,7 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
      * Retrieves a list of findings generated by the specified analyzer.
      * </p>
      * <p>
-     * To learn about filter keys that you can use to create an archive rule, see <a
+     * To learn about filter keys that you can use to retrieve a list of findings, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">Access
      * Analyzer filter keys</a> in the <b>IAM User Guide</b>.
      * </p>

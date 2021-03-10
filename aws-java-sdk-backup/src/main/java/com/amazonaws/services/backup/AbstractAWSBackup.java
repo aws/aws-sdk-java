@@ -113,6 +113,11 @@ public class AbstractAWSBackup implements AWSBackup {
     }
 
     @Override
+    public DisassociateRecoveryPointResult disassociateRecoveryPoint(DisassociateRecoveryPointRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ExportBackupPlanTemplateResult exportBackupPlanTemplate(ExportBackupPlanTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

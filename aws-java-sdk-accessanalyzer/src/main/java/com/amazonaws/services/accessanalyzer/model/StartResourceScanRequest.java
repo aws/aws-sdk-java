@@ -30,7 +30,9 @@ public class StartResourceScanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ARN of the analyzer to use to scan the policies applied to the specified resource.
+     * The <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> to use to scan the policies applied to the specified resource.
      * </p>
      */
     private String analyzerArn;
@@ -43,11 +45,15 @@ public class StartResourceScanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ARN of the analyzer to use to scan the policies applied to the specified resource.
+     * The <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> to use to scan the policies applied to the specified resource.
      * </p>
      * 
      * @param analyzerArn
-     *        The ARN of the analyzer to use to scan the policies applied to the specified resource.
+     *        The <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources"
+     *        >ARN of the analyzer</a> to use to scan the policies applied to the specified resource.
      */
 
     public void setAnalyzerArn(String analyzerArn) {
@@ -56,10 +62,14 @@ public class StartResourceScanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ARN of the analyzer to use to scan the policies applied to the specified resource.
+     * The <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> to use to scan the policies applied to the specified resource.
      * </p>
      * 
-     * @return The ARN of the analyzer to use to scan the policies applied to the specified resource.
+     * @return The <a href=
+     *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources"
+     *         >ARN of the analyzer</a> to use to scan the policies applied to the specified resource.
      */
 
     public String getAnalyzerArn() {
@@ -68,11 +78,15 @@ public class StartResourceScanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ARN of the analyzer to use to scan the policies applied to the specified resource.
+     * The <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
+     * of the analyzer</a> to use to scan the policies applied to the specified resource.
      * </p>
      * 
      * @param analyzerArn
-     *        The ARN of the analyzer to use to scan the policies applied to the specified resource.
+     *        The <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources"
+     *        >ARN of the analyzer</a> to use to scan the policies applied to the specified resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

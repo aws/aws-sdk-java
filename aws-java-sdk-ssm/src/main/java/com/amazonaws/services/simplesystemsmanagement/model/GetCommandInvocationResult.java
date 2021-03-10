@@ -56,7 +56,8 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
     private String documentVersion;
     /**
      * <p>
-     * The name of the plugin for which you want detailed results. For example, aws:RunShellScript is a plugin.
+     * The name of the plugin, or <i>step name</i>, for which details are reported. For example,
+     * <code>aws:RunShellScript</code> is a plugin.
      * </p>
      */
     private String pluginName;
@@ -423,11 +424,13 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the plugin for which you want detailed results. For example, aws:RunShellScript is a plugin.
+     * The name of the plugin, or <i>step name</i>, for which details are reported. For example,
+     * <code>aws:RunShellScript</code> is a plugin.
      * </p>
      * 
      * @param pluginName
-     *        The name of the plugin for which you want detailed results. For example, aws:RunShellScript is a plugin.
+     *        The name of the plugin, or <i>step name</i>, for which details are reported. For example,
+     *        <code>aws:RunShellScript</code> is a plugin.
      */
 
     public void setPluginName(String pluginName) {
@@ -436,10 +439,12 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the plugin for which you want detailed results. For example, aws:RunShellScript is a plugin.
+     * The name of the plugin, or <i>step name</i>, for which details are reported. For example,
+     * <code>aws:RunShellScript</code> is a plugin.
      * </p>
      * 
-     * @return The name of the plugin for which you want detailed results. For example, aws:RunShellScript is a plugin.
+     * @return The name of the plugin, or <i>step name</i>, for which details are reported. For example,
+     *         <code>aws:RunShellScript</code> is a plugin.
      */
 
     public String getPluginName() {
@@ -448,11 +453,13 @@ public class GetCommandInvocationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the plugin for which you want detailed results. For example, aws:RunShellScript is a plugin.
+     * The name of the plugin, or <i>step name</i>, for which details are reported. For example,
+     * <code>aws:RunShellScript</code> is a plugin.
      * </p>
      * 
      * @param pluginName
-     *        The name of the plugin for which you want detailed results. For example, aws:RunShellScript is a plugin.
+     *        The name of the plugin, or <i>step name</i>, for which details are reported. For example,
+     *        <code>aws:RunShellScript</code> is a plugin.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

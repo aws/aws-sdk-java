@@ -90,6 +90,13 @@ public class BackupRuleInput implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.List<CopyAction> copyActions;
+    /**
+     * <p>
+     * Specifies whether AWS Backup creates continuous backups. True causes AWS Backup to create continuous backups
+     * capable of point-in-time restore (PITR). False (or not specified) causes AWS Backup to create snapshot backups.
+     * </p>
+     */
+    private Boolean enableContinuousBackup;
 
     /**
      * <p>
@@ -554,6 +561,70 @@ public class BackupRuleInput implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Specifies whether AWS Backup creates continuous backups. True causes AWS Backup to create continuous backups
+     * capable of point-in-time restore (PITR). False (or not specified) causes AWS Backup to create snapshot backups.
+     * </p>
+     * 
+     * @param enableContinuousBackup
+     *        Specifies whether AWS Backup creates continuous backups. True causes AWS Backup to create continuous
+     *        backups capable of point-in-time restore (PITR). False (or not specified) causes AWS Backup to create
+     *        snapshot backups.
+     */
+
+    public void setEnableContinuousBackup(Boolean enableContinuousBackup) {
+        this.enableContinuousBackup = enableContinuousBackup;
+    }
+
+    /**
+     * <p>
+     * Specifies whether AWS Backup creates continuous backups. True causes AWS Backup to create continuous backups
+     * capable of point-in-time restore (PITR). False (or not specified) causes AWS Backup to create snapshot backups.
+     * </p>
+     * 
+     * @return Specifies whether AWS Backup creates continuous backups. True causes AWS Backup to create continuous
+     *         backups capable of point-in-time restore (PITR). False (or not specified) causes AWS Backup to create
+     *         snapshot backups.
+     */
+
+    public Boolean getEnableContinuousBackup() {
+        return this.enableContinuousBackup;
+    }
+
+    /**
+     * <p>
+     * Specifies whether AWS Backup creates continuous backups. True causes AWS Backup to create continuous backups
+     * capable of point-in-time restore (PITR). False (or not specified) causes AWS Backup to create snapshot backups.
+     * </p>
+     * 
+     * @param enableContinuousBackup
+     *        Specifies whether AWS Backup creates continuous backups. True causes AWS Backup to create continuous
+     *        backups capable of point-in-time restore (PITR). False (or not specified) causes AWS Backup to create
+     *        snapshot backups.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BackupRuleInput withEnableContinuousBackup(Boolean enableContinuousBackup) {
+        setEnableContinuousBackup(enableContinuousBackup);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether AWS Backup creates continuous backups. True causes AWS Backup to create continuous backups
+     * capable of point-in-time restore (PITR). False (or not specified) causes AWS Backup to create snapshot backups.
+     * </p>
+     * 
+     * @return Specifies whether AWS Backup creates continuous backups. True causes AWS Backup to create continuous
+     *         backups capable of point-in-time restore (PITR). False (or not specified) causes AWS Backup to create
+     *         snapshot backups.
+     */
+
+    public Boolean isEnableContinuousBackup() {
+        return this.enableContinuousBackup;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -580,7 +651,9 @@ public class BackupRuleInput implements Serializable, Cloneable, StructuredPojo 
         if (getRecoveryPointTags() != null)
             sb.append("RecoveryPointTags: ").append("***Sensitive Data Redacted***").append(",");
         if (getCopyActions() != null)
-            sb.append("CopyActions: ").append(getCopyActions());
+            sb.append("CopyActions: ").append(getCopyActions()).append(",");
+        if (getEnableContinuousBackup() != null)
+            sb.append("EnableContinuousBackup: ").append(getEnableContinuousBackup());
         sb.append("}");
         return sb.toString();
     }
@@ -627,6 +700,10 @@ public class BackupRuleInput implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getCopyActions() != null && other.getCopyActions().equals(this.getCopyActions()) == false)
             return false;
+        if (other.getEnableContinuousBackup() == null ^ this.getEnableContinuousBackup() == null)
+            return false;
+        if (other.getEnableContinuousBackup() != null && other.getEnableContinuousBackup().equals(this.getEnableContinuousBackup()) == false)
+            return false;
         return true;
     }
 
@@ -643,6 +720,7 @@ public class BackupRuleInput implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getLifecycle() == null) ? 0 : getLifecycle().hashCode());
         hashCode = prime * hashCode + ((getRecoveryPointTags() == null) ? 0 : getRecoveryPointTags().hashCode());
         hashCode = prime * hashCode + ((getCopyActions() == null) ? 0 : getCopyActions().hashCode());
+        hashCode = prime * hashCode + ((getEnableContinuousBackup() == null) ? 0 : getEnableContinuousBackup().hashCode());
         return hashCode;
     }
 

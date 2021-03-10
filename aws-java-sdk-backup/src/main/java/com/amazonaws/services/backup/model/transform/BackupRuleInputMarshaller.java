@@ -45,6 +45,8 @@ public class BackupRuleInputMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecoveryPointTags").build();
     private static final MarshallingInfo<List> COPYACTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("CopyActions").build();
+    private static final MarshallingInfo<Boolean> ENABLECONTINUOUSBACKUP_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableContinuousBackup").build();
 
     private static final BackupRuleInputMarshaller instance = new BackupRuleInputMarshaller();
 
@@ -70,6 +72,7 @@ public class BackupRuleInputMarshaller {
             protocolMarshaller.marshall(backupRuleInput.getLifecycle(), LIFECYCLE_BINDING);
             protocolMarshaller.marshall(backupRuleInput.getRecoveryPointTags(), RECOVERYPOINTTAGS_BINDING);
             protocolMarshaller.marshall(backupRuleInput.getCopyActions(), COPYACTIONS_BINDING);
+            protocolMarshaller.marshall(backupRuleInput.getEnableContinuousBackup(), ENABLECONTINUOUSBACKUP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
