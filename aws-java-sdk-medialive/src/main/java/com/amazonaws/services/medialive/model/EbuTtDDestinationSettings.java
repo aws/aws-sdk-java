@@ -27,6 +27,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class EbuTtDDestinationSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
+     * Applies only if you plan to convert these source captions to EBU-TT-D or TTML in an output. Complete this field
+     * if you want to include the name of the copyright holder in the copyright metadata tag in the TTML
+     */
+    private String copyrightHolder;
+    /**
      * Specifies how to handle the gap between the lines (in multi-line captions).
      * 
      * - enabled: Fill with the captions background color (as specified in the input captions). - disabled: Leave the
@@ -56,6 +61,46 @@ public class EbuTtDDestinationSettings implements Serializable, Cloneable, Struc
      * family to "monospaced". Do not include any other style information.
      */
     private String styleControl;
+
+    /**
+     * Applies only if you plan to convert these source captions to EBU-TT-D or TTML in an output. Complete this field
+     * if you want to include the name of the copyright holder in the copyright metadata tag in the TTML
+     * 
+     * @param copyrightHolder
+     *        Applies only if you plan to convert these source captions to EBU-TT-D or TTML in an output. Complete this
+     *        field if you want to include the name of the copyright holder in the copyright metadata tag in the TTML
+     */
+
+    public void setCopyrightHolder(String copyrightHolder) {
+        this.copyrightHolder = copyrightHolder;
+    }
+
+    /**
+     * Applies only if you plan to convert these source captions to EBU-TT-D or TTML in an output. Complete this field
+     * if you want to include the name of the copyright holder in the copyright metadata tag in the TTML
+     * 
+     * @return Applies only if you plan to convert these source captions to EBU-TT-D or TTML in an output. Complete this
+     *         field if you want to include the name of the copyright holder in the copyright metadata tag in the TTML
+     */
+
+    public String getCopyrightHolder() {
+        return this.copyrightHolder;
+    }
+
+    /**
+     * Applies only if you plan to convert these source captions to EBU-TT-D or TTML in an output. Complete this field
+     * if you want to include the name of the copyright holder in the copyright metadata tag in the TTML
+     * 
+     * @param copyrightHolder
+     *        Applies only if you plan to convert these source captions to EBU-TT-D or TTML in an output. Complete this
+     *        field if you want to include the name of the copyright holder in the copyright metadata tag in the TTML
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EbuTtDDestinationSettings withCopyrightHolder(String copyrightHolder) {
+        setCopyrightHolder(copyrightHolder);
+        return this;
+    }
 
     /**
      * Specifies how to handle the gap between the lines (in multi-line captions).
@@ -332,6 +377,8 @@ public class EbuTtDDestinationSettings implements Serializable, Cloneable, Struc
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCopyrightHolder() != null)
+            sb.append("CopyrightHolder: ").append(getCopyrightHolder()).append(",");
         if (getFillLineGap() != null)
             sb.append("FillLineGap: ").append(getFillLineGap()).append(",");
         if (getFontFamily() != null)
@@ -352,6 +399,10 @@ public class EbuTtDDestinationSettings implements Serializable, Cloneable, Struc
         if (obj instanceof EbuTtDDestinationSettings == false)
             return false;
         EbuTtDDestinationSettings other = (EbuTtDDestinationSettings) obj;
+        if (other.getCopyrightHolder() == null ^ this.getCopyrightHolder() == null)
+            return false;
+        if (other.getCopyrightHolder() != null && other.getCopyrightHolder().equals(this.getCopyrightHolder()) == false)
+            return false;
         if (other.getFillLineGap() == null ^ this.getFillLineGap() == null)
             return false;
         if (other.getFillLineGap() != null && other.getFillLineGap().equals(this.getFillLineGap()) == false)
@@ -372,6 +423,7 @@ public class EbuTtDDestinationSettings implements Serializable, Cloneable, Struc
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCopyrightHolder() == null) ? 0 : getCopyrightHolder().hashCode());
         hashCode = prime * hashCode + ((getFillLineGap() == null) ? 0 : getFillLineGap().hashCode());
         hashCode = prime * hashCode + ((getFontFamily() == null) ? 0 : getFontFamily().hashCode());
         hashCode = prime * hashCode + ((getStyleControl() == null) ? 0 : getStyleControl().hashCode());

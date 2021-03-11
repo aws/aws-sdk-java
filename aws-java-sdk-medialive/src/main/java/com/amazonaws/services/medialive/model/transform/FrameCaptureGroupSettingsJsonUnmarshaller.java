@@ -52,6 +52,10 @@ public class FrameCaptureGroupSettingsJsonUnmarshaller implements Unmarshaller<F
                     context.nextToken();
                     frameCaptureGroupSettings.setDestination(OutputLocationRefJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("frameCaptureCdnSettings", targetDepth)) {
+                    context.nextToken();
+                    frameCaptureGroupSettings.setFrameCaptureCdnSettings(FrameCaptureCdnSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

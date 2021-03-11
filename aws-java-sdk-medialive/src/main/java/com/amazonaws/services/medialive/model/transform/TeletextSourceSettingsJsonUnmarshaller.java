@@ -48,6 +48,10 @@ public class TeletextSourceSettingsJsonUnmarshaller implements Unmarshaller<Tele
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("outputRectangle", targetDepth)) {
+                    context.nextToken();
+                    teletextSourceSettings.setOutputRectangle(CaptionRectangleJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("pageNumber", targetDepth)) {
                     context.nextToken();
                     teletextSourceSettings.setPageNumber(context.getUnmarshaller(String.class).unmarshall(context));

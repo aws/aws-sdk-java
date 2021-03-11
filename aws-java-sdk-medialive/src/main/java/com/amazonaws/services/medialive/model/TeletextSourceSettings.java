@@ -26,11 +26,47 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TeletextSourceSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /** Optionally defines a region where TTML style captions will be displayed */
+    private CaptionRectangle outputRectangle;
     /**
      * Specifies the teletext page number within the data stream from which to extract captions. Range of 0x100 (256) to
      * 0x8FF (2303). Unused for passthrough. Should be specified as a hexadecimal string with no "0x" prefix.
      */
     private String pageNumber;
+
+    /**
+     * Optionally defines a region where TTML style captions will be displayed
+     * 
+     * @param outputRectangle
+     *        Optionally defines a region where TTML style captions will be displayed
+     */
+
+    public void setOutputRectangle(CaptionRectangle outputRectangle) {
+        this.outputRectangle = outputRectangle;
+    }
+
+    /**
+     * Optionally defines a region where TTML style captions will be displayed
+     * 
+     * @return Optionally defines a region where TTML style captions will be displayed
+     */
+
+    public CaptionRectangle getOutputRectangle() {
+        return this.outputRectangle;
+    }
+
+    /**
+     * Optionally defines a region where TTML style captions will be displayed
+     * 
+     * @param outputRectangle
+     *        Optionally defines a region where TTML style captions will be displayed
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TeletextSourceSettings withOutputRectangle(CaptionRectangle outputRectangle) {
+        setOutputRectangle(outputRectangle);
+        return this;
+    }
 
     /**
      * Specifies the teletext page number within the data stream from which to extract captions. Range of 0x100 (256) to
@@ -87,6 +123,8 @@ public class TeletextSourceSettings implements Serializable, Cloneable, Structur
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getOutputRectangle() != null)
+            sb.append("OutputRectangle: ").append(getOutputRectangle()).append(",");
         if (getPageNumber() != null)
             sb.append("PageNumber: ").append(getPageNumber());
         sb.append("}");
@@ -103,6 +141,10 @@ public class TeletextSourceSettings implements Serializable, Cloneable, Structur
         if (obj instanceof TeletextSourceSettings == false)
             return false;
         TeletextSourceSettings other = (TeletextSourceSettings) obj;
+        if (other.getOutputRectangle() == null ^ this.getOutputRectangle() == null)
+            return false;
+        if (other.getOutputRectangle() != null && other.getOutputRectangle().equals(this.getOutputRectangle()) == false)
+            return false;
         if (other.getPageNumber() == null ^ this.getPageNumber() == null)
             return false;
         if (other.getPageNumber() != null && other.getPageNumber().equals(this.getPageNumber()) == false)
@@ -115,6 +157,7 @@ public class TeletextSourceSettings implements Serializable, Cloneable, Structur
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getOutputRectangle() == null) ? 0 : getOutputRectangle().hashCode());
         hashCode = prime * hashCode + ((getPageNumber() == null) ? 0 : getPageNumber().hashCode());
         return hashCode;
     }

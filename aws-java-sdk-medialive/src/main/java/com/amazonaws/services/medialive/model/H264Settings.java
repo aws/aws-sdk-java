@@ -183,7 +183,10 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
      * optional; when no value is specified the encoder will choose the number of slices based on encode resolution.
      */
     private Integer slices;
-    /** Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image. */
+    /**
+     * Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image. If not set
+     * to zero, must be greater than 15.
+     */
     private Integer softness;
     /** If set to enabled, adjust quantization within each frame based on spatial variation of content complexity. */
     private String spatialAq;
@@ -2081,10 +2084,12 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image.
+     * Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image. If not set
+     * to zero, must be greater than 15.
      * 
      * @param softness
-     *        Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image.
+     *        Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image. If
+     *        not set to zero, must be greater than 15.
      */
 
     public void setSoftness(Integer softness) {
@@ -2092,9 +2097,11 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image.
+     * Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image. If not set
+     * to zero, must be greater than 15.
      * 
-     * @return Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image.
+     * @return Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image. If
+     *         not set to zero, must be greater than 15.
      */
 
     public Integer getSoftness() {
@@ -2102,10 +2109,12 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image.
+     * Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image. If not set
+     * to zero, must be greater than 15.
      * 
      * @param softness
-     *        Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image.
+     *        Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image. If
+     *        not set to zero, must be greater than 15.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

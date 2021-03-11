@@ -276,6 +276,39 @@ public class AmazonComprehendAsyncClient extends AmazonComprehendClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ContainsPiiEntitiesResult> containsPiiEntitiesAsync(ContainsPiiEntitiesRequest request) {
+
+        return containsPiiEntitiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ContainsPiiEntitiesResult> containsPiiEntitiesAsync(final ContainsPiiEntitiesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ContainsPiiEntitiesRequest, ContainsPiiEntitiesResult> asyncHandler) {
+        final ContainsPiiEntitiesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ContainsPiiEntitiesResult>() {
+            @Override
+            public ContainsPiiEntitiesResult call() throws Exception {
+                ContainsPiiEntitiesResult result = null;
+
+                try {
+                    result = executeContainsPiiEntities(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDocumentClassifierResult> createDocumentClassifierAsync(CreateDocumentClassifierRequest request) {
 
         return createDocumentClassifierAsync(request, null);

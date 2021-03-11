@@ -49,14 +49,15 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
     private String matchScope;
     /**
      * <p>
-     * The inspection behavior to fall back to if the JSON in the request body is invalid. For AWS WAF, invalid JSON is
-     * any content that isn't complete syntactical JSON, content whose root node isn't an object or an array, and
-     * duplicate keys in the content.
-     * </p>
-     * <p>
-     * You can specify the following fallback behaviors:
+     * What AWS WAF should do if it fails to completely parse the JSON body. The options are the following:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. AWS WAF applies the text transformations and
+     * inspection criteria that you defined for the JSON inspection to the body text string.
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule action to the
@@ -68,17 +69,35 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      * <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.
      * </p>
      * </li>
+     * </ul>
+     * <p>
+     * If you don't provide this setting, AWS WAF parses and evaluates the content only up to the first parsing failure
+     * that it encounters.
+     * </p>
+     * <p>
+     * AWS WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as invalid
+     * characters, duplicate keys, truncation, and any content whose root node isn't an object or an array.
+     * </p>
+     * <p>
+     * AWS WAF parses the JSON in the following examples as two valid key, value pairs:
+     * </p>
+     * <ul>
      * <li>
      * <p>
-     * <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. This option applies the text transformations
-     * and inspection criteria that you defined for the JSON inspection to the body text string.
+     * Missing comma: <code>{"key1":"value1""key2":"value2"}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Missing colon: <code>{"key1":"value1","key2""value2"}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Extra colons: <code>{"key1"::"value1","key2""value2"}</code>
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * If you don't provide this setting, when AWS WAF encounters invalid JSON, it parses and inspects what it can, up
-     * to the first invalid JSON that it encounters.
-     * </p>
      */
     private String invalidFallbackBehavior;
 
@@ -197,14 +216,15 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The inspection behavior to fall back to if the JSON in the request body is invalid. For AWS WAF, invalid JSON is
-     * any content that isn't complete syntactical JSON, content whose root node isn't an object or an array, and
-     * duplicate keys in the content.
-     * </p>
-     * <p>
-     * You can specify the following fallback behaviors:
+     * What AWS WAF should do if it fails to completely parse the JSON body. The options are the following:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. AWS WAF applies the text transformations and
+     * inspection criteria that you defined for the JSON inspection to the body text string.
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule action to the
@@ -216,26 +236,45 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      * <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.
      * </p>
      * </li>
+     * </ul>
+     * <p>
+     * If you don't provide this setting, AWS WAF parses and evaluates the content only up to the first parsing failure
+     * that it encounters.
+     * </p>
+     * <p>
+     * AWS WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as invalid
+     * characters, duplicate keys, truncation, and any content whose root node isn't an object or an array.
+     * </p>
+     * <p>
+     * AWS WAF parses the JSON in the following examples as two valid key, value pairs:
+     * </p>
+     * <ul>
      * <li>
      * <p>
-     * <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. This option applies the text transformations
-     * and inspection criteria that you defined for the JSON inspection to the body text string.
+     * Missing comma: <code>{"key1":"value1""key2":"value2"}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Missing colon: <code>{"key1":"value1","key2""value2"}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Extra colons: <code>{"key1"::"value1","key2""value2"}</code>
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * If you don't provide this setting, when AWS WAF encounters invalid JSON, it parses and inspects what it can, up
-     * to the first invalid JSON that it encounters.
-     * </p>
      * 
      * @param invalidFallbackBehavior
-     *        The inspection behavior to fall back to if the JSON in the request body is invalid. For AWS WAF, invalid
-     *        JSON is any content that isn't complete syntactical JSON, content whose root node isn't an object or an
-     *        array, and duplicate keys in the content. </p>
-     *        <p>
-     *        You can specify the following fallback behaviors:
-     *        </p>
+     *        What AWS WAF should do if it fails to completely parse the JSON body. The options are the following:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. AWS WAF applies the text transformations
+     *        and inspection criteria that you defined for the JSON inspection to the body text string.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule action
@@ -247,16 +286,35 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      *        <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.
      *        </p>
      *        </li>
-     *        <li>
-     *        <p>
-     *        <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. This option applies the text
-     *        transformations and inspection criteria that you defined for the JSON inspection to the body text string.
-     *        </p>
-     *        </li>
      *        </ul>
      *        <p>
-     *        If you don't provide this setting, when AWS WAF encounters invalid JSON, it parses and inspects what it
-     *        can, up to the first invalid JSON that it encounters.
+     *        If you don't provide this setting, AWS WAF parses and evaluates the content only up to the first parsing
+     *        failure that it encounters.
+     *        </p>
+     *        <p>
+     *        AWS WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as
+     *        invalid characters, duplicate keys, truncation, and any content whose root node isn't an object or an
+     *        array.
+     *        </p>
+     *        <p>
+     *        AWS WAF parses the JSON in the following examples as two valid key, value pairs:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Missing comma: <code>{"key1":"value1""key2":"value2"}</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Missing colon: <code>{"key1":"value1","key2""value2"}</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Extra colons: <code>{"key1"::"value1","key2""value2"}</code>
+     *        </p>
+     *        </li>
      * @see BodyParsingFallbackBehavior
      */
 
@@ -266,14 +324,15 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The inspection behavior to fall back to if the JSON in the request body is invalid. For AWS WAF, invalid JSON is
-     * any content that isn't complete syntactical JSON, content whose root node isn't an object or an array, and
-     * duplicate keys in the content.
-     * </p>
-     * <p>
-     * You can specify the following fallback behaviors:
+     * What AWS WAF should do if it fails to completely parse the JSON body. The options are the following:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. AWS WAF applies the text transformations and
+     * inspection criteria that you defined for the JSON inspection to the body text string.
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule action to the
@@ -285,25 +344,44 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      * <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.
      * </p>
      * </li>
+     * </ul>
+     * <p>
+     * If you don't provide this setting, AWS WAF parses and evaluates the content only up to the first parsing failure
+     * that it encounters.
+     * </p>
+     * <p>
+     * AWS WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as invalid
+     * characters, duplicate keys, truncation, and any content whose root node isn't an object or an array.
+     * </p>
+     * <p>
+     * AWS WAF parses the JSON in the following examples as two valid key, value pairs:
+     * </p>
+     * <ul>
      * <li>
      * <p>
-     * <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. This option applies the text transformations
-     * and inspection criteria that you defined for the JSON inspection to the body text string.
+     * Missing comma: <code>{"key1":"value1""key2":"value2"}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Missing colon: <code>{"key1":"value1","key2""value2"}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Extra colons: <code>{"key1"::"value1","key2""value2"}</code>
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * If you don't provide this setting, when AWS WAF encounters invalid JSON, it parses and inspects what it can, up
-     * to the first invalid JSON that it encounters.
-     * </p>
      * 
-     * @return The inspection behavior to fall back to if the JSON in the request body is invalid. For AWS WAF, invalid
-     *         JSON is any content that isn't complete syntactical JSON, content whose root node isn't an object or an
-     *         array, and duplicate keys in the content. </p>
-     *         <p>
-     *         You can specify the following fallback behaviors:
-     *         </p>
+     * @return What AWS WAF should do if it fails to completely parse the JSON body. The options are the following:</p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. AWS WAF applies the text
+     *         transformations and inspection criteria that you defined for the JSON inspection to the body text string.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule
@@ -315,16 +393,35 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      *         <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.
      *         </p>
      *         </li>
-     *         <li>
-     *         <p>
-     *         <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. This option applies the text
-     *         transformations and inspection criteria that you defined for the JSON inspection to the body text string.
-     *         </p>
-     *         </li>
      *         </ul>
      *         <p>
-     *         If you don't provide this setting, when AWS WAF encounters invalid JSON, it parses and inspects what it
-     *         can, up to the first invalid JSON that it encounters.
+     *         If you don't provide this setting, AWS WAF parses and evaluates the content only up to the first parsing
+     *         failure that it encounters.
+     *         </p>
+     *         <p>
+     *         AWS WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as
+     *         invalid characters, duplicate keys, truncation, and any content whose root node isn't an object or an
+     *         array.
+     *         </p>
+     *         <p>
+     *         AWS WAF parses the JSON in the following examples as two valid key, value pairs:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Missing comma: <code>{"key1":"value1""key2":"value2"}</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Missing colon: <code>{"key1":"value1","key2""value2"}</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Extra colons: <code>{"key1"::"value1","key2""value2"}</code>
+     *         </p>
+     *         </li>
      * @see BodyParsingFallbackBehavior
      */
 
@@ -334,14 +431,15 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The inspection behavior to fall back to if the JSON in the request body is invalid. For AWS WAF, invalid JSON is
-     * any content that isn't complete syntactical JSON, content whose root node isn't an object or an array, and
-     * duplicate keys in the content.
-     * </p>
-     * <p>
-     * You can specify the following fallback behaviors:
+     * What AWS WAF should do if it fails to completely parse the JSON body. The options are the following:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. AWS WAF applies the text transformations and
+     * inspection criteria that you defined for the JSON inspection to the body text string.
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule action to the
@@ -353,26 +451,45 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      * <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.
      * </p>
      * </li>
+     * </ul>
+     * <p>
+     * If you don't provide this setting, AWS WAF parses and evaluates the content only up to the first parsing failure
+     * that it encounters.
+     * </p>
+     * <p>
+     * AWS WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as invalid
+     * characters, duplicate keys, truncation, and any content whose root node isn't an object or an array.
+     * </p>
+     * <p>
+     * AWS WAF parses the JSON in the following examples as two valid key, value pairs:
+     * </p>
+     * <ul>
      * <li>
      * <p>
-     * <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. This option applies the text transformations
-     * and inspection criteria that you defined for the JSON inspection to the body text string.
+     * Missing comma: <code>{"key1":"value1""key2":"value2"}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Missing colon: <code>{"key1":"value1","key2""value2"}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Extra colons: <code>{"key1"::"value1","key2""value2"}</code>
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * If you don't provide this setting, when AWS WAF encounters invalid JSON, it parses and inspects what it can, up
-     * to the first invalid JSON that it encounters.
-     * </p>
      * 
      * @param invalidFallbackBehavior
-     *        The inspection behavior to fall back to if the JSON in the request body is invalid. For AWS WAF, invalid
-     *        JSON is any content that isn't complete syntactical JSON, content whose root node isn't an object or an
-     *        array, and duplicate keys in the content. </p>
-     *        <p>
-     *        You can specify the following fallback behaviors:
-     *        </p>
+     *        What AWS WAF should do if it fails to completely parse the JSON body. The options are the following:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. AWS WAF applies the text transformations
+     *        and inspection criteria that you defined for the JSON inspection to the body text string.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule action
@@ -384,16 +501,35 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      *        <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.
      *        </p>
      *        </li>
-     *        <li>
-     *        <p>
-     *        <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. This option applies the text
-     *        transformations and inspection criteria that you defined for the JSON inspection to the body text string.
-     *        </p>
-     *        </li>
      *        </ul>
      *        <p>
-     *        If you don't provide this setting, when AWS WAF encounters invalid JSON, it parses and inspects what it
-     *        can, up to the first invalid JSON that it encounters.
+     *        If you don't provide this setting, AWS WAF parses and evaluates the content only up to the first parsing
+     *        failure that it encounters.
+     *        </p>
+     *        <p>
+     *        AWS WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as
+     *        invalid characters, duplicate keys, truncation, and any content whose root node isn't an object or an
+     *        array.
+     *        </p>
+     *        <p>
+     *        AWS WAF parses the JSON in the following examples as two valid key, value pairs:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Missing comma: <code>{"key1":"value1""key2":"value2"}</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Missing colon: <code>{"key1":"value1","key2""value2"}</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Extra colons: <code>{"key1"::"value1","key2""value2"}</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BodyParsingFallbackBehavior
      */
@@ -405,14 +541,15 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The inspection behavior to fall back to if the JSON in the request body is invalid. For AWS WAF, invalid JSON is
-     * any content that isn't complete syntactical JSON, content whose root node isn't an object or an array, and
-     * duplicate keys in the content.
-     * </p>
-     * <p>
-     * You can specify the following fallback behaviors:
+     * What AWS WAF should do if it fails to completely parse the JSON body. The options are the following:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. AWS WAF applies the text transformations and
+     * inspection criteria that you defined for the JSON inspection to the body text string.
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule action to the
@@ -424,26 +561,45 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      * <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.
      * </p>
      * </li>
+     * </ul>
+     * <p>
+     * If you don't provide this setting, AWS WAF parses and evaluates the content only up to the first parsing failure
+     * that it encounters.
+     * </p>
+     * <p>
+     * AWS WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as invalid
+     * characters, duplicate keys, truncation, and any content whose root node isn't an object or an array.
+     * </p>
+     * <p>
+     * AWS WAF parses the JSON in the following examples as two valid key, value pairs:
+     * </p>
+     * <ul>
      * <li>
      * <p>
-     * <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. This option applies the text transformations
-     * and inspection criteria that you defined for the JSON inspection to the body text string.
+     * Missing comma: <code>{"key1":"value1""key2":"value2"}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Missing colon: <code>{"key1":"value1","key2""value2"}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Extra colons: <code>{"key1"::"value1","key2""value2"}</code>
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * If you don't provide this setting, when AWS WAF encounters invalid JSON, it parses and inspects what it can, up
-     * to the first invalid JSON that it encounters.
-     * </p>
      * 
      * @param invalidFallbackBehavior
-     *        The inspection behavior to fall back to if the JSON in the request body is invalid. For AWS WAF, invalid
-     *        JSON is any content that isn't complete syntactical JSON, content whose root node isn't an object or an
-     *        array, and duplicate keys in the content. </p>
-     *        <p>
-     *        You can specify the following fallback behaviors:
-     *        </p>
+     *        What AWS WAF should do if it fails to completely parse the JSON body. The options are the following:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. AWS WAF applies the text transformations
+     *        and inspection criteria that you defined for the JSON inspection to the body text string.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>MATCH</code> - Treat the web request as matching the rule statement. AWS WAF applies the rule action
@@ -455,16 +611,35 @@ public class JsonBody implements Serializable, Cloneable, StructuredPojo {
      *        <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.
      *        </p>
      *        </li>
-     *        <li>
-     *        <p>
-     *        <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. This option applies the text
-     *        transformations and inspection criteria that you defined for the JSON inspection to the body text string.
-     *        </p>
-     *        </li>
      *        </ul>
      *        <p>
-     *        If you don't provide this setting, when AWS WAF encounters invalid JSON, it parses and inspects what it
-     *        can, up to the first invalid JSON that it encounters.
+     *        If you don't provide this setting, AWS WAF parses and evaluates the content only up to the first parsing
+     *        failure that it encounters.
+     *        </p>
+     *        <p>
+     *        AWS WAF does its best to parse the entire JSON body, but might be forced to stop for reasons such as
+     *        invalid characters, duplicate keys, truncation, and any content whose root node isn't an object or an
+     *        array.
+     *        </p>
+     *        <p>
+     *        AWS WAF parses the JSON in the following examples as two valid key, value pairs:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Missing comma: <code>{"key1":"value1""key2":"value2"}</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Missing colon: <code>{"key1":"value1","key2""value2"}</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Extra colons: <code>{"key1"::"value1","key2""value2"}</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BodyParsingFallbackBehavior
      */

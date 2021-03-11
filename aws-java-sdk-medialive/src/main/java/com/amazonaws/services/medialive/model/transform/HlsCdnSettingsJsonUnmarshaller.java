@@ -60,6 +60,10 @@ public class HlsCdnSettingsJsonUnmarshaller implements Unmarshaller<HlsCdnSettin
                     context.nextToken();
                     hlsCdnSettings.setHlsMediaStoreSettings(HlsMediaStoreSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("hlsS3Settings", targetDepth)) {
+                    context.nextToken();
+                    hlsCdnSettings.setHlsS3Settings(HlsS3SettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("hlsWebdavSettings", targetDepth)) {
                     context.nextToken();
                     hlsCdnSettings.setHlsWebdavSettings(HlsWebdavSettingsJsonUnmarshaller.getInstance().unmarshall(context));

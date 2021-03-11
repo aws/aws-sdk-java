@@ -236,6 +236,39 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
 
     /**
      * <p>
+     * Analyzes input text for the presence of personally identifiable information (PII) and returns the labels of
+     * identified PII entity types such as name, address, bank account number, or phone number.
+     * </p>
+     * 
+     * @param containsPiiEntitiesRequest
+     * @return A Java Future containing the result of the ContainsPiiEntities operation returned by the service.
+     * @sample AmazonComprehendAsync.ContainsPiiEntities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ContainsPiiEntities" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ContainsPiiEntitiesResult> containsPiiEntitiesAsync(ContainsPiiEntitiesRequest containsPiiEntitiesRequest);
+
+    /**
+     * <p>
+     * Analyzes input text for the presence of personally identifiable information (PII) and returns the labels of
+     * identified PII entity types such as name, address, bank account number, or phone number.
+     * </p>
+     * 
+     * @param containsPiiEntitiesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ContainsPiiEntities operation returned by the service.
+     * @sample AmazonComprehendAsyncHandler.ContainsPiiEntities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ContainsPiiEntities" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ContainsPiiEntitiesResult> containsPiiEntitiesAsync(ContainsPiiEntitiesRequest containsPiiEntitiesRequest,
+            com.amazonaws.handlers.AsyncHandler<ContainsPiiEntitiesRequest, ContainsPiiEntitiesResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new document classifier that you can use to categorize documents. To create a classifier, you provide a
      * set of training documents that labeled with the categories that you want to use. After the classifier is trained
      * you can use it to categorize a set of labeled documents into the categories. For more information, see

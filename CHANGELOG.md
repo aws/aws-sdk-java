@@ -1,3 +1,20 @@
+# __1.11.973__ __2021-03-11__
+## __AWS Elemental MediaLive__
+  - ### Features
+    - MediaLive supports the ability to apply a canned ACL to output sent to an AWS S3 bucket; supports ability to specify position for EBU-TT and TTML output captions converted from Teletext source.
+
+## __AWS Network Firewall__
+  - ### Features
+    - Correct the documentation about how you can provide rule group rules
+
+## __AWS WAFV2__
+  - ### Features
+    - Correct the documentation about JSON body parsing behavior and IP set update behavior
+
+## __Amazon Comprehend__
+  - ### Features
+    - ContainsPiiEntities API analyzes the input text for the presence of personally identifiable information(PII) and returns the labels of identified PII entity types such as name, address etc.
+
 # __1.11.972__ __2021-03-10__
 ## __AWS Backup__
   - ### Features

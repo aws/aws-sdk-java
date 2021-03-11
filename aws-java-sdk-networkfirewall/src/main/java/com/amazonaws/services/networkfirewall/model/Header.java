@@ -31,7 +31,8 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The protocol to inspect for.
+     * The protocol to inspect for. To specify all, you can use <code>IP</code>, because all traffic on AWS and on the
+     * internet is IP.
      * </p>
      */
     private String protocol;
@@ -122,11 +123,13 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The protocol to inspect for.
+     * The protocol to inspect for. To specify all, you can use <code>IP</code>, because all traffic on AWS and on the
+     * internet is IP.
      * </p>
      * 
      * @param protocol
-     *        The protocol to inspect for.
+     *        The protocol to inspect for. To specify all, you can use <code>IP</code>, because all traffic on AWS and
+     *        on the internet is IP.
      * @see StatefulRuleProtocol
      */
 
@@ -136,10 +139,12 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The protocol to inspect for.
+     * The protocol to inspect for. To specify all, you can use <code>IP</code>, because all traffic on AWS and on the
+     * internet is IP.
      * </p>
      * 
-     * @return The protocol to inspect for.
+     * @return The protocol to inspect for. To specify all, you can use <code>IP</code>, because all traffic on AWS and
+     *         on the internet is IP.
      * @see StatefulRuleProtocol
      */
 
@@ -149,11 +154,13 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The protocol to inspect for.
+     * The protocol to inspect for. To specify all, you can use <code>IP</code>, because all traffic on AWS and on the
+     * internet is IP.
      * </p>
      * 
      * @param protocol
-     *        The protocol to inspect for.
+     *        The protocol to inspect for. To specify all, you can use <code>IP</code>, because all traffic on AWS and
+     *        on the internet is IP.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatefulRuleProtocol
      */
@@ -165,11 +172,13 @@ public class Header implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The protocol to inspect for.
+     * The protocol to inspect for. To specify all, you can use <code>IP</code>, because all traffic on AWS and on the
+     * internet is IP.
      * </p>
      * 
      * @param protocol
-     *        The protocol to inspect for.
+     *        The protocol to inspect for. To specify all, you can use <code>IP</code>, because all traffic on AWS and
+     *        on the internet is IP.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatefulRuleProtocol
      */

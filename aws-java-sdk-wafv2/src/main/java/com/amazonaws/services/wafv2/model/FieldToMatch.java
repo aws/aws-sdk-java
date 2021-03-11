@@ -36,6 +36,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * Inspect a single header. Provide the name of the header to inspect, for example, <code>User-Agent</code> or
      * <code>Referer</code>. This setting isn't case sensitive.
      * </p>
+     * <p>
+     * Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code>
+     * </p>
      */
     private SingleHeader singleHeader;
     /**
@@ -46,6 +49,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
      * specification.
+     * </p>
+     * <p>
+     * Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code>
      * </p>
      */
     private SingleQueryArgument singleQueryArgument;
@@ -113,10 +119,15 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * Inspect a single header. Provide the name of the header to inspect, for example, <code>User-Agent</code> or
      * <code>Referer</code>. This setting isn't case sensitive.
      * </p>
+     * <p>
+     * Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code>
+     * </p>
      * 
      * @param singleHeader
      *        Inspect a single header. Provide the name of the header to inspect, for example, <code>User-Agent</code>
-     *        or <code>Referer</code>. This setting isn't case sensitive.
+     *        or <code>Referer</code>. This setting isn't case sensitive.</p>
+     *        <p>
+     *        Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code>
      */
 
     public void setSingleHeader(SingleHeader singleHeader) {
@@ -128,9 +139,14 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * Inspect a single header. Provide the name of the header to inspect, for example, <code>User-Agent</code> or
      * <code>Referer</code>. This setting isn't case sensitive.
      * </p>
+     * <p>
+     * Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code>
+     * </p>
      * 
      * @return Inspect a single header. Provide the name of the header to inspect, for example, <code>User-Agent</code>
-     *         or <code>Referer</code>. This setting isn't case sensitive.
+     *         or <code>Referer</code>. This setting isn't case sensitive.</p>
+     *         <p>
+     *         Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code>
      */
 
     public SingleHeader getSingleHeader() {
@@ -142,10 +158,15 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * Inspect a single header. Provide the name of the header to inspect, for example, <code>User-Agent</code> or
      * <code>Referer</code>. This setting isn't case sensitive.
      * </p>
+     * <p>
+     * Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code>
+     * </p>
      * 
      * @param singleHeader
      *        Inspect a single header. Provide the name of the header to inspect, for example, <code>User-Agent</code>
-     *        or <code>Referer</code>. This setting isn't case sensitive.
+     *        or <code>Referer</code>. This setting isn't case sensitive.</p>
+     *        <p>
+     *        Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,6 +184,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
      * specification.
      * </p>
+     * <p>
+     * Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code>
+     * </p>
      * 
      * @param singleQueryArgument
      *        Inspect a single query argument. Provide the name of the query argument to inspect, such as
@@ -171,6 +195,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
      *        specification.
+     *        </p>
+     *        <p>
+     *        Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code>
      */
 
     public void setSingleQueryArgument(SingleQueryArgument singleQueryArgument) {
@@ -186,6 +213,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
      * specification.
      * </p>
+     * <p>
+     * Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code>
+     * </p>
      * 
      * @return Inspect a single query argument. Provide the name of the query argument to inspect, such as
      *         <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30 characters long and isn't case sensitive.
@@ -193,6 +223,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         This is used only to indicate the web request component for AWS WAF to inspect, in the
      *         <a>FieldToMatch</a> specification.
+     *         </p>
+     *         <p>
+     *         Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code>
      */
 
     public SingleQueryArgument getSingleQueryArgument() {
@@ -208,6 +241,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
      * specification.
      * </p>
+     * <p>
+     * Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code>
+     * </p>
      * 
      * @param singleQueryArgument
      *        Inspect a single query argument. Provide the name of the query argument to inspect, such as
@@ -216,6 +252,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
      *        specification.
+     *        </p>
+     *        <p>
+     *        Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

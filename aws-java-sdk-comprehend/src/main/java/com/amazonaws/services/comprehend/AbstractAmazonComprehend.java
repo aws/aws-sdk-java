@@ -58,6 +58,11 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
     }
 
     @Override
+    public ContainsPiiEntitiesResult containsPiiEntities(ContainsPiiEntitiesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateDocumentClassifierResult createDocumentClassifier(CreateDocumentClassifierRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

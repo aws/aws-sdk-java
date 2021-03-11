@@ -20,8 +20,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR)
- * notation. AWS WAF supports any CIDR range. For information about CIDR notation, see the Wikipedia entry <a
- * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
+ * notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0. For information about CIDR notation, see the
+ * Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain
+ * Routing</a>.
  * </p>
  * <p>
  * AWS WAF assigns an ARN to each <code>IPSet</code> that you create. To use an IP set in a rule, you provide the ARN to
@@ -67,7 +68,7 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all address ranges for IP versions IPv4 and IPv6.
+     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
      * </p>
      * <p>
      * Examples:
@@ -334,7 +335,7 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all address ranges for IP versions IPv4 and IPv6.
+     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
      * </p>
      * <p>
      * Examples:
@@ -372,8 +373,7 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @return Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     *         Inter-Domain Routing (CIDR) notation. AWS WAF supports all address ranges for IP versions IPv4 and IPv6.
-     *         </p>
+     *         Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
      *         <p>
      *         Examples:
      *         </p>
@@ -417,7 +417,7 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all address ranges for IP versions IPv4 and IPv6.
+     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
      * </p>
      * <p>
      * Examples:
@@ -456,8 +456,7 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param addresses
      *        Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     *        Inter-Domain Routing (CIDR) notation. AWS WAF supports all address ranges for IP versions IPv4 and IPv6.
-     *        </p>
+     *        Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
      *        <p>
      *        Examples:
      *        </p>
@@ -505,7 +504,7 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all address ranges for IP versions IPv4 and IPv6.
+     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
      * </p>
      * <p>
      * Examples:
@@ -549,8 +548,7 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param addresses
      *        Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     *        Inter-Domain Routing (CIDR) notation. AWS WAF supports all address ranges for IP versions IPv4 and IPv6.
-     *        </p>
+     *        Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
      *        <p>
      *        Examples:
      *        </p>
@@ -600,7 +598,7 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all address ranges for IP versions IPv4 and IPv6.
+     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
      * </p>
      * <p>
      * Examples:
@@ -639,8 +637,7 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param addresses
      *        Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     *        Inter-Domain Routing (CIDR) notation. AWS WAF supports all address ranges for IP versions IPv4 and IPv6.
-     *        </p>
+     *        Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
      *        <p>
      *        Examples:
      *        </p>

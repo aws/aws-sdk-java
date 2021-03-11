@@ -48,6 +48,10 @@ public class ArchiveGroupSettingsJsonUnmarshaller implements Unmarshaller<Archiv
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("archiveCdnSettings", targetDepth)) {
+                    context.nextToken();
+                    archiveGroupSettings.setArchiveCdnSettings(ArchiveCdnSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("destination", targetDepth)) {
                     context.nextToken();
                     archiveGroupSettings.setDestination(OutputLocationRefJsonUnmarshaller.getInstance().unmarshall(context));

@@ -26,10 +26,46 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ArchiveGroupSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /** Parameters that control interactions with the CDN. */
+    private ArchiveCdnSettings archiveCdnSettings;
     /** A directory and base filename where archive files should be written. */
     private OutputLocationRef destination;
     /** Number of seconds to write to archive file before closing and starting a new one. */
     private Integer rolloverInterval;
+
+    /**
+     * Parameters that control interactions with the CDN.
+     * 
+     * @param archiveCdnSettings
+     *        Parameters that control interactions with the CDN.
+     */
+
+    public void setArchiveCdnSettings(ArchiveCdnSettings archiveCdnSettings) {
+        this.archiveCdnSettings = archiveCdnSettings;
+    }
+
+    /**
+     * Parameters that control interactions with the CDN.
+     * 
+     * @return Parameters that control interactions with the CDN.
+     */
+
+    public ArchiveCdnSettings getArchiveCdnSettings() {
+        return this.archiveCdnSettings;
+    }
+
+    /**
+     * Parameters that control interactions with the CDN.
+     * 
+     * @param archiveCdnSettings
+     *        Parameters that control interactions with the CDN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ArchiveGroupSettings withArchiveCdnSettings(ArchiveCdnSettings archiveCdnSettings) {
+        setArchiveCdnSettings(archiveCdnSettings);
+        return this;
+    }
 
     /**
      * A directory and base filename where archive files should be written.
@@ -111,6 +147,8 @@ public class ArchiveGroupSettings implements Serializable, Cloneable, Structured
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getArchiveCdnSettings() != null)
+            sb.append("ArchiveCdnSettings: ").append(getArchiveCdnSettings()).append(",");
         if (getDestination() != null)
             sb.append("Destination: ").append(getDestination()).append(",");
         if (getRolloverInterval() != null)
@@ -129,6 +167,10 @@ public class ArchiveGroupSettings implements Serializable, Cloneable, Structured
         if (obj instanceof ArchiveGroupSettings == false)
             return false;
         ArchiveGroupSettings other = (ArchiveGroupSettings) obj;
+        if (other.getArchiveCdnSettings() == null ^ this.getArchiveCdnSettings() == null)
+            return false;
+        if (other.getArchiveCdnSettings() != null && other.getArchiveCdnSettings().equals(this.getArchiveCdnSettings()) == false)
+            return false;
         if (other.getDestination() == null ^ this.getDestination() == null)
             return false;
         if (other.getDestination() != null && other.getDestination().equals(this.getDestination()) == false)
@@ -145,6 +187,7 @@ public class ArchiveGroupSettings implements Serializable, Cloneable, Structured
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getArchiveCdnSettings() == null) ? 0 : getArchiveCdnSettings().hashCode());
         hashCode = prime * hashCode + ((getDestination() == null) ? 0 : getDestination().hashCode());
         hashCode = prime * hashCode + ((getRolloverInterval() == null) ? 0 : getRolloverInterval().hashCode());
         return hashCode;

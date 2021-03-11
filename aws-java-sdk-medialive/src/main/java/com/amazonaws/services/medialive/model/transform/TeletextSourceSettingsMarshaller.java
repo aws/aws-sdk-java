@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class TeletextSourceSettingsMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> OUTPUTRECTANGLE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("outputRectangle").build();
     private static final MarshallingInfo<String> PAGENUMBER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pageNumber").build();
 
@@ -46,6 +48,7 @@ public class TeletextSourceSettingsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(teletextSourceSettings.getOutputRectangle(), OUTPUTRECTANGLE_BINDING);
             protocolMarshaller.marshall(teletextSourceSettings.getPageNumber(), PAGENUMBER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -48,6 +48,10 @@ public class EbuTtDDestinationSettingsJsonUnmarshaller implements Unmarshaller<E
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("copyrightHolder", targetDepth)) {
+                    context.nextToken();
+                    ebuTtDDestinationSettings.setCopyrightHolder(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("fillLineGap", targetDepth)) {
                     context.nextToken();
                     ebuTtDDestinationSettings.setFillLineGap(context.getUnmarshaller(String.class).unmarshall(context));

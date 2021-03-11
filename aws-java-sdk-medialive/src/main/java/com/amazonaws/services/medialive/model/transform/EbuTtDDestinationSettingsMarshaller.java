@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class EbuTtDDestinationSettingsMarshaller {
 
+    private static final MarshallingInfo<String> COPYRIGHTHOLDER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("copyrightHolder").build();
     private static final MarshallingInfo<String> FILLLINEGAP_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fillLineGap").build();
     private static final MarshallingInfo<String> FONTFAMILY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -50,6 +52,7 @@ public class EbuTtDDestinationSettingsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(ebuTtDDestinationSettings.getCopyrightHolder(), COPYRIGHTHOLDER_BINDING);
             protocolMarshaller.marshall(ebuTtDDestinationSettings.getFillLineGap(), FILLLINEGAP_BINDING);
             protocolMarshaller.marshall(ebuTtDDestinationSettings.getFontFamily(), FONTFAMILY_BINDING);
             protocolMarshaller.marshall(ebuTtDDestinationSettings.getStyleControl(), STYLECONTROL_BINDING);

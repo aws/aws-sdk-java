@@ -113,6 +113,22 @@
       ],
       "documentation":"<p>Creates a new document classification request to analyze a single document in real-time, using a previously created and trained custom model and an endpoint.</p>"
     },
+    "ContainsPiiEntities":{
+      "name":"ContainsPiiEntities",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ContainsPiiEntitiesRequest"},
+      "output":{"shape":"ContainsPiiEntitiesResponse"},
+      "errors":[
+        {"shape":"InvalidRequestException"},
+        {"shape":"TextSizeLimitExceededException"},
+        {"shape":"UnsupportedLanguageException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Analyzes input text for the presence of personally identifiable information (PII) and returns the labels of identified PII entity types such as name, address, bank account number, or phone number.</p>"
+    },
     "CreateDocumentClassifier":{
       "name":"CreateDocumentClassifier",
       "http":{
@@ -1429,6 +1445,32 @@
       "documentation":"<p>Concurrent modification of the tags associated with an Amazon Comprehend resource is not supported. </p>",
       "exception":true
     },
+    "ContainsPiiEntitiesRequest":{
+      "type":"structure",
+      "required":[
+        "Text",
+        "LanguageCode"
+      ],
+      "members":{
+        "Text":{
+          "shape":"String",
+          "documentation":"<p>Creates a new document classification request to analyze a single document in real-time, returning personally identifiable information (PII) entity labels.</p>"
+        },
+        "LanguageCode":{
+          "shape":"LanguageCode",
+          "documentation":"<p>The language of the input documents.</p>"
+        }
+      }
+    },
+    "ContainsPiiEntitiesResponse":{
+      "type":"structure",
+      "members":{
+        "Labels":{
+          "shape":"ListOfEntityLabels",
+          "documentation":"<p>The labels used in the document being analyzed. Individual labels represent personally identifiable information (PII) entity types.</p>"
+        }
+      }
+    },
     "CreateDocumentClassifierRequest":{
       "type":"structure",
       "required":[
@@ -2538,6 +2580,20 @@
       },
       "documentation":"<p>Provides information about an entity. </p> <p> </p>"
     },
+    "EntityLabel":{
+      "type":"structure",
+      "members":{
+        "Name":{
+          "shape":"PiiEntityType",
+          "documentation":"<p>The name of the label.</p>"
+        },
+        "Score":{
+          "shape":"Float",
+          "documentation":"<p>The level of confidence that Amazon Comprehend has in the accuracy of the detection.</p>"
+        }
+      },
+      "documentation":"<p>Specifies one of the label or labels that categorize the personally identifiable information (PII) entity being analyzed.</p>"
+    },
     "EntityRecognizerAnnotations":{
       "type":"structure",
       "required":["S3Uri"],
@@ -2783,7 +2839,7 @@
     "EntityTypeName":{
       "type":"string",
       "max":64,
-      "pattern":"^(?:(?!\\\\n+|\\\\t+|\\\\r+|[\\r\\t\\n\\s,]).)+$"
+      "pattern":"^(?:(?!\\\\n+|\\\\t+|\\\\r+|[\\r\\t\\n,]).)+$"
     },
     "EntityTypesEvaluationMetrics":{
       "type":"structure",
@@ -3398,6 +3454,10 @@
     "ListOfEntities":{
       "type":"list",
       "member":{"shape":"Entity"}
+    },
+    "ListOfEntityLabels":{
+      "type":"list",
+      "member":{"shape":"EntityLabel"}
     },
     "ListOfKeyPhrases":{
       "type":"list",
@@ -4800,7 +4860,7 @@
       "members":{
         "Message":{"shape":"String"}
       },
-      "documentation":"<p>Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs (such as <code>CreateEntityRecognizer</code>), only English, Spanish, French, Italian, German, or Portuguese are accepted. For most other APIs, such as those for Custom Classification, Amazon Comprehend accepts text in all supported languages. For a list of supported languages, see <a>supported-languages</a>. </p>",
+      "documentation":"<p>Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see <a>supported-languages</a>. </p>",
       "exception":true
     },
     "UntagResourceRequest":{

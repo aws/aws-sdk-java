@@ -29,6 +29,8 @@ public class FrameCaptureGroupSettingsMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> DESTINATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destination").build();
+    private static final MarshallingInfo<StructuredPojo> FRAMECAPTURECDNSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("frameCaptureCdnSettings").build();
 
     private static final FrameCaptureGroupSettingsMarshaller instance = new FrameCaptureGroupSettingsMarshaller();
 
@@ -47,6 +49,7 @@ public class FrameCaptureGroupSettingsMarshaller {
 
         try {
             protocolMarshaller.marshall(frameCaptureGroupSettings.getDestination(), DESTINATION_BINDING);
+            protocolMarshaller.marshall(frameCaptureGroupSettings.getFrameCaptureCdnSettings(), FRAMECAPTURECDNSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

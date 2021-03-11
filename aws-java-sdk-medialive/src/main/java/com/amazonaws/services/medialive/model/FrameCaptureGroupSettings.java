@@ -34,6 +34,8 @@ public class FrameCaptureGroupSettings implements Serializable, Cloneable, Struc
      * digits, starting from 00001) + extension (which is always .jpg). For example, curling-low.00001.jpg
      */
     private OutputLocationRef destination;
+    /** Parameters that control interactions with the CDN. */
+    private FrameCaptureCdnSettings frameCaptureCdnSettings;
 
     /**
      * The destination for the frame capture files. Either the URI for an Amazon S3 bucket and object, plus a file name
@@ -97,6 +99,40 @@ public class FrameCaptureGroupSettings implements Serializable, Cloneable, Struc
     }
 
     /**
+     * Parameters that control interactions with the CDN.
+     * 
+     * @param frameCaptureCdnSettings
+     *        Parameters that control interactions with the CDN.
+     */
+
+    public void setFrameCaptureCdnSettings(FrameCaptureCdnSettings frameCaptureCdnSettings) {
+        this.frameCaptureCdnSettings = frameCaptureCdnSettings;
+    }
+
+    /**
+     * Parameters that control interactions with the CDN.
+     * 
+     * @return Parameters that control interactions with the CDN.
+     */
+
+    public FrameCaptureCdnSettings getFrameCaptureCdnSettings() {
+        return this.frameCaptureCdnSettings;
+    }
+
+    /**
+     * Parameters that control interactions with the CDN.
+     * 
+     * @param frameCaptureCdnSettings
+     *        Parameters that control interactions with the CDN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FrameCaptureGroupSettings withFrameCaptureCdnSettings(FrameCaptureCdnSettings frameCaptureCdnSettings) {
+        setFrameCaptureCdnSettings(frameCaptureCdnSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -109,7 +145,9 @@ public class FrameCaptureGroupSettings implements Serializable, Cloneable, Struc
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDestination() != null)
-            sb.append("Destination: ").append(getDestination());
+            sb.append("Destination: ").append(getDestination()).append(",");
+        if (getFrameCaptureCdnSettings() != null)
+            sb.append("FrameCaptureCdnSettings: ").append(getFrameCaptureCdnSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -128,6 +166,10 @@ public class FrameCaptureGroupSettings implements Serializable, Cloneable, Struc
             return false;
         if (other.getDestination() != null && other.getDestination().equals(this.getDestination()) == false)
             return false;
+        if (other.getFrameCaptureCdnSettings() == null ^ this.getFrameCaptureCdnSettings() == null)
+            return false;
+        if (other.getFrameCaptureCdnSettings() != null && other.getFrameCaptureCdnSettings().equals(this.getFrameCaptureCdnSettings()) == false)
+            return false;
         return true;
     }
 
@@ -137,6 +179,7 @@ public class FrameCaptureGroupSettings implements Serializable, Cloneable, Struc
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDestination() == null) ? 0 : getDestination().hashCode());
+        hashCode = prime * hashCode + ((getFrameCaptureCdnSettings() == null) ? 0 : getFrameCaptureCdnSettings().hashCode());
         return hashCode;
     }
 

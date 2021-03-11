@@ -68,7 +68,7 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all address ranges for IP versions IPv4 and IPv6.
+     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
      * </p>
      * <p>
      * Examples:
@@ -446,7 +446,7 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all address ranges for IP versions IPv4 and IPv6.
+     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
      * </p>
      * <p>
      * Examples:
@@ -484,8 +484,7 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @return Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     *         Inter-Domain Routing (CIDR) notation. AWS WAF supports all address ranges for IP versions IPv4 and IPv6.
-     *         </p>
+     *         Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
      *         <p>
      *         Examples:
      *         </p>
@@ -529,7 +528,7 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all address ranges for IP versions IPv4 and IPv6.
+     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
      * </p>
      * <p>
      * Examples:
@@ -568,8 +567,7 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @param addresses
      *        Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     *        Inter-Domain Routing (CIDR) notation. AWS WAF supports all address ranges for IP versions IPv4 and IPv6.
-     *        </p>
+     *        Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
      *        <p>
      *        Examples:
      *        </p>
@@ -617,7 +615,7 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all address ranges for IP versions IPv4 and IPv6.
+     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
      * </p>
      * <p>
      * Examples:
@@ -661,8 +659,7 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @param addresses
      *        Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     *        Inter-Domain Routing (CIDR) notation. AWS WAF supports all address ranges for IP versions IPv4 and IPv6.
-     *        </p>
+     *        Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
      *        <p>
      *        Examples:
      *        </p>
@@ -712,7 +709,7 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all address ranges for IP versions IPv4 and IPv6.
+     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
      * </p>
      * <p>
      * Examples:
@@ -751,8 +748,7 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @param addresses
      *        Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     *        Inter-Domain Routing (CIDR) notation. AWS WAF supports all address ranges for IP versions IPv4 and IPv6.
-     *        </p>
+     *        Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
      *        <p>
      *        Examples:
      *        </p>
