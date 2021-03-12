@@ -20,7 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of an
- * ad break.
+ * ad break. To learn more about bumpers, see <a
+ * href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/Bumper" target="_top">AWS API

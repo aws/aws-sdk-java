@@ -30,7 +30,7 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The bundle identifier.
+     * The identifier of the bundle.
      * </p>
      */
     private String bundleId;
@@ -49,13 +49,13 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
     private String owner;
     /**
      * <p>
-     * A description.
+     * The description of the bundle.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The image identifier of the bundle.
+     * The identifier of the image that was used to create the bundle.
      * </p>
      */
     private String imageId;
@@ -67,13 +67,13 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
     private RootStorage rootStorage;
     /**
      * <p>
-     * The size of the user storage.
+     * The size of the user volume.
      * </p>
      */
     private UserStorage userStorage;
     /**
      * <p>
-     * The compute type. For more information, see <a
+     * The compute type of the bundle. For more information, see <a
      * href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.
      * </p>
      */
@@ -84,14 +84,20 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.Date lastUpdatedTime;
+    /**
+     * <p>
+     * The time when the bundle was created.
+     * </p>
+     */
+    private java.util.Date creationTime;
 
     /**
      * <p>
-     * The bundle identifier.
+     * The identifier of the bundle.
      * </p>
      * 
      * @param bundleId
-     *        The bundle identifier.
+     *        The identifier of the bundle.
      */
 
     public void setBundleId(String bundleId) {
@@ -100,10 +106,10 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The bundle identifier.
+     * The identifier of the bundle.
      * </p>
      * 
-     * @return The bundle identifier.
+     * @return The identifier of the bundle.
      */
 
     public String getBundleId() {
@@ -112,11 +118,11 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The bundle identifier.
+     * The identifier of the bundle.
      * </p>
      * 
      * @param bundleId
-     *        The bundle identifier.
+     *        The identifier of the bundle.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -213,11 +219,11 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A description.
+     * The description of the bundle.
      * </p>
      * 
      * @param description
-     *        A description.
+     *        The description of the bundle.
      */
 
     public void setDescription(String description) {
@@ -226,10 +232,10 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A description.
+     * The description of the bundle.
      * </p>
      * 
-     * @return A description.
+     * @return The description of the bundle.
      */
 
     public String getDescription() {
@@ -238,11 +244,11 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A description.
+     * The description of the bundle.
      * </p>
      * 
      * @param description
-     *        A description.
+     *        The description of the bundle.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -253,11 +259,11 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The image identifier of the bundle.
+     * The identifier of the image that was used to create the bundle.
      * </p>
      * 
      * @param imageId
-     *        The image identifier of the bundle.
+     *        The identifier of the image that was used to create the bundle.
      */
 
     public void setImageId(String imageId) {
@@ -266,10 +272,10 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The image identifier of the bundle.
+     * The identifier of the image that was used to create the bundle.
      * </p>
      * 
-     * @return The image identifier of the bundle.
+     * @return The identifier of the image that was used to create the bundle.
      */
 
     public String getImageId() {
@@ -278,11 +284,11 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The image identifier of the bundle.
+     * The identifier of the image that was used to create the bundle.
      * </p>
      * 
      * @param imageId
-     *        The image identifier of the bundle.
+     *        The identifier of the image that was used to create the bundle.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -333,11 +339,11 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The size of the user storage.
+     * The size of the user volume.
      * </p>
      * 
      * @param userStorage
-     *        The size of the user storage.
+     *        The size of the user volume.
      */
 
     public void setUserStorage(UserStorage userStorage) {
@@ -346,10 +352,10 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The size of the user storage.
+     * The size of the user volume.
      * </p>
      * 
-     * @return The size of the user storage.
+     * @return The size of the user volume.
      */
 
     public UserStorage getUserStorage() {
@@ -358,11 +364,11 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The size of the user storage.
+     * The size of the user volume.
      * </p>
      * 
      * @param userStorage
-     *        The size of the user storage.
+     *        The size of the user volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -373,12 +379,12 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The compute type. For more information, see <a
+     * The compute type of the bundle. For more information, see <a
      * href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.
      * </p>
      * 
      * @param computeType
-     *        The compute type. For more information, see <a
+     *        The compute type of the bundle. For more information, see <a
      *        href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.
      */
 
@@ -388,11 +394,11 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The compute type. For more information, see <a
+     * The compute type of the bundle. For more information, see <a
      * href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.
      * </p>
      * 
-     * @return The compute type. For more information, see <a
+     * @return The compute type of the bundle. For more information, see <a
      *         href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.
      */
 
@@ -402,12 +408,12 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The compute type. For more information, see <a
+     * The compute type of the bundle. For more information, see <a
      * href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.
      * </p>
      * 
      * @param computeType
-     *        The compute type. For more information, see <a
+     *        The compute type of the bundle. For more information, see <a
      *        href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -458,6 +464,46 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The time when the bundle was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        The time when the bundle was created.
+     */
+
+    public void setCreationTime(java.util.Date creationTime) {
+        this.creationTime = creationTime;
+    }
+
+    /**
+     * <p>
+     * The time when the bundle was created.
+     * </p>
+     * 
+     * @return The time when the bundle was created.
+     */
+
+    public java.util.Date getCreationTime() {
+        return this.creationTime;
+    }
+
+    /**
+     * <p>
+     * The time when the bundle was created.
+     * </p>
+     * 
+     * @param creationTime
+     *        The time when the bundle was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkspaceBundle withCreationTime(java.util.Date creationTime) {
+        setCreationTime(creationTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -486,7 +532,9 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
         if (getComputeType() != null)
             sb.append("ComputeType: ").append(getComputeType()).append(",");
         if (getLastUpdatedTime() != null)
-            sb.append("LastUpdatedTime: ").append(getLastUpdatedTime());
+            sb.append("LastUpdatedTime: ").append(getLastUpdatedTime()).append(",");
+        if (getCreationTime() != null)
+            sb.append("CreationTime: ").append(getCreationTime());
         sb.append("}");
         return sb.toString();
     }
@@ -537,6 +585,10 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getLastUpdatedTime() != null && other.getLastUpdatedTime().equals(this.getLastUpdatedTime()) == false)
             return false;
+        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
+            return false;
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
+            return false;
         return true;
     }
 
@@ -554,6 +606,7 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getUserStorage() == null) ? 0 : getUserStorage().hashCode());
         hashCode = prime * hashCode + ((getComputeType() == null) ? 0 : getComputeType().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         return hashCode;
     }
 

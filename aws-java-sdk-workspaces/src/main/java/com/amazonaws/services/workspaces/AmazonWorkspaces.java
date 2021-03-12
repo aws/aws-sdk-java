@@ -312,6 +312,33 @@ public interface AmazonWorkspaces {
 
     /**
      * <p>
+     * Creates the specified WorkSpace bundle. For more information about creating WorkSpace bundles, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/create-custom-bundle.html"> Create a Custom
+     * WorkSpaces Image and Bundle</a>.
+     * </p>
+     * 
+     * @param createWorkspaceBundleRequest
+     * @return Result of the CreateWorkspaceBundle operation returned by the service.
+     * @throws ResourceUnavailableException
+     *         The specified resource is not available.
+     * @throws ResourceAlreadyExistsException
+     *         The specified resource already exists.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @sample AmazonWorkspaces.CreateWorkspaceBundle
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaceBundle"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateWorkspaceBundleResult createWorkspaceBundle(CreateWorkspaceBundleRequest createWorkspaceBundleRequest);
+
+    /**
+     * <p>
      * Creates one or more WorkSpaces.
      * </p>
      * <p>
@@ -413,6 +440,29 @@ public interface AmazonWorkspaces {
      *      Documentation</a>
      */
     DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest);
+
+    /**
+     * <p>
+     * Deletes the specified WorkSpace bundle. For more information about deleting WorkSpace bundles, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/delete_bundle.html"> Delete a Custom WorkSpaces
+     * Bundle or Image</a>.
+     * </p>
+     * 
+     * @param deleteWorkspaceBundleRequest
+     * @return Result of the DeleteWorkspaceBundle operation returned by the service.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ResourceAssociatedException
+     *         The resource is associated with a directory.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @sample AmazonWorkspaces.DeleteWorkspaceBundle
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteWorkspaceBundle"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteWorkspaceBundleResult deleteWorkspaceBundle(DeleteWorkspaceBundleRequest deleteWorkspaceBundleRequest);
 
     /**
      * <p>
@@ -1342,6 +1392,36 @@ public interface AmazonWorkspaces {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateRulesOfIpGroupResult updateRulesOfIpGroup(UpdateRulesOfIpGroupRequest updateRulesOfIpGroupRequest);
+
+    /**
+     * <p>
+     * Updates a WorkSpace bundle with a new image. For more information about updating WorkSpace bundles, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-custom-bundle.html"> Update a Custom
+     * WorkSpaces Bundle</a>.
+     * </p>
+     * <important>
+     * <p>
+     * Existing WorkSpaces aren't automatically updated when you update the bundle that they're based on. To update
+     * existing WorkSpaces that are based on a bundle that you've updated, you must either rebuild the WorkSpaces or
+     * delete and recreate them.
+     * </p>
+     * </important>
+     * 
+     * @param updateWorkspaceBundleRequest
+     * @return Result of the UpdateWorkspaceBundle operation returned by the service.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ResourceUnavailableException
+     *         The specified resource is not available.
+     * @sample AmazonWorkspaces.UpdateWorkspaceBundle
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateWorkspaceBundle"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateWorkspaceBundleResult updateWorkspaceBundle(UpdateWorkspaceBundleRequest updateWorkspaceBundleRequest);
 
     /**
      * <p>

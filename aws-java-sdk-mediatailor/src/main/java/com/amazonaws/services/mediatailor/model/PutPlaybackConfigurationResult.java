@@ -34,15 +34,16 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
     private String adDecisionServerUrl;
     /**
      * <p>
-     * The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a long
-     * manifest, or if a viewer joins mid-break.
+     * The configuration for avail suppression, also known as ad suppression. For more information about ad suppression,
+     * see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Suppression</a>.
      * </p>
      */
     private AvailSuppression availSuppression;
     /**
      * <p>
      * The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of
-     * an ad break.
+     * an ad break. To learn more about bumpers, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.
      * </p>
      */
     private Bumper bumper;
@@ -55,7 +56,8 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
     private CdnConfiguration cdnConfiguration;
     /**
      * <p>
-     * Predefined aliases for dynamic variables.
+     * The player parameters and aliases used as dynamic variables during session initialization. For more information,
+     * see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.
      * </p>
      */
     private java.util.Map<String, java.util.Map<String, String>> configurationAliases;
@@ -78,8 +80,10 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
      */
     private LivePreRollConfiguration livePreRollConfiguration;
     /**
+     * <p>
      * The configuration for manifest processing rules. Manifest processing rules enable customization of the
      * personalized manifests created by MediaTailor.
+     * </p>
      */
     private ManifestProcessingRules manifestProcessingRules;
     /**
@@ -90,7 +94,13 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
     private String name;
     /**
      * <p>
-     * The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
+     * Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of
+     * underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned
+     * and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams,
+     * rather than ad insertion, because it relies on an underlying content stream. For more information about ad break
+     * behavior, including ad replacement and insertion, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental
+     * MediaTailor</a>.
      * </p>
      */
     private Integer personalizationThresholdSeconds;
@@ -138,7 +148,7 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
     private String transcodeProfileName;
     /**
      * <p>
-     * The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.
+     * The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.
      * </p>
      */
     private String videoContentSourceUrl;
@@ -203,13 +213,14 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a long
-     * manifest, or if a viewer joins mid-break.
+     * The configuration for avail suppression, also known as ad suppression. For more information about ad suppression,
+     * see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Suppression</a>.
      * </p>
      * 
      * @param availSuppression
-     *        The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a
-     *        long manifest, or if a viewer joins mid-break.
+     *        The configuration for avail suppression, also known as ad suppression. For more information about ad
+     *        suppression, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad
+     *        Suppression</a>.
      */
 
     public void setAvailSuppression(AvailSuppression availSuppression) {
@@ -218,12 +229,13 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a long
-     * manifest, or if a viewer joins mid-break.
+     * The configuration for avail suppression, also known as ad suppression. For more information about ad suppression,
+     * see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Suppression</a>.
      * </p>
      * 
-     * @return The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a
-     *         long manifest, or if a viewer joins mid-break.
+     * @return The configuration for avail suppression, also known as ad suppression. For more information about ad
+     *         suppression, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad
+     *         Suppression</a>.
      */
 
     public AvailSuppression getAvailSuppression() {
@@ -232,13 +244,14 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a long
-     * manifest, or if a viewer joins mid-break.
+     * The configuration for avail suppression, also known as ad suppression. For more information about ad suppression,
+     * see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Suppression</a>.
      * </p>
      * 
      * @param availSuppression
-     *        The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a
-     *        long manifest, or if a viewer joins mid-break.
+     *        The configuration for avail suppression, also known as ad suppression. For more information about ad
+     *        suppression, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad
+     *        Suppression</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -250,12 +263,14 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of
-     * an ad break.
+     * an ad break. To learn more about bumpers, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.
      * </p>
      * 
      * @param bumper
      *        The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the
-     *        end of an ad break.
+     *        end of an ad break. To learn more about bumpers, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.
      */
 
     public void setBumper(Bumper bumper) {
@@ -265,11 +280,13 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of
-     * an ad break.
+     * an ad break. To learn more about bumpers, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.
      * </p>
      * 
      * @return The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before
-     *         the end of an ad break.
+     *         the end of an ad break. To learn more about bumpers, see <a
+     *         href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.
      */
 
     public Bumper getBumper() {
@@ -279,12 +296,14 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the end of
-     * an ad break.
+     * an ad break. To learn more about bumpers, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.
      * </p>
      * 
      * @param bumper
      *        The configuration for bumpers. Bumpers are short audio or video clips that play at the start or before the
-     *        end of an ad break.
+     *        end of an ad break. To learn more about bumpers, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/bumpers.html">Bumpers</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -341,10 +360,13 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Predefined aliases for dynamic variables.
+     * The player parameters and aliases used as dynamic variables during session initialization. For more information,
+     * see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.
      * </p>
      * 
-     * @return Predefined aliases for dynamic variables.
+     * @return The player parameters and aliases used as dynamic variables during session initialization. For more
+     *         information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain
+     *         Variables</a>.
      */
 
     public java.util.Map<String, java.util.Map<String, String>> getConfigurationAliases() {
@@ -353,11 +375,14 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Predefined aliases for dynamic variables.
+     * The player parameters and aliases used as dynamic variables during session initialization. For more information,
+     * see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.
      * </p>
      * 
      * @param configurationAliases
-     *        Predefined aliases for dynamic variables.
+     *        The player parameters and aliases used as dynamic variables during session initialization. For more
+     *        information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain
+     *        Variables</a>.
      */
 
     public void setConfigurationAliases(java.util.Map<String, java.util.Map<String, String>> configurationAliases) {
@@ -366,11 +391,14 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Predefined aliases for dynamic variables.
+     * The player parameters and aliases used as dynamic variables during session initialization. For more information,
+     * see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.
      * </p>
      * 
      * @param configurationAliases
-     *        Predefined aliases for dynamic variables.
+     *        The player parameters and aliases used as dynamic variables during session initialization. For more
+     *        information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain
+     *        Variables</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -528,8 +556,10 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
      * The configuration for manifest processing rules. Manifest processing rules enable customization of the
      * personalized manifests created by MediaTailor.
+     * </p>
      * 
      * @param manifestProcessingRules
      *        The configuration for manifest processing rules. Manifest processing rules enable customization of the
@@ -541,8 +571,10 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
      * The configuration for manifest processing rules. Manifest processing rules enable customization of the
      * personalized manifests created by MediaTailor.
+     * </p>
      * 
      * @return The configuration for manifest processing rules. Manifest processing rules enable customization of the
      *         personalized manifests created by MediaTailor.
@@ -553,8 +585,10 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
      * The configuration for manifest processing rules. Manifest processing rules enable customization of the
      * personalized manifests created by MediaTailor.
+     * </p>
      * 
      * @param manifestProcessingRules
      *        The configuration for manifest processing rules. Manifest processing rules enable customization of the
@@ -609,11 +643,23 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
+     * Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of
+     * underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned
+     * and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams,
+     * rather than ad insertion, because it relies on an underlying content stream. For more information about ad break
+     * behavior, including ad replacement and insertion, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental
+     * MediaTailor</a>.
      * </p>
      * 
      * @param personalizationThresholdSeconds
-     *        The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
+     *        Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration
+     *        of underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is
+     *        abandoned and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and
+     *        VOD streams, rather than ad insertion, because it relies on an underlying content stream. For more
+     *        information about ad break behavior, including ad replacement and insertion, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental
+     *        MediaTailor</a>.
      */
 
     public void setPersonalizationThresholdSeconds(Integer personalizationThresholdSeconds) {
@@ -622,10 +668,22 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
+     * Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of
+     * underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned
+     * and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams,
+     * rather than ad insertion, because it relies on an underlying content stream. For more information about ad break
+     * behavior, including ad replacement and insertion, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental
+     * MediaTailor</a>.
      * </p>
      * 
-     * @return The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
+     * @return Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration
+     *         of underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is
+     *         abandoned and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and
+     *         VOD streams, rather than ad insertion, because it relies on an underlying content stream. For more
+     *         information about ad break behavior, including ad replacement and insertion, see <a
+     *         href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental
+     *         MediaTailor</a>.
      */
 
     public Integer getPersonalizationThresholdSeconds() {
@@ -634,11 +692,23 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
+     * Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of
+     * underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned
+     * and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams,
+     * rather than ad insertion, because it relies on an underlying content stream. For more information about ad break
+     * behavior, including ad replacement and insertion, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental
+     * MediaTailor</a>.
      * </p>
      * 
      * @param personalizationThresholdSeconds
-     *        The maximum duration of underfilled ad time (in seconds) allowed in an ad break.
+     *        Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration
+     *        of underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is
+     *        abandoned and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and
+     *        VOD streams, rather than ad insertion, because it relies on an underlying content stream. For more
+     *        information about ad break behavior, including ad replacement and insertion, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental
+     *        MediaTailor</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -956,11 +1026,11 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.
+     * The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.
      * </p>
      * 
      * @param videoContentSourceUrl
-     *        The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512
+     *        The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512
      *        characters.
      */
 
@@ -970,10 +1040,10 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.
+     * The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.
      * </p>
      * 
-     * @return The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512
+     * @return The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512
      *         characters.
      */
 
@@ -983,11 +1053,11 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.
+     * The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.
      * </p>
      * 
      * @param videoContentSourceUrl
-     *        The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512
+     *        The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512
      *        characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

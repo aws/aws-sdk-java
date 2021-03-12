@@ -36,8 +36,8 @@ public class DescribeWorkspaceBundlesRequest extends com.amazonaws.AmazonWebServ
      * The owner of the bundles. You cannot combine this parameter with any other filter.
      * </p>
      * <p>
-     * Specify <code>AMAZON</code> to describe the bundles provided by AWS or null to describe the bundles that belong
-     * to your account.
+     * To describe the bundles provided by AWS, specify <code>AMAZON</code>. To describe the bundles that belong to your
+     * account, don't specify a value.
      * </p>
      */
     private String owner;
@@ -126,15 +126,15 @@ public class DescribeWorkspaceBundlesRequest extends com.amazonaws.AmazonWebServ
      * The owner of the bundles. You cannot combine this parameter with any other filter.
      * </p>
      * <p>
-     * Specify <code>AMAZON</code> to describe the bundles provided by AWS or null to describe the bundles that belong
-     * to your account.
+     * To describe the bundles provided by AWS, specify <code>AMAZON</code>. To describe the bundles that belong to your
+     * account, don't specify a value.
      * </p>
      * 
      * @param owner
      *        The owner of the bundles. You cannot combine this parameter with any other filter.</p>
      *        <p>
-     *        Specify <code>AMAZON</code> to describe the bundles provided by AWS or null to describe the bundles that
-     *        belong to your account.
+     *        To describe the bundles provided by AWS, specify <code>AMAZON</code>. To describe the bundles that belong
+     *        to your account, don't specify a value.
      */
 
     public void setOwner(String owner) {
@@ -146,14 +146,14 @@ public class DescribeWorkspaceBundlesRequest extends com.amazonaws.AmazonWebServ
      * The owner of the bundles. You cannot combine this parameter with any other filter.
      * </p>
      * <p>
-     * Specify <code>AMAZON</code> to describe the bundles provided by AWS or null to describe the bundles that belong
-     * to your account.
+     * To describe the bundles provided by AWS, specify <code>AMAZON</code>. To describe the bundles that belong to your
+     * account, don't specify a value.
      * </p>
      * 
      * @return The owner of the bundles. You cannot combine this parameter with any other filter.</p>
      *         <p>
-     *         Specify <code>AMAZON</code> to describe the bundles provided by AWS or null to describe the bundles that
-     *         belong to your account.
+     *         To describe the bundles provided by AWS, specify <code>AMAZON</code>. To describe the bundles that belong
+     *         to your account, don't specify a value.
      */
 
     public String getOwner() {
@@ -165,15 +165,15 @@ public class DescribeWorkspaceBundlesRequest extends com.amazonaws.AmazonWebServ
      * The owner of the bundles. You cannot combine this parameter with any other filter.
      * </p>
      * <p>
-     * Specify <code>AMAZON</code> to describe the bundles provided by AWS or null to describe the bundles that belong
-     * to your account.
+     * To describe the bundles provided by AWS, specify <code>AMAZON</code>. To describe the bundles that belong to your
+     * account, don't specify a value.
      * </p>
      * 
      * @param owner
      *        The owner of the bundles. You cannot combine this parameter with any other filter.</p>
      *        <p>
-     *        Specify <code>AMAZON</code> to describe the bundles provided by AWS or null to describe the bundles that
-     *        belong to your account.
+     *        To describe the bundles provided by AWS, specify <code>AMAZON</code>. To describe the bundles that belong
+     *        to your account, don't specify a value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

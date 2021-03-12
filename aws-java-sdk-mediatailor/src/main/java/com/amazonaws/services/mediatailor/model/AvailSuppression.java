@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The configuration for Avail Suppression. Ad suppression can be used to turn off ad personalization in a long
- * manifest, or if a viewer joins mid-break.
+ * The configuration for avail suppression, also known as ad suppression. For more information about ad suppression, see
+ * <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Suppression</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/AvailSuppression" target="_top">AWS API
@@ -30,23 +30,36 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class AvailSuppression implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * Sets the mode for avail suppression, also known as ad suppression. By default, ad suppression is off and all ad
-     * breaks are filled by MediaTailor with ads or slate.
+     * <p>
+     * Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or slate.
+     * When Mode is set to BEHIND_LIVE_EDGE, ad suppression is active and MediaTailor won't fill ad breaks on or behind
+     * the ad suppression Value time in the manifest lookback window.
+     * </p>
      */
     private String mode;
     /**
-     * The avail suppression value is a live edge offset time in HH:MM:SS. MediaTailor won't fill ad breaks on or behind
-     * this time in the manifest lookback window.
+     * <p>
+     * A live edge offset time in HH:MM:SS. MediaTailor won't fill ad breaks on or behind this time in the manifest
+     * lookback window. If Value is set to 00:00:00, it is in sync with the live edge, and MediaTailor won't fill any ad
+     * breaks on or behind the live edge. If you set a Value time, MediaTailor won't fill any ad breaks on or behind
+     * this time in the manifest lookback window. For example, if you set 00:45:00, then MediaTailor will fill ad breaks
+     * that occur within 45 minutes behind the live edge, but won't fill ad breaks on or behind 45 minutes behind the
+     * live edge.
+     * </p>
      */
     private String value;
 
     /**
-     * Sets the mode for avail suppression, also known as ad suppression. By default, ad suppression is off and all ad
-     * breaks are filled by MediaTailor with ads or slate.
+     * <p>
+     * Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or slate.
+     * When Mode is set to BEHIND_LIVE_EDGE, ad suppression is active and MediaTailor won't fill ad breaks on or behind
+     * the ad suppression Value time in the manifest lookback window.
+     * </p>
      * 
      * @param mode
-     *        Sets the mode for avail suppression, also known as ad suppression. By default, ad suppression is off and
-     *        all ad breaks are filled by MediaTailor with ads or slate.
+     *        Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or
+     *        slate. When Mode is set to BEHIND_LIVE_EDGE, ad suppression is active and MediaTailor won't fill ad breaks
+     *        on or behind the ad suppression Value time in the manifest lookback window.
      * @see Mode
      */
 
@@ -55,11 +68,15 @@ public class AvailSuppression implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Sets the mode for avail suppression, also known as ad suppression. By default, ad suppression is off and all ad
-     * breaks are filled by MediaTailor with ads or slate.
+     * <p>
+     * Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or slate.
+     * When Mode is set to BEHIND_LIVE_EDGE, ad suppression is active and MediaTailor won't fill ad breaks on or behind
+     * the ad suppression Value time in the manifest lookback window.
+     * </p>
      * 
-     * @return Sets the mode for avail suppression, also known as ad suppression. By default, ad suppression is off and
-     *         all ad breaks are filled by MediaTailor with ads or slate.
+     * @return Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or
+     *         slate. When Mode is set to BEHIND_LIVE_EDGE, ad suppression is active and MediaTailor won't fill ad
+     *         breaks on or behind the ad suppression Value time in the manifest lookback window.
      * @see Mode
      */
 
@@ -68,12 +85,16 @@ public class AvailSuppression implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Sets the mode for avail suppression, also known as ad suppression. By default, ad suppression is off and all ad
-     * breaks are filled by MediaTailor with ads or slate.
+     * <p>
+     * Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or slate.
+     * When Mode is set to BEHIND_LIVE_EDGE, ad suppression is active and MediaTailor won't fill ad breaks on or behind
+     * the ad suppression Value time in the manifest lookback window.
+     * </p>
      * 
      * @param mode
-     *        Sets the mode for avail suppression, also known as ad suppression. By default, ad suppression is off and
-     *        all ad breaks are filled by MediaTailor with ads or slate.
+     *        Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or
+     *        slate. When Mode is set to BEHIND_LIVE_EDGE, ad suppression is active and MediaTailor won't fill ad breaks
+     *        on or behind the ad suppression Value time in the manifest lookback window.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Mode
      */
@@ -84,12 +105,16 @@ public class AvailSuppression implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Sets the mode for avail suppression, also known as ad suppression. By default, ad suppression is off and all ad
-     * breaks are filled by MediaTailor with ads or slate.
+     * <p>
+     * Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or slate.
+     * When Mode is set to BEHIND_LIVE_EDGE, ad suppression is active and MediaTailor won't fill ad breaks on or behind
+     * the ad suppression Value time in the manifest lookback window.
+     * </p>
      * 
      * @param mode
-     *        Sets the mode for avail suppression, also known as ad suppression. By default, ad suppression is off and
-     *        all ad breaks are filled by MediaTailor with ads or slate.
+     *        Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or
+     *        slate. When Mode is set to BEHIND_LIVE_EDGE, ad suppression is active and MediaTailor won't fill ad breaks
+     *        on or behind the ad suppression Value time in the manifest lookback window.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Mode
      */
@@ -100,12 +125,22 @@ public class AvailSuppression implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The avail suppression value is a live edge offset time in HH:MM:SS. MediaTailor won't fill ad breaks on or behind
-     * this time in the manifest lookback window.
+     * <p>
+     * A live edge offset time in HH:MM:SS. MediaTailor won't fill ad breaks on or behind this time in the manifest
+     * lookback window. If Value is set to 00:00:00, it is in sync with the live edge, and MediaTailor won't fill any ad
+     * breaks on or behind the live edge. If you set a Value time, MediaTailor won't fill any ad breaks on or behind
+     * this time in the manifest lookback window. For example, if you set 00:45:00, then MediaTailor will fill ad breaks
+     * that occur within 45 minutes behind the live edge, but won't fill ad breaks on or behind 45 minutes behind the
+     * live edge.
+     * </p>
      * 
      * @param value
-     *        The avail suppression value is a live edge offset time in HH:MM:SS. MediaTailor won't fill ad breaks on or
-     *        behind this time in the manifest lookback window.
+     *        A live edge offset time in HH:MM:SS. MediaTailor won't fill ad breaks on or behind this time in the
+     *        manifest lookback window. If Value is set to 00:00:00, it is in sync with the live edge, and MediaTailor
+     *        won't fill any ad breaks on or behind the live edge. If you set a Value time, MediaTailor won't fill any
+     *        ad breaks on or behind this time in the manifest lookback window. For example, if you set 00:45:00, then
+     *        MediaTailor will fill ad breaks that occur within 45 minutes behind the live edge, but won't fill ad
+     *        breaks on or behind 45 minutes behind the live edge.
      */
 
     public void setValue(String value) {
@@ -113,11 +148,21 @@ public class AvailSuppression implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The avail suppression value is a live edge offset time in HH:MM:SS. MediaTailor won't fill ad breaks on or behind
-     * this time in the manifest lookback window.
+     * <p>
+     * A live edge offset time in HH:MM:SS. MediaTailor won't fill ad breaks on or behind this time in the manifest
+     * lookback window. If Value is set to 00:00:00, it is in sync with the live edge, and MediaTailor won't fill any ad
+     * breaks on or behind the live edge. If you set a Value time, MediaTailor won't fill any ad breaks on or behind
+     * this time in the manifest lookback window. For example, if you set 00:45:00, then MediaTailor will fill ad breaks
+     * that occur within 45 minutes behind the live edge, but won't fill ad breaks on or behind 45 minutes behind the
+     * live edge.
+     * </p>
      * 
-     * @return The avail suppression value is a live edge offset time in HH:MM:SS. MediaTailor won't fill ad breaks on
-     *         or behind this time in the manifest lookback window.
+     * @return A live edge offset time in HH:MM:SS. MediaTailor won't fill ad breaks on or behind this time in the
+     *         manifest lookback window. If Value is set to 00:00:00, it is in sync with the live edge, and MediaTailor
+     *         won't fill any ad breaks on or behind the live edge. If you set a Value time, MediaTailor won't fill any
+     *         ad breaks on or behind this time in the manifest lookback window. For example, if you set 00:45:00, then
+     *         MediaTailor will fill ad breaks that occur within 45 minutes behind the live edge, but won't fill ad
+     *         breaks on or behind 45 minutes behind the live edge.
      */
 
     public String getValue() {
@@ -125,12 +170,22 @@ public class AvailSuppression implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The avail suppression value is a live edge offset time in HH:MM:SS. MediaTailor won't fill ad breaks on or behind
-     * this time in the manifest lookback window.
+     * <p>
+     * A live edge offset time in HH:MM:SS. MediaTailor won't fill ad breaks on or behind this time in the manifest
+     * lookback window. If Value is set to 00:00:00, it is in sync with the live edge, and MediaTailor won't fill any ad
+     * breaks on or behind the live edge. If you set a Value time, MediaTailor won't fill any ad breaks on or behind
+     * this time in the manifest lookback window. For example, if you set 00:45:00, then MediaTailor will fill ad breaks
+     * that occur within 45 minutes behind the live edge, but won't fill ad breaks on or behind 45 minutes behind the
+     * live edge.
+     * </p>
      * 
      * @param value
-     *        The avail suppression value is a live edge offset time in HH:MM:SS. MediaTailor won't fill ad breaks on or
-     *        behind this time in the manifest lookback window.
+     *        A live edge offset time in HH:MM:SS. MediaTailor won't fill ad breaks on or behind this time in the
+     *        manifest lookback window. If Value is set to 00:00:00, it is in sync with the live edge, and MediaTailor
+     *        won't fill any ad breaks on or behind the live edge. If you set a Value time, MediaTailor won't fill any
+     *        ad breaks on or behind this time in the manifest lookback window. For example, if you set 00:45:00, then
+     *        MediaTailor will fill ad breaks that occur within 45 minutes behind the live edge, but won't fill ad
+     *        breaks on or behind 45 minutes behind the live edge.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

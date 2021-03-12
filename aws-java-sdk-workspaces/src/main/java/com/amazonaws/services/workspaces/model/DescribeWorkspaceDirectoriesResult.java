@@ -31,7 +31,8 @@ public class DescribeWorkspaceDirectoriesResult extends com.amazonaws.AmazonWebS
     private com.amazonaws.internal.SdkInternalList<WorkspaceDirectory> directories;
     /**
      * <p>
-     * The token to use to retrieve the next set of results, or null if no more results are available.
+     * The token to use to retrieve the next page of results. This value is null when there are no more results to
+     * return.
      * </p>
      */
     private String nextToken;
@@ -111,11 +112,13 @@ public class DescribeWorkspaceDirectoriesResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The token to use to retrieve the next set of results, or null if no more results are available.
+     * The token to use to retrieve the next page of results. This value is null when there are no more results to
+     * return.
      * </p>
      * 
      * @param nextToken
-     *        The token to use to retrieve the next set of results, or null if no more results are available.
+     *        The token to use to retrieve the next page of results. This value is null when there are no more results
+     *        to return.
      */
 
     public void setNextToken(String nextToken) {
@@ -124,10 +127,12 @@ public class DescribeWorkspaceDirectoriesResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The token to use to retrieve the next set of results, or null if no more results are available.
+     * The token to use to retrieve the next page of results. This value is null when there are no more results to
+     * return.
      * </p>
      * 
-     * @return The token to use to retrieve the next set of results, or null if no more results are available.
+     * @return The token to use to retrieve the next page of results. This value is null when there are no more results
+     *         to return.
      */
 
     public String getNextToken() {
@@ -136,11 +141,13 @@ public class DescribeWorkspaceDirectoriesResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The token to use to retrieve the next set of results, or null if no more results are available.
+     * The token to use to retrieve the next page of results. This value is null when there are no more results to
+     * return.
      * </p>
      * 
      * @param nextToken
-     *        The token to use to retrieve the next set of results, or null if no more results are available.
+     *        The token to use to retrieve the next page of results. This value is null when there are no more results
+     *        to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

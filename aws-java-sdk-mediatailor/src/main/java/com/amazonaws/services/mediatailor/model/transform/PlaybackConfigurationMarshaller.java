@@ -43,10 +43,14 @@ public class PlaybackConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DashConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> HLSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HlsConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> LIVEPREROLLCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LivePreRollConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> MANIFESTPROCESSINGRULES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ManifestProcessingRules").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<Integer> PERSONALIZATIONTHRESHOLDSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PersonalizationThresholdSeconds").build();
     private static final MarshallingInfo<String> PLAYBACKCONFIGURATIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PlaybackConfigurationArn").build();
     private static final MarshallingInfo<String> PLAYBACKENDPOINTPREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -59,8 +63,6 @@ public class PlaybackConfigurationMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> TRANSCODEPROFILENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TranscodeProfileName").build();
-    private static final MarshallingInfo<Integer> PERSONALIZATIONTHRESHOLDSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PersonalizationThresholdSeconds").build();
     private static final MarshallingInfo<String> VIDEOCONTENTSOURCEURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VideoContentSourceUrl").build();
 
@@ -87,15 +89,16 @@ public class PlaybackConfigurationMarshaller {
             protocolMarshaller.marshall(playbackConfiguration.getConfigurationAliases(), CONFIGURATIONALIASES_BINDING);
             protocolMarshaller.marshall(playbackConfiguration.getDashConfiguration(), DASHCONFIGURATION_BINDING);
             protocolMarshaller.marshall(playbackConfiguration.getHlsConfiguration(), HLSCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(playbackConfiguration.getLivePreRollConfiguration(), LIVEPREROLLCONFIGURATION_BINDING);
             protocolMarshaller.marshall(playbackConfiguration.getManifestProcessingRules(), MANIFESTPROCESSINGRULES_BINDING);
             protocolMarshaller.marshall(playbackConfiguration.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(playbackConfiguration.getPersonalizationThresholdSeconds(), PERSONALIZATIONTHRESHOLDSECONDS_BINDING);
             protocolMarshaller.marshall(playbackConfiguration.getPlaybackConfigurationArn(), PLAYBACKCONFIGURATIONARN_BINDING);
             protocolMarshaller.marshall(playbackConfiguration.getPlaybackEndpointPrefix(), PLAYBACKENDPOINTPREFIX_BINDING);
             protocolMarshaller.marshall(playbackConfiguration.getSessionInitializationEndpointPrefix(), SESSIONINITIALIZATIONENDPOINTPREFIX_BINDING);
             protocolMarshaller.marshall(playbackConfiguration.getSlateAdUrl(), SLATEADURL_BINDING);
             protocolMarshaller.marshall(playbackConfiguration.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(playbackConfiguration.getTranscodeProfileName(), TRANSCODEPROFILENAME_BINDING);
-            protocolMarshaller.marshall(playbackConfiguration.getPersonalizationThresholdSeconds(), PERSONALIZATIONTHRESHOLDSECONDS_BINDING);
             protocolMarshaller.marshall(playbackConfiguration.getVideoContentSourceUrl(), VIDEOCONTENTSOURCEURL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

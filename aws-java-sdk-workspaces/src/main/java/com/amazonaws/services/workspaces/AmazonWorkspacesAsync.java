@@ -349,6 +349,41 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
+     * Creates the specified WorkSpace bundle. For more information about creating WorkSpace bundles, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/create-custom-bundle.html"> Create a Custom
+     * WorkSpaces Image and Bundle</a>.
+     * </p>
+     * 
+     * @param createWorkspaceBundleRequest
+     * @return A Java Future containing the result of the CreateWorkspaceBundle operation returned by the service.
+     * @sample AmazonWorkspacesAsync.CreateWorkspaceBundle
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaceBundle"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateWorkspaceBundleResult> createWorkspaceBundleAsync(CreateWorkspaceBundleRequest createWorkspaceBundleRequest);
+
+    /**
+     * <p>
+     * Creates the specified WorkSpace bundle. For more information about creating WorkSpace bundles, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/create-custom-bundle.html"> Create a Custom
+     * WorkSpaces Image and Bundle</a>.
+     * </p>
+     * 
+     * @param createWorkspaceBundleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateWorkspaceBundle operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.CreateWorkspaceBundle
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaceBundle"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateWorkspaceBundleResult> createWorkspaceBundleAsync(CreateWorkspaceBundleRequest createWorkspaceBundleRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateWorkspaceBundleRequest, CreateWorkspaceBundleResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates one or more WorkSpaces.
      * </p>
      * <p>
@@ -518,6 +553,41 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      */
     java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(DeleteTagsRequest deleteTagsRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified WorkSpace bundle. For more information about deleting WorkSpace bundles, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/delete_bundle.html"> Delete a Custom WorkSpaces
+     * Bundle or Image</a>.
+     * </p>
+     * 
+     * @param deleteWorkspaceBundleRequest
+     * @return A Java Future containing the result of the DeleteWorkspaceBundle operation returned by the service.
+     * @sample AmazonWorkspacesAsync.DeleteWorkspaceBundle
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteWorkspaceBundle"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteWorkspaceBundleResult> deleteWorkspaceBundleAsync(DeleteWorkspaceBundleRequest deleteWorkspaceBundleRequest);
+
+    /**
+     * <p>
+     * Deletes the specified WorkSpace bundle. For more information about deleting WorkSpace bundles, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/delete_bundle.html"> Delete a Custom WorkSpaces
+     * Bundle or Image</a>.
+     * </p>
+     * 
+     * @param deleteWorkspaceBundleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteWorkspaceBundle operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.DeleteWorkspaceBundle
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteWorkspaceBundle"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteWorkspaceBundleResult> deleteWorkspaceBundleAsync(DeleteWorkspaceBundleRequest deleteWorkspaceBundleRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteWorkspaceBundleRequest, DeleteWorkspaceBundleResult> asyncHandler);
 
     /**
      * <p>
@@ -2153,6 +2223,55 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      */
     java.util.concurrent.Future<UpdateRulesOfIpGroupResult> updateRulesOfIpGroupAsync(UpdateRulesOfIpGroupRequest updateRulesOfIpGroupRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateRulesOfIpGroupRequest, UpdateRulesOfIpGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a WorkSpace bundle with a new image. For more information about updating WorkSpace bundles, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-custom-bundle.html"> Update a Custom
+     * WorkSpaces Bundle</a>.
+     * </p>
+     * <important>
+     * <p>
+     * Existing WorkSpaces aren't automatically updated when you update the bundle that they're based on. To update
+     * existing WorkSpaces that are based on a bundle that you've updated, you must either rebuild the WorkSpaces or
+     * delete and recreate them.
+     * </p>
+     * </important>
+     * 
+     * @param updateWorkspaceBundleRequest
+     * @return A Java Future containing the result of the UpdateWorkspaceBundle operation returned by the service.
+     * @sample AmazonWorkspacesAsync.UpdateWorkspaceBundle
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateWorkspaceBundle"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateWorkspaceBundleResult> updateWorkspaceBundleAsync(UpdateWorkspaceBundleRequest updateWorkspaceBundleRequest);
+
+    /**
+     * <p>
+     * Updates a WorkSpace bundle with a new image. For more information about updating WorkSpace bundles, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-custom-bundle.html"> Update a Custom
+     * WorkSpaces Bundle</a>.
+     * </p>
+     * <important>
+     * <p>
+     * Existing WorkSpaces aren't automatically updated when you update the bundle that they're based on. To update
+     * existing WorkSpaces that are based on a bundle that you've updated, you must either rebuild the WorkSpaces or
+     * delete and recreate them.
+     * </p>
+     * </important>
+     * 
+     * @param updateWorkspaceBundleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateWorkspaceBundle operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.UpdateWorkspaceBundle
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateWorkspaceBundle"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateWorkspaceBundleResult> updateWorkspaceBundleAsync(UpdateWorkspaceBundleRequest updateWorkspaceBundleRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateWorkspaceBundleRequest, UpdateWorkspaceBundleResult> asyncHandler);
 
     /**
      * <p>

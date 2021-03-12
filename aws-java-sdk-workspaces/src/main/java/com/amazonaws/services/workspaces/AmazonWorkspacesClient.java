@@ -836,6 +836,76 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Creates the specified WorkSpace bundle. For more information about creating WorkSpace bundles, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/create-custom-bundle.html"> Create a Custom
+     * WorkSpaces Image and Bundle</a>.
+     * </p>
+     * 
+     * @param createWorkspaceBundleRequest
+     * @return Result of the CreateWorkspaceBundle operation returned by the service.
+     * @throws ResourceUnavailableException
+     *         The specified resource is not available.
+     * @throws ResourceAlreadyExistsException
+     *         The specified resource already exists.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @sample AmazonWorkspaces.CreateWorkspaceBundle
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateWorkspaceBundle"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateWorkspaceBundleResult createWorkspaceBundle(CreateWorkspaceBundleRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateWorkspaceBundle(request);
+    }
+
+    @SdkInternalApi
+    final CreateWorkspaceBundleResult executeCreateWorkspaceBundle(CreateWorkspaceBundleRequest createWorkspaceBundleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createWorkspaceBundleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateWorkspaceBundleRequest> request = null;
+        Response<CreateWorkspaceBundleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateWorkspaceBundleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createWorkspaceBundleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateWorkspaceBundle");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateWorkspaceBundleResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new CreateWorkspaceBundleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates one or more WorkSpaces.
      * </p>
      * <p>
@@ -1097,6 +1167,72 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteTagsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteTagsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified WorkSpace bundle. For more information about deleting WorkSpace bundles, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/delete_bundle.html"> Delete a Custom WorkSpaces
+     * Bundle or Image</a>.
+     * </p>
+     * 
+     * @param deleteWorkspaceBundleRequest
+     * @return Result of the DeleteWorkspaceBundle operation returned by the service.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ResourceAssociatedException
+     *         The resource is associated with a directory.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @sample AmazonWorkspaces.DeleteWorkspaceBundle
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteWorkspaceBundle"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteWorkspaceBundleResult deleteWorkspaceBundle(DeleteWorkspaceBundleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteWorkspaceBundle(request);
+    }
+
+    @SdkInternalApi
+    final DeleteWorkspaceBundleResult executeDeleteWorkspaceBundle(DeleteWorkspaceBundleRequest deleteWorkspaceBundleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteWorkspaceBundleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteWorkspaceBundleRequest> request = null;
+        Response<DeleteWorkspaceBundleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteWorkspaceBundleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteWorkspaceBundleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteWorkspaceBundle");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteWorkspaceBundleResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteWorkspaceBundleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3660,6 +3796,79 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateRulesOfIpGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateRulesOfIpGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a WorkSpace bundle with a new image. For more information about updating WorkSpace bundles, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-custom-bundle.html"> Update a Custom
+     * WorkSpaces Bundle</a>.
+     * </p>
+     * <important>
+     * <p>
+     * Existing WorkSpaces aren't automatically updated when you update the bundle that they're based on. To update
+     * existing WorkSpaces that are based on a bundle that you've updated, you must either rebuild the WorkSpaces or
+     * delete and recreate them.
+     * </p>
+     * </important>
+     * 
+     * @param updateWorkspaceBundleRequest
+     * @return Result of the UpdateWorkspaceBundle operation returned by the service.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ResourceUnavailableException
+     *         The specified resource is not available.
+     * @sample AmazonWorkspaces.UpdateWorkspaceBundle
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateWorkspaceBundle"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateWorkspaceBundleResult updateWorkspaceBundle(UpdateWorkspaceBundleRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateWorkspaceBundle(request);
+    }
+
+    @SdkInternalApi
+    final UpdateWorkspaceBundleResult executeUpdateWorkspaceBundle(UpdateWorkspaceBundleRequest updateWorkspaceBundleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateWorkspaceBundleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateWorkspaceBundleRequest> request = null;
+        Response<UpdateWorkspaceBundleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateWorkspaceBundleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateWorkspaceBundleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateWorkspaceBundle");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateWorkspaceBundleResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new UpdateWorkspaceBundleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

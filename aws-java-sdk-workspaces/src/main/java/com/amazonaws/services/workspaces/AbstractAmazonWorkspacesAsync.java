@@ -119,6 +119,19 @@ public class AbstractAmazonWorkspacesAsync extends AbstractAmazonWorkspaces impl
     }
 
     @Override
+    public java.util.concurrent.Future<CreateWorkspaceBundleResult> createWorkspaceBundleAsync(CreateWorkspaceBundleRequest request) {
+
+        return createWorkspaceBundleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWorkspaceBundleResult> createWorkspaceBundleAsync(CreateWorkspaceBundleRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateWorkspaceBundleRequest, CreateWorkspaceBundleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateWorkspacesResult> createWorkspacesAsync(CreateWorkspacesRequest request) {
 
         return createWorkspacesAsync(request, null);
@@ -166,6 +179,19 @@ public class AbstractAmazonWorkspacesAsync extends AbstractAmazonWorkspaces impl
     @Override
     public java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(DeleteTagsRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteTagsRequest, DeleteTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWorkspaceBundleResult> deleteWorkspaceBundleAsync(DeleteWorkspaceBundleRequest request) {
+
+        return deleteWorkspaceBundleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWorkspaceBundleResult> deleteWorkspaceBundleAsync(DeleteWorkspaceBundleRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteWorkspaceBundleRequest, DeleteWorkspaceBundleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -743,6 +769,19 @@ public class AbstractAmazonWorkspacesAsync extends AbstractAmazonWorkspaces impl
     @Override
     public java.util.concurrent.Future<UpdateRulesOfIpGroupResult> updateRulesOfIpGroupAsync(UpdateRulesOfIpGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateRulesOfIpGroupRequest, UpdateRulesOfIpGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWorkspaceBundleResult> updateWorkspaceBundleAsync(UpdateWorkspaceBundleRequest request) {
+
+        return updateWorkspaceBundleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWorkspaceBundleResult> updateWorkspaceBundleAsync(UpdateWorkspaceBundleRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateWorkspaceBundleRequest, UpdateWorkspaceBundleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

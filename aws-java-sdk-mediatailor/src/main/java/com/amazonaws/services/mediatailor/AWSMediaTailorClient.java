@@ -51,14 +51,16 @@ import com.amazonaws.services.mediatailor.model.transform.*;
  * the service call completes.
  * <p>
  * <p>
- * Use the AWS Elemental MediaTailor SDK to configure scalable ad insertion for your live and VOD content. With AWS
- * Elemental MediaTailor, you can serve targeted ads to viewers while maintaining broadcast quality in over-the-top
- * (OTT) video applications. For information about using the service, including detailed information about the settings
- * covered in this guide, see the AWS Elemental MediaTailor User Guide.
+ * Use the AWS Elemental MediaTailor SDKs and CLI to configure scalable ad insertion and linear channels. With
+ * MediaTailor, you can assemble existing content into a linear stream and serve targeted ads to viewers while
+ * maintaining broadcast quality in over-the-top (OTT) video applications. For information about using the service,
+ * including detailed information about the settings covered in this guide, see the <a
+ * href="https://docs.aws.amazon.com/mediatailor/latest/ug/">AWS Elemental MediaTailor User Guide</a>.
+ * </p>
  * <p>
- * Through the SDK, you manage AWS Elemental MediaTailor configurations the same as you do through the console. For
- * example, you specify ad insertion behavior and mapping information for the origin server and the ad decision server
- * (ADS).
+ * Through the SDKs and the CLI you manage AWS Elemental MediaTailor configurations and channels the same as you do
+ * through the console. For example, you specify ad insertion behavior and mapping information for the origin server and
+ * the ad decision server (ADS).
  * </p>
  */
 @ThreadSafe
@@ -137,6 +139,336 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
+     * Creates a channel.
+     * </p>
+     * 
+     * @param createChannelRequest
+     * @return Result of the CreateChannel operation returned by the service.
+     * @sample AWSMediaTailor.CreateChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateChannelResult createChannel(CreateChannelRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateChannel(request);
+    }
+
+    @SdkInternalApi
+    final CreateChannelResult executeCreateChannel(CreateChannelRequest createChannelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createChannelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateChannelRequest> request = null;
+        Response<CreateChannelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createChannelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateChannel");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateChannelResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateChannelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a program.
+     * </p>
+     * 
+     * @param createProgramRequest
+     * @return Result of the CreateProgram operation returned by the service.
+     * @sample AWSMediaTailor.CreateProgram
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateProgram" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateProgramResult createProgram(CreateProgramRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateProgram(request);
+    }
+
+    @SdkInternalApi
+    final CreateProgramResult executeCreateProgram(CreateProgramRequest createProgramRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createProgramRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateProgramRequest> request = null;
+        Response<CreateProgramResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateProgramRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProgramRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProgram");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateProgramResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateProgramResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a source location on a specific channel.
+     * </p>
+     * 
+     * @param createSourceLocationRequest
+     * @return Result of the CreateSourceLocation operation returned by the service.
+     * @sample AWSMediaTailor.CreateSourceLocation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateSourceLocation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateSourceLocationResult createSourceLocation(CreateSourceLocationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSourceLocation(request);
+    }
+
+    @SdkInternalApi
+    final CreateSourceLocationResult executeCreateSourceLocation(CreateSourceLocationRequest createSourceLocationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createSourceLocationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateSourceLocationRequest> request = null;
+        Response<CreateSourceLocationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateSourceLocationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSourceLocationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSourceLocation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateSourceLocationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateSourceLocationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates name for a specific VOD source in a source location.
+     * </p>
+     * 
+     * @param createVodSourceRequest
+     * @return Result of the CreateVodSource operation returned by the service.
+     * @sample AWSMediaTailor.CreateVodSource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/CreateVodSource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateVodSourceResult createVodSource(CreateVodSourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateVodSource(request);
+    }
+
+    @SdkInternalApi
+    final CreateVodSourceResult executeCreateVodSource(CreateVodSourceRequest createVodSourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createVodSourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateVodSourceRequest> request = null;
+        Response<CreateVodSourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateVodSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createVodSourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVodSource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateVodSourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateVodSourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a channel. You must stop the channel before it can be deleted.
+     * </p>
+     * 
+     * @param deleteChannelRequest
+     * @return Result of the DeleteChannel operation returned by the service.
+     * @sample AWSMediaTailor.DeleteChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteChannelResult deleteChannel(DeleteChannelRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteChannel(request);
+    }
+
+    @SdkInternalApi
+    final DeleteChannelResult executeDeleteChannel(DeleteChannelRequest deleteChannelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteChannelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteChannelRequest> request = null;
+        Response<DeleteChannelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteChannelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteChannel");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteChannelResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteChannelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a channel's IAM policy.
+     * </p>
+     * 
+     * @param deleteChannelPolicyRequest
+     * @return Result of the DeleteChannelPolicy operation returned by the service.
+     * @sample AWSMediaTailor.DeleteChannelPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteChannelPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteChannelPolicyResult deleteChannelPolicy(DeleteChannelPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteChannelPolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteChannelPolicyResult executeDeleteChannelPolicy(DeleteChannelPolicyRequest deleteChannelPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteChannelPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteChannelPolicyRequest> request = null;
+        Response<DeleteChannelPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteChannelPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteChannelPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteChannelPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteChannelPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteChannelPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the playback configuration for the specified name.
      * </p>
      * 
@@ -194,6 +526,502 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
+     * Deletes a specific program on a specific channel.
+     * </p>
+     * 
+     * @param deleteProgramRequest
+     * @return Result of the DeleteProgram operation returned by the service.
+     * @sample AWSMediaTailor.DeleteProgram
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteProgram" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteProgramResult deleteProgram(DeleteProgramRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteProgram(request);
+    }
+
+    @SdkInternalApi
+    final DeleteProgramResult executeDeleteProgram(DeleteProgramRequest deleteProgramRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteProgramRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteProgramRequest> request = null;
+        Response<DeleteProgramResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteProgramRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProgramRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProgram");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteProgramResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteProgramResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a source location on a specific channel.
+     * </p>
+     * 
+     * @param deleteSourceLocationRequest
+     * @return Result of the DeleteSourceLocation operation returned by the service.
+     * @sample AWSMediaTailor.DeleteSourceLocation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteSourceLocation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteSourceLocationResult deleteSourceLocation(DeleteSourceLocationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSourceLocation(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSourceLocationResult executeDeleteSourceLocation(DeleteSourceLocationRequest deleteSourceLocationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteSourceLocationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteSourceLocationRequest> request = null;
+        Response<DeleteSourceLocationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteSourceLocationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSourceLocationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSourceLocation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteSourceLocationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteSourceLocationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a specific VOD source in a specific source location.
+     * </p>
+     * 
+     * @param deleteVodSourceRequest
+     * @return Result of the DeleteVodSource operation returned by the service.
+     * @sample AWSMediaTailor.DeleteVodSource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeleteVodSource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteVodSourceResult deleteVodSource(DeleteVodSourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteVodSource(request);
+    }
+
+    @SdkInternalApi
+    final DeleteVodSourceResult executeDeleteVodSource(DeleteVodSourceRequest deleteVodSourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteVodSourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteVodSourceRequest> request = null;
+        Response<DeleteVodSourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteVodSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteVodSourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVodSource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteVodSourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteVodSourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the properties of a specific channel.
+     * </p>
+     * 
+     * @param describeChannelRequest
+     * @return Result of the DescribeChannel operation returned by the service.
+     * @sample AWSMediaTailor.DescribeChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeChannel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeChannelResult describeChannel(DescribeChannelRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeChannel(request);
+    }
+
+    @SdkInternalApi
+    final DescribeChannelResult executeDescribeChannel(DescribeChannelRequest describeChannelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeChannelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeChannelRequest> request = null;
+        Response<DescribeChannelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeChannelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeChannel");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeChannelResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeChannelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the properties of the requested program.
+     * </p>
+     * 
+     * @param describeProgramRequest
+     * @return Result of the DescribeProgram operation returned by the service.
+     * @sample AWSMediaTailor.DescribeProgram
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeProgram" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeProgramResult describeProgram(DescribeProgramRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeProgram(request);
+    }
+
+    @SdkInternalApi
+    final DescribeProgramResult executeDescribeProgram(DescribeProgramRequest describeProgramRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeProgramRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeProgramRequest> request = null;
+        Response<DescribeProgramResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeProgramRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeProgramRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProgram");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeProgramResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeProgramResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the properties of the requested source location.
+     * </p>
+     * 
+     * @param describeSourceLocationRequest
+     * @return Result of the DescribeSourceLocation operation returned by the service.
+     * @sample AWSMediaTailor.DescribeSourceLocation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeSourceLocation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeSourceLocationResult describeSourceLocation(DescribeSourceLocationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeSourceLocation(request);
+    }
+
+    @SdkInternalApi
+    final DescribeSourceLocationResult executeDescribeSourceLocation(DescribeSourceLocationRequest describeSourceLocationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeSourceLocationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeSourceLocationRequest> request = null;
+        Response<DescribeSourceLocationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeSourceLocationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSourceLocationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSourceLocation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeSourceLocationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeSourceLocationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provides details about a specific VOD source in a specific source location.
+     * </p>
+     * 
+     * @param describeVodSourceRequest
+     * @return Result of the DescribeVodSource operation returned by the service.
+     * @sample AWSMediaTailor.DescribeVodSource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DescribeVodSource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeVodSourceResult describeVodSource(DescribeVodSourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeVodSource(request);
+    }
+
+    @SdkInternalApi
+    final DescribeVodSourceResult executeDescribeVodSource(DescribeVodSourceRequest describeVodSourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeVodSourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeVodSourceRequest> request = null;
+        Response<DescribeVodSourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeVodSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeVodSourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVodSource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeVodSourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeVodSourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves information about a channel's IAM policy.
+     * </p>
+     * 
+     * @param getChannelPolicyRequest
+     * @return Result of the GetChannelPolicy operation returned by the service.
+     * @sample AWSMediaTailor.GetChannelPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetChannelPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetChannelPolicyResult getChannelPolicy(GetChannelPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetChannelPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetChannelPolicyResult executeGetChannelPolicy(GetChannelPolicyRequest getChannelPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getChannelPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetChannelPolicyRequest> request = null;
+        Response<GetChannelPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetChannelPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getChannelPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetChannelPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetChannelPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetChannelPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves information about your channel's schedule.
+     * </p>
+     * 
+     * @param getChannelScheduleRequest
+     * @return Result of the GetChannelSchedule operation returned by the service.
+     * @sample AWSMediaTailor.GetChannelSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetChannelSchedule" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetChannelScheduleResult getChannelSchedule(GetChannelScheduleRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetChannelSchedule(request);
+    }
+
+    @SdkInternalApi
+    final GetChannelScheduleResult executeGetChannelSchedule(GetChannelScheduleRequest getChannelScheduleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getChannelScheduleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetChannelScheduleRequest> request = null;
+        Response<GetChannelScheduleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetChannelScheduleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getChannelScheduleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetChannelSchedule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetChannelScheduleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetChannelScheduleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns the playback configuration for the specified name.
      * </p>
      * 
@@ -239,6 +1067,61 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
             HttpResponseHandler<AmazonWebServiceResponse<GetPlaybackConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetPlaybackConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a list of channels that are associated with this account.
+     * </p>
+     * 
+     * @param listChannelsRequest
+     * @return Result of the ListChannels operation returned by the service.
+     * @sample AWSMediaTailor.ListChannels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListChannels" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListChannelsResult listChannels(ListChannelsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListChannels(request);
+    }
+
+    @SdkInternalApi
+    final ListChannelsResult executeListChannels(ListChannelsRequest listChannelsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listChannelsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListChannelsRequest> request = null;
+        Response<ListChannelsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListChannelsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listChannelsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListChannels");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListChannelsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListChannelsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -311,6 +1194,116 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
+     * Retrieves a list of programs on a specific channel.
+     * </p>
+     * 
+     * @param listProgramsRequest
+     * @return Result of the ListPrograms operation returned by the service.
+     * @sample AWSMediaTailor.ListPrograms
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPrograms" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListProgramsResult listPrograms(ListProgramsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPrograms(request);
+    }
+
+    @SdkInternalApi
+    final ListProgramsResult executeListPrograms(ListProgramsRequest listProgramsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listProgramsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListProgramsRequest> request = null;
+        Response<ListProgramsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListProgramsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProgramsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPrograms");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListProgramsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListProgramsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a list of source locations.
+     * </p>
+     * 
+     * @param listSourceLocationsRequest
+     * @return Result of the ListSourceLocations operation returned by the service.
+     * @sample AWSMediaTailor.ListSourceLocations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListSourceLocations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListSourceLocationsResult listSourceLocations(ListSourceLocationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSourceLocations(request);
+    }
+
+    @SdkInternalApi
+    final ListSourceLocationsResult executeListSourceLocations(ListSourceLocationsRequest listSourceLocationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSourceLocationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSourceLocationsRequest> request = null;
+        Response<ListSourceLocationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSourceLocationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSourceLocationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSourceLocations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSourceLocationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListSourceLocationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of the tags assigned to the specified playback configuration resource.
      * </p>
      * 
@@ -368,6 +1361,116 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
+     * Lists all the VOD sources in a source location.
+     * </p>
+     * 
+     * @param listVodSourcesRequest
+     * @return Result of the ListVodSources operation returned by the service.
+     * @sample AWSMediaTailor.ListVodSources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListVodSources" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListVodSourcesResult listVodSources(ListVodSourcesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListVodSources(request);
+    }
+
+    @SdkInternalApi
+    final ListVodSourcesResult executeListVodSources(ListVodSourcesRequest listVodSourcesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listVodSourcesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListVodSourcesRequest> request = null;
+        Response<ListVodSourcesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListVodSourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVodSourcesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVodSources");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListVodSourcesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListVodSourcesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an IAM policy for the channel.
+     * </p>
+     * 
+     * @param putChannelPolicyRequest
+     * @return Result of the PutChannelPolicy operation returned by the service.
+     * @sample AWSMediaTailor.PutChannelPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/PutChannelPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public PutChannelPolicyResult putChannelPolicy(PutChannelPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutChannelPolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutChannelPolicyResult executePutChannelPolicy(PutChannelPolicyRequest putChannelPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putChannelPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutChannelPolicyRequest> request = null;
+        Response<PutChannelPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutChannelPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putChannelPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutChannelPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutChannelPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutChannelPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Adds a new playback configuration to AWS Elemental MediaTailor.
      * </p>
      * 
@@ -413,6 +1516,116 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
             HttpResponseHandler<AmazonWebServiceResponse<PutPlaybackConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new PutPlaybackConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts a specific channel.
+     * </p>
+     * 
+     * @param startChannelRequest
+     * @return Result of the StartChannel operation returned by the service.
+     * @sample AWSMediaTailor.StartChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/StartChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StartChannelResult startChannel(StartChannelRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartChannel(request);
+    }
+
+    @SdkInternalApi
+    final StartChannelResult executeStartChannel(StartChannelRequest startChannelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startChannelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartChannelRequest> request = null;
+        Response<StartChannelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startChannelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartChannel");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartChannelResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartChannelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops a specific channel.
+     * </p>
+     * 
+     * @param stopChannelRequest
+     * @return Result of the StopChannel operation returned by the service.
+     * @sample AWSMediaTailor.StopChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/StopChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StopChannelResult stopChannel(StopChannelRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopChannel(request);
+    }
+
+    @SdkInternalApi
+    final StopChannelResult executeStopChannel(StopChannelRequest stopChannelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopChannelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopChannelRequest> request = null;
+        Response<StopChannelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopChannelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopChannel");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopChannelResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopChannelResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -527,6 +1740,171 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an existing channel.
+     * </p>
+     * 
+     * @param updateChannelRequest
+     * @return Result of the UpdateChannel operation returned by the service.
+     * @sample AWSMediaTailor.UpdateChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateChannelResult updateChannel(UpdateChannelRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateChannel(request);
+    }
+
+    @SdkInternalApi
+    final UpdateChannelResult executeUpdateChannel(UpdateChannelRequest updateChannelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateChannelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateChannelRequest> request = null;
+        Response<UpdateChannelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateChannelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateChannel");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateChannelResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateChannelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a source location on a specific channel.
+     * </p>
+     * 
+     * @param updateSourceLocationRequest
+     * @return Result of the UpdateSourceLocation operation returned by the service.
+     * @sample AWSMediaTailor.UpdateSourceLocation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateSourceLocation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateSourceLocationResult updateSourceLocation(UpdateSourceLocationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateSourceLocation(request);
+    }
+
+    @SdkInternalApi
+    final UpdateSourceLocationResult executeUpdateSourceLocation(UpdateSourceLocationRequest updateSourceLocationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateSourceLocationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateSourceLocationRequest> request = null;
+        Response<UpdateSourceLocationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateSourceLocationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateSourceLocationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSourceLocation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateSourceLocationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateSourceLocationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a specific VOD source in a specific source location.
+     * </p>
+     * 
+     * @param updateVodSourceRequest
+     * @return Result of the UpdateVodSource operation returned by the service.
+     * @sample AWSMediaTailor.UpdateVodSource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateVodSource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateVodSourceResult updateVodSource(UpdateVodSourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateVodSource(request);
+    }
+
+    @SdkInternalApi
+    final UpdateVodSourceResult executeUpdateVodSource(UpdateVodSourceRequest updateVodSourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateVodSourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateVodSourceRequest> request = null;
+        Response<UpdateVodSourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateVodSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateVodSourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateVodSource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateVodSourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateVodSourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

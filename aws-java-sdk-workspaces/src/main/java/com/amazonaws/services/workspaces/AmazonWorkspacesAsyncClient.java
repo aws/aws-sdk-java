@@ -491,6 +491,39 @@ public class AmazonWorkspacesAsyncClient extends AmazonWorkspacesClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateWorkspaceBundleResult> createWorkspaceBundleAsync(CreateWorkspaceBundleRequest request) {
+
+        return createWorkspaceBundleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWorkspaceBundleResult> createWorkspaceBundleAsync(final CreateWorkspaceBundleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateWorkspaceBundleRequest, CreateWorkspaceBundleResult> asyncHandler) {
+        final CreateWorkspaceBundleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateWorkspaceBundleResult>() {
+            @Override
+            public CreateWorkspaceBundleResult call() throws Exception {
+                CreateWorkspaceBundleResult result = null;
+
+                try {
+                    result = executeCreateWorkspaceBundle(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateWorkspacesResult> createWorkspacesAsync(CreateWorkspacesRequest request) {
 
         return createWorkspacesAsync(request, null);
@@ -607,6 +640,39 @@ public class AmazonWorkspacesAsyncClient extends AmazonWorkspacesClient implemen
 
                 try {
                     result = executeDeleteTags(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWorkspaceBundleResult> deleteWorkspaceBundleAsync(DeleteWorkspaceBundleRequest request) {
+
+        return deleteWorkspaceBundleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWorkspaceBundleResult> deleteWorkspaceBundleAsync(final DeleteWorkspaceBundleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteWorkspaceBundleRequest, DeleteWorkspaceBundleResult> asyncHandler) {
+        final DeleteWorkspaceBundleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteWorkspaceBundleResult>() {
+            @Override
+            public DeleteWorkspaceBundleResult call() throws Exception {
+                DeleteWorkspaceBundleResult result = null;
+
+                try {
+                    result = executeDeleteWorkspaceBundle(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1944,6 +2010,39 @@ public class AmazonWorkspacesAsyncClient extends AmazonWorkspacesClient implemen
 
                 try {
                     result = executeUpdateRulesOfIpGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWorkspaceBundleResult> updateWorkspaceBundleAsync(UpdateWorkspaceBundleRequest request) {
+
+        return updateWorkspaceBundleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWorkspaceBundleResult> updateWorkspaceBundleAsync(final UpdateWorkspaceBundleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateWorkspaceBundleRequest, UpdateWorkspaceBundleResult> asyncHandler) {
+        final UpdateWorkspaceBundleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateWorkspaceBundleResult>() {
+            @Override
+            public UpdateWorkspaceBundleResult call() throws Exception {
+                UpdateWorkspaceBundleResult result = null;
+
+                try {
+                    result = executeUpdateWorkspaceBundle(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

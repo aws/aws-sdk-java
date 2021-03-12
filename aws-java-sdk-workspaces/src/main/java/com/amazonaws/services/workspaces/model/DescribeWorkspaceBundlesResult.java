@@ -31,8 +31,8 @@ public class DescribeWorkspaceBundlesResult extends com.amazonaws.AmazonWebServi
     private com.amazonaws.internal.SdkInternalList<WorkspaceBundle> bundles;
     /**
      * <p>
-     * The token to use to retrieve the next set of results, or null if there are no more results available. This token
-     * is valid for one day and must be used within that time frame.
+     * The token to use to retrieve the next page of results. This value is null when there are no more results to
+     * return. This token is valid for one day and must be used within that time frame.
      * </p>
      */
     private String nextToken;
@@ -112,13 +112,13 @@ public class DescribeWorkspaceBundlesResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The token to use to retrieve the next set of results, or null if there are no more results available. This token
-     * is valid for one day and must be used within that time frame.
+     * The token to use to retrieve the next page of results. This value is null when there are no more results to
+     * return. This token is valid for one day and must be used within that time frame.
      * </p>
      * 
      * @param nextToken
-     *        The token to use to retrieve the next set of results, or null if there are no more results available. This
-     *        token is valid for one day and must be used within that time frame.
+     *        The token to use to retrieve the next page of results. This value is null when there are no more results
+     *        to return. This token is valid for one day and must be used within that time frame.
      */
 
     public void setNextToken(String nextToken) {
@@ -127,12 +127,12 @@ public class DescribeWorkspaceBundlesResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The token to use to retrieve the next set of results, or null if there are no more results available. This token
-     * is valid for one day and must be used within that time frame.
+     * The token to use to retrieve the next page of results. This value is null when there are no more results to
+     * return. This token is valid for one day and must be used within that time frame.
      * </p>
      * 
-     * @return The token to use to retrieve the next set of results, or null if there are no more results available.
-     *         This token is valid for one day and must be used within that time frame.
+     * @return The token to use to retrieve the next page of results. This value is null when there are no more results
+     *         to return. This token is valid for one day and must be used within that time frame.
      */
 
     public String getNextToken() {
@@ -141,13 +141,13 @@ public class DescribeWorkspaceBundlesResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The token to use to retrieve the next set of results, or null if there are no more results available. This token
-     * is valid for one day and must be used within that time frame.
+     * The token to use to retrieve the next page of results. This value is null when there are no more results to
+     * return. This token is valid for one day and must be used within that time frame.
      * </p>
      * 
      * @param nextToken
-     *        The token to use to retrieve the next set of results, or null if there are no more results available. This
-     *        token is valid for one day and must be used within that time frame.
+     *        The token to use to retrieve the next page of results. This value is null when there are no more results
+     *        to return. This token is valid for one day and must be used within that time frame.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

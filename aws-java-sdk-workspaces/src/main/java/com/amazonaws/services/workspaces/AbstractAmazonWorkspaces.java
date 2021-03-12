@@ -73,6 +73,11 @@ public class AbstractAmazonWorkspaces implements AmazonWorkspaces {
     }
 
     @Override
+    public CreateWorkspaceBundleResult createWorkspaceBundle(CreateWorkspaceBundleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateWorkspacesResult createWorkspaces(CreateWorkspacesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -89,6 +94,11 @@ public class AbstractAmazonWorkspaces implements AmazonWorkspaces {
 
     @Override
     public DeleteTagsResult deleteTags(DeleteTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteWorkspaceBundleResult deleteWorkspaceBundle(DeleteWorkspaceBundleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -294,6 +304,11 @@ public class AbstractAmazonWorkspaces implements AmazonWorkspaces {
 
     @Override
     public UpdateRulesOfIpGroupResult updateRulesOfIpGroup(UpdateRulesOfIpGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateWorkspaceBundleResult updateWorkspaceBundle(UpdateWorkspaceBundleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

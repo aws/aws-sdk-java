@@ -1,3 +1,16 @@
+# __1.11.974__ __2021-03-12__
+## __AWS Cost and Usage Report Service__
+  - ### Features
+    - - Added optional billingViewArn field for OSG.
+
+## __AWS MediaTailor__
+  - ### Features
+    - MediaTailor channel assembly is a new manifest-only service that allows you to assemble linear streams using your existing VOD content.
+
+## __Amazon WorkSpaces__
+  - ### Features
+    - Adds API support for WorkSpaces bundle management operations.
+
 # __1.11.973__ __2021-03-11__
 ## __AWS Elemental MediaLive__
   - ### Features

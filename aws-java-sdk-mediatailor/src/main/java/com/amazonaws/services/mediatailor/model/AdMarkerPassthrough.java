@@ -19,8 +19,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The configuration for Ad Marker Passthrough. Ad marker passthrough can be used to pass ad markers from the origin to
- * the customized manifest.
+ * For HLS, when set to true, MediaTailor passes through EXT-X-CUE-IN, EXT-X-CUE-OUT, and EXT-X-SPLICEPOINT-SCTE35 ad
+ * markers from the origin manifest to the MediaTailor personalized manifest.
+ * </p>
+ * <p>
+ * No logic is applied to these ad markers. For example, if EXT-X-CUE-OUT has a value of 60, but no ads are filled for
+ * that ad break, MediaTailor will not set the value to 0.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/AdMarkerPassthrough" target="_top">AWS
@@ -31,32 +35,18 @@ public class AdMarkerPassthrough implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * For HLS, when set to true, MediaTailor passes through EXT-X-CUE-IN, EXT-X-CUE-OUT, and EXT-X-SPLICEPOINT-SCTE35
-     * ad markers from the origin manifest to the MediaTailor personalized manifest.
-     * </p>
-     * <p>
-     * No logic is applied to these ad markers. For example, if EXT-X-CUE-OUT has a value of 60, but no ads are filled
-     * for that ad break, MediaTailor will not set the value to 0.
+     * Enables ad marker passthrough for your configuration.
      * </p>
      */
     private Boolean enabled;
 
     /**
      * <p>
-     * For HLS, when set to true, MediaTailor passes through EXT-X-CUE-IN, EXT-X-CUE-OUT, and EXT-X-SPLICEPOINT-SCTE35
-     * ad markers from the origin manifest to the MediaTailor personalized manifest.
-     * </p>
-     * <p>
-     * No logic is applied to these ad markers. For example, if EXT-X-CUE-OUT has a value of 60, but no ads are filled
-     * for that ad break, MediaTailor will not set the value to 0.
+     * Enables ad marker passthrough for your configuration.
      * </p>
      * 
      * @param enabled
-     *        For HLS, when set to true, MediaTailor passes through EXT-X-CUE-IN, EXT-X-CUE-OUT, and
-     *        EXT-X-SPLICEPOINT-SCTE35 ad markers from the origin manifest to the MediaTailor personalized manifest.</p>
-     *        <p>
-     *        No logic is applied to these ad markers. For example, if EXT-X-CUE-OUT has a value of 60, but no ads are
-     *        filled for that ad break, MediaTailor will not set the value to 0.
+     *        Enables ad marker passthrough for your configuration.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -65,20 +55,10 @@ public class AdMarkerPassthrough implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * For HLS, when set to true, MediaTailor passes through EXT-X-CUE-IN, EXT-X-CUE-OUT, and EXT-X-SPLICEPOINT-SCTE35
-     * ad markers from the origin manifest to the MediaTailor personalized manifest.
-     * </p>
-     * <p>
-     * No logic is applied to these ad markers. For example, if EXT-X-CUE-OUT has a value of 60, but no ads are filled
-     * for that ad break, MediaTailor will not set the value to 0.
+     * Enables ad marker passthrough for your configuration.
      * </p>
      * 
-     * @return For HLS, when set to true, MediaTailor passes through EXT-X-CUE-IN, EXT-X-CUE-OUT, and
-     *         EXT-X-SPLICEPOINT-SCTE35 ad markers from the origin manifest to the MediaTailor personalized
-     *         manifest.</p>
-     *         <p>
-     *         No logic is applied to these ad markers. For example, if EXT-X-CUE-OUT has a value of 60, but no ads are
-     *         filled for that ad break, MediaTailor will not set the value to 0.
+     * @return Enables ad marker passthrough for your configuration.
      */
 
     public Boolean getEnabled() {
@@ -87,20 +67,11 @@ public class AdMarkerPassthrough implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * For HLS, when set to true, MediaTailor passes through EXT-X-CUE-IN, EXT-X-CUE-OUT, and EXT-X-SPLICEPOINT-SCTE35
-     * ad markers from the origin manifest to the MediaTailor personalized manifest.
-     * </p>
-     * <p>
-     * No logic is applied to these ad markers. For example, if EXT-X-CUE-OUT has a value of 60, but no ads are filled
-     * for that ad break, MediaTailor will not set the value to 0.
+     * Enables ad marker passthrough for your configuration.
      * </p>
      * 
      * @param enabled
-     *        For HLS, when set to true, MediaTailor passes through EXT-X-CUE-IN, EXT-X-CUE-OUT, and
-     *        EXT-X-SPLICEPOINT-SCTE35 ad markers from the origin manifest to the MediaTailor personalized manifest.</p>
-     *        <p>
-     *        No logic is applied to these ad markers. For example, if EXT-X-CUE-OUT has a value of 60, but no ads are
-     *        filled for that ad break, MediaTailor will not set the value to 0.
+     *        Enables ad marker passthrough for your configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,20 +82,10 @@ public class AdMarkerPassthrough implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * For HLS, when set to true, MediaTailor passes through EXT-X-CUE-IN, EXT-X-CUE-OUT, and EXT-X-SPLICEPOINT-SCTE35
-     * ad markers from the origin manifest to the MediaTailor personalized manifest.
-     * </p>
-     * <p>
-     * No logic is applied to these ad markers. For example, if EXT-X-CUE-OUT has a value of 60, but no ads are filled
-     * for that ad break, MediaTailor will not set the value to 0.
+     * Enables ad marker passthrough for your configuration.
      * </p>
      * 
-     * @return For HLS, when set to true, MediaTailor passes through EXT-X-CUE-IN, EXT-X-CUE-OUT, and
-     *         EXT-X-SPLICEPOINT-SCTE35 ad markers from the origin manifest to the MediaTailor personalized
-     *         manifest.</p>
-     *         <p>
-     *         No logic is applied to these ad markers. For example, if EXT-X-CUE-OUT has a value of 60, but no ads are
-     *         filled for that ad break, MediaTailor will not set the value to 0.
+     * @return Enables ad marker passthrough for your configuration.
      */
 
     public Boolean isEnabled() {

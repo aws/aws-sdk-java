@@ -84,6 +84,10 @@ public class WorkspaceBundleJsonUnmarshaller implements Unmarshaller<WorkspaceBu
                     context.nextToken();
                     workspaceBundle.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("CreationTime", targetDepth)) {
+                    context.nextToken();
+                    workspaceBundle.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

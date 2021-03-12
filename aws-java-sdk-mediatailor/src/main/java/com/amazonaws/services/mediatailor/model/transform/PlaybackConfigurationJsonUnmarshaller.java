@@ -79,6 +79,10 @@ public class PlaybackConfigurationJsonUnmarshaller implements Unmarshaller<Playb
                     context.nextToken();
                     playbackConfiguration.setHlsConfiguration(HlsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("LivePreRollConfiguration", targetDepth)) {
+                    context.nextToken();
+                    playbackConfiguration.setLivePreRollConfiguration(LivePreRollConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ManifestProcessingRules", targetDepth)) {
                     context.nextToken();
                     playbackConfiguration.setManifestProcessingRules(ManifestProcessingRulesJsonUnmarshaller.getInstance().unmarshall(context));
@@ -86,6 +90,10 @@ public class PlaybackConfigurationJsonUnmarshaller implements Unmarshaller<Playb
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
                     playbackConfiguration.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PersonalizationThresholdSeconds", targetDepth)) {
+                    context.nextToken();
+                    playbackConfiguration.setPersonalizationThresholdSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("PlaybackConfigurationArn", targetDepth)) {
                     context.nextToken();
@@ -111,10 +119,6 @@ public class PlaybackConfigurationJsonUnmarshaller implements Unmarshaller<Playb
                 if (context.testExpression("TranscodeProfileName", targetDepth)) {
                     context.nextToken();
                     playbackConfiguration.setTranscodeProfileName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("PersonalizationThresholdSeconds", targetDepth)) {
-                    context.nextToken();
-                    playbackConfiguration.setPersonalizationThresholdSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("VideoContentSourceUrl", targetDepth)) {
                     context.nextToken();

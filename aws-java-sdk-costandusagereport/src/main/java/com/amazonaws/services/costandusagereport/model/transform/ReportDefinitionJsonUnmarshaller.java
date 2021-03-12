@@ -96,6 +96,10 @@ public class ReportDefinitionJsonUnmarshaller implements Unmarshaller<ReportDefi
                     context.nextToken();
                     reportDefinition.setReportVersioning(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("BillingViewArn", targetDepth)) {
+                    context.nextToken();
+                    reportDefinition.setBillingViewArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
