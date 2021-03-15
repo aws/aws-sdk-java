@@ -53,8 +53,7 @@ public class UpdateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
     private com.amazonaws.internal.SdkInternalList<String> subnetIds;
     /**
      * <p>
-     * A default Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio. A Studio user
-     * can select an alternative Amazon S3 location when creating a Workspace.
+     * The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.
      * </p>
      */
     private String defaultS3Location;
@@ -270,13 +269,11 @@ public class UpdateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A default Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio. A Studio user
-     * can select an alternative Amazon S3 location when creating a Workspace.
+     * The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.
      * </p>
      * 
      * @param defaultS3Location
-     *        A default Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio. A Studio
-     *        user can select an alternative Amazon S3 location when creating a Workspace.
+     *        The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.
      */
 
     public void setDefaultS3Location(String defaultS3Location) {
@@ -285,12 +282,10 @@ public class UpdateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A default Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio. A Studio user
-     * can select an alternative Amazon S3 location when creating a Workspace.
+     * The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.
      * </p>
      * 
-     * @return A default Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio. A Studio
-     *         user can select an alternative Amazon S3 location when creating a Workspace.
+     * @return The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.
      */
 
     public String getDefaultS3Location() {
@@ -299,13 +294,11 @@ public class UpdateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A default Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio. A Studio user
-     * can select an alternative Amazon S3 location when creating a Workspace.
+     * The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.
      * </p>
      * 
      * @param defaultS3Location
-     *        A default Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio. A Studio
-     *        user can select an alternative Amazon S3 location when creating a Workspace.
+     *        The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

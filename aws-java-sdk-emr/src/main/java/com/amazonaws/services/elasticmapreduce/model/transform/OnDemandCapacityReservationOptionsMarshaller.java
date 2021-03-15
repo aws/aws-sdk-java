@@ -31,6 +31,8 @@ public class OnDemandCapacityReservationOptionsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UsageStrategy").build();
     private static final MarshallingInfo<String> CAPACITYRESERVATIONPREFERENCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CapacityReservationPreference").build();
+    private static final MarshallingInfo<String> CAPACITYRESERVATIONRESOURCEGROUPARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CapacityReservationResourceGroupArn").build();
 
     private static final OnDemandCapacityReservationOptionsMarshaller instance = new OnDemandCapacityReservationOptionsMarshaller();
 
@@ -50,6 +52,8 @@ public class OnDemandCapacityReservationOptionsMarshaller {
         try {
             protocolMarshaller.marshall(onDemandCapacityReservationOptions.getUsageStrategy(), USAGESTRATEGY_BINDING);
             protocolMarshaller.marshall(onDemandCapacityReservationOptions.getCapacityReservationPreference(), CAPACITYRESERVATIONPREFERENCE_BINDING);
+            protocolMarshaller.marshall(onDemandCapacityReservationOptions.getCapacityReservationResourceGroupArn(),
+                    CAPACITYRESERVATIONRESOURCEGROUPARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

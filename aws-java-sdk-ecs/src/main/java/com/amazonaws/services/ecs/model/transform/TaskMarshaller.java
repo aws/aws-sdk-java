@@ -52,6 +52,8 @@ public class TaskMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> DESIREDSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("desiredStatus").build();
+    private static final MarshallingInfo<Boolean> ENABLEEXECUTECOMMAND_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enableExecuteCommand").build();
     private static final MarshallingInfo<java.util.Date> EXECUTIONSTOPPEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionStoppedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> GROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -123,6 +125,7 @@ public class TaskMarshaller {
             protocolMarshaller.marshall(task.getCpu(), CPU_BINDING);
             protocolMarshaller.marshall(task.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(task.getDesiredStatus(), DESIREDSTATUS_BINDING);
+            protocolMarshaller.marshall(task.getEnableExecuteCommand(), ENABLEEXECUTECOMMAND_BINDING);
             protocolMarshaller.marshall(task.getExecutionStoppedAt(), EXECUTIONSTOPPEDAT_BINDING);
             protocolMarshaller.marshall(task.getGroup(), GROUP_BINDING);
             protocolMarshaller.marshall(task.getHealthStatus(), HEALTHSTATUS_BINDING);

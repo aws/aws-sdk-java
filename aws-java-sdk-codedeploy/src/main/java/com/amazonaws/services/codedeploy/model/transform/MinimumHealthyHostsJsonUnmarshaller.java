@@ -48,13 +48,13 @@ public class MinimumHealthyHostsJsonUnmarshaller implements Unmarshaller<Minimum
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("value", targetDepth)) {
-                    context.nextToken();
-                    minimumHealthyHosts.setValue(context.getUnmarshaller(Integer.class).unmarshall(context));
-                }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
                     minimumHealthyHosts.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("value", targetDepth)) {
+                    context.nextToken();
+                    minimumHealthyHosts.setValue(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

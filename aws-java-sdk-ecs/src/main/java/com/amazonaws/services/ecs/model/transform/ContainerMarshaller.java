@@ -52,6 +52,8 @@ public class ContainerMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkInterfaces").build();
     private static final MarshallingInfo<String> HEALTHSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("healthStatus").build();
+    private static final MarshallingInfo<List> MANAGEDAGENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("managedAgents").build();
     private static final MarshallingInfo<String> CPU_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("cpu").build();
     private static final MarshallingInfo<String> MEMORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -89,6 +91,7 @@ public class ContainerMarshaller {
             protocolMarshaller.marshall(container.getNetworkBindings(), NETWORKBINDINGS_BINDING);
             protocolMarshaller.marshall(container.getNetworkInterfaces(), NETWORKINTERFACES_BINDING);
             protocolMarshaller.marshall(container.getHealthStatus(), HEALTHSTATUS_BINDING);
+            protocolMarshaller.marshall(container.getManagedAgents(), MANAGEDAGENTS_BINDING);
             protocolMarshaller.marshall(container.getCpu(), CPU_BINDING);
             protocolMarshaller.marshall(container.getMemory(), MEMORY_BINDING);
             protocolMarshaller.marshall(container.getMemoryReservation(), MEMORYRESERVATION_BINDING);

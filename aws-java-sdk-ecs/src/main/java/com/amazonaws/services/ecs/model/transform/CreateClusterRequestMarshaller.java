@@ -34,6 +34,8 @@ public class CreateClusterRequestMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<List> SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("settings").build();
+    private static final MarshallingInfo<StructuredPojo> CONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configuration").build();
     private static final MarshallingInfo<List> CAPACITYPROVIDERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("capacityProviders").build();
     private static final MarshallingInfo<List> DEFAULTCAPACITYPROVIDERSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -58,6 +60,7 @@ public class CreateClusterRequestMarshaller {
             protocolMarshaller.marshall(createClusterRequest.getClusterName(), CLUSTERNAME_BINDING);
             protocolMarshaller.marshall(createClusterRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createClusterRequest.getSettings(), SETTINGS_BINDING);
+            protocolMarshaller.marshall(createClusterRequest.getConfiguration(), CONFIGURATION_BINDING);
             protocolMarshaller.marshall(createClusterRequest.getCapacityProviders(), CAPACITYPROVIDERS_BINDING);
             protocolMarshaller.marshall(createClusterRequest.getDefaultCapacityProviderStrategy(), DEFAULTCAPACITYPROVIDERSTRATEGY_BINDING);
         } catch (Exception e) {

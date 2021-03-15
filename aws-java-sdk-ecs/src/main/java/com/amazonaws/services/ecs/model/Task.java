@@ -143,6 +143,13 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     private String desiredStatus;
     /**
      * <p>
+     * Whether or not execute command functionality is enabled for this task. If <code>true</code>, this enables execute
+     * command functionality on all containers in the task.
+     * </p>
+     */
+    private Boolean enableExecuteCommand;
+    /**
+     * <p>
      * The Unix timestamp for when the task execution stopped.
      * </p>
      */
@@ -1233,6 +1240,66 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     public Task withDesiredStatus(String desiredStatus) {
         setDesiredStatus(desiredStatus);
         return this;
+    }
+
+    /**
+     * <p>
+     * Whether or not execute command functionality is enabled for this task. If <code>true</code>, this enables execute
+     * command functionality on all containers in the task.
+     * </p>
+     * 
+     * @param enableExecuteCommand
+     *        Whether or not execute command functionality is enabled for this task. If <code>true</code>, this enables
+     *        execute command functionality on all containers in the task.
+     */
+
+    public void setEnableExecuteCommand(Boolean enableExecuteCommand) {
+        this.enableExecuteCommand = enableExecuteCommand;
+    }
+
+    /**
+     * <p>
+     * Whether or not execute command functionality is enabled for this task. If <code>true</code>, this enables execute
+     * command functionality on all containers in the task.
+     * </p>
+     * 
+     * @return Whether or not execute command functionality is enabled for this task. If <code>true</code>, this enables
+     *         execute command functionality on all containers in the task.
+     */
+
+    public Boolean getEnableExecuteCommand() {
+        return this.enableExecuteCommand;
+    }
+
+    /**
+     * <p>
+     * Whether or not execute command functionality is enabled for this task. If <code>true</code>, this enables execute
+     * command functionality on all containers in the task.
+     * </p>
+     * 
+     * @param enableExecuteCommand
+     *        Whether or not execute command functionality is enabled for this task. If <code>true</code>, this enables
+     *        execute command functionality on all containers in the task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Task withEnableExecuteCommand(Boolean enableExecuteCommand) {
+        setEnableExecuteCommand(enableExecuteCommand);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether or not execute command functionality is enabled for this task. If <code>true</code>, this enables execute
+     * command functionality on all containers in the task.
+     * </p>
+     * 
+     * @return Whether or not execute command functionality is enabled for this task. If <code>true</code>, this enables
+     *         execute command functionality on all containers in the task.
+     */
+
+    public Boolean isEnableExecuteCommand() {
+        return this.enableExecuteCommand;
     }
 
     /**
@@ -3014,6 +3081,8 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getDesiredStatus() != null)
             sb.append("DesiredStatus: ").append(getDesiredStatus()).append(",");
+        if (getEnableExecuteCommand() != null)
+            sb.append("EnableExecuteCommand: ").append(getEnableExecuteCommand()).append(",");
         if (getExecutionStoppedAt() != null)
             sb.append("ExecutionStoppedAt: ").append(getExecutionStoppedAt()).append(",");
         if (getGroup() != null)
@@ -3117,6 +3186,10 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
         if (other.getDesiredStatus() == null ^ this.getDesiredStatus() == null)
             return false;
         if (other.getDesiredStatus() != null && other.getDesiredStatus().equals(this.getDesiredStatus()) == false)
+            return false;
+        if (other.getEnableExecuteCommand() == null ^ this.getEnableExecuteCommand() == null)
+            return false;
+        if (other.getEnableExecuteCommand() != null && other.getEnableExecuteCommand().equals(this.getEnableExecuteCommand()) == false)
             return false;
         if (other.getExecutionStoppedAt() == null ^ this.getExecutionStoppedAt() == null)
             return false;
@@ -3222,6 +3295,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCpu() == null) ? 0 : getCpu().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getDesiredStatus() == null) ? 0 : getDesiredStatus().hashCode());
+        hashCode = prime * hashCode + ((getEnableExecuteCommand() == null) ? 0 : getEnableExecuteCommand().hashCode());
         hashCode = prime * hashCode + ((getExecutionStoppedAt() == null) ? 0 : getExecutionStoppedAt().hashCode());
         hashCode = prime * hashCode + ((getGroup() == null) ? 0 : getGroup().hashCode());
         hashCode = prime * hashCode + ((getHealthStatus() == null) ? 0 : getHealthStatus().hashCode());

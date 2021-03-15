@@ -126,9 +126,9 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     private com.amazonaws.internal.SdkInternalList<TaskDefinitionPlacementConstraint> placementConstraints;
     /**
      * <p>
-     * The task launch type that Amazon ECS should validate the task definition against. This ensures that the task
-     * definition parameters are compatible with the specified launch type. If no value is specified, it defaults to
-     * <code>EC2</code>.
+     * The task launch type that Amazon ECS should validate the task definition against. A client exception is returned
+     * if the task definition doesn't validate against the compatibilities specified. If no value is specified, the
+     * parameter is omitted from the response.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> requiresCompatibilities;
@@ -304,7 +304,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      */
@@ -348,7 +348,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      */
@@ -1317,14 +1317,14 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The task launch type that Amazon ECS should validate the task definition against. This ensures that the task
-     * definition parameters are compatible with the specified launch type. If no value is specified, it defaults to
-     * <code>EC2</code>.
+     * The task launch type that Amazon ECS should validate the task definition against. A client exception is returned
+     * if the task definition doesn't validate against the compatibilities specified. If no value is specified, the
+     * parameter is omitted from the response.
      * </p>
      * 
-     * @return The task launch type that Amazon ECS should validate the task definition against. This ensures that the
-     *         task definition parameters are compatible with the specified launch type. If no value is specified, it
-     *         defaults to <code>EC2</code>.
+     * @return The task launch type that Amazon ECS should validate the task definition against. A client exception is
+     *         returned if the task definition doesn't validate against the compatibilities specified. If no value is
+     *         specified, the parameter is omitted from the response.
      * @see Compatibility
      */
 
@@ -1337,15 +1337,15 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The task launch type that Amazon ECS should validate the task definition against. This ensures that the task
-     * definition parameters are compatible with the specified launch type. If no value is specified, it defaults to
-     * <code>EC2</code>.
+     * The task launch type that Amazon ECS should validate the task definition against. A client exception is returned
+     * if the task definition doesn't validate against the compatibilities specified. If no value is specified, the
+     * parameter is omitted from the response.
      * </p>
      * 
      * @param requiresCompatibilities
-     *        The task launch type that Amazon ECS should validate the task definition against. This ensures that the
-     *        task definition parameters are compatible with the specified launch type. If no value is specified, it
-     *        defaults to <code>EC2</code>.
+     *        The task launch type that Amazon ECS should validate the task definition against. A client exception is
+     *        returned if the task definition doesn't validate against the compatibilities specified. If no value is
+     *        specified, the parameter is omitted from the response.
      * @see Compatibility
      */
 
@@ -1360,9 +1360,9 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The task launch type that Amazon ECS should validate the task definition against. This ensures that the task
-     * definition parameters are compatible with the specified launch type. If no value is specified, it defaults to
-     * <code>EC2</code>.
+     * The task launch type that Amazon ECS should validate the task definition against. A client exception is returned
+     * if the task definition doesn't validate against the compatibilities specified. If no value is specified, the
+     * parameter is omitted from the response.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1371,9 +1371,9 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param requiresCompatibilities
-     *        The task launch type that Amazon ECS should validate the task definition against. This ensures that the
-     *        task definition parameters are compatible with the specified launch type. If no value is specified, it
-     *        defaults to <code>EC2</code>.
+     *        The task launch type that Amazon ECS should validate the task definition against. A client exception is
+     *        returned if the task definition doesn't validate against the compatibilities specified. If no value is
+     *        specified, the parameter is omitted from the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Compatibility
      */
@@ -1390,15 +1390,15 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The task launch type that Amazon ECS should validate the task definition against. This ensures that the task
-     * definition parameters are compatible with the specified launch type. If no value is specified, it defaults to
-     * <code>EC2</code>.
+     * The task launch type that Amazon ECS should validate the task definition against. A client exception is returned
+     * if the task definition doesn't validate against the compatibilities specified. If no value is specified, the
+     * parameter is omitted from the response.
      * </p>
      * 
      * @param requiresCompatibilities
-     *        The task launch type that Amazon ECS should validate the task definition against. This ensures that the
-     *        task definition parameters are compatible with the specified launch type. If no value is specified, it
-     *        defaults to <code>EC2</code>.
+     *        The task launch type that Amazon ECS should validate the task definition against. A client exception is
+     *        returned if the task definition doesn't validate against the compatibilities specified. If no value is
+     *        specified, the parameter is omitted from the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Compatibility
      */
@@ -1410,15 +1410,15 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The task launch type that Amazon ECS should validate the task definition against. This ensures that the task
-     * definition parameters are compatible with the specified launch type. If no value is specified, it defaults to
-     * <code>EC2</code>.
+     * The task launch type that Amazon ECS should validate the task definition against. A client exception is returned
+     * if the task definition doesn't validate against the compatibilities specified. If no value is specified, the
+     * parameter is omitted from the response.
      * </p>
      * 
      * @param requiresCompatibilities
-     *        The task launch type that Amazon ECS should validate the task definition against. This ensures that the
-     *        task definition parameters are compatible with the specified launch type. If no value is specified, it
-     *        defaults to <code>EC2</code>.
+     *        The task launch type that Amazon ECS should validate the task definition against. A client exception is
+     *        returned if the task definition doesn't validate against the compatibilities specified. If no value is
+     *        specified, the parameter is omitted from the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Compatibility
      */
@@ -2509,7 +2509,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      * 
@@ -2528,7 +2528,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      *        </p>
      * @see PidMode
      */
@@ -2554,7 +2554,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      * 
@@ -2572,7 +2572,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *         </p>
      *         <note>
      *         <p>
-     *         This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *         This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      *         </p>
      * @see PidMode
      */
@@ -2598,7 +2598,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      * 
@@ -2617,7 +2617,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PidMode
@@ -2645,7 +2645,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      * 
@@ -2664,7 +2664,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      *        </p>
      * @see PidMode
      */
@@ -2690,7 +2690,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      * 
@@ -2709,7 +2709,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PidMode
@@ -2759,7 +2759,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      * 
@@ -2801,7 +2801,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        </ul>
      *        <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      *        </p>
      * @see IpcMode
      */
@@ -2849,7 +2849,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      * 
@@ -2890,7 +2890,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *         </ul>
      *         <note>
      *         <p>
-     *         This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *         This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      *         </p>
      * @see IpcMode
      */
@@ -2938,7 +2938,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      * 
@@ -2980,7 +2980,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        </ul>
      *        <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpcMode
@@ -3030,7 +3030,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      * 
@@ -3072,7 +3072,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        </ul>
      *        <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      *        </p>
      * @see IpcMode
      */
@@ -3120,7 +3120,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      * 
@@ -3162,7 +3162,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        </ul>
      *        <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpcMode

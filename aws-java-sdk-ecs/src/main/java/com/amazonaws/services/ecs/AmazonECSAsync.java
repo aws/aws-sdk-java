@@ -29,14 +29,12 @@ import com.amazonaws.services.ecs.model.*;
  * <p>
  * Amazon Elastic Container Service (Amazon ECS) is a highly scalable, fast, container management service that makes it
  * easy to run, stop, and manage Docker containers on a cluster. You can host your cluster on a serverless
- * infrastructure that is managed by Amazon ECS by launching your services or tasks using the Fargate launch type. For
- * more control, you can host your tasks on a cluster of Amazon Elastic Compute Cloud (Amazon EC2) instances that you
- * manage by using the EC2 launch type. For more information about launch types, see <a
- * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>.
+ * infrastructure that is managed by Amazon ECS by launching your services or tasks on AWS Fargate. For more control,
+ * you can host your tasks on a cluster of Amazon Elastic Compute Cloud (Amazon EC2) instances that you manage.
  * </p>
  * <p>
- * Amazon ECS lets you launch and stop container-based applications with simple API calls, allows you to get the state
- * of your cluster from a centralized service, and gives you access to many familiar Amazon EC2 features.
+ * Amazon ECS makes it easy to launch and stop container-based applications with simple API calls, allows you to get the
+ * state of your cluster from a centralized service, and gives you access to many familiar Amazon EC2 features.
  * </p>
  * <p>
  * You can use Amazon ECS to schedule the placement of containers across your cluster based on your resource needs,
@@ -1179,6 +1177,37 @@ public interface AmazonECSAsync extends AmazonECS {
      */
     java.util.concurrent.Future<DiscoverPollEndpointResult> discoverPollEndpointAsync(
             com.amazonaws.handlers.AsyncHandler<DiscoverPollEndpointRequest, DiscoverPollEndpointResult> asyncHandler);
+
+    /**
+     * <p>
+     * Runs a command remotely on a container within a task.
+     * </p>
+     * 
+     * @param executeCommandRequest
+     * @return A Java Future containing the result of the ExecuteCommand operation returned by the service.
+     * @sample AmazonECSAsync.ExecuteCommand
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ExecuteCommand" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ExecuteCommandResult> executeCommandAsync(ExecuteCommandRequest executeCommandRequest);
+
+    /**
+     * <p>
+     * Runs a command remotely on a container within a task.
+     * </p>
+     * 
+     * @param executeCommandRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ExecuteCommand operation returned by the service.
+     * @sample AmazonECSAsyncHandler.ExecuteCommand
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ExecuteCommand" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ExecuteCommandResult> executeCommandAsync(ExecuteCommandRequest executeCommandRequest,
+            com.amazonaws.handlers.AsyncHandler<ExecuteCommandRequest, ExecuteCommandResult> asyncHandler);
 
     /**
      * <p>
@@ -2375,6 +2404,37 @@ public interface AmazonECSAsync extends AmazonECS {
      */
     java.util.concurrent.Future<UpdateCapacityProviderResult> updateCapacityProviderAsync(UpdateCapacityProviderRequest updateCapacityProviderRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateCapacityProviderRequest, UpdateCapacityProviderResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the cluster.
+     * </p>
+     * 
+     * @param updateClusterRequest
+     * @return A Java Future containing the result of the UpdateCluster operation returned by the service.
+     * @sample AmazonECSAsync.UpdateCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateClusterResult> updateClusterAsync(UpdateClusterRequest updateClusterRequest);
+
+    /**
+     * <p>
+     * Updates the cluster.
+     * </p>
+     * 
+     * @param updateClusterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateCluster operation returned by the service.
+     * @sample AmazonECSAsyncHandler.UpdateCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateClusterResult> updateClusterAsync(UpdateClusterRequest updateClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateClusterRequest, UpdateClusterResult> asyncHandler);
 
     /**
      * <p>

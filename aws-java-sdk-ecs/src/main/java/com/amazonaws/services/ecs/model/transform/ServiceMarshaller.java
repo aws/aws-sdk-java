@@ -86,6 +86,8 @@ public class ServiceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enableECSManagedTags").build();
     private static final MarshallingInfo<String> PROPAGATETAGS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("propagateTags").build();
+    private static final MarshallingInfo<Boolean> ENABLEEXECUTECOMMAND_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enableExecuteCommand").build();
 
     private static final ServiceMarshaller instance = new ServiceMarshaller();
 
@@ -132,6 +134,7 @@ public class ServiceMarshaller {
             protocolMarshaller.marshall(service.getCreatedBy(), CREATEDBY_BINDING);
             protocolMarshaller.marshall(service.getEnableECSManagedTags(), ENABLEECSMANAGEDTAGS_BINDING);
             protocolMarshaller.marshall(service.getPropagateTags(), PROPAGATETAGS_BINDING);
+            protocolMarshaller.marshall(service.getEnableExecuteCommand(), ENABLEEXECUTECOMMAND_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

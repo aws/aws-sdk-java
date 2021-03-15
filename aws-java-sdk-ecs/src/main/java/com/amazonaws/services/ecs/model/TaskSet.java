@@ -147,7 +147,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The launch type the tasks in the task set are using. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
@@ -160,11 +160,10 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<CapacityProviderStrategyItem> capacityProviderStrategy;
     /**
      * <p>
-     * The platform version on which the tasks in the task set are running. A platform version is only specified for
-     * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
-     * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * The AWS Fargate platform version on which the tasks in the task set are running. A platform version is only
+     * specified for tasks run on AWS Fargate. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate platform
+     * versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private String platformVersion;
@@ -183,7 +182,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The details of the service discovery registries to assign to this task set. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ServiceRegistry> serviceRegistries;
@@ -1025,14 +1024,14 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The launch type the tasks in the task set are using. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param launchType
      *        The launch type the tasks in the task set are using. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
-     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *        types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @see LaunchType
      */
 
@@ -1043,13 +1042,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The launch type the tasks in the task set are using. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return The launch type the tasks in the task set are using. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
-     *         Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *         types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @see LaunchType
      */
 
@@ -1060,14 +1059,14 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The launch type the tasks in the task set are using. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param launchType
      *        The launch type the tasks in the task set are using. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
-     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *        types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchType
      */
@@ -1080,14 +1079,14 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The launch type the tasks in the task set are using. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param launchType
      *        The launch type the tasks in the task set are using. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
-     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *        types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchType
      */
@@ -1172,19 +1171,17 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform version on which the tasks in the task set are running. A platform version is only specified for
-     * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
-     * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * The AWS Fargate platform version on which the tasks in the task set are running. A platform version is only
+     * specified for tasks run on AWS Fargate. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate platform
+     * versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param platformVersion
-     *        The platform version on which the tasks in the task set are running. A platform version is only specified
-     *        for tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version
-     *        is used by default. For more information, see <a
+     *        The AWS Fargate platform version on which the tasks in the task set are running. A platform version is
+     *        only specified for tasks run on AWS Fargate. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
-     *        Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setPlatformVersion(String platformVersion) {
@@ -1193,18 +1190,16 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform version on which the tasks in the task set are running. A platform version is only specified for
-     * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
-     * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * The AWS Fargate platform version on which the tasks in the task set are running. A platform version is only
+     * specified for tasks run on AWS Fargate. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate platform
+     * versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The platform version on which the tasks in the task set are running. A platform version is only specified
-     *         for tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform
-     *         version is used by default. For more information, see <a
+     * @return The AWS Fargate platform version on which the tasks in the task set are running. A platform version is
+     *         only specified for tasks run on AWS Fargate. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
-     *         Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public String getPlatformVersion() {
@@ -1213,19 +1208,17 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform version on which the tasks in the task set are running. A platform version is only specified for
-     * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
-     * default. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
-     * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * The AWS Fargate platform version on which the tasks in the task set are running. A platform version is only
+     * specified for tasks run on AWS Fargate. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate platform
+     * versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param platformVersion
-     *        The platform version on which the tasks in the task set are running. A platform version is only specified
-     *        for tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version
-     *        is used by default. For more information, see <a
+     *        The AWS Fargate platform version on which the tasks in the task set are running. A platform version is
+     *        only specified for tasks run on AWS Fargate. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
-     *        Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1350,12 +1343,12 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The details of the service discovery registries to assign to this task set. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.
      * </p>
      * 
      * @return The details of the service discovery registries to assign to this task set. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     *         Discovery</a>.
+     *         discovery</a>.
      */
 
     public java.util.List<ServiceRegistry> getServiceRegistries() {
@@ -1368,13 +1361,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The details of the service discovery registries to assign to this task set. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.
      * </p>
      * 
      * @param serviceRegistries
      *        The details of the service discovery registries to assign to this task set. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     *        Discovery</a>.
+     *        discovery</a>.
      */
 
     public void setServiceRegistries(java.util.Collection<ServiceRegistry> serviceRegistries) {
@@ -1389,7 +1382,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The details of the service discovery registries to assign to this task set. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1400,7 +1393,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * @param serviceRegistries
      *        The details of the service discovery registries to assign to this task set. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     *        Discovery</a>.
+     *        discovery</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1417,13 +1410,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The details of the service discovery registries to assign to this task set. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.
      * </p>
      * 
      * @param serviceRegistries
      *        The details of the service discovery registries to assign to this task set. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     *        Discovery</a>.
+     *        discovery</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

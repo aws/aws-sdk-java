@@ -108,6 +108,10 @@ public class DeploymentGroupInfoJsonUnmarshaller implements Unmarshaller<Deploym
                     context.nextToken();
                     deploymentGroupInfo.setDeploymentStyle(DeploymentStyleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("outdatedInstancesStrategy", targetDepth)) {
+                    context.nextToken();
+                    deploymentGroupInfo.setOutdatedInstancesStrategy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("blueGreenDeploymentConfiguration", targetDepth)) {
                     context.nextToken();
                     deploymentGroupInfo.setBlueGreenDeploymentConfiguration(BlueGreenDeploymentConfigurationJsonUnmarshaller.getInstance().unmarshall(context));

@@ -65,6 +65,12 @@ public class OnDemandCapacityReservationOptions implements Serializable, Cloneab
      * </ul>
      */
     private String capacityReservationPreference;
+    /**
+     * <p>
+     * The ARN of the Capacity Reservation resource group in which to run the instance.
+     * </p>
+     */
+    private String capacityReservationResourceGroupArn;
 
     /**
      * <p>
@@ -378,6 +384,46 @@ public class OnDemandCapacityReservationOptions implements Serializable, Cloneab
     }
 
     /**
+     * <p>
+     * The ARN of the Capacity Reservation resource group in which to run the instance.
+     * </p>
+     * 
+     * @param capacityReservationResourceGroupArn
+     *        The ARN of the Capacity Reservation resource group in which to run the instance.
+     */
+
+    public void setCapacityReservationResourceGroupArn(String capacityReservationResourceGroupArn) {
+        this.capacityReservationResourceGroupArn = capacityReservationResourceGroupArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the Capacity Reservation resource group in which to run the instance.
+     * </p>
+     * 
+     * @return The ARN of the Capacity Reservation resource group in which to run the instance.
+     */
+
+    public String getCapacityReservationResourceGroupArn() {
+        return this.capacityReservationResourceGroupArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the Capacity Reservation resource group in which to run the instance.
+     * </p>
+     * 
+     * @param capacityReservationResourceGroupArn
+     *        The ARN of the Capacity Reservation resource group in which to run the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OnDemandCapacityReservationOptions withCapacityReservationResourceGroupArn(String capacityReservationResourceGroupArn) {
+        setCapacityReservationResourceGroupArn(capacityReservationResourceGroupArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -392,7 +438,9 @@ public class OnDemandCapacityReservationOptions implements Serializable, Cloneab
         if (getUsageStrategy() != null)
             sb.append("UsageStrategy: ").append(getUsageStrategy()).append(",");
         if (getCapacityReservationPreference() != null)
-            sb.append("CapacityReservationPreference: ").append(getCapacityReservationPreference());
+            sb.append("CapacityReservationPreference: ").append(getCapacityReservationPreference()).append(",");
+        if (getCapacityReservationResourceGroupArn() != null)
+            sb.append("CapacityReservationResourceGroupArn: ").append(getCapacityReservationResourceGroupArn());
         sb.append("}");
         return sb.toString();
     }
@@ -416,6 +464,11 @@ public class OnDemandCapacityReservationOptions implements Serializable, Cloneab
         if (other.getCapacityReservationPreference() != null
                 && other.getCapacityReservationPreference().equals(this.getCapacityReservationPreference()) == false)
             return false;
+        if (other.getCapacityReservationResourceGroupArn() == null ^ this.getCapacityReservationResourceGroupArn() == null)
+            return false;
+        if (other.getCapacityReservationResourceGroupArn() != null
+                && other.getCapacityReservationResourceGroupArn().equals(this.getCapacityReservationResourceGroupArn()) == false)
+            return false;
         return true;
     }
 
@@ -426,6 +479,7 @@ public class OnDemandCapacityReservationOptions implements Serializable, Cloneab
 
         hashCode = prime * hashCode + ((getUsageStrategy() == null) ? 0 : getUsageStrategy().hashCode());
         hashCode = prime * hashCode + ((getCapacityReservationPreference() == null) ? 0 : getCapacityReservationPreference().hashCode());
+        hashCode = prime * hashCode + ((getCapacityReservationResourceGroupArn() == null) ? 0 : getCapacityReservationResourceGroupArn().hashCode());
         return hashCode;
     }
 

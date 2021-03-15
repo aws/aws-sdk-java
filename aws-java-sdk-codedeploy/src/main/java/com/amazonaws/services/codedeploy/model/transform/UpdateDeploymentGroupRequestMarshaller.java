@@ -50,6 +50,8 @@ public class UpdateDeploymentGroupRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("alarmConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> AUTOROLLBACKCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoRollbackConfiguration").build();
+    private static final MarshallingInfo<String> OUTDATEDINSTANCESSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("outdatedInstancesStrategy").build();
     private static final MarshallingInfo<StructuredPojo> DEPLOYMENTSTYLE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentStyle").build();
     private static final MarshallingInfo<StructuredPojo> BLUEGREENDEPLOYMENTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -90,6 +92,7 @@ public class UpdateDeploymentGroupRequestMarshaller {
             protocolMarshaller.marshall(updateDeploymentGroupRequest.getTriggerConfigurations(), TRIGGERCONFIGURATIONS_BINDING);
             protocolMarshaller.marshall(updateDeploymentGroupRequest.getAlarmConfiguration(), ALARMCONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateDeploymentGroupRequest.getAutoRollbackConfiguration(), AUTOROLLBACKCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(updateDeploymentGroupRequest.getOutdatedInstancesStrategy(), OUTDATEDINSTANCESSTRATEGY_BINDING);
             protocolMarshaller.marshall(updateDeploymentGroupRequest.getDeploymentStyle(), DEPLOYMENTSTYLE_BINDING);
             protocolMarshaller.marshall(updateDeploymentGroupRequest.getBlueGreenDeploymentConfiguration(), BLUEGREENDEPLOYMENTCONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateDeploymentGroupRequest.getLoadBalancerInfo(), LOADBALANCERINFO_BINDING);

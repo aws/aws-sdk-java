@@ -34,6 +34,8 @@ public class StartTaskRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containerInstances").build();
     private static final MarshallingInfo<Boolean> ENABLEECSMANAGEDTAGS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enableECSManagedTags").build();
+    private static final MarshallingInfo<Boolean> ENABLEEXECUTECOMMAND_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enableExecuteCommand").build();
     private static final MarshallingInfo<String> GROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("group").build();
     private static final MarshallingInfo<StructuredPojo> NETWORKCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -70,6 +72,7 @@ public class StartTaskRequestMarshaller {
             protocolMarshaller.marshall(startTaskRequest.getCluster(), CLUSTER_BINDING);
             protocolMarshaller.marshall(startTaskRequest.getContainerInstances(), CONTAINERINSTANCES_BINDING);
             protocolMarshaller.marshall(startTaskRequest.getEnableECSManagedTags(), ENABLEECSMANAGEDTAGS_BINDING);
+            protocolMarshaller.marshall(startTaskRequest.getEnableExecuteCommand(), ENABLEEXECUTECOMMAND_BINDING);
             protocolMarshaller.marshall(startTaskRequest.getGroup(), GROUP_BINDING);
             protocolMarshaller.marshall(startTaskRequest.getNetworkConfiguration(), NETWORKCONFIGURATION_BINDING);
             protocolMarshaller.marshall(startTaskRequest.getOverrides(), OVERRIDES_BINDING);

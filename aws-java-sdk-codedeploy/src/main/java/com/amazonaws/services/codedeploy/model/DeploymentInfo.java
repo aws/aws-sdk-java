@@ -131,6 +131,12 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * <code>codeDeployRollback</code>: A rollback process created the deployment.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated EC2
+     * instances.
+     * </p>
+     * </li>
      * </ul>
      */
     private String creator;
@@ -265,6 +271,8 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String externalId;
+
+    private RelatedDeployments relatedDeployments;
 
     /**
      * <p>
@@ -869,6 +877,12 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * <code>codeDeployRollback</code>: A rollback process created the deployment.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated EC2
+     * instances.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param creator
@@ -887,6 +901,12 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>codeDeployRollback</code>: A rollback process created the deployment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated
+     *        EC2 instances.
      *        </p>
      *        </li>
      * @see DeploymentCreator
@@ -916,6 +936,12 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * <code>codeDeployRollback</code>: A rollback process created the deployment.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated EC2
+     * instances.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The means by which the deployment was created:</p>
@@ -933,6 +959,12 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <code>codeDeployRollback</code>: A rollback process created the deployment.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected
+     *         outdated EC2 instances.
      *         </p>
      *         </li>
      * @see DeploymentCreator
@@ -962,6 +994,12 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * <code>codeDeployRollback</code>: A rollback process created the deployment.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated EC2
+     * instances.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param creator
@@ -980,6 +1018,12 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>codeDeployRollback</code>: A rollback process created the deployment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated
+     *        EC2 instances.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1011,6 +1055,12 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * <code>codeDeployRollback</code>: A rollback process created the deployment.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated EC2
+     * instances.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param creator
@@ -1029,6 +1079,12 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>codeDeployRollback</code>: A rollback process created the deployment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated
+     *        EC2 instances.
      *        </p>
      *        </li>
      * @see DeploymentCreator
@@ -1058,6 +1114,12 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      * <code>codeDeployRollback</code>: A rollback process created the deployment.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated EC2
+     * instances.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param creator
@@ -1076,6 +1138,12 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>codeDeployRollback</code>: A rollback process created the deployment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CodeDeployAutoUpdate</code>: An auto-update process created the deployment when it detected outdated
+     *        EC2 instances.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2197,6 +2265,32 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param relatedDeployments
+     */
+
+    public void setRelatedDeployments(RelatedDeployments relatedDeployments) {
+        this.relatedDeployments = relatedDeployments;
+    }
+
+    /**
+     * @return
+     */
+
+    public RelatedDeployments getRelatedDeployments() {
+        return this.relatedDeployments;
+    }
+
+    /**
+     * @param relatedDeployments
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeploymentInfo withRelatedDeployments(RelatedDeployments relatedDeployments) {
+        setRelatedDeployments(relatedDeployments);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2263,7 +2357,9 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
         if (getComputePlatform() != null)
             sb.append("ComputePlatform: ").append(getComputePlatform()).append(",");
         if (getExternalId() != null)
-            sb.append("ExternalId: ").append(getExternalId());
+            sb.append("ExternalId: ").append(getExternalId()).append(",");
+        if (getRelatedDeployments() != null)
+            sb.append("RelatedDeployments: ").append(getRelatedDeployments());
         sb.append("}");
         return sb.toString();
     }
@@ -2394,6 +2490,10 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getExternalId() != null && other.getExternalId().equals(this.getExternalId()) == false)
             return false;
+        if (other.getRelatedDeployments() == null ^ this.getRelatedDeployments() == null)
+            return false;
+        if (other.getRelatedDeployments() != null && other.getRelatedDeployments().equals(this.getRelatedDeployments()) == false)
+            return false;
         return true;
     }
 
@@ -2430,6 +2530,7 @@ public class DeploymentInfo implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDeploymentStatusMessages() == null) ? 0 : getDeploymentStatusMessages().hashCode());
         hashCode = prime * hashCode + ((getComputePlatform() == null) ? 0 : getComputePlatform().hashCode());
         hashCode = prime * hashCode + ((getExternalId() == null) ? 0 : getExternalId().hashCode());
+        hashCode = prime * hashCode + ((getRelatedDeployments() == null) ? 0 : getRelatedDeployments().hashCode());
         return hashCode;
     }
 

@@ -46,6 +46,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private String clusterName;
     /**
      * <p>
+     * The execute command configuration for the cluster.
+     * </p>
+     */
+    private ClusterConfiguration configuration;
+    /**
+     * <p>
      * The status of the cluster. The following are the possible states that will be returned.
      * </p>
      * <dl>
@@ -363,6 +369,46 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     public Cluster withClusterName(String clusterName) {
         setClusterName(clusterName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The execute command configuration for the cluster.
+     * </p>
+     * 
+     * @param configuration
+     *        The execute command configuration for the cluster.
+     */
+
+    public void setConfiguration(ClusterConfiguration configuration) {
+        this.configuration = configuration;
+    }
+
+    /**
+     * <p>
+     * The execute command configuration for the cluster.
+     * </p>
+     * 
+     * @return The execute command configuration for the cluster.
+     */
+
+    public ClusterConfiguration getConfiguration() {
+        return this.configuration;
+    }
+
+    /**
+     * <p>
+     * The execute command configuration for the cluster.
+     * </p>
+     * 
+     * @param configuration
+     *        The execute command configuration for the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withConfiguration(ClusterConfiguration configuration) {
+        setConfiguration(configuration);
         return this;
     }
 
@@ -2136,6 +2182,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
             sb.append("ClusterArn: ").append(getClusterArn()).append(",");
         if (getClusterName() != null)
             sb.append("ClusterName: ").append(getClusterName()).append(",");
+        if (getConfiguration() != null)
+            sb.append("Configuration: ").append(getConfiguration()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getRegisteredContainerInstancesCount() != null)
@@ -2181,6 +2229,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         if (other.getClusterName() == null ^ this.getClusterName() == null)
             return false;
         if (other.getClusterName() != null && other.getClusterName().equals(this.getClusterName()) == false)
+            return false;
+        if (other.getConfiguration() == null ^ this.getConfiguration() == null)
+            return false;
+        if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
             return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
@@ -2242,6 +2294,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getClusterArn() == null) ? 0 : getClusterArn().hashCode());
         hashCode = prime * hashCode + ((getClusterName() == null) ? 0 : getClusterName().hashCode());
+        hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getRegisteredContainerInstancesCount() == null) ? 0 : getRegisteredContainerInstancesCount().hashCode());
         hashCode = prime * hashCode + ((getRunningTasksCount() == null) ? 0 : getRunningTasksCount().hashCode());

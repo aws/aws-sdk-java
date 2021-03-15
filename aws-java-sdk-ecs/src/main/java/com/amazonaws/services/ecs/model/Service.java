@@ -298,6 +298,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String propagateTags;
+    /**
+     * <p>
+     * Whether or not the execute command functionality is enabled for the service. If <code>true</code>, the execute
+     * command functionality is enabled for all containers in tasks as part of the service.
+     * </p>
+     */
+    private Boolean enableExecuteCommand;
 
     /**
      * <p>
@@ -2564,6 +2571,66 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Whether or not the execute command functionality is enabled for the service. If <code>true</code>, the execute
+     * command functionality is enabled for all containers in tasks as part of the service.
+     * </p>
+     * 
+     * @param enableExecuteCommand
+     *        Whether or not the execute command functionality is enabled for the service. If <code>true</code>, the
+     *        execute command functionality is enabled for all containers in tasks as part of the service.
+     */
+
+    public void setEnableExecuteCommand(Boolean enableExecuteCommand) {
+        this.enableExecuteCommand = enableExecuteCommand;
+    }
+
+    /**
+     * <p>
+     * Whether or not the execute command functionality is enabled for the service. If <code>true</code>, the execute
+     * command functionality is enabled for all containers in tasks as part of the service.
+     * </p>
+     * 
+     * @return Whether or not the execute command functionality is enabled for the service. If <code>true</code>, the
+     *         execute command functionality is enabled for all containers in tasks as part of the service.
+     */
+
+    public Boolean getEnableExecuteCommand() {
+        return this.enableExecuteCommand;
+    }
+
+    /**
+     * <p>
+     * Whether or not the execute command functionality is enabled for the service. If <code>true</code>, the execute
+     * command functionality is enabled for all containers in tasks as part of the service.
+     * </p>
+     * 
+     * @param enableExecuteCommand
+     *        Whether or not the execute command functionality is enabled for the service. If <code>true</code>, the
+     *        execute command functionality is enabled for all containers in tasks as part of the service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Service withEnableExecuteCommand(Boolean enableExecuteCommand) {
+        setEnableExecuteCommand(enableExecuteCommand);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether or not the execute command functionality is enabled for the service. If <code>true</code>, the execute
+     * command functionality is enabled for all containers in tasks as part of the service.
+     * </p>
+     * 
+     * @return Whether or not the execute command functionality is enabled for the service. If <code>true</code>, the
+     *         execute command functionality is enabled for all containers in tasks as part of the service.
+     */
+
+    public Boolean isEnableExecuteCommand() {
+        return this.enableExecuteCommand;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2632,7 +2699,9 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         if (getEnableECSManagedTags() != null)
             sb.append("EnableECSManagedTags: ").append(getEnableECSManagedTags()).append(",");
         if (getPropagateTags() != null)
-            sb.append("PropagateTags: ").append(getPropagateTags());
+            sb.append("PropagateTags: ").append(getPropagateTags()).append(",");
+        if (getEnableExecuteCommand() != null)
+            sb.append("EnableExecuteCommand: ").append(getEnableExecuteCommand());
         sb.append("}");
         return sb.toString();
     }
@@ -2764,6 +2833,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPropagateTags() != null && other.getPropagateTags().equals(this.getPropagateTags()) == false)
             return false;
+        if (other.getEnableExecuteCommand() == null ^ this.getEnableExecuteCommand() == null)
+            return false;
+        if (other.getEnableExecuteCommand() != null && other.getEnableExecuteCommand().equals(this.getEnableExecuteCommand()) == false)
+            return false;
         return true;
     }
 
@@ -2801,6 +2874,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreatedBy() == null) ? 0 : getCreatedBy().hashCode());
         hashCode = prime * hashCode + ((getEnableECSManagedTags() == null) ? 0 : getEnableECSManagedTags().hashCode());
         hashCode = prime * hashCode + ((getPropagateTags() == null) ? 0 : getPropagateTags().hashCode());
+        hashCode = prime * hashCode + ((getEnableExecuteCommand() == null) ? 0 : getEnableExecuteCommand().hashCode());
         return hashCode;
     }
 

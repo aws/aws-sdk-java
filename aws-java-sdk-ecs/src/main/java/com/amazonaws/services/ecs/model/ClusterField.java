@@ -21,6 +21,7 @@ import javax.annotation.Generated;
 public enum ClusterField {
 
     ATTACHMENTS("ATTACHMENTS"),
+    CONFIGURATIONS("CONFIGURATIONS"),
     SETTINGS("SETTINGS"),
     STATISTICS("STATISTICS"),
     TAGS("TAGS");

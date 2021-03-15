@@ -56,6 +56,10 @@ public class ClusterJsonUnmarshaller implements Unmarshaller<Cluster, JsonUnmars
                     context.nextToken();
                     cluster.setClusterName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("configuration", targetDepth)) {
+                    context.nextToken();
+                    cluster.setConfiguration(ClusterConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     cluster.setStatus(context.getUnmarshaller(String.class).unmarshall(context));

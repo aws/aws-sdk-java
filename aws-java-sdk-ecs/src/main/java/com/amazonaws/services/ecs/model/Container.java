@@ -110,6 +110,12 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
     private String healthStatus;
     /**
      * <p>
+     * The details of any Amazon ECS managed agents associated with the container.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ManagedAgent> managedAgents;
+    /**
+     * <p>
      * The number of CPU units set for the container. The value will be <code>0</code> if no value was specified in the
      * container definition when the task definition was registered.
      * </p>
@@ -745,6 +751,79 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The details of any Amazon ECS managed agents associated with the container.
+     * </p>
+     * 
+     * @return The details of any Amazon ECS managed agents associated with the container.
+     */
+
+    public java.util.List<ManagedAgent> getManagedAgents() {
+        if (managedAgents == null) {
+            managedAgents = new com.amazonaws.internal.SdkInternalList<ManagedAgent>();
+        }
+        return managedAgents;
+    }
+
+    /**
+     * <p>
+     * The details of any Amazon ECS managed agents associated with the container.
+     * </p>
+     * 
+     * @param managedAgents
+     *        The details of any Amazon ECS managed agents associated with the container.
+     */
+
+    public void setManagedAgents(java.util.Collection<ManagedAgent> managedAgents) {
+        if (managedAgents == null) {
+            this.managedAgents = null;
+            return;
+        }
+
+        this.managedAgents = new com.amazonaws.internal.SdkInternalList<ManagedAgent>(managedAgents);
+    }
+
+    /**
+     * <p>
+     * The details of any Amazon ECS managed agents associated with the container.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setManagedAgents(java.util.Collection)} or {@link #withManagedAgents(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param managedAgents
+     *        The details of any Amazon ECS managed agents associated with the container.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Container withManagedAgents(ManagedAgent... managedAgents) {
+        if (this.managedAgents == null) {
+            setManagedAgents(new com.amazonaws.internal.SdkInternalList<ManagedAgent>(managedAgents.length));
+        }
+        for (ManagedAgent ele : managedAgents) {
+            this.managedAgents.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The details of any Amazon ECS managed agents associated with the container.
+     * </p>
+     * 
+     * @param managedAgents
+     *        The details of any Amazon ECS managed agents associated with the container.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Container withManagedAgents(java.util.Collection<ManagedAgent> managedAgents) {
+        setManagedAgents(managedAgents);
+        return this;
+    }
+
+    /**
+     * <p>
      * The number of CPU units set for the container. The value will be <code>0</code> if no value was specified in the
      * container definition when the task definition was registered.
      * </p>
@@ -978,6 +1057,8 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
             sb.append("NetworkInterfaces: ").append(getNetworkInterfaces()).append(",");
         if (getHealthStatus() != null)
             sb.append("HealthStatus: ").append(getHealthStatus()).append(",");
+        if (getManagedAgents() != null)
+            sb.append("ManagedAgents: ").append(getManagedAgents()).append(",");
         if (getCpu() != null)
             sb.append("Cpu: ").append(getCpu()).append(",");
         if (getMemory() != null)
@@ -1048,6 +1129,10 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getHealthStatus() != null && other.getHealthStatus().equals(this.getHealthStatus()) == false)
             return false;
+        if (other.getManagedAgents() == null ^ this.getManagedAgents() == null)
+            return false;
+        if (other.getManagedAgents() != null && other.getManagedAgents().equals(this.getManagedAgents()) == false)
+            return false;
         if (other.getCpu() == null ^ this.getCpu() == null)
             return false;
         if (other.getCpu() != null && other.getCpu().equals(this.getCpu()) == false)
@@ -1084,6 +1169,7 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getNetworkBindings() == null) ? 0 : getNetworkBindings().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode());
         hashCode = prime * hashCode + ((getHealthStatus() == null) ? 0 : getHealthStatus().hashCode());
+        hashCode = prime * hashCode + ((getManagedAgents() == null) ? 0 : getManagedAgents().hashCode());
         hashCode = prime * hashCode + ((getCpu() == null) ? 0 : getCpu().hashCode());
         hashCode = prime * hashCode + ((getMemory() == null) ? 0 : getMemory().hashCode());
         hashCode = prime * hashCode + ((getMemoryReservation() == null) ? 0 : getMemoryReservation().hashCode());

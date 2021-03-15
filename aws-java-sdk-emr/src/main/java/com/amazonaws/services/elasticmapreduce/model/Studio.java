@@ -110,7 +110,7 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date creationTime;
     /**
      * <p>
-     * The default Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.
+     * The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.
      * </p>
      */
     private String defaultS3Location;
@@ -707,11 +707,11 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The default Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.
+     * The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.
      * </p>
      * 
      * @param defaultS3Location
-     *        The default Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.
+     *        The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.
      */
 
     public void setDefaultS3Location(String defaultS3Location) {
@@ -720,10 +720,10 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The default Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.
+     * The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.
      * </p>
      * 
-     * @return The default Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.
+     * @return The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.
      */
 
     public String getDefaultS3Location() {
@@ -732,11 +732,11 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The default Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.
+     * The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.
      * </p>
      * 
      * @param defaultS3Location
-     *        The default Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.
+     *        The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

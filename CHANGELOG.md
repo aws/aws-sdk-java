@@ -1,3 +1,28 @@
+# __1.11.975__ __2021-03-15__
+## __AWS CodeDeploy__
+  - ### Features
+    - AWS CodeDeploy can now detect instances running an outdated revision of your application and automatically update them with the latest revision.
+
+## __AWS Fault Injection Simulator__
+  - ### Features
+    - Initial release of AWS Fault Injection Simulator, a managed service that enables you to perform fault injection experiments on your AWS workloads
+
+## __AWS SDK for Java__
+  - ### Features
+    - Add retry mode in user-agent.
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - This is for ecs exec feature release which includes two new APIs - execute-command and update-cluster and an AWS CLI customization for execute-command API
+
+## __Amazon Elastic MapReduce__
+  - ### Features
+    - Amazon EMR customers can now specify Resource Group to target Capacity Reservations in their EMR clusters with instance fleets using allocation strategy.
+
+## __Amazon Transcribe Streaming Service__
+  - ### Features
+    - AWS Transcribe now supports real-time transcription for Chinese (zh-CN) and confidence scores in the transcription output.
+
 # __1.11.974__ __2021-03-12__
 ## __AWS Cost and Usage Report Service__
   - ### Features

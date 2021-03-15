@@ -68,8 +68,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option is set when you launch the
      * Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code in order to take
      * advantage of the feature. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM Roles
-     * for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM roles
+     * for tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private String taskRoleArn;
@@ -147,17 +147,15 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     private Integer revision;
     /**
      * <p>
-     * The list of volume definitions for the task.
+     * The list of data volume definitions for the task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using data volumes in
+     * tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <note>
      * <p>
-     * If your tasks are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code> parameters are
-     * not supported.
+     * The <code>host</code> and <code>sourcePath</code> parameters are not supported for tasks run on AWS Fargate.
      * </p>
-     * <p>
-     * For more information about volume definition parameters and defaults, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
-     * Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<Volume> volumes;
     /**
@@ -168,30 +166,44 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * The container instance attributes required by your task. This field is not valid if you are using the Fargate
-     * launch type for your task.
+     * The container instance attributes required by your task. When an Amazon EC2 instance is registered to your
+     * cluster, the Amazon ECS container agent assigns some standard attributes to the instance. You can apply custom
+     * attributes, specified as key-value pairs using the Amazon ECS console or the <a>PutAttributes</a> API. These
+     * attributes are used when considering task placement for tasks hosted on Amazon EC2 instances. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes"
+     * >Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter is not supported for tasks run on AWS Fargate.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<Attribute> requiresAttributes;
     /**
      * <p>
-     * An array of placement constraint objects to use for tasks. This field is not valid if you are using the Fargate
-     * launch type for your task.
+     * An array of placement constraint objects to use for tasks.
      * </p>
+     * <note>
+     * <p>
+     * This parameter is not supported for tasks run on AWS Fargate.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<TaskDefinitionPlacementConstraint> placementConstraints;
     /**
      * <p>
-     * The launch type to use with your task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
-     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * The task launch types the task definition validated against during task definition registration. For more
+     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> compatibilities;
     /**
      * <p>
-     * The launch type the task requires. If no value is specified, it will default to <code>EC2</code>. Valid values
-     * include <code>EC2</code> and <code>FARGATE</code>.
+     * The task launch types the task definition was validated against. To determine which task launch types the task
+     * definition is validated for, see the <a>TaskDefinition$compatibilities</a> parameter.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> requiresCompatibilities;
@@ -239,16 +251,16 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * The amount (in MiB) of memory used by the task.
      * </p>
      * <p>
-     * If using the EC2 launch type, you must specify either a task-level memory value or a container-level memory
-     * value. This field is optional and any value can be used. If a task-level memory value is specified then the
-     * container-level memory value is optional. For more information regarding container-level memory and memory
-     * reservation, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">
-     * ContainerDefinition</a>.
+     * If your tasks will be run on Amazon EC2 instances, you must specify either a task-level memory value or a
+     * container-level memory value. This field is optional and any value can be used. If a task-level memory value is
+     * specified then the container-level memory value is optional. For more information regarding container-level
+     * memory and memory reservation, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html"
+     * >ContainerDefinition</a>.
      * </p>
      * <p>
-     * If using the Fargate launch type, this field is required and you must use one of the following values, which
-     * determines your range of valid values for the <code>cpu</code> parameter:
+     * If your tasks will be run on AWS Fargate, this field is required and you must use one of the following values,
+     * which determines your range of valid values for the <code>cpu</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -305,7 +317,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      */
@@ -349,7 +361,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      */
@@ -608,8 +620,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option is set when you launch the
      * Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code in order to take
      * advantage of the feature. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM Roles
-     * for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM roles
+     * for tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param taskRoleArn
@@ -622,7 +634,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        launch the Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code in
      *        order to take advantage of the feature. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM
-     *        Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        roles for tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setTaskRoleArn(String taskRoleArn) {
@@ -640,8 +652,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option is set when you launch the
      * Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code in order to take
      * advantage of the feature. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM Roles
-     * for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM roles
+     * for tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return The short name or full Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
@@ -653,7 +665,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *         launch the Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code in
      *         order to take advantage of the feature. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows
-     *         IAM Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         IAM roles for tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public String getTaskRoleArn() {
@@ -671,8 +683,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option is set when you launch the
      * Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code in order to take
      * advantage of the feature. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM Roles
-     * for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM roles
+     * for tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param taskRoleArn
@@ -685,7 +697,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        launch the Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code in
      *        order to take advantage of the feature. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM
-     *        Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        roles for tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1363,27 +1375,23 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of volume definitions for the task.
+     * The list of data volume definitions for the task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using data volumes in
+     * tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <note>
      * <p>
-     * If your tasks are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code> parameters are
-     * not supported.
+     * The <code>host</code> and <code>sourcePath</code> parameters are not supported for tasks run on AWS Fargate.
      * </p>
-     * <p>
-     * For more information about volume definition parameters and defaults, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
-     * Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-     * </p>
+     * </note>
      * 
-     * @return The list of volume definitions for the task.</p>
+     * @return The list of data volume definitions for the task. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using data
+     *         volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
      *         <p>
-     *         If your tasks are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code>
-     *         parameters are not supported.
+     *         The <code>host</code> and <code>sourcePath</code> parameters are not supported for tasks run on AWS
+     *         Fargate.
      *         </p>
-     *         <p>
-     *         For more information about volume definition parameters and defaults, see <a
-     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
-     *         Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public java.util.List<Volume> getVolumes() {
@@ -1395,28 +1403,24 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of volume definitions for the task.
+     * The list of data volume definitions for the task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using data volumes in
+     * tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <note>
      * <p>
-     * If your tasks are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code> parameters are
-     * not supported.
+     * The <code>host</code> and <code>sourcePath</code> parameters are not supported for tasks run on AWS Fargate.
      * </p>
-     * <p>
-     * For more information about volume definition parameters and defaults, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
-     * Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-     * </p>
+     * </note>
      * 
      * @param volumes
-     *        The list of volume definitions for the task.</p>
+     *        The list of data volume definitions for the task. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using data
+     *        volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
      *        <p>
-     *        If your tasks are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code>
-     *        parameters are not supported.
+     *        The <code>host</code> and <code>sourcePath</code> parameters are not supported for tasks run on AWS
+     *        Fargate.
      *        </p>
-     *        <p>
-     *        For more information about volume definition parameters and defaults, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
-     *        Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setVolumes(java.util.Collection<Volume> volumes) {
@@ -1430,17 +1434,15 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of volume definitions for the task.
+     * The list of data volume definitions for the task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using data volumes in
+     * tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <note>
      * <p>
-     * If your tasks are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code> parameters are
-     * not supported.
+     * The <code>host</code> and <code>sourcePath</code> parameters are not supported for tasks run on AWS Fargate.
      * </p>
-     * <p>
-     * For more information about volume definition parameters and defaults, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
-     * Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setVolumes(java.util.Collection)} or {@link #withVolumes(java.util.Collection)} if you want to override
@@ -1448,15 +1450,13 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param volumes
-     *        The list of volume definitions for the task.</p>
+     *        The list of data volume definitions for the task. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using data
+     *        volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
      *        <p>
-     *        If your tasks are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code>
-     *        parameters are not supported.
+     *        The <code>host</code> and <code>sourcePath</code> parameters are not supported for tasks run on AWS
+     *        Fargate.
      *        </p>
-     *        <p>
-     *        For more information about volume definition parameters and defaults, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
-     *        Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1472,28 +1472,24 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of volume definitions for the task.
+     * The list of data volume definitions for the task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using data volumes in
+     * tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <note>
      * <p>
-     * If your tasks are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code> parameters are
-     * not supported.
+     * The <code>host</code> and <code>sourcePath</code> parameters are not supported for tasks run on AWS Fargate.
      * </p>
-     * <p>
-     * For more information about volume definition parameters and defaults, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
-     * Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-     * </p>
+     * </note>
      * 
      * @param volumes
-     *        The list of volume definitions for the task.</p>
+     *        The list of data volume definitions for the task. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using data
+     *        volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
      *        <p>
-     *        If your tasks are using the Fargate launch type, the <code>host</code> and <code>sourcePath</code>
-     *        parameters are not supported.
+     *        The <code>host</code> and <code>sourcePath</code> parameters are not supported for tasks run on AWS
+     *        Fargate.
      *        </p>
-     *        <p>
-     *        For more information about volume definition parameters and defaults, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
-     *        Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1577,12 +1573,30 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The container instance attributes required by your task. This field is not valid if you are using the Fargate
-     * launch type for your task.
+     * The container instance attributes required by your task. When an Amazon EC2 instance is registered to your
+     * cluster, the Amazon ECS container agent assigns some standard attributes to the instance. You can apply custom
+     * attributes, specified as key-value pairs using the Amazon ECS console or the <a>PutAttributes</a> API. These
+     * attributes are used when considering task placement for tasks hosted on Amazon EC2 instances. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes"
+     * >Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter is not supported for tasks run on AWS Fargate.
+     * </p>
+     * </note>
      * 
-     * @return The container instance attributes required by your task. This field is not valid if you are using the
-     *         Fargate launch type for your task.
+     * @return The container instance attributes required by your task. When an Amazon EC2 instance is registered to
+     *         your cluster, the Amazon ECS container agent assigns some standard attributes to the instance. You can
+     *         apply custom attributes, specified as key-value pairs using the Amazon ECS console or the
+     *         <a>PutAttributes</a> API. These attributes are used when considering task placement for tasks hosted on
+     *         Amazon EC2 instances. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes"
+     *         >Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
+     *         <p>
+     *         This parameter is not supported for tasks run on AWS Fargate.
+     *         </p>
      */
 
     public java.util.List<Attribute> getRequiresAttributes() {
@@ -1594,13 +1608,31 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The container instance attributes required by your task. This field is not valid if you are using the Fargate
-     * launch type for your task.
+     * The container instance attributes required by your task. When an Amazon EC2 instance is registered to your
+     * cluster, the Amazon ECS container agent assigns some standard attributes to the instance. You can apply custom
+     * attributes, specified as key-value pairs using the Amazon ECS console or the <a>PutAttributes</a> API. These
+     * attributes are used when considering task placement for tasks hosted on Amazon EC2 instances. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes"
+     * >Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter is not supported for tasks run on AWS Fargate.
+     * </p>
+     * </note>
      * 
      * @param requiresAttributes
-     *        The container instance attributes required by your task. This field is not valid if you are using the
-     *        Fargate launch type for your task.
+     *        The container instance attributes required by your task. When an Amazon EC2 instance is registered to your
+     *        cluster, the Amazon ECS container agent assigns some standard attributes to the instance. You can apply
+     *        custom attributes, specified as key-value pairs using the Amazon ECS console or the <a>PutAttributes</a>
+     *        API. These attributes are used when considering task placement for tasks hosted on Amazon EC2 instances.
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes"
+     *        >Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
+     *        <p>
+     *        This parameter is not supported for tasks run on AWS Fargate.
+     *        </p>
      */
 
     public void setRequiresAttributes(java.util.Collection<Attribute> requiresAttributes) {
@@ -1614,9 +1646,19 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The container instance attributes required by your task. This field is not valid if you are using the Fargate
-     * launch type for your task.
+     * The container instance attributes required by your task. When an Amazon EC2 instance is registered to your
+     * cluster, the Amazon ECS container agent assigns some standard attributes to the instance. You can apply custom
+     * attributes, specified as key-value pairs using the Amazon ECS console or the <a>PutAttributes</a> API. These
+     * attributes are used when considering task placement for tasks hosted on Amazon EC2 instances. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes"
+     * >Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter is not supported for tasks run on AWS Fargate.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setRequiresAttributes(java.util.Collection)} or {@link #withRequiresAttributes(java.util.Collection)} if
@@ -1624,8 +1666,16 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param requiresAttributes
-     *        The container instance attributes required by your task. This field is not valid if you are using the
-     *        Fargate launch type for your task.
+     *        The container instance attributes required by your task. When an Amazon EC2 instance is registered to your
+     *        cluster, the Amazon ECS container agent assigns some standard attributes to the instance. You can apply
+     *        custom attributes, specified as key-value pairs using the Amazon ECS console or the <a>PutAttributes</a>
+     *        API. These attributes are used when considering task placement for tasks hosted on Amazon EC2 instances.
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes"
+     *        >Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
+     *        <p>
+     *        This parameter is not supported for tasks run on AWS Fargate.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1641,13 +1691,31 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The container instance attributes required by your task. This field is not valid if you are using the Fargate
-     * launch type for your task.
+     * The container instance attributes required by your task. When an Amazon EC2 instance is registered to your
+     * cluster, the Amazon ECS container agent assigns some standard attributes to the instance. You can apply custom
+     * attributes, specified as key-value pairs using the Amazon ECS console or the <a>PutAttributes</a> API. These
+     * attributes are used when considering task placement for tasks hosted on Amazon EC2 instances. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes"
+     * >Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * This parameter is not supported for tasks run on AWS Fargate.
+     * </p>
+     * </note>
      * 
      * @param requiresAttributes
-     *        The container instance attributes required by your task. This field is not valid if you are using the
-     *        Fargate launch type for your task.
+     *        The container instance attributes required by your task. When an Amazon EC2 instance is registered to your
+     *        cluster, the Amazon ECS container agent assigns some standard attributes to the instance. You can apply
+     *        custom attributes, specified as key-value pairs using the Amazon ECS console or the <a>PutAttributes</a>
+     *        API. These attributes are used when considering task placement for tasks hosted on Amazon EC2 instances.
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes"
+     *        >Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
+     *        <p>
+     *        This parameter is not supported for tasks run on AWS Fargate.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1658,12 +1726,18 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of placement constraint objects to use for tasks. This field is not valid if you are using the Fargate
-     * launch type for your task.
+     * An array of placement constraint objects to use for tasks.
      * </p>
+     * <note>
+     * <p>
+     * This parameter is not supported for tasks run on AWS Fargate.
+     * </p>
+     * </note>
      * 
-     * @return An array of placement constraint objects to use for tasks. This field is not valid if you are using the
-     *         Fargate launch type for your task.
+     * @return An array of placement constraint objects to use for tasks.</p> <note>
+     *         <p>
+     *         This parameter is not supported for tasks run on AWS Fargate.
+     *         </p>
      */
 
     public java.util.List<TaskDefinitionPlacementConstraint> getPlacementConstraints() {
@@ -1675,13 +1749,19 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of placement constraint objects to use for tasks. This field is not valid if you are using the Fargate
-     * launch type for your task.
+     * An array of placement constraint objects to use for tasks.
      * </p>
+     * <note>
+     * <p>
+     * This parameter is not supported for tasks run on AWS Fargate.
+     * </p>
+     * </note>
      * 
      * @param placementConstraints
-     *        An array of placement constraint objects to use for tasks. This field is not valid if you are using the
-     *        Fargate launch type for your task.
+     *        An array of placement constraint objects to use for tasks.</p> <note>
+     *        <p>
+     *        This parameter is not supported for tasks run on AWS Fargate.
+     *        </p>
      */
 
     public void setPlacementConstraints(java.util.Collection<TaskDefinitionPlacementConstraint> placementConstraints) {
@@ -1695,9 +1775,13 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of placement constraint objects to use for tasks. This field is not valid if you are using the Fargate
-     * launch type for your task.
+     * An array of placement constraint objects to use for tasks.
      * </p>
+     * <note>
+     * <p>
+     * This parameter is not supported for tasks run on AWS Fargate.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setPlacementConstraints(java.util.Collection)} or {@link #withPlacementConstraints(java.util.Collection)}
@@ -1705,8 +1789,10 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param placementConstraints
-     *        An array of placement constraint objects to use for tasks. This field is not valid if you are using the
-     *        Fargate launch type for your task.
+     *        An array of placement constraint objects to use for tasks.</p> <note>
+     *        <p>
+     *        This parameter is not supported for tasks run on AWS Fargate.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1722,13 +1808,19 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of placement constraint objects to use for tasks. This field is not valid if you are using the Fargate
-     * launch type for your task.
+     * An array of placement constraint objects to use for tasks.
      * </p>
+     * <note>
+     * <p>
+     * This parameter is not supported for tasks run on AWS Fargate.
+     * </p>
+     * </note>
      * 
      * @param placementConstraints
-     *        An array of placement constraint objects to use for tasks. This field is not valid if you are using the
-     *        Fargate launch type for your task.
+     *        An array of placement constraint objects to use for tasks.</p> <note>
+     *        <p>
+     *        This parameter is not supported for tasks run on AWS Fargate.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1739,14 +1831,15 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type to use with your task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
-     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * The task launch types the task definition validated against during task definition registration. For more
+     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The launch type to use with your task. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
-     *         Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @return The task launch types the task definition validated against during task definition registration. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *         types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @see Compatibility
      */
 
@@ -1759,15 +1852,16 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type to use with your task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
-     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * The task launch types the task definition validated against during task definition registration. For more
+     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param compatibilities
-     *        The launch type to use with your task. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
-     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        The task launch types the task definition validated against during task definition registration. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *        types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @see Compatibility
      */
 
@@ -1782,9 +1876,9 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type to use with your task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
-     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * The task launch types the task definition validated against during task definition registration. For more
+     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1793,9 +1887,10 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param compatibilities
-     *        The launch type to use with your task. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
-     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        The task launch types the task definition validated against during task definition registration. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *        types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Compatibility
      */
@@ -1812,15 +1907,16 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type to use with your task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
-     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * The task launch types the task definition validated against during task definition registration. For more
+     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param compatibilities
-     *        The launch type to use with your task. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
-     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        The task launch types the task definition validated against during task definition registration. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *        types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Compatibility
      */
@@ -1832,15 +1928,16 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type to use with your task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
-     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * The task launch types the task definition validated against during task definition registration. For more
+     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param compatibilities
-     *        The launch type to use with your task. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
-     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        The task launch types the task definition validated against during task definition registration. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *        types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Compatibility
      */
@@ -1860,12 +1957,12 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type the task requires. If no value is specified, it will default to <code>EC2</code>. Valid values
-     * include <code>EC2</code> and <code>FARGATE</code>.
+     * The task launch types the task definition was validated against. To determine which task launch types the task
+     * definition is validated for, see the <a>TaskDefinition$compatibilities</a> parameter.
      * </p>
      * 
-     * @return The launch type the task requires. If no value is specified, it will default to <code>EC2</code>. Valid
-     *         values include <code>EC2</code> and <code>FARGATE</code>.
+     * @return The task launch types the task definition was validated against. To determine which task launch types the
+     *         task definition is validated for, see the <a>TaskDefinition$compatibilities</a> parameter.
      * @see Compatibility
      */
 
@@ -1878,13 +1975,13 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type the task requires. If no value is specified, it will default to <code>EC2</code>. Valid values
-     * include <code>EC2</code> and <code>FARGATE</code>.
+     * The task launch types the task definition was validated against. To determine which task launch types the task
+     * definition is validated for, see the <a>TaskDefinition$compatibilities</a> parameter.
      * </p>
      * 
      * @param requiresCompatibilities
-     *        The launch type the task requires. If no value is specified, it will default to <code>EC2</code>. Valid
-     *        values include <code>EC2</code> and <code>FARGATE</code>.
+     *        The task launch types the task definition was validated against. To determine which task launch types the
+     *        task definition is validated for, see the <a>TaskDefinition$compatibilities</a> parameter.
      * @see Compatibility
      */
 
@@ -1899,8 +1996,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type the task requires. If no value is specified, it will default to <code>EC2</code>. Valid values
-     * include <code>EC2</code> and <code>FARGATE</code>.
+     * The task launch types the task definition was validated against. To determine which task launch types the task
+     * definition is validated for, see the <a>TaskDefinition$compatibilities</a> parameter.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1909,8 +2006,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param requiresCompatibilities
-     *        The launch type the task requires. If no value is specified, it will default to <code>EC2</code>. Valid
-     *        values include <code>EC2</code> and <code>FARGATE</code>.
+     *        The task launch types the task definition was validated against. To determine which task launch types the
+     *        task definition is validated for, see the <a>TaskDefinition$compatibilities</a> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Compatibility
      */
@@ -1927,13 +2024,13 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type the task requires. If no value is specified, it will default to <code>EC2</code>. Valid values
-     * include <code>EC2</code> and <code>FARGATE</code>.
+     * The task launch types the task definition was validated against. To determine which task launch types the task
+     * definition is validated for, see the <a>TaskDefinition$compatibilities</a> parameter.
      * </p>
      * 
      * @param requiresCompatibilities
-     *        The launch type the task requires. If no value is specified, it will default to <code>EC2</code>. Valid
-     *        values include <code>EC2</code> and <code>FARGATE</code>.
+     *        The task launch types the task definition was validated against. To determine which task launch types the
+     *        task definition is validated for, see the <a>TaskDefinition$compatibilities</a> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Compatibility
      */
@@ -1945,13 +2042,13 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type the task requires. If no value is specified, it will default to <code>EC2</code>. Valid values
-     * include <code>EC2</code> and <code>FARGATE</code>.
+     * The task launch types the task definition was validated against. To determine which task launch types the task
+     * definition is validated for, see the <a>TaskDefinition$compatibilities</a> parameter.
      * </p>
      * 
      * @param requiresCompatibilities
-     *        The launch type the task requires. If no value is specified, it will default to <code>EC2</code>. Valid
-     *        values include <code>EC2</code> and <code>FARGATE</code>.
+     *        The task launch types the task definition was validated against. To determine which task launch types the
+     *        task definition is validated for, see the <a>TaskDefinition$compatibilities</a> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Compatibility
      */
@@ -2210,16 +2307,16 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * The amount (in MiB) of memory used by the task.
      * </p>
      * <p>
-     * If using the EC2 launch type, you must specify either a task-level memory value or a container-level memory
-     * value. This field is optional and any value can be used. If a task-level memory value is specified then the
-     * container-level memory value is optional. For more information regarding container-level memory and memory
-     * reservation, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">
-     * ContainerDefinition</a>.
+     * If your tasks will be run on Amazon EC2 instances, you must specify either a task-level memory value or a
+     * container-level memory value. This field is optional and any value can be used. If a task-level memory value is
+     * specified then the container-level memory value is optional. For more information regarding container-level
+     * memory and memory reservation, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html"
+     * >ContainerDefinition</a>.
      * </p>
      * <p>
-     * If using the Fargate launch type, this field is required and you must use one of the following values, which
-     * determines your range of valid values for the <code>cpu</code> parameter:
+     * If your tasks will be run on AWS Fargate, this field is required and you must use one of the following values,
+     * which determines your range of valid values for the <code>cpu</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -2255,16 +2352,16 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * @param memory
      *        The amount (in MiB) of memory used by the task.</p>
      *        <p>
-     *        If using the EC2 launch type, you must specify either a task-level memory value or a container-level
-     *        memory value. This field is optional and any value can be used. If a task-level memory value is specified
-     *        then the container-level memory value is optional. For more information regarding container-level memory
-     *        and memory reservation, see <a
+     *        If your tasks will be run on Amazon EC2 instances, you must specify either a task-level memory value or a
+     *        container-level memory value. This field is optional and any value can be used. If a task-level memory
+     *        value is specified then the container-level memory value is optional. For more information regarding
+     *        container-level memory and memory reservation, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html"
      *        >ContainerDefinition</a>.
      *        </p>
      *        <p>
-     *        If using the Fargate launch type, this field is required and you must use one of the following values,
-     *        which determines your range of valid values for the <code>cpu</code> parameter:
+     *        If your tasks will be run on AWS Fargate, this field is required and you must use one of the following
+     *        values, which determines your range of valid values for the <code>cpu</code> parameter:
      *        </p>
      *        <ul>
      *        <li>
@@ -2306,16 +2403,16 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * The amount (in MiB) of memory used by the task.
      * </p>
      * <p>
-     * If using the EC2 launch type, you must specify either a task-level memory value or a container-level memory
-     * value. This field is optional and any value can be used. If a task-level memory value is specified then the
-     * container-level memory value is optional. For more information regarding container-level memory and memory
-     * reservation, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">
-     * ContainerDefinition</a>.
+     * If your tasks will be run on Amazon EC2 instances, you must specify either a task-level memory value or a
+     * container-level memory value. This field is optional and any value can be used. If a task-level memory value is
+     * specified then the container-level memory value is optional. For more information regarding container-level
+     * memory and memory reservation, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html"
+     * >ContainerDefinition</a>.
      * </p>
      * <p>
-     * If using the Fargate launch type, this field is required and you must use one of the following values, which
-     * determines your range of valid values for the <code>cpu</code> parameter:
+     * If your tasks will be run on AWS Fargate, this field is required and you must use one of the following values,
+     * which determines your range of valid values for the <code>cpu</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -2350,16 +2447,16 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return The amount (in MiB) of memory used by the task.</p>
      *         <p>
-     *         If using the EC2 launch type, you must specify either a task-level memory value or a container-level
-     *         memory value. This field is optional and any value can be used. If a task-level memory value is specified
-     *         then the container-level memory value is optional. For more information regarding container-level memory
-     *         and memory reservation, see <a
+     *         If your tasks will be run on Amazon EC2 instances, you must specify either a task-level memory value or a
+     *         container-level memory value. This field is optional and any value can be used. If a task-level memory
+     *         value is specified then the container-level memory value is optional. For more information regarding
+     *         container-level memory and memory reservation, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html"
      *         >ContainerDefinition</a>.
      *         </p>
      *         <p>
-     *         If using the Fargate launch type, this field is required and you must use one of the following values,
-     *         which determines your range of valid values for the <code>cpu</code> parameter:
+     *         If your tasks will be run on AWS Fargate, this field is required and you must use one of the following
+     *         values, which determines your range of valid values for the <code>cpu</code> parameter:
      *         </p>
      *         <ul>
      *         <li>
@@ -2401,16 +2498,16 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * The amount (in MiB) of memory used by the task.
      * </p>
      * <p>
-     * If using the EC2 launch type, you must specify either a task-level memory value or a container-level memory
-     * value. This field is optional and any value can be used. If a task-level memory value is specified then the
-     * container-level memory value is optional. For more information regarding container-level memory and memory
-     * reservation, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">
-     * ContainerDefinition</a>.
+     * If your tasks will be run on Amazon EC2 instances, you must specify either a task-level memory value or a
+     * container-level memory value. This field is optional and any value can be used. If a task-level memory value is
+     * specified then the container-level memory value is optional. For more information regarding container-level
+     * memory and memory reservation, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html"
+     * >ContainerDefinition</a>.
      * </p>
      * <p>
-     * If using the Fargate launch type, this field is required and you must use one of the following values, which
-     * determines your range of valid values for the <code>cpu</code> parameter:
+     * If your tasks will be run on AWS Fargate, this field is required and you must use one of the following values,
+     * which determines your range of valid values for the <code>cpu</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -2446,16 +2543,16 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * @param memory
      *        The amount (in MiB) of memory used by the task.</p>
      *        <p>
-     *        If using the EC2 launch type, you must specify either a task-level memory value or a container-level
-     *        memory value. This field is optional and any value can be used. If a task-level memory value is specified
-     *        then the container-level memory value is optional. For more information regarding container-level memory
-     *        and memory reservation, see <a
+     *        If your tasks will be run on Amazon EC2 instances, you must specify either a task-level memory value or a
+     *        container-level memory value. This field is optional and any value can be used. If a task-level memory
+     *        value is specified then the container-level memory value is optional. For more information regarding
+     *        container-level memory and memory reservation, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html"
      *        >ContainerDefinition</a>.
      *        </p>
      *        <p>
-     *        If using the Fargate launch type, this field is required and you must use one of the following values,
-     *        which determines your range of valid values for the <code>cpu</code> parameter:
+     *        If your tasks will be run on AWS Fargate, this field is required and you must use one of the following
+     *        values, which determines your range of valid values for the <code>cpu</code> parameter:
      *        </p>
      *        <ul>
      *        <li>
@@ -2584,7 +2681,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      * 
@@ -2603,7 +2700,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      *        </p>
      * @see PidMode
      */
@@ -2629,7 +2726,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      * 
@@ -2647,7 +2744,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <note>
      *         <p>
-     *         This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *         This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      *         </p>
      * @see PidMode
      */
@@ -2673,7 +2770,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      * 
@@ -2692,7 +2789,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PidMode
@@ -2720,7 +2817,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      * 
@@ -2739,7 +2836,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      *        </p>
      * @see PidMode
      */
@@ -2765,7 +2862,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      * 
@@ -2784,7 +2881,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PidMode
@@ -2834,7 +2931,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      * 
@@ -2876,7 +2973,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        </ul>
      *        <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      *        </p>
      * @see IpcMode
      */
@@ -2924,7 +3021,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      * 
@@ -2965,7 +3062,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *         </ul>
      *         <note>
      *         <p>
-     *         This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *         This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      *         </p>
      * @see IpcMode
      */
@@ -3013,7 +3110,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      * 
@@ -3055,7 +3152,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        </ul>
      *        <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpcMode
@@ -3105,7 +3202,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      * 
@@ -3147,7 +3244,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        </ul>
      *        <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      *        </p>
      * @see IpcMode
      */
@@ -3195,7 +3292,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     * This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      * </p>
      * </note>
      * 
@@ -3237,7 +3334,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        </ul>
      *        <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+     *        This parameter is not supported for Windows containers or tasks run on AWS Fargate.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpcMode

@@ -100,6 +100,12 @@ public class ContainerJsonUnmarshaller implements Unmarshaller<Container, JsonUn
                     context.nextToken();
                     container.setHealthStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("managedAgents", targetDepth)) {
+                    context.nextToken();
+                    container.setManagedAgents(new ListUnmarshaller<ManagedAgent>(ManagedAgentJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("cpu", targetDepth)) {
                     context.nextToken();
                     container.setCpu(context.getUnmarshaller(String.class).unmarshall(context));

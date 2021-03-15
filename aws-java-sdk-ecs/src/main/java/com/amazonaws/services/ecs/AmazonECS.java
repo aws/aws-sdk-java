@@ -31,14 +31,12 @@ import com.amazonaws.services.ecs.waiters.AmazonECSWaiters;
  * <p>
  * Amazon Elastic Container Service (Amazon ECS) is a highly scalable, fast, container management service that makes it
  * easy to run, stop, and manage Docker containers on a cluster. You can host your cluster on a serverless
- * infrastructure that is managed by Amazon ECS by launching your services or tasks using the Fargate launch type. For
- * more control, you can host your tasks on a cluster of Amazon Elastic Compute Cloud (Amazon EC2) instances that you
- * manage by using the EC2 launch type. For more information about launch types, see <a
- * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>.
+ * infrastructure that is managed by Amazon ECS by launching your services or tasks on AWS Fargate. For more control,
+ * you can host your tasks on a cluster of Amazon Elastic Compute Cloud (Amazon EC2) instances that you manage.
  * </p>
  * <p>
- * Amazon ECS lets you launch and stop container-based applications with simple API calls, allows you to get the state
- * of your cluster from a centralized service, and gives you access to many familiar Amazon EC2 features.
+ * Amazon ECS makes it easy to launch and stop container-based applications with simple API calls, allows you to get the
+ * state of your cluster from a centralized service, and gives you access to many familiar Amazon EC2 features.
  * </p>
  * <p>
  * You can use Amazon ECS to schedule the placement of containers across your cluster based on your resource needs,
@@ -881,6 +879,35 @@ public interface AmazonECS {
 
     /**
      * <p>
+     * Runs a command remotely on a container within a task.
+     * </p>
+     * 
+     * @param executeCommandRequest
+     * @return Result of the ExecuteCommand operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws AccessDeniedException
+     *         You do not have authorization to perform the requested action.
+     * @throws ClusterNotFoundException
+     *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         Amazon ECS clusters are Region-specific.
+     * @throws TargetNotConnectedException
+     *         The target container is not properly configured with the execute command agent or the container is no
+     *         longer active or running.
+     * @sample AmazonECS.ExecuteCommand
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ExecuteCommand" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ExecuteCommandResult executeCommand(ExecuteCommandRequest executeCommandRequest);
+
+    /**
+     * <p>
      * Lists the account settings for a specified principal.
      * </p>
      * 
@@ -1659,6 +1686,30 @@ public interface AmazonECS {
      *      Documentation</a>
      */
     UpdateCapacityProviderResult updateCapacityProvider(UpdateCapacityProviderRequest updateCapacityProviderRequest);
+
+    /**
+     * <p>
+     * Updates the cluster.
+     * </p>
+     * 
+     * @param updateClusterRequest
+     * @return Result of the UpdateCluster operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         valid.
+     * @throws ClusterNotFoundException
+     *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         Amazon ECS clusters are Region-specific.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @sample AmazonECS.UpdateCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateClusterResult updateCluster(UpdateClusterRequest updateClusterRequest);
 
     /**
      * <p>

@@ -106,6 +106,21 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     private AutoRollbackConfiguration autoRollbackConfiguration;
     /**
      * <p>
+     * Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed
+     * application revision.
+     * </p>
+     * <p>
+     * If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update
+     * outdated instances' deployments to apply the deployed application revision to the new EC2 instances.
+     * </p>
+     * <p>
+     * If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2
+     * instances. This may result in instances having different revisions.
+     * </p>
+     */
+    private String outdatedInstancesStrategy;
+    /**
+     * <p>
      * Information about the type of deployment, in-place or blue/green, that you want to run and whether to route
      * deployment traffic behind a load balancer.
      * </p>
@@ -789,6 +804,137 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
+     * Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed
+     * application revision.
+     * </p>
+     * <p>
+     * If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update
+     * outdated instances' deployments to apply the deployed application revision to the new EC2 instances.
+     * </p>
+     * <p>
+     * If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2
+     * instances. This may result in instances having different revisions.
+     * </p>
+     * 
+     * @param outdatedInstancesStrategy
+     *        Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed
+     *        application revision.</p>
+     *        <p>
+     *        If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more
+     *        'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2
+     *        instances.
+     *        </p>
+     *        <p>
+     *        If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new
+     *        EC2 instances. This may result in instances having different revisions.
+     * @see OutdatedInstancesStrategy
+     */
+
+    public void setOutdatedInstancesStrategy(String outdatedInstancesStrategy) {
+        this.outdatedInstancesStrategy = outdatedInstancesStrategy;
+    }
+
+    /**
+     * <p>
+     * Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed
+     * application revision.
+     * </p>
+     * <p>
+     * If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update
+     * outdated instances' deployments to apply the deployed application revision to the new EC2 instances.
+     * </p>
+     * <p>
+     * If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2
+     * instances. This may result in instances having different revisions.
+     * </p>
+     * 
+     * @return Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed
+     *         application revision.</p>
+     *         <p>
+     *         If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more
+     *         'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2
+     *         instances.
+     *         </p>
+     *         <p>
+     *         If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new
+     *         EC2 instances. This may result in instances having different revisions.
+     * @see OutdatedInstancesStrategy
+     */
+
+    public String getOutdatedInstancesStrategy() {
+        return this.outdatedInstancesStrategy;
+    }
+
+    /**
+     * <p>
+     * Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed
+     * application revision.
+     * </p>
+     * <p>
+     * If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update
+     * outdated instances' deployments to apply the deployed application revision to the new EC2 instances.
+     * </p>
+     * <p>
+     * If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2
+     * instances. This may result in instances having different revisions.
+     * </p>
+     * 
+     * @param outdatedInstancesStrategy
+     *        Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed
+     *        application revision.</p>
+     *        <p>
+     *        If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more
+     *        'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2
+     *        instances.
+     *        </p>
+     *        <p>
+     *        If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new
+     *        EC2 instances. This may result in instances having different revisions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OutdatedInstancesStrategy
+     */
+
+    public CreateDeploymentGroupRequest withOutdatedInstancesStrategy(String outdatedInstancesStrategy) {
+        setOutdatedInstancesStrategy(outdatedInstancesStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed
+     * application revision.
+     * </p>
+     * <p>
+     * If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more 'auto-update
+     * outdated instances' deployments to apply the deployed application revision to the new EC2 instances.
+     * </p>
+     * <p>
+     * If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new EC2
+     * instances. This may result in instances having different revisions.
+     * </p>
+     * 
+     * @param outdatedInstancesStrategy
+     *        Indicates what happens when new EC2 instances are launched mid-deployment and do not receive the deployed
+     *        application revision.</p>
+     *        <p>
+     *        If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates one or more
+     *        'auto-update outdated instances' deployments to apply the deployed application revision to the new EC2
+     *        instances.
+     *        </p>
+     *        <p>
+     *        If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment to update the new
+     *        EC2 instances. This may result in instances having different revisions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OutdatedInstancesStrategy
+     */
+
+    public CreateDeploymentGroupRequest withOutdatedInstancesStrategy(OutdatedInstancesStrategy outdatedInstancesStrategy) {
+        this.outdatedInstancesStrategy = outdatedInstancesStrategy.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * Information about the type of deployment, in-place or blue/green, that you want to run and whether to route
      * deployment traffic behind a load balancer.
      * </p>
@@ -1214,6 +1360,8 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
             sb.append("AlarmConfiguration: ").append(getAlarmConfiguration()).append(",");
         if (getAutoRollbackConfiguration() != null)
             sb.append("AutoRollbackConfiguration: ").append(getAutoRollbackConfiguration()).append(",");
+        if (getOutdatedInstancesStrategy() != null)
+            sb.append("OutdatedInstancesStrategy: ").append(getOutdatedInstancesStrategy()).append(",");
         if (getDeploymentStyle() != null)
             sb.append("DeploymentStyle: ").append(getDeploymentStyle()).append(",");
         if (getBlueGreenDeploymentConfiguration() != null)
@@ -1282,6 +1430,10 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getAutoRollbackConfiguration() != null && other.getAutoRollbackConfiguration().equals(this.getAutoRollbackConfiguration()) == false)
             return false;
+        if (other.getOutdatedInstancesStrategy() == null ^ this.getOutdatedInstancesStrategy() == null)
+            return false;
+        if (other.getOutdatedInstancesStrategy() != null && other.getOutdatedInstancesStrategy().equals(this.getOutdatedInstancesStrategy()) == false)
+            return false;
         if (other.getDeploymentStyle() == null ^ this.getDeploymentStyle() == null)
             return false;
         if (other.getDeploymentStyle() != null && other.getDeploymentStyle().equals(this.getDeploymentStyle()) == false)
@@ -1329,6 +1481,7 @@ public class CreateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getTriggerConfigurations() == null) ? 0 : getTriggerConfigurations().hashCode());
         hashCode = prime * hashCode + ((getAlarmConfiguration() == null) ? 0 : getAlarmConfiguration().hashCode());
         hashCode = prime * hashCode + ((getAutoRollbackConfiguration() == null) ? 0 : getAutoRollbackConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getOutdatedInstancesStrategy() == null) ? 0 : getOutdatedInstancesStrategy().hashCode());
         hashCode = prime * hashCode + ((getDeploymentStyle() == null) ? 0 : getDeploymentStyle().hashCode());
         hashCode = prime * hashCode + ((getBlueGreenDeploymentConfiguration() == null) ? 0 : getBlueGreenDeploymentConfiguration().hashCode());
         hashCode = prime * hashCode + ((getLoadBalancerInfo() == null) ? 0 : getLoadBalancerInfo().hashCode());

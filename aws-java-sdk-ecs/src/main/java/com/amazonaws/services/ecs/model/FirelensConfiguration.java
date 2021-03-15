@@ -48,6 +48,11 @@ public class FirelensConfiguration implements Serializable, Cloneable, Structure
      * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * Tasks hosted on AWS Fargate only support the <code>file</code> configuration file type.
+     * </p>
+     * </note>
      */
     private java.util.Map<String, String> options;
 
@@ -121,6 +126,11 @@ public class FirelensConfiguration implements Serializable, Cloneable, Structure
      * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * Tasks hosted on AWS Fargate only support the <code>file</code> configuration file type.
+     * </p>
+     * </note>
      * 
      * @return The options to use when configuring the log router. This field is optional and can be used to specify a
      *         custom configuration file or to add additional metadata, such as the task, task definition, cluster, and
@@ -129,7 +139,10 @@ public class FirelensConfiguration implements Serializable, Cloneable, Structure
      *         . For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef"
      *         >Creating a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon Elastic Container
-     *         Service Developer Guide</i>.
+     *         Service Developer Guide</i>.</p> <note>
+     *         <p>
+     *         Tasks hosted on AWS Fargate only support the <code>file</code> configuration file type.
+     *         </p>
      */
 
     public java.util.Map<String, String> getOptions() {
@@ -147,6 +160,11 @@ public class FirelensConfiguration implements Serializable, Cloneable, Structure
      * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * Tasks hosted on AWS Fargate only support the <code>file</code> configuration file type.
+     * </p>
+     * </note>
      * 
      * @param options
      *        The options to use when configuring the log router. This field is optional and can be used to specify a
@@ -156,7 +174,10 @@ public class FirelensConfiguration implements Serializable, Cloneable, Structure
      *        . For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef"
      *        >Creating a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon Elastic Container
-     *        Service Developer Guide</i>.
+     *        Service Developer Guide</i>.</p> <note>
+     *        <p>
+     *        Tasks hosted on AWS Fargate only support the <code>file</code> configuration file type.
+     *        </p>
      */
 
     public void setOptions(java.util.Map<String, String> options) {
@@ -174,6 +195,11 @@ public class FirelensConfiguration implements Serializable, Cloneable, Structure
      * a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * Tasks hosted on AWS Fargate only support the <code>file</code> configuration file type.
+     * </p>
+     * </note>
      * 
      * @param options
      *        The options to use when configuring the log router. This field is optional and can be used to specify a
@@ -183,7 +209,10 @@ public class FirelensConfiguration implements Serializable, Cloneable, Structure
      *        . For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef"
      *        >Creating a Task Definition that Uses a FireLens Configuration</a> in the <i>Amazon Elastic Container
-     *        Service Developer Guide</i>.
+     *        Service Developer Guide</i>.</p> <note>
+     *        <p>
+     *        Tasks hosted on AWS Fargate only support the <code>file</code> configuration file type.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

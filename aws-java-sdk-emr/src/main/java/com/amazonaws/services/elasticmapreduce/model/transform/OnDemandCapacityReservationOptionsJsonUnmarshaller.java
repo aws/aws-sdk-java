@@ -56,6 +56,10 @@ public class OnDemandCapacityReservationOptionsJsonUnmarshaller implements Unmar
                     context.nextToken();
                     onDemandCapacityReservationOptions.setCapacityReservationPreference(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CapacityReservationResourceGroupArn", targetDepth)) {
+                    context.nextToken();
+                    onDemandCapacityReservationOptions.setCapacityReservationResourceGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

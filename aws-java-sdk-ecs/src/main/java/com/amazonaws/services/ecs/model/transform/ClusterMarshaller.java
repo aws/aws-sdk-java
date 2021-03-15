@@ -32,6 +32,8 @@ public class ClusterMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clusterArn").build();
     private static final MarshallingInfo<String> CLUSTERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clusterName").build();
+    private static final MarshallingInfo<StructuredPojo> CONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configuration").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
     private static final MarshallingInfo<Integer> REGISTEREDCONTAINERINSTANCESCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -75,6 +77,7 @@ public class ClusterMarshaller {
         try {
             protocolMarshaller.marshall(cluster.getClusterArn(), CLUSTERARN_BINDING);
             protocolMarshaller.marshall(cluster.getClusterName(), CLUSTERNAME_BINDING);
+            protocolMarshaller.marshall(cluster.getConfiguration(), CONFIGURATION_BINDING);
             protocolMarshaller.marshall(cluster.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(cluster.getRegisteredContainerInstancesCount(), REGISTEREDCONTAINERINSTANCESCOUNT_BINDING);
             protocolMarshaller.marshall(cluster.getRunningTasksCount(), RUNNINGTASKSCOUNT_BINDING);

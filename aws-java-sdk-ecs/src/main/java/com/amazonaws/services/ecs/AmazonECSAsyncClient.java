@@ -34,14 +34,12 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * Amazon Elastic Container Service (Amazon ECS) is a highly scalable, fast, container management service that makes it
  * easy to run, stop, and manage Docker containers on a cluster. You can host your cluster on a serverless
- * infrastructure that is managed by Amazon ECS by launching your services or tasks using the Fargate launch type. For
- * more control, you can host your tasks on a cluster of Amazon Elastic Compute Cloud (Amazon EC2) instances that you
- * manage by using the EC2 launch type. For more information about launch types, see <a
- * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>.
+ * infrastructure that is managed by Amazon ECS by launching your services or tasks on AWS Fargate. For more control,
+ * you can host your tasks on a cluster of Amazon Elastic Compute Cloud (Amazon EC2) instances that you manage.
  * </p>
  * <p>
- * Amazon ECS lets you launch and stop container-based applications with simple API calls, allows you to get the state
- * of your cluster from a centralized service, and gives you access to many familiar Amazon EC2 features.
+ * Amazon ECS makes it easy to launch and stop container-based applications with simple API calls, allows you to get the
+ * state of your cluster from a centralized service, and gives you access to many familiar Amazon EC2 features.
  * </p>
  * <p>
  * You can use Amazon ECS to schedule the placement of containers across your cluster based on your resource needs,
@@ -1000,6 +998,39 @@ public class AmazonECSAsyncClient extends AmazonECSClient implements AmazonECSAs
     }
 
     @Override
+    public java.util.concurrent.Future<ExecuteCommandResult> executeCommandAsync(ExecuteCommandRequest request) {
+
+        return executeCommandAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExecuteCommandResult> executeCommandAsync(final ExecuteCommandRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ExecuteCommandRequest, ExecuteCommandResult> asyncHandler) {
+        final ExecuteCommandRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ExecuteCommandResult>() {
+            @Override
+            public ExecuteCommandResult call() throws Exception {
+                ExecuteCommandResult result = null;
+
+                try {
+                    result = executeExecuteCommand(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAccountSettingsResult> listAccountSettingsAsync(ListAccountSettingsRequest request) {
 
         return listAccountSettingsAsync(request, null);
@@ -1936,6 +1967,39 @@ public class AmazonECSAsyncClient extends AmazonECSClient implements AmazonECSAs
 
                 try {
                     result = executeUpdateCapacityProvider(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateClusterResult> updateClusterAsync(UpdateClusterRequest request) {
+
+        return updateClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateClusterResult> updateClusterAsync(final UpdateClusterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateClusterRequest, UpdateClusterResult> asyncHandler) {
+        final UpdateClusterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateClusterResult>() {
+            @Override
+            public UpdateClusterResult call() throws Exception {
+                UpdateClusterResult result = null;
+
+                try {
+                    result = executeUpdateCluster(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

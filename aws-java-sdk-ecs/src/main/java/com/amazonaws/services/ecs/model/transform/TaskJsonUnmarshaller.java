@@ -102,6 +102,10 @@ public class TaskJsonUnmarshaller implements Unmarshaller<Task, JsonUnmarshaller
                     context.nextToken();
                     task.setDesiredStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("enableExecuteCommand", targetDepth)) {
+                    context.nextToken();
+                    task.setEnableExecuteCommand(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("executionStoppedAt", targetDepth)) {
                     context.nextToken();
                     task.setExecutionStoppedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

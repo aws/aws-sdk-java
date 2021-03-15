@@ -30,11 +30,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * they take precedence over the variables contained within an environment file. If multiple environment files are
  * specified that contain the same variable, they are processed from the top down. It is recommended to use unique
  * variable names. For more information, see <a
- * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying Environment
- * Variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+ * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying environment
+ * variables</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
  * </p>
  * <p>
- * This field is not valid for containers in tasks using the Fargate launch type.
+ * This field is only valid for containers in Fargate tasks that use platform version <code>1.4.0</code> or later.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/EnvironmentFile" target="_top">AWS API

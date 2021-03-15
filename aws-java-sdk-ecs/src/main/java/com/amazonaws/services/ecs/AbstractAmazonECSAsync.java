@@ -356,6 +356,19 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<ExecuteCommandResult> executeCommandAsync(ExecuteCommandRequest request) {
+
+        return executeCommandAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExecuteCommandResult> executeCommandAsync(ExecuteCommandRequest request,
+            com.amazonaws.handlers.AsyncHandler<ExecuteCommandRequest, ExecuteCommandResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAccountSettingsResult> listAccountSettingsAsync(ListAccountSettingsRequest request) {
 
         return listAccountSettingsAsync(request, null);
@@ -823,6 +836,19 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     @Override
     public java.util.concurrent.Future<UpdateCapacityProviderResult> updateCapacityProviderAsync(UpdateCapacityProviderRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateCapacityProviderRequest, UpdateCapacityProviderResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateClusterResult> updateClusterAsync(UpdateClusterRequest request) {
+
+        return updateClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateClusterResult> updateClusterAsync(UpdateClusterRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateClusterRequest, UpdateClusterResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

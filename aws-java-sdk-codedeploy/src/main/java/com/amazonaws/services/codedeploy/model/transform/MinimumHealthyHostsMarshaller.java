@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class MinimumHealthyHostsMarshaller {
 
-    private static final MarshallingInfo<Integer> VALUE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("value").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("type").build();
+    private static final MarshallingInfo<Integer> VALUE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("value").build();
 
     private static final MinimumHealthyHostsMarshaller instance = new MinimumHealthyHostsMarshaller();
 
@@ -48,8 +48,8 @@ public class MinimumHealthyHostsMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(minimumHealthyHosts.getValue(), VALUE_BINDING);
             protocolMarshaller.marshall(minimumHealthyHosts.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(minimumHealthyHosts.getValue(), VALUE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

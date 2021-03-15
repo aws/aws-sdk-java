@@ -154,6 +154,11 @@ public class AbstractAmazonECS implements AmazonECS {
     }
 
     @Override
+    public ExecuteCommandResult executeCommand(ExecuteCommandRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListAccountSettingsResult listAccountSettings(ListAccountSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -305,6 +310,11 @@ public class AbstractAmazonECS implements AmazonECS {
 
     @Override
     public UpdateCapacityProviderResult updateCapacityProvider(UpdateCapacityProviderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateClusterResult updateCluster(UpdateClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -55,14 +55,12 @@ import com.amazonaws.services.ecs.model.transform.*;
  * <p>
  * Amazon Elastic Container Service (Amazon ECS) is a highly scalable, fast, container management service that makes it
  * easy to run, stop, and manage Docker containers on a cluster. You can host your cluster on a serverless
- * infrastructure that is managed by Amazon ECS by launching your services or tasks using the Fargate launch type. For
- * more control, you can host your tasks on a cluster of Amazon Elastic Compute Cloud (Amazon EC2) instances that you
- * manage by using the EC2 launch type. For more information about launch types, see <a
- * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>.
+ * infrastructure that is managed by Amazon ECS by launching your services or tasks on AWS Fargate. For more control,
+ * you can host your tasks on a cluster of Amazon Elastic Compute Cloud (Amazon EC2) instances that you manage.
  * </p>
  * <p>
- * Amazon ECS lets you launch and stop container-based applications with simple API calls, allows you to get the state
- * of your cluster from a centralized service, and gives you access to many familiar Amazon EC2 features.
+ * Amazon ECS makes it easy to launch and stop container-based applications with simple API calls, allows you to get the
+ * state of your cluster from a centralized service, and gives you access to many familiar Amazon EC2 features.
  * </p>
  * <p>
  * You can use Amazon ECS to schedule the placement of containers across your cluster based on your resource needs,
@@ -97,6 +95,9 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("BlockedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ecs.model.transform.BlockedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TargetNotConnectedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecs.model.transform.TargetNotConnectedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ClusterContainsServicesException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ecs.model.transform.ClusterContainsServicesExceptionUnmarshaller.getInstance()))
@@ -1980,6 +1981,77 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
 
     /**
      * <p>
+     * Runs a command remotely on a container within a task.
+     * </p>
+     * 
+     * @param executeCommandRequest
+     * @return Result of the ExecuteCommand operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         valid.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws AccessDeniedException
+     *         You do not have authorization to perform the requested action.
+     * @throws ClusterNotFoundException
+     *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         Amazon ECS clusters are Region-specific.
+     * @throws TargetNotConnectedException
+     *         The target container is not properly configured with the execute command agent or the container is no
+     *         longer active or running.
+     * @sample AmazonECS.ExecuteCommand
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ExecuteCommand" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ExecuteCommandResult executeCommand(ExecuteCommandRequest request) {
+        request = beforeClientExecution(request);
+        return executeExecuteCommand(request);
+    }
+
+    @SdkInternalApi
+    final ExecuteCommandResult executeExecuteCommand(ExecuteCommandRequest executeCommandRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(executeCommandRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ExecuteCommandRequest> request = null;
+        Response<ExecuteCommandResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ExecuteCommandRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(executeCommandRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExecuteCommand");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ExecuteCommandResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ExecuteCommandResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the account settings for a specified principal.
      * </p>
      * 
@@ -3759,6 +3831,72 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
             HttpResponseHandler<AmazonWebServiceResponse<UpdateCapacityProviderResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateCapacityProviderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the cluster.
+     * </p>
+     * 
+     * @param updateClusterRequest
+     * @return Result of the UpdateCluster operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server issue.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that is not
+     *         valid.
+     * @throws ClusterNotFoundException
+     *         The specified cluster could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         Amazon ECS clusters are Region-specific.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @sample AmazonECS.UpdateCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateClusterResult updateCluster(UpdateClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateCluster(request);
+    }
+
+    @SdkInternalApi
+    final UpdateClusterResult executeUpdateCluster(UpdateClusterRequest updateClusterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateClusterRequest> request = null;
+        Response<UpdateClusterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateClusterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCluster");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateClusterResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateClusterResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

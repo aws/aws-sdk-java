@@ -57,10 +57,17 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     private HostVolumeProperties host;
     /**
      * <p>
-     * This parameter is specified when you are using Docker volumes. Docker volumes are only supported when you are
-     * using the EC2 launch type. Windows containers only support the use of the <code>local</code> driver. To use bind
-     * mounts, specify the <code>host</code> parameter instead.
+     * This parameter is specified when you are using Docker volumes.
      * </p>
+     * <p>
+     * Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify the
+     * <code>host</code> parameter instead.
+     * </p>
+     * <note>
+     * <p>
+     * Docker volumes are not supported by tasks run on AWS Fargate.
+     * </p>
+     * </note>
      */
     private DockerVolumeConfiguration dockerVolumeConfiguration;
     /**
@@ -221,15 +228,28 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This parameter is specified when you are using Docker volumes. Docker volumes are only supported when you are
-     * using the EC2 launch type. Windows containers only support the use of the <code>local</code> driver. To use bind
-     * mounts, specify the <code>host</code> parameter instead.
+     * This parameter is specified when you are using Docker volumes.
      * </p>
+     * <p>
+     * Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify the
+     * <code>host</code> parameter instead.
+     * </p>
+     * <note>
+     * <p>
+     * Docker volumes are not supported by tasks run on AWS Fargate.
+     * </p>
+     * </note>
      * 
      * @param dockerVolumeConfiguration
-     *        This parameter is specified when you are using Docker volumes. Docker volumes are only supported when you
-     *        are using the EC2 launch type. Windows containers only support the use of the <code>local</code> driver.
-     *        To use bind mounts, specify the <code>host</code> parameter instead.
+     *        This parameter is specified when you are using Docker volumes.</p>
+     *        <p>
+     *        Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify the
+     *        <code>host</code> parameter instead.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Docker volumes are not supported by tasks run on AWS Fargate.
+     *        </p>
      */
 
     public void setDockerVolumeConfiguration(DockerVolumeConfiguration dockerVolumeConfiguration) {
@@ -238,14 +258,27 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This parameter is specified when you are using Docker volumes. Docker volumes are only supported when you are
-     * using the EC2 launch type. Windows containers only support the use of the <code>local</code> driver. To use bind
-     * mounts, specify the <code>host</code> parameter instead.
+     * This parameter is specified when you are using Docker volumes.
      * </p>
+     * <p>
+     * Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify the
+     * <code>host</code> parameter instead.
+     * </p>
+     * <note>
+     * <p>
+     * Docker volumes are not supported by tasks run on AWS Fargate.
+     * </p>
+     * </note>
      * 
-     * @return This parameter is specified when you are using Docker volumes. Docker volumes are only supported when you
-     *         are using the EC2 launch type. Windows containers only support the use of the <code>local</code> driver.
-     *         To use bind mounts, specify the <code>host</code> parameter instead.
+     * @return This parameter is specified when you are using Docker volumes.</p>
+     *         <p>
+     *         Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify the
+     *         <code>host</code> parameter instead.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         Docker volumes are not supported by tasks run on AWS Fargate.
+     *         </p>
      */
 
     public DockerVolumeConfiguration getDockerVolumeConfiguration() {
@@ -254,15 +287,28 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This parameter is specified when you are using Docker volumes. Docker volumes are only supported when you are
-     * using the EC2 launch type. Windows containers only support the use of the <code>local</code> driver. To use bind
-     * mounts, specify the <code>host</code> parameter instead.
+     * This parameter is specified when you are using Docker volumes.
      * </p>
+     * <p>
+     * Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify the
+     * <code>host</code> parameter instead.
+     * </p>
+     * <note>
+     * <p>
+     * Docker volumes are not supported by tasks run on AWS Fargate.
+     * </p>
+     * </note>
      * 
      * @param dockerVolumeConfiguration
-     *        This parameter is specified when you are using Docker volumes. Docker volumes are only supported when you
-     *        are using the EC2 launch type. Windows containers only support the use of the <code>local</code> driver.
-     *        To use bind mounts, specify the <code>host</code> parameter instead.
+     *        This parameter is specified when you are using Docker volumes.</p>
+     *        <p>
+     *        Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify the
+     *        <code>host</code> parameter instead.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Docker volumes are not supported by tasks run on AWS Fargate.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
