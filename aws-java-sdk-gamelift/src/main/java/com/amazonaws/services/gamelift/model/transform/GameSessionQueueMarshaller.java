@@ -38,6 +38,10 @@ public class GameSessionQueueMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PlayerLatencyPolicies").build();
     private static final MarshallingInfo<List> DESTINATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Destinations").build();
+    private static final MarshallingInfo<StructuredPojo> FILTERCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FilterConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> PRIORITYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PriorityConfiguration").build();
 
     private static final GameSessionQueueMarshaller instance = new GameSessionQueueMarshaller();
 
@@ -60,6 +64,8 @@ public class GameSessionQueueMarshaller {
             protocolMarshaller.marshall(gameSessionQueue.getTimeoutInSeconds(), TIMEOUTINSECONDS_BINDING);
             protocolMarshaller.marshall(gameSessionQueue.getPlayerLatencyPolicies(), PLAYERLATENCYPOLICIES_BINDING);
             protocolMarshaller.marshall(gameSessionQueue.getDestinations(), DESTINATIONS_BINDING);
+            protocolMarshaller.marshall(gameSessionQueue.getFilterConfiguration(), FILTERCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(gameSessionQueue.getPriorityConfiguration(), PRIORITYCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

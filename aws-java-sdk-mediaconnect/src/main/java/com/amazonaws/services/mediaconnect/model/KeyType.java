@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum KeyType {
 
     Speke("speke"),
-    StaticKey("static-key");
+    StaticKey("static-key"),
+    SrtPassword("srt-password");
 
     private String value;
 

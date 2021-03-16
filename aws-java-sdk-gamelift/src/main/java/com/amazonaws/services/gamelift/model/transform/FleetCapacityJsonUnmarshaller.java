@@ -52,6 +52,10 @@ public class FleetCapacityJsonUnmarshaller implements Unmarshaller<FleetCapacity
                     context.nextToken();
                     fleetCapacity.setFleetId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("FleetArn", targetDepth)) {
+                    context.nextToken();
+                    fleetCapacity.setFleetArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("InstanceType", targetDepth)) {
                     context.nextToken();
                     fleetCapacity.setInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
@@ -59,6 +63,10 @@ public class FleetCapacityJsonUnmarshaller implements Unmarshaller<FleetCapacity
                 if (context.testExpression("InstanceCounts", targetDepth)) {
                     context.nextToken();
                     fleetCapacity.setInstanceCounts(EC2InstanceCountsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Location", targetDepth)) {
+                    context.nextToken();
+                    fleetCapacity.setLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

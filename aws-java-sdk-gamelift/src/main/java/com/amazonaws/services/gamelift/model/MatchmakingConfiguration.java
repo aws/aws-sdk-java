@@ -31,17 +31,18 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A unique identifier for a matchmaking configuration. This name is used to identify the configuration associated
+     * A unique identifier for the matchmaking configuration. This name is used to identify the configuration associated
      * with a matchmaking request or ticket.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * GameLift matchmaking configuration resource and uniquely identifies it. ARNs are unique across all Regions. In a
-     * GameLift configuration ARN, the resource ID matches the <i>Name</i> value.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift matchmaking configuration resource and uniquely identifies it. ARNs are unique
+     * across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::matchmakingconfiguration/&lt;matchmaking configuration name&gt;</code>. In
+     * a GameLift configuration ARN, the resource ID matches the <i>Name</i> value.
      * </p>
      */
     private String configurationArn;
@@ -53,11 +54,11 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
     private String description;
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Queues can
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue name&gt;</code>. Queues can
      * be located in any Region. Queues are used to start new GameLift-hosted game sessions for matches that are created
-     * with this matchmaking configuration. Thais property is not set when <code>FlexMatchMode</code> is set to
+     * with this matchmaking configuration. This property is not set when <code>FlexMatchMode</code> is set to
      * <code>STANDALONE</code>.
      * </p>
      */
@@ -72,8 +73,8 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required. If any
-     * player rejects the match or fails to accept before the timeout, the tickets are returned to the ticket pool and
-     * continue to be evaluated for an acceptable match.
+     * player rejects the match or fails to accept before the timeout, the ticket continues to look for an acceptable
+     * match.
      * </p>
      */
     private Integer acceptanceTimeoutSeconds;
@@ -87,16 +88,15 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
     private Boolean acceptanceRequired;
     /**
      * <p>
-     * A unique identifier for a matchmaking rule set to use with this configuration. A matchmaking configuration can
+     * A unique identifier for the matchmaking rule set to use with this configuration. A matchmaking configuration can
      * only use rule sets that are defined in the same Region.
      * </p>
      */
     private String ruleSetName;
     /**
      * <p>
-     * The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
-     * GameLift matchmaking rule set resource that this configuration uses.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * associated with the GameLift matchmaking rule set resource that this configuration uses.
      * </p>
      */
     private String ruleSetArn;
@@ -108,10 +108,10 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
     private String notificationTarget;
     /**
      * <p>
-     * The number of player slots in a match to keep open for future players. For example, assume that the
-     * configuration's rule set specifies a match for a single 12-person team. If the additional player count is set to
-     * 2, only 10 players are initially selected for the match. This parameter is not used when
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
+     * The number of player slots in a match to keep open for future players. For example, if the configuration's rule
+     * set specifies a match for a single 12-person team, and the additional player count is set to 2, only 10 players
+     * are selected for the match. This parameter is not used when <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.
      * </p>
      */
     private Integer additionalPlayerCount;
@@ -123,14 +123,14 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
     private String customEventData;
     /**
      * <p>
-     * The time stamp indicating when this data object was created. The format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key-value pairs. These properties are passed to a
+     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
      * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created for a
@@ -154,7 +154,7 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
      * game makes backfill requests or does not use the match backfill feature. AUTOMATIC indicates that GameLift
      * creates <a>StartMatchBackfill</a> requests whenever a game session has one or more open slots. Learn more about
      * manual and automatic backfill in <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill Existing Games
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill existing games
      * with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to
      * <code>STANDALONE</code>.
      * </p>
@@ -186,12 +186,12 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A unique identifier for a matchmaking configuration. This name is used to identify the configuration associated
+     * A unique identifier for the matchmaking configuration. This name is used to identify the configuration associated
      * with a matchmaking request or ticket.
      * </p>
      * 
      * @param name
-     *        A unique identifier for a matchmaking configuration. This name is used to identify the configuration
+     *        A unique identifier for the matchmaking configuration. This name is used to identify the configuration
      *        associated with a matchmaking request or ticket.
      */
 
@@ -201,11 +201,11 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A unique identifier for a matchmaking configuration. This name is used to identify the configuration associated
+     * A unique identifier for the matchmaking configuration. This name is used to identify the configuration associated
      * with a matchmaking request or ticket.
      * </p>
      * 
-     * @return A unique identifier for a matchmaking configuration. This name is used to identify the configuration
+     * @return A unique identifier for the matchmaking configuration. This name is used to identify the configuration
      *         associated with a matchmaking request or ticket.
      */
 
@@ -215,12 +215,12 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A unique identifier for a matchmaking configuration. This name is used to identify the configuration associated
+     * A unique identifier for the matchmaking configuration. This name is used to identify the configuration associated
      * with a matchmaking request or ticket.
      * </p>
      * 
      * @param name
-     *        A unique identifier for a matchmaking configuration. This name is used to identify the configuration
+     *        A unique identifier for the matchmaking configuration. This name is used to identify the configuration
      *        associated with a matchmaking request or ticket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -232,17 +232,20 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * GameLift matchmaking configuration resource and uniquely identifies it. ARNs are unique across all Regions. In a
-     * GameLift configuration ARN, the resource ID matches the <i>Name</i> value.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift matchmaking configuration resource and uniquely identifies it. ARNs are unique
+     * across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::matchmakingconfiguration/&lt;matchmaking configuration name&gt;</code>. In
+     * a GameLift configuration ARN, the resource ID matches the <i>Name</i> value.
      * </p>
      * 
      * @param configurationArn
-     *        Amazon Resource Name (<a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
-     *        assigned to a GameLift matchmaking configuration resource and uniquely identifies it. ARNs are unique
-     *        across all Regions. In a GameLift configuration ARN, the resource ID matches the <i>Name</i> value.
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        GameLift matchmaking configuration resource and uniquely identifies it. ARNs are unique across all
+     *        Regions. Format is
+     *        <code>arn:aws:gamelift:&lt;region&gt;::matchmakingconfiguration/&lt;matchmaking configuration name&gt;</code>
+     *        . In a GameLift configuration ARN, the resource ID matches the <i>Name</i> value.
      */
 
     public void setConfigurationArn(String configurationArn) {
@@ -251,16 +254,19 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * GameLift matchmaking configuration resource and uniquely identifies it. ARNs are unique across all Regions. In a
-     * GameLift configuration ARN, the resource ID matches the <i>Name</i> value.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift matchmaking configuration resource and uniquely identifies it. ARNs are unique
+     * across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::matchmakingconfiguration/&lt;matchmaking configuration name&gt;</code>. In
+     * a GameLift configuration ARN, the resource ID matches the <i>Name</i> value.
      * </p>
      * 
-     * @return Amazon Resource Name (<a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
-     *         assigned to a GameLift matchmaking configuration resource and uniquely identifies it. ARNs are unique
-     *         across all Regions. In a GameLift configuration ARN, the resource ID matches the <i>Name</i> value.
+     * @return The Amazon Resource Name (<a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *         GameLift matchmaking configuration resource and uniquely identifies it. ARNs are unique across all
+     *         Regions. Format is
+     *         <code>arn:aws:gamelift:&lt;region&gt;::matchmakingconfiguration/&lt;matchmaking configuration name&gt;</code>
+     *         . In a GameLift configuration ARN, the resource ID matches the <i>Name</i> value.
      */
 
     public String getConfigurationArn() {
@@ -269,17 +275,20 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * GameLift matchmaking configuration resource and uniquely identifies it. ARNs are unique across all Regions. In a
-     * GameLift configuration ARN, the resource ID matches the <i>Name</i> value.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift matchmaking configuration resource and uniquely identifies it. ARNs are unique
+     * across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::matchmakingconfiguration/&lt;matchmaking configuration name&gt;</code>. In
+     * a GameLift configuration ARN, the resource ID matches the <i>Name</i> value.
      * </p>
      * 
      * @param configurationArn
-     *        Amazon Resource Name (<a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
-     *        assigned to a GameLift matchmaking configuration resource and uniquely identifies it. ARNs are unique
-     *        across all Regions. In a GameLift configuration ARN, the resource ID matches the <i>Name</i> value.
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        GameLift matchmaking configuration resource and uniquely identifies it. ARNs are unique across all
+     *        Regions. Format is
+     *        <code>arn:aws:gamelift:&lt;region&gt;::matchmakingconfiguration/&lt;matchmaking configuration name&gt;</code>
+     *        . In a GameLift configuration ARN, the resource ID matches the <i>Name</i> value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -330,20 +339,21 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Queues can
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue name&gt;</code>. Queues can
      * be located in any Region. Queues are used to start new GameLift-hosted game sessions for matches that are created
-     * with this matchmaking configuration. Thais property is not set when <code>FlexMatchMode</code> is set to
+     * with this matchmaking configuration. This property is not set when <code>FlexMatchMode</code> is set to
      * <code>STANDALONE</code>.
      * </p>
      * 
-     * @return Amazon Resource Name (<a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
-     *         assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all
-     *         Regions. Queues can be located in any Region. Queues are used to start new GameLift-hosted game sessions
-     *         for matches that are created with this matchmaking configuration. Thais property is not set when
-     *         <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
+     * @return The Amazon Resource Name (<a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *         GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions.
+     *         Format is <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue name&gt;</code>. Queues can
+     *         be located in any Region. Queues are used to start new GameLift-hosted game sessions for matches that are
+     *         created with this matchmaking configuration. This property is not set when <code>FlexMatchMode</code> is
+     *         set to <code>STANDALONE</code>.
      */
 
     public java.util.List<String> getGameSessionQueueArns() {
@@ -352,21 +362,22 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Queues can
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue name&gt;</code>. Queues can
      * be located in any Region. Queues are used to start new GameLift-hosted game sessions for matches that are created
-     * with this matchmaking configuration. Thais property is not set when <code>FlexMatchMode</code> is set to
+     * with this matchmaking configuration. This property is not set when <code>FlexMatchMode</code> is set to
      * <code>STANDALONE</code>.
      * </p>
      * 
      * @param gameSessionQueueArns
-     *        Amazon Resource Name (<a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
-     *        assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all
-     *        Regions. Queues can be located in any Region. Queues are used to start new GameLift-hosted game sessions
-     *        for matches that are created with this matchmaking configuration. Thais property is not set when
-     *        <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions.
+     *        Format is <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue name&gt;</code>. Queues can be
+     *        located in any Region. Queues are used to start new GameLift-hosted game sessions for matches that are
+     *        created with this matchmaking configuration. This property is not set when <code>FlexMatchMode</code> is
+     *        set to <code>STANDALONE</code>.
      */
 
     public void setGameSessionQueueArns(java.util.Collection<String> gameSessionQueueArns) {
@@ -380,11 +391,11 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Queues can
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue name&gt;</code>. Queues can
      * be located in any Region. Queues are used to start new GameLift-hosted game sessions for matches that are created
-     * with this matchmaking configuration. Thais property is not set when <code>FlexMatchMode</code> is set to
+     * with this matchmaking configuration. This property is not set when <code>FlexMatchMode</code> is set to
      * <code>STANDALONE</code>.
      * </p>
      * <p>
@@ -394,12 +405,13 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
      * </p>
      * 
      * @param gameSessionQueueArns
-     *        Amazon Resource Name (<a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
-     *        assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all
-     *        Regions. Queues can be located in any Region. Queues are used to start new GameLift-hosted game sessions
-     *        for matches that are created with this matchmaking configuration. Thais property is not set when
-     *        <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions.
+     *        Format is <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue name&gt;</code>. Queues can be
+     *        located in any Region. Queues are used to start new GameLift-hosted game sessions for matches that are
+     *        created with this matchmaking configuration. This property is not set when <code>FlexMatchMode</code> is
+     *        set to <code>STANDALONE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -415,21 +427,22 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Queues can
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue name&gt;</code>. Queues can
      * be located in any Region. Queues are used to start new GameLift-hosted game sessions for matches that are created
-     * with this matchmaking configuration. Thais property is not set when <code>FlexMatchMode</code> is set to
+     * with this matchmaking configuration. This property is not set when <code>FlexMatchMode</code> is set to
      * <code>STANDALONE</code>.
      * </p>
      * 
      * @param gameSessionQueueArns
-     *        Amazon Resource Name (<a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
-     *        assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all
-     *        Regions. Queues can be located in any Region. Queues are used to start new GameLift-hosted game sessions
-     *        for matches that are created with this matchmaking configuration. Thais property is not set when
-     *        <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions.
+     *        Format is <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue name&gt;</code>. Queues can be
+     *        located in any Region. Queues are used to start new GameLift-hosted game sessions for matches that are
+     *        created with this matchmaking configuration. This property is not set when <code>FlexMatchMode</code> is
+     *        set to <code>STANDALONE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -487,14 +500,14 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required. If any
-     * player rejects the match or fails to accept before the timeout, the tickets are returned to the ticket pool and
-     * continue to be evaluated for an acceptable match.
+     * player rejects the match or fails to accept before the timeout, the ticket continues to look for an acceptable
+     * match.
      * </p>
      * 
      * @param acceptanceTimeoutSeconds
      *        The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required.
-     *        If any player rejects the match or fails to accept before the timeout, the tickets are returned to the
-     *        ticket pool and continue to be evaluated for an acceptable match.
+     *        If any player rejects the match or fails to accept before the timeout, the ticket continues to look for an
+     *        acceptable match.
      */
 
     public void setAcceptanceTimeoutSeconds(Integer acceptanceTimeoutSeconds) {
@@ -504,13 +517,13 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required. If any
-     * player rejects the match or fails to accept before the timeout, the tickets are returned to the ticket pool and
-     * continue to be evaluated for an acceptable match.
+     * player rejects the match or fails to accept before the timeout, the ticket continues to look for an acceptable
+     * match.
      * </p>
      * 
      * @return The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is
-     *         required. If any player rejects the match or fails to accept before the timeout, the tickets are returned
-     *         to the ticket pool and continue to be evaluated for an acceptable match.
+     *         required. If any player rejects the match or fails to accept before the timeout, the ticket continues to
+     *         look for an acceptable match.
      */
 
     public Integer getAcceptanceTimeoutSeconds() {
@@ -520,14 +533,14 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required. If any
-     * player rejects the match or fails to accept before the timeout, the tickets are returned to the ticket pool and
-     * continue to be evaluated for an acceptable match.
+     * player rejects the match or fails to accept before the timeout, the ticket continues to look for an acceptable
+     * match.
      * </p>
      * 
      * @param acceptanceTimeoutSeconds
      *        The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required.
-     *        If any player rejects the match or fails to accept before the timeout, the tickets are returned to the
-     *        ticket pool and continue to be evaluated for an acceptable match.
+     *        If any player rejects the match or fails to accept before the timeout, the ticket continues to look for an
+     *        acceptable match.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -610,13 +623,13 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A unique identifier for a matchmaking rule set to use with this configuration. A matchmaking configuration can
+     * A unique identifier for the matchmaking rule set to use with this configuration. A matchmaking configuration can
      * only use rule sets that are defined in the same Region.
      * </p>
      * 
      * @param ruleSetName
-     *        A unique identifier for a matchmaking rule set to use with this configuration. A matchmaking configuration
-     *        can only use rule sets that are defined in the same Region.
+     *        A unique identifier for the matchmaking rule set to use with this configuration. A matchmaking
+     *        configuration can only use rule sets that are defined in the same Region.
      */
 
     public void setRuleSetName(String ruleSetName) {
@@ -625,11 +638,11 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A unique identifier for a matchmaking rule set to use with this configuration. A matchmaking configuration can
+     * A unique identifier for the matchmaking rule set to use with this configuration. A matchmaking configuration can
      * only use rule sets that are defined in the same Region.
      * </p>
      * 
-     * @return A unique identifier for a matchmaking rule set to use with this configuration. A matchmaking
+     * @return A unique identifier for the matchmaking rule set to use with this configuration. A matchmaking
      *         configuration can only use rule sets that are defined in the same Region.
      */
 
@@ -639,13 +652,13 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A unique identifier for a matchmaking rule set to use with this configuration. A matchmaking configuration can
+     * A unique identifier for the matchmaking rule set to use with this configuration. A matchmaking configuration can
      * only use rule sets that are defined in the same Region.
      * </p>
      * 
      * @param ruleSetName
-     *        A unique identifier for a matchmaking rule set to use with this configuration. A matchmaking configuration
-     *        can only use rule sets that are defined in the same Region.
+     *        A unique identifier for the matchmaking rule set to use with this configuration. A matchmaking
+     *        configuration can only use rule sets that are defined in the same Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -656,15 +669,14 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
-     * GameLift matchmaking rule set resource that this configuration uses.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * associated with the GameLift matchmaking rule set resource that this configuration uses.
      * </p>
      * 
      * @param ruleSetArn
      *        The Amazon Resource Name (<a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with
-     *        the GameLift matchmaking rule set resource that this configuration uses.
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the
+     *        GameLift matchmaking rule set resource that this configuration uses.
      */
 
     public void setRuleSetArn(String ruleSetArn) {
@@ -673,14 +685,13 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
-     * GameLift matchmaking rule set resource that this configuration uses.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * associated with the GameLift matchmaking rule set resource that this configuration uses.
      * </p>
      * 
      * @return The Amazon Resource Name (<a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated
-     *         with the GameLift matchmaking rule set resource that this configuration uses.
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the
+     *         GameLift matchmaking rule set resource that this configuration uses.
      */
 
     public String getRuleSetArn() {
@@ -689,15 +700,14 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
-     * GameLift matchmaking rule set resource that this configuration uses.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * associated with the GameLift matchmaking rule set resource that this configuration uses.
      * </p>
      * 
      * @param ruleSetArn
      *        The Amazon Resource Name (<a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with
-     *        the GameLift matchmaking rule set resource that this configuration uses.
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the
+     *        GameLift matchmaking rule set resource that this configuration uses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -748,17 +758,17 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The number of player slots in a match to keep open for future players. For example, assume that the
-     * configuration's rule set specifies a match for a single 12-person team. If the additional player count is set to
-     * 2, only 10 players are initially selected for the match. This parameter is not used when
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
+     * The number of player slots in a match to keep open for future players. For example, if the configuration's rule
+     * set specifies a match for a single 12-person team, and the additional player count is set to 2, only 10 players
+     * are selected for the match. This parameter is not used when <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.
      * </p>
      * 
      * @param additionalPlayerCount
-     *        The number of player slots in a match to keep open for future players. For example, assume that the
-     *        configuration's rule set specifies a match for a single 12-person team. If the additional player count is
-     *        set to 2, only 10 players are initially selected for the match. This parameter is not used when
-     *        <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
+     *        The number of player slots in a match to keep open for future players. For example, if the configuration's
+     *        rule set specifies a match for a single 12-person team, and the additional player count is set to 2, only
+     *        10 players are selected for the match. This parameter is not used when <code>FlexMatchMode</code> is set
+     *        to <code>STANDALONE</code>.
      */
 
     public void setAdditionalPlayerCount(Integer additionalPlayerCount) {
@@ -767,15 +777,15 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The number of player slots in a match to keep open for future players. For example, assume that the
-     * configuration's rule set specifies a match for a single 12-person team. If the additional player count is set to
-     * 2, only 10 players are initially selected for the match. This parameter is not used when
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
+     * The number of player slots in a match to keep open for future players. For example, if the configuration's rule
+     * set specifies a match for a single 12-person team, and the additional player count is set to 2, only 10 players
+     * are selected for the match. This parameter is not used when <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.
      * </p>
      * 
-     * @return The number of player slots in a match to keep open for future players. For example, assume that the
-     *         configuration's rule set specifies a match for a single 12-person team. If the additional player count is
-     *         set to 2, only 10 players are initially selected for the match. This parameter is not used when
+     * @return The number of player slots in a match to keep open for future players. For example, if the
+     *         configuration's rule set specifies a match for a single 12-person team, and the additional player count
+     *         is set to 2, only 10 players are selected for the match. This parameter is not used when
      *         <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
      */
 
@@ -785,17 +795,17 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The number of player slots in a match to keep open for future players. For example, assume that the
-     * configuration's rule set specifies a match for a single 12-person team. If the additional player count is set to
-     * 2, only 10 players are initially selected for the match. This parameter is not used when
-     * <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
+     * The number of player slots in a match to keep open for future players. For example, if the configuration's rule
+     * set specifies a match for a single 12-person team, and the additional player count is set to 2, only 10 players
+     * are selected for the match. This parameter is not used when <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.
      * </p>
      * 
      * @param additionalPlayerCount
-     *        The number of player slots in a match to keep open for future players. For example, assume that the
-     *        configuration's rule set specifies a match for a single 12-person team. If the additional player count is
-     *        set to 2, only 10 players are initially selected for the match. This parameter is not used when
-     *        <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
+     *        The number of player slots in a match to keep open for future players. For example, if the configuration's
+     *        rule set specifies a match for a single 12-person team, and the additional player count is set to 2, only
+     *        10 players are selected for the match. This parameter is not used when <code>FlexMatchMode</code> is set
+     *        to <code>STANDALONE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -846,13 +856,13 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The time stamp indicating when this data object was created. The format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
      * @param creationTime
-     *        The time stamp indicating when this data object was created. The format is a number expressed in Unix time
-     *        as milliseconds (for example "1469498468.057").
+     *        A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     *        milliseconds (for example <code>"1469498468.057"</code>).
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -861,12 +871,12 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The time stamp indicating when this data object was created. The format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
-     * @return The time stamp indicating when this data object was created. The format is a number expressed in Unix
-     *         time as milliseconds (for example "1469498468.057").
+     * @return A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     *         milliseconds (for example <code>"1469498468.057"</code>).
      */
 
     public java.util.Date getCreationTime() {
@@ -875,13 +885,13 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The time stamp indicating when this data object was created. The format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
      * @param creationTime
-     *        The time stamp indicating when this data object was created. The format is a number expressed in Unix time
-     *        as milliseconds (for example "1469498468.057").
+     *        A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     *        milliseconds (for example <code>"1469498468.057"</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -892,14 +902,14 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key-value pairs. These properties are passed to a
+     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
      * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created for a
      * successful match. This parameter is not used when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
      * </p>
      * 
-     * @return A set of custom properties for a game session, formatted as key-value pairs. These properties are passed
+     * @return A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
      *         to a game server process in the <a>GameSession</a> object with a request to start a new game session (see
      *         <a href=
      *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
@@ -914,7 +924,7 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key-value pairs. These properties are passed to a
+     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
      * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created for a
@@ -922,7 +932,7 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
      * </p>
      * 
      * @param gameProperties
-     *        A set of custom properties for a game session, formatted as key-value pairs. These properties are passed
+     *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
      *        to a game server process in the <a>GameSession</a> object with a request to start a new game session (see
      *        <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
@@ -942,7 +952,7 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key-value pairs. These properties are passed to a
+     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
      * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created for a
@@ -955,7 +965,7 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
      * </p>
      * 
      * @param gameProperties
-     *        A set of custom properties for a game session, formatted as key-value pairs. These properties are passed
+     *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
      *        to a game server process in the <a>GameSession</a> object with a request to start a new game session (see
      *        <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
@@ -977,7 +987,7 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key-value pairs. These properties are passed to a
+     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
      * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created for a
@@ -985,7 +995,7 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
      * </p>
      * 
      * @param gameProperties
-     *        A set of custom properties for a game session, formatted as key-value pairs. These properties are passed
+     *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
      *        to a game server process in the <a>GameSession</a> object with a request to start a new game session (see
      *        <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
@@ -1074,7 +1084,7 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
      * game makes backfill requests or does not use the match backfill feature. AUTOMATIC indicates that GameLift
      * creates <a>StartMatchBackfill</a> requests whenever a game session has one or more open slots. Learn more about
      * manual and automatic backfill in <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill Existing Games
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill existing games
      * with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to
      * <code>STANDALONE</code>.
      * </p>
@@ -1084,8 +1094,8 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
      *        that the game makes backfill requests or does not use the match backfill feature. AUTOMATIC indicates that
      *        GameLift creates <a>StartMatchBackfill</a> requests whenever a game session has one or more open slots.
      *        Learn more about manual and automatic backfill in <a
-     *        href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill Existing
-     *        Games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to
+     *        href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill existing
+     *        games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to
      *        <code>STANDALONE</code>.
      * @see BackfillMode
      */
@@ -1100,7 +1110,7 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
      * game makes backfill requests or does not use the match backfill feature. AUTOMATIC indicates that GameLift
      * creates <a>StartMatchBackfill</a> requests whenever a game session has one or more open slots. Learn more about
      * manual and automatic backfill in <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill Existing Games
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill existing games
      * with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to
      * <code>STANDALONE</code>.
      * </p>
@@ -1109,8 +1119,8 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
      *         that the game makes backfill requests or does not use the match backfill feature. AUTOMATIC indicates
      *         that GameLift creates <a>StartMatchBackfill</a> requests whenever a game session has one or more open
      *         slots. Learn more about manual and automatic backfill in <a
-     *         href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill Existing
-     *         Games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to
+     *         href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill existing
+     *         games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to
      *         <code>STANDALONE</code>.
      * @see BackfillMode
      */
@@ -1125,7 +1135,7 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
      * game makes backfill requests or does not use the match backfill feature. AUTOMATIC indicates that GameLift
      * creates <a>StartMatchBackfill</a> requests whenever a game session has one or more open slots. Learn more about
      * manual and automatic backfill in <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill Existing Games
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill existing games
      * with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to
      * <code>STANDALONE</code>.
      * </p>
@@ -1135,8 +1145,8 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
      *        that the game makes backfill requests or does not use the match backfill feature. AUTOMATIC indicates that
      *        GameLift creates <a>StartMatchBackfill</a> requests whenever a game session has one or more open slots.
      *        Learn more about manual and automatic backfill in <a
-     *        href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill Existing
-     *        Games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to
+     *        href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill existing
+     *        games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to
      *        <code>STANDALONE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BackfillMode
@@ -1153,7 +1163,7 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
      * game makes backfill requests or does not use the match backfill feature. AUTOMATIC indicates that GameLift
      * creates <a>StartMatchBackfill</a> requests whenever a game session has one or more open slots. Learn more about
      * manual and automatic backfill in <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill Existing Games
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill existing games
      * with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to
      * <code>STANDALONE</code>.
      * </p>
@@ -1163,8 +1173,8 @@ public class MatchmakingConfiguration implements Serializable, Cloneable, Struct
      *        that the game makes backfill requests or does not use the match backfill feature. AUTOMATIC indicates that
      *        GameLift creates <a>StartMatchBackfill</a> requests whenever a game session has one or more open slots.
      *        Learn more about manual and automatic backfill in <a
-     *        href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill Existing
-     *        Games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to
+     *        href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html">Backfill existing
+     *        games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to
      *        <code>STANDALONE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BackfillMode

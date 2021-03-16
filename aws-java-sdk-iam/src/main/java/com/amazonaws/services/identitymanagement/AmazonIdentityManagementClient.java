@@ -547,6 +547,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <a>PutGroupPolicy</a>.
      * </p>
      * <p>
+     * As a best practice, you can validate your IAM policies. To learn more, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_policy-validator.html">Validating IAM
+     * policies</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
      * For more information about policies, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed policies and
      * inline policies</a> in the <i>IAM User Guide</i>.
@@ -633,6 +638,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed policies and
      * inline policies</a> in the <i>IAM User Guide</i>.
      * </p>
+     * <p>
+     * As a best practice, you can validate your IAM policies. To learn more, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_policy-validator.html">Validating IAM
+     * policies</a> in the <i>IAM User Guide</i>.
+     * </p>
      * 
      * @param attachRolePolicyRequest
      * @return Result of the AttachRolePolicy operation returned by the service.
@@ -709,6 +719,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * You use this operation to attach a <i>managed</i> policy to a user. To embed an inline policy in a user, use
      * <a>PutUserPolicy</a>.
+     * </p>
+     * <p>
+     * As a best practice, you can validate your IAM policies. To learn more, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_policy-validator.html">Validating IAM
+     * policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * For more information about policies, see <a
@@ -1349,6 +1364,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * This operation creates a policy version with a version identifier of <code>v1</code> and sets v1 as the policy's
      * default version. For more information about policy versions, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
+     * policies</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * As a best practice, you can validate your IAM policies. To learn more, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_policy-validator.html">Validating IAM
      * policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>

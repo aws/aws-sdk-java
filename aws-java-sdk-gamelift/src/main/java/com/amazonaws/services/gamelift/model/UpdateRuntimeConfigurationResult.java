@@ -28,21 +28,21 @@ public class UpdateRuntimeConfigurationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The runtime configuration currently in force. If the update was successful, this object matches the one in the
-     * request.
+     * The runtime configuration currently in use by all instances in the fleet. If the update was successful, all
+     * property changes are shown.
      * </p>
      */
     private RuntimeConfiguration runtimeConfiguration;
 
     /**
      * <p>
-     * The runtime configuration currently in force. If the update was successful, this object matches the one in the
-     * request.
+     * The runtime configuration currently in use by all instances in the fleet. If the update was successful, all
+     * property changes are shown.
      * </p>
      * 
      * @param runtimeConfiguration
-     *        The runtime configuration currently in force. If the update was successful, this object matches the one in
-     *        the request.
+     *        The runtime configuration currently in use by all instances in the fleet. If the update was successful,
+     *        all property changes are shown.
      */
 
     public void setRuntimeConfiguration(RuntimeConfiguration runtimeConfiguration) {
@@ -51,12 +51,12 @@ public class UpdateRuntimeConfigurationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The runtime configuration currently in force. If the update was successful, this object matches the one in the
-     * request.
+     * The runtime configuration currently in use by all instances in the fleet. If the update was successful, all
+     * property changes are shown.
      * </p>
      * 
-     * @return The runtime configuration currently in force. If the update was successful, this object matches the one
-     *         in the request.
+     * @return The runtime configuration currently in use by all instances in the fleet. If the update was successful,
+     *         all property changes are shown.
      */
 
     public RuntimeConfiguration getRuntimeConfiguration() {
@@ -65,13 +65,13 @@ public class UpdateRuntimeConfigurationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The runtime configuration currently in force. If the update was successful, this object matches the one in the
-     * request.
+     * The runtime configuration currently in use by all instances in the fleet. If the update was successful, all
+     * property changes are shown.
      * </p>
      * 
      * @param runtimeConfiguration
-     *        The runtime configuration currently in force. If the update was successful, this object matches the one in
-     *        the request.
+     *        The runtime configuration currently in use by all instances in the fleet. If the update was successful,
+     *        all property changes are shown.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

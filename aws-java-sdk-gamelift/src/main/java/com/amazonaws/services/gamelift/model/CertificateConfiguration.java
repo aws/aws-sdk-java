@@ -19,10 +19,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the use of a TLS/SSL certificate for a fleet. TLS certificate generation is enabled at the fleet
- * level, with one certificate generated for the fleet. When this feature is enabled, the certificate can be retrieved
- * using the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">GameLift
- * Server SDK</a> call <code>GetInstanceCertificate</code>. All instances in a fleet share the same certificate.
+ * Determines whether a TLS/SSL certificate is generated for a fleet. This feature must be enabled when creating the
+ * fleet. All instances in a fleet share the same certificate. The certificate can be retrieved by calling the <a
+ * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">GameLift Server SDK</a>
+ * operation <code>GetInstanceCertificate</code>.
+ * </p>
+ * <p>
+ * A fleet's certificate configuration is part of <a>FleetAttributes</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CertificateConfiguration" target="_top">AWS
@@ -33,10 +36,23 @@ public class CertificateConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Indicates whether a TLS/SSL certificate was generated for a fleet.
+     * Indicates whether a TLS/SSL certificate is generated for a fleet.
      * </p>
      * <p>
+     * Valid values include:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * </p>
      */
@@ -44,17 +60,43 @@ public class CertificateConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Indicates whether a TLS/SSL certificate was generated for a fleet.
+     * Indicates whether a TLS/SSL certificate is generated for a fleet.
      * </p>
      * <p>
+     * Valid values include:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * </p>
      * 
      * @param certificateType
-     *        Indicates whether a TLS/SSL certificate was generated for a fleet. </p>
+     *        Indicates whether a TLS/SSL certificate is generated for a fleet. </p>
      *        <p>
+     *        Valid values include:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      * @see CertificateType
      */
@@ -65,16 +107,42 @@ public class CertificateConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Indicates whether a TLS/SSL certificate was generated for a fleet.
+     * Indicates whether a TLS/SSL certificate is generated for a fleet.
      * </p>
      * <p>
+     * Valid values include:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * </p>
      * 
-     * @return Indicates whether a TLS/SSL certificate was generated for a fleet. </p>
+     * @return Indicates whether a TLS/SSL certificate is generated for a fleet. </p>
      *         <p>
+     *         Valid values include:
      *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet.
+     *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
      * @see CertificateType
      */
@@ -85,17 +153,43 @@ public class CertificateConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Indicates whether a TLS/SSL certificate was generated for a fleet.
+     * Indicates whether a TLS/SSL certificate is generated for a fleet.
      * </p>
      * <p>
+     * Valid values include:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * </p>
      * 
      * @param certificateType
-     *        Indicates whether a TLS/SSL certificate was generated for a fleet. </p>
+     *        Indicates whether a TLS/SSL certificate is generated for a fleet. </p>
      *        <p>
+     *        Valid values include:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CertificateType
@@ -108,17 +202,43 @@ public class CertificateConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Indicates whether a TLS/SSL certificate was generated for a fleet.
+     * Indicates whether a TLS/SSL certificate is generated for a fleet.
      * </p>
      * <p>
+     * Valid values include:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * </p>
      * 
      * @param certificateType
-     *        Indicates whether a TLS/SSL certificate was generated for a fleet. </p>
+     *        Indicates whether a TLS/SSL certificate is generated for a fleet. </p>
      *        <p>
+     *        Valid values include:
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>GENERATED</b> - Generate a TLS/SSL certificate for this fleet.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>DISABLED</b> - (default) Do not generate a TLS/SSL certificate for this fleet.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CertificateType

@@ -66,6 +66,13 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
      * Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. After the Auto Scaling
      * group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.
      * </p>
+     * <note>
+     * <p>
+     * If you specify network interfaces in your launch template, you must explicitly set the property
+     * <code>AssociatePublicIpAddress</code> to "true". If no network interface is specified in the launch template,
+     * GameLift FleetIQ uses your account's default VPC.
+     * </p>
+     * </note>
      */
     private LaunchTemplateSpecification launchTemplate;
     /**
@@ -373,6 +380,13 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
      * Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. After the Auto Scaling
      * group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.
      * </p>
+     * <note>
+     * <p>
+     * If you specify network interfaces in your launch template, you must explicitly set the property
+     * <code>AssociatePublicIpAddress</code> to "true". If no network interface is specified in the launch template,
+     * GameLift FleetIQ uses your account's default VPC.
+     * </p>
+     * </note>
      * 
      * @param launchTemplate
      *        The EC2 launch template that contains configuration settings and game server code to be deployed to all
@@ -381,7 +395,12 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch
      *        Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. After the Auto
      *        Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or
-     *        APIs.
+     *        APIs.</p> <note>
+     *        <p>
+     *        If you specify network interfaces in your launch template, you must explicitly set the property
+     *        <code>AssociatePublicIpAddress</code> to "true". If no network interface is specified in the launch
+     *        template, GameLift FleetIQ uses your account's default VPC.
+     *        </p>
      */
 
     public void setLaunchTemplate(LaunchTemplateSpecification launchTemplate) {
@@ -397,6 +416,13 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
      * Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. After the Auto Scaling
      * group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.
      * </p>
+     * <note>
+     * <p>
+     * If you specify network interfaces in your launch template, you must explicitly set the property
+     * <code>AssociatePublicIpAddress</code> to "true". If no network interface is specified in the launch template,
+     * GameLift FleetIQ uses your account's default VPC.
+     * </p>
+     * </note>
      * 
      * @return The EC2 launch template that contains configuration settings and game server code to be deployed to all
      *         instances in the game server group. You can specify the template using either the template name or ID.
@@ -404,7 +430,12 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
      *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a
      *         Launch Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. After the
      *         Auto Scaling group is created, update this value directly in the Auto Scaling group using the AWS console
-     *         or APIs.
+     *         or APIs.</p> <note>
+     *         <p>
+     *         If you specify network interfaces in your launch template, you must explicitly set the property
+     *         <code>AssociatePublicIpAddress</code> to "true". If no network interface is specified in the launch
+     *         template, GameLift FleetIQ uses your account's default VPC.
+     *         </p>
      */
 
     public LaunchTemplateSpecification getLaunchTemplate() {
@@ -420,6 +451,13 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
      * Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. After the Auto Scaling
      * group is created, update this value directly in the Auto Scaling group using the AWS console or APIs.
      * </p>
+     * <note>
+     * <p>
+     * If you specify network interfaces in your launch template, you must explicitly set the property
+     * <code>AssociatePublicIpAddress</code> to "true". If no network interface is specified in the launch template,
+     * GameLift FleetIQ uses your account's default VPC.
+     * </p>
+     * </note>
      * 
      * @param launchTemplate
      *        The EC2 launch template that contains configuration settings and game server code to be deployed to all
@@ -428,7 +466,12 @@ public class CreateGameServerGroupRequest extends com.amazonaws.AmazonWebService
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a Launch
      *        Template for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. After the Auto
      *        Scaling group is created, update this value directly in the Auto Scaling group using the AWS console or
-     *        APIs.
+     *        APIs.</p> <note>
+     *        <p>
+     *        If you specify network interfaces in your launch template, you must explicitly set the property
+     *        <code>AssociatePublicIpAddress</code> to "true". If no network interface is specified in the launch
+     *        template, GameLift FleetIQ uses your account's default VPC.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

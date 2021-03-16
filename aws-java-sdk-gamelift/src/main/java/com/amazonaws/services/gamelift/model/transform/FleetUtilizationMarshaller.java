@@ -29,6 +29,8 @@ public class FleetUtilizationMarshaller {
 
     private static final MarshallingInfo<String> FLEETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("FleetId").build();
+    private static final MarshallingInfo<String> FLEETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("FleetArn").build();
     private static final MarshallingInfo<Integer> ACTIVESERVERPROCESSCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ActiveServerProcessCount").build();
     private static final MarshallingInfo<Integer> ACTIVEGAMESESSIONCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -37,6 +39,8 @@ public class FleetUtilizationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CurrentPlayerSessionCount").build();
     private static final MarshallingInfo<Integer> MAXIMUMPLAYERSESSIONCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaximumPlayerSessionCount").build();
+    private static final MarshallingInfo<String> LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Location").build();
 
     private static final FleetUtilizationMarshaller instance = new FleetUtilizationMarshaller();
 
@@ -55,10 +59,12 @@ public class FleetUtilizationMarshaller {
 
         try {
             protocolMarshaller.marshall(fleetUtilization.getFleetId(), FLEETID_BINDING);
+            protocolMarshaller.marshall(fleetUtilization.getFleetArn(), FLEETARN_BINDING);
             protocolMarshaller.marshall(fleetUtilization.getActiveServerProcessCount(), ACTIVESERVERPROCESSCOUNT_BINDING);
             protocolMarshaller.marshall(fleetUtilization.getActiveGameSessionCount(), ACTIVEGAMESESSIONCOUNT_BINDING);
             protocolMarshaller.marshall(fleetUtilization.getCurrentPlayerSessionCount(), CURRENTPLAYERSESSIONCOUNT_BINDING);
             protocolMarshaller.marshall(fleetUtilization.getMaximumPlayerSessionCount(), MAXIMUMPLAYERSESSIONCOUNT_BINDING);
+            protocolMarshaller.marshall(fleetUtilization.getLocation(), LOCATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

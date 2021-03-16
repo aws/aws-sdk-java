@@ -143,6 +143,11 @@ public class AbstractAWSAccessAnalyzer implements AWSAccessAnalyzer {
     }
 
     @Override
+    public ValidatePolicyResult validatePolicy(ValidatePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public void shutdown() {
         throw new java.lang.UnsupportedOperationException();
     }

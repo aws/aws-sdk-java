@@ -48,7 +48,7 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
     private String name;
     /**
      * <p>
-     * Policy determining whether or not the game session accepts new players.
+     * A policy that determines whether the game session is accepting new players.
      * </p>
      */
     private String playerSessionCreationPolicy;
@@ -194,11 +194,11 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Policy determining whether or not the game session accepts new players.
+     * A policy that determines whether the game session is accepting new players.
      * </p>
      * 
      * @param playerSessionCreationPolicy
-     *        Policy determining whether or not the game session accepts new players.
+     *        A policy that determines whether the game session is accepting new players.
      * @see PlayerSessionCreationPolicy
      */
 
@@ -208,10 +208,10 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Policy determining whether or not the game session accepts new players.
+     * A policy that determines whether the game session is accepting new players.
      * </p>
      * 
-     * @return Policy determining whether or not the game session accepts new players.
+     * @return A policy that determines whether the game session is accepting new players.
      * @see PlayerSessionCreationPolicy
      */
 
@@ -221,11 +221,11 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Policy determining whether or not the game session accepts new players.
+     * A policy that determines whether the game session is accepting new players.
      * </p>
      * 
      * @param playerSessionCreationPolicy
-     *        Policy determining whether or not the game session accepts new players.
+     *        A policy that determines whether the game session is accepting new players.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlayerSessionCreationPolicy
      */
@@ -237,11 +237,11 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Policy determining whether or not the game session accepts new players.
+     * A policy that determines whether the game session is accepting new players.
      * </p>
      * 
      * @param playerSessionCreationPolicy
-     *        Policy determining whether or not the game session accepts new players.
+     *        A policy that determines whether the game session is accepting new players.
      * @see PlayerSessionCreationPolicy
      */
 
@@ -251,11 +251,11 @@ public class UpdateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Policy determining whether or not the game session accepts new players.
+     * A policy that determines whether the game session is accepting new players.
      * </p>
      * 
      * @param playerSessionCreationPolicy
-     *        Policy determining whether or not the game session accepts new players.
+     *        A policy that determines whether the game session is accepting new players.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlayerSessionCreationPolicy
      */

@@ -42,8 +42,8 @@ public class CreatePlayerSessionRequest extends com.amazonaws.AmazonWebServiceRe
     private String playerId;
     /**
      * <p>
-     * Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted
-     * as needed for use in the game.
+     * Developer-defined information related to a player. GameLift does not use this data, so it can be formatted as
+     * needed for use in the game.
      * </p>
      */
     private String playerData;
@@ -130,13 +130,13 @@ public class CreatePlayerSessionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted
-     * as needed for use in the game.
+     * Developer-defined information related to a player. GameLift does not use this data, so it can be formatted as
+     * needed for use in the game.
      * </p>
      * 
      * @param playerData
-     *        Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be
-     *        formatted as needed for use in the game.
+     *        Developer-defined information related to a player. GameLift does not use this data, so it can be formatted
+     *        as needed for use in the game.
      */
 
     public void setPlayerData(String playerData) {
@@ -145,11 +145,11 @@ public class CreatePlayerSessionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted
-     * as needed for use in the game.
+     * Developer-defined information related to a player. GameLift does not use this data, so it can be formatted as
+     * needed for use in the game.
      * </p>
      * 
-     * @return Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be
+     * @return Developer-defined information related to a player. GameLift does not use this data, so it can be
      *         formatted as needed for use in the game.
      */
 
@@ -159,13 +159,13 @@ public class CreatePlayerSessionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted
-     * as needed for use in the game.
+     * Developer-defined information related to a player. GameLift does not use this data, so it can be formatted as
+     * needed for use in the game.
      * </p>
      * 
      * @param playerData
-     *        Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be
-     *        formatted as needed for use in the game.
+     *        Developer-defined information related to a player. GameLift does not use this data, so it can be formatted
+     *        as needed for use in the game.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

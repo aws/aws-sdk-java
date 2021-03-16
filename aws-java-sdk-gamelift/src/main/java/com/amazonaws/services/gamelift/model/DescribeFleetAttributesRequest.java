@@ -31,8 +31,7 @@ public class DescribeFleetAttributesRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN value. To
-     * retrieve attributes for all current fleets, do not include this parameter. If the list of fleet identifiers
-     * includes fleets that don't currently exist, the request succeeds but no attributes for that fleet are returned.
+     * retrieve attributes for all current fleets, do not include this parameter.
      * </p>
      */
     private java.util.List<String> fleetIds;
@@ -45,7 +44,7 @@ public class DescribeFleetAttributesRequest extends com.amazonaws.AmazonWebServi
     private Integer limit;
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
      * previous call to this operation. To start at the beginning of the result set, do not specify a value. This
      * parameter is ignored when the request specifies one or a list of fleet IDs.
      * </p>
@@ -55,14 +54,11 @@ public class DescribeFleetAttributesRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN value. To
-     * retrieve attributes for all current fleets, do not include this parameter. If the list of fleet identifiers
-     * includes fleets that don't currently exist, the request succeeds but no attributes for that fleet are returned.
+     * retrieve attributes for all current fleets, do not include this parameter.
      * </p>
      * 
      * @return A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN
-     *         value. To retrieve attributes for all current fleets, do not include this parameter. If the list of fleet
-     *         identifiers includes fleets that don't currently exist, the request succeeds but no attributes for that
-     *         fleet are returned.
+     *         value. To retrieve attributes for all current fleets, do not include this parameter.
      */
 
     public java.util.List<String> getFleetIds() {
@@ -72,15 +68,12 @@ public class DescribeFleetAttributesRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN value. To
-     * retrieve attributes for all current fleets, do not include this parameter. If the list of fleet identifiers
-     * includes fleets that don't currently exist, the request succeeds but no attributes for that fleet are returned.
+     * retrieve attributes for all current fleets, do not include this parameter.
      * </p>
      * 
      * @param fleetIds
      *        A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN
-     *        value. To retrieve attributes for all current fleets, do not include this parameter. If the list of fleet
-     *        identifiers includes fleets that don't currently exist, the request succeeds but no attributes for that
-     *        fleet are returned.
+     *        value. To retrieve attributes for all current fleets, do not include this parameter.
      */
 
     public void setFleetIds(java.util.Collection<String> fleetIds) {
@@ -95,8 +88,7 @@ public class DescribeFleetAttributesRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN value. To
-     * retrieve attributes for all current fleets, do not include this parameter. If the list of fleet identifiers
-     * includes fleets that don't currently exist, the request succeeds but no attributes for that fleet are returned.
+     * retrieve attributes for all current fleets, do not include this parameter.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -106,9 +98,7 @@ public class DescribeFleetAttributesRequest extends com.amazonaws.AmazonWebServi
      * 
      * @param fleetIds
      *        A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN
-     *        value. To retrieve attributes for all current fleets, do not include this parameter. If the list of fleet
-     *        identifiers includes fleets that don't currently exist, the request succeeds but no attributes for that
-     *        fleet are returned.
+     *        value. To retrieve attributes for all current fleets, do not include this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -125,15 +115,12 @@ public class DescribeFleetAttributesRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN value. To
-     * retrieve attributes for all current fleets, do not include this parameter. If the list of fleet identifiers
-     * includes fleets that don't currently exist, the request succeeds but no attributes for that fleet are returned.
+     * retrieve attributes for all current fleets, do not include this parameter.
      * </p>
      * 
      * @param fleetIds
      *        A list of unique fleet identifiers to retrieve attributes for. You can use either the fleet ID or ARN
-     *        value. To retrieve attributes for all current fleets, do not include this parameter. If the list of fleet
-     *        identifiers includes fleets that don't currently exist, the request succeeds but no attributes for that
-     *        fleet are returned.
+     *        value. To retrieve attributes for all current fleets, do not include this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,15 +180,15 @@ public class DescribeFleetAttributesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
      * previous call to this operation. To start at the beginning of the result set, do not specify a value. This
      * parameter is ignored when the request specifies one or a list of fleet IDs.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
-     *        a previous call to this operation. To start at the beginning of the result set, do not specify a value.
-     *        This parameter is ignored when the request specifies one or a list of fleet IDs.
+     *        A token that indicates the start of the next sequential page of results. Use the token that is returned
+     *        with a previous call to this operation. To start at the beginning of the result set, do not specify a
+     *        value. This parameter is ignored when the request specifies one or a list of fleet IDs.
      */
 
     public void setNextToken(String nextToken) {
@@ -210,12 +197,12 @@ public class DescribeFleetAttributesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
      * previous call to this operation. To start at the beginning of the result set, do not specify a value. This
      * parameter is ignored when the request specifies one or a list of fleet IDs.
      * </p>
      * 
-     * @return Token that indicates the start of the next sequential page of results. Use the token that is returned
+     * @return A token that indicates the start of the next sequential page of results. Use the token that is returned
      *         with a previous call to this operation. To start at the beginning of the result set, do not specify a
      *         value. This parameter is ignored when the request specifies one or a list of fleet IDs.
      */
@@ -226,15 +213,15 @@ public class DescribeFleetAttributesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
      * previous call to this operation. To start at the beginning of the result set, do not specify a value. This
      * parameter is ignored when the request specifies one or a list of fleet IDs.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
-     *        a previous call to this operation. To start at the beginning of the result set, do not specify a value.
-     *        This parameter is ignored when the request specifies one or a list of fleet IDs.
+     *        A token that indicates the start of the next sequential page of results. Use the token that is returned
+     *        with a previous call to this operation. To start at the beginning of the result set, do not specify a
+     *        value. This parameter is ignored when the request specifies one or a list of fleet IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

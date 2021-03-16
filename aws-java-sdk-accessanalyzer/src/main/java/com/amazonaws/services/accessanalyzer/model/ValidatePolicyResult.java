@@ -10,109 +10,109 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.mediatailor.model;
+package com.amazonaws.services.accessanalyzer.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPrograms" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ValidatePolicy" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListProgramsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
+public class ValidatePolicyResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array containing the programs for a channel.
+     * The list of findings in a policy returned by Access Analyzer based on its suite of policy checks.
      * </p>
      */
-    private java.util.List<Program> items;
+    private java.util.List<ValidatePolicyFinding> findings;
     /**
      * <p>
-     * Pagination token from the list request. Use the token to fetch the next page of results.
+     * A token used for pagination of results returned.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * An array containing the programs for a channel.
+     * The list of findings in a policy returned by Access Analyzer based on its suite of policy checks.
      * </p>
      * 
-     * @return An array containing the programs for a channel.
+     * @return The list of findings in a policy returned by Access Analyzer based on its suite of policy checks.
      */
 
-    public java.util.List<Program> getItems() {
-        return items;
+    public java.util.List<ValidatePolicyFinding> getFindings() {
+        return findings;
     }
 
     /**
      * <p>
-     * An array containing the programs for a channel.
+     * The list of findings in a policy returned by Access Analyzer based on its suite of policy checks.
      * </p>
      * 
-     * @param items
-     *        An array containing the programs for a channel.
+     * @param findings
+     *        The list of findings in a policy returned by Access Analyzer based on its suite of policy checks.
      */
 
-    public void setItems(java.util.Collection<Program> items) {
-        if (items == null) {
-            this.items = null;
+    public void setFindings(java.util.Collection<ValidatePolicyFinding> findings) {
+        if (findings == null) {
+            this.findings = null;
             return;
         }
 
-        this.items = new java.util.ArrayList<Program>(items);
+        this.findings = new java.util.ArrayList<ValidatePolicyFinding>(findings);
     }
 
     /**
      * <p>
-     * An array containing the programs for a channel.
+     * The list of findings in a policy returned by Access Analyzer based on its suite of policy checks.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the
-     * existing values.
+     * {@link #setFindings(java.util.Collection)} or {@link #withFindings(java.util.Collection)} if you want to override
+     * the existing values.
      * </p>
      * 
-     * @param items
-     *        An array containing the programs for a channel.
+     * @param findings
+     *        The list of findings in a policy returned by Access Analyzer based on its suite of policy checks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListProgramsResult withItems(Program... items) {
-        if (this.items == null) {
-            setItems(new java.util.ArrayList<Program>(items.length));
+    public ValidatePolicyResult withFindings(ValidatePolicyFinding... findings) {
+        if (this.findings == null) {
+            setFindings(new java.util.ArrayList<ValidatePolicyFinding>(findings.length));
         }
-        for (Program ele : items) {
-            this.items.add(ele);
+        for (ValidatePolicyFinding ele : findings) {
+            this.findings.add(ele);
         }
         return this;
     }
 
     /**
      * <p>
-     * An array containing the programs for a channel.
+     * The list of findings in a policy returned by Access Analyzer based on its suite of policy checks.
      * </p>
      * 
-     * @param items
-     *        An array containing the programs for a channel.
+     * @param findings
+     *        The list of findings in a policy returned by Access Analyzer based on its suite of policy checks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListProgramsResult withItems(java.util.Collection<Program> items) {
-        setItems(items);
+    public ValidatePolicyResult withFindings(java.util.Collection<ValidatePolicyFinding> findings) {
+        setFindings(findings);
         return this;
     }
 
     /**
      * <p>
-     * Pagination token from the list request. Use the token to fetch the next page of results.
+     * A token used for pagination of results returned.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token from the list request. Use the token to fetch the next page of results.
+     *        A token used for pagination of results returned.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,10 +121,10 @@ public class ListProgramsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Pagination token from the list request. Use the token to fetch the next page of results.
+     * A token used for pagination of results returned.
      * </p>
      * 
-     * @return Pagination token from the list request. Use the token to fetch the next page of results.
+     * @return A token used for pagination of results returned.
      */
 
     public String getNextToken() {
@@ -133,15 +133,15 @@ public class ListProgramsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Pagination token from the list request. Use the token to fetch the next page of results.
+     * A token used for pagination of results returned.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token from the list request. Use the token to fetch the next page of results.
+     *        A token used for pagination of results returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListProgramsResult withNextToken(String nextToken) {
+    public ValidatePolicyResult withNextToken(String nextToken) {
         setNextToken(nextToken);
         return this;
     }
@@ -158,8 +158,8 @@ public class ListProgramsResult extends com.amazonaws.AmazonWebServiceResult<com
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getItems() != null)
-            sb.append("Items: ").append(getItems()).append(",");
+        if (getFindings() != null)
+            sb.append("Findings: ").append(getFindings()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
@@ -173,12 +173,12 @@ public class ListProgramsResult extends com.amazonaws.AmazonWebServiceResult<com
         if (obj == null)
             return false;
 
-        if (obj instanceof ListProgramsResult == false)
+        if (obj instanceof ValidatePolicyResult == false)
             return false;
-        ListProgramsResult other = (ListProgramsResult) obj;
-        if (other.getItems() == null ^ this.getItems() == null)
+        ValidatePolicyResult other = (ValidatePolicyResult) obj;
+        if (other.getFindings() == null ^ this.getFindings() == null)
             return false;
-        if (other.getItems() != null && other.getItems().equals(this.getItems()) == false)
+        if (other.getFindings() != null && other.getFindings().equals(this.getFindings()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
@@ -192,15 +192,15 @@ public class ListProgramsResult extends com.amazonaws.AmazonWebServiceResult<com
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getItems() == null) ? 0 : getItems().hashCode());
+        hashCode = prime * hashCode + ((getFindings() == null) ? 0 : getFindings().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 
     @Override
-    public ListProgramsResult clone() {
+    public ValidatePolicyResult clone() {
         try {
-            return (ListProgramsResult) super.clone();
+            return (ValidatePolicyResult) super.clone();
         } catch (CloneNotSupportedException e) {
             throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
         }

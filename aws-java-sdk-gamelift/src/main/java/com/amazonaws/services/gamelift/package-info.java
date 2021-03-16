@@ -24,29 +24,37 @@
  * </p>
  * <p>
  * Get more information on these GameLift solutions in the <a
- * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift Developer Guide</a>.
+ * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/">GameLift Developer Guide</a>.
  * </p>
  * <ul>
  * <li>
  * <p>
- * Managed GameLift -- GameLift offers a fully managed service to set up and maintain computing machines for hosting,
- * manage game session and player session life cycle, and handle security, storage, and performance tracking. You can
- * use automatic scaling tools to balance hosting costs against meeting player demand., configure your game session
- * management to minimize player latency, or add FlexMatch for matchmaking.
+ * GameLift managed hosting -- GameLift offers a fully managed service to set up and maintain computing machines for
+ * hosting, manage game session and player session life cycle, and handle security, storage, and performance tracking.
+ * You can use automatic scaling tools to balance player demand and hosting costs, configure your game session
+ * management to minimize player latency, and add FlexMatch for matchmaking.
  * </p>
  * </li>
  * <li>
  * <p>
- * Managed GameLift with Realtime Servers – With GameLift Realtime Servers, you can quickly configure and set up game
- * servers for your game. Realtime Servers provides a game server framework with core Amazon GameLift infrastructure
- * already built in.
+ * Managed hosting with Realtime Servers -- With GameLift Realtime Servers, you can quickly configure and set up
+ * ready-to-go game servers for your game. Realtime Servers provides a game server framework with core GameLift
+ * infrastructure already built in. Then use the full range of GameLift managed hosting features, including FlexMatch,
+ * for your game.
  * </p>
  * </li>
  * <li>
  * <p>
- * GameLift FleetIQ – Use GameLift FleetIQ as a standalone feature while managing your own EC2 instances and Auto
- * Scaling groups for game hosting. GameLift FleetIQ provides optimizations that make low-cost Spot Instances viable for
- * game hosting.
+ * GameLift FleetIQ -- Use GameLift FleetIQ as a standalone service while hosting your games using EC2 instances and
+ * Auto Scaling groups. GameLift FleetIQ provides optimizations for game hosting, including boosting the viability of
+ * low-cost Spot Instances gaming. For a complete solution, pair the GameLift FleetIQ and FlexMatch standalone services.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * GameLift FlexMatch -- Add matchmaking to your game hosting solution. FlexMatch is a customizable matchmaking service
+ * for multiplayer games. Use FlexMatch as integrated with GameLift managed hosting or incorporate FlexMatch as a
+ * standalone service into your own hosting solution.
  * </p>
  * </li>
  * </ul>
@@ -54,8 +62,8 @@
  * <b>About this API Reference</b>
  * </p>
  * <p>
- * This reference guide describes the low-level service API for Amazon GameLift. You can find links to language-specific
- * SDK guides and the AWS CLI reference with each operation and data type topic. Useful links:
+ * This reference guide describes the low-level service API for Amazon GameLift. With each topic in this guide, you can
+ * find links to language-specific SDK guides and the AWS CLI reference. Useful links:
  * </p>
  * <ul>
  * <li>

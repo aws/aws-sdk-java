@@ -35,6 +35,8 @@ public enum GameliftActions implements Action {
     CreateBuild("gamelift:CreateBuild"),
     /** Action for the CreateFleet operation. */
     CreateFleet("gamelift:CreateFleet"),
+    /** Action for the CreateFleetLocations operation. */
+    CreateFleetLocations("gamelift:CreateFleetLocations"),
     /** Action for the CreateGameServerGroup operation. */
     CreateGameServerGroup("gamelift:CreateGameServerGroup"),
     /** Action for the CreateGameSession operation. */
@@ -61,6 +63,8 @@ public enum GameliftActions implements Action {
     DeleteBuild("gamelift:DeleteBuild"),
     /** Action for the DeleteFleet operation. */
     DeleteFleet("gamelift:DeleteFleet"),
+    /** Action for the DeleteFleetLocations operation. */
+    DeleteFleetLocations("gamelift:DeleteFleetLocations"),
     /** Action for the DeleteGameServerGroup operation. */
     DeleteGameServerGroup("gamelift:DeleteGameServerGroup"),
     /** Action for the DeleteGameSessionQueue operation. */
@@ -91,6 +95,12 @@ public enum GameliftActions implements Action {
     DescribeFleetCapacity("gamelift:DescribeFleetCapacity"),
     /** Action for the DescribeFleetEvents operation. */
     DescribeFleetEvents("gamelift:DescribeFleetEvents"),
+    /** Action for the DescribeFleetLocationAttributes operation. */
+    DescribeFleetLocationAttributes("gamelift:DescribeFleetLocationAttributes"),
+    /** Action for the DescribeFleetLocationCapacity operation. */
+    DescribeFleetLocationCapacity("gamelift:DescribeFleetLocationCapacity"),
+    /** Action for the DescribeFleetLocationUtilization operation. */
+    DescribeFleetLocationUtilization("gamelift:DescribeFleetLocationUtilization"),
     /** Action for the DescribeFleetPortSettings operation. */
     DescribeFleetPortSettings("gamelift:DescribeFleetPortSettings"),
     /** Action for the DescribeFleetUtilization operation. */

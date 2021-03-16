@@ -28,18 +28,32 @@ public class UpdateFleetCapacityResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A unique identifier for a fleet that was updated.
+     * A unique identifier for the fleet that was updated.
      * </p>
      */
     private String fleetId;
+    /**
+     * <p>
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
+     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * </p>
+     */
+    private String fleetArn;
+    /**
+     * <p>
+     * The remote location being updated, expressed as an AWS Region code, such as <code>us-west-2</code>.
+     * </p>
+     */
+    private String location;
 
     /**
      * <p>
-     * A unique identifier for a fleet that was updated.
+     * A unique identifier for the fleet that was updated.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet that was updated.
+     *        A unique identifier for the fleet that was updated.
      */
 
     public void setFleetId(String fleetId) {
@@ -48,10 +62,10 @@ public class UpdateFleetCapacityResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A unique identifier for a fleet that was updated.
+     * A unique identifier for the fleet that was updated.
      * </p>
      * 
-     * @return A unique identifier for a fleet that was updated.
+     * @return A unique identifier for the fleet that was updated.
      */
 
     public String getFleetId() {
@@ -60,16 +74,111 @@ public class UpdateFleetCapacityResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A unique identifier for a fleet that was updated.
+     * A unique identifier for the fleet that was updated.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet that was updated.
+     *        A unique identifier for the fleet that was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateFleetCapacityResult withFleetId(String fleetId) {
         setFleetId(fleetId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
+     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * </p>
+     * 
+     * @param fleetArn
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *        <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     */
+
+    public void setFleetArn(String fleetArn) {
+        this.fleetArn = fleetArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
+     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (<a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *         GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *         <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     */
+
+    public String getFleetArn() {
+        return this.fleetArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
+     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * </p>
+     * 
+     * @param fleetArn
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *        <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFleetCapacityResult withFleetArn(String fleetArn) {
+        setFleetArn(fleetArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The remote location being updated, expressed as an AWS Region code, such as <code>us-west-2</code>.
+     * </p>
+     * 
+     * @param location
+     *        The remote location being updated, expressed as an AWS Region code, such as <code>us-west-2</code>.
+     */
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    /**
+     * <p>
+     * The remote location being updated, expressed as an AWS Region code, such as <code>us-west-2</code>.
+     * </p>
+     * 
+     * @return The remote location being updated, expressed as an AWS Region code, such as <code>us-west-2</code>.
+     */
+
+    public String getLocation() {
+        return this.location;
+    }
+
+    /**
+     * <p>
+     * The remote location being updated, expressed as an AWS Region code, such as <code>us-west-2</code>.
+     * </p>
+     * 
+     * @param location
+     *        The remote location being updated, expressed as an AWS Region code, such as <code>us-west-2</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFleetCapacityResult withLocation(String location) {
+        setLocation(location);
         return this;
     }
 
@@ -86,7 +195,11 @@ public class UpdateFleetCapacityResult extends com.amazonaws.AmazonWebServiceRes
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFleetId() != null)
-            sb.append("FleetId: ").append(getFleetId());
+            sb.append("FleetId: ").append(getFleetId()).append(",");
+        if (getFleetArn() != null)
+            sb.append("FleetArn: ").append(getFleetArn()).append(",");
+        if (getLocation() != null)
+            sb.append("Location: ").append(getLocation());
         sb.append("}");
         return sb.toString();
     }
@@ -105,6 +218,14 @@ public class UpdateFleetCapacityResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getFleetId() != null && other.getFleetId().equals(this.getFleetId()) == false)
             return false;
+        if (other.getFleetArn() == null ^ this.getFleetArn() == null)
+            return false;
+        if (other.getFleetArn() != null && other.getFleetArn().equals(this.getFleetArn()) == false)
+            return false;
+        if (other.getLocation() == null ^ this.getLocation() == null)
+            return false;
+        if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
+            return false;
         return true;
     }
 
@@ -114,6 +235,8 @@ public class UpdateFleetCapacityResult extends com.amazonaws.AmazonWebServiceRes
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getFleetId() == null) ? 0 : getFleetId().hashCode());
+        hashCode = prime * hashCode + ((getFleetArn() == null) ? 0 : getFleetArn().hashCode());
+        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         return hashCode;
     }
 

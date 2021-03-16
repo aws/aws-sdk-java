@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b>
+ * <b>This data type is used with the GameLift FleetIQ and game server groups.</b>
  * </p>
  * <p>
  * An EC2 launch template that contains configuration settings and game server code to be deployed to all instances in a

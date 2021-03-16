@@ -73,6 +73,14 @@ public class GameSessionQueueJsonUnmarshaller implements Unmarshaller<GameSessio
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("FilterConfiguration", targetDepth)) {
+                    context.nextToken();
+                    gameSessionQueue.setFilterConfiguration(FilterConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("PriorityConfiguration", targetDepth)) {
+                    context.nextToken();
+                    gameSessionQueue.setPriorityConfiguration(PriorityConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

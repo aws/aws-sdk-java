@@ -30,18 +30,18 @@ public class DeleteFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A unique identifier for a fleet to be deleted. You can use either the fleet ID or ARN value.
+     * A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.
      * </p>
      */
     private String fleetId;
 
     /**
      * <p>
-     * A unique identifier for a fleet to be deleted. You can use either the fleet ID or ARN value.
+     * A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet to be deleted. You can use either the fleet ID or ARN value.
+     *        A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.
      */
 
     public void setFleetId(String fleetId) {
@@ -50,10 +50,10 @@ public class DeleteFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A unique identifier for a fleet to be deleted. You can use either the fleet ID or ARN value.
+     * A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.
      * </p>
      * 
-     * @return A unique identifier for a fleet to be deleted. You can use either the fleet ID or ARN value.
+     * @return A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.
      */
 
     public String getFleetId() {
@@ -62,11 +62,11 @@ public class DeleteFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A unique identifier for a fleet to be deleted. You can use either the fleet ID or ARN value.
+     * A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet to be deleted. You can use either the fleet ID or ARN value.
+     *        A unique identifier for the fleet to be deleted. You can use either the fleet ID or ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

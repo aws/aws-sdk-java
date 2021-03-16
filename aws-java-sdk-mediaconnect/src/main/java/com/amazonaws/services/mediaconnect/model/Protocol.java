@@ -24,7 +24,8 @@ public enum Protocol {
     RtpFec("rtp-fec"),
     Rtp("rtp"),
     ZixiPull("zixi-pull"),
-    Rist("rist");
+    Rist("rist"),
+    SrtListener("srt-listener");
 
     private String value;
 

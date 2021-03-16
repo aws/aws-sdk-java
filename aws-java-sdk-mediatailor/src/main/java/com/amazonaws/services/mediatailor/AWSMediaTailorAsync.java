@@ -642,37 +642,6 @@ public interface AWSMediaTailorAsync extends AWSMediaTailor {
 
     /**
      * <p>
-     * Retrieves a list of programs on a specific channel.
-     * </p>
-     * 
-     * @param listProgramsRequest
-     * @return A Java Future containing the result of the ListPrograms operation returned by the service.
-     * @sample AWSMediaTailorAsync.ListPrograms
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPrograms" target="_top">AWS API
-     *      Documentation</a>
-     */
-    java.util.concurrent.Future<ListProgramsResult> listProgramsAsync(ListProgramsRequest listProgramsRequest);
-
-    /**
-     * <p>
-     * Retrieves a list of programs on a specific channel.
-     * </p>
-     * 
-     * @param listProgramsRequest
-     * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
-     *        implementation of the callback methods in this interface to receive notification of successful or
-     *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the ListPrograms operation returned by the service.
-     * @sample AWSMediaTailorAsyncHandler.ListPrograms
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPrograms" target="_top">AWS API
-     *      Documentation</a>
-     */
-    java.util.concurrent.Future<ListProgramsResult> listProgramsAsync(ListProgramsRequest listProgramsRequest,
-            com.amazonaws.handlers.AsyncHandler<ListProgramsRequest, ListProgramsResult> asyncHandler);
-
-    /**
-     * <p>
      * Retrieves a list of source locations.
      * </p>
      * 

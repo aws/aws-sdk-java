@@ -9334,6 +9334,12 @@
       }, {
         "name" : "DELETED",
         "value" : "DELETED"
+      }, {
+        "name" : "UNAVAILABLE",
+        "value" : "UNAVAILABLE"
+      }, {
+        "name" : "UPDATE_FAILED",
+        "value" : "UPDATE_FAILED"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.mwaa.enum.EnvironmentStatus",

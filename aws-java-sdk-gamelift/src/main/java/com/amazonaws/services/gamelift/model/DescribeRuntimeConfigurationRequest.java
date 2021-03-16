@@ -30,7 +30,7 @@ public class DescribeRuntimeConfigurationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A unique identifier for a fleet to get the runtime configuration for. You can use either the fleet ID or ARN
+     * A unique identifier for the fleet to get the runtime configuration for. You can use either the fleet ID or ARN
      * value.
      * </p>
      */
@@ -38,12 +38,12 @@ public class DescribeRuntimeConfigurationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A unique identifier for a fleet to get the runtime configuration for. You can use either the fleet ID or ARN
+     * A unique identifier for the fleet to get the runtime configuration for. You can use either the fleet ID or ARN
      * value.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet to get the runtime configuration for. You can use either the fleet ID or
+     *        A unique identifier for the fleet to get the runtime configuration for. You can use either the fleet ID or
      *        ARN value.
      */
 
@@ -53,12 +53,12 @@ public class DescribeRuntimeConfigurationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A unique identifier for a fleet to get the runtime configuration for. You can use either the fleet ID or ARN
+     * A unique identifier for the fleet to get the runtime configuration for. You can use either the fleet ID or ARN
      * value.
      * </p>
      * 
-     * @return A unique identifier for a fleet to get the runtime configuration for. You can use either the fleet ID or
-     *         ARN value.
+     * @return A unique identifier for the fleet to get the runtime configuration for. You can use either the fleet ID
+     *         or ARN value.
      */
 
     public String getFleetId() {
@@ -67,12 +67,12 @@ public class DescribeRuntimeConfigurationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A unique identifier for a fleet to get the runtime configuration for. You can use either the fleet ID or ARN
+     * A unique identifier for the fleet to get the runtime configuration for. You can use either the fleet ID or ARN
      * value.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet to get the runtime configuration for. You can use either the fleet ID or
+     *        A unique identifier for the fleet to get the runtime configuration for. You can use either the fleet ID or
      *        ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

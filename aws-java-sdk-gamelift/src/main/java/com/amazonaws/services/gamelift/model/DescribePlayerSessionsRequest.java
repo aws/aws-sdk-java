@@ -88,7 +88,7 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
     private Integer limit;
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
      * previous call to this operation. To start at the beginning of the result set, do not specify a value. If a player
      * session ID is specified, this parameter is ignored.
      * </p>
@@ -462,15 +462,15 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
      * previous call to this operation. To start at the beginning of the result set, do not specify a value. If a player
      * session ID is specified, this parameter is ignored.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
-     *        a previous call to this operation. To start at the beginning of the result set, do not specify a value. If
-     *        a player session ID is specified, this parameter is ignored.
+     *        A token that indicates the start of the next sequential page of results. Use the token that is returned
+     *        with a previous call to this operation. To start at the beginning of the result set, do not specify a
+     *        value. If a player session ID is specified, this parameter is ignored.
      */
 
     public void setNextToken(String nextToken) {
@@ -479,12 +479,12 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
      * previous call to this operation. To start at the beginning of the result set, do not specify a value. If a player
      * session ID is specified, this parameter is ignored.
      * </p>
      * 
-     * @return Token that indicates the start of the next sequential page of results. Use the token that is returned
+     * @return A token that indicates the start of the next sequential page of results. Use the token that is returned
      *         with a previous call to this operation. To start at the beginning of the result set, do not specify a
      *         value. If a player session ID is specified, this parameter is ignored.
      */
@@ -495,15 +495,15 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
      * previous call to this operation. To start at the beginning of the result set, do not specify a value. If a player
      * session ID is specified, this parameter is ignored.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
-     *        a previous call to this operation. To start at the beginning of the result set, do not specify a value. If
-     *        a player session ID is specified, this parameter is ignored.
+     *        A token that indicates the start of the next sequential page of results. Use the token that is returned
+     *        with a previous call to this operation. To start at the beginning of the result set, do not specify a
+     *        value. If a player session ID is specified, this parameter is ignored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

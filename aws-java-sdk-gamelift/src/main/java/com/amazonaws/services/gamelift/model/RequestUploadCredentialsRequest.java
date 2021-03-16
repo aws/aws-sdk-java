@@ -30,18 +30,18 @@ public class RequestUploadCredentialsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A unique identifier for a build to get credentials for. You can use either the build ID or ARN value.
+     * A unique identifier for the build to get credentials for. You can use either the build ID or ARN value.
      * </p>
      */
     private String buildId;
 
     /**
      * <p>
-     * A unique identifier for a build to get credentials for. You can use either the build ID or ARN value.
+     * A unique identifier for the build to get credentials for. You can use either the build ID or ARN value.
      * </p>
      * 
      * @param buildId
-     *        A unique identifier for a build to get credentials for. You can use either the build ID or ARN value.
+     *        A unique identifier for the build to get credentials for. You can use either the build ID or ARN value.
      */
 
     public void setBuildId(String buildId) {
@@ -50,10 +50,10 @@ public class RequestUploadCredentialsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A unique identifier for a build to get credentials for. You can use either the build ID or ARN value.
+     * A unique identifier for the build to get credentials for. You can use either the build ID or ARN value.
      * </p>
      * 
-     * @return A unique identifier for a build to get credentials for. You can use either the build ID or ARN value.
+     * @return A unique identifier for the build to get credentials for. You can use either the build ID or ARN value.
      */
 
     public String getBuildId() {
@@ -62,11 +62,11 @@ public class RequestUploadCredentialsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A unique identifier for a build to get credentials for. You can use either the build ID or ARN value.
+     * A unique identifier for the build to get credentials for. You can use either the build ID or ARN value.
      * </p>
      * 
      * @param buildId
-     *        A unique identifier for a build to get credentials for. You can use either the build ID or ARN value.
+     *        A unique identifier for the build to get credentials for. You can use either the build ID or ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

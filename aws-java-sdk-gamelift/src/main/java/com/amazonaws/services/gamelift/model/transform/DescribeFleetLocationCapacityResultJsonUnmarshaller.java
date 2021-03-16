@@ -10,13 +10,13 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.mediatailor.model.transform;
+package com.amazonaws.services.gamelift.model.transform;
 
 import java.math.*;
 
 import javax.annotation.Generated;
 
-import com.amazonaws.services.mediatailor.model.*;
+import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
@@ -24,13 +24,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * ListProgramsResult JSON Unmarshaller
+ * DescribeFleetLocationCapacityResult JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListProgramsResultJsonUnmarshaller implements Unmarshaller<ListProgramsResult, JsonUnmarshallerContext> {
+public class DescribeFleetLocationCapacityResultJsonUnmarshaller implements Unmarshaller<DescribeFleetLocationCapacityResult, JsonUnmarshallerContext> {
 
-    public ListProgramsResult unmarshall(JsonUnmarshallerContext context) throws Exception {
-        ListProgramsResult listProgramsResult = new ListProgramsResult();
+    public DescribeFleetLocationCapacityResult unmarshall(JsonUnmarshallerContext context) throws Exception {
+        DescribeFleetLocationCapacityResult describeFleetLocationCapacityResult = new DescribeFleetLocationCapacityResult();
 
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
@@ -40,7 +40,7 @@ public class ListProgramsResultJsonUnmarshaller implements Unmarshaller<ListProg
         if (token == null)
             token = context.nextToken();
         if (token == VALUE_NULL) {
-            return listProgramsResult;
+            return describeFleetLocationCapacityResult;
         }
 
         while (true) {
@@ -48,15 +48,9 @@ public class ListProgramsResultJsonUnmarshaller implements Unmarshaller<ListProg
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("Items", targetDepth)) {
+                if (context.testExpression("FleetCapacity", targetDepth)) {
                     context.nextToken();
-                    listProgramsResult.setItems(new ListUnmarshaller<Program>(ProgramJsonUnmarshaller.getInstance())
-
-                    .unmarshall(context));
-                }
-                if (context.testExpression("NextToken", targetDepth)) {
-                    context.nextToken();
-                    listProgramsResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                    describeFleetLocationCapacityResult.setFleetCapacity(FleetCapacityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
@@ -67,14 +61,14 @@ public class ListProgramsResultJsonUnmarshaller implements Unmarshaller<ListProg
             token = context.nextToken();
         }
 
-        return listProgramsResult;
+        return describeFleetLocationCapacityResult;
     }
 
-    private static ListProgramsResultJsonUnmarshaller instance;
+    private static DescribeFleetLocationCapacityResultJsonUnmarshaller instance;
 
-    public static ListProgramsResultJsonUnmarshaller getInstance() {
+    public static DescribeFleetLocationCapacityResultJsonUnmarshaller getInstance() {
         if (instance == null)
-            instance = new ListProgramsResultJsonUnmarshaller();
+            instance = new DescribeFleetLocationCapacityResultJsonUnmarshaller();
         return instance;
     }
 }

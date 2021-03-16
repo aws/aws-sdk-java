@@ -41,6 +41,8 @@ public class UpdateFlowSourceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxBitrate").build();
     private static final MarshallingInfo<Integer> MAXLATENCY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxLatency").build();
+    private static final MarshallingInfo<Integer> MINLATENCY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("minLatency").build();
     private static final MarshallingInfo<String> PROTOCOL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("protocol").build();
     private static final MarshallingInfo<String> SOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
@@ -75,6 +77,7 @@ public class UpdateFlowSourceRequestMarshaller {
             protocolMarshaller.marshall(updateFlowSourceRequest.getIngestPort(), INGESTPORT_BINDING);
             protocolMarshaller.marshall(updateFlowSourceRequest.getMaxBitrate(), MAXBITRATE_BINDING);
             protocolMarshaller.marshall(updateFlowSourceRequest.getMaxLatency(), MAXLATENCY_BINDING);
+            protocolMarshaller.marshall(updateFlowSourceRequest.getMinLatency(), MINLATENCY_BINDING);
             protocolMarshaller.marshall(updateFlowSourceRequest.getProtocol(), PROTOCOL_BINDING);
             protocolMarshaller.marshall(updateFlowSourceRequest.getSourceArn(), SOURCEARN_BINDING);
             protocolMarshaller.marshall(updateFlowSourceRequest.getStreamId(), STREAMID_BINDING);

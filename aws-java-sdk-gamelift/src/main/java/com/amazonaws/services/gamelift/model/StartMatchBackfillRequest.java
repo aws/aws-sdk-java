@@ -46,9 +46,8 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
     private String configurationName;
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * game session and uniquely identifies it. This is the same as the game session ID.
+     * A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone
+     * matchmaking solution, this parameter is not needed.
      * </p>
      */
     private String gameSessionArn;
@@ -60,7 +59,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * PlayerID, PlayerAttributes, Team -\\- This information is maintained in the <a>GameSession</a> object,
+     * PlayerID, PlayerAttributes, Team -- This information is maintained in the <a>GameSession</a> object,
      * <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The
      * matchmaker data is in JSON syntax, formatted as a string. For more details, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data"> Match
@@ -69,7 +68,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * LatencyInMs -\\- If the matchmaker uses player latency, include a latency value, in milliseconds, for the Region
+     * LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the Region
      * that the game session is currently in. Do not include latency values for any other Region.
      * </p>
      * </li>
@@ -183,15 +182,13 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * game session and uniquely identifies it. This is the same as the game session ID.
+     * A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone
+     * matchmaking solution, this parameter is not needed.
      * </p>
      * 
      * @param gameSessionArn
-     *        Amazon Resource Name (<a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
-     *        assigned to a game session and uniquely identifies it. This is the same as the game session ID.
+     *        A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone
+     *        matchmaking solution, this parameter is not needed.
      */
 
     public void setGameSessionArn(String gameSessionArn) {
@@ -200,14 +197,12 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * game session and uniquely identifies it. This is the same as the game session ID.
+     * A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone
+     * matchmaking solution, this parameter is not needed.
      * </p>
      * 
-     * @return Amazon Resource Name (<a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
-     *         assigned to a game session and uniquely identifies it. This is the same as the game session ID.
+     * @return A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone
+     *         matchmaking solution, this parameter is not needed.
      */
 
     public String getGameSessionArn() {
@@ -216,15 +211,13 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * game session and uniquely identifies it. This is the same as the game session ID.
+     * A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone
+     * matchmaking solution, this parameter is not needed.
      * </p>
      * 
      * @param gameSessionArn
-     *        Amazon Resource Name (<a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
-     *        assigned to a game session and uniquely identifies it. This is the same as the game session ID.
+     *        A unique identifier for the game session. Use the game session ID. When using FlexMatch as a standalone
+     *        matchmaking solution, this parameter is not needed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -241,7 +234,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * PlayerID, PlayerAttributes, Team -\\- This information is maintained in the <a>GameSession</a> object,
+     * PlayerID, PlayerAttributes, Team -- This information is maintained in the <a>GameSession</a> object,
      * <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The
      * matchmaker data is in JSON syntax, formatted as a string. For more details, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data"> Match
@@ -250,7 +243,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * LatencyInMs -\\- If the matchmaker uses player latency, include a latency value, in milliseconds, for the Region
+     * LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the Region
      * that the game session is currently in. Do not include latency values for any other Region.
      * </p>
      * </li>
@@ -261,7 +254,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      *         <ul>
      *         <li>
      *         <p>
-     *         PlayerID, PlayerAttributes, Team -\\- This information is maintained in the <a>GameSession</a> object,
+     *         PlayerID, PlayerAttributes, Team -- This information is maintained in the <a>GameSession</a> object,
      *         <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The
      *         matchmaker data is in JSON syntax, formatted as a string. For more details, see <a
      *         href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
@@ -270,7 +263,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         <li>
      *         <p>
-     *         LatencyInMs -\\- If the matchmaker uses player latency, include a latency value, in milliseconds, for the
+     *         LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the
      *         Region that the game session is currently in. Do not include latency values for any other Region.
      *         </p>
      *         </li>
@@ -288,7 +281,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * PlayerID, PlayerAttributes, Team -\\- This information is maintained in the <a>GameSession</a> object,
+     * PlayerID, PlayerAttributes, Team -- This information is maintained in the <a>GameSession</a> object,
      * <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The
      * matchmaker data is in JSON syntax, formatted as a string. For more details, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data"> Match
@@ -297,7 +290,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * LatencyInMs -\\- If the matchmaker uses player latency, include a latency value, in milliseconds, for the Region
+     * LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the Region
      * that the game session is currently in. Do not include latency values for any other Region.
      * </p>
      * </li>
@@ -309,7 +302,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        PlayerID, PlayerAttributes, Team -\\- This information is maintained in the <a>GameSession</a> object,
+     *        PlayerID, PlayerAttributes, Team -- This information is maintained in the <a>GameSession</a> object,
      *        <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The
      *        matchmaker data is in JSON syntax, formatted as a string. For more details, see <a
      *        href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
@@ -318,7 +311,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        LatencyInMs -\\- If the matchmaker uses player latency, include a latency value, in milliseconds, for the
+     *        LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the
      *        Region that the game session is currently in. Do not include latency values for any other Region.
      *        </p>
      *        </li>
@@ -341,7 +334,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * PlayerID, PlayerAttributes, Team -\\- This information is maintained in the <a>GameSession</a> object,
+     * PlayerID, PlayerAttributes, Team -- This information is maintained in the <a>GameSession</a> object,
      * <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The
      * matchmaker data is in JSON syntax, formatted as a string. For more details, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data"> Match
@@ -350,7 +343,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * LatencyInMs -\\- If the matchmaker uses player latency, include a latency value, in milliseconds, for the Region
+     * LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the Region
      * that the game session is currently in. Do not include latency values for any other Region.
      * </p>
      * </li>
@@ -367,7 +360,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        PlayerID, PlayerAttributes, Team -\\- This information is maintained in the <a>GameSession</a> object,
+     *        PlayerID, PlayerAttributes, Team -- This information is maintained in the <a>GameSession</a> object,
      *        <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The
      *        matchmaker data is in JSON syntax, formatted as a string. For more details, see <a
      *        href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
@@ -376,7 +369,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        LatencyInMs -\\- If the matchmaker uses player latency, include a latency value, in milliseconds, for the
+     *        LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the
      *        Region that the game session is currently in. Do not include latency values for any other Region.
      *        </p>
      *        </li>
@@ -401,7 +394,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * PlayerID, PlayerAttributes, Team -\\- This information is maintained in the <a>GameSession</a> object,
+     * PlayerID, PlayerAttributes, Team -- This information is maintained in the <a>GameSession</a> object,
      * <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The
      * matchmaker data is in JSON syntax, formatted as a string. For more details, see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data"> Match
@@ -410,7 +403,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * LatencyInMs -\\- If the matchmaker uses player latency, include a latency value, in milliseconds, for the Region
+     * LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the Region
      * that the game session is currently in. Do not include latency values for any other Region.
      * </p>
      * </li>
@@ -422,7 +415,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        PlayerID, PlayerAttributes, Team -\\- This information is maintained in the <a>GameSession</a> object,
+     *        PlayerID, PlayerAttributes, Team -- This information is maintained in the <a>GameSession</a> object,
      *        <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The
      *        matchmaker data is in JSON syntax, formatted as a string. For more details, see <a
      *        href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
@@ -431,7 +424,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        LatencyInMs -\\- If the matchmaker uses player latency, include a latency value, in milliseconds, for the
+     *        LatencyInMs -- If the matchmaker uses player latency, include a latency value, in milliseconds, for the
      *        Region that the game session is currently in. Do not include latency values for any other Region.
      *        </p>
      *        </li>

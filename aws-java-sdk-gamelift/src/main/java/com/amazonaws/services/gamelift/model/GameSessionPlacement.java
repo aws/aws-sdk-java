@@ -99,8 +99,8 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
     private String status;
     /**
      * <p>
-     * Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game
-     * server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
+     * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>).
      * </p>
@@ -142,7 +142,7 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
     private String gameSessionRegion;
     /**
      * <p>
-     * Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
+     * A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when
      * connected to AWS Regions.
      * </p>
      */
@@ -150,7 +150,7 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
     /**
      * <p>
      * Time stamp indicating when this request was placed in the queue. Format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      */
     private java.util.Date startTime;
@@ -162,15 +162,14 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
     private java.util.Date endTime;
     /**
      * <p>
-     * IP address of the instance that is running the game session. When connecting to a Amazon GameLift game server, a
-     * client needs to reference an IP address (or DNS name) and port number. This value is set once the new game
-     * session is placed (placement status is <code>FULFILLED</code>).
+     * The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address and
+     * port number. This value is set once the new game session is placed (placement status is <code>FULFILLED</code>).
      * </p>
      */
     private String ipAddress;
     /**
      * <p>
-     * DNS identifier assigned to the instance that is running the game session. Values have the following format:
+     * The DNS identifier assigned to the instance that is running the game session. Values have the following format:
      * </p>
      * <ul>
      * <li>
@@ -194,9 +193,8 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
     private String dnsName;
     /**
      * <p>
-     * Port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP address
-     * and port number. This value is set once the new game session is placed (placement status is
-     * <code>FULFILLED</code>).
+     * The port number for the game session. To connect to a GameLift game server, an app needs both the IP address and
+     * port number. This value is set once the new game session is placed (placement status is <code>FULFILLED</code>).
      * </p>
      */
     private Integer port;
@@ -212,7 +210,7 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
     private java.util.List<PlacedPlayerSession> placedPlayerSessions;
     /**
      * <p>
-     * Set of custom game session properties, formatted as a single string value. This data is passed to a game server
+     * A set of custom game session properties, formatted as a single string value. This data is passed to a game server
      * process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>).
@@ -688,15 +686,15 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game
-     * server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
+     * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>).
      * </p>
      * 
-     * @return Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to
-     *         a game server process in the <a>GameSession</a> object with a request to start a new game session (see <a
-     *         href=
+     * @return A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
+     *         to a game server process in the <a>GameSession</a> object with a request to start a new game session (see
+     *         <a href=
      *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      *         >Start a Game Session</a>).
      */
@@ -707,16 +705,16 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game
-     * server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
+     * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>).
      * </p>
      * 
      * @param gameProperties
-     *        Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to
-     *        a game server process in the <a>GameSession</a> object with a request to start a new game session (see <a
-     *        href=
+     *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
+     *        to a game server process in the <a>GameSession</a> object with a request to start a new game session (see
+     *        <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      *        >Start a Game Session</a>).
      */
@@ -732,8 +730,8 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game
-     * server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
+     * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>).
      * </p>
@@ -744,9 +742,9 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param gameProperties
-     *        Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to
-     *        a game server process in the <a>GameSession</a> object with a request to start a new game session (see <a
-     *        href=
+     *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
+     *        to a game server process in the <a>GameSession</a> object with a request to start a new game session (see
+     *        <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      *        >Start a Game Session</a>).
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -764,16 +762,16 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game
-     * server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
+     * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>).
      * </p>
      * 
      * @param gameProperties
-     *        Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to
-     *        a game server process in the <a>GameSession</a> object with a request to start a new game session (see <a
-     *        href=
+     *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
+     *        to a game server process in the <a>GameSession</a> object with a request to start a new game session (see
+     *        <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      *        >Start a Game Session</a>).
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1010,12 +1008,12 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
+     * A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when
      * connected to AWS Regions.
      * </p>
      * 
-     * @return Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
-     *         connected to AWS Regions.
+     * @return A set of values, expressed in milliseconds, that indicates the amount of latency that a player
+     *         experiences when connected to AWS Regions.
      */
 
     public java.util.List<PlayerLatency> getPlayerLatencies() {
@@ -1024,13 +1022,13 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
+     * A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when
      * connected to AWS Regions.
      * </p>
      * 
      * @param playerLatencies
-     *        Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
-     *        connected to AWS Regions.
+     *        A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences
+     *        when connected to AWS Regions.
      */
 
     public void setPlayerLatencies(java.util.Collection<PlayerLatency> playerLatencies) {
@@ -1044,7 +1042,7 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
+     * A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when
      * connected to AWS Regions.
      * </p>
      * <p>
@@ -1054,8 +1052,8 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param playerLatencies
-     *        Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
-     *        connected to AWS Regions.
+     *        A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences
+     *        when connected to AWS Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1071,13 +1069,13 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
+     * A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when
      * connected to AWS Regions.
      * </p>
      * 
      * @param playerLatencies
-     *        Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
-     *        connected to AWS Regions.
+     *        A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences
+     *        when connected to AWS Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1089,12 +1087,12 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
     /**
      * <p>
      * Time stamp indicating when this request was placed in the queue. Format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
      * @param startTime
      *        Time stamp indicating when this request was placed in the queue. Format is a number expressed in Unix time
-     *        as milliseconds (for example "1469498468.057").
+     *        as milliseconds (for example <code>"1469498468.057"</code>).
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -1104,11 +1102,11 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
     /**
      * <p>
      * Time stamp indicating when this request was placed in the queue. Format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
      * @return Time stamp indicating when this request was placed in the queue. Format is a number expressed in Unix
-     *         time as milliseconds (for example "1469498468.057").
+     *         time as milliseconds (for example <code>"1469498468.057"</code>).
      */
 
     public java.util.Date getStartTime() {
@@ -1118,12 +1116,12 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
     /**
      * <p>
      * Time stamp indicating when this request was placed in the queue. Format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
      * @param startTime
      *        Time stamp indicating when this request was placed in the queue. Format is a number expressed in Unix time
-     *        as milliseconds (for example "1469498468.057").
+     *        as milliseconds (for example <code>"1469498468.057"</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1174,15 +1172,14 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * IP address of the instance that is running the game session. When connecting to a Amazon GameLift game server, a
-     * client needs to reference an IP address (or DNS name) and port number. This value is set once the new game
-     * session is placed (placement status is <code>FULFILLED</code>).
+     * The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address and
+     * port number. This value is set once the new game session is placed (placement status is <code>FULFILLED</code>).
      * </p>
      * 
      * @param ipAddress
-     *        IP address of the instance that is running the game session. When connecting to a Amazon GameLift game
-     *        server, a client needs to reference an IP address (or DNS name) and port number. This value is set once
-     *        the new game session is placed (placement status is <code>FULFILLED</code>).
+     *        The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address
+     *        and port number. This value is set once the new game session is placed (placement status is
+     *        <code>FULFILLED</code>).
      */
 
     public void setIpAddress(String ipAddress) {
@@ -1191,14 +1188,13 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * IP address of the instance that is running the game session. When connecting to a Amazon GameLift game server, a
-     * client needs to reference an IP address (or DNS name) and port number. This value is set once the new game
-     * session is placed (placement status is <code>FULFILLED</code>).
+     * The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address and
+     * port number. This value is set once the new game session is placed (placement status is <code>FULFILLED</code>).
      * </p>
      * 
-     * @return IP address of the instance that is running the game session. When connecting to a Amazon GameLift game
-     *         server, a client needs to reference an IP address (or DNS name) and port number. This value is set once
-     *         the new game session is placed (placement status is <code>FULFILLED</code>).
+     * @return The IP address of the game session. To connect to a GameLift game server, an app needs both the IP
+     *         address and port number. This value is set once the new game session is placed (placement status is
+     *         <code>FULFILLED</code>).
      */
 
     public String getIpAddress() {
@@ -1207,15 +1203,14 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * IP address of the instance that is running the game session. When connecting to a Amazon GameLift game server, a
-     * client needs to reference an IP address (or DNS name) and port number. This value is set once the new game
-     * session is placed (placement status is <code>FULFILLED</code>).
+     * The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address and
+     * port number. This value is set once the new game session is placed (placement status is <code>FULFILLED</code>).
      * </p>
      * 
      * @param ipAddress
-     *        IP address of the instance that is running the game session. When connecting to a Amazon GameLift game
-     *        server, a client needs to reference an IP address (or DNS name) and port number. This value is set once
-     *        the new game session is placed (placement status is <code>FULFILLED</code>).
+     *        The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address
+     *        and port number. This value is set once the new game session is placed (placement status is
+     *        <code>FULFILLED</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1226,7 +1221,7 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * DNS identifier assigned to the instance that is running the game session. Values have the following format:
+     * The DNS identifier assigned to the instance that is running the game session. Values have the following format:
      * </p>
      * <ul>
      * <li>
@@ -1248,7 +1243,7 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param dnsName
-     *        DNS identifier assigned to the instance that is running the game session. Values have the following
+     *        The DNS identifier assigned to the instance that is running the game session. Values have the following
      *        format:</p>
      *        <ul>
      *        <li>
@@ -1275,7 +1270,7 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * DNS identifier assigned to the instance that is running the game session. Values have the following format:
+     * The DNS identifier assigned to the instance that is running the game session. Values have the following format:
      * </p>
      * <ul>
      * <li>
@@ -1296,7 +1291,7 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
      * address.
      * </p>
      * 
-     * @return DNS identifier assigned to the instance that is running the game session. Values have the following
+     * @return The DNS identifier assigned to the instance that is running the game session. Values have the following
      *         format:</p>
      *         <ul>
      *         <li>
@@ -1323,7 +1318,7 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * DNS identifier assigned to the instance that is running the game session. Values have the following format:
+     * The DNS identifier assigned to the instance that is running the game session. Values have the following format:
      * </p>
      * <ul>
      * <li>
@@ -1345,7 +1340,7 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param dnsName
-     *        DNS identifier assigned to the instance that is running the game session. Values have the following
+     *        The DNS identifier assigned to the instance that is running the game session. Values have the following
      *        format:</p>
      *        <ul>
      *        <li>
@@ -1374,13 +1369,12 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP address
-     * and port number. This value is set once the new game session is placed (placement status is
-     * <code>FULFILLED</code>).
+     * The port number for the game session. To connect to a GameLift game server, an app needs both the IP address and
+     * port number. This value is set once the new game session is placed (placement status is <code>FULFILLED</code>).
      * </p>
      * 
      * @param port
-     *        Port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP
+     *        The port number for the game session. To connect to a GameLift game server, an app needs both the IP
      *        address and port number. This value is set once the new game session is placed (placement status is
      *        <code>FULFILLED</code>).
      */
@@ -1391,12 +1385,11 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP address
-     * and port number. This value is set once the new game session is placed (placement status is
-     * <code>FULFILLED</code>).
+     * The port number for the game session. To connect to a GameLift game server, an app needs both the IP address and
+     * port number. This value is set once the new game session is placed (placement status is <code>FULFILLED</code>).
      * </p>
      * 
-     * @return Port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP
+     * @return The port number for the game session. To connect to a GameLift game server, an app needs both the IP
      *         address and port number. This value is set once the new game session is placed (placement status is
      *         <code>FULFILLED</code>).
      */
@@ -1407,13 +1400,12 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP address
-     * and port number. This value is set once the new game session is placed (placement status is
-     * <code>FULFILLED</code>).
+     * The port number for the game session. To connect to a GameLift game server, an app needs both the IP address and
+     * port number. This value is set once the new game session is placed (placement status is <code>FULFILLED</code>).
      * </p>
      * 
      * @param port
-     *        Port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP
+     *        The port number for the game session. To connect to a GameLift game server, an app needs both the IP
      *        address and port number. This value is set once the new game session is placed (placement status is
      *        <code>FULFILLED</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1528,14 +1520,14 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Set of custom game session properties, formatted as a single string value. This data is passed to a game server
+     * A set of custom game session properties, formatted as a single string value. This data is passed to a game server
      * process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>).
      * </p>
      * 
      * @param gameSessionData
-     *        Set of custom game session properties, formatted as a single string value. This data is passed to a game
+     *        A set of custom game session properties, formatted as a single string value. This data is passed to a game
      *        server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      *        >Start a Game Session</a>).
@@ -1547,14 +1539,15 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Set of custom game session properties, formatted as a single string value. This data is passed to a game server
+     * A set of custom game session properties, formatted as a single string value. This data is passed to a game server
      * process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>).
      * </p>
      * 
-     * @return Set of custom game session properties, formatted as a single string value. This data is passed to a game
-     *         server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     * @return A set of custom game session properties, formatted as a single string value. This data is passed to a
+     *         game server process in the <a>GameSession</a> object with a request to start a new game session (see <a
+     *         href=
      *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      *         >Start a Game Session</a>).
      */
@@ -1565,14 +1558,14 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Set of custom game session properties, formatted as a single string value. This data is passed to a game server
+     * A set of custom game session properties, formatted as a single string value. This data is passed to a game server
      * process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>).
      * </p>
      * 
      * @param gameSessionData
-     *        Set of custom game session properties, formatted as a single string value. This data is passed to a game
+     *        A set of custom game session properties, formatted as a single string value. This data is passed to a game
      *        server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      *        >Start a Game Session</a>).

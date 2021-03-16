@@ -28,10 +28,133 @@ public class DescribeFleetPortSettingsResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
+     * A unique identifier for the fleet that was requested.
+     * </p>
+     */
+    private String fleetId;
+    /**
+     * <p>
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
+     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * </p>
+     */
+    private String fleetArn;
+    /**
+     * <p>
      * The port settings for the requested fleet ID.
      * </p>
      */
     private java.util.List<IpPermission> inboundPermissions;
+    /**
+     * <p>
+     * The current status of updates to the fleet's port settings in the requested fleet location. A status of
+     * <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed
+     * for the location.
+     * </p>
+     */
+    private String updateStatus;
+    /**
+     * <p>
+     * The requested fleet location, expressed as an AWS Region code, such as <code>us-west-2</code>.
+     * </p>
+     */
+    private String location;
+
+    /**
+     * <p>
+     * A unique identifier for the fleet that was requested.
+     * </p>
+     * 
+     * @param fleetId
+     *        A unique identifier for the fleet that was requested.
+     */
+
+    public void setFleetId(String fleetId) {
+        this.fleetId = fleetId;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the fleet that was requested.
+     * </p>
+     * 
+     * @return A unique identifier for the fleet that was requested.
+     */
+
+    public String getFleetId() {
+        return this.fleetId;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the fleet that was requested.
+     * </p>
+     * 
+     * @param fleetId
+     *        A unique identifier for the fleet that was requested.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeFleetPortSettingsResult withFleetId(String fleetId) {
+        setFleetId(fleetId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
+     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * </p>
+     * 
+     * @param fleetArn
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *        <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     */
+
+    public void setFleetArn(String fleetArn) {
+        this.fleetArn = fleetArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
+     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (<a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *         GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *         <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     */
+
+    public String getFleetArn() {
+        return this.fleetArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
+     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * </p>
+     * 
+     * @param fleetArn
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *        <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeFleetPortSettingsResult withFleetArn(String fleetArn) {
+        setFleetArn(fleetArn);
+        return this;
+    }
 
     /**
      * <p>
@@ -104,6 +227,121 @@ public class DescribeFleetPortSettingsResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * The current status of updates to the fleet's port settings in the requested fleet location. A status of
+     * <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed
+     * for the location.
+     * </p>
+     * 
+     * @param updateStatus
+     *        The current status of updates to the fleet's port settings in the requested fleet location. A status of
+     *        <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been
+     *        completed for the location.
+     * @see LocationUpdateStatus
+     */
+
+    public void setUpdateStatus(String updateStatus) {
+        this.updateStatus = updateStatus;
+    }
+
+    /**
+     * <p>
+     * The current status of updates to the fleet's port settings in the requested fleet location. A status of
+     * <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed
+     * for the location.
+     * </p>
+     * 
+     * @return The current status of updates to the fleet's port settings in the requested fleet location. A status of
+     *         <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been
+     *         completed for the location.
+     * @see LocationUpdateStatus
+     */
+
+    public String getUpdateStatus() {
+        return this.updateStatus;
+    }
+
+    /**
+     * <p>
+     * The current status of updates to the fleet's port settings in the requested fleet location. A status of
+     * <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed
+     * for the location.
+     * </p>
+     * 
+     * @param updateStatus
+     *        The current status of updates to the fleet's port settings in the requested fleet location. A status of
+     *        <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been
+     *        completed for the location.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LocationUpdateStatus
+     */
+
+    public DescribeFleetPortSettingsResult withUpdateStatus(String updateStatus) {
+        setUpdateStatus(updateStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current status of updates to the fleet's port settings in the requested fleet location. A status of
+     * <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed
+     * for the location.
+     * </p>
+     * 
+     * @param updateStatus
+     *        The current status of updates to the fleet's port settings in the requested fleet location. A status of
+     *        <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been
+     *        completed for the location.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LocationUpdateStatus
+     */
+
+    public DescribeFleetPortSettingsResult withUpdateStatus(LocationUpdateStatus updateStatus) {
+        this.updateStatus = updateStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The requested fleet location, expressed as an AWS Region code, such as <code>us-west-2</code>.
+     * </p>
+     * 
+     * @param location
+     *        The requested fleet location, expressed as an AWS Region code, such as <code>us-west-2</code>.
+     */
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    /**
+     * <p>
+     * The requested fleet location, expressed as an AWS Region code, such as <code>us-west-2</code>.
+     * </p>
+     * 
+     * @return The requested fleet location, expressed as an AWS Region code, such as <code>us-west-2</code>.
+     */
+
+    public String getLocation() {
+        return this.location;
+    }
+
+    /**
+     * <p>
+     * The requested fleet location, expressed as an AWS Region code, such as <code>us-west-2</code>.
+     * </p>
+     * 
+     * @param location
+     *        The requested fleet location, expressed as an AWS Region code, such as <code>us-west-2</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeFleetPortSettingsResult withLocation(String location) {
+        setLocation(location);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -115,8 +353,16 @@ public class DescribeFleetPortSettingsResult extends com.amazonaws.AmazonWebServ
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getFleetId() != null)
+            sb.append("FleetId: ").append(getFleetId()).append(",");
+        if (getFleetArn() != null)
+            sb.append("FleetArn: ").append(getFleetArn()).append(",");
         if (getInboundPermissions() != null)
-            sb.append("InboundPermissions: ").append(getInboundPermissions());
+            sb.append("InboundPermissions: ").append(getInboundPermissions()).append(",");
+        if (getUpdateStatus() != null)
+            sb.append("UpdateStatus: ").append(getUpdateStatus()).append(",");
+        if (getLocation() != null)
+            sb.append("Location: ").append(getLocation());
         sb.append("}");
         return sb.toString();
     }
@@ -131,9 +377,25 @@ public class DescribeFleetPortSettingsResult extends com.amazonaws.AmazonWebServ
         if (obj instanceof DescribeFleetPortSettingsResult == false)
             return false;
         DescribeFleetPortSettingsResult other = (DescribeFleetPortSettingsResult) obj;
+        if (other.getFleetId() == null ^ this.getFleetId() == null)
+            return false;
+        if (other.getFleetId() != null && other.getFleetId().equals(this.getFleetId()) == false)
+            return false;
+        if (other.getFleetArn() == null ^ this.getFleetArn() == null)
+            return false;
+        if (other.getFleetArn() != null && other.getFleetArn().equals(this.getFleetArn()) == false)
+            return false;
         if (other.getInboundPermissions() == null ^ this.getInboundPermissions() == null)
             return false;
         if (other.getInboundPermissions() != null && other.getInboundPermissions().equals(this.getInboundPermissions()) == false)
+            return false;
+        if (other.getUpdateStatus() == null ^ this.getUpdateStatus() == null)
+            return false;
+        if (other.getUpdateStatus() != null && other.getUpdateStatus().equals(this.getUpdateStatus()) == false)
+            return false;
+        if (other.getLocation() == null ^ this.getLocation() == null)
+            return false;
+        if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
             return false;
         return true;
     }
@@ -143,7 +405,11 @@ public class DescribeFleetPortSettingsResult extends com.amazonaws.AmazonWebServ
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getFleetId() == null) ? 0 : getFleetId().hashCode());
+        hashCode = prime * hashCode + ((getFleetArn() == null) ? 0 : getFleetArn().hashCode());
         hashCode = prime * hashCode + ((getInboundPermissions() == null) ? 0 : getInboundPermissions().hashCode());
+        hashCode = prime * hashCode + ((getUpdateStatus() == null) ? 0 : getUpdateStatus().hashCode());
+        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         return hashCode;
     }
 

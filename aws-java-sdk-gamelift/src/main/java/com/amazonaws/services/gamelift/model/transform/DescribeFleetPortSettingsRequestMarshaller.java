@@ -29,6 +29,8 @@ public class DescribeFleetPortSettingsRequestMarshaller {
 
     private static final MarshallingInfo<String> FLEETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("FleetId").build();
+    private static final MarshallingInfo<String> LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Location").build();
 
     private static final DescribeFleetPortSettingsRequestMarshaller instance = new DescribeFleetPortSettingsRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class DescribeFleetPortSettingsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(describeFleetPortSettingsRequest.getFleetId(), FLEETID_BINDING);
+            protocolMarshaller.marshall(describeFleetPortSettingsRequest.getLocation(), LOCATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -25,7 +25,9 @@ public enum EnvironmentStatus {
     AVAILABLE("AVAILABLE"),
     UPDATING("UPDATING"),
     DELETING("DELETING"),
-    DELETED("DELETED");
+    DELETED("DELETED"),
+    UNAVAILABLE("UNAVAILABLE"),
+    UPDATE_FAILED("UPDATE_FAILED");
 
     private String value;
 

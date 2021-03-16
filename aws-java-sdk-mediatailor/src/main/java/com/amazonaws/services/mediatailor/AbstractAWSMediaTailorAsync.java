@@ -275,19 +275,6 @@ public class AbstractAWSMediaTailorAsync extends AbstractAWSMediaTailor implemen
     }
 
     @Override
-    public java.util.concurrent.Future<ListProgramsResult> listProgramsAsync(ListProgramsRequest request) {
-
-        return listProgramsAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListProgramsResult> listProgramsAsync(ListProgramsRequest request,
-            com.amazonaws.handlers.AsyncHandler<ListProgramsRequest, ListProgramsResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
     public java.util.concurrent.Future<ListSourceLocationsResult> listSourceLocationsAsync(ListSourceLocationsRequest request) {
 
         return listSourceLocationsAsync(request, null);

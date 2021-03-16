@@ -44,23 +44,39 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
     private Integer timeoutInSeconds;
     /**
      * <p>
-     * A collection of latency policies to apply when processing game sessions placement requests with player latency
-     * information. Multiple policies are evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, the policy is enforced at the start of the game session placement for the
-     * duration period. With multiple policies, each policy is enforced consecutively for its duration period. For
-     * example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the
-     * remainder of the placement. When updating policies, provide a complete collection of policies.
+     * A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most
+     * players in a game session. These policies ensure that no individual player can be placed into a game with
+     * unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time.
+     * Multiple policies are applied based on their maximum allowed latency, starting with the lowest value. When
+     * updating policies, provide a complete collection of policies.
      * </p>
      */
     private java.util.List<PlayerLatencyPolicy> playerLatencyPolicies;
     /**
      * <p>
-     * A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified
-     * by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order. When updating
-     * this list, provide a complete list of destinations.
+     * A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
+     * Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement
+     * preference. When updating this list, provide a complete list of destinations.
      * </p>
      */
     private java.util.List<GameSessionQueueDestination> destinations;
+    /**
+     * <p>
+     * A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of
+     * AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in
+     * any queue location. To remove an existing filter configuration, pass in an empty set.
+     * </p>
+     */
+    private FilterConfiguration filterConfiguration;
+    /**
+     * <p>
+     * Custom settings to use when prioritizing destinations and locations for game session placements. This
+     * configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named
+     * will be automatically applied at the end of the prioritization process. To remove an existing priority
+     * configuration, pass in an empty set.
+     * </p>
+     */
+    private PriorityConfiguration priorityConfiguration;
 
     /**
      * <p>
@@ -156,21 +172,18 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A collection of latency policies to apply when processing game sessions placement requests with player latency
-     * information. Multiple policies are evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, the policy is enforced at the start of the game session placement for the
-     * duration period. With multiple policies, each policy is enforced consecutively for its duration period. For
-     * example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the
-     * remainder of the placement. When updating policies, provide a complete collection of policies.
+     * A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most
+     * players in a game session. These policies ensure that no individual player can be placed into a game with
+     * unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time.
+     * Multiple policies are applied based on their maximum allowed latency, starting with the lowest value. When
+     * updating policies, provide a complete collection of policies.
      * </p>
      * 
-     * @return A collection of latency policies to apply when processing game sessions placement requests with player
-     *         latency information. Multiple policies are evaluated in order of the maximum latency value, starting with
-     *         the lowest latency values. With just one policy, the policy is enforced at the start of the game session
-     *         placement for the duration period. With multiple policies, each policy is enforced consecutively for its
-     *         duration period. For example, a queue might enforce a 60-second policy followed by a 120-second policy,
-     *         and then no policy for the remainder of the placement. When updating policies, provide a complete
-     *         collection of policies.
+     * @return A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for
+     *         most players in a game session. These policies ensure that no individual player can be placed into a game
+     *         with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a
+     *         time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest
+     *         value. When updating policies, provide a complete collection of policies.
      */
 
     public java.util.List<PlayerLatencyPolicy> getPlayerLatencyPolicies() {
@@ -179,22 +192,19 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A collection of latency policies to apply when processing game sessions placement requests with player latency
-     * information. Multiple policies are evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, the policy is enforced at the start of the game session placement for the
-     * duration period. With multiple policies, each policy is enforced consecutively for its duration period. For
-     * example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the
-     * remainder of the placement. When updating policies, provide a complete collection of policies.
+     * A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most
+     * players in a game session. These policies ensure that no individual player can be placed into a game with
+     * unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time.
+     * Multiple policies are applied based on their maximum allowed latency, starting with the lowest value. When
+     * updating policies, provide a complete collection of policies.
      * </p>
      * 
      * @param playerLatencyPolicies
-     *        A collection of latency policies to apply when processing game sessions placement requests with player
-     *        latency information. Multiple policies are evaluated in order of the maximum latency value, starting with
-     *        the lowest latency values. With just one policy, the policy is enforced at the start of the game session
-     *        placement for the duration period. With multiple policies, each policy is enforced consecutively for its
-     *        duration period. For example, a queue might enforce a 60-second policy followed by a 120-second policy,
-     *        and then no policy for the remainder of the placement. When updating policies, provide a complete
-     *        collection of policies.
+     *        A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for
+     *        most players in a game session. These policies ensure that no individual player can be placed into a game
+     *        with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a
+     *        time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest
+     *        value. When updating policies, provide a complete collection of policies.
      */
 
     public void setPlayerLatencyPolicies(java.util.Collection<PlayerLatencyPolicy> playerLatencyPolicies) {
@@ -208,12 +218,11 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A collection of latency policies to apply when processing game sessions placement requests with player latency
-     * information. Multiple policies are evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, the policy is enforced at the start of the game session placement for the
-     * duration period. With multiple policies, each policy is enforced consecutively for its duration period. For
-     * example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the
-     * remainder of the placement. When updating policies, provide a complete collection of policies.
+     * A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most
+     * players in a game session. These policies ensure that no individual player can be placed into a game with
+     * unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time.
+     * Multiple policies are applied based on their maximum allowed latency, starting with the lowest value. When
+     * updating policies, provide a complete collection of policies.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -222,13 +231,11 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param playerLatencyPolicies
-     *        A collection of latency policies to apply when processing game sessions placement requests with player
-     *        latency information. Multiple policies are evaluated in order of the maximum latency value, starting with
-     *        the lowest latency values. With just one policy, the policy is enforced at the start of the game session
-     *        placement for the duration period. With multiple policies, each policy is enforced consecutively for its
-     *        duration period. For example, a queue might enforce a 60-second policy followed by a 120-second policy,
-     *        and then no policy for the remainder of the placement. When updating policies, provide a complete
-     *        collection of policies.
+     *        A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for
+     *        most players in a game session. These policies ensure that no individual player can be placed into a game
+     *        with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a
+     *        time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest
+     *        value. When updating policies, provide a complete collection of policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -244,22 +251,19 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A collection of latency policies to apply when processing game sessions placement requests with player latency
-     * information. Multiple policies are evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, the policy is enforced at the start of the game session placement for the
-     * duration period. With multiple policies, each policy is enforced consecutively for its duration period. For
-     * example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the
-     * remainder of the placement. When updating policies, provide a complete collection of policies.
+     * A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most
+     * players in a game session. These policies ensure that no individual player can be placed into a game with
+     * unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time.
+     * Multiple policies are applied based on their maximum allowed latency, starting with the lowest value. When
+     * updating policies, provide a complete collection of policies.
      * </p>
      * 
      * @param playerLatencyPolicies
-     *        A collection of latency policies to apply when processing game sessions placement requests with player
-     *        latency information. Multiple policies are evaluated in order of the maximum latency value, starting with
-     *        the lowest latency values. With just one policy, the policy is enforced at the start of the game session
-     *        placement for the duration period. With multiple policies, each policy is enforced consecutively for its
-     *        duration period. For example, a queue might enforce a 60-second policy followed by a 120-second policy,
-     *        and then no policy for the remainder of the placement. When updating policies, provide a complete
-     *        collection of policies.
+     *        A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for
+     *        most players in a game session. These policies ensure that no individual player can be placed into a game
+     *        with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a
+     *        time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest
+     *        value. When updating policies, provide a complete collection of policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -270,14 +274,14 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified
-     * by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order. When updating
-     * this list, provide a complete list of destinations.
+     * A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
+     * Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement
+     * preference. When updating this list, provide a complete list of destinations.
      * </p>
      * 
-     * @return A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
-     *         identified by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference
-     *         order. When updating this list, provide a complete list of destinations.
+     * @return A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the
+     *         queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of
+     *         placement preference. When updating this list, provide a complete list of destinations.
      */
 
     public java.util.List<GameSessionQueueDestination> getDestinations() {
@@ -286,15 +290,15 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified
-     * by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order. When updating
-     * this list, provide a complete list of destinations.
+     * A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
+     * Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement
+     * preference. When updating this list, provide a complete list of destinations.
      * </p>
      * 
      * @param destinations
-     *        A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
-     *        identified by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference
-     *        order. When updating this list, provide a complete list of destinations.
+     *        A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the
+     *        queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of
+     *        placement preference. When updating this list, provide a complete list of destinations.
      */
 
     public void setDestinations(java.util.Collection<GameSessionQueueDestination> destinations) {
@@ -308,9 +312,9 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified
-     * by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order. When updating
-     * this list, provide a complete list of destinations.
+     * A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
+     * Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement
+     * preference. When updating this list, provide a complete list of destinations.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -319,9 +323,9 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param destinations
-     *        A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
-     *        identified by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference
-     *        order. When updating this list, provide a complete list of destinations.
+     *        A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the
+     *        queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of
+     *        placement preference. When updating this list, provide a complete list of destinations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -337,20 +341,130 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified
-     * by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order. When updating
-     * this list, provide a complete list of destinations.
+     * A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
+     * Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement
+     * preference. When updating this list, provide a complete list of destinations.
      * </p>
      * 
      * @param destinations
-     *        A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
-     *        identified by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference
-     *        order. When updating this list, provide a complete list of destinations.
+     *        A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the
+     *        queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of
+     *        placement preference. When updating this list, provide a complete list of destinations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateGameSessionQueueRequest withDestinations(java.util.Collection<GameSessionQueueDestination> destinations) {
         setDestinations(destinations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of
+     * AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in
+     * any queue location. To remove an existing filter configuration, pass in an empty set.
+     * </p>
+     * 
+     * @param filterConfiguration
+     *        A list of locations where a queue is allowed to place new game sessions. Locations are specified in the
+     *        form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can
+     *        be placed in any queue location. To remove an existing filter configuration, pass in an empty set.
+     */
+
+    public void setFilterConfiguration(FilterConfiguration filterConfiguration) {
+        this.filterConfiguration = filterConfiguration;
+    }
+
+    /**
+     * <p>
+     * A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of
+     * AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in
+     * any queue location. To remove an existing filter configuration, pass in an empty set.
+     * </p>
+     * 
+     * @return A list of locations where a queue is allowed to place new game sessions. Locations are specified in the
+     *         form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can
+     *         be placed in any queue location. To remove an existing filter configuration, pass in an empty set.
+     */
+
+    public FilterConfiguration getFilterConfiguration() {
+        return this.filterConfiguration;
+    }
+
+    /**
+     * <p>
+     * A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of
+     * AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in
+     * any queue location. To remove an existing filter configuration, pass in an empty set.
+     * </p>
+     * 
+     * @param filterConfiguration
+     *        A list of locations where a queue is allowed to place new game sessions. Locations are specified in the
+     *        form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can
+     *        be placed in any queue location. To remove an existing filter configuration, pass in an empty set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateGameSessionQueueRequest withFilterConfiguration(FilterConfiguration filterConfiguration) {
+        setFilterConfiguration(filterConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Custom settings to use when prioritizing destinations and locations for game session placements. This
+     * configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named
+     * will be automatically applied at the end of the prioritization process. To remove an existing priority
+     * configuration, pass in an empty set.
+     * </p>
+     * 
+     * @param priorityConfiguration
+     *        Custom settings to use when prioritizing destinations and locations for game session placements. This
+     *        configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly
+     *        named will be automatically applied at the end of the prioritization process. To remove an existing
+     *        priority configuration, pass in an empty set.
+     */
+
+    public void setPriorityConfiguration(PriorityConfiguration priorityConfiguration) {
+        this.priorityConfiguration = priorityConfiguration;
+    }
+
+    /**
+     * <p>
+     * Custom settings to use when prioritizing destinations and locations for game session placements. This
+     * configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named
+     * will be automatically applied at the end of the prioritization process. To remove an existing priority
+     * configuration, pass in an empty set.
+     * </p>
+     * 
+     * @return Custom settings to use when prioritizing destinations and locations for game session placements. This
+     *         configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly
+     *         named will be automatically applied at the end of the prioritization process. To remove an existing
+     *         priority configuration, pass in an empty set.
+     */
+
+    public PriorityConfiguration getPriorityConfiguration() {
+        return this.priorityConfiguration;
+    }
+
+    /**
+     * <p>
+     * Custom settings to use when prioritizing destinations and locations for game session placements. This
+     * configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named
+     * will be automatically applied at the end of the prioritization process. To remove an existing priority
+     * configuration, pass in an empty set.
+     * </p>
+     * 
+     * @param priorityConfiguration
+     *        Custom settings to use when prioritizing destinations and locations for game session placements. This
+     *        configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly
+     *        named will be automatically applied at the end of the prioritization process. To remove an existing
+     *        priority configuration, pass in an empty set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateGameSessionQueueRequest withPriorityConfiguration(PriorityConfiguration priorityConfiguration) {
+        setPriorityConfiguration(priorityConfiguration);
         return this;
     }
 
@@ -373,7 +487,11 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
         if (getPlayerLatencyPolicies() != null)
             sb.append("PlayerLatencyPolicies: ").append(getPlayerLatencyPolicies()).append(",");
         if (getDestinations() != null)
-            sb.append("Destinations: ").append(getDestinations());
+            sb.append("Destinations: ").append(getDestinations()).append(",");
+        if (getFilterConfiguration() != null)
+            sb.append("FilterConfiguration: ").append(getFilterConfiguration()).append(",");
+        if (getPriorityConfiguration() != null)
+            sb.append("PriorityConfiguration: ").append(getPriorityConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -404,6 +522,14 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getDestinations() != null && other.getDestinations().equals(this.getDestinations()) == false)
             return false;
+        if (other.getFilterConfiguration() == null ^ this.getFilterConfiguration() == null)
+            return false;
+        if (other.getFilterConfiguration() != null && other.getFilterConfiguration().equals(this.getFilterConfiguration()) == false)
+            return false;
+        if (other.getPriorityConfiguration() == null ^ this.getPriorityConfiguration() == null)
+            return false;
+        if (other.getPriorityConfiguration() != null && other.getPriorityConfiguration().equals(this.getPriorityConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -416,6 +542,8 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getTimeoutInSeconds() == null) ? 0 : getTimeoutInSeconds().hashCode());
         hashCode = prime * hashCode + ((getPlayerLatencyPolicies() == null) ? 0 : getPlayerLatencyPolicies().hashCode());
         hashCode = prime * hashCode + ((getDestinations() == null) ? 0 : getDestinations().hashCode());
+        hashCode = prime * hashCode + ((getFilterConfiguration() == null) ? 0 : getFilterConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getPriorityConfiguration() == null) ? 0 : getPriorityConfiguration().hashCode());
         return hashCode;
     }
 

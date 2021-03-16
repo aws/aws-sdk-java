@@ -44,13 +44,10 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String version;
     /**
      * <p>
-     * The location where your game build files are stored. Use this parameter only when creating a build using files
-     * that are stored in an S3 bucket that you own. Identify an S3 bucket name and key, which must in the same Region
-     * where you're creating a build. This parameter must also specify the ARN for an IAM role that you've set up to
-     * give Amazon GameLift access your S3 bucket. To call this operation with a storage location, you must have IAM
-     * PassRole permission. For more details on IAM roles and PassRole permissions, see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html"> Set up a role for
-     * GameLift access</a>.
+     * Information indicating where your game build files are stored. Use this parameter only when creating a build with
+     * files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and
+     * key. The location must also specify a role ARN that you set up to allow Amazon GameLift to access your Amazon S3
+     * bucket. The S3 bucket and your new build must be in the same Region.
      * </p>
      */
     private S3Location storageLocation;
@@ -169,23 +166,17 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The location where your game build files are stored. Use this parameter only when creating a build using files
-     * that are stored in an S3 bucket that you own. Identify an S3 bucket name and key, which must in the same Region
-     * where you're creating a build. This parameter must also specify the ARN for an IAM role that you've set up to
-     * give Amazon GameLift access your S3 bucket. To call this operation with a storage location, you must have IAM
-     * PassRole permission. For more details on IAM roles and PassRole permissions, see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html"> Set up a role for
-     * GameLift access</a>.
+     * Information indicating where your game build files are stored. Use this parameter only when creating a build with
+     * files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and
+     * key. The location must also specify a role ARN that you set up to allow Amazon GameLift to access your Amazon S3
+     * bucket. The S3 bucket and your new build must be in the same Region.
      * </p>
      * 
      * @param storageLocation
-     *        The location where your game build files are stored. Use this parameter only when creating a build using
-     *        files that are stored in an S3 bucket that you own. Identify an S3 bucket name and key, which must in the
-     *        same Region where you're creating a build. This parameter must also specify the ARN for an IAM role that
-     *        you've set up to give Amazon GameLift access your S3 bucket. To call this operation with a storage
-     *        location, you must have IAM PassRole permission. For more details on IAM roles and PassRole permissions,
-     *        see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html"> Set up a
-     *        role for GameLift access</a>.
+     *        Information indicating where your game build files are stored. Use this parameter only when creating a
+     *        build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon
+     *        S3 bucket name and key. The location must also specify a role ARN that you set up to allow Amazon GameLift
+     *        to access your Amazon S3 bucket. The S3 bucket and your new build must be in the same Region.
      */
 
     public void setStorageLocation(S3Location storageLocation) {
@@ -194,22 +185,16 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The location where your game build files are stored. Use this parameter only when creating a build using files
-     * that are stored in an S3 bucket that you own. Identify an S3 bucket name and key, which must in the same Region
-     * where you're creating a build. This parameter must also specify the ARN for an IAM role that you've set up to
-     * give Amazon GameLift access your S3 bucket. To call this operation with a storage location, you must have IAM
-     * PassRole permission. For more details on IAM roles and PassRole permissions, see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html"> Set up a role for
-     * GameLift access</a>.
+     * Information indicating where your game build files are stored. Use this parameter only when creating a build with
+     * files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and
+     * key. The location must also specify a role ARN that you set up to allow Amazon GameLift to access your Amazon S3
+     * bucket. The S3 bucket and your new build must be in the same Region.
      * </p>
      * 
-     * @return The location where your game build files are stored. Use this parameter only when creating a build using
-     *         files that are stored in an S3 bucket that you own. Identify an S3 bucket name and key, which must in the
-     *         same Region where you're creating a build. This parameter must also specify the ARN for an IAM role that
-     *         you've set up to give Amazon GameLift access your S3 bucket. To call this operation with a storage
-     *         location, you must have IAM PassRole permission. For more details on IAM roles and PassRole permissions,
-     *         see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html"> Set up a
-     *         role for GameLift access</a>.
+     * @return Information indicating where your game build files are stored. Use this parameter only when creating a
+     *         build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon
+     *         S3 bucket name and key. The location must also specify a role ARN that you set up to allow Amazon
+     *         GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must be in the same Region.
      */
 
     public S3Location getStorageLocation() {
@@ -218,23 +203,17 @@ public class CreateBuildRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The location where your game build files are stored. Use this parameter only when creating a build using files
-     * that are stored in an S3 bucket that you own. Identify an S3 bucket name and key, which must in the same Region
-     * where you're creating a build. This parameter must also specify the ARN for an IAM role that you've set up to
-     * give Amazon GameLift access your S3 bucket. To call this operation with a storage location, you must have IAM
-     * PassRole permission. For more details on IAM roles and PassRole permissions, see <a
-     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html"> Set up a role for
-     * GameLift access</a>.
+     * Information indicating where your game build files are stored. Use this parameter only when creating a build with
+     * files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and
+     * key. The location must also specify a role ARN that you set up to allow Amazon GameLift to access your Amazon S3
+     * bucket. The S3 bucket and your new build must be in the same Region.
      * </p>
      * 
      * @param storageLocation
-     *        The location where your game build files are stored. Use this parameter only when creating a build using
-     *        files that are stored in an S3 bucket that you own. Identify an S3 bucket name and key, which must in the
-     *        same Region where you're creating a build. This parameter must also specify the ARN for an IAM role that
-     *        you've set up to give Amazon GameLift access your S3 bucket. To call this operation with a storage
-     *        location, you must have IAM PassRole permission. For more details on IAM roles and PassRole permissions,
-     *        see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/setting-up-role.html"> Set up a
-     *        role for GameLift access</a>.
+     *        Information indicating where your game build files are stored. Use this parameter only when creating a
+     *        build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon
+     *        S3 bucket name and key. The location must also specify a role ARN that you set up to allow Amazon GameLift
+     *        to access your Amazon S3 bucket. The S3 bucket and your new build must be in the same Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

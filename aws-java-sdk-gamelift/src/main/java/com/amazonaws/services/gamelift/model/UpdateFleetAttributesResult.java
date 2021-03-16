@@ -28,18 +28,18 @@ public class UpdateFleetAttributesResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A unique identifier for a fleet that was updated. Use either the fleet ID or ARN value.
+     * A unique identifier for the fleet that was updated.
      * </p>
      */
     private String fleetId;
 
     /**
      * <p>
-     * A unique identifier for a fleet that was updated. Use either the fleet ID or ARN value.
+     * A unique identifier for the fleet that was updated.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet that was updated. Use either the fleet ID or ARN value.
+     *        A unique identifier for the fleet that was updated.
      */
 
     public void setFleetId(String fleetId) {
@@ -48,10 +48,10 @@ public class UpdateFleetAttributesResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A unique identifier for a fleet that was updated. Use either the fleet ID or ARN value.
+     * A unique identifier for the fleet that was updated.
      * </p>
      * 
-     * @return A unique identifier for a fleet that was updated. Use either the fleet ID or ARN value.
+     * @return A unique identifier for the fleet that was updated.
      */
 
     public String getFleetId() {
@@ -60,11 +60,11 @@ public class UpdateFleetAttributesResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A unique identifier for a fleet that was updated. Use either the fleet ID or ARN value.
+     * A unique identifier for the fleet that was updated.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet that was updated. Use either the fleet ID or ARN value.
+     *        A unique identifier for the fleet that was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

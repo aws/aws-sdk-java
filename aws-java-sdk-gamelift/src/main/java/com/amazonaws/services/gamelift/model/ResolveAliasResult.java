@@ -34,9 +34,8 @@ public class ResolveAliasResult extends com.amazonaws.AmazonWebServiceResult<com
     private String fleetId;
     /**
      * <p>
-     * The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
-     * GameLift fleet resource that this alias points to.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * associated with the GameLift fleet resource that this alias points to.
      * </p>
      */
     private String fleetArn;
@@ -83,15 +82,14 @@ public class ResolveAliasResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
-     * GameLift fleet resource that this alias points to.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * associated with the GameLift fleet resource that this alias points to.
      * </p>
      * 
      * @param fleetArn
      *        The Amazon Resource Name (<a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with
-     *        the GameLift fleet resource that this alias points to.
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the
+     *        GameLift fleet resource that this alias points to.
      */
 
     public void setFleetArn(String fleetArn) {
@@ -100,14 +98,13 @@ public class ResolveAliasResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
-     * GameLift fleet resource that this alias points to.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * associated with the GameLift fleet resource that this alias points to.
      * </p>
      * 
      * @return The Amazon Resource Name (<a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated
-     *         with the GameLift fleet resource that this alias points to.
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the
+     *         GameLift fleet resource that this alias points to.
      */
 
     public String getFleetArn() {
@@ -116,15 +113,14 @@ public class ResolveAliasResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
-     * GameLift fleet resource that this alias points to.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * associated with the GameLift fleet resource that this alias points to.
      * </p>
      * 
      * @param fleetArn
      *        The Amazon Resource Name (<a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with
-     *        the GameLift fleet resource that this alias points to.
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the
+     *        GameLift fleet resource that this alias points to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

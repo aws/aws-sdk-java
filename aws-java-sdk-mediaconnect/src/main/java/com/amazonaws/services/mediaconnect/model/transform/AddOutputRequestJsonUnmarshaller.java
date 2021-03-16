@@ -70,6 +70,10 @@ public class AddOutputRequestJsonUnmarshaller implements Unmarshaller<AddOutputR
                     context.nextToken();
                     addOutputRequest.setMaxLatency(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("minLatency", targetDepth)) {
+                    context.nextToken();
+                    addOutputRequest.setMinLatency(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     addOutputRequest.setName(context.getUnmarshaller(String.class).unmarshall(context));

@@ -134,6 +134,11 @@ public interface AWSAccessAnalyzer {
      * Creates an archive rule for the specified analyzer. Archive rules automatically archive new findings that meet
      * the criteria you define when you create the rule.
      * </p>
+     * <p>
+     * To learn about filter keys that you can use to create an archive rule, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">Access
+     * Analyzer filter keys</a> in the <b>IAM User Guide</b>.
+     * </p>
      * 
      * @param createArchiveRuleRequest
      *        Creates an archive rule.
@@ -620,6 +625,29 @@ public interface AWSAccessAnalyzer {
      *      API Documentation</a>
      */
     UpdateFindingsResult updateFindings(UpdateFindingsRequest updateFindingsRequest);
+
+    /**
+     * <p>
+     * Requests the validation of a policy and returns a list of findings. The findings help you identify issues and
+     * provide actionable recommendations to resolve the issue and enable you to author functional policies that meet
+     * security best practices.
+     * </p>
+     * 
+     * @param validatePolicyRequest
+     * @return Result of the ValidatePolicy operation returned by the service.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws InternalServerException
+     *         Internal server error.
+     * @throws ThrottlingException
+     *         Throttling limit exceeded error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSAccessAnalyzer.ValidatePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ValidatePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ValidatePolicyResult validatePolicy(ValidatePolicyRequest validatePolicyRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

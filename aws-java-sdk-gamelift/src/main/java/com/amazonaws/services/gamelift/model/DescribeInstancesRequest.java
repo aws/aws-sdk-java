@@ -30,7 +30,7 @@ public class DescribeInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A unique identifier for a fleet to retrieve instance information for. You can use either the fleet ID or ARN
+     * A unique identifier for the fleet to retrieve instance information for. You can use either the fleet ID or ARN
      * value.
      * </p>
      */
@@ -51,20 +51,27 @@ public class DescribeInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
     private Integer limit;
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
      * previous call to this operation. To start at the beginning of the result set, do not specify a value.
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * The name of a location to retrieve instance information for, in the form of an AWS Region code such as
+     * <code>us-west-2</code>.
+     * </p>
+     */
+    private String location;
 
     /**
      * <p>
-     * A unique identifier for a fleet to retrieve instance information for. You can use either the fleet ID or ARN
+     * A unique identifier for the fleet to retrieve instance information for. You can use either the fleet ID or ARN
      * value.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet to retrieve instance information for. You can use either the fleet ID or
+     *        A unique identifier for the fleet to retrieve instance information for. You can use either the fleet ID or
      *        ARN value.
      */
 
@@ -74,12 +81,12 @@ public class DescribeInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A unique identifier for a fleet to retrieve instance information for. You can use either the fleet ID or ARN
+     * A unique identifier for the fleet to retrieve instance information for. You can use either the fleet ID or ARN
      * value.
      * </p>
      * 
-     * @return A unique identifier for a fleet to retrieve instance information for. You can use either the fleet ID or
-     *         ARN value.
+     * @return A unique identifier for the fleet to retrieve instance information for. You can use either the fleet ID
+     *         or ARN value.
      */
 
     public String getFleetId() {
@@ -88,12 +95,12 @@ public class DescribeInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A unique identifier for a fleet to retrieve instance information for. You can use either the fleet ID or ARN
+     * A unique identifier for the fleet to retrieve instance information for. You can use either the fleet ID or ARN
      * value.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet to retrieve instance information for. You can use either the fleet ID or
+     *        A unique identifier for the fleet to retrieve instance information for. You can use either the fleet ID or
      *        ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -197,13 +204,14 @@ public class DescribeInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
      * previous call to this operation. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
-     *        a previous call to this operation. To start at the beginning of the result set, do not specify a value.
+     *        A token that indicates the start of the next sequential page of results. Use the token that is returned
+     *        with a previous call to this operation. To start at the beginning of the result set, do not specify a
+     *        value.
      */
 
     public void setNextToken(String nextToken) {
@@ -212,11 +220,11 @@ public class DescribeInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
      * previous call to this operation. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
-     * @return Token that indicates the start of the next sequential page of results. Use the token that is returned
+     * @return A token that indicates the start of the next sequential page of results. Use the token that is returned
      *         with a previous call to this operation. To start at the beginning of the result set, do not specify a
      *         value.
      */
@@ -227,18 +235,65 @@ public class DescribeInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
      * previous call to this operation. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
-     *        a previous call to this operation. To start at the beginning of the result set, do not specify a value.
+     *        A token that indicates the start of the next sequential page of results. Use the token that is returned
+     *        with a previous call to this operation. To start at the beginning of the result set, do not specify a
+     *        value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeInstancesRequest withNextToken(String nextToken) {
         setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of a location to retrieve instance information for, in the form of an AWS Region code such as
+     * <code>us-west-2</code>.
+     * </p>
+     * 
+     * @param location
+     *        The name of a location to retrieve instance information for, in the form of an AWS Region code such as
+     *        <code>us-west-2</code>.
+     */
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    /**
+     * <p>
+     * The name of a location to retrieve instance information for, in the form of an AWS Region code such as
+     * <code>us-west-2</code>.
+     * </p>
+     * 
+     * @return The name of a location to retrieve instance information for, in the form of an AWS Region code such as
+     *         <code>us-west-2</code>.
+     */
+
+    public String getLocation() {
+        return this.location;
+    }
+
+    /**
+     * <p>
+     * The name of a location to retrieve instance information for, in the form of an AWS Region code such as
+     * <code>us-west-2</code>.
+     * </p>
+     * 
+     * @param location
+     *        The name of a location to retrieve instance information for, in the form of an AWS Region code such as
+     *        <code>us-west-2</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeInstancesRequest withLocation(String location) {
+        setLocation(location);
         return this;
     }
 
@@ -261,7 +316,9 @@ public class DescribeInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getLimit() != null)
             sb.append("Limit: ").append(getLimit()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getLocation() != null)
+            sb.append("Location: ").append(getLocation());
         sb.append("}");
         return sb.toString();
     }
@@ -292,6 +349,10 @@ public class DescribeInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getLocation() == null ^ this.getLocation() == null)
+            return false;
+        if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
+            return false;
         return true;
     }
 
@@ -304,6 +365,7 @@ public class DescribeInstancesRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         return hashCode;
     }
 

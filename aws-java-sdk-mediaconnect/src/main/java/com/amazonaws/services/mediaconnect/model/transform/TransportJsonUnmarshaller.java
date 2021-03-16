@@ -62,6 +62,10 @@ public class TransportJsonUnmarshaller implements Unmarshaller<Transport, JsonUn
                     context.nextToken();
                     transport.setMaxLatency(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("minLatency", targetDepth)) {
+                    context.nextToken();
+                    transport.setMinLatency(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("protocol", targetDepth)) {
                     context.nextToken();
                     transport.setProtocol(context.getUnmarshaller(String.class).unmarshall(context));

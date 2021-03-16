@@ -326,4 +326,17 @@ public class AbstractAWSAccessAnalyzerAsync extends AbstractAWSAccessAnalyzer im
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Override
+    public java.util.concurrent.Future<ValidatePolicyResult> validatePolicyAsync(ValidatePolicyRequest request) {
+
+        return validatePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidatePolicyResult> validatePolicyAsync(ValidatePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<ValidatePolicyRequest, ValidatePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
 }

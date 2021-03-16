@@ -72,6 +72,10 @@ public class SetSourceRequestJsonUnmarshaller implements Unmarshaller<SetSourceR
                     context.nextToken();
                     setSourceRequest.setMaxLatency(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("minLatency", targetDepth)) {
+                    context.nextToken();
+                    setSourceRequest.setMinLatency(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     setSourceRequest.setName(context.getUnmarshaller(String.class).unmarshall(context));

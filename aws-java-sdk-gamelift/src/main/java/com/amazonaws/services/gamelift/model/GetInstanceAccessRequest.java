@@ -30,8 +30,8 @@ public class GetInstanceAccessRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A unique identifier for a fleet that contains the instance you want access to. You can use either the fleet ID or
-     * ARN value. The fleet can be in any of the following statuses: <code>ACTIVATING</code>, <code>ACTIVE</code>, or
+     * A unique identifier for the fleet that contains the instance you want access to. You can use either the fleet ID
+     * or ARN value. The fleet can be in any of the following statuses: <code>ACTIVATING</code>, <code>ACTIVE</code>, or
      * <code>ERROR</code>. Fleets with an <code>ERROR</code> status may be accessible for a short time before they are
      * deleted.
      * </p>
@@ -39,21 +39,21 @@ public class GetInstanceAccessRequest extends com.amazonaws.AmazonWebServiceRequ
     private String fleetId;
     /**
      * <p>
-     * A unique identifier for an instance you want to get access to. You can access an instance in any status.
+     * A unique identifier for the instance you want to get access to. You can access an instance in any status.
      * </p>
      */
     private String instanceId;
 
     /**
      * <p>
-     * A unique identifier for a fleet that contains the instance you want access to. You can use either the fleet ID or
-     * ARN value. The fleet can be in any of the following statuses: <code>ACTIVATING</code>, <code>ACTIVE</code>, or
+     * A unique identifier for the fleet that contains the instance you want access to. You can use either the fleet ID
+     * or ARN value. The fleet can be in any of the following statuses: <code>ACTIVATING</code>, <code>ACTIVE</code>, or
      * <code>ERROR</code>. Fleets with an <code>ERROR</code> status may be accessible for a short time before they are
      * deleted.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet that contains the instance you want access to. You can use either the
+     *        A unique identifier for the fleet that contains the instance you want access to. You can use either the
      *        fleet ID or ARN value. The fleet can be in any of the following statuses: <code>ACTIVATING</code>,
      *        <code>ACTIVE</code>, or <code>ERROR</code>. Fleets with an <code>ERROR</code> status may be accessible for
      *        a short time before they are deleted.
@@ -65,13 +65,13 @@ public class GetInstanceAccessRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A unique identifier for a fleet that contains the instance you want access to. You can use either the fleet ID or
-     * ARN value. The fleet can be in any of the following statuses: <code>ACTIVATING</code>, <code>ACTIVE</code>, or
+     * A unique identifier for the fleet that contains the instance you want access to. You can use either the fleet ID
+     * or ARN value. The fleet can be in any of the following statuses: <code>ACTIVATING</code>, <code>ACTIVE</code>, or
      * <code>ERROR</code>. Fleets with an <code>ERROR</code> status may be accessible for a short time before they are
      * deleted.
      * </p>
      * 
-     * @return A unique identifier for a fleet that contains the instance you want access to. You can use either the
+     * @return A unique identifier for the fleet that contains the instance you want access to. You can use either the
      *         fleet ID or ARN value. The fleet can be in any of the following statuses: <code>ACTIVATING</code>,
      *         <code>ACTIVE</code>, or <code>ERROR</code>. Fleets with an <code>ERROR</code> status may be accessible
      *         for a short time before they are deleted.
@@ -83,14 +83,14 @@ public class GetInstanceAccessRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A unique identifier for a fleet that contains the instance you want access to. You can use either the fleet ID or
-     * ARN value. The fleet can be in any of the following statuses: <code>ACTIVATING</code>, <code>ACTIVE</code>, or
+     * A unique identifier for the fleet that contains the instance you want access to. You can use either the fleet ID
+     * or ARN value. The fleet can be in any of the following statuses: <code>ACTIVATING</code>, <code>ACTIVE</code>, or
      * <code>ERROR</code>. Fleets with an <code>ERROR</code> status may be accessible for a short time before they are
      * deleted.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet that contains the instance you want access to. You can use either the
+     *        A unique identifier for the fleet that contains the instance you want access to. You can use either the
      *        fleet ID or ARN value. The fleet can be in any of the following statuses: <code>ACTIVATING</code>,
      *        <code>ACTIVE</code>, or <code>ERROR</code>. Fleets with an <code>ERROR</code> status may be accessible for
      *        a short time before they are deleted.
@@ -104,11 +104,11 @@ public class GetInstanceAccessRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A unique identifier for an instance you want to get access to. You can access an instance in any status.
+     * A unique identifier for the instance you want to get access to. You can access an instance in any status.
      * </p>
      * 
      * @param instanceId
-     *        A unique identifier for an instance you want to get access to. You can access an instance in any status.
+     *        A unique identifier for the instance you want to get access to. You can access an instance in any status.
      */
 
     public void setInstanceId(String instanceId) {
@@ -117,10 +117,10 @@ public class GetInstanceAccessRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A unique identifier for an instance you want to get access to. You can access an instance in any status.
+     * A unique identifier for the instance you want to get access to. You can access an instance in any status.
      * </p>
      * 
-     * @return A unique identifier for an instance you want to get access to. You can access an instance in any status.
+     * @return A unique identifier for the instance you want to get access to. You can access an instance in any status.
      */
 
     public String getInstanceId() {
@@ -129,11 +129,11 @@ public class GetInstanceAccessRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A unique identifier for an instance you want to get access to. You can access an instance in any status.
+     * A unique identifier for the instance you want to get access to. You can access an instance in any status.
      * </p>
      * 
      * @param instanceId
-     *        A unique identifier for an instance you want to get access to. You can access an instance in any status.
+     *        A unique identifier for the instance you want to get access to. You can access an instance in any status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,14 +30,14 @@ public class DescribeMatchmakingConfigurationsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * A unique identifier for a matchmaking configuration(s) to retrieve. You can use either the configuration name or
-     * ARN value. To request all existing configurations, leave this parameter empty.
+     * A unique identifier for the matchmaking configuration(s) to retrieve. You can use either the configuration name
+     * or ARN value. To request all existing configurations, leave this parameter empty.
      * </p>
      */
     private java.util.List<String> names;
     /**
      * <p>
-     * A unique identifier for a matchmaking rule set. You can use either the rule set name or ARN value. Use this
+     * A unique identifier for the matchmaking rule set. You can use either the rule set name or ARN value. Use this
      * parameter to retrieve all matchmaking configurations that use this rule set.
      * </p>
      */
@@ -59,12 +59,12 @@ public class DescribeMatchmakingConfigurationsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * A unique identifier for a matchmaking configuration(s) to retrieve. You can use either the configuration name or
-     * ARN value. To request all existing configurations, leave this parameter empty.
+     * A unique identifier for the matchmaking configuration(s) to retrieve. You can use either the configuration name
+     * or ARN value. To request all existing configurations, leave this parameter empty.
      * </p>
      * 
-     * @return A unique identifier for a matchmaking configuration(s) to retrieve. You can use either the configuration
-     *         name or ARN value. To request all existing configurations, leave this parameter empty.
+     * @return A unique identifier for the matchmaking configuration(s) to retrieve. You can use either the
+     *         configuration name or ARN value. To request all existing configurations, leave this parameter empty.
      */
 
     public java.util.List<String> getNames() {
@@ -73,12 +73,12 @@ public class DescribeMatchmakingConfigurationsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * A unique identifier for a matchmaking configuration(s) to retrieve. You can use either the configuration name or
-     * ARN value. To request all existing configurations, leave this parameter empty.
+     * A unique identifier for the matchmaking configuration(s) to retrieve. You can use either the configuration name
+     * or ARN value. To request all existing configurations, leave this parameter empty.
      * </p>
      * 
      * @param names
-     *        A unique identifier for a matchmaking configuration(s) to retrieve. You can use either the configuration
+     *        A unique identifier for the matchmaking configuration(s) to retrieve. You can use either the configuration
      *        name or ARN value. To request all existing configurations, leave this parameter empty.
      */
 
@@ -93,8 +93,8 @@ public class DescribeMatchmakingConfigurationsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * A unique identifier for a matchmaking configuration(s) to retrieve. You can use either the configuration name or
-     * ARN value. To request all existing configurations, leave this parameter empty.
+     * A unique identifier for the matchmaking configuration(s) to retrieve. You can use either the configuration name
+     * or ARN value. To request all existing configurations, leave this parameter empty.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -103,7 +103,7 @@ public class DescribeMatchmakingConfigurationsRequest extends com.amazonaws.Amaz
      * </p>
      * 
      * @param names
-     *        A unique identifier for a matchmaking configuration(s) to retrieve. You can use either the configuration
+     *        A unique identifier for the matchmaking configuration(s) to retrieve. You can use either the configuration
      *        name or ARN value. To request all existing configurations, leave this parameter empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -120,12 +120,12 @@ public class DescribeMatchmakingConfigurationsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * A unique identifier for a matchmaking configuration(s) to retrieve. You can use either the configuration name or
-     * ARN value. To request all existing configurations, leave this parameter empty.
+     * A unique identifier for the matchmaking configuration(s) to retrieve. You can use either the configuration name
+     * or ARN value. To request all existing configurations, leave this parameter empty.
      * </p>
      * 
      * @param names
-     *        A unique identifier for a matchmaking configuration(s) to retrieve. You can use either the configuration
+     *        A unique identifier for the matchmaking configuration(s) to retrieve. You can use either the configuration
      *        name or ARN value. To request all existing configurations, leave this parameter empty.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -137,12 +137,12 @@ public class DescribeMatchmakingConfigurationsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * A unique identifier for a matchmaking rule set. You can use either the rule set name or ARN value. Use this
+     * A unique identifier for the matchmaking rule set. You can use either the rule set name or ARN value. Use this
      * parameter to retrieve all matchmaking configurations that use this rule set.
      * </p>
      * 
      * @param ruleSetName
-     *        A unique identifier for a matchmaking rule set. You can use either the rule set name or ARN value. Use
+     *        A unique identifier for the matchmaking rule set. You can use either the rule set name or ARN value. Use
      *        this parameter to retrieve all matchmaking configurations that use this rule set.
      */
 
@@ -152,11 +152,11 @@ public class DescribeMatchmakingConfigurationsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * A unique identifier for a matchmaking rule set. You can use either the rule set name or ARN value. Use this
+     * A unique identifier for the matchmaking rule set. You can use either the rule set name or ARN value. Use this
      * parameter to retrieve all matchmaking configurations that use this rule set.
      * </p>
      * 
-     * @return A unique identifier for a matchmaking rule set. You can use either the rule set name or ARN value. Use
+     * @return A unique identifier for the matchmaking rule set. You can use either the rule set name or ARN value. Use
      *         this parameter to retrieve all matchmaking configurations that use this rule set.
      */
 
@@ -166,12 +166,12 @@ public class DescribeMatchmakingConfigurationsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * A unique identifier for a matchmaking rule set. You can use either the rule set name or ARN value. Use this
+     * A unique identifier for the matchmaking rule set. You can use either the rule set name or ARN value. Use this
      * parameter to retrieve all matchmaking configurations that use this rule set.
      * </p>
      * 
      * @param ruleSetName
-     *        A unique identifier for a matchmaking rule set. You can use either the rule set name or ARN value. Use
+     *        A unique identifier for the matchmaking rule set. You can use either the rule set name or ARN value. Use
      *        this parameter to retrieve all matchmaking configurations that use this rule set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

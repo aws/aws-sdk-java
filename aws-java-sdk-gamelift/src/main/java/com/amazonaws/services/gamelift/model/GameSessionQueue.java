@@ -19,52 +19,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Configuration of a queue that is used to process game session placement requests. The queue configuration identifies
- * several game features:
+ * Configuration for a game session placement mechanism that processes requests for new game sessions. A queue can be
+ * used on its own or as part of a matchmaking solution.
  * </p>
- * <ul>
- * <li>
  * <p>
- * The destinations where a new game session can potentially be hosted. Amazon GameLift tries these destinations in an
- * order based on either the queue's default order or player latency information, if provided in a placement request.
- * With latency information, Amazon GameLift can place game sessions where the majority of players are reporting the
- * lowest possible latency.
+ * <b>Related actions</b>
  * </p>
- * </li>
- * <li>
  * <p>
- * The length of time that placement requests can wait in the queue before timing out.
+ * <a>CreateGameSessionQueue</a> | <a>DescribeGameSessionQueues</a> | <a>UpdateGameSessionQueue</a>
  * </p>
- * </li>
- * <li>
- * <p>
- * A set of optional latency policies that protect individual players from high latencies, preventing game sessions from
- * being placed where any individual player is reporting latency higher than a policy's maximum.
- * </p>
- * </li>
- * </ul>
- * <ul>
- * <li>
- * <p>
- * <a>CreateGameSessionQueue</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeGameSessionQueues</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>UpdateGameSessionQueue</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DeleteGameSessionQueue</a>
- * </p>
- * </li>
- * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameSessionQueue" target="_top">AWS API
  *      Documentation</a>
@@ -80,9 +43,9 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
     private String name;
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. In a
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue name&gt;</code>. In a
      * GameLift game session queue ARN, the resource ID matches the <i>Name</i> value.
      * </p>
      */
@@ -96,22 +59,37 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
     private Integer timeoutInSeconds;
     /**
      * <p>
-     * A collection of latency policies to apply when processing game sessions placement requests with player latency
-     * information. Multiple policies are evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, the policy is enforced at the start of the game session placement for the
-     * duration period. With multiple policies, each policy is enforced consecutively for its duration period. For
-     * example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the
-     * remainder of the placement.
+     * A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most
+     * players in a game session. These policies ensure that no individual player can be placed into a game with
+     * unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time.
+     * Multiple policies are applied based on their maximum allowed latency, starting with the lowest value.
      * </p>
      */
     private java.util.List<PlayerLatencyPolicy> playerLatencyPolicies;
     /**
      * <p>
-     * A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified
-     * by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order.
+     * A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
+     * Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement
+     * preference.
      * </p>
      */
     private java.util.List<GameSessionQueueDestination> destinations;
+    /**
+     * <p>
+     * A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of
+     * AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in
+     * any queue location.
+     * </p>
+     */
+    private FilterConfiguration filterConfiguration;
+    /**
+     * <p>
+     * Custom settings to use when prioritizing destinations and locations for game session placements. This
+     * configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named
+     * will be automatically applied at the end of the prioritization process.
+     * </p>
+     */
+    private PriorityConfiguration priorityConfiguration;
 
     /**
      * <p>
@@ -158,17 +136,18 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. In a
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue name&gt;</code>. In a
      * GameLift game session queue ARN, the resource ID matches the <i>Name</i> value.
      * </p>
      * 
      * @param gameSessionQueueArn
-     *        Amazon Resource Name (<a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
-     *        assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all
-     *        Regions. In a GameLift game session queue ARN, the resource ID matches the <i>Name</i> value.
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions.
+     *        Format is <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue name&gt;</code>. In a GameLift
+     *        game session queue ARN, the resource ID matches the <i>Name</i> value.
      */
 
     public void setGameSessionQueueArn(String gameSessionQueueArn) {
@@ -177,16 +156,17 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. In a
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue name&gt;</code>. In a
      * GameLift game session queue ARN, the resource ID matches the <i>Name</i> value.
      * </p>
      * 
-     * @return Amazon Resource Name (<a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
-     *         assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all
-     *         Regions. In a GameLift game session queue ARN, the resource ID matches the <i>Name</i> value.
+     * @return The Amazon Resource Name (<a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *         GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions.
+     *         Format is <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue name&gt;</code>. In a
+     *         GameLift game session queue ARN, the resource ID matches the <i>Name</i> value.
      */
 
     public String getGameSessionQueueArn() {
@@ -195,17 +175,18 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. In a
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue name&gt;</code>. In a
      * GameLift game session queue ARN, the resource ID matches the <i>Name</i> value.
      * </p>
      * 
      * @param gameSessionQueueArn
-     *        Amazon Resource Name (<a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
-     *        assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all
-     *        Regions. In a GameLift game session queue ARN, the resource ID matches the <i>Name</i> value.
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions.
+     *        Format is <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue name&gt;</code>. In a GameLift
+     *        game session queue ARN, the resource ID matches the <i>Name</i> value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -262,20 +243,17 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A collection of latency policies to apply when processing game sessions placement requests with player latency
-     * information. Multiple policies are evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, the policy is enforced at the start of the game session placement for the
-     * duration period. With multiple policies, each policy is enforced consecutively for its duration period. For
-     * example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the
-     * remainder of the placement.
+     * A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most
+     * players in a game session. These policies ensure that no individual player can be placed into a game with
+     * unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time.
+     * Multiple policies are applied based on their maximum allowed latency, starting with the lowest value.
      * </p>
      * 
-     * @return A collection of latency policies to apply when processing game sessions placement requests with player
-     *         latency information. Multiple policies are evaluated in order of the maximum latency value, starting with
-     *         the lowest latency values. With just one policy, the policy is enforced at the start of the game session
-     *         placement for the duration period. With multiple policies, each policy is enforced consecutively for its
-     *         duration period. For example, a queue might enforce a 60-second policy followed by a 120-second policy,
-     *         and then no policy for the remainder of the placement.
+     * @return A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for
+     *         most players in a game session. These policies ensure that no individual player can be placed into a game
+     *         with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a
+     *         time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest
+     *         value.
      */
 
     public java.util.List<PlayerLatencyPolicy> getPlayerLatencyPolicies() {
@@ -284,21 +262,18 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A collection of latency policies to apply when processing game sessions placement requests with player latency
-     * information. Multiple policies are evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, the policy is enforced at the start of the game session placement for the
-     * duration period. With multiple policies, each policy is enforced consecutively for its duration period. For
-     * example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the
-     * remainder of the placement.
+     * A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most
+     * players in a game session. These policies ensure that no individual player can be placed into a game with
+     * unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time.
+     * Multiple policies are applied based on their maximum allowed latency, starting with the lowest value.
      * </p>
      * 
      * @param playerLatencyPolicies
-     *        A collection of latency policies to apply when processing game sessions placement requests with player
-     *        latency information. Multiple policies are evaluated in order of the maximum latency value, starting with
-     *        the lowest latency values. With just one policy, the policy is enforced at the start of the game session
-     *        placement for the duration period. With multiple policies, each policy is enforced consecutively for its
-     *        duration period. For example, a queue might enforce a 60-second policy followed by a 120-second policy,
-     *        and then no policy for the remainder of the placement.
+     *        A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for
+     *        most players in a game session. These policies ensure that no individual player can be placed into a game
+     *        with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a
+     *        time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest
+     *        value.
      */
 
     public void setPlayerLatencyPolicies(java.util.Collection<PlayerLatencyPolicy> playerLatencyPolicies) {
@@ -312,12 +287,10 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A collection of latency policies to apply when processing game sessions placement requests with player latency
-     * information. Multiple policies are evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, the policy is enforced at the start of the game session placement for the
-     * duration period. With multiple policies, each policy is enforced consecutively for its duration period. For
-     * example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the
-     * remainder of the placement.
+     * A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most
+     * players in a game session. These policies ensure that no individual player can be placed into a game with
+     * unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time.
+     * Multiple policies are applied based on their maximum allowed latency, starting with the lowest value.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -326,12 +299,11 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param playerLatencyPolicies
-     *        A collection of latency policies to apply when processing game sessions placement requests with player
-     *        latency information. Multiple policies are evaluated in order of the maximum latency value, starting with
-     *        the lowest latency values. With just one policy, the policy is enforced at the start of the game session
-     *        placement for the duration period. With multiple policies, each policy is enforced consecutively for its
-     *        duration period. For example, a queue might enforce a 60-second policy followed by a 120-second policy,
-     *        and then no policy for the remainder of the placement.
+     *        A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for
+     *        most players in a game session. These policies ensure that no individual player can be placed into a game
+     *        with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a
+     *        time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest
+     *        value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -347,21 +319,18 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A collection of latency policies to apply when processing game sessions placement requests with player latency
-     * information. Multiple policies are evaluated in order of the maximum latency value, starting with the lowest
-     * latency values. With just one policy, the policy is enforced at the start of the game session placement for the
-     * duration period. With multiple policies, each policy is enforced consecutively for its duration period. For
-     * example, a queue might enforce a 60-second policy followed by a 120-second policy, and then no policy for the
-     * remainder of the placement.
+     * A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for most
+     * players in a game session. These policies ensure that no individual player can be placed into a game with
+     * unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a time.
+     * Multiple policies are applied based on their maximum allowed latency, starting with the lowest value.
      * </p>
      * 
      * @param playerLatencyPolicies
-     *        A collection of latency policies to apply when processing game sessions placement requests with player
-     *        latency information. Multiple policies are evaluated in order of the maximum latency value, starting with
-     *        the lowest latency values. With just one policy, the policy is enforced at the start of the game session
-     *        placement for the duration period. With multiple policies, each policy is enforced consecutively for its
-     *        duration period. For example, a queue might enforce a 60-second policy followed by a 120-second policy,
-     *        and then no policy for the remainder of the placement.
+     *        A set of policies that act as a sliding cap on player latency. FleetIQ works to deliver low latency for
+     *        most players in a game session. These policies ensure that no individual player can be placed into a game
+     *        with unreasonably high latency. Use multiple policies to gradually relax latency requirements a step at a
+     *        time. Multiple policies are applied based on their maximum allowed latency, starting with the lowest
+     *        value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -372,13 +341,14 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified
-     * by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order.
+     * A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
+     * Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement
+     * preference.
      * </p>
      * 
-     * @return A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
-     *         identified by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference
-     *         order.
+     * @return A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the
+     *         queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of
+     *         placement preference.
      */
 
     public java.util.List<GameSessionQueueDestination> getDestinations() {
@@ -387,14 +357,15 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified
-     * by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order.
+     * A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
+     * Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement
+     * preference.
      * </p>
      * 
      * @param destinations
-     *        A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
-     *        identified by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference
-     *        order.
+     *        A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the
+     *        queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of
+     *        placement preference.
      */
 
     public void setDestinations(java.util.Collection<GameSessionQueueDestination> destinations) {
@@ -408,8 +379,9 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified
-     * by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order.
+     * A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
+     * Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement
+     * preference.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -418,9 +390,9 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param destinations
-     *        A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
-     *        identified by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference
-     *        order.
+     *        A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the
+     *        queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of
+     *        placement preference.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -436,19 +408,124 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are identified
-     * by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference order.
+     * A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the queue.
+     * Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of placement
+     * preference.
      * </p>
      * 
      * @param destinations
-     *        A list of fleets that can be used to fulfill game session placement requests in the queue. Fleets are
-     *        identified by either a fleet ARN or a fleet alias ARN. Destinations are listed in default preference
-     *        order.
+     *        A list of fleets and/or fleet aliases that can be used to fulfill game session placement requests in the
+     *        queue. Destinations are identified by either a fleet ARN or a fleet alias ARN, and are listed in order of
+     *        placement preference.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GameSessionQueue withDestinations(java.util.Collection<GameSessionQueueDestination> destinations) {
         setDestinations(destinations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of
+     * AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in
+     * any queue location.
+     * </p>
+     * 
+     * @param filterConfiguration
+     *        A list of locations where a queue is allowed to place new game sessions. Locations are specified in the
+     *        form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can
+     *        be placed in any queue location.
+     */
+
+    public void setFilterConfiguration(FilterConfiguration filterConfiguration) {
+        this.filterConfiguration = filterConfiguration;
+    }
+
+    /**
+     * <p>
+     * A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of
+     * AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in
+     * any queue location.
+     * </p>
+     * 
+     * @return A list of locations where a queue is allowed to place new game sessions. Locations are specified in the
+     *         form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can
+     *         be placed in any queue location.
+     */
+
+    public FilterConfiguration getFilterConfiguration() {
+        return this.filterConfiguration;
+    }
+
+    /**
+     * <p>
+     * A list of locations where a queue is allowed to place new game sessions. Locations are specified in the form of
+     * AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can be placed in
+     * any queue location.
+     * </p>
+     * 
+     * @param filterConfiguration
+     *        A list of locations where a queue is allowed to place new game sessions. Locations are specified in the
+     *        form of AWS Region codes, such as <code>us-west-2</code>. If this parameter is not set, game sessions can
+     *        be placed in any queue location.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GameSessionQueue withFilterConfiguration(FilterConfiguration filterConfiguration) {
+        setFilterConfiguration(filterConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Custom settings to use when prioritizing destinations and locations for game session placements. This
+     * configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named
+     * will be automatically applied at the end of the prioritization process.
+     * </p>
+     * 
+     * @param priorityConfiguration
+     *        Custom settings to use when prioritizing destinations and locations for game session placements. This
+     *        configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly
+     *        named will be automatically applied at the end of the prioritization process.
+     */
+
+    public void setPriorityConfiguration(PriorityConfiguration priorityConfiguration) {
+        this.priorityConfiguration = priorityConfiguration;
+    }
+
+    /**
+     * <p>
+     * Custom settings to use when prioritizing destinations and locations for game session placements. This
+     * configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named
+     * will be automatically applied at the end of the prioritization process.
+     * </p>
+     * 
+     * @return Custom settings to use when prioritizing destinations and locations for game session placements. This
+     *         configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly
+     *         named will be automatically applied at the end of the prioritization process.
+     */
+
+    public PriorityConfiguration getPriorityConfiguration() {
+        return this.priorityConfiguration;
+    }
+
+    /**
+     * <p>
+     * Custom settings to use when prioritizing destinations and locations for game session placements. This
+     * configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly named
+     * will be automatically applied at the end of the prioritization process.
+     * </p>
+     * 
+     * @param priorityConfiguration
+     *        Custom settings to use when prioritizing destinations and locations for game session placements. This
+     *        configuration replaces the FleetIQ default prioritization process. Priority types that are not explicitly
+     *        named will be automatically applied at the end of the prioritization process.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GameSessionQueue withPriorityConfiguration(PriorityConfiguration priorityConfiguration) {
+        setPriorityConfiguration(priorityConfiguration);
         return this;
     }
 
@@ -473,7 +550,11 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
         if (getPlayerLatencyPolicies() != null)
             sb.append("PlayerLatencyPolicies: ").append(getPlayerLatencyPolicies()).append(",");
         if (getDestinations() != null)
-            sb.append("Destinations: ").append(getDestinations());
+            sb.append("Destinations: ").append(getDestinations()).append(",");
+        if (getFilterConfiguration() != null)
+            sb.append("FilterConfiguration: ").append(getFilterConfiguration()).append(",");
+        if (getPriorityConfiguration() != null)
+            sb.append("PriorityConfiguration: ").append(getPriorityConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -508,6 +589,14 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getDestinations() != null && other.getDestinations().equals(this.getDestinations()) == false)
             return false;
+        if (other.getFilterConfiguration() == null ^ this.getFilterConfiguration() == null)
+            return false;
+        if (other.getFilterConfiguration() != null && other.getFilterConfiguration().equals(this.getFilterConfiguration()) == false)
+            return false;
+        if (other.getPriorityConfiguration() == null ^ this.getPriorityConfiguration() == null)
+            return false;
+        if (other.getPriorityConfiguration() != null && other.getPriorityConfiguration().equals(this.getPriorityConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -521,6 +610,8 @@ public class GameSessionQueue implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getTimeoutInSeconds() == null) ? 0 : getTimeoutInSeconds().hashCode());
         hashCode = prime * hashCode + ((getPlayerLatencyPolicies() == null) ? 0 : getPlayerLatencyPolicies().hashCode());
         hashCode = prime * hashCode + ((getDestinations() == null) ? 0 : getDestinations().hashCode());
+        hashCode = prime * hashCode + ((getFilterConfiguration() == null) ? 0 : getFilterConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getPriorityConfiguration() == null) ? 0 : getPriorityConfiguration().hashCode());
         return hashCode;
     }
 

@@ -30,7 +30,7 @@ public class DeleteVpcPeeringConnectionRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A unique identifier for a fleet. This fleet specified must match the fleet referenced in the VPC peering
+     * A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC peering
      * connection record. You can use either the fleet ID or ARN value.
      * </p>
      */
@@ -45,12 +45,12 @@ public class DeleteVpcPeeringConnectionRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A unique identifier for a fleet. This fleet specified must match the fleet referenced in the VPC peering
+     * A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC peering
      * connection record. You can use either the fleet ID or ARN value.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet. This fleet specified must match the fleet referenced in the VPC peering
+     *        A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC peering
      *        connection record. You can use either the fleet ID or ARN value.
      */
 
@@ -60,12 +60,12 @@ public class DeleteVpcPeeringConnectionRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A unique identifier for a fleet. This fleet specified must match the fleet referenced in the VPC peering
+     * A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC peering
      * connection record. You can use either the fleet ID or ARN value.
      * </p>
      * 
-     * @return A unique identifier for a fleet. This fleet specified must match the fleet referenced in the VPC peering
-     *         connection record. You can use either the fleet ID or ARN value.
+     * @return A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC
+     *         peering connection record. You can use either the fleet ID or ARN value.
      */
 
     public String getFleetId() {
@@ -74,12 +74,12 @@ public class DeleteVpcPeeringConnectionRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A unique identifier for a fleet. This fleet specified must match the fleet referenced in the VPC peering
+     * A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC peering
      * connection record. You can use either the fleet ID or ARN value.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet. This fleet specified must match the fleet referenced in the VPC peering
+     *        A unique identifier for the fleet. This fleet specified must match the fleet referenced in the VPC peering
      *        connection record. You can use either the fleet ID or ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

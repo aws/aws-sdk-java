@@ -26,7 +26,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * A rule set may define the following elements for a match. For detailed information and examples showing how to
  * construct a rule set, see <a
- * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-rulesets.html">Build a FlexMatch Rule Set</a>.
+ * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-rulesets.html">Build a FlexMatch rule set</a>.
  * </p>
  * <ul>
  * <li>
@@ -69,16 +69,16 @@ public class MatchmakingRuleSet implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A unique identifier for a matchmaking rule set
+     * A unique identifier for the matchmaking rule set
      * </p>
      */
     private String ruleSetName;
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions. In a
-     * GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across
+     * all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::matchmakingruleset/&lt;ruleset name&gt;</code>. In
+     * a GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.
      * </p>
      */
     private String ruleSetArn;
@@ -91,19 +91,19 @@ public class MatchmakingRuleSet implements Serializable, Cloneable, StructuredPo
     private String ruleSetBody;
     /**
      * <p>
-     * The time stamp indicating when this data object was created. The format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      */
     private java.util.Date creationTime;
 
     /**
      * <p>
-     * A unique identifier for a matchmaking rule set
+     * A unique identifier for the matchmaking rule set
      * </p>
      * 
      * @param ruleSetName
-     *        A unique identifier for a matchmaking rule set
+     *        A unique identifier for the matchmaking rule set
      */
 
     public void setRuleSetName(String ruleSetName) {
@@ -112,10 +112,10 @@ public class MatchmakingRuleSet implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A unique identifier for a matchmaking rule set
+     * A unique identifier for the matchmaking rule set
      * </p>
      * 
-     * @return A unique identifier for a matchmaking rule set
+     * @return A unique identifier for the matchmaking rule set
      */
 
     public String getRuleSetName() {
@@ -124,11 +124,11 @@ public class MatchmakingRuleSet implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A unique identifier for a matchmaking rule set
+     * A unique identifier for the matchmaking rule set
      * </p>
      * 
      * @param ruleSetName
-     *        A unique identifier for a matchmaking rule set
+     *        A unique identifier for the matchmaking rule set
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,17 +139,18 @@ public class MatchmakingRuleSet implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions. In a
-     * GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across
+     * all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::matchmakingruleset/&lt;ruleset name&gt;</code>. In
+     * a GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.
      * </p>
      * 
      * @param ruleSetArn
-     *        Amazon Resource Name (<a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
-     *        assigned to a GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across
-     *        all Regions. In a GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions.
+     *        Format is <code>arn:aws:gamelift:&lt;region&gt;::matchmakingruleset/&lt;ruleset name&gt;</code>. In a
+     *        GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.
      */
 
     public void setRuleSetArn(String ruleSetArn) {
@@ -158,16 +159,17 @@ public class MatchmakingRuleSet implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions. In a
-     * GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across
+     * all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::matchmakingruleset/&lt;ruleset name&gt;</code>. In
+     * a GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.
      * </p>
      * 
-     * @return Amazon Resource Name (<a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
-     *         assigned to a GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across
-     *         all Regions. In a GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.
+     * @return The Amazon Resource Name (<a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *         GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions.
+     *         Format is <code>arn:aws:gamelift:&lt;region&gt;::matchmakingruleset/&lt;ruleset name&gt;</code>. In a
+     *         GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.
      */
 
     public String getRuleSetArn() {
@@ -176,17 +178,18 @@ public class MatchmakingRuleSet implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions. In a
-     * GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across
+     * all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::matchmakingruleset/&lt;ruleset name&gt;</code>. In
+     * a GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.
      * </p>
      * 
      * @param ruleSetArn
-     *        Amazon Resource Name (<a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
-     *        assigned to a GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across
-     *        all Regions. In a GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        GameLift matchmaking rule set resource and uniquely identifies it. ARNs are unique across all Regions.
+     *        Format is <code>arn:aws:gamelift:&lt;region&gt;::matchmakingruleset/&lt;ruleset name&gt;</code>. In a
+     *        GameLift rule set ARN, the resource ID matches the <i>RuleSetName</i> value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -243,13 +246,13 @@ public class MatchmakingRuleSet implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The time stamp indicating when this data object was created. The format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
      * @param creationTime
-     *        The time stamp indicating when this data object was created. The format is a number expressed in Unix time
-     *        as milliseconds (for example "1469498468.057").
+     *        A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     *        milliseconds (for example <code>"1469498468.057"</code>).
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -258,12 +261,12 @@ public class MatchmakingRuleSet implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The time stamp indicating when this data object was created. The format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
-     * @return The time stamp indicating when this data object was created. The format is a number expressed in Unix
-     *         time as milliseconds (for example "1469498468.057").
+     * @return A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     *         milliseconds (for example <code>"1469498468.057"</code>).
      */
 
     public java.util.Date getCreationTime() {
@@ -272,13 +275,13 @@ public class MatchmakingRuleSet implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The time stamp indicating when this data object was created. The format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
      * @param creationTime
-     *        The time stamp indicating when this data object was created. The format is a number expressed in Unix time
-     *        as milliseconds (for example "1469498468.057").
+     *        A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     *        milliseconds (for example <code>"1469498468.057"</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

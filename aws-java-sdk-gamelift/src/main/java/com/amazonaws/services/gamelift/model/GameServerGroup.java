@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b>
+ * <b>This data type is used with the GameLift FleetIQ and game server groups.</b>
  * </p>
  * <p>
  * Properties that describe a game server group resource. A game server group manages certain properties related to a
@@ -30,48 +30,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <code>DeleteGameServerGroup</code>. Game server group activity can be temporarily suspended and resumed by calling
  * <code>SuspendGameServerGroup</code> and <code>ResumeGameServerGroup</code>, respectively.
  * </p>
- * <ul>
- * <li>
  * <p>
- * <a>CreateGameServerGroup</a>
+ * <b>Related actions</b>
  * </p>
- * </li>
- * <li>
  * <p>
- * <a>ListGameServerGroups</a>
+ * <a>CreateGameServerGroup</a> | <a>ListGameServerGroups</a> | <a>DescribeGameServerGroup</a> |
+ * <a>UpdateGameServerGroup</a> | <a>DeleteGameServerGroup</a> | <a>ResumeGameServerGroup</a> |
+ * <a>SuspendGameServerGroup</a> | <a>DescribeGameServerInstances</a> | <a
+ * href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a>
  * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeGameServerGroup</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>UpdateGameServerGroup</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DeleteGameServerGroup</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>ResumeGameServerGroup</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>SuspendGameServerGroup</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeGameServerInstances</a>
- * </p>
- * </li>
- * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameServerGroup" target="_top">AWS API
  *      Documentation</a>
@@ -215,7 +182,7 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<String> suspendedActions;
     /**
      * <p>
-     * A timestamp that indicates when this data object was created. Format is a number expressed in Unix time as
+     * A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
      * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      */
@@ -1362,12 +1329,12 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A timestamp that indicates when this data object was created. Format is a number expressed in Unix time as
+     * A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
      * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
      * @param creationTime
-     *        A timestamp that indicates when this data object was created. Format is a number expressed in Unix time as
+     *        A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
      *        milliseconds (for example <code>"1469498468.057"</code>).
      */
 
@@ -1377,12 +1344,12 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A timestamp that indicates when this data object was created. Format is a number expressed in Unix time as
+     * A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
      * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
-     * @return A timestamp that indicates when this data object was created. Format is a number expressed in Unix time
-     *         as milliseconds (for example <code>"1469498468.057"</code>).
+     * @return A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     *         milliseconds (for example <code>"1469498468.057"</code>).
      */
 
     public java.util.Date getCreationTime() {
@@ -1391,12 +1358,12 @@ public class GameServerGroup implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A timestamp that indicates when this data object was created. Format is a number expressed in Unix time as
+     * A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
      * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
      * @param creationTime
-     *        A timestamp that indicates when this data object was created. Format is a number expressed in Unix time as
+     *        A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
      *        milliseconds (for example <code>"1469498468.057"</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b>
+ * <b>This data type is used with the GameLift FleetIQ and game server groups.</b>
  * </p>
  * <p>
  * An allowed instance type for a <a>GameServerGroup</a>. All game server groups must have at least two instance types

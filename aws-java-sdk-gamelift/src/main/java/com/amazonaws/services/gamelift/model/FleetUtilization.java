@@ -19,40 +19,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Current status of fleet utilization, including the number of game and player sessions being hosted.
+ * Current resource utilization statistics in a specified fleet or location. The location value might refer to a fleet's
+ * remote location or its home Region.
  * </p>
- * <ul>
- * <li>
  * <p>
- * <a>CreateFleet</a>
+ * <b>Related actions</b>
  * </p>
- * </li>
- * <li>
  * <p>
- * <a>ListFleets</a>
+ * <a>DescribeFleetUtilization</a> | <a>DescribeFleetLocationUtilization</a>
  * </p>
- * </li>
- * <li>
- * <p>
- * <a>DeleteFleet</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeFleetAttributes</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>UpdateFleetAttributes</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>StartFleetActions</a> or <a>StopFleetActions</a>
- * </p>
- * </li>
- * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/FleetUtilization" target="_top">AWS API
  *      Documentation</a>
@@ -62,43 +37,59 @@ public class FleetUtilization implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A unique identifier for a fleet.
+     * A unique identifier for the fleet associated with the location.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
-     * Number of server processes in an <code>ACTIVE</code> status currently running across all instances in the fleet
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
+     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * </p>
+     */
+    private String fleetArn;
+    /**
+     * <p>
+     * The number of server processes in <code>ACTIVE</code> status that are currently running across all instances in
+     * the fleet location.
      * </p>
      */
     private Integer activeServerProcessCount;
     /**
      * <p>
-     * Number of active game sessions currently being hosted on all instances in the fleet.
+     * The number of active game sessions that are currently being hosted across all instances in the fleet location.
      * </p>
      */
     private Integer activeGameSessionCount;
     /**
      * <p>
-     * Number of active player sessions currently being hosted on all instances in the fleet.
+     * The number of active player sessions that are currently being hosted across all instances in the fleet location.
      * </p>
      */
     private Integer currentPlayerSessionCount;
     /**
      * <p>
-     * The maximum number of players allowed across all game sessions currently being hosted on all instances in the
-     * fleet.
+     * The maximum number of players allowed across all game sessions that are currently being hosted across all
+     * instances in the fleet location.
      * </p>
      */
     private Integer maximumPlayerSessionCount;
+    /**
+     * <p>
+     * The fleet location for the fleet utilization information, expressed as an AWS Region code, such as
+     * <code>us-west-2</code>.
+     * </p>
+     */
+    private String location;
 
     /**
      * <p>
-     * A unique identifier for a fleet.
+     * A unique identifier for the fleet associated with the location.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet.
+     *        A unique identifier for the fleet associated with the location.
      */
 
     public void setFleetId(String fleetId) {
@@ -107,10 +98,10 @@ public class FleetUtilization implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A unique identifier for a fleet.
+     * A unique identifier for the fleet associated with the location.
      * </p>
      * 
-     * @return A unique identifier for a fleet.
+     * @return A unique identifier for the fleet associated with the location.
      */
 
     public String getFleetId() {
@@ -119,11 +110,11 @@ public class FleetUtilization implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A unique identifier for a fleet.
+     * A unique identifier for the fleet associated with the location.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet.
+     *        A unique identifier for the fleet associated with the location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,12 +125,68 @@ public class FleetUtilization implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Number of server processes in an <code>ACTIVE</code> status currently running across all instances in the fleet
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
+     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * </p>
+     * 
+     * @param fleetArn
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *        <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     */
+
+    public void setFleetArn(String fleetArn) {
+        this.fleetArn = fleetArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
+     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (<a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *         GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *         <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     */
+
+    public String getFleetArn() {
+        return this.fleetArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
+     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * </p>
+     * 
+     * @param fleetArn
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *        <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FleetUtilization withFleetArn(String fleetArn) {
+        setFleetArn(fleetArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of server processes in <code>ACTIVE</code> status that are currently running across all instances in
+     * the fleet location.
      * </p>
      * 
      * @param activeServerProcessCount
-     *        Number of server processes in an <code>ACTIVE</code> status currently running across all instances in the
-     *        fleet
+     *        The number of server processes in <code>ACTIVE</code> status that are currently running across all
+     *        instances in the fleet location.
      */
 
     public void setActiveServerProcessCount(Integer activeServerProcessCount) {
@@ -148,11 +195,12 @@ public class FleetUtilization implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Number of server processes in an <code>ACTIVE</code> status currently running across all instances in the fleet
+     * The number of server processes in <code>ACTIVE</code> status that are currently running across all instances in
+     * the fleet location.
      * </p>
      * 
-     * @return Number of server processes in an <code>ACTIVE</code> status currently running across all instances in the
-     *         fleet
+     * @return The number of server processes in <code>ACTIVE</code> status that are currently running across all
+     *         instances in the fleet location.
      */
 
     public Integer getActiveServerProcessCount() {
@@ -161,12 +209,13 @@ public class FleetUtilization implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Number of server processes in an <code>ACTIVE</code> status currently running across all instances in the fleet
+     * The number of server processes in <code>ACTIVE</code> status that are currently running across all instances in
+     * the fleet location.
      * </p>
      * 
      * @param activeServerProcessCount
-     *        Number of server processes in an <code>ACTIVE</code> status currently running across all instances in the
-     *        fleet
+     *        The number of server processes in <code>ACTIVE</code> status that are currently running across all
+     *        instances in the fleet location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -177,11 +226,12 @@ public class FleetUtilization implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Number of active game sessions currently being hosted on all instances in the fleet.
+     * The number of active game sessions that are currently being hosted across all instances in the fleet location.
      * </p>
      * 
      * @param activeGameSessionCount
-     *        Number of active game sessions currently being hosted on all instances in the fleet.
+     *        The number of active game sessions that are currently being hosted across all instances in the fleet
+     *        location.
      */
 
     public void setActiveGameSessionCount(Integer activeGameSessionCount) {
@@ -190,10 +240,11 @@ public class FleetUtilization implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Number of active game sessions currently being hosted on all instances in the fleet.
+     * The number of active game sessions that are currently being hosted across all instances in the fleet location.
      * </p>
      * 
-     * @return Number of active game sessions currently being hosted on all instances in the fleet.
+     * @return The number of active game sessions that are currently being hosted across all instances in the fleet
+     *         location.
      */
 
     public Integer getActiveGameSessionCount() {
@@ -202,11 +253,12 @@ public class FleetUtilization implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Number of active game sessions currently being hosted on all instances in the fleet.
+     * The number of active game sessions that are currently being hosted across all instances in the fleet location.
      * </p>
      * 
      * @param activeGameSessionCount
-     *        Number of active game sessions currently being hosted on all instances in the fleet.
+     *        The number of active game sessions that are currently being hosted across all instances in the fleet
+     *        location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -217,11 +269,12 @@ public class FleetUtilization implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Number of active player sessions currently being hosted on all instances in the fleet.
+     * The number of active player sessions that are currently being hosted across all instances in the fleet location.
      * </p>
      * 
      * @param currentPlayerSessionCount
-     *        Number of active player sessions currently being hosted on all instances in the fleet.
+     *        The number of active player sessions that are currently being hosted across all instances in the fleet
+     *        location.
      */
 
     public void setCurrentPlayerSessionCount(Integer currentPlayerSessionCount) {
@@ -230,10 +283,11 @@ public class FleetUtilization implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Number of active player sessions currently being hosted on all instances in the fleet.
+     * The number of active player sessions that are currently being hosted across all instances in the fleet location.
      * </p>
      * 
-     * @return Number of active player sessions currently being hosted on all instances in the fleet.
+     * @return The number of active player sessions that are currently being hosted across all instances in the fleet
+     *         location.
      */
 
     public Integer getCurrentPlayerSessionCount() {
@@ -242,11 +296,12 @@ public class FleetUtilization implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Number of active player sessions currently being hosted on all instances in the fleet.
+     * The number of active player sessions that are currently being hosted across all instances in the fleet location.
      * </p>
      * 
      * @param currentPlayerSessionCount
-     *        Number of active player sessions currently being hosted on all instances in the fleet.
+     *        The number of active player sessions that are currently being hosted across all instances in the fleet
+     *        location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -257,13 +312,13 @@ public class FleetUtilization implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The maximum number of players allowed across all game sessions currently being hosted on all instances in the
-     * fleet.
+     * The maximum number of players allowed across all game sessions that are currently being hosted across all
+     * instances in the fleet location.
      * </p>
      * 
      * @param maximumPlayerSessionCount
-     *        The maximum number of players allowed across all game sessions currently being hosted on all instances in
-     *        the fleet.
+     *        The maximum number of players allowed across all game sessions that are currently being hosted across all
+     *        instances in the fleet location.
      */
 
     public void setMaximumPlayerSessionCount(Integer maximumPlayerSessionCount) {
@@ -272,12 +327,12 @@ public class FleetUtilization implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The maximum number of players allowed across all game sessions currently being hosted on all instances in the
-     * fleet.
+     * The maximum number of players allowed across all game sessions that are currently being hosted across all
+     * instances in the fleet location.
      * </p>
      * 
-     * @return The maximum number of players allowed across all game sessions currently being hosted on all instances in
-     *         the fleet.
+     * @return The maximum number of players allowed across all game sessions that are currently being hosted across all
+     *         instances in the fleet location.
      */
 
     public Integer getMaximumPlayerSessionCount() {
@@ -286,18 +341,64 @@ public class FleetUtilization implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The maximum number of players allowed across all game sessions currently being hosted on all instances in the
-     * fleet.
+     * The maximum number of players allowed across all game sessions that are currently being hosted across all
+     * instances in the fleet location.
      * </p>
      * 
      * @param maximumPlayerSessionCount
-     *        The maximum number of players allowed across all game sessions currently being hosted on all instances in
-     *        the fleet.
+     *        The maximum number of players allowed across all game sessions that are currently being hosted across all
+     *        instances in the fleet location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FleetUtilization withMaximumPlayerSessionCount(Integer maximumPlayerSessionCount) {
         setMaximumPlayerSessionCount(maximumPlayerSessionCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The fleet location for the fleet utilization information, expressed as an AWS Region code, such as
+     * <code>us-west-2</code>.
+     * </p>
+     * 
+     * @param location
+     *        The fleet location for the fleet utilization information, expressed as an AWS Region code, such as
+     *        <code>us-west-2</code>.
+     */
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    /**
+     * <p>
+     * The fleet location for the fleet utilization information, expressed as an AWS Region code, such as
+     * <code>us-west-2</code>.
+     * </p>
+     * 
+     * @return The fleet location for the fleet utilization information, expressed as an AWS Region code, such as
+     *         <code>us-west-2</code>.
+     */
+
+    public String getLocation() {
+        return this.location;
+    }
+
+    /**
+     * <p>
+     * The fleet location for the fleet utilization information, expressed as an AWS Region code, such as
+     * <code>us-west-2</code>.
+     * </p>
+     * 
+     * @param location
+     *        The fleet location for the fleet utilization information, expressed as an AWS Region code, such as
+     *        <code>us-west-2</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FleetUtilization withLocation(String location) {
+        setLocation(location);
         return this;
     }
 
@@ -315,6 +416,8 @@ public class FleetUtilization implements Serializable, Cloneable, StructuredPojo
         sb.append("{");
         if (getFleetId() != null)
             sb.append("FleetId: ").append(getFleetId()).append(",");
+        if (getFleetArn() != null)
+            sb.append("FleetArn: ").append(getFleetArn()).append(",");
         if (getActiveServerProcessCount() != null)
             sb.append("ActiveServerProcessCount: ").append(getActiveServerProcessCount()).append(",");
         if (getActiveGameSessionCount() != null)
@@ -322,7 +425,9 @@ public class FleetUtilization implements Serializable, Cloneable, StructuredPojo
         if (getCurrentPlayerSessionCount() != null)
             sb.append("CurrentPlayerSessionCount: ").append(getCurrentPlayerSessionCount()).append(",");
         if (getMaximumPlayerSessionCount() != null)
-            sb.append("MaximumPlayerSessionCount: ").append(getMaximumPlayerSessionCount());
+            sb.append("MaximumPlayerSessionCount: ").append(getMaximumPlayerSessionCount()).append(",");
+        if (getLocation() != null)
+            sb.append("Location: ").append(getLocation());
         sb.append("}");
         return sb.toString();
     }
@@ -341,6 +446,10 @@ public class FleetUtilization implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getFleetId() != null && other.getFleetId().equals(this.getFleetId()) == false)
             return false;
+        if (other.getFleetArn() == null ^ this.getFleetArn() == null)
+            return false;
+        if (other.getFleetArn() != null && other.getFleetArn().equals(this.getFleetArn()) == false)
+            return false;
         if (other.getActiveServerProcessCount() == null ^ this.getActiveServerProcessCount() == null)
             return false;
         if (other.getActiveServerProcessCount() != null && other.getActiveServerProcessCount().equals(this.getActiveServerProcessCount()) == false)
@@ -357,6 +466,10 @@ public class FleetUtilization implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getMaximumPlayerSessionCount() != null && other.getMaximumPlayerSessionCount().equals(this.getMaximumPlayerSessionCount()) == false)
             return false;
+        if (other.getLocation() == null ^ this.getLocation() == null)
+            return false;
+        if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
+            return false;
         return true;
     }
 
@@ -366,10 +479,12 @@ public class FleetUtilization implements Serializable, Cloneable, StructuredPojo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getFleetId() == null) ? 0 : getFleetId().hashCode());
+        hashCode = prime * hashCode + ((getFleetArn() == null) ? 0 : getFleetArn().hashCode());
         hashCode = prime * hashCode + ((getActiveServerProcessCount() == null) ? 0 : getActiveServerProcessCount().hashCode());
         hashCode = prime * hashCode + ((getActiveGameSessionCount() == null) ? 0 : getActiveGameSessionCount().hashCode());
         hashCode = prime * hashCode + ((getCurrentPlayerSessionCount() == null) ? 0 : getCurrentPlayerSessionCount().hashCode());
         hashCode = prime * hashCode + ((getMaximumPlayerSessionCount() == null) ? 0 : getMaximumPlayerSessionCount().hashCode());
+        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         return hashCode;
     }
 

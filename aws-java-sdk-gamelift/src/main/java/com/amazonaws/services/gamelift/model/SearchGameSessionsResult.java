@@ -28,13 +28,13 @@ public class SearchGameSessionsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A collection of objects containing game session properties for each session matching the request.
+     * A collection of objects containing game session properties for each session that matches the request.
      * </p>
      */
     private java.util.List<GameSession> gameSessions;
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this operation. If no token is
+     * A token that indicates where to resume retrieving results on the next call to this operation. If no token is
      * returned, these results represent the end of the list.
      * </p>
      */
@@ -42,10 +42,10 @@ public class SearchGameSessionsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A collection of objects containing game session properties for each session matching the request.
+     * A collection of objects containing game session properties for each session that matches the request.
      * </p>
      * 
-     * @return A collection of objects containing game session properties for each session matching the request.
+     * @return A collection of objects containing game session properties for each session that matches the request.
      */
 
     public java.util.List<GameSession> getGameSessions() {
@@ -54,11 +54,11 @@ public class SearchGameSessionsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A collection of objects containing game session properties for each session matching the request.
+     * A collection of objects containing game session properties for each session that matches the request.
      * </p>
      * 
      * @param gameSessions
-     *        A collection of objects containing game session properties for each session matching the request.
+     *        A collection of objects containing game session properties for each session that matches the request.
      */
 
     public void setGameSessions(java.util.Collection<GameSession> gameSessions) {
@@ -72,7 +72,7 @@ public class SearchGameSessionsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A collection of objects containing game session properties for each session matching the request.
+     * A collection of objects containing game session properties for each session that matches the request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class SearchGameSessionsResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param gameSessions
-     *        A collection of objects containing game session properties for each session matching the request.
+     *        A collection of objects containing game session properties for each session that matches the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class SearchGameSessionsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A collection of objects containing game session properties for each session matching the request.
+     * A collection of objects containing game session properties for each session that matches the request.
      * </p>
      * 
      * @param gameSessions
-     *        A collection of objects containing game session properties for each session matching the request.
+     *        A collection of objects containing game session properties for each session that matches the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,13 +112,13 @@ public class SearchGameSessionsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this operation. If no token is
+     * A token that indicates where to resume retrieving results on the next call to this operation. If no token is
      * returned, these results represent the end of the list.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates where to resume retrieving results on the next call to this operation. If no token is
-     *        returned, these results represent the end of the list.
+     *        A token that indicates where to resume retrieving results on the next call to this operation. If no token
+     *        is returned, these results represent the end of the list.
      */
 
     public void setNextToken(String nextToken) {
@@ -127,11 +127,11 @@ public class SearchGameSessionsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this operation. If no token is
+     * A token that indicates where to resume retrieving results on the next call to this operation. If no token is
      * returned, these results represent the end of the list.
      * </p>
      * 
-     * @return Token that indicates where to resume retrieving results on the next call to this operation. If no token
+     * @return A token that indicates where to resume retrieving results on the next call to this operation. If no token
      *         is returned, these results represent the end of the list.
      */
 
@@ -141,13 +141,13 @@ public class SearchGameSessionsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this operation. If no token is
+     * A token that indicates where to resume retrieving results on the next call to this operation. If no token is
      * returned, these results represent the end of the list.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates where to resume retrieving results on the next call to this operation. If no token is
-     *        returned, these results represent the end of the list.
+     *        A token that indicates where to resume retrieving results on the next call to this operation. If no token
+     *        is returned, these results represent the end of the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

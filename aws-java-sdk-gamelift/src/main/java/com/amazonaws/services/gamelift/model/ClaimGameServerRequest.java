@@ -28,8 +28,8 @@ public class ClaimGameServerRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A unique identifier for the game server group where the game server is running. Use either the
-     * <a>GameServerGroup</a> name or ARN value.. If you are not specifying a game server to claim, this value
-     * identifies where you want GameLift FleetIQ to look for an available game server to claim.
+     * <a>GameServerGroup</a> name or ARN value. If you are not specifying a game server to claim, this value identifies
+     * where you want GameLift FleetIQ to look for an available game server to claim.
      * </p>
      */
     private String gameServerGroupName;
@@ -51,13 +51,13 @@ public class ClaimGameServerRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A unique identifier for the game server group where the game server is running. Use either the
-     * <a>GameServerGroup</a> name or ARN value.. If you are not specifying a game server to claim, this value
-     * identifies where you want GameLift FleetIQ to look for an available game server to claim.
+     * <a>GameServerGroup</a> name or ARN value. If you are not specifying a game server to claim, this value identifies
+     * where you want GameLift FleetIQ to look for an available game server to claim.
      * </p>
      * 
      * @param gameServerGroupName
      *        A unique identifier for the game server group where the game server is running. Use either the
-     *        <a>GameServerGroup</a> name or ARN value.. If you are not specifying a game server to claim, this value
+     *        <a>GameServerGroup</a> name or ARN value. If you are not specifying a game server to claim, this value
      *        identifies where you want GameLift FleetIQ to look for an available game server to claim.
      */
 
@@ -68,12 +68,12 @@ public class ClaimGameServerRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A unique identifier for the game server group where the game server is running. Use either the
-     * <a>GameServerGroup</a> name or ARN value.. If you are not specifying a game server to claim, this value
-     * identifies where you want GameLift FleetIQ to look for an available game server to claim.
+     * <a>GameServerGroup</a> name or ARN value. If you are not specifying a game server to claim, this value identifies
+     * where you want GameLift FleetIQ to look for an available game server to claim.
      * </p>
      * 
      * @return A unique identifier for the game server group where the game server is running. Use either the
-     *         <a>GameServerGroup</a> name or ARN value.. If you are not specifying a game server to claim, this value
+     *         <a>GameServerGroup</a> name or ARN value. If you are not specifying a game server to claim, this value
      *         identifies where you want GameLift FleetIQ to look for an available game server to claim.
      */
 
@@ -84,13 +84,13 @@ public class ClaimGameServerRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A unique identifier for the game server group where the game server is running. Use either the
-     * <a>GameServerGroup</a> name or ARN value.. If you are not specifying a game server to claim, this value
-     * identifies where you want GameLift FleetIQ to look for an available game server to claim.
+     * <a>GameServerGroup</a> name or ARN value. If you are not specifying a game server to claim, this value identifies
+     * where you want GameLift FleetIQ to look for an available game server to claim.
      * </p>
      * 
      * @param gameServerGroupName
      *        A unique identifier for the game server group where the game server is running. Use either the
-     *        <a>GameServerGroup</a> name or ARN value.. If you are not specifying a game server to claim, this value
+     *        <a>GameServerGroup</a> name or ARN value. If you are not specifying a game server to claim, this value
      *        identifies where you want GameLift FleetIQ to look for an available game server to claim.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

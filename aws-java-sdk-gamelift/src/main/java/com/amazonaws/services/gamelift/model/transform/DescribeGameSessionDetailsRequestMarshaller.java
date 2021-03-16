@@ -33,6 +33,8 @@ public class DescribeGameSessionDetailsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GameSessionId").build();
     private static final MarshallingInfo<String> ALIASID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("AliasId").build();
+    private static final MarshallingInfo<String> LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Location").build();
     private static final MarshallingInfo<String> STATUSFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusFilter").build();
     private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
@@ -59,6 +61,7 @@ public class DescribeGameSessionDetailsRequestMarshaller {
             protocolMarshaller.marshall(describeGameSessionDetailsRequest.getFleetId(), FLEETID_BINDING);
             protocolMarshaller.marshall(describeGameSessionDetailsRequest.getGameSessionId(), GAMESESSIONID_BINDING);
             protocolMarshaller.marshall(describeGameSessionDetailsRequest.getAliasId(), ALIASID_BINDING);
+            protocolMarshaller.marshall(describeGameSessionDetailsRequest.getLocation(), LOCATION_BINDING);
             protocolMarshaller.marshall(describeGameSessionDetailsRequest.getStatusFilter(), STATUSFILTER_BINDING);
             protocolMarshaller.marshall(describeGameSessionDetailsRequest.getLimit(), LIMIT_BINDING);
             protocolMarshaller.marshall(describeGameSessionDetailsRequest.getNextToken(), NEXTTOKEN_BINDING);

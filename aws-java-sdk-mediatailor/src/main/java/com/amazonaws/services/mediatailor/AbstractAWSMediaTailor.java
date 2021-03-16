@@ -123,11 +123,6 @@ public class AbstractAWSMediaTailor implements AWSMediaTailor {
     }
 
     @Override
-    public ListProgramsResult listPrograms(ListProgramsRequest request) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
     public ListSourceLocationsResult listSourceLocations(ListSourceLocationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

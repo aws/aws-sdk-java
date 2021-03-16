@@ -31,6 +31,8 @@ public class SearchGameSessionsRequestMarshaller {
             .marshallLocationName("FleetId").build();
     private static final MarshallingInfo<String> ALIASID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("AliasId").build();
+    private static final MarshallingInfo<String> LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Location").build();
     private static final MarshallingInfo<String> FILTEREXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FilterExpression").build();
     private static final MarshallingInfo<String> SORTEXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -58,6 +60,7 @@ public class SearchGameSessionsRequestMarshaller {
         try {
             protocolMarshaller.marshall(searchGameSessionsRequest.getFleetId(), FLEETID_BINDING);
             protocolMarshaller.marshall(searchGameSessionsRequest.getAliasId(), ALIASID_BINDING);
+            protocolMarshaller.marshall(searchGameSessionsRequest.getLocation(), LOCATION_BINDING);
             protocolMarshaller.marshall(searchGameSessionsRequest.getFilterExpression(), FILTEREXPRESSION_BINDING);
             protocolMarshaller.marshall(searchGameSessionsRequest.getSortExpression(), SORTEXPRESSION_BINDING);
             protocolMarshaller.marshall(searchGameSessionsRequest.getLimit(), LIMIT_BINDING);

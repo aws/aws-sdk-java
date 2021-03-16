@@ -19,11 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A set of instructions for launching server processes on each instance in a fleet. Server processes run either a
- * custom game build executable or a Realtime Servers script. Each instruction set identifies the location of the custom
- * game build executable or Realtime launch script, optional launch parameters, and the number of server processes with
- * this configuration to maintain concurrently on the instance. Server process configurations make up a fleet's
- * <code> <a>RuntimeConfiguration</a> </code>.
+ * A set of instructions for launching server processes on each instance in a fleet. Server processes run either an
+ * executable in a custom game build or a Realtime Servers script. Server process configurations are part of a fleet's
+ * <a>RuntimeConfiguration</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ServerProcess" target="_top">AWS API
@@ -34,14 +32,13 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The location of the server executable in a custom game build or the name of the Realtime script file that
-     * contains the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at the
-     * root:
+     * The location of a game build executable or the Realtime script file that contains the <code>Init()</code>
+     * function. Game builds and Realtime scripts are installed on instances at the root:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Windows (for custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>"
+     * Windows (custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>"
      * </p>
      * </li>
      * <li>
@@ -61,21 +58,20 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
     private String parameters;
     /**
      * <p>
-     * The number of server processes that use this configuration to run concurrently on an instance.
+     * The number of server processes using this configuration that run concurrently on each instance.
      * </p>
      */
     private Integer concurrentExecutions;
 
     /**
      * <p>
-     * The location of the server executable in a custom game build or the name of the Realtime script file that
-     * contains the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at the
-     * root:
+     * The location of a game build executable or the Realtime script file that contains the <code>Init()</code>
+     * function. Game builds and Realtime scripts are installed on instances at the root:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Windows (for custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>"
+     * Windows (custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>"
      * </p>
      * </li>
      * <li>
@@ -87,14 +83,12 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param launchPath
-     *        The location of the server executable in a custom game build or the name of the Realtime script file that
-     *        contains the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at
-     *        the root: </p>
+     *        The location of a game build executable or the Realtime script file that contains the <code>Init()</code>
+     *        function. Game builds and Realtime scripts are installed on instances at the root: </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Windows (for custom game builds only): <code>C:\game</code>. Example: "
-     *        <code>C:\game\MyGame\server.exe</code>"
+     *        Windows (custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>"
      *        </p>
      *        </li>
      *        <li>
@@ -111,14 +105,13 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The location of the server executable in a custom game build or the name of the Realtime script file that
-     * contains the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at the
-     * root:
+     * The location of a game build executable or the Realtime script file that contains the <code>Init()</code>
+     * function. Game builds and Realtime scripts are installed on instances at the root:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Windows (for custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>"
+     * Windows (custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>"
      * </p>
      * </li>
      * <li>
@@ -129,14 +122,13 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return The location of the server executable in a custom game build or the name of the Realtime script file that
-     *         contains the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at
-     *         the root: </p>
+     * @return The location of a game build executable or the Realtime script file that contains the <code>Init()</code>
+     *         function. Game builds and Realtime scripts are installed on instances at the root: </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Windows (for custom game builds only): <code>C:\game</code>. Example: "
-     *         <code>C:\game\MyGame\server.exe</code>"
+     *         Windows (custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>
+     *         "
      *         </p>
      *         </li>
      *         <li>
@@ -153,14 +145,13 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The location of the server executable in a custom game build or the name of the Realtime script file that
-     * contains the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at the
-     * root:
+     * The location of a game build executable or the Realtime script file that contains the <code>Init()</code>
+     * function. Game builds and Realtime scripts are installed on instances at the root:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Windows (for custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>"
+     * Windows (custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>"
      * </p>
      * </li>
      * <li>
@@ -172,14 +163,12 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param launchPath
-     *        The location of the server executable in a custom game build or the name of the Realtime script file that
-     *        contains the <code>Init()</code> function. Game builds and Realtime scripts are installed on instances at
-     *        the root: </p>
+     *        The location of a game build executable or the Realtime script file that contains the <code>Init()</code>
+     *        function. Game builds and Realtime scripts are installed on instances at the root: </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Windows (for custom game builds only): <code>C:\game</code>. Example: "
-     *        <code>C:\game\MyGame\server.exe</code>"
+     *        Windows (custom game builds only): <code>C:\game</code>. Example: "<code>C:\game\MyGame\server.exe</code>"
      *        </p>
      *        </li>
      *        <li>
@@ -238,11 +227,11 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of server processes that use this configuration to run concurrently on an instance.
+     * The number of server processes using this configuration that run concurrently on each instance.
      * </p>
      * 
      * @param concurrentExecutions
-     *        The number of server processes that use this configuration to run concurrently on an instance.
+     *        The number of server processes using this configuration that run concurrently on each instance.
      */
 
     public void setConcurrentExecutions(Integer concurrentExecutions) {
@@ -251,10 +240,10 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of server processes that use this configuration to run concurrently on an instance.
+     * The number of server processes using this configuration that run concurrently on each instance.
      * </p>
      * 
-     * @return The number of server processes that use this configuration to run concurrently on an instance.
+     * @return The number of server processes using this configuration that run concurrently on each instance.
      */
 
     public Integer getConcurrentExecutions() {
@@ -263,11 +252,11 @@ public class ServerProcess implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of server processes that use this configuration to run concurrently on an instance.
+     * The number of server processes using this configuration that run concurrently on each instance.
      * </p>
      * 
      * @param concurrentExecutions
-     *        The number of server processes that use this configuration to run concurrently on an instance.
+     *        The number of server processes using this configuration that run concurrently on each instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

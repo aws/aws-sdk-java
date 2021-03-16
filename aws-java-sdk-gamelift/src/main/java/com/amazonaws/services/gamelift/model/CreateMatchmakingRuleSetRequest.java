@@ -30,7 +30,7 @@ public class CreateMatchmakingRuleSetRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A unique identifier for a matchmaking rule set. A matchmaking configuration identifies the rule set it uses by
+     * A unique identifier for the matchmaking rule set. A matchmaking configuration identifies the rule set it uses by
      * this name value. Note that the rule set name is different from the optional <code>name</code> field in the rule
      * set body.
      * </p>
@@ -57,13 +57,13 @@ public class CreateMatchmakingRuleSetRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A unique identifier for a matchmaking rule set. A matchmaking configuration identifies the rule set it uses by
+     * A unique identifier for the matchmaking rule set. A matchmaking configuration identifies the rule set it uses by
      * this name value. Note that the rule set name is different from the optional <code>name</code> field in the rule
      * set body.
      * </p>
      * 
      * @param name
-     *        A unique identifier for a matchmaking rule set. A matchmaking configuration identifies the rule set it
+     *        A unique identifier for the matchmaking rule set. A matchmaking configuration identifies the rule set it
      *        uses by this name value. Note that the rule set name is different from the optional <code>name</code>
      *        field in the rule set body.
      */
@@ -74,12 +74,12 @@ public class CreateMatchmakingRuleSetRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A unique identifier for a matchmaking rule set. A matchmaking configuration identifies the rule set it uses by
+     * A unique identifier for the matchmaking rule set. A matchmaking configuration identifies the rule set it uses by
      * this name value. Note that the rule set name is different from the optional <code>name</code> field in the rule
      * set body.
      * </p>
      * 
-     * @return A unique identifier for a matchmaking rule set. A matchmaking configuration identifies the rule set it
+     * @return A unique identifier for the matchmaking rule set. A matchmaking configuration identifies the rule set it
      *         uses by this name value. Note that the rule set name is different from the optional <code>name</code>
      *         field in the rule set body.
      */
@@ -90,13 +90,13 @@ public class CreateMatchmakingRuleSetRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A unique identifier for a matchmaking rule set. A matchmaking configuration identifies the rule set it uses by
+     * A unique identifier for the matchmaking rule set. A matchmaking configuration identifies the rule set it uses by
      * this name value. Note that the rule set name is different from the optional <code>name</code> field in the rule
      * set body.
      * </p>
      * 
      * @param name
-     *        A unique identifier for a matchmaking rule set. A matchmaking configuration identifies the rule set it
+     *        A unique identifier for the matchmaking rule set. A matchmaking configuration identifies the rule set it
      *        uses by this name value. Note that the rule set name is different from the optional <code>name</code>
      *        field in the rule set body.
      * @return Returns a reference to this object so that method calls can be chained together.

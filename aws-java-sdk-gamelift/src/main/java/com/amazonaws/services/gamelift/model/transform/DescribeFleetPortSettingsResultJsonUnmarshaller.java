@@ -48,11 +48,27 @@ public class DescribeFleetPortSettingsResultJsonUnmarshaller implements Unmarsha
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("FleetId", targetDepth)) {
+                    context.nextToken();
+                    describeFleetPortSettingsResult.setFleetId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("FleetArn", targetDepth)) {
+                    context.nextToken();
+                    describeFleetPortSettingsResult.setFleetArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("InboundPermissions", targetDepth)) {
                     context.nextToken();
                     describeFleetPortSettingsResult.setInboundPermissions(new ListUnmarshaller<IpPermission>(IpPermissionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (context.testExpression("UpdateStatus", targetDepth)) {
+                    context.nextToken();
+                    describeFleetPortSettingsResult.setUpdateStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Location", targetDepth)) {
+                    context.nextToken();
+                    describeFleetPortSettingsResult.setLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

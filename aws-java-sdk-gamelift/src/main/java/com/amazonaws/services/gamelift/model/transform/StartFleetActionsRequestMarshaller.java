@@ -32,6 +32,8 @@ public class StartFleetActionsRequestMarshaller {
             .marshallLocationName("FleetId").build();
     private static final MarshallingInfo<List> ACTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Actions").build();
+    private static final MarshallingInfo<String> LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Location").build();
 
     private static final StartFleetActionsRequestMarshaller instance = new StartFleetActionsRequestMarshaller();
 
@@ -51,6 +53,7 @@ public class StartFleetActionsRequestMarshaller {
         try {
             protocolMarshaller.marshall(startFleetActionsRequest.getFleetId(), FLEETID_BINDING);
             protocolMarshaller.marshall(startFleetActionsRequest.getActions(), ACTIONS_BINDING);
+            protocolMarshaller.marshall(startFleetActionsRequest.getLocation(), LOCATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

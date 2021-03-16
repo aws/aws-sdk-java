@@ -842,6 +842,39 @@ public class AWSAccessAnalyzerAsyncClient extends AWSAccessAnalyzerClient implem
         });
     }
 
+    @Override
+    public java.util.concurrent.Future<ValidatePolicyResult> validatePolicyAsync(ValidatePolicyRequest request) {
+
+        return validatePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidatePolicyResult> validatePolicyAsync(final ValidatePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ValidatePolicyRequest, ValidatePolicyResult> asyncHandler) {
+        final ValidatePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ValidatePolicyResult>() {
+            @Override
+            public ValidatePolicyResult call() throws Exception {
+                ValidatePolicyResult result = null;
+
+                try {
+                    result = executeValidatePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
     /**
      * Shuts down the client, releasing all managed resources. This includes forcibly terminating all pending
      * asynchronous service calls. Clients who wish to give pending asynchronous service calls time to complete should

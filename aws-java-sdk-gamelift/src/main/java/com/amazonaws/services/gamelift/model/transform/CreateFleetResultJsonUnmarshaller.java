@@ -52,6 +52,12 @@ public class CreateFleetResultJsonUnmarshaller implements Unmarshaller<CreateFle
                     context.nextToken();
                     createFleetResult.setFleetAttributes(FleetAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("LocationStates", targetDepth)) {
+                    context.nextToken();
+                    createFleetResult.setLocationStates(new ListUnmarshaller<LocationState>(LocationStateJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

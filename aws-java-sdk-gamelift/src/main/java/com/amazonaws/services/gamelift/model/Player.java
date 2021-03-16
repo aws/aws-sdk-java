@@ -51,7 +51,7 @@ public class Player implements Serializable, Cloneable, StructuredPojo {
     private String team;
     /**
      * <p>
-     * Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
+     * A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when
      * connected to AWS Regions. If this property is present, FlexMatch considers placing the match only in Regions for
      * which latency is reported.
      * </p>
@@ -228,7 +228,7 @@ public class Player implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
+     * A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when
      * connected to AWS Regions. If this property is present, FlexMatch considers placing the match only in Regions for
      * which latency is reported.
      * </p>
@@ -238,9 +238,9 @@ public class Player implements Serializable, Cloneable, StructuredPojo {
      * ticket is not matchable.
      * </p>
      * 
-     * @return Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
-     *         connected to AWS Regions. If this property is present, FlexMatch considers placing the match only in
-     *         Regions for which latency is reported. </p>
+     * @return A set of values, expressed in milliseconds, that indicates the amount of latency that a player
+     *         experiences when connected to AWS Regions. If this property is present, FlexMatch considers placing the
+     *         match only in Regions for which latency is reported. </p>
      *         <p>
      *         If a matchmaker has a rule that evaluates player latency, players must report latency in order to be
      *         matched. If no latency is reported in this scenario, FlexMatch assumes that no Regions are available to
@@ -253,7 +253,7 @@ public class Player implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
+     * A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when
      * connected to AWS Regions. If this property is present, FlexMatch considers placing the match only in Regions for
      * which latency is reported.
      * </p>
@@ -264,8 +264,8 @@ public class Player implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param latencyInMs
-     *        Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
-     *        connected to AWS Regions. If this property is present, FlexMatch considers placing the match only in
+     *        A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences
+     *        when connected to AWS Regions. If this property is present, FlexMatch considers placing the match only in
      *        Regions for which latency is reported. </p>
      *        <p>
      *        If a matchmaker has a rule that evaluates player latency, players must report latency in order to be
@@ -279,7 +279,7 @@ public class Player implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
+     * A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when
      * connected to AWS Regions. If this property is present, FlexMatch considers placing the match only in Regions for
      * which latency is reported.
      * </p>
@@ -290,8 +290,8 @@ public class Player implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param latencyInMs
-     *        Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when
-     *        connected to AWS Regions. If this property is present, FlexMatch considers placing the match only in
+     *        A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences
+     *        when connected to AWS Regions. If this property is present, FlexMatch considers placing the match only in
      *        Regions for which latency is reported. </p>
      *        <p>
      *        If a matchmaker has a rule that evaluates player latency, players must report latency in order to be

@@ -302,19 +302,6 @@ public interface AWSMediaTailor {
 
     /**
      * <p>
-     * Retrieves a list of programs on a specific channel.
-     * </p>
-     * 
-     * @param listProgramsRequest
-     * @return Result of the ListPrograms operation returned by the service.
-     * @sample AWSMediaTailor.ListPrograms
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPrograms" target="_top">AWS API
-     *      Documentation</a>
-     */
-    ListProgramsResult listPrograms(ListProgramsRequest listProgramsRequest);
-
-    /**
-     * <p>
      * Retrieves a list of source locations.
      * </p>
      * 

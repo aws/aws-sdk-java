@@ -1194,61 +1194,6 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
     /**
      * <p>
-     * Retrieves a list of programs on a specific channel.
-     * </p>
-     * 
-     * @param listProgramsRequest
-     * @return Result of the ListPrograms operation returned by the service.
-     * @sample AWSMediaTailor.ListPrograms
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPrograms" target="_top">AWS API
-     *      Documentation</a>
-     */
-    @Override
-    public ListProgramsResult listPrograms(ListProgramsRequest request) {
-        request = beforeClientExecution(request);
-        return executeListPrograms(request);
-    }
-
-    @SdkInternalApi
-    final ListProgramsResult executeListPrograms(ListProgramsRequest listProgramsRequest) {
-
-        ExecutionContext executionContext = createExecutionContext(listProgramsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListProgramsRequest> request = null;
-        Response<ListProgramsResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ListProgramsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProgramsRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
-                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
-                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
-                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPrograms");
-                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
-
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            HttpResponseHandler<AmazonWebServiceResponse<ListProgramsResult>> responseHandler = protocolFactory.createResponseHandler(
-                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListProgramsResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * <p>
      * Retrieves a list of source locations.
      * </p>
      * 

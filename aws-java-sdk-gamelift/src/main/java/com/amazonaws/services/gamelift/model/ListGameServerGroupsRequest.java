@@ -28,13 +28,13 @@ public class ListGameServerGroupsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
-     * of sequential segments.
+     * of sequential pages.
      * </p>
      */
     private Integer limit;
     /**
      * <p>
-     * A token that indicates the start of the next sequential segment of results. Use the token returned with the
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
      * previous call to this operation. To start at the beginning of the result set, do not specify a value.
      * </p>
      */
@@ -43,12 +43,12 @@ public class ListGameServerGroupsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
-     * of sequential segments.
+     * of sequential pages.
      * </p>
      * 
      * @param limit
      *        The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
-     *        a set of sequential segments.
+     *        a set of sequential pages.
      */
 
     public void setLimit(Integer limit) {
@@ -58,11 +58,11 @@ public class ListGameServerGroupsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
-     * of sequential segments.
+     * of sequential pages.
      * </p>
      * 
      * @return The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
-     *         a set of sequential segments.
+     *         a set of sequential pages.
      */
 
     public Integer getLimit() {
@@ -72,12 +72,12 @@ public class ListGameServerGroupsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
-     * of sequential segments.
+     * of sequential pages.
      * </p>
      * 
      * @param limit
      *        The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
-     *        a set of sequential segments.
+     *        a set of sequential pages.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,13 +88,14 @@ public class ListGameServerGroupsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A token that indicates the start of the next sequential segment of results. Use the token returned with the
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
      * previous call to this operation. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
-     *        A token that indicates the start of the next sequential segment of results. Use the token returned with
-     *        the previous call to this operation. To start at the beginning of the result set, do not specify a value.
+     *        A token that indicates the start of the next sequential page of results. Use the token that is returned
+     *        with a previous call to this operation. To start at the beginning of the result set, do not specify a
+     *        value.
      */
 
     public void setNextToken(String nextToken) {
@@ -103,12 +104,13 @@ public class ListGameServerGroupsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A token that indicates the start of the next sequential segment of results. Use the token returned with the
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
      * previous call to this operation. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
-     * @return A token that indicates the start of the next sequential segment of results. Use the token returned with
-     *         the previous call to this operation. To start at the beginning of the result set, do not specify a value.
+     * @return A token that indicates the start of the next sequential page of results. Use the token that is returned
+     *         with a previous call to this operation. To start at the beginning of the result set, do not specify a
+     *         value.
      */
 
     public String getNextToken() {
@@ -117,13 +119,14 @@ public class ListGameServerGroupsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A token that indicates the start of the next sequential segment of results. Use the token returned with the
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
      * previous call to this operation. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
-     *        A token that indicates the start of the next sequential segment of results. Use the token returned with
-     *        the previous call to this operation. To start at the beginning of the result set, do not specify a value.
+     *        A token that indicates the start of the next sequential page of results. Use the token that is returned
+     *        with a previous call to this operation. To start at the beginning of the result set, do not specify a
+     *        value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

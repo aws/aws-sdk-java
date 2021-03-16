@@ -63,6 +63,11 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
     }
 
     @Override
+    public CreateFleetLocationsResult createFleetLocations(CreateFleetLocationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateGameServerGroupResult createGameServerGroup(CreateGameServerGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -124,6 +129,11 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
 
     @Override
     public DeleteFleetResult deleteFleet(DeleteFleetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteFleetLocationsResult deleteFleetLocations(DeleteFleetLocationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -199,6 +209,21 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
 
     @Override
     public DescribeFleetEventsResult describeFleetEvents(DescribeFleetEventsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeFleetLocationAttributesResult describeFleetLocationAttributes(DescribeFleetLocationAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeFleetLocationCapacityResult describeFleetLocationCapacity(DescribeFleetLocationCapacityRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeFleetLocationUtilizationResult describeFleetLocationUtilization(DescribeFleetLocationUtilizationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

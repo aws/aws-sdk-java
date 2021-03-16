@@ -46,6 +46,13 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer maxBitrate;
     /** The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams. */
     private Integer maxLatency;
+    /**
+     * The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that
+     * you set on your MediaConnect source or output represents the minimal potential latency of that connection. The
+     * latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum
+     * latency.
+     */
+    private Integer minLatency;
     /** The protocol that is used by the source. */
     private String protocol;
     /** The ARN of the source that you want to update. */
@@ -311,6 +318,58 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that
+     * you set on your MediaConnect source or output represents the minimal potential latency of that connection. The
+     * latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum
+     * latency.
+     * 
+     * @param minLatency
+     *        The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this
+     *        value that you set on your MediaConnect source or output represents the minimal potential latency of that
+     *        connection. The latency of the stream is set to the highest number between the sender’s minimum latency
+     *        and the receiver’s minimum latency.
+     */
+
+    public void setMinLatency(Integer minLatency) {
+        this.minLatency = minLatency;
+    }
+
+    /**
+     * The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that
+     * you set on your MediaConnect source or output represents the minimal potential latency of that connection. The
+     * latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum
+     * latency.
+     * 
+     * @return The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this
+     *         value that you set on your MediaConnect source or output represents the minimal potential latency of that
+     *         connection. The latency of the stream is set to the highest number between the sender’s minimum latency
+     *         and the receiver’s minimum latency.
+     */
+
+    public Integer getMinLatency() {
+        return this.minLatency;
+    }
+
+    /**
+     * The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that
+     * you set on your MediaConnect source or output represents the minimal potential latency of that connection. The
+     * latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum
+     * latency.
+     * 
+     * @param minLatency
+     *        The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this
+     *        value that you set on your MediaConnect source or output represents the minimal potential latency of that
+     *        connection. The latency of the stream is set to the highest number between the sender’s minimum latency
+     *        and the receiver’s minimum latency.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFlowSourceRequest withMinLatency(Integer minLatency) {
+        setMinLatency(minLatency);
+        return this;
+    }
+
+    /**
      * The protocol that is used by the source.
      * 
      * @param protocol
@@ -529,6 +588,8 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("MaxBitrate: ").append(getMaxBitrate()).append(",");
         if (getMaxLatency() != null)
             sb.append("MaxLatency: ").append(getMaxLatency()).append(",");
+        if (getMinLatency() != null)
+            sb.append("MinLatency: ").append(getMinLatency()).append(",");
         if (getProtocol() != null)
             sb.append("Protocol: ").append(getProtocol()).append(",");
         if (getSourceArn() != null)
@@ -581,6 +642,10 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getMaxLatency() != null && other.getMaxLatency().equals(this.getMaxLatency()) == false)
             return false;
+        if (other.getMinLatency() == null ^ this.getMinLatency() == null)
+            return false;
+        if (other.getMinLatency() != null && other.getMinLatency().equals(this.getMinLatency()) == false)
+            return false;
         if (other.getProtocol() == null ^ this.getProtocol() == null)
             return false;
         if (other.getProtocol() != null && other.getProtocol().equals(this.getProtocol()) == false)
@@ -616,6 +681,7 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getIngestPort() == null) ? 0 : getIngestPort().hashCode());
         hashCode = prime * hashCode + ((getMaxBitrate() == null) ? 0 : getMaxBitrate().hashCode());
         hashCode = prime * hashCode + ((getMaxLatency() == null) ? 0 : getMaxLatency().hashCode());
+        hashCode = prime * hashCode + ((getMinLatency() == null) ? 0 : getMinLatency().hashCode());
         hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode());
         hashCode = prime * hashCode + ((getSourceArn() == null) ? 0 : getSourceArn().hashCode());
         hashCode = prime * hashCode + ((getStreamId() == null) ? 0 : getStreamId().hashCode());

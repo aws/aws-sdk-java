@@ -19,42 +19,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the fleet's capacity. Fleet capacity is measured in EC2 instances. By default, new fleets have a
- * capacity of one instance, but can be updated as needed. The maximum number of instances for a fleet is determined by
- * the fleet's instance type.
+ * Current resource capacity settings in a specified fleet or location. The location value might refer to a fleet's
+ * remote location or its home Region.
  * </p>
- * <ul>
- * <li>
  * <p>
- * <a>CreateFleet</a>
+ * <b>Related actions</b>
  * </p>
- * </li>
- * <li>
  * <p>
- * <a>ListFleets</a>
+ * <a>DescribeFleetCapacity</a> | <a>DescribeFleetLocationCapacity</a> | <a>UpdateFleetCapacity</a>
  * </p>
- * </li>
- * <li>
- * <p>
- * <a>DeleteFleet</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeFleetAttributes</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>UpdateFleetAttributes</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>StartFleetActions</a> or <a>StopFleetActions</a>
- * </p>
- * </li>
- * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/FleetCapacity" target="_top">AWS API
  *      Documentation</a>
@@ -64,33 +37,47 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for a fleet.
+     * A unique identifier for the fleet associated with the location.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
-     * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
-     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift
-     * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
-     * Instance Types</a> for detailed descriptions.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
+     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * </p>
+     */
+    private String fleetArn;
+    /**
+     * <p>
+     * The EC2 instance type that is used for all instances in a fleet. The instance type determines the computing
+     * resources in use, including CPU, memory, storage, and networking capacity. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * </p>
      */
     private String instanceType;
     /**
      * <p>
-     * Current status of fleet capacity.
+     * The current instance count and capacity settings for the fleet location.
      * </p>
      */
     private EC2InstanceCounts instanceCounts;
+    /**
+     * <p>
+     * The fleet location for the instance count information, expressed as an AWS Region code, such as
+     * <code>us-west-2</code>.
+     * </p>
+     */
+    private String location;
 
     /**
      * <p>
-     * A unique identifier for a fleet.
+     * A unique identifier for the fleet associated with the location.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet.
+     *        A unique identifier for the fleet associated with the location.
      */
 
     public void setFleetId(String fleetId) {
@@ -99,10 +86,10 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for a fleet.
+     * A unique identifier for the fleet associated with the location.
      * </p>
      * 
-     * @return A unique identifier for a fleet.
+     * @return A unique identifier for the fleet associated with the location.
      */
 
     public String getFleetId() {
@@ -111,11 +98,11 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for a fleet.
+     * A unique identifier for the fleet associated with the location.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet.
+     *        A unique identifier for the fleet associated with the location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,16 +113,69 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
-     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift
-     * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
-     * Instance Types</a> for detailed descriptions.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
+     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * </p>
+     * 
+     * @param fleetArn
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *        <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     */
+
+    public void setFleetArn(String fleetArn) {
+        this.fleetArn = fleetArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
+     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (<a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *         GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *         <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     */
+
+    public String getFleetArn() {
+        return this.fleetArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
+     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * </p>
+     * 
+     * @param fleetArn
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *        <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FleetCapacity withFleetArn(String fleetArn) {
+        setFleetArn(fleetArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The EC2 instance type that is used for all instances in a fleet. The instance type determines the computing
+     * resources in use, including CPU, memory, storage, and networking capacity. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * </p>
      * 
      * @param instanceType
-     *        Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
-     *        computing resources of each instance in the fleet, including CPU, memory, storage, and networking
-     *        capacity. Amazon GameLift supports the following EC2 instance types. See <a
+     *        The EC2 instance type that is used for all instances in a fleet. The instance type determines the
+     *        computing resources in use, including CPU, memory, storage, and networking capacity. See <a
      *        href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * @see EC2InstanceType
      */
@@ -146,15 +186,13 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
-     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift
-     * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
-     * Instance Types</a> for detailed descriptions.
+     * The EC2 instance type that is used for all instances in a fleet. The instance type determines the computing
+     * resources in use, including CPU, memory, storage, and networking capacity. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * </p>
      * 
-     * @return Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
-     *         computing resources of each instance in the fleet, including CPU, memory, storage, and networking
-     *         capacity. Amazon GameLift supports the following EC2 instance types. See <a
+     * @return The EC2 instance type that is used for all instances in a fleet. The instance type determines the
+     *         computing resources in use, including CPU, memory, storage, and networking capacity. See <a
      *         href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * @see EC2InstanceType
      */
@@ -165,16 +203,14 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
-     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift
-     * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
-     * Instance Types</a> for detailed descriptions.
+     * The EC2 instance type that is used for all instances in a fleet. The instance type determines the computing
+     * resources in use, including CPU, memory, storage, and networking capacity. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * </p>
      * 
      * @param instanceType
-     *        Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
-     *        computing resources of each instance in the fleet, including CPU, memory, storage, and networking
-     *        capacity. Amazon GameLift supports the following EC2 instance types. See <a
+     *        The EC2 instance type that is used for all instances in a fleet. The instance type determines the
+     *        computing resources in use, including CPU, memory, storage, and networking capacity. See <a
      *        href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EC2InstanceType
@@ -187,16 +223,14 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
-     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift
-     * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
-     * Instance Types</a> for detailed descriptions.
+     * The EC2 instance type that is used for all instances in a fleet. The instance type determines the computing
+     * resources in use, including CPU, memory, storage, and networking capacity. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * </p>
      * 
      * @param instanceType
-     *        Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
-     *        computing resources of each instance in the fleet, including CPU, memory, storage, and networking
-     *        capacity. Amazon GameLift supports the following EC2 instance types. See <a
+     *        The EC2 instance type that is used for all instances in a fleet. The instance type determines the
+     *        computing resources in use, including CPU, memory, storage, and networking capacity. See <a
      *        href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * @see EC2InstanceType
      */
@@ -207,16 +241,14 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
-     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift
-     * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
-     * Instance Types</a> for detailed descriptions.
+     * The EC2 instance type that is used for all instances in a fleet. The instance type determines the computing
+     * resources in use, including CPU, memory, storage, and networking capacity. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * </p>
      * 
      * @param instanceType
-     *        Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
-     *        computing resources of each instance in the fleet, including CPU, memory, storage, and networking
-     *        capacity. Amazon GameLift supports the following EC2 instance types. See <a
+     *        The EC2 instance type that is used for all instances in a fleet. The instance type determines the
+     *        computing resources in use, including CPU, memory, storage, and networking capacity. See <a
      *        href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EC2InstanceType
@@ -229,11 +261,11 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Current status of fleet capacity.
+     * The current instance count and capacity settings for the fleet location.
      * </p>
      * 
      * @param instanceCounts
-     *        Current status of fleet capacity.
+     *        The current instance count and capacity settings for the fleet location.
      */
 
     public void setInstanceCounts(EC2InstanceCounts instanceCounts) {
@@ -242,10 +274,10 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Current status of fleet capacity.
+     * The current instance count and capacity settings for the fleet location.
      * </p>
      * 
-     * @return Current status of fleet capacity.
+     * @return The current instance count and capacity settings for the fleet location.
      */
 
     public EC2InstanceCounts getInstanceCounts() {
@@ -254,16 +286,62 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Current status of fleet capacity.
+     * The current instance count and capacity settings for the fleet location.
      * </p>
      * 
      * @param instanceCounts
-     *        Current status of fleet capacity.
+     *        The current instance count and capacity settings for the fleet location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FleetCapacity withInstanceCounts(EC2InstanceCounts instanceCounts) {
         setInstanceCounts(instanceCounts);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The fleet location for the instance count information, expressed as an AWS Region code, such as
+     * <code>us-west-2</code>.
+     * </p>
+     * 
+     * @param location
+     *        The fleet location for the instance count information, expressed as an AWS Region code, such as
+     *        <code>us-west-2</code>.
+     */
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    /**
+     * <p>
+     * The fleet location for the instance count information, expressed as an AWS Region code, such as
+     * <code>us-west-2</code>.
+     * </p>
+     * 
+     * @return The fleet location for the instance count information, expressed as an AWS Region code, such as
+     *         <code>us-west-2</code>.
+     */
+
+    public String getLocation() {
+        return this.location;
+    }
+
+    /**
+     * <p>
+     * The fleet location for the instance count information, expressed as an AWS Region code, such as
+     * <code>us-west-2</code>.
+     * </p>
+     * 
+     * @param location
+     *        The fleet location for the instance count information, expressed as an AWS Region code, such as
+     *        <code>us-west-2</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FleetCapacity withLocation(String location) {
+        setLocation(location);
         return this;
     }
 
@@ -281,10 +359,14 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getFleetId() != null)
             sb.append("FleetId: ").append(getFleetId()).append(",");
+        if (getFleetArn() != null)
+            sb.append("FleetArn: ").append(getFleetArn()).append(",");
         if (getInstanceType() != null)
             sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getInstanceCounts() != null)
-            sb.append("InstanceCounts: ").append(getInstanceCounts());
+            sb.append("InstanceCounts: ").append(getInstanceCounts()).append(",");
+        if (getLocation() != null)
+            sb.append("Location: ").append(getLocation());
         sb.append("}");
         return sb.toString();
     }
@@ -303,6 +385,10 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFleetId() != null && other.getFleetId().equals(this.getFleetId()) == false)
             return false;
+        if (other.getFleetArn() == null ^ this.getFleetArn() == null)
+            return false;
+        if (other.getFleetArn() != null && other.getFleetArn().equals(this.getFleetArn()) == false)
+            return false;
         if (other.getInstanceType() == null ^ this.getInstanceType() == null)
             return false;
         if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
@@ -310,6 +396,10 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
         if (other.getInstanceCounts() == null ^ this.getInstanceCounts() == null)
             return false;
         if (other.getInstanceCounts() != null && other.getInstanceCounts().equals(this.getInstanceCounts()) == false)
+            return false;
+        if (other.getLocation() == null ^ this.getLocation() == null)
+            return false;
+        if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
             return false;
         return true;
     }
@@ -320,8 +410,10 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getFleetId() == null) ? 0 : getFleetId().hashCode());
+        hashCode = prime * hashCode + ((getFleetArn() == null) ? 0 : getFleetArn().hashCode());
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getInstanceCounts() == null) ? 0 : getInstanceCounts().hashCode());
+        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         return hashCode;
     }
 

@@ -30,18 +30,18 @@ public class DeleteMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A unique identifier for a matchmaking configuration. You can use either the configuration name or ARN value.
+     * A unique identifier for the matchmaking configuration. You can use either the configuration name or ARN value.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * A unique identifier for a matchmaking configuration. You can use either the configuration name or ARN value.
+     * A unique identifier for the matchmaking configuration. You can use either the configuration name or ARN value.
      * </p>
      * 
      * @param name
-     *        A unique identifier for a matchmaking configuration. You can use either the configuration name or ARN
+     *        A unique identifier for the matchmaking configuration. You can use either the configuration name or ARN
      *        value.
      */
 
@@ -51,10 +51,10 @@ public class DeleteMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A unique identifier for a matchmaking configuration. You can use either the configuration name or ARN value.
+     * A unique identifier for the matchmaking configuration. You can use either the configuration name or ARN value.
      * </p>
      * 
-     * @return A unique identifier for a matchmaking configuration. You can use either the configuration name or ARN
+     * @return A unique identifier for the matchmaking configuration. You can use either the configuration name or ARN
      *         value.
      */
 
@@ -64,11 +64,11 @@ public class DeleteMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A unique identifier for a matchmaking configuration. You can use either the configuration name or ARN value.
+     * A unique identifier for the matchmaking configuration. You can use either the configuration name or ARN value.
      * </p>
      * 
      * @param name
-     *        A unique identifier for a matchmaking configuration. You can use either the configuration name or ARN
+     *        A unique identifier for the matchmaking configuration. You can use either the configuration name or ARN
      *        value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

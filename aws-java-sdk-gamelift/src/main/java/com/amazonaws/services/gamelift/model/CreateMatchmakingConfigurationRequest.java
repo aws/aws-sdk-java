@@ -30,7 +30,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A unique identifier for a matchmaking configuration. This name is used to identify the configuration associated
+     * A unique identifier for the matchmaking configuration. This name is used to identify the configuration associated
      * with a matchmaking request or ticket.
      * </p>
      */
@@ -43,9 +43,9 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
     private String description;
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Queues can
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue name&gt;</code>. Queues can
      * be located in any Region. Queues are used to start new GameLift-hosted game sessions for matches that are created
      * with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set
      * this parameter.
@@ -61,9 +61,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
     private Integer requestTimeoutSeconds;
     /**
      * <p>
-     * The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required. If any
-     * player rejects the match or fails to accept before the timeout, the tickets are returned to the ticket pool and
-     * continue to be evaluated for an acceptable match.
+     * The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required.
      * </p>
      */
     private Integer acceptanceTimeoutSeconds;
@@ -78,7 +76,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
     private Boolean acceptanceRequired;
     /**
      * <p>
-     * A unique identifier for a matchmaking rule set to use with this configuration. You can use either the rule set
+     * A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set
      * name or ARN value. A matchmaking configuration can only use rule sets that are defined in the same Region.
      * </p>
      */
@@ -91,10 +89,10 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
     private String notificationTarget;
     /**
      * <p>
-     * The number of player slots in a match to keep open for future players. For example, assume that the
-     * configuration's rule set specifies a match for a single 12-person team. If the additional player count is set to
-     * 2, only 10 players are initially selected for the match. This parameter is not used if <code>FlexMatchMode</code>
-     * is set to <code>STANDALONE</code>.
+     * The number of player slots in a match to keep open for future players. For example, if the configuration's rule
+     * set specifies a match for a single 12-person team, and the additional player count is set to 2, only 10 players
+     * are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.
      * </p>
      */
     private Integer additionalPlayerCount;
@@ -106,7 +104,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
     private String customEventData;
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key-value pairs. These properties are passed to a
+     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
      * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created for a
@@ -173,12 +171,12 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A unique identifier for a matchmaking configuration. This name is used to identify the configuration associated
+     * A unique identifier for the matchmaking configuration. This name is used to identify the configuration associated
      * with a matchmaking request or ticket.
      * </p>
      * 
      * @param name
-     *        A unique identifier for a matchmaking configuration. This name is used to identify the configuration
+     *        A unique identifier for the matchmaking configuration. This name is used to identify the configuration
      *        associated with a matchmaking request or ticket.
      */
 
@@ -188,11 +186,11 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A unique identifier for a matchmaking configuration. This name is used to identify the configuration associated
+     * A unique identifier for the matchmaking configuration. This name is used to identify the configuration associated
      * with a matchmaking request or ticket.
      * </p>
      * 
-     * @return A unique identifier for a matchmaking configuration. This name is used to identify the configuration
+     * @return A unique identifier for the matchmaking configuration. This name is used to identify the configuration
      *         associated with a matchmaking request or ticket.
      */
 
@@ -202,12 +200,12 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A unique identifier for a matchmaking configuration. This name is used to identify the configuration associated
+     * A unique identifier for the matchmaking configuration. This name is used to identify the configuration associated
      * with a matchmaking request or ticket.
      * </p>
      * 
      * @param name
-     *        A unique identifier for a matchmaking configuration. This name is used to identify the configuration
+     *        A unique identifier for the matchmaking configuration. This name is used to identify the configuration
      *        associated with a matchmaking request or ticket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -259,19 +257,20 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Queues can
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue name&gt;</code>. Queues can
      * be located in any Region. Queues are used to start new GameLift-hosted game sessions for matches that are created
      * with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set
      * this parameter.
      * </p>
      * 
-     * @return Amazon Resource Name (<a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
-     *         assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all
-     *         Regions. Queues can be located in any Region. Queues are used to start new GameLift-hosted game sessions
-     *         for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to
+     * @return The Amazon Resource Name (<a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *         GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions.
+     *         Format is <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue name&gt;</code>. Queues can
+     *         be located in any Region. Queues are used to start new GameLift-hosted game sessions for matches that are
+     *         created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to
      *         <code>STANDALONE</code>, do not set this parameter.
      */
 
@@ -281,20 +280,21 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Queues can
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue name&gt;</code>. Queues can
      * be located in any Region. Queues are used to start new GameLift-hosted game sessions for matches that are created
      * with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set
      * this parameter.
      * </p>
      * 
      * @param gameSessionQueueArns
-     *        Amazon Resource Name (<a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
-     *        assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all
-     *        Regions. Queues can be located in any Region. Queues are used to start new GameLift-hosted game sessions
-     *        for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions.
+     *        Format is <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue name&gt;</code>. Queues can be
+     *        located in any Region. Queues are used to start new GameLift-hosted game sessions for matches that are
+     *        created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to
      *        <code>STANDALONE</code>, do not set this parameter.
      */
 
@@ -309,9 +309,9 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Queues can
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue name&gt;</code>. Queues can
      * be located in any Region. Queues are used to start new GameLift-hosted game sessions for matches that are created
      * with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set
      * this parameter.
@@ -323,11 +323,12 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param gameSessionQueueArns
-     *        Amazon Resource Name (<a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
-     *        assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all
-     *        Regions. Queues can be located in any Region. Queues are used to start new GameLift-hosted game sessions
-     *        for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions.
+     *        Format is <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue name&gt;</code>. Queues can be
+     *        located in any Region. Queues are used to start new GameLift-hosted game sessions for matches that are
+     *        created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to
      *        <code>STANDALONE</code>, do not set this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -344,20 +345,21 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. Queues can
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue name&gt;</code>. Queues can
      * be located in any Region. Queues are used to start new GameLift-hosted game sessions for matches that are created
      * with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set
      * this parameter.
      * </p>
      * 
      * @param gameSessionQueueArns
-     *        Amazon Resource Name (<a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
-     *        assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all
-     *        Regions. Queues can be located in any Region. Queues are used to start new GameLift-hosted game sessions
-     *        for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions.
+     *        Format is <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue name&gt;</code>. Queues can be
+     *        located in any Region. Queues are used to start new GameLift-hosted game sessions for matches that are
+     *        created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to
      *        <code>STANDALONE</code>, do not set this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -415,15 +417,11 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required. If any
-     * player rejects the match or fails to accept before the timeout, the tickets are returned to the ticket pool and
-     * continue to be evaluated for an acceptable match.
+     * The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required.
      * </p>
      * 
      * @param acceptanceTimeoutSeconds
      *        The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required.
-     *        If any player rejects the match or fails to accept before the timeout, the tickets are returned to the
-     *        ticket pool and continue to be evaluated for an acceptable match.
      */
 
     public void setAcceptanceTimeoutSeconds(Integer acceptanceTimeoutSeconds) {
@@ -432,14 +430,11 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required. If any
-     * player rejects the match or fails to accept before the timeout, the tickets are returned to the ticket pool and
-     * continue to be evaluated for an acceptable match.
+     * The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required.
      * </p>
      * 
      * @return The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is
-     *         required. If any player rejects the match or fails to accept before the timeout, the tickets are returned
-     *         to the ticket pool and continue to be evaluated for an acceptable match.
+     *         required.
      */
 
     public Integer getAcceptanceTimeoutSeconds() {
@@ -448,15 +443,11 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required. If any
-     * player rejects the match or fails to accept before the timeout, the tickets are returned to the ticket pool and
-     * continue to be evaluated for an acceptable match.
+     * The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required.
      * </p>
      * 
      * @param acceptanceTimeoutSeconds
      *        The length of time (in seconds) to wait for players to accept a proposed match, if acceptance is required.
-     *        If any player rejects the match or fails to accept before the timeout, the tickets are returned to the
-     *        ticket pool and continue to be evaluated for an acceptable match.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -543,14 +534,14 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A unique identifier for a matchmaking rule set to use with this configuration. You can use either the rule set
+     * A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set
      * name or ARN value. A matchmaking configuration can only use rule sets that are defined in the same Region.
      * </p>
      * 
      * @param ruleSetName
-     *        A unique identifier for a matchmaking rule set to use with this configuration. You can use either the rule
-     *        set name or ARN value. A matchmaking configuration can only use rule sets that are defined in the same
-     *        Region.
+     *        A unique identifier for the matchmaking rule set to use with this configuration. You can use either the
+     *        rule set name or ARN value. A matchmaking configuration can only use rule sets that are defined in the
+     *        same Region.
      */
 
     public void setRuleSetName(String ruleSetName) {
@@ -559,11 +550,11 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A unique identifier for a matchmaking rule set to use with this configuration. You can use either the rule set
+     * A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set
      * name or ARN value. A matchmaking configuration can only use rule sets that are defined in the same Region.
      * </p>
      * 
-     * @return A unique identifier for a matchmaking rule set to use with this configuration. You can use either the
+     * @return A unique identifier for the matchmaking rule set to use with this configuration. You can use either the
      *         rule set name or ARN value. A matchmaking configuration can only use rule sets that are defined in the
      *         same Region.
      */
@@ -574,14 +565,14 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A unique identifier for a matchmaking rule set to use with this configuration. You can use either the rule set
+     * A unique identifier for the matchmaking rule set to use with this configuration. You can use either the rule set
      * name or ARN value. A matchmaking configuration can only use rule sets that are defined in the same Region.
      * </p>
      * 
      * @param ruleSetName
-     *        A unique identifier for a matchmaking rule set to use with this configuration. You can use either the rule
-     *        set name or ARN value. A matchmaking configuration can only use rule sets that are defined in the same
-     *        Region.
+     *        A unique identifier for the matchmaking rule set to use with this configuration. You can use either the
+     *        rule set name or ARN value. A matchmaking configuration can only use rule sets that are defined in the
+     *        same Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -632,17 +623,17 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The number of player slots in a match to keep open for future players. For example, assume that the
-     * configuration's rule set specifies a match for a single 12-person team. If the additional player count is set to
-     * 2, only 10 players are initially selected for the match. This parameter is not used if <code>FlexMatchMode</code>
-     * is set to <code>STANDALONE</code>.
+     * The number of player slots in a match to keep open for future players. For example, if the configuration's rule
+     * set specifies a match for a single 12-person team, and the additional player count is set to 2, only 10 players
+     * are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.
      * </p>
      * 
      * @param additionalPlayerCount
-     *        The number of player slots in a match to keep open for future players. For example, assume that the
-     *        configuration's rule set specifies a match for a single 12-person team. If the additional player count is
-     *        set to 2, only 10 players are initially selected for the match. This parameter is not used if
-     *        <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
+     *        The number of player slots in a match to keep open for future players. For example, if the configuration's
+     *        rule set specifies a match for a single 12-person team, and the additional player count is set to 2, only
+     *        10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to
+     *        <code>STANDALONE</code>.
      */
 
     public void setAdditionalPlayerCount(Integer additionalPlayerCount) {
@@ -651,15 +642,15 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The number of player slots in a match to keep open for future players. For example, assume that the
-     * configuration's rule set specifies a match for a single 12-person team. If the additional player count is set to
-     * 2, only 10 players are initially selected for the match. This parameter is not used if <code>FlexMatchMode</code>
-     * is set to <code>STANDALONE</code>.
+     * The number of player slots in a match to keep open for future players. For example, if the configuration's rule
+     * set specifies a match for a single 12-person team, and the additional player count is set to 2, only 10 players
+     * are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.
      * </p>
      * 
-     * @return The number of player slots in a match to keep open for future players. For example, assume that the
-     *         configuration's rule set specifies a match for a single 12-person team. If the additional player count is
-     *         set to 2, only 10 players are initially selected for the match. This parameter is not used if
+     * @return The number of player slots in a match to keep open for future players. For example, if the
+     *         configuration's rule set specifies a match for a single 12-person team, and the additional player count
+     *         is set to 2, only 10 players are selected for the match. This parameter is not used if
      *         <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
      */
 
@@ -669,17 +660,17 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The number of player slots in a match to keep open for future players. For example, assume that the
-     * configuration's rule set specifies a match for a single 12-person team. If the additional player count is set to
-     * 2, only 10 players are initially selected for the match. This parameter is not used if <code>FlexMatchMode</code>
-     * is set to <code>STANDALONE</code>.
+     * The number of player slots in a match to keep open for future players. For example, if the configuration's rule
+     * set specifies a match for a single 12-person team, and the additional player count is set to 2, only 10 players
+     * are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.
      * </p>
      * 
      * @param additionalPlayerCount
-     *        The number of player slots in a match to keep open for future players. For example, assume that the
-     *        configuration's rule set specifies a match for a single 12-person team. If the additional player count is
-     *        set to 2, only 10 players are initially selected for the match. This parameter is not used if
-     *        <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
+     *        The number of player slots in a match to keep open for future players. For example, if the configuration's
+     *        rule set specifies a match for a single 12-person team, and the additional player count is set to 2, only
+     *        10 players are selected for the match. This parameter is not used if <code>FlexMatchMode</code> is set to
+     *        <code>STANDALONE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -730,14 +721,14 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key-value pairs. These properties are passed to a
+     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
      * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created for a
      * successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
      * </p>
      * 
-     * @return A set of custom properties for a game session, formatted as key-value pairs. These properties are passed
+     * @return A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
      *         to a game server process in the <a>GameSession</a> object with a request to start a new game session (see
      *         <a href=
      *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
@@ -752,7 +743,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key-value pairs. These properties are passed to a
+     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
      * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created for a
@@ -760,7 +751,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param gameProperties
-     *        A set of custom properties for a game session, formatted as key-value pairs. These properties are passed
+     *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
      *        to a game server process in the <a>GameSession</a> object with a request to start a new game session (see
      *        <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
@@ -780,7 +771,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key-value pairs. These properties are passed to a
+     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
      * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created for a
@@ -793,7 +784,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param gameProperties
-     *        A set of custom properties for a game session, formatted as key-value pairs. These properties are passed
+     *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
      *        to a game server process in the <a>GameSession</a> object with a request to start a new game session (see
      *        <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
@@ -815,7 +806,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key-value pairs. These properties are passed to a
+     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
      * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created for a
@@ -823,7 +814,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param gameProperties
-     *        A set of custom properties for a game session, formatted as key-value pairs. These properties are passed
+     *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
      *        to a game server process in the <a>GameSession</a> object with a request to start a new game session (see
      *        <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"

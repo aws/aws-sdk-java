@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b>
+ * <b>This data type is used with the GameLift FleetIQ and game server groups.</b>
  * </p>
  * <p>
  * Configuration settings for intelligent automatic scaling that uses target tracking. These settings are used to add an

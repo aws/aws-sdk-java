@@ -28,14 +28,14 @@ public class DescribeFleetCapacityResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A collection of objects containing capacity information for each requested fleet ID. Leave this parameter empty
-     * to retrieve capacity information for all fleets.
+     * A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are
+     * returned only for fleets that currently exist.
      * </p>
      */
     private java.util.List<FleetCapacity> fleetCapacity;
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this operation. If no token is
+     * A token that indicates where to resume retrieving results on the next call to this operation. If no token is
      * returned, these results represent the end of the list.
      * </p>
      */
@@ -43,12 +43,12 @@ public class DescribeFleetCapacityResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A collection of objects containing capacity information for each requested fleet ID. Leave this parameter empty
-     * to retrieve capacity information for all fleets.
+     * A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are
+     * returned only for fleets that currently exist.
      * </p>
      * 
-     * @return A collection of objects containing capacity information for each requested fleet ID. Leave this parameter
-     *         empty to retrieve capacity information for all fleets.
+     * @return A collection of objects that contains capacity information for each requested fleet ID. Capacity objects
+     *         are returned only for fleets that currently exist.
      */
 
     public java.util.List<FleetCapacity> getFleetCapacity() {
@@ -57,13 +57,13 @@ public class DescribeFleetCapacityResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A collection of objects containing capacity information for each requested fleet ID. Leave this parameter empty
-     * to retrieve capacity information for all fleets.
+     * A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are
+     * returned only for fleets that currently exist.
      * </p>
      * 
      * @param fleetCapacity
-     *        A collection of objects containing capacity information for each requested fleet ID. Leave this parameter
-     *        empty to retrieve capacity information for all fleets.
+     *        A collection of objects that contains capacity information for each requested fleet ID. Capacity objects
+     *        are returned only for fleets that currently exist.
      */
 
     public void setFleetCapacity(java.util.Collection<FleetCapacity> fleetCapacity) {
@@ -77,8 +77,8 @@ public class DescribeFleetCapacityResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A collection of objects containing capacity information for each requested fleet ID. Leave this parameter empty
-     * to retrieve capacity information for all fleets.
+     * A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are
+     * returned only for fleets that currently exist.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -87,8 +87,8 @@ public class DescribeFleetCapacityResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param fleetCapacity
-     *        A collection of objects containing capacity information for each requested fleet ID. Leave this parameter
-     *        empty to retrieve capacity information for all fleets.
+     *        A collection of objects that contains capacity information for each requested fleet ID. Capacity objects
+     *        are returned only for fleets that currently exist.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,13 +104,13 @@ public class DescribeFleetCapacityResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A collection of objects containing capacity information for each requested fleet ID. Leave this parameter empty
-     * to retrieve capacity information for all fleets.
+     * A collection of objects that contains capacity information for each requested fleet ID. Capacity objects are
+     * returned only for fleets that currently exist.
      * </p>
      * 
      * @param fleetCapacity
-     *        A collection of objects containing capacity information for each requested fleet ID. Leave this parameter
-     *        empty to retrieve capacity information for all fleets.
+     *        A collection of objects that contains capacity information for each requested fleet ID. Capacity objects
+     *        are returned only for fleets that currently exist.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,13 +121,13 @@ public class DescribeFleetCapacityResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this operation. If no token is
+     * A token that indicates where to resume retrieving results on the next call to this operation. If no token is
      * returned, these results represent the end of the list.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates where to resume retrieving results on the next call to this operation. If no token is
-     *        returned, these results represent the end of the list.
+     *        A token that indicates where to resume retrieving results on the next call to this operation. If no token
+     *        is returned, these results represent the end of the list.
      */
 
     public void setNextToken(String nextToken) {
@@ -136,11 +136,11 @@ public class DescribeFleetCapacityResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this operation. If no token is
+     * A token that indicates where to resume retrieving results on the next call to this operation. If no token is
      * returned, these results represent the end of the list.
      * </p>
      * 
-     * @return Token that indicates where to resume retrieving results on the next call to this operation. If no token
+     * @return A token that indicates where to resume retrieving results on the next call to this operation. If no token
      *         is returned, these results represent the end of the list.
      */
 
@@ -150,13 +150,13 @@ public class DescribeFleetCapacityResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this operation. If no token is
+     * A token that indicates where to resume retrieving results on the next call to this operation. If no token is
      * returned, these results represent the end of the list.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates where to resume retrieving results on the next call to this operation. If no token is
-     *        returned, these results represent the end of the list.
+     *        A token that indicates where to resume retrieving results on the next call to this operation. If no token
+     *        is returned, these results represent the end of the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

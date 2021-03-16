@@ -64,7 +64,7 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private Integer limit;
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
      * previous call to this operation. To start at the beginning of the result set, do not specify a value.
      * </p>
      */
@@ -406,13 +406,14 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
      * previous call to this operation. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
-     *        a previous call to this operation. To start at the beginning of the result set, do not specify a value.
+     *        A token that indicates the start of the next sequential page of results. Use the token that is returned
+     *        with a previous call to this operation. To start at the beginning of the result set, do not specify a
+     *        value.
      */
 
     public void setNextToken(String nextToken) {
@@ -421,11 +422,11 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
      * previous call to this operation. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
-     * @return Token that indicates the start of the next sequential page of results. Use the token that is returned
+     * @return A token that indicates the start of the next sequential page of results. Use the token that is returned
      *         with a previous call to this operation. To start at the beginning of the result set, do not specify a
      *         value.
      */
@@ -436,13 +437,14 @@ public class ListBuildsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
      * previous call to this operation. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
-     *        a previous call to this operation. To start at the beginning of the result set, do not specify a value.
+     *        A token that indicates the start of the next sequential page of results. Use the token that is returned
+     *        with a previous call to this operation. To start at the beginning of the result set, do not specify a
+     *        value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

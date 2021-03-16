@@ -29,60 +29,16 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Once the session ends, the game session object is retained for 30 days. This means you can reuse idempotency token
  * values after this time. Game session logs are retained for 14 days.
  * </p>
- * <ul>
- * <li>
  * <p>
- * <a>CreateGameSession</a>
+ * <b>Related actions</b>
  * </p>
- * </li>
- * <li>
  * <p>
- * <a>DescribeGameSessions</a>
+ * <a>CreateGameSession</a> | <a>DescribeGameSessions</a> | <a>DescribeGameSessionDetails</a> |
+ * <a>SearchGameSessions</a> | <a>UpdateGameSession</a> | <a>GetGameSessionLogUrl</a> | <a>StartGameSessionPlacement</a>
+ * | <a>DescribeGameSessionPlacement</a> | <a>StopGameSessionPlacement</a> | <a href=
+ * "https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets"
+ * >All APIs by task</a>
  * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeGameSessionDetails</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>SearchGameSessions</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>UpdateGameSession</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>GetGameSessionLogUrl</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * Game session placements
- * </p>
- * <ul>
- * <li>
- * <p>
- * <a>StartGameSessionPlacement</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeGameSessionPlacement</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>StopGameSessionPlacement</a>
- * </p>
- * </li>
- * </ul>
- * </li>
- * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameSession" target="_top">AWS API
  *      Documentation</a>
@@ -106,29 +62,28 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * A unique identifier for a fleet that the game session is running on.
+     * A unique identifier for the fleet that the game session is running on.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
-     * The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
-     * GameLift fleet that this game session is running on.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * associated with the GameLift fleet that this game session is running on.
      * </p>
      */
     private String fleetArn;
     /**
      * <p>
-     * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      */
     private java.util.Date terminationTime;
@@ -160,24 +115,22 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     private String statusReason;
     /**
      * <p>
-     * Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game
-     * server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>). You can search for active game sessions based on this custom data with
-     * <a>SearchGameSessions</a>.
+     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
+     * game server process in the <a>GameSession</a> object with a request to start a new game session. You can search
+     * for active game sessions based on this custom data with <a>SearchGameSessions</a>.
      * </p>
      */
     private java.util.List<GameProperty> gameProperties;
     /**
      * <p>
-     * IP address of the instance that is running the game session. When connecting to a Amazon GameLift game server, a
-     * client needs to reference an IP address (or DNS name) and port number.
+     * The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address and
+     * port number.
      * </p>
      */
     private String ipAddress;
     /**
      * <p>
-     * DNS identifier assigned to the instance that is running the game session. Values have the following format:
+     * The DNS identifier assigned to the instance that is running the game session. Values have the following format:
      * </p>
      * <ul>
      * <li>
@@ -201,8 +154,8 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     private String dnsName;
     /**
      * <p>
-     * Port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP address
-     * and port number.
+     * The port number for the game session. To connect to a GameLift game server, an app needs both the IP address and
+     * port number.
      * </p>
      */
     private Integer port;
@@ -221,10 +174,8 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     private String creatorId;
     /**
      * <p>
-     * Set of custom game session properties, formatted as a single string value. This data is passed to a game server
-     * process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>).
+     * A set of custom game session properties, formatted as a single string value. This data is passed to a game server
+     * process in the <a>GameSession</a> object with a request to start a new game session.
      * </p>
      */
     private String gameSessionData;
@@ -239,6 +190,13 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String matchmakerData;
+    /**
+     * <p>
+     * The fleet location where the game session is running. This value might specify the fleet's home Region or a
+     * remote location. Location is expressed as an AWS Region code such as <code>us-west-2</code>.
+     * </p>
+     */
+    private String location;
 
     /**
      * <p>
@@ -334,11 +292,11 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for a fleet that the game session is running on.
+     * A unique identifier for the fleet that the game session is running on.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet that the game session is running on.
+     *        A unique identifier for the fleet that the game session is running on.
      */
 
     public void setFleetId(String fleetId) {
@@ -347,10 +305,10 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for a fleet that the game session is running on.
+     * A unique identifier for the fleet that the game session is running on.
      * </p>
      * 
-     * @return A unique identifier for a fleet that the game session is running on.
+     * @return A unique identifier for the fleet that the game session is running on.
      */
 
     public String getFleetId() {
@@ -359,11 +317,11 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for a fleet that the game session is running on.
+     * A unique identifier for the fleet that the game session is running on.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet that the game session is running on.
+     *        A unique identifier for the fleet that the game session is running on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -374,15 +332,14 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
-     * GameLift fleet that this game session is running on.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * associated with the GameLift fleet that this game session is running on.
      * </p>
      * 
      * @param fleetArn
      *        The Amazon Resource Name (<a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with
-     *        the GameLift fleet that this game session is running on.
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the
+     *        GameLift fleet that this game session is running on.
      */
 
     public void setFleetArn(String fleetArn) {
@@ -391,14 +348,13 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
-     * GameLift fleet that this game session is running on.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * associated with the GameLift fleet that this game session is running on.
      * </p>
      * 
      * @return The Amazon Resource Name (<a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated
-     *         with the GameLift fleet that this game session is running on.
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the
+     *         GameLift fleet that this game session is running on.
      */
 
     public String getFleetArn() {
@@ -407,15 +363,14 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
-     * GameLift fleet that this game session is running on.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * associated with the GameLift fleet that this game session is running on.
      * </p>
      * 
      * @param fleetArn
      *        The Amazon Resource Name (<a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with
-     *        the GameLift fleet that this game session is running on.
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the
+     *        GameLift fleet that this game session is running on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -426,13 +381,13 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
      * @param creationTime
-     *        Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *        milliseconds (for example "1469498468.057").
+     *        A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     *        milliseconds (for example <code>"1469498468.057"</code>).
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -441,12 +396,12 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
-     * @return Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *         milliseconds (for example "1469498468.057").
+     * @return A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     *         milliseconds (for example <code>"1469498468.057"</code>).
      */
 
     public java.util.Date getCreationTime() {
@@ -455,13 +410,13 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
      * @param creationTime
-     *        Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *        milliseconds (for example "1469498468.057").
+     *        A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     *        milliseconds (for example <code>"1469498468.057"</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -472,13 +427,13 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
      * @param terminationTime
-     *        Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
-     *        milliseconds (for example "1469498468.057").
+     *        A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
+     *        milliseconds (for example <code>"1469498468.057"</code>).
      */
 
     public void setTerminationTime(java.util.Date terminationTime) {
@@ -487,12 +442,12 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
-     * @return Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
-     *         milliseconds (for example "1469498468.057").
+     * @return A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time
+     *         as milliseconds (for example <code>"1469498468.057"</code>).
      */
 
     public java.util.Date getTerminationTime() {
@@ -501,13 +456,13 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
      * @param terminationTime
-     *        Time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
-     *        milliseconds (for example "1469498468.057").
+     *        A time stamp indicating when this data object was terminated. Format is a number expressed in Unix time as
+     *        milliseconds (for example <code>"1469498468.057"</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -769,19 +724,14 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game
-     * server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>). You can search for active game sessions based on this custom data with
-     * <a>SearchGameSessions</a>.
+     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
+     * game server process in the <a>GameSession</a> object with a request to start a new game session. You can search
+     * for active game sessions based on this custom data with <a>SearchGameSessions</a>.
      * </p>
      * 
-     * @return Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to
-     *         a game server process in the <a>GameSession</a> object with a request to start a new game session (see <a
-     *         href=
-     *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *         >Start a Game Session</a>). You can search for active game sessions based on this custom data with
-     *         <a>SearchGameSessions</a>.
+     * @return A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
+     *         to a game server process in the <a>GameSession</a> object with a request to start a new game session. You
+     *         can search for active game sessions based on this custom data with <a>SearchGameSessions</a>.
      */
 
     public java.util.List<GameProperty> getGameProperties() {
@@ -790,20 +740,15 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game
-     * server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>). You can search for active game sessions based on this custom data with
-     * <a>SearchGameSessions</a>.
+     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
+     * game server process in the <a>GameSession</a> object with a request to start a new game session. You can search
+     * for active game sessions based on this custom data with <a>SearchGameSessions</a>.
      * </p>
      * 
      * @param gameProperties
-     *        Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to
-     *        a game server process in the <a>GameSession</a> object with a request to start a new game session (see <a
-     *        href=
-     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *        >Start a Game Session</a>). You can search for active game sessions based on this custom data with
-     *        <a>SearchGameSessions</a>.
+     *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
+     *        to a game server process in the <a>GameSession</a> object with a request to start a new game session. You
+     *        can search for active game sessions based on this custom data with <a>SearchGameSessions</a>.
      */
 
     public void setGameProperties(java.util.Collection<GameProperty> gameProperties) {
@@ -817,11 +762,9 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game
-     * server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>). You can search for active game sessions based on this custom data with
-     * <a>SearchGameSessions</a>.
+     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
+     * game server process in the <a>GameSession</a> object with a request to start a new game session. You can search
+     * for active game sessions based on this custom data with <a>SearchGameSessions</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -830,12 +773,9 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param gameProperties
-     *        Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to
-     *        a game server process in the <a>GameSession</a> object with a request to start a new game session (see <a
-     *        href=
-     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *        >Start a Game Session</a>). You can search for active game sessions based on this custom data with
-     *        <a>SearchGameSessions</a>.
+     *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
+     *        to a game server process in the <a>GameSession</a> object with a request to start a new game session. You
+     *        can search for active game sessions based on this custom data with <a>SearchGameSessions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -851,20 +791,15 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game
-     * server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>). You can search for active game sessions based on this custom data with
-     * <a>SearchGameSessions</a>.
+     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
+     * game server process in the <a>GameSession</a> object with a request to start a new game session. You can search
+     * for active game sessions based on this custom data with <a>SearchGameSessions</a>.
      * </p>
      * 
      * @param gameProperties
-     *        Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to
-     *        a game server process in the <a>GameSession</a> object with a request to start a new game session (see <a
-     *        href=
-     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *        >Start a Game Session</a>). You can search for active game sessions based on this custom data with
-     *        <a>SearchGameSessions</a>.
+     *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
+     *        to a game server process in the <a>GameSession</a> object with a request to start a new game session. You
+     *        can search for active game sessions based on this custom data with <a>SearchGameSessions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -875,13 +810,13 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * IP address of the instance that is running the game session. When connecting to a Amazon GameLift game server, a
-     * client needs to reference an IP address (or DNS name) and port number.
+     * The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address and
+     * port number.
      * </p>
      * 
      * @param ipAddress
-     *        IP address of the instance that is running the game session. When connecting to a Amazon GameLift game
-     *        server, a client needs to reference an IP address (or DNS name) and port number.
+     *        The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address
+     *        and port number.
      */
 
     public void setIpAddress(String ipAddress) {
@@ -890,12 +825,12 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * IP address of the instance that is running the game session. When connecting to a Amazon GameLift game server, a
-     * client needs to reference an IP address (or DNS name) and port number.
+     * The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address and
+     * port number.
      * </p>
      * 
-     * @return IP address of the instance that is running the game session. When connecting to a Amazon GameLift game
-     *         server, a client needs to reference an IP address (or DNS name) and port number.
+     * @return The IP address of the game session. To connect to a GameLift game server, an app needs both the IP
+     *         address and port number.
      */
 
     public String getIpAddress() {
@@ -904,13 +839,13 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * IP address of the instance that is running the game session. When connecting to a Amazon GameLift game server, a
-     * client needs to reference an IP address (or DNS name) and port number.
+     * The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address and
+     * port number.
      * </p>
      * 
      * @param ipAddress
-     *        IP address of the instance that is running the game session. When connecting to a Amazon GameLift game
-     *        server, a client needs to reference an IP address (or DNS name) and port number.
+     *        The IP address of the game session. To connect to a GameLift game server, an app needs both the IP address
+     *        and port number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -921,7 +856,7 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * DNS identifier assigned to the instance that is running the game session. Values have the following format:
+     * The DNS identifier assigned to the instance that is running the game session. Values have the following format:
      * </p>
      * <ul>
      * <li>
@@ -943,7 +878,7 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param dnsName
-     *        DNS identifier assigned to the instance that is running the game session. Values have the following
+     *        The DNS identifier assigned to the instance that is running the game session. Values have the following
      *        format:</p>
      *        <ul>
      *        <li>
@@ -970,7 +905,7 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * DNS identifier assigned to the instance that is running the game session. Values have the following format:
+     * The DNS identifier assigned to the instance that is running the game session. Values have the following format:
      * </p>
      * <ul>
      * <li>
@@ -991,7 +926,7 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
      * address.
      * </p>
      * 
-     * @return DNS identifier assigned to the instance that is running the game session. Values have the following
+     * @return The DNS identifier assigned to the instance that is running the game session. Values have the following
      *         format:</p>
      *         <ul>
      *         <li>
@@ -1018,7 +953,7 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * DNS identifier assigned to the instance that is running the game session. Values have the following format:
+     * The DNS identifier assigned to the instance that is running the game session. Values have the following format:
      * </p>
      * <ul>
      * <li>
@@ -1040,7 +975,7 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param dnsName
-     *        DNS identifier assigned to the instance that is running the game session. Values have the following
+     *        The DNS identifier assigned to the instance that is running the game session. Values have the following
      *        format:</p>
      *        <ul>
      *        <li>
@@ -1069,12 +1004,12 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP address
-     * and port number.
+     * The port number for the game session. To connect to a GameLift game server, an app needs both the IP address and
+     * port number.
      * </p>
      * 
      * @param port
-     *        Port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP
+     *        The port number for the game session. To connect to a GameLift game server, an app needs both the IP
      *        address and port number.
      */
 
@@ -1084,11 +1019,11 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP address
-     * and port number.
+     * The port number for the game session. To connect to a GameLift game server, an app needs both the IP address and
+     * port number.
      * </p>
      * 
-     * @return Port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP
+     * @return The port number for the game session. To connect to a GameLift game server, an app needs both the IP
      *         address and port number.
      */
 
@@ -1098,12 +1033,12 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP address
-     * and port number.
+     * The port number for the game session. To connect to a GameLift game server, an app needs both the IP address and
+     * port number.
      * </p>
      * 
      * @param port
-     *        Port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP
+     *        The port number for the game session. To connect to a GameLift game server, an app needs both the IP
      *        address and port number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1234,17 +1169,13 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Set of custom game session properties, formatted as a single string value. This data is passed to a game server
-     * process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>).
+     * A set of custom game session properties, formatted as a single string value. This data is passed to a game server
+     * process in the <a>GameSession</a> object with a request to start a new game session.
      * </p>
      * 
      * @param gameSessionData
-     *        Set of custom game session properties, formatted as a single string value. This data is passed to a game
-     *        server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *        >Start a Game Session</a>).
+     *        A set of custom game session properties, formatted as a single string value. This data is passed to a game
+     *        server process in the <a>GameSession</a> object with a request to start a new game session.
      */
 
     public void setGameSessionData(String gameSessionData) {
@@ -1253,16 +1184,12 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Set of custom game session properties, formatted as a single string value. This data is passed to a game server
-     * process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>).
+     * A set of custom game session properties, formatted as a single string value. This data is passed to a game server
+     * process in the <a>GameSession</a> object with a request to start a new game session.
      * </p>
      * 
-     * @return Set of custom game session properties, formatted as a single string value. This data is passed to a game
-     *         server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *         >Start a Game Session</a>).
+     * @return A set of custom game session properties, formatted as a single string value. This data is passed to a
+     *         game server process in the <a>GameSession</a> object with a request to start a new game session.
      */
 
     public String getGameSessionData() {
@@ -1271,17 +1198,13 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Set of custom game session properties, formatted as a single string value. This data is passed to a game server
-     * process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>).
+     * A set of custom game session properties, formatted as a single string value. This data is passed to a game server
+     * process in the <a>GameSession</a> object with a request to start a new game session.
      * </p>
      * 
      * @param gameSessionData
-     *        Set of custom game session properties, formatted as a single string value. This data is passed to a game
-     *        server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *        >Start a Game Session</a>).
+     *        A set of custom game session properties, formatted as a single string value. This data is passed to a game
+     *        server process in the <a>GameSession</a> object with a request to start a new game session.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1364,6 +1287,52 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The fleet location where the game session is running. This value might specify the fleet's home Region or a
+     * remote location. Location is expressed as an AWS Region code such as <code>us-west-2</code>.
+     * </p>
+     * 
+     * @param location
+     *        The fleet location where the game session is running. This value might specify the fleet's home Region or
+     *        a remote location. Location is expressed as an AWS Region code such as <code>us-west-2</code>.
+     */
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    /**
+     * <p>
+     * The fleet location where the game session is running. This value might specify the fleet's home Region or a
+     * remote location. Location is expressed as an AWS Region code such as <code>us-west-2</code>.
+     * </p>
+     * 
+     * @return The fleet location where the game session is running. This value might specify the fleet's home Region or
+     *         a remote location. Location is expressed as an AWS Region code such as <code>us-west-2</code>.
+     */
+
+    public String getLocation() {
+        return this.location;
+    }
+
+    /**
+     * <p>
+     * The fleet location where the game session is running. This value might specify the fleet's home Region or a
+     * remote location. Location is expressed as an AWS Region code such as <code>us-west-2</code>.
+     * </p>
+     * 
+     * @param location
+     *        The fleet location where the game session is running. This value might specify the fleet's home Region or
+     *        a remote location. Location is expressed as an AWS Region code such as <code>us-west-2</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GameSession withLocation(String location) {
+        setLocation(location);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1410,7 +1379,9 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
         if (getGameSessionData() != null)
             sb.append("GameSessionData: ").append(getGameSessionData()).append(",");
         if (getMatchmakerData() != null)
-            sb.append("MatchmakerData: ").append(getMatchmakerData());
+            sb.append("MatchmakerData: ").append(getMatchmakerData()).append(",");
+        if (getLocation() != null)
+            sb.append("Location: ").append(getLocation());
         sb.append("}");
         return sb.toString();
     }
@@ -1497,6 +1468,10 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMatchmakerData() != null && other.getMatchmakerData().equals(this.getMatchmakerData()) == false)
             return false;
+        if (other.getLocation() == null ^ this.getLocation() == null)
+            return false;
+        if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
+            return false;
         return true;
     }
 
@@ -1523,6 +1498,7 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreatorId() == null) ? 0 : getCreatorId().hashCode());
         hashCode = prime * hashCode + ((getGameSessionData() == null) ? 0 : getGameSessionData().hashCode());
         hashCode = prime * hashCode + ((getMatchmakerData() == null) ? 0 : getMatchmakerData().hashCode());
+        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         return hashCode;
     }
 

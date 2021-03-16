@@ -10,7 +10,7 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.mediatailor.model.transform;
+package com.amazonaws.services.gamelift.model.transform;
 
 import javax.annotation.Generated;
 
@@ -18,7 +18,7 @@ import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 
 import com.amazonaws.http.HttpMethodName;
-import com.amazonaws.services.mediatailor.model.*;
+import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.Marshaller;
 
 import com.amazonaws.protocol.*;
@@ -26,34 +26,35 @@ import com.amazonaws.protocol.Protocol;
 import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListProgramsRequest Marshaller
+ * DescribeFleetLocationUtilizationRequest Marshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 @SdkInternalApi
-public class ListProgramsRequestProtocolMarshaller implements Marshaller<Request<ListProgramsRequest>, ListProgramsRequest> {
+public class DescribeFleetLocationUtilizationRequestProtocolMarshaller implements
+        Marshaller<Request<DescribeFleetLocationUtilizationRequest>, DescribeFleetLocationUtilizationRequest> {
 
-    private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/channel/{channelName}/programs").httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false)
-            .serviceName("AWSMediaTailor").build();
+    private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.AWS_JSON).requestUri("/")
+            .httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false).hasPayloadMembers(true)
+            .operationIdentifier("GameLift.DescribeFleetLocationUtilization").serviceName("AmazonGameLift").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 
-    public ListProgramsRequestProtocolMarshaller(com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory) {
+    public DescribeFleetLocationUtilizationRequestProtocolMarshaller(com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<ListProgramsRequest> marshall(ListProgramsRequest listProgramsRequest) {
+    public Request<DescribeFleetLocationUtilizationRequest> marshall(DescribeFleetLocationUtilizationRequest describeFleetLocationUtilizationRequest) {
 
-        if (listProgramsRequest == null) {
+        if (describeFleetLocationUtilizationRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
-            final ProtocolRequestMarshaller<ListProgramsRequest> protocolMarshaller = protocolFactory.createProtocolMarshaller(SDK_OPERATION_BINDING,
-                    listProgramsRequest);
+            final ProtocolRequestMarshaller<DescribeFleetLocationUtilizationRequest> protocolMarshaller = protocolFactory.createProtocolMarshaller(
+                    SDK_OPERATION_BINDING, describeFleetLocationUtilizationRequest);
 
             protocolMarshaller.startMarshalling();
-            ListProgramsRequestMarshaller.getInstance().marshall(listProgramsRequest, protocolMarshaller);
+            DescribeFleetLocationUtilizationRequestMarshaller.getInstance().marshall(describeFleetLocationUtilizationRequest, protocolMarshaller);
             return protocolMarshaller.finishMarshalling();
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

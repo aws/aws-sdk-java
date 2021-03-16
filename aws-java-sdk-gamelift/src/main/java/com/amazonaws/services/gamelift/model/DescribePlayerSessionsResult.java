@@ -34,7 +34,7 @@ public class DescribePlayerSessionsResult extends com.amazonaws.AmazonWebService
     private java.util.List<PlayerSession> playerSessions;
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this operation. If no token is
+     * A token that indicates where to resume retrieving results on the next call to this operation. If no token is
      * returned, these results represent the end of the list.
      * </p>
      */
@@ -112,13 +112,13 @@ public class DescribePlayerSessionsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this operation. If no token is
+     * A token that indicates where to resume retrieving results on the next call to this operation. If no token is
      * returned, these results represent the end of the list.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates where to resume retrieving results on the next call to this operation. If no token is
-     *        returned, these results represent the end of the list.
+     *        A token that indicates where to resume retrieving results on the next call to this operation. If no token
+     *        is returned, these results represent the end of the list.
      */
 
     public void setNextToken(String nextToken) {
@@ -127,11 +127,11 @@ public class DescribePlayerSessionsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this operation. If no token is
+     * A token that indicates where to resume retrieving results on the next call to this operation. If no token is
      * returned, these results represent the end of the list.
      * </p>
      * 
-     * @return Token that indicates where to resume retrieving results on the next call to this operation. If no token
+     * @return A token that indicates where to resume retrieving results on the next call to this operation. If no token
      *         is returned, these results represent the end of the list.
      */
 
@@ -141,13 +141,13 @@ public class DescribePlayerSessionsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this operation. If no token is
+     * A token that indicates where to resume retrieving results on the next call to this operation. If no token is
      * returned, these results represent the end of the list.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates where to resume retrieving results on the next call to this operation. If no token is
-     *        returned, these results represent the end of the list.
+     *        A token that indicates where to resume retrieving results on the next call to this operation. If no token
+     *        is returned, these results represent the end of the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

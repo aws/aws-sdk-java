@@ -29,6 +29,8 @@ public class DescribeEC2InstanceLimitsRequestMarshaller {
 
     private static final MarshallingInfo<String> EC2INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EC2InstanceType").build();
+    private static final MarshallingInfo<String> LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Location").build();
 
     private static final DescribeEC2InstanceLimitsRequestMarshaller instance = new DescribeEC2InstanceLimitsRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class DescribeEC2InstanceLimitsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(describeEC2InstanceLimitsRequest.getEC2InstanceType(), EC2INSTANCETYPE_BINDING);
+            protocolMarshaller.marshall(describeEC2InstanceLimitsRequest.getLocation(), LOCATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

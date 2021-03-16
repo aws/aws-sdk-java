@@ -45,9 +45,8 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
     private String configurationName;
     /**
      * <p>
-     * The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
-     * GameLift matchmaking configuration resource that is used with this ticket.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * associated with the GameLift matchmaking configuration resource that is used with this ticket.
      * </p>
      */
     private String configurationArn;
@@ -127,14 +126,15 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Time stamp indicating when this matchmaking request was received. Format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      */
     private java.util.Date startTime;
     /**
      * <p>
      * Time stamp indicating when this matchmaking request stopped being processed due to success, failure, or
-     * cancellation. Format is a number expressed in Unix time as milliseconds (for example "1469498468.057").
+     * cancellation. Format is a number expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).
      * </p>
      */
     private java.util.Date endTime;
@@ -251,15 +251,14 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
-     * GameLift matchmaking configuration resource that is used with this ticket.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * associated with the GameLift matchmaking configuration resource that is used with this ticket.
      * </p>
      * 
      * @param configurationArn
      *        The Amazon Resource Name (<a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with
-     *        the GameLift matchmaking configuration resource that is used with this ticket.
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the
+     *        GameLift matchmaking configuration resource that is used with this ticket.
      */
 
     public void setConfigurationArn(String configurationArn) {
@@ -268,14 +267,13 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
-     * GameLift matchmaking configuration resource that is used with this ticket.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * associated with the GameLift matchmaking configuration resource that is used with this ticket.
      * </p>
      * 
      * @return The Amazon Resource Name (<a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated
-     *         with the GameLift matchmaking configuration resource that is used with this ticket.
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the
+     *         GameLift matchmaking configuration resource that is used with this ticket.
      */
 
     public String getConfigurationArn() {
@@ -284,15 +282,14 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with the
-     * GameLift matchmaking configuration resource that is used with this ticket.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * associated with the GameLift matchmaking configuration resource that is used with this ticket.
      * </p>
      * 
      * @param configurationArn
      *        The Amazon Resource Name (<a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) associated with
-     *        the GameLift matchmaking configuration resource that is used with this ticket.
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) associated with the
+     *        GameLift matchmaking configuration resource that is used with this ticket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -877,12 +874,12 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Time stamp indicating when this matchmaking request was received. Format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
      * @param startTime
      *        Time stamp indicating when this matchmaking request was received. Format is a number expressed in Unix
-     *        time as milliseconds (for example "1469498468.057").
+     *        time as milliseconds (for example <code>"1469498468.057"</code>).
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -892,11 +889,11 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Time stamp indicating when this matchmaking request was received. Format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
      * @return Time stamp indicating when this matchmaking request was received. Format is a number expressed in Unix
-     *         time as milliseconds (for example "1469498468.057").
+     *         time as milliseconds (for example <code>"1469498468.057"</code>).
      */
 
     public java.util.Date getStartTime() {
@@ -906,12 +903,12 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Time stamp indicating when this matchmaking request was received. Format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
      * @param startTime
      *        Time stamp indicating when this matchmaking request was received. Format is a number expressed in Unix
-     *        time as milliseconds (for example "1469498468.057").
+     *        time as milliseconds (for example <code>"1469498468.057"</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -923,12 +920,14 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Time stamp indicating when this matchmaking request stopped being processed due to success, failure, or
-     * cancellation. Format is a number expressed in Unix time as milliseconds (for example "1469498468.057").
+     * cancellation. Format is a number expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).
      * </p>
      * 
      * @param endTime
      *        Time stamp indicating when this matchmaking request stopped being processed due to success, failure, or
-     *        cancellation. Format is a number expressed in Unix time as milliseconds (for example "1469498468.057").
+     *        cancellation. Format is a number expressed in Unix time as milliseconds (for example
+     *        <code>"1469498468.057"</code>).
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -938,11 +937,13 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Time stamp indicating when this matchmaking request stopped being processed due to success, failure, or
-     * cancellation. Format is a number expressed in Unix time as milliseconds (for example "1469498468.057").
+     * cancellation. Format is a number expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).
      * </p>
      * 
      * @return Time stamp indicating when this matchmaking request stopped being processed due to success, failure, or
-     *         cancellation. Format is a number expressed in Unix time as milliseconds (for example "1469498468.057").
+     *         cancellation. Format is a number expressed in Unix time as milliseconds (for example
+     *         <code>"1469498468.057"</code>).
      */
 
     public java.util.Date getEndTime() {
@@ -952,12 +953,14 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Time stamp indicating when this matchmaking request stopped being processed due to success, failure, or
-     * cancellation. Format is a number expressed in Unix time as milliseconds (for example "1469498468.057").
+     * cancellation. Format is a number expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).
      * </p>
      * 
      * @param endTime
      *        Time stamp indicating when this matchmaking request stopped being processed due to success, failure, or
-     *        cancellation. Format is a number expressed in Unix time as milliseconds (for example "1469498468.057").
+     *        cancellation. Format is a number expressed in Unix time as milliseconds (for example
+     *        <code>"1469498468.057"</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -93,6 +93,19 @@ public class AbstractAmazonGameLiftAsync extends AbstractAmazonGameLift implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateFleetLocationsResult> createFleetLocationsAsync(CreateFleetLocationsRequest request) {
+
+        return createFleetLocationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFleetLocationsResult> createFleetLocationsAsync(CreateFleetLocationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateFleetLocationsRequest, CreateFleetLocationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateGameServerGroupResult> createGameServerGroupAsync(CreateGameServerGroupRequest request) {
 
         return createGameServerGroupAsync(request, null);
@@ -257,6 +270,19 @@ public class AbstractAmazonGameLiftAsync extends AbstractAmazonGameLift implemen
     @Override
     public java.util.concurrent.Future<DeleteFleetResult> deleteFleetAsync(DeleteFleetRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteFleetRequest, DeleteFleetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFleetLocationsResult> deleteFleetLocationsAsync(DeleteFleetLocationsRequest request) {
+
+        return deleteFleetLocationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFleetLocationsResult> deleteFleetLocationsAsync(DeleteFleetLocationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteFleetLocationsRequest, DeleteFleetLocationsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -452,6 +478,49 @@ public class AbstractAmazonGameLiftAsync extends AbstractAmazonGameLift implemen
     @Override
     public java.util.concurrent.Future<DescribeFleetEventsResult> describeFleetEventsAsync(DescribeFleetEventsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeFleetEventsRequest, DescribeFleetEventsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFleetLocationAttributesResult> describeFleetLocationAttributesAsync(
+            DescribeFleetLocationAttributesRequest request) {
+
+        return describeFleetLocationAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFleetLocationAttributesResult> describeFleetLocationAttributesAsync(
+            DescribeFleetLocationAttributesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeFleetLocationAttributesRequest, DescribeFleetLocationAttributesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFleetLocationCapacityResult> describeFleetLocationCapacityAsync(DescribeFleetLocationCapacityRequest request) {
+
+        return describeFleetLocationCapacityAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFleetLocationCapacityResult> describeFleetLocationCapacityAsync(DescribeFleetLocationCapacityRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeFleetLocationCapacityRequest, DescribeFleetLocationCapacityResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFleetLocationUtilizationResult> describeFleetLocationUtilizationAsync(
+            DescribeFleetLocationUtilizationRequest request) {
+
+        return describeFleetLocationUtilizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFleetLocationUtilizationResult> describeFleetLocationUtilizationAsync(
+            DescribeFleetLocationUtilizationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeFleetLocationUtilizationRequest, DescribeFleetLocationUtilizationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

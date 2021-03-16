@@ -21,38 +21,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * The routing configuration for a fleet alias.
  * </p>
- * <ul>
- * <li>
  * <p>
- * <a>CreateAlias</a>
+ * <b>Related actions</b>
  * </p>
- * </li>
- * <li>
  * <p>
- * <a>ListAliases</a>
+ * <a>CreateAlias</a> | <a>ListAliases</a> | <a>DescribeAlias</a> | <a>UpdateAlias</a> | <a>DeleteAlias</a> |
+ * <a>ResolveAlias</a> | <a href=
+ * "https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets"
+ * >All APIs by task</a>
  * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeAlias</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>UpdateAlias</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DeleteAlias</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>ResolveAlias</a>
- * </p>
- * </li>
- * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RoutingStrategy" target="_top">AWS API
  *      Documentation</a>
@@ -84,7 +61,7 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
     private String type;
     /**
      * <p>
-     * The unique identifier for a fleet that the alias points to. This value is the fleet ID, not the fleet ARN.
+     * A unique identifier for the fleet that the alias points to. This value is the fleet ID, not the fleet ARN.
      * </p>
      */
     private String fleetId;
@@ -330,11 +307,11 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The unique identifier for a fleet that the alias points to. This value is the fleet ID, not the fleet ARN.
+     * A unique identifier for the fleet that the alias points to. This value is the fleet ID, not the fleet ARN.
      * </p>
      * 
      * @param fleetId
-     *        The unique identifier for a fleet that the alias points to. This value is the fleet ID, not the fleet ARN.
+     *        A unique identifier for the fleet that the alias points to. This value is the fleet ID, not the fleet ARN.
      */
 
     public void setFleetId(String fleetId) {
@@ -343,10 +320,10 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The unique identifier for a fleet that the alias points to. This value is the fleet ID, not the fleet ARN.
+     * A unique identifier for the fleet that the alias points to. This value is the fleet ID, not the fleet ARN.
      * </p>
      * 
-     * @return The unique identifier for a fleet that the alias points to. This value is the fleet ID, not the fleet
+     * @return A unique identifier for the fleet that the alias points to. This value is the fleet ID, not the fleet
      *         ARN.
      */
 
@@ -356,11 +333,11 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The unique identifier for a fleet that the alias points to. This value is the fleet ID, not the fleet ARN.
+     * A unique identifier for the fleet that the alias points to. This value is the fleet ID, not the fleet ARN.
      * </p>
      * 
      * @param fleetId
-     *        The unique identifier for a fleet that the alias points to. This value is the fleet ID, not the fleet ARN.
+     *        A unique identifier for the fleet that the alias points to. This value is the fleet ID, not the fleet ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

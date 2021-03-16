@@ -34,6 +34,8 @@ public class TransportMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxBitrate").build();
     private static final MarshallingInfo<Integer> MAXLATENCY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxLatency").build();
+    private static final MarshallingInfo<Integer> MINLATENCY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("minLatency").build();
     private static final MarshallingInfo<String> PROTOCOL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("protocol").build();
     private static final MarshallingInfo<String> REMOTEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -62,6 +64,7 @@ public class TransportMarshaller {
             protocolMarshaller.marshall(transport.getCidrAllowList(), CIDRALLOWLIST_BINDING);
             protocolMarshaller.marshall(transport.getMaxBitrate(), MAXBITRATE_BINDING);
             protocolMarshaller.marshall(transport.getMaxLatency(), MAXLATENCY_BINDING);
+            protocolMarshaller.marshall(transport.getMinLatency(), MINLATENCY_BINDING);
             protocolMarshaller.marshall(transport.getProtocol(), PROTOCOL_BINDING);
             protocolMarshaller.marshall(transport.getRemoteId(), REMOTEID_BINDING);
             protocolMarshaller.marshall(transport.getSmoothingLatency(), SMOOTHINGLATENCY_BINDING);

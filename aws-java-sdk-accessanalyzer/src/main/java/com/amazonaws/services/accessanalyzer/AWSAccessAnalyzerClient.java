@@ -365,6 +365,11 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
      * Creates an archive rule for the specified analyzer. Archive rules automatically archive new findings that meet
      * the criteria you define when you create the rule.
      * </p>
+     * <p>
+     * To learn about filter keys that you can use to create an archive rule, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">Access
+     * Analyzer filter keys</a> in the <b>IAM User Guide</b>.
+     * </p>
      * 
      * @param createArchiveRuleRequest
      *        Creates an archive rule.
@@ -1685,6 +1690,71 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateFindingsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateFindingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Requests the validation of a policy and returns a list of findings. The findings help you identify issues and
+     * provide actionable recommendations to resolve the issue and enable you to author functional policies that meet
+     * security best practices.
+     * </p>
+     * 
+     * @param validatePolicyRequest
+     * @return Result of the ValidatePolicy operation returned by the service.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws InternalServerException
+     *         Internal server error.
+     * @throws ThrottlingException
+     *         Throttling limit exceeded error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSAccessAnalyzer.ValidatePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ValidatePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ValidatePolicyResult validatePolicy(ValidatePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeValidatePolicy(request);
+    }
+
+    @SdkInternalApi
+    final ValidatePolicyResult executeValidatePolicy(ValidatePolicyRequest validatePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(validatePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ValidatePolicyRequest> request = null;
+        Response<ValidatePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ValidatePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(validatePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ValidatePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ValidatePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ValidatePolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
