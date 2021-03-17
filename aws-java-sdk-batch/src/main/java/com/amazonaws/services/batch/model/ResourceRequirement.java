@@ -49,10 +49,10 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      * <dt>type="MEMORY"</dt>
      * <dd>
      * <p>
-     * For jobs running on EC2 resources, the hard limit (in MiB) of memory to present to the container. If your
-     * container attempts to exceed the memory specified here, the container is killed. This parameter maps to
-     * <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
-     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     * The memory hard limit (in MiB) present to the container. This parameter is supported for jobs running on EC2
+     * resources. If your container attempts to exceed the memory specified, the container is terminated. This parameter
+     * maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
+     * a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
      * specify at least 4 MiB of memory for a job. This is required but can be specified in several places for
      * multi-node parallel (MNP) jobs. It must be specified for each node at least once. This parameter maps to
@@ -209,10 +209,10 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      * <dt>type="MEMORY"</dt>
      * <dd>
      * <p>
-     * For jobs running on EC2 resources, the hard limit (in MiB) of memory to present to the container. If your
-     * container attempts to exceed the memory specified here, the container is killed. This parameter maps to
-     * <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
-     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     * The memory hard limit (in MiB) present to the container. This parameter is supported for jobs running on EC2
+     * resources. If your container attempts to exceed the memory specified, the container is terminated. This parameter
+     * maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
+     * a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
      * specify at least 4 MiB of memory for a job. This is required but can be specified in several places for
      * multi-node parallel (MNP) jobs. It must be specified for each node at least once. This parameter maps to
@@ -359,17 +359,18 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      *        <dt>type="MEMORY"</dt>
      *        <dd>
      *        <p>
-     *        For jobs running on EC2 resources, the hard limit (in MiB) of memory to present to the container. If your
-     *        container attempts to exceed the memory specified here, the container is killed. This parameter maps to
+     *        The memory hard limit (in MiB) present to the container. This parameter is supported for jobs running on
+     *        EC2 resources. If your container attempts to exceed the memory specified, the container is terminated.
+     *        This parameter maps to <code>Memory</code> in the <a
+     *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
+     *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code>
+     *        option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at
+     *        least 4 MiB of memory for a job. This is required but can be specified in several places for multi-node
+     *        parallel (MNP) jobs. It must be specified for each node at least once. This parameter maps to
      *        <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      *        container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and
      *        the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>. You must specify at least 4 MiB of memory for a job. This is required but can be specified in
-     *        several places for multi-node parallel (MNP) jobs. It must be specified for each node at least once. This
-     *        parameter maps to <code>Memory</code> in the <a
-     *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
-     *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code>
-     *        option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *        run</a>.
      *        </p>
      *        <note>
      *        <p>
@@ -519,10 +520,10 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      * <dt>type="MEMORY"</dt>
      * <dd>
      * <p>
-     * For jobs running on EC2 resources, the hard limit (in MiB) of memory to present to the container. If your
-     * container attempts to exceed the memory specified here, the container is killed. This parameter maps to
-     * <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
-     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     * The memory hard limit (in MiB) present to the container. This parameter is supported for jobs running on EC2
+     * resources. If your container attempts to exceed the memory specified, the container is terminated. This parameter
+     * maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
+     * a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
      * specify at least 4 MiB of memory for a job. This is required but can be specified in several places for
      * multi-node parallel (MNP) jobs. It must be specified for each node at least once. This parameter maps to
@@ -668,17 +669,18 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      *         <dt>type="MEMORY"</dt>
      *         <dd>
      *         <p>
-     *         For jobs running on EC2 resources, the hard limit (in MiB) of memory to present to the container. If your
-     *         container attempts to exceed the memory specified here, the container is killed. This parameter maps to
+     *         The memory hard limit (in MiB) present to the container. This parameter is supported for jobs running on
+     *         EC2 resources. If your container attempts to exceed the memory specified, the container is terminated.
+     *         This parameter maps to <code>Memory</code> in the <a
+     *         href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
+     *         <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code>
+     *         option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at
+     *         least 4 MiB of memory for a job. This is required but can be specified in several places for multi-node
+     *         parallel (MNP) jobs. It must be specified for each node at least once. This parameter maps to
      *         <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
      *         a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a>
      *         and the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *         run</a>. You must specify at least 4 MiB of memory for a job. This is required but can be specified in
-     *         several places for multi-node parallel (MNP) jobs. It must be specified for each node at least once. This
-     *         parameter maps to <code>Memory</code> in the <a
-     *         href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
-     *         <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code>
-     *         option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *         run</a>.
      *         </p>
      *         <note>
      *         <p>
@@ -828,10 +830,10 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      * <dt>type="MEMORY"</dt>
      * <dd>
      * <p>
-     * For jobs running on EC2 resources, the hard limit (in MiB) of memory to present to the container. If your
-     * container attempts to exceed the memory specified here, the container is killed. This parameter maps to
-     * <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
-     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     * The memory hard limit (in MiB) present to the container. This parameter is supported for jobs running on EC2
+     * resources. If your container attempts to exceed the memory specified, the container is terminated. This parameter
+     * maps to <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
+     * a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
      * specify at least 4 MiB of memory for a job. This is required but can be specified in several places for
      * multi-node parallel (MNP) jobs. It must be specified for each node at least once. This parameter maps to
@@ -978,17 +980,18 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      *        <dt>type="MEMORY"</dt>
      *        <dd>
      *        <p>
-     *        For jobs running on EC2 resources, the hard limit (in MiB) of memory to present to the container. If your
-     *        container attempts to exceed the memory specified here, the container is killed. This parameter maps to
+     *        The memory hard limit (in MiB) present to the container. This parameter is supported for jobs running on
+     *        EC2 resources. If your container attempts to exceed the memory specified, the container is terminated.
+     *        This parameter maps to <code>Memory</code> in the <a
+     *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
+     *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code>
+     *        option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must specify at
+     *        least 4 MiB of memory for a job. This is required but can be specified in several places for multi-node
+     *        parallel (MNP) jobs. It must be specified for each node at least once. This parameter maps to
      *        <code>Memory</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      *        container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and
      *        the <code>--memory</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>. You must specify at least 4 MiB of memory for a job. This is required but can be specified in
-     *        several places for multi-node parallel (MNP) jobs. It must be specified for each node at least once. This
-     *        parameter maps to <code>Memory</code> in the <a
-     *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
-     *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--memory</code>
-     *        option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     *        run</a>.
      *        </p>
      *        <note>
      *        <p>

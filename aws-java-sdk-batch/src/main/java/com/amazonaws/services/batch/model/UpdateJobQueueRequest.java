@@ -36,9 +36,9 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
     private String jobQueue;
     /**
      * <p>
-     * Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it is able to
-     * accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs
-     * already in the queue can finish.
+     * Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it can accept
+     * jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in
+     * the queue can finish.
      * </p>
      */
     private String state;
@@ -49,7 +49,7 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
      * scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments
      * must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be mixed.
+     * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.
      * </p>
      */
     private Integer priority;
@@ -59,7 +59,7 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * of the parameters used by the job scheduler to determine which compute environment should run a given job.
      * Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All
      * of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (
-     * <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
+     * <code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.
      * </p>
      * <note>
      * <p>
@@ -112,15 +112,15 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it is able to
-     * accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs
-     * already in the queue can finish.
+     * Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it can accept
+     * jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in
+     * the queue can finish.
      * </p>
      * 
      * @param state
-     *        Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it is
-     *        able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the
-     *        queue, but jobs already in the queue can finish.
+     *        Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it can
+     *        accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but
+     *        jobs already in the queue can finish.
      * @see JQState
      */
 
@@ -130,14 +130,14 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it is able to
-     * accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs
-     * already in the queue can finish.
+     * Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it can accept
+     * jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in
+     * the queue can finish.
      * </p>
      * 
-     * @return Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it is
-     *         able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the
-     *         queue, but jobs already in the queue can finish.
+     * @return Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it can
+     *         accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but
+     *         jobs already in the queue can finish.
      * @see JQState
      */
 
@@ -147,15 +147,15 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it is able to
-     * accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs
-     * already in the queue can finish.
+     * Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it can accept
+     * jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in
+     * the queue can finish.
      * </p>
      * 
      * @param state
-     *        Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it is
-     *        able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the
-     *        queue, but jobs already in the queue can finish.
+     *        Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it can
+     *        accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but
+     *        jobs already in the queue can finish.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JQState
      */
@@ -167,15 +167,15 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it is able to
-     * accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs
-     * already in the queue can finish.
+     * Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it can accept
+     * jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in
+     * the queue can finish.
      * </p>
      * 
      * @param state
-     *        Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it is
-     *        able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the
-     *        queue, but jobs already in the queue can finish.
+     *        Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it can
+     *        accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but
+     *        jobs already in the queue can finish.
      * @see JQState
      */
 
@@ -185,15 +185,15 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it is able to
-     * accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs
-     * already in the queue can finish.
+     * Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it can accept
+     * jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs already in
+     * the queue can finish.
      * </p>
      * 
      * @param state
-     *        Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it is
-     *        able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the
-     *        queue, but jobs already in the queue can finish.
+     *        Describes the queue's ability to accept new jobs. If the job queue state is <code>ENABLED</code>, it can
+     *        accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but
+     *        jobs already in the queue can finish.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JQState
      */
@@ -210,7 +210,7 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
      * scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments
      * must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be mixed.
+     * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.
      * </p>
      * 
      * @param priority
@@ -219,7 +219,7 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Priority is determined in descending order, for example, a job queue with a priority value of
      *        <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>.
      *        All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (
-     *        <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be mixed.
+     *        <code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.
      */
 
     public void setPriority(Integer priority) {
@@ -233,7 +233,7 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
      * scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments
      * must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be mixed.
+     * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.
      * </p>
      * 
      * @return The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
@@ -241,7 +241,7 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      *         Priority is determined in descending order, for example, a job queue with a priority value of
      *         <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>.
      *         All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (
-     *         <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be mixed.
+     *         <code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.
      */
 
     public Integer getPriority() {
@@ -255,7 +255,7 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
      * scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments
      * must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be mixed.
+     * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.
      * </p>
      * 
      * @param priority
@@ -264,7 +264,7 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Priority is determined in descending order, for example, a job queue with a priority value of
      *        <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>.
      *        All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (
-     *        <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be mixed.
+     *        <code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,7 +279,7 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * of the parameters used by the job scheduler to determine which compute environment should run a given job.
      * Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All
      * of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (
-     * <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
+     * <code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.
      * </p>
      * <note>
      * <p>
@@ -292,7 +292,7 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      *         This is one of the parameters used by the job scheduler to determine which compute environment should run
      *         a given job. Compute environments must be in the <code>VALID</code> state before you can associate them
      *         with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or
-     *         <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate
+     *         <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate
      *         compute environments can't be mixed.</p> <note>
      *         <p>
      *         All compute environments that are associated with a job queue must share the same architecture. AWS Batch
@@ -310,7 +310,7 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * of the parameters used by the job scheduler to determine which compute environment should run a given job.
      * Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All
      * of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (
-     * <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
+     * <code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.
      * </p>
      * <note>
      * <p>
@@ -324,7 +324,7 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        is one of the parameters used by the job scheduler to determine which compute environment should run a
      *        given job. Compute environments must be in the <code>VALID</code> state before you can associate them with
      *        a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or
-     *        Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be
+     *        Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
      *        mixed.</p> <note>
      *        <p>
      *        All compute environments that are associated with a job queue must share the same architecture. AWS Batch
@@ -347,7 +347,7 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * of the parameters used by the job scheduler to determine which compute environment should run a given job.
      * Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All
      * of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (
-     * <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
+     * <code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.
      * </p>
      * <note>
      * <p>
@@ -366,7 +366,7 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        is one of the parameters used by the job scheduler to determine which compute environment should run a
      *        given job. Compute environments must be in the <code>VALID</code> state before you can associate them with
      *        a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or
-     *        Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be
+     *        Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
      *        mixed.</p> <note>
      *        <p>
      *        All compute environments that are associated with a job queue must share the same architecture. AWS Batch
@@ -391,7 +391,7 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      * of the parameters used by the job scheduler to determine which compute environment should run a given job.
      * Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All
      * of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (
-     * <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
+     * <code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be mixed.
      * </p>
      * <note>
      * <p>
@@ -405,7 +405,7 @@ public class UpdateJobQueueRequest extends com.amazonaws.AmazonWebServiceRequest
      *        is one of the parameters used by the job scheduler to determine which compute environment should run a
      *        given job. Compute environments must be in the <code>VALID</code> state before you can associate them with
      *        a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or
-     *        Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be
+     *        Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
      *        mixed.</p> <note>
      *        <p>
      *        All compute environments that are associated with a job queue must share the same architecture. AWS Batch

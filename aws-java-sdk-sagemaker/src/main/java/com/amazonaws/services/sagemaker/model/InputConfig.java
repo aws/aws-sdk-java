@@ -346,6 +346,56 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * </li>
      * </ul>
+     * <p>
+     * Depending on the model format, <code>DataInputConfig</code> requires the following parameters for
+     * <code>ml_eia2</code> <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-TargetDevice"
+     * >OutputConfig:TargetDevice</a>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For TensorFlow models saved in the SavedModel format, specify the input names from <code>signature_def_key</code>
+     * and the input model shapes for <code>DataInputConfig</code>. Specify the <code>signature_def_key</code> in <a
+     * href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"
+     * > <code>OutputConfig:CompilerOptions</code> </a> if the model does not use TensorFlow's default signature def
+     * key. For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": {"inputs": [1, 224, 224, 3]}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"CompilerOptions": {"signature_def_key": "serving_custom"}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * For TensorFlow models saved as a frozen graph, specify the input tensor names and shapes in
+     * <code>DataInputConfig</code> and the output tensor names for <code>output_names</code> in <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"
+     * > <code>OutputConfig:CompilerOptions</code> </a>. For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": {"input_tensor:0": [1, 224, 224, 3]}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      */
     private String dataInputConfig;
     /**
@@ -722,6 +772,56 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * </li>
      * </ul>
+     * <p>
+     * Depending on the model format, <code>DataInputConfig</code> requires the following parameters for
+     * <code>ml_eia2</code> <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-TargetDevice"
+     * >OutputConfig:TargetDevice</a>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For TensorFlow models saved in the SavedModel format, specify the input names from <code>signature_def_key</code>
+     * and the input model shapes for <code>DataInputConfig</code>. Specify the <code>signature_def_key</code> in <a
+     * href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"
+     * > <code>OutputConfig:CompilerOptions</code> </a> if the model does not use TensorFlow's default signature def
+     * key. For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": {"inputs": [1, 224, 224, 3]}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"CompilerOptions": {"signature_def_key": "serving_custom"}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * For TensorFlow models saved as a frozen graph, specify the input tensor names and shapes in
+     * <code>DataInputConfig</code> and the output tensor names for <code>output_names</code> in <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"
+     * > <code>OutputConfig:CompilerOptions</code> </a>. For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": {"input_tensor:0": [1, 224, 224, 3]}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @param dataInputConfig
      *        Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary
@@ -1030,6 +1130,56 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Depending on the model format, <code>DataInputConfig</code> requires the following parameters for
+     *        <code>ml_eia2</code> <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-TargetDevice"
+     *        >OutputConfig:TargetDevice</a>.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For TensorFlow models saved in the SavedModel format, specify the input names from
+     *        <code>signature_def_key</code> and the input model shapes for <code>DataInputConfig</code>. Specify the
+     *        <code>signature_def_key</code> in <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"
+     *        > <code>OutputConfig:CompilerOptions</code> </a> if the model does not use TensorFlow's default signature
+     *        def key. For example:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"DataInputConfig": {"inputs": [1, 224, 224, 3]}</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"CompilerOptions": {"signature_def_key": "serving_custom"}</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For TensorFlow models saved as a frozen graph, specify the input tensor names and shapes in
+     *        <code>DataInputConfig</code> and the output tensor names for <code>output_names</code> in <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"
+     *        > <code>OutputConfig:CompilerOptions</code> </a>. For example:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"DataInputConfig": {"input_tensor:0": [1, 224, 224, 3]}</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -1350,6 +1500,56 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * </li>
      * </ul>
+     * <p>
+     * Depending on the model format, <code>DataInputConfig</code> requires the following parameters for
+     * <code>ml_eia2</code> <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-TargetDevice"
+     * >OutputConfig:TargetDevice</a>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For TensorFlow models saved in the SavedModel format, specify the input names from <code>signature_def_key</code>
+     * and the input model shapes for <code>DataInputConfig</code>. Specify the <code>signature_def_key</code> in <a
+     * href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"
+     * > <code>OutputConfig:CompilerOptions</code> </a> if the model does not use TensorFlow's default signature def
+     * key. For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": {"inputs": [1, 224, 224, 3]}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"CompilerOptions": {"signature_def_key": "serving_custom"}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * For TensorFlow models saved as a frozen graph, specify the input tensor names and shapes in
+     * <code>DataInputConfig</code> and the output tensor names for <code>output_names</code> in <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"
+     * > <code>OutputConfig:CompilerOptions</code> </a>. For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": {"input_tensor:0": [1, 224, 224, 3]}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @return Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary
      *         form. The data inputs are <a>InputConfig$Framework</a> specific. </p>
@@ -1657,6 +1857,56 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Depending on the model format, <code>DataInputConfig</code> requires the following parameters for
+     *         <code>ml_eia2</code> <a href=
+     *         "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-TargetDevice"
+     *         >OutputConfig:TargetDevice</a>.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For TensorFlow models saved in the SavedModel format, specify the input names from
+     *         <code>signature_def_key</code> and the input model shapes for <code>DataInputConfig</code>. Specify the
+     *         <code>signature_def_key</code> in <a href=
+     *         "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"
+     *         > <code>OutputConfig:CompilerOptions</code> </a> if the model does not use TensorFlow's default signature
+     *         def key. For example:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>"DataInputConfig": {"inputs": [1, 224, 224, 3]}</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"CompilerOptions": {"signature_def_key": "serving_custom"}</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For TensorFlow models saved as a frozen graph, specify the input tensor names and shapes in
+     *         <code>DataInputConfig</code> and the output tensor names for <code>output_names</code> in <a href=
+     *         "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"
+     *         > <code>OutputConfig:CompilerOptions</code> </a>. For example:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>"DataInputConfig": {"input_tensor:0": [1, 224, 224, 3]}</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -1977,6 +2227,56 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * </li>
      * </ul>
+     * <p>
+     * Depending on the model format, <code>DataInputConfig</code> requires the following parameters for
+     * <code>ml_eia2</code> <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-TargetDevice"
+     * >OutputConfig:TargetDevice</a>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For TensorFlow models saved in the SavedModel format, specify the input names from <code>signature_def_key</code>
+     * and the input model shapes for <code>DataInputConfig</code>. Specify the <code>signature_def_key</code> in <a
+     * href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"
+     * > <code>OutputConfig:CompilerOptions</code> </a> if the model does not use TensorFlow's default signature def
+     * key. For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": {"inputs": [1, 224, 224, 3]}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"CompilerOptions": {"signature_def_key": "serving_custom"}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * For TensorFlow models saved as a frozen graph, specify the input tensor names and shapes in
+     * <code>DataInputConfig</code> and the output tensor names for <code>output_names</code> in <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"
+     * > <code>OutputConfig:CompilerOptions</code> </a>. For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"DataInputConfig": {"input_tensor:0": [1, 224, 224, 3]}</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @param dataInputConfig
      *        Specifies the name and shape of the expected data inputs for your trained model with a JSON dictionary
@@ -2285,6 +2585,56 @@ public class InputConfig implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Depending on the model format, <code>DataInputConfig</code> requires the following parameters for
+     *        <code>ml_eia2</code> <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-TargetDevice"
+     *        >OutputConfig:TargetDevice</a>.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For TensorFlow models saved in the SavedModel format, specify the input names from
+     *        <code>signature_def_key</code> and the input model shapes for <code>DataInputConfig</code>. Specify the
+     *        <code>signature_def_key</code> in <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"
+     *        > <code>OutputConfig:CompilerOptions</code> </a> if the model does not use TensorFlow's default signature
+     *        def key. For example:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"DataInputConfig": {"inputs": [1, 224, 224, 3]}</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"CompilerOptions": {"signature_def_key": "serving_custom"}</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For TensorFlow models saved as a frozen graph, specify the input tensor names and shapes in
+     *        <code>DataInputConfig</code> and the output tensor names for <code>output_names</code> in <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions"
+     *        > <code>OutputConfig:CompilerOptions</code> </a>. For example:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"DataInputConfig": {"input_tensor:0": [1, 224, 224, 3]}</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code>
      *        </p>
      *        </li>
      *        </ul>

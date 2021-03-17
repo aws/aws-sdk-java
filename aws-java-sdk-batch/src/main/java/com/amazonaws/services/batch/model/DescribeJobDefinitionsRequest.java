@@ -38,10 +38,10 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The maximum number of results returned by <code>DescribeJobDefinitions</code> in paginated output. When this
      * parameter is used, <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results in a single
-     * page along with a <code>nextToken</code> response element. The remaining results of the initial request can be
-     * seen by sending another <code>DescribeJobDefinitions</code> request with the returned <code>nextToken</code>
-     * value. This value can be between 1 and 100. If this parameter isn't used, then
-     * <code>DescribeJobDefinitions</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
+     * page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
+     * sending another <code>DescribeJobDefinitions</code> request with the returned <code>nextToken</code> value. This
+     * value can be between 1 and 100. If this parameter isn't used, then <code>DescribeJobDefinitions</code> returns up
+     * to 100 results and a <code>nextToken</code> value if applicable.
      * </p>
      */
     private Integer maxResults;
@@ -147,19 +147,19 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The maximum number of results returned by <code>DescribeJobDefinitions</code> in paginated output. When this
      * parameter is used, <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results in a single
-     * page along with a <code>nextToken</code> response element. The remaining results of the initial request can be
-     * seen by sending another <code>DescribeJobDefinitions</code> request with the returned <code>nextToken</code>
-     * value. This value can be between 1 and 100. If this parameter isn't used, then
-     * <code>DescribeJobDefinitions</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
+     * page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
+     * sending another <code>DescribeJobDefinitions</code> request with the returned <code>nextToken</code> value. This
+     * value can be between 1 and 100. If this parameter isn't used, then <code>DescribeJobDefinitions</code> returns up
+     * to 100 results and a <code>nextToken</code> value if applicable.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of results returned by <code>DescribeJobDefinitions</code> in paginated output. When
      *        this parameter is used, <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results
-     *        in a single page along with a <code>nextToken</code> response element. The remaining results of the
-     *        initial request can be seen by sending another <code>DescribeJobDefinitions</code> request with the
-     *        returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used,
-     *        then <code>DescribeJobDefinitions</code> returns up to 100 results and a <code>nextToken</code> value if
+     *        in a single page and a <code>nextToken</code> response element. The remaining results of the initial
+     *        request can be seen by sending another <code>DescribeJobDefinitions</code> request with the returned
+     *        <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then
+     *        <code>DescribeJobDefinitions</code> returns up to 100 results and a <code>nextToken</code> value if
      *        applicable.
      */
 
@@ -171,18 +171,18 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The maximum number of results returned by <code>DescribeJobDefinitions</code> in paginated output. When this
      * parameter is used, <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results in a single
-     * page along with a <code>nextToken</code> response element. The remaining results of the initial request can be
-     * seen by sending another <code>DescribeJobDefinitions</code> request with the returned <code>nextToken</code>
-     * value. This value can be between 1 and 100. If this parameter isn't used, then
-     * <code>DescribeJobDefinitions</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
+     * page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
+     * sending another <code>DescribeJobDefinitions</code> request with the returned <code>nextToken</code> value. This
+     * value can be between 1 and 100. If this parameter isn't used, then <code>DescribeJobDefinitions</code> returns up
+     * to 100 results and a <code>nextToken</code> value if applicable.
      * </p>
      * 
      * @return The maximum number of results returned by <code>DescribeJobDefinitions</code> in paginated output. When
      *         this parameter is used, <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results
-     *         in a single page along with a <code>nextToken</code> response element. The remaining results of the
-     *         initial request can be seen by sending another <code>DescribeJobDefinitions</code> request with the
-     *         returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used,
-     *         then <code>DescribeJobDefinitions</code> returns up to 100 results and a <code>nextToken</code> value if
+     *         in a single page and a <code>nextToken</code> response element. The remaining results of the initial
+     *         request can be seen by sending another <code>DescribeJobDefinitions</code> request with the returned
+     *         <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then
+     *         <code>DescribeJobDefinitions</code> returns up to 100 results and a <code>nextToken</code> value if
      *         applicable.
      */
 
@@ -194,19 +194,19 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The maximum number of results returned by <code>DescribeJobDefinitions</code> in paginated output. When this
      * parameter is used, <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results in a single
-     * page along with a <code>nextToken</code> response element. The remaining results of the initial request can be
-     * seen by sending another <code>DescribeJobDefinitions</code> request with the returned <code>nextToken</code>
-     * value. This value can be between 1 and 100. If this parameter isn't used, then
-     * <code>DescribeJobDefinitions</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
+     * page and a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
+     * sending another <code>DescribeJobDefinitions</code> request with the returned <code>nextToken</code> value. This
+     * value can be between 1 and 100. If this parameter isn't used, then <code>DescribeJobDefinitions</code> returns up
+     * to 100 results and a <code>nextToken</code> value if applicable.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of results returned by <code>DescribeJobDefinitions</code> in paginated output. When
      *        this parameter is used, <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results
-     *        in a single page along with a <code>nextToken</code> response element. The remaining results of the
-     *        initial request can be seen by sending another <code>DescribeJobDefinitions</code> request with the
-     *        returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used,
-     *        then <code>DescribeJobDefinitions</code> returns up to 100 results and a <code>nextToken</code> value if
+     *        in a single page and a <code>nextToken</code> response element. The remaining results of the initial
+     *        request can be seen by sending another <code>DescribeJobDefinitions</code> request with the returned
+     *        <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then
+     *        <code>DescribeJobDefinitions</code> returns up to 100 results and a <code>nextToken</code> value if
      *        applicable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

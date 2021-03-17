@@ -169,9 +169,9 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If
-     * no value is specified, the tags are not propagated. Tags can only be propagated to the tasks during task
-     * creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number
-     * of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
+     * no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation.
+     * For tags with the same name, job tags are given priority over job definitions tags. If the total number of
+     * combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
      * </p>
      */
     private Boolean propagateTags;
@@ -1258,14 +1258,14 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If
-     * no value is specified, the tags are not propagated. Tags can only be propagated to the tasks during task
-     * creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number
-     * of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
+     * no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation.
+     * For tags with the same name, job tags are given priority over job definitions tags. If the total number of
+     * combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
      * </p>
      * 
      * @param propagateTags
      *        Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS
-     *        task. If no value is specified, the tags are not propagated. Tags can only be propagated to the tasks
+     *        task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks
      *        during task creation. For tags with the same name, job tags are given priority over job definitions tags.
      *        If the total number of combined tags from the job and job definition is over 50, the job is moved to the
      *        <code>FAILED</code> state.
@@ -1278,13 +1278,13 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If
-     * no value is specified, the tags are not propagated. Tags can only be propagated to the tasks during task
-     * creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number
-     * of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
+     * no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation.
+     * For tags with the same name, job tags are given priority over job definitions tags. If the total number of
+     * combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
      * </p>
      * 
      * @return Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS
-     *         task. If no value is specified, the tags are not propagated. Tags can only be propagated to the tasks
+     *         task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks
      *         during task creation. For tags with the same name, job tags are given priority over job definitions tags.
      *         If the total number of combined tags from the job and job definition is over 50, the job is moved to the
      *         <code>FAILED</code> state.
@@ -1297,14 +1297,14 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If
-     * no value is specified, the tags are not propagated. Tags can only be propagated to the tasks during task
-     * creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number
-     * of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
+     * no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation.
+     * For tags with the same name, job tags are given priority over job definitions tags. If the total number of
+     * combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
      * </p>
      * 
      * @param propagateTags
      *        Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS
-     *        task. If no value is specified, the tags are not propagated. Tags can only be propagated to the tasks
+     *        task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks
      *        during task creation. For tags with the same name, job tags are given priority over job definitions tags.
      *        If the total number of combined tags from the job and job definition is over 50, the job is moved to the
      *        <code>FAILED</code> state.
@@ -1319,13 +1319,13 @@ public class JobDetail implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If
-     * no value is specified, the tags are not propagated. Tags can only be propagated to the tasks during task
-     * creation. For tags with the same name, job tags are given priority over job definitions tags. If the total number
-     * of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
+     * no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks during task creation.
+     * For tags with the same name, job tags are given priority over job definitions tags. If the total number of
+     * combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.
      * </p>
      * 
      * @return Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS
-     *         task. If no value is specified, the tags are not propagated. Tags can only be propagated to the tasks
+     *         task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks
      *         during task creation. For tags with the same name, job tags are given priority over job definitions tags.
      *         If the total number of combined tags from the job and job definition is over 50, the job is moved to the
      *         <code>FAILED</code> state.

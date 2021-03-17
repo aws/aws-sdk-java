@@ -1,3 +1,12 @@
+# __1.11.977__ __2021-03-17__
+## __AWS Batch__
+  - ### Features
+    - Making serviceRole an optional parameter when creating a compute environment. If serviceRole is not provided then Service Linked Role will be created (or reused if it already exists).
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - Support new target device ml_eia2 in SageMaker CreateCompilationJob API
+
 # __1.11.976__ __2021-03-16__
 ## __AWS Identity and Access Management__
   - ### Features

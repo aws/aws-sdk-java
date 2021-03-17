@@ -67,7 +67,7 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
      * is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
      * scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments
      * must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be mixed.
+     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
      * </p>
      */
     private Integer priority;
@@ -380,7 +380,7 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
      * is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
      * scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments
      * must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be mixed.
+     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
      * </p>
      * 
      * @param priority
@@ -389,7 +389,7 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
      *        Priority is determined in descending order, for example, a job queue with a priority value of
      *        <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>.
      *        All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (
-     *        <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be mixed.
+     *        <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
      */
 
     public void setPriority(Integer priority) {
@@ -403,7 +403,7 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
      * is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
      * scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments
      * must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be mixed.
+     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
      * </p>
      * 
      * @return The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
@@ -411,7 +411,7 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
      *         Priority is determined in descending order, for example, a job queue with a priority value of
      *         <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>.
      *         All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (
-     *         <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be mixed.
+     *         <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
      */
 
     public Integer getPriority() {
@@ -425,7 +425,7 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
      * is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
      * scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments
      * must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be mixed.
+     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
      * </p>
      * 
      * @param priority
@@ -434,7 +434,7 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
      *        Priority is determined in descending order, for example, a job queue with a priority value of
      *        <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>.
      *        All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (
-     *        <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments cannot be mixed.
+     *        <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

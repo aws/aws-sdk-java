@@ -234,6 +234,34 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * </li>
+     * <li>
+     * <p>
+     * <code>EIA</code>: Compilation for the Elastic Inference Accelerator supports the following compiler options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>precision_mode</code>: Specifies the precision of compiled artifacts. Supported values are
+     * <code>"FP16"</code> and <code>"FP32"</code>. Default is <code>"FP32"</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>signature_def_key</code>: Specifies the signature to use for models in SavedModel format. Defaults is
+     * TensorFlow's default signature def key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>output_names</code>: Specifies a list of output tensor names for models in FrozenGraph format. Set at most
+     * one API field, either: <code>signature_def_key</code> or <code>output_names</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example: <code>{"precision_mode": "FP32", "output_names": ["output:0"]}</code>
+     * </p>
+     * </li>
      * </ul>
      */
     private String compilerOptions;
@@ -959,6 +987,34 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * </li>
+     * <li>
+     * <p>
+     * <code>EIA</code>: Compilation for the Elastic Inference Accelerator supports the following compiler options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>precision_mode</code>: Specifies the precision of compiled artifacts. Supported values are
+     * <code>"FP16"</code> and <code>"FP32"</code>. Default is <code>"FP32"</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>signature_def_key</code>: Specifies the signature to use for models in SavedModel format. Defaults is
+     * TensorFlow's default signature def key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>output_names</code>: Specifies a list of output tensor names for models in FrozenGraph format. Set at most
+     * one API field, either: <code>signature_def_key</code> or <code>output_names</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example: <code>{"precision_mode": "FP32", "output_names": ["output:0"]}</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param compilerOptions
@@ -1068,6 +1124,35 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </li>
      *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EIA</code>: Compilation for the Elastic Inference Accelerator supports the following compiler
+     *        options:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>precision_mode</code>: Specifies the precision of compiled artifacts. Supported values are
+     *        <code>"FP16"</code> and <code>"FP32"</code>. Default is <code>"FP32"</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>signature_def_key</code>: Specifies the signature to use for models in SavedModel format. Defaults
+     *        is TensorFlow's default signature def key.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>output_names</code>: Specifies a list of output tensor names for models in FrozenGraph format. Set
+     *        at most one API field, either: <code>signature_def_key</code> or <code>output_names</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For example: <code>{"precision_mode": "FP32", "output_names": ["output:0"]}</code>
+     *        </p>
      *        </li>
      */
 
@@ -1185,6 +1270,34 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * </li>
+     * <li>
+     * <p>
+     * <code>EIA</code>: Compilation for the Elastic Inference Accelerator supports the following compiler options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>precision_mode</code>: Specifies the precision of compiled artifacts. Supported values are
+     * <code>"FP16"</code> and <code>"FP32"</code>. Default is <code>"FP32"</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>signature_def_key</code>: Specifies the signature to use for models in SavedModel format. Defaults is
+     * TensorFlow's default signature def key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>output_names</code>: Specifies a list of output tensor names for models in FrozenGraph format. Set at most
+     * one API field, either: <code>signature_def_key</code> or <code>output_names</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example: <code>{"precision_mode": "FP32", "output_names": ["output:0"]}</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Specifies additional parameters for compiler options in JSON format. The compiler options are
@@ -1293,6 +1406,35 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         </li>
      *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>EIA</code>: Compilation for the Elastic Inference Accelerator supports the following compiler
+     *         options:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>precision_mode</code>: Specifies the precision of compiled artifacts. Supported values are
+     *         <code>"FP16"</code> and <code>"FP32"</code>. Default is <code>"FP32"</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>signature_def_key</code>: Specifies the signature to use for models in SavedModel format. Defaults
+     *         is TensorFlow's default signature def key.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>output_names</code>: Specifies a list of output tensor names for models in FrozenGraph format. Set
+     *         at most one API field, either: <code>signature_def_key</code> or <code>output_names</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For example: <code>{"precision_mode": "FP32", "output_names": ["output:0"]}</code>
+     *         </p>
      *         </li>
      */
 
@@ -1410,6 +1552,34 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * </li>
+     * <li>
+     * <p>
+     * <code>EIA</code>: Compilation for the Elastic Inference Accelerator supports the following compiler options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>precision_mode</code>: Specifies the precision of compiled artifacts. Supported values are
+     * <code>"FP16"</code> and <code>"FP32"</code>. Default is <code>"FP32"</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>signature_def_key</code>: Specifies the signature to use for models in SavedModel format. Defaults is
+     * TensorFlow's default signature def key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>output_names</code>: Specifies a list of output tensor names for models in FrozenGraph format. Set at most
+     * one API field, either: <code>signature_def_key</code> or <code>output_names</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example: <code>{"precision_mode": "FP32", "output_names": ["output:0"]}</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param compilerOptions
@@ -1519,6 +1689,35 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </li>
      *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EIA</code>: Compilation for the Elastic Inference Accelerator supports the following compiler
+     *        options:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>precision_mode</code>: Specifies the precision of compiled artifacts. Supported values are
+     *        <code>"FP16"</code> and <code>"FP32"</code>. Default is <code>"FP32"</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>signature_def_key</code>: Specifies the signature to use for models in SavedModel format. Defaults
+     *        is TensorFlow's default signature def key.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>output_names</code>: Specifies a list of output tensor names for models in FrozenGraph format. Set
+     *        at most one API field, either: <code>signature_def_key</code> or <code>output_names</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For example: <code>{"precision_mode": "FP32", "output_names": ["output:0"]}</code>
+     *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

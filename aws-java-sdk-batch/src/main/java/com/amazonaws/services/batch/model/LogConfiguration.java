@@ -104,7 +104,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * </dl>
      * <note>
      * <p>
-     * If you have a custom driver that'sn't listed earlier that you want to work with the Amazon ECS container agent,
+     * If you have a custom driver that's not listed earlier that you want to work with the Amazon ECS container agent,
      * you can fork the Amazon ECS container agent project that's <a
      * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that driver.
      * We encourage you to submit pull requests for changes that you want to have included. However, Amazon Web Services
@@ -212,7 +212,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * </dl>
      * <note>
      * <p>
-     * If you have a custom driver that'sn't listed earlier that you want to work with the Amazon ECS container agent,
+     * If you have a custom driver that's not listed earlier that you want to work with the Amazon ECS container agent,
      * you can fork the Amazon ECS container agent project that's <a
      * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that driver.
      * We encourage you to submit pull requests for changes that you want to have included. However, Amazon Web Services
@@ -301,7 +301,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *        </dl>
      *        <note>
      *        <p>
-     *        If you have a custom driver that'sn't listed earlier that you want to work with the Amazon ECS container
+     *        If you have a custom driver that's not listed earlier that you want to work with the Amazon ECS container
      *        agent, you can fork the Amazon ECS container agent project that's <a
      *        href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that
      *        driver. We encourage you to submit pull requests for changes that you want to have included. However,
@@ -395,7 +395,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * </dl>
      * <note>
      * <p>
-     * If you have a custom driver that'sn't listed earlier that you want to work with the Amazon ECS container agent,
+     * If you have a custom driver that's not listed earlier that you want to work with the Amazon ECS container agent,
      * you can fork the Amazon ECS container agent project that's <a
      * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that driver.
      * We encourage you to submit pull requests for changes that you want to have included. However, Amazon Web Services
@@ -483,7 +483,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *         </dl>
      *         <note>
      *         <p>
-     *         If you have a custom driver that'sn't listed earlier that you want to work with the Amazon ECS container
+     *         If you have a custom driver that's not listed earlier that you want to work with the Amazon ECS container
      *         agent, you can fork the Amazon ECS container agent project that's <a
      *         href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that
      *         driver. We encourage you to submit pull requests for changes that you want to have included. However,
@@ -577,7 +577,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * </dl>
      * <note>
      * <p>
-     * If you have a custom driver that'sn't listed earlier that you want to work with the Amazon ECS container agent,
+     * If you have a custom driver that's not listed earlier that you want to work with the Amazon ECS container agent,
      * you can fork the Amazon ECS container agent project that's <a
      * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that driver.
      * We encourage you to submit pull requests for changes that you want to have included. However, Amazon Web Services
@@ -666,7 +666,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *        </dl>
      *        <note>
      *        <p>
-     *        If you have a custom driver that'sn't listed earlier that you want to work with the Amazon ECS container
+     *        If you have a custom driver that's not listed earlier that you want to work with the Amazon ECS container
      *        agent, you can fork the Amazon ECS container agent project that's <a
      *        href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that
      *        driver. We encourage you to submit pull requests for changes that you want to have included. However,
@@ -762,7 +762,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * </dl>
      * <note>
      * <p>
-     * If you have a custom driver that'sn't listed earlier that you want to work with the Amazon ECS container agent,
+     * If you have a custom driver that's not listed earlier that you want to work with the Amazon ECS container agent,
      * you can fork the Amazon ECS container agent project that's <a
      * href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that driver.
      * We encourage you to submit pull requests for changes that you want to have included. However, Amazon Web Services
@@ -851,7 +851,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *        </dl>
      *        <note>
      *        <p>
-     *        If you have a custom driver that'sn't listed earlier that you want to work with the Amazon ECS container
+     *        If you have a custom driver that's not listed earlier that you want to work with the Amazon ECS container
      *        agent, you can fork the Amazon ECS container agent project that's <a
      *        href="https://github.com/aws/amazon-ecs-agent">available on GitHub</a> and customize it to work with that
      *        driver. We encourage you to submit pull requests for changes that you want to have included. However,

@@ -135,8 +135,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * If the <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from a job definition, each
-     * container will have a default <code>swappiness</code> value of 60 and the total swap usage will be limited to two
-     * times the memory reservation of the container.
+     * container will have a default <code>swappiness</code> value of 60, and the total swap usage will be limited to
+     * two times the memory reservation of the container.
      * </p>
      * </li>
      * </ul>
@@ -720,8 +720,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * If the <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from a job definition, each
-     * container will have a default <code>swappiness</code> value of 60 and the total swap usage will be limited to two
-     * times the memory reservation of the container.
+     * container will have a default <code>swappiness</code> value of 60, and the total swap usage will be limited to
+     * two times the memory reservation of the container.
      * </p>
      * </li>
      * </ul>
@@ -766,8 +766,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        If the <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from a job definition, each
-     *        container will have a default <code>swappiness</code> value of 60 and the total swap usage will be limited
-     *        to two times the memory reservation of the container.
+     *        container will have a default <code>swappiness</code> value of 60, and the total swap usage will be
+     *        limited to two times the memory reservation of the container.
      *        </p>
      *        </li>
      *        </ul>
@@ -818,8 +818,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * If the <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from a job definition, each
-     * container will have a default <code>swappiness</code> value of 60 and the total swap usage will be limited to two
-     * times the memory reservation of the container.
+     * container will have a default <code>swappiness</code> value of 60, and the total swap usage will be limited to
+     * two times the memory reservation of the container.
      * </p>
      * </li>
      * </ul>
@@ -863,7 +863,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *         <li>
      *         <p>
      *         If the <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from a job definition,
-     *         each container will have a default <code>swappiness</code> value of 60 and the total swap usage will be
+     *         each container will have a default <code>swappiness</code> value of 60, and the total swap usage will be
      *         limited to two times the memory reservation of the container.
      *         </p>
      *         </li>
@@ -915,8 +915,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * If the <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from a job definition, each
-     * container will have a default <code>swappiness</code> value of 60 and the total swap usage will be limited to two
-     * times the memory reservation of the container.
+     * container will have a default <code>swappiness</code> value of 60, and the total swap usage will be limited to
+     * two times the memory reservation of the container.
      * </p>
      * </li>
      * </ul>
@@ -961,8 +961,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        If the <code>maxSwap</code> and <code>swappiness</code> parameters are omitted from a job definition, each
-     *        container will have a default <code>swappiness</code> value of 60 and the total swap usage will be limited
-     *        to two times the memory reservation of the container.
+     *        container will have a default <code>swappiness</code> value of 60, and the total swap usage will be
+     *        limited to two times the memory reservation of the container.
      *        </p>
      *        </li>
      *        </ul>

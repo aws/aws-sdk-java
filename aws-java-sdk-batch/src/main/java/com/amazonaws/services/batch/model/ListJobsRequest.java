@@ -58,10 +58,10 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     /**
      * <p>
      * The maximum number of results returned by <code>ListJobs</code> in paginated output. When this parameter is used,
-     * <code>ListJobs</code> only returns <code>maxResults</code> results in a single page along with a
-     * <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
-     * another <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1
-     * and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to 100 results and a
+     * <code>ListJobs</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code>
+     * response element. The remaining results of the initial request can be seen by sending another
+     * <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and
+     * 100. If this parameter isn't used, then <code>ListJobs</code> returns up to 100 results and a
      * <code>nextToken</code> value if applicable.
      * </p>
      */
@@ -300,16 +300,16 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     /**
      * <p>
      * The maximum number of results returned by <code>ListJobs</code> in paginated output. When this parameter is used,
-     * <code>ListJobs</code> only returns <code>maxResults</code> results in a single page along with a
-     * <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
-     * another <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1
-     * and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to 100 results and a
+     * <code>ListJobs</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code>
+     * response element. The remaining results of the initial request can be seen by sending another
+     * <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and
+     * 100. If this parameter isn't used, then <code>ListJobs</code> returns up to 100 results and a
      * <code>nextToken</code> value if applicable.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of results returned by <code>ListJobs</code> in paginated output. When this parameter
-     *        is used, <code>ListJobs</code> only returns <code>maxResults</code> results in a single page along with a
+     *        is used, <code>ListJobs</code> only returns <code>maxResults</code> results in a single page and a
      *        <code>nextToken</code> response element. The remaining results of the initial request can be seen by
      *        sending another <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value
      *        can be between 1 and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to 100
@@ -323,15 +323,15 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     /**
      * <p>
      * The maximum number of results returned by <code>ListJobs</code> in paginated output. When this parameter is used,
-     * <code>ListJobs</code> only returns <code>maxResults</code> results in a single page along with a
-     * <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
-     * another <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1
-     * and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to 100 results and a
+     * <code>ListJobs</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code>
+     * response element. The remaining results of the initial request can be seen by sending another
+     * <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and
+     * 100. If this parameter isn't used, then <code>ListJobs</code> returns up to 100 results and a
      * <code>nextToken</code> value if applicable.
      * </p>
      * 
      * @return The maximum number of results returned by <code>ListJobs</code> in paginated output. When this parameter
-     *         is used, <code>ListJobs</code> only returns <code>maxResults</code> results in a single page along with a
+     *         is used, <code>ListJobs</code> only returns <code>maxResults</code> results in a single page and a
      *         <code>nextToken</code> response element. The remaining results of the initial request can be seen by
      *         sending another <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value
      *         can be between 1 and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to 100
@@ -345,16 +345,16 @@ public class ListJobsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     /**
      * <p>
      * The maximum number of results returned by <code>ListJobs</code> in paginated output. When this parameter is used,
-     * <code>ListJobs</code> only returns <code>maxResults</code> results in a single page along with a
-     * <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
-     * another <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1
-     * and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to 100 results and a
+     * <code>ListJobs</code> only returns <code>maxResults</code> results in a single page and a <code>nextToken</code>
+     * response element. The remaining results of the initial request can be seen by sending another
+     * <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and
+     * 100. If this parameter isn't used, then <code>ListJobs</code> returns up to 100 results and a
      * <code>nextToken</code> value if applicable.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of results returned by <code>ListJobs</code> in paginated output. When this parameter
-     *        is used, <code>ListJobs</code> only returns <code>maxResults</code> results in a single page along with a
+     *        is used, <code>ListJobs</code> only returns <code>maxResults</code> results in a single page and a
      *        <code>nextToken</code> response element. The remaining results of the initial request can be seen by
      *        sending another <code>ListJobs</code> request with the returned <code>nextToken</code> value. This value
      *        can be between 1 and 100. If this parameter isn't used, then <code>ListJobs</code> returns up to 100

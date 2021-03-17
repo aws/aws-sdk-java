@@ -36,19 +36,19 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     private String image;
     /**
      * <p>
-     * The number of vCPUs reserved for the container. Jobs running on EC2 resources can specify the vCPU requirement
-     * for the job using <code>resourceRequirements</code> but the vCPU requirements can't be specified both here and in
-     * the <code>resourceRequirement</code> object. This parameter maps to <code>CpuShares</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
-     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option
-     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU
-     * shares. You must specify at least one vCPU. This is required but can be specified in several places. It must be
-     * specified for each node at least once.
+     * The number of vCPUs reserved for the container. For jobs that run on EC2 resources, you can specify the vCPU
+     * requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU requirements in
+     * both the <code>vcpus</code> and <code>resourceRequirement</code> object. This parameter maps to
+     * <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
+     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     * <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each
+     * vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is required but can be specified
+     * in several places. It must be specified for each node at least once.
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources. Jobs running on Fargate resources must
-     * specify the vCPU requirement for the job using <code>resourceRequirements</code>.
+     * This parameter isn't applicable to jobs that run on Fargate resources. For jobs that run on Fargate resources,
+     * you must specify the vCPU requirement for the job using <code>resourceRequirements</code>.
      * </p>
      * </note>
      */
@@ -224,7 +224,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option
      * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the same
-     * logging driver that the Docker daemon uses. However the container might use a different logging driver than the
+     * logging driver that the Docker daemon uses. However, the container might use a different logging driver than the
      * Docker daemon by specifying a log driver with this parameter in the container definition. To use a different
      * logging driver for a container, the log system must be configured properly on the container instance. Or,
      * alternatively, it must be configured on a different log server for remote logging options. For more information
@@ -320,35 +320,35 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of vCPUs reserved for the container. Jobs running on EC2 resources can specify the vCPU requirement
-     * for the job using <code>resourceRequirements</code> but the vCPU requirements can't be specified both here and in
-     * the <code>resourceRequirement</code> object. This parameter maps to <code>CpuShares</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
-     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option
-     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU
-     * shares. You must specify at least one vCPU. This is required but can be specified in several places. It must be
-     * specified for each node at least once.
+     * The number of vCPUs reserved for the container. For jobs that run on EC2 resources, you can specify the vCPU
+     * requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU requirements in
+     * both the <code>vcpus</code> and <code>resourceRequirement</code> object. This parameter maps to
+     * <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
+     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     * <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each
+     * vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is required but can be specified
+     * in several places. It must be specified for each node at least once.
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources. Jobs running on Fargate resources must
-     * specify the vCPU requirement for the job using <code>resourceRequirements</code>.
+     * This parameter isn't applicable to jobs that run on Fargate resources. For jobs that run on Fargate resources,
+     * you must specify the vCPU requirement for the job using <code>resourceRequirements</code>.
      * </p>
      * </note>
      * 
      * @param vcpus
-     *        The number of vCPUs reserved for the container. Jobs running on EC2 resources can specify the vCPU
-     *        requirement for the job using <code>resourceRequirements</code> but the vCPU requirements can't be
-     *        specified both here and in the <code>resourceRequirement</code> object. This parameter maps to
-     *        <code>CpuShares</code> in the <a
+     *        The number of vCPUs reserved for the container. For jobs that run on EC2 resources, you can specify the
+     *        vCPU requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU
+     *        requirements in both the <code>vcpus</code> and <code>resourceRequirement</code> object. This parameter
+     *        maps to <code>CpuShares</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      *        <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is required
      *        but can be specified in several places. It must be specified for each node at least once.</p> <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources. Jobs running on Fargate resources
-     *        must specify the vCPU requirement for the job using <code>resourceRequirements</code>.
+     *        This parameter isn't applicable to jobs that run on Fargate resources. For jobs that run on Fargate
+     *        resources, you must specify the vCPU requirement for the job using <code>resourceRequirements</code>.
      *        </p>
      */
 
@@ -358,26 +358,26 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of vCPUs reserved for the container. Jobs running on EC2 resources can specify the vCPU requirement
-     * for the job using <code>resourceRequirements</code> but the vCPU requirements can't be specified both here and in
-     * the <code>resourceRequirement</code> object. This parameter maps to <code>CpuShares</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
-     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option
-     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU
-     * shares. You must specify at least one vCPU. This is required but can be specified in several places. It must be
-     * specified for each node at least once.
+     * The number of vCPUs reserved for the container. For jobs that run on EC2 resources, you can specify the vCPU
+     * requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU requirements in
+     * both the <code>vcpus</code> and <code>resourceRequirement</code> object. This parameter maps to
+     * <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
+     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     * <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each
+     * vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is required but can be specified
+     * in several places. It must be specified for each node at least once.
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources. Jobs running on Fargate resources must
-     * specify the vCPU requirement for the job using <code>resourceRequirements</code>.
+     * This parameter isn't applicable to jobs that run on Fargate resources. For jobs that run on Fargate resources,
+     * you must specify the vCPU requirement for the job using <code>resourceRequirements</code>.
      * </p>
      * </note>
      * 
-     * @return The number of vCPUs reserved for the container. Jobs running on EC2 resources can specify the vCPU
-     *         requirement for the job using <code>resourceRequirements</code> but the vCPU requirements can't be
-     *         specified both here and in the <code>resourceRequirement</code> object. This parameter maps to
-     *         <code>CpuShares</code> in the <a
+     * @return The number of vCPUs reserved for the container. For jobs that run on EC2 resources, you can specify the
+     *         vCPU requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU
+     *         requirements in both the <code>vcpus</code> and <code>resourceRequirement</code> object. This parameter
+     *         maps to <code>CpuShares</code> in the <a
      *         href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *         <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      *         <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
@@ -385,8 +385,8 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      *         required but can be specified in several places. It must be specified for each node at least once.</p>
      *         <note>
      *         <p>
-     *         This parameter isn't applicable to jobs running on Fargate resources. Jobs running on Fargate resources
-     *         must specify the vCPU requirement for the job using <code>resourceRequirements</code>.
+     *         This parameter isn't applicable to jobs that run on Fargate resources. For jobs that run on Fargate
+     *         resources, you must specify the vCPU requirement for the job using <code>resourceRequirements</code>.
      *         </p>
      */
 
@@ -396,35 +396,35 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of vCPUs reserved for the container. Jobs running on EC2 resources can specify the vCPU requirement
-     * for the job using <code>resourceRequirements</code> but the vCPU requirements can't be specified both here and in
-     * the <code>resourceRequirement</code> object. This parameter maps to <code>CpuShares</code> in the <a
-     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
-     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--cpu-shares</code> option
-     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU is equivalent to 1,024 CPU
-     * shares. You must specify at least one vCPU. This is required but can be specified in several places. It must be
-     * specified for each node at least once.
+     * The number of vCPUs reserved for the container. For jobs that run on EC2 resources, you can specify the vCPU
+     * requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU requirements in
+     * both the <code>vcpus</code> and <code>resourceRequirement</code> object. This parameter maps to
+     * <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
+     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     * <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each
+     * vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is required but can be specified
+     * in several places. It must be specified for each node at least once.
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs running on Fargate resources. Jobs running on Fargate resources must
-     * specify the vCPU requirement for the job using <code>resourceRequirements</code>.
+     * This parameter isn't applicable to jobs that run on Fargate resources. For jobs that run on Fargate resources,
+     * you must specify the vCPU requirement for the job using <code>resourceRequirements</code>.
      * </p>
      * </note>
      * 
      * @param vcpus
-     *        The number of vCPUs reserved for the container. Jobs running on EC2 resources can specify the vCPU
-     *        requirement for the job using <code>resourceRequirements</code> but the vCPU requirements can't be
-     *        specified both here and in the <code>resourceRequirement</code> object. This parameter maps to
-     *        <code>CpuShares</code> in the <a
+     *        The number of vCPUs reserved for the container. For jobs that run on EC2 resources, you can specify the
+     *        vCPU requirement for the job using <code>resourceRequirements</code>, but you can't specify the vCPU
+     *        requirements in both the <code>vcpus</code> and <code>resourceRequirement</code> object. This parameter
+     *        maps to <code>CpuShares</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      *        <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
      *        run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one vCPU. This is required
      *        but can be specified in several places. It must be specified for each node at least once.</p> <note>
      *        <p>
-     *        This parameter isn't applicable to jobs running on Fargate resources. Jobs running on Fargate resources
-     *        must specify the vCPU requirement for the job using <code>resourceRequirements</code>.
+     *        This parameter isn't applicable to jobs that run on Fargate resources. For jobs that run on Fargate
+     *        resources, you must specify the vCPU requirement for the job using <code>resourceRequirements</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1759,7 +1759,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option
      * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the same
-     * logging driver that the Docker daemon uses. However the container might use a different logging driver than the
+     * logging driver that the Docker daemon uses. However, the container might use a different logging driver than the
      * Docker daemon by specifying a log driver with this parameter in the container definition. To use a different
      * logging driver for a container, the log system must be configured properly on the container instance. Or,
      * alternatively, it must be configured on a different log server for remote logging options. For more information
@@ -1796,7 +1796,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      *        <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>. By default, containers use the same logging driver that the Docker daemon uses. However the
+     *        run</a>. By default, containers use the same logging driver that the Docker daemon uses. However, the
      *        container might use a different logging driver than the Docker daemon by specifying a log driver with this
      *        parameter in the container definition. To use a different logging driver for a container, the log system
      *        must be configured properly on the container instance. Or, alternatively, it must be configured on a
@@ -1839,7 +1839,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option
      * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the same
-     * logging driver that the Docker daemon uses. However the container might use a different logging driver than the
+     * logging driver that the Docker daemon uses. However, the container might use a different logging driver than the
      * Docker daemon by specifying a log driver with this parameter in the container definition. To use a different
      * logging driver for a container, the log system must be configured properly on the container instance. Or,
      * alternatively, it must be configured on a different log server for remote logging options. For more information
@@ -1875,7 +1875,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      *         href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *         <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      *         <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *         run</a>. By default, containers use the same logging driver that the Docker daemon uses. However the
+     *         run</a>. By default, containers use the same logging driver that the Docker daemon uses. However, the
      *         container might use a different logging driver than the Docker daemon by specifying a log driver with
      *         this parameter in the container definition. To use a different logging driver for a container, the log
      *         system must be configured properly on the container instance. Or, alternatively, it must be configured on
@@ -1918,7 +1918,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option
      * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the same
-     * logging driver that the Docker daemon uses. However the container might use a different logging driver than the
+     * logging driver that the Docker daemon uses. However, the container might use a different logging driver than the
      * Docker daemon by specifying a log driver with this parameter in the container definition. To use a different
      * logging driver for a container, the log system must be configured properly on the container instance. Or,
      * alternatively, it must be configured on a different log server for remote logging options. For more information
@@ -1955,7 +1955,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
      *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      *        <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>. By default, containers use the same logging driver that the Docker daemon uses. However the
+     *        run</a>. By default, containers use the same logging driver that the Docker daemon uses. However, the
      *        container might use a different logging driver than the Docker daemon by specifying a log driver with this
      *        parameter in the container definition. To use a different logging driver for a container, the log system
      *        must be configured properly on the container instance. Or, alternatively, it must be configured on a
