@@ -59,6 +59,25 @@ public class StartInstanceRefreshRequestMarshaller implements Marshaller<Request
                 if (preferences.getInstanceWarmup() != null) {
                     request.addParameter("Preferences.InstanceWarmup", StringUtils.fromInteger(preferences.getInstanceWarmup()));
                 }
+
+                if (!preferences.getCheckpointPercentages().isEmpty()
+                        || !((com.amazonaws.internal.SdkInternalList<Integer>) preferences.getCheckpointPercentages()).isAutoConstruct()) {
+                    com.amazonaws.internal.SdkInternalList<Integer> checkpointPercentagesList = (com.amazonaws.internal.SdkInternalList<Integer>) preferences
+                            .getCheckpointPercentages();
+                    int checkpointPercentagesListIndex = 1;
+
+                    for (Integer checkpointPercentagesListValue : checkpointPercentagesList) {
+                        if (checkpointPercentagesListValue != null) {
+                            request.addParameter("Preferences.CheckpointPercentages.member." + checkpointPercentagesListIndex,
+                                    StringUtils.fromInteger(checkpointPercentagesListValue));
+                        }
+                        checkpointPercentagesListIndex++;
+                    }
+                }
+
+                if (preferences.getCheckpointDelay() != null) {
+                    request.addParameter("Preferences.CheckpointDelay", StringUtils.fromInteger(preferences.getCheckpointDelay()));
+                }
             }
         }
 

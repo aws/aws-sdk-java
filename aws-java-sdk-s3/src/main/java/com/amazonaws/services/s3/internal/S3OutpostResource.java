@@ -126,8 +126,7 @@ public final class S3OutpostResource implements S3Resource {
         private String region;
         private String accountId;
 
-        private
-        Builder() {
+        private Builder() {
         }
 
         /**

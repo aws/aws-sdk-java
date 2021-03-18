@@ -553,6 +553,53 @@ public class AwsSecurityFindingFiltersJsonUnmarshaller implements Unmarshaller<A
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("FindingProviderFieldsConfidence", targetDepth)) {
+                    context.nextToken();
+                    awsSecurityFindingFilters.setFindingProviderFieldsConfidence(new ListUnmarshaller<NumberFilter>(NumberFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("FindingProviderFieldsCriticality", targetDepth)) {
+                    context.nextToken();
+                    awsSecurityFindingFilters
+                            .setFindingProviderFieldsCriticality(new ListUnmarshaller<NumberFilter>(NumberFilterJsonUnmarshaller.getInstance())
+
+                            .unmarshall(context));
+                }
+                if (context.testExpression("FindingProviderFieldsRelatedFindingsId", targetDepth)) {
+                    context.nextToken();
+                    awsSecurityFindingFilters.setFindingProviderFieldsRelatedFindingsId(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("FindingProviderFieldsRelatedFindingsProductArn", targetDepth)) {
+                    context.nextToken();
+                    awsSecurityFindingFilters.setFindingProviderFieldsRelatedFindingsProductArn(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("FindingProviderFieldsSeverityLabel", targetDepth)) {
+                    context.nextToken();
+                    awsSecurityFindingFilters.setFindingProviderFieldsSeverityLabel(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("FindingProviderFieldsSeverityOriginal", targetDepth)) {
+                    context.nextToken();
+                    awsSecurityFindingFilters.setFindingProviderFieldsSeverityOriginal(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("FindingProviderFieldsTypes", targetDepth)) {
+                    context.nextToken();
+                    awsSecurityFindingFilters.setFindingProviderFieldsTypes(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

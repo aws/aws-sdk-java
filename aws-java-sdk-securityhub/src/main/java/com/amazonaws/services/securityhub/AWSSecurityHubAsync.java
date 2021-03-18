@@ -218,8 +218,8 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
 
     /**
      * <p>
-     * Imports security findings generated from an integrated third-party product into Security Hub. This action is
-     * requested by the integrated product to import its findings into Security Hub.
+     * Imports security findings generated from an integrated product into Security Hub. This action is requested by the
+     * integrated product to import its findings into Security Hub.
      * </p>
      * <p>
      * The maximum allowed size for a finding is 240 Kb. An error is returned for any finding larger than 240 Kb.
@@ -251,9 +251,7 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * </li>
      * </ul>
      * <p>
-     * <code>BatchImportFindings</code> can be used to update the following finding fields and objects only if they have
-     * not been updated using <code>BatchUpdateFindings</code>. After they are updated using
-     * <code>BatchUpdateFindings</code>, these fields cannot be updated using <code>BatchImportFindings</code>.
+     * Finding providers also should not use <code>BatchImportFindings</code> to update the following attributes.
      * </p>
      * <ul>
      * <li>
@@ -282,6 +280,9 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Instead, finding providers use <code>FindingProviderFields</code> to provide values for these attributes.
+     * </p>
      * 
      * @param batchImportFindingsRequest
      * @return A Java Future containing the result of the BatchImportFindings operation returned by the service.
@@ -293,8 +294,8 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
 
     /**
      * <p>
-     * Imports security findings generated from an integrated third-party product into Security Hub. This action is
-     * requested by the integrated product to import its findings into Security Hub.
+     * Imports security findings generated from an integrated product into Security Hub. This action is requested by the
+     * integrated product to import its findings into Security Hub.
      * </p>
      * <p>
      * The maximum allowed size for a finding is 240 Kb. An error is returned for any finding larger than 240 Kb.
@@ -326,9 +327,7 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * </li>
      * </ul>
      * <p>
-     * <code>BatchImportFindings</code> can be used to update the following finding fields and objects only if they have
-     * not been updated using <code>BatchUpdateFindings</code>. After they are updated using
-     * <code>BatchUpdateFindings</code>, these fields cannot be updated using <code>BatchImportFindings</code>.
+     * Finding providers also should not use <code>BatchImportFindings</code> to update the following attributes.
      * </p>
      * <ul>
      * <li>
@@ -357,6 +356,9 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Instead, finding providers use <code>FindingProviderFields</code> to provide values for these attributes.
+     * </p>
      * 
      * @param batchImportFindingsRequest
      * @param asyncHandler

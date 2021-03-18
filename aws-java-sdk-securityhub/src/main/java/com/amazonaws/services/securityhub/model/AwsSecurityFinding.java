@@ -299,6 +299,13 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private Action action;
+    /**
+     * <p>
+     * In a <code>BatchImportFindings</code> request, finding providers use <code>FindingProviderFields</code> to
+     * provide and update their own values for confidence, criticality, related findings, severity, and types.
+     * </p>
+     */
+    private FindingProviderFields findingProviderFields;
 
     /**
      * <p>
@@ -2331,6 +2338,53 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * In a <code>BatchImportFindings</code> request, finding providers use <code>FindingProviderFields</code> to
+     * provide and update their own values for confidence, criticality, related findings, severity, and types.
+     * </p>
+     * 
+     * @param findingProviderFields
+     *        In a <code>BatchImportFindings</code> request, finding providers use <code>FindingProviderFields</code> to
+     *        provide and update their own values for confidence, criticality, related findings, severity, and types.
+     */
+
+    public void setFindingProviderFields(FindingProviderFields findingProviderFields) {
+        this.findingProviderFields = findingProviderFields;
+    }
+
+    /**
+     * <p>
+     * In a <code>BatchImportFindings</code> request, finding providers use <code>FindingProviderFields</code> to
+     * provide and update their own values for confidence, criticality, related findings, severity, and types.
+     * </p>
+     * 
+     * @return In a <code>BatchImportFindings</code> request, finding providers use <code>FindingProviderFields</code>
+     *         to provide and update their own values for confidence, criticality, related findings, severity, and
+     *         types.
+     */
+
+    public FindingProviderFields getFindingProviderFields() {
+        return this.findingProviderFields;
+    }
+
+    /**
+     * <p>
+     * In a <code>BatchImportFindings</code> request, finding providers use <code>FindingProviderFields</code> to
+     * provide and update their own values for confidence, criticality, related findings, severity, and types.
+     * </p>
+     * 
+     * @param findingProviderFields
+     *        In a <code>BatchImportFindings</code> request, finding providers use <code>FindingProviderFields</code> to
+     *        provide and update their own values for confidence, criticality, related findings, severity, and types.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFinding withFindingProviderFields(FindingProviderFields findingProviderFields) {
+        setFindingProviderFields(findingProviderFields);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2411,7 +2465,9 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
         if (getPatchSummary() != null)
             sb.append("PatchSummary: ").append(getPatchSummary()).append(",");
         if (getAction() != null)
-            sb.append("Action: ").append(getAction());
+            sb.append("Action: ").append(getAction()).append(",");
+        if (getFindingProviderFields() != null)
+            sb.append("FindingProviderFields: ").append(getFindingProviderFields());
         sb.append("}");
         return sb.toString();
     }
@@ -2566,6 +2622,10 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getAction() != null && other.getAction().equals(this.getAction()) == false)
             return false;
+        if (other.getFindingProviderFields() == null ^ this.getFindingProviderFields() == null)
+            return false;
+        if (other.getFindingProviderFields() != null && other.getFindingProviderFields().equals(this.getFindingProviderFields()) == false)
+            return false;
         return true;
     }
 
@@ -2609,6 +2669,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getVulnerabilities() == null) ? 0 : getVulnerabilities().hashCode());
         hashCode = prime * hashCode + ((getPatchSummary() == null) ? 0 : getPatchSummary().hashCode());
         hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
+        hashCode = prime * hashCode + ((getFindingProviderFields() == null) ? 0 : getFindingProviderFields().hashCode());
         return hashCode;
     }
 

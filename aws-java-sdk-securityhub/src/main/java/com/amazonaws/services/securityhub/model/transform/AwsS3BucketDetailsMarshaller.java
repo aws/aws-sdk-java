@@ -35,6 +35,8 @@ public class AwsS3BucketDetailsMarshaller {
             .marshallLocationName("CreatedAt").build();
     private static final MarshallingInfo<StructuredPojo> SERVERSIDEENCRYPTIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerSideEncryptionConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> PUBLICACCESSBLOCKCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PublicAccessBlockConfiguration").build();
 
     private static final AwsS3BucketDetailsMarshaller instance = new AwsS3BucketDetailsMarshaller();
 
@@ -56,6 +58,7 @@ public class AwsS3BucketDetailsMarshaller {
             protocolMarshaller.marshall(awsS3BucketDetails.getOwnerName(), OWNERNAME_BINDING);
             protocolMarshaller.marshall(awsS3BucketDetails.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(awsS3BucketDetails.getServerSideEncryptionConfiguration(), SERVERSIDEENCRYPTIONCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(awsS3BucketDetails.getPublicAccessBlockConfiguration(), PUBLICACCESSBLOCKCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

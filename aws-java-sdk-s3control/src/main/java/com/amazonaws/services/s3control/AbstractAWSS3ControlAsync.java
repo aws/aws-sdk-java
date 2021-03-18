@@ -41,6 +41,21 @@ public class AbstractAWSS3ControlAsync extends AbstractAWSS3Control implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAccessPointForObjectLambdaResult> createAccessPointForObjectLambdaAsync(
+            CreateAccessPointForObjectLambdaRequest request) {
+
+        return createAccessPointForObjectLambdaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAccessPointForObjectLambdaResult> createAccessPointForObjectLambdaAsync(
+            CreateAccessPointForObjectLambdaRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateAccessPointForObjectLambdaRequest, CreateAccessPointForObjectLambdaResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateBucketResult> createBucketAsync(CreateBucketRequest request) {
 
         return createBucketAsync(request, null);
@@ -80,6 +95,21 @@ public class AbstractAWSS3ControlAsync extends AbstractAWSS3Control implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteAccessPointForObjectLambdaResult> deleteAccessPointForObjectLambdaAsync(
+            DeleteAccessPointForObjectLambdaRequest request) {
+
+        return deleteAccessPointForObjectLambdaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccessPointForObjectLambdaResult> deleteAccessPointForObjectLambdaAsync(
+            DeleteAccessPointForObjectLambdaRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAccessPointForObjectLambdaRequest, DeleteAccessPointForObjectLambdaResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteAccessPointPolicyResult> deleteAccessPointPolicyAsync(DeleteAccessPointPolicyRequest request) {
 
         return deleteAccessPointPolicyAsync(request, null);
@@ -88,6 +118,21 @@ public class AbstractAWSS3ControlAsync extends AbstractAWSS3Control implements A
     @Override
     public java.util.concurrent.Future<DeleteAccessPointPolicyResult> deleteAccessPointPolicyAsync(DeleteAccessPointPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteAccessPointPolicyRequest, DeleteAccessPointPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccessPointPolicyForObjectLambdaResult> deleteAccessPointPolicyForObjectLambdaAsync(
+            DeleteAccessPointPolicyForObjectLambdaRequest request) {
+
+        return deleteAccessPointPolicyForObjectLambdaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccessPointPolicyForObjectLambdaResult> deleteAccessPointPolicyForObjectLambdaAsync(
+            DeleteAccessPointPolicyForObjectLambdaRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAccessPointPolicyForObjectLambdaRequest, DeleteAccessPointPolicyForObjectLambdaResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -227,6 +272,34 @@ public class AbstractAWSS3ControlAsync extends AbstractAWSS3Control implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetAccessPointConfigurationForObjectLambdaResult> getAccessPointConfigurationForObjectLambdaAsync(
+            GetAccessPointConfigurationForObjectLambdaRequest request) {
+
+        return getAccessPointConfigurationForObjectLambdaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAccessPointConfigurationForObjectLambdaResult> getAccessPointConfigurationForObjectLambdaAsync(
+            GetAccessPointConfigurationForObjectLambdaRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetAccessPointConfigurationForObjectLambdaRequest, GetAccessPointConfigurationForObjectLambdaResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAccessPointForObjectLambdaResult> getAccessPointForObjectLambdaAsync(GetAccessPointForObjectLambdaRequest request) {
+
+        return getAccessPointForObjectLambdaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAccessPointForObjectLambdaResult> getAccessPointForObjectLambdaAsync(GetAccessPointForObjectLambdaRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetAccessPointForObjectLambdaRequest, GetAccessPointForObjectLambdaResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAccessPointPolicyResult> getAccessPointPolicyAsync(GetAccessPointPolicyRequest request) {
 
         return getAccessPointPolicyAsync(request, null);
@@ -240,6 +313,21 @@ public class AbstractAWSS3ControlAsync extends AbstractAWSS3Control implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetAccessPointPolicyForObjectLambdaResult> getAccessPointPolicyForObjectLambdaAsync(
+            GetAccessPointPolicyForObjectLambdaRequest request) {
+
+        return getAccessPointPolicyForObjectLambdaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAccessPointPolicyForObjectLambdaResult> getAccessPointPolicyForObjectLambdaAsync(
+            GetAccessPointPolicyForObjectLambdaRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetAccessPointPolicyForObjectLambdaRequest, GetAccessPointPolicyForObjectLambdaResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAccessPointPolicyStatusResult> getAccessPointPolicyStatusAsync(GetAccessPointPolicyStatusRequest request) {
 
         return getAccessPointPolicyStatusAsync(request, null);
@@ -248,6 +336,21 @@ public class AbstractAWSS3ControlAsync extends AbstractAWSS3Control implements A
     @Override
     public java.util.concurrent.Future<GetAccessPointPolicyStatusResult> getAccessPointPolicyStatusAsync(GetAccessPointPolicyStatusRequest request,
             com.amazonaws.handlers.AsyncHandler<GetAccessPointPolicyStatusRequest, GetAccessPointPolicyStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAccessPointPolicyStatusForObjectLambdaResult> getAccessPointPolicyStatusForObjectLambdaAsync(
+            GetAccessPointPolicyStatusForObjectLambdaRequest request) {
+
+        return getAccessPointPolicyStatusForObjectLambdaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAccessPointPolicyStatusForObjectLambdaResult> getAccessPointPolicyStatusForObjectLambdaAsync(
+            GetAccessPointPolicyStatusForObjectLambdaRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetAccessPointPolicyStatusForObjectLambdaRequest, GetAccessPointPolicyStatusForObjectLambdaResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -374,6 +477,21 @@ public class AbstractAWSS3ControlAsync extends AbstractAWSS3Control implements A
     }
 
     @Override
+    public java.util.concurrent.Future<ListAccessPointsForObjectLambdaResult> listAccessPointsForObjectLambdaAsync(
+            ListAccessPointsForObjectLambdaRequest request) {
+
+        return listAccessPointsForObjectLambdaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessPointsForObjectLambdaResult> listAccessPointsForObjectLambdaAsync(
+            ListAccessPointsForObjectLambdaRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAccessPointsForObjectLambdaRequest, ListAccessPointsForObjectLambdaResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListJobsResult> listJobsAsync(ListJobsRequest request) {
 
         return listJobsAsync(request, null);
@@ -413,6 +531,21 @@ public class AbstractAWSS3ControlAsync extends AbstractAWSS3Control implements A
     }
 
     @Override
+    public java.util.concurrent.Future<PutAccessPointConfigurationForObjectLambdaResult> putAccessPointConfigurationForObjectLambdaAsync(
+            PutAccessPointConfigurationForObjectLambdaRequest request) {
+
+        return putAccessPointConfigurationForObjectLambdaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAccessPointConfigurationForObjectLambdaResult> putAccessPointConfigurationForObjectLambdaAsync(
+            PutAccessPointConfigurationForObjectLambdaRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutAccessPointConfigurationForObjectLambdaRequest, PutAccessPointConfigurationForObjectLambdaResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<PutAccessPointPolicyResult> putAccessPointPolicyAsync(PutAccessPointPolicyRequest request) {
 
         return putAccessPointPolicyAsync(request, null);
@@ -421,6 +554,21 @@ public class AbstractAWSS3ControlAsync extends AbstractAWSS3Control implements A
     @Override
     public java.util.concurrent.Future<PutAccessPointPolicyResult> putAccessPointPolicyAsync(PutAccessPointPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<PutAccessPointPolicyRequest, PutAccessPointPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAccessPointPolicyForObjectLambdaResult> putAccessPointPolicyForObjectLambdaAsync(
+            PutAccessPointPolicyForObjectLambdaRequest request) {
+
+        return putAccessPointPolicyForObjectLambdaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAccessPointPolicyForObjectLambdaResult> putAccessPointPolicyForObjectLambdaAsync(
+            PutAccessPointPolicyForObjectLambdaRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutAccessPointPolicyForObjectLambdaRequest, PutAccessPointPolicyForObjectLambdaResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

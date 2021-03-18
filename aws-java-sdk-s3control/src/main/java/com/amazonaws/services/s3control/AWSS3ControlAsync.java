@@ -35,42 +35,20 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <p>
      * Creates an access point and associates it with the specified bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing Data Access with Amazon S3
-     * Access Points</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing Data Access with Amazon
+     * S3 Access Points</a> in the <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p/>
+     * <note>
      * <p>
-     * <b>Using this action with Amazon S3 on Outposts</b>
+     * S3 on Outposts only supports VPC-style Access Points.
      * </p>
      * <p>
-     * This action:
+     * For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">
+     * Accessing Amazon S3 on Outposts using virtual private cloud (VPC) only Access Points</a> in the <i>Amazon Simple
+     * Storage Service User Guide</i>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Requires a virtual private cloud (VPC) configuration as S3 on Outposts only supports VPC style access points.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Does not support ACL on S3 on Outposts buckets.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Does not support Public Access on S3 on Outposts buckets.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Does not support object lock for S3 on Outposts buckets.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User Guide </i>.
-     * </p>
+     * </note>
      * <p>
      * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
      * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
@@ -114,42 +92,20 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <p>
      * Creates an access point and associates it with the specified bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing Data Access with Amazon S3
-     * Access Points</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing Data Access with Amazon
+     * S3 Access Points</a> in the <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p/>
+     * <note>
      * <p>
-     * <b>Using this action with Amazon S3 on Outposts</b>
+     * S3 on Outposts only supports VPC-style Access Points.
      * </p>
      * <p>
-     * This action:
+     * For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">
+     * Accessing Amazon S3 on Outposts using virtual private cloud (VPC) only Access Points</a> in the <i>Amazon Simple
+     * Storage Service User Guide</i>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Requires a virtual private cloud (VPC) configuration as S3 on Outposts only supports VPC style access points.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Does not support ACL on S3 on Outposts buckets.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Does not support Public Access on S3 on Outposts buckets.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Does not support object lock for S3 on Outposts buckets.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User Guide </i>.
-     * </p>
+     * </note>
      * <p>
      * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
      * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
@@ -196,6 +152,91 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<CreateAccessPointRequest, CreateAccessPointResult> asyncHandler);
 
     /**
+     * <p>
+     * Creates an Object Lambda Access Point. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html">Transforming objects with
+     * Object Lambda Access Points</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * </p>
+     * <p>
+     * The following actions are related to <code>CreateAccessPointForObjectLambda</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointForObjectLambda.html">
+     * DeleteAccessPointForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointForObjectLambda.html">
+     * GetAccessPointForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForObjectLambda.html">
+     * ListAccessPointsForObjectLambda</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param createAccessPointForObjectLambdaRequest
+     * @return A Java Future containing the result of the CreateAccessPointForObjectLambda operation returned by the
+     *         service.
+     * @sample AWSS3ControlAsync.CreateAccessPointForObjectLambda
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessPointForObjectLambda"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAccessPointForObjectLambdaResult> createAccessPointForObjectLambdaAsync(
+            CreateAccessPointForObjectLambdaRequest createAccessPointForObjectLambdaRequest);
+
+    /**
+     * <p>
+     * Creates an Object Lambda Access Point. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html">Transforming objects with
+     * Object Lambda Access Points</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * </p>
+     * <p>
+     * The following actions are related to <code>CreateAccessPointForObjectLambda</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointForObjectLambda.html">
+     * DeleteAccessPointForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointForObjectLambda.html">
+     * GetAccessPointForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForObjectLambda.html">
+     * ListAccessPointsForObjectLambda</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param createAccessPointForObjectLambdaRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAccessPointForObjectLambda operation returned by the
+     *         service.
+     * @sample AWSS3ControlAsyncHandler.CreateAccessPointForObjectLambda
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessPointForObjectLambda"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAccessPointForObjectLambdaResult> createAccessPointForObjectLambdaAsync(
+            CreateAccessPointForObjectLambdaRequest createAccessPointForObjectLambdaRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAccessPointForObjectLambdaRequest, CreateAccessPointForObjectLambdaResult> asyncHandler);
+
+    /**
      * <note>
      * <p>
      * This action creates an Amazon S3 on Outposts bucket. To create an S3 bucket, see <a
@@ -206,13 +247,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Creates a new Outposts bucket. By creating the bucket, you become the bucket owner. To create an Outposts bucket,
      * you must have S3 on Outposts. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
      * <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
      * Not every string is an acceptable bucket name. For information on bucket naming restrictions, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Working with
-     * Amazon S3 Buckets</a>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/BucketRestrictions.html#bucketnamingrules">Working
+     * with Amazon S3 Buckets</a>.
      * </p>
      * <p>
      * S3 on Outposts buckets support:
@@ -230,9 +271,9 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </li>
      * </ul>
      * <p>
-     * For a list of Amazon S3 features not supported by Amazon S3 on Outposts, see <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OnOutpostsRestrictionsLimitations.html#S3OnOutpostsFeatureLimitations"
-     * >Unsupported Amazon S3 features</a>.
+     * For a complete list of restrictions and Amazon S3 feature limitations on S3 on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OnOutpostsRestrictionsLimitations.html"> Amazon S3
+     * on Outposts Restrictions and Limitations</a>.
      * </p>
      * <p>
      * For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname
@@ -292,13 +333,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Creates a new Outposts bucket. By creating the bucket, you become the bucket owner. To create an Outposts bucket,
      * you must have S3 on Outposts. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
      * <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
      * Not every string is an acceptable bucket name. For information on bucket naming restrictions, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Working with
-     * Amazon S3 Buckets</a>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/BucketRestrictions.html#bucketnamingrules">Working
+     * with Amazon S3 Buckets</a>.
      * </p>
      * <p>
      * S3 on Outposts buckets support:
@@ -316,9 +357,9 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </li>
      * </ul>
      * <p>
-     * For a list of Amazon S3 features not supported by Amazon S3 on Outposts, see <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OnOutpostsRestrictionsLimitations.html#S3OnOutpostsFeatureLimitations"
-     * >Unsupported Amazon S3 features</a>.
+     * For a complete list of restrictions and Amazon S3 feature limitations on S3 on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OnOutpostsRestrictionsLimitations.html"> Amazon S3
+     * on Outposts Restrictions and Limitations</a>.
      * </p>
      * <p>
      * For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname
@@ -572,6 +613,87 @@ public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
      * <p>
+     * Deletes the specified Object Lambda Access Point.
+     * </p>
+     * <p>
+     * The following actions are related to <code>DeleteAccessPointForObjectLambda</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPointForObjectLambda.html">
+     * CreateAccessPointForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointForObjectLambda.html">
+     * GetAccessPointForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForObjectLambda.html">
+     * ListAccessPointsForObjectLambda</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteAccessPointForObjectLambdaRequest
+     * @return A Java Future containing the result of the DeleteAccessPointForObjectLambda operation returned by the
+     *         service.
+     * @sample AWSS3ControlAsync.DeleteAccessPointForObjectLambda
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointForObjectLambda"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccessPointForObjectLambdaResult> deleteAccessPointForObjectLambdaAsync(
+            DeleteAccessPointForObjectLambdaRequest deleteAccessPointForObjectLambdaRequest);
+
+    /**
+     * <p>
+     * Deletes the specified Object Lambda Access Point.
+     * </p>
+     * <p>
+     * The following actions are related to <code>DeleteAccessPointForObjectLambda</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPointForObjectLambda.html">
+     * CreateAccessPointForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointForObjectLambda.html">
+     * GetAccessPointForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForObjectLambda.html">
+     * ListAccessPointsForObjectLambda</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteAccessPointForObjectLambdaRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAccessPointForObjectLambda operation returned by the
+     *         service.
+     * @sample AWSS3ControlAsyncHandler.DeleteAccessPointForObjectLambda
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointForObjectLambda"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccessPointForObjectLambdaResult> deleteAccessPointForObjectLambdaAsync(
+            DeleteAccessPointForObjectLambdaRequest deleteAccessPointForObjectLambdaRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAccessPointForObjectLambdaRequest, DeleteAccessPointForObjectLambdaResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the access point policy for the specified access point.
      * </p>
      * <p/>
@@ -656,6 +778,75 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<DeleteAccessPointPolicyRequest, DeleteAccessPointPolicyResult> asyncHandler);
 
     /**
+     * <p>
+     * Removes the resource policy for an Object Lambda Access Point.
+     * </p>
+     * <p>
+     * The following actions are related to <code>DeleteAccessPointPolicyForObjectLambda</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicyForObjectLambda.html">
+     * GetAccessPointPolicyForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicyForObjectLambda.html">
+     * PutAccessPointPolicyForObjectLambda</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteAccessPointPolicyForObjectLambdaRequest
+     * @return A Java Future containing the result of the DeleteAccessPointPolicyForObjectLambda operation returned by
+     *         the service.
+     * @sample AWSS3ControlAsync.DeleteAccessPointPolicyForObjectLambda
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointPolicyForObjectLambda"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccessPointPolicyForObjectLambdaResult> deleteAccessPointPolicyForObjectLambdaAsync(
+            DeleteAccessPointPolicyForObjectLambdaRequest deleteAccessPointPolicyForObjectLambdaRequest);
+
+    /**
+     * <p>
+     * Removes the resource policy for an Object Lambda Access Point.
+     * </p>
+     * <p>
+     * The following actions are related to <code>DeleteAccessPointPolicyForObjectLambda</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicyForObjectLambda.html">
+     * GetAccessPointPolicyForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicyForObjectLambda.html">
+     * PutAccessPointPolicyForObjectLambda</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteAccessPointPolicyForObjectLambdaRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAccessPointPolicyForObjectLambda operation returned by
+     *         the service.
+     * @sample AWSS3ControlAsyncHandler.DeleteAccessPointPolicyForObjectLambda
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointPolicyForObjectLambda"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccessPointPolicyForObjectLambdaResult> deleteAccessPointPolicyForObjectLambdaAsync(
+            DeleteAccessPointPolicyForObjectLambdaRequest deleteAccessPointPolicyForObjectLambdaRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAccessPointPolicyForObjectLambdaRequest, DeleteAccessPointPolicyForObjectLambdaResult> asyncHandler);
+
+    /**
      * <note>
      * <p>
      * This action deletes an Amazon S3 on Outposts bucket. To delete an S3 bucket, see <a
@@ -666,7 +857,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Deletes the Amazon S3 on Outposts bucket. All objects (including all object versions and delete markers) in the
      * bucket must be deleted before the bucket itself can be deleted. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
      * <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
@@ -718,7 +909,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Deletes the Amazon S3 on Outposts bucket. All objects (including all object versions and delete markers) in the
      * bucket must be deleted before the bucket itself can be deleted. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
      * <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
@@ -778,7 +969,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * lifecycle configuration rules in the lifecycle subresource associated with the bucket. Your objects never expire,
      * and Amazon S3 on Outposts no longer automatically deletes any objects on the basis of rules contained in the
      * deleted lifecycle configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
      * <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
@@ -842,7 +1033,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * lifecycle configuration rules in the lifecycle subresource associated with the bucket. Your objects never expire,
      * and Amazon S3 on Outposts no longer automatically deletes any objects on the basis of rules contained in the
      * deleted lifecycle configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
      * <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
@@ -910,8 +1101,8 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * S3 on Outposts bucket. If you are using an identity other than the root user of the AWS account that owns the
      * bucket, the calling identity must have the <code>s3-outposts:DeleteBucketPolicy</code> permissions on the
      * specified Outposts bucket and belong to the bucket owner's account to use this action. For more information, see
-     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a>
+     * in <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
      * If you don't have <code>DeleteBucketPolicy</code> permissions, Amazon S3 returns a <code>403 Access Denied</code>
@@ -975,8 +1166,8 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * S3 on Outposts bucket. If you are using an identity other than the root user of the AWS account that owns the
      * bucket, the calling identity must have the <code>s3-outposts:DeleteBucketPolicy</code> permissions on the
      * specified Outposts bucket and belong to the bucket owner's account to use this action. For more information, see
-     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a>
+     * in <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
      * If you don't have <code>DeleteBucketPolicy</code> permissions, Amazon S3 returns a <code>403 Access Denied</code>
@@ -1042,7 +1233,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </note>
      * <p>
      * Deletes the tags from the Outposts bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
      * <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
@@ -1092,7 +1283,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </note>
      * <p>
      * Deletes the tags from the Outposts bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
      * <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
@@ -1581,6 +1772,148 @@ public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
      * <p>
+     * Returns configuration for an Object Lambda Access Point.
+     * </p>
+     * <p>
+     * The following actions are related to <code>GetAccessPointConfigurationForObjectLambda</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointConfigurationForObjectLambda.html"
+     * >PutAccessPointConfigurationForObjectLambda</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getAccessPointConfigurationForObjectLambdaRequest
+     * @return A Java Future containing the result of the GetAccessPointConfigurationForObjectLambda operation returned
+     *         by the service.
+     * @sample AWSS3ControlAsync.GetAccessPointConfigurationForObjectLambda
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointConfigurationForObjectLambda"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccessPointConfigurationForObjectLambdaResult> getAccessPointConfigurationForObjectLambdaAsync(
+            GetAccessPointConfigurationForObjectLambdaRequest getAccessPointConfigurationForObjectLambdaRequest);
+
+    /**
+     * <p>
+     * Returns configuration for an Object Lambda Access Point.
+     * </p>
+     * <p>
+     * The following actions are related to <code>GetAccessPointConfigurationForObjectLambda</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointConfigurationForObjectLambda.html"
+     * >PutAccessPointConfigurationForObjectLambda</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getAccessPointConfigurationForObjectLambdaRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAccessPointConfigurationForObjectLambda operation returned
+     *         by the service.
+     * @sample AWSS3ControlAsyncHandler.GetAccessPointConfigurationForObjectLambda
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointConfigurationForObjectLambda"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccessPointConfigurationForObjectLambdaResult> getAccessPointConfigurationForObjectLambdaAsync(
+            GetAccessPointConfigurationForObjectLambdaRequest getAccessPointConfigurationForObjectLambdaRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAccessPointConfigurationForObjectLambdaRequest, GetAccessPointConfigurationForObjectLambdaResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns configuration information about the specified Object Lambda Access Point
+     * </p>
+     * <p>
+     * The following actions are related to <code>GetAccessPointForObjectLambda</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPointForObjectLambda.html">
+     * CreateAccessPointForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointForObjectLambda.html">
+     * DeleteAccessPointForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForObjectLambda.html">
+     * ListAccessPointsForObjectLambda</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getAccessPointForObjectLambdaRequest
+     * @return A Java Future containing the result of the GetAccessPointForObjectLambda operation returned by the
+     *         service.
+     * @sample AWSS3ControlAsync.GetAccessPointForObjectLambda
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointForObjectLambda"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccessPointForObjectLambdaResult> getAccessPointForObjectLambdaAsync(
+            GetAccessPointForObjectLambdaRequest getAccessPointForObjectLambdaRequest);
+
+    /**
+     * <p>
+     * Returns configuration information about the specified Object Lambda Access Point
+     * </p>
+     * <p>
+     * The following actions are related to <code>GetAccessPointForObjectLambda</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPointForObjectLambda.html">
+     * CreateAccessPointForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointForObjectLambda.html">
+     * DeleteAccessPointForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForObjectLambda.html">
+     * ListAccessPointsForObjectLambda</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getAccessPointForObjectLambdaRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAccessPointForObjectLambda operation returned by the
+     *         service.
+     * @sample AWSS3ControlAsyncHandler.GetAccessPointForObjectLambda
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointForObjectLambda"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccessPointForObjectLambdaResult> getAccessPointForObjectLambdaAsync(
+            GetAccessPointForObjectLambdaRequest getAccessPointForObjectLambdaRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAccessPointForObjectLambdaRequest, GetAccessPointForObjectLambdaResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the access point policy associated with the specified access point.
      * </p>
      * <p>
@@ -1646,10 +1979,81 @@ public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
      * <p>
+     * Returns the resource policy for an Object Lambda Access Point.
+     * </p>
+     * <p>
+     * The following actions are related to <code>GetAccessPointPolicyForObjectLambda</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicyForObjectLambda.html">
+     * DeleteAccessPointPolicyForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicyForObjectLambda.html">
+     * PutAccessPointPolicyForObjectLambda</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getAccessPointPolicyForObjectLambdaRequest
+     * @return A Java Future containing the result of the GetAccessPointPolicyForObjectLambda operation returned by the
+     *         service.
+     * @sample AWSS3ControlAsync.GetAccessPointPolicyForObjectLambda
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyForObjectLambda"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccessPointPolicyForObjectLambdaResult> getAccessPointPolicyForObjectLambdaAsync(
+            GetAccessPointPolicyForObjectLambdaRequest getAccessPointPolicyForObjectLambdaRequest);
+
+    /**
+     * <p>
+     * Returns the resource policy for an Object Lambda Access Point.
+     * </p>
+     * <p>
+     * The following actions are related to <code>GetAccessPointPolicyForObjectLambda</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicyForObjectLambda.html">
+     * DeleteAccessPointPolicyForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicyForObjectLambda.html">
+     * PutAccessPointPolicyForObjectLambda</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getAccessPointPolicyForObjectLambdaRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAccessPointPolicyForObjectLambda operation returned by the
+     *         service.
+     * @sample AWSS3ControlAsyncHandler.GetAccessPointPolicyForObjectLambda
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyForObjectLambda"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccessPointPolicyForObjectLambdaResult> getAccessPointPolicyForObjectLambdaAsync(
+            GetAccessPointPolicyForObjectLambdaRequest getAccessPointPolicyForObjectLambdaRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAccessPointPolicyForObjectLambdaRequest, GetAccessPointPolicyForObjectLambdaResult> asyncHandler);
+
+    /**
+     * <p>
      * Indicates whether the specified access point currently has a policy that allows public access. For more
      * information about public access through access points, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing Data Access with Amazon S3
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing Data Access with Amazon
+     * S3 Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * 
      * @param getAccessPointPolicyStatusRequest
@@ -1665,8 +2069,8 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Indicates whether the specified access point currently has a policy that allows public access. For more
      * information about public access through access points, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing Data Access with Amazon S3
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing Data Access with Amazon
+     * S3 Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * 
      * @param getAccessPointPolicyStatusRequest
@@ -1685,15 +2089,52 @@ public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
      * <p>
+     * Returns the status of the resource policy associated with an Object Lambda Access Point.
+     * </p>
+     * 
+     * @param getAccessPointPolicyStatusForObjectLambdaRequest
+     * @return A Java Future containing the result of the GetAccessPointPolicyStatusForObjectLambda operation returned
+     *         by the service.
+     * @sample AWSS3ControlAsync.GetAccessPointPolicyStatusForObjectLambda
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyStatusForObjectLambda"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccessPointPolicyStatusForObjectLambdaResult> getAccessPointPolicyStatusForObjectLambdaAsync(
+            GetAccessPointPolicyStatusForObjectLambdaRequest getAccessPointPolicyStatusForObjectLambdaRequest);
+
+    /**
+     * <p>
+     * Returns the status of the resource policy associated with an Object Lambda Access Point.
+     * </p>
+     * 
+     * @param getAccessPointPolicyStatusForObjectLambdaRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAccessPointPolicyStatusForObjectLambda operation returned
+     *         by the service.
+     * @sample AWSS3ControlAsyncHandler.GetAccessPointPolicyStatusForObjectLambda
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyStatusForObjectLambda"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAccessPointPolicyStatusForObjectLambdaResult> getAccessPointPolicyStatusForObjectLambdaAsync(
+            GetAccessPointPolicyStatusForObjectLambdaRequest getAccessPointPolicyStatusForObjectLambdaRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAccessPointPolicyStatusForObjectLambdaRequest, GetAccessPointPolicyStatusForObjectLambdaResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets an Amazon S3 on Outposts bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html"> Using Amazon S3 on Outposts</a> in the
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html"> Using Amazon S3 on Outposts</a>
+     * in the <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
-     * If you are using an identity other than the root user of the AWS account that owns the bucket, the calling
-     * identity must have the <code>s3-outposts:GetBucket</code> permissions on the specified bucket and belong to the
-     * bucket owner's account in order to use this action. Only users from Outposts bucket owner account with the right
-     * permissions can perform actions on an Outposts bucket.
+     * If you are using an identity other than the root user of the AWS account that owns the Outposts bucket, the
+     * calling identity must have the <code>s3-outposts:GetBucket</code> permissions on the specified Outposts bucket
+     * and belong to the Outposts bucket owner's account in order to use this action. Only users from Outposts bucket
+     * owner account with the right permissions can perform actions on an Outposts bucket.
      * </p>
      * <p>
      * If you don't have <code>s3-outposts:GetBucket</code> permissions or you're not using an identity that belongs to
@@ -1740,14 +2181,14 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <p>
      * Gets an Amazon S3 on Outposts bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html"> Using Amazon S3 on Outposts</a> in the
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html"> Using Amazon S3 on Outposts</a>
+     * in the <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
-     * If you are using an identity other than the root user of the AWS account that owns the bucket, the calling
-     * identity must have the <code>s3-outposts:GetBucket</code> permissions on the specified bucket and belong to the
-     * bucket owner's account in order to use this action. Only users from Outposts bucket owner account with the right
-     * permissions can perform actions on an Outposts bucket.
+     * If you are using an identity other than the root user of the AWS account that owns the Outposts bucket, the
+     * calling identity must have the <code>s3-outposts:GetBucket</code> permissions on the specified Outposts bucket
+     * and belong to the Outposts bucket owner's account in order to use this action. Only users from Outposts bucket
+     * owner account with the right permissions can perform actions on an Outposts bucket.
      * </p>
      * <p>
      * If you don't have <code>s3-outposts:GetBucket</code> permissions or you're not using an identity that belongs to
@@ -1807,8 +2248,8 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </note>
      * <p>
      * Returns the lifecycle configuration information set on the Outposts bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> and for
-     * information about lifecycle configuration, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a>
+     * and for information about lifecycle configuration, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html"> Object Lifecycle
      * Management</a> in <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
@@ -1816,10 +2257,10 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * To use this action, you must have permission to perform the <code>s3-outposts:GetLifecycleConfiguration</code>
      * action. The Outposts bucket owner has this permission, by default. The bucket owner can grant this permission to
      * others. For more information about permissions, see <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources"
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources"
      * >Permissions Related to Bucket Subresource Operations</a> and <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing Access Permissions to Your
-     * Amazon S3 Resources</a>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing Access Permissions
+     * to Your Amazon S3 Resources</a>.
      * </p>
      * <p>
      * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
@@ -1896,8 +2337,8 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </note>
      * <p>
      * Returns the lifecycle configuration information set on the Outposts bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> and for
-     * information about lifecycle configuration, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a>
+     * and for information about lifecycle configuration, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html"> Object Lifecycle
      * Management</a> in <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
@@ -1905,10 +2346,10 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * To use this action, you must have permission to perform the <code>s3-outposts:GetLifecycleConfiguration</code>
      * action. The Outposts bucket owner has this permission, by default. The bucket owner can grant this permission to
      * others. For more information about permissions, see <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources"
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources"
      * >Permissions Related to Bucket Subresource Operations</a> and <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing Access Permissions to Your
-     * Amazon S3 Resources</a>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing Access Permissions
+     * to Your Amazon S3 Resources</a>.
      * </p>
      * <p>
      * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
@@ -1989,8 +2430,8 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </note>
      * <p>
      * Returns the policy of a specified Outposts bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
+     * the <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
      * If you are using an identity other than the root user of the AWS account that owns the bucket, the calling
@@ -2062,8 +2503,8 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </note>
      * <p>
      * Returns the policy of a specified Outposts bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
+     * the <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
      * If you are using an identity other than the root user of the AWS account that owns the bucket, the calling
@@ -2140,8 +2581,8 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </note>
      * <p>
      * Returns the tag set associated with the Outposts bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
+     * the <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
      * To use this action, you must have permission to perform the <code>GetBucketTagging</code> action. By default, the
@@ -2209,8 +2650,8 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </note>
      * <p>
      * Returns the tag set associated with the Outposts bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
+     * the <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
      * To use this action, you must have permission to perform the <code>GetBucketTagging</code> action. By default, the
@@ -2632,6 +3073,93 @@ public interface AWSS3ControlAsync extends AWSS3Control {
 
     /**
      * <p>
+     * Returns a list of the access points associated with the Object Lambda Access Point. You can retrieve up to 1000
+     * access points per call. If there are more than 1,000 access points (or the number specified in
+     * <code>maxResults</code>, whichever is less), the response will include a continuation token that you can use to
+     * list the additional access points.
+     * </p>
+     * <p>
+     * The following actions are related to <code>ListAccessPointsForObjectLambda</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPointForObjectLambda.html">
+     * CreateAccessPointForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointForObjectLambda.html">
+     * DeleteAccessPointForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointForObjectLambda.html">
+     * GetAccessPointForObjectLambda</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param listAccessPointsForObjectLambdaRequest
+     * @return A Java Future containing the result of the ListAccessPointsForObjectLambda operation returned by the
+     *         service.
+     * @sample AWSS3ControlAsync.ListAccessPointsForObjectLambda
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPointsForObjectLambda"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAccessPointsForObjectLambdaResult> listAccessPointsForObjectLambdaAsync(
+            ListAccessPointsForObjectLambdaRequest listAccessPointsForObjectLambdaRequest);
+
+    /**
+     * <p>
+     * Returns a list of the access points associated with the Object Lambda Access Point. You can retrieve up to 1000
+     * access points per call. If there are more than 1,000 access points (or the number specified in
+     * <code>maxResults</code>, whichever is less), the response will include a continuation token that you can use to
+     * list the additional access points.
+     * </p>
+     * <p>
+     * The following actions are related to <code>ListAccessPointsForObjectLambda</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPointForObjectLambda.html">
+     * CreateAccessPointForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointForObjectLambda.html">
+     * DeleteAccessPointForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointForObjectLambda.html">
+     * GetAccessPointForObjectLambda</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param listAccessPointsForObjectLambdaRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAccessPointsForObjectLambda operation returned by the
+     *         service.
+     * @sample AWSS3ControlAsyncHandler.ListAccessPointsForObjectLambda
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPointsForObjectLambda"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAccessPointsForObjectLambdaResult> listAccessPointsForObjectLambdaAsync(
+            ListAccessPointsForObjectLambdaRequest listAccessPointsForObjectLambdaRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAccessPointsForObjectLambdaRequest, ListAccessPointsForObjectLambdaResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists current S3 Batch Operations jobs and jobs that have ended within the last 30 days for the AWS account
      * making the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the
@@ -2724,7 +3252,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <p>
      * Returns a list of all Outposts buckets in an Outpost that are owned by the authenticated sender of the request.
-     * For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
      * Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
@@ -2745,7 +3273,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     /**
      * <p>
      * Returns a list of all Outposts buckets in an Outpost that are owned by the authenticated sender of the request.
-     * For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
      * Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
@@ -2822,6 +3350,67 @@ public interface AWSS3ControlAsync extends AWSS3Control {
     java.util.concurrent.Future<ListStorageLensConfigurationsResult> listStorageLensConfigurationsAsync(
             ListStorageLensConfigurationsRequest listStorageLensConfigurationsRequest,
             com.amazonaws.handlers.AsyncHandler<ListStorageLensConfigurationsRequest, ListStorageLensConfigurationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Replaces configuration for an Object Lambda Access Point.
+     * </p>
+     * <p>
+     * The following actions are related to <code>PutAccessPointConfigurationForObjectLambda</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointConfigurationForObjectLambda.html"
+     * >GetAccessPointConfigurationForObjectLambda</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param putAccessPointConfigurationForObjectLambdaRequest
+     * @return A Java Future containing the result of the PutAccessPointConfigurationForObjectLambda operation returned
+     *         by the service.
+     * @sample AWSS3ControlAsync.PutAccessPointConfigurationForObjectLambda
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointConfigurationForObjectLambda"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutAccessPointConfigurationForObjectLambdaResult> putAccessPointConfigurationForObjectLambdaAsync(
+            PutAccessPointConfigurationForObjectLambdaRequest putAccessPointConfigurationForObjectLambdaRequest);
+
+    /**
+     * <p>
+     * Replaces configuration for an Object Lambda Access Point.
+     * </p>
+     * <p>
+     * The following actions are related to <code>PutAccessPointConfigurationForObjectLambda</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointConfigurationForObjectLambda.html"
+     * >GetAccessPointConfigurationForObjectLambda</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param putAccessPointConfigurationForObjectLambdaRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutAccessPointConfigurationForObjectLambda operation returned
+     *         by the service.
+     * @sample AWSS3ControlAsyncHandler.PutAccessPointConfigurationForObjectLambda
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointConfigurationForObjectLambda"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutAccessPointConfigurationForObjectLambdaResult> putAccessPointConfigurationForObjectLambdaAsync(
+            PutAccessPointConfigurationForObjectLambdaRequest putAccessPointConfigurationForObjectLambdaRequest,
+            com.amazonaws.handlers.AsyncHandler<PutAccessPointConfigurationForObjectLambdaRequest, PutAccessPointConfigurationForObjectLambdaResult> asyncHandler);
 
     /**
      * <p>
@@ -2911,6 +3500,81 @@ public interface AWSS3ControlAsync extends AWSS3Control {
             com.amazonaws.handlers.AsyncHandler<PutAccessPointPolicyRequest, PutAccessPointPolicyResult> asyncHandler);
 
     /**
+     * <p>
+     * Creates or replaces resource policy for an Object Lambda Access Point. For an example policy, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/olap-create.html#olap-create-cli">Creating Object
+     * Lambda Access Points</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * </p>
+     * <p>
+     * The following actions are related to <code>PutAccessPointPolicyForObjectLambda</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicyForObjectLambda.html">
+     * DeleteAccessPointPolicyForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicyForObjectLambda.html">
+     * GetAccessPointPolicyForObjectLambda</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param putAccessPointPolicyForObjectLambdaRequest
+     * @return A Java Future containing the result of the PutAccessPointPolicyForObjectLambda operation returned by the
+     *         service.
+     * @sample AWSS3ControlAsync.PutAccessPointPolicyForObjectLambda
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointPolicyForObjectLambda"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutAccessPointPolicyForObjectLambdaResult> putAccessPointPolicyForObjectLambdaAsync(
+            PutAccessPointPolicyForObjectLambdaRequest putAccessPointPolicyForObjectLambdaRequest);
+
+    /**
+     * <p>
+     * Creates or replaces resource policy for an Object Lambda Access Point. For an example policy, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/olap-create.html#olap-create-cli">Creating Object
+     * Lambda Access Points</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * </p>
+     * <p>
+     * The following actions are related to <code>PutAccessPointPolicyForObjectLambda</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicyForObjectLambda.html">
+     * DeleteAccessPointPolicyForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicyForObjectLambda.html">
+     * GetAccessPointPolicyForObjectLambda</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param putAccessPointPolicyForObjectLambdaRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutAccessPointPolicyForObjectLambda operation returned by the
+     *         service.
+     * @sample AWSS3ControlAsyncHandler.PutAccessPointPolicyForObjectLambda
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointPolicyForObjectLambda"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutAccessPointPolicyForObjectLambdaResult> putAccessPointPolicyForObjectLambdaAsync(
+            PutAccessPointPolicyForObjectLambdaRequest putAccessPointPolicyForObjectLambdaRequest,
+            com.amazonaws.handlers.AsyncHandler<PutAccessPointPolicyForObjectLambdaRequest, PutAccessPointPolicyForObjectLambdaResult> asyncHandler);
+
+    /**
      * <note>
      * <p>
      * This action puts a lifecycle configuration to an Amazon S3 on Outposts bucket. To put a lifecycle configuration
@@ -2920,11 +3584,9 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </p>
      * </note>
      * <p>
-     * Creates a new lifecycle configuration for the Outposts bucket or replaces an existing lifecycle configuration.
-     * Outposts buckets only support lifecycle configurations that delete/expire objects after a certain period of time
-     * and abort incomplete multipart uploads. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Managing Lifecycle Permissions for
-     * Amazon S3 on Outposts</a>.
+     * Creates a new lifecycle configuration for the S3 on Outposts bucket or replaces an existing lifecycle
+     * configuration. Outposts buckets only support lifecycle configurations that delete/expire objects after a certain
+     * period of time and abort incomplete multipart uploads.
      * </p>
      * <p/>
      * <p>
@@ -2974,11 +3636,9 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </p>
      * </note>
      * <p>
-     * Creates a new lifecycle configuration for the Outposts bucket or replaces an existing lifecycle configuration.
-     * Outposts buckets only support lifecycle configurations that delete/expire objects after a certain period of time
-     * and abort incomplete multipart uploads. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Managing Lifecycle Permissions for
-     * Amazon S3 on Outposts</a>.
+     * Creates a new lifecycle configuration for the S3 on Outposts bucket or replaces an existing lifecycle
+     * configuration. Outposts buckets only support lifecycle configurations that delete/expire objects after a certain
+     * period of time and abort incomplete multipart uploads.
      * </p>
      * <p/>
      * <p>
@@ -3033,8 +3693,8 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </note>
      * <p>
      * Applies an Amazon S3 bucket policy to an Outposts bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
+     * the <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
      * If you are using an identity other than the root user of the AWS account that owns the Outposts bucket, the
@@ -3101,8 +3761,8 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </note>
      * <p>
      * Applies an Amazon S3 bucket policy to an Outposts bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
+     * the <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
      * If you are using an identity other than the root user of the AWS account that owns the Outposts bucket, the
@@ -3173,9 +3833,9 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </p>
      * </note>
      * <p>
-     * Sets the tags for an Outposts bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * Sets the tags for an S3 on Outposts bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
+     * the <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
      * Use tags to organize your AWS bill to reflect your own cost structure. To do this, sign up to get your AWS
@@ -3183,24 +3843,25 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * information according to resources with the same tag key values. For example, you can tag several resources with
      * a specific application name, and then organize your billing information to see the total cost of that application
      * across several services. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost Allocation and
-     * Tagging</a>.
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost allocation and
+     * tagging</a>.
      * </p>
      * <note>
      * <p>
      * Within a bucket, if you add a tag that has the same key as an existing tag, the new value overwrites the old
-     * value. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CostAllocTagging.html">
-     * Using Cost Allocation in Amazon S3 Bucket Tags</a>.
+     * value. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CostAllocTagging.html"> Using cost allocation in
+     * Amazon S3 bucket tags</a>.
      * </p>
      * </note>
      * <p>
      * To use this action, you must have permissions to perform the <code>s3-outposts:PutBucketTagging</code> action.
      * The Outposts bucket owner has this permission by default and can grant this permission to others. For more
      * information about permissions, see <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources"
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources"
      * > Permissions Related to Bucket Subresource Operations</a> and <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing Access Permissions to Your
-     * Amazon S3 Resources</a>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing access permissions
+     * to your Amazon S3 resources</a>.
      * </p>
      * <p>
      * <code>PutBucketTagging</code> has the following special errors:
@@ -3304,9 +3965,9 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * </p>
      * </note>
      * <p>
-     * Sets the tags for an Outposts bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * Sets the tags for an S3 on Outposts bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
+     * the <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
      * Use tags to organize your AWS bill to reflect your own cost structure. To do this, sign up to get your AWS
@@ -3314,24 +3975,25 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * information according to resources with the same tag key values. For example, you can tag several resources with
      * a specific application name, and then organize your billing information to see the total cost of that application
      * across several services. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost Allocation and
-     * Tagging</a>.
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost allocation and
+     * tagging</a>.
      * </p>
      * <note>
      * <p>
      * Within a bucket, if you add a tag that has the same key as an existing tag, the new value overwrites the old
-     * value. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CostAllocTagging.html">
-     * Using Cost Allocation in Amazon S3 Bucket Tags</a>.
+     * value. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CostAllocTagging.html"> Using cost allocation in
+     * Amazon S3 bucket tags</a>.
      * </p>
      * </note>
      * <p>
      * To use this action, you must have permissions to perform the <code>s3-outposts:PutBucketTagging</code> action.
      * The Outposts bucket owner has this permission by default and can grant this permission to others. For more
      * information about permissions, see <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources"
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources"
      * > Permissions Related to Bucket Subresource Operations</a> and <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing Access Permissions to Your
-     * Amazon S3 Resources</a>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing access permissions
+     * to your Amazon S3 resources</a>.
      * </p>
      * <p>
      * <code>PutBucketTagging</code> has the following special errors:

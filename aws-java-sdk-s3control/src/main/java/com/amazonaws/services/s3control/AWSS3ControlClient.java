@@ -117,14 +117,14 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
 
     private void init() {
         exceptionUnmarshallers.add(new InvalidRequestExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new BucketAlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new NotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidNextTokenExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyTagsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new JobStatusExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new IdempotencyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchPublicAccessBlockConfigurationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InternalServiceExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new BucketAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyTagsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new IdempotencyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new BucketAlreadyOwnedByYouExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyRequestsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new BadRequestExceptionUnmarshaller());
@@ -143,42 +143,20 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
     /**
      * <p>
      * Creates an access point and associates it with the specified bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing Data Access with Amazon S3
-     * Access Points</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing Data Access with Amazon
+     * S3 Access Points</a> in the <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p/>
+     * <note>
      * <p>
-     * <b>Using this action with Amazon S3 on Outposts</b>
+     * S3 on Outposts only supports VPC-style Access Points.
      * </p>
      * <p>
-     * This action:
+     * For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">
+     * Accessing Amazon S3 on Outposts using virtual private cloud (VPC) only Access Points</a> in the <i>Amazon Simple
+     * Storage Service User Guide</i>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Requires a virtual private cloud (VPC) configuration as S3 on Outposts only supports VPC style access points.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Does not support ACL on S3 on Outposts buckets.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Does not support Public Access on S3 on Outposts buckets.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Does not support object lock for S3 on Outposts buckets.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User Guide </i>.
-     * </p>
+     * </note>
      * <p>
      * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
      * <code>x-amz-outpost-id</code> to be passed with the request and an S3 on Outposts endpoint hostname prefix
@@ -299,6 +277,100 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
     }
 
     /**
+     * <p>
+     * Creates an Object Lambda Access Point. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html">Transforming objects with
+     * Object Lambda Access Points</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * </p>
+     * <p>
+     * The following actions are related to <code>CreateAccessPointForObjectLambda</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointForObjectLambda.html">
+     * DeleteAccessPointForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointForObjectLambda.html">
+     * GetAccessPointForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForObjectLambda.html">
+     * ListAccessPointsForObjectLambda</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param createAccessPointForObjectLambdaRequest
+     * @return Result of the CreateAccessPointForObjectLambda operation returned by the service.
+     * @sample AWSS3Control.CreateAccessPointForObjectLambda
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessPointForObjectLambda"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateAccessPointForObjectLambdaResult createAccessPointForObjectLambda(CreateAccessPointForObjectLambdaRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAccessPointForObjectLambda(request);
+    }
+
+    @SdkInternalApi
+    final CreateAccessPointForObjectLambdaResult executeCreateAccessPointForObjectLambda(
+            CreateAccessPointForObjectLambdaRequest createAccessPointForObjectLambdaRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createAccessPointForObjectLambdaRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateAccessPointForObjectLambdaRequest> request = null;
+        Response<CreateAccessPointForObjectLambdaResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAccessPointForObjectLambdaRequestMarshaller().marshall(super.beforeMarshalling(createAccessPointForObjectLambdaRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAccessPointForObjectLambda");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(createAccessPointForObjectLambdaRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(createAccessPointForObjectLambdaRequest.getAccountId(), "AccountId",
+                        "createAccessPointForObjectLambdaRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", createAccessPointForObjectLambdaRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            StaxResponseHandler<CreateAccessPointForObjectLambdaResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<CreateAccessPointForObjectLambdaResult>(
+                    new CreateAccessPointForObjectLambdaResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <note>
      * <p>
      * This action creates an Amazon S3 on Outposts bucket. To create an S3 bucket, see <a
@@ -309,13 +381,13 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * <p>
      * Creates a new Outposts bucket. By creating the bucket, you become the bucket owner. To create an Outposts bucket,
      * you must have S3 on Outposts. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
      * <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
      * Not every string is an acceptable bucket name. For information on bucket naming restrictions, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Working with
-     * Amazon S3 Buckets</a>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/BucketRestrictions.html#bucketnamingrules">Working
+     * with Amazon S3 Buckets</a>.
      * </p>
      * <p>
      * S3 on Outposts buckets support:
@@ -333,9 +405,9 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * </li>
      * </ul>
      * <p>
-     * For a list of Amazon S3 features not supported by Amazon S3 on Outposts, see <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OnOutpostsRestrictionsLimitations.html#S3OnOutpostsFeatureLimitations"
-     * >Unsupported Amazon S3 features</a>.
+     * For a complete list of restrictions and Amazon S3 feature limitations on S3 on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3OnOutpostsRestrictionsLimitations.html"> Amazon S3
+     * on Outposts Restrictions and Limitations</a>.
      * </p>
      * <p>
      * For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname
@@ -665,6 +737,98 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
 
     /**
      * <p>
+     * Deletes the specified Object Lambda Access Point.
+     * </p>
+     * <p>
+     * The following actions are related to <code>DeleteAccessPointForObjectLambda</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPointForObjectLambda.html">
+     * CreateAccessPointForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointForObjectLambda.html">
+     * GetAccessPointForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForObjectLambda.html">
+     * ListAccessPointsForObjectLambda</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteAccessPointForObjectLambdaRequest
+     * @return Result of the DeleteAccessPointForObjectLambda operation returned by the service.
+     * @sample AWSS3Control.DeleteAccessPointForObjectLambda
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointForObjectLambda"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteAccessPointForObjectLambdaResult deleteAccessPointForObjectLambda(DeleteAccessPointForObjectLambdaRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAccessPointForObjectLambda(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAccessPointForObjectLambdaResult executeDeleteAccessPointForObjectLambda(
+            DeleteAccessPointForObjectLambdaRequest deleteAccessPointForObjectLambdaRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAccessPointForObjectLambdaRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAccessPointForObjectLambdaRequest> request = null;
+        Response<DeleteAccessPointForObjectLambdaResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAccessPointForObjectLambdaRequestMarshaller().marshall(super.beforeMarshalling(deleteAccessPointForObjectLambdaRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAccessPointForObjectLambda");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(deleteAccessPointForObjectLambdaRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(deleteAccessPointForObjectLambdaRequest.getAccountId(), "AccountId",
+                        "deleteAccessPointForObjectLambdaRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", deleteAccessPointForObjectLambdaRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            StaxResponseHandler<DeleteAccessPointForObjectLambdaResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<DeleteAccessPointForObjectLambdaResult>(
+                    new DeleteAccessPointForObjectLambdaResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the access point policy for the specified access point.
      * </p>
      * <p/>
@@ -783,6 +947,93 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
     }
 
     /**
+     * <p>
+     * Removes the resource policy for an Object Lambda Access Point.
+     * </p>
+     * <p>
+     * The following actions are related to <code>DeleteAccessPointPolicyForObjectLambda</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicyForObjectLambda.html">
+     * GetAccessPointPolicyForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicyForObjectLambda.html">
+     * PutAccessPointPolicyForObjectLambda</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteAccessPointPolicyForObjectLambdaRequest
+     * @return Result of the DeleteAccessPointPolicyForObjectLambda operation returned by the service.
+     * @sample AWSS3Control.DeleteAccessPointPolicyForObjectLambda
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointPolicyForObjectLambda"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteAccessPointPolicyForObjectLambdaResult deleteAccessPointPolicyForObjectLambda(DeleteAccessPointPolicyForObjectLambdaRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAccessPointPolicyForObjectLambda(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAccessPointPolicyForObjectLambdaResult executeDeleteAccessPointPolicyForObjectLambda(
+            DeleteAccessPointPolicyForObjectLambdaRequest deleteAccessPointPolicyForObjectLambdaRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAccessPointPolicyForObjectLambdaRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAccessPointPolicyForObjectLambdaRequest> request = null;
+        Response<DeleteAccessPointPolicyForObjectLambdaResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAccessPointPolicyForObjectLambdaRequestMarshaller().marshall(super
+                        .beforeMarshalling(deleteAccessPointPolicyForObjectLambdaRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAccessPointPolicyForObjectLambda");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(deleteAccessPointPolicyForObjectLambdaRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(deleteAccessPointPolicyForObjectLambdaRequest.getAccountId(), "AccountId",
+                        "deleteAccessPointPolicyForObjectLambdaRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", deleteAccessPointPolicyForObjectLambdaRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            StaxResponseHandler<DeleteAccessPointPolicyForObjectLambdaResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<DeleteAccessPointPolicyForObjectLambdaResult>(
+                    new DeleteAccessPointPolicyForObjectLambdaResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <note>
      * <p>
      * This action deletes an Amazon S3 on Outposts bucket. To delete an S3 bucket, see <a
@@ -793,7 +1044,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * <p>
      * Deletes the Amazon S3 on Outposts bucket. All objects (including all object versions and delete markers) in the
      * bucket must be deleted before the bucket itself can be deleted. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
      * <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
@@ -927,7 +1178,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * lifecycle configuration rules in the lifecycle subresource associated with the bucket. Your objects never expire,
      * and Amazon S3 on Outposts no longer automatically deletes any objects on the basis of rules contained in the
      * deleted lifecycle configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
      * <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
@@ -1070,8 +1321,8 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * S3 on Outposts bucket. If you are using an identity other than the root user of the AWS account that owns the
      * bucket, the calling identity must have the <code>s3-outposts:DeleteBucketPolicy</code> permissions on the
      * specified Outposts bucket and belong to the bucket owner's account to use this action. For more information, see
-     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a>
+     * in <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
      * If you don't have <code>DeleteBucketPolicy</code> permissions, Amazon S3 returns a <code>403 Access Denied</code>
@@ -1211,7 +1462,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * </note>
      * <p>
      * Deletes the tags from the Outposts bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
      * <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
@@ -1894,6 +2145,180 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
 
     /**
      * <p>
+     * Returns configuration for an Object Lambda Access Point.
+     * </p>
+     * <p>
+     * The following actions are related to <code>GetAccessPointConfigurationForObjectLambda</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointConfigurationForObjectLambda.html"
+     * >PutAccessPointConfigurationForObjectLambda</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getAccessPointConfigurationForObjectLambdaRequest
+     * @return Result of the GetAccessPointConfigurationForObjectLambda operation returned by the service.
+     * @sample AWSS3Control.GetAccessPointConfigurationForObjectLambda
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointConfigurationForObjectLambda"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetAccessPointConfigurationForObjectLambdaResult getAccessPointConfigurationForObjectLambda(GetAccessPointConfigurationForObjectLambdaRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAccessPointConfigurationForObjectLambda(request);
+    }
+
+    @SdkInternalApi
+    final GetAccessPointConfigurationForObjectLambdaResult executeGetAccessPointConfigurationForObjectLambda(
+            GetAccessPointConfigurationForObjectLambdaRequest getAccessPointConfigurationForObjectLambdaRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAccessPointConfigurationForObjectLambdaRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAccessPointConfigurationForObjectLambdaRequest> request = null;
+        Response<GetAccessPointConfigurationForObjectLambdaResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAccessPointConfigurationForObjectLambdaRequestMarshaller().marshall(super
+                        .beforeMarshalling(getAccessPointConfigurationForObjectLambdaRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccessPointConfigurationForObjectLambda");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(getAccessPointConfigurationForObjectLambdaRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(getAccessPointConfigurationForObjectLambdaRequest.getAccountId(), "AccountId",
+                        "getAccessPointConfigurationForObjectLambdaRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", getAccessPointConfigurationForObjectLambdaRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            StaxResponseHandler<GetAccessPointConfigurationForObjectLambdaResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<GetAccessPointConfigurationForObjectLambdaResult>(
+                    new GetAccessPointConfigurationForObjectLambdaResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns configuration information about the specified Object Lambda Access Point
+     * </p>
+     * <p>
+     * The following actions are related to <code>GetAccessPointForObjectLambda</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPointForObjectLambda.html">
+     * CreateAccessPointForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointForObjectLambda.html">
+     * DeleteAccessPointForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPointsForObjectLambda.html">
+     * ListAccessPointsForObjectLambda</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getAccessPointForObjectLambdaRequest
+     * @return Result of the GetAccessPointForObjectLambda operation returned by the service.
+     * @sample AWSS3Control.GetAccessPointForObjectLambda
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointForObjectLambda"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetAccessPointForObjectLambdaResult getAccessPointForObjectLambda(GetAccessPointForObjectLambdaRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAccessPointForObjectLambda(request);
+    }
+
+    @SdkInternalApi
+    final GetAccessPointForObjectLambdaResult executeGetAccessPointForObjectLambda(GetAccessPointForObjectLambdaRequest getAccessPointForObjectLambdaRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAccessPointForObjectLambdaRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAccessPointForObjectLambdaRequest> request = null;
+        Response<GetAccessPointForObjectLambdaResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAccessPointForObjectLambdaRequestMarshaller().marshall(super.beforeMarshalling(getAccessPointForObjectLambdaRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccessPointForObjectLambda");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(getAccessPointForObjectLambdaRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(getAccessPointForObjectLambdaRequest.getAccountId(), "AccountId",
+                        "getAccessPointForObjectLambdaRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", getAccessPointForObjectLambdaRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            StaxResponseHandler<GetAccessPointForObjectLambdaResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<GetAccessPointForObjectLambdaResult>(
+                    new GetAccessPointForObjectLambdaResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns the access point policy associated with the specified access point.
      * </p>
      * <p>
@@ -2003,10 +2428,98 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
 
     /**
      * <p>
+     * Returns the resource policy for an Object Lambda Access Point.
+     * </p>
+     * <p>
+     * The following actions are related to <code>GetAccessPointPolicyForObjectLambda</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicyForObjectLambda.html">
+     * DeleteAccessPointPolicyForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicyForObjectLambda.html">
+     * PutAccessPointPolicyForObjectLambda</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getAccessPointPolicyForObjectLambdaRequest
+     * @return Result of the GetAccessPointPolicyForObjectLambda operation returned by the service.
+     * @sample AWSS3Control.GetAccessPointPolicyForObjectLambda
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyForObjectLambda"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetAccessPointPolicyForObjectLambdaResult getAccessPointPolicyForObjectLambda(GetAccessPointPolicyForObjectLambdaRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAccessPointPolicyForObjectLambda(request);
+    }
+
+    @SdkInternalApi
+    final GetAccessPointPolicyForObjectLambdaResult executeGetAccessPointPolicyForObjectLambda(
+            GetAccessPointPolicyForObjectLambdaRequest getAccessPointPolicyForObjectLambdaRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAccessPointPolicyForObjectLambdaRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAccessPointPolicyForObjectLambdaRequest> request = null;
+        Response<GetAccessPointPolicyForObjectLambdaResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAccessPointPolicyForObjectLambdaRequestMarshaller().marshall(super
+                        .beforeMarshalling(getAccessPointPolicyForObjectLambdaRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccessPointPolicyForObjectLambda");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(getAccessPointPolicyForObjectLambdaRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(getAccessPointPolicyForObjectLambdaRequest.getAccountId(), "AccountId",
+                        "getAccessPointPolicyForObjectLambdaRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", getAccessPointPolicyForObjectLambdaRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            StaxResponseHandler<GetAccessPointPolicyForObjectLambdaResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<GetAccessPointPolicyForObjectLambdaResult>(
+                    new GetAccessPointPolicyForObjectLambdaResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Indicates whether the specified access point currently has a policy that allows public access. For more
      * information about public access through access points, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing Data Access with Amazon S3
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing Data Access with Amazon
+     * S3 Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * 
      * @param getAccessPointPolicyStatusRequest
@@ -2073,15 +2586,86 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
 
     /**
      * <p>
+     * Returns the status of the resource policy associated with an Object Lambda Access Point.
+     * </p>
+     * 
+     * @param getAccessPointPolicyStatusForObjectLambdaRequest
+     * @return Result of the GetAccessPointPolicyStatusForObjectLambda operation returned by the service.
+     * @sample AWSS3Control.GetAccessPointPolicyStatusForObjectLambda
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyStatusForObjectLambda"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetAccessPointPolicyStatusForObjectLambdaResult getAccessPointPolicyStatusForObjectLambda(GetAccessPointPolicyStatusForObjectLambdaRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAccessPointPolicyStatusForObjectLambda(request);
+    }
+
+    @SdkInternalApi
+    final GetAccessPointPolicyStatusForObjectLambdaResult executeGetAccessPointPolicyStatusForObjectLambda(
+            GetAccessPointPolicyStatusForObjectLambdaRequest getAccessPointPolicyStatusForObjectLambdaRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAccessPointPolicyStatusForObjectLambdaRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAccessPointPolicyStatusForObjectLambdaRequest> request = null;
+        Response<GetAccessPointPolicyStatusForObjectLambdaResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAccessPointPolicyStatusForObjectLambdaRequestMarshaller().marshall(super
+                        .beforeMarshalling(getAccessPointPolicyStatusForObjectLambdaRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccessPointPolicyStatusForObjectLambda");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(getAccessPointPolicyStatusForObjectLambdaRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(getAccessPointPolicyStatusForObjectLambdaRequest.getAccountId(), "AccountId",
+                        "getAccessPointPolicyStatusForObjectLambdaRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", getAccessPointPolicyStatusForObjectLambdaRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            StaxResponseHandler<GetAccessPointPolicyStatusForObjectLambdaResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<GetAccessPointPolicyStatusForObjectLambdaResult>(
+                    new GetAccessPointPolicyStatusForObjectLambdaResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets an Amazon S3 on Outposts bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html"> Using Amazon S3 on Outposts</a> in the
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html"> Using Amazon S3 on Outposts</a>
+     * in the <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
-     * If you are using an identity other than the root user of the AWS account that owns the bucket, the calling
-     * identity must have the <code>s3-outposts:GetBucket</code> permissions on the specified bucket and belong to the
-     * bucket owner's account in order to use this action. Only users from Outposts bucket owner account with the right
-     * permissions can perform actions on an Outposts bucket.
+     * If you are using an identity other than the root user of the AWS account that owns the Outposts bucket, the
+     * calling identity must have the <code>s3-outposts:GetBucket</code> permissions on the specified Outposts bucket
+     * and belong to the Outposts bucket owner's account in order to use this action. Only users from Outposts bucket
+     * owner account with the right permissions can perform actions on an Outposts bucket.
      * </p>
      * <p>
      * If you don't have <code>s3-outposts:GetBucket</code> permissions or you're not using an identity that belongs to
@@ -2215,8 +2799,8 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * </note>
      * <p>
      * Returns the lifecycle configuration information set on the Outposts bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> and for
-     * information about lifecycle configuration, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a>
+     * and for information about lifecycle configuration, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html"> Object Lifecycle
      * Management</a> in <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
@@ -2224,10 +2808,10 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * To use this action, you must have permission to perform the <code>s3-outposts:GetLifecycleConfiguration</code>
      * action. The Outposts bucket owner has this permission, by default. The bucket owner can grant this permission to
      * others. For more information about permissions, see <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources"
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources"
      * >Permissions Related to Bucket Subresource Operations</a> and <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing Access Permissions to Your
-     * Amazon S3 Resources</a>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing Access Permissions
+     * to Your Amazon S3 Resources</a>.
      * </p>
      * <p>
      * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
@@ -2382,8 +2966,8 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * </note>
      * <p>
      * Returns the policy of a specified Outposts bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
+     * the <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
      * If you are using an identity other than the root user of the AWS account that owns the bucket, the calling
@@ -2534,8 +3118,8 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * </note>
      * <p>
      * Returns the tag set associated with the Outposts bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
+     * the <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
      * To use this action, you must have permission to perform the <code>GetBucketTagging</code> action. By default, the
@@ -3142,6 +3726,101 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
 
     /**
      * <p>
+     * Returns a list of the access points associated with the Object Lambda Access Point. You can retrieve up to 1000
+     * access points per call. If there are more than 1,000 access points (or the number specified in
+     * <code>maxResults</code>, whichever is less), the response will include a continuation token that you can use to
+     * list the additional access points.
+     * </p>
+     * <p>
+     * The following actions are related to <code>ListAccessPointsForObjectLambda</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPointForObjectLambda.html">
+     * CreateAccessPointForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointForObjectLambda.html">
+     * DeleteAccessPointForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointForObjectLambda.html">
+     * GetAccessPointForObjectLambda</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param listAccessPointsForObjectLambdaRequest
+     * @return Result of the ListAccessPointsForObjectLambda operation returned by the service.
+     * @sample AWSS3Control.ListAccessPointsForObjectLambda
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPointsForObjectLambda"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListAccessPointsForObjectLambdaResult listAccessPointsForObjectLambda(ListAccessPointsForObjectLambdaRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAccessPointsForObjectLambda(request);
+    }
+
+    @SdkInternalApi
+    final ListAccessPointsForObjectLambdaResult executeListAccessPointsForObjectLambda(
+            ListAccessPointsForObjectLambdaRequest listAccessPointsForObjectLambdaRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAccessPointsForObjectLambdaRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAccessPointsForObjectLambdaRequest> request = null;
+        Response<ListAccessPointsForObjectLambdaResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAccessPointsForObjectLambdaRequestMarshaller().marshall(super.beforeMarshalling(listAccessPointsForObjectLambdaRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccessPointsForObjectLambda");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(listAccessPointsForObjectLambdaRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(listAccessPointsForObjectLambdaRequest.getAccountId(), "AccountId",
+                        "listAccessPointsForObjectLambdaRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", listAccessPointsForObjectLambdaRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            StaxResponseHandler<ListAccessPointsForObjectLambdaResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<ListAccessPointsForObjectLambdaResult>(
+                    new ListAccessPointsForObjectLambdaResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists current S3 Batch Operations jobs and jobs that have ended within the last 30 days for the AWS account
      * making the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the
@@ -3243,7 +3922,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
     /**
      * <p>
      * Returns a list of all Outposts buckets in an Outpost that are owned by the authenticated sender of the request.
-     * For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
      * Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
@@ -3395,6 +4074,89 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
 
     /**
      * <p>
+     * Replaces configuration for an Object Lambda Access Point.
+     * </p>
+     * <p>
+     * The following actions are related to <code>PutAccessPointConfigurationForObjectLambda</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointConfigurationForObjectLambda.html"
+     * >GetAccessPointConfigurationForObjectLambda</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param putAccessPointConfigurationForObjectLambdaRequest
+     * @return Result of the PutAccessPointConfigurationForObjectLambda operation returned by the service.
+     * @sample AWSS3Control.PutAccessPointConfigurationForObjectLambda
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointConfigurationForObjectLambda"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutAccessPointConfigurationForObjectLambdaResult putAccessPointConfigurationForObjectLambda(PutAccessPointConfigurationForObjectLambdaRequest request) {
+        request = beforeClientExecution(request);
+        return executePutAccessPointConfigurationForObjectLambda(request);
+    }
+
+    @SdkInternalApi
+    final PutAccessPointConfigurationForObjectLambdaResult executePutAccessPointConfigurationForObjectLambda(
+            PutAccessPointConfigurationForObjectLambdaRequest putAccessPointConfigurationForObjectLambdaRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putAccessPointConfigurationForObjectLambdaRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutAccessPointConfigurationForObjectLambdaRequest> request = null;
+        Response<PutAccessPointConfigurationForObjectLambdaResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutAccessPointConfigurationForObjectLambdaRequestMarshaller().marshall(super
+                        .beforeMarshalling(putAccessPointConfigurationForObjectLambdaRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAccessPointConfigurationForObjectLambda");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(putAccessPointConfigurationForObjectLambdaRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(putAccessPointConfigurationForObjectLambdaRequest.getAccountId(), "AccountId",
+                        "putAccessPointConfigurationForObjectLambdaRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", putAccessPointConfigurationForObjectLambdaRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            StaxResponseHandler<PutAccessPointConfigurationForObjectLambdaResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<PutAccessPointConfigurationForObjectLambdaResult>(
+                    new PutAccessPointConfigurationForObjectLambdaResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Associates an access policy with the specified access point. Each access point can have only one policy, so a
      * request made to this API replaces any existing policy associated with the specified access point.
      * </p>
@@ -3514,6 +4276,96 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
     }
 
     /**
+     * <p>
+     * Creates or replaces resource policy for an Object Lambda Access Point. For an example policy, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/olap-create.html#olap-create-cli">Creating Object
+     * Lambda Access Points</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * </p>
+     * <p>
+     * The following actions are related to <code>PutAccessPointPolicyForObjectLambda</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicyForObjectLambda.html">
+     * DeleteAccessPointPolicyForObjectLambda</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicyForObjectLambda.html">
+     * GetAccessPointPolicyForObjectLambda</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param putAccessPointPolicyForObjectLambdaRequest
+     * @return Result of the PutAccessPointPolicyForObjectLambda operation returned by the service.
+     * @sample AWSS3Control.PutAccessPointPolicyForObjectLambda
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointPolicyForObjectLambda"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutAccessPointPolicyForObjectLambdaResult putAccessPointPolicyForObjectLambda(PutAccessPointPolicyForObjectLambdaRequest request) {
+        request = beforeClientExecution(request);
+        return executePutAccessPointPolicyForObjectLambda(request);
+    }
+
+    @SdkInternalApi
+    final PutAccessPointPolicyForObjectLambdaResult executePutAccessPointPolicyForObjectLambda(
+            PutAccessPointPolicyForObjectLambdaRequest putAccessPointPolicyForObjectLambdaRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putAccessPointPolicyForObjectLambdaRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutAccessPointPolicyForObjectLambdaRequest> request = null;
+        Response<PutAccessPointPolicyForObjectLambdaResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutAccessPointPolicyForObjectLambdaRequestMarshaller().marshall(super
+                        .beforeMarshalling(putAccessPointPolicyForObjectLambdaRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAccessPointPolicyForObjectLambda");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(putAccessPointPolicyForObjectLambdaRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(putAccessPointPolicyForObjectLambdaRequest.getAccountId(), "AccountId",
+                        "putAccessPointPolicyForObjectLambdaRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", putAccessPointPolicyForObjectLambdaRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            StaxResponseHandler<PutAccessPointPolicyForObjectLambdaResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<PutAccessPointPolicyForObjectLambdaResult>(
+                    new PutAccessPointPolicyForObjectLambdaResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <note>
      * <p>
      * This action puts a lifecycle configuration to an Amazon S3 on Outposts bucket. To put a lifecycle configuration
@@ -3523,11 +4375,9 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * </p>
      * </note>
      * <p>
-     * Creates a new lifecycle configuration for the Outposts bucket or replaces an existing lifecycle configuration.
-     * Outposts buckets only support lifecycle configurations that delete/expire objects after a certain period of time
-     * and abort incomplete multipart uploads. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Managing Lifecycle Permissions for
-     * Amazon S3 on Outposts</a>.
+     * Creates a new lifecycle configuration for the S3 on Outposts bucket or replaces an existing lifecycle
+     * configuration. Outposts buckets only support lifecycle configurations that delete/expire objects after a certain
+     * period of time and abort incomplete multipart uploads.
      * </p>
      * <p/>
      * <p>
@@ -3656,8 +4506,8 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * </note>
      * <p>
      * Applies an Amazon S3 bucket policy to an Outposts bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
+     * the <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
      * If you are using an identity other than the root user of the AWS account that owns the Outposts bucket, the
@@ -3802,9 +4652,9 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * </p>
      * </note>
      * <p>
-     * Sets the tags for an Outposts bucket. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * Sets the tags for an S3 on Outposts bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
+     * the <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <p>
      * Use tags to organize your AWS bill to reflect your own cost structure. To do this, sign up to get your AWS
@@ -3812,24 +4662,25 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * information according to resources with the same tag key values. For example, you can tag several resources with
      * a specific application name, and then organize your billing information to see the total cost of that application
      * across several services. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost Allocation and
-     * Tagging</a>.
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost allocation and
+     * tagging</a>.
      * </p>
      * <note>
      * <p>
      * Within a bucket, if you add a tag that has the same key as an existing tag, the new value overwrites the old
-     * value. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CostAllocTagging.html">
-     * Using Cost Allocation in Amazon S3 Bucket Tags</a>.
+     * value. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CostAllocTagging.html"> Using cost allocation in
+     * Amazon S3 bucket tags</a>.
      * </p>
      * </note>
      * <p>
      * To use this action, you must have permissions to perform the <code>s3-outposts:PutBucketTagging</code> action.
      * The Outposts bucket owner has this permission by default and can grant this permission to others. For more
      * information about permissions, see <a href=
-     * "https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources"
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources"
      * > Permissions Related to Bucket Subresource Operations</a> and <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing Access Permissions to Your
-     * Amazon S3 Resources</a>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing access permissions
+     * to your Amazon S3 resources</a>.
      * </p>
      * <p>
      * <code>PutBucketTagging</code> has the following special errors:

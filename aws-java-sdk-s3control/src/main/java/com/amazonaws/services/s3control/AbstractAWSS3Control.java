@@ -33,6 +33,11 @@ public class AbstractAWSS3Control implements AWSS3Control {
     }
 
     @Override
+    public CreateAccessPointForObjectLambdaResult createAccessPointForObjectLambda(CreateAccessPointForObjectLambdaRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateBucketResult createBucket(CreateBucketRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -48,7 +53,17 @@ public class AbstractAWSS3Control implements AWSS3Control {
     }
 
     @Override
+    public DeleteAccessPointForObjectLambdaResult deleteAccessPointForObjectLambda(DeleteAccessPointForObjectLambdaRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteAccessPointPolicyResult deleteAccessPointPolicy(DeleteAccessPointPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAccessPointPolicyForObjectLambdaResult deleteAccessPointPolicyForObjectLambda(DeleteAccessPointPolicyForObjectLambdaRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -103,12 +118,32 @@ public class AbstractAWSS3Control implements AWSS3Control {
     }
 
     @Override
+    public GetAccessPointConfigurationForObjectLambdaResult getAccessPointConfigurationForObjectLambda(GetAccessPointConfigurationForObjectLambdaRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAccessPointForObjectLambdaResult getAccessPointForObjectLambda(GetAccessPointForObjectLambdaRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetAccessPointPolicyResult getAccessPointPolicy(GetAccessPointPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public GetAccessPointPolicyForObjectLambdaResult getAccessPointPolicyForObjectLambda(GetAccessPointPolicyForObjectLambdaRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetAccessPointPolicyStatusResult getAccessPointPolicyStatus(GetAccessPointPolicyStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAccessPointPolicyStatusForObjectLambdaResult getAccessPointPolicyStatusForObjectLambda(GetAccessPointPolicyStatusForObjectLambdaRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -158,6 +193,11 @@ public class AbstractAWSS3Control implements AWSS3Control {
     }
 
     @Override
+    public ListAccessPointsForObjectLambdaResult listAccessPointsForObjectLambda(ListAccessPointsForObjectLambdaRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListJobsResult listJobs(ListJobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -173,7 +213,17 @@ public class AbstractAWSS3Control implements AWSS3Control {
     }
 
     @Override
+    public PutAccessPointConfigurationForObjectLambdaResult putAccessPointConfigurationForObjectLambda(PutAccessPointConfigurationForObjectLambdaRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutAccessPointPolicyResult putAccessPointPolicy(PutAccessPointPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutAccessPointPolicyForObjectLambdaResult putAccessPointPolicyForObjectLambda(PutAccessPointPolicyForObjectLambdaRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

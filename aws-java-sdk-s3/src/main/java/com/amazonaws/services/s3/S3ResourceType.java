@@ -15,6 +15,7 @@
 package com.amazonaws.services.s3;
 
 import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.services.s3.internal.S3ObjectLambdasResource;
 import com.amazonaws.services.s3.internal.S3OutpostResource;
 
 /**
@@ -39,7 +40,14 @@ public enum S3ResourceType {
     /**
      * An outpost access point. Implemented by {@link S3OutpostResource}.
      */
-    OUTPOST("outpost");
+    OUTPOST("outpost"),
+
+    /**
+     * An object lambda access point. Implemented by {@link S3ObjectLambdasResource}.
+     */
+    OBJECT_LAMBDAS("object-lambda"),
+
+    ;
 
     private final String value;
 

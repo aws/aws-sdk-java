@@ -66,6 +66,7 @@ import com.amazonaws.services.s3.model.SetObjectRetentionResult;
 import com.amazonaws.services.s3.model.SetObjectTaggingResult;
 import com.amazonaws.services.s3.model.SetPublicAccessBlockResult;
 import com.amazonaws.services.s3.model.VersionListing;
+import com.amazonaws.services.s3.model.WriteGetObjectResponseResult;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CompleteMultipartUploadHandler;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CopyObjectResultHandler;
 import com.amazonaws.transform.Unmarshaller;
@@ -649,6 +650,14 @@ public class Unmarshallers {
         @Override
         public GetObjectRetentionResult unmarshall(InputStream in) throws Exception {
             return new XmlResponsesSaxParser().parseGetObjectRetentionResponse(in).getResult();
+        }
+    }
+
+    public static final class WriteGetObjectResponseResultUnmarshaller implements Unmarshaller<WriteGetObjectResponseResult, InputStream> {
+
+        @Override
+        public WriteGetObjectResponseResult unmarshall(InputStream inputStream) throws Exception {
+            return new WriteGetObjectResponseResult();
         }
     }
 }

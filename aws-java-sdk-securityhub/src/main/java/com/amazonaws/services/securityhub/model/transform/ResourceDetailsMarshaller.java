@@ -53,6 +53,8 @@ public class ResourceDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsElasticsearchDomain").build();
     private static final MarshallingInfo<StructuredPojo> AWSS3BUCKET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsS3Bucket").build();
+    private static final MarshallingInfo<StructuredPojo> AWSS3ACCOUNTPUBLICACCESSBLOCK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsS3AccountPublicAccessBlock").build();
     private static final MarshallingInfo<StructuredPojo> AWSS3OBJECT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsS3Object").build();
     private static final MarshallingInfo<StructuredPojo> AWSSECRETSMANAGERSECRET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -140,6 +142,7 @@ public class ResourceDetailsMarshaller {
             protocolMarshaller.marshall(resourceDetails.getAwsElbv2LoadBalancer(), AWSELBV2LOADBALANCER_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsElasticsearchDomain(), AWSELASTICSEARCHDOMAIN_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsS3Bucket(), AWSS3BUCKET_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsS3AccountPublicAccessBlock(), AWSS3ACCOUNTPUBLICACCESSBLOCK_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsS3Object(), AWSS3OBJECT_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsSecretsManagerSecret(), AWSSECRETSMANAGERSECRET_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsIamAccessKey(), AWSIAMACCESSKEY_BINDING);

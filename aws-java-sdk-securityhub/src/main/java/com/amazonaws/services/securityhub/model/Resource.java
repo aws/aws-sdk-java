@@ -72,6 +72,12 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, String> tags;
     /**
      * <p>
+     * Contains information about sensitive data that was detected on the resource.
+     * </p>
+     */
+    private DataClassificationDetails dataClassification;
+    /**
+     * <p>
      * Additional details about the resource related to a finding.
      * </p>
      */
@@ -400,6 +406,46 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Contains information about sensitive data that was detected on the resource.
+     * </p>
+     * 
+     * @param dataClassification
+     *        Contains information about sensitive data that was detected on the resource.
+     */
+
+    public void setDataClassification(DataClassificationDetails dataClassification) {
+        this.dataClassification = dataClassification;
+    }
+
+    /**
+     * <p>
+     * Contains information about sensitive data that was detected on the resource.
+     * </p>
+     * 
+     * @return Contains information about sensitive data that was detected on the resource.
+     */
+
+    public DataClassificationDetails getDataClassification() {
+        return this.dataClassification;
+    }
+
+    /**
+     * <p>
+     * Contains information about sensitive data that was detected on the resource.
+     * </p>
+     * 
+     * @param dataClassification
+     *        Contains information about sensitive data that was detected on the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Resource withDataClassification(DataClassificationDetails dataClassification) {
+        setDataClassification(dataClassification);
+        return this;
+    }
+
+    /**
+     * <p>
      * Additional details about the resource related to a finding.
      * </p>
      * 
@@ -462,6 +508,8 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
             sb.append("ResourceRole: ").append(getResourceRole()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
+        if (getDataClassification() != null)
+            sb.append("DataClassification: ").append(getDataClassification()).append(",");
         if (getDetails() != null)
             sb.append("Details: ").append(getDetails());
         sb.append("}");
@@ -502,6 +550,10 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getDataClassification() == null ^ this.getDataClassification() == null)
+            return false;
+        if (other.getDataClassification() != null && other.getDataClassification().equals(this.getDataClassification()) == false)
+            return false;
         if (other.getDetails() == null ^ this.getDetails() == null)
             return false;
         if (other.getDetails() != null && other.getDetails().equals(this.getDetails()) == false)
@@ -520,6 +572,7 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
         hashCode = prime * hashCode + ((getResourceRole() == null) ? 0 : getResourceRole().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getDataClassification() == null) ? 0 : getDataClassification().hashCode());
         hashCode = prime * hashCode + ((getDetails() == null) ? 0 : getDetails().hashCode());
         return hashCode;
     }

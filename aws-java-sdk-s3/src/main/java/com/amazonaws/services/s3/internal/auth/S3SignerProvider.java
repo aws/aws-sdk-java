@@ -84,7 +84,7 @@ public class S3SignerProvider extends SignerProvider {
 
     private boolean isAccessPointUri(URI uri) {
         String str = uri.toASCIIString();
-        return str.contains(".s3-accesspoint.") || str.contains(".s3-outposts.");
+        return str.contains(".s3-accesspoint.") || str.contains(".s3-outposts.") || str.contains(".s3-object-lambda.");
     }
 
     private boolean isSignerRegionOverrideSet() {

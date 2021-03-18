@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.s3;
 
+import com.amazonaws.services.s3.model.WriteGetObjectResponseRequest;
+import com.amazonaws.services.s3.model.WriteGetObjectResponseResult;
 import java.io.File;
 import java.io.InputStream;
 import java.net.URL;
@@ -6228,6 +6230,29 @@ public interface AmazonS3 extends S3DirectSpi {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectRetention">AWS API Documentation</a>
      */
     GetObjectRetentionResult getObjectRetention(GetObjectRetentionRequest getObjectRetentionRequest);
+
+    /**
+     * <p>
+     * Passes transformed objects to a <code>GetObject</code> operation when using Object Lambda Access Points. For
+     * information about Object Lambda Access Points, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html">Transforming objects with
+     * Object Lambda Access Points</a> in the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * <p>
+     * This operation supports metadata that can be returned by <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>, in addition to
+     * <code>RequestRoute</code>, <code>RequestToken</code>, <code>StatusCode</code>, <code>ErrorCode</code>, and
+     * <code>ErrorMessage</code>. The <code>GetObject</code> response metadata is supported so that the
+     * <code>WriteGetObjectResponse</code> caller, typically an AWS Lambda function, can provide the same metadata when
+     * it internally invokes <code>GetObject</code>. When <code>WriteGetObjectResponse</code> is called by a
+     * customer-owned Lambda function, the metadata returned to the end user <code>GetObject</code> call might differ
+     * from what Amazon S3 would normally return.
+     * </p>
+     *
+     * @param writeGetObjectResponseRequest The request object for writing the GetObject response.
+     * @return a {@link WriteGetObjectResponseResult}.
+     */
+    WriteGetObjectResponseResult writeGetObjectResponse(WriteGetObjectResponseRequest writeGetObjectResponseRequest);
 
     /**
      * <p>

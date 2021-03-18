@@ -500,6 +500,12 @@ public class Cluster implements Serializable, Cloneable {
      * </p>
      */
     private String clusterNamespaceArn;
+    /**
+     * <p>
+     * The total storage capacity of the cluster in megabytes.
+     * </p>
+     */
+    private Long totalStorageCapacityInMegaBytes;
 
     /**
      * <p>
@@ -3904,6 +3910,46 @@ public class Cluster implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The total storage capacity of the cluster in megabytes.
+     * </p>
+     * 
+     * @param totalStorageCapacityInMegaBytes
+     *        The total storage capacity of the cluster in megabytes.
+     */
+
+    public void setTotalStorageCapacityInMegaBytes(Long totalStorageCapacityInMegaBytes) {
+        this.totalStorageCapacityInMegaBytes = totalStorageCapacityInMegaBytes;
+    }
+
+    /**
+     * <p>
+     * The total storage capacity of the cluster in megabytes.
+     * </p>
+     * 
+     * @return The total storage capacity of the cluster in megabytes.
+     */
+
+    public Long getTotalStorageCapacityInMegaBytes() {
+        return this.totalStorageCapacityInMegaBytes;
+    }
+
+    /**
+     * <p>
+     * The total storage capacity of the cluster in megabytes.
+     * </p>
+     * 
+     * @param totalStorageCapacityInMegaBytes
+     *        The total storage capacity of the cluster in megabytes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withTotalStorageCapacityInMegaBytes(Long totalStorageCapacityInMegaBytes) {
+        setTotalStorageCapacityInMegaBytes(totalStorageCapacityInMegaBytes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -4010,7 +4056,9 @@ public class Cluster implements Serializable, Cloneable {
         if (getAvailabilityZoneRelocationStatus() != null)
             sb.append("AvailabilityZoneRelocationStatus: ").append(getAvailabilityZoneRelocationStatus()).append(",");
         if (getClusterNamespaceArn() != null)
-            sb.append("ClusterNamespaceArn: ").append(getClusterNamespaceArn());
+            sb.append("ClusterNamespaceArn: ").append(getClusterNamespaceArn()).append(",");
+        if (getTotalStorageCapacityInMegaBytes() != null)
+            sb.append("TotalStorageCapacityInMegaBytes: ").append(getTotalStorageCapacityInMegaBytes());
         sb.append("}");
         return sb.toString();
     }
@@ -4224,6 +4272,11 @@ public class Cluster implements Serializable, Cloneable {
             return false;
         if (other.getClusterNamespaceArn() != null && other.getClusterNamespaceArn().equals(this.getClusterNamespaceArn()) == false)
             return false;
+        if (other.getTotalStorageCapacityInMegaBytes() == null ^ this.getTotalStorageCapacityInMegaBytes() == null)
+            return false;
+        if (other.getTotalStorageCapacityInMegaBytes() != null
+                && other.getTotalStorageCapacityInMegaBytes().equals(this.getTotalStorageCapacityInMegaBytes()) == false)
+            return false;
         return true;
     }
 
@@ -4280,6 +4333,7 @@ public class Cluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getResizeInfo() == null) ? 0 : getResizeInfo().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZoneRelocationStatus() == null) ? 0 : getAvailabilityZoneRelocationStatus().hashCode());
         hashCode = prime * hashCode + ((getClusterNamespaceArn() == null) ? 0 : getClusterNamespaceArn().hashCode());
+        hashCode = prime * hashCode + ((getTotalStorageCapacityInMegaBytes() == null) ? 0 : getTotalStorageCapacityInMegaBytes().hashCode());
         return hashCode;
     }
 

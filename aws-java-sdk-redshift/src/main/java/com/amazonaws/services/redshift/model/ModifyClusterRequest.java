@@ -193,6 +193,9 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * fall outside of the new retention period will be immediately deleted.
      * </p>
      * <p>
+     * You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.
+     * </p>
+     * <p>
      * Default: Uses existing setting.
      * </p>
      * <p>
@@ -1471,6 +1474,9 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * fall outside of the new retention period will be immediately deleted.
      * </p>
      * <p>
+     * You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.
+     * </p>
+     * <p>
      * Default: Uses existing setting.
      * </p>
      * <p>
@@ -1484,6 +1490,10 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        If you decrease the automated snapshot retention period from its current value, existing automated
      *        snapshots that fall outside of the new retention period will be immediately deleted.
+     *        </p>
+     *        <p>
+     *        You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35
+     *        days.
      *        </p>
      *        <p>
      *        Default: Uses existing setting.
@@ -1507,6 +1517,9 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * fall outside of the new retention period will be immediately deleted.
      * </p>
      * <p>
+     * You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.
+     * </p>
+     * <p>
      * Default: Uses existing setting.
      * </p>
      * <p>
@@ -1519,6 +1532,10 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <p>
      *         If you decrease the automated snapshot retention period from its current value, existing automated
      *         snapshots that fall outside of the new retention period will be immediately deleted.
+     *         </p>
+     *         <p>
+     *         You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35
+     *         days.
      *         </p>
      *         <p>
      *         Default: Uses existing setting.
@@ -1542,6 +1559,9 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * fall outside of the new retention period will be immediately deleted.
      * </p>
      * <p>
+     * You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.
+     * </p>
+     * <p>
      * Default: Uses existing setting.
      * </p>
      * <p>
@@ -1555,6 +1575,10 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        If you decrease the automated snapshot retention period from its current value, existing automated
      *        snapshots that fall outside of the new retention period will be immediately deleted.
+     *        </p>
+     *        <p>
+     *        You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35
+     *        days.
      *        </p>
      *        <p>
      *        Default: Uses existing setting.

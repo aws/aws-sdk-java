@@ -21,6 +21,8 @@ import com.amazonaws.services.s3.model.GetBucketOwnershipControlsResult;
 import com.amazonaws.services.s3.model.SetBucketOwnershipControlsRequest;
 import com.amazonaws.services.s3.model.SetBucketOwnershipControlsResult;
 import com.amazonaws.services.s3.model.SetRequestPaymentConfigurationRequest;
+import com.amazonaws.services.s3.model.WriteGetObjectResponseRequest;
+import com.amazonaws.services.s3.model.WriteGetObjectResponseResult;
 import com.amazonaws.services.s3.model.ownership.OwnershipControls;
 import java.io.File;
 import java.io.InputStream;
@@ -1393,6 +1395,11 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
 
     @Override
     public GetObjectRetentionResult getObjectRetention(GetObjectRetentionRequest getObjectRetentionRequest) {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public WriteGetObjectResponseResult writeGetObjectResponse(WriteGetObjectResponseRequest writeGetObjectResponseRequest) {
         throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
     }
 

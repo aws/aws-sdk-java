@@ -1,3 +1,28 @@
+# __1.11.978__ __2021-03-18__
+## __AWS Kinesis Video__
+  - ### Features
+    - Upgrade Netty to `4.1.60.Final`
+
+## __AWS S3 Control__
+  - ### Features
+    - S3 Object Lambda is a new S3 feature that enables users to apply their own custom code to process the output of a standard S3 GET request by automatically invoking a Lambda function with a GET request
+
+## __AWS SecurityHub__
+  - ### Features
+    - New object for separate provider and customer values. New objects track S3 Public Access Block configuration and identify sensitive data. BatchImportFinding requests are limited to 100 findings.
+
+## __Amazon Redshift__
+  - ### Features
+    - Add new fields for additional information about VPC endpoint for clusters with reallocation enabled, and a new field for total storage capacity for all clusters.
+
+## __Amazon Simple Storage Service__
+  - ### Features
+    - S3 Object Lambda is a new S3 feature that enables users to apply their own custom code to process the output of a standard S3 GET request by automatically invoking a Lambda function with a GET request
+
+## __Auto Scaling__
+  - ### Features
+    - Amazon EC2 Auto Scaling Instance Refresh now supports phased deployments.
+
 # __1.11.977__ __2021-03-17__
 ## __AWS Batch__
   - ### Features

@@ -57,6 +57,12 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private AwsS3BucketServerSideEncryptionConfiguration serverSideEncryptionConfiguration;
+    /**
+     * <p>
+     * Provides information about the Amazon S3 Public Access Block configuration for the S3 bucket.
+     * </p>
+     */
+    private AwsS3AccountPublicAccessBlockDetails publicAccessBlockConfiguration;
 
     /**
      * <p>
@@ -246,6 +252,46 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * Provides information about the Amazon S3 Public Access Block configuration for the S3 bucket.
+     * </p>
+     * 
+     * @param publicAccessBlockConfiguration
+     *        Provides information about the Amazon S3 Public Access Block configuration for the S3 bucket.
+     */
+
+    public void setPublicAccessBlockConfiguration(AwsS3AccountPublicAccessBlockDetails publicAccessBlockConfiguration) {
+        this.publicAccessBlockConfiguration = publicAccessBlockConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides information about the Amazon S3 Public Access Block configuration for the S3 bucket.
+     * </p>
+     * 
+     * @return Provides information about the Amazon S3 Public Access Block configuration for the S3 bucket.
+     */
+
+    public AwsS3AccountPublicAccessBlockDetails getPublicAccessBlockConfiguration() {
+        return this.publicAccessBlockConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides information about the Amazon S3 Public Access Block configuration for the S3 bucket.
+     * </p>
+     * 
+     * @param publicAccessBlockConfiguration
+     *        Provides information about the Amazon S3 Public Access Block configuration for the S3 bucket.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsS3BucketDetails withPublicAccessBlockConfiguration(AwsS3AccountPublicAccessBlockDetails publicAccessBlockConfiguration) {
+        setPublicAccessBlockConfiguration(publicAccessBlockConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -264,7 +310,9 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getServerSideEncryptionConfiguration() != null)
-            sb.append("ServerSideEncryptionConfiguration: ").append(getServerSideEncryptionConfiguration());
+            sb.append("ServerSideEncryptionConfiguration: ").append(getServerSideEncryptionConfiguration()).append(",");
+        if (getPublicAccessBlockConfiguration() != null)
+            sb.append("PublicAccessBlockConfiguration: ").append(getPublicAccessBlockConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -296,6 +344,11 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
         if (other.getServerSideEncryptionConfiguration() != null
                 && other.getServerSideEncryptionConfiguration().equals(this.getServerSideEncryptionConfiguration()) == false)
             return false;
+        if (other.getPublicAccessBlockConfiguration() == null ^ this.getPublicAccessBlockConfiguration() == null)
+            return false;
+        if (other.getPublicAccessBlockConfiguration() != null
+                && other.getPublicAccessBlockConfiguration().equals(this.getPublicAccessBlockConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -308,6 +361,7 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getOwnerName() == null) ? 0 : getOwnerName().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getServerSideEncryptionConfiguration() == null) ? 0 : getServerSideEncryptionConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getPublicAccessBlockConfiguration() == null) ? 0 : getPublicAccessBlockConfiguration().hashCode());
         return hashCode;
     }
 

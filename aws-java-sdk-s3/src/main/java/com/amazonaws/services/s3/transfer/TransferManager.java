@@ -80,6 +80,7 @@ import com.amazonaws.util.VersionInfoUtils;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedList;
@@ -632,6 +633,8 @@ public class TransferManager {
             final PersistableUpload persistableUpload) throws AmazonServiceException,
             AmazonClientException {
 
+        assertNotObjectLambdaArn(putObjectRequest.getBucketName(), "upload");
+
         appendSingleObjectUserAgent(putObjectRequest);
 
         String multipartUploadId = persistableUpload != null ? persistableUpload
@@ -1007,6 +1010,8 @@ public class TransferManager {
                                 final boolean resumeExistingDownload,
                                 final long timeoutMillis,
                                 final PersistableDownload persistableDownload) {
+        assertNotObjectLambdaArn(getObjectRequest.getBucketName(), "download");
+
         long lastModifiedTimeRecordedDuringPause = 0L;
         Integer lastFullyDownloadedPartNumber = null;
         Long lastFullyDownloadedFilePosition = null;
@@ -1037,6 +1042,8 @@ public class TransferManager {
             final long lastModifiedTimeRecordedDuringPause,
             final boolean resumeOnRetry,
             final Long lastFullyDownloadedPartPosition) {
+
+        assertNotObjectLambdaArn(getObjectRequest.getBucketName(), "download");
 
         PreparedDownloadContext prepared = prepareDownload(getObjectRequest,
                                                            file,
@@ -1205,6 +1212,7 @@ public class TransferManager {
      *         listen for progress notifications, and otherwise manage the download.
      */
     public PresignedUrlDownload download(final PresignedUrlDownloadRequest request, final File destFile) {
+
         return download(request, destFile, new PresignedUrlDownloadConfig());
     }
 
@@ -1236,6 +1244,8 @@ public class TransferManager {
                                "A valid file must be provided to download into");
         assertParameterNotNull(downloadContext,
                                "A valid PresignedUrlDownloadContext must be provided");
+
+        assertNotObjectLambdaUrl(request.getPresignedUrl(), "download");
 
         appendSingleObjectUserAgent(request);
         String description = "Downloading from the given presigned url: " + request.getPresignedUrl();
@@ -1369,6 +1379,8 @@ public class TransferManager {
      */
     public MultipleFileDownload downloadDirectory(String bucketName, String keyPrefix, File destinationDirectory,
                                                   boolean resumeOnRetry, KeyFilter filter) {
+        assertNotObjectLambdaArn(bucketName, "downloadDirectory");
+
         if ( keyPrefix == null )
             keyPrefix = "";
         if ( filter == null ) {
@@ -1657,6 +1669,8 @@ public class TransferManager {
             throw new IllegalArgumentException("Must provide a directory to upload");
         }
 
+        assertNotObjectLambdaArn(bucketName, "uploadDirectory");
+
         List<File> files = new LinkedList<File>();
         listFiles(directory, files, includeSubdirectories);
 
@@ -1826,6 +1840,8 @@ public class TransferManager {
             throw new IllegalArgumentException("Must provide a common base directory for uploaded files");
         }
 
+        assertNotObjectLambdaArn(bucketName, "uploadFileList");
+
         if (virtualDirectoryKeyPrefix == null || virtualDirectoryKeyPrefix.length() == 0) {
             virtualDirectoryKeyPrefix = "";
         } else if ( !virtualDirectoryKeyPrefix.endsWith("/") ) {
@@ -1957,6 +1973,8 @@ public class TransferManager {
      */
     public void abortMultipartUploads(String bucketName, Date date)
             throws AmazonServiceException, AmazonClientException {
+        assertNotObjectLambdaArn(bucketName, "abortMultipartUploads");
+
         MultipartUploadListing uploadListing = s3.listMultipartUploads(appendSingleObjectUserAgent(
                 new ListMultipartUploadsRequest(bucketName)));
         do {
@@ -2243,6 +2261,8 @@ public class TransferManager {
                      final TransferStateChangeListener stateChangeListener) throws
                                                                             AmazonServiceException,
                                                                             AmazonClientException {
+        assertNotObjectLambdaArn(copyObjectRequest.getDestinationBucketName(), "copy");
+        assertNotObjectLambdaArn(copyObjectRequest.getSourceBucketName(), "copy");
 
         appendSingleObjectUserAgent(copyObjectRequest);
 
@@ -2309,6 +2329,9 @@ public class TransferManager {
     public Upload resumeUpload(PersistableUpload persistableUpload) {
         assertParameterNotNull(persistableUpload,
                 "PauseUpload is mandatory to resume a upload.");
+
+        assertNotObjectLambdaArn(persistableUpload.getBucketName(), "resumeUpload");
+
         configuration.setMinimumUploadPartSize(persistableUpload.getPartSize());
         configuration.setMultipartUploadThreshold(persistableUpload
                 .getMutlipartUploadThreshold());
@@ -2338,6 +2361,8 @@ public class TransferManager {
     public Download resumeDownload(PersistableDownload persistableDownload) {
         assertParameterNotNull(persistableDownload,
                 "PausedDownload is mandatory to resume a download.");
+        assertNotObjectLambdaArn(persistableDownload.getBucketName(), "resumeDownload");
+
         GetObjectRequest request = new GetObjectRequest(
                 persistableDownload.getBucketName(), persistableDownload.getKey(),
                 persistableDownload.getVersionId());
@@ -2389,5 +2414,37 @@ public class TransferManager {
             throw new UnsupportedOperationException(
                     "TransferManager is immutable when created with the builder.");
         }
+    }
+
+    private static void assertNotObjectLambdaArn(String arn, String operation) {
+        if (isObjectLambdaArn(arn)) {
+            String error = String.format("%s does not support S3 Object Lambda resources", operation);
+            throw new IllegalArgumentException(error);
+        }
+    }
+
+    private static void assertNotObjectLambdaUrl(URL url, String operation) {
+        if (isObjectLambdaHost(url)) {
+            String error = String.format("%s does not support S3 Object Lambda resources", operation);
+            throw new IllegalArgumentException(error);
+        }
+    }
+
+    private static boolean isObjectLambdaArn(String arn) {
+        if (arn == null) {
+            return false;
+        }
+
+        return arn.startsWith("arn:") && arn.contains(":s3-object-lambda");
+    }
+
+    private static boolean isObjectLambdaHost(URL url) {
+        String host = url.getHost();
+
+        if (host == null) {
+            return false;
+        }
+
+        return host.contains(".s3-object-lambda.");
     }
 }

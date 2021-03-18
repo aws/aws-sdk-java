@@ -258,4 +258,72 @@ public interface Headers {
     String OBJECT_LOCK_ENABLED_FOR_BUCKET = "x-amz-bucket-object-lock-enabled";
 
     String BYPASS_GOVERNANCE_RETENTION = "x-amz-bypass-governance-retention";
+
+    String REQUEST_ROUTE = "x-amz-request-route";
+
+    String REQUEST_TOKEN = "x-amz-request-token";
+
+    String FWD_STATUS_CODE = "x-amz-fwd-status";
+
+    String FWD_ERROR_CODE = "x-amz-fwd-error-code";
+
+    String FWD_ERROR_MESSAGE = "x-amz-fwd-error-message";
+
+    String FWD_ACCEPT_RANGES = "x-amz-fwd-header-accept-ranges";
+
+    String FWD_CACHE_CONTROL = "x-amz-fwd-header-Cache-Control";
+
+    String FWD_CONTENT_DISPOSITION = "x-amz-fwd-header-Content-Disposition";
+
+    String FWD_CONTENT_ENCODING = "x-amz-fwd-header-Content-Encoding";
+
+    String FWD_CONTENT_LANGUAGE = "x-amz-fwd-header-Content-Language";
+
+    String FWD_CONTENT_RANGE = "x-amz-fwd-header-Content-Range";
+
+    String FWD_CONTENT_TYPE = "x-amz-fwd-header-Content-Type";
+
+    String FWD_DELETE_MARKER = "x-amz-fwd-header-x-amz-delete-marker";
+
+    String FWD_ETAG = "x-amz-fwd-header-ETag";
+
+    String FWD_EXPIRES = "x-amz-fwd-header-Expires";
+
+    String FWD_EXPIRATION = "x-amz-fwd-header-x-amz-expiration";
+
+    String FWD_LAST_MODIFIED = "x-amz-fwd-header-Last-Modified";
+
+    String FWD_MISSING_META = "x-amz-fwd-header-x-amz-missing-meta";
+
+    String FWD_OBJECT_LOCK_MODE = "x-amz-fwd-header-x-amz-object-lock-mode";
+
+    String FWD_OBJECT_LOCK_LEGAL_HOLD = "x-amz-fwd-header-x-amz-object-lock-legal-hold";
+
+    String FWD_OBJECT_LOCK_RETAIN_UNTIL_DATE = "x-amz-fwd-header-x-amz-object-lock-retain-until-date";
+
+    String FWD_PARTS_COUNT = "x-amz-fwd-header-x-amz-mp-parts-count";
+
+    String FWD_REPLICATION_STATUS = "x-amz-fwd-header-x-amz-replication-status";
+
+    String FWD_REQUEST_CHARGED = "x-amz-fwd-header-x-amz-request-charged";
+
+    String FWD_RESTORE = "x-amz-fwd-header-x-amz-restore";
+
+    String FWD_SERVER = "-amz-fwd-header-Server";
+
+    String FWD_SERVER_SIDE_ENCRYPTION = "x-amz-fwd-header-x-amz-server-side-encryption";
+
+    String FWD_SSE_CUSTOMER_ALGORITHM = "x-amz-fwd-header-x-amz-server-side-encryption-customer-algorithm";
+
+    String FWD_SSE_KMS_KEY_ID = "x-amz-fwd-header-x-amz-server-side-encryption-aws-kms-key-id";
+
+    String FWD_SSE_CUSTOMER_KEY_MD5 = "x-amz-fwd-header-x-amz-server-side-encryption-customer-key-MD5";
+
+    String FWD_STORAGE_CLASS = "x-amz-fwd-header-x-amz-storage-class";
+
+    String FWD_TAG_COUNT = "x-amz-fwd-header-x-amz-tagging-count";
+
+    String FWD_VERSION_ID = "x-amz-fwd-header-x-amz-version-id";
+
+    String FWD_SSE_BUCKET_KEY_ENABLED = "x-amz-fwd-header-x-amz-server-side-encryption-bucket-key-enabled";
 }

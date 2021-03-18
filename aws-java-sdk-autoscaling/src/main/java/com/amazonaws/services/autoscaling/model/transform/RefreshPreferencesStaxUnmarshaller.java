@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.autoscaling.model.transform;
 
+import java.util.ArrayList;
+
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -50,6 +52,21 @@ public class RefreshPreferencesStaxUnmarshaller implements Unmarshaller<RefreshP
 
                 if (context.testExpression("InstanceWarmup", targetDepth)) {
                     refreshPreferences.setInstanceWarmup(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("CheckpointPercentages", targetDepth)) {
+                    refreshPreferences.withCheckpointPercentages(new ArrayList<Integer>());
+                    continue;
+                }
+
+                if (context.testExpression("CheckpointPercentages/member", targetDepth)) {
+                    refreshPreferences.withCheckpointPercentages(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("CheckpointDelay", targetDepth)) {
+                    refreshPreferences.setCheckpointDelay(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

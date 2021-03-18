@@ -95,6 +95,8 @@ import com.amazonaws.services.s3.internal.RegionalEndpointsOptionResolver;
 import com.amazonaws.services.s3.internal.ResponseHeaderHandlerChain;
 import com.amazonaws.services.s3.internal.S3AbortableInputStream;
 import com.amazonaws.services.s3.internal.S3AccessPointBuilder;
+import com.amazonaws.services.s3.internal.S3ObjectLambdaOperationEndpointBuilder;
+import com.amazonaws.services.s3.internal.S3ObjectLambdaEndpointBuilder;
 import com.amazonaws.services.s3.internal.S3ErrorResponseHandler;
 import com.amazonaws.services.s3.internal.S3MetadataResponseHandler;
 import com.amazonaws.services.s3.internal.S3ObjectResponseHandler;
@@ -313,6 +315,8 @@ import com.amazonaws.services.s3.model.UploadObjectRequest;
 import com.amazonaws.services.s3.model.UploadPartRequest;
 import com.amazonaws.services.s3.model.UploadPartResult;
 import com.amazonaws.services.s3.model.VersionListing;
+import com.amazonaws.services.s3.model.WriteGetObjectResponseRequest;
+import com.amazonaws.services.s3.model.WriteGetObjectResponseResult;
 import com.amazonaws.services.s3.model.analytics.AnalyticsConfiguration;
 import com.amazonaws.services.s3.model.intelligenttiering.IntelligentTieringConfiguration;
 import com.amazonaws.services.s3.model.inventory.InventoryConfiguration;
@@ -353,6 +357,7 @@ import com.amazonaws.util.RuntimeHttpUtils;
 import com.amazonaws.util.SdkHttpUtils;
 import com.amazonaws.util.ServiceClientHolderInputStream;
 import com.amazonaws.util.StringUtils;
+import com.amazonaws.util.UriResourcePathUtils;
 import com.amazonaws.util.ValidationUtils;
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -422,6 +427,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     private static final String SERVICE_ID = "S3";
     private static final String AWS_PARTITION_KEY = "aws";
     private static final String S3_OUTPOSTS_NAME = "s3-outposts";
+    private static final String S3_OBJECT_LAMBDAS_NAME = "s3-object-lambda";
 
     protected static final AmazonS3ClientConfigurationFactory configFactory
             = new AmazonS3ClientConfigurationFactory();
@@ -1581,9 +1587,16 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         } else {
             // Ensures the data received from S3 has the same length as the
             // expected content-length
-            is = new LengthCheckInputStream(is,
-                                            s3Object.getObjectMetadata().getContentLength(), // expected length
-                                            INCLUDE_SKIPPED_BYTES); // bytes received from S3 are all included even if skipped
+
+            // Note: The GetObject response many not have a content-length if
+            // it was uploaded using chunked encoding, e.g.
+            // using WriteGetObjectResponse
+            Object contentLength = s3Object.getObjectMetadata().getRawMetadataValue(Headers.CONTENT_LENGTH);
+            if (contentLength != null) {
+                is = new LengthCheckInputStream(is,
+                        s3Object.getObjectMetadata().getContentLength(), // expected length
+                        INCLUDE_SKIPPED_BYTES); // bytes received from S3 are all included even if skipped
+            }
         }
 
         S3AbortableInputStream abortableInputStream =
@@ -3343,6 +3356,90 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     @Override
+    public WriteGetObjectResponseResult writeGetObjectResponse(WriteGetObjectResponseRequest writeGetObjectResponseRequest) {
+        writeGetObjectResponseRequest = beforeClientExecution(writeGetObjectResponseRequest);
+
+        rejectNull(writeGetObjectResponseRequest, "The request parameter must be specified");
+
+        Request<WriteGetObjectResponseRequest> request = createRequest(null, null, writeGetObjectResponseRequest, HttpMethodName.POST);
+        request.setResourcePath("/WriteGetObjectResponse");
+        request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "WriteGetObjectResponse");
+        request.addHandlerContext(HandlerContextKey.REQUIRES_LENGTH, false);
+        request.addHandlerContext(HandlerContextKey.HAS_STREAMING_INPUT, true);
+
+        // Never sign the body. This operation is v4-unsigned-body
+        request.addHandlerContext(S3HandlerContextKeys.IS_CHUNKED_ENCODING_DISABLED, true);
+        request.addHandlerContext(S3HandlerContextKeys.IS_PAYLOAD_SIGNING_ENABLED, false);
+
+        addHeaderIfNotNull(request, Headers.REQUEST_ROUTE, writeGetObjectResponseRequest.getRequestRoute());
+        addHeaderIfNotNull(request, Headers.REQUEST_TOKEN, writeGetObjectResponseRequest.getRequestToken());
+        addIntegerHeaderIfNotNull(request, Headers.FWD_STATUS_CODE, writeGetObjectResponseRequest.getStatusCode());
+        addHeaderIfNotNull(request, Headers.FWD_ERROR_CODE, writeGetObjectResponseRequest.getErrorCode());
+        addHeaderIfNotNull(request, Headers.FWD_ERROR_MESSAGE, writeGetObjectResponseRequest.getErrorMessage());
+        addHeaderIfNotNull(request, Headers.FWD_ACCEPT_RANGES, writeGetObjectResponseRequest.getAcceptRanges());
+        addHeaderIfNotNull(request, Headers.FWD_CACHE_CONTROL, writeGetObjectResponseRequest.getCacheControl());
+        addHeaderIfNotNull(request, Headers.FWD_CONTENT_DISPOSITION, writeGetObjectResponseRequest.getContentDisposition());
+        addHeaderIfNotNull(request, Headers.FWD_CONTENT_ENCODING, writeGetObjectResponseRequest.getContentEncoding());
+        addHeaderIfNotNull(request, Headers.FWD_CONTENT_LANGUAGE, writeGetObjectResponseRequest.getContentLanguage());
+        addHeaderIfNotNull(request, Headers.FWD_CONTENT_RANGE, writeGetObjectResponseRequest.getContentRange());
+        addHeaderIfNotNull(request, Headers.FWD_CONTENT_TYPE, writeGetObjectResponseRequest.getContentType());
+        addHeaderIfNotNull(request, Headers.FWD_DELETE_MARKER, writeGetObjectResponseRequest.getDeleteMarker());
+        addHeaderIfNotNull(request, Headers.FWD_ETAG, writeGetObjectResponseRequest.getETag());
+        addDateHeader(request, Headers.FWD_EXPIRES, writeGetObjectResponseRequest.getExpires());
+        addHeaderIfNotNull(request, Headers.FWD_EXPIRATION, writeGetObjectResponseRequest.getExpiration());
+        addDateHeader(request, Headers.FWD_LAST_MODIFIED, writeGetObjectResponseRequest.getLastModified());
+        addIntegerHeaderIfNotNull(request, Headers.FWD_MISSING_META, writeGetObjectResponseRequest.getMissingMeta());
+        addHeaderIfNotNull(request, Headers.FWD_OBJECT_LOCK_MODE, writeGetObjectResponseRequest.getObjectLockMode());
+        addHeaderIfNotNull(request, Headers.FWD_OBJECT_LOCK_LEGAL_HOLD, writeGetObjectResponseRequest.getObjectLockLegalHoldStatus());
+        addDateHeader(request, Headers.FWD_OBJECT_LOCK_RETAIN_UNTIL_DATE, writeGetObjectResponseRequest.getObjectLockRetainUntilDate());
+        addIntegerHeaderIfNotNull(request, Headers.FWD_PARTS_COUNT, writeGetObjectResponseRequest.getPartsCount());
+        addHeaderIfNotNull(request, Headers.FWD_REPLICATION_STATUS, writeGetObjectResponseRequest.getReplicationStatus());
+        addHeaderIfNotNull(request, Headers.FWD_REQUEST_CHARGED, writeGetObjectResponseRequest.getRequestCharged());
+        addHeaderIfNotNull(request, Headers.FWD_RESTORE, writeGetObjectResponseRequest.getRestore());
+        addHeaderIfNotNull(request, Headers.FWD_SERVER_SIDE_ENCRYPTION, writeGetObjectResponseRequest.getServerSideEncryption());
+        addHeaderIfNotNull(request, Headers.FWD_SSE_CUSTOMER_ALGORITHM, writeGetObjectResponseRequest.getSSECustomerAlgorithm());
+        addHeaderIfNotNull(request, Headers.FWD_SSE_KMS_KEY_ID, writeGetObjectResponseRequest.getSSEKMSKeyId());
+        addHeaderIfNotNull(request, Headers.FWD_SSE_CUSTOMER_KEY_MD5, writeGetObjectResponseRequest.getSSECustomerKeyMD5());
+        addHeaderIfNotNull(request, Headers.FWD_STORAGE_CLASS, writeGetObjectResponseRequest.getStorageClass());
+        addIntegerHeaderIfNotNull(request, Headers.FWD_TAG_COUNT, writeGetObjectResponseRequest.getTagCount());
+        addHeaderIfNotNull(request, Headers.FWD_VERSION_ID, writeGetObjectResponseRequest.getVersionId());
+        if (writeGetObjectResponseRequest.getBucketKeyEnabled() != null) {
+            request.addHeader(Headers.FWD_SSE_BUCKET_KEY_ENABLED, writeGetObjectResponseRequest.getBucketKeyEnabled().toString());
+        }
+
+        ObjectMetadata metadata = writeGetObjectResponseRequest.getMetadata();
+        if (metadata == null) {
+            metadata = new ObjectMetadata();
+        }
+
+        if (writeGetObjectResponseRequest.getContentLength() != null) {
+            metadata.setContentLength(writeGetObjectResponseRequest.getContentLength());
+        }
+
+        InputStream originalIs = writeGetObjectResponseRequest.getInputStream();
+        File originalFile = writeGetObjectResponseRequest.getFile();
+        InputStream requestInputStream = null;
+        try {
+            requestInputStream = getInputStream(
+                    writeGetObjectResponseRequest.getInputStream(),
+                    writeGetObjectResponseRequest.getFile(),
+                    metadata,
+                    request,
+                    false,
+                    true
+            );
+
+            request.setContent(requestInputStream);
+
+            populateRequestMetadata(request, metadata);
+
+            return invoke(request, new Unmarshallers.WriteGetObjectResponseResultUnmarshaller(), null, null);
+        } finally {
+            cleanupDataSource(writeGetObjectResponseRequest, originalFile, originalIs, requestInputStream, log);
+        }
+    }
+
+    @Override
     public URL generatePresignedUrl(String bucketName, String key, Date expiration)
             throws SdkClientException {
         return generatePresignedUrl(bucketName, key, expiration, HttpMethod.GET);
@@ -4589,6 +4686,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         }
     }
 
+    private static void addIntegerHeaderIfNotNull(Request<?> request, String header, Integer value) {
+        if (value != null) {
+            request.addHeader(header, Integer.toString(value));
+        }
+    }
+
     /**
      * Adds the specified parameter to the specified request, if the parameter
      * value is not null.
@@ -4850,7 +4953,33 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
             if (isOutpostAccessPointArn(bucketName)) {
                 request.addHandlerContext(HandlerContextKey.SIGNING_NAME, S3_OUTPOSTS_NAME);
+            } else if (isObjectLambdasArn(bucketName)) {
+                request.addHandlerContext(HandlerContextKey.SIGNING_NAME, S3_OBJECT_LAMBDAS_NAME);
             }
+            return request;
+        } else if (isObjectLambdasRequest(originalRequest)) {
+            validateConfigurationForObjectLambdaOperation();
+
+            com.amazonaws.regions.Region region = RegionUtils.getRegion(getRegionName());
+            endpoint = getEndpointForObjectLambdas(region.getDomain(), region.getName());
+
+            resolveRequestEndpoint(request, null, null, endpoint);
+
+            if (originalRequest instanceof WriteGetObjectResponseRequest
+                && !clientConfiguration.isDisableHostPrefixInjection()) {
+
+                WriteGetObjectResponseRequest writeGetObjectResponseRequest = (WriteGetObjectResponseRequest) originalRequest;
+
+                rejectNull(writeGetObjectResponseRequest.getRequestRoute(), "requestRoute must not be null");
+
+                String requestRoute = writeGetObjectResponseRequest.getRequestRoute() + ".";
+                URI newEndpoint = UriResourcePathUtils.updateUriHost(request.getEndpoint(), requestRoute);
+
+                resolveEndpointIdentity(request, null, null, newEndpoint);
+            }
+
+            request.addHandlerContext(HandlerContextKey.SIGNING_NAME, S3_OBJECT_LAMBDAS_NAME);
+
             return request;
         } else {
             signingRegion = getSigningRegion();
@@ -4913,8 +5042,23 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                                               .withDomain(domain)
                                               .toURI();
         }
+
         com.amazonaws.regions.Region clientRegion = RegionUtils.getRegion(getRegionName());
         boolean fipsRegionProvided = isFipsRegionProvided(clientRegion.getName(), s3Resource.getRegion(), useArnRegion());
+
+        if (parentS3Resource != null && S3ResourceType.OBJECT_LAMBDAS.toString().equals(parentS3Resource.getType())) {
+            return S3ObjectLambdaEndpointBuilder.create()
+                    .withEndpointOverride(endpointOverride)
+                    .withAccessPointName(s3Resource.getAccessPointName())
+                    .withAccountId(s3Resource.getAccountId())
+                    .withRegion(trimmedRegion)
+                    .withProtocol(protocol)
+                    .withDomain(domain)
+                    .withFipsEnabled(fipsRegionProvided)
+                    .withDualstackEnabled(clientOptions.isDualstackEnabled())
+                    .toURI();
+        }
+
         return S3AccessPointBuilder.create()
                                    .withEndpointOverride(endpointOverride)
                                    .withAccessPointName(s3Resource.getAccessPointName())
@@ -4925,6 +5069,24 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                                    .withDualstackEnabled(clientOptions.isDualstackEnabled())
                                    .withFipsEnabled(fipsRegionProvided)
                                    .toURI();
+    }
+
+    private URI getEndpointForObjectLambdas(String domain,
+                                            String trimmedRegion) {
+        if (isEndpointOverridden()) {
+            return getEndpoint();
+        }
+
+        String protocol = null;
+        if (clientConfiguration.getProtocol() != null) {
+            protocol = clientConfiguration.getProtocol().toString();
+        }
+
+        return S3ObjectLambdaOperationEndpointBuilder.create()
+                .withProtocol(protocol)
+                .withDomain(domain)
+                .withRegion(trimmedRegion)
+                .toURI();
     }
 
     private void validateConfiguration(S3Resource s3Resource) {
@@ -4944,6 +5106,16 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             throw new IllegalArgumentException(String.format("An ARN of type %s cannot be passed as a bucket parameter to an S3 "
                                                + "operation if the S3 client has been configured with path style "
                                                + "addressing enabled.", type));
+        }
+    }
+
+    private void validateConfigurationForObjectLambdaOperation() {
+        if (clientOptions.isDualstackEnabled()) {
+            throw new IllegalArgumentException("S3 Object Lambda does not support dualstack endpoints");
+        }
+
+        if (clientOptions.isAccelerateModeEnabled()) {
+            throw new IllegalArgumentException("S3 Object Lambda does not support accelerate endpoints");
         }
     }
 
@@ -5005,6 +5177,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      * the correct path.
      */
     private void resolveAccessPointEndpoint(Request<?> request, String bucketName, String key, URI endpoint) {
+        resolveEndpointIdentity(request, bucketName, key, endpoint);
+    }
+
+    private void resolveEndpointIdentity(Request<?> request, String bucketName, String key, URI endpoint) {
         ServiceEndpointBuilder builder = new IdentityEndpointBuilder(endpoint);
         buildEndpointResolver(builder, bucketName, key).resolveRequestEndpoint(request);
     }
@@ -5325,7 +5501,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     private boolean isAccessPointArn(String s) {
-        return s != null && s.startsWith("arn:") && (isS3AccessPointArn(s) || isOutpostAccessPointArn(s));
+        return s != null
+                && s.startsWith("arn:")
+                && (isS3AccessPointArn(s) || isOutpostAccessPointArn(s) || isObjectLambdasArn(s));
     }
 
     private boolean isS3AccessPointArn(String s) {
@@ -5334,6 +5512,14 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
     private boolean isOutpostAccessPointArn(String s) {
         return s.contains(":s3-outposts");
+    }
+
+    private boolean isObjectLambdasArn(String s) {
+        return s.contains(":s3-object-lambda");
+    }
+
+    private boolean isObjectLambdasRequest(AmazonWebServiceRequest request) {
+        return request instanceof WriteGetObjectResponseRequest;
     }
 
     private boolean isArn(String s) {

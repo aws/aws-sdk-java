@@ -24,6 +24,7 @@ import com.amazonaws.arn.ArnConverter;
 import com.amazonaws.arn.ArnResource;
 import com.amazonaws.services.s3.internal.IntermediateOutpostResource;
 import com.amazonaws.services.s3.internal.OutpostResourceType;
+import com.amazonaws.services.s3.internal.S3ObjectLambdasResource;
 import com.amazonaws.services.s3.internal.S3OutpostResource;
 
 /**
@@ -35,6 +36,7 @@ import com.amazonaws.services.s3.internal.S3OutpostResource;
 public class S3ArnConverter implements ArnConverter<S3Resource> {
     private static final S3ArnConverter INSTANCE = new S3ArnConverter();
     private static final Pattern OBJECT_AP_PATTERN = Pattern.compile("^([0-9a-zA-Z-]+)/object/(.*)$");
+    private static final String OBJECT_LAMBDAS_SERVICE = "s3-object-lambda";
 
     private S3ArnConverter() {
     }
@@ -155,12 +157,30 @@ public class S3ArnConverter implements ArnConverter<S3Resource> {
                                    .build();
         }
 
+        if (OBJECT_LAMBDAS_SERVICE.equals(arn.getService())) {
+            return parseS3ObjectLambdasAccessPointArn(arn);
+        }
+
         return S3AccessPointResource.builder()
                                     .withPartition(arn.getPartition())
                                     .withRegion(arn.getRegion())
                                     .withAccountId(arn.getAccountId())
                                     .withAccessPointName(arn.getResource().getResource())
                                     .build();
+    }
+
+    private S3Resource parseS3ObjectLambdasAccessPointArn(Arn arn) {
+        S3ObjectLambdasResource objectLambdasResource = S3ObjectLambdasResource.builder()
+                .withAccountId(arn.getAccountId())
+                .withRegion(arn.getRegion())
+                .withPartition(arn.getPartition())
+                .withAccessPointName(arn.getResource().getResource())
+                .build();
+
+        return S3AccessPointResource.builder()
+                .withAccessPointName(objectLambdasResource.getAccessPointName())
+                .withParentS3Resource(objectLambdasResource)
+                .build();
     }
 
     private static boolean isV1Arn(Arn arn) {

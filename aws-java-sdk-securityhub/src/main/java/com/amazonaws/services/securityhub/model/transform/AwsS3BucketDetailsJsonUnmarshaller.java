@@ -65,6 +65,11 @@ public class AwsS3BucketDetailsJsonUnmarshaller implements Unmarshaller<AwsS3Buc
                     awsS3BucketDetails.setServerSideEncryptionConfiguration(AwsS3BucketServerSideEncryptionConfigurationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
+                if (context.testExpression("PublicAccessBlockConfiguration", targetDepth)) {
+                    context.nextToken();
+                    awsS3BucketDetails
+                            .setPublicAccessBlockConfiguration(AwsS3AccountPublicAccessBlockDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

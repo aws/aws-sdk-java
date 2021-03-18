@@ -349,7 +349,7 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing Auto Scaling
-     * Instances Based on an Instance Refresh</a>.
+     * instances based on an instance refresh</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param cancelInstanceRefreshRequest
@@ -368,7 +368,7 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing Auto Scaling
-     * Instances Based on an Instance Refresh</a>.
+     * instances based on an instance refresh</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param cancelInstanceRefreshRequest
@@ -1303,7 +1303,7 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing Auto Scaling
-     * Instances Based on an Instance Refresh</a>.
+     * instances based on an instance refresh</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param describeInstanceRefreshesRequest
@@ -1360,7 +1360,7 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing Auto Scaling
-     * Instances Based on an Instance Refresh</a>.
+     * instances based on an instance refresh</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param describeInstanceRefreshesRequest
@@ -3014,7 +3014,7 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing Auto Scaling
-     * Instances Based on an Instance Refresh</a>.
+     * instances based on an instance refresh</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param startInstanceRefreshRequest
@@ -3039,7 +3039,7 @@ public interface AmazonAutoScalingAsync extends AmazonAutoScaling {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">Replacing Auto Scaling
-     * Instances Based on an Instance Refresh</a>.
+     * instances based on an instance refresh</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param startInstanceRefreshRequest
