@@ -133,6 +133,28 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
+     * <code>DTYPE</code>: Specifies the data type for the input. When compiling for <code>ml_*</code> (except for
+     * <code>ml_inf</code>) instances using PyTorch framework, provide the data type (dtype) of the model's input.
+     * <code>"float32"</code> is used if <code>"DTYPE"</code> is not specified. Options for data type are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * float32: Use either <code>"float"</code> or <code>"float32"</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * int64: Use either <code>"int64"</code> or <code>"long"</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example, <code>{"dtype" : "float32"}</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>CPU</code>: Compilation for CPU supports the following compiler options.
      * </p>
      * <ul>
@@ -886,6 +908,28 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
+     * <code>DTYPE</code>: Specifies the data type for the input. When compiling for <code>ml_*</code> (except for
+     * <code>ml_inf</code>) instances using PyTorch framework, provide the data type (dtype) of the model's input.
+     * <code>"float32"</code> is used if <code>"DTYPE"</code> is not specified. Options for data type are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * float32: Use either <code>"float"</code> or <code>"float32"</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * int64: Use either <code>"int64"</code> or <code>"long"</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example, <code>{"dtype" : "float32"}</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>CPU</code>: Compilation for CPU supports the following compiler options.
      * </p>
      * <ul>
@@ -1022,6 +1066,28 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      *        <code>TargetPlatform</code> specific. It is required for NVIDIA accelerators and highly recommended for
      *        CPU compilations. For any other cases, it is optional to specify <code>CompilerOptions.</code> </p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DTYPE</code>: Specifies the data type for the input. When compiling for <code>ml_*</code> (except
+     *        for <code>ml_inf</code>) instances using PyTorch framework, provide the data type (dtype) of the model's
+     *        input. <code>"float32"</code> is used if <code>"DTYPE"</code> is not specified. Options for data type are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        float32: Use either <code>"float"</code> or <code>"float32"</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        int64: Use either <code>"int64"</code> or <code>"long"</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For example, <code>{"dtype" : "float32"}</code>.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>CPU</code>: Compilation for CPU supports the following compiler options.
@@ -1169,6 +1235,28 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
+     * <code>DTYPE</code>: Specifies the data type for the input. When compiling for <code>ml_*</code> (except for
+     * <code>ml_inf</code>) instances using PyTorch framework, provide the data type (dtype) of the model's input.
+     * <code>"float32"</code> is used if <code>"DTYPE"</code> is not specified. Options for data type are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * float32: Use either <code>"float"</code> or <code>"float32"</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * int64: Use either <code>"int64"</code> or <code>"long"</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example, <code>{"dtype" : "float32"}</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>CPU</code>: Compilation for CPU supports the following compiler options.
      * </p>
      * <ul>
@@ -1304,6 +1392,29 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      *         <code>TargetPlatform</code> specific. It is required for NVIDIA accelerators and highly recommended for
      *         CPU compilations. For any other cases, it is optional to specify <code>CompilerOptions.</code> </p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>DTYPE</code>: Specifies the data type for the input. When compiling for <code>ml_*</code> (except
+     *         for <code>ml_inf</code>) instances using PyTorch framework, provide the data type (dtype) of the model's
+     *         input. <code>"float32"</code> is used if <code>"DTYPE"</code> is not specified. Options for data type
+     *         are:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         float32: Use either <code>"float"</code> or <code>"float32"</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         int64: Use either <code>"int64"</code> or <code>"long"</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For example, <code>{"dtype" : "float32"}</code>.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <code>CPU</code>: Compilation for CPU supports the following compiler options.
@@ -1451,6 +1562,28 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
+     * <code>DTYPE</code>: Specifies the data type for the input. When compiling for <code>ml_*</code> (except for
+     * <code>ml_inf</code>) instances using PyTorch framework, provide the data type (dtype) of the model's input.
+     * <code>"float32"</code> is used if <code>"DTYPE"</code> is not specified. Options for data type are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * float32: Use either <code>"float"</code> or <code>"float32"</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * int64: Use either <code>"int64"</code> or <code>"long"</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example, <code>{"dtype" : "float32"}</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>CPU</code>: Compilation for CPU supports the following compiler options.
      * </p>
      * <ul>
@@ -1587,6 +1720,28 @@ public class OutputConfig implements Serializable, Cloneable, StructuredPojo {
      *        <code>TargetPlatform</code> specific. It is required for NVIDIA accelerators and highly recommended for
      *        CPU compilations. For any other cases, it is optional to specify <code>CompilerOptions.</code> </p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DTYPE</code>: Specifies the data type for the input. When compiling for <code>ml_*</code> (except
+     *        for <code>ml_inf</code>) instances using PyTorch framework, provide the data type (dtype) of the model's
+     *        input. <code>"float32"</code> is used if <code>"DTYPE"</code> is not specified. Options for data type are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        float32: Use either <code>"float"</code> or <code>"float32"</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        int64: Use either <code>"int64"</code> or <code>"long"</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For example, <code>{"dtype" : "float32"}</code>.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>CPU</code>: Compilation for CPU supports the following compiler options.

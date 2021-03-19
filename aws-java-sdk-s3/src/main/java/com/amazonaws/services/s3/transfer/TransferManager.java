@@ -31,6 +31,7 @@ import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.AmazonS3Encryption;
+import com.amazonaws.services.s3.AmazonS3EncryptionV2;
 import com.amazonaws.services.s3.internal.FileLocks;
 import com.amazonaws.services.s3.internal.Mimetypes;
 import com.amazonaws.services.s3.internal.RequestCopyUtils;
@@ -1327,6 +1328,7 @@ public class TransferManager {
     private boolean isDownloadParallel(PresignedUrlDownloadRequest request, Long startByte, Long endByte,
                                        long partialObjectMaxSize) {
         return !configuration.isDisableParallelDownloads() && !(s3 instanceof AmazonS3Encryption)
+               && !(s3 instanceof AmazonS3EncryptionV2)
                // Can't rely on set range as endbyte can be set to random number longer than actual size. This results in
                // making large number of partial requests even after the entire file is read from S3
                && request.getRange() == null

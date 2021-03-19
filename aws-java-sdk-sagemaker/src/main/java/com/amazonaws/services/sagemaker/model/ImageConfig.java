@@ -47,6 +47,15 @@ public class ImageConfig implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      */
     private String repositoryAccessMode;
+    /**
+     * <p>
+     * (Optional) Specifies an authentication configuration for the private docker registry where your model image is
+     * hosted. Specify a value for this property only if you specified <code>Vpc</code> as the value for the
+     * <code>RepositoryAccessMode</code> field, and the private Docker registry where the model image is hosted requires
+     * authentication.
+     * </p>
+     */
+    private RepositoryAuthConfig repositoryAuthConfig;
 
     /**
      * <p>
@@ -200,6 +209,64 @@ public class ImageConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * (Optional) Specifies an authentication configuration for the private docker registry where your model image is
+     * hosted. Specify a value for this property only if you specified <code>Vpc</code> as the value for the
+     * <code>RepositoryAccessMode</code> field, and the private Docker registry where the model image is hosted requires
+     * authentication.
+     * </p>
+     * 
+     * @param repositoryAuthConfig
+     *        (Optional) Specifies an authentication configuration for the private docker registry where your model
+     *        image is hosted. Specify a value for this property only if you specified <code>Vpc</code> as the value for
+     *        the <code>RepositoryAccessMode</code> field, and the private Docker registry where the model image is
+     *        hosted requires authentication.
+     */
+
+    public void setRepositoryAuthConfig(RepositoryAuthConfig repositoryAuthConfig) {
+        this.repositoryAuthConfig = repositoryAuthConfig;
+    }
+
+    /**
+     * <p>
+     * (Optional) Specifies an authentication configuration for the private docker registry where your model image is
+     * hosted. Specify a value for this property only if you specified <code>Vpc</code> as the value for the
+     * <code>RepositoryAccessMode</code> field, and the private Docker registry where the model image is hosted requires
+     * authentication.
+     * </p>
+     * 
+     * @return (Optional) Specifies an authentication configuration for the private docker registry where your model
+     *         image is hosted. Specify a value for this property only if you specified <code>Vpc</code> as the value
+     *         for the <code>RepositoryAccessMode</code> field, and the private Docker registry where the model image is
+     *         hosted requires authentication.
+     */
+
+    public RepositoryAuthConfig getRepositoryAuthConfig() {
+        return this.repositoryAuthConfig;
+    }
+
+    /**
+     * <p>
+     * (Optional) Specifies an authentication configuration for the private docker registry where your model image is
+     * hosted. Specify a value for this property only if you specified <code>Vpc</code> as the value for the
+     * <code>RepositoryAccessMode</code> field, and the private Docker registry where the model image is hosted requires
+     * authentication.
+     * </p>
+     * 
+     * @param repositoryAuthConfig
+     *        (Optional) Specifies an authentication configuration for the private docker registry where your model
+     *        image is hosted. Specify a value for this property only if you specified <code>Vpc</code> as the value for
+     *        the <code>RepositoryAccessMode</code> field, and the private Docker registry where the model image is
+     *        hosted requires authentication.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImageConfig withRepositoryAuthConfig(RepositoryAuthConfig repositoryAuthConfig) {
+        setRepositoryAuthConfig(repositoryAuthConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -212,7 +279,9 @@ public class ImageConfig implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRepositoryAccessMode() != null)
-            sb.append("RepositoryAccessMode: ").append(getRepositoryAccessMode());
+            sb.append("RepositoryAccessMode: ").append(getRepositoryAccessMode()).append(",");
+        if (getRepositoryAuthConfig() != null)
+            sb.append("RepositoryAuthConfig: ").append(getRepositoryAuthConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -231,6 +300,10 @@ public class ImageConfig implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRepositoryAccessMode() != null && other.getRepositoryAccessMode().equals(this.getRepositoryAccessMode()) == false)
             return false;
+        if (other.getRepositoryAuthConfig() == null ^ this.getRepositoryAuthConfig() == null)
+            return false;
+        if (other.getRepositoryAuthConfig() != null && other.getRepositoryAuthConfig().equals(this.getRepositoryAuthConfig()) == false)
+            return false;
         return true;
     }
 
@@ -240,6 +313,7 @@ public class ImageConfig implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getRepositoryAccessMode() == null) ? 0 : getRepositoryAccessMode().hashCode());
+        hashCode = prime * hashCode + ((getRepositoryAuthConfig() == null) ? 0 : getRepositoryAuthConfig().hashCode());
         return hashCode;
     }
 

@@ -1,3 +1,12 @@
+# __1.11.979__ __2021-03-19__
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - X2gd instances are the next generation of memory-optimized instances powered by AWS-designed, Arm-based AWS Graviton2 processors.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - Adding authentication support for pulling images stored in private Docker registries to build containers for real-time inference.
+
 # __1.11.978__ __2021-03-18__
 ## __AWS Kinesis Video__
   - ### Features

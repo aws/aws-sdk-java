@@ -52,6 +52,10 @@ public class ImageConfigJsonUnmarshaller implements Unmarshaller<ImageConfig, Js
                     context.nextToken();
                     imageConfig.setRepositoryAccessMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("RepositoryAuthConfig", targetDepth)) {
+                    context.nextToken();
+                    imageConfig.setRepositoryAuthConfig(RepositoryAuthConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

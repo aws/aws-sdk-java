@@ -29,6 +29,8 @@ public class ImageConfigMarshaller {
 
     private static final MarshallingInfo<String> REPOSITORYACCESSMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RepositoryAccessMode").build();
+    private static final MarshallingInfo<StructuredPojo> REPOSITORYAUTHCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RepositoryAuthConfig").build();
 
     private static final ImageConfigMarshaller instance = new ImageConfigMarshaller();
 
@@ -47,6 +49,7 @@ public class ImageConfigMarshaller {
 
         try {
             protocolMarshaller.marshall(imageConfig.getRepositoryAccessMode(), REPOSITORYACCESSMODE_BINDING);
+            protocolMarshaller.marshall(imageConfig.getRepositoryAuthConfig(), REPOSITORYAUTHCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

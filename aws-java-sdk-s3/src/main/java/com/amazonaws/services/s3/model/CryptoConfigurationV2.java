@@ -41,7 +41,7 @@ public class CryptoConfigurationV2 implements Cloneable,Serializable {
 
     /**
      * Creates a new CryptoConfiguration object with default crypto mode,
-     * @link CryptoMode#StrictAuthenticatedEncryption.
+     * {@link CryptoMode#StrictAuthenticatedEncryption}.
      */
     public CryptoConfigurationV2() {
         this(CryptoMode.StrictAuthenticatedEncryption);
@@ -53,7 +53,7 @@ public class CryptoConfigurationV2 implements Cloneable,Serializable {
      * storage mode, and the default crypto provider is the JCE provider.
      *
      * Note that the V2 configuration and encryption client does not support
-     * @link CryptoMode#EncryptionOnly. Attempts to use that mode will result in
+     * {@link CryptoMode#EncryptionOnly}. Attempts to use that mode will result in
      * an exception.
      *
      * @param cryptoMode
@@ -224,7 +224,7 @@ public class CryptoConfigurationV2 implements Cloneable,Serializable {
      * client.
      *
      * Note that the V2 configuration and encryption client does not support
-     * @link CryptoMode#EncryptionOnly. Attempts to use that mode will result in
+     * {@link CryptoMode#EncryptionOnly}. Attempts to use that mode will result in
      * an exception.
      *
      * @throws UnsupportedOperationException

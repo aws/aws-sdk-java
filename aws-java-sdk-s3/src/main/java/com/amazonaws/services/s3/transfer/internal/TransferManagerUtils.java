@@ -18,6 +18,7 @@ import static com.amazonaws.services.s3.internal.Constants.MAXIMUM_UPLOAD_PARTS;
 
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Encryption;
+import com.amazonaws.services.s3.AmazonS3EncryptionV2;
 import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.model.CopyObjectRequest;
 import com.amazonaws.services.s3.model.GetObjectRequest;
@@ -210,8 +211,8 @@ public class TransferManagerUtils {
         ValidationUtils.assertNotNull(s3, "S3 client");
         ValidationUtils.assertNotNull(getObjectRequest, "GetObjectRequest");
 
-        if (s3 instanceof AmazonS3Encryption || getObjectRequest.getRange() != null
-                || getObjectRequest.getPartNumber() != null || partCount == null) {
+        if (s3 instanceof AmazonS3Encryption || s3 instanceof AmazonS3EncryptionV2 || getObjectRequest.getRange() != null
+            || getObjectRequest.getPartNumber() != null || partCount == null) {
             return false;
         }
         return true;

@@ -20,6 +20,7 @@ import com.amazonaws.event.ProgressEventType;
 import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Encryption;
+import com.amazonaws.services.s3.AmazonS3EncryptionV2;
 import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadResult;
@@ -207,7 +208,7 @@ public class UploadCallable implements Callable<UploadResult> {
      * as the multipart upload id.
      */
     private UploadResult uploadInParts() throws Exception {
-        boolean isUsingEncryption = s3 instanceof AmazonS3Encryption;
+        boolean isUsingEncryption = s3 instanceof AmazonS3Encryption || s3 instanceof AmazonS3EncryptionV2;
         long optimalPartSize = getOptimalPartSize(isUsingEncryption);
 
         try {
