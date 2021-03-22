@@ -30,10 +30,11 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The path, as a JSONPath expression, to the field in the record that contains the data.
+     * The path, as a JSONPath expression, to the field in the record that contains the data. If Amazon Macie detects
+     * sensitive data in the name of any element in the path, Macie omits this field.
      * </p>
      * <p>
-     * If the name of an element exceeds 20 characters, Amazon Macie truncates the name by removing characters from the
+     * If the name of an element exceeds 20 characters, Macie truncates the name by removing characters from the
      * beginning of the name. If the resulting full path exceeds 250 characters, Macie also truncates the path, starting
      * with the first element in the path, until the path contains 250 or fewer characters.
      * </p>
@@ -48,20 +49,22 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The path, as a JSONPath expression, to the field in the record that contains the data.
+     * The path, as a JSONPath expression, to the field in the record that contains the data. If Amazon Macie detects
+     * sensitive data in the name of any element in the path, Macie omits this field.
      * </p>
      * <p>
-     * If the name of an element exceeds 20 characters, Amazon Macie truncates the name by removing characters from the
+     * If the name of an element exceeds 20 characters, Macie truncates the name by removing characters from the
      * beginning of the name. If the resulting full path exceeds 250 characters, Macie also truncates the path, starting
      * with the first element in the path, until the path contains 250 or fewer characters.
      * </p>
      * 
      * @param jsonPath
-     *        The path, as a JSONPath expression, to the field in the record that contains the data.</p>
+     *        The path, as a JSONPath expression, to the field in the record that contains the data. If Amazon Macie
+     *        detects sensitive data in the name of any element in the path, Macie omits this field.</p>
      *        <p>
-     *        If the name of an element exceeds 20 characters, Amazon Macie truncates the name by removing characters
-     *        from the beginning of the name. If the resulting full path exceeds 250 characters, Macie also truncates
-     *        the path, starting with the first element in the path, until the path contains 250 or fewer characters.
+     *        If the name of an element exceeds 20 characters, Macie truncates the name by removing characters from the
+     *        beginning of the name. If the resulting full path exceeds 250 characters, Macie also truncates the path,
+     *        starting with the first element in the path, until the path contains 250 or fewer characters.
      */
 
     public void setJsonPath(String jsonPath) {
@@ -70,19 +73,21 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The path, as a JSONPath expression, to the field in the record that contains the data.
+     * The path, as a JSONPath expression, to the field in the record that contains the data. If Amazon Macie detects
+     * sensitive data in the name of any element in the path, Macie omits this field.
      * </p>
      * <p>
-     * If the name of an element exceeds 20 characters, Amazon Macie truncates the name by removing characters from the
+     * If the name of an element exceeds 20 characters, Macie truncates the name by removing characters from the
      * beginning of the name. If the resulting full path exceeds 250 characters, Macie also truncates the path, starting
      * with the first element in the path, until the path contains 250 or fewer characters.
      * </p>
      * 
-     * @return The path, as a JSONPath expression, to the field in the record that contains the data.</p>
+     * @return The path, as a JSONPath expression, to the field in the record that contains the data. If Amazon Macie
+     *         detects sensitive data in the name of any element in the path, Macie omits this field.</p>
      *         <p>
-     *         If the name of an element exceeds 20 characters, Amazon Macie truncates the name by removing characters
-     *         from the beginning of the name. If the resulting full path exceeds 250 characters, Macie also truncates
-     *         the path, starting with the first element in the path, until the path contains 250 or fewer characters.
+     *         If the name of an element exceeds 20 characters, Macie truncates the name by removing characters from the
+     *         beginning of the name. If the resulting full path exceeds 250 characters, Macie also truncates the path,
+     *         starting with the first element in the path, until the path contains 250 or fewer characters.
      */
 
     public String getJsonPath() {
@@ -91,20 +96,22 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The path, as a JSONPath expression, to the field in the record that contains the data.
+     * The path, as a JSONPath expression, to the field in the record that contains the data. If Amazon Macie detects
+     * sensitive data in the name of any element in the path, Macie omits this field.
      * </p>
      * <p>
-     * If the name of an element exceeds 20 characters, Amazon Macie truncates the name by removing characters from the
+     * If the name of an element exceeds 20 characters, Macie truncates the name by removing characters from the
      * beginning of the name. If the resulting full path exceeds 250 characters, Macie also truncates the path, starting
      * with the first element in the path, until the path contains 250 or fewer characters.
      * </p>
      * 
      * @param jsonPath
-     *        The path, as a JSONPath expression, to the field in the record that contains the data.</p>
+     *        The path, as a JSONPath expression, to the field in the record that contains the data. If Amazon Macie
+     *        detects sensitive data in the name of any element in the path, Macie omits this field.</p>
      *        <p>
-     *        If the name of an element exceeds 20 characters, Amazon Macie truncates the name by removing characters
-     *        from the beginning of the name. If the resulting full path exceeds 250 characters, Macie also truncates
-     *        the path, starting with the first element in the path, until the path contains 250 or fewer characters.
+     *        If the name of an element exceeds 20 characters, Macie truncates the name by removing characters from the
+     *        beginning of the name. If the resulting full path exceeds 250 characters, Macie also truncates the path,
+     *        starting with the first element in the path, until the path contains 250 or fewer characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

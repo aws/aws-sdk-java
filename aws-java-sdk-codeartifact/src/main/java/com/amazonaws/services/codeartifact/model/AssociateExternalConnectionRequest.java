@@ -78,11 +78,6 @@ public class AssociateExternalConnectionRequest extends com.amazonaws.AmazonWebS
      * <code>public:maven-commonsware</code> - for the CommonsWare Android repository.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>public:nuget-org</code> - for the NuGet Gallery.
-     * </p>
-     * </li>
      * </ul>
      */
     private String externalConnection;
@@ -243,11 +238,6 @@ public class AssociateExternalConnectionRequest extends com.amazonaws.AmazonWebS
      * <code>public:maven-commonsware</code> - for the CommonsWare Android repository.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>public:nuget-org</code> - for the NuGet Gallery.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param externalConnection
@@ -281,11 +271,6 @@ public class AssociateExternalConnectionRequest extends com.amazonaws.AmazonWebS
      *        <li>
      *        <p>
      *        <code>public:maven-commonsware</code> - for the CommonsWare Android repository.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>public:nuget-org</code> - for the NuGet Gallery.
      *        </p>
      *        </li>
      */
@@ -329,11 +314,6 @@ public class AssociateExternalConnectionRequest extends com.amazonaws.AmazonWebS
      * <code>public:maven-commonsware</code> - for the CommonsWare Android repository.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>public:nuget-org</code> - for the NuGet Gallery.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @return The name of the external connection to add to the repository. The following values are supported: </p>
@@ -366,11 +346,6 @@ public class AssociateExternalConnectionRequest extends com.amazonaws.AmazonWebS
      *         <li>
      *         <p>
      *         <code>public:maven-commonsware</code> - for the CommonsWare Android repository.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>public:nuget-org</code> - for the NuGet Gallery.
      *         </p>
      *         </li>
      */
@@ -414,11 +389,6 @@ public class AssociateExternalConnectionRequest extends com.amazonaws.AmazonWebS
      * <code>public:maven-commonsware</code> - for the CommonsWare Android repository.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>public:nuget-org</code> - for the NuGet Gallery.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param externalConnection
@@ -452,11 +422,6 @@ public class AssociateExternalConnectionRequest extends com.amazonaws.AmazonWebS
      *        <li>
      *        <p>
      *        <code>public:maven-commonsware</code> - for the CommonsWare Android repository.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>public:nuget-org</code> - for the NuGet Gallery.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

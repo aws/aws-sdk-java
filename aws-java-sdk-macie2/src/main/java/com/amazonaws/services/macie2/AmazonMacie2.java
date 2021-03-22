@@ -893,6 +893,35 @@ public interface AmazonMacie2 {
 
     /**
      * <p>
+     * Retrieves the configuration settings for publishing findings to AWS Security Hub.
+     * </p>
+     * 
+     * @param getFindingsPublicationConfigurationRequest
+     * @return Result of the GetFindingsPublicationConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws ServiceQuotaExceededException
+     *         The request failed because fulfilling the request would exceed one or more service quotas for your
+     *         account.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @throws ResourceNotFoundException
+     *         The request failed because the specified resource wasn't found.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @throws ConflictException
+     *         The request failed because it conflicts with the current state of the specified resource.
+     * @sample AmazonMacie2.GetFindingsPublicationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingsPublicationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetFindingsPublicationConfigurationResult getFindingsPublicationConfiguration(
+            GetFindingsPublicationConfigurationRequest getFindingsPublicationConfigurationRequest);
+
+    /**
+     * <p>
      * Retrieves the count of Amazon Macie membership invitations that were received by an account.
      * </p>
      * 
@@ -1298,6 +1327,35 @@ public interface AmazonMacie2 {
      */
     PutClassificationExportConfigurationResult putClassificationExportConfiguration(
             PutClassificationExportConfigurationRequest putClassificationExportConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates the configuration settings for publishing findings to AWS Security Hub.
+     * </p>
+     * 
+     * @param putFindingsPublicationConfigurationRequest
+     * @return Result of the PutFindingsPublicationConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws ServiceQuotaExceededException
+     *         The request failed because fulfilling the request would exceed one or more service quotas for your
+     *         account.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @throws ResourceNotFoundException
+     *         The request failed because the specified resource wasn't found.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @throws ConflictException
+     *         The request failed because it conflicts with the current state of the specified resource.
+     * @sample AmazonMacie2.PutFindingsPublicationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PutFindingsPublicationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutFindingsPublicationConfigurationResult putFindingsPublicationConfiguration(
+            PutFindingsPublicationConfigurationRequest putFindingsPublicationConfigurationRequest);
 
     /**
      * <p>

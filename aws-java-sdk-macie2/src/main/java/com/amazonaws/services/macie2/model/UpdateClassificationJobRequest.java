@@ -58,9 +58,9 @@ public class UpdateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE or
-     * RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to pause all
-     * processing tasks for the job.
+     * USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE, PAUSED,
+     * or RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to pause
+     * all processing tasks for the job.
      * </p>
      * <p>
      * If you pause a one-time job and you don't resume it within 30 days, the job expires and Macie cancels the job. If
@@ -139,9 +139,9 @@ public class UpdateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE or
-     * RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to pause all
-     * processing tasks for the job.
+     * USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE, PAUSED,
+     * or RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to pause
+     * all processing tasks for the job.
      * </p>
      * <p>
      * If you pause a one-time job and you don't resume it within 30 days, the job expires and Macie cancels the job. If
@@ -176,9 +176,9 @@ public class UpdateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE or
-     *        RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to
-     *        pause all processing tasks for the job.
+     *        USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE,
+     *        PAUSED, or RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately
+     *        begins to pause all processing tasks for the job.
      *        </p>
      *        <p>
      *        If you pause a one-time job and you don't resume it within 30 days, the job expires and Macie cancels the
@@ -221,9 +221,9 @@ public class UpdateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE or
-     * RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to pause all
-     * processing tasks for the job.
+     * USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE, PAUSED,
+     * or RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to pause
+     * all processing tasks for the job.
      * </p>
      * <p>
      * If you pause a one-time job and you don't resume it within 30 days, the job expires and Macie cancels the job. If
@@ -257,9 +257,9 @@ public class UpdateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      *         </li>
      *         <li>
      *         <p>
-     *         USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE or
-     *         RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to
-     *         pause all processing tasks for the job.
+     *         USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE,
+     *         PAUSED, or RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately
+     *         begins to pause all processing tasks for the job.
      *         </p>
      *         <p>
      *         If you pause a one-time job and you don't resume it within 30 days, the job expires and Macie cancels the
@@ -302,9 +302,9 @@ public class UpdateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE or
-     * RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to pause all
-     * processing tasks for the job.
+     * USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE, PAUSED,
+     * or RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to pause
+     * all processing tasks for the job.
      * </p>
      * <p>
      * If you pause a one-time job and you don't resume it within 30 days, the job expires and Macie cancels the job. If
@@ -339,9 +339,9 @@ public class UpdateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE or
-     *        RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to
-     *        pause all processing tasks for the job.
+     *        USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE,
+     *        PAUSED, or RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately
+     *        begins to pause all processing tasks for the job.
      *        </p>
      *        <p>
      *        If you pause a one-time job and you don't resume it within 30 days, the job expires and Macie cancels the
@@ -386,9 +386,9 @@ public class UpdateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
-     * USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE or
-     * RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to pause all
-     * processing tasks for the job.
+     * USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE, PAUSED,
+     * or RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to pause
+     * all processing tasks for the job.
      * </p>
      * <p>
      * If you pause a one-time job and you don't resume it within 30 days, the job expires and Macie cancels the job. If
@@ -423,9 +423,9 @@ public class UpdateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      *        </li>
      *        <li>
      *        <p>
-     *        USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE or
-     *        RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately begins to
-     *        pause all processing tasks for the job.
+     *        USER_PAUSED - Pauses the job temporarily. This value is valid only if the job's current status is IDLE,
+     *        PAUSED, or RUNNING. If you specify this value and the job's current status is RUNNING, Macie immediately
+     *        begins to pause all processing tasks for the job.
      *        </p>
      *        <p>
      *        If you pause a one-time job and you don't resume it within 30 days, the job expires and Macie cancels the

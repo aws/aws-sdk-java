@@ -43,7 +43,8 @@ public class Cell implements Serializable, Cloneable, StructuredPojo {
     private Long column;
     /**
      * <p>
-     * The name of the column that contains the data, if available.
+     * The name of the column that contains the data, if available. This value is also null if Amazon Macie detects
+     * sensitive data in the name of any column in the file.
      * </p>
      */
     private String columnName;
@@ -151,11 +152,13 @@ public class Cell implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the column that contains the data, if available.
+     * The name of the column that contains the data, if available. This value is also null if Amazon Macie detects
+     * sensitive data in the name of any column in the file.
      * </p>
      * 
      * @param columnName
-     *        The name of the column that contains the data, if available.
+     *        The name of the column that contains the data, if available. This value is also null if Amazon Macie
+     *        detects sensitive data in the name of any column in the file.
      */
 
     public void setColumnName(String columnName) {
@@ -164,10 +167,12 @@ public class Cell implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the column that contains the data, if available.
+     * The name of the column that contains the data, if available. This value is also null if Amazon Macie detects
+     * sensitive data in the name of any column in the file.
      * </p>
      * 
-     * @return The name of the column that contains the data, if available.
+     * @return The name of the column that contains the data, if available. This value is also null if Amazon Macie
+     *         detects sensitive data in the name of any column in the file.
      */
 
     public String getColumnName() {
@@ -176,11 +181,13 @@ public class Cell implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the column that contains the data, if available.
+     * The name of the column that contains the data, if available. This value is also null if Amazon Macie detects
+     * sensitive data in the name of any column in the file.
      * </p>
      * 
      * @param columnName
-     *        The name of the column that contains the data, if available.
+     *        The name of the column that contains the data, if available. This value is also null if Amazon Macie
+     *        detects sensitive data in the name of any column in the file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

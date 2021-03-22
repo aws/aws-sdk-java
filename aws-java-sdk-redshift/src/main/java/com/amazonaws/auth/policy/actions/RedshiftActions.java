@@ -161,6 +161,8 @@ public enum RedshiftActions implements Action {
     GetClusterCredentials("redshift:GetClusterCredentials"),
     /** Action for the GetReservedNodeExchangeOfferings operation. */
     GetReservedNodeExchangeOfferings("redshift:GetReservedNodeExchangeOfferings"),
+    /** Action for the ModifyAquaConfiguration operation. */
+    ModifyAquaConfiguration("redshift:ModifyAquaConfiguration"),
     /** Action for the ModifyCluster operation. */
     ModifyCluster("redshift:ModifyCluster"),
     /** Action for the ModifyClusterDbRevision operation. */

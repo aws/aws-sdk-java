@@ -250,12 +250,7 @@ public class Instance implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<GroupIdentifier> securityGroups;
     /**
      * <p>
-     * Specifies whether to enable an instance launched in a VPC to perform NAT. This controls whether
-     * source/destination checking is enabled on the instance. A value of <code>true</code> means that checking is
-     * enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code> for the
-     * instance to perform NAT. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT instances</a> in the
-     * <i>Amazon VPC User Guide</i>.
+     * Indicates whether source/destination checking is enabled.
      * </p>
      */
     private Boolean sourceDestCheck;
@@ -331,6 +326,14 @@ public class Instance implements Serializable, Cloneable {
      * </p>
      */
     private EnclaveOptions enclaveOptions;
+    /**
+     * <p>
+     * The boot mode of the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
+     * </p>
+     */
+    private String bootMode;
 
     /**
      * <p>
@@ -2246,21 +2249,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether to enable an instance launched in a VPC to perform NAT. This controls whether
-     * source/destination checking is enabled on the instance. A value of <code>true</code> means that checking is
-     * enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code> for the
-     * instance to perform NAT. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT instances</a> in the
-     * <i>Amazon VPC User Guide</i>.
+     * Indicates whether source/destination checking is enabled.
      * </p>
      * 
      * @param sourceDestCheck
-     *        Specifies whether to enable an instance launched in a VPC to perform NAT. This controls whether
-     *        source/destination checking is enabled on the instance. A value of <code>true</code> means that checking
-     *        is enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code>
-     *        for the instance to perform NAT. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT instances</a> in
-     *        the <i>Amazon VPC User Guide</i>.
+     *        Indicates whether source/destination checking is enabled.
      */
 
     public void setSourceDestCheck(Boolean sourceDestCheck) {
@@ -2269,20 +2262,10 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether to enable an instance launched in a VPC to perform NAT. This controls whether
-     * source/destination checking is enabled on the instance. A value of <code>true</code> means that checking is
-     * enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code> for the
-     * instance to perform NAT. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT instances</a> in the
-     * <i>Amazon VPC User Guide</i>.
+     * Indicates whether source/destination checking is enabled.
      * </p>
      * 
-     * @return Specifies whether to enable an instance launched in a VPC to perform NAT. This controls whether
-     *         source/destination checking is enabled on the instance. A value of <code>true</code> means that checking
-     *         is enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code>
-     *         for the instance to perform NAT. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT instances</a> in
-     *         the <i>Amazon VPC User Guide</i>.
+     * @return Indicates whether source/destination checking is enabled.
      */
 
     public Boolean getSourceDestCheck() {
@@ -2291,21 +2274,11 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether to enable an instance launched in a VPC to perform NAT. This controls whether
-     * source/destination checking is enabled on the instance. A value of <code>true</code> means that checking is
-     * enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code> for the
-     * instance to perform NAT. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT instances</a> in the
-     * <i>Amazon VPC User Guide</i>.
+     * Indicates whether source/destination checking is enabled.
      * </p>
      * 
      * @param sourceDestCheck
-     *        Specifies whether to enable an instance launched in a VPC to perform NAT. This controls whether
-     *        source/destination checking is enabled on the instance. A value of <code>true</code> means that checking
-     *        is enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code>
-     *        for the instance to perform NAT. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT instances</a> in
-     *        the <i>Amazon VPC User Guide</i>.
+     *        Indicates whether source/destination checking is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2316,20 +2289,10 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether to enable an instance launched in a VPC to perform NAT. This controls whether
-     * source/destination checking is enabled on the instance. A value of <code>true</code> means that checking is
-     * enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code> for the
-     * instance to perform NAT. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT instances</a> in the
-     * <i>Amazon VPC User Guide</i>.
+     * Indicates whether source/destination checking is enabled.
      * </p>
      * 
-     * @return Specifies whether to enable an instance launched in a VPC to perform NAT. This controls whether
-     *         source/destination checking is enabled on the instance. A value of <code>true</code> means that checking
-     *         is enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code>
-     *         for the instance to perform NAT. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT instances</a> in
-     *         the <i>Amazon VPC User Guide</i>.
+     * @return Indicates whether source/destination checking is enabled.
      */
 
     public Boolean isSourceDestCheck() {
@@ -2916,6 +2879,99 @@ public class Instance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The boot mode of the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param bootMode
+     *        The boot mode of the instance. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
+     *        EC2 User Guide</i>.
+     * @see BootModeValues
+     */
+
+    public void setBootMode(String bootMode) {
+        this.bootMode = bootMode;
+    }
+
+    /**
+     * <p>
+     * The boot mode of the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
+     * </p>
+     * 
+     * @return The boot mode of the instance. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
+     *         EC2 User Guide</i>.
+     * @see BootModeValues
+     */
+
+    public String getBootMode() {
+        return this.bootMode;
+    }
+
+    /**
+     * <p>
+     * The boot mode of the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param bootMode
+     *        The boot mode of the instance. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
+     *        EC2 User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BootModeValues
+     */
+
+    public Instance withBootMode(String bootMode) {
+        setBootMode(bootMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The boot mode of the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param bootMode
+     *        The boot mode of the instance. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
+     *        EC2 User Guide</i>.
+     * @see BootModeValues
+     */
+
+    public void setBootMode(BootModeValues bootMode) {
+        withBootMode(bootMode);
+    }
+
+    /**
+     * <p>
+     * The boot mode of the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param bootMode
+     *        The boot mode of the instance. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
+     *        EC2 User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BootModeValues
+     */
+
+    public Instance withBootMode(BootModeValues bootMode) {
+        this.bootMode = bootMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3022,7 +3078,9 @@ public class Instance implements Serializable, Cloneable {
         if (getMetadataOptions() != null)
             sb.append("MetadataOptions: ").append(getMetadataOptions()).append(",");
         if (getEnclaveOptions() != null)
-            sb.append("EnclaveOptions: ").append(getEnclaveOptions());
+            sb.append("EnclaveOptions: ").append(getEnclaveOptions()).append(",");
+        if (getBootMode() != null)
+            sb.append("BootMode: ").append(getBootMode());
         sb.append("}");
         return sb.toString();
     }
@@ -3231,6 +3289,10 @@ public class Instance implements Serializable, Cloneable {
             return false;
         if (other.getEnclaveOptions() != null && other.getEnclaveOptions().equals(this.getEnclaveOptions()) == false)
             return false;
+        if (other.getBootMode() == null ^ this.getBootMode() == null)
+            return false;
+        if (other.getBootMode() != null && other.getBootMode().equals(this.getBootMode()) == false)
+            return false;
         return true;
     }
 
@@ -3287,6 +3349,7 @@ public class Instance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getLicenses() == null) ? 0 : getLicenses().hashCode());
         hashCode = prime * hashCode + ((getMetadataOptions() == null) ? 0 : getMetadataOptions().hashCode());
         hashCode = prime * hashCode + ((getEnclaveOptions() == null) ? 0 : getEnclaveOptions().hashCode());
+        hashCode = prime * hashCode + ((getBootMode() == null) ? 0 : getBootMode().hashCode());
         return hashCode;
     }
 

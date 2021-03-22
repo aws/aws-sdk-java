@@ -63,11 +63,6 @@ public class ListPackageVersionAssetsRequest extends com.amazonaws.AmazonWebServ
      * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>nuget</code>: A NuGet package.
-     * </p>
-     * </li>
      * </ul>
      */
     private String format;
@@ -90,11 +85,6 @@ public class ListPackageVersionAssetsRequest extends com.amazonaws.AmazonWebServ
      * <li>
      * <p>
      * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
      * </p>
      * </li>
      * </ul>
@@ -267,11 +257,6 @@ public class ListPackageVersionAssetsRequest extends com.amazonaws.AmazonWebServ
      * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>nuget</code>: A NuGet package.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param format
@@ -292,11 +277,6 @@ public class ListPackageVersionAssetsRequest extends com.amazonaws.AmazonWebServ
      *        <p>
      *        <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
      *        file.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>nuget</code>: A NuGet package.
      *        </p>
      *        </li>
      * @see PackageFormat
@@ -326,11 +306,6 @@ public class ListPackageVersionAssetsRequest extends com.amazonaws.AmazonWebServ
      * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>nuget</code>: A NuGet package.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @return The format of the package that contains the returned package version assets. The valid package types are:
@@ -350,11 +325,6 @@ public class ListPackageVersionAssetsRequest extends com.amazonaws.AmazonWebServ
      *         <p>
      *         <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
      *         file.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>nuget</code>: A NuGet package.
      *         </p>
      *         </li>
      * @see PackageFormat
@@ -384,11 +354,6 @@ public class ListPackageVersionAssetsRequest extends com.amazonaws.AmazonWebServ
      * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>nuget</code>: A NuGet package.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param format
@@ -409,11 +374,6 @@ public class ListPackageVersionAssetsRequest extends com.amazonaws.AmazonWebServ
      *        <p>
      *        <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
      *        file.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>nuget</code>: A NuGet package.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -445,11 +405,6 @@ public class ListPackageVersionAssetsRequest extends com.amazonaws.AmazonWebServ
      * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>nuget</code>: A NuGet package.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param format
@@ -470,11 +425,6 @@ public class ListPackageVersionAssetsRequest extends com.amazonaws.AmazonWebServ
      *        <p>
      *        <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
      *        file.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>nuget</code>: A NuGet package.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -507,11 +457,6 @@ public class ListPackageVersionAssetsRequest extends com.amazonaws.AmazonWebServ
      * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param namespace
@@ -531,11 +476,6 @@ public class ListPackageVersionAssetsRequest extends com.amazonaws.AmazonWebServ
      *        <li>
      *        <p>
      *        A Python package does not contain a corresponding component, so Python packages do not have a namespace.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
      *        </p>
      *        </li>
      */
@@ -565,11 +505,6 @@ public class ListPackageVersionAssetsRequest extends com.amazonaws.AmazonWebServ
      * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @return The namespace of the package. The package component that specifies its namespace depends on its type. For
@@ -588,11 +523,6 @@ public class ListPackageVersionAssetsRequest extends com.amazonaws.AmazonWebServ
      *         <li>
      *         <p>
      *         A Python package does not contain a corresponding component, so Python packages do not have a namespace.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
      *         </p>
      *         </li>
      */
@@ -622,11 +552,6 @@ public class ListPackageVersionAssetsRequest extends com.amazonaws.AmazonWebServ
      * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param namespace
@@ -646,11 +571,6 @@ public class ListPackageVersionAssetsRequest extends com.amazonaws.AmazonWebServ
      *        <li>
      *        <p>
      *        A Python package does not contain a corresponding component, so Python packages do not have a namespace.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

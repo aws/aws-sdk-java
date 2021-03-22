@@ -45,8 +45,9 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions are the
-     * locations of: data in unstructured sections of an otherwise structured file, such as a comment in a file; and,
-     * data in a malformed file that Amazon Macie analyzes as plain text.
+     * locations of data in: unstructured sections of an otherwise structured file, such as a comment in a file; a
+     * malformed file that Amazon Macie analyzes as plain text; and, a CSV or TSV file that has any column names that
+     * contain sensitive data.
      * </p>
      */
     private java.util.List<Range> lineRanges;
@@ -172,8 +173,9 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions are the
-     * locations of: data in unstructured sections of an otherwise structured file, such as a comment in a file; and,
-     * data in a malformed file that Amazon Macie analyzes as plain text.
+     * locations of data in: unstructured sections of an otherwise structured file, such as a comment in a file; a
+     * malformed file that Amazon Macie analyzes as plain text; and, a CSV or TSV file that has any column names that
+     * contain sensitive data.
      * </p>
      * 
      * @return An array of objects, one for each occurrence of sensitive data in a Microsoft Word document or non-binary
@@ -181,8 +183,9 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
      *         data, and the position of the data on that line.</p>
      *         <p>
      *         This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions
-     *         are the locations of: data in unstructured sections of an otherwise structured file, such as a comment in
-     *         a file; and, data in a malformed file that Amazon Macie analyzes as plain text.
+     *         are the locations of data in: unstructured sections of an otherwise structured file, such as a comment in
+     *         a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or TSV file that has any
+     *         column names that contain sensitive data.
      */
 
     public java.util.List<Range> getLineRanges() {
@@ -197,8 +200,9 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions are the
-     * locations of: data in unstructured sections of an otherwise structured file, such as a comment in a file; and,
-     * data in a malformed file that Amazon Macie analyzes as plain text.
+     * locations of data in: unstructured sections of an otherwise structured file, such as a comment in a file; a
+     * malformed file that Amazon Macie analyzes as plain text; and, a CSV or TSV file that has any column names that
+     * contain sensitive data.
      * </p>
      * 
      * @param lineRanges
@@ -207,8 +211,9 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
      *        and the position of the data on that line.</p>
      *        <p>
      *        This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions
-     *        are the locations of: data in unstructured sections of an otherwise structured file, such as a comment in
-     *        a file; and, data in a malformed file that Amazon Macie analyzes as plain text.
+     *        are the locations of data in: unstructured sections of an otherwise structured file, such as a comment in
+     *        a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or TSV file that has any
+     *        column names that contain sensitive data.
      */
 
     public void setLineRanges(java.util.Collection<Range> lineRanges) {
@@ -228,8 +233,9 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions are the
-     * locations of: data in unstructured sections of an otherwise structured file, such as a comment in a file; and,
-     * data in a malformed file that Amazon Macie analyzes as plain text.
+     * locations of data in: unstructured sections of an otherwise structured file, such as a comment in a file; a
+     * malformed file that Amazon Macie analyzes as plain text; and, a CSV or TSV file that has any column names that
+     * contain sensitive data.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -243,8 +249,9 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
      *        and the position of the data on that line.</p>
      *        <p>
      *        This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions
-     *        are the locations of: data in unstructured sections of an otherwise structured file, such as a comment in
-     *        a file; and, data in a malformed file that Amazon Macie analyzes as plain text.
+     *        are the locations of data in: unstructured sections of an otherwise structured file, such as a comment in
+     *        a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or TSV file that has any
+     *        column names that contain sensitive data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -266,8 +273,9 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions are the
-     * locations of: data in unstructured sections of an otherwise structured file, such as a comment in a file; and,
-     * data in a malformed file that Amazon Macie analyzes as plain text.
+     * locations of data in: unstructured sections of an otherwise structured file, such as a comment in a file; a
+     * malformed file that Amazon Macie analyzes as plain text; and, a CSV or TSV file that has any column names that
+     * contain sensitive data.
      * </p>
      * 
      * @param lineRanges
@@ -276,8 +284,9 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
      *        and the position of the data on that line.</p>
      *        <p>
      *        This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions
-     *        are the locations of: data in unstructured sections of an otherwise structured file, such as a comment in
-     *        a file; and, data in a malformed file that Amazon Macie analyzes as plain text.
+     *        are the locations of data in: unstructured sections of an otherwise structured file, such as a comment in
+     *        a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or TSV file that has any
+     *        column names that contain sensitive data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

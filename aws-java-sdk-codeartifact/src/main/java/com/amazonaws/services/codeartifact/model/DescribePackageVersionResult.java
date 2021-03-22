@@ -25,24 +25,22 @@ public class DescribePackageVersionResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A
-     * <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a> </code>
-     * object that contains information about the requested package version.
+     * A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">
+     * PackageVersionDescription</a> object that contains information about the requested package version.
      * </p>
      */
     private PackageVersionDescription packageVersion;
 
     /**
      * <p>
-     * A
-     * <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a> </code>
-     * object that contains information about the requested package version.
+     * A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">
+     * PackageVersionDescription</a> object that contains information about the requested package version.
      * </p>
      * 
      * @param packageVersion
-     *        A
-     *        <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a> </code>
-     *        object that contains information about the requested package version.
+     *        A <a
+     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html"
+     *        >PackageVersionDescription</a> object that contains information about the requested package version.
      */
 
     public void setPackageVersion(PackageVersionDescription packageVersion) {
@@ -51,14 +49,13 @@ public class DescribePackageVersionResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A
-     * <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a> </code>
-     * object that contains information about the requested package version.
+     * A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">
+     * PackageVersionDescription</a> object that contains information about the requested package version.
      * </p>
      * 
-     * @return A
-     *         <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a> </code>
-     *         object that contains information about the requested package version.
+     * @return A <a
+     *         href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html"
+     *         >PackageVersionDescription</a> object that contains information about the requested package version.
      */
 
     public PackageVersionDescription getPackageVersion() {
@@ -67,15 +64,14 @@ public class DescribePackageVersionResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A
-     * <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a> </code>
-     * object that contains information about the requested package version.
+     * A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">
+     * PackageVersionDescription</a> object that contains information about the requested package version.
      * </p>
      * 
      * @param packageVersion
-     *        A
-     *        <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a> </code>
-     *        object that contains information about the requested package version.
+     *        A <a
+     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html"
+     *        >PackageVersionDescription</a> object that contains information about the requested package version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

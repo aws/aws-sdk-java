@@ -75,6 +75,8 @@ public class ImageAttribute implements Serializable, Cloneable {
      */
     private String sriovNetSupport;
 
+    private String bootMode;
+
     /**
      * <p>
      * The block device mapping entries.
@@ -495,6 +497,32 @@ public class ImageAttribute implements Serializable, Cloneable {
     }
 
     /**
+     * @param bootMode
+     */
+
+    public void setBootMode(String bootMode) {
+        this.bootMode = bootMode;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getBootMode() {
+        return this.bootMode;
+    }
+
+    /**
+     * @param bootMode
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImageAttribute withBootMode(String bootMode) {
+        setBootMode(bootMode);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -521,7 +549,9 @@ public class ImageAttribute implements Serializable, Cloneable {
         if (getRamdiskId() != null)
             sb.append("RamdiskId: ").append(getRamdiskId()).append(",");
         if (getSriovNetSupport() != null)
-            sb.append("SriovNetSupport: ").append(getSriovNetSupport());
+            sb.append("SriovNetSupport: ").append(getSriovNetSupport()).append(",");
+        if (getBootMode() != null)
+            sb.append("BootMode: ").append(getBootMode());
         sb.append("}");
         return sb.toString();
     }
@@ -568,6 +598,10 @@ public class ImageAttribute implements Serializable, Cloneable {
             return false;
         if (other.getSriovNetSupport() != null && other.getSriovNetSupport().equals(this.getSriovNetSupport()) == false)
             return false;
+        if (other.getBootMode() == null ^ this.getBootMode() == null)
+            return false;
+        if (other.getBootMode() != null && other.getBootMode().equals(this.getBootMode()) == false)
+            return false;
         return true;
     }
 
@@ -584,6 +618,7 @@ public class ImageAttribute implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getKernelId() == null) ? 0 : getKernelId().hashCode());
         hashCode = prime * hashCode + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode());
         hashCode = prime * hashCode + ((getSriovNetSupport() == null) ? 0 : getSriovNetSupport().hashCode());
+        hashCode = prime * hashCode + ((getBootMode() == null) ? 0 : getBootMode().hashCode());
         return hashCode;
     }
 

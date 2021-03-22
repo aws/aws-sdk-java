@@ -1009,6 +1009,41 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
+     * Retrieves the configuration settings for publishing findings to AWS Security Hub.
+     * </p>
+     * 
+     * @param getFindingsPublicationConfigurationRequest
+     * @return A Java Future containing the result of the GetFindingsPublicationConfiguration operation returned by the
+     *         service.
+     * @sample AmazonMacie2Async.GetFindingsPublicationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingsPublicationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetFindingsPublicationConfigurationResult> getFindingsPublicationConfigurationAsync(
+            GetFindingsPublicationConfigurationRequest getFindingsPublicationConfigurationRequest);
+
+    /**
+     * <p>
+     * Retrieves the configuration settings for publishing findings to AWS Security Hub.
+     * </p>
+     * 
+     * @param getFindingsPublicationConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetFindingsPublicationConfiguration operation returned by the
+     *         service.
+     * @sample AmazonMacie2AsyncHandler.GetFindingsPublicationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingsPublicationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetFindingsPublicationConfigurationResult> getFindingsPublicationConfigurationAsync(
+            GetFindingsPublicationConfigurationRequest getFindingsPublicationConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetFindingsPublicationConfigurationRequest, GetFindingsPublicationConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves the count of Amazon Macie membership invitations that were received by an account.
      * </p>
      * 
@@ -1485,6 +1520,41 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
     java.util.concurrent.Future<PutClassificationExportConfigurationResult> putClassificationExportConfigurationAsync(
             PutClassificationExportConfigurationRequest putClassificationExportConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<PutClassificationExportConfigurationRequest, PutClassificationExportConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the configuration settings for publishing findings to AWS Security Hub.
+     * </p>
+     * 
+     * @param putFindingsPublicationConfigurationRequest
+     * @return A Java Future containing the result of the PutFindingsPublicationConfiguration operation returned by the
+     *         service.
+     * @sample AmazonMacie2Async.PutFindingsPublicationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PutFindingsPublicationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutFindingsPublicationConfigurationResult> putFindingsPublicationConfigurationAsync(
+            PutFindingsPublicationConfigurationRequest putFindingsPublicationConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates the configuration settings for publishing findings to AWS Security Hub.
+     * </p>
+     * 
+     * @param putFindingsPublicationConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutFindingsPublicationConfiguration operation returned by the
+     *         service.
+     * @sample AmazonMacie2AsyncHandler.PutFindingsPublicationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PutFindingsPublicationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutFindingsPublicationConfigurationResult> putFindingsPublicationConfigurationAsync(
+            PutFindingsPublicationConfigurationRequest putFindingsPublicationConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutFindingsPublicationConfigurationRequest, PutFindingsPublicationConfigurationResult> asyncHandler);
 
     /**
      * <p>

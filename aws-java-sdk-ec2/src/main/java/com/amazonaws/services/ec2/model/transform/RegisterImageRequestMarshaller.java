@@ -165,6 +165,10 @@ public class RegisterImageRequestMarshaller implements Marshaller<Request<Regist
             request.addParameter("VirtualizationType", StringUtils.fromString(registerImageRequest.getVirtualizationType()));
         }
 
+        if (registerImageRequest.getBootMode() != null) {
+            request.addParameter("BootMode", StringUtils.fromString(registerImageRequest.getBootMode()));
+        }
+
         return request;
     }
 

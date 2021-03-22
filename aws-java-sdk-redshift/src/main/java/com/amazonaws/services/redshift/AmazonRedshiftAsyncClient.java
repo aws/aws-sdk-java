@@ -2933,6 +2933,39 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<ModifyAquaConfigurationResult> modifyAquaConfigurationAsync(ModifyAquaConfigurationRequest request) {
+
+        return modifyAquaConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyAquaConfigurationResult> modifyAquaConfigurationAsync(final ModifyAquaConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyAquaConfigurationRequest, ModifyAquaConfigurationResult> asyncHandler) {
+        final ModifyAquaConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyAquaConfigurationResult>() {
+            @Override
+            public ModifyAquaConfigurationResult call() throws Exception {
+                ModifyAquaConfigurationResult result = null;
+
+                try {
+                    result = executeModifyAquaConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<Cluster> modifyClusterAsync(ModifyClusterRequest request) {
 
         return modifyClusterAsync(request, null);

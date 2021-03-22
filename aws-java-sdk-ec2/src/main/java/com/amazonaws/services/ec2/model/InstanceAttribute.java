@@ -109,9 +109,11 @@ public class InstanceAttribute implements Serializable, Cloneable {
     private String rootDeviceName;
     /**
      * <p>
-     * Indicates whether source/destination checking is enabled. A value of <code>true</code> means that checking is
-     * enabled, and <code>false</code> means that checking is disabled. This value must be <code>false</code> for a NAT
-     * instance to perform NAT.
+     * Enable or disable source/destination checks, which ensure that the instance is either the source or the
+     * destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are
+     * enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable
+     * source/destination checks if the instance runs services such as network address translation, routing, or
+     * firewalls.
      * </p>
      */
     private Boolean sourceDestCheck;
@@ -805,15 +807,19 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether source/destination checking is enabled. A value of <code>true</code> means that checking is
-     * enabled, and <code>false</code> means that checking is disabled. This value must be <code>false</code> for a NAT
-     * instance to perform NAT.
+     * Enable or disable source/destination checks, which ensure that the instance is either the source or the
+     * destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are
+     * enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable
+     * source/destination checks if the instance runs services such as network address translation, routing, or
+     * firewalls.
      * </p>
      * 
      * @param sourceDestCheck
-     *        Indicates whether source/destination checking is enabled. A value of <code>true</code> means that checking
-     *        is enabled, and <code>false</code> means that checking is disabled. This value must be <code>false</code>
-     *        for a NAT instance to perform NAT.
+     *        Enable or disable source/destination checks, which ensure that the instance is either the source or the
+     *        destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks
+     *        are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable
+     *        source/destination checks if the instance runs services such as network address translation, routing, or
+     *        firewalls.
      */
 
     public void setSourceDestCheck(Boolean sourceDestCheck) {
@@ -822,14 +828,18 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether source/destination checking is enabled. A value of <code>true</code> means that checking is
-     * enabled, and <code>false</code> means that checking is disabled. This value must be <code>false</code> for a NAT
-     * instance to perform NAT.
+     * Enable or disable source/destination checks, which ensure that the instance is either the source or the
+     * destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are
+     * enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable
+     * source/destination checks if the instance runs services such as network address translation, routing, or
+     * firewalls.
      * </p>
      * 
-     * @return Indicates whether source/destination checking is enabled. A value of <code>true</code> means that
-     *         checking is enabled, and <code>false</code> means that checking is disabled. This value must be
-     *         <code>false</code> for a NAT instance to perform NAT.
+     * @return Enable or disable source/destination checks, which ensure that the instance is either the source or the
+     *         destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks
+     *         are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable
+     *         source/destination checks if the instance runs services such as network address translation, routing, or
+     *         firewalls.
      */
 
     public Boolean getSourceDestCheck() {
@@ -838,15 +848,19 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether source/destination checking is enabled. A value of <code>true</code> means that checking is
-     * enabled, and <code>false</code> means that checking is disabled. This value must be <code>false</code> for a NAT
-     * instance to perform NAT.
+     * Enable or disable source/destination checks, which ensure that the instance is either the source or the
+     * destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are
+     * enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable
+     * source/destination checks if the instance runs services such as network address translation, routing, or
+     * firewalls.
      * </p>
      * 
      * @param sourceDestCheck
-     *        Indicates whether source/destination checking is enabled. A value of <code>true</code> means that checking
-     *        is enabled, and <code>false</code> means that checking is disabled. This value must be <code>false</code>
-     *        for a NAT instance to perform NAT.
+     *        Enable or disable source/destination checks, which ensure that the instance is either the source or the
+     *        destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks
+     *        are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable
+     *        source/destination checks if the instance runs services such as network address translation, routing, or
+     *        firewalls.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -857,14 +871,18 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether source/destination checking is enabled. A value of <code>true</code> means that checking is
-     * enabled, and <code>false</code> means that checking is disabled. This value must be <code>false</code> for a NAT
-     * instance to perform NAT.
+     * Enable or disable source/destination checks, which ensure that the instance is either the source or the
+     * destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are
+     * enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable
+     * source/destination checks if the instance runs services such as network address translation, routing, or
+     * firewalls.
      * </p>
      * 
-     * @return Indicates whether source/destination checking is enabled. A value of <code>true</code> means that
-     *         checking is enabled, and <code>false</code> means that checking is disabled. This value must be
-     *         <code>false</code> for a NAT instance to perform NAT.
+     * @return Enable or disable source/destination checks, which ensure that the instance is either the source or the
+     *         destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks
+     *         are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable
+     *         source/destination checks if the instance runs services such as network address translation, routing, or
+     *         firewalls.
      */
 
     public Boolean isSourceDestCheck() {

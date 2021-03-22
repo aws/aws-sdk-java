@@ -166,6 +166,14 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
      * </p>
      */
     private Boolean autoRecoverySupported;
+    /**
+     * <p>
+     * The supported boot modes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> supportedBootModes;
 
     /**
      * <p>
@@ -1424,6 +1432,127 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The supported boot modes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
+     * </p>
+     * 
+     * @return The supported boot modes. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
+     *         EC2 User Guide</i>.
+     * @see BootModeType
+     */
+
+    public java.util.List<String> getSupportedBootModes() {
+        if (supportedBootModes == null) {
+            supportedBootModes = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return supportedBootModes;
+    }
+
+    /**
+     * <p>
+     * The supported boot modes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param supportedBootModes
+     *        The supported boot modes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
+     *        EC2 User Guide</i>.
+     * @see BootModeType
+     */
+
+    public void setSupportedBootModes(java.util.Collection<String> supportedBootModes) {
+        if (supportedBootModes == null) {
+            this.supportedBootModes = null;
+            return;
+        }
+
+        this.supportedBootModes = new com.amazonaws.internal.SdkInternalList<String>(supportedBootModes);
+    }
+
+    /**
+     * <p>
+     * The supported boot modes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedBootModes(java.util.Collection)} or {@link #withSupportedBootModes(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedBootModes
+     *        The supported boot modes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
+     *        EC2 User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BootModeType
+     */
+
+    public InstanceTypeInfo withSupportedBootModes(String... supportedBootModes) {
+        if (this.supportedBootModes == null) {
+            setSupportedBootModes(new com.amazonaws.internal.SdkInternalList<String>(supportedBootModes.length));
+        }
+        for (String ele : supportedBootModes) {
+            this.supportedBootModes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The supported boot modes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param supportedBootModes
+     *        The supported boot modes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
+     *        EC2 User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BootModeType
+     */
+
+    public InstanceTypeInfo withSupportedBootModes(java.util.Collection<String> supportedBootModes) {
+        setSupportedBootModes(supportedBootModes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The supported boot modes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param supportedBootModes
+     *        The supported boot modes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
+     *        EC2 User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BootModeType
+     */
+
+    public InstanceTypeInfo withSupportedBootModes(BootModeType... supportedBootModes) {
+        com.amazonaws.internal.SdkInternalList<String> supportedBootModesCopy = new com.amazonaws.internal.SdkInternalList<String>(supportedBootModes.length);
+        for (BootModeType value : supportedBootModes) {
+            supportedBootModesCopy.add(value.toString());
+        }
+        if (getSupportedBootModes() == null) {
+            setSupportedBootModes(supportedBootModesCopy);
+        } else {
+            getSupportedBootModes().addAll(supportedBootModesCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1480,7 +1609,9 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
         if (getDedicatedHostsSupported() != null)
             sb.append("DedicatedHostsSupported: ").append(getDedicatedHostsSupported()).append(",");
         if (getAutoRecoverySupported() != null)
-            sb.append("AutoRecoverySupported: ").append(getAutoRecoverySupported());
+            sb.append("AutoRecoverySupported: ").append(getAutoRecoverySupported()).append(",");
+        if (getSupportedBootModes() != null)
+            sb.append("SupportedBootModes: ").append(getSupportedBootModes());
         sb.append("}");
         return sb.toString();
     }
@@ -1588,6 +1719,10 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
             return false;
         if (other.getAutoRecoverySupported() != null && other.getAutoRecoverySupported().equals(this.getAutoRecoverySupported()) == false)
             return false;
+        if (other.getSupportedBootModes() == null ^ this.getSupportedBootModes() == null)
+            return false;
+        if (other.getSupportedBootModes() != null && other.getSupportedBootModes().equals(this.getSupportedBootModes()) == false)
+            return false;
         return true;
     }
 
@@ -1619,6 +1754,7 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getBurstablePerformanceSupported() == null) ? 0 : getBurstablePerformanceSupported().hashCode());
         hashCode = prime * hashCode + ((getDedicatedHostsSupported() == null) ? 0 : getDedicatedHostsSupported().hashCode());
         hashCode = prime * hashCode + ((getAutoRecoverySupported() == null) ? 0 : getAutoRecoverySupported().hashCode());
+        hashCode = prime * hashCode + ((getSupportedBootModes() == null) ? 0 : getSupportedBootModes().hashCode());
         return hashCode;
     }
 

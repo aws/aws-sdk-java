@@ -26,7 +26,8 @@ public enum ImageAttributeName {
     LaunchPermission("launchPermission"),
     ProductCodes("productCodes"),
     BlockDeviceMapping("blockDeviceMapping"),
-    SriovNetSupport("sriovNetSupport");
+    SriovNetSupport("sriovNetSupport"),
+    BootMode("bootMode");
 
     private String value;
 

@@ -37,6 +37,10 @@ public class FleetLaunchTemplateConfigRequest implements Serializable, Cloneable
      * <p>
      * Any parameters that you specify override the same parameters in the launch template.
      * </p>
+     * <p>
+     * For fleets of type <code>request</code> and <code>maintain</code>, a maximum of 300 items is allowed across all
+     * launch templates.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<FleetLaunchTemplateOverridesRequest> overrides;
 
@@ -90,8 +94,15 @@ public class FleetLaunchTemplateConfigRequest implements Serializable, Cloneable
      * <p>
      * Any parameters that you specify override the same parameters in the launch template.
      * </p>
+     * <p>
+     * For fleets of type <code>request</code> and <code>maintain</code>, a maximum of 300 items is allowed across all
+     * launch templates.
+     * </p>
      * 
-     * @return Any parameters that you specify override the same parameters in the launch template.
+     * @return Any parameters that you specify override the same parameters in the launch template.</p>
+     *         <p>
+     *         For fleets of type <code>request</code> and <code>maintain</code>, a maximum of 300 items is allowed
+     *         across all launch templates.
      */
 
     public java.util.List<FleetLaunchTemplateOverridesRequest> getOverrides() {
@@ -105,9 +116,16 @@ public class FleetLaunchTemplateConfigRequest implements Serializable, Cloneable
      * <p>
      * Any parameters that you specify override the same parameters in the launch template.
      * </p>
+     * <p>
+     * For fleets of type <code>request</code> and <code>maintain</code>, a maximum of 300 items is allowed across all
+     * launch templates.
+     * </p>
      * 
      * @param overrides
-     *        Any parameters that you specify override the same parameters in the launch template.
+     *        Any parameters that you specify override the same parameters in the launch template.</p>
+     *        <p>
+     *        For fleets of type <code>request</code> and <code>maintain</code>, a maximum of 300 items is allowed
+     *        across all launch templates.
      */
 
     public void setOverrides(java.util.Collection<FleetLaunchTemplateOverridesRequest> overrides) {
@@ -124,13 +142,20 @@ public class FleetLaunchTemplateConfigRequest implements Serializable, Cloneable
      * Any parameters that you specify override the same parameters in the launch template.
      * </p>
      * <p>
+     * For fleets of type <code>request</code> and <code>maintain</code>, a maximum of 300 items is allowed across all
+     * launch templates.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setOverrides(java.util.Collection)} or {@link #withOverrides(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param overrides
-     *        Any parameters that you specify override the same parameters in the launch template.
+     *        Any parameters that you specify override the same parameters in the launch template.</p>
+     *        <p>
+     *        For fleets of type <code>request</code> and <code>maintain</code>, a maximum of 300 items is allowed
+     *        across all launch templates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,9 +173,16 @@ public class FleetLaunchTemplateConfigRequest implements Serializable, Cloneable
      * <p>
      * Any parameters that you specify override the same parameters in the launch template.
      * </p>
+     * <p>
+     * For fleets of type <code>request</code> and <code>maintain</code>, a maximum of 300 items is allowed across all
+     * launch templates.
+     * </p>
      * 
      * @param overrides
-     *        Any parameters that you specify override the same parameters in the launch template.
+     *        Any parameters that you specify override the same parameters in the launch template.</p>
+     *        <p>
+     *        For fleets of type <code>request</code> and <code>maintain</code>, a maximum of 300 items is allowed
+     *        across all launch templates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

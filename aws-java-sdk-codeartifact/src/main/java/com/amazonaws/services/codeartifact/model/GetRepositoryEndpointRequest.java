@@ -64,11 +64,6 @@ public class GetRepositoryEndpointRequest extends com.amazonaws.AmazonWebService
      * <code>maven</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>nuget</code>
-     * </p>
-     * </li>
      * </ul>
      */
     private String format;
@@ -219,11 +214,6 @@ public class GetRepositoryEndpointRequest extends com.amazonaws.AmazonWebService
      * <code>maven</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>nuget</code>
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param format
@@ -243,11 +233,6 @@ public class GetRepositoryEndpointRequest extends com.amazonaws.AmazonWebService
      *        <li>
      *        <p>
      *        <code>maven</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>nuget</code>
      *        </p>
      *        </li>
      * @see PackageFormat
@@ -277,11 +262,6 @@ public class GetRepositoryEndpointRequest extends com.amazonaws.AmazonWebService
      * <code>maven</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>nuget</code>
-     * </p>
-     * </li>
      * </ul>
      * 
      * @return Returns which endpoint of a repository to return. A repository has one endpoint for each package format:
@@ -300,11 +280,6 @@ public class GetRepositoryEndpointRequest extends com.amazonaws.AmazonWebService
      *         <li>
      *         <p>
      *         <code>maven</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>nuget</code>
      *         </p>
      *         </li>
      * @see PackageFormat
@@ -334,11 +309,6 @@ public class GetRepositoryEndpointRequest extends com.amazonaws.AmazonWebService
      * <code>maven</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>nuget</code>
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param format
@@ -358,11 +328,6 @@ public class GetRepositoryEndpointRequest extends com.amazonaws.AmazonWebService
      *        <li>
      *        <p>
      *        <code>maven</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>nuget</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -394,11 +359,6 @@ public class GetRepositoryEndpointRequest extends com.amazonaws.AmazonWebService
      * <code>maven</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>nuget</code>
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param format
@@ -418,11 +378,6 @@ public class GetRepositoryEndpointRequest extends com.amazonaws.AmazonWebService
      *        <li>
      *        <p>
      *        <code>maven</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>nuget</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

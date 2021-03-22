@@ -178,6 +178,11 @@ public class AbstractAmazonMacie2 implements AmazonMacie2 {
     }
 
     @Override
+    public GetFindingsPublicationConfigurationResult getFindingsPublicationConfiguration(GetFindingsPublicationConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetInvitationsCountResult getInvitationsCount(GetInvitationsCountRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -249,6 +254,11 @@ public class AbstractAmazonMacie2 implements AmazonMacie2 {
 
     @Override
     public PutClassificationExportConfigurationResult putClassificationExportConfiguration(PutClassificationExportConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutFindingsPublicationConfigurationResult putFindingsPublicationConfiguration(PutFindingsPublicationConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

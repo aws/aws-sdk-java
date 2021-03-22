@@ -231,6 +231,11 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
+     * <code>supported-boot-mode</code> - The boot mode (<code>legacy-bios</code> | <code>uefi</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>supported-root-device-type</code> - The root device type (<code>ebs</code> | <code>instance-store</code>).
      * </p>
      * </li>
@@ -606,6 +611,11 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
+     * <code>supported-boot-mode</code> - The boot mode (<code>legacy-bios</code> | <code>uefi</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>supported-root-device-type</code> - The root device type (<code>ebs</code> | <code>instance-store</code>).
      * </p>
      * </li>
@@ -841,6 +851,11 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *         <li>
      *         <p>
      *         <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in GHz.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>supported-boot-mode</code> - The boot mode (<code>legacy-bios</code> | <code>uefi</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -1093,6 +1108,11 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
+     * <code>supported-boot-mode</code> - The boot mode (<code>legacy-bios</code> | <code>uefi</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>supported-root-device-type</code> - The root device type (<code>ebs</code> | <code>instance-store</code>).
      * </p>
      * </li>
@@ -1328,6 +1348,11 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <li>
      *        <p>
      *        <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in GHz.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>supported-boot-mode</code> - The boot mode (<code>legacy-bios</code> | <code>uefi</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1582,6 +1607,11 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
+     * <code>supported-boot-mode</code> - The boot mode (<code>legacy-bios</code> | <code>uefi</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>supported-root-device-type</code> - The root device type (<code>ebs</code> | <code>instance-store</code>).
      * </p>
      * </li>
@@ -1822,6 +1852,11 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <li>
      *        <p>
      *        <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in GHz.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>supported-boot-mode</code> - The boot mode (<code>legacy-bios</code> | <code>uefi</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -2078,6 +2113,11 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
+     * <code>supported-boot-mode</code> - The boot mode (<code>legacy-bios</code> | <code>uefi</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>supported-root-device-type</code> - The root device type (<code>ebs</code> | <code>instance-store</code>).
      * </p>
      * </li>
@@ -2313,6 +2353,11 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <li>
      *        <p>
      *        <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in GHz.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>supported-boot-mode</code> - The boot mode (<code>legacy-bios</code> | <code>uefi</code>).
      *        </p>
      *        </li>
      *        <li>

@@ -174,6 +174,17 @@ public class InstanceTypeInfoStaxUnmarshaller implements Unmarshaller<InstanceTy
                     instanceTypeInfo.setAutoRecoverySupported(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("supportedBootModes", targetDepth)) {
+                    instanceTypeInfo.withSupportedBootModes(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("supportedBootModes/item", targetDepth)) {
+                    instanceTypeInfo.withSupportedBootModes(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return instanceTypeInfo;

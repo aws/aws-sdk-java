@@ -27,7 +27,7 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The domain that contains the created repository.
+     * The name of the domain that contains the created repository.
      * </p>
      */
     private String domain;
@@ -67,11 +67,11 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The domain that contains the created repository.
+     * The name of the domain that contains the created repository.
      * </p>
      * 
      * @param domain
-     *        The domain that contains the created repository.
+     *        The name of the domain that contains the created repository.
      */
 
     public void setDomain(String domain) {
@@ -80,10 +80,10 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The domain that contains the created repository.
+     * The name of the domain that contains the created repository.
      * </p>
      * 
-     * @return The domain that contains the created repository.
+     * @return The name of the domain that contains the created repository.
      */
 
     public String getDomain() {
@@ -92,11 +92,11 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The domain that contains the created repository.
+     * The name of the domain that contains the created repository.
      * </p>
      * 
      * @param domain
-     *        The domain that contains the created repository.
+     *        The name of the domain that contains the created repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -426,6 +426,21 @@ public class AbstractAmazonMacie2Async extends AbstractAmazonMacie2 implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetFindingsPublicationConfigurationResult> getFindingsPublicationConfigurationAsync(
+            GetFindingsPublicationConfigurationRequest request) {
+
+        return getFindingsPublicationConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFindingsPublicationConfigurationResult> getFindingsPublicationConfigurationAsync(
+            GetFindingsPublicationConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetFindingsPublicationConfigurationRequest, GetFindingsPublicationConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetInvitationsCountResult> getInvitationsCountAsync(GetInvitationsCountRequest request) {
 
         return getInvitationsCountAsync(request, null);
@@ -618,6 +633,21 @@ public class AbstractAmazonMacie2Async extends AbstractAmazonMacie2 implements A
     public java.util.concurrent.Future<PutClassificationExportConfigurationResult> putClassificationExportConfigurationAsync(
             PutClassificationExportConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<PutClassificationExportConfigurationRequest, PutClassificationExportConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutFindingsPublicationConfigurationResult> putFindingsPublicationConfigurationAsync(
+            PutFindingsPublicationConfigurationRequest request) {
+
+        return putFindingsPublicationConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutFindingsPublicationConfigurationResult> putFindingsPublicationConfigurationAsync(
+            PutFindingsPublicationConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutFindingsPublicationConfigurationRequest, PutFindingsPublicationConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

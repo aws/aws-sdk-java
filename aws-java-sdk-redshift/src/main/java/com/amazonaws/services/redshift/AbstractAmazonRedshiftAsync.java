@@ -1314,6 +1314,19 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ModifyAquaConfigurationResult> modifyAquaConfigurationAsync(ModifyAquaConfigurationRequest request) {
+
+        return modifyAquaConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyAquaConfigurationResult> modifyAquaConfigurationAsync(ModifyAquaConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyAquaConfigurationRequest, ModifyAquaConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<Cluster> modifyClusterAsync(ModifyClusterRequest request) {
 
         return modifyClusterAsync(request, null);

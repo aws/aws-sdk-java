@@ -1,3 +1,20 @@
+# __1.11.980__ __2021-03-22__
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release adds support for UEFI boot on selected AMD- and Intel-based EC2 instances.
+
+## __Amazon Macie 2__
+  - ### Features
+    - This release of the Amazon Macie API adds support for publishing sensitive data findings to AWS Security Hub and specifying which categories of findings to publish to Security Hub.
+
+## __Amazon Redshift__
+  - ### Features
+    - Added support to enable AQUA in Amazon Redshift clusters.
+
+## __CodeArtifact__
+  - ### Features
+    - Documentation updates for CodeArtifact
+
 # __1.11.979__ __2021-03-19__
 ## __Amazon Elastic Compute Cloud__
   - ### Features

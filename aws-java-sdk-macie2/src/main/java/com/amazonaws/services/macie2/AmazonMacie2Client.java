@@ -2286,6 +2286,79 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Retrieves the configuration settings for publishing findings to AWS Security Hub.
+     * </p>
+     * 
+     * @param getFindingsPublicationConfigurationRequest
+     * @return Result of the GetFindingsPublicationConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws ServiceQuotaExceededException
+     *         The request failed because fulfilling the request would exceed one or more service quotas for your
+     *         account.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @throws ResourceNotFoundException
+     *         The request failed because the specified resource wasn't found.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @throws ConflictException
+     *         The request failed because it conflicts with the current state of the specified resource.
+     * @sample AmazonMacie2.GetFindingsPublicationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingsPublicationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetFindingsPublicationConfigurationResult getFindingsPublicationConfiguration(GetFindingsPublicationConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetFindingsPublicationConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetFindingsPublicationConfigurationResult executeGetFindingsPublicationConfiguration(
+            GetFindingsPublicationConfigurationRequest getFindingsPublicationConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getFindingsPublicationConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetFindingsPublicationConfigurationRequest> request = null;
+        Response<GetFindingsPublicationConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetFindingsPublicationConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getFindingsPublicationConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFindingsPublicationConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetFindingsPublicationConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetFindingsPublicationConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves the count of Amazon Macie membership invitations that were received by an account.
      * </p>
      * 
@@ -3319,6 +3392,79 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
             HttpResponseHandler<AmazonWebServiceResponse<PutClassificationExportConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new PutClassificationExportConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the configuration settings for publishing findings to AWS Security Hub.
+     * </p>
+     * 
+     * @param putFindingsPublicationConfigurationRequest
+     * @return Result of the PutFindingsPublicationConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws ServiceQuotaExceededException
+     *         The request failed because fulfilling the request would exceed one or more service quotas for your
+     *         account.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @throws ResourceNotFoundException
+     *         The request failed because the specified resource wasn't found.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @throws ConflictException
+     *         The request failed because it conflicts with the current state of the specified resource.
+     * @sample AmazonMacie2.PutFindingsPublicationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PutFindingsPublicationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutFindingsPublicationConfigurationResult putFindingsPublicationConfiguration(PutFindingsPublicationConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executePutFindingsPublicationConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final PutFindingsPublicationConfigurationResult executePutFindingsPublicationConfiguration(
+            PutFindingsPublicationConfigurationRequest putFindingsPublicationConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putFindingsPublicationConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutFindingsPublicationConfigurationRequest> request = null;
+        Response<PutFindingsPublicationConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutFindingsPublicationConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putFindingsPublicationConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutFindingsPublicationConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutFindingsPublicationConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutFindingsPublicationConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

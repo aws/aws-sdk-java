@@ -27,7 +27,7 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The domain that contains the repository that contains the requested list of packages.
+     * The name of the domain that contains the repository that contains the requested list of packages.
      * </p>
      */
     private String domain;
@@ -63,11 +63,6 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>nuget</code>: A NuGet package.
-     * </p>
-     * </li>
      * </ul>
      */
     private String format;
@@ -90,11 +85,6 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
      * </p>
      * </li>
      * </ul>
@@ -123,11 +113,11 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The domain that contains the repository that contains the requested list of packages.
+     * The name of the domain that contains the repository that contains the requested list of packages.
      * </p>
      * 
      * @param domain
-     *        The domain that contains the repository that contains the requested list of packages.
+     *        The name of the domain that contains the repository that contains the requested list of packages.
      */
 
     public void setDomain(String domain) {
@@ -136,10 +126,10 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The domain that contains the repository that contains the requested list of packages.
+     * The name of the domain that contains the repository that contains the requested list of packages.
      * </p>
      * 
-     * @return The domain that contains the repository that contains the requested list of packages.
+     * @return The name of the domain that contains the repository that contains the requested list of packages.
      */
 
     public String getDomain() {
@@ -148,11 +138,11 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The domain that contains the repository that contains the requested list of packages.
+     * The name of the domain that contains the repository that contains the requested list of packages.
      * </p>
      * 
      * @param domain
-     *        The domain that contains the repository that contains the requested list of packages.
+     *        The name of the domain that contains the repository that contains the requested list of packages.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -262,11 +252,6 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>nuget</code>: A NuGet package.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param format
@@ -286,11 +271,6 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
      *        file.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>nuget</code>: A NuGet package.
      *        </p>
      *        </li>
      * @see PackageFormat
@@ -320,11 +300,6 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>nuget</code>: A NuGet package.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @return The format of the packages. The valid package types are: </p>
@@ -343,11 +318,6 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <p>
      *         <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
      *         file.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>nuget</code>: A NuGet package.
      *         </p>
      *         </li>
      * @see PackageFormat
@@ -377,11 +347,6 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>nuget</code>: A NuGet package.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param format
@@ -401,11 +366,6 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
      *        file.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>nuget</code>: A NuGet package.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -437,11 +397,6 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>nuget</code>: A NuGet package.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param format
@@ -461,11 +416,6 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
      *        file.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>nuget</code>: A NuGet package.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -498,11 +448,6 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param namespace
@@ -522,11 +467,6 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        A Python package does not contain a corresponding component, so Python packages do not have a namespace.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
      *        </p>
      *        </li>
      */
@@ -556,11 +496,6 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @return The namespace of the package. The package component that specifies its namespace depends on its type. For
@@ -579,11 +514,6 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <li>
      *         <p>
      *         A Python package does not contain a corresponding component, so Python packages do not have a namespace.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
      *         </p>
      *         </li>
      */
@@ -613,11 +543,6 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * A Python package does not contain a corresponding component, so Python packages do not have a namespace.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param namespace
@@ -637,11 +562,6 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        A Python package does not contain a corresponding component, so Python packages do not have a namespace.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        A NuGet package does not contain a corresponding component, so NuGet packages do not have a namespace.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

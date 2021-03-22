@@ -25,8 +25,8 @@ public class ListDomainsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The returned list of
-     * <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a> </code>
+     * The returned list of <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a>
      * objects.
      * </p>
      */
@@ -41,14 +41,14 @@ public class ListDomainsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The returned list of
-     * <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a> </code>
+     * The returned list of <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a>
      * objects.
      * </p>
      * 
-     * @return The returned list of
-     *         <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a> </code>
-     *         objects.
+     * @return The returned list of <a
+     *         href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html"
+     *         >DomainSummary</a> objects.
      */
 
     public java.util.List<DomainSummary> getDomains() {
@@ -57,15 +57,15 @@ public class ListDomainsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The returned list of
-     * <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a> </code>
+     * The returned list of <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a>
      * objects.
      * </p>
      * 
      * @param domains
-     *        The returned list of
-     *        <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a> </code>
-     *        objects.
+     *        The returned list of <a
+     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html"
+     *        >DomainSummary</a> objects.
      */
 
     public void setDomains(java.util.Collection<DomainSummary> domains) {
@@ -79,8 +79,8 @@ public class ListDomainsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The returned list of
-     * <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a> </code>
+     * The returned list of <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a>
      * objects.
      * </p>
      * <p>
@@ -90,9 +90,9 @@ public class ListDomainsResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param domains
-     *        The returned list of
-     *        <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a> </code>
-     *        objects.
+     *        The returned list of <a
+     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html"
+     *        >DomainSummary</a> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,15 +108,15 @@ public class ListDomainsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The returned list of
-     * <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a> </code>
+     * The returned list of <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a>
      * objects.
      * </p>
      * 
      * @param domains
-     *        The returned list of
-     *        <code> <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a> </code>
-     *        objects.
+     *        The returned list of <a
+     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html"
+     *        >DomainSummary</a> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

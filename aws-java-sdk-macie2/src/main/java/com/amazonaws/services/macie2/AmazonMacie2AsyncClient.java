@@ -1080,6 +1080,41 @@ public class AmazonMacie2AsyncClient extends AmazonMacie2Client implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<GetFindingsPublicationConfigurationResult> getFindingsPublicationConfigurationAsync(
+            GetFindingsPublicationConfigurationRequest request) {
+
+        return getFindingsPublicationConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFindingsPublicationConfigurationResult> getFindingsPublicationConfigurationAsync(
+            final GetFindingsPublicationConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetFindingsPublicationConfigurationRequest, GetFindingsPublicationConfigurationResult> asyncHandler) {
+        final GetFindingsPublicationConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetFindingsPublicationConfigurationResult>() {
+            @Override
+            public GetFindingsPublicationConfigurationResult call() throws Exception {
+                GetFindingsPublicationConfigurationResult result = null;
+
+                try {
+                    result = executeGetFindingsPublicationConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetInvitationsCountResult> getInvitationsCountAsync(GetInvitationsCountRequest request) {
 
         return getInvitationsCountAsync(request, null);
@@ -1562,6 +1597,41 @@ public class AmazonMacie2AsyncClient extends AmazonMacie2Client implements Amazo
 
                 try {
                     result = executePutClassificationExportConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutFindingsPublicationConfigurationResult> putFindingsPublicationConfigurationAsync(
+            PutFindingsPublicationConfigurationRequest request) {
+
+        return putFindingsPublicationConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutFindingsPublicationConfigurationResult> putFindingsPublicationConfigurationAsync(
+            final PutFindingsPublicationConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutFindingsPublicationConfigurationRequest, PutFindingsPublicationConfigurationResult> asyncHandler) {
+        final PutFindingsPublicationConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutFindingsPublicationConfigurationResult>() {
+            @Override
+            public PutFindingsPublicationConfigurationResult call() throws Exception {
+                PutFindingsPublicationConfigurationResult result = null;
+
+                try {
+                    result = executePutFindingsPublicationConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
