@@ -34,6 +34,8 @@ public class UpdateCostCategoryDefinitionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RuleVersion").build();
     private static final MarshallingInfo<List> RULES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Rules").build();
+    private static final MarshallingInfo<String> DEFAULTVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultValue").build();
 
     private static final UpdateCostCategoryDefinitionRequestMarshaller instance = new UpdateCostCategoryDefinitionRequestMarshaller();
 
@@ -54,6 +56,7 @@ public class UpdateCostCategoryDefinitionRequestMarshaller {
             protocolMarshaller.marshall(updateCostCategoryDefinitionRequest.getCostCategoryArn(), COSTCATEGORYARN_BINDING);
             protocolMarshaller.marshall(updateCostCategoryDefinitionRequest.getRuleVersion(), RULEVERSION_BINDING);
             protocolMarshaller.marshall(updateCostCategoryDefinitionRequest.getRules(), RULES_BINDING);
+            protocolMarshaller.marshall(updateCostCategoryDefinitionRequest.getDefaultValue(), DEFAULTVALUE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

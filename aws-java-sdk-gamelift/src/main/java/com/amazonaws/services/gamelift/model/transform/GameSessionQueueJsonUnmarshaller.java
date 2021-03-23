@@ -81,6 +81,14 @@ public class GameSessionQueueJsonUnmarshaller implements Unmarshaller<GameSessio
                     context.nextToken();
                     gameSessionQueue.setPriorityConfiguration(PriorityConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("CustomEventData", targetDepth)) {
+                    context.nextToken();
+                    gameSessionQueue.setCustomEventData(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("NotificationTarget", targetDepth)) {
+                    context.nextToken();
+                    gameSessionQueue.setNotificationTarget(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

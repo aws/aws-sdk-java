@@ -83,7 +83,9 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
     private String ruleSetName;
     /**
      * <p>
-     * An SNS topic ARN that is set up to receive matchmaking notifications.
+     * An SNS topic ARN that is set up to receive matchmaking notifications. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Setting up
+     * notifications for matchmaking</a> for more information.
      * </p>
      */
     private String notificationTarget;
@@ -583,11 +585,15 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * An SNS topic ARN that is set up to receive matchmaking notifications.
+     * An SNS topic ARN that is set up to receive matchmaking notifications. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Setting up
+     * notifications for matchmaking</a> for more information.
      * </p>
      * 
      * @param notificationTarget
-     *        An SNS topic ARN that is set up to receive matchmaking notifications.
+     *        An SNS topic ARN that is set up to receive matchmaking notifications. See <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Setting up
+     *        notifications for matchmaking</a> for more information.
      */
 
     public void setNotificationTarget(String notificationTarget) {
@@ -596,10 +602,14 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * An SNS topic ARN that is set up to receive matchmaking notifications.
+     * An SNS topic ARN that is set up to receive matchmaking notifications. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Setting up
+     * notifications for matchmaking</a> for more information.
      * </p>
      * 
-     * @return An SNS topic ARN that is set up to receive matchmaking notifications.
+     * @return An SNS topic ARN that is set up to receive matchmaking notifications. See <a
+     *         href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Setting up
+     *         notifications for matchmaking</a> for more information.
      */
 
     public String getNotificationTarget() {
@@ -608,11 +618,15 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * An SNS topic ARN that is set up to receive matchmaking notifications.
+     * An SNS topic ARN that is set up to receive matchmaking notifications. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Setting up
+     * notifications for matchmaking</a> for more information.
      * </p>
      * 
      * @param notificationTarget
-     *        An SNS topic ARN that is set up to receive matchmaking notifications.
+     *        An SNS topic ARN that is set up to receive matchmaking notifications. See <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Setting up
+     *        notifications for matchmaking</a> for more information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -10,7 +10,7 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.redshift.model;
+package com.amazonaws.services.costexplorer.model;
 
 import javax.annotation.Generated;
 
@@ -18,15 +18,14 @@ import javax.annotation.Generated;
  * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public enum AquaConfigurationStatus {
+public enum CostCategoryInheritedValueDimensionName {
 
-    Enabled("enabled"),
-    Disabled("disabled"),
-    Auto("auto");
+    LINKED_ACCOUNT_NAME("LINKED_ACCOUNT_NAME"),
+    TAG("TAG");
 
     private String value;
 
-    private AquaConfigurationStatus(String value) {
+    private CostCategoryInheritedValueDimensionName(String value) {
         this.value = value;
     }
 
@@ -40,17 +39,17 @@ public enum AquaConfigurationStatus {
      *
      * @param value
      *        real value
-     * @return AquaConfigurationStatus corresponding to the value
+     * @return CostCategoryInheritedValueDimensionName corresponding to the value
      *
      * @throws IllegalArgumentException
      *         If the specified value does not map to one of the known values in this enum.
      */
-    public static AquaConfigurationStatus fromValue(String value) {
+    public static CostCategoryInheritedValueDimensionName fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         }
 
-        for (AquaConfigurationStatus enumEntry : AquaConfigurationStatus.values()) {
+        for (CostCategoryInheritedValueDimensionName enumEntry : CostCategoryInheritedValueDimensionName.values()) {
             if (enumEntry.toString().equals(value)) {
                 return enumEntry;
             }

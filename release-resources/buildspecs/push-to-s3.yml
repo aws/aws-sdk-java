@@ -2,6 +2,8 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      java: "$JAVA_RUNTIME"
     commands:
       - mkdir ~/.aws/
       - touch ~/.aws/config
@@ -25,3 +27,5 @@ phases:
       - aws --profile destination-location-profile s3 cp $CODEBUILD_SRC_DIR/pom.xml s3://$DESTINATION_BUCKET/pom.xml --acl public-read
       - aws configure set preview.cloudfront true
       - aws --profile destination-location-profile  cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths /latest/$LATEST_SDK_NAME
+      - java -version
+      - python --version

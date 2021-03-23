@@ -77,6 +77,20 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private PriorityConfiguration priorityConfiguration;
+    /**
+     * <p>
+     * Information to be added to all events that are related to this game session queue.
+     * </p>
+     */
+    private String customEventData;
+    /**
+     * <p>
+     * An SNS topic ARN that is set up to receive game session placement notifications. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up
+     * notifications for game session placement</a>.
+     * </p>
+     */
+    private String notificationTarget;
 
     /**
      * <p>
@@ -469,6 +483,98 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * Information to be added to all events that are related to this game session queue.
+     * </p>
+     * 
+     * @param customEventData
+     *        Information to be added to all events that are related to this game session queue.
+     */
+
+    public void setCustomEventData(String customEventData) {
+        this.customEventData = customEventData;
+    }
+
+    /**
+     * <p>
+     * Information to be added to all events that are related to this game session queue.
+     * </p>
+     * 
+     * @return Information to be added to all events that are related to this game session queue.
+     */
+
+    public String getCustomEventData() {
+        return this.customEventData;
+    }
+
+    /**
+     * <p>
+     * Information to be added to all events that are related to this game session queue.
+     * </p>
+     * 
+     * @param customEventData
+     *        Information to be added to all events that are related to this game session queue.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateGameSessionQueueRequest withCustomEventData(String customEventData) {
+        setCustomEventData(customEventData);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An SNS topic ARN that is set up to receive game session placement notifications. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up
+     * notifications for game session placement</a>.
+     * </p>
+     * 
+     * @param notificationTarget
+     *        An SNS topic ARN that is set up to receive game session placement notifications. See <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up
+     *        notifications for game session placement</a>.
+     */
+
+    public void setNotificationTarget(String notificationTarget) {
+        this.notificationTarget = notificationTarget;
+    }
+
+    /**
+     * <p>
+     * An SNS topic ARN that is set up to receive game session placement notifications. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up
+     * notifications for game session placement</a>.
+     * </p>
+     * 
+     * @return An SNS topic ARN that is set up to receive game session placement notifications. See <a
+     *         href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up
+     *         notifications for game session placement</a>.
+     */
+
+    public String getNotificationTarget() {
+        return this.notificationTarget;
+    }
+
+    /**
+     * <p>
+     * An SNS topic ARN that is set up to receive game session placement notifications. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up
+     * notifications for game session placement</a>.
+     * </p>
+     * 
+     * @param notificationTarget
+     *        An SNS topic ARN that is set up to receive game session placement notifications. See <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up
+     *        notifications for game session placement</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateGameSessionQueueRequest withNotificationTarget(String notificationTarget) {
+        setNotificationTarget(notificationTarget);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -491,7 +597,11 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
         if (getFilterConfiguration() != null)
             sb.append("FilterConfiguration: ").append(getFilterConfiguration()).append(",");
         if (getPriorityConfiguration() != null)
-            sb.append("PriorityConfiguration: ").append(getPriorityConfiguration());
+            sb.append("PriorityConfiguration: ").append(getPriorityConfiguration()).append(",");
+        if (getCustomEventData() != null)
+            sb.append("CustomEventData: ").append(getCustomEventData()).append(",");
+        if (getNotificationTarget() != null)
+            sb.append("NotificationTarget: ").append(getNotificationTarget());
         sb.append("}");
         return sb.toString();
     }
@@ -530,6 +640,14 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getPriorityConfiguration() != null && other.getPriorityConfiguration().equals(this.getPriorityConfiguration()) == false)
             return false;
+        if (other.getCustomEventData() == null ^ this.getCustomEventData() == null)
+            return false;
+        if (other.getCustomEventData() != null && other.getCustomEventData().equals(this.getCustomEventData()) == false)
+            return false;
+        if (other.getNotificationTarget() == null ^ this.getNotificationTarget() == null)
+            return false;
+        if (other.getNotificationTarget() != null && other.getNotificationTarget().equals(this.getNotificationTarget()) == false)
+            return false;
         return true;
     }
 
@@ -544,6 +662,8 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getDestinations() == null) ? 0 : getDestinations().hashCode());
         hashCode = prime * hashCode + ((getFilterConfiguration() == null) ? 0 : getFilterConfiguration().hashCode());
         hashCode = prime * hashCode + ((getPriorityConfiguration() == null) ? 0 : getPriorityConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getCustomEventData() == null) ? 0 : getCustomEventData().hashCode());
+        hashCode = prime * hashCode + ((getNotificationTarget() == null) ? 0 : getNotificationTarget().hashCode());
         return hashCode;
     }
 

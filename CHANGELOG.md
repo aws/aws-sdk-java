@@ -1,3 +1,28 @@
+# __1.11.981__ __2021-03-23__
+## __AWS Cost Explorer Service__
+  - ### Features
+    - You can now create cost categories with inherited value rules and specify default values for any uncategorized costs.
+
+## __AWS Fault Injection Simulator__
+  - ### Features
+    - Updated maximum allowed size of action parameter from 64 to 1024
+
+## __AWS Identity and Access Management__
+  - ### Features
+    - Documentation updates for IAM operations and descriptions.
+
+## __Amazon DynamoDB__
+  - ### Features
+    - Change Standard mode max retry count for DynamoDB which was 2 to match DynamoDB's Standard retry count which is 10.
+
+## __Amazon GameLift__
+  - ### Features
+    - GameLift adds support for using event notifications to monitor game session placements. Specify an SNS topic or use CloudWatch Events to track activity for a game session queue.
+
+## __Amazon Redshift__
+  - ### Features
+    - Removed APIs to control AQUA on clusters.
+
 # __1.11.980__ __2021-03-22__
 ## __Amazon Elastic Compute Cloud__
   - ### Features

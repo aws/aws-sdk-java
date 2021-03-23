@@ -158,7 +158,7 @@ public class RetryPolicyAdapterTest {
         adapter = new RetryPolicyAdapter(dynamoDBDefaultRetryPolicy, new ClientConfiguration().withRetryMode(RetryMode.STANDARD));
 
         assertFalse(adapter.maxRetriesExceeded(RetryPolicyContexts.withRetriesAttempted(1)));
-        assertTrue(adapter.maxRetriesExceeded(RetryPolicyContexts.withRetriesAttempted(2)));
+        assertTrue(adapter.maxRetriesExceeded(RetryPolicyContexts.withRetriesAttempted(10)));
     }
 
     @Test

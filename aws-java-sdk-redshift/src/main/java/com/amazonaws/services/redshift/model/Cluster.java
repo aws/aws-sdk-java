@@ -506,12 +506,6 @@ public class Cluster implements Serializable, Cloneable {
      * </p>
      */
     private Long totalStorageCapacityInMegaBytes;
-    /**
-     * <p>
-     * The AQUA (Advanced Query Accelerator) configuration of the cluster.
-     * </p>
-     */
-    private AquaConfiguration aquaConfiguration;
 
     /**
      * <p>
@@ -3956,46 +3950,6 @@ public class Cluster implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * The AQUA (Advanced Query Accelerator) configuration of the cluster.
-     * </p>
-     * 
-     * @param aquaConfiguration
-     *        The AQUA (Advanced Query Accelerator) configuration of the cluster.
-     */
-
-    public void setAquaConfiguration(AquaConfiguration aquaConfiguration) {
-        this.aquaConfiguration = aquaConfiguration;
-    }
-
-    /**
-     * <p>
-     * The AQUA (Advanced Query Accelerator) configuration of the cluster.
-     * </p>
-     * 
-     * @return The AQUA (Advanced Query Accelerator) configuration of the cluster.
-     */
-
-    public AquaConfiguration getAquaConfiguration() {
-        return this.aquaConfiguration;
-    }
-
-    /**
-     * <p>
-     * The AQUA (Advanced Query Accelerator) configuration of the cluster.
-     * </p>
-     * 
-     * @param aquaConfiguration
-     *        The AQUA (Advanced Query Accelerator) configuration of the cluster.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Cluster withAquaConfiguration(AquaConfiguration aquaConfiguration) {
-        setAquaConfiguration(aquaConfiguration);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -4104,9 +4058,7 @@ public class Cluster implements Serializable, Cloneable {
         if (getClusterNamespaceArn() != null)
             sb.append("ClusterNamespaceArn: ").append(getClusterNamespaceArn()).append(",");
         if (getTotalStorageCapacityInMegaBytes() != null)
-            sb.append("TotalStorageCapacityInMegaBytes: ").append(getTotalStorageCapacityInMegaBytes()).append(",");
-        if (getAquaConfiguration() != null)
-            sb.append("AquaConfiguration: ").append(getAquaConfiguration());
+            sb.append("TotalStorageCapacityInMegaBytes: ").append(getTotalStorageCapacityInMegaBytes());
         sb.append("}");
         return sb.toString();
     }
@@ -4325,10 +4277,6 @@ public class Cluster implements Serializable, Cloneable {
         if (other.getTotalStorageCapacityInMegaBytes() != null
                 && other.getTotalStorageCapacityInMegaBytes().equals(this.getTotalStorageCapacityInMegaBytes()) == false)
             return false;
-        if (other.getAquaConfiguration() == null ^ this.getAquaConfiguration() == null)
-            return false;
-        if (other.getAquaConfiguration() != null && other.getAquaConfiguration().equals(this.getAquaConfiguration()) == false)
-            return false;
         return true;
     }
 
@@ -4386,7 +4334,6 @@ public class Cluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAvailabilityZoneRelocationStatus() == null) ? 0 : getAvailabilityZoneRelocationStatus().hashCode());
         hashCode = prime * hashCode + ((getClusterNamespaceArn() == null) ? 0 : getClusterNamespaceArn().hashCode());
         hashCode = prime * hashCode + ((getTotalStorageCapacityInMegaBytes() == null) ? 0 : getTotalStorageCapacityInMegaBytes().hashCode());
-        hashCode = prime * hashCode + ((getAquaConfiguration() == null) ? 0 : getAquaConfiguration().hashCode());
         return hashCode;
     }
 

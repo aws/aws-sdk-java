@@ -183,10 +183,6 @@ public class RestoreFromClusterSnapshotRequestMarshaller implements Marshaller<R
             request.addParameter("AvailabilityZoneRelocation", StringUtils.fromBoolean(restoreFromClusterSnapshotRequest.getAvailabilityZoneRelocation()));
         }
 
-        if (restoreFromClusterSnapshotRequest.getAquaConfigurationStatus() != null) {
-            request.addParameter("AquaConfigurationStatus", StringUtils.fromString(restoreFromClusterSnapshotRequest.getAquaConfigurationStatus()));
-        }
-
         return request;
     }
 

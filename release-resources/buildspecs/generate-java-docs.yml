@@ -3,31 +3,25 @@ version: 0.2
 phases:
 
   install:
+    runtime-versions:
+      java: "$JAVA_RUNTIME"
     commands:
-      - java -version
       - apt-get update
-      - apt-get install python3 python3-pip -y
-      - update-alternatives --install /usr/bin/python python /usr/bin/python3 10
-      - update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 10
       - pip install awscli --upgrade --user
       - pip install rsa
       - pip install typing
-      - java -version
-      - aws s3 cp s3://$S3_BUCKET/$JDK_TAR_GZ .
-      - tar -xvf $JDK_TAR_GZ && jvm_path=/usr/lib/jvm/$JDK_VERSION && mv ./$JDK_VERSION/ $jvm_path
-      - update-alternatives --install /usr/bin/java java $jvm_path/bin/java 2 && sudo echo "2" | sudo update-alternatives --config java
-      - export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:/bin/java::") && export PATH=$JAVA_HOME/bin:$PATH
-
 
   build:
     commands:
       - echo "Started"
-      - mvn install -Ppublishing -DskipTests -Dadditionalparam=-Xdoclint:none -DskipRemoteStaging=true -DperformRelease -Dgpg.skip
+      - mvn install -Ppublishing -DskipTests -DadditionalJOption=-Xdoclint:none -DadditionalJOption=--allow-script-in-comments -DskipRemoteStaging=true -DperformRelease -Dgpg.skip
       - SUBJECT="Build SUCCESS:GenerateJavaDocs"
       - RELEASE_ID=`(grep -w releaseId | cut -d= -f2) <$RELEASE_PROPERTIES`
       - SNS_MESSAGE_BODY='{"jobName":"GenerateJavaDocs", "phase":"COMPLETED","result":"SUCCESS", "releaseId":"'"$RELEASE_ID"'"}'
       - echo Publishing message to SNS $SNS_MESSAGE_BODY
       - aws --region us-west-2 sns publish --message "$SNS_MESSAGE_BODY" --topic $SNS_TOPIC --subject "$SUBJECT"
+      - java -version
+      - python --version
       - echo "Done"
 
 artifacts:

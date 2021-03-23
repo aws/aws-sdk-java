@@ -56,6 +56,14 @@ public class CostCategoryRuleJsonUnmarshaller implements Unmarshaller<CostCatego
                     context.nextToken();
                     costCategoryRule.setRule(ExpressionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("InheritedValue", targetDepth)) {
+                    context.nextToken();
+                    costCategoryRule.setInheritedValue(CostCategoryInheritedValueDimensionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Type", targetDepth)) {
+                    context.nextToken();
+                    costCategoryRule.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

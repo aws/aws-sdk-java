@@ -49,8 +49,11 @@ public class PredefinedRetryPolicies {
 
     /* Default for DynamoDB client */
 
-    /** Default max retry count for DynamoDB client **/
-    public static final int DYNAMODB_DEFAULT_MAX_ERROR_RETRY = 10;
+    /** Standard max retry count for DynamoDB client **/
+    private static final int DYNAMODB_STANDARD_DEFAULT_MAX_ERROR_RETRY = 10;
+
+    /** Standard max retry count for DynamoDB client for DynamoDB client **/
+    public static final int DYNAMODB_DEFAULT_MAX_ERROR_RETRY = DYNAMODB_STANDARD_DEFAULT_MAX_ERROR_RETRY;
 
     /** Default policy for DynamoDB client **/
     public static final RetryPolicy DYNAMODB_DEFAULT;
@@ -116,15 +119,18 @@ public class PredefinedRetryPolicies {
     /**
      * Returns the default retry policy for DynamoDB client. This policy will
      * honor the maxErrorRetry set in ClientConfiguration.
+     * For DynamoDB the Default max error retry attempts is kept same as Standard Max retry of Dynamo DB.
+     * Thus honorDefaultMaxErrorRetryInRetryMode is set to False so that it uses max error retries same as
+     * DYNAMODB_STANDARD_DEFAULT_MAX_ERROR_RETRY which is 10.
      *
      * @see ClientConfiguration#setMaxErrorRetry(int)
      */
     public static RetryPolicy getDynamoDBDefaultRetryPolicy() {
         return new RetryPolicy(DEFAULT_RETRY_CONDITION,
                                DYNAMODB_DEFAULT_BACKOFF_STRATEGY,
-                               DYNAMODB_DEFAULT_MAX_ERROR_RETRY,
+                               DYNAMODB_STANDARD_DEFAULT_MAX_ERROR_RETRY,
                                true,
-                               true);
+                               false);
     }
 
     /**

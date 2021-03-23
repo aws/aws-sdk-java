@@ -42,6 +42,8 @@ public class CostCategoryReferenceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProcessingStatus").build();
     private static final MarshallingInfo<List> VALUES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Values").build();
+    private static final MarshallingInfo<String> DEFAULTVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultValue").build();
 
     private static final CostCategoryReferenceMarshaller instance = new CostCategoryReferenceMarshaller();
 
@@ -66,6 +68,7 @@ public class CostCategoryReferenceMarshaller {
             protocolMarshaller.marshall(costCategoryReference.getNumberOfRules(), NUMBEROFRULES_BINDING);
             protocolMarshaller.marshall(costCategoryReference.getProcessingStatus(), PROCESSINGSTATUS_BINDING);
             protocolMarshaller.marshall(costCategoryReference.getValues(), VALUES_BINDING);
+            protocolMarshaller.marshall(costCategoryReference.getDefaultValue(), DEFAULTVALUE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

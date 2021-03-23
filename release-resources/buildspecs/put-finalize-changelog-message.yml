@@ -2,11 +2,10 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      java: "$JAVA_RUNTIME"
     commands:
       - apt-get update
-      - apt-get install python3 python3-pip -y
-      - update-alternatives --install /usr/bin/python python /usr/bin/python3 10
-      - update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 10
       - pip install awscli --upgrade --user
       - pip install rsa
       - pip install typing
@@ -27,3 +26,5 @@ phases:
       - echo $RELEASE_ID
       - SNS_MESSAGE_BODY='{"jobName":"FinalizeChangelogMsg", "phase":"COMPLETED","result":"SUCCESS", "releaseId":"'"$RELEASE_ID"'"}'
       - aws --region us-west-2 sns publish --message "$SNS_MESSAGE_BODY" --topic $SNS_TOPIC --subject "$SUBJECT"
+      - python --version
+      - echo "Done"

@@ -65,6 +65,8 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
      */
     private java.util.List<CostCategoryProcessingStatus> processingStatus;
 
+    private String defaultValue;
+
     /**
      * <p>
      * The unique identifier for your Cost Category.
@@ -400,6 +402,32 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param defaultValue
+     */
+
+    public void setDefaultValue(String defaultValue) {
+        this.defaultValue = defaultValue;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getDefaultValue() {
+        return this.defaultValue;
+    }
+
+    /**
+     * @param defaultValue
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CostCategory withDefaultValue(String defaultValue) {
+        setDefaultValue(defaultValue);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -424,7 +452,9 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
         if (getRules() != null)
             sb.append("Rules: ").append(getRules()).append(",");
         if (getProcessingStatus() != null)
-            sb.append("ProcessingStatus: ").append(getProcessingStatus());
+            sb.append("ProcessingStatus: ").append(getProcessingStatus()).append(",");
+        if (getDefaultValue() != null)
+            sb.append("DefaultValue: ").append(getDefaultValue());
         sb.append("}");
         return sb.toString();
     }
@@ -467,6 +497,10 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getProcessingStatus() != null && other.getProcessingStatus().equals(this.getProcessingStatus()) == false)
             return false;
+        if (other.getDefaultValue() == null ^ this.getDefaultValue() == null)
+            return false;
+        if (other.getDefaultValue() != null && other.getDefaultValue().equals(this.getDefaultValue()) == false)
+            return false;
         return true;
     }
 
@@ -482,6 +516,7 @@ public class CostCategory implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRuleVersion() == null) ? 0 : getRuleVersion().hashCode());
         hashCode = prime * hashCode + ((getRules() == null) ? 0 : getRules().hashCode());
         hashCode = prime * hashCode + ((getProcessingStatus() == null) ? 0 : getProcessingStatus().hashCode());
+        hashCode = prime * hashCode + ((getDefaultValue() == null) ? 0 : getDefaultValue().hashCode());
         return hashCode;
     }
 

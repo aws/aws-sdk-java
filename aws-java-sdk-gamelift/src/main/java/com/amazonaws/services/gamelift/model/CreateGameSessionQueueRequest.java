@@ -76,6 +76,20 @@ public class CreateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
     private PriorityConfiguration priorityConfiguration;
     /**
      * <p>
+     * Information to be added to all events that are related to this game session queue.
+     * </p>
+     */
+    private String customEventData;
+    /**
+     * <p>
+     * An SNS topic ARN that is set up to receive game session placement notifications. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up
+     * notifications for game session placement</a>.
+     * </p>
+     */
+    private String notificationTarget;
+    /**
+     * <p>
      * A list of labels to assign to the new game session queue resource. Tags are developer-defined key-value pairs.
      * Tagging AWS resources are useful for resource management, access management and cost allocation. For more
      * information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS
@@ -465,6 +479,98 @@ public class CreateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
+     * Information to be added to all events that are related to this game session queue.
+     * </p>
+     * 
+     * @param customEventData
+     *        Information to be added to all events that are related to this game session queue.
+     */
+
+    public void setCustomEventData(String customEventData) {
+        this.customEventData = customEventData;
+    }
+
+    /**
+     * <p>
+     * Information to be added to all events that are related to this game session queue.
+     * </p>
+     * 
+     * @return Information to be added to all events that are related to this game session queue.
+     */
+
+    public String getCustomEventData() {
+        return this.customEventData;
+    }
+
+    /**
+     * <p>
+     * Information to be added to all events that are related to this game session queue.
+     * </p>
+     * 
+     * @param customEventData
+     *        Information to be added to all events that are related to this game session queue.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateGameSessionQueueRequest withCustomEventData(String customEventData) {
+        setCustomEventData(customEventData);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An SNS topic ARN that is set up to receive game session placement notifications. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up
+     * notifications for game session placement</a>.
+     * </p>
+     * 
+     * @param notificationTarget
+     *        An SNS topic ARN that is set up to receive game session placement notifications. See <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up
+     *        notifications for game session placement</a>.
+     */
+
+    public void setNotificationTarget(String notificationTarget) {
+        this.notificationTarget = notificationTarget;
+    }
+
+    /**
+     * <p>
+     * An SNS topic ARN that is set up to receive game session placement notifications. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up
+     * notifications for game session placement</a>.
+     * </p>
+     * 
+     * @return An SNS topic ARN that is set up to receive game session placement notifications. See <a
+     *         href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up
+     *         notifications for game session placement</a>.
+     */
+
+    public String getNotificationTarget() {
+        return this.notificationTarget;
+    }
+
+    /**
+     * <p>
+     * An SNS topic ARN that is set up to receive game session placement notifications. See <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up
+     * notifications for game session placement</a>.
+     * </p>
+     * 
+     * @param notificationTarget
+     *        An SNS topic ARN that is set up to receive game session placement notifications. See <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html"> Setting up
+     *        notifications for game session placement</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateGameSessionQueueRequest withNotificationTarget(String notificationTarget) {
+        setNotificationTarget(notificationTarget);
+        return this;
+    }
+
+    /**
+     * <p>
      * A list of labels to assign to the new game session queue resource. Tags are developer-defined key-value pairs.
      * Tagging AWS resources are useful for resource management, access management and cost allocation. For more
      * information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS
@@ -597,6 +703,10 @@ public class CreateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
             sb.append("FilterConfiguration: ").append(getFilterConfiguration()).append(",");
         if (getPriorityConfiguration() != null)
             sb.append("PriorityConfiguration: ").append(getPriorityConfiguration()).append(",");
+        if (getCustomEventData() != null)
+            sb.append("CustomEventData: ").append(getCustomEventData()).append(",");
+        if (getNotificationTarget() != null)
+            sb.append("NotificationTarget: ").append(getNotificationTarget()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -637,6 +747,14 @@ public class CreateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getPriorityConfiguration() != null && other.getPriorityConfiguration().equals(this.getPriorityConfiguration()) == false)
             return false;
+        if (other.getCustomEventData() == null ^ this.getCustomEventData() == null)
+            return false;
+        if (other.getCustomEventData() != null && other.getCustomEventData().equals(this.getCustomEventData()) == false)
+            return false;
+        if (other.getNotificationTarget() == null ^ this.getNotificationTarget() == null)
+            return false;
+        if (other.getNotificationTarget() != null && other.getNotificationTarget().equals(this.getNotificationTarget()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -655,6 +773,8 @@ public class CreateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getDestinations() == null) ? 0 : getDestinations().hashCode());
         hashCode = prime * hashCode + ((getFilterConfiguration() == null) ? 0 : getFilterConfiguration().hashCode());
         hashCode = prime * hashCode + ((getPriorityConfiguration() == null) ? 0 : getPriorityConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getCustomEventData() == null) ? 0 : getCustomEventData().hashCode());
+        hashCode = prime * hashCode + ((getNotificationTarget() == null) ? 0 : getNotificationTarget().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

@@ -70,6 +70,8 @@ public class CostCategoryReference implements Serializable, Cloneable, Structure
      */
     private java.util.List<String> values;
 
+    private String defaultValue;
+
     /**
      * <p>
      * The unique identifier for your Cost Category.
@@ -397,6 +399,32 @@ public class CostCategoryReference implements Serializable, Cloneable, Structure
     }
 
     /**
+     * @param defaultValue
+     */
+
+    public void setDefaultValue(String defaultValue) {
+        this.defaultValue = defaultValue;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getDefaultValue() {
+        return this.defaultValue;
+    }
+
+    /**
+     * @param defaultValue
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CostCategoryReference withDefaultValue(String defaultValue) {
+        setDefaultValue(defaultValue);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -421,7 +449,9 @@ public class CostCategoryReference implements Serializable, Cloneable, Structure
         if (getProcessingStatus() != null)
             sb.append("ProcessingStatus: ").append(getProcessingStatus()).append(",");
         if (getValues() != null)
-            sb.append("Values: ").append(getValues());
+            sb.append("Values: ").append(getValues()).append(",");
+        if (getDefaultValue() != null)
+            sb.append("DefaultValue: ").append(getDefaultValue());
         sb.append("}");
         return sb.toString();
     }
@@ -464,6 +494,10 @@ public class CostCategoryReference implements Serializable, Cloneable, Structure
             return false;
         if (other.getValues() != null && other.getValues().equals(this.getValues()) == false)
             return false;
+        if (other.getDefaultValue() == null ^ this.getDefaultValue() == null)
+            return false;
+        if (other.getDefaultValue() != null && other.getDefaultValue().equals(this.getDefaultValue()) == false)
+            return false;
         return true;
     }
 
@@ -479,6 +513,7 @@ public class CostCategoryReference implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getNumberOfRules() == null) ? 0 : getNumberOfRules().hashCode());
         hashCode = prime * hashCode + ((getProcessingStatus() == null) ? 0 : getProcessingStatus().hashCode());
         hashCode = prime * hashCode + ((getValues() == null) ? 0 : getValues().hashCode());
+        hashCode = prime * hashCode + ((getDefaultValue() == null) ? 0 : getDefaultValue().hashCode());
         return hashCode;
     }
 
