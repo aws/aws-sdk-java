@@ -36,6 +36,8 @@ public class ResourceDataSyncSourceMarshaller {
             .marshallLocationName("SourceRegions").build();
     private static final MarshallingInfo<Boolean> INCLUDEFUTUREREGIONS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeFutureRegions").build();
+    private static final MarshallingInfo<Boolean> ENABLEALLOPSDATASOURCES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableAllOpsDataSources").build();
 
     private static final ResourceDataSyncSourceMarshaller instance = new ResourceDataSyncSourceMarshaller();
 
@@ -57,6 +59,7 @@ public class ResourceDataSyncSourceMarshaller {
             protocolMarshaller.marshall(resourceDataSyncSource.getAwsOrganizationsSource(), AWSORGANIZATIONSSOURCE_BINDING);
             protocolMarshaller.marshall(resourceDataSyncSource.getSourceRegions(), SOURCEREGIONS_BINDING);
             protocolMarshaller.marshall(resourceDataSyncSource.getIncludeFutureRegions(), INCLUDEFUTUREREGIONS_BINDING);
+            protocolMarshaller.marshall(resourceDataSyncSource.getEnableAllOpsDataSources(), ENABLEALLOPSDATASOURCES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

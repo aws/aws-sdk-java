@@ -180,6 +180,12 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
+     * <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of Elastic Fabric Adapters (EFAs)
+     * per instance. (<code>true</code> | <code>false</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-info.efa-supported</code> - Indicates whether the instance type supports Elastic Fabric Adapter
      * (EFA) (<code>true</code> | <code>false</code>).
      * </p>
@@ -560,6 +566,12 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
+     * <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of Elastic Fabric Adapters (EFAs)
+     * per instance. (<code>true</code> | <code>false</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-info.efa-supported</code> - Indicates whether the instance type supports Elastic Fabric Adapter
      * (EFA) (<code>true</code> | <code>false</code>).
      * </p>
@@ -799,6 +811,12 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *         <li>
      *         <p>
      *         <code>memory-info.size-in-mib</code> - The memory size.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of Elastic Fabric Adapters
+     *         (EFAs) per instance. (<code>true</code> | <code>false</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -1057,6 +1075,12 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
+     * <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of Elastic Fabric Adapters (EFAs)
+     * per instance. (<code>true</code> | <code>false</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-info.efa-supported</code> - Indicates whether the instance type supports Elastic Fabric Adapter
      * (EFA) (<code>true</code> | <code>false</code>).
      * </p>
@@ -1296,6 +1320,12 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <li>
      *        <p>
      *        <code>memory-info.size-in-mib</code> - The memory size.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of Elastic Fabric Adapters
+     *        (EFAs) per instance. (<code>true</code> | <code>false</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1556,6 +1586,12 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
+     * <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of Elastic Fabric Adapters (EFAs)
+     * per instance. (<code>true</code> | <code>false</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-info.efa-supported</code> - Indicates whether the instance type supports Elastic Fabric Adapter
      * (EFA) (<code>true</code> | <code>false</code>).
      * </p>
@@ -1800,6 +1836,12 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <li>
      *        <p>
      *        <code>memory-info.size-in-mib</code> - The memory size.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of Elastic Fabric Adapters
+     *        (EFAs) per instance. (<code>true</code> | <code>false</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -2062,6 +2104,12 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
+     * <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of Elastic Fabric Adapters (EFAs)
+     * per instance. (<code>true</code> | <code>false</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-info.efa-supported</code> - Indicates whether the instance type supports Elastic Fabric Adapter
      * (EFA) (<code>true</code> | <code>false</code>).
      * </p>
@@ -2301,6 +2349,12 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <li>
      *        <p>
      *        <code>memory-info.size-in-mib</code> - The memory size.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of Elastic Fabric Adapters
+     *        (EFAs) per instance. (<code>true</code> | <code>false</code>).
      *        </p>
      *        </li>
      *        <li>

@@ -143,6 +143,10 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * you could specify <code>value:WebServer</code> to run a command on instances that include EC2 tags of
      * <code>ServerRole,WebServer</code>.
      * </p>
+     * <p>
+     * Depending on the type of <code>Target</code>, the maximum number of values for a <code>Key</code> might be lower
+     * than the global maximum of 50.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> values;
 
@@ -192,10 +196,17 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * you could specify <code>value:WebServer</code> to run a command on instances that include EC2 tags of
      * <code>ServerRole,WebServer</code>.
      * </p>
+     * <p>
+     * Depending on the type of <code>Target</code>, the maximum number of values for a <code>Key</code> might be lower
+     * than the global maximum of 50.
+     * </p>
      * 
      * @return User-defined criteria that maps to <code>Key</code>. For example, if you specified
      *         <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to run a command on instances
-     *         that include EC2 tags of <code>ServerRole,WebServer</code>.
+     *         that include EC2 tags of <code>ServerRole,WebServer</code>. </p>
+     *         <p>
+     *         Depending on the type of <code>Target</code>, the maximum number of values for a <code>Key</code> might
+     *         be lower than the global maximum of 50.
      */
 
     public java.util.List<String> getValues() {
@@ -211,11 +222,18 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * you could specify <code>value:WebServer</code> to run a command on instances that include EC2 tags of
      * <code>ServerRole,WebServer</code>.
      * </p>
+     * <p>
+     * Depending on the type of <code>Target</code>, the maximum number of values for a <code>Key</code> might be lower
+     * than the global maximum of 50.
+     * </p>
      * 
      * @param values
      *        User-defined criteria that maps to <code>Key</code>. For example, if you specified
      *        <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to run a command on instances
-     *        that include EC2 tags of <code>ServerRole,WebServer</code>.
+     *        that include EC2 tags of <code>ServerRole,WebServer</code>. </p>
+     *        <p>
+     *        Depending on the type of <code>Target</code>, the maximum number of values for a <code>Key</code> might be
+     *        lower than the global maximum of 50.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -234,6 +252,10 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * <code>ServerRole,WebServer</code>.
      * </p>
      * <p>
+     * Depending on the type of <code>Target</code>, the maximum number of values for a <code>Key</code> might be lower
+     * than the global maximum of 50.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the
      * existing values.
@@ -242,7 +264,10 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * @param values
      *        User-defined criteria that maps to <code>Key</code>. For example, if you specified
      *        <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to run a command on instances
-     *        that include EC2 tags of <code>ServerRole,WebServer</code>.
+     *        that include EC2 tags of <code>ServerRole,WebServer</code>. </p>
+     *        <p>
+     *        Depending on the type of <code>Target</code>, the maximum number of values for a <code>Key</code> might be
+     *        lower than the global maximum of 50.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -262,11 +287,18 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * you could specify <code>value:WebServer</code> to run a command on instances that include EC2 tags of
      * <code>ServerRole,WebServer</code>.
      * </p>
+     * <p>
+     * Depending on the type of <code>Target</code>, the maximum number of values for a <code>Key</code> might be lower
+     * than the global maximum of 50.
+     * </p>
      * 
      * @param values
      *        User-defined criteria that maps to <code>Key</code>. For example, if you specified
      *        <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to run a command on instances
-     *        that include EC2 tags of <code>ServerRole,WebServer</code>.
+     *        that include EC2 tags of <code>ServerRole,WebServer</code>. </p>
+     *        <p>
+     *        Depending on the type of <code>Target</code>, the maximum number of values for a <code>Key</code> might be
+     *        lower than the global maximum of 50.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

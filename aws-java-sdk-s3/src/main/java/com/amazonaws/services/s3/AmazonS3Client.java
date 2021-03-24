@@ -1657,6 +1657,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetObjectTagging");
         request.addParameter("tagging", null);
         addParameterIfNotNull(request, "versionId", getObjectTaggingRequest.getVersionId());
+        populateRequesterPaysHeader(request, getObjectTaggingRequest.isRequesterPays());
 
         ResponseHeaderHandlerChain<GetObjectTaggingResult> handlerChain = new ResponseHeaderHandlerChain<GetObjectTaggingResult>(
                 new Unmarshallers.GetObjectTaggingResponseUnmarshaller(),
@@ -1681,6 +1682,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         addParameterIfNotNull(request, "versionId", setObjectTaggingRequest.getVersionId());
         byte[] content = new ObjectTaggingXmlFactory().convertToXmlByteArray(tagging);
         setContent(request, content, "application/xml", true);
+        populateRequesterPaysHeader(request, setObjectTaggingRequest.isRequesterPays());
 
         ResponseHeaderHandlerChain<SetObjectTaggingResult> handlerChain = new ResponseHeaderHandlerChain<SetObjectTaggingResult>(
                 new Unmarshallers.SetObjectTaggingResponseUnmarshaller(),

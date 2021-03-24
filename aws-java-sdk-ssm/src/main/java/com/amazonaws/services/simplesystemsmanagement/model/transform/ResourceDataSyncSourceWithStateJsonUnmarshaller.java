@@ -71,6 +71,10 @@ public class ResourceDataSyncSourceWithStateJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     resourceDataSyncSourceWithState.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("EnableAllOpsDataSources", targetDepth)) {
+                    context.nextToken();
+                    resourceDataSyncSourceWithState.setEnableAllOpsDataSources(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

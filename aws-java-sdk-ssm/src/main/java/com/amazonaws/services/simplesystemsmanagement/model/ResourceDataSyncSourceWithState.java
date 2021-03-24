@@ -88,6 +88,16 @@ public class ResourceDataSyncSourceWithState implements Serializable, Cloneable,
      * </p>
      */
     private String state;
+    /**
+     * <p>
+     * When you create a resource data sync, if you choose one of the AWS Organizations options, then Systems Manager
+     * automatically enables all OpsData sources in the selected AWS Regions for all AWS accounts in your organization
+     * (or in the selected organization units). For more information, see <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html"
+     * >About multiple account and Region resource data syncs</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     */
+    private Boolean enableAllOpsDataSources;
 
     /**
      * <p>
@@ -438,6 +448,90 @@ public class ResourceDataSyncSourceWithState implements Serializable, Cloneable,
     }
 
     /**
+     * <p>
+     * When you create a resource data sync, if you choose one of the AWS Organizations options, then Systems Manager
+     * automatically enables all OpsData sources in the selected AWS Regions for all AWS accounts in your organization
+     * (or in the selected organization units). For more information, see <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html"
+     * >About multiple account and Region resource data syncs</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * 
+     * @param enableAllOpsDataSources
+     *        When you create a resource data sync, if you choose one of the AWS Organizations options, then Systems
+     *        Manager automatically enables all OpsData sources in the selected AWS Regions for all AWS accounts in your
+     *        organization (or in the selected organization units). For more information, see <a href=
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html"
+     *        >About multiple account and Region resource data syncs</a> in the <i>AWS Systems Manager User Guide</i>.
+     */
+
+    public void setEnableAllOpsDataSources(Boolean enableAllOpsDataSources) {
+        this.enableAllOpsDataSources = enableAllOpsDataSources;
+    }
+
+    /**
+     * <p>
+     * When you create a resource data sync, if you choose one of the AWS Organizations options, then Systems Manager
+     * automatically enables all OpsData sources in the selected AWS Regions for all AWS accounts in your organization
+     * (or in the selected organization units). For more information, see <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html"
+     * >About multiple account and Region resource data syncs</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * 
+     * @return When you create a resource data sync, if you choose one of the AWS Organizations options, then Systems
+     *         Manager automatically enables all OpsData sources in the selected AWS Regions for all AWS accounts in
+     *         your organization (or in the selected organization units). For more information, see <a href=
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html"
+     *         >About multiple account and Region resource data syncs</a> in the <i>AWS Systems Manager User Guide</i>.
+     */
+
+    public Boolean getEnableAllOpsDataSources() {
+        return this.enableAllOpsDataSources;
+    }
+
+    /**
+     * <p>
+     * When you create a resource data sync, if you choose one of the AWS Organizations options, then Systems Manager
+     * automatically enables all OpsData sources in the selected AWS Regions for all AWS accounts in your organization
+     * (or in the selected organization units). For more information, see <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html"
+     * >About multiple account and Region resource data syncs</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * 
+     * @param enableAllOpsDataSources
+     *        When you create a resource data sync, if you choose one of the AWS Organizations options, then Systems
+     *        Manager automatically enables all OpsData sources in the selected AWS Regions for all AWS accounts in your
+     *        organization (or in the selected organization units). For more information, see <a href=
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html"
+     *        >About multiple account and Region resource data syncs</a> in the <i>AWS Systems Manager User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDataSyncSourceWithState withEnableAllOpsDataSources(Boolean enableAllOpsDataSources) {
+        setEnableAllOpsDataSources(enableAllOpsDataSources);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When you create a resource data sync, if you choose one of the AWS Organizations options, then Systems Manager
+     * automatically enables all OpsData sources in the selected AWS Regions for all AWS accounts in your organization
+     * (or in the selected organization units). For more information, see <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html"
+     * >About multiple account and Region resource data syncs</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * 
+     * @return When you create a resource data sync, if you choose one of the AWS Organizations options, then Systems
+     *         Manager automatically enables all OpsData sources in the selected AWS Regions for all AWS accounts in
+     *         your organization (or in the selected organization units). For more information, see <a href=
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html"
+     *         >About multiple account and Region resource data syncs</a> in the <i>AWS Systems Manager User Guide</i>.
+     */
+
+    public Boolean isEnableAllOpsDataSources() {
+        return this.enableAllOpsDataSources;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -458,7 +552,9 @@ public class ResourceDataSyncSourceWithState implements Serializable, Cloneable,
         if (getIncludeFutureRegions() != null)
             sb.append("IncludeFutureRegions: ").append(getIncludeFutureRegions()).append(",");
         if (getState() != null)
-            sb.append("State: ").append(getState());
+            sb.append("State: ").append(getState()).append(",");
+        if (getEnableAllOpsDataSources() != null)
+            sb.append("EnableAllOpsDataSources: ").append(getEnableAllOpsDataSources());
         sb.append("}");
         return sb.toString();
     }
@@ -493,6 +589,10 @@ public class ResourceDataSyncSourceWithState implements Serializable, Cloneable,
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
+        if (other.getEnableAllOpsDataSources() == null ^ this.getEnableAllOpsDataSources() == null)
+            return false;
+        if (other.getEnableAllOpsDataSources() != null && other.getEnableAllOpsDataSources().equals(this.getEnableAllOpsDataSources()) == false)
+            return false;
         return true;
     }
 
@@ -506,6 +606,7 @@ public class ResourceDataSyncSourceWithState implements Serializable, Cloneable,
         hashCode = prime * hashCode + ((getSourceRegions() == null) ? 0 : getSourceRegions().hashCode());
         hashCode = prime * hashCode + ((getIncludeFutureRegions() == null) ? 0 : getIncludeFutureRegions().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getEnableAllOpsDataSources() == null) ? 0 : getEnableAllOpsDataSources().hashCode());
         return hashCode;
     }
 

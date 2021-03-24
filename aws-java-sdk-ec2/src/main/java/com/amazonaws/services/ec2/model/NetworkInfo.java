@@ -86,6 +86,12 @@ public class NetworkInfo implements Serializable, Cloneable {
      * </p>
      */
     private Boolean efaSupported;
+    /**
+     * <p>
+     * Describes the Elastic Fabric Adapters for the instance type.
+     * </p>
+     */
+    private EfaInfo efaInfo;
 
     /**
      * <p>
@@ -564,6 +570,46 @@ public class NetworkInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Describes the Elastic Fabric Adapters for the instance type.
+     * </p>
+     * 
+     * @param efaInfo
+     *        Describes the Elastic Fabric Adapters for the instance type.
+     */
+
+    public void setEfaInfo(EfaInfo efaInfo) {
+        this.efaInfo = efaInfo;
+    }
+
+    /**
+     * <p>
+     * Describes the Elastic Fabric Adapters for the instance type.
+     * </p>
+     * 
+     * @return Describes the Elastic Fabric Adapters for the instance type.
+     */
+
+    public EfaInfo getEfaInfo() {
+        return this.efaInfo;
+    }
+
+    /**
+     * <p>
+     * Describes the Elastic Fabric Adapters for the instance type.
+     * </p>
+     * 
+     * @param efaInfo
+     *        Describes the Elastic Fabric Adapters for the instance type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInfo withEfaInfo(EfaInfo efaInfo) {
+        setEfaInfo(efaInfo);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -594,7 +640,9 @@ public class NetworkInfo implements Serializable, Cloneable {
         if (getEnaSupport() != null)
             sb.append("EnaSupport: ").append(getEnaSupport()).append(",");
         if (getEfaSupported() != null)
-            sb.append("EfaSupported: ").append(getEfaSupported());
+            sb.append("EfaSupported: ").append(getEfaSupported()).append(",");
+        if (getEfaInfo() != null)
+            sb.append("EfaInfo: ").append(getEfaInfo());
         sb.append("}");
         return sb.toString();
     }
@@ -649,6 +697,10 @@ public class NetworkInfo implements Serializable, Cloneable {
             return false;
         if (other.getEfaSupported() != null && other.getEfaSupported().equals(this.getEfaSupported()) == false)
             return false;
+        if (other.getEfaInfo() == null ^ this.getEfaInfo() == null)
+            return false;
+        if (other.getEfaInfo() != null && other.getEfaInfo().equals(this.getEfaInfo()) == false)
+            return false;
         return true;
     }
 
@@ -667,6 +719,7 @@ public class NetworkInfo implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getIpv6Supported() == null) ? 0 : getIpv6Supported().hashCode());
         hashCode = prime * hashCode + ((getEnaSupport() == null) ? 0 : getEnaSupport().hashCode());
         hashCode = prime * hashCode + ((getEfaSupported() == null) ? 0 : getEfaSupported().hashCode());
+        hashCode = prime * hashCode + ((getEfaInfo() == null) ? 0 : getEfaInfo().hashCode());
         return hashCode;
     }
 

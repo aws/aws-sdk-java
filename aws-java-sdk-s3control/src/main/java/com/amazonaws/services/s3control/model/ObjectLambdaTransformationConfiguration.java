@@ -28,7 +28,7 @@ public class ObjectLambdaTransformationConfiguration implements Serializable, Cl
 
     /**
      * <p>
-     * A container for the action of an Object Lambda Access Point configuration.
+     * A container for the action of an Object Lambda Access Point configuration. Valid input is <code>GetObject</code>.
      * </p>
      */
     private java.util.List<String> actions;
@@ -41,10 +41,11 @@ public class ObjectLambdaTransformationConfiguration implements Serializable, Cl
 
     /**
      * <p>
-     * A container for the action of an Object Lambda Access Point configuration.
+     * A container for the action of an Object Lambda Access Point configuration. Valid input is <code>GetObject</code>.
      * </p>
      * 
-     * @return A container for the action of an Object Lambda Access Point configuration.
+     * @return A container for the action of an Object Lambda Access Point configuration. Valid input is
+     *         <code>GetObject</code>.
      * @see ObjectLambdaTransformationConfigurationAction
      */
 
@@ -54,11 +55,12 @@ public class ObjectLambdaTransformationConfiguration implements Serializable, Cl
 
     /**
      * <p>
-     * A container for the action of an Object Lambda Access Point configuration.
+     * A container for the action of an Object Lambda Access Point configuration. Valid input is <code>GetObject</code>.
      * </p>
      * 
      * @param actions
-     *        A container for the action of an Object Lambda Access Point configuration.
+     *        A container for the action of an Object Lambda Access Point configuration. Valid input is
+     *        <code>GetObject</code>.
      * @see ObjectLambdaTransformationConfigurationAction
      */
 
@@ -73,7 +75,7 @@ public class ObjectLambdaTransformationConfiguration implements Serializable, Cl
 
     /**
      * <p>
-     * A container for the action of an Object Lambda Access Point configuration.
+     * A container for the action of an Object Lambda Access Point configuration. Valid input is <code>GetObject</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +84,8 @@ public class ObjectLambdaTransformationConfiguration implements Serializable, Cl
      * </p>
      * 
      * @param actions
-     *        A container for the action of an Object Lambda Access Point configuration.
+     *        A container for the action of an Object Lambda Access Point configuration. Valid input is
+     *        <code>GetObject</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ObjectLambdaTransformationConfigurationAction
      */
@@ -99,11 +102,12 @@ public class ObjectLambdaTransformationConfiguration implements Serializable, Cl
 
     /**
      * <p>
-     * A container for the action of an Object Lambda Access Point configuration.
+     * A container for the action of an Object Lambda Access Point configuration. Valid input is <code>GetObject</code>.
      * </p>
      * 
      * @param actions
-     *        A container for the action of an Object Lambda Access Point configuration.
+     *        A container for the action of an Object Lambda Access Point configuration. Valid input is
+     *        <code>GetObject</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ObjectLambdaTransformationConfigurationAction
      */
@@ -115,11 +119,12 @@ public class ObjectLambdaTransformationConfiguration implements Serializable, Cl
 
     /**
      * <p>
-     * A container for the action of an Object Lambda Access Point configuration.
+     * A container for the action of an Object Lambda Access Point configuration. Valid input is <code>GetObject</code>.
      * </p>
      * 
      * @param actions
-     *        A container for the action of an Object Lambda Access Point configuration.
+     *        A container for the action of an Object Lambda Access Point configuration. Valid input is
+     *        <code>GetObject</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ObjectLambdaTransformationConfigurationAction
      */

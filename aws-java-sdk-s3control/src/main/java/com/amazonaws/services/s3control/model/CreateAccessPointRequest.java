@@ -68,7 +68,11 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
      * </note>
      */
     private VpcConfiguration vpcConfiguration;
-
+    /**
+     * <p>
+     * The <code>PublicAccessBlock</code> configuration that you want to apply to the access point.
+     * </p>
+     */
     private PublicAccessBlockConfiguration publicAccessBlockConfiguration;
 
     /**
@@ -337,7 +341,12 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The <code>PublicAccessBlock</code> configuration that you want to apply to the access point.
+     * </p>
+     * 
      * @param publicAccessBlockConfiguration
+     *        The <code>PublicAccessBlock</code> configuration that you want to apply to the access point.
      */
 
     public void setPublicAccessBlockConfiguration(PublicAccessBlockConfiguration publicAccessBlockConfiguration) {
@@ -345,7 +354,11 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * <p>
+     * The <code>PublicAccessBlock</code> configuration that you want to apply to the access point.
+     * </p>
+     * 
+     * @return The <code>PublicAccessBlock</code> configuration that you want to apply to the access point.
      */
 
     public PublicAccessBlockConfiguration getPublicAccessBlockConfiguration() {
@@ -353,7 +366,12 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The <code>PublicAccessBlock</code> configuration that you want to apply to the access point.
+     * </p>
+     * 
      * @param publicAccessBlockConfiguration
+     *        The <code>PublicAccessBlock</code> configuration that you want to apply to the access point.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -28,6 +28,7 @@ public class SetObjectTaggingRequest extends AmazonWebServiceRequest implements 
     private ObjectTagging tagging;
 
     private String expectedBucketOwner;
+    private boolean isRequesterPays;
 
     /**
      * Constructs an instance of this object.
@@ -231,6 +232,40 @@ public class SetObjectTaggingRequest extends AmazonWebServiceRequest implements 
      */
     public SetObjectTaggingRequest withTagging(ObjectTagging tagging) {
         setTagging(tagging);
+        return this;
+    }
+
+    /**
+     * Returns whether the requester knows that they will be charged for the request.
+     *
+     * @return true if the user has enabled Requester Pays option for
+     *         conducting this operation from Requester Pays Bucket.
+     */
+    public boolean isRequesterPays() {
+        return isRequesterPays;
+    }
+
+    /**
+     * Confirms whether the requester knows that they will be charged for the request. Bucket owners need not specify this
+     * parameter in their requests.
+     *
+     * @param isRequesterPays if Requester Pays option is enabled for the operation.
+     */
+    public void setRequesterPays(boolean isRequesterPays) {
+        this.isRequesterPays = isRequesterPays;
+    }
+
+    /**
+     * Confirms whether the requester knows that they will be charged for the request. Bucket owners need not specify this
+     * parameter in their requests.
+     *
+     *
+     * @param isRequesterPays if Requester Pays option is enabled for the operation.
+     *
+     * @return The updated ListObjectsRequest object.
+     */
+    public SetObjectTaggingRequest withRequesterPays(boolean isRequesterPays) {
+        setRequesterPays(isRequesterPays);
         return this;
     }
 }

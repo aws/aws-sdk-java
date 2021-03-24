@@ -1,3 +1,28 @@
+# __1.11.982__ __2021-03-24__
+## __AWS Greengrass__
+  - ### Features
+    - Updated the parameters to make name required for CreateGroup API.
+
+## __AWS S3 Control__
+  - ### Features
+    - Documentation updates for s3-control
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - maximumEfaInterfaces added to DescribeInstanceTypes API
+
+## __Amazon Route 53__
+  - ### Features
+    - Documentation updates for route53
+
+## __Amazon Simple Storage Service__
+  - ### Features
+    - Documentation updates for Amazon S3
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - This release allows SSM Explorer customers to enable OpsData sources across their organization when creating a resource data sync.
+
 # __1.11.981__ __2021-03-23__
 ## __AWS Cost Explorer Service__
   - ### Features
