@@ -99,10 +99,18 @@ public interface AmazonRekognition {
      * Compares a face in the <i>source</i> input image with each of the 100 largest faces detected in the <i>target</i>
      * input image.
      * </p>
-     * <note>
      * <p>
      * If the source image contains multiple faces, the service detects the largest face and compares it with each face
      * detected in the target image.
+     * </p>
+     * <note>
+     * <p>
+     * CompareFaces uses machine learning algorithms, which are probabilistic. A false negative is an incorrect
+     * prediction that a face in the target image has a low similarity confidence score when compared to the face in the
+     * source image. To reduce the probability of false negatives, we recommend that you compare the target image
+     * against multiple source images. If you plan to use <code>CompareFaces</code> to make a decision that impacts an
+     * individual's rights, privacy, or access to services, we recommend that you pass the result to a human for review
+     * and further validation before taking action.
      * </p>
      * </note>
      * <p>
@@ -161,7 +169,8 @@ public interface AmazonRekognition {
      * @throws InvalidS3ObjectException
      *         Amazon Rekognition is unable to access the S3 object specified in the request.
      * @throws ImageTooLargeException
-     *         The input image size exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in
+     *         The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image
+     *         size or resolution exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in
      *         the Amazon Rekognition Developer Guide.
      * @throws AccessDeniedException
      *         You are not authorized to perform the action.
@@ -214,6 +223,10 @@ public interface AmazonRekognition {
      *         Rekognition.
      * @throws ResourceAlreadyExistsException
      *         A collection with the specified ID already exists.
+     * @throws ServiceQuotaExceededException
+     *         <p>
+     *         The size of the collection or tag list exceeds the allowed limit. For more information, see Limits in
+     *         Amazon Rekognition in the Amazon Rekognition Developer Guide.
      * @sample AmazonRekognition.CreateCollection
      */
     CreateCollectionResult createCollection(CreateCollectionRequest createCollectionRequest);
@@ -293,6 +306,10 @@ public interface AmazonRekognition {
      * @throws ProvisionedThroughputExceededException
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
+     * @throws ServiceQuotaExceededException
+     *         <p>
+     *         The size of the collection or tag list exceeds the allowed limit. For more information, see Limits in
+     *         Amazon Rekognition in the Amazon Rekognition Developer Guide.
      * @sample AmazonRekognition.CreateProjectVersion
      */
     CreateProjectVersionResult createProjectVersion(CreateProjectVersionRequest createProjectVersionRequest);
@@ -338,6 +355,10 @@ public interface AmazonRekognition {
      * @throws ProvisionedThroughputExceededException
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
+     * @throws ServiceQuotaExceededException
+     *         <p>
+     *         The size of the collection or tag list exceeds the allowed limit. For more information, see Limits in
+     *         Amazon Rekognition in the Amazon Rekognition Developer Guide.
      * @sample AmazonRekognition.CreateStreamProcessor
      */
     CreateStreamProcessorResult createStreamProcessor(CreateStreamProcessorRequest createStreamProcessorRequest);
@@ -650,7 +671,8 @@ public interface AmazonRekognition {
      * @throws InvalidParameterException
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws ImageTooLargeException
-     *         The input image size exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in
+     *         The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image
+     *         size or resolution exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in
      *         the Amazon Rekognition Developer Guide.
      * @throws LimitExceededException
      *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
@@ -707,7 +729,8 @@ public interface AmazonRekognition {
      * @throws InvalidParameterException
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws ImageTooLargeException
-     *         The input image size exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in
+     *         The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image
+     *         size or resolution exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in
      *         the Amazon Rekognition Developer Guide.
      * @throws AccessDeniedException
      *         You are not authorized to perform the action.
@@ -814,7 +837,8 @@ public interface AmazonRekognition {
      * @throws InvalidParameterException
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws ImageTooLargeException
-     *         The input image size exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in
+     *         The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image
+     *         size or resolution exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in
      *         the Amazon Rekognition Developer Guide.
      * @throws AccessDeniedException
      *         You are not authorized to perform the action.
@@ -857,7 +881,8 @@ public interface AmazonRekognition {
      * @throws InvalidParameterException
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws ImageTooLargeException
-     *         The input image size exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in
+     *         The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image
+     *         size or resolution exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in
      *         the Amazon Rekognition Developer Guide.
      * @throws AccessDeniedException
      *         You are not authorized to perform the action.
@@ -947,7 +972,8 @@ public interface AmazonRekognition {
      * @throws InvalidParameterException
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws ImageTooLargeException
-     *         The input image size exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in
+     *         The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image
+     *         size or resolution exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in
      *         the Amazon Rekognition Developer Guide.
      * @throws AccessDeniedException
      *         You are not authorized to perform the action.
@@ -1009,7 +1035,8 @@ public interface AmazonRekognition {
      * @throws InvalidParameterException
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws ImageTooLargeException
-     *         The input image size exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in
+     *         The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image
+     *         size or resolution exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in
      *         the Amazon Rekognition Developer Guide.
      * @throws AccessDeniedException
      *         You are not authorized to perform the action.
@@ -1660,7 +1687,8 @@ public interface AmazonRekognition {
      * @throws InvalidParameterException
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws ImageTooLargeException
-     *         The input image size exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in
+     *         The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image
+     *         size or resolution exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in
      *         the Amazon Rekognition Developer Guide.
      * @throws AccessDeniedException
      *         You are not authorized to perform the action.
@@ -1677,8 +1705,8 @@ public interface AmazonRekognition {
      *         The provided image format is not supported.
      * @throws ServiceQuotaExceededException
      *         <p>
-     *         The size of the collection exceeds the allowed limit. For more information, see Limits in Amazon
-     *         Rekognition in the Amazon Rekognition Developer Guide.
+     *         The size of the collection or tag list exceeds the allowed limit. For more information, see Limits in
+     *         Amazon Rekognition in the Amazon Rekognition Developer Guide.
      * @sample AmazonRekognition.IndexFaces
      */
     IndexFacesResult indexFaces(IndexFacesRequest indexFacesRequest);
@@ -1773,6 +1801,30 @@ public interface AmazonRekognition {
 
     /**
      * <p>
+     * Returns a list of tags in an Amazon Rekognition collection, stream processor, or Custom Labels model.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The collection specified in the request cannot be found.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @sample AmazonRekognition.ListTagsForResource
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
      * Returns an array of celebrities recognized in the input image. For more information, see Recognizing Celebrities
      * in the Amazon Rekognition Developer Guide.
      * </p>
@@ -1815,7 +1867,8 @@ public interface AmazonRekognition {
      * @throws InvalidImageFormatException
      *         The provided image format is not supported.
      * @throws ImageTooLargeException
-     *         The input image size exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in
+     *         The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image
+     *         size or resolution exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in
      *         the Amazon Rekognition Developer Guide.
      * @throws AccessDeniedException
      *         You are not authorized to perform the action.
@@ -1928,7 +1981,8 @@ public interface AmazonRekognition {
      * @throws InvalidParameterException
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws ImageTooLargeException
-     *         The input image size exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in
+     *         The input image size exceeds the allowed limit. If you are calling DetectProtectiveEquipment, the image
+     *         size or resolution exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in
      *         the Amazon Rekognition Developer Guide.
      * @throws AccessDeniedException
      *         You are not authorized to perform the action.
@@ -2466,6 +2520,60 @@ public interface AmazonRekognition {
      * @sample AmazonRekognition.StopStreamProcessor
      */
     StopStreamProcessorResult stopStreamProcessor(StopStreamProcessorRequest stopStreamProcessorRequest);
+
+    /**
+     * <p>
+     * Adds one or more key-value tags to an Amazon Rekognition collection, stream processor, or Custom Labels model.
+     * For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+     * Resources</a>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The collection specified in the request cannot be found.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws ServiceQuotaExceededException
+     *         <p>
+     *         The size of the collection or tag list exceeds the allowed limit. For more information, see Limits in
+     *         Amazon Rekognition in the Amazon Rekognition Developer Guide.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @sample AmazonRekognition.TagResource
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes one or more tags from an Amazon Rekognition collection, stream processor, or Custom Labels model.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The collection specified in the request cannot be found.
+     * @throws InvalidParameterException
+     *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform the action.
+     * @throws InternalServerErrorException
+     *         Amazon Rekognition experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Rekognition.
+     * @sample AmazonRekognition.UntagResource
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

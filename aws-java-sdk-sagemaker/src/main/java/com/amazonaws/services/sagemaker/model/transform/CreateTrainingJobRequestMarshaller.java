@@ -69,6 +69,8 @@ public class CreateTrainingJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProfilerConfig").build();
     private static final MarshallingInfo<List> PROFILERRULECONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProfilerRuleConfigurations").build();
+    private static final MarshallingInfo<Map> ENVIRONMENT_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Environment").build();
 
     private static final CreateTrainingJobRequestMarshaller instance = new CreateTrainingJobRequestMarshaller();
 
@@ -106,6 +108,7 @@ public class CreateTrainingJobRequestMarshaller {
             protocolMarshaller.marshall(createTrainingJobRequest.getExperimentConfig(), EXPERIMENTCONFIG_BINDING);
             protocolMarshaller.marshall(createTrainingJobRequest.getProfilerConfig(), PROFILERCONFIG_BINDING);
             protocolMarshaller.marshall(createTrainingJobRequest.getProfilerRuleConfigurations(), PROFILERRULECONFIGURATIONS_BINDING);
+            protocolMarshaller.marshall(createTrainingJobRequest.getEnvironment(), ENVIRONMENT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -204,6 +204,11 @@ public class AbstractAmazonRekognition implements AmazonRekognition {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RecognizeCelebritiesResult recognizeCelebrities(RecognizeCelebritiesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -275,6 +280,16 @@ public class AbstractAmazonRekognition implements AmazonRekognition {
 
     @Override
     public StopStreamProcessorResult stopStreamProcessor(StopStreamProcessorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

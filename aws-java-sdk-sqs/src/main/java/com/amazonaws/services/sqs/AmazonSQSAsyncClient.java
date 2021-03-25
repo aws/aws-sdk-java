@@ -65,7 +65,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * </ul>
  * <p>
- * <b>Additional Information</b>
+ * <b>Additional information</b>
  * </p>
  * <ul>
  * <li>

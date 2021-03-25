@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 /**
  * <p/>
  * <p>
- * The size of the collection exceeds the allowed limit. For more information, see Limits in Amazon Rekognition in the
- * Amazon Rekognition Developer Guide.
+ * The size of the collection or tag list exceeds the allowed limit. For more information, see Limits in Amazon
+ * Rekognition in the Amazon Rekognition Developer Guide.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

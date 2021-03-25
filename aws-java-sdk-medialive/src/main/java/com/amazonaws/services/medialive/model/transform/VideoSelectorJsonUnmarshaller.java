@@ -52,6 +52,10 @@ public class VideoSelectorJsonUnmarshaller implements Unmarshaller<VideoSelector
                     context.nextToken();
                     videoSelector.setColorSpace(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("colorSpaceSettings", targetDepth)) {
+                    context.nextToken();
+                    videoSelector.setColorSpaceSettings(VideoSelectorColorSpaceSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("colorSpaceUsage", targetDepth)) {
                     context.nextToken();
                     videoSelector.setColorSpaceUsage(context.getUnmarshaller(String.class).unmarshall(context));

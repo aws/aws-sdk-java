@@ -102,6 +102,12 @@ public class Profile implements Serializable, Cloneable, StructuredPojo {
     private Boolean pSTNEnabled;
     /**
      * <p>
+     * Whether data retention of the profile is enabled.
+     * </p>
+     */
+    private Boolean dataRetentionOptIn;
+    /**
+     * <p>
      * The ARN of the address book.
      * </p>
      */
@@ -688,6 +694,58 @@ public class Profile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Whether data retention of the profile is enabled.
+     * </p>
+     * 
+     * @param dataRetentionOptIn
+     *        Whether data retention of the profile is enabled.
+     */
+
+    public void setDataRetentionOptIn(Boolean dataRetentionOptIn) {
+        this.dataRetentionOptIn = dataRetentionOptIn;
+    }
+
+    /**
+     * <p>
+     * Whether data retention of the profile is enabled.
+     * </p>
+     * 
+     * @return Whether data retention of the profile is enabled.
+     */
+
+    public Boolean getDataRetentionOptIn() {
+        return this.dataRetentionOptIn;
+    }
+
+    /**
+     * <p>
+     * Whether data retention of the profile is enabled.
+     * </p>
+     * 
+     * @param dataRetentionOptIn
+     *        Whether data retention of the profile is enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Profile withDataRetentionOptIn(Boolean dataRetentionOptIn) {
+        setDataRetentionOptIn(dataRetentionOptIn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether data retention of the profile is enabled.
+     * </p>
+     * 
+     * @return Whether data retention of the profile is enabled.
+     */
+
+    public Boolean isDataRetentionOptIn() {
+        return this.dataRetentionOptIn;
+    }
+
+    /**
+     * <p>
      * The ARN of the address book.
      * </p>
      * 
@@ -802,6 +860,8 @@ public class Profile implements Serializable, Cloneable, StructuredPojo {
             sb.append("MaxVolumeLimit: ").append(getMaxVolumeLimit()).append(",");
         if (getPSTNEnabled() != null)
             sb.append("PSTNEnabled: ").append(getPSTNEnabled()).append(",");
+        if (getDataRetentionOptIn() != null)
+            sb.append("DataRetentionOptIn: ").append(getDataRetentionOptIn()).append(",");
         if (getAddressBookArn() != null)
             sb.append("AddressBookArn: ").append(getAddressBookArn()).append(",");
         if (getMeetingRoomConfiguration() != null)
@@ -868,6 +928,10 @@ public class Profile implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPSTNEnabled() != null && other.getPSTNEnabled().equals(this.getPSTNEnabled()) == false)
             return false;
+        if (other.getDataRetentionOptIn() == null ^ this.getDataRetentionOptIn() == null)
+            return false;
+        if (other.getDataRetentionOptIn() != null && other.getDataRetentionOptIn().equals(this.getDataRetentionOptIn()) == false)
+            return false;
         if (other.getAddressBookArn() == null ^ this.getAddressBookArn() == null)
             return false;
         if (other.getAddressBookArn() != null && other.getAddressBookArn().equals(this.getAddressBookArn()) == false)
@@ -896,6 +960,7 @@ public class Profile implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSetupModeDisabled() == null) ? 0 : getSetupModeDisabled().hashCode());
         hashCode = prime * hashCode + ((getMaxVolumeLimit() == null) ? 0 : getMaxVolumeLimit().hashCode());
         hashCode = prime * hashCode + ((getPSTNEnabled() == null) ? 0 : getPSTNEnabled().hashCode());
+        hashCode = prime * hashCode + ((getDataRetentionOptIn() == null) ? 0 : getDataRetentionOptIn().hashCode());
         hashCode = prime * hashCode + ((getAddressBookArn() == null) ? 0 : getAddressBookArn().hashCode());
         hashCode = prime * hashCode + ((getMeetingRoomConfiguration() == null) ? 0 : getMeetingRoomConfiguration().hashCode());
         return hashCode;

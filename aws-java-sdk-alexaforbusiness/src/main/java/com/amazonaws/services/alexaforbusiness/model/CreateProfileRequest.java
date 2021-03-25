@@ -93,6 +93,12 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
     private Boolean pSTNEnabled;
     /**
      * <p>
+     * Whether data retention of the profile is enabled.
+     * </p>
+     */
+    private Boolean dataRetentionOptIn;
+    /**
+     * <p>
      * The meeting room settings of a room profile.
      * </p>
      */
@@ -627,6 +633,58 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * Whether data retention of the profile is enabled.
+     * </p>
+     * 
+     * @param dataRetentionOptIn
+     *        Whether data retention of the profile is enabled.
+     */
+
+    public void setDataRetentionOptIn(Boolean dataRetentionOptIn) {
+        this.dataRetentionOptIn = dataRetentionOptIn;
+    }
+
+    /**
+     * <p>
+     * Whether data retention of the profile is enabled.
+     * </p>
+     * 
+     * @return Whether data retention of the profile is enabled.
+     */
+
+    public Boolean getDataRetentionOptIn() {
+        return this.dataRetentionOptIn;
+    }
+
+    /**
+     * <p>
+     * Whether data retention of the profile is enabled.
+     * </p>
+     * 
+     * @param dataRetentionOptIn
+     *        Whether data retention of the profile is enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateProfileRequest withDataRetentionOptIn(Boolean dataRetentionOptIn) {
+        setDataRetentionOptIn(dataRetentionOptIn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether data retention of the profile is enabled.
+     * </p>
+     * 
+     * @return Whether data retention of the profile is enabled.
+     */
+
+    public Boolean isDataRetentionOptIn() {
+        return this.dataRetentionOptIn;
+    }
+
+    /**
+     * <p>
      * The meeting room settings of a room profile.
      * </p>
      * 
@@ -769,6 +827,8 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("MaxVolumeLimit: ").append(getMaxVolumeLimit()).append(",");
         if (getPSTNEnabled() != null)
             sb.append("PSTNEnabled: ").append(getPSTNEnabled()).append(",");
+        if (getDataRetentionOptIn() != null)
+            sb.append("DataRetentionOptIn: ").append(getDataRetentionOptIn()).append(",");
         if (getMeetingRoomConfiguration() != null)
             sb.append("MeetingRoomConfiguration: ").append(getMeetingRoomConfiguration()).append(",");
         if (getTags() != null)
@@ -831,6 +891,10 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getPSTNEnabled() != null && other.getPSTNEnabled().equals(this.getPSTNEnabled()) == false)
             return false;
+        if (other.getDataRetentionOptIn() == null ^ this.getDataRetentionOptIn() == null)
+            return false;
+        if (other.getDataRetentionOptIn() != null && other.getDataRetentionOptIn().equals(this.getDataRetentionOptIn()) == false)
+            return false;
         if (other.getMeetingRoomConfiguration() == null ^ this.getMeetingRoomConfiguration() == null)
             return false;
         if (other.getMeetingRoomConfiguration() != null && other.getMeetingRoomConfiguration().equals(this.getMeetingRoomConfiguration()) == false)
@@ -858,6 +922,7 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getSetupModeDisabled() == null) ? 0 : getSetupModeDisabled().hashCode());
         hashCode = prime * hashCode + ((getMaxVolumeLimit() == null) ? 0 : getMaxVolumeLimit().hashCode());
         hashCode = prime * hashCode + ((getPSTNEnabled() == null) ? 0 : getPSTNEnabled().hashCode());
+        hashCode = prime * hashCode + ((getDataRetentionOptIn() == null) ? 0 : getDataRetentionOptIn().hashCode());
         hashCode = prime * hashCode + ((getMeetingRoomConfiguration() == null) ? 0 : getMeetingRoomConfiguration().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;

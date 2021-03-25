@@ -198,6 +198,12 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private java.util.List<ProfilerRuleConfiguration> profilerRuleConfigurations;
+    /**
+     * <p>
+     * The environment variables to set in the Docker container.
+     * </p>
+     */
+    private java.util.Map<String, String> environment;
 
     /**
      * <p>
@@ -1592,6 +1598,74 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The environment variables to set in the Docker container.
+     * </p>
+     * 
+     * @return The environment variables to set in the Docker container.
+     */
+
+    public java.util.Map<String, String> getEnvironment() {
+        return environment;
+    }
+
+    /**
+     * <p>
+     * The environment variables to set in the Docker container.
+     * </p>
+     * 
+     * @param environment
+     *        The environment variables to set in the Docker container.
+     */
+
+    public void setEnvironment(java.util.Map<String, String> environment) {
+        this.environment = environment;
+    }
+
+    /**
+     * <p>
+     * The environment variables to set in the Docker container.
+     * </p>
+     * 
+     * @param environment
+     *        The environment variables to set in the Docker container.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTrainingJobRequest withEnvironment(java.util.Map<String, String> environment) {
+        setEnvironment(environment);
+        return this;
+    }
+
+    /**
+     * Add a single Environment entry
+     *
+     * @see CreateTrainingJobRequest#withEnvironment
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTrainingJobRequest addEnvironmentEntry(String key, String value) {
+        if (null == this.environment) {
+            this.environment = new java.util.HashMap<String, String>();
+        }
+        if (this.environment.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.environment.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Environment.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTrainingJobRequest clearEnvironmentEntries() {
+        this.environment = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1642,7 +1716,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getProfilerConfig() != null)
             sb.append("ProfilerConfig: ").append(getProfilerConfig()).append(",");
         if (getProfilerRuleConfigurations() != null)
-            sb.append("ProfilerRuleConfigurations: ").append(getProfilerRuleConfigurations());
+            sb.append("ProfilerRuleConfigurations: ").append(getProfilerRuleConfigurations()).append(",");
+        if (getEnvironment() != null)
+            sb.append("Environment: ").append(getEnvironment());
         sb.append("}");
         return sb.toString();
     }
@@ -1738,6 +1814,10 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getProfilerRuleConfigurations() != null && other.getProfilerRuleConfigurations().equals(this.getProfilerRuleConfigurations()) == false)
             return false;
+        if (other.getEnvironment() == null ^ this.getEnvironment() == null)
+            return false;
+        if (other.getEnvironment() != null && other.getEnvironment().equals(this.getEnvironment()) == false)
+            return false;
         return true;
     }
 
@@ -1766,6 +1846,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getExperimentConfig() == null) ? 0 : getExperimentConfig().hashCode());
         hashCode = prime * hashCode + ((getProfilerConfig() == null) ? 0 : getProfilerConfig().hashCode());
         hashCode = prime * hashCode + ((getProfilerRuleConfigurations() == null) ? 0 : getProfilerRuleConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         return hashCode;
     }
 

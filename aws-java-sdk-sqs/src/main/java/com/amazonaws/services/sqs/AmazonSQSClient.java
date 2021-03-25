@@ -85,7 +85,7 @@ import com.amazonaws.services.sqs.model.transform.*;
  * </li>
  * </ul>
  * <p>
- * <b>Additional Information</b>
+ * <b>Additional information</b>
  * </p>
  * <ul>
  * <li>

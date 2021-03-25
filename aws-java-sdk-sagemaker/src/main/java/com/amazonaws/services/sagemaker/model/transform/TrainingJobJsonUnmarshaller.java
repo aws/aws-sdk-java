@@ -197,6 +197,12 @@ public class TrainingJobJsonUnmarshaller implements Unmarshaller<TrainingJob, Js
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("Environment", targetDepth)) {
+                    context.nextToken();
+                    trainingJob
+                            .setEnvironment(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
+                                    .unmarshall(context));
+                }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
                     trainingJob.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())

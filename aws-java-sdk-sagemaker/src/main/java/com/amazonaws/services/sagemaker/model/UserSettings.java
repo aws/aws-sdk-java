@@ -19,8 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A collection of settings that apply to users of Amazon SageMaker Studio. These settings are specified when the
- * <a>CreateUserProfile</a> API is called, and as <code>DefaultUserSettings</code> when the <a>CreateDomain</a> API is
+ * A collection of settings that apply to users of Amazon SageMaker Studio. These settings are specified when the <a
+ * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateUserProfile.html">CreateUserProfile</a> API
+ * is called, and as <code>DefaultUserSettings</code> when the <a
+ * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateDomain.html">CreateDomain</a> API is
  * called.
  * </p>
  * <p>
@@ -60,7 +62,7 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> securityGroups;
     /**
      * <p>
-     * The sharing settings.
+     * Specifies options for sharing SageMaker Studio notebooks.
      * </p>
      */
     private SharingSettings sharingSettings;
@@ -280,11 +282,11 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The sharing settings.
+     * Specifies options for sharing SageMaker Studio notebooks.
      * </p>
      * 
      * @param sharingSettings
-     *        The sharing settings.
+     *        Specifies options for sharing SageMaker Studio notebooks.
      */
 
     public void setSharingSettings(SharingSettings sharingSettings) {
@@ -293,10 +295,10 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The sharing settings.
+     * Specifies options for sharing SageMaker Studio notebooks.
      * </p>
      * 
-     * @return The sharing settings.
+     * @return Specifies options for sharing SageMaker Studio notebooks.
      */
 
     public SharingSettings getSharingSettings() {
@@ -305,11 +307,11 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The sharing settings.
+     * Specifies options for sharing SageMaker Studio notebooks.
      * </p>
      * 
      * @param sharingSettings
-     *        The sharing settings.
+     *        Specifies options for sharing SageMaker Studio notebooks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

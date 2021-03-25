@@ -2446,6 +2446,11 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * managed spot training job to complete.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>Environment</code> - The environment variables to set in the Docker container.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information about Amazon SageMaker, see <a
@@ -2525,6 +2530,11 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * <code>StoppingCondition</code> - To help cap training costs, use <code>MaxRuntimeInSeconds</code> to set a time
      * limit for training. Use <code>MaxWaitTimeInSeconds</code> to specify how long you are willing to wait for a
      * managed spot training job to complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Environment</code> - The environment variables to set in the Docker container.
      * </p>
      * </li>
      * </ul>

@@ -1334,6 +1334,11 @@ public interface AmazonSageMaker {
      * managed spot training job to complete.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>Environment</code> - The environment variables to set in the Docker container.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information about Amazon SageMaker, see <a

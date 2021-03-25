@@ -47,7 +47,9 @@ public class LabelingJobDataSource implements Serializable, Cloneable, Structure
     private LabelingJobS3DataSource s3DataSource;
     /**
      * <p>
-     * An Amazon SNS data source used for streaming labeling jobs.
+     * An Amazon SNS data source used for streaming labeling jobs. To learn more, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-labeling-job.html#sms-streaming-how-it-works-send-data"
+     * >Send Data to a Streaming Labeling Job</a>.
      * </p>
      */
     private LabelingJobSnsDataSource snsDataSource;
@@ -94,11 +96,15 @@ public class LabelingJobDataSource implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * An Amazon SNS data source used for streaming labeling jobs.
+     * An Amazon SNS data source used for streaming labeling jobs. To learn more, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-labeling-job.html#sms-streaming-how-it-works-send-data"
+     * >Send Data to a Streaming Labeling Job</a>.
      * </p>
      * 
      * @param snsDataSource
-     *        An Amazon SNS data source used for streaming labeling jobs.
+     *        An Amazon SNS data source used for streaming labeling jobs. To learn more, see <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-labeling-job.html#sms-streaming-how-it-works-send-data"
+     *        >Send Data to a Streaming Labeling Job</a>.
      */
 
     public void setSnsDataSource(LabelingJobSnsDataSource snsDataSource) {
@@ -107,10 +113,14 @@ public class LabelingJobDataSource implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * An Amazon SNS data source used for streaming labeling jobs.
+     * An Amazon SNS data source used for streaming labeling jobs. To learn more, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-labeling-job.html#sms-streaming-how-it-works-send-data"
+     * >Send Data to a Streaming Labeling Job</a>.
      * </p>
      * 
-     * @return An Amazon SNS data source used for streaming labeling jobs.
+     * @return An Amazon SNS data source used for streaming labeling jobs. To learn more, see <a href=
+     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-labeling-job.html#sms-streaming-how-it-works-send-data"
+     *         >Send Data to a Streaming Labeling Job</a>.
      */
 
     public LabelingJobSnsDataSource getSnsDataSource() {
@@ -119,11 +129,15 @@ public class LabelingJobDataSource implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * An Amazon SNS data source used for streaming labeling jobs.
+     * An Amazon SNS data source used for streaming labeling jobs. To learn more, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-labeling-job.html#sms-streaming-how-it-works-send-data"
+     * >Send Data to a Streaming Labeling Job</a>.
      * </p>
      * 
      * @param snsDataSource
-     *        An Amazon SNS data source used for streaming labeling jobs.
+     *        An Amazon SNS data source used for streaming labeling jobs. To learn more, see <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-labeling-job.html#sms-streaming-how-it-works-send-data"
+     *        >Send Data to a Streaming Labeling Job</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

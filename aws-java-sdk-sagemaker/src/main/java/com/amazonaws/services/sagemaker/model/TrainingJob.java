@@ -379,6 +379,12 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<DebugRuleEvaluationStatus> debugRuleEvaluationStatuses;
     /**
      * <p>
+     * The environment variables to set in the Docker container.
+     * </p>
+     */
+    private java.util.Map<String, String> environment;
+    /**
+     * <p>
      * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
      * purpose, owner, or environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
@@ -3197,6 +3203,74 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The environment variables to set in the Docker container.
+     * </p>
+     * 
+     * @return The environment variables to set in the Docker container.
+     */
+
+    public java.util.Map<String, String> getEnvironment() {
+        return environment;
+    }
+
+    /**
+     * <p>
+     * The environment variables to set in the Docker container.
+     * </p>
+     * 
+     * @param environment
+     *        The environment variables to set in the Docker container.
+     */
+
+    public void setEnvironment(java.util.Map<String, String> environment) {
+        this.environment = environment;
+    }
+
+    /**
+     * <p>
+     * The environment variables to set in the Docker container.
+     * </p>
+     * 
+     * @param environment
+     *        The environment variables to set in the Docker container.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrainingJob withEnvironment(java.util.Map<String, String> environment) {
+        setEnvironment(environment);
+        return this;
+    }
+
+    /**
+     * Add a single Environment entry
+     *
+     * @see TrainingJob#withEnvironment
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrainingJob addEnvironmentEntry(String key, String value) {
+        if (null == this.environment) {
+            this.environment = new java.util.HashMap<String, String>();
+        }
+        if (this.environment.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.environment.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Environment.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrainingJob clearEnvironmentEntries() {
+        this.environment = null;
+        return this;
+    }
+
+    /**
+     * <p>
      * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
      * purpose, owner, or environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
@@ -3361,6 +3435,8 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
             sb.append("TensorBoardOutputConfig: ").append(getTensorBoardOutputConfig()).append(",");
         if (getDebugRuleEvaluationStatuses() != null)
             sb.append("DebugRuleEvaluationStatuses: ").append(getDebugRuleEvaluationStatuses()).append(",");
+        if (getEnvironment() != null)
+            sb.append("Environment: ").append(getEnvironment()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -3514,6 +3590,10 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDebugRuleEvaluationStatuses() != null && other.getDebugRuleEvaluationStatuses().equals(this.getDebugRuleEvaluationStatuses()) == false)
             return false;
+        if (other.getEnvironment() == null ^ this.getEnvironment() == null)
+            return false;
+        if (other.getEnvironment() != null && other.getEnvironment().equals(this.getEnvironment()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -3560,6 +3640,7 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDebugRuleConfigurations() == null) ? 0 : getDebugRuleConfigurations().hashCode());
         hashCode = prime * hashCode + ((getTensorBoardOutputConfig() == null) ? 0 : getTensorBoardOutputConfig().hashCode());
         hashCode = prime * hashCode + ((getDebugRuleEvaluationStatuses() == null) ? 0 : getDebugRuleEvaluationStatuses().hashCode());
+        hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

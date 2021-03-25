@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.rekognition.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +39,8 @@ public class CreateProjectVersionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrainingData").build();
     private static final MarshallingInfo<StructuredPojo> TESTINGDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TestingData").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateProjectVersionRequestMarshaller instance = new CreateProjectVersionRequestMarshaller();
 
@@ -59,6 +63,7 @@ public class CreateProjectVersionRequestMarshaller {
             protocolMarshaller.marshall(createProjectVersionRequest.getOutputConfig(), OUTPUTCONFIG_BINDING);
             protocolMarshaller.marshall(createProjectVersionRequest.getTrainingData(), TRAININGDATA_BINDING);
             protocolMarshaller.marshall(createProjectVersionRequest.getTestingData(), TESTINGDATA_BINDING);
+            protocolMarshaller.marshall(createProjectVersionRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

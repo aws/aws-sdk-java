@@ -21,6 +21,8 @@ import javax.annotation.Generated;
 public enum VideoSelectorColorSpace {
 
     FOLLOW("FOLLOW"),
+    HDR10("HDR10"),
+    HLG_2020("HLG_2020"),
     REC_601("REC_601"),
     REC_709("REC_709");
 

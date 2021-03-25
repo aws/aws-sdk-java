@@ -55,6 +55,12 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private String roleArn;
+    /**
+     * <p>
+     * A set of tags (key-value pairs) that you want to attach to the stream processor.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -287,6 +293,74 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * A set of tags (key-value pairs) that you want to attach to the stream processor.
+     * </p>
+     * 
+     * @return A set of tags (key-value pairs) that you want to attach to the stream processor.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A set of tags (key-value pairs) that you want to attach to the stream processor.
+     * </p>
+     * 
+     * @param tags
+     *        A set of tags (key-value pairs) that you want to attach to the stream processor.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * A set of tags (key-value pairs) that you want to attach to the stream processor.
+     * </p>
+     * 
+     * @param tags
+     *        A set of tags (key-value pairs) that you want to attach to the stream processor.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStreamProcessorRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see CreateStreamProcessorRequest#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStreamProcessorRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStreamProcessorRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -307,7 +381,9 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
         if (getSettings() != null)
             sb.append("Settings: ").append(getSettings()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: ").append(getRoleArn());
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -342,6 +418,10 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -355,6 +435,7 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -33,10 +33,6 @@ public class LabelingJobSnsDataSource implements Serializable, Cloneable, Struct
      * The Amazon SNS input topic Amazon Resource Name (ARN). Specify the ARN of the input topic you will use to send
      * new data objects to a streaming labeling job.
      * </p>
-     * <p>
-     * If you specify an input topic for <code>SnsTopicArn</code> in <code>InputConfig</code>, you must specify a value
-     * for <code>SnsTopicArn</code> in <code>OutputConfig</code>.
-     * </p>
      */
     private String snsTopicArn;
 
@@ -45,17 +41,10 @@ public class LabelingJobSnsDataSource implements Serializable, Cloneable, Struct
      * The Amazon SNS input topic Amazon Resource Name (ARN). Specify the ARN of the input topic you will use to send
      * new data objects to a streaming labeling job.
      * </p>
-     * <p>
-     * If you specify an input topic for <code>SnsTopicArn</code> in <code>InputConfig</code>, you must specify a value
-     * for <code>SnsTopicArn</code> in <code>OutputConfig</code>.
-     * </p>
      * 
      * @param snsTopicArn
      *        The Amazon SNS input topic Amazon Resource Name (ARN). Specify the ARN of the input topic you will use to
-     *        send new data objects to a streaming labeling job.</p>
-     *        <p>
-     *        If you specify an input topic for <code>SnsTopicArn</code> in <code>InputConfig</code>, you must specify a
-     *        value for <code>SnsTopicArn</code> in <code>OutputConfig</code>.
+     *        send new data objects to a streaming labeling job.
      */
 
     public void setSnsTopicArn(String snsTopicArn) {
@@ -67,16 +56,9 @@ public class LabelingJobSnsDataSource implements Serializable, Cloneable, Struct
      * The Amazon SNS input topic Amazon Resource Name (ARN). Specify the ARN of the input topic you will use to send
      * new data objects to a streaming labeling job.
      * </p>
-     * <p>
-     * If you specify an input topic for <code>SnsTopicArn</code> in <code>InputConfig</code>, you must specify a value
-     * for <code>SnsTopicArn</code> in <code>OutputConfig</code>.
-     * </p>
      * 
      * @return The Amazon SNS input topic Amazon Resource Name (ARN). Specify the ARN of the input topic you will use to
-     *         send new data objects to a streaming labeling job.</p>
-     *         <p>
-     *         If you specify an input topic for <code>SnsTopicArn</code> in <code>InputConfig</code>, you must specify
-     *         a value for <code>SnsTopicArn</code> in <code>OutputConfig</code>.
+     *         send new data objects to a streaming labeling job.
      */
 
     public String getSnsTopicArn() {
@@ -88,17 +70,10 @@ public class LabelingJobSnsDataSource implements Serializable, Cloneable, Struct
      * The Amazon SNS input topic Amazon Resource Name (ARN). Specify the ARN of the input topic you will use to send
      * new data objects to a streaming labeling job.
      * </p>
-     * <p>
-     * If you specify an input topic for <code>SnsTopicArn</code> in <code>InputConfig</code>, you must specify a value
-     * for <code>SnsTopicArn</code> in <code>OutputConfig</code>.
-     * </p>
      * 
      * @param snsTopicArn
      *        The Amazon SNS input topic Amazon Resource Name (ARN). Specify the ARN of the input topic you will use to
-     *        send new data objects to a streaming labeling job.</p>
-     *        <p>
-     *        If you specify an input topic for <code>SnsTopicArn</code> in <code>InputConfig</code>, you must specify a
-     *        value for <code>SnsTopicArn</code> in <code>OutputConfig</code>.
+     *        send new data objects to a streaming labeling job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

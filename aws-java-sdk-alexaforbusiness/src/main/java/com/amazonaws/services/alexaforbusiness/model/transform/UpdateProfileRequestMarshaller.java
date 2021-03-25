@@ -51,6 +51,8 @@ public class UpdateProfileRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxVolumeLimit").build();
     private static final MarshallingInfo<Boolean> PSTNENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PSTNEnabled").build();
+    private static final MarshallingInfo<Boolean> DATARETENTIONOPTIN_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataRetentionOptIn").build();
     private static final MarshallingInfo<StructuredPojo> MEETINGROOMCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MeetingRoomConfiguration").build();
 
@@ -82,6 +84,7 @@ public class UpdateProfileRequestMarshaller {
             protocolMarshaller.marshall(updateProfileRequest.getSetupModeDisabled(), SETUPMODEDISABLED_BINDING);
             protocolMarshaller.marshall(updateProfileRequest.getMaxVolumeLimit(), MAXVOLUMELIMIT_BINDING);
             protocolMarshaller.marshall(updateProfileRequest.getPSTNEnabled(), PSTNENABLED_BINDING);
+            protocolMarshaller.marshall(updateProfileRequest.getDataRetentionOptIn(), DATARETENTIONOPTIN_BINDING);
             protocolMarshaller.marshall(updateProfileRequest.getMeetingRoomConfiguration(), MEETINGROOMCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

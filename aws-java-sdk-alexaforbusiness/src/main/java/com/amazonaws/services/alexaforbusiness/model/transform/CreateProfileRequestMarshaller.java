@@ -53,6 +53,8 @@ public class CreateProfileRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxVolumeLimit").build();
     private static final MarshallingInfo<Boolean> PSTNENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PSTNEnabled").build();
+    private static final MarshallingInfo<Boolean> DATARETENTIONOPTIN_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataRetentionOptIn").build();
     private static final MarshallingInfo<StructuredPojo> MEETINGROOMCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MeetingRoomConfiguration").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -85,6 +87,7 @@ public class CreateProfileRequestMarshaller {
             protocolMarshaller.marshall(createProfileRequest.getSetupModeDisabled(), SETUPMODEDISABLED_BINDING);
             protocolMarshaller.marshall(createProfileRequest.getMaxVolumeLimit(), MAXVOLUMELIMIT_BINDING);
             protocolMarshaller.marshall(createProfileRequest.getPSTNEnabled(), PSTNENABLED_BINDING);
+            protocolMarshaller.marshall(createProfileRequest.getDataRetentionOptIn(), DATARETENTIONOPTIN_BINDING);
             protocolMarshaller.marshall(createProfileRequest.getMeetingRoomConfiguration(), MEETINGROOMCONFIGURATION_BINDING);
             protocolMarshaller.marshall(createProfileRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {

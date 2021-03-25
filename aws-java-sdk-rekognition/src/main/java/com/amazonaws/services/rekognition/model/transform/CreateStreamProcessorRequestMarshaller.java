@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.rekognition.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +39,8 @@ public class CreateStreamProcessorRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Settings").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("RoleArn").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateStreamProcessorRequestMarshaller instance = new CreateStreamProcessorRequestMarshaller();
 
@@ -59,6 +63,7 @@ public class CreateStreamProcessorRequestMarshaller {
             protocolMarshaller.marshall(createStreamProcessorRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createStreamProcessorRequest.getSettings(), SETTINGS_BINDING);
             protocolMarshaller.marshall(createStreamProcessorRequest.getRoleArn(), ROLEARN_BINDING);
+            protocolMarshaller.marshall(createStreamProcessorRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

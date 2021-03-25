@@ -29,7 +29,10 @@ public enum AutoMLJobSecondaryStatus {
     Stopped("Stopped"),
     MaxAutoMLJobRuntimeReached("MaxAutoMLJobRuntimeReached"),
     Stopping("Stopping"),
-    CandidateDefinitionsGenerated("CandidateDefinitionsGenerated");
+    CandidateDefinitionsGenerated("CandidateDefinitionsGenerated"),
+    GeneratingExplainabilityReport("GeneratingExplainabilityReport"),
+    Completed("Completed"),
+    ExplainabilityError("ExplainabilityError");
 
     private String value;
 

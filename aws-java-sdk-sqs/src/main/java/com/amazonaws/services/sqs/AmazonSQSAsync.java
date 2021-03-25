@@ -60,7 +60,7 @@ import com.amazonaws.services.sqs.model.*;
  * </li>
  * </ul>
  * <p>
- * <b>Additional Information</b>
+ * <b>Additional information</b>
  * </p>
  * <ul>
  * <li>

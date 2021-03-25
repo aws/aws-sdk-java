@@ -45,8 +45,8 @@ public class ProtectiveEquipmentSummary implements Serializable, Cloneable, Stru
     private java.util.List<Integer> personsWithRequiredEquipment;
     /**
      * <p>
-     * An array of IDs for persons who are not wearing all of the types of PPE specified in the RequiredEquipmentTypes
-     * field of the detected personal protective equipment.
+     * An array of IDs for persons who are not wearing all of the types of PPE specified in the
+     * <code>RequiredEquipmentTypes</code> field of the detected personal protective equipment.
      * </p>
      */
     private java.util.List<Integer> personsWithoutRequiredEquipment;
@@ -130,12 +130,12 @@ public class ProtectiveEquipmentSummary implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * An array of IDs for persons who are not wearing all of the types of PPE specified in the RequiredEquipmentTypes
-     * field of the detected personal protective equipment.
+     * An array of IDs for persons who are not wearing all of the types of PPE specified in the
+     * <code>RequiredEquipmentTypes</code> field of the detected personal protective equipment.
      * </p>
      * 
      * @return An array of IDs for persons who are not wearing all of the types of PPE specified in the
-     *         RequiredEquipmentTypes field of the detected personal protective equipment.
+     *         <code>RequiredEquipmentTypes</code> field of the detected personal protective equipment.
      */
 
     public java.util.List<Integer> getPersonsWithoutRequiredEquipment() {
@@ -144,13 +144,13 @@ public class ProtectiveEquipmentSummary implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * An array of IDs for persons who are not wearing all of the types of PPE specified in the RequiredEquipmentTypes
-     * field of the detected personal protective equipment.
+     * An array of IDs for persons who are not wearing all of the types of PPE specified in the
+     * <code>RequiredEquipmentTypes</code> field of the detected personal protective equipment.
      * </p>
      * 
      * @param personsWithoutRequiredEquipment
      *        An array of IDs for persons who are not wearing all of the types of PPE specified in the
-     *        RequiredEquipmentTypes field of the detected personal protective equipment.
+     *        <code>RequiredEquipmentTypes</code> field of the detected personal protective equipment.
      */
 
     public void setPersonsWithoutRequiredEquipment(java.util.Collection<Integer> personsWithoutRequiredEquipment) {
@@ -164,8 +164,8 @@ public class ProtectiveEquipmentSummary implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * An array of IDs for persons who are not wearing all of the types of PPE specified in the RequiredEquipmentTypes
-     * field of the detected personal protective equipment.
+     * An array of IDs for persons who are not wearing all of the types of PPE specified in the
+     * <code>RequiredEquipmentTypes</code> field of the detected personal protective equipment.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -175,7 +175,7 @@ public class ProtectiveEquipmentSummary implements Serializable, Cloneable, Stru
      * 
      * @param personsWithoutRequiredEquipment
      *        An array of IDs for persons who are not wearing all of the types of PPE specified in the
-     *        RequiredEquipmentTypes field of the detected personal protective equipment.
+     *        <code>RequiredEquipmentTypes</code> field of the detected personal protective equipment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -191,13 +191,13 @@ public class ProtectiveEquipmentSummary implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * An array of IDs for persons who are not wearing all of the types of PPE specified in the RequiredEquipmentTypes
-     * field of the detected personal protective equipment.
+     * An array of IDs for persons who are not wearing all of the types of PPE specified in the
+     * <code>RequiredEquipmentTypes</code> field of the detected personal protective equipment.
      * </p>
      * 
      * @param personsWithoutRequiredEquipment
      *        An array of IDs for persons who are not wearing all of the types of PPE specified in the
-     *        RequiredEquipmentTypes field of the detected personal protective equipment.
+     *        <code>RequiredEquipmentTypes</code> field of the detected personal protective equipment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

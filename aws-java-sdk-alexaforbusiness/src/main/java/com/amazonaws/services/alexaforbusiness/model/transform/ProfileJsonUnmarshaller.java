@@ -96,6 +96,10 @@ public class ProfileJsonUnmarshaller implements Unmarshaller<Profile, JsonUnmars
                     context.nextToken();
                     profile.setPSTNEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("DataRetentionOptIn", targetDepth)) {
+                    context.nextToken();
+                    profile.setDataRetentionOptIn(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("AddressBookArn", targetDepth)) {
                     context.nextToken();
                     profile.setAddressBookArn(context.getUnmarshaller(String.class).unmarshall(context));
