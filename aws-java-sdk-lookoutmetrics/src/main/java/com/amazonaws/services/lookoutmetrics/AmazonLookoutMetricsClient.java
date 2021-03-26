@@ -78,7 +78,7 @@ public class AmazonLookoutMetricsClient extends AmazonWebServiceClient implement
                     .withProtocolVersion("1.1")
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
-                    .withContentTypeOverride("")
+                    .withContentTypeOverride("application/x-amz-json-1.1")
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lookoutmetrics.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))

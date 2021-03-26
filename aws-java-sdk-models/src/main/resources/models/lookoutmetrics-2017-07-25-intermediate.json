@@ -17,7 +17,10 @@
     "customFileHeader" : null,
     "customResponseHandlerFqcn" : null,
     "customResponseMetadataClassName" : null,
-    "customServiceMetadata" : null,
+    "customServiceMetadata" : {
+      "contentType" : "application/x-amz-json-1.1",
+      "protocol" : null
+    },
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
     "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
@@ -51,7 +54,7 @@
     "asyncInterface" : "AmazonLookoutMetricsAsync",
     "cborProtocol" : false,
     "checksumFormat" : null,
-    "contentType" : "",
+    "contentType" : "application/x-amz-json-1.1",
     "cucumberModuleInjectorClassName" : "AmazonLookoutMetricsModuleInjector",
     "defaultEndpoint" : "lookoutmetrics.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "lookoutmetrics.us-east-1.amazonaws.com",
