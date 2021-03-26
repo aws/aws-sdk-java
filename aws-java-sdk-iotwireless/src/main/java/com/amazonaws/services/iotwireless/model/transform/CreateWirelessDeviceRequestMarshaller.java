@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.iotwireless.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -42,6 +43,8 @@ public class CreateWirelessDeviceRequestMarshaller {
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<StructuredPojo> LORAWAN_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LoRaWAN").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateWirelessDeviceRequestMarshaller instance = new CreateWirelessDeviceRequestMarshaller();
 
@@ -65,6 +68,7 @@ public class CreateWirelessDeviceRequestMarshaller {
             protocolMarshaller.marshall(createWirelessDeviceRequest.getDestinationName(), DESTINATIONNAME_BINDING);
             protocolMarshaller.marshall(createWirelessDeviceRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(createWirelessDeviceRequest.getLoRaWAN(), LORAWAN_BINDING);
+            protocolMarshaller.marshall(createWirelessDeviceRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

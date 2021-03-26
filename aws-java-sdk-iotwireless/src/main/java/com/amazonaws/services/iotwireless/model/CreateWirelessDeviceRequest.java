@@ -63,6 +63,12 @@ public class CreateWirelessDeviceRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private LoRaWANDevice loRaWAN;
+    /**
+     * <p>
+     * The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -336,6 +342,76 @@ public class CreateWirelessDeviceRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.
+     * </p>
+     * 
+     * @return The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWirelessDeviceRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWirelessDeviceRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -358,7 +434,9 @@ public class CreateWirelessDeviceRequest extends com.amazonaws.AmazonWebServiceR
         if (getClientRequestToken() != null)
             sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
         if (getLoRaWAN() != null)
-            sb.append("LoRaWAN: ").append(getLoRaWAN());
+            sb.append("LoRaWAN: ").append(getLoRaWAN()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -397,6 +475,10 @@ public class CreateWirelessDeviceRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getLoRaWAN() != null && other.getLoRaWAN().equals(this.getLoRaWAN()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -411,6 +493,7 @@ public class CreateWirelessDeviceRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getDestinationName() == null) ? 0 : getDestinationName().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         hashCode = prime * hashCode + ((getLoRaWAN() == null) ? 0 : getLoRaWAN().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

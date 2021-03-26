@@ -37,6 +37,8 @@ public class PutIntegrationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ObjectTypeName").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<StructuredPojo> FLOWDEFINITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FlowDefinition").build();
 
     private static final PutIntegrationRequestMarshaller instance = new PutIntegrationRequestMarshaller();
 
@@ -58,6 +60,7 @@ public class PutIntegrationRequestMarshaller {
             protocolMarshaller.marshall(putIntegrationRequest.getUri(), URI_BINDING);
             protocolMarshaller.marshall(putIntegrationRequest.getObjectTypeName(), OBJECTTYPENAME_BINDING);
             protocolMarshaller.marshall(putIntegrationRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(putIntegrationRequest.getFlowDefinition(), FLOWDEFINITION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

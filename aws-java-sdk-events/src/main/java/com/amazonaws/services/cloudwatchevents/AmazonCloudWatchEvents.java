@@ -1191,6 +1191,11 @@ public interface AmazonCloudWatchEvents {
      * Custom/SaaS HTTPS APIs via EventBridge API Destinations
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon SageMaker Model Building Pipelines
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Creating rules with built-in targets is supported only in the AWS Management Console. The built-in targets are

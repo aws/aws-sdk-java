@@ -50,6 +50,8 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      */
     private java.util.Map<String, String> tags;
 
+    private FlowDefinition flowDefinition;
+
     /**
      * <p>
      * The unique name of the domain.
@@ -239,6 +241,32 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * @param flowDefinition
+     */
+
+    public void setFlowDefinition(FlowDefinition flowDefinition) {
+        this.flowDefinition = flowDefinition;
+    }
+
+    /**
+     * @return
+     */
+
+    public FlowDefinition getFlowDefinition() {
+        return this.flowDefinition;
+    }
+
+    /**
+     * @param flowDefinition
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutIntegrationRequest withFlowDefinition(FlowDefinition flowDefinition) {
+        setFlowDefinition(flowDefinition);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -257,7 +285,9 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getObjectTypeName() != null)
             sb.append("ObjectTypeName: ").append(getObjectTypeName()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getFlowDefinition() != null)
+            sb.append("FlowDefinition: ").append(getFlowDefinition());
         sb.append("}");
         return sb.toString();
     }
@@ -288,6 +318,10 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getFlowDefinition() == null ^ this.getFlowDefinition() == null)
+            return false;
+        if (other.getFlowDefinition() != null && other.getFlowDefinition().equals(this.getFlowDefinition()) == false)
+            return false;
         return true;
     }
 
@@ -300,6 +334,7 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getUri() == null) ? 0 : getUri().hashCode());
         hashCode = prime * hashCode + ((getObjectTypeName() == null) ? 0 : getObjectTypeName().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getFlowDefinition() == null) ? 0 : getFlowDefinition().hashCode());
         return hashCode;
     }
 

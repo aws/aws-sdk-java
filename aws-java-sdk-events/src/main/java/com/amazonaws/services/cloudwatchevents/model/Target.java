@@ -141,6 +141,17 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     private RedshiftDataParameters redshiftDataParameters;
     /**
      * <p>
+     * Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building
+     * Pipeline.
+     * </p>
+     * <p>
+     * If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to start a
+     * pipeline execution based on EventBridge events.
+     * </p>
+     */
+    private SageMakerPipelineParameters sageMakerPipelineParameters;
+    /**
+     * <p>
      * The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter queue events to.
      * </p>
      */
@@ -823,6 +834,73 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building
+     * Pipeline.
+     * </p>
+     * <p>
+     * If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to start a
+     * pipeline execution based on EventBridge events.
+     * </p>
+     * 
+     * @param sageMakerPipelineParameters
+     *        Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building
+     *        Pipeline.</p>
+     *        <p>
+     *        If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to
+     *        start a pipeline execution based on EventBridge events.
+     */
+
+    public void setSageMakerPipelineParameters(SageMakerPipelineParameters sageMakerPipelineParameters) {
+        this.sageMakerPipelineParameters = sageMakerPipelineParameters;
+    }
+
+    /**
+     * <p>
+     * Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building
+     * Pipeline.
+     * </p>
+     * <p>
+     * If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to start a
+     * pipeline execution based on EventBridge events.
+     * </p>
+     * 
+     * @return Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model
+     *         Building Pipeline.</p>
+     *         <p>
+     *         If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to
+     *         start a pipeline execution based on EventBridge events.
+     */
+
+    public SageMakerPipelineParameters getSageMakerPipelineParameters() {
+        return this.sageMakerPipelineParameters;
+    }
+
+    /**
+     * <p>
+     * Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building
+     * Pipeline.
+     * </p>
+     * <p>
+     * If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to start a
+     * pipeline execution based on EventBridge events.
+     * </p>
+     * 
+     * @param sageMakerPipelineParameters
+     *        Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building
+     *        Pipeline.</p>
+     *        <p>
+     *        If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to
+     *        start a pipeline execution based on EventBridge events.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Target withSageMakerPipelineParameters(SageMakerPipelineParameters sageMakerPipelineParameters) {
+        setSageMakerPipelineParameters(sageMakerPipelineParameters);
+        return this;
+    }
+
+    /**
+     * <p>
      * The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter queue events to.
      * </p>
      * 
@@ -945,6 +1023,8 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
             sb.append("HttpParameters: ").append(getHttpParameters()).append(",");
         if (getRedshiftDataParameters() != null)
             sb.append("RedshiftDataParameters: ").append(getRedshiftDataParameters()).append(",");
+        if (getSageMakerPipelineParameters() != null)
+            sb.append("SageMakerPipelineParameters: ").append(getSageMakerPipelineParameters()).append(",");
         if (getDeadLetterConfig() != null)
             sb.append("DeadLetterConfig: ").append(getDeadLetterConfig()).append(",");
         if (getRetryPolicy() != null)
@@ -1015,6 +1095,10 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRedshiftDataParameters() != null && other.getRedshiftDataParameters().equals(this.getRedshiftDataParameters()) == false)
             return false;
+        if (other.getSageMakerPipelineParameters() == null ^ this.getSageMakerPipelineParameters() == null)
+            return false;
+        if (other.getSageMakerPipelineParameters() != null && other.getSageMakerPipelineParameters().equals(this.getSageMakerPipelineParameters()) == false)
+            return false;
         if (other.getDeadLetterConfig() == null ^ this.getDeadLetterConfig() == null)
             return false;
         if (other.getDeadLetterConfig() != null && other.getDeadLetterConfig().equals(this.getDeadLetterConfig()) == false)
@@ -1044,6 +1128,7 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSqsParameters() == null) ? 0 : getSqsParameters().hashCode());
         hashCode = prime * hashCode + ((getHttpParameters() == null) ? 0 : getHttpParameters().hashCode());
         hashCode = prime * hashCode + ((getRedshiftDataParameters() == null) ? 0 : getRedshiftDataParameters().hashCode());
+        hashCode = prime * hashCode + ((getSageMakerPipelineParameters() == null) ? 0 : getSageMakerPipelineParameters().hashCode());
         hashCode = prime * hashCode + ((getDeadLetterConfig() == null) ? 0 : getDeadLetterConfig().hashCode());
         hashCode = prime * hashCode + ((getRetryPolicy() == null) ? 0 : getRetryPolicy().hashCode());
         return hashCode;

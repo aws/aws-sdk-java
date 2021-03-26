@@ -33,7 +33,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String resourceArn;
     /**
      * <p>
-     * Adds to or modifies the tags of the given resource. Tags are metadata that can be used to manage a resource.
+     * Adds to or modifies the tags of the given resource. Tags are metadata that you can use to manage a resource.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -80,10 +80,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Adds to or modifies the tags of the given resource. Tags are metadata that can be used to manage a resource.
+     * Adds to or modifies the tags of the given resource. Tags are metadata that you can use to manage a resource.
      * </p>
      * 
-     * @return Adds to or modifies the tags of the given resource. Tags are metadata that can be used to manage a
+     * @return Adds to or modifies the tags of the given resource. Tags are metadata that you can use to manage a
      *         resource.
      */
 
@@ -93,11 +93,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Adds to or modifies the tags of the given resource. Tags are metadata that can be used to manage a resource.
+     * Adds to or modifies the tags of the given resource. Tags are metadata that you can use to manage a resource.
      * </p>
      * 
      * @param tags
-     *        Adds to or modifies the tags of the given resource. Tags are metadata that can be used to manage a
+     *        Adds to or modifies the tags of the given resource. Tags are metadata that you can use to manage a
      *        resource.
      */
 
@@ -112,7 +112,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Adds to or modifies the tags of the given resource. Tags are metadata that can be used to manage a resource.
+     * Adds to or modifies the tags of the given resource. Tags are metadata that you can use to manage a resource.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -121,7 +121,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param tags
-     *        Adds to or modifies the tags of the given resource. Tags are metadata that can be used to manage a
+     *        Adds to or modifies the tags of the given resource. Tags are metadata that you can use to manage a
      *        resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -138,11 +138,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Adds to or modifies the tags of the given resource. Tags are metadata that can be used to manage a resource.
+     * Adds to or modifies the tags of the given resource. Tags are metadata that you can use to manage a resource.
      * </p>
      * 
      * @param tags
-     *        Adds to or modifies the tags of the given resource. Tags are metadata that can be used to manage a
+     *        Adds to or modifies the tags of the given resource. Tags are metadata that you can use to manage a
      *        resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

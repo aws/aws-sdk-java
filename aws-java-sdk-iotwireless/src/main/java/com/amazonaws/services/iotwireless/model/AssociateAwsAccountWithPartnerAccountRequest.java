@@ -41,7 +41,7 @@ public class AssociateAwsAccountWithPartnerAccountRequest extends com.amazonaws.
     private String clientRequestToken;
     /**
      * <p>
-     * The tags attached to the specified resource. Tags are metadata that can be used to manage a resource
+     * The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -140,10 +140,10 @@ public class AssociateAwsAccountWithPartnerAccountRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The tags attached to the specified resource. Tags are metadata that can be used to manage a resource
+     * The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.
      * </p>
      * 
-     * @return The tags attached to the specified resource. Tags are metadata that can be used to manage a resource
+     * @return The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.
      */
 
     public java.util.List<Tag> getTags() {
@@ -152,11 +152,11 @@ public class AssociateAwsAccountWithPartnerAccountRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The tags attached to the specified resource. Tags are metadata that can be used to manage a resource
+     * The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.
      * </p>
      * 
      * @param tags
-     *        The tags attached to the specified resource. Tags are metadata that can be used to manage a resource
+     *        The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -170,7 +170,7 @@ public class AssociateAwsAccountWithPartnerAccountRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The tags attached to the specified resource. Tags are metadata that can be used to manage a resource
+     * The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -179,7 +179,7 @@ public class AssociateAwsAccountWithPartnerAccountRequest extends com.amazonaws.
      * </p>
      * 
      * @param tags
-     *        The tags attached to the specified resource. Tags are metadata that can be used to manage a resource
+     *        The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -195,11 +195,11 @@ public class AssociateAwsAccountWithPartnerAccountRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The tags attached to the specified resource. Tags are metadata that can be used to manage a resource
+     * The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.
      * </p>
      * 
      * @param tags
-     *        The tags attached to the specified resource. Tags are metadata that can be used to manage a resource
+     *        The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

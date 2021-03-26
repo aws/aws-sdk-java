@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum VocabularyFilterMethod {
 
     Remove("remove"),
-    Mask("mask");
+    Mask("mask"),
+    Tag("tag");
 
     private String value;
 

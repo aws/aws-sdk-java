@@ -993,7 +993,7 @@
         },
         "Tags":{
           "shape":"TagList",
-          "documentation":"<p>The tags attached to the specified resource. Tags are metadata that can be used to manage a resource</p>"
+          "documentation":"<p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>"
         }
       }
     },
@@ -1160,7 +1160,7 @@
         },
         "Tags":{
           "shape":"TagList",
-          "documentation":"<p>The tags to attach to the new destination. Tags are metadata that can be used to manage a resource.</p>"
+          "documentation":"<p>The tags to attach to the new destination. Tags are metadata that you can use to manage a resource.</p>"
         },
         "ClientRequestToken":{
           "shape":"ClientRequestToken",
@@ -1195,7 +1195,7 @@
         },
         "Tags":{
           "shape":"TagList",
-          "documentation":"<p>The tags to attach to the new device profile Tags are metadata that can be used to manage a resource.</p>"
+          "documentation":"<p>The tags to attach to the new device profile. Tags are metadata that you can use to manage a resource.</p>"
         },
         "ClientRequestToken":{
           "shape":"ClientRequestToken",
@@ -1230,7 +1230,7 @@
         },
         "Tags":{
           "shape":"TagList",
-          "documentation":"<p>The tags to attach to the new service profile. Tags are metadata that can be used to manage a resource.</p>"
+          "documentation":"<p>The tags to attach to the new service profile. Tags are metadata that you can use to manage a resource.</p>"
         },
         "ClientRequestToken":{
           "shape":"ClientRequestToken",
@@ -1283,6 +1283,10 @@
         "LoRaWAN":{
           "shape":"LoRaWANDevice",
           "documentation":"<p>The device configuration information to use to create the wireless device.</p>"
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>The tags to attach to the new wireless device. Tags are metadata that you can use to manage a resource.</p>"
         }
       }
     },
@@ -1317,7 +1321,7 @@
         },
         "Tags":{
           "shape":"TagList",
-          "documentation":"<p>The tags to attach to the new wireless gateway. Tags are metadata that can be used to manage a resource.</p>"
+          "documentation":"<p>The tags to attach to the new wireless gateway. Tags are metadata that you can use to manage a resource.</p>"
         },
         "ClientRequestToken":{
           "shape":"ClientRequestToken",
@@ -1362,7 +1366,7 @@
         },
         "Tags":{
           "shape":"TagList",
-          "documentation":"<p>The tags attached to the specified resource. Tags are metadata that can be used to manage a resource</p>"
+          "documentation":"<p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>"
         }
       }
     },
@@ -2371,7 +2375,7 @@
       "members":{
         "ResourceArn":{
           "shape":"AmazonResourceName",
-          "documentation":"<p>The ARN of the resource for which to list tags.</p>",
+          "documentation":"<p>The ARN of the resource for which you want to list tags.</p>",
           "location":"querystring",
           "locationName":"resourceArn"
         }
@@ -2382,7 +2386,7 @@
       "members":{
         "Tags":{
           "shape":"TagList",
-          "documentation":"<p>The tags attached to the specified resource. Tags are metadata that can be used to manage a resource</p>"
+          "documentation":"<p>The tags to attach to the specified resource. Tags are metadata that you can use to manage a resource.</p>"
         }
       }
     },
@@ -3292,7 +3296,7 @@
         },
         "Tags":{
           "shape":"TagList",
-          "documentation":"<p>Adds to or modifies the tags of the given resource. Tags are metadata that can be used to manage a resource.</p>"
+          "documentation":"<p>Adds to or modifies the tags of the given resource. Tags are metadata that you can use to manage a resource.</p>"
         }
       }
     },

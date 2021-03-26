@@ -100,6 +100,10 @@ public class TargetJsonUnmarshaller implements Unmarshaller<Target, JsonUnmarsha
                     context.nextToken();
                     target.setRedshiftDataParameters(RedshiftDataParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("SageMakerPipelineParameters", targetDepth)) {
+                    context.nextToken();
+                    target.setSageMakerPipelineParameters(SageMakerPipelineParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("DeadLetterConfig", targetDepth)) {
                     context.nextToken();
                     target.setDeadLetterConfig(DeadLetterConfigJsonUnmarshaller.getInstance().unmarshall(context));

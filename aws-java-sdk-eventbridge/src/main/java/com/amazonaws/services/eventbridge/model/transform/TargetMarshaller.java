@@ -53,6 +53,8 @@ public class TargetMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HttpParameters").build();
     private static final MarshallingInfo<StructuredPojo> REDSHIFTDATAPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RedshiftDataParameters").build();
+    private static final MarshallingInfo<StructuredPojo> SAGEMAKERPIPELINEPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SageMakerPipelineParameters").build();
     private static final MarshallingInfo<StructuredPojo> DEADLETTERCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeadLetterConfig").build();
     private static final MarshallingInfo<StructuredPojo> RETRYPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -87,6 +89,7 @@ public class TargetMarshaller {
             protocolMarshaller.marshall(target.getSqsParameters(), SQSPARAMETERS_BINDING);
             protocolMarshaller.marshall(target.getHttpParameters(), HTTPPARAMETERS_BINDING);
             protocolMarshaller.marshall(target.getRedshiftDataParameters(), REDSHIFTDATAPARAMETERS_BINDING);
+            protocolMarshaller.marshall(target.getSageMakerPipelineParameters(), SAGEMAKERPIPELINEPARAMETERS_BINDING);
             protocolMarshaller.marshall(target.getDeadLetterConfig(), DEADLETTERCONFIG_BINDING);
             protocolMarshaller.marshall(target.getRetryPolicy(), RETRYPOLICY_BINDING);
         } catch (Exception e) {
