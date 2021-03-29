@@ -48,6 +48,10 @@ public class CountActionJsonUnmarshaller implements Unmarshaller<CountAction, Js
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("CustomRequestHandling", targetDepth)) {
+                    context.nextToken();
+                    countAction.setCustomRequestHandling(CustomRequestHandlingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

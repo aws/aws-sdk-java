@@ -23,7 +23,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * You set the <code>OverrideAction</code> on the <a>Rule</a>.
  * </p>
  * <p>
- * This is used only in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL
+ * This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL
  * <a>DefaultAction</a>.
  * </p>
  * 

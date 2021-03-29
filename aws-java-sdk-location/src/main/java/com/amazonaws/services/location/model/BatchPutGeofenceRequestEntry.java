@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains geofence details.
+ * Contains geofence geometry details.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchPutGeofenceRequestEntry"
@@ -36,8 +36,15 @@ public class BatchPutGeofenceRequestEntry implements Serializable, Cloneable, St
     private String geofenceId;
     /**
      * <p>
-     * The geometry details for the geofence.
+     * Contains the polygon details to specify the position of the geofence.
      * </p>
+     * <note>
+     * <p>
+     * Each <a
+     * href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence
+     * polygon</a> can have a maximum of 1,000 vertices.
+     * </p>
+     * </note>
      */
     private GeofenceGeometry geometry;
 
@@ -83,11 +90,23 @@ public class BatchPutGeofenceRequestEntry implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The geometry details for the geofence.
+     * Contains the polygon details to specify the position of the geofence.
      * </p>
+     * <note>
+     * <p>
+     * Each <a
+     * href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence
+     * polygon</a> can have a maximum of 1,000 vertices.
+     * </p>
+     * </note>
      * 
      * @param geometry
-     *        The geometry details for the geofence.
+     *        Contains the polygon details to specify the position of the geofence.</p> <note>
+     *        <p>
+     *        Each <a
+     *        href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"
+     *        >geofence polygon</a> can have a maximum of 1,000 vertices.
+     *        </p>
      */
 
     public void setGeometry(GeofenceGeometry geometry) {
@@ -96,10 +115,22 @@ public class BatchPutGeofenceRequestEntry implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The geometry details for the geofence.
+     * Contains the polygon details to specify the position of the geofence.
      * </p>
+     * <note>
+     * <p>
+     * Each <a
+     * href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence
+     * polygon</a> can have a maximum of 1,000 vertices.
+     * </p>
+     * </note>
      * 
-     * @return The geometry details for the geofence.
+     * @return Contains the polygon details to specify the position of the geofence.</p> <note>
+     *         <p>
+     *         Each <a
+     *         href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"
+     *         >geofence polygon</a> can have a maximum of 1,000 vertices.
+     *         </p>
      */
 
     public GeofenceGeometry getGeometry() {
@@ -108,11 +139,23 @@ public class BatchPutGeofenceRequestEntry implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The geometry details for the geofence.
+     * Contains the polygon details to specify the position of the geofence.
      * </p>
+     * <note>
+     * <p>
+     * Each <a
+     * href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence
+     * polygon</a> can have a maximum of 1,000 vertices.
+     * </p>
+     * </note>
      * 
      * @param geometry
-     *        The geometry details for the geofence.
+     *        Contains the polygon details to specify the position of the geofence.</p> <note>
+     *        <p>
+     *        Each <a
+     *        href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"
+     *        >geofence polygon</a> can have a maximum of 1,000 vertices.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

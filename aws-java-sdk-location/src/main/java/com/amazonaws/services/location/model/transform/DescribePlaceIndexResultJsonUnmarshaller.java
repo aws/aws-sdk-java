@@ -72,6 +72,10 @@ public class DescribePlaceIndexResultJsonUnmarshaller implements Unmarshaller<De
                     context.nextToken();
                     describePlaceIndexResult.setIndexName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PricingPlan", targetDepth)) {
+                    context.nextToken();
+                    describePlaceIndexResult.setPricingPlan(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("UpdateTime", targetDepth)) {
                     context.nextToken();
                     describePlaceIndexResult.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));

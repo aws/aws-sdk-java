@@ -56,6 +56,16 @@ public class ListMapsResponseEntry implements Serializable, Cloneable, Structure
     private String mapName;
     /**
      * <p>
+     * The pricing plan for the specified map resource.
+     * </p>
+     * <p>
+     * For additional details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * </p>
+     */
+    private String pricingPlan;
+    /**
+     * <p>
      * The timestamp for when the map resource was last updated in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
@@ -237,6 +247,93 @@ public class ListMapsResponseEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
+     * The pricing plan for the specified map resource.
+     * </p>
+     * <p>
+     * For additional details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * </p>
+     * 
+     * @param pricingPlan
+     *        The pricing plan for the specified map resource.</p>
+     *        <p>
+     *        For additional details and restrictions on each pricing plan option, see the <a
+     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * @see PricingPlan
+     */
+
+    public void setPricingPlan(String pricingPlan) {
+        this.pricingPlan = pricingPlan;
+    }
+
+    /**
+     * <p>
+     * The pricing plan for the specified map resource.
+     * </p>
+     * <p>
+     * For additional details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * </p>
+     * 
+     * @return The pricing plan for the specified map resource.</p>
+     *         <p>
+     *         For additional details and restrictions on each pricing plan option, see the <a
+     *         href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * @see PricingPlan
+     */
+
+    public String getPricingPlan() {
+        return this.pricingPlan;
+    }
+
+    /**
+     * <p>
+     * The pricing plan for the specified map resource.
+     * </p>
+     * <p>
+     * For additional details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * </p>
+     * 
+     * @param pricingPlan
+     *        The pricing plan for the specified map resource.</p>
+     *        <p>
+     *        For additional details and restrictions on each pricing plan option, see the <a
+     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PricingPlan
+     */
+
+    public ListMapsResponseEntry withPricingPlan(String pricingPlan) {
+        setPricingPlan(pricingPlan);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The pricing plan for the specified map resource.
+     * </p>
+     * <p>
+     * For additional details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * </p>
+     * 
+     * @param pricingPlan
+     *        The pricing plan for the specified map resource.</p>
+     *        <p>
+     *        For additional details and restrictions on each pricing plan option, see the <a
+     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PricingPlan
+     */
+
+    public ListMapsResponseEntry withPricingPlan(PricingPlan pricingPlan) {
+        this.pricingPlan = pricingPlan.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The timestamp for when the map resource was last updated in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
@@ -307,6 +404,8 @@ public class ListMapsResponseEntry implements Serializable, Cloneable, Structure
             sb.append("Description: ").append(getDescription()).append(",");
         if (getMapName() != null)
             sb.append("MapName: ").append(getMapName()).append(",");
+        if (getPricingPlan() != null)
+            sb.append("PricingPlan: ").append(getPricingPlan()).append(",");
         if (getUpdateTime() != null)
             sb.append("UpdateTime: ").append(getUpdateTime());
         sb.append("}");
@@ -339,6 +438,10 @@ public class ListMapsResponseEntry implements Serializable, Cloneable, Structure
             return false;
         if (other.getMapName() != null && other.getMapName().equals(this.getMapName()) == false)
             return false;
+        if (other.getPricingPlan() == null ^ this.getPricingPlan() == null)
+            return false;
+        if (other.getPricingPlan() != null && other.getPricingPlan().equals(this.getPricingPlan()) == false)
+            return false;
         if (other.getUpdateTime() == null ^ this.getUpdateTime() == null)
             return false;
         if (other.getUpdateTime() != null && other.getUpdateTime().equals(this.getUpdateTime()) == false)
@@ -355,6 +458,7 @@ public class ListMapsResponseEntry implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getDataSource() == null) ? 0 : getDataSource().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getMapName() == null) ? 0 : getMapName().hashCode());
+        hashCode = prime * hashCode + ((getPricingPlan() == null) ? 0 : getPricingPlan().hashCode());
         hashCode = prime * hashCode + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
         return hashCode;
     }

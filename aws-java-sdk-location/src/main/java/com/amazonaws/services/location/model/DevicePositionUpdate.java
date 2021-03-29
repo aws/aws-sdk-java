@@ -37,13 +37,13 @@ public class DevicePositionUpdate implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The latest device position defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a>
-     * format: <code>[Xlongitude, Ylatitude]</code>.
+     * format: <code>[X or longitude, Y or latitude]</code>.
      * </p>
      */
     private java.util.List<Double> position;
     /**
      * <p>
-     * The timestamp for when the position update was received in <a
+     * The timestamp at which the device's position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
      * </p>
@@ -93,11 +93,11 @@ public class DevicePositionUpdate implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The latest device position defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a>
-     * format: <code>[Xlongitude, Ylatitude]</code>.
+     * format: <code>[X or longitude, Y or latitude]</code>.
      * </p>
      * 
      * @return The latest device position defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS
-     *         84</a> format: <code>[Xlongitude, Ylatitude]</code>.
+     *         84</a> format: <code>[X or longitude, Y or latitude]</code>.
      */
 
     public java.util.List<Double> getPosition() {
@@ -107,12 +107,12 @@ public class DevicePositionUpdate implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The latest device position defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a>
-     * format: <code>[Xlongitude, Ylatitude]</code>.
+     * format: <code>[X or longitude, Y or latitude]</code>.
      * </p>
      * 
      * @param position
      *        The latest device position defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS
-     *        84</a> format: <code>[Xlongitude, Ylatitude]</code>.
+     *        84</a> format: <code>[X or longitude, Y or latitude]</code>.
      */
 
     public void setPosition(java.util.Collection<Double> position) {
@@ -127,7 +127,7 @@ public class DevicePositionUpdate implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The latest device position defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a>
-     * format: <code>[Xlongitude, Ylatitude]</code>.
+     * format: <code>[X or longitude, Y or latitude]</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -137,7 +137,7 @@ public class DevicePositionUpdate implements Serializable, Cloneable, Structured
      * 
      * @param position
      *        The latest device position defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS
-     *        84</a> format: <code>[Xlongitude, Ylatitude]</code>.
+     *        84</a> format: <code>[X or longitude, Y or latitude]</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,12 +154,12 @@ public class DevicePositionUpdate implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The latest device position defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a>
-     * format: <code>[Xlongitude, Ylatitude]</code>.
+     * format: <code>[X or longitude, Y or latitude]</code>.
      * </p>
      * 
      * @param position
      *        The latest device position defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS
-     *        84</a> format: <code>[Xlongitude, Ylatitude]</code>.
+     *        84</a> format: <code>[X or longitude, Y or latitude]</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -170,13 +170,13 @@ public class DevicePositionUpdate implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The timestamp for when the position update was received in <a
+     * The timestamp at which the device's position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
      * </p>
      * 
      * @param sampleTime
-     *        The timestamp for when the position update was received in <a
+     *        The timestamp at which the device's position was determined. Uses <a
      *        href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      *        <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
      */
@@ -187,12 +187,12 @@ public class DevicePositionUpdate implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The timestamp for when the position update was received in <a
+     * The timestamp at which the device's position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
      * </p>
      * 
-     * @return The timestamp for when the position update was received in <a
+     * @return The timestamp at which the device's position was determined. Uses <a
      *         href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      *         <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
      */
@@ -203,13 +203,13 @@ public class DevicePositionUpdate implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The timestamp for when the position update was received in <a
+     * The timestamp at which the device's position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
      * </p>
      * 
      * @param sampleTime
-     *        The timestamp for when the position update was received in <a
+     *        The timestamp at which the device's position was determined. Uses <a
      *        href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      *        <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
      * @return Returns a reference to this object so that method calls can be chained together.

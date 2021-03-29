@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.wafv2.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -44,6 +45,8 @@ public class UpdateWebACLRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VisibilityConfig").build();
     private static final MarshallingInfo<String> LOCKTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("LockToken").build();
+    private static final MarshallingInfo<Map> CUSTOMRESPONSEBODIES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomResponseBodies").build();
 
     private static final UpdateWebACLRequestMarshaller instance = new UpdateWebACLRequestMarshaller();
 
@@ -69,6 +72,7 @@ public class UpdateWebACLRequestMarshaller {
             protocolMarshaller.marshall(updateWebACLRequest.getRules(), RULES_BINDING);
             protocolMarshaller.marshall(updateWebACLRequest.getVisibilityConfig(), VISIBILITYCONFIG_BINDING);
             protocolMarshaller.marshall(updateWebACLRequest.getLockToken(), LOCKTOKEN_BINDING);
+            protocolMarshaller.marshall(updateWebACLRequest.getCustomResponseBodies(), CUSTOMRESPONSEBODIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

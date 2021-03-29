@@ -64,6 +64,14 @@ public class DescribeGeofenceCollectionResultJsonUnmarshaller implements Unmarsh
                     context.nextToken();
                     describeGeofenceCollectionResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PricingPlan", targetDepth)) {
+                    context.nextToken();
+                    describeGeofenceCollectionResult.setPricingPlan(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PricingPlanDataSource", targetDepth)) {
+                    context.nextToken();
+                    describeGeofenceCollectionResult.setPricingPlanDataSource(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("UpdateTime", targetDepth)) {
                     context.nextToken();
                     describeGeofenceCollectionResult.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));

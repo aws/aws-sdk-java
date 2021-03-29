@@ -87,6 +87,25 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private VisibilityConfig visibilityConfig;
+    /**
+     * <p>
+     * A map of custom response keys and content bodies. When you create a rule with a block action, you can send a
+     * custom response to the web request. You define these for the rule group, and then use them in the rules that you
+     * define in the rule group.
+     * </p>
+     * <p>
+     * For information about customizing web requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
+     * requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * <p>
+     * For information about the limits on count and size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     */
+    private java.util.Map<String, CustomResponseBody> customResponseBodies;
 
     /**
      * <p>
@@ -490,6 +509,151 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A map of custom response keys and content bodies. When you create a rule with a block action, you can send a
+     * custom response to the web request. You define these for the rule group, and then use them in the rules that you
+     * define in the rule group.
+     * </p>
+     * <p>
+     * For information about customizing web requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
+     * requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * <p>
+     * For information about the limits on count and size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @return A map of custom response keys and content bodies. When you create a rule with a block action, you can
+     *         send a custom response to the web request. You define these for the rule group, and then use them in the
+     *         rules that you define in the rule group. </p>
+     *         <p>
+     *         For information about customizing web requests and responses, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     *         web requests and responses in AWS WAF</a> in the <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer
+     *         Guide</a>.
+     *         </p>
+     *         <p>
+     *         For information about the limits on count and size for custom request and response settings, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer
+     *         Guide</a>.
+     */
+
+    public java.util.Map<String, CustomResponseBody> getCustomResponseBodies() {
+        return customResponseBodies;
+    }
+
+    /**
+     * <p>
+     * A map of custom response keys and content bodies. When you create a rule with a block action, you can send a
+     * custom response to the web request. You define these for the rule group, and then use them in the rules that you
+     * define in the rule group.
+     * </p>
+     * <p>
+     * For information about customizing web requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
+     * requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * <p>
+     * For information about the limits on count and size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param customResponseBodies
+     *        A map of custom response keys and content bodies. When you create a rule with a block action, you can send
+     *        a custom response to the web request. You define these for the rule group, and then use them in the rules
+     *        that you define in the rule group. </p>
+     *        <p>
+     *        For information about customizing web requests and responses, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     *        web requests and responses in AWS WAF</a> in the <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     *        </p>
+     *        <p>
+     *        For information about the limits on count and size for custom request and response settings, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     */
+
+    public void setCustomResponseBodies(java.util.Map<String, CustomResponseBody> customResponseBodies) {
+        this.customResponseBodies = customResponseBodies;
+    }
+
+    /**
+     * <p>
+     * A map of custom response keys and content bodies. When you create a rule with a block action, you can send a
+     * custom response to the web request. You define these for the rule group, and then use them in the rules that you
+     * define in the rule group.
+     * </p>
+     * <p>
+     * For information about customizing web requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
+     * requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * <p>
+     * For information about the limits on count and size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param customResponseBodies
+     *        A map of custom response keys and content bodies. When you create a rule with a block action, you can send
+     *        a custom response to the web request. You define these for the rule group, and then use them in the rules
+     *        that you define in the rule group. </p>
+     *        <p>
+     *        For information about customizing web requests and responses, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     *        web requests and responses in AWS WAF</a> in the <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     *        </p>
+     *        <p>
+     *        For information about the limits on count and size for custom request and response settings, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleGroup withCustomResponseBodies(java.util.Map<String, CustomResponseBody> customResponseBodies) {
+        setCustomResponseBodies(customResponseBodies);
+        return this;
+    }
+
+    /**
+     * Add a single CustomResponseBodies entry
+     *
+     * @see RuleGroup#withCustomResponseBodies
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleGroup addCustomResponseBodiesEntry(String key, CustomResponseBody value) {
+        if (null == this.customResponseBodies) {
+            this.customResponseBodies = new java.util.HashMap<String, CustomResponseBody>();
+        }
+        if (this.customResponseBodies.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.customResponseBodies.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into CustomResponseBodies.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleGroup clearCustomResponseBodiesEntries() {
+        this.customResponseBodies = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -514,7 +678,9 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
         if (getRules() != null)
             sb.append("Rules: ").append(getRules()).append(",");
         if (getVisibilityConfig() != null)
-            sb.append("VisibilityConfig: ").append(getVisibilityConfig());
+            sb.append("VisibilityConfig: ").append(getVisibilityConfig()).append(",");
+        if (getCustomResponseBodies() != null)
+            sb.append("CustomResponseBodies: ").append(getCustomResponseBodies());
         sb.append("}");
         return sb.toString();
     }
@@ -557,6 +723,10 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getVisibilityConfig() != null && other.getVisibilityConfig().equals(this.getVisibilityConfig()) == false)
             return false;
+        if (other.getCustomResponseBodies() == null ^ this.getCustomResponseBodies() == null)
+            return false;
+        if (other.getCustomResponseBodies() != null && other.getCustomResponseBodies().equals(this.getCustomResponseBodies()) == false)
+            return false;
         return true;
     }
 
@@ -572,6 +742,7 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getRules() == null) ? 0 : getRules().hashCode());
         hashCode = prime * hashCode + ((getVisibilityConfig() == null) ? 0 : getVisibilityConfig().hashCode());
+        hashCode = prime * hashCode + ((getCustomResponseBodies() == null) ? 0 : getCustomResponseBodies().hashCode());
         return hashCode;
     }
 

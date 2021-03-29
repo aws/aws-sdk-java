@@ -52,6 +52,22 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
     private String description;
     /**
      * <p>
+     * The pricing plan selected for the specified geofence collection.
+     * </p>
+     * <p>
+     * For additional details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * </p>
+     */
+    private String pricingPlan;
+    /**
+     * <p>
+     * The data source selected for the geofence collection and associated pricing plan.
+     * </p>
+     */
+    private String pricingPlanDataSource;
+    /**
+     * <p>
      * The timestamp for when the geofence collection was last updated in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
@@ -239,6 +255,133 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
+     * The pricing plan selected for the specified geofence collection.
+     * </p>
+     * <p>
+     * For additional details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * </p>
+     * 
+     * @param pricingPlan
+     *        The pricing plan selected for the specified geofence collection.</p>
+     *        <p>
+     *        For additional details and restrictions on each pricing plan option, see the <a
+     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * @see PricingPlan
+     */
+
+    public void setPricingPlan(String pricingPlan) {
+        this.pricingPlan = pricingPlan;
+    }
+
+    /**
+     * <p>
+     * The pricing plan selected for the specified geofence collection.
+     * </p>
+     * <p>
+     * For additional details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * </p>
+     * 
+     * @return The pricing plan selected for the specified geofence collection.</p>
+     *         <p>
+     *         For additional details and restrictions on each pricing plan option, see the <a
+     *         href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * @see PricingPlan
+     */
+
+    public String getPricingPlan() {
+        return this.pricingPlan;
+    }
+
+    /**
+     * <p>
+     * The pricing plan selected for the specified geofence collection.
+     * </p>
+     * <p>
+     * For additional details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * </p>
+     * 
+     * @param pricingPlan
+     *        The pricing plan selected for the specified geofence collection.</p>
+     *        <p>
+     *        For additional details and restrictions on each pricing plan option, see the <a
+     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PricingPlan
+     */
+
+    public DescribeGeofenceCollectionResult withPricingPlan(String pricingPlan) {
+        setPricingPlan(pricingPlan);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The pricing plan selected for the specified geofence collection.
+     * </p>
+     * <p>
+     * For additional details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * </p>
+     * 
+     * @param pricingPlan
+     *        The pricing plan selected for the specified geofence collection.</p>
+     *        <p>
+     *        For additional details and restrictions on each pricing plan option, see the <a
+     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PricingPlan
+     */
+
+    public DescribeGeofenceCollectionResult withPricingPlan(PricingPlan pricingPlan) {
+        this.pricingPlan = pricingPlan.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The data source selected for the geofence collection and associated pricing plan.
+     * </p>
+     * 
+     * @param pricingPlanDataSource
+     *        The data source selected for the geofence collection and associated pricing plan.
+     */
+
+    public void setPricingPlanDataSource(String pricingPlanDataSource) {
+        this.pricingPlanDataSource = pricingPlanDataSource;
+    }
+
+    /**
+     * <p>
+     * The data source selected for the geofence collection and associated pricing plan.
+     * </p>
+     * 
+     * @return The data source selected for the geofence collection and associated pricing plan.
+     */
+
+    public String getPricingPlanDataSource() {
+        return this.pricingPlanDataSource;
+    }
+
+    /**
+     * <p>
+     * The data source selected for the geofence collection and associated pricing plan.
+     * </p>
+     * 
+     * @param pricingPlanDataSource
+     *        The data source selected for the geofence collection and associated pricing plan.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeGeofenceCollectionResult withPricingPlanDataSource(String pricingPlanDataSource) {
+        setPricingPlanDataSource(pricingPlanDataSource);
+        return this;
+    }
+
+    /**
+     * <p>
      * The timestamp for when the geofence collection was last updated in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
@@ -309,6 +452,10 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
             sb.append("CreateTime: ").append(getCreateTime()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getPricingPlan() != null)
+            sb.append("PricingPlan: ").append(getPricingPlan()).append(",");
+        if (getPricingPlanDataSource() != null)
+            sb.append("PricingPlanDataSource: ").append(getPricingPlanDataSource()).append(",");
         if (getUpdateTime() != null)
             sb.append("UpdateTime: ").append(getUpdateTime());
         sb.append("}");
@@ -341,6 +488,14 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getPricingPlan() == null ^ this.getPricingPlan() == null)
+            return false;
+        if (other.getPricingPlan() != null && other.getPricingPlan().equals(this.getPricingPlan()) == false)
+            return false;
+        if (other.getPricingPlanDataSource() == null ^ this.getPricingPlanDataSource() == null)
+            return false;
+        if (other.getPricingPlanDataSource() != null && other.getPricingPlanDataSource().equals(this.getPricingPlanDataSource()) == false)
+            return false;
         if (other.getUpdateTime() == null ^ this.getUpdateTime() == null)
             return false;
         if (other.getUpdateTime() != null && other.getUpdateTime().equals(this.getUpdateTime()) == false)
@@ -357,6 +512,8 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getCollectionName() == null) ? 0 : getCollectionName().hashCode());
         hashCode = prime * hashCode + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getPricingPlan() == null) ? 0 : getPricingPlan().hashCode());
+        hashCode = prime * hashCode + ((getPricingPlanDataSource() == null) ? 0 : getPricingPlanDataSource().hashCode());
         hashCode = prime * hashCode + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
         return hashCode;
     }

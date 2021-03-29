@@ -33,6 +33,8 @@ public class CreateGeofenceCollectionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<String> PRICINGPLAN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PricingPlan").build();
+    private static final MarshallingInfo<String> PRICINGPLANDATASOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PricingPlanDataSource").build();
 
     private static final CreateGeofenceCollectionRequestMarshaller instance = new CreateGeofenceCollectionRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class CreateGeofenceCollectionRequestMarshaller {
             protocolMarshaller.marshall(createGeofenceCollectionRequest.getCollectionName(), COLLECTIONNAME_BINDING);
             protocolMarshaller.marshall(createGeofenceCollectionRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createGeofenceCollectionRequest.getPricingPlan(), PRICINGPLAN_BINDING);
+            protocolMarshaller.marshall(createGeofenceCollectionRequest.getPricingPlanDataSource(), PRICINGPLANDATASOURCE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

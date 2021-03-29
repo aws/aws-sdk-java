@@ -27,6 +27,9 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AllowActionMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> CUSTOMREQUESTHANDLING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomRequestHandling").build();
+
     private static final AllowActionMarshaller instance = new AllowActionMarshaller();
 
     public static AllowActionMarshaller getInstance() {
@@ -43,6 +46,7 @@ public class AllowActionMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(allowAction.getCustomRequestHandling(), CUSTOMREQUESTHANDLING_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

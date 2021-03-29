@@ -29,6 +29,32 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Specifies the data provider of geospatial data.
      * </p>
+     * <note>
+     * <p>
+     * This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> will
+     * return an error.
+     * </p>
+     * </note>
+     * <p>
+     * Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Esri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Here</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For additional details on data providers, see the <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location
+     * Service data providers page</a>.
+     * </p>
      */
     private String dataSource;
     /**
@@ -53,7 +79,7 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-) and underscores (_) ).
+     * Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods (.), and underscores (_).
      * </p>
      * </li>
      * <li>
@@ -71,25 +97,8 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
     private String indexName;
     /**
      * <p>
-     * Specifies the pricing plan for your Place index resource. There's three pricing plan options:
+     * Specifies the pricing plan for your Place index resource.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>RequestBasedUsage</code> — Selects the "Request-Based Usage" pricing plan.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing plan.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MobileAssetManagement</code> — Selects the "Mobile Asset Management" pricing plan.
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * For additional details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
@@ -101,9 +110,59 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Specifies the data provider of geospatial data.
      * </p>
+     * <note>
+     * <p>
+     * This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> will
+     * return an error.
+     * </p>
+     * </note>
+     * <p>
+     * Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Esri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Here</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For additional details on data providers, see the <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location
+     * Service data providers page</a>.
+     * </p>
      * 
      * @param dataSource
-     *        Specifies the data provider of geospatial data.
+     *        Specifies the data provider of geospatial data.</p> <note>
+     *        <p>
+     *        This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code>
+     *        will return an error.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        Valid values include:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Esri</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Here</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For additional details on data providers, see the <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     *        Location Service data providers page</a>.
      */
 
     public void setDataSource(String dataSource) {
@@ -114,8 +173,58 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Specifies the data provider of geospatial data.
      * </p>
+     * <note>
+     * <p>
+     * This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> will
+     * return an error.
+     * </p>
+     * </note>
+     * <p>
+     * Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Esri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Here</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For additional details on data providers, see the <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location
+     * Service data providers page</a>.
+     * </p>
      * 
-     * @return Specifies the data provider of geospatial data.
+     * @return Specifies the data provider of geospatial data.</p> <note>
+     *         <p>
+     *         This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code>
+     *         will return an error.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         Valid values include:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Esri</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Here</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For additional details on data providers, see the <a
+     *         href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     *         Location Service data providers page</a>.
      */
 
     public String getDataSource() {
@@ -126,9 +235,59 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Specifies the data provider of geospatial data.
      * </p>
+     * <note>
+     * <p>
+     * This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> will
+     * return an error.
+     * </p>
+     * </note>
+     * <p>
+     * Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Esri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Here</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For additional details on data providers, see the <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location
+     * Service data providers page</a>.
+     * </p>
      * 
      * @param dataSource
-     *        Specifies the data provider of geospatial data.
+     *        Specifies the data provider of geospatial data.</p> <note>
+     *        <p>
+     *        This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code>
+     *        will return an error.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        Valid values include:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Esri</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Here</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For additional details on data providers, see the <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     *        Location Service data providers page</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,7 +386,7 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-) and underscores (_) ).
+     * Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods (.), and underscores (_).
      * </p>
      * </li>
      * <li>
@@ -250,7 +409,7 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-) and underscores (_) ).
+     *        Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods (.), and underscores (_).
      *        </p>
      *        </li>
      *        <li>
@@ -279,7 +438,7 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-) and underscores (_) ).
+     * Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods (.), and underscores (_).
      * </p>
      * </li>
      * <li>
@@ -301,7 +460,7 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-) and underscores (_) ).
+     *         Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods (.), and underscores (_).
      *         </p>
      *         </li>
      *         <li>
@@ -330,7 +489,7 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-) and underscores (_) ).
+     * Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods (.), and underscores (_).
      * </p>
      * </li>
      * <li>
@@ -353,7 +512,7 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-) and underscores (_) ).
+     *        Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods (.), and underscores (_).
      *        </p>
      *        </li>
      *        <li>
@@ -376,49 +535,15 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Specifies the pricing plan for your Place index resource. There's three pricing plan options:
+     * Specifies the pricing plan for your Place index resource.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>RequestBasedUsage</code> — Selects the "Request-Based Usage" pricing plan.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing plan.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MobileAssetManagement</code> — Selects the "Mobile Asset Management" pricing plan.
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * For additional details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
      * </p>
      * 
      * @param pricingPlan
-     *        Specifies the pricing plan for your Place index resource. There's three pricing plan options:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>RequestBasedUsage</code> — Selects the "Request-Based Usage" pricing plan.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing plan.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>MobileAssetManagement</code> — Selects the "Mobile Asset Management" pricing plan.
-     *        </p>
-     *        </li>
-     *        </ul>
+     *        Specifies the pricing plan for your Place index resource.</p>
      *        <p>
      *        For additional details and restrictions on each pricing plan option, see the <a
      *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
@@ -431,48 +556,14 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Specifies the pricing plan for your Place index resource. There's three pricing plan options:
+     * Specifies the pricing plan for your Place index resource.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>RequestBasedUsage</code> — Selects the "Request-Based Usage" pricing plan.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing plan.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MobileAssetManagement</code> — Selects the "Mobile Asset Management" pricing plan.
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * For additional details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
      * </p>
      * 
-     * @return Specifies the pricing plan for your Place index resource. There's three pricing plan options:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>RequestBasedUsage</code> — Selects the "Request-Based Usage" pricing plan.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing plan.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>MobileAssetManagement</code> — Selects the "Mobile Asset Management" pricing plan.
-     *         </p>
-     *         </li>
-     *         </ul>
+     * @return Specifies the pricing plan for your Place index resource.</p>
      *         <p>
      *         For additional details and restrictions on each pricing plan option, see the <a
      *         href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
@@ -485,49 +576,15 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Specifies the pricing plan for your Place index resource. There's three pricing plan options:
+     * Specifies the pricing plan for your Place index resource.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>RequestBasedUsage</code> — Selects the "Request-Based Usage" pricing plan.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing plan.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MobileAssetManagement</code> — Selects the "Mobile Asset Management" pricing plan.
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * For additional details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
      * </p>
      * 
      * @param pricingPlan
-     *        Specifies the pricing plan for your Place index resource. There's three pricing plan options:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>RequestBasedUsage</code> — Selects the "Request-Based Usage" pricing plan.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing plan.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>MobileAssetManagement</code> — Selects the "Mobile Asset Management" pricing plan.
-     *        </p>
-     *        </li>
-     *        </ul>
+     *        Specifies the pricing plan for your Place index resource.</p>
      *        <p>
      *        For additional details and restrictions on each pricing plan option, see the <a
      *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
@@ -542,49 +599,15 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Specifies the pricing plan for your Place index resource. There's three pricing plan options:
+     * Specifies the pricing plan for your Place index resource.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>RequestBasedUsage</code> — Selects the "Request-Based Usage" pricing plan.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing plan.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MobileAssetManagement</code> — Selects the "Mobile Asset Management" pricing plan.
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * For additional details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
      * </p>
      * 
      * @param pricingPlan
-     *        Specifies the pricing plan for your Place index resource. There's three pricing plan options:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>RequestBasedUsage</code> — Selects the "Request-Based Usage" pricing plan.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing plan.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>MobileAssetManagement</code> — Selects the "Mobile Asset Management" pricing plan.
-     *        </p>
-     *        </li>
-     *        </ul>
+     *        Specifies the pricing plan for your Place index resource.</p>
      *        <p>
      *        For additional details and restrictions on each pricing plan option, see the <a
      *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.

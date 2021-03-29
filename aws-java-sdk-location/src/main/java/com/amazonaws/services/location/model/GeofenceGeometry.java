@@ -23,8 +23,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <note>
  * <p>
- * Limitation — Amazon Location does not currently support polygons with holes, multipolygons, polygons that are wound
- * clockwise, or that cross the antimeridian.
+ * Amazon Location does not currently support polygons with holes, multipolygons, polygons that are wound clockwise, or
+ * that cross the antimeridian.
  * </p>
  * </note>
  * 

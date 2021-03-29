@@ -33,7 +33,24 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
     private java.util.Date createTime;
     /**
      * <p>
-     * The data provider of geospatial data.
+     * The data provider of geospatial data. Indicates one of the available providers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Esri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Here</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For additional details on data providers, see the <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location
+     * Service data providers page</a>.
      * </p>
      */
     private String dataSource;
@@ -62,6 +79,16 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private String indexName;
+    /**
+     * <p>
+     * The pricing plan selected for the specified Place index resource.
+     * </p>
+     * <p>
+     * For additional details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * </p>
+     */
+    private String pricingPlan;
     /**
      * <p>
      * The timestamp for when the Place index resource was last updated in <a
@@ -125,11 +152,44 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The data provider of geospatial data.
+     * The data provider of geospatial data. Indicates one of the available providers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Esri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Here</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For additional details on data providers, see the <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location
+     * Service data providers page</a>.
      * </p>
      * 
      * @param dataSource
-     *        The data provider of geospatial data.
+     *        The data provider of geospatial data. Indicates one of the available providers:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Esri</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Here</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For additional details on data providers, see the <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     *        Location Service data providers page</a>.
      */
 
     public void setDataSource(String dataSource) {
@@ -138,10 +198,43 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The data provider of geospatial data.
+     * The data provider of geospatial data. Indicates one of the available providers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Esri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Here</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For additional details on data providers, see the <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location
+     * Service data providers page</a>.
      * </p>
      * 
-     * @return The data provider of geospatial data.
+     * @return The data provider of geospatial data. Indicates one of the available providers:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Esri</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Here</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For additional details on data providers, see the <a
+     *         href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     *         Location Service data providers page</a>.
      */
 
     public String getDataSource() {
@@ -150,11 +243,44 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The data provider of geospatial data.
+     * The data provider of geospatial data. Indicates one of the available providers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Esri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Here</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For additional details on data providers, see the <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location
+     * Service data providers page</a>.
      * </p>
      * 
      * @param dataSource
-     *        The data provider of geospatial data.
+     *        The data provider of geospatial data. Indicates one of the available providers:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Esri</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Here</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For additional details on data providers, see the <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     *        Location Service data providers page</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -331,6 +457,93 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
+     * The pricing plan selected for the specified Place index resource.
+     * </p>
+     * <p>
+     * For additional details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * </p>
+     * 
+     * @param pricingPlan
+     *        The pricing plan selected for the specified Place index resource.</p>
+     *        <p>
+     *        For additional details and restrictions on each pricing plan option, see the <a
+     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * @see PricingPlan
+     */
+
+    public void setPricingPlan(String pricingPlan) {
+        this.pricingPlan = pricingPlan;
+    }
+
+    /**
+     * <p>
+     * The pricing plan selected for the specified Place index resource.
+     * </p>
+     * <p>
+     * For additional details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * </p>
+     * 
+     * @return The pricing plan selected for the specified Place index resource.</p>
+     *         <p>
+     *         For additional details and restrictions on each pricing plan option, see the <a
+     *         href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * @see PricingPlan
+     */
+
+    public String getPricingPlan() {
+        return this.pricingPlan;
+    }
+
+    /**
+     * <p>
+     * The pricing plan selected for the specified Place index resource.
+     * </p>
+     * <p>
+     * For additional details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * </p>
+     * 
+     * @param pricingPlan
+     *        The pricing plan selected for the specified Place index resource.</p>
+     *        <p>
+     *        For additional details and restrictions on each pricing plan option, see the <a
+     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PricingPlan
+     */
+
+    public DescribePlaceIndexResult withPricingPlan(String pricingPlan) {
+        setPricingPlan(pricingPlan);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The pricing plan selected for the specified Place index resource.
+     * </p>
+     * <p>
+     * For additional details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * </p>
+     * 
+     * @param pricingPlan
+     *        The pricing plan selected for the specified Place index resource.</p>
+     *        <p>
+     *        For additional details and restrictions on each pricing plan option, see the <a
+     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PricingPlan
+     */
+
+    public DescribePlaceIndexResult withPricingPlan(PricingPlan pricingPlan) {
+        this.pricingPlan = pricingPlan.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The timestamp for when the Place index resource was last updated in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
@@ -405,6 +618,8 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
             sb.append("IndexArn: ").append(getIndexArn()).append(",");
         if (getIndexName() != null)
             sb.append("IndexName: ").append(getIndexName()).append(",");
+        if (getPricingPlan() != null)
+            sb.append("PricingPlan: ").append(getPricingPlan()).append(",");
         if (getUpdateTime() != null)
             sb.append("UpdateTime: ").append(getUpdateTime());
         sb.append("}");
@@ -445,6 +660,10 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getIndexName() != null && other.getIndexName().equals(this.getIndexName()) == false)
             return false;
+        if (other.getPricingPlan() == null ^ this.getPricingPlan() == null)
+            return false;
+        if (other.getPricingPlan() != null && other.getPricingPlan().equals(this.getPricingPlan()) == false)
+            return false;
         if (other.getUpdateTime() == null ^ this.getUpdateTime() == null)
             return false;
         if (other.getUpdateTime() != null && other.getUpdateTime().equals(this.getUpdateTime()) == false)
@@ -463,6 +682,7 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getIndexArn() == null) ? 0 : getIndexArn().hashCode());
         hashCode = prime * hashCode + ((getIndexName() == null) ? 0 : getIndexName().hashCode());
+        hashCode = prime * hashCode + ((getPricingPlan() == null) ? 0 : getPricingPlan().hashCode());
         hashCode = prime * hashCode + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
         return hashCode;
     }

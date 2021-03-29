@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.wafv2.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +38,10 @@ public class SampledHTTPRequestMarshaller {
             .marshallLocationName("Action").build();
     private static final MarshallingInfo<String> RULENAMEWITHINRULEGROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RuleNameWithinRuleGroup").build();
+    private static final MarshallingInfo<List> REQUESTHEADERSINSERTED_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequestHeadersInserted").build();
+    private static final MarshallingInfo<Integer> RESPONSECODESENT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResponseCodeSent").build();
 
     private static final SampledHTTPRequestMarshaller instance = new SampledHTTPRequestMarshaller();
 
@@ -59,6 +64,8 @@ public class SampledHTTPRequestMarshaller {
             protocolMarshaller.marshall(sampledHTTPRequest.getTimestamp(), TIMESTAMP_BINDING);
             protocolMarshaller.marshall(sampledHTTPRequest.getAction(), ACTION_BINDING);
             protocolMarshaller.marshall(sampledHTTPRequest.getRuleNameWithinRuleGroup(), RULENAMEWITHINRULEGROUP_BINDING);
+            protocolMarshaller.marshall(sampledHTTPRequest.getRequestHeadersInserted(), REQUESTHEADERSINSERTED_BINDING);
+            protocolMarshaller.marshall(sampledHTTPRequest.getResponseCodeSent(), RESPONSECODESENT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -29,6 +29,11 @@ public class AbstractAmazonDocDB implements AmazonDocDB {
     }
 
     @Override
+    public EventSubscription addSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -74,6 +79,11 @@ public class AbstractAmazonDocDB implements AmazonDocDB {
     }
 
     @Override
+    public EventSubscription createEventSubscription(CreateEventSubscriptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DBCluster deleteDBCluster(DeleteDBClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -95,6 +105,11 @@ public class AbstractAmazonDocDB implements AmazonDocDB {
 
     @Override
     public DeleteDBSubnetGroupResult deleteDBSubnetGroup(DeleteDBSubnetGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public EventSubscription deleteEventSubscription(DeleteEventSubscriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -154,6 +169,11 @@ public class AbstractAmazonDocDB implements AmazonDocDB {
     }
 
     @Override
+    public DescribeEventSubscriptionsResult describeEventSubscriptions(DescribeEventSubscriptionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeEventsResult describeEvents(DescribeEventsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -204,7 +224,17 @@ public class AbstractAmazonDocDB implements AmazonDocDB {
     }
 
     @Override
+    public EventSubscription modifyEventSubscription(ModifyEventSubscriptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DBInstance rebootDBInstance(RebootDBInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public EventSubscription removeSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

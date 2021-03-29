@@ -19,10 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies that AWS WAF should count requests.
+ * Specifies that AWS WAF should count the request. Optionally defines additional custom handling for the request.
  * </p>
  * <p>
- * This is used only in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL
+ * This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL
  * <a>DefaultAction</a>.
  * </p>
  * 
@@ -31,6 +31,93 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CountAction implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * Defines custom handling for the web request.
+     * </p>
+     * <p>
+     * For information about customizing web requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
+     * requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     */
+    private CustomRequestHandling customRequestHandling;
+
+    /**
+     * <p>
+     * Defines custom handling for the web request.
+     * </p>
+     * <p>
+     * For information about customizing web requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
+     * requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param customRequestHandling
+     *        Defines custom handling for the web request.</p>
+     *        <p>
+     *        For information about customizing web requests and responses, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     *        web requests and responses in AWS WAF</a> in the <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     */
+
+    public void setCustomRequestHandling(CustomRequestHandling customRequestHandling) {
+        this.customRequestHandling = customRequestHandling;
+    }
+
+    /**
+     * <p>
+     * Defines custom handling for the web request.
+     * </p>
+     * <p>
+     * For information about customizing web requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
+     * requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @return Defines custom handling for the web request.</p>
+     *         <p>
+     *         For information about customizing web requests and responses, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     *         web requests and responses in AWS WAF</a> in the <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer
+     *         Guide</a>.
+     */
+
+    public CustomRequestHandling getCustomRequestHandling() {
+        return this.customRequestHandling;
+    }
+
+    /**
+     * <p>
+     * Defines custom handling for the web request.
+     * </p>
+     * <p>
+     * For information about customizing web requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
+     * requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param customRequestHandling
+     *        Defines custom handling for the web request.</p>
+     *        <p>
+     *        For information about customizing web requests and responses, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     *        web requests and responses in AWS WAF</a> in the <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CountAction withCustomRequestHandling(CustomRequestHandling customRequestHandling) {
+        setCustomRequestHandling(customRequestHandling);
+        return this;
+    }
 
     /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
@@ -44,6 +131,8 @@ public class CountAction implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCustomRequestHandling() != null)
+            sb.append("CustomRequestHandling: ").append(getCustomRequestHandling());
         sb.append("}");
         return sb.toString();
     }
@@ -58,6 +147,10 @@ public class CountAction implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof CountAction == false)
             return false;
         CountAction other = (CountAction) obj;
+        if (other.getCustomRequestHandling() == null ^ this.getCustomRequestHandling() == null)
+            return false;
+        if (other.getCustomRequestHandling() != null && other.getCustomRequestHandling().equals(this.getCustomRequestHandling()) == false)
+            return false;
         return true;
     }
 
@@ -66,6 +159,7 @@ public class CountAction implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCustomRequestHandling() == null) ? 0 : getCustomRequestHandling().hashCode());
         return hashCode;
     }
 

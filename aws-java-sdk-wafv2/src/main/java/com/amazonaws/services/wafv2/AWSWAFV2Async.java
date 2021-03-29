@@ -1517,14 +1517,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * <p>
      * Updates the specified <a>IPSet</a>.
      * </p>
-     * <note>
-     * <p>
-     * This operation completely replaces any IP address specifications that you already have in the IP set with the
-     * ones that you provide to this call. If you want to add to or modify the addresses that are already in the IP set,
-     * retrieve those by calling <a>GetIPSet</a>, update them, and provide the complete updated array of IP addresses to
-     * this call.
-     * </p>
-     * </note>
      * 
      * @param updateIPSetRequest
      * @return A Java Future containing the result of the UpdateIPSet operation returned by the service.
@@ -1538,14 +1530,6 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * <p>
      * Updates the specified <a>IPSet</a>.
      * </p>
-     * <note>
-     * <p>
-     * This operation completely replaces any IP address specifications that you already have in the IP set with the
-     * ones that you provide to this call. If you want to add to or modify the addresses that are already in the IP set,
-     * retrieve those by calling <a>GetIPSet</a>, update them, and provide the complete updated array of IP addresses to
-     * this call.
-     * </p>
-     * </note>
      * 
      * @param updateIPSetRequest
      * @param asyncHandler

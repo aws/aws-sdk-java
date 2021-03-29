@@ -42,7 +42,7 @@ public class BatchUpdateDevicePositionError implements Serializable, Cloneable, 
     private BatchItemError error;
     /**
      * <p>
-     * The timestamp for when a position sample was attempted in <a
+     * The timestamp at which the device position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      * </p>
@@ -131,13 +131,13 @@ public class BatchUpdateDevicePositionError implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The timestamp for when a position sample was attempted in <a
+     * The timestamp at which the device position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      * </p>
      * 
      * @param sampleTime
-     *        The timestamp for when a position sample was attempted in <a
+     *        The timestamp at which the device position was determined. Uses <a
      *        href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format:
      *        <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      */
@@ -148,12 +148,12 @@ public class BatchUpdateDevicePositionError implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The timestamp for when a position sample was attempted in <a
+     * The timestamp at which the device position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      * </p>
      * 
-     * @return The timestamp for when a position sample was attempted in <a
+     * @return The timestamp at which the device position was determined. Uses <a
      *         href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format:
      *         <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      */
@@ -164,13 +164,13 @@ public class BatchUpdateDevicePositionError implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The timestamp for when a position sample was attempted in <a
+     * The timestamp at which the device position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      * </p>
      * 
      * @param sampleTime
-     *        The timestamp for when a position sample was attempted in <a
+     *        The timestamp at which the device position was determined. Uses <a
      *        href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format:
      *        <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      * @return Returns a reference to this object so that method calls can be chained together.

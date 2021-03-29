@@ -27,7 +27,7 @@ public class GetDevicePositionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The device whose position you want to retreieve.
+     * The device whose position you want to retrieve.
      * </p>
      */
     private String deviceId;
@@ -40,11 +40,11 @@ public class GetDevicePositionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The device whose position you want to retreieve.
+     * The device whose position you want to retrieve.
      * </p>
      * 
      * @param deviceId
-     *        The device whose position you want to retreieve.
+     *        The device whose position you want to retrieve.
      */
 
     public void setDeviceId(String deviceId) {
@@ -53,10 +53,10 @@ public class GetDevicePositionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The device whose position you want to retreieve.
+     * The device whose position you want to retrieve.
      * </p>
      * 
-     * @return The device whose position you want to retreieve.
+     * @return The device whose position you want to retrieve.
      */
 
     public String getDeviceId() {
@@ -65,11 +65,11 @@ public class GetDevicePositionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The device whose position you want to retreieve.
+     * The device whose position you want to retrieve.
      * </p>
      * 
      * @param deviceId
-     *        The device whose position you want to retreieve.
+     *        The device whose position you want to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

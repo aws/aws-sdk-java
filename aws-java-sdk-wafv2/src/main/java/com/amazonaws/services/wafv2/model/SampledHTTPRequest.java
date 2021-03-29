@@ -66,6 +66,19 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String ruleNameWithinRuleGroup;
+    /**
+     * <p>
+     * Custom request headers inserted by AWS WAF into the request, according to the custom request configuration for
+     * the matching rule action.
+     * </p>
+     */
+    private java.util.List<HTTPHeader> requestHeadersInserted;
+    /**
+     * <p>
+     * The response code that was sent for the request.
+     * </p>
+     */
+    private Integer responseCodeSent;
 
     /**
      * <p>
@@ -304,6 +317,124 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * Custom request headers inserted by AWS WAF into the request, according to the custom request configuration for
+     * the matching rule action.
+     * </p>
+     * 
+     * @return Custom request headers inserted by AWS WAF into the request, according to the custom request
+     *         configuration for the matching rule action.
+     */
+
+    public java.util.List<HTTPHeader> getRequestHeadersInserted() {
+        return requestHeadersInserted;
+    }
+
+    /**
+     * <p>
+     * Custom request headers inserted by AWS WAF into the request, according to the custom request configuration for
+     * the matching rule action.
+     * </p>
+     * 
+     * @param requestHeadersInserted
+     *        Custom request headers inserted by AWS WAF into the request, according to the custom request configuration
+     *        for the matching rule action.
+     */
+
+    public void setRequestHeadersInserted(java.util.Collection<HTTPHeader> requestHeadersInserted) {
+        if (requestHeadersInserted == null) {
+            this.requestHeadersInserted = null;
+            return;
+        }
+
+        this.requestHeadersInserted = new java.util.ArrayList<HTTPHeader>(requestHeadersInserted);
+    }
+
+    /**
+     * <p>
+     * Custom request headers inserted by AWS WAF into the request, according to the custom request configuration for
+     * the matching rule action.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRequestHeadersInserted(java.util.Collection)} or
+     * {@link #withRequestHeadersInserted(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param requestHeadersInserted
+     *        Custom request headers inserted by AWS WAF into the request, according to the custom request configuration
+     *        for the matching rule action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SampledHTTPRequest withRequestHeadersInserted(HTTPHeader... requestHeadersInserted) {
+        if (this.requestHeadersInserted == null) {
+            setRequestHeadersInserted(new java.util.ArrayList<HTTPHeader>(requestHeadersInserted.length));
+        }
+        for (HTTPHeader ele : requestHeadersInserted) {
+            this.requestHeadersInserted.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Custom request headers inserted by AWS WAF into the request, according to the custom request configuration for
+     * the matching rule action.
+     * </p>
+     * 
+     * @param requestHeadersInserted
+     *        Custom request headers inserted by AWS WAF into the request, according to the custom request configuration
+     *        for the matching rule action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SampledHTTPRequest withRequestHeadersInserted(java.util.Collection<HTTPHeader> requestHeadersInserted) {
+        setRequestHeadersInserted(requestHeadersInserted);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The response code that was sent for the request.
+     * </p>
+     * 
+     * @param responseCodeSent
+     *        The response code that was sent for the request.
+     */
+
+    public void setResponseCodeSent(Integer responseCodeSent) {
+        this.responseCodeSent = responseCodeSent;
+    }
+
+    /**
+     * <p>
+     * The response code that was sent for the request.
+     * </p>
+     * 
+     * @return The response code that was sent for the request.
+     */
+
+    public Integer getResponseCodeSent() {
+        return this.responseCodeSent;
+    }
+
+    /**
+     * <p>
+     * The response code that was sent for the request.
+     * </p>
+     * 
+     * @param responseCodeSent
+     *        The response code that was sent for the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SampledHTTPRequest withResponseCodeSent(Integer responseCodeSent) {
+        setResponseCodeSent(responseCodeSent);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -324,7 +455,11 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
         if (getAction() != null)
             sb.append("Action: ").append(getAction()).append(",");
         if (getRuleNameWithinRuleGroup() != null)
-            sb.append("RuleNameWithinRuleGroup: ").append(getRuleNameWithinRuleGroup());
+            sb.append("RuleNameWithinRuleGroup: ").append(getRuleNameWithinRuleGroup()).append(",");
+        if (getRequestHeadersInserted() != null)
+            sb.append("RequestHeadersInserted: ").append(getRequestHeadersInserted()).append(",");
+        if (getResponseCodeSent() != null)
+            sb.append("ResponseCodeSent: ").append(getResponseCodeSent());
         sb.append("}");
         return sb.toString();
     }
@@ -359,6 +494,14 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getRuleNameWithinRuleGroup() != null && other.getRuleNameWithinRuleGroup().equals(this.getRuleNameWithinRuleGroup()) == false)
             return false;
+        if (other.getRequestHeadersInserted() == null ^ this.getRequestHeadersInserted() == null)
+            return false;
+        if (other.getRequestHeadersInserted() != null && other.getRequestHeadersInserted().equals(this.getRequestHeadersInserted()) == false)
+            return false;
+        if (other.getResponseCodeSent() == null ^ this.getResponseCodeSent() == null)
+            return false;
+        if (other.getResponseCodeSent() != null && other.getResponseCodeSent().equals(this.getResponseCodeSent()) == false)
+            return false;
         return true;
     }
 
@@ -372,6 +515,8 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
         hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
         hashCode = prime * hashCode + ((getRuleNameWithinRuleGroup() == null) ? 0 : getRuleNameWithinRuleGroup().hashCode());
+        hashCode = prime * hashCode + ((getRequestHeadersInserted() == null) ? 0 : getRequestHeadersInserted().hashCode());
+        hashCode = prime * hashCode + ((getResponseCodeSent() == null) ? 0 : getResponseCodeSent().hashCode());
         return hashCode;
     }
 

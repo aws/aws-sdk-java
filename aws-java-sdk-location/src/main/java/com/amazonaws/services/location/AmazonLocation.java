@@ -46,6 +46,12 @@ public interface AmazonLocation {
      * Creates an association between a geofence collection and a tracker resource. This allows the tracker resource to
      * communicate location data to the linked geofence collection.
      * </p>
+     * <note>
+     * <p>
+     * Currently not supported — Cross-account configurations, such as creating associations between a tracker resource
+     * in one account and a geofence collection in another account.
+     * </p>
+     * </note>
      * 
      * @param associateTrackerConsumerRequest
      * @return Result of the AssociateTrackerConsumer operation returned by the service.
@@ -99,9 +105,16 @@ public interface AmazonLocation {
 
     /**
      * <p>
-     * Used in geofence monitoring. Evaluates device positions against the position of geofences in a given geofence
-     * collection.
+     * Evaluates device positions against the geofence geometries from a given geofence collection. The evaluation
+     * determines if the device has entered or exited a geofenced area, which publishes ENTER or EXIT geofence events to
+     * Amazon EventBridge.
      * </p>
+     * <note>
+     * <p>
+     * The last geofence that a device was observed within, if any, is tracked for 30 days after the most recent device
+     * position update
+     * </p>
+     * </note>
      * 
      * @param batchEvaluateGeofencesRequest
      * @return Result of the BatchEvaluateGeofences operation returned by the service.
@@ -124,13 +137,8 @@ public interface AmazonLocation {
 
     /**
      * <p>
-     * A batch request to retrieve device positions.
+     * A batch request to retrieve all device positions.
      * </p>
-     * <note>
-     * <p>
-     * The response will return the device positions from the last 24 hours.
-     * </p>
-     * </note>
      * 
      * @param batchGetDevicePositionRequest
      * @return Result of the BatchGetDevicePosition operation returned by the service.
@@ -153,7 +161,7 @@ public interface AmazonLocation {
 
     /**
      * <p>
-     * A batch request for storing geofences into a given geofence collection.
+     * A batch request for storing geofence geometries into a given geofence collection.
      * </p>
      * 
      * @param batchPutGeofenceRequest
@@ -177,13 +185,13 @@ public interface AmazonLocation {
 
     /**
      * <p>
-     * Uploads a position update for one or more devices to a tracker resource. The data is used for API queries
-     * requesting the device position and position history.
+     * Uploads position update data for one or more devices to a tracker resource. Amazon Location uses the data when
+     * reporting the last known device position and position history.
      * </p>
      * <note>
      * <p>
-     * Limitation — Location data is sampled at a fixed rate of 1 position per 30 second interval, and retained for 1
-     * year before it is deleted.
+     * Only one position update is stored per sample time. Location data is sampled at a fixed rate of one position per
+     * 30-second interval, and retained for one year before it is deleted.
      * </p>
      * </note>
      * 
@@ -540,7 +548,7 @@ public interface AmazonLocation {
 
     /**
      * <p>
-     * Removes the association bewteen a tracker resource and a geofence collection.
+     * Removes the association between a tracker resource and a geofence collection.
      * </p>
      * <note>
      * <p>
@@ -570,11 +578,11 @@ public interface AmazonLocation {
 
     /**
      * <p>
-     * Retrieves the latest device position.
+     * Retrieves a device's most recent position according to its sample time.
      * </p>
      * <note>
      * <p>
-     * Limitation — Device positions are deleted after one year.
+     * Device positions are deleted after one year.
      * </p>
      * </note>
      * 
@@ -603,7 +611,7 @@ public interface AmazonLocation {
      * </p>
      * <note>
      * <p>
-     * Limitation — Device positions are deleted after one year.
+     * Device positions are deleted after 1 year.
      * </p>
      * </note>
      * 
@@ -896,8 +904,8 @@ public interface AmazonLocation {
 
     /**
      * <p>
-     * Stores a geofence to a given geofence collection, or updates the geometry of an existing geofence if a geofence
-     * ID is included in the request.
+     * Stores a geofence geometry in a given geofence collection, or updates the geometry of an existing geofence if a
+     * geofence ID is included in the request.
      * </p>
      * 
      * @param putGeofenceRequest

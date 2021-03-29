@@ -33,6 +33,10 @@ public class ListGeofenceCollectionsResponseEntryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateTime").timestampFormat("iso8601").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<String> PRICINGPLAN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PricingPlan").build();
+    private static final MarshallingInfo<String> PRICINGPLANDATASOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PricingPlanDataSource").build();
     private static final MarshallingInfo<java.util.Date> UPDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpdateTime").timestampFormat("iso8601").build();
 
@@ -55,6 +59,8 @@ public class ListGeofenceCollectionsResponseEntryMarshaller {
             protocolMarshaller.marshall(listGeofenceCollectionsResponseEntry.getCollectionName(), COLLECTIONNAME_BINDING);
             protocolMarshaller.marshall(listGeofenceCollectionsResponseEntry.getCreateTime(), CREATETIME_BINDING);
             protocolMarshaller.marshall(listGeofenceCollectionsResponseEntry.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(listGeofenceCollectionsResponseEntry.getPricingPlan(), PRICINGPLAN_BINDING);
+            protocolMarshaller.marshall(listGeofenceCollectionsResponseEntry.getPricingPlanDataSource(), PRICINGPLANDATASOURCE_BINDING);
             protocolMarshaller.marshall(listGeofenceCollectionsResponseEntry.getUpdateTime(), UPDATETIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

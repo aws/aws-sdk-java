@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.wafv2.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -42,6 +43,8 @@ public class UpdateRuleGroupRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VisibilityConfig").build();
     private static final MarshallingInfo<String> LOCKTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("LockToken").build();
+    private static final MarshallingInfo<Map> CUSTOMRESPONSEBODIES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomResponseBodies").build();
 
     private static final UpdateRuleGroupRequestMarshaller instance = new UpdateRuleGroupRequestMarshaller();
 
@@ -66,6 +69,7 @@ public class UpdateRuleGroupRequestMarshaller {
             protocolMarshaller.marshall(updateRuleGroupRequest.getRules(), RULES_BINDING);
             protocolMarshaller.marshall(updateRuleGroupRequest.getVisibilityConfig(), VISIBILITYCONFIG_BINDING);
             protocolMarshaller.marshall(updateRuleGroupRequest.getLockToken(), LOCKTOKEN_BINDING);
+            protocolMarshaller.marshall(updateRuleGroupRequest.getCustomResponseBodies(), CUSTOMRESPONSEBODIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -72,6 +72,10 @@ public class DescribeMapResultJsonUnmarshaller implements Unmarshaller<DescribeM
                     context.nextToken();
                     describeMapResult.setMapName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PricingPlan", targetDepth)) {
+                    context.nextToken();
+                    describeMapResult.setPricingPlan(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("UpdateTime", targetDepth)) {
                     context.nextToken();
                     describeMapResult.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));

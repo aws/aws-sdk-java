@@ -1,3 +1,24 @@
+# __1.11.987__ __2021-03-29__
+## __AWS Glue__
+  - ### Features
+    - Allow Dots in Registry and Schema Names for CreateRegistry, CreateSchema; Fixed issue when duplicate keys are present and not returned as part of QuerySchemaVersionMetadata.
+
+## __AWS Identity and Access Management__
+  - ### Features
+    - AWS Identity and Access Management GetAccessKeyLastUsed API will throw a custom error if customer public key is not found for access keys.
+
+## __AWS WAFV2__
+  - ### Features
+    - Added custom request handling and custom response support in rule actions and default action; Added the option to inspect the web request body as parsed and filtered JSON.
+
+## __Amazon DocumentDB with MongoDB compatibility__
+  - ### Features
+    - This release adds support for Event Subscriptions to DocumentDB.
+
+## __Amazon Location Service__
+  - ### Features
+    - Amazon Location added support for specifying pricing plan information on resources in alignment with our cost model.
+
 # __1.11.986__ __2021-03-26__
 ## __AWS IoT Wireless__
   - ### Features

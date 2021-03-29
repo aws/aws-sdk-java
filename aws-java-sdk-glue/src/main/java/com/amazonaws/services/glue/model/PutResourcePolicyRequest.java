@@ -33,10 +33,7 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     private String policyInJson;
     /**
      * <p>
-     * The ARN of the AWS Glue resource for the resource policy to be set. For more information about AWS Glue resource
-     * ARNs, see the <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
-     * Glue ARN string pattern</a>
+     * Do not use. For internal use only.
      * </p>
      */
     private String resourceArn;
@@ -50,20 +47,31 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to
-     * create a new policy. If a value of <code>NONE</code> or a null value is used, the call will not depend on the
+     * create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend on the
      * existence of a policy.
      * </p>
      */
     private String policyExistsCondition;
     /**
      * <p>
-     * Allows you to specify if you want to use both resource-level and account/catalog-level resource policies. A
-     * resource-level policy is a policy attached to an individual resource such as a database or a table.
+     * If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog
+     * resources:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * The default value of <code>NO</code> indicates that resource-level policies cannot co-exist with an account-level
-     * policy. A value of <code>YES</code> means the use of both resource-level and account/catalog-level resource
-     * policies is allowed.
+     * By directly updating the resource policy with <code>PutResourePolicy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * By using the <b>Grant permissions</b> command on the AWS Management Console.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access,
+     * otherwise the call fails. Default is 'FALSE'.
      * </p>
      */
     private String enableHybrid;
@@ -110,17 +118,11 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ARN of the AWS Glue resource for the resource policy to be set. For more information about AWS Glue resource
-     * ARNs, see the <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
-     * Glue ARN string pattern</a>
+     * Do not use. For internal use only.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN of the AWS Glue resource for the resource policy to be set. For more information about AWS Glue
-     *        resource ARNs, see the <a href=
-     *        "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id"
-     *        >AWS Glue ARN string pattern</a>
+     *        Do not use. For internal use only.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -129,16 +131,10 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ARN of the AWS Glue resource for the resource policy to be set. For more information about AWS Glue resource
-     * ARNs, see the <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
-     * Glue ARN string pattern</a>
+     * Do not use. For internal use only.
      * </p>
      * 
-     * @return The ARN of the AWS Glue resource for the resource policy to be set. For more information about AWS Glue
-     *         resource ARNs, see the <a href=
-     *         "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id"
-     *         >AWS Glue ARN string pattern</a>
+     * @return Do not use. For internal use only.
      */
 
     public String getResourceArn() {
@@ -147,17 +143,11 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ARN of the AWS Glue resource for the resource policy to be set. For more information about AWS Glue resource
-     * ARNs, see the <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id">AWS
-     * Glue ARN string pattern</a>
+     * Do not use. For internal use only.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN of the AWS Glue resource for the resource policy to be set. For more information about AWS Glue
-     *        resource ARNs, see the <a href=
-     *        "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html#aws-glue-api-regex-aws-glue-arn-id"
-     *        >AWS Glue ARN string pattern</a>
+     *        Do not use. For internal use only.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -218,13 +208,13 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to
-     * create a new policy. If a value of <code>NONE</code> or a null value is used, the call will not depend on the
+     * create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend on the
      * existence of a policy.
      * </p>
      * 
      * @param policyExistsCondition
      *        A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used
-     *        to create a new policy. If a value of <code>NONE</code> or a null value is used, the call will not depend
+     *        to create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend
      *        on the existence of a policy.
      * @see ExistCondition
      */
@@ -236,12 +226,12 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to
-     * create a new policy. If a value of <code>NONE</code> or a null value is used, the call will not depend on the
+     * create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend on the
      * existence of a policy.
      * </p>
      * 
      * @return A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used
-     *         to create a new policy. If a value of <code>NONE</code> or a null value is used, the call will not depend
+     *         to create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend
      *         on the existence of a policy.
      * @see ExistCondition
      */
@@ -253,13 +243,13 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to
-     * create a new policy. If a value of <code>NONE</code> or a null value is used, the call will not depend on the
+     * create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend on the
      * existence of a policy.
      * </p>
      * 
      * @param policyExistsCondition
      *        A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used
-     *        to create a new policy. If a value of <code>NONE</code> or a null value is used, the call will not depend
+     *        to create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend
      *        on the existence of a policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExistCondition
@@ -273,13 +263,13 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to
-     * create a new policy. If a value of <code>NONE</code> or a null value is used, the call will not depend on the
+     * create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend on the
      * existence of a policy.
      * </p>
      * 
      * @param policyExistsCondition
      *        A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used
-     *        to create a new policy. If a value of <code>NONE</code> or a null value is used, the call will not depend
+     *        to create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend
      *        on the existence of a policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExistCondition
@@ -292,22 +282,44 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Allows you to specify if you want to use both resource-level and account/catalog-level resource policies. A
-     * resource-level policy is a policy attached to an individual resource such as a database or a table.
+     * If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog
+     * resources:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * The default value of <code>NO</code> indicates that resource-level policies cannot co-exist with an account-level
-     * policy. A value of <code>YES</code> means the use of both resource-level and account/catalog-level resource
-     * policies is allowed.
+     * By directly updating the resource policy with <code>PutResourePolicy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * By using the <b>Grant permissions</b> command on the AWS Management Console.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access,
+     * otherwise the call fails. Default is 'FALSE'.
      * </p>
      * 
      * @param enableHybrid
-     *        Allows you to specify if you want to use both resource-level and account/catalog-level resource policies.
-     *        A resource-level policy is a policy attached to an individual resource such as a database or a table.</p>
+     *        If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data
+     *        Catalog resources:</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        The default value of <code>NO</code> indicates that resource-level policies cannot co-exist with an
-     *        account-level policy. A value of <code>YES</code> means the use of both resource-level and
-     *        account/catalog-level resource policies is allowed.
+     *        By directly updating the resource policy with <code>PutResourePolicy</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        By using the <b>Grant permissions</b> command on the AWS Management Console.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account
+     *        access, otherwise the call fails. Default is 'FALSE'.
      * @see EnableHybridValues
      */
 
@@ -317,21 +329,43 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Allows you to specify if you want to use both resource-level and account/catalog-level resource policies. A
-     * resource-level policy is a policy attached to an individual resource such as a database or a table.
+     * If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog
+     * resources:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * The default value of <code>NO</code> indicates that resource-level policies cannot co-exist with an account-level
-     * policy. A value of <code>YES</code> means the use of both resource-level and account/catalog-level resource
-     * policies is allowed.
+     * By directly updating the resource policy with <code>PutResourePolicy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * By using the <b>Grant permissions</b> command on the AWS Management Console.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access,
+     * otherwise the call fails. Default is 'FALSE'.
      * </p>
      * 
-     * @return Allows you to specify if you want to use both resource-level and account/catalog-level resource policies.
-     *         A resource-level policy is a policy attached to an individual resource such as a database or a table.</p>
+     * @return If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data
+     *         Catalog resources:</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         The default value of <code>NO</code> indicates that resource-level policies cannot co-exist with an
-     *         account-level policy. A value of <code>YES</code> means the use of both resource-level and
-     *         account/catalog-level resource policies is allowed.
+     *         By directly updating the resource policy with <code>PutResourePolicy</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         By using the <b>Grant permissions</b> command on the AWS Management Console.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account
+     *         access, otherwise the call fails. Default is 'FALSE'.
      * @see EnableHybridValues
      */
 
@@ -341,22 +375,44 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Allows you to specify if you want to use both resource-level and account/catalog-level resource policies. A
-     * resource-level policy is a policy attached to an individual resource such as a database or a table.
+     * If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog
+     * resources:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * The default value of <code>NO</code> indicates that resource-level policies cannot co-exist with an account-level
-     * policy. A value of <code>YES</code> means the use of both resource-level and account/catalog-level resource
-     * policies is allowed.
+     * By directly updating the resource policy with <code>PutResourePolicy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * By using the <b>Grant permissions</b> command on the AWS Management Console.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access,
+     * otherwise the call fails. Default is 'FALSE'.
      * </p>
      * 
      * @param enableHybrid
-     *        Allows you to specify if you want to use both resource-level and account/catalog-level resource policies.
-     *        A resource-level policy is a policy attached to an individual resource such as a database or a table.</p>
+     *        If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data
+     *        Catalog resources:</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        The default value of <code>NO</code> indicates that resource-level policies cannot co-exist with an
-     *        account-level policy. A value of <code>YES</code> means the use of both resource-level and
-     *        account/catalog-level resource policies is allowed.
+     *        By directly updating the resource policy with <code>PutResourePolicy</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        By using the <b>Grant permissions</b> command on the AWS Management Console.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account
+     *        access, otherwise the call fails. Default is 'FALSE'.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EnableHybridValues
      */
@@ -368,22 +424,44 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Allows you to specify if you want to use both resource-level and account/catalog-level resource policies. A
-     * resource-level policy is a policy attached to an individual resource such as a database or a table.
+     * If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog
+     * resources:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * The default value of <code>NO</code> indicates that resource-level policies cannot co-exist with an account-level
-     * policy. A value of <code>YES</code> means the use of both resource-level and account/catalog-level resource
-     * policies is allowed.
+     * By directly updating the resource policy with <code>PutResourePolicy</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * By using the <b>Grant permissions</b> command on the AWS Management Console.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access,
+     * otherwise the call fails. Default is 'FALSE'.
      * </p>
      * 
      * @param enableHybrid
-     *        Allows you to specify if you want to use both resource-level and account/catalog-level resource policies.
-     *        A resource-level policy is a policy attached to an individual resource such as a database or a table.</p>
+     *        If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data
+     *        Catalog resources:</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        The default value of <code>NO</code> indicates that resource-level policies cannot co-exist with an
-     *        account-level policy. A value of <code>YES</code> means the use of both resource-level and
-     *        account/catalog-level resource policies is allowed.
+     *        By directly updating the resource policy with <code>PutResourePolicy</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        By using the <b>Grant permissions</b> command on the AWS Management Console.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account
+     *        access, otherwise the call fails. Default is 'FALSE'.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EnableHybridValues
      */

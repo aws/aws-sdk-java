@@ -40,6 +40,12 @@ public class MetadataInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String createdTime;
+    /**
+     * <p>
+     * Other metadata belonging to the same metadata key.
+     * </p>
+     */
+    private java.util.List<OtherMetadataValueListItem> otherMetadataValueList;
 
     /**
      * <p>
@@ -122,6 +128,76 @@ public class MetadataInfo implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Other metadata belonging to the same metadata key.
+     * </p>
+     * 
+     * @return Other metadata belonging to the same metadata key.
+     */
+
+    public java.util.List<OtherMetadataValueListItem> getOtherMetadataValueList() {
+        return otherMetadataValueList;
+    }
+
+    /**
+     * <p>
+     * Other metadata belonging to the same metadata key.
+     * </p>
+     * 
+     * @param otherMetadataValueList
+     *        Other metadata belonging to the same metadata key.
+     */
+
+    public void setOtherMetadataValueList(java.util.Collection<OtherMetadataValueListItem> otherMetadataValueList) {
+        if (otherMetadataValueList == null) {
+            this.otherMetadataValueList = null;
+            return;
+        }
+
+        this.otherMetadataValueList = new java.util.ArrayList<OtherMetadataValueListItem>(otherMetadataValueList);
+    }
+
+    /**
+     * <p>
+     * Other metadata belonging to the same metadata key.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setOtherMetadataValueList(java.util.Collection)} or
+     * {@link #withOtherMetadataValueList(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param otherMetadataValueList
+     *        Other metadata belonging to the same metadata key.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MetadataInfo withOtherMetadataValueList(OtherMetadataValueListItem... otherMetadataValueList) {
+        if (this.otherMetadataValueList == null) {
+            setOtherMetadataValueList(new java.util.ArrayList<OtherMetadataValueListItem>(otherMetadataValueList.length));
+        }
+        for (OtherMetadataValueListItem ele : otherMetadataValueList) {
+            this.otherMetadataValueList.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Other metadata belonging to the same metadata key.
+     * </p>
+     * 
+     * @param otherMetadataValueList
+     *        Other metadata belonging to the same metadata key.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MetadataInfo withOtherMetadataValueList(java.util.Collection<OtherMetadataValueListItem> otherMetadataValueList) {
+        setOtherMetadataValueList(otherMetadataValueList);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +212,9 @@ public class MetadataInfo implements Serializable, Cloneable, StructuredPojo {
         if (getMetadataValue() != null)
             sb.append("MetadataValue: ").append(getMetadataValue()).append(",");
         if (getCreatedTime() != null)
-            sb.append("CreatedTime: ").append(getCreatedTime());
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
+        if (getOtherMetadataValueList() != null)
+            sb.append("OtherMetadataValueList: ").append(getOtherMetadataValueList());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +237,10 @@ public class MetadataInfo implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
             return false;
+        if (other.getOtherMetadataValueList() == null ^ this.getOtherMetadataValueList() == null)
+            return false;
+        if (other.getOtherMetadataValueList() != null && other.getOtherMetadataValueList().equals(this.getOtherMetadataValueList()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +251,7 @@ public class MetadataInfo implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getMetadataValue() == null) ? 0 : getMetadataValue().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
+        hashCode = prime * hashCode + ((getOtherMetadataValueList() == null) ? 0 : getOtherMetadataValueList().hashCode());
         return hashCode;
     }
 

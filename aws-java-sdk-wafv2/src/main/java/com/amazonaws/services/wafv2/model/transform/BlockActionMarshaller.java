@@ -27,6 +27,9 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class BlockActionMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> CUSTOMRESPONSE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomResponse").build();
+
     private static final BlockActionMarshaller instance = new BlockActionMarshaller();
 
     public static BlockActionMarshaller getInstance() {
@@ -43,6 +46,7 @@ public class BlockActionMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(blockAction.getCustomResponse(), CUSTOMRESPONSE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

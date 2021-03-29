@@ -56,6 +56,13 @@ public class MetadataInfoJsonUnmarshaller implements Unmarshaller<MetadataInfo, 
                     context.nextToken();
                     metadataInfo.setCreatedTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("OtherMetadataValueList", targetDepth)) {
+                    context.nextToken();
+                    metadataInfo.setOtherMetadataValueList(new ListUnmarshaller<OtherMetadataValueListItem>(OtherMetadataValueListItemJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

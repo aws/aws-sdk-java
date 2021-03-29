@@ -123,6 +123,25 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Boolean managedByFirewallManager;
+    /**
+     * <p>
+     * A map of custom response keys and content bodies. When you create a rule with a block action, you can send a
+     * custom response to the web request. You define these for the web ACL, and then use them in the rules and default
+     * actions that you define in the web ACL.
+     * </p>
+     * <p>
+     * For information about customizing web requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
+     * requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * <p>
+     * For information about the limits on count and size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     */
+    private java.util.Map<String, CustomResponseBody> customResponseBodies;
 
     /**
      * <p>
@@ -842,6 +861,151 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A map of custom response keys and content bodies. When you create a rule with a block action, you can send a
+     * custom response to the web request. You define these for the web ACL, and then use them in the rules and default
+     * actions that you define in the web ACL.
+     * </p>
+     * <p>
+     * For information about customizing web requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
+     * requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * <p>
+     * For information about the limits on count and size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @return A map of custom response keys and content bodies. When you create a rule with a block action, you can
+     *         send a custom response to the web request. You define these for the web ACL, and then use them in the
+     *         rules and default actions that you define in the web ACL. </p>
+     *         <p>
+     *         For information about customizing web requests and responses, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     *         web requests and responses in AWS WAF</a> in the <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer
+     *         Guide</a>.
+     *         </p>
+     *         <p>
+     *         For information about the limits on count and size for custom request and response settings, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer
+     *         Guide</a>.
+     */
+
+    public java.util.Map<String, CustomResponseBody> getCustomResponseBodies() {
+        return customResponseBodies;
+    }
+
+    /**
+     * <p>
+     * A map of custom response keys and content bodies. When you create a rule with a block action, you can send a
+     * custom response to the web request. You define these for the web ACL, and then use them in the rules and default
+     * actions that you define in the web ACL.
+     * </p>
+     * <p>
+     * For information about customizing web requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
+     * requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * <p>
+     * For information about the limits on count and size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param customResponseBodies
+     *        A map of custom response keys and content bodies. When you create a rule with a block action, you can send
+     *        a custom response to the web request. You define these for the web ACL, and then use them in the rules and
+     *        default actions that you define in the web ACL. </p>
+     *        <p>
+     *        For information about customizing web requests and responses, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     *        web requests and responses in AWS WAF</a> in the <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     *        </p>
+     *        <p>
+     *        For information about the limits on count and size for custom request and response settings, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     */
+
+    public void setCustomResponseBodies(java.util.Map<String, CustomResponseBody> customResponseBodies) {
+        this.customResponseBodies = customResponseBodies;
+    }
+
+    /**
+     * <p>
+     * A map of custom response keys and content bodies. When you create a rule with a block action, you can send a
+     * custom response to the web request. You define these for the web ACL, and then use them in the rules and default
+     * actions that you define in the web ACL.
+     * </p>
+     * <p>
+     * For information about customizing web requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
+     * requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * <p>
+     * For information about the limits on count and size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param customResponseBodies
+     *        A map of custom response keys and content bodies. When you create a rule with a block action, you can send
+     *        a custom response to the web request. You define these for the web ACL, and then use them in the rules and
+     *        default actions that you define in the web ACL. </p>
+     *        <p>
+     *        For information about customizing web requests and responses, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     *        web requests and responses in AWS WAF</a> in the <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     *        </p>
+     *        <p>
+     *        For information about the limits on count and size for custom request and response settings, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WebACL withCustomResponseBodies(java.util.Map<String, CustomResponseBody> customResponseBodies) {
+        setCustomResponseBodies(customResponseBodies);
+        return this;
+    }
+
+    /**
+     * Add a single CustomResponseBodies entry
+     *
+     * @see WebACL#withCustomResponseBodies
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WebACL addCustomResponseBodiesEntry(String key, CustomResponseBody value) {
+        if (null == this.customResponseBodies) {
+            this.customResponseBodies = new java.util.HashMap<String, CustomResponseBody>();
+        }
+        if (this.customResponseBodies.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.customResponseBodies.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into CustomResponseBodies.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WebACL clearCustomResponseBodiesEntries() {
+        this.customResponseBodies = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -874,7 +1038,9 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
         if (getPostProcessFirewallManagerRuleGroups() != null)
             sb.append("PostProcessFirewallManagerRuleGroups: ").append(getPostProcessFirewallManagerRuleGroups()).append(",");
         if (getManagedByFirewallManager() != null)
-            sb.append("ManagedByFirewallManager: ").append(getManagedByFirewallManager());
+            sb.append("ManagedByFirewallManager: ").append(getManagedByFirewallManager()).append(",");
+        if (getCustomResponseBodies() != null)
+            sb.append("CustomResponseBodies: ").append(getCustomResponseBodies());
         sb.append("}");
         return sb.toString();
     }
@@ -935,6 +1101,10 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getManagedByFirewallManager() != null && other.getManagedByFirewallManager().equals(this.getManagedByFirewallManager()) == false)
             return false;
+        if (other.getCustomResponseBodies() == null ^ this.getCustomResponseBodies() == null)
+            return false;
+        if (other.getCustomResponseBodies() != null && other.getCustomResponseBodies().equals(this.getCustomResponseBodies()) == false)
+            return false;
         return true;
     }
 
@@ -954,6 +1124,7 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPreProcessFirewallManagerRuleGroups() == null) ? 0 : getPreProcessFirewallManagerRuleGroups().hashCode());
         hashCode = prime * hashCode + ((getPostProcessFirewallManagerRuleGroups() == null) ? 0 : getPostProcessFirewallManagerRuleGroups().hashCode());
         hashCode = prime * hashCode + ((getManagedByFirewallManager() == null) ? 0 : getManagedByFirewallManager().hashCode());
+        hashCode = prime * hashCode + ((getCustomResponseBodies() == null) ? 0 : getCustomResponseBodies().hashCode());
         return hashCode;
     }
 

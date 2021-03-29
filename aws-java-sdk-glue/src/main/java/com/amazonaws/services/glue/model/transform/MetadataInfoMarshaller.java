@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.glue.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class MetadataInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MetadataValue").build();
     private static final MarshallingInfo<String> CREATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedTime").build();
+    private static final MarshallingInfo<List> OTHERMETADATAVALUELIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OtherMetadataValueList").build();
 
     private static final MetadataInfoMarshaller instance = new MetadataInfoMarshaller();
 
@@ -50,6 +53,7 @@ public class MetadataInfoMarshaller {
         try {
             protocolMarshaller.marshall(metadataInfo.getMetadataValue(), METADATAVALUE_BINDING);
             protocolMarshaller.marshall(metadataInfo.getCreatedTime(), CREATEDTIME_BINDING);
+            protocolMarshaller.marshall(metadataInfo.getOtherMetadataValueList(), OTHERMETADATAVALUELIST_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -56,6 +56,14 @@ public class DescribeTrackerResultJsonUnmarshaller implements Unmarshaller<Descr
                     context.nextToken();
                     describeTrackerResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PricingPlan", targetDepth)) {
+                    context.nextToken();
+                    describeTrackerResult.setPricingPlan(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PricingPlanDataSource", targetDepth)) {
+                    context.nextToken();
+                    describeTrackerResult.setPricingPlanDataSource(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("TrackerArn", targetDepth)) {
                     context.nextToken();
                     describeTrackerResult.setTrackerArn(context.getUnmarshaller(String.class).unmarshall(context));

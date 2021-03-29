@@ -123,10 +123,12 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
         exceptionUnmarshallers.add(new SnapshotQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBInstanceNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSnapshotNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SubscriptionCategoryNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidRestoreExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBInstanceAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSnapshotAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SharedSnapshotQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SNSInvalidTopicExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBParameterGroupAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDBInstanceStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDBSubnetGroupStateExceptionUnmarshaller());
@@ -139,13 +141,16 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
         exceptionUnmarshallers.add(new DBSubnetQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDBSnapshotStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidVPCNetworkStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SNSTopicArnNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSecurityGroupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSubnetGroupQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StorageTypeNotSupportedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InsufficientDBInstanceCapacityExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBUpgradeDependencyFailureExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SubscriptionAlreadyExistExceptionUnmarshaller());
         exceptionUnmarshallers.add(new KMSKeyNotAccessibleExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SubscriptionNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBParameterGroupQuotaExceededExceptionUnmarshaller());
@@ -153,11 +158,15 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
         exceptionUnmarshallers.add(new SubnetAlreadyInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterSnapshotAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDBClusterSnapshotStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SourceNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidEventSubscriptionStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBParameterGroupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDBParameterGroupStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidSubnetExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new EventSubscriptionQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StorageQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSubnetGroupAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new SNSNoAuthorizationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AuthorizationNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller(com.amazonaws.services.docdb.model.AmazonDocDBException.class));
 
@@ -169,6 +178,66 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/docdb/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/docdb/request.handler2s"));
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * Adds a source identifier to an existing event notification subscription.
+     * </p>
+     * 
+     * @param addSourceIdentifierToSubscriptionRequest
+     *        Represents the input to <a>AddSourceIdentifierToSubscription</a>.
+     * @return Result of the AddSourceIdentifierToSubscription operation returned by the service.
+     * @throws SubscriptionNotFoundException
+     *         The subscription name does not exist.
+     * @throws SourceNotFoundException
+     *         The requested source could not be found.
+     * @sample AmazonDocDB.AddSourceIdentifierToSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/AddSourceIdentifierToSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public EventSubscription addSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddSourceIdentifierToSubscription(request);
+    }
+
+    @SdkInternalApi
+    final EventSubscription executeAddSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest addSourceIdentifierToSubscriptionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(addSourceIdentifierToSubscriptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AddSourceIdentifierToSubscriptionRequest> request = null;
+        Response<EventSubscription> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AddSourceIdentifierToSubscriptionRequestMarshaller().marshall(super.beforeMarshalling(addSourceIdentifierToSubscriptionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddSourceIdentifierToSubscription");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<EventSubscription> responseHandler = new StaxResponseHandler<EventSubscription>(new EventSubscriptionStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -835,6 +904,95 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
+     * Creates an Amazon DocumentDB event notification subscription. This action requires a topic Amazon Resource Name
+     * (ARN) created by using the Amazon DocumentDB console, the Amazon SNS console, or the Amazon SNS API. To obtain an
+     * ARN with Amazon SNS, you must create a topic in Amazon SNS and subscribe to the topic. The ARN is displayed in
+     * the Amazon SNS console.
+     * </p>
+     * <p>
+     * You can specify the type of source (<code>SourceType</code>) that you want to be notified of. You can also
+     * provide a list of Amazon DocumentDB sources (<code>SourceIds</code>) that trigger the events, and you can provide
+     * a list of event categories (<code>EventCategories</code>) for events that you want to be notified of. For
+     * example, you can specify <code>SourceType = db-instance</code>,
+     * <code>SourceIds = mydbinstance1, mydbinstance2</code> and <code>EventCategories = Availability, Backup</code>.
+     * </p>
+     * <p>
+     * If you specify both the <code>SourceType</code> and <code>SourceIds</code> (such as
+     * <code>SourceType = db-instance</code> and <code>SourceIdentifier = myDBInstance1</code>), you are notified of all
+     * the <code>db-instance</code> events for the specified source. If you specify a <code>SourceType</code> but do not
+     * specify a <code>SourceIdentifier</code>, you receive notice of the events for that source type for all your
+     * Amazon DocumentDB sources. If you do not specify either the <code>SourceType</code> or the
+     * <code>SourceIdentifier</code>, you are notified of events generated from all Amazon DocumentDB sources belonging
+     * to your customer account.
+     * </p>
+     * 
+     * @param createEventSubscriptionRequest
+     *        Represents the input to <a>CreateEventSubscription</a>.
+     * @return Result of the CreateEventSubscription operation returned by the service.
+     * @throws EventSubscriptionQuotaExceededException
+     *         You have reached the maximum number of event subscriptions.
+     * @throws SubscriptionAlreadyExistException
+     *         The provided subscription name already exists.
+     * @throws SNSInvalidTopicException
+     *         Amazon SNS has responded that there is a problem with the specified topic.
+     * @throws SNSNoAuthorizationException
+     *         You do not have permission to publish to the SNS topic Amazon Resource Name (ARN).
+     * @throws SNSTopicArnNotFoundException
+     *         The SNS topic Amazon Resource Name (ARN) does not exist.
+     * @throws SubscriptionCategoryNotFoundException
+     *         The provided category does not exist.
+     * @throws SourceNotFoundException
+     *         The requested source could not be found.
+     * @sample AmazonDocDB.CreateEventSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateEventSubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public EventSubscription createEventSubscription(CreateEventSubscriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateEventSubscription(request);
+    }
+
+    @SdkInternalApi
+    final EventSubscription executeCreateEventSubscription(CreateEventSubscriptionRequest createEventSubscriptionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createEventSubscriptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateEventSubscriptionRequest> request = null;
+        Response<EventSubscription> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateEventSubscriptionRequestMarshaller().marshall(super.beforeMarshalling(createEventSubscriptionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEventSubscription");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<EventSubscription> responseHandler = new StaxResponseHandler<EventSubscription>(new EventSubscriptionStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a previously provisioned cluster. When you delete a cluster, all automated backups for that cluster are
      * deleted and can't be recovered. Manual DB cluster snapshots of the specified cluster are not deleted.
      * </p>
@@ -1152,6 +1310,66 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
             StaxResponseHandler<DeleteDBSubnetGroupResult> responseHandler = new StaxResponseHandler<DeleteDBSubnetGroupResult>(
                     new DeleteDBSubnetGroupResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an Amazon DocumentDB event notification subscription.
+     * </p>
+     * 
+     * @param deleteEventSubscriptionRequest
+     *        Represents the input to <a>DeleteEventSubscription</a>.
+     * @return Result of the DeleteEventSubscription operation returned by the service.
+     * @throws SubscriptionNotFoundException
+     *         The subscription name does not exist.
+     * @throws InvalidEventSubscriptionStateException
+     *         Someone else might be modifying a subscription. Wait a few seconds, and try again.
+     * @sample AmazonDocDB.DeleteEventSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteEventSubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public EventSubscription deleteEventSubscription(DeleteEventSubscriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteEventSubscription(request);
+    }
+
+    @SdkInternalApi
+    final EventSubscription executeDeleteEventSubscription(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteEventSubscriptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteEventSubscriptionRequest> request = null;
+        Response<EventSubscription> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteEventSubscriptionRequestMarshaller().marshall(super.beforeMarshalling(deleteEventSubscriptionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEventSubscription");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<EventSubscription> responseHandler = new StaxResponseHandler<EventSubscription>(new EventSubscriptionStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -1810,6 +2028,70 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
             StaxResponseHandler<DescribeEventCategoriesResult> responseHandler = new StaxResponseHandler<DescribeEventCategoriesResult>(
                     new DescribeEventCategoriesResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all the subscription descriptions for a customer account. The description for a subscription includes
+     * <code>SubscriptionName</code>, <code>SNSTopicARN</code>, <code>CustomerID</code>, <code>SourceType</code>,
+     * <code>SourceID</code>, <code>CreationTime</code>, and <code>Status</code>.
+     * </p>
+     * <p>
+     * If you specify a <code>SubscriptionName</code>, lists the description for that subscription.
+     * </p>
+     * 
+     * @param describeEventSubscriptionsRequest
+     *        Represents the input to <a>DescribeEventSubscriptions</a>.
+     * @return Result of the DescribeEventSubscriptions operation returned by the service.
+     * @throws SubscriptionNotFoundException
+     *         The subscription name does not exist.
+     * @sample AmazonDocDB.DescribeEventSubscriptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeEventSubscriptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeEventSubscriptionsResult describeEventSubscriptions(DescribeEventSubscriptionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEventSubscriptions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEventSubscriptionsResult executeDescribeEventSubscriptions(DescribeEventSubscriptionsRequest describeEventSubscriptionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeEventSubscriptionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeEventSubscriptionsRequest> request = null;
+        Response<DescribeEventSubscriptionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeEventSubscriptionsRequestMarshaller().marshall(super.beforeMarshalling(describeEventSubscriptionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEventSubscriptions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeEventSubscriptionsResult> responseHandler = new StaxResponseHandler<DescribeEventSubscriptionsResult>(
+                    new DescribeEventSubscriptionsResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -2522,6 +2804,74 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
 
     /**
      * <p>
+     * Modifies an existing Amazon DocumentDB event notification subscription.
+     * </p>
+     * 
+     * @param modifyEventSubscriptionRequest
+     *        Represents the input to <a>ModifyEventSubscription</a>.
+     * @return Result of the ModifyEventSubscription operation returned by the service.
+     * @throws EventSubscriptionQuotaExceededException
+     *         You have reached the maximum number of event subscriptions.
+     * @throws SubscriptionNotFoundException
+     *         The subscription name does not exist.
+     * @throws SNSInvalidTopicException
+     *         Amazon SNS has responded that there is a problem with the specified topic.
+     * @throws SNSNoAuthorizationException
+     *         You do not have permission to publish to the SNS topic Amazon Resource Name (ARN).
+     * @throws SNSTopicArnNotFoundException
+     *         The SNS topic Amazon Resource Name (ARN) does not exist.
+     * @throws SubscriptionCategoryNotFoundException
+     *         The provided category does not exist.
+     * @sample AmazonDocDB.ModifyEventSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyEventSubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public EventSubscription modifyEventSubscription(ModifyEventSubscriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyEventSubscription(request);
+    }
+
+    @SdkInternalApi
+    final EventSubscription executeModifyEventSubscription(ModifyEventSubscriptionRequest modifyEventSubscriptionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyEventSubscriptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyEventSubscriptionRequest> request = null;
+        Response<EventSubscription> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyEventSubscriptionRequestMarshaller().marshall(super.beforeMarshalling(modifyEventSubscriptionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyEventSubscription");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<EventSubscription> responseHandler = new StaxResponseHandler<EventSubscription>(new EventSubscriptionStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * You might need to reboot your instance, usually for maintenance reasons. For example, if you make certain
      * changes, or if you change the cluster parameter group that is associated with the instance, you must reboot the
      * instance for the changes to take effect.
@@ -2575,6 +2925,68 @@ public class AmazonDocDBClient extends AmazonWebServiceClient implements AmazonD
             }
 
             StaxResponseHandler<DBInstance> responseHandler = new StaxResponseHandler<DBInstance>(new DBInstanceStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes a source identifier from an existing Amazon DocumentDB event notification subscription.
+     * </p>
+     * 
+     * @param removeSourceIdentifierFromSubscriptionRequest
+     *        Represents the input to <a>RemoveSourceIdentifierFromSubscription</a>.
+     * @return Result of the RemoveSourceIdentifierFromSubscription operation returned by the service.
+     * @throws SubscriptionNotFoundException
+     *         The subscription name does not exist.
+     * @throws SourceNotFoundException
+     *         The requested source could not be found.
+     * @sample AmazonDocDB.RemoveSourceIdentifierFromSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RemoveSourceIdentifierFromSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public EventSubscription removeSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveSourceIdentifierFromSubscription(request);
+    }
+
+    @SdkInternalApi
+    final EventSubscription executeRemoveSourceIdentifierFromSubscription(
+            RemoveSourceIdentifierFromSubscriptionRequest removeSourceIdentifierFromSubscriptionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(removeSourceIdentifierFromSubscriptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RemoveSourceIdentifierFromSubscriptionRequest> request = null;
+        Response<EventSubscription> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemoveSourceIdentifierFromSubscriptionRequestMarshaller().marshall(super
+                        .beforeMarshalling(removeSourceIdentifierFromSubscriptionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DocDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveSourceIdentifierFromSubscription");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<EventSubscription> responseHandler = new StaxResponseHandler<EventSubscription>(new EventSubscriptionStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 

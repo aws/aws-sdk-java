@@ -74,6 +74,39 @@ public class AmazonDocDBAsyncClient extends AmazonDocDBClient implements AmazonD
     }
 
     @Override
+    public java.util.concurrent.Future<EventSubscription> addSourceIdentifierToSubscriptionAsync(AddSourceIdentifierToSubscriptionRequest request) {
+
+        return addSourceIdentifierToSubscriptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EventSubscription> addSourceIdentifierToSubscriptionAsync(final AddSourceIdentifierToSubscriptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AddSourceIdentifierToSubscriptionRequest, EventSubscription> asyncHandler) {
+        final AddSourceIdentifierToSubscriptionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<EventSubscription>() {
+            @Override
+            public EventSubscription call() throws Exception {
+                EventSubscription result = null;
+
+                try {
+                    result = executeAddSourceIdentifierToSubscription(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(AddTagsToResourceRequest request) {
 
         return addTagsToResourceAsync(request, null);
@@ -372,6 +405,39 @@ public class AmazonDocDBAsyncClient extends AmazonDocDBClient implements AmazonD
     }
 
     @Override
+    public java.util.concurrent.Future<EventSubscription> createEventSubscriptionAsync(CreateEventSubscriptionRequest request) {
+
+        return createEventSubscriptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EventSubscription> createEventSubscriptionAsync(final CreateEventSubscriptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateEventSubscriptionRequest, EventSubscription> asyncHandler) {
+        final CreateEventSubscriptionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<EventSubscription>() {
+            @Override
+            public EventSubscription call() throws Exception {
+                EventSubscription result = null;
+
+                try {
+                    result = executeCreateEventSubscription(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DBCluster> deleteDBClusterAsync(DeleteDBClusterRequest request) {
 
         return deleteDBClusterAsync(request, null);
@@ -522,6 +588,39 @@ public class AmazonDocDBAsyncClient extends AmazonDocDBClient implements AmazonD
 
                 try {
                     result = executeDeleteDBSubnetGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<EventSubscription> deleteEventSubscriptionAsync(DeleteEventSubscriptionRequest request) {
+
+        return deleteEventSubscriptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EventSubscription> deleteEventSubscriptionAsync(final DeleteEventSubscriptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteEventSubscriptionRequest, EventSubscription> asyncHandler) {
+        final DeleteEventSubscriptionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<EventSubscription>() {
+            @Override
+            public EventSubscription call() throws Exception {
+                EventSubscription result = null;
+
+                try {
+                    result = executeDeleteEventSubscription(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -905,6 +1004,39 @@ public class AmazonDocDBAsyncClient extends AmazonDocDBClient implements AmazonD
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeEventSubscriptionsResult> describeEventSubscriptionsAsync(DescribeEventSubscriptionsRequest request) {
+
+        return describeEventSubscriptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEventSubscriptionsResult> describeEventSubscriptionsAsync(final DescribeEventSubscriptionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeEventSubscriptionsRequest, DescribeEventSubscriptionsResult> asyncHandler) {
+        final DescribeEventSubscriptionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeEventSubscriptionsResult>() {
+            @Override
+            public DescribeEventSubscriptionsResult call() throws Exception {
+                DescribeEventSubscriptionsResult result = null;
+
+                try {
+                    result = executeDescribeEventSubscriptions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeEventsResult> describeEventsAsync(DescribeEventsRequest request) {
 
         return describeEventsAsync(request, null);
@@ -1241,6 +1373,39 @@ public class AmazonDocDBAsyncClient extends AmazonDocDBClient implements AmazonD
     }
 
     @Override
+    public java.util.concurrent.Future<EventSubscription> modifyEventSubscriptionAsync(ModifyEventSubscriptionRequest request) {
+
+        return modifyEventSubscriptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EventSubscription> modifyEventSubscriptionAsync(final ModifyEventSubscriptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyEventSubscriptionRequest, EventSubscription> asyncHandler) {
+        final ModifyEventSubscriptionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<EventSubscription>() {
+            @Override
+            public EventSubscription call() throws Exception {
+                EventSubscription result = null;
+
+                try {
+                    result = executeModifyEventSubscription(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DBInstance> rebootDBInstanceAsync(RebootDBInstanceRequest request) {
 
         return rebootDBInstanceAsync(request, null);
@@ -1258,6 +1423,40 @@ public class AmazonDocDBAsyncClient extends AmazonDocDBClient implements AmazonD
 
                 try {
                     result = executeRebootDBInstance(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<EventSubscription> removeSourceIdentifierFromSubscriptionAsync(RemoveSourceIdentifierFromSubscriptionRequest request) {
+
+        return removeSourceIdentifierFromSubscriptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EventSubscription> removeSourceIdentifierFromSubscriptionAsync(
+            final RemoveSourceIdentifierFromSubscriptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RemoveSourceIdentifierFromSubscriptionRequest, EventSubscription> asyncHandler) {
+        final RemoveSourceIdentifierFromSubscriptionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<EventSubscription>() {
+            @Override
+            public EventSubscription call() throws Exception {
+                EventSubscription result = null;
+
+                try {
+                    result = executeRemoveSourceIdentifierFromSubscription(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

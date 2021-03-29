@@ -35,6 +35,8 @@ public class ListMapsResponseEntryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<String> MAPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("MapName").build();
+    private static final MarshallingInfo<String> PRICINGPLAN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PricingPlan").build();
     private static final MarshallingInfo<java.util.Date> UPDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpdateTime").timestampFormat("iso8601").build();
 
@@ -58,6 +60,7 @@ public class ListMapsResponseEntryMarshaller {
             protocolMarshaller.marshall(listMapsResponseEntry.getDataSource(), DATASOURCE_BINDING);
             protocolMarshaller.marshall(listMapsResponseEntry.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(listMapsResponseEntry.getMapName(), MAPNAME_BINDING);
+            protocolMarshaller.marshall(listMapsResponseEntry.getPricingPlan(), PRICINGPLAN_BINDING);
             protocolMarshaller.marshall(listMapsResponseEntry.getUpdateTime(), UPDATETIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -63,6 +63,16 @@ public class DescribeMapResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String mapName;
     /**
      * <p>
+     * The pricing plan selected for the specified map resource.
+     * </p>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see the &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing page&lt;/a&gt;.&lt;/p&gt; </code>
+     * </pre>
+     */
+    private String pricingPlan;
+    /**
+     * <p>
      * The timestamp for when the map resource was last update in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
@@ -327,6 +337,93 @@ public class DescribeMapResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
+     * The pricing plan selected for the specified map resource.
+     * </p>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see the &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing page&lt;/a&gt;.&lt;/p&gt; </code>
+     * </pre>
+     * 
+     * @param pricingPlan
+     *        The pricing plan selected for the specified map resource.</p>
+     * 
+     *        <pre>
+     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see the &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing page&lt;/a&gt;.&lt;/p&gt; </code>
+     * @see PricingPlan
+     */
+
+    public void setPricingPlan(String pricingPlan) {
+        this.pricingPlan = pricingPlan;
+    }
+
+    /**
+     * <p>
+     * The pricing plan selected for the specified map resource.
+     * </p>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see the &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing page&lt;/a&gt;.&lt;/p&gt; </code>
+     * </pre>
+     * 
+     * @return The pricing plan selected for the specified map resource.</p>
+     * 
+     *         <pre>
+     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see the &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing page&lt;/a&gt;.&lt;/p&gt; </code>
+     * @see PricingPlan
+     */
+
+    public String getPricingPlan() {
+        return this.pricingPlan;
+    }
+
+    /**
+     * <p>
+     * The pricing plan selected for the specified map resource.
+     * </p>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see the &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing page&lt;/a&gt;.&lt;/p&gt; </code>
+     * </pre>
+     * 
+     * @param pricingPlan
+     *        The pricing plan selected for the specified map resource.</p>
+     * 
+     *        <pre>
+     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see the &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing page&lt;/a&gt;.&lt;/p&gt; </code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PricingPlan
+     */
+
+    public DescribeMapResult withPricingPlan(String pricingPlan) {
+        setPricingPlan(pricingPlan);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The pricing plan selected for the specified map resource.
+     * </p>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see the &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing page&lt;/a&gt;.&lt;/p&gt; </code>
+     * </pre>
+     * 
+     * @param pricingPlan
+     *        The pricing plan selected for the specified map resource.</p>
+     * 
+     *        <pre>
+     * <code> &lt;p&gt;For additional details and restrictions on each pricing plan option, see the &lt;a href=&quot;https://aws.amazon.com/location/pricing/&quot;&gt;Amazon Location Service pricing page&lt;/a&gt;.&lt;/p&gt; </code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PricingPlan
+     */
+
+    public DescribeMapResult withPricingPlan(PricingPlan pricingPlan) {
+        this.pricingPlan = pricingPlan.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The timestamp for when the map resource was last update in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
@@ -401,6 +498,8 @@ public class DescribeMapResult extends com.amazonaws.AmazonWebServiceResult<com.
             sb.append("MapArn: ").append(getMapArn()).append(",");
         if (getMapName() != null)
             sb.append("MapName: ").append(getMapName()).append(",");
+        if (getPricingPlan() != null)
+            sb.append("PricingPlan: ").append(getPricingPlan()).append(",");
         if (getUpdateTime() != null)
             sb.append("UpdateTime: ").append(getUpdateTime());
         sb.append("}");
@@ -441,6 +540,10 @@ public class DescribeMapResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getMapName() != null && other.getMapName().equals(this.getMapName()) == false)
             return false;
+        if (other.getPricingPlan() == null ^ this.getPricingPlan() == null)
+            return false;
+        if (other.getPricingPlan() != null && other.getPricingPlan().equals(this.getPricingPlan()) == false)
+            return false;
         if (other.getUpdateTime() == null ^ this.getUpdateTime() == null)
             return false;
         if (other.getUpdateTime() != null && other.getUpdateTime().equals(this.getUpdateTime()) == false)
@@ -459,6 +562,7 @@ public class DescribeMapResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getMapArn() == null) ? 0 : getMapArn().hashCode());
         hashCode = prime * hashCode + ((getMapName() == null) ? 0 : getMapName().hashCode());
+        hashCode = prime * hashCode + ((getPricingPlan() == null) ? 0 : getPricingPlan().hashCode());
         hashCode = prime * hashCode + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
         return hashCode;
     }

@@ -64,6 +64,10 @@ public class ListMapsResponseEntryJsonUnmarshaller implements Unmarshaller<ListM
                     context.nextToken();
                     listMapsResponseEntry.setMapName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PricingPlan", targetDepth)) {
+                    context.nextToken();
+                    listMapsResponseEntry.setPricingPlan(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("UpdateTime", targetDepth)) {
                     context.nextToken();
                     listMapsResponseEntry.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));

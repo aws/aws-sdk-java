@@ -47,7 +47,7 @@ public class CreateMapRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), and underscores (_).
+     * Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).
      * </p>
      * </li>
      * <li>
@@ -65,25 +65,8 @@ public class CreateMapRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String mapName;
     /**
      * <p>
-     * Specifies the pricing plan for your map resource. There's three pricing plan options:
+     * Specifies the pricing plan for your map resource.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>RequestBasedUsage</code> — Selects the "Request-Based Usage" pricing plan.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing plan.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MobileAssetManagement</code> — Selects the "Mobile Asset Management" pricing plan.
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * For additional details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
@@ -181,7 +164,7 @@ public class CreateMapRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), and underscores (_).
+     * Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).
      * </p>
      * </li>
      * <li>
@@ -204,7 +187,7 @@ public class CreateMapRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), and underscores (_).
+     *        Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).
      *        </p>
      *        </li>
      *        <li>
@@ -233,7 +216,7 @@ public class CreateMapRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), and underscores (_).
+     * Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).
      * </p>
      * </li>
      * <li>
@@ -255,7 +238,7 @@ public class CreateMapRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), and underscores (_).
+     *         Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).
      *         </p>
      *         </li>
      *         <li>
@@ -284,7 +267,7 @@ public class CreateMapRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), and underscores (_).
+     * Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).
      * </p>
      * </li>
      * <li>
@@ -307,7 +290,7 @@ public class CreateMapRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), and underscores (_).
+     *        Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).
      *        </p>
      *        </li>
      *        <li>
@@ -330,49 +313,15 @@ public class CreateMapRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Specifies the pricing plan for your map resource. There's three pricing plan options:
+     * Specifies the pricing plan for your map resource.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>RequestBasedUsage</code> — Selects the "Request-Based Usage" pricing plan.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing plan.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MobileAssetManagement</code> — Selects the "Mobile Asset Management" pricing plan.
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * For additional details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
      * </p>
      * 
      * @param pricingPlan
-     *        Specifies the pricing plan for your map resource. There's three pricing plan options:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>RequestBasedUsage</code> — Selects the "Request-Based Usage" pricing plan.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing plan.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>MobileAssetManagement</code> — Selects the "Mobile Asset Management" pricing plan.
-     *        </p>
-     *        </li>
-     *        </ul>
+     *        Specifies the pricing plan for your map resource.</p>
      *        <p>
      *        For additional details and restrictions on each pricing plan option, see the <a
      *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
@@ -385,48 +334,14 @@ public class CreateMapRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Specifies the pricing plan for your map resource. There's three pricing plan options:
+     * Specifies the pricing plan for your map resource.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>RequestBasedUsage</code> — Selects the "Request-Based Usage" pricing plan.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing plan.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MobileAssetManagement</code> — Selects the "Mobile Asset Management" pricing plan.
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * For additional details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
      * </p>
      * 
-     * @return Specifies the pricing plan for your map resource. There's three pricing plan options:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>RequestBasedUsage</code> — Selects the "Request-Based Usage" pricing plan.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing plan.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>MobileAssetManagement</code> — Selects the "Mobile Asset Management" pricing plan.
-     *         </p>
-     *         </li>
-     *         </ul>
+     * @return Specifies the pricing plan for your map resource.</p>
      *         <p>
      *         For additional details and restrictions on each pricing plan option, see the <a
      *         href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
@@ -439,49 +354,15 @@ public class CreateMapRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Specifies the pricing plan for your map resource. There's three pricing plan options:
+     * Specifies the pricing plan for your map resource.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>RequestBasedUsage</code> — Selects the "Request-Based Usage" pricing plan.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing plan.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MobileAssetManagement</code> — Selects the "Mobile Asset Management" pricing plan.
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * For additional details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
      * </p>
      * 
      * @param pricingPlan
-     *        Specifies the pricing plan for your map resource. There's three pricing plan options:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>RequestBasedUsage</code> — Selects the "Request-Based Usage" pricing plan.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing plan.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>MobileAssetManagement</code> — Selects the "Mobile Asset Management" pricing plan.
-     *        </p>
-     *        </li>
-     *        </ul>
+     *        Specifies the pricing plan for your map resource.</p>
      *        <p>
      *        For additional details and restrictions on each pricing plan option, see the <a
      *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
@@ -496,49 +377,15 @@ public class CreateMapRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Specifies the pricing plan for your map resource. There's three pricing plan options:
+     * Specifies the pricing plan for your map resource.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>RequestBasedUsage</code> — Selects the "Request-Based Usage" pricing plan.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing plan.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MobileAssetManagement</code> — Selects the "Mobile Asset Management" pricing plan.
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * For additional details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
      * </p>
      * 
      * @param pricingPlan
-     *        Specifies the pricing plan for your map resource. There's three pricing plan options:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>RequestBasedUsage</code> — Selects the "Request-Based Usage" pricing plan.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing plan.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>MobileAssetManagement</code> — Selects the "Mobile Asset Management" pricing plan.
-     *        </p>
-     *        </li>
-     *        </ul>
+     *        Specifies the pricing plan for your map resource.</p>
      *        <p>
      *        For additional details and restrictions on each pricing plan option, see the <a
      *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.

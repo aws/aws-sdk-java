@@ -68,6 +68,16 @@ public class SampledHTTPRequestJsonUnmarshaller implements Unmarshaller<SampledH
                     context.nextToken();
                     sampledHTTPRequest.setRuleNameWithinRuleGroup(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("RequestHeadersInserted", targetDepth)) {
+                    context.nextToken();
+                    sampledHTTPRequest.setRequestHeadersInserted(new ListUnmarshaller<HTTPHeader>(HTTPHeaderJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("ResponseCodeSent", targetDepth)) {
+                    context.nextToken();
+                    sampledHTTPRequest.setResponseCodeSent(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

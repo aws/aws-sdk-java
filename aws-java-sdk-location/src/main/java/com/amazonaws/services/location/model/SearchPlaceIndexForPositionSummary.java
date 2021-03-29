@@ -30,7 +30,24 @@ public class SearchPlaceIndexForPositionSummary implements Serializable, Cloneab
 
     /**
      * <p>
-     * The data provider of geospatial data for the Place index resource.
+     * The data provider of geospatial data. Indicates one of the available providers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Esri
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HERE
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For additional details on data providers, see the <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location
+     * Service data providers page</a>.
      * </p>
      */
     private String dataSource;
@@ -52,11 +69,44 @@ public class SearchPlaceIndexForPositionSummary implements Serializable, Cloneab
 
     /**
      * <p>
-     * The data provider of geospatial data for the Place index resource.
+     * The data provider of geospatial data. Indicates one of the available providers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Esri
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HERE
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For additional details on data providers, see the <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location
+     * Service data providers page</a>.
      * </p>
      * 
      * @param dataSource
-     *        The data provider of geospatial data for the Place index resource.
+     *        The data provider of geospatial data. Indicates one of the available providers:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Esri
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        HERE
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For additional details on data providers, see the <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     *        Location Service data providers page</a>.
      */
 
     public void setDataSource(String dataSource) {
@@ -65,10 +115,43 @@ public class SearchPlaceIndexForPositionSummary implements Serializable, Cloneab
 
     /**
      * <p>
-     * The data provider of geospatial data for the Place index resource.
+     * The data provider of geospatial data. Indicates one of the available providers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Esri
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HERE
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For additional details on data providers, see the <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location
+     * Service data providers page</a>.
      * </p>
      * 
-     * @return The data provider of geospatial data for the Place index resource.
+     * @return The data provider of geospatial data. Indicates one of the available providers:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Esri
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         HERE
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For additional details on data providers, see the <a
+     *         href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     *         Location Service data providers page</a>.
      */
 
     public String getDataSource() {
@@ -77,11 +160,44 @@ public class SearchPlaceIndexForPositionSummary implements Serializable, Cloneab
 
     /**
      * <p>
-     * The data provider of geospatial data for the Place index resource.
+     * The data provider of geospatial data. Indicates one of the available providers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Esri
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HERE
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For additional details on data providers, see the <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location
+     * Service data providers page</a>.
      * </p>
      * 
      * @param dataSource
-     *        The data provider of geospatial data for the Place index resource.
+     *        The data provider of geospatial data. Indicates one of the available providers:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Esri
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        HERE
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For additional details on data providers, see the <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
+     *        Location Service data providers page</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

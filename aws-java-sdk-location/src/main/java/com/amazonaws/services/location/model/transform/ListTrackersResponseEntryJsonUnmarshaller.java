@@ -56,6 +56,14 @@ public class ListTrackersResponseEntryJsonUnmarshaller implements Unmarshaller<L
                     context.nextToken();
                     listTrackersResponseEntry.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PricingPlan", targetDepth)) {
+                    context.nextToken();
+                    listTrackersResponseEntry.setPricingPlan(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PricingPlanDataSource", targetDepth)) {
+                    context.nextToken();
+                    listTrackersResponseEntry.setPricingPlanDataSource(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("TrackerName", targetDepth)) {
                     context.nextToken();
                     listTrackersResponseEntry.setTrackerName(context.getUnmarshaller(String.class).unmarshall(context));

@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.wafv2.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -50,6 +51,8 @@ public class WebACLMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PostProcessFirewallManagerRuleGroups").build();
     private static final MarshallingInfo<Boolean> MANAGEDBYFIREWALLMANAGER_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ManagedByFirewallManager").build();
+    private static final MarshallingInfo<Map> CUSTOMRESPONSEBODIES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomResponseBodies").build();
 
     private static final WebACLMarshaller instance = new WebACLMarshaller();
 
@@ -78,6 +81,7 @@ public class WebACLMarshaller {
             protocolMarshaller.marshall(webACL.getPreProcessFirewallManagerRuleGroups(), PREPROCESSFIREWALLMANAGERRULEGROUPS_BINDING);
             protocolMarshaller.marshall(webACL.getPostProcessFirewallManagerRuleGroups(), POSTPROCESSFIREWALLMANAGERRULEGROUPS_BINDING);
             protocolMarshaller.marshall(webACL.getManagedByFirewallManager(), MANAGEDBYFIREWALLMANAGER_BINDING);
+            protocolMarshaller.marshall(webACL.getCustomResponseBodies(), CUSTOMRESPONSEBODIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

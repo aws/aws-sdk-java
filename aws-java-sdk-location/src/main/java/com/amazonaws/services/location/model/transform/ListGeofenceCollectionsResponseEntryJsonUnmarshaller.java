@@ -60,6 +60,14 @@ public class ListGeofenceCollectionsResponseEntryJsonUnmarshaller implements Unm
                     context.nextToken();
                     listGeofenceCollectionsResponseEntry.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PricingPlan", targetDepth)) {
+                    context.nextToken();
+                    listGeofenceCollectionsResponseEntry.setPricingPlan(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PricingPlanDataSource", targetDepth)) {
+                    context.nextToken();
+                    listGeofenceCollectionsResponseEntry.setPricingPlanDataSource(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("UpdateTime", targetDepth)) {
                     context.nextToken();
                     listGeofenceCollectionsResponseEntry.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));

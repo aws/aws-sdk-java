@@ -64,6 +64,10 @@ public class ListPlaceIndexesResponseEntryJsonUnmarshaller implements Unmarshall
                     context.nextToken();
                     listPlaceIndexesResponseEntry.setIndexName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PricingPlan", targetDepth)) {
+                    context.nextToken();
+                    listPlaceIndexesResponseEntry.setPricingPlan(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("UpdateTime", targetDepth)) {
                     context.nextToken();
                     listPlaceIndexesResponseEntry.setUpdateTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
