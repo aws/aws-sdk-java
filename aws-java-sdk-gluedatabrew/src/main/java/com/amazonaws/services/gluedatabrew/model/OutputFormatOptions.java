@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Options that define the structure of Csv job output.
+ * Represents a set of options that define the structure of comma-separated (CSV) job output.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/OutputFormatOptions" target="_top">AWS API
@@ -30,18 +30,18 @@ public class OutputFormatOptions implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Options that define how DataBrew writes Csv output.
+     * Represents a set of options that define the structure of comma-separated value (CSV) job output.
      * </p>
      */
     private CsvOutputOptions csv;
 
     /**
      * <p>
-     * Options that define how DataBrew writes Csv output.
+     * Represents a set of options that define the structure of comma-separated value (CSV) job output.
      * </p>
      * 
      * @param csv
-     *        Options that define how DataBrew writes Csv output.
+     *        Represents a set of options that define the structure of comma-separated value (CSV) job output.
      */
 
     public void setCsv(CsvOutputOptions csv) {
@@ -50,10 +50,10 @@ public class OutputFormatOptions implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Options that define how DataBrew writes Csv output.
+     * Represents a set of options that define the structure of comma-separated value (CSV) job output.
      * </p>
      * 
-     * @return Options that define how DataBrew writes Csv output.
+     * @return Represents a set of options that define the structure of comma-separated value (CSV) job output.
      */
 
     public CsvOutputOptions getCsv() {
@@ -62,11 +62,11 @@ public class OutputFormatOptions implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Options that define how DataBrew writes Csv output.
+     * Represents a set of options that define the structure of comma-separated value (CSV) job output.
      * </p>
      * 
      * @param csv
-     *        Options that define how DataBrew writes Csv output.
+     *        Represents a set of options that define the structure of comma-separated value (CSV) job output.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

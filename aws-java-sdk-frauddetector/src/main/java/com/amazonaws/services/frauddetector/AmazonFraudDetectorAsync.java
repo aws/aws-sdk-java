@@ -98,6 +98,68 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
 
     /**
      * <p>
+     * Cancels the specified batch prediction job.
+     * </p>
+     * 
+     * @param cancelBatchPredictionJobRequest
+     * @return A Java Future containing the result of the CancelBatchPredictionJob operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.CancelBatchPredictionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CancelBatchPredictionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelBatchPredictionJobResult> cancelBatchPredictionJobAsync(CancelBatchPredictionJobRequest cancelBatchPredictionJobRequest);
+
+    /**
+     * <p>
+     * Cancels the specified batch prediction job.
+     * </p>
+     * 
+     * @param cancelBatchPredictionJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelBatchPredictionJob operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.CancelBatchPredictionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CancelBatchPredictionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelBatchPredictionJobResult> cancelBatchPredictionJobAsync(CancelBatchPredictionJobRequest cancelBatchPredictionJobRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelBatchPredictionJobRequest, CancelBatchPredictionJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a batch prediction job.
+     * </p>
+     * 
+     * @param createBatchPredictionJobRequest
+     * @return A Java Future containing the result of the CreateBatchPredictionJob operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.CreateBatchPredictionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateBatchPredictionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateBatchPredictionJobResult> createBatchPredictionJobAsync(CreateBatchPredictionJobRequest createBatchPredictionJobRequest);
+
+    /**
+     * <p>
+     * Creates a batch prediction job.
+     * </p>
+     * 
+     * @param createBatchPredictionJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateBatchPredictionJob operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.CreateBatchPredictionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateBatchPredictionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateBatchPredictionJobResult> createBatchPredictionJobAsync(CreateBatchPredictionJobRequest createBatchPredictionJobRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateBatchPredictionJobRequest, CreateBatchPredictionJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a detector version. The detector version starts in a <code>DRAFT</code> status.
      * </p>
      * 
@@ -250,6 +312,37 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
      */
     java.util.concurrent.Future<CreateVariableResult> createVariableAsync(CreateVariableRequest createVariableRequest,
             com.amazonaws.handlers.AsyncHandler<CreateVariableRequest, CreateVariableResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a batch prediction job.
+     * </p>
+     * 
+     * @param deleteBatchPredictionJobRequest
+     * @return A Java Future containing the result of the DeleteBatchPredictionJob operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.DeleteBatchPredictionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteBatchPredictionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteBatchPredictionJobResult> deleteBatchPredictionJobAsync(DeleteBatchPredictionJobRequest deleteBatchPredictionJobRequest);
+
+    /**
+     * <p>
+     * Deletes a batch prediction job.
+     * </p>
+     * 
+     * @param deleteBatchPredictionJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteBatchPredictionJob operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.DeleteBatchPredictionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteBatchPredictionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteBatchPredictionJobResult> deleteBatchPredictionJobAsync(DeleteBatchPredictionJobRequest deleteBatchPredictionJobRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteBatchPredictionJobRequest, DeleteBatchPredictionJobResult> asyncHandler);
 
     /**
      * <p>
@@ -846,6 +939,45 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
      */
     java.util.concurrent.Future<DescribeModelVersionsResult> describeModelVersionsAsync(DescribeModelVersionsRequest describeModelVersionsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeModelVersionsRequest, DescribeModelVersionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets all batch prediction jobs or a specific job if you specify a job ID. This is a paginated API. If you provide
+     * a null maxResults, this action retrieves a maximum of 50 records per page. If you provide a maxResults, the value
+     * must be between 1 and 50. To get the next page results, provide the pagination token from the
+     * GetBatchPredictionJobsResponse as part of your request. A null pagination token fetches the records from the
+     * beginning.
+     * </p>
+     * 
+     * @param getBatchPredictionJobsRequest
+     * @return A Java Future containing the result of the GetBatchPredictionJobs operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.GetBatchPredictionJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetBatchPredictionJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetBatchPredictionJobsResult> getBatchPredictionJobsAsync(GetBatchPredictionJobsRequest getBatchPredictionJobsRequest);
+
+    /**
+     * <p>
+     * Gets all batch prediction jobs or a specific job if you specify a job ID. This is a paginated API. If you provide
+     * a null maxResults, this action retrieves a maximum of 50 records per page. If you provide a maxResults, the value
+     * must be between 1 and 50. To get the next page results, provide the pagination token from the
+     * GetBatchPredictionJobsResponse as part of your request. A null pagination token fetches the records from the
+     * beginning.
+     * </p>
+     * 
+     * @param getBatchPredictionJobsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetBatchPredictionJobs operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.GetBatchPredictionJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetBatchPredictionJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetBatchPredictionJobsResult> getBatchPredictionJobsAsync(GetBatchPredictionJobsRequest getBatchPredictionJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetBatchPredictionJobsRequest, GetBatchPredictionJobsResult> asyncHandler);
 
     /**
      * <p>

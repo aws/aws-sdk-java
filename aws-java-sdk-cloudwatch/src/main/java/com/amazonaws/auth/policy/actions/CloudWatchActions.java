@@ -33,6 +33,8 @@ public enum CloudWatchActions implements Action {
     DeleteDashboards("cloudwatch:DeleteDashboards"),
     /** Action for the DeleteInsightRules operation. */
     DeleteInsightRules("cloudwatch:DeleteInsightRules"),
+    /** Action for the DeleteMetricStream operation. */
+    DeleteMetricStream("cloudwatch:DeleteMetricStream"),
     /** Action for the DescribeAlarmHistory operation. */
     DescribeAlarmHistory("cloudwatch:DescribeAlarmHistory"),
     /** Action for the DescribeAlarms operation. */
@@ -59,10 +61,14 @@ public enum CloudWatchActions implements Action {
     GetMetricData("cloudwatch:GetMetricData"),
     /** Action for the GetMetricStatistics operation. */
     GetMetricStatistics("cloudwatch:GetMetricStatistics"),
+    /** Action for the GetMetricStream operation. */
+    GetMetricStream("cloudwatch:GetMetricStream"),
     /** Action for the GetMetricWidgetImage operation. */
     GetMetricWidgetImage("cloudwatch:GetMetricWidgetImage"),
     /** Action for the ListDashboards operation. */
     ListDashboards("cloudwatch:ListDashboards"),
+    /** Action for the ListMetricStreams operation. */
+    ListMetricStreams("cloudwatch:ListMetricStreams"),
     /** Action for the ListMetrics operation. */
     ListMetrics("cloudwatch:ListMetrics"),
     /** Action for the ListTagsForResource operation. */
@@ -79,8 +85,14 @@ public enum CloudWatchActions implements Action {
     PutMetricAlarm("cloudwatch:PutMetricAlarm"),
     /** Action for the PutMetricData operation. */
     PutMetricData("cloudwatch:PutMetricData"),
+    /** Action for the PutMetricStream operation. */
+    PutMetricStream("cloudwatch:PutMetricStream"),
     /** Action for the SetAlarmState operation. */
     SetAlarmState("cloudwatch:SetAlarmState"),
+    /** Action for the StartMetricStreams operation. */
+    StartMetricStreams("cloudwatch:StartMetricStreams"),
+    /** Action for the StopMetricStreams operation. */
+    StopMetricStreams("cloudwatch:StopMetricStreams"),
     /** Action for the TagResource operation. */
     TagResource("cloudwatch:TagResource"),
     /** Action for the UntagResource operation. */

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A collection of settings used for a job.
+ * A collection of settings used for an AutoML job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLJobConfig" target="_top">AWS API
@@ -30,7 +30,7 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * How long a job is allowed to run, or how many candidates a job is allowed to generate.
+     * How long an AutoML job is allowed to run, or how many candidates a job is allowed to generate.
      * </p>
      */
     private AutoMLJobCompletionCriteria completionCriteria;
@@ -43,11 +43,11 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * How long a job is allowed to run, or how many candidates a job is allowed to generate.
+     * How long an AutoML job is allowed to run, or how many candidates a job is allowed to generate.
      * </p>
      * 
      * @param completionCriteria
-     *        How long a job is allowed to run, or how many candidates a job is allowed to generate.
+     *        How long an AutoML job is allowed to run, or how many candidates a job is allowed to generate.
      */
 
     public void setCompletionCriteria(AutoMLJobCompletionCriteria completionCriteria) {
@@ -56,10 +56,10 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * How long a job is allowed to run, or how many candidates a job is allowed to generate.
+     * How long an AutoML job is allowed to run, or how many candidates a job is allowed to generate.
      * </p>
      * 
-     * @return How long a job is allowed to run, or how many candidates a job is allowed to generate.
+     * @return How long an AutoML job is allowed to run, or how many candidates a job is allowed to generate.
      */
 
     public AutoMLJobCompletionCriteria getCompletionCriteria() {
@@ -68,11 +68,11 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * How long a job is allowed to run, or how many candidates a job is allowed to generate.
+     * How long an AutoML job is allowed to run, or how many candidates a job is allowed to generate.
      * </p>
      * 
      * @param completionCriteria
-     *        How long a job is allowed to run, or how many candidates a job is allowed to generate.
+     *        How long an AutoML job is allowed to run, or how many candidates a job is allowed to generate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

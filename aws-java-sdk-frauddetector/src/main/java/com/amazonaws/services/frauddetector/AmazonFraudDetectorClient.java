@@ -276,6 +276,138 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Cancels the specified batch prediction job.
+     * </p>
+     * 
+     * @param cancelBatchPredictionJobRequest
+     * @return Result of the CancelBatchPredictionJob operation returned by the service.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws ResourceNotFoundException
+     *         An exception indicating the specified resource was not found.
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.CancelBatchPredictionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CancelBatchPredictionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CancelBatchPredictionJobResult cancelBatchPredictionJob(CancelBatchPredictionJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelBatchPredictionJob(request);
+    }
+
+    @SdkInternalApi
+    final CancelBatchPredictionJobResult executeCancelBatchPredictionJob(CancelBatchPredictionJobRequest cancelBatchPredictionJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelBatchPredictionJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelBatchPredictionJobRequest> request = null;
+        Response<CancelBatchPredictionJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelBatchPredictionJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(cancelBatchPredictionJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelBatchPredictionJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelBatchPredictionJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CancelBatchPredictionJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a batch prediction job.
+     * </p>
+     * 
+     * @param createBatchPredictionJobRequest
+     * @return Result of the CreateBatchPredictionJob operation returned by the service.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.CreateBatchPredictionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateBatchPredictionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateBatchPredictionJobResult createBatchPredictionJob(CreateBatchPredictionJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateBatchPredictionJob(request);
+    }
+
+    @SdkInternalApi
+    final CreateBatchPredictionJobResult executeCreateBatchPredictionJob(CreateBatchPredictionJobRequest createBatchPredictionJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createBatchPredictionJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateBatchPredictionJobRequest> request = null;
+        Response<CreateBatchPredictionJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateBatchPredictionJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createBatchPredictionJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBatchPredictionJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateBatchPredictionJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateBatchPredictionJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a detector version. The detector version starts in a <code>DRAFT</code> status.
      * </p>
      * 
@@ -590,6 +722,73 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateVariableResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateVariableResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a batch prediction job.
+     * </p>
+     * 
+     * @param deleteBatchPredictionJobRequest
+     * @return Result of the DeleteBatchPredictionJob operation returned by the service.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws ResourceNotFoundException
+     *         An exception indicating the specified resource was not found.
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.DeleteBatchPredictionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteBatchPredictionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteBatchPredictionJobResult deleteBatchPredictionJob(DeleteBatchPredictionJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteBatchPredictionJob(request);
+    }
+
+    @SdkInternalApi
+    final DeleteBatchPredictionJobResult executeDeleteBatchPredictionJob(DeleteBatchPredictionJobRequest deleteBatchPredictionJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteBatchPredictionJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteBatchPredictionJobRequest> request = null;
+        Response<DeleteBatchPredictionJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteBatchPredictionJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteBatchPredictionJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBatchPredictionJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteBatchPredictionJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteBatchPredictionJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1826,6 +2025,76 @@ public class AmazonFraudDetectorClient extends AmazonWebServiceClient implements
             HttpResponseHandler<AmazonWebServiceResponse<DescribeModelVersionsResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new DescribeModelVersionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets all batch prediction jobs or a specific job if you specify a job ID. This is a paginated API. If you provide
+     * a null maxResults, this action retrieves a maximum of 50 records per page. If you provide a maxResults, the value
+     * must be between 1 and 50. To get the next page results, provide the pagination token from the
+     * GetBatchPredictionJobsResponse as part of your request. A null pagination token fetches the records from the
+     * beginning.
+     * </p>
+     * 
+     * @param getBatchPredictionJobsRequest
+     * @return Result of the GetBatchPredictionJobs operation returned by the service.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws ResourceNotFoundException
+     *         An exception indicating the specified resource was not found.
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.GetBatchPredictionJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetBatchPredictionJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetBatchPredictionJobsResult getBatchPredictionJobs(GetBatchPredictionJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetBatchPredictionJobs(request);
+    }
+
+    @SdkInternalApi
+    final GetBatchPredictionJobsResult executeGetBatchPredictionJobs(GetBatchPredictionJobsRequest getBatchPredictionJobsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getBatchPredictionJobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetBatchPredictionJobsRequest> request = null;
+        Response<GetBatchPredictionJobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetBatchPredictionJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBatchPredictionJobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FraudDetector");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBatchPredictionJobs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetBatchPredictionJobsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetBatchPredictionJobsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

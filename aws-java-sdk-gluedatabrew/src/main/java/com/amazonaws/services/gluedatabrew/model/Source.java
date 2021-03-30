@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum Source {
 
     S3("S3"),
-    DATACATALOG("DATA-CATALOG");
+    DATACATALOG("DATA-CATALOG"),
+    DATABASE("DATABASE");
 
     private String value;
 

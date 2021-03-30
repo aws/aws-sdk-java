@@ -473,9 +473,10 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Creates a running App for the specified UserProfile. Supported Apps are JupyterServer and KernelGateway. This
-     * operation is automatically invoked by Amazon SageMaker Studio upon access to the associated Domain, and when new
-     * kernel configurations are selected by the user. A user may have multiple Apps active simultaneously.
+     * Creates a running app for the specified UserProfile. Supported apps are <code>JupyterServer</code> and
+     * <code>KernelGateway</code>. This operation is automatically invoked by Amazon SageMaker Studio upon access to the
+     * associated Domain, and when new kernel configurations are selected by the user. A user may have multiple Apps
+     * active simultaneously.
      * </p>
      * 
      * @param createAppRequest
@@ -657,13 +658,11 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * Creates an Autopilot job.
      * </p>
      * <p>
-     * Find the best performing model after you run an Autopilot job by calling . Deploy that model by following the
-     * steps described in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html">Step 6.1:
-     * Deploy the Model to Amazon SageMaker Hosting Services</a>.
+     * Find the best performing model after you run an Autopilot job by calling .
      * </p>
      * <p>
      * For information about how to use Autopilot, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html"> Automate Model
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html">Automate Model
      * Development with Amazon SageMaker Autopilot</a>.
      * </p>
      * 
@@ -6184,7 +6183,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Returns information about an Amazon SageMaker job.
+     * Returns information about an Amazon SageMaker AutoML job.
      * </p>
      * 
      * @param describeAutoMLJobRequest
@@ -9372,7 +9371,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * List the Candidates created for the job.
+     * List the candidates created for the job.
      * </p>
      * 
      * @param listCandidatesForAutoMLJobRequest

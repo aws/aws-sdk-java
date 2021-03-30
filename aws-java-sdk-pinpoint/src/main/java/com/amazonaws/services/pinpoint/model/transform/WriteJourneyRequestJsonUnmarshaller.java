@@ -97,6 +97,14 @@ public class WriteJourneyRequestJsonUnmarshaller implements Unmarshaller<WriteJo
                     context.nextToken();
                     writeJourneyRequest.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("WaitForQuietTime", targetDepth)) {
+                    context.nextToken();
+                    writeJourneyRequest.setWaitForQuietTime(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("RefreshOnSegmentUpdate", targetDepth)) {
+                    context.nextToken();
+                    writeJourneyRequest.setRefreshOnSegmentUpdate(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

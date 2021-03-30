@@ -80,6 +80,19 @@ public class AbstractAmazonCloudWatchAsync extends AbstractAmazonCloudWatch impl
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteMetricStreamResult> deleteMetricStreamAsync(DeleteMetricStreamRequest request) {
+
+        return deleteMetricStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMetricStreamResult> deleteMetricStreamAsync(DeleteMetricStreamRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteMetricStreamRequest, DeleteMetricStreamResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAlarmHistoryResult> describeAlarmHistoryAsync(DescribeAlarmHistoryRequest request) {
 
         return describeAlarmHistoryAsync(request, null);
@@ -295,6 +308,19 @@ public class AbstractAmazonCloudWatchAsync extends AbstractAmazonCloudWatch impl
     }
 
     @Override
+    public java.util.concurrent.Future<GetMetricStreamResult> getMetricStreamAsync(GetMetricStreamRequest request) {
+
+        return getMetricStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMetricStreamResult> getMetricStreamAsync(GetMetricStreamRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetMetricStreamRequest, GetMetricStreamResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetMetricWidgetImageResult> getMetricWidgetImageAsync(GetMetricWidgetImageRequest request) {
 
         return getMetricWidgetImageAsync(request, null);
@@ -316,6 +342,19 @@ public class AbstractAmazonCloudWatchAsync extends AbstractAmazonCloudWatch impl
     @Override
     public java.util.concurrent.Future<ListDashboardsResult> listDashboardsAsync(ListDashboardsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDashboardsRequest, ListDashboardsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMetricStreamsResult> listMetricStreamsAsync(ListMetricStreamsRequest request) {
+
+        return listMetricStreamsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMetricStreamsResult> listMetricStreamsAsync(ListMetricStreamsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListMetricStreamsRequest, ListMetricStreamsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -448,6 +487,19 @@ public class AbstractAmazonCloudWatchAsync extends AbstractAmazonCloudWatch impl
     }
 
     @Override
+    public java.util.concurrent.Future<PutMetricStreamResult> putMetricStreamAsync(PutMetricStreamRequest request) {
+
+        return putMetricStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutMetricStreamResult> putMetricStreamAsync(PutMetricStreamRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutMetricStreamRequest, PutMetricStreamResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<SetAlarmStateResult> setAlarmStateAsync(SetAlarmStateRequest request) {
 
         return setAlarmStateAsync(request, null);
@@ -456,6 +508,32 @@ public class AbstractAmazonCloudWatchAsync extends AbstractAmazonCloudWatch impl
     @Override
     public java.util.concurrent.Future<SetAlarmStateResult> setAlarmStateAsync(SetAlarmStateRequest request,
             com.amazonaws.handlers.AsyncHandler<SetAlarmStateRequest, SetAlarmStateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMetricStreamsResult> startMetricStreamsAsync(StartMetricStreamsRequest request) {
+
+        return startMetricStreamsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMetricStreamsResult> startMetricStreamsAsync(StartMetricStreamsRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartMetricStreamsRequest, StartMetricStreamsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopMetricStreamsResult> stopMetricStreamsAsync(StopMetricStreamsRequest request) {
+
+        return stopMetricStreamsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopMetricStreamsResult> stopMetricStreamsAsync(StopMetricStreamsRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopMetricStreamsRequest, StopMetricStreamsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

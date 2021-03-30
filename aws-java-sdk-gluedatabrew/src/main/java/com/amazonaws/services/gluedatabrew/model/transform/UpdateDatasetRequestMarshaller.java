@@ -35,6 +35,8 @@ public class UpdateDatasetRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FormatOptions").build();
     private static final MarshallingInfo<StructuredPojo> INPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Input").build();
+    private static final MarshallingInfo<StructuredPojo> PATHOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PathOptions").build();
 
     private static final UpdateDatasetRequestMarshaller instance = new UpdateDatasetRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class UpdateDatasetRequestMarshaller {
             protocolMarshaller.marshall(updateDatasetRequest.getFormat(), FORMAT_BINDING);
             protocolMarshaller.marshall(updateDatasetRequest.getFormatOptions(), FORMATOPTIONS_BINDING);
             protocolMarshaller.marshall(updateDatasetRequest.getInput(), INPUT_BINDING);
+            protocolMarshaller.marshall(updateDatasetRequest.getPathOptions(), PATHOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

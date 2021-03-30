@@ -1,3 +1,36 @@
+# __1.11.988__ __2021-03-30__
+## __AWS Config__
+  - ### Features
+    - Adding new APIs to support ConformancePack Compliance CI in Aggregators
+
+## __AWS EC2 Instance Connect__
+  - ### Features
+    - Adding support to push SSH keys to the EC2 serial console in order to allow an SSH connection to your Amazon EC2 instance's serial port.
+
+## __AWS Glue DataBrew__
+  - ### Features
+    - This SDK release adds two new dataset features: 1) support for specifying a database connection as a dataset input 2) support for dynamic datasets that accept configurable parameters in S3 path.
+
+## __Amazon CloudWatch__
+  - ### Features
+    - SDK update for new Metric Streams feature
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - ReplaceRootVolume feature enables customers to replace the EBS root volume of a running instance to a previously known state. Add support to grant account-level access to the EC2 serial console
+
+## __Amazon Fraud Detector__
+  - ### Features
+    - This release adds support for Batch Predictions in Amazon Fraud Detector.
+
+## __Amazon Pinpoint__
+  - ### Features
+    - Added support for journey pause/resume, journey updatable import segment and journey quiet time wait.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - Amazon SageMaker Autopilot now supports 1) feature importance reports for AutoML jobs and 2) PartialFailures for AutoML jobs
+
 # __1.11.987__ __2021-03-29__
 ## __AWS Glue__
   - ### Features

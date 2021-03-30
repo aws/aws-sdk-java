@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Options that define how DataBrew will write a Csv file.
+ * Represents a set of options that define how DataBrew will write a comma-separated value (CSV) file.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CsvOutputOptions" target="_top">AWS API
@@ -30,18 +30,18 @@ public class CsvOutputOptions implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A single character that specifies the delimiter used to create Csv job output.
+     * A single character that specifies the delimiter used to create CSV job output.
      * </p>
      */
     private String delimiter;
 
     /**
      * <p>
-     * A single character that specifies the delimiter used to create Csv job output.
+     * A single character that specifies the delimiter used to create CSV job output.
      * </p>
      * 
      * @param delimiter
-     *        A single character that specifies the delimiter used to create Csv job output.
+     *        A single character that specifies the delimiter used to create CSV job output.
      */
 
     public void setDelimiter(String delimiter) {
@@ -50,10 +50,10 @@ public class CsvOutputOptions implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A single character that specifies the delimiter used to create Csv job output.
+     * A single character that specifies the delimiter used to create CSV job output.
      * </p>
      * 
-     * @return A single character that specifies the delimiter used to create Csv job output.
+     * @return A single character that specifies the delimiter used to create CSV job output.
      */
 
     public String getDelimiter() {
@@ -62,11 +62,11 @@ public class CsvOutputOptions implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A single character that specifies the delimiter used to create Csv job output.
+     * A single character that specifies the delimiter used to create CSV job output.
      * </p>
      * 
      * @param delimiter
-     *        A single character that specifies the delimiter used to create Csv job output.
+     *        A single character that specifies the delimiter used to create CSV job output.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

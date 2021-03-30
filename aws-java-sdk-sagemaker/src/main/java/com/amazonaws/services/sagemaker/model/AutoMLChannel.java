@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Similar to Channel. A channel is a named input source that training algorithms can consume. Refer to Channel for
- * detailed descriptions.
+ * A channel is a named input source that training algorithms can consume. For more information, see .
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLChannel" target="_top">AWS API
@@ -31,30 +30,30 @@ public class AutoMLChannel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data source.
+     * The data source for an AutoML channel.
      * </p>
      */
     private AutoMLDataSource dataSource;
     /**
      * <p>
-     * You can use Gzip or None. The default value is None.
+     * You can use <code>Gzip</code> or <code>None</code>. The default value is <code>None</code>.
      * </p>
      */
     private String compressionType;
     /**
      * <p>
-     * The name of the target variable in supervised learning, a.k.a. 'y'.
+     * The name of the target variable in supervised learning, usually represented by 'y'.
      * </p>
      */
     private String targetAttributeName;
 
     /**
      * <p>
-     * The data source.
+     * The data source for an AutoML channel.
      * </p>
      * 
      * @param dataSource
-     *        The data source.
+     *        The data source for an AutoML channel.
      */
 
     public void setDataSource(AutoMLDataSource dataSource) {
@@ -63,10 +62,10 @@ public class AutoMLChannel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data source.
+     * The data source for an AutoML channel.
      * </p>
      * 
-     * @return The data source.
+     * @return The data source for an AutoML channel.
      */
 
     public AutoMLDataSource getDataSource() {
@@ -75,11 +74,11 @@ public class AutoMLChannel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data source.
+     * The data source for an AutoML channel.
      * </p>
      * 
      * @param dataSource
-     *        The data source.
+     *        The data source for an AutoML channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +89,11 @@ public class AutoMLChannel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * You can use Gzip or None. The default value is None.
+     * You can use <code>Gzip</code> or <code>None</code>. The default value is <code>None</code>.
      * </p>
      * 
      * @param compressionType
-     *        You can use Gzip or None. The default value is None.
+     *        You can use <code>Gzip</code> or <code>None</code>. The default value is <code>None</code>.
      * @see CompressionType
      */
 
@@ -104,10 +103,10 @@ public class AutoMLChannel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * You can use Gzip or None. The default value is None.
+     * You can use <code>Gzip</code> or <code>None</code>. The default value is <code>None</code>.
      * </p>
      * 
-     * @return You can use Gzip or None. The default value is None.
+     * @return You can use <code>Gzip</code> or <code>None</code>. The default value is <code>None</code>.
      * @see CompressionType
      */
 
@@ -117,11 +116,11 @@ public class AutoMLChannel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * You can use Gzip or None. The default value is None.
+     * You can use <code>Gzip</code> or <code>None</code>. The default value is <code>None</code>.
      * </p>
      * 
      * @param compressionType
-     *        You can use Gzip or None. The default value is None.
+     *        You can use <code>Gzip</code> or <code>None</code>. The default value is <code>None</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CompressionType
      */
@@ -133,11 +132,11 @@ public class AutoMLChannel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * You can use Gzip or None. The default value is None.
+     * You can use <code>Gzip</code> or <code>None</code>. The default value is <code>None</code>.
      * </p>
      * 
      * @param compressionType
-     *        You can use Gzip or None. The default value is None.
+     *        You can use <code>Gzip</code> or <code>None</code>. The default value is <code>None</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CompressionType
      */
@@ -149,11 +148,11 @@ public class AutoMLChannel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the target variable in supervised learning, a.k.a. 'y'.
+     * The name of the target variable in supervised learning, usually represented by 'y'.
      * </p>
      * 
      * @param targetAttributeName
-     *        The name of the target variable in supervised learning, a.k.a. 'y'.
+     *        The name of the target variable in supervised learning, usually represented by 'y'.
      */
 
     public void setTargetAttributeName(String targetAttributeName) {
@@ -162,10 +161,10 @@ public class AutoMLChannel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the target variable in supervised learning, a.k.a. 'y'.
+     * The name of the target variable in supervised learning, usually represented by 'y'.
      * </p>
      * 
-     * @return The name of the target variable in supervised learning, a.k.a. 'y'.
+     * @return The name of the target variable in supervised learning, usually represented by 'y'.
      */
 
     public String getTargetAttributeName() {
@@ -174,11 +173,11 @@ public class AutoMLChannel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the target variable in supervised learning, a.k.a. 'y'.
+     * The name of the target variable in supervised learning, usually represented by 'y'.
      * </p>
      * 
      * @param targetAttributeName
-     *        The name of the target variable in supervised learning, a.k.a. 'y'.
+     *        The name of the target variable in supervised learning, usually represented by 'y'.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

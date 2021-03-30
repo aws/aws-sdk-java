@@ -921,6 +921,57 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
+     * Returns a list of the conformance packs and their associated compliance status with the count of compliant and
+     * noncompliant AWS Config rules within each conformance pack.
+     * </p>
+     * <note>
+     * <p>
+     * The results can return an empty result page, but if you have a <code>nextToken</code>, the results are displayed
+     * on the next page.
+     * </p>
+     * </note>
+     * 
+     * @param describeAggregateComplianceByConformancePacksRequest
+     * @return A Java Future containing the result of the DescribeAggregateComplianceByConformancePacks operation
+     *         returned by the service.
+     * @sample AmazonConfigAsync.DescribeAggregateComplianceByConformancePacks
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConformancePacks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAggregateComplianceByConformancePacksResult> describeAggregateComplianceByConformancePacksAsync(
+            DescribeAggregateComplianceByConformancePacksRequest describeAggregateComplianceByConformancePacksRequest);
+
+    /**
+     * <p>
+     * Returns a list of the conformance packs and their associated compliance status with the count of compliant and
+     * noncompliant AWS Config rules within each conformance pack.
+     * </p>
+     * <note>
+     * <p>
+     * The results can return an empty result page, but if you have a <code>nextToken</code>, the results are displayed
+     * on the next page.
+     * </p>
+     * </note>
+     * 
+     * @param describeAggregateComplianceByConformancePacksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAggregateComplianceByConformancePacks operation
+     *         returned by the service.
+     * @sample AmazonConfigAsyncHandler.DescribeAggregateComplianceByConformancePacks
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConformancePacks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAggregateComplianceByConformancePacksResult> describeAggregateComplianceByConformancePacksAsync(
+            DescribeAggregateComplianceByConformancePacksRequest describeAggregateComplianceByConformancePacksRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAggregateComplianceByConformancePacksRequest, DescribeAggregateComplianceByConformancePacksResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of authorizations granted to various aggregator accounts and regions.
      * </p>
      * 
@@ -2274,6 +2325,57 @@ public interface AmazonConfigAsync extends AmazonConfig {
     java.util.concurrent.Future<GetAggregateConfigRuleComplianceSummaryResult> getAggregateConfigRuleComplianceSummaryAsync(
             GetAggregateConfigRuleComplianceSummaryRequest getAggregateConfigRuleComplianceSummaryRequest,
             com.amazonaws.handlers.AsyncHandler<GetAggregateConfigRuleComplianceSummaryRequest, GetAggregateConfigRuleComplianceSummaryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the count of compliant and noncompliant conformance packs across all AWS Accounts and AWS Regions. You
+     * can filter based on AWS Account ID or AWS Region.
+     * </p>
+     * <note>
+     * <p>
+     * The results can return an empty result page, but if you have a nextToken, the results are displayed on the next
+     * page.
+     * </p>
+     * </note>
+     * 
+     * @param getAggregateConformancePackComplianceSummaryRequest
+     * @return A Java Future containing the result of the GetAggregateConformancePackComplianceSummary operation
+     *         returned by the service.
+     * @sample AmazonConfigAsync.GetAggregateConformancePackComplianceSummary
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConformancePackComplianceSummary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAggregateConformancePackComplianceSummaryResult> getAggregateConformancePackComplianceSummaryAsync(
+            GetAggregateConformancePackComplianceSummaryRequest getAggregateConformancePackComplianceSummaryRequest);
+
+    /**
+     * <p>
+     * Returns the count of compliant and noncompliant conformance packs across all AWS Accounts and AWS Regions. You
+     * can filter based on AWS Account ID or AWS Region.
+     * </p>
+     * <note>
+     * <p>
+     * The results can return an empty result page, but if you have a nextToken, the results are displayed on the next
+     * page.
+     * </p>
+     * </note>
+     * 
+     * @param getAggregateConformancePackComplianceSummaryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAggregateConformancePackComplianceSummary operation
+     *         returned by the service.
+     * @sample AmazonConfigAsyncHandler.GetAggregateConformancePackComplianceSummary
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConformancePackComplianceSummary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAggregateConformancePackComplianceSummaryResult> getAggregateConformancePackComplianceSummaryAsync(
+            GetAggregateConformancePackComplianceSummaryRequest getAggregateConformancePackComplianceSummaryRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAggregateConformancePackComplianceSummaryRequest, GetAggregateConformancePackComplianceSummaryResult> asyncHandler);
 
     /**
      * <p>
@@ -3717,7 +3819,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * conformance pack is created or updated. You cannot update a conformance pack while it is in this state.
      * </p>
      * <p>
-     * You can create 6 conformance packs with 25 AWS Config rules in each pack and 3 delegated administrator per
+     * You can create 50 conformance packs with 25 AWS Config rules in each pack and 3 delegated administrator per
      * organization.
      * </p>
      * </note>
@@ -3762,7 +3864,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * conformance pack is created or updated. You cannot update a conformance pack while it is in this state.
      * </p>
      * <p>
-     * You can create 6 conformance packs with 25 AWS Config rules in each pack and 3 delegated administrator per
+     * You can create 50 conformance packs with 25 AWS Config rules in each pack and 3 delegated administrator per
      * organization.
      * </p>
      * </note>

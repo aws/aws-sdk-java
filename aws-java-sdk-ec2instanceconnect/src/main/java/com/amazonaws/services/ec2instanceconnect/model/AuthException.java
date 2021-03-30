@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Indicates that either your AWS credentials are invalid or you do not have access to the EC2 instance.
+ * Either your AWS credentials are not valid or you do not have access to the EC2 instance.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

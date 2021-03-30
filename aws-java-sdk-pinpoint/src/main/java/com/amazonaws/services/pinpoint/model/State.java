@@ -24,7 +24,8 @@ public enum State {
     ACTIVE("ACTIVE"),
     COMPLETED("COMPLETED"),
     CANCELLED("CANCELLED"),
-    CLOSED("CLOSED");
+    CLOSED("CLOSED"),
+    PAUSED("PAUSED");
 
     private String value;
 

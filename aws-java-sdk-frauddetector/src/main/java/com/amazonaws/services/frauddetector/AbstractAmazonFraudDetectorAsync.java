@@ -54,6 +54,32 @@ public class AbstractAmazonFraudDetectorAsync extends AbstractAmazonFraudDetecto
     }
 
     @Override
+    public java.util.concurrent.Future<CancelBatchPredictionJobResult> cancelBatchPredictionJobAsync(CancelBatchPredictionJobRequest request) {
+
+        return cancelBatchPredictionJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelBatchPredictionJobResult> cancelBatchPredictionJobAsync(CancelBatchPredictionJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<CancelBatchPredictionJobRequest, CancelBatchPredictionJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateBatchPredictionJobResult> createBatchPredictionJobAsync(CreateBatchPredictionJobRequest request) {
+
+        return createBatchPredictionJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateBatchPredictionJobResult> createBatchPredictionJobAsync(CreateBatchPredictionJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateBatchPredictionJobRequest, CreateBatchPredictionJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDetectorVersionResult> createDetectorVersionAsync(CreateDetectorVersionRequest request) {
 
         return createDetectorVersionAsync(request, null);
@@ -114,6 +140,19 @@ public class AbstractAmazonFraudDetectorAsync extends AbstractAmazonFraudDetecto
     @Override
     public java.util.concurrent.Future<CreateVariableResult> createVariableAsync(CreateVariableRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateVariableRequest, CreateVariableResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBatchPredictionJobResult> deleteBatchPredictionJobAsync(DeleteBatchPredictionJobRequest request) {
+
+        return deleteBatchPredictionJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBatchPredictionJobResult> deleteBatchPredictionJobAsync(DeleteBatchPredictionJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteBatchPredictionJobRequest, DeleteBatchPredictionJobResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -296,6 +335,19 @@ public class AbstractAmazonFraudDetectorAsync extends AbstractAmazonFraudDetecto
     @Override
     public java.util.concurrent.Future<DescribeModelVersionsResult> describeModelVersionsAsync(DescribeModelVersionsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeModelVersionsRequest, DescribeModelVersionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBatchPredictionJobsResult> getBatchPredictionJobsAsync(GetBatchPredictionJobsRequest request) {
+
+        return getBatchPredictionJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBatchPredictionJobsResult> getBatchPredictionJobsAsync(GetBatchPredictionJobsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetBatchPredictionJobsRequest, GetBatchPredictionJobsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -912,6 +912,41 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAggregateComplianceByConformancePacksResult> describeAggregateComplianceByConformancePacksAsync(
+            DescribeAggregateComplianceByConformancePacksRequest request) {
+
+        return describeAggregateComplianceByConformancePacksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAggregateComplianceByConformancePacksResult> describeAggregateComplianceByConformancePacksAsync(
+            final DescribeAggregateComplianceByConformancePacksRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAggregateComplianceByConformancePacksRequest, DescribeAggregateComplianceByConformancePacksResult> asyncHandler) {
+        final DescribeAggregateComplianceByConformancePacksRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAggregateComplianceByConformancePacksResult>() {
+            @Override
+            public DescribeAggregateComplianceByConformancePacksResult call() throws Exception {
+                DescribeAggregateComplianceByConformancePacksResult result = null;
+
+                try {
+                    result = executeDescribeAggregateComplianceByConformancePacks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAggregationAuthorizationsResult> describeAggregationAuthorizationsAsync(
             DescribeAggregationAuthorizationsRequest request) {
 
@@ -1947,6 +1982,41 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
 
                 try {
                     result = executeGetAggregateConfigRuleComplianceSummary(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAggregateConformancePackComplianceSummaryResult> getAggregateConformancePackComplianceSummaryAsync(
+            GetAggregateConformancePackComplianceSummaryRequest request) {
+
+        return getAggregateConformancePackComplianceSummaryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAggregateConformancePackComplianceSummaryResult> getAggregateConformancePackComplianceSummaryAsync(
+            final GetAggregateConformancePackComplianceSummaryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAggregateConformancePackComplianceSummaryRequest, GetAggregateConformancePackComplianceSummaryResult> asyncHandler) {
+        final GetAggregateConformancePackComplianceSummaryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAggregateConformancePackComplianceSummaryResult>() {
+            @Override
+            public GetAggregateConformancePackComplianceSummaryResult call() throws Exception {
+                GetAggregateConformancePackComplianceSummaryResult result = null;
+
+                try {
+                    result = executeGetAggregateConformancePackComplianceSummary(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

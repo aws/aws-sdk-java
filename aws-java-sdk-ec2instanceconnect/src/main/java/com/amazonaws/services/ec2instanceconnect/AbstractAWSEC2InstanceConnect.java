@@ -33,6 +33,11 @@ public class AbstractAWSEC2InstanceConnect implements AWSEC2InstanceConnect {
     }
 
     @Override
+    public SendSerialConsoleSSHPublicKeyResult sendSerialConsoleSSHPublicKey(SendSerialConsoleSSHPublicKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public void shutdown() {
         throw new java.lang.UnsupportedOperationException();
     }

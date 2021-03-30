@@ -56,6 +56,12 @@ public class ConformancePackRuleComplianceJsonUnmarshaller implements Unmarshall
                     context.nextToken();
                     conformancePackRuleCompliance.setComplianceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Controls", targetDepth)) {
+                    context.nextToken();
+                    conformancePackRuleCompliance.setControls(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

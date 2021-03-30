@@ -1327,15 +1327,15 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Certificate Manager for Nitro Enclaves</a> in the <i>AWS Nitro Enclaves User Guide</i>.
      * </p>
      * <p>
-     * When the IAM role is associated with the ACM certificate, places the certificate, certificate chain, and
-     * encrypted private key in an Amazon S3 bucket that only the associated IAM role can access. The private key of the
-     * certificate is encrypted with an AWS-managed KMS customer master (CMK) that has an attached attestation-based CMK
-     * policy.
+     * When the IAM role is associated with the ACM certificate, the certificate, certificate chain, and encrypted
+     * private key are placed in an Amazon S3 bucket that only the associated IAM role can access. The private key of
+     * the certificate is encrypted with an AWS-managed KMS customer master (CMK) that has an attached attestation-based
+     * CMK policy.
      * </p>
      * <p>
      * To enable the IAM role to access the Amazon S3 object, you must grant it permission to call
      * <code>s3:GetObject</code> on the Amazon S3 bucket returned by the command. To enable the IAM role to access the
-     * AWS KMS CMK, you must grant it permission to call <code>kms:Decrypt</code> on AWS KMS CMK returned by the
+     * AWS KMS CMK, you must grant it permission to call <code>kms:Decrypt</code> on the AWS KMS CMK returned by the
      * command. For more information, see <a
      * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html#add-policy"> Grant the role
      * permission to access the certificate and encryption key</a> in the <i>AWS Nitro Enclaves User Guide</i>.
@@ -4978,6 +4978,67 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreatePlacementGroupResult> responseHandler = new StaxResponseHandler<CreatePlacementGroupResult>(
                     new CreatePlacementGroupResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a root volume replacement task for an Amazon EC2 instance. The root volume can either be restored to its
+     * initial launch state, or it can be restored using a specific snapshot.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/">Replace a root volume</a> in the <i>Amazon
+     * Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param createReplaceRootVolumeTaskRequest
+     * @return Result of the CreateReplaceRootVolumeTask operation returned by the service.
+     * @sample AmazonEC2.CreateReplaceRootVolumeTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReplaceRootVolumeTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateReplaceRootVolumeTaskResult createReplaceRootVolumeTask(CreateReplaceRootVolumeTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateReplaceRootVolumeTask(request);
+    }
+
+    @SdkInternalApi
+    final CreateReplaceRootVolumeTaskResult executeCreateReplaceRootVolumeTask(CreateReplaceRootVolumeTaskRequest createReplaceRootVolumeTaskRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createReplaceRootVolumeTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateReplaceRootVolumeTaskRequest> request = null;
+        Response<CreateReplaceRootVolumeTaskResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateReplaceRootVolumeTaskRequestMarshaller().marshall(super.beforeMarshalling(createReplaceRootVolumeTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateReplaceRootVolumeTask");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateReplaceRootVolumeTaskResult> responseHandler = new StaxResponseHandler<CreateReplaceRootVolumeTaskResult>(
+                    new CreateReplaceRootVolumeTaskResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -15189,6 +15250,64 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Describes a root volume replacement task. For more information, see <a
+     * href="https://docs.aws.amazon.com/">Replace a root volume</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param describeReplaceRootVolumeTasksRequest
+     * @return Result of the DescribeReplaceRootVolumeTasks operation returned by the service.
+     * @sample AmazonEC2.DescribeReplaceRootVolumeTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReplaceRootVolumeTasks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeReplaceRootVolumeTasksResult describeReplaceRootVolumeTasks(DescribeReplaceRootVolumeTasksRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeReplaceRootVolumeTasks(request);
+    }
+
+    @SdkInternalApi
+    final DescribeReplaceRootVolumeTasksResult executeDescribeReplaceRootVolumeTasks(DescribeReplaceRootVolumeTasksRequest describeReplaceRootVolumeTasksRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeReplaceRootVolumeTasksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeReplaceRootVolumeTasksRequest> request = null;
+        Response<DescribeReplaceRootVolumeTasksResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeReplaceRootVolumeTasksRequestMarshaller().marshall(super.beforeMarshalling(describeReplaceRootVolumeTasksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReplaceRootVolumeTasks");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeReplaceRootVolumeTasksResult> responseHandler = new StaxResponseHandler<DescribeReplaceRootVolumeTasksResult>(
+                    new DescribeReplaceRootVolumeTasksResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes one or more of the Reserved Instances that you purchased.
      * </p>
      * <p>
@@ -18724,6 +18843,65 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Disables access to the EC2 serial console of all instances for your account. By default, access to the EC2 serial
+     * console is disabled for your account. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access"
+     * >Manage account access to the EC2 serial console</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param disableSerialConsoleAccessRequest
+     * @return Result of the DisableSerialConsoleAccess operation returned by the service.
+     * @sample AmazonEC2.DisableSerialConsoleAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableSerialConsoleAccess" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DisableSerialConsoleAccessResult disableSerialConsoleAccess(DisableSerialConsoleAccessRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableSerialConsoleAccess(request);
+    }
+
+    @SdkInternalApi
+    final DisableSerialConsoleAccessResult executeDisableSerialConsoleAccess(DisableSerialConsoleAccessRequest disableSerialConsoleAccessRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disableSerialConsoleAccessRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisableSerialConsoleAccessRequest> request = null;
+        Response<DisableSerialConsoleAccessResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisableSerialConsoleAccessRequestMarshaller().marshall(super.beforeMarshalling(disableSerialConsoleAccessRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableSerialConsoleAccess");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DisableSerialConsoleAccessResult> responseHandler = new StaxResponseHandler<DisableSerialConsoleAccessResult>(
+                    new DisableSerialConsoleAccessResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Disables the specified resource attachment from propagating routes to the specified propagation route table.
      * </p>
      * 
@@ -19526,8 +19704,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Enables EBS encryption by default for your account in the current Region.
      * </p>
      * <p>
-     * After you enable encryption by default, the EBS volumes that you create are are always encrypted, either using
-     * the default CMK or the CMK that you specified when you created each volume. For more information, see <a
+     * After you enable encryption by default, the EBS volumes that you create are always encrypted, either using the
+     * default CMK or the CMK that you specified when you created each volume. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -19651,6 +19829,65 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<EnableFastSnapshotRestoresResult> responseHandler = new StaxResponseHandler<EnableFastSnapshotRestoresResult>(
                     new EnableFastSnapshotRestoresResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Enables access to the EC2 serial console of all instances for your account. By default, access to the EC2 serial
+     * console is disabled for your account. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access"
+     * >Manage account access to the EC2 serial console</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param enableSerialConsoleAccessRequest
+     * @return Result of the EnableSerialConsoleAccess operation returned by the service.
+     * @sample AmazonEC2.EnableSerialConsoleAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableSerialConsoleAccess" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public EnableSerialConsoleAccessResult enableSerialConsoleAccess(EnableSerialConsoleAccessRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableSerialConsoleAccess(request);
+    }
+
+    @SdkInternalApi
+    final EnableSerialConsoleAccessResult executeEnableSerialConsoleAccess(EnableSerialConsoleAccessRequest enableSerialConsoleAccessRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(enableSerialConsoleAccessRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<EnableSerialConsoleAccessRequest> request = null;
+        Response<EnableSerialConsoleAccessResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new EnableSerialConsoleAccessRequestMarshaller().marshall(super.beforeMarshalling(enableSerialConsoleAccessRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableSerialConsoleAccess");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<EnableSerialConsoleAccessResult> responseHandler = new StaxResponseHandler<EnableSerialConsoleAccessResult>(
+                    new EnableSerialConsoleAccessResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -21164,6 +21401,65 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetReservedInstancesExchangeQuoteResult> responseHandler = new StaxResponseHandler<GetReservedInstancesExchangeQuoteResult>(
                     new GetReservedInstancesExchangeQuoteResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the access status of your account to the EC2 serial console of all instances. By default, access to the
+     * EC2 serial console is disabled for your account. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access"
+     * >Manage account access to the EC2 serial console</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param getSerialConsoleAccessStatusRequest
+     * @return Result of the GetSerialConsoleAccessStatus operation returned by the service.
+     * @sample AmazonEC2.GetSerialConsoleAccessStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSerialConsoleAccessStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetSerialConsoleAccessStatusResult getSerialConsoleAccessStatus(GetSerialConsoleAccessStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSerialConsoleAccessStatus(request);
+    }
+
+    @SdkInternalApi
+    final GetSerialConsoleAccessStatusResult executeGetSerialConsoleAccessStatus(GetSerialConsoleAccessStatusRequest getSerialConsoleAccessStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSerialConsoleAccessStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSerialConsoleAccessStatusRequest> request = null;
+        Response<GetSerialConsoleAccessStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSerialConsoleAccessStatusRequestMarshaller().marshall(super.beforeMarshalling(getSerialConsoleAccessStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSerialConsoleAccessStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetSerialConsoleAccessStatusResult> responseHandler = new StaxResponseHandler<GetSerialConsoleAccessStatusResult>(
+                    new GetSerialConsoleAccessStatusResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 

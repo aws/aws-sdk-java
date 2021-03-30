@@ -59,6 +59,11 @@ public class AbstractAmazonCloudWatch implements AmazonCloudWatch {
     }
 
     @Override
+    public DeleteMetricStreamResult deleteMetricStream(DeleteMetricStreamRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeAlarmHistoryResult describeAlarmHistory(DescribeAlarmHistoryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -134,12 +139,22 @@ public class AbstractAmazonCloudWatch implements AmazonCloudWatch {
     }
 
     @Override
+    public GetMetricStreamResult getMetricStream(GetMetricStreamRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetMetricWidgetImageResult getMetricWidgetImage(GetMetricWidgetImageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ListDashboardsResult listDashboards(ListDashboardsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListMetricStreamsResult listMetricStreams(ListMetricStreamsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -189,7 +204,22 @@ public class AbstractAmazonCloudWatch implements AmazonCloudWatch {
     }
 
     @Override
+    public PutMetricStreamResult putMetricStream(PutMetricStreamRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SetAlarmStateResult setAlarmState(SetAlarmStateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartMetricStreamsResult startMetricStreams(StartMetricStreamsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopMetricStreamsResult stopMetricStreams(StopMetricStreamsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

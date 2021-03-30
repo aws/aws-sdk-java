@@ -43,7 +43,7 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
     private String name;
     /**
      * <p>
-     * Specifies the file format of a dataset created from an S3 file or folder.
+     * The file format of a dataset that is created from an S3 file or folder.
      * </p>
      */
     private String format;
@@ -69,6 +69,12 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      */
     private String source;
+    /**
+     * <p>
+     * A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     * </p>
+     */
+    private PathOptions pathOptions;
     /**
      * <p>
      * Metadata tags associated with this dataset.
@@ -204,11 +210,11 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Specifies the file format of a dataset created from an S3 file or folder.
+     * The file format of a dataset that is created from an S3 file or folder.
      * </p>
      * 
      * @param format
-     *        Specifies the file format of a dataset created from an S3 file or folder.
+     *        The file format of a dataset that is created from an S3 file or folder.
      * @see InputFormat
      */
 
@@ -218,10 +224,10 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Specifies the file format of a dataset created from an S3 file or folder.
+     * The file format of a dataset that is created from an S3 file or folder.
      * </p>
      * 
-     * @return Specifies the file format of a dataset created from an S3 file or folder.
+     * @return The file format of a dataset that is created from an S3 file or folder.
      * @see InputFormat
      */
 
@@ -231,11 +237,11 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Specifies the file format of a dataset created from an S3 file or folder.
+     * The file format of a dataset that is created from an S3 file or folder.
      * </p>
      * 
      * @param format
-     *        Specifies the file format of a dataset created from an S3 file or folder.
+     *        The file format of a dataset that is created from an S3 file or folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputFormat
      */
@@ -247,11 +253,11 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Specifies the file format of a dataset created from an S3 file or folder.
+     * The file format of a dataset that is created from an S3 file or folder.
      * </p>
      * 
      * @param format
-     *        Specifies the file format of a dataset created from an S3 file or folder.
+     *        The file format of a dataset that is created from an S3 file or folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputFormat
      */
@@ -454,6 +460,46 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
+     * A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     * </p>
+     * 
+     * @param pathOptions
+     *        A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     */
+
+    public void setPathOptions(PathOptions pathOptions) {
+        this.pathOptions = pathOptions;
+    }
+
+    /**
+     * <p>
+     * A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     * </p>
+     * 
+     * @return A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     */
+
+    public PathOptions getPathOptions() {
+        return this.pathOptions;
+    }
+
+    /**
+     * <p>
+     * A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     * </p>
+     * 
+     * @param pathOptions
+     *        A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDatasetResult withPathOptions(PathOptions pathOptions) {
+        setPathOptions(pathOptions);
+        return this;
+    }
+
+    /**
+     * <p>
      * Metadata tags associated with this dataset.
      * </p>
      * 
@@ -590,6 +636,8 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
             sb.append("LastModifiedBy: ").append(getLastModifiedBy()).append(",");
         if (getSource() != null)
             sb.append("Source: ").append(getSource()).append(",");
+        if (getPathOptions() != null)
+            sb.append("PathOptions: ").append(getPathOptions()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getResourceArn() != null)
@@ -644,6 +692,10 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getSource() != null && other.getSource().equals(this.getSource()) == false)
             return false;
+        if (other.getPathOptions() == null ^ this.getPathOptions() == null)
+            return false;
+        if (other.getPathOptions() != null && other.getPathOptions().equals(this.getPathOptions()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -669,6 +721,7 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
         hashCode = prime * hashCode + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedBy() == null) ? 0 : getLastModifiedBy().hashCode());
         hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode());
+        hashCode = prime * hashCode + ((getPathOptions() == null) ? 0 : getPathOptions().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
         return hashCode;

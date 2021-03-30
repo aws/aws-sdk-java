@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Options that define how DataBrew will read a Csv file when creating a dataset from that file.
+ * Represents a set of options that define how DataBrew will read a comma-separated value (CSV) file when creating a
+ * dataset from that file.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CsvOptions" target="_top">AWS API
@@ -30,25 +31,25 @@ public class CsvOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A single character that specifies the delimiter being used in the Csv file.
+     * A single character that specifies the delimiter being used in the CSV file.
      * </p>
      */
     private String delimiter;
     /**
      * <p>
-     * A variable that specifies whether the first row in the file will be parsed as the header. If false, column names
-     * will be auto-generated.
+     * A variable that specifies whether the first row in the file is parsed as the header. If this value is false,
+     * column names are auto-generated.
      * </p>
      */
     private Boolean headerRow;
 
     /**
      * <p>
-     * A single character that specifies the delimiter being used in the Csv file.
+     * A single character that specifies the delimiter being used in the CSV file.
      * </p>
      * 
      * @param delimiter
-     *        A single character that specifies the delimiter being used in the Csv file.
+     *        A single character that specifies the delimiter being used in the CSV file.
      */
 
     public void setDelimiter(String delimiter) {
@@ -57,10 +58,10 @@ public class CsvOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A single character that specifies the delimiter being used in the Csv file.
+     * A single character that specifies the delimiter being used in the CSV file.
      * </p>
      * 
-     * @return A single character that specifies the delimiter being used in the Csv file.
+     * @return A single character that specifies the delimiter being used in the CSV file.
      */
 
     public String getDelimiter() {
@@ -69,11 +70,11 @@ public class CsvOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A single character that specifies the delimiter being used in the Csv file.
+     * A single character that specifies the delimiter being used in the CSV file.
      * </p>
      * 
      * @param delimiter
-     *        A single character that specifies the delimiter being used in the Csv file.
+     *        A single character that specifies the delimiter being used in the CSV file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,13 +85,13 @@ public class CsvOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A variable that specifies whether the first row in the file will be parsed as the header. If false, column names
-     * will be auto-generated.
+     * A variable that specifies whether the first row in the file is parsed as the header. If this value is false,
+     * column names are auto-generated.
      * </p>
      * 
      * @param headerRow
-     *        A variable that specifies whether the first row in the file will be parsed as the header. If false, column
-     *        names will be auto-generated.
+     *        A variable that specifies whether the first row in the file is parsed as the header. If this value is
+     *        false, column names are auto-generated.
      */
 
     public void setHeaderRow(Boolean headerRow) {
@@ -99,12 +100,12 @@ public class CsvOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A variable that specifies whether the first row in the file will be parsed as the header. If false, column names
-     * will be auto-generated.
+     * A variable that specifies whether the first row in the file is parsed as the header. If this value is false,
+     * column names are auto-generated.
      * </p>
      * 
-     * @return A variable that specifies whether the first row in the file will be parsed as the header. If false,
-     *         column names will be auto-generated.
+     * @return A variable that specifies whether the first row in the file is parsed as the header. If this value is
+     *         false, column names are auto-generated.
      */
 
     public Boolean getHeaderRow() {
@@ -113,13 +114,13 @@ public class CsvOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A variable that specifies whether the first row in the file will be parsed as the header. If false, column names
-     * will be auto-generated.
+     * A variable that specifies whether the first row in the file is parsed as the header. If this value is false,
+     * column names are auto-generated.
      * </p>
      * 
      * @param headerRow
-     *        A variable that specifies whether the first row in the file will be parsed as the header. If false, column
-     *        names will be auto-generated.
+     *        A variable that specifies whether the first row in the file is parsed as the header. If this value is
+     *        false, column names are auto-generated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,12 +131,12 @@ public class CsvOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A variable that specifies whether the first row in the file will be parsed as the header. If false, column names
-     * will be auto-generated.
+     * A variable that specifies whether the first row in the file is parsed as the header. If this value is false,
+     * column names are auto-generated.
      * </p>
      * 
-     * @return A variable that specifies whether the first row in the file will be parsed as the header. If false,
-     *         column names will be auto-generated.
+     * @return A variable that specifies whether the first row in the file is parsed as the header. If this value is
+     *         false, column names are auto-generated.
      */
 
     public Boolean isHeaderRow() {

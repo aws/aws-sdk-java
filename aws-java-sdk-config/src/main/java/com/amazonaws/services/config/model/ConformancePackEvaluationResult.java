@@ -32,6 +32,7 @@ public class ConformancePackEvaluationResult implements Serializable, Cloneable,
     /**
      * <p>
      * The compliance type. The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     * <code>INSUFFICIENT_DATA</code> is not supported.
      * </p>
      */
     private String complianceType;
@@ -59,10 +60,12 @@ public class ConformancePackEvaluationResult implements Serializable, Cloneable,
     /**
      * <p>
      * The compliance type. The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     * <code>INSUFFICIENT_DATA</code> is not supported.
      * </p>
      * 
      * @param complianceType
      *        The compliance type. The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     *        <code>INSUFFICIENT_DATA</code> is not supported.
      * @see ConformancePackComplianceType
      */
 
@@ -73,9 +76,11 @@ public class ConformancePackEvaluationResult implements Serializable, Cloneable,
     /**
      * <p>
      * The compliance type. The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     * <code>INSUFFICIENT_DATA</code> is not supported.
      * </p>
      * 
      * @return The compliance type. The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     *         <code>INSUFFICIENT_DATA</code> is not supported.
      * @see ConformancePackComplianceType
      */
 
@@ -86,10 +91,12 @@ public class ConformancePackEvaluationResult implements Serializable, Cloneable,
     /**
      * <p>
      * The compliance type. The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     * <code>INSUFFICIENT_DATA</code> is not supported.
      * </p>
      * 
      * @param complianceType
      *        The compliance type. The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     *        <code>INSUFFICIENT_DATA</code> is not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConformancePackComplianceType
      */
@@ -102,10 +109,12 @@ public class ConformancePackEvaluationResult implements Serializable, Cloneable,
     /**
      * <p>
      * The compliance type. The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     * <code>INSUFFICIENT_DATA</code> is not supported.
      * </p>
      * 
      * @param complianceType
      *        The compliance type. The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     *        <code>INSUFFICIENT_DATA</code> is not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConformancePackComplianceType
      */

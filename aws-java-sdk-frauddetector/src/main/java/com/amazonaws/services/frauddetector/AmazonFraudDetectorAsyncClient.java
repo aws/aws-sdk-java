@@ -144,6 +144,72 @@ public class AmazonFraudDetectorAsyncClient extends AmazonFraudDetectorClient im
     }
 
     @Override
+    public java.util.concurrent.Future<CancelBatchPredictionJobResult> cancelBatchPredictionJobAsync(CancelBatchPredictionJobRequest request) {
+
+        return cancelBatchPredictionJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelBatchPredictionJobResult> cancelBatchPredictionJobAsync(final CancelBatchPredictionJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CancelBatchPredictionJobRequest, CancelBatchPredictionJobResult> asyncHandler) {
+        final CancelBatchPredictionJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CancelBatchPredictionJobResult>() {
+            @Override
+            public CancelBatchPredictionJobResult call() throws Exception {
+                CancelBatchPredictionJobResult result = null;
+
+                try {
+                    result = executeCancelBatchPredictionJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateBatchPredictionJobResult> createBatchPredictionJobAsync(CreateBatchPredictionJobRequest request) {
+
+        return createBatchPredictionJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateBatchPredictionJobResult> createBatchPredictionJobAsync(final CreateBatchPredictionJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateBatchPredictionJobRequest, CreateBatchPredictionJobResult> asyncHandler) {
+        final CreateBatchPredictionJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateBatchPredictionJobResult>() {
+            @Override
+            public CreateBatchPredictionJobResult call() throws Exception {
+                CreateBatchPredictionJobResult result = null;
+
+                try {
+                    result = executeCreateBatchPredictionJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDetectorVersionResult> createDetectorVersionAsync(CreateDetectorVersionRequest request) {
 
         return createDetectorVersionAsync(request, null);
@@ -293,6 +359,39 @@ public class AmazonFraudDetectorAsyncClient extends AmazonFraudDetectorClient im
 
                 try {
                     result = executeCreateVariable(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBatchPredictionJobResult> deleteBatchPredictionJobAsync(DeleteBatchPredictionJobRequest request) {
+
+        return deleteBatchPredictionJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBatchPredictionJobResult> deleteBatchPredictionJobAsync(final DeleteBatchPredictionJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteBatchPredictionJobRequest, DeleteBatchPredictionJobResult> asyncHandler) {
+        final DeleteBatchPredictionJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteBatchPredictionJobResult>() {
+            @Override
+            public DeleteBatchPredictionJobResult call() throws Exception {
+                DeleteBatchPredictionJobResult result = null;
+
+                try {
+                    result = executeDeleteBatchPredictionJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -755,6 +854,39 @@ public class AmazonFraudDetectorAsyncClient extends AmazonFraudDetectorClient im
 
                 try {
                     result = executeDescribeModelVersions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBatchPredictionJobsResult> getBatchPredictionJobsAsync(GetBatchPredictionJobsRequest request) {
+
+        return getBatchPredictionJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBatchPredictionJobsResult> getBatchPredictionJobsAsync(final GetBatchPredictionJobsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetBatchPredictionJobsRequest, GetBatchPredictionJobsResult> asyncHandler) {
+        final GetBatchPredictionJobsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetBatchPredictionJobsResult>() {
+            @Override
+            public GetBatchPredictionJobsResult call() throws Exception {
+                GetBatchPredictionJobsResult result = null;
+
+                try {
+                    result = executeGetBatchPredictionJobs(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

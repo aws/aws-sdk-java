@@ -84,8 +84,8 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
     private String resourceArn;
     /**
      * <p>
-     * The sample size and sampling type to apply to the data. If this parameter isn't specified, then the sample will
-     * consiste of the first 500 rows from the dataset.
+     * The sample size and sampling type to apply to the data. If this parameter isn't specified, then the sample
+     * consists of the first 500 rows from the dataset.
      * </p>
      */
     private Sample sample;
@@ -476,13 +476,13 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The sample size and sampling type to apply to the data. If this parameter isn't specified, then the sample will
-     * consiste of the first 500 rows from the dataset.
+     * The sample size and sampling type to apply to the data. If this parameter isn't specified, then the sample
+     * consists of the first 500 rows from the dataset.
      * </p>
      * 
      * @param sample
      *        The sample size and sampling type to apply to the data. If this parameter isn't specified, then the sample
-     *        will consiste of the first 500 rows from the dataset.
+     *        consists of the first 500 rows from the dataset.
      */
 
     public void setSample(Sample sample) {
@@ -491,12 +491,12 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The sample size and sampling type to apply to the data. If this parameter isn't specified, then the sample will
-     * consiste of the first 500 rows from the dataset.
+     * The sample size and sampling type to apply to the data. If this parameter isn't specified, then the sample
+     * consists of the first 500 rows from the dataset.
      * </p>
      * 
      * @return The sample size and sampling type to apply to the data. If this parameter isn't specified, then the
-     *         sample will consiste of the first 500 rows from the dataset.
+     *         sample consists of the first 500 rows from the dataset.
      */
 
     public Sample getSample() {
@@ -505,13 +505,13 @@ public class Project implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The sample size and sampling type to apply to the data. If this parameter isn't specified, then the sample will
-     * consiste of the first 500 rows from the dataset.
+     * The sample size and sampling type to apply to the data. If this parameter isn't specified, then the sample
+     * consists of the first 500 rows from the dataset.
      * </p>
      * 
      * @param sample
      *        The sample size and sampling type to apply to the data. If this parameter isn't specified, then the sample
-     *        will consiste of the first 500 rows from the dataset.
+     *        consists of the first 500 rows from the dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

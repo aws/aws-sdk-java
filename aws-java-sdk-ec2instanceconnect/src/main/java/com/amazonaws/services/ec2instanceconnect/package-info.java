@@ -13,8 +13,8 @@
 
 /**
  * <p>
- * AWS EC2 Connect Service is a service that enables system administrators to publish temporary SSH keys to their EC2
- * instances in order to establish connections to their instances without leaving a permanent authentication option.
+ * Amazon EC2 Instance Connect enables system administrators to publish one-time use SSH public keys to EC2, providing
+ * users a simple and secure way to connect to their instances.
  * </p>
  */
 package com.amazonaws.services.ec2instanceconnect;

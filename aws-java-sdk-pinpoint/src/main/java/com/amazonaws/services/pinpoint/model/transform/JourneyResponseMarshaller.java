@@ -59,6 +59,10 @@ public class JourneyResponseMarshaller {
             .marshallLocationName("State").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<Boolean> WAITFORQUIETTIME_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WaitForQuietTime").build();
+    private static final MarshallingInfo<Boolean> REFRESHONSEGMENTUPDATE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RefreshOnSegmentUpdate").build();
 
     private static final JourneyResponseMarshaller instance = new JourneyResponseMarshaller();
 
@@ -91,6 +95,8 @@ public class JourneyResponseMarshaller {
             protocolMarshaller.marshall(journeyResponse.getStartCondition(), STARTCONDITION_BINDING);
             protocolMarshaller.marshall(journeyResponse.getState(), STATE_BINDING);
             protocolMarshaller.marshall(journeyResponse.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(journeyResponse.getWaitForQuietTime(), WAITFORQUIETTIME_BINDING);
+            protocolMarshaller.marshall(journeyResponse.getRefreshOnSegmentUpdate(), REFRESHONSEGMENTUPDATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

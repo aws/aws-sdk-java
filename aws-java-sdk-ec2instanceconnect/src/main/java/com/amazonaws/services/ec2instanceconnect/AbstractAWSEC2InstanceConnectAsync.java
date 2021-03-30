@@ -40,4 +40,17 @@ public class AbstractAWSEC2InstanceConnectAsync extends AbstractAWSEC2InstanceCo
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Override
+    public java.util.concurrent.Future<SendSerialConsoleSSHPublicKeyResult> sendSerialConsoleSSHPublicKeyAsync(SendSerialConsoleSSHPublicKeyRequest request) {
+
+        return sendSerialConsoleSSHPublicKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendSerialConsoleSSHPublicKeyResult> sendSerialConsoleSSHPublicKeyAsync(SendSerialConsoleSSHPublicKeyRequest request,
+            com.amazonaws.handlers.AsyncHandler<SendSerialConsoleSSHPublicKeyRequest, SendSerialConsoleSSHPublicKeyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
 }

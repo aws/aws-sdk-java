@@ -223,6 +223,37 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
 
     /**
      * <p>
+     * Permanently deletes the metric stream that you specify.
+     * </p>
+     * 
+     * @param deleteMetricStreamRequest
+     * @return A Java Future containing the result of the DeleteMetricStream operation returned by the service.
+     * @sample AmazonCloudWatchAsync.DeleteMetricStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteMetricStream" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteMetricStreamResult> deleteMetricStreamAsync(DeleteMetricStreamRequest deleteMetricStreamRequest);
+
+    /**
+     * <p>
+     * Permanently deletes the metric stream that you specify.
+     * </p>
+     * 
+     * @param deleteMetricStreamRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteMetricStream operation returned by the service.
+     * @sample AmazonCloudWatchAsyncHandler.DeleteMetricStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteMetricStream" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteMetricStreamResult> deleteMetricStreamAsync(DeleteMetricStreamRequest deleteMetricStreamRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteMetricStreamRequest, DeleteMetricStreamResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves the history for the specified alarm. You can filter the results by date range or item type. If an alarm
      * name is not specified, the histories for either all metric alarms or all composite alarms are returned.
      * </p>
@@ -1052,6 +1083,37 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
 
     /**
      * <p>
+     * Returns information about the metric stream that you specify.
+     * </p>
+     * 
+     * @param getMetricStreamRequest
+     * @return A Java Future containing the result of the GetMetricStream operation returned by the service.
+     * @sample AmazonCloudWatchAsync.GetMetricStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStream" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetMetricStreamResult> getMetricStreamAsync(GetMetricStreamRequest getMetricStreamRequest);
+
+    /**
+     * <p>
+     * Returns information about the metric stream that you specify.
+     * </p>
+     * 
+     * @param getMetricStreamRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMetricStream operation returned by the service.
+     * @sample AmazonCloudWatchAsyncHandler.GetMetricStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStream" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetMetricStreamResult> getMetricStreamAsync(GetMetricStreamRequest getMetricStreamRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMetricStreamRequest, GetMetricStreamResult> asyncHandler);
+
+    /**
+     * <p>
      * You can use the <code>GetMetricWidgetImage</code> API to retrieve a snapshot graph of one or more Amazon
      * CloudWatch metrics as a bitmap image. You can then embed this image into your services and products, such as wiki
      * pages, reports, and documents. You could also retrieve images regularly, such as every minute, and create your
@@ -1169,6 +1231,37 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      */
     java.util.concurrent.Future<ListDashboardsResult> listDashboardsAsync(ListDashboardsRequest listDashboardsRequest,
             com.amazonaws.handlers.AsyncHandler<ListDashboardsRequest, ListDashboardsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of metric streams in this account.
+     * </p>
+     * 
+     * @param listMetricStreamsRequest
+     * @return A Java Future containing the result of the ListMetricStreams operation returned by the service.
+     * @sample AmazonCloudWatchAsync.ListMetricStreams
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetricStreams" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMetricStreamsResult> listMetricStreamsAsync(ListMetricStreamsRequest listMetricStreamsRequest);
+
+    /**
+     * <p>
+     * Returns a list of metric streams in this account.
+     * </p>
+     * 
+     * @param listMetricStreamsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListMetricStreams operation returned by the service.
+     * @sample AmazonCloudWatchAsyncHandler.ListMetricStreams
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetricStreams" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMetricStreamsResult> listMetricStreamsAsync(ListMetricStreamsRequest listMetricStreamsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListMetricStreamsRequest, ListMetricStreamsResult> asyncHandler);
 
     /**
      * <p>
@@ -1594,7 +1687,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * </ul>
      * <p>
      * The first time you create an alarm in the AWS Management Console, the CLI, or by using the PutMetricAlarm API,
-     * CloudWatch creates the necessary service-linked rolea for you. The service-linked roles are called
+     * CloudWatch creates the necessary service-linked role for you. The service-linked roles are called
      * <code>AWSServiceRoleForCloudWatchEvents</code> and <code>AWSServiceRoleForCloudWatchAlarms_ActionSSM</code>. For
      * more information, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role"
@@ -1643,7 +1736,7 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      * </ul>
      * <p>
      * The first time you create an alarm in the AWS Management Console, the CLI, or by using the PutMetricAlarm API,
-     * CloudWatch creates the necessary service-linked rolea for you. The service-linked roles are called
+     * CloudWatch creates the necessary service-linked role for you. The service-linked roles are called
      * <code>AWSServiceRoleForCloudWatchEvents</code> and <code>AWSServiceRoleForCloudWatchAlarms_ActionSSM</code>. For
      * more information, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role"
@@ -1810,6 +1903,109 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
 
     /**
      * <p>
+     * Creates or updates a metric stream. Metric streams can automatically stream CloudWatch metrics to AWS
+     * destinations including Amazon S3 and to many third-party solutions.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Metric-Streams.html"> Using Metric
+     * Streams</a>.
+     * </p>
+     * <p>
+     * To create a metric stream, you must be logged on to an account that has the <code>iam:PassRole</code> permission
+     * and either the <code>CloudWatchFullAccess</code> policy or the <code>cloudwatch:PutMetricStream</code>
+     * permission.
+     * </p>
+     * <p>
+     * When you create or update a metric stream, you choose one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Stream metrics from all metric namespaces in the account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Stream metrics from all metric namespaces in the account, except for the namespaces that you list in
+     * <code>ExcludeFilters</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Stream metrics from only the metric namespaces that you list in <code>IncludeFilters</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When you use <code>PutMetricStream</code> to create a new metric stream, the stream is created in the
+     * <code>running</code> state. If you use it to update an existing stream, the state of the stream is not changed.
+     * </p>
+     * 
+     * @param putMetricStreamRequest
+     * @return A Java Future containing the result of the PutMetricStream operation returned by the service.
+     * @sample AmazonCloudWatchAsync.PutMetricStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricStream" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutMetricStreamResult> putMetricStreamAsync(PutMetricStreamRequest putMetricStreamRequest);
+
+    /**
+     * <p>
+     * Creates or updates a metric stream. Metric streams can automatically stream CloudWatch metrics to AWS
+     * destinations including Amazon S3 and to many third-party solutions.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Metric-Streams.html"> Using Metric
+     * Streams</a>.
+     * </p>
+     * <p>
+     * To create a metric stream, you must be logged on to an account that has the <code>iam:PassRole</code> permission
+     * and either the <code>CloudWatchFullAccess</code> policy or the <code>cloudwatch:PutMetricStream</code>
+     * permission.
+     * </p>
+     * <p>
+     * When you create or update a metric stream, you choose one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Stream metrics from all metric namespaces in the account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Stream metrics from all metric namespaces in the account, except for the namespaces that you list in
+     * <code>ExcludeFilters</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Stream metrics from only the metric namespaces that you list in <code>IncludeFilters</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When you use <code>PutMetricStream</code> to create a new metric stream, the stream is created in the
+     * <code>running</code> state. If you use it to update an existing stream, the state of the stream is not changed.
+     * </p>
+     * 
+     * @param putMetricStreamRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutMetricStream operation returned by the service.
+     * @sample AmazonCloudWatchAsyncHandler.PutMetricStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricStream" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutMetricStreamResult> putMetricStreamAsync(PutMetricStreamRequest putMetricStreamRequest,
+            com.amazonaws.handlers.AsyncHandler<PutMetricStreamRequest, PutMetricStreamResult> asyncHandler);
+
+    /**
+     * <p>
      * Temporarily sets the state of an alarm for testing purposes. When the updated state differs from the previous
      * value, the action configured for the appropriate state is invoked. For example, if your alarm is configured to
      * send an Amazon SNS message when an alarm is triggered, temporarily changing the alarm state to <code>ALARM</code>
@@ -1876,6 +2072,68 @@ public interface AmazonCloudWatchAsync extends AmazonCloudWatch {
      */
     java.util.concurrent.Future<SetAlarmStateResult> setAlarmStateAsync(SetAlarmStateRequest setAlarmStateRequest,
             com.amazonaws.handlers.AsyncHandler<SetAlarmStateRequest, SetAlarmStateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts the streaming of metrics for one or more of your metric streams.
+     * </p>
+     * 
+     * @param startMetricStreamsRequest
+     * @return A Java Future containing the result of the StartMetricStreams operation returned by the service.
+     * @sample AmazonCloudWatchAsync.StartMetricStreams
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StartMetricStreams" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StartMetricStreamsResult> startMetricStreamsAsync(StartMetricStreamsRequest startMetricStreamsRequest);
+
+    /**
+     * <p>
+     * Starts the streaming of metrics for one or more of your metric streams.
+     * </p>
+     * 
+     * @param startMetricStreamsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartMetricStreams operation returned by the service.
+     * @sample AmazonCloudWatchAsyncHandler.StartMetricStreams
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StartMetricStreams" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StartMetricStreamsResult> startMetricStreamsAsync(StartMetricStreamsRequest startMetricStreamsRequest,
+            com.amazonaws.handlers.AsyncHandler<StartMetricStreamsRequest, StartMetricStreamsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops the streaming of metrics for one or more of your metric streams.
+     * </p>
+     * 
+     * @param stopMetricStreamsRequest
+     * @return A Java Future containing the result of the StopMetricStreams operation returned by the service.
+     * @sample AmazonCloudWatchAsync.StopMetricStreams
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StopMetricStreams" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StopMetricStreamsResult> stopMetricStreamsAsync(StopMetricStreamsRequest stopMetricStreamsRequest);
+
+    /**
+     * <p>
+     * Stops the streaming of metrics for one or more of your metric streams.
+     * </p>
+     * 
+     * @param stopMetricStreamsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopMetricStreams operation returned by the service.
+     * @sample AmazonCloudWatchAsyncHandler.StopMetricStreams
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StopMetricStreams" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StopMetricStreamsResult> stopMetricStreamsAsync(StopMetricStreamsRequest stopMetricStreamsRequest,
+            com.amazonaws.handlers.AsyncHandler<StopMetricStreamsRequest, StopMetricStreamsResult> asyncHandler);
 
     /**
      * <p>

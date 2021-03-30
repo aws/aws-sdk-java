@@ -918,6 +918,44 @@ public interface AmazonConfig {
 
     /**
      * <p>
+     * Returns a list of the conformance packs and their associated compliance status with the count of compliant and
+     * noncompliant AWS Config rules within each conformance pack.
+     * </p>
+     * <note>
+     * <p>
+     * The results can return an empty result page, but if you have a <code>nextToken</code>, the results are displayed
+     * on the next page.
+     * </p>
+     * </note>
+     * 
+     * @param describeAggregateComplianceByConformancePacksRequest
+     * @return Result of the DescribeAggregateComplianceByConformancePacks operation returned by the service.
+     * @throws ValidationException
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
+     * @throws InvalidLimitException
+     *         The specified limit is outside the allowable range.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
+     * @throws NoSuchConfigurationAggregatorException
+     *         You have specified a configuration aggregator that does not exist.
+     * @sample AmazonConfig.DescribeAggregateComplianceByConformancePacks
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConformancePacks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeAggregateComplianceByConformancePacksResult describeAggregateComplianceByConformancePacks(
+            DescribeAggregateComplianceByConformancePacksRequest describeAggregateComplianceByConformancePacksRequest);
+
+    /**
+     * <p>
      * Returns a list of authorizations granted to various aggregator accounts and regions.
      * </p>
      * 
@@ -1811,6 +1849,44 @@ public interface AmazonConfig {
      */
     GetAggregateConfigRuleComplianceSummaryResult getAggregateConfigRuleComplianceSummary(
             GetAggregateConfigRuleComplianceSummaryRequest getAggregateConfigRuleComplianceSummaryRequest);
+
+    /**
+     * <p>
+     * Returns the count of compliant and noncompliant conformance packs across all AWS Accounts and AWS Regions. You
+     * can filter based on AWS Account ID or AWS Region.
+     * </p>
+     * <note>
+     * <p>
+     * The results can return an empty result page, but if you have a nextToken, the results are displayed on the next
+     * page.
+     * </p>
+     * </note>
+     * 
+     * @param getAggregateConformancePackComplianceSummaryRequest
+     * @return Result of the GetAggregateConformancePackComplianceSummary operation returned by the service.
+     * @throws ValidationException
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
+     * @throws InvalidLimitException
+     *         The specified limit is outside the allowable range.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
+     * @throws NoSuchConfigurationAggregatorException
+     *         You have specified a configuration aggregator that does not exist.
+     * @sample AmazonConfig.GetAggregateConformancePackComplianceSummary
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConformancePackComplianceSummary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetAggregateConformancePackComplianceSummaryResult getAggregateConformancePackComplianceSummary(
+            GetAggregateConformancePackComplianceSummaryRequest getAggregateConformancePackComplianceSummaryRequest);
 
     /**
      * <p>
@@ -3127,7 +3203,7 @@ public interface AmazonConfig {
      * conformance pack is created or updated. You cannot update a conformance pack while it is in this state.
      * </p>
      * <p>
-     * You can create 6 conformance packs with 25 AWS Config rules in each pack and 3 delegated administrator per
+     * You can create 50 conformance packs with 25 AWS Config rules in each pack and 3 delegated administrator per
      * organization.
      * </p>
      * </note>

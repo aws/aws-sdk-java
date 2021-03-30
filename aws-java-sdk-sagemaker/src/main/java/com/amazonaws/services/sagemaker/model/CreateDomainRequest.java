@@ -40,9 +40,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The default settings to use to create a user profile when <code>UserSettings</code> isn't specified in the call
-     * to the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateUserProfile.html">CreateUserProfile</a>
-     * API.
+     * to the <code>CreateUserProfile</code> API.
      * </p>
      * <p>
      * <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in
@@ -66,8 +64,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource. Tags are searchable using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API.
+     * resource. Tags are searchable using the <code>Search</code> API.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -207,9 +204,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The default settings to use to create a user profile when <code>UserSettings</code> isn't specified in the call
-     * to the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateUserProfile.html">CreateUserProfile</a>
-     * API.
+     * to the <code>CreateUserProfile</code> API.
      * </p>
      * <p>
      * <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in
@@ -219,9 +214,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param defaultUserSettings
      *        The default settings to use to create a user profile when <code>UserSettings</code> isn't specified in the
-     *        call to the <a
-     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateUserProfile.html">
-     *        CreateUserProfile</a> API.</p>
+     *        call to the <code>CreateUserProfile</code> API.</p>
      *        <p>
      *        <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in
      *        <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over
@@ -235,9 +228,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The default settings to use to create a user profile when <code>UserSettings</code> isn't specified in the call
-     * to the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateUserProfile.html">CreateUserProfile</a>
-     * API.
+     * to the <code>CreateUserProfile</code> API.
      * </p>
      * <p>
      * <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in
@@ -246,9 +237,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @return The default settings to use to create a user profile when <code>UserSettings</code> isn't specified in
-     *         the call to the <a
-     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateUserProfile.html"
-     *         >CreateUserProfile</a> API.</p>
+     *         the call to the <code>CreateUserProfile</code> API.</p>
      *         <p>
      *         <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in
      *         <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over
@@ -262,9 +251,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The default settings to use to create a user profile when <code>UserSettings</code> isn't specified in the call
-     * to the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateUserProfile.html">CreateUserProfile</a>
-     * API.
+     * to the <code>CreateUserProfile</code> API.
      * </p>
      * <p>
      * <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in
@@ -274,9 +261,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param defaultUserSettings
      *        The default settings to use to create a user profile when <code>UserSettings</code> isn't specified in the
-     *        call to the <a
-     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateUserProfile.html">
-     *        CreateUserProfile</a> API.</p>
+     *        call to the <code>CreateUserProfile</code> API.</p>
      *        <p>
      *        <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in
      *        <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over
@@ -402,13 +387,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource. Tags are searchable using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API.
+     * resource. Tags are searchable using the <code>Search</code> API.
      * </p>
      * 
      * @return Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be
-     *         unique per resource. Tags are searchable using the <a
-     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API.
+     *         unique per resource. Tags are searchable using the <code>Search</code> API.
      */
 
     public java.util.List<Tag> getTags() {
@@ -418,14 +401,12 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource. Tags are searchable using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API.
+     * resource. Tags are searchable using the <code>Search</code> API.
      * </p>
      * 
      * @param tags
      *        Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be
-     *        unique per resource. Tags are searchable using the <a
-     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API.
+     *        unique per resource. Tags are searchable using the <code>Search</code> API.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -440,8 +421,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource. Tags are searchable using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API.
+     * resource. Tags are searchable using the <code>Search</code> API.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -451,8 +431,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param tags
      *        Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be
-     *        unique per resource. Tags are searchable using the <a
-     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API.
+     *        unique per resource. Tags are searchable using the <code>Search</code> API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -469,14 +448,12 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be unique per
-     * resource. Tags are searchable using the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API.
+     * resource. Tags are searchable using the <code>Search</code> API.
      * </p>
      * 
      * @param tags
      *        Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be
-     *        unique per resource. Tags are searchable using the <a
-     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API.
+     *        unique per resource. Tags are searchable using the <code>Search</code> API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

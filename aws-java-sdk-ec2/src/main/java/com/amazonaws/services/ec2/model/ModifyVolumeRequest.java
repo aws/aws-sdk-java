@@ -103,7 +103,8 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * </ul>
      * <p>
-     * Default: If no IOPS value is specified, the existing value is retained.
+     * Default: If no IOPS value is specified, the existing value is retained, unless a volume type is modified that
+     * supports different values.
      * </p>
      */
     private Integer iops;
@@ -527,7 +528,8 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * </ul>
      * <p>
-     * Default: If no IOPS value is specified, the existing value is retained.
+     * Default: If no IOPS value is specified, the existing value is retained, unless a volume type is modified that
+     * supports different values.
      * </p>
      * 
      * @param iops
@@ -554,7 +556,8 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        </li>
      *        </ul>
      *        <p>
-     *        Default: If no IOPS value is specified, the existing value is retained.
+     *        Default: If no IOPS value is specified, the existing value is retained, unless a volume type is modified
+     *        that supports different values.
      */
 
     public void setIops(Integer iops) {
@@ -587,7 +590,8 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * </ul>
      * <p>
-     * Default: If no IOPS value is specified, the existing value is retained.
+     * Default: If no IOPS value is specified, the existing value is retained, unless a volume type is modified that
+     * supports different values.
      * </p>
      * 
      * @return The target IOPS rate of the volume. This parameter is valid only for <code>gp3</code>, <code>io1</code>,
@@ -613,7 +617,8 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      *         </li>
      *         </ul>
      *         <p>
-     *         Default: If no IOPS value is specified, the existing value is retained.
+     *         Default: If no IOPS value is specified, the existing value is retained, unless a volume type is modified
+     *         that supports different values.
      */
 
     public Integer getIops() {
@@ -646,7 +651,8 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * </ul>
      * <p>
-     * Default: If no IOPS value is specified, the existing value is retained.
+     * Default: If no IOPS value is specified, the existing value is retained, unless a volume type is modified that
+     * supports different values.
      * </p>
      * 
      * @param iops
@@ -673,7 +679,8 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        </li>
      *        </ul>
      *        <p>
-     *        Default: If no IOPS value is specified, the existing value is retained.
+     *        Default: If no IOPS value is specified, the existing value is retained, unless a volume type is modified
+     *        that supports different values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -49,6 +49,8 @@ public class DatasetMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedBy").build();
     private static final MarshallingInfo<String> SOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Source").build();
+    private static final MarshallingInfo<StructuredPojo> PATHOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PathOptions").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<String> RESOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -80,6 +82,7 @@ public class DatasetMarshaller {
             protocolMarshaller.marshall(dataset.getLastModifiedDate(), LASTMODIFIEDDATE_BINDING);
             protocolMarshaller.marshall(dataset.getLastModifiedBy(), LASTMODIFIEDBY_BINDING);
             protocolMarshaller.marshall(dataset.getSource(), SOURCE_BINDING);
+            protocolMarshaller.marshall(dataset.getPathOptions(), PATHOPTIONS_BINDING);
             protocolMarshaller.marshall(dataset.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(dataset.getResourceArn(), RESOURCEARN_BINDING);
         } catch (Exception e) {

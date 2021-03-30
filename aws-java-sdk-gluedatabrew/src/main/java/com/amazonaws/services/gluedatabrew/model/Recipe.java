@@ -109,7 +109,7 @@ public class Recipe implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers.
      * The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and
-     * <code>Y</code> are required, and "0.0" is not a valid version.
+     * <code>Y</code> are required, and "0.0" isn't a valid version.
      * </p>
      * </li>
      * <li>
@@ -673,7 +673,7 @@ public class Recipe implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers.
      * The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and
-     * <code>Y</code> are required, and "0.0" is not a valid version.
+     * <code>Y</code> are required, and "0.0" isn't a valid version.
      * </p>
      * </li>
      * <li>
@@ -695,7 +695,7 @@ public class Recipe implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version
      *        numbers. The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code>
-     *        and <code>Y</code> are required, and "0.0" is not a valid version.
+     *        and <code>Y</code> are required, and "0.0" isn't a valid version.
      *        </p>
      *        </li>
      *        <li>
@@ -723,7 +723,7 @@ public class Recipe implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers.
      * The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and
-     * <code>Y</code> are required, and "0.0" is not a valid version.
+     * <code>Y</code> are required, and "0.0" isn't a valid version.
      * </p>
      * </li>
      * <li>
@@ -744,7 +744,7 @@ public class Recipe implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version
      *         numbers. The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code>
-     *         and <code>Y</code> are required, and "0.0" is not a valid version.
+     *         and <code>Y</code> are required, and "0.0" isn't a valid version.
      *         </p>
      *         </li>
      *         <li>
@@ -772,7 +772,7 @@ public class Recipe implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version numbers.
      * The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code> and
-     * <code>Y</code> are required, and "0.0" is not a valid version.
+     * <code>Y</code> are required, and "0.0" isn't a valid version.
      * </p>
      * </li>
      * <li>
@@ -794,7 +794,7 @@ public class Recipe implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major and minor version
      *        numbers. The maximum length of each is 6 digits, and neither can be negative values. Both <code>X</code>
-     *        and <code>Y</code> are required, and "0.0" is not a valid version.
+     *        and <code>Y</code> are required, and "0.0" isn't a valid version.
      *        </p>
      *        </li>
      *        <li>

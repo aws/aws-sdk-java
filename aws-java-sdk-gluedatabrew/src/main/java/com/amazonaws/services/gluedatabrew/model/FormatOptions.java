@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Options that define the structure of either Csv, Excel, or JSON input.
+ * Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/FormatOptions" target="_top">AWS API
@@ -42,7 +42,7 @@ public class FormatOptions implements Serializable, Cloneable, StructuredPojo {
     private ExcelOptions excel;
     /**
      * <p>
-     * Options that define how Csv input is to be interpreted by DataBrew.
+     * Options that define how CSV input is to be interpreted by DataBrew.
      * </p>
      */
     private CsvOptions csv;
@@ -129,11 +129,11 @@ public class FormatOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Options that define how Csv input is to be interpreted by DataBrew.
+     * Options that define how CSV input is to be interpreted by DataBrew.
      * </p>
      * 
      * @param csv
-     *        Options that define how Csv input is to be interpreted by DataBrew.
+     *        Options that define how CSV input is to be interpreted by DataBrew.
      */
 
     public void setCsv(CsvOptions csv) {
@@ -142,10 +142,10 @@ public class FormatOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Options that define how Csv input is to be interpreted by DataBrew.
+     * Options that define how CSV input is to be interpreted by DataBrew.
      * </p>
      * 
-     * @return Options that define how Csv input is to be interpreted by DataBrew.
+     * @return Options that define how CSV input is to be interpreted by DataBrew.
      */
 
     public CsvOptions getCsv() {
@@ -154,11 +154,11 @@ public class FormatOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Options that define how Csv input is to be interpreted by DataBrew.
+     * Options that define how CSV input is to be interpreted by DataBrew.
      * </p>
      * 
      * @param csv
-     *        Options that define how Csv input is to be interpreted by DataBrew.
+     *        Options that define how CSV input is to be interpreted by DataBrew.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

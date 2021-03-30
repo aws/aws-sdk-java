@@ -51,8 +51,8 @@ import com.amazonaws.services.ec2instanceconnect.model.transform.*;
  * until the service call completes.
  * <p>
  * <p>
- * AWS EC2 Connect Service is a service that enables system administrators to publish temporary SSH keys to their EC2
- * instances in order to establish connections to their instances without leaving a permanent authentication option.
+ * Amazon EC2 Instance Connect enables system administrators to publish one-time use SSH public keys to EC2, providing
+ * users a simple and secure way to connect to their instances.
  * </p>
  */
 @ThreadSafe
@@ -78,11 +78,25 @@ public class AWSEC2InstanceConnectClient extends AmazonWebServiceClient implemen
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.ec2instanceconnect.model.transform.ServiceExceptionUnmarshaller.getInstance()))
+                            new JsonErrorShapeMetadata().withErrorCode("EC2InstanceTypeInvalidException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ec2instanceconnect.model.transform.EC2InstanceTypeInvalidExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AuthException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ec2instanceconnect.model.transform.AuthExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("SerialConsoleSessionLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ec2instanceconnect.model.transform.SerialConsoleSessionLimitExceededExceptionUnmarshaller
+                                            .getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("SerialConsoleAccessDisabledException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ec2instanceconnect.model.transform.SerialConsoleAccessDisabledExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("SerialConsoleSessionUnavailableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ec2instanceconnect.model.transform.SerialConsoleSessionUnavailableExceptionUnmarshaller
+                                            .getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ec2instanceconnect.model.transform.ServiceExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ec2instanceconnect.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
@@ -142,24 +156,25 @@ public class AWSEC2InstanceConnectClient extends AmazonWebServiceClient implemen
 
     /**
      * <p>
-     * Pushes an SSH public key to a particular OS user on a given EC2 instance for 60 seconds.
+     * Pushes an SSH public key to the specified EC2 instance for use by the specified user. The key remains for 60
+     * seconds. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect.html">Connect to
+     * your Linux instance using EC2 Instance Connect</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param sendSSHPublicKeyRequest
      * @return Result of the SendSSHPublicKey operation returned by the service.
      * @throws AuthException
-     *         Indicates that either your AWS credentials are invalid or you do not have access to the EC2 instance.
+     *         Either your AWS credentials are not valid or you do not have access to the EC2 instance.
      * @throws InvalidArgsException
-     *         Indicates that you provided bad input. Ensure you have a valid instance ID, the correct zone, and a valid
-     *         SSH public key.
+     *         One of the parameters is not valid.
      * @throws ServiceException
-     *         Indicates that the service encountered an error. Follow the message's instructions and try again.
+     *         The service encountered an error. Follow the instructions in the error message and try again.
      * @throws ThrottlingException
-     *         Indicates you have been making requests too frequently and have been throttled. Wait for a while and try
-     *         again. If higher call volume is warranted contact AWS Support.
+     *         The requests were made too frequently and have been throttled. Wait a while and try again. To increase
+     *         the limit on your request frequency, contact AWS Support.
      * @throws EC2InstanceNotFoundException
-     *         Indicates that the instance requested was not found in the given zone. Check that you have provided a
-     *         valid instance ID and the correct zone.
+     *         The specified instance was not found.
      * @sample AWSEC2InstanceConnect.SendSSHPublicKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-instance-connect-2018-04-02/SendSSHPublicKey"
      *      target="_top">AWS API Documentation</a>
@@ -198,6 +213,90 @@ public class AWSEC2InstanceConnectClient extends AmazonWebServiceClient implemen
 
             HttpResponseHandler<AmazonWebServiceResponse<SendSSHPublicKeyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SendSSHPublicKeyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Pushes an SSH public key to the specified EC2 instance. The key remains for 60 seconds, which gives you 60
+     * seconds to establish a serial console connection to the instance using SSH. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-serial-console.html">EC2 Serial Console</a> in the
+     * <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param sendSerialConsoleSSHPublicKeyRequest
+     * @return Result of the SendSerialConsoleSSHPublicKey operation returned by the service.
+     * @throws AuthException
+     *         Either your AWS credentials are not valid or you do not have access to the EC2 instance.
+     * @throws SerialConsoleAccessDisabledException
+     *         Your account is not authorized to use the EC2 Serial Console. To authorize your account, run the
+     *         EnableSerialConsoleAccess API. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableSerialConsoleAccess.html"
+     *         >EnableSerialConsoleAccess</a> in the <i>Amazon EC2 API Reference</i>.
+     * @throws InvalidArgsException
+     *         One of the parameters is not valid.
+     * @throws ServiceException
+     *         The service encountered an error. Follow the instructions in the error message and try again.
+     * @throws ThrottlingException
+     *         The requests were made too frequently and have been throttled. Wait a while and try again. To increase
+     *         the limit on your request frequency, contact AWS Support.
+     * @throws EC2InstanceNotFoundException
+     *         The specified instance was not found.
+     * @throws EC2InstanceTypeInvalidException
+     *         The instance type is not supported for connecting via the serial console. Only Nitro instance types are
+     *         currently supported.
+     * @throws SerialConsoleSessionLimitExceededException
+     *         The instance currently has 1 active serial console session. Only 1 session is supported at a time.
+     * @throws SerialConsoleSessionUnavailableException
+     *         Unable to start a serial console session. Please try again.
+     * @sample AWSEC2InstanceConnect.SendSerialConsoleSSHPublicKey
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-instance-connect-2018-04-02/SendSerialConsoleSSHPublicKey"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SendSerialConsoleSSHPublicKeyResult sendSerialConsoleSSHPublicKey(SendSerialConsoleSSHPublicKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeSendSerialConsoleSSHPublicKey(request);
+    }
+
+    @SdkInternalApi
+    final SendSerialConsoleSSHPublicKeyResult executeSendSerialConsoleSSHPublicKey(SendSerialConsoleSSHPublicKeyRequest sendSerialConsoleSSHPublicKeyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(sendSerialConsoleSSHPublicKeyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SendSerialConsoleSSHPublicKeyRequest> request = null;
+        Response<SendSerialConsoleSSHPublicKeyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SendSerialConsoleSSHPublicKeyRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(sendSerialConsoleSSHPublicKeyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2 Instance Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendSerialConsoleSSHPublicKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SendSerialConsoleSSHPublicKeyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new SendSerialConsoleSSHPublicKeyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

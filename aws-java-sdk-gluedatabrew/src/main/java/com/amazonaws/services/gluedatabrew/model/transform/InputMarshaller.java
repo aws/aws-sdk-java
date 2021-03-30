@@ -31,6 +31,8 @@ public class InputMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3InputDefinition").build();
     private static final MarshallingInfo<StructuredPojo> DATACATALOGINPUTDEFINITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataCatalogInputDefinition").build();
+    private static final MarshallingInfo<StructuredPojo> DATABASEINPUTDEFINITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatabaseInputDefinition").build();
 
     private static final InputMarshaller instance = new InputMarshaller();
 
@@ -50,6 +52,7 @@ public class InputMarshaller {
         try {
             protocolMarshaller.marshall(input.getS3InputDefinition(), S3INPUTDEFINITION_BINDING);
             protocolMarshaller.marshall(input.getDataCatalogInputDefinition(), DATACATALOGINPUTDEFINITION_BINDING);
+            protocolMarshaller.marshall(input.getDatabaseInputDefinition(), DATABASEINPUTDEFINITION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

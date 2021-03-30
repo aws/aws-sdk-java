@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Indicates that the service encountered an error. Follow the message's instructions and try again.
+ * The service encountered an error. Follow the instructions in the error message and try again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -93,6 +93,10 @@ public class AutoMLCandidateJsonUnmarshaller implements Unmarshaller<AutoMLCandi
                     context.nextToken();
                     autoMLCandidate.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CandidateProperties", targetDepth)) {
+                    context.nextToken();
+                    autoMLCandidate.setCandidateProperties(CandidatePropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -36,7 +36,8 @@ public class ConformancePackComplianceSummary implements Serializable, Cloneable
     private String conformancePackName;
     /**
      * <p>
-     * The status of the conformance pack. The allowed values are COMPLIANT and NON_COMPLIANT.
+     * The status of the conformance pack. The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code> and
+     * <code>INSUFFICIENT_DATA</code>.
      * </p>
      */
     private String conformancePackComplianceStatus;
@@ -83,11 +84,13 @@ public class ConformancePackComplianceSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The status of the conformance pack. The allowed values are COMPLIANT and NON_COMPLIANT.
+     * The status of the conformance pack. The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code> and
+     * <code>INSUFFICIENT_DATA</code>.
      * </p>
      * 
      * @param conformancePackComplianceStatus
-     *        The status of the conformance pack. The allowed values are COMPLIANT and NON_COMPLIANT.
+     *        The status of the conformance pack. The allowed values are <code>COMPLIANT</code>,
+     *        <code>NON_COMPLIANT</code> and <code>INSUFFICIENT_DATA</code>.
      * @see ConformancePackComplianceType
      */
 
@@ -97,10 +100,12 @@ public class ConformancePackComplianceSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The status of the conformance pack. The allowed values are COMPLIANT and NON_COMPLIANT.
+     * The status of the conformance pack. The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code> and
+     * <code>INSUFFICIENT_DATA</code>.
      * </p>
      * 
-     * @return The status of the conformance pack. The allowed values are COMPLIANT and NON_COMPLIANT.
+     * @return The status of the conformance pack. The allowed values are <code>COMPLIANT</code>,
+     *         <code>NON_COMPLIANT</code> and <code>INSUFFICIENT_DATA</code>.
      * @see ConformancePackComplianceType
      */
 
@@ -110,11 +115,13 @@ public class ConformancePackComplianceSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The status of the conformance pack. The allowed values are COMPLIANT and NON_COMPLIANT.
+     * The status of the conformance pack. The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code> and
+     * <code>INSUFFICIENT_DATA</code>.
      * </p>
      * 
      * @param conformancePackComplianceStatus
-     *        The status of the conformance pack. The allowed values are COMPLIANT and NON_COMPLIANT.
+     *        The status of the conformance pack. The allowed values are <code>COMPLIANT</code>,
+     *        <code>NON_COMPLIANT</code> and <code>INSUFFICIENT_DATA</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConformancePackComplianceType
      */
@@ -126,11 +133,13 @@ public class ConformancePackComplianceSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The status of the conformance pack. The allowed values are COMPLIANT and NON_COMPLIANT.
+     * The status of the conformance pack. The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code> and
+     * <code>INSUFFICIENT_DATA</code>.
      * </p>
      * 
      * @param conformancePackComplianceStatus
-     *        The status of the conformance pack. The allowed values are COMPLIANT and NON_COMPLIANT.
+     *        The status of the conformance pack. The allowed values are <code>COMPLIANT</code>,
+     *        <code>NON_COMPLIANT</code> and <code>INSUFFICIENT_DATA</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConformancePackComplianceType
      */

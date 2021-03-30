@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.sagemaker.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -43,6 +44,8 @@ public class AutoMLJobSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> FAILUREREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FailureReason").build();
+    private static final MarshallingInfo<List> PARTIALFAILUREREASONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PartialFailureReasons").build();
 
     private static final AutoMLJobSummaryMarshaller instance = new AutoMLJobSummaryMarshaller();
 
@@ -68,6 +71,7 @@ public class AutoMLJobSummaryMarshaller {
             protocolMarshaller.marshall(autoMLJobSummary.getEndTime(), ENDTIME_BINDING);
             protocolMarshaller.marshall(autoMLJobSummary.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);
             protocolMarshaller.marshall(autoMLJobSummary.getFailureReason(), FAILUREREASON_BINDING);
+            protocolMarshaller.marshall(autoMLJobSummary.getPartialFailureReasons(), PARTIALFAILUREREASONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

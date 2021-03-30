@@ -16,8 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Indicates that the instance requested was not found in the given zone. Check that you have provided a valid instance
- * ID and the correct zone.
+ * The specified instance was not found.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

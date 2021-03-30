@@ -27,37 +27,37 @@ public class ListCandidatesForAutoMLJobRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List the Candidates created for the job by providing the job's name.
+     * List the candidates created for the job by providing the job's name.
      * </p>
      */
     private String autoMLJobName;
     /**
      * <p>
-     * List the Candidates for the job and filter by status.
+     * List the candidates for the job and filter by status.
      * </p>
      */
     private String statusEquals;
     /**
      * <p>
-     * List the Candidates for the job and filter by candidate name.
+     * List the candidates for the job and filter by candidate name.
      * </p>
      */
     private String candidateNameEquals;
     /**
      * <p>
-     * The sort order for the results. The default is Ascending.
+     * The sort order for the results. The default is <code>Ascending</code>.
      * </p>
      */
     private String sortOrder;
     /**
      * <p>
-     * The parameter by which to sort the results. The default is Descending.
+     * The parameter by which to sort the results. The default is <code>Descending</code>.
      * </p>
      */
     private String sortBy;
     /**
      * <p>
-     * List the job's Candidates up to a specified limit.
+     * List the job's candidates up to a specified limit.
      * </p>
      */
     private Integer maxResults;
@@ -71,11 +71,11 @@ public class ListCandidatesForAutoMLJobRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List the Candidates created for the job by providing the job's name.
+     * List the candidates created for the job by providing the job's name.
      * </p>
      * 
      * @param autoMLJobName
-     *        List the Candidates created for the job by providing the job's name.
+     *        List the candidates created for the job by providing the job's name.
      */
 
     public void setAutoMLJobName(String autoMLJobName) {
@@ -84,10 +84,10 @@ public class ListCandidatesForAutoMLJobRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List the Candidates created for the job by providing the job's name.
+     * List the candidates created for the job by providing the job's name.
      * </p>
      * 
-     * @return List the Candidates created for the job by providing the job's name.
+     * @return List the candidates created for the job by providing the job's name.
      */
 
     public String getAutoMLJobName() {
@@ -96,11 +96,11 @@ public class ListCandidatesForAutoMLJobRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List the Candidates created for the job by providing the job's name.
+     * List the candidates created for the job by providing the job's name.
      * </p>
      * 
      * @param autoMLJobName
-     *        List the Candidates created for the job by providing the job's name.
+     *        List the candidates created for the job by providing the job's name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,11 +111,11 @@ public class ListCandidatesForAutoMLJobRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List the Candidates for the job and filter by status.
+     * List the candidates for the job and filter by status.
      * </p>
      * 
      * @param statusEquals
-     *        List the Candidates for the job and filter by status.
+     *        List the candidates for the job and filter by status.
      * @see CandidateStatus
      */
 
@@ -125,10 +125,10 @@ public class ListCandidatesForAutoMLJobRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List the Candidates for the job and filter by status.
+     * List the candidates for the job and filter by status.
      * </p>
      * 
-     * @return List the Candidates for the job and filter by status.
+     * @return List the candidates for the job and filter by status.
      * @see CandidateStatus
      */
 
@@ -138,11 +138,11 @@ public class ListCandidatesForAutoMLJobRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List the Candidates for the job and filter by status.
+     * List the candidates for the job and filter by status.
      * </p>
      * 
      * @param statusEquals
-     *        List the Candidates for the job and filter by status.
+     *        List the candidates for the job and filter by status.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CandidateStatus
      */
@@ -154,11 +154,11 @@ public class ListCandidatesForAutoMLJobRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List the Candidates for the job and filter by status.
+     * List the candidates for the job and filter by status.
      * </p>
      * 
      * @param statusEquals
-     *        List the Candidates for the job and filter by status.
+     *        List the candidates for the job and filter by status.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CandidateStatus
      */
@@ -170,11 +170,11 @@ public class ListCandidatesForAutoMLJobRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List the Candidates for the job and filter by candidate name.
+     * List the candidates for the job and filter by candidate name.
      * </p>
      * 
      * @param candidateNameEquals
-     *        List the Candidates for the job and filter by candidate name.
+     *        List the candidates for the job and filter by candidate name.
      */
 
     public void setCandidateNameEquals(String candidateNameEquals) {
@@ -183,10 +183,10 @@ public class ListCandidatesForAutoMLJobRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List the Candidates for the job and filter by candidate name.
+     * List the candidates for the job and filter by candidate name.
      * </p>
      * 
-     * @return List the Candidates for the job and filter by candidate name.
+     * @return List the candidates for the job and filter by candidate name.
      */
 
     public String getCandidateNameEquals() {
@@ -195,11 +195,11 @@ public class ListCandidatesForAutoMLJobRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List the Candidates for the job and filter by candidate name.
+     * List the candidates for the job and filter by candidate name.
      * </p>
      * 
      * @param candidateNameEquals
-     *        List the Candidates for the job and filter by candidate name.
+     *        List the candidates for the job and filter by candidate name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -210,11 +210,11 @@ public class ListCandidatesForAutoMLJobRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The sort order for the results. The default is Ascending.
+     * The sort order for the results. The default is <code>Ascending</code>.
      * </p>
      * 
      * @param sortOrder
-     *        The sort order for the results. The default is Ascending.
+     *        The sort order for the results. The default is <code>Ascending</code>.
      * @see AutoMLSortOrder
      */
 
@@ -224,10 +224,10 @@ public class ListCandidatesForAutoMLJobRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The sort order for the results. The default is Ascending.
+     * The sort order for the results. The default is <code>Ascending</code>.
      * </p>
      * 
-     * @return The sort order for the results. The default is Ascending.
+     * @return The sort order for the results. The default is <code>Ascending</code>.
      * @see AutoMLSortOrder
      */
 
@@ -237,11 +237,11 @@ public class ListCandidatesForAutoMLJobRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The sort order for the results. The default is Ascending.
+     * The sort order for the results. The default is <code>Ascending</code>.
      * </p>
      * 
      * @param sortOrder
-     *        The sort order for the results. The default is Ascending.
+     *        The sort order for the results. The default is <code>Ascending</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLSortOrder
      */
@@ -253,11 +253,11 @@ public class ListCandidatesForAutoMLJobRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The sort order for the results. The default is Ascending.
+     * The sort order for the results. The default is <code>Ascending</code>.
      * </p>
      * 
      * @param sortOrder
-     *        The sort order for the results. The default is Ascending.
+     *        The sort order for the results. The default is <code>Ascending</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLSortOrder
      */
@@ -269,11 +269,11 @@ public class ListCandidatesForAutoMLJobRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The parameter by which to sort the results. The default is Descending.
+     * The parameter by which to sort the results. The default is <code>Descending</code>.
      * </p>
      * 
      * @param sortBy
-     *        The parameter by which to sort the results. The default is Descending.
+     *        The parameter by which to sort the results. The default is <code>Descending</code>.
      * @see CandidateSortBy
      */
 
@@ -283,10 +283,10 @@ public class ListCandidatesForAutoMLJobRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The parameter by which to sort the results. The default is Descending.
+     * The parameter by which to sort the results. The default is <code>Descending</code>.
      * </p>
      * 
-     * @return The parameter by which to sort the results. The default is Descending.
+     * @return The parameter by which to sort the results. The default is <code>Descending</code>.
      * @see CandidateSortBy
      */
 
@@ -296,11 +296,11 @@ public class ListCandidatesForAutoMLJobRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The parameter by which to sort the results. The default is Descending.
+     * The parameter by which to sort the results. The default is <code>Descending</code>.
      * </p>
      * 
      * @param sortBy
-     *        The parameter by which to sort the results. The default is Descending.
+     *        The parameter by which to sort the results. The default is <code>Descending</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CandidateSortBy
      */
@@ -312,11 +312,11 @@ public class ListCandidatesForAutoMLJobRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The parameter by which to sort the results. The default is Descending.
+     * The parameter by which to sort the results. The default is <code>Descending</code>.
      * </p>
      * 
      * @param sortBy
-     *        The parameter by which to sort the results. The default is Descending.
+     *        The parameter by which to sort the results. The default is <code>Descending</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CandidateSortBy
      */
@@ -328,11 +328,11 @@ public class ListCandidatesForAutoMLJobRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List the job's Candidates up to a specified limit.
+     * List the job's candidates up to a specified limit.
      * </p>
      * 
      * @param maxResults
-     *        List the job's Candidates up to a specified limit.
+     *        List the job's candidates up to a specified limit.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -341,10 +341,10 @@ public class ListCandidatesForAutoMLJobRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List the job's Candidates up to a specified limit.
+     * List the job's candidates up to a specified limit.
      * </p>
      * 
-     * @return List the job's Candidates up to a specified limit.
+     * @return List the job's candidates up to a specified limit.
      */
 
     public Integer getMaxResults() {
@@ -353,11 +353,11 @@ public class ListCandidatesForAutoMLJobRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List the job's Candidates up to a specified limit.
+     * List the job's candidates up to a specified limit.
      * </p>
      * 
      * @param maxResults
-     *        List the job's Candidates up to a specified limit.
+     *        List the job's candidates up to a specified limit.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

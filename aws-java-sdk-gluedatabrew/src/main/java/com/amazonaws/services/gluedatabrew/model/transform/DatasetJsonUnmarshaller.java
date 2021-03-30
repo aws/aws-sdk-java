@@ -88,6 +88,10 @@ public class DatasetJsonUnmarshaller implements Unmarshaller<Dataset, JsonUnmars
                     context.nextToken();
                     dataset.setSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PathOptions", targetDepth)) {
+                    context.nextToken();
+                    dataset.setPathOptions(PathOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
                     dataset.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))

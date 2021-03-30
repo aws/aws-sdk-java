@@ -133,6 +133,12 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
+    public DescribeAggregateComplianceByConformancePacksResult describeAggregateComplianceByConformancePacks(
+            DescribeAggregateComplianceByConformancePacksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeAggregationAuthorizationsResult describeAggregationAuthorizations(DescribeAggregationAuthorizationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -296,6 +302,12 @@ public class AbstractAmazonConfig implements AmazonConfig {
 
     @Override
     public GetAggregateConfigRuleComplianceSummaryResult getAggregateConfigRuleComplianceSummary(GetAggregateConfigRuleComplianceSummaryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAggregateConformancePackComplianceSummaryResult getAggregateConformancePackComplianceSummary(
+            GetAggregateConformancePackComplianceSummaryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

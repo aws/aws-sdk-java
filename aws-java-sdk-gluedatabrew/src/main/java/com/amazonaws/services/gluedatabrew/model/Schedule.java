@@ -72,7 +72,7 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     private String resourceArn;
     /**
      * <p>
-     * The date(s) and time(s) when the job will run. For more information, see <a
+     * The dates and times when the job is to run. For more information, see <a
      * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>AWS Glue
      * DataBrew Developer Guide</i>.
      * </p>
@@ -403,13 +403,13 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date(s) and time(s) when the job will run. For more information, see <a
+     * The dates and times when the job is to run. For more information, see <a
      * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>AWS Glue
      * DataBrew Developer Guide</i>.
      * </p>
      * 
      * @param cronExpression
-     *        The date(s) and time(s) when the job will run. For more information, see <a
+     *        The dates and times when the job is to run. For more information, see <a
      *        href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>AWS
      *        Glue DataBrew Developer Guide</i>.
      */
@@ -420,12 +420,12 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date(s) and time(s) when the job will run. For more information, see <a
+     * The dates and times when the job is to run. For more information, see <a
      * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>AWS Glue
      * DataBrew Developer Guide</i>.
      * </p>
      * 
-     * @return The date(s) and time(s) when the job will run. For more information, see <a
+     * @return The dates and times when the job is to run. For more information, see <a
      *         href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>AWS
      *         Glue DataBrew Developer Guide</i>.
      */
@@ -436,13 +436,13 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date(s) and time(s) when the job will run. For more information, see <a
+     * The dates and times when the job is to run. For more information, see <a
      * href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>AWS Glue
      * DataBrew Developer Guide</i>.
      * </p>
      * 
      * @param cronExpression
-     *        The date(s) and time(s) when the job will run. For more information, see <a
+     *        The dates and times when the job is to run. For more information, see <a
      *        href="https://docs.aws.amazon.com/databrew/latest/dg/jobs.cron.html">Cron expressions</a> in the <i>AWS
      *        Glue DataBrew Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -16,8 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Indicates that you provided bad input. Ensure you have a valid instance ID, the correct zone, and a valid SSH public
- * key.
+ * One of the parameters is not valid.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

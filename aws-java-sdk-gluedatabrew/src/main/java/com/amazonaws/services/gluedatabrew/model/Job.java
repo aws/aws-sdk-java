@@ -66,7 +66,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     * <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
      * </p>
      * </li>
      * <li>
@@ -158,7 +158,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     private String resourceArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the role that will be assumed for this job.
+     * The Amazon Resource Name (ARN) of the role to be assumed for this job.
      * </p>
      */
     private String roleArn;
@@ -177,9 +177,9 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be
-     * executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS
-     * for the mode parameter and 20000 for the size parameter.
+     * A sample configuration for profile jobs only, which determines the number of rows on which the profile job is
+     * run. If a <code>JobSample</code> value isn't provided, the default value is used. The default value is
+     * CUSTOM_ROWS for the mode parameter and 20,000 for the size parameter.
      * </p>
      */
     private JobSample jobSample;
@@ -406,7 +406,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     * <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
      * </p>
      * </li>
      * <li>
@@ -421,7 +421,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     *        <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
      *        </p>
      *        </li>
      *        <li>
@@ -443,7 +443,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     * <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
      * </p>
      * </li>
      * <li>
@@ -457,7 +457,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     *         <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
      *         </p>
      *         </li>
      *         <li>
@@ -479,7 +479,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     * <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
      * </p>
      * </li>
      * <li>
@@ -494,7 +494,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     *        <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
      *        </p>
      *        </li>
      *        <li>
@@ -518,7 +518,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     * <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
      * </p>
      * </li>
      * <li>
@@ -533,7 +533,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>SSE-KMS</code> - Server-side encryption with AWS KMS-managed keys.
+     *        <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS KMS.
      *        </p>
      *        </li>
      *        <li>
@@ -1160,11 +1160,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the role that will be assumed for this job.
+     * The Amazon Resource Name (ARN) of the role to be assumed for this job.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the role that will be assumed for this job.
+     *        The Amazon Resource Name (ARN) of the role to be assumed for this job.
      */
 
     public void setRoleArn(String roleArn) {
@@ -1173,10 +1173,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the role that will be assumed for this job.
+     * The Amazon Resource Name (ARN) of the role to be assumed for this job.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the role that will be assumed for this job.
+     * @return The Amazon Resource Name (ARN) of the role to be assumed for this job.
      */
 
     public String getRoleArn() {
@@ -1185,11 +1185,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the role that will be assumed for this job.
+     * The Amazon Resource Name (ARN) of the role to be assumed for this job.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the role that will be assumed for this job.
+     *        The Amazon Resource Name (ARN) of the role to be assumed for this job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1314,15 +1314,15 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be
-     * executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS
-     * for the mode parameter and 20000 for the size parameter.
+     * A sample configuration for profile jobs only, which determines the number of rows on which the profile job is
+     * run. If a <code>JobSample</code> value isn't provided, the default value is used. The default value is
+     * CUSTOM_ROWS for the mode parameter and 20,000 for the size parameter.
      * </p>
      * 
      * @param jobSample
-     *        Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be
-     *        executed. If a JobSample value is not provided, the default value will be used. The default value is
-     *        CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.
+     *        A sample configuration for profile jobs only, which determines the number of rows on which the profile job
+     *        is run. If a <code>JobSample</code> value isn't provided, the default value is used. The default value is
+     *        CUSTOM_ROWS for the mode parameter and 20,000 for the size parameter.
      */
 
     public void setJobSample(JobSample jobSample) {
@@ -1331,14 +1331,14 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be
-     * executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS
-     * for the mode parameter and 20000 for the size parameter.
+     * A sample configuration for profile jobs only, which determines the number of rows on which the profile job is
+     * run. If a <code>JobSample</code> value isn't provided, the default value is used. The default value is
+     * CUSTOM_ROWS for the mode parameter and 20,000 for the size parameter.
      * </p>
      * 
-     * @return Sample configuration for profile jobs only. Determines the number of rows on which the profile job will
-     *         be executed. If a JobSample value is not provided, the default value will be used. The default value is
-     *         CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.
+     * @return A sample configuration for profile jobs only, which determines the number of rows on which the profile
+     *         job is run. If a <code>JobSample</code> value isn't provided, the default value is used. The default
+     *         value is CUSTOM_ROWS for the mode parameter and 20,000 for the size parameter.
      */
 
     public JobSample getJobSample() {
@@ -1347,15 +1347,15 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be
-     * executed. If a JobSample value is not provided, the default value will be used. The default value is CUSTOM_ROWS
-     * for the mode parameter and 20000 for the size parameter.
+     * A sample configuration for profile jobs only, which determines the number of rows on which the profile job is
+     * run. If a <code>JobSample</code> value isn't provided, the default value is used. The default value is
+     * CUSTOM_ROWS for the mode parameter and 20,000 for the size parameter.
      * </p>
      * 
      * @param jobSample
-     *        Sample configuration for profile jobs only. Determines the number of rows on which the profile job will be
-     *        executed. If a JobSample value is not provided, the default value will be used. The default value is
-     *        CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.
+     *        A sample configuration for profile jobs only, which determines the number of rows on which the profile job
+     *        is run. If a <code>JobSample</code> value isn't provided, the default value is used. The default value is
+     *        CUSTOM_ROWS for the mode parameter and 20,000 for the size parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -2752,6 +2752,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<CreateReplaceRootVolumeTaskResult> createReplaceRootVolumeTaskAsync(CreateReplaceRootVolumeTaskRequest request) {
+
+        return createReplaceRootVolumeTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateReplaceRootVolumeTaskResult> createReplaceRootVolumeTaskAsync(final CreateReplaceRootVolumeTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateReplaceRootVolumeTaskRequest, CreateReplaceRootVolumeTaskResult> asyncHandler) {
+        final CreateReplaceRootVolumeTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateReplaceRootVolumeTaskResult>() {
+            @Override
+            public CreateReplaceRootVolumeTaskResult call() throws Exception {
+                CreateReplaceRootVolumeTaskResult result = null;
+
+                try {
+                    result = executeCreateReplaceRootVolumeTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateReservedInstancesListingResult> createReservedInstancesListingAsync(CreateReservedInstancesListingRequest request) {
 
         return createReservedInstancesListingAsync(request, null);
@@ -8801,6 +8834,40 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeReplaceRootVolumeTasksResult> describeReplaceRootVolumeTasksAsync(DescribeReplaceRootVolumeTasksRequest request) {
+
+        return describeReplaceRootVolumeTasksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeReplaceRootVolumeTasksResult> describeReplaceRootVolumeTasksAsync(
+            final DescribeReplaceRootVolumeTasksRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeReplaceRootVolumeTasksRequest, DescribeReplaceRootVolumeTasksResult> asyncHandler) {
+        final DescribeReplaceRootVolumeTasksRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeReplaceRootVolumeTasksResult>() {
+            @Override
+            public DescribeReplaceRootVolumeTasksResult call() throws Exception {
+                DescribeReplaceRootVolumeTasksResult result = null;
+
+                try {
+                    result = executeDescribeReplaceRootVolumeTasks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeReservedInstancesResult> describeReservedInstancesAsync(DescribeReservedInstancesRequest request) {
 
         return describeReservedInstancesAsync(request, null);
@@ -11166,6 +11233,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<DisableSerialConsoleAccessResult> disableSerialConsoleAccessAsync(DisableSerialConsoleAccessRequest request) {
+
+        return disableSerialConsoleAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableSerialConsoleAccessResult> disableSerialConsoleAccessAsync(final DisableSerialConsoleAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisableSerialConsoleAccessRequest, DisableSerialConsoleAccessResult> asyncHandler) {
+        final DisableSerialConsoleAccessRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisableSerialConsoleAccessResult>() {
+            @Override
+            public DisableSerialConsoleAccessResult call() throws Exception {
+                DisableSerialConsoleAccessResult result = null;
+
+                try {
+                    result = executeDisableSerialConsoleAccess(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableTransitGatewayRouteTablePropagationResult> disableTransitGatewayRouteTablePropagationAsync(
             DisableTransitGatewayRouteTablePropagationRequest request) {
 
@@ -11658,6 +11758,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeEnableFastSnapshotRestores(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableSerialConsoleAccessResult> enableSerialConsoleAccessAsync(EnableSerialConsoleAccessRequest request) {
+
+        return enableSerialConsoleAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableSerialConsoleAccessResult> enableSerialConsoleAccessAsync(final EnableSerialConsoleAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<EnableSerialConsoleAccessRequest, EnableSerialConsoleAccessResult> asyncHandler) {
+        final EnableSerialConsoleAccessRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<EnableSerialConsoleAccessResult>() {
+            @Override
+            public EnableSerialConsoleAccessResult call() throws Exception {
+                EnableSerialConsoleAccessResult result = null;
+
+                try {
+                    result = executeEnableSerialConsoleAccess(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -12501,6 +12634,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeGetReservedInstancesExchangeQuote(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSerialConsoleAccessStatusResult> getSerialConsoleAccessStatusAsync(GetSerialConsoleAccessStatusRequest request) {
+
+        return getSerialConsoleAccessStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSerialConsoleAccessStatusResult> getSerialConsoleAccessStatusAsync(final GetSerialConsoleAccessStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSerialConsoleAccessStatusRequest, GetSerialConsoleAccessStatusResult> asyncHandler) {
+        final GetSerialConsoleAccessStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSerialConsoleAccessStatusResult>() {
+            @Override
+            public GetSerialConsoleAccessStatusResult call() throws Exception {
+                GetSerialConsoleAccessStatusResult result = null;
+
+                try {
+                    result = executeGetSerialConsoleAccessStatus(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

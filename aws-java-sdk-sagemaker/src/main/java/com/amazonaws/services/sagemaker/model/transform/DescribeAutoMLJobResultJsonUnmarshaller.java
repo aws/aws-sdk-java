@@ -98,6 +98,13 @@ public class DescribeAutoMLJobResultJsonUnmarshaller implements Unmarshaller<Des
                     context.nextToken();
                     describeAutoMLJobResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PartialFailureReasons", targetDepth)) {
+                    context.nextToken();
+                    describeAutoMLJobResult.setPartialFailureReasons(new ListUnmarshaller<AutoMLPartialFailureReason>(
+                            AutoMLPartialFailureReasonJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("BestCandidate", targetDepth)) {
                     context.nextToken();
                     describeAutoMLJobResult.setBestCandidate(AutoMLCandidateJsonUnmarshaller.getInstance().unmarshall(context));

@@ -43,7 +43,7 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
     /**
      * <p>
      * The maximum time, in seconds, an AutoML job is allowed to wait for a trial to complete. It must be equal to or
-     * greater than MaxRuntimePerTrainingJobInSeconds.
+     * greater than <code>MaxRuntimePerTrainingJobInSeconds</code>.
      * </p>
      */
     private Integer maxAutoMLJobRuntimeInSeconds;
@@ -131,12 +131,12 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
     /**
      * <p>
      * The maximum time, in seconds, an AutoML job is allowed to wait for a trial to complete. It must be equal to or
-     * greater than MaxRuntimePerTrainingJobInSeconds.
+     * greater than <code>MaxRuntimePerTrainingJobInSeconds</code>.
      * </p>
      * 
      * @param maxAutoMLJobRuntimeInSeconds
      *        The maximum time, in seconds, an AutoML job is allowed to wait for a trial to complete. It must be equal
-     *        to or greater than MaxRuntimePerTrainingJobInSeconds.
+     *        to or greater than <code>MaxRuntimePerTrainingJobInSeconds</code>.
      */
 
     public void setMaxAutoMLJobRuntimeInSeconds(Integer maxAutoMLJobRuntimeInSeconds) {
@@ -146,11 +146,11 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
     /**
      * <p>
      * The maximum time, in seconds, an AutoML job is allowed to wait for a trial to complete. It must be equal to or
-     * greater than MaxRuntimePerTrainingJobInSeconds.
+     * greater than <code>MaxRuntimePerTrainingJobInSeconds</code>.
      * </p>
      * 
      * @return The maximum time, in seconds, an AutoML job is allowed to wait for a trial to complete. It must be equal
-     *         to or greater than MaxRuntimePerTrainingJobInSeconds.
+     *         to or greater than <code>MaxRuntimePerTrainingJobInSeconds</code>.
      */
 
     public Integer getMaxAutoMLJobRuntimeInSeconds() {
@@ -160,12 +160,12 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
     /**
      * <p>
      * The maximum time, in seconds, an AutoML job is allowed to wait for a trial to complete. It must be equal to or
-     * greater than MaxRuntimePerTrainingJobInSeconds.
+     * greater than <code>MaxRuntimePerTrainingJobInSeconds</code>.
      * </p>
      * 
      * @param maxAutoMLJobRuntimeInSeconds
      *        The maximum time, in seconds, an AutoML job is allowed to wait for a trial to complete. It must be equal
-     *        to or greater than MaxRuntimePerTrainingJobInSeconds.
+     *        to or greater than <code>MaxRuntimePerTrainingJobInSeconds</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -84,6 +84,10 @@ public class DescribeDatasetResultJsonUnmarshaller implements Unmarshaller<Descr
                     context.nextToken();
                     describeDatasetResult.setSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PathOptions", targetDepth)) {
+                    context.nextToken();
+                    describeDatasetResult.setPathOptions(PathOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
                     describeDatasetResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context

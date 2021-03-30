@@ -91,6 +91,50 @@ public interface AmazonFraudDetector {
 
     /**
      * <p>
+     * Cancels the specified batch prediction job.
+     * </p>
+     * 
+     * @param cancelBatchPredictionJobRequest
+     * @return Result of the CancelBatchPredictionJob operation returned by the service.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws ResourceNotFoundException
+     *         An exception indicating the specified resource was not found.
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.CancelBatchPredictionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CancelBatchPredictionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CancelBatchPredictionJobResult cancelBatchPredictionJob(CancelBatchPredictionJobRequest cancelBatchPredictionJobRequest);
+
+    /**
+     * <p>
+     * Creates a batch prediction job.
+     * </p>
+     * 
+     * @param createBatchPredictionJobRequest
+     * @return Result of the CreateBatchPredictionJob operation returned by the service.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.CreateBatchPredictionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateBatchPredictionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateBatchPredictionJobResult createBatchPredictionJob(CreateBatchPredictionJobRequest createBatchPredictionJobRequest);
+
+    /**
+     * <p>
      * Creates a detector version. The detector version starts in a <code>DRAFT</code> status.
      * </p>
      * 
@@ -203,6 +247,29 @@ public interface AmazonFraudDetector {
      *      API Documentation</a>
      */
     CreateVariableResult createVariable(CreateVariableRequest createVariableRequest);
+
+    /**
+     * <p>
+     * Deletes a batch prediction job.
+     * </p>
+     * 
+     * @param deleteBatchPredictionJobRequest
+     * @return Result of the DeleteBatchPredictionJob operation returned by the service.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws ResourceNotFoundException
+     *         An exception indicating the specified resource was not found.
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.DeleteBatchPredictionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteBatchPredictionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteBatchPredictionJobResult deleteBatchPredictionJob(DeleteBatchPredictionJobRequest deleteBatchPredictionJobRequest);
 
     /**
      * <p>
@@ -849,6 +916,33 @@ public interface AmazonFraudDetector {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeModelVersionsResult describeModelVersions(DescribeModelVersionsRequest describeModelVersionsRequest);
+
+    /**
+     * <p>
+     * Gets all batch prediction jobs or a specific job if you specify a job ID. This is a paginated API. If you provide
+     * a null maxResults, this action retrieves a maximum of 50 records per page. If you provide a maxResults, the value
+     * must be between 1 and 50. To get the next page results, provide the pagination token from the
+     * GetBatchPredictionJobsResponse as part of your request. A null pagination token fetches the records from the
+     * beginning.
+     * </p>
+     * 
+     * @param getBatchPredictionJobsRequest
+     * @return Result of the GetBatchPredictionJobs operation returned by the service.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws ResourceNotFoundException
+     *         An exception indicating the specified resource was not found.
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.GetBatchPredictionJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetBatchPredictionJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetBatchPredictionJobsResult getBatchPredictionJobs(GetBatchPredictionJobsRequest getBatchPredictionJobsRequest);
 
     /**
      * <p>

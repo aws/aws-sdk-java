@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Represents an individual condition that evaluates to true or false.
  * </p>
  * <p>
- * Conditions are used with recipe actions: The action is only performed for column values where the condition evaluates
+ * Conditions are used with recipe actions. The action is only performed for column values where the condition evaluates
  * to true.
  * </p>
  * <p>

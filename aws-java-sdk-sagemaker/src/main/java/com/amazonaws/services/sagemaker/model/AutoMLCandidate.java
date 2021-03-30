@@ -85,6 +85,12 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String failureReason;
+    /**
+     * <p>
+     * The AutoML candidate's properties.
+     * </p>
+     */
+    private CandidateProperties candidateProperties;
 
     /**
      * <p>
@@ -571,6 +577,46 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The AutoML candidate's properties.
+     * </p>
+     * 
+     * @param candidateProperties
+     *        The AutoML candidate's properties.
+     */
+
+    public void setCandidateProperties(CandidateProperties candidateProperties) {
+        this.candidateProperties = candidateProperties;
+    }
+
+    /**
+     * <p>
+     * The AutoML candidate's properties.
+     * </p>
+     * 
+     * @return The AutoML candidate's properties.
+     */
+
+    public CandidateProperties getCandidateProperties() {
+        return this.candidateProperties;
+    }
+
+    /**
+     * <p>
+     * The AutoML candidate's properties.
+     * </p>
+     * 
+     * @param candidateProperties
+     *        The AutoML candidate's properties.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoMLCandidate withCandidateProperties(CandidateProperties candidateProperties) {
+        setCandidateProperties(candidateProperties);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -601,7 +647,9 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
         if (getLastModifiedTime() != null)
             sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
         if (getFailureReason() != null)
-            sb.append("FailureReason: ").append(getFailureReason());
+            sb.append("FailureReason: ").append(getFailureReason()).append(",");
+        if (getCandidateProperties() != null)
+            sb.append("CandidateProperties: ").append(getCandidateProperties());
         sb.append("}");
         return sb.toString();
     }
@@ -657,6 +705,10 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getFailureReason() != null && other.getFailureReason().equals(this.getFailureReason()) == false)
             return false;
+        if (other.getCandidateProperties() == null ^ this.getCandidateProperties() == null)
+            return false;
+        if (other.getCandidateProperties() != null && other.getCandidateProperties().equals(this.getCandidateProperties()) == false)
+            return false;
         return true;
     }
 
@@ -675,6 +727,7 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
+        hashCode = prime * hashCode + ((getCandidateProperties() == null) ? 0 : getCandidateProperties().hashCode());
         return hashCode;
     }
 

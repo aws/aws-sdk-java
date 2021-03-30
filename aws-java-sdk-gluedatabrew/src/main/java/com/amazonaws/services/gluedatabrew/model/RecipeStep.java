@@ -36,7 +36,7 @@ public class RecipeStep implements Serializable, Cloneable, StructuredPojo {
     private RecipeAction action;
     /**
      * <p>
-     * One or more conditions that must be met, in order for the recipe step to succeed.
+     * One or more conditions that must be met for the recipe step to succeed.
      * </p>
      * <note>
      * <p>
@@ -89,7 +89,7 @@ public class RecipeStep implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more conditions that must be met, in order for the recipe step to succeed.
+     * One or more conditions that must be met for the recipe step to succeed.
      * </p>
      * <note>
      * <p>
@@ -98,7 +98,7 @@ public class RecipeStep implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </note>
      * 
-     * @return One or more conditions that must be met, in order for the recipe step to succeed.</p> <note>
+     * @return One or more conditions that must be met for the recipe step to succeed.</p> <note>
      *         <p>
      *         All of the conditions in the array must be met. In other words, all of the conditions must be combined
      *         using a logical AND operation.
@@ -111,7 +111,7 @@ public class RecipeStep implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more conditions that must be met, in order for the recipe step to succeed.
+     * One or more conditions that must be met for the recipe step to succeed.
      * </p>
      * <note>
      * <p>
@@ -121,7 +121,7 @@ public class RecipeStep implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * 
      * @param conditionExpressions
-     *        One or more conditions that must be met, in order for the recipe step to succeed.</p> <note>
+     *        One or more conditions that must be met for the recipe step to succeed.</p> <note>
      *        <p>
      *        All of the conditions in the array must be met. In other words, all of the conditions must be combined
      *        using a logical AND operation.
@@ -139,7 +139,7 @@ public class RecipeStep implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more conditions that must be met, in order for the recipe step to succeed.
+     * One or more conditions that must be met for the recipe step to succeed.
      * </p>
      * <note>
      * <p>
@@ -154,7 +154,7 @@ public class RecipeStep implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param conditionExpressions
-     *        One or more conditions that must be met, in order for the recipe step to succeed.</p> <note>
+     *        One or more conditions that must be met for the recipe step to succeed.</p> <note>
      *        <p>
      *        All of the conditions in the array must be met. In other words, all of the conditions must be combined
      *        using a logical AND operation.
@@ -174,7 +174,7 @@ public class RecipeStep implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more conditions that must be met, in order for the recipe step to succeed.
+     * One or more conditions that must be met for the recipe step to succeed.
      * </p>
      * <note>
      * <p>
@@ -184,7 +184,7 @@ public class RecipeStep implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * 
      * @param conditionExpressions
-     *        One or more conditions that must be met, in order for the recipe step to succeed.</p> <note>
+     *        One or more conditions that must be met for the recipe step to succeed.</p> <note>
      *        <p>
      *        All of the conditions in the array must be met. In other words, all of the conditions must be combined
      *        using a logical AND operation.

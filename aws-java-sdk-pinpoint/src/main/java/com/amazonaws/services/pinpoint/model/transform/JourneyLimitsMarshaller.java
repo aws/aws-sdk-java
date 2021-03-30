@@ -33,6 +33,8 @@ public class JourneyLimitsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointReentryCap").build();
     private static final MarshallingInfo<Integer> MESSAGESPERSECOND_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MessagesPerSecond").build();
+    private static final MarshallingInfo<String> ENDPOINTREENTRYINTERVAL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointReentryInterval").build();
 
     private static final JourneyLimitsMarshaller instance = new JourneyLimitsMarshaller();
 
@@ -53,6 +55,7 @@ public class JourneyLimitsMarshaller {
             protocolMarshaller.marshall(journeyLimits.getDailyCap(), DAILYCAP_BINDING);
             protocolMarshaller.marshall(journeyLimits.getEndpointReentryCap(), ENDPOINTREENTRYCAP_BINDING);
             protocolMarshaller.marshall(journeyLimits.getMessagesPerSecond(), MESSAGESPERSECOND_BINDING);
+            protocolMarshaller.marshall(journeyLimits.getEndpointReentryInterval(), ENDPOINTREENTRYINTERVAL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

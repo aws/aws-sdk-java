@@ -37,6 +37,8 @@ public class CreateDatasetRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FormatOptions").build();
     private static final MarshallingInfo<StructuredPojo> INPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Input").build();
+    private static final MarshallingInfo<StructuredPojo> PATHOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PathOptions").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
 
@@ -60,6 +62,7 @@ public class CreateDatasetRequestMarshaller {
             protocolMarshaller.marshall(createDatasetRequest.getFormat(), FORMAT_BINDING);
             protocolMarshaller.marshall(createDatasetRequest.getFormatOptions(), FORMATOPTIONS_BINDING);
             protocolMarshaller.marshall(createDatasetRequest.getInput(), INPUT_BINDING);
+            protocolMarshaller.marshall(createDatasetRequest.getPathOptions(), PATHOPTIONS_BINDING);
             protocolMarshaller.marshall(createDatasetRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

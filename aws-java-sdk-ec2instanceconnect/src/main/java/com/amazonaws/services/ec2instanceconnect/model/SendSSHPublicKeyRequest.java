@@ -27,37 +27,36 @@ public class SendSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The EC2 instance you wish to publish the SSH key to.
+     * The ID of the EC2 instance.
      * </p>
      */
     private String instanceId;
     /**
      * <p>
-     * The OS user on the EC2 instance whom the key may be used to authenticate as.
+     * The OS user on the EC2 instance for whom the key can be used to authenticate.
      * </p>
      */
     private String instanceOSUser;
     /**
      * <p>
-     * The public key to be published to the instance. To use it after publication you must have the matching private
-     * key.
+     * The public key material. To use the public key, you must have the matching private key.
      * </p>
      */
     private String sSHPublicKey;
     /**
      * <p>
-     * The availability zone the EC2 instance was launched in.
+     * The Availability Zone in which the EC2 instance was launched.
      * </p>
      */
     private String availabilityZone;
 
     /**
      * <p>
-     * The EC2 instance you wish to publish the SSH key to.
+     * The ID of the EC2 instance.
      * </p>
      * 
      * @param instanceId
-     *        The EC2 instance you wish to publish the SSH key to.
+     *        The ID of the EC2 instance.
      */
 
     public void setInstanceId(String instanceId) {
@@ -66,10 +65,10 @@ public class SendSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The EC2 instance you wish to publish the SSH key to.
+     * The ID of the EC2 instance.
      * </p>
      * 
-     * @return The EC2 instance you wish to publish the SSH key to.
+     * @return The ID of the EC2 instance.
      */
 
     public String getInstanceId() {
@@ -78,11 +77,11 @@ public class SendSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The EC2 instance you wish to publish the SSH key to.
+     * The ID of the EC2 instance.
      * </p>
      * 
      * @param instanceId
-     *        The EC2 instance you wish to publish the SSH key to.
+     *        The ID of the EC2 instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +92,11 @@ public class SendSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The OS user on the EC2 instance whom the key may be used to authenticate as.
+     * The OS user on the EC2 instance for whom the key can be used to authenticate.
      * </p>
      * 
      * @param instanceOSUser
-     *        The OS user on the EC2 instance whom the key may be used to authenticate as.
+     *        The OS user on the EC2 instance for whom the key can be used to authenticate.
      */
 
     public void setInstanceOSUser(String instanceOSUser) {
@@ -106,10 +105,10 @@ public class SendSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The OS user on the EC2 instance whom the key may be used to authenticate as.
+     * The OS user on the EC2 instance for whom the key can be used to authenticate.
      * </p>
      * 
-     * @return The OS user on the EC2 instance whom the key may be used to authenticate as.
+     * @return The OS user on the EC2 instance for whom the key can be used to authenticate.
      */
 
     public String getInstanceOSUser() {
@@ -118,11 +117,11 @@ public class SendSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The OS user on the EC2 instance whom the key may be used to authenticate as.
+     * The OS user on the EC2 instance for whom the key can be used to authenticate.
      * </p>
      * 
      * @param instanceOSUser
-     *        The OS user on the EC2 instance whom the key may be used to authenticate as.
+     *        The OS user on the EC2 instance for whom the key can be used to authenticate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,13 +132,11 @@ public class SendSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The public key to be published to the instance. To use it after publication you must have the matching private
-     * key.
+     * The public key material. To use the public key, you must have the matching private key.
      * </p>
      * 
      * @param sSHPublicKey
-     *        The public key to be published to the instance. To use it after publication you must have the matching
-     *        private key.
+     *        The public key material. To use the public key, you must have the matching private key.
      */
 
     public void setSSHPublicKey(String sSHPublicKey) {
@@ -148,12 +145,10 @@ public class SendSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The public key to be published to the instance. To use it after publication you must have the matching private
-     * key.
+     * The public key material. To use the public key, you must have the matching private key.
      * </p>
      * 
-     * @return The public key to be published to the instance. To use it after publication you must have the matching
-     *         private key.
+     * @return The public key material. To use the public key, you must have the matching private key.
      */
 
     public String getSSHPublicKey() {
@@ -162,13 +157,11 @@ public class SendSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The public key to be published to the instance. To use it after publication you must have the matching private
-     * key.
+     * The public key material. To use the public key, you must have the matching private key.
      * </p>
      * 
      * @param sSHPublicKey
-     *        The public key to be published to the instance. To use it after publication you must have the matching
-     *        private key.
+     *        The public key material. To use the public key, you must have the matching private key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,11 +172,11 @@ public class SendSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The availability zone the EC2 instance was launched in.
+     * The Availability Zone in which the EC2 instance was launched.
      * </p>
      * 
      * @param availabilityZone
-     *        The availability zone the EC2 instance was launched in.
+     *        The Availability Zone in which the EC2 instance was launched.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -192,10 +185,10 @@ public class SendSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The availability zone the EC2 instance was launched in.
+     * The Availability Zone in which the EC2 instance was launched.
      * </p>
      * 
-     * @return The availability zone the EC2 instance was launched in.
+     * @return The Availability Zone in which the EC2 instance was launched.
      */
 
     public String getAvailabilityZone() {
@@ -204,11 +197,11 @@ public class SendSSHPublicKeyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The availability zone the EC2 instance was launched in.
+     * The Availability Zone in which the EC2 instance was launched.
      * </p>
      * 
      * @param availabilityZone
-     *        The availability zone the EC2 instance was launched in.
+     *        The Availability Zone in which the EC2 instance was launched.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

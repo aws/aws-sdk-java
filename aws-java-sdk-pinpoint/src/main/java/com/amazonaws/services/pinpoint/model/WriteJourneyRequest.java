@@ -144,12 +144,24 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
      * </li>
      * </ul>
      * <p>
-     * The CANCELLED, COMPLETED, and CLOSED values are not supported in requests to create or update a journey. To
-     * cancel a journey, use the <link linkend="apps-application-id-journeys-journey-id-state">Journey State</link>
-     * resource.
+     * PAUSED, CANCELLED, COMPLETED, and CLOSED states are not supported in requests to create or update a journey. To
+     * cancel, pause, or resume a journey, use the <link linkend="apps-application-id-journeys-journey-id-state">Journey
+     * State</link> resource.
      * </p>
      */
     private String state;
+    /**
+     * <p>
+     * Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.
+     * </p>
+     */
+    private Boolean waitForQuietTime;
+    /**
+     * <p>
+     * Specifies whether a journey should be refreshed on segment update.
+     * </p>
+     */
+    private Boolean refreshOnSegmentUpdate;
 
     /**
      * <p>
@@ -838,9 +850,9 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
      * </li>
      * </ul>
      * <p>
-     * The CANCELLED, COMPLETED, and CLOSED values are not supported in requests to create or update a journey. To
-     * cancel a journey, use the <link linkend="apps-application-id-journeys-journey-id-state">Journey State</link>
-     * resource.
+     * PAUSED, CANCELLED, COMPLETED, and CLOSED states are not supported in requests to create or update a journey. To
+     * cancel, pause, or resume a journey, use the <link linkend="apps-application-id-journeys-journey-id-state">Journey
+     * State</link> resource.
      * </p>
      * 
      * @param state
@@ -860,9 +872,9 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
      *        </li>
      *        </ul>
      *        <p>
-     *        The CANCELLED, COMPLETED, and CLOSED values are not supported in requests to create or update a journey.
-     *        To cancel a journey, use the <link linkend="apps-application-id-journeys-journey-id-state">Journey
-     *        State</link> resource.
+     *        PAUSED, CANCELLED, COMPLETED, and CLOSED states are not supported in requests to create or update a
+     *        journey. To cancel, pause, or resume a journey, use the <link
+     *        linkend="apps-application-id-journeys-journey-id-state">Journey State</link> resource.
      * @see State
      */
 
@@ -889,9 +901,9 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
      * </li>
      * </ul>
      * <p>
-     * The CANCELLED, COMPLETED, and CLOSED values are not supported in requests to create or update a journey. To
-     * cancel a journey, use the <link linkend="apps-application-id-journeys-journey-id-state">Journey State</link>
-     * resource.
+     * PAUSED, CANCELLED, COMPLETED, and CLOSED states are not supported in requests to create or update a journey. To
+     * cancel, pause, or resume a journey, use the <link linkend="apps-application-id-journeys-journey-id-state">Journey
+     * State</link> resource.
      * </p>
      * 
      * @return The status of the journey. Valid values are:</p>
@@ -910,9 +922,9 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
      *         </li>
      *         </ul>
      *         <p>
-     *         The CANCELLED, COMPLETED, and CLOSED values are not supported in requests to create or update a journey.
-     *         To cancel a journey, use the <link linkend="apps-application-id-journeys-journey-id-state">Journey
-     *         State</link> resource.
+     *         PAUSED, CANCELLED, COMPLETED, and CLOSED states are not supported in requests to create or update a
+     *         journey. To cancel, pause, or resume a journey, use the <link
+     *         linkend="apps-application-id-journeys-journey-id-state">Journey State</link> resource.
      * @see State
      */
 
@@ -939,9 +951,9 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
      * </li>
      * </ul>
      * <p>
-     * The CANCELLED, COMPLETED, and CLOSED values are not supported in requests to create or update a journey. To
-     * cancel a journey, use the <link linkend="apps-application-id-journeys-journey-id-state">Journey State</link>
-     * resource.
+     * PAUSED, CANCELLED, COMPLETED, and CLOSED states are not supported in requests to create or update a journey. To
+     * cancel, pause, or resume a journey, use the <link linkend="apps-application-id-journeys-journey-id-state">Journey
+     * State</link> resource.
      * </p>
      * 
      * @param state
@@ -961,9 +973,9 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
      *        </li>
      *        </ul>
      *        <p>
-     *        The CANCELLED, COMPLETED, and CLOSED values are not supported in requests to create or update a journey.
-     *        To cancel a journey, use the <link linkend="apps-application-id-journeys-journey-id-state">Journey
-     *        State</link> resource.
+     *        PAUSED, CANCELLED, COMPLETED, and CLOSED states are not supported in requests to create or update a
+     *        journey. To cancel, pause, or resume a journey, use the <link
+     *        linkend="apps-application-id-journeys-journey-id-state">Journey State</link> resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see State
      */
@@ -992,9 +1004,9 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
      * </li>
      * </ul>
      * <p>
-     * The CANCELLED, COMPLETED, and CLOSED values are not supported in requests to create or update a journey. To
-     * cancel a journey, use the <link linkend="apps-application-id-journeys-journey-id-state">Journey State</link>
-     * resource.
+     * PAUSED, CANCELLED, COMPLETED, and CLOSED states are not supported in requests to create or update a journey. To
+     * cancel, pause, or resume a journey, use the <link linkend="apps-application-id-journeys-journey-id-state">Journey
+     * State</link> resource.
      * </p>
      * 
      * @param state
@@ -1014,9 +1026,9 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
      *        </li>
      *        </ul>
      *        <p>
-     *        The CANCELLED, COMPLETED, and CLOSED values are not supported in requests to create or update a journey.
-     *        To cancel a journey, use the <link linkend="apps-application-id-journeys-journey-id-state">Journey
-     *        State</link> resource.
+     *        PAUSED, CANCELLED, COMPLETED, and CLOSED states are not supported in requests to create or update a
+     *        journey. To cancel, pause, or resume a journey, use the <link
+     *        linkend="apps-application-id-journeys-journey-id-state">Journey State</link> resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see State
      */
@@ -1024,6 +1036,110 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
     public WriteJourneyRequest withState(State state) {
         this.state = state.toString();
         return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.
+     * </p>
+     * 
+     * @param waitForQuietTime
+     *        Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.
+     */
+
+    public void setWaitForQuietTime(Boolean waitForQuietTime) {
+        this.waitForQuietTime = waitForQuietTime;
+    }
+
+    /**
+     * <p>
+     * Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.
+     * </p>
+     * 
+     * @return Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.
+     */
+
+    public Boolean getWaitForQuietTime() {
+        return this.waitForQuietTime;
+    }
+
+    /**
+     * <p>
+     * Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.
+     * </p>
+     * 
+     * @param waitForQuietTime
+     *        Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WriteJourneyRequest withWaitForQuietTime(Boolean waitForQuietTime) {
+        setWaitForQuietTime(waitForQuietTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.
+     * </p>
+     * 
+     * @return Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.
+     */
+
+    public Boolean isWaitForQuietTime() {
+        return this.waitForQuietTime;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a journey should be refreshed on segment update.
+     * </p>
+     * 
+     * @param refreshOnSegmentUpdate
+     *        Specifies whether a journey should be refreshed on segment update.
+     */
+
+    public void setRefreshOnSegmentUpdate(Boolean refreshOnSegmentUpdate) {
+        this.refreshOnSegmentUpdate = refreshOnSegmentUpdate;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a journey should be refreshed on segment update.
+     * </p>
+     * 
+     * @return Specifies whether a journey should be refreshed on segment update.
+     */
+
+    public Boolean getRefreshOnSegmentUpdate() {
+        return this.refreshOnSegmentUpdate;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a journey should be refreshed on segment update.
+     * </p>
+     * 
+     * @param refreshOnSegmentUpdate
+     *        Specifies whether a journey should be refreshed on segment update.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WriteJourneyRequest withRefreshOnSegmentUpdate(Boolean refreshOnSegmentUpdate) {
+        setRefreshOnSegmentUpdate(refreshOnSegmentUpdate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a journey should be refreshed on segment update.
+     * </p>
+     * 
+     * @return Specifies whether a journey should be refreshed on segment update.
+     */
+
+    public Boolean isRefreshOnSegmentUpdate() {
+        return this.refreshOnSegmentUpdate;
     }
 
     /**
@@ -1061,7 +1177,11 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
         if (getStartCondition() != null)
             sb.append("StartCondition: ").append(getStartCondition()).append(",");
         if (getState() != null)
-            sb.append("State: ").append(getState());
+            sb.append("State: ").append(getState()).append(",");
+        if (getWaitForQuietTime() != null)
+            sb.append("WaitForQuietTime: ").append(getWaitForQuietTime()).append(",");
+        if (getRefreshOnSegmentUpdate() != null)
+            sb.append("RefreshOnSegmentUpdate: ").append(getRefreshOnSegmentUpdate());
         sb.append("}");
         return sb.toString();
     }
@@ -1124,6 +1244,14 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
+        if (other.getWaitForQuietTime() == null ^ this.getWaitForQuietTime() == null)
+            return false;
+        if (other.getWaitForQuietTime() != null && other.getWaitForQuietTime().equals(this.getWaitForQuietTime()) == false)
+            return false;
+        if (other.getRefreshOnSegmentUpdate() == null ^ this.getRefreshOnSegmentUpdate() == null)
+            return false;
+        if (other.getRefreshOnSegmentUpdate() != null && other.getRefreshOnSegmentUpdate().equals(this.getRefreshOnSegmentUpdate()) == false)
+            return false;
         return true;
     }
 
@@ -1144,6 +1272,8 @@ public class WriteJourneyRequest implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getStartActivity() == null) ? 0 : getStartActivity().hashCode());
         hashCode = prime * hashCode + ((getStartCondition() == null) ? 0 : getStartCondition().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getWaitForQuietTime() == null) ? 0 : getWaitForQuietTime().hashCode());
+        hashCode = prime * hashCode + ((getRefreshOnSegmentUpdate() == null) ? 0 : getRefreshOnSegmentUpdate().hashCode());
         return hashCode;
     }
 

@@ -82,7 +82,7 @@ class SecurityGroupExists {
          */
         @Override
         public boolean matches(AmazonServiceException e) {
-            return "InvalidGroupNotFound".equals(e.getErrorCode());
+            return "InvalidGroup.NotFound".equals(e.getErrorCode());
         }
 
         /**

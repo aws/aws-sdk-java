@@ -56,7 +56,7 @@ public class PutOrganizationConformancePackRequest extends com.amazonaws.AmazonW
      * </p>
      * <note>
      * <p>
-     * This field is optional.
+     * This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.
      * </p>
      * </note>
      */
@@ -247,14 +247,14 @@ public class PutOrganizationConformancePackRequest extends com.amazonaws.AmazonW
      * </p>
      * <note>
      * <p>
-     * This field is optional.
+     * This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.
      * </p>
      * </note>
      * 
      * @param deliveryS3Bucket
      *        Amazon S3 bucket where AWS Config stores conformance pack templates.</p> <note>
      *        <p>
-     *        This field is optional.
+     *        This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.
      *        </p>
      */
 
@@ -268,13 +268,13 @@ public class PutOrganizationConformancePackRequest extends com.amazonaws.AmazonW
      * </p>
      * <note>
      * <p>
-     * This field is optional.
+     * This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.
      * </p>
      * </note>
      * 
      * @return Amazon S3 bucket where AWS Config stores conformance pack templates.</p> <note>
      *         <p>
-     *         This field is optional.
+     *         This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.
      *         </p>
      */
 
@@ -288,14 +288,14 @@ public class PutOrganizationConformancePackRequest extends com.amazonaws.AmazonW
      * </p>
      * <note>
      * <p>
-     * This field is optional.
+     * This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.
      * </p>
      * </note>
      * 
      * @param deliveryS3Bucket
      *        Amazon S3 bucket where AWS Config stores conformance pack templates.</p> <note>
      *        <p>
-     *        This field is optional.
+     *        This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -495,15 +495,15 @@ public interface AmazonEC2 {
      * Certificate Manager for Nitro Enclaves</a> in the <i>AWS Nitro Enclaves User Guide</i>.
      * </p>
      * <p>
-     * When the IAM role is associated with the ACM certificate, places the certificate, certificate chain, and
-     * encrypted private key in an Amazon S3 bucket that only the associated IAM role can access. The private key of the
-     * certificate is encrypted with an AWS-managed KMS customer master (CMK) that has an attached attestation-based CMK
-     * policy.
+     * When the IAM role is associated with the ACM certificate, the certificate, certificate chain, and encrypted
+     * private key are placed in an Amazon S3 bucket that only the associated IAM role can access. The private key of
+     * the certificate is encrypted with an AWS-managed KMS customer master (CMK) that has an attached attestation-based
+     * CMK policy.
      * </p>
      * <p>
      * To enable the IAM role to access the Amazon S3 object, you must grant it permission to call
      * <code>s3:GetObject</code> on the Amazon S3 bucket returned by the command. To enable the IAM role to access the
-     * AWS KMS CMK, you must grant it permission to call <code>kms:Decrypt</code> on AWS KMS CMK returned by the
+     * AWS KMS CMK, you must grant it permission to call <code>kms:Decrypt</code> on the AWS KMS CMK returned by the
      * command. For more information, see <a
      * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html#add-policy"> Grant the role
      * permission to access the certificate and encryption key</a> in the <i>AWS Nitro Enclaves User Guide</i>.
@@ -1753,6 +1753,24 @@ public interface AmazonEC2 {
      *      Documentation</a>
      */
     CreatePlacementGroupResult createPlacementGroup(CreatePlacementGroupRequest createPlacementGroupRequest);
+
+    /**
+     * <p>
+     * Creates a root volume replacement task for an Amazon EC2 instance. The root volume can either be restored to its
+     * initial launch state, or it can be restored using a specific snapshot.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/">Replace a root volume</a> in the <i>Amazon
+     * Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param createReplaceRootVolumeTaskRequest
+     * @return Result of the CreateReplaceRootVolumeTask operation returned by the service.
+     * @sample AmazonEC2.CreateReplaceRootVolumeTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReplaceRootVolumeTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateReplaceRootVolumeTaskResult createReplaceRootVolumeTask(CreateReplaceRootVolumeTaskRequest createReplaceRootVolumeTaskRequest);
 
     /**
      * <p>
@@ -5014,6 +5032,21 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Describes a root volume replacement task. For more information, see <a
+     * href="https://docs.aws.amazon.com/">Replace a root volume</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param describeReplaceRootVolumeTasksRequest
+     * @return Result of the DescribeReplaceRootVolumeTasks operation returned by the service.
+     * @sample AmazonEC2.DescribeReplaceRootVolumeTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReplaceRootVolumeTasks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeReplaceRootVolumeTasksResult describeReplaceRootVolumeTasks(DescribeReplaceRootVolumeTasksRequest describeReplaceRootVolumeTasksRequest);
+
+    /**
+     * <p>
      * Describes one or more of the Reserved Instances that you purchased.
      * </p>
      * <p>
@@ -6214,6 +6247,22 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Disables access to the EC2 serial console of all instances for your account. By default, access to the EC2 serial
+     * console is disabled for your account. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access"
+     * >Manage account access to the EC2 serial console</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param disableSerialConsoleAccessRequest
+     * @return Result of the DisableSerialConsoleAccess operation returned by the service.
+     * @sample AmazonEC2.DisableSerialConsoleAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableSerialConsoleAccess" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DisableSerialConsoleAccessResult disableSerialConsoleAccess(DisableSerialConsoleAccessRequest disableSerialConsoleAccessRequest);
+
+    /**
+     * <p>
      * Disables the specified resource attachment from propagating routes to the specified propagation route table.
      * </p>
      * 
@@ -6451,8 +6500,8 @@ public interface AmazonEC2 {
      * Enables EBS encryption by default for your account in the current Region.
      * </p>
      * <p>
-     * After you enable encryption by default, the EBS volumes that you create are are always encrypted, either using
-     * the default CMK or the CMK that you specified when you created each volume. For more information, see <a
+     * After you enable encryption by default, the EBS volumes that you create are always encrypted, either using the
+     * default CMK or the CMK that you specified when you created each volume. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -6500,6 +6549,22 @@ public interface AmazonEC2 {
      *      API Documentation</a>
      */
     EnableFastSnapshotRestoresResult enableFastSnapshotRestores(EnableFastSnapshotRestoresRequest enableFastSnapshotRestoresRequest);
+
+    /**
+     * <p>
+     * Enables access to the EC2 serial console of all instances for your account. By default, access to the EC2 serial
+     * console is disabled for your account. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access"
+     * >Manage account access to the EC2 serial console</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param enableSerialConsoleAccessRequest
+     * @return Result of the EnableSerialConsoleAccess operation returned by the service.
+     * @sample AmazonEC2.EnableSerialConsoleAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableSerialConsoleAccess" target="_top">AWS
+     *      API Documentation</a>
+     */
+    EnableSerialConsoleAccessResult enableSerialConsoleAccess(EnableSerialConsoleAccessRequest enableSerialConsoleAccessRequest);
 
     /**
      * <p>
@@ -6930,6 +6995,22 @@ public interface AmazonEC2 {
      *      target="_top">AWS API Documentation</a>
      */
     GetReservedInstancesExchangeQuoteResult getReservedInstancesExchangeQuote(GetReservedInstancesExchangeQuoteRequest getReservedInstancesExchangeQuoteRequest);
+
+    /**
+     * <p>
+     * Retrieves the access status of your account to the EC2 serial console of all instances. By default, access to the
+     * EC2 serial console is disabled for your account. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access"
+     * >Manage account access to the EC2 serial console</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param getSerialConsoleAccessStatusRequest
+     * @return Result of the GetSerialConsoleAccessStatus operation returned by the service.
+     * @sample AmazonEC2.GetSerialConsoleAccessStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSerialConsoleAccessStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetSerialConsoleAccessStatusResult getSerialConsoleAccessStatus(GetSerialConsoleAccessStatusRequest getSerialConsoleAccessStatusRequest);
 
     /**
      * <p>

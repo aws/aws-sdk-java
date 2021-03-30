@@ -101,11 +101,11 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      * changes (for example, <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).
      * </p>
      * <p>
-     * To record all configuration changes, you must set the <code>allSupported</code> option to <code>false</code>.
+     * To record all configuration changes, you must set the <code>allSupported</code> option to <code>true</code>.
      * </p>
      * <p>
-     * If you set this option to <code>true</code>, when AWS Config adds support for a new type of resource, it will not
-     * record resources of that type unless you manually add that type to your recording group.
+     * If you set this option to <code>false</code>, when AWS Config adds support for a new type of resource, it will
+     * not record resources of that type unless you manually add that type to your recording group.
      * </p>
      * <p>
      * For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a href=
@@ -385,11 +385,11 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      * changes (for example, <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).
      * </p>
      * <p>
-     * To record all configuration changes, you must set the <code>allSupported</code> option to <code>false</code>.
+     * To record all configuration changes, you must set the <code>allSupported</code> option to <code>true</code>.
      * </p>
      * <p>
-     * If you set this option to <code>true</code>, when AWS Config adds support for a new type of resource, it will not
-     * record resources of that type unless you manually add that type to your recording group.
+     * If you set this option to <code>false</code>, when AWS Config adds support for a new type of resource, it will
+     * not record resources of that type unless you manually add that type to your recording group.
      * </p>
      * <p>
      * For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a href=
@@ -402,10 +402,10 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      *         <code>AWS::CloudTrail::Trail</code>).</p>
      *         <p>
      *         To record all configuration changes, you must set the <code>allSupported</code> option to
-     *         <code>false</code>.
+     *         <code>true</code>.
      *         </p>
      *         <p>
-     *         If you set this option to <code>true</code>, when AWS Config adds support for a new type of resource, it
+     *         If you set this option to <code>false</code>, when AWS Config adds support for a new type of resource, it
      *         will not record resources of that type unless you manually add that type to your recording group.
      *         </p>
      *         <p>
@@ -429,11 +429,11 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      * changes (for example, <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).
      * </p>
      * <p>
-     * To record all configuration changes, you must set the <code>allSupported</code> option to <code>false</code>.
+     * To record all configuration changes, you must set the <code>allSupported</code> option to <code>true</code>.
      * </p>
      * <p>
-     * If you set this option to <code>true</code>, when AWS Config adds support for a new type of resource, it will not
-     * record resources of that type unless you manually add that type to your recording group.
+     * If you set this option to <code>false</code>, when AWS Config adds support for a new type of resource, it will
+     * not record resources of that type unless you manually add that type to your recording group.
      * </p>
      * <p>
      * For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a href=
@@ -447,10 +447,10 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      *        ).</p>
      *        <p>
      *        To record all configuration changes, you must set the <code>allSupported</code> option to
-     *        <code>false</code>.
+     *        <code>true</code>.
      *        </p>
      *        <p>
-     *        If you set this option to <code>true</code>, when AWS Config adds support for a new type of resource, it
+     *        If you set this option to <code>false</code>, when AWS Config adds support for a new type of resource, it
      *        will not record resources of that type unless you manually add that type to your recording group.
      *        </p>
      *        <p>
@@ -476,11 +476,11 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      * changes (for example, <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).
      * </p>
      * <p>
-     * To record all configuration changes, you must set the <code>allSupported</code> option to <code>false</code>.
+     * To record all configuration changes, you must set the <code>allSupported</code> option to <code>true</code>.
      * </p>
      * <p>
-     * If you set this option to <code>true</code>, when AWS Config adds support for a new type of resource, it will not
-     * record resources of that type unless you manually add that type to your recording group.
+     * If you set this option to <code>false</code>, when AWS Config adds support for a new type of resource, it will
+     * not record resources of that type unless you manually add that type to your recording group.
      * </p>
      * <p>
      * For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a href=
@@ -499,10 +499,10 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      *        ).</p>
      *        <p>
      *        To record all configuration changes, you must set the <code>allSupported</code> option to
-     *        <code>false</code>.
+     *        <code>true</code>.
      *        </p>
      *        <p>
-     *        If you set this option to <code>true</code>, when AWS Config adds support for a new type of resource, it
+     *        If you set this option to <code>false</code>, when AWS Config adds support for a new type of resource, it
      *        will not record resources of that type unless you manually add that type to your recording group.
      *        </p>
      *        <p>
@@ -530,11 +530,11 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      * changes (for example, <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).
      * </p>
      * <p>
-     * To record all configuration changes, you must set the <code>allSupported</code> option to <code>false</code>.
+     * To record all configuration changes, you must set the <code>allSupported</code> option to <code>true</code>.
      * </p>
      * <p>
-     * If you set this option to <code>true</code>, when AWS Config adds support for a new type of resource, it will not
-     * record resources of that type unless you manually add that type to your recording group.
+     * If you set this option to <code>false</code>, when AWS Config adds support for a new type of resource, it will
+     * not record resources of that type unless you manually add that type to your recording group.
      * </p>
      * <p>
      * For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a href=
@@ -548,10 +548,10 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      *        ).</p>
      *        <p>
      *        To record all configuration changes, you must set the <code>allSupported</code> option to
-     *        <code>false</code>.
+     *        <code>true</code>.
      *        </p>
      *        <p>
-     *        If you set this option to <code>true</code>, when AWS Config adds support for a new type of resource, it
+     *        If you set this option to <code>false</code>, when AWS Config adds support for a new type of resource, it
      *        will not record resources of that type unless you manually add that type to your recording group.
      *        </p>
      *        <p>
@@ -574,11 +574,11 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      * changes (for example, <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).
      * </p>
      * <p>
-     * To record all configuration changes, you must set the <code>allSupported</code> option to <code>false</code>.
+     * To record all configuration changes, you must set the <code>allSupported</code> option to <code>true</code>.
      * </p>
      * <p>
-     * If you set this option to <code>true</code>, when AWS Config adds support for a new type of resource, it will not
-     * record resources of that type unless you manually add that type to your recording group.
+     * If you set this option to <code>false</code>, when AWS Config adds support for a new type of resource, it will
+     * not record resources of that type unless you manually add that type to your recording group.
      * </p>
      * <p>
      * For a list of valid <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in <a href=
@@ -592,10 +592,10 @@ public class RecordingGroup implements Serializable, Cloneable, StructuredPojo {
      *        ).</p>
      *        <p>
      *        To record all configuration changes, you must set the <code>allSupported</code> option to
-     *        <code>false</code>.
+     *        <code>true</code>.
      *        </p>
      *        <p>
-     *        If you set this option to <code>true</code>, when AWS Config adds support for a new type of resource, it
+     *        If you set this option to <code>false</code>, when AWS Config adds support for a new type of resource, it
      *        will not record resources of that type unless you manually add that type to your recording group.
      *        </p>
      *        <p>

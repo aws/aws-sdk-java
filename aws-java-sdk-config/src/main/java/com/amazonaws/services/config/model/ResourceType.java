@@ -101,6 +101,7 @@ public enum ResourceType {
     AWSSSMPatchCompliance("AWS::SSM::PatchCompliance"),
     AWSShieldProtection("AWS::Shield::Protection"),
     AWSShieldRegionalProtection("AWS::ShieldRegional::Protection"),
+    AWSConfigConformancePackCompliance("AWS::Config::ConformancePackCompliance"),
     AWSConfigResourceCompliance("AWS::Config::ResourceCompliance"),
     AWSApiGatewayStage("AWS::ApiGateway::Stage"),
     AWSApiGatewayRestApi("AWS::ApiGateway::RestApi"),

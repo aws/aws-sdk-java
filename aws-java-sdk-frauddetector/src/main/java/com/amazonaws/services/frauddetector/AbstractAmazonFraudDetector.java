@@ -38,6 +38,16 @@ public class AbstractAmazonFraudDetector implements AmazonFraudDetector {
     }
 
     @Override
+    public CancelBatchPredictionJobResult cancelBatchPredictionJob(CancelBatchPredictionJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateBatchPredictionJobResult createBatchPredictionJob(CreateBatchPredictionJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateDetectorVersionResult createDetectorVersion(CreateDetectorVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -59,6 +69,11 @@ public class AbstractAmazonFraudDetector implements AmazonFraudDetector {
 
     @Override
     public CreateVariableResult createVariable(CreateVariableRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteBatchPredictionJobResult deleteBatchPredictionJob(DeleteBatchPredictionJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -129,6 +144,11 @@ public class AbstractAmazonFraudDetector implements AmazonFraudDetector {
 
     @Override
     public DescribeModelVersionsResult describeModelVersions(DescribeModelVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetBatchPredictionJobsResult getBatchPredictionJobs(GetBatchPredictionJobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

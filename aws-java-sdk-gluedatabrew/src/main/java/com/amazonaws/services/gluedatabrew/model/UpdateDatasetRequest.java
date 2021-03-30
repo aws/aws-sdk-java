@@ -33,7 +33,7 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String name;
     /**
      * <p>
-     * Specifies the file format of a dataset created from an S3 file or folder.
+     * The file format of a dataset that is created from an S3 file or folder.
      * </p>
      */
     private String format;
@@ -41,6 +41,12 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
     private FormatOptions formatOptions;
 
     private Input input;
+    /**
+     * <p>
+     * A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     * </p>
+     */
+    private PathOptions pathOptions;
 
     /**
      * <p>
@@ -84,11 +90,11 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies the file format of a dataset created from an S3 file or folder.
+     * The file format of a dataset that is created from an S3 file or folder.
      * </p>
      * 
      * @param format
-     *        Specifies the file format of a dataset created from an S3 file or folder.
+     *        The file format of a dataset that is created from an S3 file or folder.
      * @see InputFormat
      */
 
@@ -98,10 +104,10 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies the file format of a dataset created from an S3 file or folder.
+     * The file format of a dataset that is created from an S3 file or folder.
      * </p>
      * 
-     * @return Specifies the file format of a dataset created from an S3 file or folder.
+     * @return The file format of a dataset that is created from an S3 file or folder.
      * @see InputFormat
      */
 
@@ -111,11 +117,11 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies the file format of a dataset created from an S3 file or folder.
+     * The file format of a dataset that is created from an S3 file or folder.
      * </p>
      * 
      * @param format
-     *        Specifies the file format of a dataset created from an S3 file or folder.
+     *        The file format of a dataset that is created from an S3 file or folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputFormat
      */
@@ -127,11 +133,11 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies the file format of a dataset created from an S3 file or folder.
+     * The file format of a dataset that is created from an S3 file or folder.
      * </p>
      * 
      * @param format
-     *        Specifies the file format of a dataset created from an S3 file or folder.
+     *        The file format of a dataset that is created from an S3 file or folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputFormat
      */
@@ -194,6 +200,46 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     * </p>
+     * 
+     * @param pathOptions
+     *        A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     */
+
+    public void setPathOptions(PathOptions pathOptions) {
+        this.pathOptions = pathOptions;
+    }
+
+    /**
+     * <p>
+     * A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     * </p>
+     * 
+     * @return A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     */
+
+    public PathOptions getPathOptions() {
+        return this.pathOptions;
+    }
+
+    /**
+     * <p>
+     * A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     * </p>
+     * 
+     * @param pathOptions
+     *        A set of options that defines how DataBrew interprets an S3 path of the dataset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDatasetRequest withPathOptions(PathOptions pathOptions) {
+        setPathOptions(pathOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -212,7 +258,9 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getFormatOptions() != null)
             sb.append("FormatOptions: ").append(getFormatOptions()).append(",");
         if (getInput() != null)
-            sb.append("Input: ").append(getInput());
+            sb.append("Input: ").append(getInput()).append(",");
+        if (getPathOptions() != null)
+            sb.append("PathOptions: ").append(getPathOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -243,6 +291,10 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getInput() != null && other.getInput().equals(this.getInput()) == false)
             return false;
+        if (other.getPathOptions() == null ^ this.getPathOptions() == null)
+            return false;
+        if (other.getPathOptions() != null && other.getPathOptions().equals(this.getPathOptions()) == false)
+            return false;
         return true;
     }
 
@@ -255,6 +307,7 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode());
         hashCode = prime * hashCode + ((getFormatOptions() == null) ? 0 : getFormatOptions().hashCode());
         hashCode = prime * hashCode + ((getInput() == null) ? 0 : getInput().hashCode());
+        hashCode = prime * hashCode + ((getPathOptions() == null) ? 0 : getPathOptions().hashCode());
         return hashCode;
     }
 

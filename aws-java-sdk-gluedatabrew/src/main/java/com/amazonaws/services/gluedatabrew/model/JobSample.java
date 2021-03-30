@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Sample configuration for Profile Jobs only. Determines the number of rows on which the Profile job will be executed.
- * If a JobSample value is not provided for profile jobs, the default value will be used. The default value is
- * CUSTOM_ROWS for the mode parameter and 20000 for the size parameter.
+ * A sample configuration for profile jobs only, which determines the number of rows on which the profile job is run. If
+ * a <code>JobSample</code> value isn't provided, the default is used. The default value is CUSTOM_ROWS for the mode
+ * parameter and 20,000 for the size parameter.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/JobSample" target="_top">AWS API
@@ -32,18 +32,18 @@ public class JobSample implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines whether the profile job will be executed on the entire dataset or on a specified number of rows. Must
-     * be one of the following:
+     * A value that determines whether the profile job is run on the entire dataset or a specified number of rows. This
+     * value must be one of the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * FULL_DATASET: Profile job will be executed on the entire dataset.
+     * FULL_DATASET - The profile job is run on the entire dataset.
      * </p>
      * </li>
      * <li>
      * <p>
-     * CUSTOM_ROWS: Profile job will be executed on the number of rows specified in the Size parameter.
+     * CUSTOM_ROWS - The profile job is run on the number of rows specified in the <code>Size</code> parameter.
      * </p>
      * </li>
      * </ul>
@@ -51,8 +51,8 @@ public class JobSample implements Serializable, Cloneable, StructuredPojo {
     private String mode;
     /**
      * <p>
-     * Size parameter is only required when the mode is CUSTOM_ROWS. Profile job will be executed on the the specified
-     * number of rows. The maximum value for size is Long.MAX_VALUE.
+     * The <code>Size</code> parameter is only required when the mode is CUSTOM_ROWS. The profile job is run on the
+     * specified number of rows. The maximum value for size is Long.MAX_VALUE.
      * </p>
      * <p>
      * Long.MAX_VALUE = 9223372036854775807
@@ -62,34 +62,34 @@ public class JobSample implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines whether the profile job will be executed on the entire dataset or on a specified number of rows. Must
-     * be one of the following:
+     * A value that determines whether the profile job is run on the entire dataset or a specified number of rows. This
+     * value must be one of the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * FULL_DATASET: Profile job will be executed on the entire dataset.
+     * FULL_DATASET - The profile job is run on the entire dataset.
      * </p>
      * </li>
      * <li>
      * <p>
-     * CUSTOM_ROWS: Profile job will be executed on the number of rows specified in the Size parameter.
+     * CUSTOM_ROWS - The profile job is run on the number of rows specified in the <code>Size</code> parameter.
      * </p>
      * </li>
      * </ul>
      * 
      * @param mode
-     *        Determines whether the profile job will be executed on the entire dataset or on a specified number of
-     *        rows. Must be one of the following:</p>
+     *        A value that determines whether the profile job is run on the entire dataset or a specified number of
+     *        rows. This value must be one of the following:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        FULL_DATASET: Profile job will be executed on the entire dataset.
+     *        FULL_DATASET - The profile job is run on the entire dataset.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        CUSTOM_ROWS: Profile job will be executed on the number of rows specified in the Size parameter.
+     *        CUSTOM_ROWS - The profile job is run on the number of rows specified in the <code>Size</code> parameter.
      *        </p>
      *        </li>
      * @see SampleMode
@@ -101,33 +101,33 @@ public class JobSample implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines whether the profile job will be executed on the entire dataset or on a specified number of rows. Must
-     * be one of the following:
+     * A value that determines whether the profile job is run on the entire dataset or a specified number of rows. This
+     * value must be one of the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * FULL_DATASET: Profile job will be executed on the entire dataset.
+     * FULL_DATASET - The profile job is run on the entire dataset.
      * </p>
      * </li>
      * <li>
      * <p>
-     * CUSTOM_ROWS: Profile job will be executed on the number of rows specified in the Size parameter.
+     * CUSTOM_ROWS - The profile job is run on the number of rows specified in the <code>Size</code> parameter.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return Determines whether the profile job will be executed on the entire dataset or on a specified number of
-     *         rows. Must be one of the following:</p>
+     * @return A value that determines whether the profile job is run on the entire dataset or a specified number of
+     *         rows. This value must be one of the following:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         FULL_DATASET: Profile job will be executed on the entire dataset.
+     *         FULL_DATASET - The profile job is run on the entire dataset.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         CUSTOM_ROWS: Profile job will be executed on the number of rows specified in the Size parameter.
+     *         CUSTOM_ROWS - The profile job is run on the number of rows specified in the <code>Size</code> parameter.
      *         </p>
      *         </li>
      * @see SampleMode
@@ -139,34 +139,34 @@ public class JobSample implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines whether the profile job will be executed on the entire dataset or on a specified number of rows. Must
-     * be one of the following:
+     * A value that determines whether the profile job is run on the entire dataset or a specified number of rows. This
+     * value must be one of the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * FULL_DATASET: Profile job will be executed on the entire dataset.
+     * FULL_DATASET - The profile job is run on the entire dataset.
      * </p>
      * </li>
      * <li>
      * <p>
-     * CUSTOM_ROWS: Profile job will be executed on the number of rows specified in the Size parameter.
+     * CUSTOM_ROWS - The profile job is run on the number of rows specified in the <code>Size</code> parameter.
      * </p>
      * </li>
      * </ul>
      * 
      * @param mode
-     *        Determines whether the profile job will be executed on the entire dataset or on a specified number of
-     *        rows. Must be one of the following:</p>
+     *        A value that determines whether the profile job is run on the entire dataset or a specified number of
+     *        rows. This value must be one of the following:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        FULL_DATASET: Profile job will be executed on the entire dataset.
+     *        FULL_DATASET - The profile job is run on the entire dataset.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        CUSTOM_ROWS: Profile job will be executed on the number of rows specified in the Size parameter.
+     *        CUSTOM_ROWS - The profile job is run on the number of rows specified in the <code>Size</code> parameter.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -180,34 +180,34 @@ public class JobSample implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines whether the profile job will be executed on the entire dataset or on a specified number of rows. Must
-     * be one of the following:
+     * A value that determines whether the profile job is run on the entire dataset or a specified number of rows. This
+     * value must be one of the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * FULL_DATASET: Profile job will be executed on the entire dataset.
+     * FULL_DATASET - The profile job is run on the entire dataset.
      * </p>
      * </li>
      * <li>
      * <p>
-     * CUSTOM_ROWS: Profile job will be executed on the number of rows specified in the Size parameter.
+     * CUSTOM_ROWS - The profile job is run on the number of rows specified in the <code>Size</code> parameter.
      * </p>
      * </li>
      * </ul>
      * 
      * @param mode
-     *        Determines whether the profile job will be executed on the entire dataset or on a specified number of
-     *        rows. Must be one of the following:</p>
+     *        A value that determines whether the profile job is run on the entire dataset or a specified number of
+     *        rows. This value must be one of the following:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        FULL_DATASET: Profile job will be executed on the entire dataset.
+     *        FULL_DATASET - The profile job is run on the entire dataset.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        CUSTOM_ROWS: Profile job will be executed on the number of rows specified in the Size parameter.
+     *        CUSTOM_ROWS - The profile job is run on the number of rows specified in the <code>Size</code> parameter.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -221,16 +221,16 @@ public class JobSample implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Size parameter is only required when the mode is CUSTOM_ROWS. Profile job will be executed on the the specified
-     * number of rows. The maximum value for size is Long.MAX_VALUE.
+     * The <code>Size</code> parameter is only required when the mode is CUSTOM_ROWS. The profile job is run on the
+     * specified number of rows. The maximum value for size is Long.MAX_VALUE.
      * </p>
      * <p>
      * Long.MAX_VALUE = 9223372036854775807
      * </p>
      * 
      * @param size
-     *        Size parameter is only required when the mode is CUSTOM_ROWS. Profile job will be executed on the the
-     *        specified number of rows. The maximum value for size is Long.MAX_VALUE.</p>
+     *        The <code>Size</code> parameter is only required when the mode is CUSTOM_ROWS. The profile job is run on
+     *        the specified number of rows. The maximum value for size is Long.MAX_VALUE.</p>
      *        <p>
      *        Long.MAX_VALUE = 9223372036854775807
      */
@@ -241,15 +241,15 @@ public class JobSample implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Size parameter is only required when the mode is CUSTOM_ROWS. Profile job will be executed on the the specified
-     * number of rows. The maximum value for size is Long.MAX_VALUE.
+     * The <code>Size</code> parameter is only required when the mode is CUSTOM_ROWS. The profile job is run on the
+     * specified number of rows. The maximum value for size is Long.MAX_VALUE.
      * </p>
      * <p>
      * Long.MAX_VALUE = 9223372036854775807
      * </p>
      * 
-     * @return Size parameter is only required when the mode is CUSTOM_ROWS. Profile job will be executed on the the
-     *         specified number of rows. The maximum value for size is Long.MAX_VALUE.</p>
+     * @return The <code>Size</code> parameter is only required when the mode is CUSTOM_ROWS. The profile job is run on
+     *         the specified number of rows. The maximum value for size is Long.MAX_VALUE.</p>
      *         <p>
      *         Long.MAX_VALUE = 9223372036854775807
      */
@@ -260,16 +260,16 @@ public class JobSample implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Size parameter is only required when the mode is CUSTOM_ROWS. Profile job will be executed on the the specified
-     * number of rows. The maximum value for size is Long.MAX_VALUE.
+     * The <code>Size</code> parameter is only required when the mode is CUSTOM_ROWS. The profile job is run on the
+     * specified number of rows. The maximum value for size is Long.MAX_VALUE.
      * </p>
      * <p>
      * Long.MAX_VALUE = 9223372036854775807
      * </p>
      * 
      * @param size
-     *        Size parameter is only required when the mode is CUSTOM_ROWS. Profile job will be executed on the the
-     *        specified number of rows. The maximum value for size is Long.MAX_VALUE.</p>
+     *        The <code>Size</code> parameter is only required when the mode is CUSTOM_ROWS. The profile job is run on
+     *        the specified number of rows. The maximum value for size is Long.MAX_VALUE.</p>
      *        <p>
      *        Long.MAX_VALUE = 9223372036854775807
      * @return Returns a reference to this object so that method calls can be chained together.

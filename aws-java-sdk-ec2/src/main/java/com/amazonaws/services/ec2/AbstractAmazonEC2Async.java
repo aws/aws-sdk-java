@@ -1066,6 +1066,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<CreateReplaceRootVolumeTaskResult> createReplaceRootVolumeTaskAsync(CreateReplaceRootVolumeTaskRequest request) {
+
+        return createReplaceRootVolumeTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateReplaceRootVolumeTaskResult> createReplaceRootVolumeTaskAsync(CreateReplaceRootVolumeTaskRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateReplaceRootVolumeTaskRequest, CreateReplaceRootVolumeTaskResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateReservedInstancesListingResult> createReservedInstancesListingAsync(CreateReservedInstancesListingRequest request) {
 
         return createReservedInstancesListingAsync(request, null);
@@ -3864,6 +3877,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeReplaceRootVolumeTasksResult> describeReplaceRootVolumeTasksAsync(DescribeReplaceRootVolumeTasksRequest request) {
+
+        return describeReplaceRootVolumeTasksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeReplaceRootVolumeTasksResult> describeReplaceRootVolumeTasksAsync(DescribeReplaceRootVolumeTasksRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeReplaceRootVolumeTasksRequest, DescribeReplaceRootVolumeTasksResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeReservedInstancesResult> describeReservedInstancesAsync(DescribeReservedInstancesRequest request) {
 
         return describeReservedInstancesAsync(request, null);
@@ -5124,6 +5150,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<DisableSerialConsoleAccessResult> disableSerialConsoleAccessAsync(DisableSerialConsoleAccessRequest request) {
+
+        return disableSerialConsoleAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableSerialConsoleAccessResult> disableSerialConsoleAccessAsync(DisableSerialConsoleAccessRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisableSerialConsoleAccessRequest, DisableSerialConsoleAccessResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableTransitGatewayRouteTablePropagationResult> disableTransitGatewayRouteTablePropagationAsync(
             DisableTransitGatewayRouteTablePropagationRequest request) {
 
@@ -5326,6 +5365,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     @Override
     public java.util.concurrent.Future<EnableFastSnapshotRestoresResult> enableFastSnapshotRestoresAsync(EnableFastSnapshotRestoresRequest request,
             com.amazonaws.handlers.AsyncHandler<EnableFastSnapshotRestoresRequest, EnableFastSnapshotRestoresResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableSerialConsoleAccessResult> enableSerialConsoleAccessAsync(EnableSerialConsoleAccessRequest request) {
+
+        return enableSerialConsoleAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableSerialConsoleAccessResult> enableSerialConsoleAccessAsync(EnableSerialConsoleAccessRequest request,
+            com.amazonaws.handlers.AsyncHandler<EnableSerialConsoleAccessRequest, EnableSerialConsoleAccessResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -5667,6 +5719,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     public java.util.concurrent.Future<GetReservedInstancesExchangeQuoteResult> getReservedInstancesExchangeQuoteAsync(
             GetReservedInstancesExchangeQuoteRequest request,
             com.amazonaws.handlers.AsyncHandler<GetReservedInstancesExchangeQuoteRequest, GetReservedInstancesExchangeQuoteResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSerialConsoleAccessStatusResult> getSerialConsoleAccessStatusAsync(GetSerialConsoleAccessStatusRequest request) {
+
+        return getSerialConsoleAccessStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSerialConsoleAccessStatusResult> getSerialConsoleAccessStatusAsync(GetSerialConsoleAccessStatusRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetSerialConsoleAccessStatusRequest, GetSerialConsoleAccessStatusResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

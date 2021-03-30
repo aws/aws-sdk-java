@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Options that define how DataBrew will interpret a Microsoft Excel file, when creating a dataset from that file.
+ * Represents a set of options that define how DataBrew will interpret a Microsoft Excel file when creating a dataset
+ * from that file.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ExcelOptions" target="_top">AWS API
@@ -30,30 +31,30 @@ public class ExcelOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies one or more named sheets in the Excel file, which will be included in the dataset.
+     * One or more named sheets in the Excel file that will be included in the dataset.
      * </p>
      */
     private java.util.List<String> sheetNames;
     /**
      * <p>
-     * Specifies one or more sheet numbers in the Excel file, which will be included in the dataset.
+     * One or more sheet numbers in the Excel file that will be included in the dataset.
      * </p>
      */
     private java.util.List<Integer> sheetIndexes;
     /**
      * <p>
-     * A variable that specifies whether the first row in the file will be parsed as the header. If false, column names
-     * will be auto-generated.
+     * A variable that specifies whether the first row in the file is parsed as the header. If this value is false,
+     * column names are auto-generated.
      * </p>
      */
     private Boolean headerRow;
 
     /**
      * <p>
-     * Specifies one or more named sheets in the Excel file, which will be included in the dataset.
+     * One or more named sheets in the Excel file that will be included in the dataset.
      * </p>
      * 
-     * @return Specifies one or more named sheets in the Excel file, which will be included in the dataset.
+     * @return One or more named sheets in the Excel file that will be included in the dataset.
      */
 
     public java.util.List<String> getSheetNames() {
@@ -62,11 +63,11 @@ public class ExcelOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies one or more named sheets in the Excel file, which will be included in the dataset.
+     * One or more named sheets in the Excel file that will be included in the dataset.
      * </p>
      * 
      * @param sheetNames
-     *        Specifies one or more named sheets in the Excel file, which will be included in the dataset.
+     *        One or more named sheets in the Excel file that will be included in the dataset.
      */
 
     public void setSheetNames(java.util.Collection<String> sheetNames) {
@@ -80,7 +81,7 @@ public class ExcelOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies one or more named sheets in the Excel file, which will be included in the dataset.
+     * One or more named sheets in the Excel file that will be included in the dataset.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -89,7 +90,7 @@ public class ExcelOptions implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param sheetNames
-     *        Specifies one or more named sheets in the Excel file, which will be included in the dataset.
+     *        One or more named sheets in the Excel file that will be included in the dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,11 +106,11 @@ public class ExcelOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies one or more named sheets in the Excel file, which will be included in the dataset.
+     * One or more named sheets in the Excel file that will be included in the dataset.
      * </p>
      * 
      * @param sheetNames
-     *        Specifies one or more named sheets in the Excel file, which will be included in the dataset.
+     *        One or more named sheets in the Excel file that will be included in the dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,10 +121,10 @@ public class ExcelOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies one or more sheet numbers in the Excel file, which will be included in the dataset.
+     * One or more sheet numbers in the Excel file that will be included in the dataset.
      * </p>
      * 
-     * @return Specifies one or more sheet numbers in the Excel file, which will be included in the dataset.
+     * @return One or more sheet numbers in the Excel file that will be included in the dataset.
      */
 
     public java.util.List<Integer> getSheetIndexes() {
@@ -132,11 +133,11 @@ public class ExcelOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies one or more sheet numbers in the Excel file, which will be included in the dataset.
+     * One or more sheet numbers in the Excel file that will be included in the dataset.
      * </p>
      * 
      * @param sheetIndexes
-     *        Specifies one or more sheet numbers in the Excel file, which will be included in the dataset.
+     *        One or more sheet numbers in the Excel file that will be included in the dataset.
      */
 
     public void setSheetIndexes(java.util.Collection<Integer> sheetIndexes) {
@@ -150,7 +151,7 @@ public class ExcelOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies one or more sheet numbers in the Excel file, which will be included in the dataset.
+     * One or more sheet numbers in the Excel file that will be included in the dataset.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -159,7 +160,7 @@ public class ExcelOptions implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param sheetIndexes
-     *        Specifies one or more sheet numbers in the Excel file, which will be included in the dataset.
+     *        One or more sheet numbers in the Excel file that will be included in the dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +176,11 @@ public class ExcelOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies one or more sheet numbers in the Excel file, which will be included in the dataset.
+     * One or more sheet numbers in the Excel file that will be included in the dataset.
      * </p>
      * 
      * @param sheetIndexes
-     *        Specifies one or more sheet numbers in the Excel file, which will be included in the dataset.
+     *        One or more sheet numbers in the Excel file that will be included in the dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -190,13 +191,13 @@ public class ExcelOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A variable that specifies whether the first row in the file will be parsed as the header. If false, column names
-     * will be auto-generated.
+     * A variable that specifies whether the first row in the file is parsed as the header. If this value is false,
+     * column names are auto-generated.
      * </p>
      * 
      * @param headerRow
-     *        A variable that specifies whether the first row in the file will be parsed as the header. If false, column
-     *        names will be auto-generated.
+     *        A variable that specifies whether the first row in the file is parsed as the header. If this value is
+     *        false, column names are auto-generated.
      */
 
     public void setHeaderRow(Boolean headerRow) {
@@ -205,12 +206,12 @@ public class ExcelOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A variable that specifies whether the first row in the file will be parsed as the header. If false, column names
-     * will be auto-generated.
+     * A variable that specifies whether the first row in the file is parsed as the header. If this value is false,
+     * column names are auto-generated.
      * </p>
      * 
-     * @return A variable that specifies whether the first row in the file will be parsed as the header. If false,
-     *         column names will be auto-generated.
+     * @return A variable that specifies whether the first row in the file is parsed as the header. If this value is
+     *         false, column names are auto-generated.
      */
 
     public Boolean getHeaderRow() {
@@ -219,13 +220,13 @@ public class ExcelOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A variable that specifies whether the first row in the file will be parsed as the header. If false, column names
-     * will be auto-generated.
+     * A variable that specifies whether the first row in the file is parsed as the header. If this value is false,
+     * column names are auto-generated.
      * </p>
      * 
      * @param headerRow
-     *        A variable that specifies whether the first row in the file will be parsed as the header. If false, column
-     *        names will be auto-generated.
+     *        A variable that specifies whether the first row in the file is parsed as the header. If this value is
+     *        false, column names are auto-generated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -236,12 +237,12 @@ public class ExcelOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A variable that specifies whether the first row in the file will be parsed as the header. If false, column names
-     * will be auto-generated.
+     * A variable that specifies whether the first row in the file is parsed as the header. If this value is false,
+     * column names are auto-generated.
      * </p>
      * 
-     * @return A variable that specifies whether the first row in the file will be parsed as the header. If false,
-     *         column names will be auto-generated.
+     * @return A variable that specifies whether the first row in the file is parsed as the header. If this value is
+     *         false, column names are auto-generated.
      */
 
     public Boolean isHeaderRow() {
