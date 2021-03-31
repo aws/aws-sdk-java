@@ -142,6 +142,19 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateMacSecKeyResult> associateMacSecKeyAsync(AssociateMacSecKeyRequest request) {
+
+        return associateMacSecKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateMacSecKeyResult> associateMacSecKeyAsync(AssociateMacSecKeyRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateMacSecKeyRequest, AssociateMacSecKeyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateVirtualInterfaceResult> associateVirtualInterfaceAsync(AssociateVirtualInterfaceRequest request) {
 
         return associateVirtualInterfaceAsync(request, null);
@@ -799,6 +812,19 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateMacSecKeyResult> disassociateMacSecKeyAsync(DisassociateMacSecKeyRequest request) {
+
+        return disassociateMacSecKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateMacSecKeyResult> disassociateMacSecKeyAsync(DisassociateMacSecKeyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateMacSecKeyRequest, DisassociateMacSecKeyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListVirtualInterfaceTestHistoryResult> listVirtualInterfaceTestHistoryAsync(
             ListVirtualInterfaceTestHistoryRequest request) {
 
@@ -861,6 +887,19 @@ public class AbstractAmazonDirectConnectAsync extends AbstractAmazonDirectConnec
     @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConnectionResult> updateConnectionAsync(UpdateConnectionRequest request) {
+
+        return updateConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConnectionResult> updateConnectionAsync(UpdateConnectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateConnectionRequest, UpdateConnectionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

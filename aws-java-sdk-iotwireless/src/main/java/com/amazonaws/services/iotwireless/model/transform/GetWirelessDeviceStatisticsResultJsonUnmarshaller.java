@@ -60,6 +60,10 @@ public class GetWirelessDeviceStatisticsResultJsonUnmarshaller implements Unmars
                     context.nextToken();
                     getWirelessDeviceStatisticsResult.setLoRaWAN(LoRaWANDeviceMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Sidewalk", targetDepth)) {
+                    context.nextToken();
+                    getWirelessDeviceStatisticsResult.setSidewalk(SidewalkDeviceMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

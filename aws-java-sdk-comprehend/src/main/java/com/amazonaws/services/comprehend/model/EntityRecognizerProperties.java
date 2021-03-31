@@ -125,6 +125,26 @@ public class EntityRecognizerProperties implements Serializable, Cloneable, Stru
      * </p>
      */
     private VpcConfig vpcConfig;
+    /**
+     * <p>
+     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The
+     * ModelKmsKeyId can be either of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String modelKmsKeyId;
 
     /**
      * <p>
@@ -798,6 +818,127 @@ public class EntityRecognizerProperties implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The
+     * ModelKmsKeyId can be either of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param modelKmsKeyId
+     *        ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom
+     *        models. The ModelKmsKeyId can be either of the following formats: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Resource Name (ARN) of a KMS Key:
+     *        <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *        </p>
+     *        </li>
+     */
+
+    public void setModelKmsKeyId(String modelKmsKeyId) {
+        this.modelKmsKeyId = modelKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The
+     * ModelKmsKeyId can be either of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom
+     *         models. The ModelKmsKeyId can be either of the following formats: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon Resource Name (ARN) of a KMS Key:
+     *         <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *         </p>
+     *         </li>
+     */
+
+    public String getModelKmsKeyId() {
+        return this.modelKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The
+     * ModelKmsKeyId can be either of the following formats:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Resource Name (ARN) of a KMS Key:
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param modelKmsKeyId
+     *        ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom
+     *        models. The ModelKmsKeyId can be either of the following formats: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Resource Name (ARN) of a KMS Key:
+     *        <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EntityRecognizerProperties withModelKmsKeyId(String modelKmsKeyId) {
+        setModelKmsKeyId(modelKmsKeyId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -834,7 +975,9 @@ public class EntityRecognizerProperties implements Serializable, Cloneable, Stru
         if (getVolumeKmsKeyId() != null)
             sb.append("VolumeKmsKeyId: ").append(getVolumeKmsKeyId()).append(",");
         if (getVpcConfig() != null)
-            sb.append("VpcConfig: ").append(getVpcConfig());
+            sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
+        if (getModelKmsKeyId() != null)
+            sb.append("ModelKmsKeyId: ").append(getModelKmsKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -901,6 +1044,10 @@ public class EntityRecognizerProperties implements Serializable, Cloneable, Stru
             return false;
         if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
             return false;
+        if (other.getModelKmsKeyId() == null ^ this.getModelKmsKeyId() == null)
+            return false;
+        if (other.getModelKmsKeyId() != null && other.getModelKmsKeyId().equals(this.getModelKmsKeyId()) == false)
+            return false;
         return true;
     }
 
@@ -922,6 +1069,7 @@ public class EntityRecognizerProperties implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getDataAccessRoleArn() == null) ? 0 : getDataAccessRoleArn().hashCode());
         hashCode = prime * hashCode + ((getVolumeKmsKeyId() == null) ? 0 : getVolumeKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
+        hashCode = prime * hashCode + ((getModelKmsKeyId() == null) ? 0 : getModelKmsKeyId().hashCode());
         return hashCode;
     }
 

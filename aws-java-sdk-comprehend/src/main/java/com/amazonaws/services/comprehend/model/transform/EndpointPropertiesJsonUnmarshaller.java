@@ -80,6 +80,10 @@ public class EndpointPropertiesJsonUnmarshaller implements Unmarshaller<Endpoint
                     context.nextToken();
                     endpointProperties.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("DataAccessRoleArn", targetDepth)) {
+                    context.nextToken();
+                    endpointProperties.setDataAccessRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

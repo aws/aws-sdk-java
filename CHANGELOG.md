@@ -1,3 +1,68 @@
+# __1.11.989__ __2021-03-31__
+## __AWS Batch__
+  - ### Features
+    - AWS Batch adds support for Amazon EFS File System
+
+## __AWS Cloud9__
+  - ### Features
+    - Add ImageId input parameter to CreateEnvironmentEC2 endpoint. New parameter enables creation of environments with different AMIs.
+
+## __AWS CloudFormation__
+  - ### Features
+    - 1. Added a new parameter "RegionConcurrencyType" in OperationPreferences. 2. Changed the name of "AccountUrl" to "AccountsUrl" in "DeploymentTargets" parameter.
+
+## __AWS Data Pipeline__
+  - ### Features
+    - Minor documentation updates and link updates.
+
+## __AWS Direct Connect__
+  - ### Features
+    - This release adds MACsec support to AWS Direct Connect
+
+## __AWS IoT__
+  - ### Features
+    - Added ability to prefix search on attribute value for ListThings API.
+
+## __AWS IoT Wireless__
+  - ### Features
+    - Add Sidewalk support to APIs: GetWirelessDevice, ListWirelessDevices, GetWirelessDeviceStatistics. Add Gateway connection status in GetWirelessGatewayStatistics API.
+
+## __AWS Price List Service__
+  - ### Features
+    - Minor documentation and link updates.
+
+## __Amazon CloudHSM__
+  - ### Features
+    - Minor documentation and link updates.
+
+## __Amazon Cognito Sync__
+  - ### Features
+    - Minor documentation updates and link updates.
+
+## __Amazon Comprehend__
+  - ### Features
+    - Support for customer managed KMS encryption of Comprehend custom models
+
+## __Amazon Detective__
+  - ### Features
+    - Added the ability to assign tag values to Detective behavior graphs. Tag values can be used for attribute-based access control, and for cost allocation for billing.
+
+## __Amazon Machine Learning__
+  - ### Features
+    - Minor documentation updates and link updates.
+
+## __Amazon Redshift__
+  - ### Features
+    - Enable customers to share access to their Redshift clusters from other VPCs (including VPCs from other accounts).
+
+## __Amazon Transcribe Service__
+  - ### Features
+    - Amazon Transcribe now supports creating custom language models in the following languages: British English (en-GB), Australian English (en-AU), Indian Hindi (hi-IN), and US Spanish (es-US).
+
+## __Amazon WorkMail__
+  - ### Features
+    - This release adds support for mobile device access rules management in Amazon WorkMail.
+
 # __1.11.988__ __2021-03-30__
 ## __AWS Config__
   - ### Features

@@ -118,6 +118,24 @@ public class AllocateConnectionOnInterconnectResultJsonUnmarshaller implements U
                     context.nextToken();
                     allocateConnectionOnInterconnectResult.setProviderName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("macSecCapable", targetDepth)) {
+                    context.nextToken();
+                    allocateConnectionOnInterconnectResult.setMacSecCapable(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("portEncryptionStatus", targetDepth)) {
+                    context.nextToken();
+                    allocateConnectionOnInterconnectResult.setPortEncryptionStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("encryptionMode", targetDepth)) {
+                    context.nextToken();
+                    allocateConnectionOnInterconnectResult.setEncryptionMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("macSecKeys", targetDepth)) {
+                    context.nextToken();
+                    allocateConnectionOnInterconnectResult.setMacSecKeys(new ListUnmarshaller<MacSecKey>(MacSecKeyJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

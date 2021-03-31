@@ -29,7 +29,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidParameterExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidParameterExceptionUnmarshaller() {
-        super(com.amazonaws.services.cognitosync.model.InvalidParameterException.class, "InvalidParameter");
+        super(com.amazonaws.services.cognitosync.model.InvalidParameterException.class, "InvalidParameterException");
     }
 
     @Override

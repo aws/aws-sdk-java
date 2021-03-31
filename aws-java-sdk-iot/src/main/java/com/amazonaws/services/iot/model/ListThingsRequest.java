@@ -56,6 +56,17 @@ public class ListThingsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String thingTypeName;
+    /**
+     * <p>
+     * When <code>true</code>, the action returns the thing resources with attribute values that start with the
+     * <code>attributeValue</code> provided.
+     * </p>
+     * <p>
+     * When <code>false</code>, or not present, the action returns only the thing resources with attribute values that
+     * match the entire <code>attributeValue</code> provided.
+     * </p>
+     */
+    private Boolean usePrefixAttributeValue;
 
     /**
      * <p>
@@ -264,6 +275,94 @@ public class ListThingsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * When <code>true</code>, the action returns the thing resources with attribute values that start with the
+     * <code>attributeValue</code> provided.
+     * </p>
+     * <p>
+     * When <code>false</code>, or not present, the action returns only the thing resources with attribute values that
+     * match the entire <code>attributeValue</code> provided.
+     * </p>
+     * 
+     * @param usePrefixAttributeValue
+     *        When <code>true</code>, the action returns the thing resources with attribute values that start with the
+     *        <code>attributeValue</code> provided.</p>
+     *        <p>
+     *        When <code>false</code>, or not present, the action returns only the thing resources with attribute values
+     *        that match the entire <code>attributeValue</code> provided.
+     */
+
+    public void setUsePrefixAttributeValue(Boolean usePrefixAttributeValue) {
+        this.usePrefixAttributeValue = usePrefixAttributeValue;
+    }
+
+    /**
+     * <p>
+     * When <code>true</code>, the action returns the thing resources with attribute values that start with the
+     * <code>attributeValue</code> provided.
+     * </p>
+     * <p>
+     * When <code>false</code>, or not present, the action returns only the thing resources with attribute values that
+     * match the entire <code>attributeValue</code> provided.
+     * </p>
+     * 
+     * @return When <code>true</code>, the action returns the thing resources with attribute values that start with the
+     *         <code>attributeValue</code> provided.</p>
+     *         <p>
+     *         When <code>false</code>, or not present, the action returns only the thing resources with attribute
+     *         values that match the entire <code>attributeValue</code> provided.
+     */
+
+    public Boolean getUsePrefixAttributeValue() {
+        return this.usePrefixAttributeValue;
+    }
+
+    /**
+     * <p>
+     * When <code>true</code>, the action returns the thing resources with attribute values that start with the
+     * <code>attributeValue</code> provided.
+     * </p>
+     * <p>
+     * When <code>false</code>, or not present, the action returns only the thing resources with attribute values that
+     * match the entire <code>attributeValue</code> provided.
+     * </p>
+     * 
+     * @param usePrefixAttributeValue
+     *        When <code>true</code>, the action returns the thing resources with attribute values that start with the
+     *        <code>attributeValue</code> provided.</p>
+     *        <p>
+     *        When <code>false</code>, or not present, the action returns only the thing resources with attribute values
+     *        that match the entire <code>attributeValue</code> provided.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListThingsRequest withUsePrefixAttributeValue(Boolean usePrefixAttributeValue) {
+        setUsePrefixAttributeValue(usePrefixAttributeValue);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When <code>true</code>, the action returns the thing resources with attribute values that start with the
+     * <code>attributeValue</code> provided.
+     * </p>
+     * <p>
+     * When <code>false</code>, or not present, the action returns only the thing resources with attribute values that
+     * match the entire <code>attributeValue</code> provided.
+     * </p>
+     * 
+     * @return When <code>true</code>, the action returns the thing resources with attribute values that start with the
+     *         <code>attributeValue</code> provided.</p>
+     *         <p>
+     *         When <code>false</code>, or not present, the action returns only the thing resources with attribute
+     *         values that match the entire <code>attributeValue</code> provided.
+     */
+
+    public Boolean isUsePrefixAttributeValue() {
+        return this.usePrefixAttributeValue;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -284,7 +383,9 @@ public class ListThingsRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getAttributeValue() != null)
             sb.append("AttributeValue: ").append(getAttributeValue()).append(",");
         if (getThingTypeName() != null)
-            sb.append("ThingTypeName: ").append(getThingTypeName());
+            sb.append("ThingTypeName: ").append(getThingTypeName()).append(",");
+        if (getUsePrefixAttributeValue() != null)
+            sb.append("UsePrefixAttributeValue: ").append(getUsePrefixAttributeValue());
         sb.append("}");
         return sb.toString();
     }
@@ -319,6 +420,10 @@ public class ListThingsRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getThingTypeName() != null && other.getThingTypeName().equals(this.getThingTypeName()) == false)
             return false;
+        if (other.getUsePrefixAttributeValue() == null ^ this.getUsePrefixAttributeValue() == null)
+            return false;
+        if (other.getUsePrefixAttributeValue() != null && other.getUsePrefixAttributeValue().equals(this.getUsePrefixAttributeValue()) == false)
+            return false;
         return true;
     }
 
@@ -332,6 +437,7 @@ public class ListThingsRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getAttributeName() == null) ? 0 : getAttributeName().hashCode());
         hashCode = prime * hashCode + ((getAttributeValue() == null) ? 0 : getAttributeValue().hashCode());
         hashCode = prime * hashCode + ((getThingTypeName() == null) ? 0 : getThingTypeName().hashCode());
+        hashCode = prime * hashCode + ((getUsePrefixAttributeValue() == null) ? 0 : getUsePrefixAttributeValue().hashCode());
         return hashCode;
     }
 

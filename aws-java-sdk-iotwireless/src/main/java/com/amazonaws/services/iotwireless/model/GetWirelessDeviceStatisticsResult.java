@@ -41,6 +41,12 @@ public class GetWirelessDeviceStatisticsResult extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private LoRaWANDeviceMetadata loRaWAN;
+    /**
+     * <p>
+     * MetaData for Sidewalk device.
+     * </p>
+     */
+    private SidewalkDeviceMetadata sidewalk;
 
     /**
      * <p>
@@ -163,6 +169,46 @@ public class GetWirelessDeviceStatisticsResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * MetaData for Sidewalk device.
+     * </p>
+     * 
+     * @param sidewalk
+     *        MetaData for Sidewalk device.
+     */
+
+    public void setSidewalk(SidewalkDeviceMetadata sidewalk) {
+        this.sidewalk = sidewalk;
+    }
+
+    /**
+     * <p>
+     * MetaData for Sidewalk device.
+     * </p>
+     * 
+     * @return MetaData for Sidewalk device.
+     */
+
+    public SidewalkDeviceMetadata getSidewalk() {
+        return this.sidewalk;
+    }
+
+    /**
+     * <p>
+     * MetaData for Sidewalk device.
+     * </p>
+     * 
+     * @param sidewalk
+     *        MetaData for Sidewalk device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetWirelessDeviceStatisticsResult withSidewalk(SidewalkDeviceMetadata sidewalk) {
+        setSidewalk(sidewalk);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -179,7 +225,9 @@ public class GetWirelessDeviceStatisticsResult extends com.amazonaws.AmazonWebSe
         if (getLastUplinkReceivedAt() != null)
             sb.append("LastUplinkReceivedAt: ").append(getLastUplinkReceivedAt()).append(",");
         if (getLoRaWAN() != null)
-            sb.append("LoRaWAN: ").append(getLoRaWAN());
+            sb.append("LoRaWAN: ").append(getLoRaWAN()).append(",");
+        if (getSidewalk() != null)
+            sb.append("Sidewalk: ").append(getSidewalk());
         sb.append("}");
         return sb.toString();
     }
@@ -206,6 +254,10 @@ public class GetWirelessDeviceStatisticsResult extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getLoRaWAN() != null && other.getLoRaWAN().equals(this.getLoRaWAN()) == false)
             return false;
+        if (other.getSidewalk() == null ^ this.getSidewalk() == null)
+            return false;
+        if (other.getSidewalk() != null && other.getSidewalk().equals(this.getSidewalk()) == false)
+            return false;
         return true;
     }
 
@@ -217,6 +269,7 @@ public class GetWirelessDeviceStatisticsResult extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getWirelessDeviceId() == null) ? 0 : getWirelessDeviceId().hashCode());
         hashCode = prime * hashCode + ((getLastUplinkReceivedAt() == null) ? 0 : getLastUplinkReceivedAt().hashCode());
         hashCode = prime * hashCode + ((getLoRaWAN() == null) ? 0 : getLoRaWAN().hashCode());
+        hashCode = prime * hashCode + ((getSidewalk() == null) ? 0 : getSidewalk().hashCode());
         return hashCode;
     }
 

@@ -539,6 +539,39 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient im
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateMacSecKeyResult> associateMacSecKeyAsync(AssociateMacSecKeyRequest request) {
+
+        return associateMacSecKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateMacSecKeyResult> associateMacSecKeyAsync(final AssociateMacSecKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateMacSecKeyRequest, AssociateMacSecKeyResult> asyncHandler) {
+        final AssociateMacSecKeyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateMacSecKeyResult>() {
+            @Override
+            public AssociateMacSecKeyResult call() throws Exception {
+                AssociateMacSecKeyResult result = null;
+
+                try {
+                    result = executeAssociateMacSecKey(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateVirtualInterfaceResult> associateVirtualInterfaceAsync(AssociateVirtualInterfaceRequest request) {
 
         return associateVirtualInterfaceAsync(request, null);
@@ -2003,6 +2036,39 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient im
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateMacSecKeyResult> disassociateMacSecKeyAsync(DisassociateMacSecKeyRequest request) {
+
+        return disassociateMacSecKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateMacSecKeyResult> disassociateMacSecKeyAsync(final DisassociateMacSecKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateMacSecKeyRequest, DisassociateMacSecKeyResult> asyncHandler) {
+        final DisassociateMacSecKeyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateMacSecKeyResult>() {
+            @Override
+            public DisassociateMacSecKeyResult call() throws Exception {
+                DisassociateMacSecKeyResult result = null;
+
+                try {
+                    result = executeDisassociateMacSecKey(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListVirtualInterfaceTestHistoryResult> listVirtualInterfaceTestHistoryAsync(
             ListVirtualInterfaceTestHistoryRequest request) {
 
@@ -2154,6 +2220,39 @@ public class AmazonDirectConnectAsyncClient extends AmazonDirectConnectClient im
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConnectionResult> updateConnectionAsync(UpdateConnectionRequest request) {
+
+        return updateConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConnectionResult> updateConnectionAsync(final UpdateConnectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateConnectionRequest, UpdateConnectionResult> asyncHandler) {
+        final UpdateConnectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateConnectionResult>() {
+            @Override
+            public UpdateConnectionResult call() throws Exception {
+                UpdateConnectionResult result = null;
+
+                try {
+                    result = executeUpdateConnection(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

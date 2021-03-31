@@ -100,6 +100,10 @@ public class EntityRecognizerPropertiesJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     entityRecognizerProperties.setVpcConfig(VpcConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ModelKmsKeyId", targetDepth)) {
+                    context.nextToken();
+                    entityRecognizerProperties.setModelKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

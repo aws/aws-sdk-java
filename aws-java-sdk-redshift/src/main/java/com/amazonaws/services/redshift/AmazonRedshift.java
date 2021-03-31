@@ -191,6 +191,31 @@ public interface AmazonRedshift {
 
     /**
      * <p>
+     * Grants access to a cluster.
+     * </p>
+     * 
+     * @param authorizeEndpointAccessRequest
+     * @return Result of the AuthorizeEndpointAccess operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws EndpointAuthorizationsPerClusterLimitExceededException
+     *         The number of endpoint authorizations per cluster has exceeded its limit.
+     * @throws UnsupportedOperationException
+     *         The requested operation isn't supported.
+     * @throws EndpointAuthorizationAlreadyExistsException
+     *         The authorization already exists for this endpoint.
+     * @throws InvalidAuthorizationStateException
+     *         The status of the authorization is not valid.
+     * @throws InvalidClusterStateException
+     *         The specified cluster is not in the <code>available</code> state.
+     * @sample AmazonRedshift.AuthorizeEndpointAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeEndpointAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AuthorizeEndpointAccessResult authorizeEndpointAccess(AuthorizeEndpointAccessRequest authorizeEndpointAccessRequest);
+
+    /**
+     * <p>
      * Authorizes the specified AWS customer account to restore the specified snapshot.
      * </p>
      * <p>
@@ -527,6 +552,39 @@ public interface AmazonRedshift {
      *      target="_top">AWS API Documentation</a>
      */
     ClusterSubnetGroup createClusterSubnetGroup(CreateClusterSubnetGroupRequest createClusterSubnetGroupRequest);
+
+    /**
+     * <p>
+     * Creates a Redshift-managed VPC endpoint.
+     * </p>
+     * 
+     * @param createEndpointAccessRequest
+     * @return Result of the CreateEndpointAccess operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws AccessToClusterDeniedException
+     *         You are not authorized to access the cluster.
+     * @throws EndpointsPerClusterLimitExceededException
+     *         The number of Redshift-managed VPC endpoints per cluster has exceeded its limit.
+     * @throws EndpointsPerAuthorizationLimitExceededException
+     *         The number of Redshift-managed VPC endpoints per authorization has exceeded its limit.
+     * @throws InvalidClusterSecurityGroupStateException
+     *         The state of the cluster security group is not <code>available</code>.
+     * @throws ClusterSubnetGroupNotFoundException
+     *         The cluster subnet group name does not refer to an existing cluster subnet group.
+     * @throws EndpointAlreadyExistsException
+     *         The account already has a Redshift-managed VPC endpoint with the given identifier.
+     * @throws UnsupportedOperationException
+     *         The requested operation isn't supported.
+     * @throws InvalidClusterStateException
+     *         The specified cluster is not in the <code>available</code> state.
+     * @throws UnauthorizedOperationException
+     *         Your account is not authorized to perform the requested operation.
+     * @sample AmazonRedshift.CreateEndpointAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateEndpointAccess" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateEndpointAccessResult createEndpointAccess(CreateEndpointAccessRequest createEndpointAccessRequest);
 
     /**
      * <p>
@@ -927,6 +985,29 @@ public interface AmazonRedshift {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteClusterSubnetGroupResult deleteClusterSubnetGroup(DeleteClusterSubnetGroupRequest deleteClusterSubnetGroupRequest);
+
+    /**
+     * <p>
+     * Deletes a Redshift-managed VPC endpoint.
+     * </p>
+     * 
+     * @param deleteEndpointAccessRequest
+     * @return Result of the DeleteEndpointAccess operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws InvalidEndpointStateException
+     *         The status of the endpoint is not valid.
+     * @throws InvalidClusterSecurityGroupStateException
+     *         The state of the cluster security group is not <code>available</code>.
+     * @throws EndpointNotFoundException
+     *         The endpoint name doesn't refer to an existing endpoint.
+     * @throws InvalidClusterStateException
+     *         The specified cluster is not in the <code>available</code> state.
+     * @sample AmazonRedshift.DeleteEndpointAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteEndpointAccess" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteEndpointAccessResult deleteEndpointAccess(DeleteEndpointAccessRequest deleteEndpointAccessRequest);
 
     /**
      * <p>
@@ -1379,6 +1460,42 @@ public interface AmazonRedshift {
      *      target="_top">AWS API Documentation</a>
      */
     DefaultClusterParameters describeDefaultClusterParameters(DescribeDefaultClusterParametersRequest describeDefaultClusterParametersRequest);
+
+    /**
+     * <p>
+     * Describes a Redshift-managed VPC endpoint.
+     * </p>
+     * 
+     * @param describeEndpointAccessRequest
+     * @return Result of the DescribeEndpointAccess operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws InvalidClusterStateException
+     *         The specified cluster is not in the <code>available</code> state.
+     * @throws EndpointNotFoundException
+     *         The endpoint name doesn't refer to an existing endpoint.
+     * @sample AmazonRedshift.DescribeEndpointAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEndpointAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeEndpointAccessResult describeEndpointAccess(DescribeEndpointAccessRequest describeEndpointAccessRequest);
+
+    /**
+     * <p>
+     * Describes an endpoint authorization.
+     * </p>
+     * 
+     * @param describeEndpointAuthorizationRequest
+     * @return Result of the DescribeEndpointAuthorization operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws UnsupportedOperationException
+     *         The requested operation isn't supported.
+     * @sample AmazonRedshift.DescribeEndpointAuthorization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEndpointAuthorization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeEndpointAuthorizationResult describeEndpointAuthorization(DescribeEndpointAuthorizationRequest describeEndpointAuthorizationRequest);
 
     /**
      * <p>
@@ -2283,6 +2400,31 @@ public interface AmazonRedshift {
 
     /**
      * <p>
+     * Modifies a Redshift-managed VPC endpoint.
+     * </p>
+     * 
+     * @param modifyEndpointAccessRequest
+     * @return Result of the ModifyEndpointAccess operation returned by the service.
+     * @throws InvalidClusterSecurityGroupStateException
+     *         The state of the cluster security group is not <code>available</code>.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws InvalidEndpointStateException
+     *         The status of the endpoint is not valid.
+     * @throws EndpointNotFoundException
+     *         The endpoint name doesn't refer to an existing endpoint.
+     * @throws InvalidClusterStateException
+     *         The specified cluster is not in the <code>available</code> state.
+     * @throws UnauthorizedOperationException
+     *         Your account is not authorized to perform the requested operation.
+     * @sample AmazonRedshift.ModifyEndpointAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyEndpointAccess" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ModifyEndpointAccessResult modifyEndpointAccess(ModifyEndpointAccessRequest modifyEndpointAccessRequest);
+
+    /**
+     * <p>
      * Modifies an existing Amazon Redshift event notification subscription.
      * </p>
      * 
@@ -2766,6 +2908,33 @@ public interface AmazonRedshift {
      *      target="_top">AWS API Documentation</a>
      */
     ClusterSecurityGroup revokeClusterSecurityGroupIngress(RevokeClusterSecurityGroupIngressRequest revokeClusterSecurityGroupIngressRequest);
+
+    /**
+     * <p>
+     * Revokes access to a cluster.
+     * </p>
+     * 
+     * @param revokeEndpointAccessRequest
+     * @return Result of the RevokeEndpointAccess operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws InvalidEndpointStateException
+     *         The status of the endpoint is not valid.
+     * @throws InvalidClusterSecurityGroupStateException
+     *         The state of the cluster security group is not <code>available</code>.
+     * @throws EndpointNotFoundException
+     *         The endpoint name doesn't refer to an existing endpoint.
+     * @throws EndpointAuthorizationNotFoundException
+     *         The authorization for this endpoint can't be found.
+     * @throws InvalidAuthorizationStateException
+     *         The status of the authorization is not valid.
+     * @throws InvalidClusterStateException
+     *         The specified cluster is not in the <code>available</code> state.
+     * @sample AmazonRedshift.RevokeEndpointAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeEndpointAccess" target="_top">AWS
+     *      API Documentation</a>
+     */
+    RevokeEndpointAccessResult revokeEndpointAccess(RevokeEndpointAccessRequest revokeEndpointAccessRequest);
 
     /**
      * <p>

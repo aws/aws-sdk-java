@@ -37,12 +37,24 @@ public class CreateMLModelRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The category of supervised learning that this <code>MLModel</code> will address. Choose from the following types:
      * </p>
      * <ul>
-     * <li>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</li>
-     * <li>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</li>
-     * <li>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</li>
+     * <li>
+     * <p>
+     * Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * For more information, see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
+     * For more information, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
      * Learning Developer Guide</a>.
      * </p>
      */
@@ -77,8 +89,7 @@ public class CreateMLModelRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling the data improves a
      * model's ability to find the optimal solution for a variety of data types. The valid values are <code>auto</code>
-     * and <code>none</code>. The default value is <code>none</code>. We <?oxy_insert_start author="laurama"
-     * timestamp="20160329T131121-0700">strongly recommend that you shuffle your data.<?oxy_insert_end>
+     * and <code>none</code>. The default value is <code>none</code>. We strongly recommend that you shuffle your data.
      * </p>
      * </li>
      * <li>
@@ -213,12 +224,24 @@ public class CreateMLModelRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The category of supervised learning that this <code>MLModel</code> will address. Choose from the following types:
      * </p>
      * <ul>
-     * <li>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</li>
-     * <li>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</li>
-     * <li>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</li>
+     * <li>
+     * <p>
+     * Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * For more information, see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
+     * For more information, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
      * Learning Developer Guide</a>.
      * </p>
      * 
@@ -226,12 +249,24 @@ public class CreateMLModelRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        The category of supervised learning that this <code>MLModel</code> will address. Choose from the following
      *        types:</p>
      *        <ul>
-     *        <li>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</li>
-     *        <li>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</li>
-     *        <li>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</li>
+     *        <li>
+     *        <p>
+     *        Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
-     *        For more information, see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
+     *        For more information, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
      *        Machine Learning Developer Guide</a>.
      * @see MLModelType
      */
@@ -245,24 +280,48 @@ public class CreateMLModelRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The category of supervised learning that this <code>MLModel</code> will address. Choose from the following types:
      * </p>
      * <ul>
-     * <li>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</li>
-     * <li>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</li>
-     * <li>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</li>
+     * <li>
+     * <p>
+     * Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * For more information, see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
+     * For more information, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
      * Learning Developer Guide</a>.
      * </p>
      * 
      * @return The category of supervised learning that this <code>MLModel</code> will address. Choose from the
      *         following types:</p>
      *         <ul>
-     *         <li>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</li>
-     *         <li>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</li>
-     *         <li>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</li>
+     *         <li>
+     *         <p>
+     *         Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
-     *         For more information, see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
+     *         For more information, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
      *         Machine Learning Developer Guide</a>.
      * @see MLModelType
      */
@@ -276,12 +335,24 @@ public class CreateMLModelRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The category of supervised learning that this <code>MLModel</code> will address. Choose from the following types:
      * </p>
      * <ul>
-     * <li>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</li>
-     * <li>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</li>
-     * <li>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</li>
+     * <li>
+     * <p>
+     * Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * For more information, see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
+     * For more information, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
      * Learning Developer Guide</a>.
      * </p>
      * 
@@ -289,12 +360,24 @@ public class CreateMLModelRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        The category of supervised learning that this <code>MLModel</code> will address. Choose from the following
      *        types:</p>
      *        <ul>
-     *        <li>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</li>
-     *        <li>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</li>
-     *        <li>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</li>
+     *        <li>
+     *        <p>
+     *        Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
-     *        For more information, see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
+     *        For more information, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
      *        Machine Learning Developer Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MLModelType
@@ -310,12 +393,24 @@ public class CreateMLModelRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The category of supervised learning that this <code>MLModel</code> will address. Choose from the following types:
      * </p>
      * <ul>
-     * <li>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</li>
-     * <li>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</li>
-     * <li>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</li>
+     * <li>
+     * <p>
+     * Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * For more information, see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
+     * For more information, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
      * Learning Developer Guide</a>.
      * </p>
      * 
@@ -323,12 +418,24 @@ public class CreateMLModelRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        The category of supervised learning that this <code>MLModel</code> will address. Choose from the following
      *        types:</p>
      *        <ul>
-     *        <li>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</li>
-     *        <li>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</li>
-     *        <li>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</li>
+     *        <li>
+     *        <p>
+     *        Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
-     *        For more information, see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
+     *        For more information, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
      *        Machine Learning Developer Guide</a>.
      * @see MLModelType
      */
@@ -342,12 +449,24 @@ public class CreateMLModelRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The category of supervised learning that this <code>MLModel</code> will address. Choose from the following types:
      * </p>
      * <ul>
-     * <li>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</li>
-     * <li>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</li>
-     * <li>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</li>
+     * <li>
+     * <p>
+     * Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * For more information, see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
+     * For more information, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
      * Learning Developer Guide</a>.
      * </p>
      * 
@@ -355,12 +474,24 @@ public class CreateMLModelRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        The category of supervised learning that this <code>MLModel</code> will address. Choose from the following
      *        types:</p>
      *        <ul>
-     *        <li>Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.</li>
-     *        <li>Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.</li>
-     *        <li>Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.</li>
+     *        <li>
+     *        <p>
+     *        Choose <code>REGRESSION</code> if the <code>MLModel</code> will be used to predict a numeric value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Choose <code>BINARY</code> if the <code>MLModel</code> result has two possible values.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Choose <code>MULTICLASS</code> if the <code>MLModel</code> result has a limited number of values.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
-     *        For more information, see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
+     *        For more information, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon
      *        Machine Learning Developer Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MLModelType
@@ -401,8 +532,7 @@ public class CreateMLModelRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling the data improves a
      * model's ability to find the optimal solution for a variety of data types. The valid values are <code>auto</code>
-     * and <code>none</code>. The default value is <code>none</code>. We <?oxy_insert_start author="laurama"
-     * timestamp="20160329T131121-0700">strongly recommend that you shuffle your data.<?oxy_insert_end>
+     * and <code>none</code>. The default value is <code>none</code>. We strongly recommend that you shuffle your data.
      * </p>
      * </li>
      * <li>
@@ -456,9 +586,8 @@ public class CreateMLModelRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <p>
      *         <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling the data improves
      *         a model's ability to find the optimal solution for a variety of data types. The valid values are
-     *         <code>auto</code> and <code>none</code>. The default value is <code>none</code>. We <?oxy_insert_start
-     *         author="laurama" timestamp="20160329T131121-0700">strongly recommend that you shuffle your
-     *         data.<?oxy_insert_end>
+     *         <code>auto</code> and <code>none</code>. The default value is <code>none</code>. We strongly recommend
+     *         that you shuffle your data.
      *         </p>
      *         </li>
      *         <li>
@@ -525,8 +654,7 @@ public class CreateMLModelRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling the data improves a
      * model's ability to find the optimal solution for a variety of data types. The valid values are <code>auto</code>
-     * and <code>none</code>. The default value is <code>none</code>. We <?oxy_insert_start author="laurama"
-     * timestamp="20160329T131121-0700">strongly recommend that you shuffle your data.<?oxy_insert_end>
+     * and <code>none</code>. The default value is <code>none</code>. We strongly recommend that you shuffle your data.
      * </p>
      * </li>
      * <li>
@@ -581,9 +709,8 @@ public class CreateMLModelRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling the data improves a
      *        model's ability to find the optimal solution for a variety of data types. The valid values are
-     *        <code>auto</code> and <code>none</code>. The default value is <code>none</code>. We <?oxy_insert_start
-     *        author="laurama" timestamp="20160329T131121-0700">strongly recommend that you shuffle your
-     *        data.<?oxy_insert_end>
+     *        <code>auto</code> and <code>none</code>. The default value is <code>none</code>. We strongly recommend
+     *        that you shuffle your data.
      *        </p>
      *        </li>
      *        <li>
@@ -646,8 +773,7 @@ public class CreateMLModelRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling the data improves a
      * model's ability to find the optimal solution for a variety of data types. The valid values are <code>auto</code>
-     * and <code>none</code>. The default value is <code>none</code>. We <?oxy_insert_start author="laurama"
-     * timestamp="20160329T131121-0700">strongly recommend that you shuffle your data.<?oxy_insert_end>
+     * and <code>none</code>. The default value is <code>none</code>. We strongly recommend that you shuffle your data.
      * </p>
      * </li>
      * <li>
@@ -702,9 +828,8 @@ public class CreateMLModelRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling the data improves a
      *        model's ability to find the optimal solution for a variety of data types. The valid values are
-     *        <code>auto</code> and <code>none</code>. The default value is <code>none</code>. We <?oxy_insert_start
-     *        author="laurama" timestamp="20160329T131121-0700">strongly recommend that you shuffle your
-     *        data.<?oxy_insert_end>
+     *        <code>auto</code> and <code>none</code>. The default value is <code>none</code>. We strongly recommend
+     *        that you shuffle your data.
      *        </p>
      *        </li>
      *        <li>

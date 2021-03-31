@@ -80,6 +80,10 @@ public class EnvironmentJsonUnmarshaller implements Unmarshaller<Environment, Js
                     context.nextToken();
                     environment.setLifecycle(EnvironmentLifecycleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("managedCredentialsStatus", targetDepth)) {
+                    context.nextToken();
+                    environment.setManagedCredentialsStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

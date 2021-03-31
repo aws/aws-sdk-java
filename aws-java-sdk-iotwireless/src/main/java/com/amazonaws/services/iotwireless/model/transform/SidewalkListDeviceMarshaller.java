@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.iotwireless.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,12 @@ public class SidewalkListDeviceMarshaller {
 
     private static final MarshallingInfo<String> AMAZONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("AmazonId").build();
+    private static final MarshallingInfo<String> SIDEWALKID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SidewalkId").build();
+    private static final MarshallingInfo<String> SIDEWALKMANUFACTURINGSN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SidewalkManufacturingSn").build();
+    private static final MarshallingInfo<List> DEVICECERTIFICATES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeviceCertificates").build();
 
     private static final SidewalkListDeviceMarshaller instance = new SidewalkListDeviceMarshaller();
 
@@ -47,6 +54,9 @@ public class SidewalkListDeviceMarshaller {
 
         try {
             protocolMarshaller.marshall(sidewalkListDevice.getAmazonId(), AMAZONID_BINDING);
+            protocolMarshaller.marshall(sidewalkListDevice.getSidewalkId(), SIDEWALKID_BINDING);
+            protocolMarshaller.marshall(sidewalkListDevice.getSidewalkManufacturingSn(), SIDEWALKMANUFACTURINGSN_BINDING);
+            protocolMarshaller.marshall(sidewalkListDevice.getDeviceCertificates(), DEVICECERTIFICATES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

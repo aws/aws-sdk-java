@@ -85,6 +85,10 @@ public class UpdateStackInstancesRequestMarshaller implements Marshaller<Request
                     }
                 }
 
+                if (deploymentTargets.getAccountsUrl() != null) {
+                    request.addParameter("DeploymentTargets.AccountsUrl", StringUtils.fromString(deploymentTargets.getAccountsUrl()));
+                }
+
                 if (deploymentTargets.getOrganizationalUnitIds().isEmpty()
                         && !((com.amazonaws.internal.SdkInternalList<String>) deploymentTargets.getOrganizationalUnitIds()).isAutoConstruct()) {
                     request.addParameter("DeploymentTargets.OrganizationalUnitIds", "");
@@ -164,6 +168,10 @@ public class UpdateStackInstancesRequestMarshaller implements Marshaller<Request
         {
             StackSetOperationPreferences operationPreferences = updateStackInstancesRequest.getOperationPreferences();
             if (operationPreferences != null) {
+
+                if (operationPreferences.getRegionConcurrencyType() != null) {
+                    request.addParameter("OperationPreferences.RegionConcurrencyType", StringUtils.fromString(operationPreferences.getRegionConcurrencyType()));
+                }
 
                 if (operationPreferences.getRegionOrder().isEmpty()
                         && !((com.amazonaws.internal.SdkInternalList<String>) operationPreferences.getRegionOrder()).isAutoConstruct()) {

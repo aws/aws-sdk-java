@@ -19,8 +19,16 @@ import javax.annotation.Generated;
  * The sort order specified in a listing condition. Possible values include the following:
  * </p>
  * <ul>
- * <li> <code>asc</code> - Present the information in ascending order (from A-Z).</li>
- * <li> <code>dsc</code> - Present the information in descending order (from Z-A).</li>
+ * <li>
+ * <p>
+ * <code>asc</code> - Present the information in ascending order (from A-Z).
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>dsc</code> - Present the information in descending order (from Z-A).
+ * </p>
+ * </li>
  * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

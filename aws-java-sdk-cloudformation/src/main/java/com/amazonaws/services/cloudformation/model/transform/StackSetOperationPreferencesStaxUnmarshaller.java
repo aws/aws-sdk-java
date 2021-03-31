@@ -45,6 +45,11 @@ public class StackSetOperationPreferencesStaxUnmarshaller implements Unmarshalle
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("RegionConcurrencyType", targetDepth)) {
+                    stackSetOperationPreferences.setRegionConcurrencyType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("RegionOrder", targetDepth)) {
                     stackSetOperationPreferences.withRegionOrder(new ArrayList<String>());
                     continue;

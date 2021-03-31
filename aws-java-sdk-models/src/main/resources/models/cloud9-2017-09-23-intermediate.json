@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -1386,6 +1386,75 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "imageId",
+        "c2jShape" : "ImageId",
+        "deprecated" : false,
+        "documentation" : "<p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. You can specify the AMI for the instance using an AMI alias or an AWS Systems Manager (SSM) path. The default AMI is used if the parameter isn't explicitly assigned a value in the request. </p> <p> <b>AMI aliases </b> </p> <ul> <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul> <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </p> </li> </ul>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. You can specify the AMI for the instance using an AMI alias or an AWS Systems Manager (SSM) path. The default AMI is used if the parameter isn't explicitly assigned a value in the request. </p> <p> <b>AMI aliases </b> </p> <ul> <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul> <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </p> </li> </ul>\n@param imageId The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. You can specify the AMI for the instance using an AMI alias or an AWS Systems Manager (SSM) path. The default AMI is used if the parameter isn't explicitly assigned a value in the request. </p> <p> <b>AMI aliases </b> </p> <ul> <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul> <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withImageId",
+        "getterDocumentation" : "/**<p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. You can specify the AMI for the instance using an AMI alias or an AWS Systems Manager (SSM) path. The default AMI is used if the parameter isn't explicitly assigned a value in the request. </p> <p> <b>AMI aliases </b> </p> <ul> <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul> <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </p> </li> </ul>\n@return The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. You can specify the AMI for the instance using an AMI alias or an AWS Systems Manager (SSM) path. The default AMI is used if the parameter isn't explicitly assigned a value in the request. </p> <p> <b>AMI aliases </b> </p> <ul> <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul> <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </p> </li>*/",
+        "getterMethodName" : "getImageId",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "imageId",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "imageId",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "ImageId",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. You can specify the AMI for the instance using an AMI alias or an AWS Systems Manager (SSM) path. The default AMI is used if the parameter isn't explicitly assigned a value in the request. </p> <p> <b>AMI aliases </b> </p> <ul> <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul> <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </p> </li> </ul>\n@param imageId The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. You can specify the AMI for the instance using an AMI alias or an AWS Systems Manager (SSM) path. The default AMI is used if the parameter isn't explicitly assigned a value in the request. </p> <p> <b>AMI aliases </b> </p> <ul> <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul> <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </p> </li>*/",
+        "setterMethodName" : "setImageId",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "imageId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. You can specify the AMI for the instance using an AMI alias or an AWS Systems Manager (SSM) path. The default AMI is used if the parameter isn't explicitly assigned a value in the request. </p> <p> <b>AMI aliases </b> </p> <ul> <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul> <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </p> </li> </ul>\n@param imageId The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. You can specify the AMI for the instance using an AMI alias or an AWS Systems Manager (SSM) path. The default AMI is used if the parameter isn't explicitly assigned a value in the request. </p> <p> <b>AMI aliases </b> </p> <ul> <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul> <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "imageId",
+          "variableType" : "String",
+          "documentation" : "<p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. You can specify the AMI for the instance using an AMI alias or an AWS Systems Manager (SSM) path. The default AMI is used if the parameter isn't explicitly assigned a value in the request. </p> <p> <b>AMI aliases </b> </p> <ul> <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul> <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </p> </li> </ul>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "automaticStopTimeMinutes",
         "c2jShape" : "AutomaticStopTimeMinutes",
         "deprecated" : false,
@@ -1604,7 +1673,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
-            "sensitive" : false,
+            "sensitive" : true,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -1649,7 +1718,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
-        "sensitive" : false,
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>An array of key-value pairs that will be associated with the new AWS Cloud9 development environment.</p>\n@param tags An array of key-value pairs that will be associated with the new AWS Cloud9 development environment.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -1680,12 +1749,12 @@
         "c2jName" : "connectionType",
         "c2jShape" : "ConnectionType",
         "deprecated" : false,
-        "documentation" : "<p>The connection type used for connecting to an Amazon EC2 environment.</p>",
+        "documentation" : "<p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through AWS Systems Manager).</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html\">Accessing no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : "ConnectionType",
-        "fluentSetterDocumentation" : "/**<p>The connection type used for connecting to an Amazon EC2 environment.</p>\n@param connectionType The connection type used for connecting to an Amazon EC2 environment.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ConnectionType*/",
+        "fluentSetterDocumentation" : "/**<p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through AWS Systems Manager).</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html\">Accessing no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.</p>\n@param connectionType The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through AWS Systems Manager).</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html\">Accessing no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ConnectionType*/",
         "fluentSetterMethodName" : "withConnectionType",
-        "getterDocumentation" : "/**<p>The connection type used for connecting to an Amazon EC2 environment.</p>\n@return The connection type used for connecting to an Amazon EC2 environment.\n@see ConnectionType*/",
+        "getterDocumentation" : "/**<p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through AWS Systems Manager).</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html\">Accessing no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.</p>\n@return The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through AWS Systems Manager).</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html\">Accessing no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.\n@see ConnectionType*/",
         "getterMethodName" : "getConnectionType",
         "getterModel" : {
           "returnType" : "String",
@@ -1719,7 +1788,7 @@
         "marshallingType" : "STRING",
         "name" : "ConnectionType",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The connection type used for connecting to an Amazon EC2 environment.</p>\n@param connectionType The connection type used for connecting to an Amazon EC2 environment.\n@see ConnectionType*/",
+        "setterDocumentation" : "/**<p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through AWS Systems Manager).</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html\">Accessing no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.</p>\n@param connectionType The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through AWS Systems Manager).</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html\">Accessing no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.\n@see ConnectionType*/",
         "setterMethodName" : "setConnectionType",
         "setterModel" : {
           "timestampFormat" : null,
@@ -1734,13 +1803,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The connection type used for connecting to an Amazon EC2 environment.</p>\n@param connectionType The connection type used for connecting to an Amazon EC2 environment.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ConnectionType*/",
+        "varargSetterDocumentation" : "/**<p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through AWS Systems Manager).</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html\">Accessing no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.</p>\n@param connectionType The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through AWS Systems Manager).</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html\">Accessing no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ConnectionType*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "connectionType",
           "variableType" : "String",
-          "documentation" : "<p>The connection type used for connecting to an Amazon EC2 environment.</p>",
+          "documentation" : "<p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through AWS Systems Manager).</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html\">Accessing no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -1891,12 +1960,12 @@
           "c2jName" : "connectionType",
           "c2jShape" : "ConnectionType",
           "deprecated" : false,
-          "documentation" : "<p>The connection type used for connecting to an Amazon EC2 environment.</p>",
+          "documentation" : "<p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through AWS Systems Manager).</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html\">Accessing no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : "ConnectionType",
-          "fluentSetterDocumentation" : "/**<p>The connection type used for connecting to an Amazon EC2 environment.</p>\n@param connectionType The connection type used for connecting to an Amazon EC2 environment.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ConnectionType*/",
+          "fluentSetterDocumentation" : "/**<p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through AWS Systems Manager).</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html\">Accessing no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.</p>\n@param connectionType The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through AWS Systems Manager).</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html\">Accessing no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ConnectionType*/",
           "fluentSetterMethodName" : "withConnectionType",
-          "getterDocumentation" : "/**<p>The connection type used for connecting to an Amazon EC2 environment.</p>\n@return The connection type used for connecting to an Amazon EC2 environment.\n@see ConnectionType*/",
+          "getterDocumentation" : "/**<p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through AWS Systems Manager).</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html\">Accessing no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.</p>\n@return The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through AWS Systems Manager).</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html\">Accessing no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.\n@see ConnectionType*/",
           "getterMethodName" : "getConnectionType",
           "getterModel" : {
             "returnType" : "String",
@@ -1930,7 +1999,7 @@
           "marshallingType" : "STRING",
           "name" : "ConnectionType",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The connection type used for connecting to an Amazon EC2 environment.</p>\n@param connectionType The connection type used for connecting to an Amazon EC2 environment.\n@see ConnectionType*/",
+          "setterDocumentation" : "/**<p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through AWS Systems Manager).</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html\">Accessing no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.</p>\n@param connectionType The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through AWS Systems Manager).</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html\">Accessing no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.\n@see ConnectionType*/",
           "setterMethodName" : "setConnectionType",
           "setterModel" : {
             "timestampFormat" : null,
@@ -1945,13 +2014,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The connection type used for connecting to an Amazon EC2 environment.</p>\n@param connectionType The connection type used for connecting to an Amazon EC2 environment.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ConnectionType*/",
+          "varargSetterDocumentation" : "/**<p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through AWS Systems Manager).</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html\">Accessing no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.</p>\n@param connectionType The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through AWS Systems Manager).</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html\">Accessing no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ConnectionType*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "connectionType",
             "variableType" : "String",
-            "documentation" : "<p>The connection type used for connecting to an Amazon EC2 environment.</p>",
+            "documentation" : "<p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through AWS Systems Manager).</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html\">Accessing no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2022,6 +2091,76 @@
             "variableName" : "description",
             "variableType" : "String",
             "documentation" : "<p>The description of the environment to create.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "ImageId" : {
+          "c2jName" : "imageId",
+          "c2jShape" : "ImageId",
+          "deprecated" : false,
+          "documentation" : "<p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. You can specify the AMI for the instance using an AMI alias or an AWS Systems Manager (SSM) path. The default AMI is used if the parameter isn't explicitly assigned a value in the request. </p> <p> <b>AMI aliases </b> </p> <ul> <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul> <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </p> </li> </ul>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. You can specify the AMI for the instance using an AMI alias or an AWS Systems Manager (SSM) path. The default AMI is used if the parameter isn't explicitly assigned a value in the request. </p> <p> <b>AMI aliases </b> </p> <ul> <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul> <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </p> </li> </ul>\n@param imageId The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. You can specify the AMI for the instance using an AMI alias or an AWS Systems Manager (SSM) path. The default AMI is used if the parameter isn't explicitly assigned a value in the request. </p> <p> <b>AMI aliases </b> </p> <ul> <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul> <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withImageId",
+          "getterDocumentation" : "/**<p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. You can specify the AMI for the instance using an AMI alias or an AWS Systems Manager (SSM) path. The default AMI is used if the parameter isn't explicitly assigned a value in the request. </p> <p> <b>AMI aliases </b> </p> <ul> <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul> <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </p> </li> </ul>\n@return The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. You can specify the AMI for the instance using an AMI alias or an AWS Systems Manager (SSM) path. The default AMI is used if the parameter isn't explicitly assigned a value in the request. </p> <p> <b>AMI aliases </b> </p> <ul> <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul> <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </p> </li>*/",
+          "getterMethodName" : "getImageId",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "imageId",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "imageId",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "ImageId",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. You can specify the AMI for the instance using an AMI alias or an AWS Systems Manager (SSM) path. The default AMI is used if the parameter isn't explicitly assigned a value in the request. </p> <p> <b>AMI aliases </b> </p> <ul> <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul> <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </p> </li> </ul>\n@param imageId The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. You can specify the AMI for the instance using an AMI alias or an AWS Systems Manager (SSM) path. The default AMI is used if the parameter isn't explicitly assigned a value in the request. </p> <p> <b>AMI aliases </b> </p> <ul> <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul> <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </p> </li>*/",
+          "setterMethodName" : "setImageId",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "imageId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. You can specify the AMI for the instance using an AMI alias or an AWS Systems Manager (SSM) path. The default AMI is used if the parameter isn't explicitly assigned a value in the request. </p> <p> <b>AMI aliases </b> </p> <ul> <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul> <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </p> </li> </ul>\n@param imageId The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. You can specify the AMI for the instance using an AMI alias or an AWS Systems Manager (SSM) path. The default AMI is used if the parameter isn't explicitly assigned a value in the request. </p> <p> <b>AMI aliases </b> </p> <ul> <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul> <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "imageId",
+            "variableType" : "String",
+            "documentation" : "<p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. You can specify the AMI for the instance using an AMI alias or an AWS Systems Manager (SSM) path. The default AMI is used if the parameter isn't explicitly assigned a value in the request. </p> <p> <b>AMI aliases </b> </p> <ul> <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul> <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li> <li> <p>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </p> </li> </ul>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -2388,7 +2527,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
-              "sensitive" : false,
+              "sensitive" : true,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -2433,7 +2572,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
-          "sensitive" : false,
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>An array of key-value pairs that will be associated with the new AWS Cloud9 development environment.</p>\n@param tags An array of key-value pairs that will be associated with the new AWS Cloud9 development environment.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -3296,7 +3435,7 @@
       "packageName" : "com.amazonaws.services.cloud9.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
-      "required" : null,
+      "required" : [ "membership" ],
       "shapeName" : "CreateEnvironmentMembershipResult",
       "signerAware" : false,
       "signerType" : null,
@@ -5813,7 +5952,7 @@
       "packageName" : "com.amazonaws.services.cloud9.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
-      "required" : null,
+      "required" : [ "status", "message" ],
       "shapeName" : "DescribeEnvironmentStatusResult",
       "signerAware" : false,
       "signerType" : null,
@@ -6840,12 +6979,12 @@
         "c2jName" : "connectionType",
         "c2jShape" : "ConnectionType",
         "deprecated" : false,
-        "documentation" : "<p>The connection type used for connecting to an Amazon EC2 environment.</p>",
+        "documentation" : "<p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : "ConnectionType",
-        "fluentSetterDocumentation" : "/**<p>The connection type used for connecting to an Amazon EC2 environment.</p>\n@param connectionType The connection type used for connecting to an Amazon EC2 environment.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ConnectionType*/",
+        "fluentSetterDocumentation" : "/**<p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.</p>\n@param connectionType The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ConnectionType*/",
         "fluentSetterMethodName" : "withConnectionType",
-        "getterDocumentation" : "/**<p>The connection type used for connecting to an Amazon EC2 environment.</p>\n@return The connection type used for connecting to an Amazon EC2 environment.\n@see ConnectionType*/",
+        "getterDocumentation" : "/**<p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.</p>\n@return The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.\n@see ConnectionType*/",
         "getterMethodName" : "getConnectionType",
         "getterModel" : {
           "returnType" : "String",
@@ -6879,7 +7018,7 @@
         "marshallingType" : "STRING",
         "name" : "ConnectionType",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The connection type used for connecting to an Amazon EC2 environment.</p>\n@param connectionType The connection type used for connecting to an Amazon EC2 environment.\n@see ConnectionType*/",
+        "setterDocumentation" : "/**<p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.</p>\n@param connectionType The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.\n@see ConnectionType*/",
         "setterMethodName" : "setConnectionType",
         "setterModel" : {
           "timestampFormat" : null,
@@ -6894,13 +7033,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The connection type used for connecting to an Amazon EC2 environment.</p>\n@param connectionType The connection type used for connecting to an Amazon EC2 environment.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ConnectionType*/",
+        "varargSetterDocumentation" : "/**<p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.</p>\n@param connectionType The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ConnectionType*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "connectionType",
           "variableType" : "String",
-          "documentation" : "<p>The connection type used for connecting to an Amazon EC2 environment.</p>",
+          "documentation" : "<p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -7112,6 +7251,75 @@
           "variableSetterType" : "EnvironmentLifecycle"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "managedCredentialsStatus",
+        "c2jShape" : "ManagedCredentialsStatus",
+        "deprecated" : false,
+        "documentation" : "<p>Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values are:</p> <ul> <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> </ul>",
+        "endpointDiscoveryId" : false,
+        "enumType" : "ManagedCredentialsStatus",
+        "fluentSetterDocumentation" : "/**<p>Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values are:</p> <ul> <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> </ul>\n@param managedCredentialsStatus Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values are:</p> <ul> <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ManagedCredentialsStatus*/",
+        "fluentSetterMethodName" : "withManagedCredentialsStatus",
+        "getterDocumentation" : "/**<p>Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values are:</p> <ul> <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> </ul>\n@return Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values are:</p> <ul> <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>\n@see ManagedCredentialsStatus*/",
+        "getterMethodName" : "getManagedCredentialsStatus",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "managedCredentialsStatus",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "managedCredentialsStatus",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "ManagedCredentialsStatus",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values are:</p> <ul> <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> </ul>\n@param managedCredentialsStatus Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values are:</p> <ul> <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>\n@see ManagedCredentialsStatus*/",
+        "setterMethodName" : "setManagedCredentialsStatus",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "managedCredentialsStatus",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values are:</p> <ul> <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> </ul>\n@param managedCredentialsStatus Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values are:</p> <ul> <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ManagedCredentialsStatus*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "managedCredentialsStatus",
+          "variableType" : "String",
+          "documentation" : "<p>Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values are:</p> <ul> <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> </ul>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "Arn" : {
@@ -7188,12 +7396,12 @@
           "c2jName" : "connectionType",
           "c2jShape" : "ConnectionType",
           "deprecated" : false,
-          "documentation" : "<p>The connection type used for connecting to an Amazon EC2 environment.</p>",
+          "documentation" : "<p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : "ConnectionType",
-          "fluentSetterDocumentation" : "/**<p>The connection type used for connecting to an Amazon EC2 environment.</p>\n@param connectionType The connection type used for connecting to an Amazon EC2 environment.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ConnectionType*/",
+          "fluentSetterDocumentation" : "/**<p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.</p>\n@param connectionType The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ConnectionType*/",
           "fluentSetterMethodName" : "withConnectionType",
-          "getterDocumentation" : "/**<p>The connection type used for connecting to an Amazon EC2 environment.</p>\n@return The connection type used for connecting to an Amazon EC2 environment.\n@see ConnectionType*/",
+          "getterDocumentation" : "/**<p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.</p>\n@return The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.\n@see ConnectionType*/",
           "getterMethodName" : "getConnectionType",
           "getterModel" : {
             "returnType" : "String",
@@ -7227,7 +7435,7 @@
           "marshallingType" : "STRING",
           "name" : "ConnectionType",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The connection type used for connecting to an Amazon EC2 environment.</p>\n@param connectionType The connection type used for connecting to an Amazon EC2 environment.\n@see ConnectionType*/",
+          "setterDocumentation" : "/**<p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.</p>\n@param connectionType The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.\n@see ConnectionType*/",
           "setterMethodName" : "setConnectionType",
           "setterModel" : {
             "timestampFormat" : null,
@@ -7242,13 +7450,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The connection type used for connecting to an Amazon EC2 environment.</p>\n@param connectionType The connection type used for connecting to an Amazon EC2 environment.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ConnectionType*/",
+          "varargSetterDocumentation" : "/**<p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.</p>\n@param connectionType The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ConnectionType*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "connectionType",
             "variableType" : "String",
-            "documentation" : "<p>The connection type used for connecting to an Amazon EC2 environment.</p>",
+            "documentation" : "<p>The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by default.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -7461,6 +7669,76 @@
             "documentation" : "<p>The state of the environment in its creation or deletion lifecycle.</p>",
             "simpleType" : "EnvironmentLifecycle",
             "variableSetterType" : "EnvironmentLifecycle"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "ManagedCredentialsStatus" : {
+          "c2jName" : "managedCredentialsStatus",
+          "c2jShape" : "ManagedCredentialsStatus",
+          "deprecated" : false,
+          "documentation" : "<p>Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values are:</p> <ul> <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> </ul>",
+          "endpointDiscoveryId" : false,
+          "enumType" : "ManagedCredentialsStatus",
+          "fluentSetterDocumentation" : "/**<p>Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values are:</p> <ul> <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> </ul>\n@param managedCredentialsStatus Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values are:</p> <ul> <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ManagedCredentialsStatus*/",
+          "fluentSetterMethodName" : "withManagedCredentialsStatus",
+          "getterDocumentation" : "/**<p>Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values are:</p> <ul> <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> </ul>\n@return Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values are:</p> <ul> <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>\n@see ManagedCredentialsStatus*/",
+          "getterMethodName" : "getManagedCredentialsStatus",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "managedCredentialsStatus",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "managedCredentialsStatus",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "ManagedCredentialsStatus",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values are:</p> <ul> <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> </ul>\n@param managedCredentialsStatus Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values are:</p> <ul> <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>\n@see ManagedCredentialsStatus*/",
+          "setterMethodName" : "setManagedCredentialsStatus",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "managedCredentialsStatus",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values are:</p> <ul> <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> </ul>\n@param managedCredentialsStatus Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values are:</p> <ul> <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li>\n@return Returns a reference to this object so that method calls can be chained together.\n@see ManagedCredentialsStatus*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "managedCredentialsStatus",
+            "variableType" : "String",
+            "documentation" : "<p>Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values are:</p> <ul> <li> <p> <code>ENABLED_ON_CREATE</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> <li> <p> <code>DISABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>PENDING_REMOVAL_BY_OWNER</code> </p> </li> <li> <p> <code>FAILED_REMOVAL_BY_COLLABORATOR</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code> </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> </ul>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "xmlNameSpaceUri" : null
         },
@@ -7678,7 +7956,7 @@
       "packageName" : "com.amazonaws.services.cloud9.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
-      "required" : null,
+      "required" : [ "type", "arn", "ownerArn" ],
       "shapeName" : "Environment",
       "signerAware" : false,
       "signerType" : null,
@@ -8939,7 +9217,7 @@
       "packageName" : "com.amazonaws.services.cloud9.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
-      "required" : null,
+      "required" : [ "permissions", "userId", "userArn", "environmentId" ],
       "shapeName" : "EnvironmentMember",
       "signerAware" : false,
       "signerType" : null,
@@ -10303,7 +10581,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
-            "sensitive" : false,
+            "sensitive" : true,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -10348,7 +10626,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
-        "sensitive" : false,
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The list of tags associated with the AWS Cloud9 development environment.</p>\n@param tags The list of tags associated with the AWS Cloud9 development environment.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -10458,7 +10736,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
-              "sensitive" : false,
+              "sensitive" : true,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -10503,7 +10781,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
-          "sensitive" : false,
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The list of tags associated with the AWS Cloud9 development environment.</p>\n@param tags The list of tags associated with the AWS Cloud9 development environment.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -10551,6 +10829,83 @@
         "documentation" : null,
         "simpleType" : "ListTagsForResourceResult",
         "variableSetterType" : "ListTagsForResourceResult"
+      },
+      "wrapper" : false
+    },
+    "ManagedCredentialsStatus" : {
+      "c2jName" : "ManagedCredentialsStatus",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "endpointDiscoveryMembers" : null,
+      "enums" : [ {
+        "name" : "ENABLED_ON_CREATE",
+        "value" : "ENABLED_ON_CREATE"
+      }, {
+        "name" : "ENABLED_BY_OWNER",
+        "value" : "ENABLED_BY_OWNER"
+      }, {
+        "name" : "DISABLED_BY_DEFAULT",
+        "value" : "DISABLED_BY_DEFAULT"
+      }, {
+        "name" : "DISABLED_BY_OWNER",
+        "value" : "DISABLED_BY_OWNER"
+      }, {
+        "name" : "DISABLED_BY_COLLABORATOR",
+        "value" : "DISABLED_BY_COLLABORATOR"
+      }, {
+        "name" : "PENDING_REMOVAL_BY_COLLABORATOR",
+        "value" : "PENDING_REMOVAL_BY_COLLABORATOR"
+      }, {
+        "name" : "PENDING_START_REMOVAL_BY_COLLABORATOR",
+        "value" : "PENDING_START_REMOVAL_BY_COLLABORATOR"
+      }, {
+        "name" : "PENDING_REMOVAL_BY_OWNER",
+        "value" : "PENDING_REMOVAL_BY_OWNER"
+      }, {
+        "name" : "PENDING_START_REMOVAL_BY_OWNER",
+        "value" : "PENDING_START_REMOVAL_BY_OWNER"
+      }, {
+        "name" : "FAILED_REMOVAL_BY_COLLABORATOR",
+        "value" : "FAILED_REMOVAL_BY_COLLABORATOR"
+      }, {
+        "name" : "FAILED_REMOVAL_BY_OWNER",
+        "value" : "FAILED_REMOVAL_BY_OWNER"
+      } ],
+      "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloud9.enum.ManagedCredentialsStatus",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cloud9.enum",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "ManagedCredentialsStatus",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "ManagedCredentialsStatus",
+        "variableName" : "managedCredentialsStatus",
+        "variableType" : "ManagedCredentialsStatus",
+        "documentation" : null,
+        "simpleType" : "ManagedCredentialsStatus",
+        "variableSetterType" : "ManagedCredentialsStatus"
       },
       "wrapper" : false
     },
@@ -10760,7 +11115,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Key",
-        "sensitive" : false,
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The <b>name</b> part of a tag.</p>\n@param key The <b>name</b> part of a tag.*/",
         "setterMethodName" : "setKey",
         "setterModel" : {
@@ -10829,7 +11184,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "Value",
-        "sensitive" : false,
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The <b>value</b> part of a tag.</p>\n@param value The <b>value</b> part of a tag.*/",
         "setterMethodName" : "setValue",
         "setterModel" : {
@@ -10900,7 +11255,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Key",
-          "sensitive" : false,
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The <b>name</b> part of a tag.</p>\n@param key The <b>name</b> part of a tag.*/",
           "setterMethodName" : "setKey",
           "setterModel" : {
@@ -10970,7 +11325,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "Value",
-          "sensitive" : false,
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The <b>value</b> part of a tag.</p>\n@param value The <b>value</b> part of a tag.*/",
           "setterMethodName" : "setValue",
           "setterModel" : {
@@ -11198,7 +11553,7 @@
             "marshallingTargetClass" : "StructuredPojo",
             "marshallingType" : "STRUCTURED",
             "name" : "Member",
-            "sensitive" : false,
+            "sensitive" : true,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -11243,7 +11598,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "Tags",
-        "sensitive" : false,
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The list of tags to add to the given AWS Cloud9 development environment.</p>\n@param tags The list of tags to add to the given AWS Cloud9 development environment.*/",
         "setterMethodName" : "setTags",
         "setterModel" : {
@@ -11423,7 +11778,7 @@
               "marshallingTargetClass" : "StructuredPojo",
               "marshallingType" : "STRUCTURED",
               "name" : "Member",
-              "sensitive" : false,
+              "sensitive" : true,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -11468,7 +11823,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "Tags",
-          "sensitive" : false,
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The list of tags to add to the given AWS Cloud9 development environment.</p>\n@param tags The list of tags to add to the given AWS Cloud9 development environment.*/",
           "setterMethodName" : "setTags",
           "setterModel" : {
@@ -11778,7 +12133,7 @@
             "marshallingTargetClass" : "String",
             "marshallingType" : "STRING",
             "name" : "Member",
-            "sensitive" : false,
+            "sensitive" : true,
             "setterDocumentation" : "/**\n@param member */",
             "setterMethodName" : "setMember",
             "setterModel" : {
@@ -11823,7 +12178,7 @@
         "marshallingTargetClass" : "List",
         "marshallingType" : "LIST",
         "name" : "TagKeys",
-        "sensitive" : false,
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The tag names of the tags to remove from the given AWS Cloud9 development environment.</p>\n@param tagKeys The tag names of the tags to remove from the given AWS Cloud9 development environment.*/",
         "setterMethodName" : "setTagKeys",
         "setterModel" : {
@@ -12003,7 +12358,7 @@
               "marshallingTargetClass" : "String",
               "marshallingType" : "STRING",
               "name" : "Member",
-              "sensitive" : false,
+              "sensitive" : true,
               "setterDocumentation" : "/**\n@param member */",
               "setterMethodName" : "setMember",
               "setterModel" : {
@@ -12048,7 +12403,7 @@
           "marshallingTargetClass" : "List",
           "marshallingType" : "LIST",
           "name" : "TagKeys",
-          "sensitive" : false,
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The tag names of the tags to remove from the given AWS Cloud9 development environment.</p>\n@param tagKeys The tag names of the tags to remove from the given AWS Cloud9 development environment.*/",
           "setterMethodName" : "setTagKeys",
           "setterModel" : {
@@ -13315,7 +13670,7 @@
           "name" : "my-demo-environment",
           "description" : "This is my demonstration environment.",
           "instanceType" : "t2.micro",
-          "subnetId" : "subnet-1fab8aEX",
+          "subnetId" : "subnet-6300cd1b",
           "automaticStopTimeMinutes" : 60,
           "ownerArn" : "arn:aws:iam::123456789012:user/MyDemoUser"
         },

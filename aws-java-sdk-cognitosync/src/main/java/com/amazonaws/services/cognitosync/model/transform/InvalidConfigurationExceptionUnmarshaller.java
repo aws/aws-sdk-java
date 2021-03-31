@@ -29,7 +29,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidConfigurationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidConfigurationExceptionUnmarshaller() {
-        super(com.amazonaws.services.cognitosync.model.InvalidConfigurationException.class, "InvalidConfiguration");
+        super(com.amazonaws.services.cognitosync.model.InvalidConfigurationException.class, "InvalidConfigurationException");
     }
 
     @Override

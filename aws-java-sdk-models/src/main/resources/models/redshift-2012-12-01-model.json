@@ -52,6 +52,27 @@
       ],
       "documentation":"<p>Adds an inbound (ingress) rule to an Amazon Redshift security group. Depending on whether the application accessing your cluster is running on the Internet or an Amazon EC2 instance, you can authorize inbound access to either a Classless Interdomain Routing (CIDR)/Internet Protocol (IP) range or to an Amazon EC2 security group. You can add as many as 20 ingress rules to an Amazon Redshift security group.</p> <p>If you authorize access to an Amazon EC2 security group, specify <i>EC2SecurityGroupName</i> and <i>EC2SecurityGroupOwnerId</i>. The Amazon EC2 security group and Amazon Redshift cluster must be in the same AWS Region. </p> <p>If you authorize access to a CIDR/IP address range, specify <i>CIDRIP</i>. For an overview of CIDR blocks, see the Wikipedia article on <a href=\"http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>. </p> <p>You must also associate the security group with a cluster so that clients running on these IP addresses or the EC2 instance are authorized to connect to the cluster. For information about managing security groups, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html\">Working with Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>"
     },
+    "AuthorizeEndpointAccess":{
+      "name":"AuthorizeEndpointAccess",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"AuthorizeEndpointAccessMessage"},
+      "output":{
+        "shape":"EndpointAuthorization",
+        "resultWrapper":"AuthorizeEndpointAccessResult"
+      },
+      "errors":[
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"EndpointAuthorizationsPerClusterLimitExceededFault"},
+        {"shape":"UnsupportedOperationFault"},
+        {"shape":"EndpointAuthorizationAlreadyExistsFault"},
+        {"shape":"InvalidAuthorizationStateFault"},
+        {"shape":"InvalidClusterStateFault"}
+      ],
+      "documentation":"<p>Grants access to a cluster.</p>"
+    },
     "AuthorizeSnapshotAccess":{
       "name":"AuthorizeSnapshotAccess",
       "http":{
@@ -264,6 +285,31 @@
         {"shape":"DependentServiceRequestThrottlingFault"}
       ],
       "documentation":"<p>Creates a new Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing Amazon Virtual Private Cloud (Amazon VPC) when creating Amazon Redshift subnet group.</p> <p> For information about subnet groups, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html\">Amazon Redshift Cluster Subnet Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>"
+    },
+    "CreateEndpointAccess":{
+      "name":"CreateEndpointAccess",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateEndpointAccessMessage"},
+      "output":{
+        "shape":"EndpointAccess",
+        "resultWrapper":"CreateEndpointAccessResult"
+      },
+      "errors":[
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"AccessToClusterDeniedFault"},
+        {"shape":"EndpointsPerClusterLimitExceededFault"},
+        {"shape":"EndpointsPerAuthorizationLimitExceededFault"},
+        {"shape":"InvalidClusterSecurityGroupStateFault"},
+        {"shape":"ClusterSubnetGroupNotFoundFault"},
+        {"shape":"EndpointAlreadyExistsFault"},
+        {"shape":"UnsupportedOperationFault"},
+        {"shape":"InvalidClusterStateFault"},
+        {"shape":"UnauthorizedOperation"}
+      ],
+      "documentation":"<p>Creates a Redshift-managed VPC endpoint.</p>"
     },
     "CreateEventSubscription":{
       "name":"CreateEventSubscription",
@@ -505,6 +551,26 @@
         {"shape":"ClusterSubnetGroupNotFoundFault"}
       ],
       "documentation":"<p>Deletes the specified cluster subnet group.</p>"
+    },
+    "DeleteEndpointAccess":{
+      "name":"DeleteEndpointAccess",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteEndpointAccessMessage"},
+      "output":{
+        "shape":"EndpointAccess",
+        "resultWrapper":"DeleteEndpointAccessResult"
+      },
+      "errors":[
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"InvalidEndpointStateFault"},
+        {"shape":"InvalidClusterSecurityGroupStateFault"},
+        {"shape":"EndpointNotFoundFault"},
+        {"shape":"InvalidClusterStateFault"}
+      ],
+      "documentation":"<p>Deletes a Redshift-managed VPC endpoint.</p>"
     },
     "DeleteEventSubscription":{
       "name":"DeleteEventSubscription",
@@ -784,6 +850,41 @@
         "resultWrapper":"DescribeDefaultClusterParametersResult"
       },
       "documentation":"<p>Returns a list of parameter settings for the specified parameter group family.</p> <p> For more information about parameters and parameter groups, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html\">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>"
+    },
+    "DescribeEndpointAccess":{
+      "name":"DescribeEndpointAccess",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeEndpointAccessMessage"},
+      "output":{
+        "shape":"EndpointAccessList",
+        "resultWrapper":"DescribeEndpointAccessResult"
+      },
+      "errors":[
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"InvalidClusterStateFault"},
+        {"shape":"EndpointNotFoundFault"}
+      ],
+      "documentation":"<p>Describes a Redshift-managed VPC endpoint.</p>"
+    },
+    "DescribeEndpointAuthorization":{
+      "name":"DescribeEndpointAuthorization",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeEndpointAuthorizationMessage"},
+      "output":{
+        "shape":"EndpointAuthorizationList",
+        "resultWrapper":"DescribeEndpointAuthorizationResult"
+      },
+      "errors":[
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"UnsupportedOperationFault"}
+      ],
+      "documentation":"<p>Describes an endpoint authorization.</p>"
     },
     "DescribeEventCategories":{
       "name":"DescribeEventCategories",
@@ -1348,6 +1449,27 @@
       ],
       "documentation":"<p>Modifies a cluster subnet group to include the specified list of VPC subnets. The operation replaces the existing list of subnets with the new list of subnets.</p>"
     },
+    "ModifyEndpointAccess":{
+      "name":"ModifyEndpointAccess",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ModifyEndpointAccessMessage"},
+      "output":{
+        "shape":"EndpointAccess",
+        "resultWrapper":"ModifyEndpointAccessResult"
+      },
+      "errors":[
+        {"shape":"InvalidClusterSecurityGroupStateFault"},
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"InvalidEndpointStateFault"},
+        {"shape":"EndpointNotFoundFault"},
+        {"shape":"InvalidClusterStateFault"},
+        {"shape":"UnauthorizedOperation"}
+      ],
+      "documentation":"<p>Modifies a Redshift-managed VPC endpoint.</p>"
+    },
     "ModifyEventSubscription":{
       "name":"ModifyEventSubscription",
       "http":{
@@ -1640,6 +1762,28 @@
       ],
       "documentation":"<p>Revokes an ingress rule in an Amazon Redshift security group for a previously authorized IP range or Amazon EC2 security group. To add an ingress rule, see <a>AuthorizeClusterSecurityGroupIngress</a>. For information about managing security groups, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html\">Amazon Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>"
     },
+    "RevokeEndpointAccess":{
+      "name":"RevokeEndpointAccess",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"RevokeEndpointAccessMessage"},
+      "output":{
+        "shape":"EndpointAuthorization",
+        "resultWrapper":"RevokeEndpointAccessResult"
+      },
+      "errors":[
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"InvalidEndpointStateFault"},
+        {"shape":"InvalidClusterSecurityGroupStateFault"},
+        {"shape":"EndpointNotFoundFault"},
+        {"shape":"EndpointAuthorizationNotFoundFault"},
+        {"shape":"InvalidAuthorizationStateFault"},
+        {"shape":"InvalidClusterStateFault"}
+      ],
+      "documentation":"<p>Revokes access to a cluster.</p>"
+    },
     "RevokeSnapshotAccess":{
       "name":"RevokeSnapshotAccess",
       "http":{
@@ -1703,6 +1847,18 @@
           "documentation":"<p/>"
         }
       }
+    },
+    "AccessToClusterDeniedFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>You are not authorized to access the cluster.</p>",
+      "error":{
+        "code":"AccessToClusterDenied",
+        "httpStatusCode":400,
+        "senderFault":true
+      },
+      "exception":true
     },
     "AccessToSnapshotDeniedFault":{
       "type":"structure",
@@ -1842,6 +1998,13 @@
       },
       "exception":true
     },
+    "AuthorizationStatus":{
+      "type":"string",
+      "enum":[
+        "Authorized",
+        "Revoking"
+      ]
+    },
     "AuthorizeClusterSecurityGroupIngressMessage":{
       "type":"structure",
       "required":["ClusterSecurityGroupName"],
@@ -1869,6 +2032,24 @@
       "type":"structure",
       "members":{
         "ClusterSecurityGroup":{"shape":"ClusterSecurityGroup"}
+      }
+    },
+    "AuthorizeEndpointAccessMessage":{
+      "type":"structure",
+      "required":["Account"],
+      "members":{
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The cluster identifier of the cluster to grant access to.</p>"
+        },
+        "Account":{
+          "shape":"String",
+          "documentation":"<p>The AWS account ID to grant access to.</p>"
+        },
+        "VpcIds":{
+          "shape":"VpcIdentifierList",
+          "documentation":"<p>The virtual private cloud (VPC) identifiers to grant access to.</p>"
+        }
       }
     },
     "AuthorizeSnapshotAccessMessage":{
@@ -3195,6 +3376,35 @@
         "ClusterSubnetGroup":{"shape":"ClusterSubnetGroup"}
       }
     },
+    "CreateEndpointAccessMessage":{
+      "type":"structure",
+      "required":[
+        "EndpointName",
+        "SubnetGroupName"
+      ],
+      "members":{
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The cluster identifier of the cluster to access.</p>"
+        },
+        "ResourceOwner":{
+          "shape":"String",
+          "documentation":"<p>The AWS account ID of the owner of the cluster. This is only required if the cluster is in another AWS account.</p>"
+        },
+        "EndpointName":{
+          "shape":"String",
+          "documentation":"<p>The Redshift-managed VPC endpoint name.</p> <p>An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.</p>"
+        },
+        "SubnetGroupName":{
+          "shape":"String",
+          "documentation":"<p>The subnet group from which Amazon Redshift chooses the subnet to deploy the endpoint.</p>"
+        },
+        "VpcSecurityGroupIds":{
+          "shape":"VpcSecurityGroupIdList",
+          "documentation":"<p>The security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>"
+        }
+      }
+    },
     "CreateEventSubscriptionMessage":{
       "type":"structure",
       "required":[
@@ -3650,6 +3860,16 @@
       },
       "documentation":"<p/>"
     },
+    "DeleteEndpointAccessMessage":{
+      "type":"structure",
+      "required":["EndpointName"],
+      "members":{
+        "EndpointName":{
+          "shape":"String",
+          "documentation":"<p>The Redshift-managed VPC endpoint to delete.</p>"
+        }
+      }
+    },
     "DeleteEventSubscriptionMessage":{
       "type":"structure",
       "required":["SubscriptionName"],
@@ -4035,6 +4255,60 @@
       "type":"structure",
       "members":{
         "DefaultClusterParameters":{"shape":"DefaultClusterParameters"}
+      }
+    },
+    "DescribeEndpointAccessMessage":{
+      "type":"structure",
+      "members":{
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The cluster identifier associated with the described endpoint.</p>"
+        },
+        "ResourceOwner":{
+          "shape":"String",
+          "documentation":"<p>The AWS account ID of the owner of the cluster.</p>"
+        },
+        "EndpointName":{
+          "shape":"String",
+          "documentation":"<p>The name of the endpoint to be described.</p>"
+        },
+        "VpcId":{
+          "shape":"String",
+          "documentation":"<p>The virtual private cloud (VPC) identifier with access to the cluster.</p>"
+        },
+        "MaxRecords":{
+          "shape":"IntegerOptional",
+          "documentation":"<p>Reserved for Amazon Redshift internal use.</p>"
+        },
+        "Marker":{
+          "shape":"String",
+          "documentation":"<p>Reserved for Amazon Redshift internal use.</p>"
+        }
+      }
+    },
+    "DescribeEndpointAuthorizationMessage":{
+      "type":"structure",
+      "members":{
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The cluster identifier of the cluster to access.</p>"
+        },
+        "Account":{
+          "shape":"String",
+          "documentation":"<p>The AWS account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p>"
+        },
+        "Grantee":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>Indicates whether to check authorization from a grantor or grantee point of view. If true, Amazon Redshift returns endpoint authorizations that you've been granted. If false (default), checks authorization from a grantor point of view.</p>"
+        },
+        "MaxRecords":{
+          "shape":"IntegerOptional",
+          "documentation":"<p>Reserved for Amazon Redshift internal use.</p>"
+        },
+        "Marker":{
+          "shape":"String",
+          "documentation":"<p>Reserved for Amazon Redshift internal use.</p>"
+        }
       }
     },
     "DescribeEventCategoriesMessage":{
@@ -4620,6 +4894,209 @@
       },
       "documentation":"<p>Describes a connection endpoint.</p>"
     },
+    "EndpointAccess":{
+      "type":"structure",
+      "members":{
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The cluster identifier of the cluster associated with the endpoint.</p>"
+        },
+        "ResourceOwner":{
+          "shape":"String",
+          "documentation":"<p>The AWS account ID of the owner of the cluster.</p>"
+        },
+        "SubnetGroupName":{
+          "shape":"String",
+          "documentation":"<p>The subnet group name where Amazon Redshift chooses to deploy the endpoint.</p>"
+        },
+        "EndpointStatus":{
+          "shape":"String",
+          "documentation":"<p>The status of the endpoint.</p>"
+        },
+        "EndpointName":{
+          "shape":"String",
+          "documentation":"<p>The name of the endpoint.</p>"
+        },
+        "EndpointCreateTime":{
+          "shape":"TStamp",
+          "documentation":"<p>The time (UTC) that the endpoint was created.</p>"
+        },
+        "Port":{
+          "shape":"Integer",
+          "documentation":"<p>The port number on which the cluster accepts incoming connections.</p>"
+        },
+        "Address":{
+          "shape":"String",
+          "documentation":"<p>The DNS address of the endpoint.</p>"
+        },
+        "VpcSecurityGroups":{
+          "shape":"VpcSecurityGroupMembershipList",
+          "documentation":"<p>The security groups associated with the endpoint.</p>"
+        },
+        "VpcEndpoint":{"shape":"VpcEndpoint"}
+      },
+      "documentation":"<p>Describes a Redshift-managed VPC endpoint.</p>"
+    },
+    "EndpointAccessList":{
+      "type":"structure",
+      "members":{
+        "EndpointAccessList":{
+          "shape":"EndpointAccesses",
+          "documentation":"<p>The list of endpoints with access to the cluster.</p>"
+        },
+        "Marker":{
+          "shape":"String",
+          "documentation":"<p>Reserved for Amazon Redshift internal use.</p>"
+        }
+      }
+    },
+    "EndpointAccesses":{
+      "type":"list",
+      "member":{"shape":"EndpointAccess"}
+    },
+    "EndpointAlreadyExistsFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The account already has a Redshift-managed VPC endpoint with the given identifier.</p>",
+      "error":{
+        "code":"EndpointAlreadyExists",
+        "httpStatusCode":400,
+        "senderFault":true
+      },
+      "exception":true
+    },
+    "EndpointAuthorization":{
+      "type":"structure",
+      "members":{
+        "Grantor":{
+          "shape":"String",
+          "documentation":"<p>The AWS account ID of the cluster owner.</p>"
+        },
+        "Grantee":{
+          "shape":"String",
+          "documentation":"<p>The AWS account ID of the grantee of the cluster.</p>"
+        },
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The cluster identifier.</p>"
+        },
+        "AuthorizeTime":{
+          "shape":"TStamp",
+          "documentation":"<p>The time (UTC) when the authorization was created.</p>"
+        },
+        "ClusterStatus":{
+          "shape":"String",
+          "documentation":"<p>The status of the cluster.</p>"
+        },
+        "Status":{
+          "shape":"AuthorizationStatus",
+          "documentation":"<p>The status of the authorization action.</p>"
+        },
+        "AllowedAllVPCs":{
+          "shape":"Boolean",
+          "documentation":"<p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>"
+        },
+        "AllowedVPCs":{
+          "shape":"VpcIdentifierList",
+          "documentation":"<p>The VPCs allowed access to the cluster.</p>"
+        },
+        "EndpointCount":{
+          "shape":"Integer",
+          "documentation":"<p>The number of Redshift-managed VPC endpoints created for the authorization.</p>"
+        }
+      },
+      "documentation":"<p>Describes an endpoint authorization for authorizing Redshift-managed VPC endpoint access to a cluster across AWS accounts.</p>"
+    },
+    "EndpointAuthorizationAlreadyExistsFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The authorization already exists for this endpoint.</p>",
+      "error":{
+        "code":"EndpointAuthorizationAlreadyExists",
+        "httpStatusCode":400,
+        "senderFault":true
+      },
+      "exception":true
+    },
+    "EndpointAuthorizationList":{
+      "type":"structure",
+      "members":{
+        "EndpointAuthorizationList":{
+          "shape":"EndpointAuthorizations",
+          "documentation":"<p>The authorizations to an endpoint.</p>"
+        },
+        "Marker":{
+          "shape":"String",
+          "documentation":"<p>Reserved for Amazon Redshift internal use.</p>"
+        }
+      }
+    },
+    "EndpointAuthorizationNotFoundFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The authorization for this endpoint can't be found.</p>",
+      "error":{
+        "code":"EndpointAuthorizationNotFound",
+        "httpStatusCode":404,
+        "senderFault":true
+      },
+      "exception":true
+    },
+    "EndpointAuthorizations":{
+      "type":"list",
+      "member":{"shape":"EndpointAuthorization"}
+    },
+    "EndpointAuthorizationsPerClusterLimitExceededFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The number of endpoint authorizations per cluster has exceeded its limit.</p>",
+      "error":{
+        "code":"EndpointAuthorizationsPerClusterLimitExceeded",
+        "httpStatusCode":400,
+        "senderFault":true
+      },
+      "exception":true
+    },
+    "EndpointNotFoundFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The endpoint name doesn't refer to an existing endpoint.</p>",
+      "error":{
+        "code":"EndpointNotFound",
+        "httpStatusCode":404,
+        "senderFault":true
+      },
+      "exception":true
+    },
+    "EndpointsPerAuthorizationLimitExceededFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The number of Redshift-managed VPC endpoints per authorization has exceeded its limit.</p>",
+      "error":{
+        "code":"EndpointsPerAuthorizationLimitExceeded",
+        "httpStatusCode":400,
+        "senderFault":true
+      },
+      "exception":true
+    },
+    "EndpointsPerClusterLimitExceededFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The number of Redshift-managed VPC endpoints per cluster has exceeded its limit.</p>",
+      "error":{
+        "code":"EndpointsPerClusterLimitExceeded",
+        "httpStatusCode":400,
+        "senderFault":true
+      },
+      "exception":true
+    },
     "Event":{
       "type":"structure",
       "members":{
@@ -5166,6 +5643,18 @@
     },
     "Integer":{"type":"integer"},
     "IntegerOptional":{"type":"integer"},
+    "InvalidAuthorizationStateFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The status of the authorization is not valid.</p>",
+      "error":{
+        "code":"InvalidAuthorizationState",
+        "httpStatusCode":400,
+        "senderFault":true
+      },
+      "exception":true
+    },
     "InvalidClusterParameterGroupStateFault":{
       "type":"structure",
       "members":{
@@ -5269,6 +5758,18 @@
       "documentation":"<p>The Elastic IP (EIP) is invalid or cannot be found.</p>",
       "error":{
         "code":"InvalidElasticIpFault",
+        "httpStatusCode":400,
+        "senderFault":true
+      },
+      "exception":true
+    },
+    "InvalidEndpointStateFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The status of the endpoint is not valid.</p>",
+      "error":{
+        "code":"InvalidEndpointState",
         "httpStatusCode":400,
         "senderFault":true
       },
@@ -5818,6 +6319,20 @@
       "type":"structure",
       "members":{
         "ClusterSubnetGroup":{"shape":"ClusterSubnetGroup"}
+      }
+    },
+    "ModifyEndpointAccessMessage":{
+      "type":"structure",
+      "required":["EndpointName"],
+      "members":{
+        "EndpointName":{
+          "shape":"String",
+          "documentation":"<p>The endpoint to be modified.</p>"
+        },
+        "VpcSecurityGroupIds":{
+          "shape":"VpcSecurityGroupIdList",
+          "documentation":"<p>The complete list of VPC security groups associated with the endpoint after the endpoint is modified.</p>"
+        }
       }
     },
     "ModifyEventSubscriptionMessage":{
@@ -6994,6 +7509,27 @@
       "type":"structure",
       "members":{
         "ClusterSecurityGroup":{"shape":"ClusterSecurityGroup"}
+      }
+    },
+    "RevokeEndpointAccessMessage":{
+      "type":"structure",
+      "members":{
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The cluster to revoke access from.</p>"
+        },
+        "Account":{
+          "shape":"String",
+          "documentation":"<p>The AWS account ID whose access is to be revoked.</p>"
+        },
+        "VpcIds":{
+          "shape":"VpcIdentifierList",
+          "documentation":"<p>The virtual private cloud (VPC) identifiers for which access is to be revoked.</p>"
+        },
+        "Force":{
+          "shape":"Boolean",
+          "documentation":"<p>Indicates whether to force the revoke action. If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted.</p>"
+        }
       }
     },
     "RevokeSnapshotAccessMessage":{
@@ -8323,13 +8859,20 @@
           "documentation":"<p>One or more network interfaces of the endpoint. Also known as an interface endpoint. </p>"
         }
       },
-      "documentation":"<p>The connection endpoint for connecting an Amazon Redshift cluster through the proxy.</p>"
+      "documentation":"<p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>"
     },
     "VpcEndpointsList":{
       "type":"list",
       "member":{
         "shape":"VpcEndpoint",
         "locationName":"VpcEndpoint"
+      }
+    },
+    "VpcIdentifierList":{
+      "type":"list",
+      "member":{
+        "shape":"String",
+        "locationName":"VpcIdentifier"
       }
     },
     "VpcSecurityGroupIdList":{

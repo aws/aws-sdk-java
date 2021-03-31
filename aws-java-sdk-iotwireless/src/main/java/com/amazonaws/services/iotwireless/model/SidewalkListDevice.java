@@ -34,6 +34,24 @@ public class SidewalkListDevice implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String amazonId;
+    /**
+     * <p>
+     * The sidewalk device identification.
+     * </p>
+     */
+    private String sidewalkId;
+    /**
+     * <p>
+     * The Sidewalk manufacturing series number.
+     * </p>
+     */
+    private String sidewalkManufacturingSn;
+    /**
+     * <p>
+     * The sidewalk device certificates for Ed25519 and P256r1.
+     * </p>
+     */
+    private java.util.List<CertificateList> deviceCertificates;
 
     /**
      * <p>
@@ -76,6 +94,156 @@ public class SidewalkListDevice implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The sidewalk device identification.
+     * </p>
+     * 
+     * @param sidewalkId
+     *        The sidewalk device identification.
+     */
+
+    public void setSidewalkId(String sidewalkId) {
+        this.sidewalkId = sidewalkId;
+    }
+
+    /**
+     * <p>
+     * The sidewalk device identification.
+     * </p>
+     * 
+     * @return The sidewalk device identification.
+     */
+
+    public String getSidewalkId() {
+        return this.sidewalkId;
+    }
+
+    /**
+     * <p>
+     * The sidewalk device identification.
+     * </p>
+     * 
+     * @param sidewalkId
+     *        The sidewalk device identification.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SidewalkListDevice withSidewalkId(String sidewalkId) {
+        setSidewalkId(sidewalkId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Sidewalk manufacturing series number.
+     * </p>
+     * 
+     * @param sidewalkManufacturingSn
+     *        The Sidewalk manufacturing series number.
+     */
+
+    public void setSidewalkManufacturingSn(String sidewalkManufacturingSn) {
+        this.sidewalkManufacturingSn = sidewalkManufacturingSn;
+    }
+
+    /**
+     * <p>
+     * The Sidewalk manufacturing series number.
+     * </p>
+     * 
+     * @return The Sidewalk manufacturing series number.
+     */
+
+    public String getSidewalkManufacturingSn() {
+        return this.sidewalkManufacturingSn;
+    }
+
+    /**
+     * <p>
+     * The Sidewalk manufacturing series number.
+     * </p>
+     * 
+     * @param sidewalkManufacturingSn
+     *        The Sidewalk manufacturing series number.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SidewalkListDevice withSidewalkManufacturingSn(String sidewalkManufacturingSn) {
+        setSidewalkManufacturingSn(sidewalkManufacturingSn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The sidewalk device certificates for Ed25519 and P256r1.
+     * </p>
+     * 
+     * @return The sidewalk device certificates for Ed25519 and P256r1.
+     */
+
+    public java.util.List<CertificateList> getDeviceCertificates() {
+        return deviceCertificates;
+    }
+
+    /**
+     * <p>
+     * The sidewalk device certificates for Ed25519 and P256r1.
+     * </p>
+     * 
+     * @param deviceCertificates
+     *        The sidewalk device certificates for Ed25519 and P256r1.
+     */
+
+    public void setDeviceCertificates(java.util.Collection<CertificateList> deviceCertificates) {
+        if (deviceCertificates == null) {
+            this.deviceCertificates = null;
+            return;
+        }
+
+        this.deviceCertificates = new java.util.ArrayList<CertificateList>(deviceCertificates);
+    }
+
+    /**
+     * <p>
+     * The sidewalk device certificates for Ed25519 and P256r1.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDeviceCertificates(java.util.Collection)} or {@link #withDeviceCertificates(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param deviceCertificates
+     *        The sidewalk device certificates for Ed25519 and P256r1.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SidewalkListDevice withDeviceCertificates(CertificateList... deviceCertificates) {
+        if (this.deviceCertificates == null) {
+            setDeviceCertificates(new java.util.ArrayList<CertificateList>(deviceCertificates.length));
+        }
+        for (CertificateList ele : deviceCertificates) {
+            this.deviceCertificates.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The sidewalk device certificates for Ed25519 and P256r1.
+     * </p>
+     * 
+     * @param deviceCertificates
+     *        The sidewalk device certificates for Ed25519 and P256r1.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SidewalkListDevice withDeviceCertificates(java.util.Collection<CertificateList> deviceCertificates) {
+        setDeviceCertificates(deviceCertificates);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +256,13 @@ public class SidewalkListDevice implements Serializable, Cloneable, StructuredPo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAmazonId() != null)
-            sb.append("AmazonId: ").append(getAmazonId());
+            sb.append("AmazonId: ").append(getAmazonId()).append(",");
+        if (getSidewalkId() != null)
+            sb.append("SidewalkId: ").append(getSidewalkId()).append(",");
+        if (getSidewalkManufacturingSn() != null)
+            sb.append("SidewalkManufacturingSn: ").append(getSidewalkManufacturingSn()).append(",");
+        if (getDeviceCertificates() != null)
+            sb.append("DeviceCertificates: ").append(getDeviceCertificates());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +281,18 @@ public class SidewalkListDevice implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getAmazonId() != null && other.getAmazonId().equals(this.getAmazonId()) == false)
             return false;
+        if (other.getSidewalkId() == null ^ this.getSidewalkId() == null)
+            return false;
+        if (other.getSidewalkId() != null && other.getSidewalkId().equals(this.getSidewalkId()) == false)
+            return false;
+        if (other.getSidewalkManufacturingSn() == null ^ this.getSidewalkManufacturingSn() == null)
+            return false;
+        if (other.getSidewalkManufacturingSn() != null && other.getSidewalkManufacturingSn().equals(this.getSidewalkManufacturingSn()) == false)
+            return false;
+        if (other.getDeviceCertificates() == null ^ this.getDeviceCertificates() == null)
+            return false;
+        if (other.getDeviceCertificates() != null && other.getDeviceCertificates().equals(this.getDeviceCertificates()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +302,9 @@ public class SidewalkListDevice implements Serializable, Cloneable, StructuredPo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAmazonId() == null) ? 0 : getAmazonId().hashCode());
+        hashCode = prime * hashCode + ((getSidewalkId() == null) ? 0 : getSidewalkId().hashCode());
+        hashCode = prime * hashCode + ((getSidewalkManufacturingSn() == null) ? 0 : getSidewalkManufacturingSn().hashCode());
+        hashCode = prime * hashCode + ((getDeviceCertificates() == null) ? 0 : getDeviceCertificates().hashCode());
         return hashCode;
     }
 

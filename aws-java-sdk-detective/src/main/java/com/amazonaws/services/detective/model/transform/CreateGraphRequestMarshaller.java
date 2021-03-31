@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.detective.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -26,6 +28,9 @@ import com.amazonaws.annotation.SdkInternalApi;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 @SdkInternalApi
 public class CreateGraphRequestMarshaller {
+
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateGraphRequestMarshaller instance = new CreateGraphRequestMarshaller();
 
@@ -43,6 +48,7 @@ public class CreateGraphRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(createGraphRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

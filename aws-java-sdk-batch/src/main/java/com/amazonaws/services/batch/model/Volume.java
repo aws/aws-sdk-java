@@ -49,6 +49,13 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * This parameter is specified when you are using an Amazon Elastic File System file system for job storage. Jobs
+     * running on Fargate resources must specify a <code>platformVersion</code> of at least <code>1.4.0</code>.
+     * </p>
+     */
+    private EFSVolumeConfiguration efsVolumeConfiguration;
 
     /**
      * <p>
@@ -185,6 +192,55 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * This parameter is specified when you are using an Amazon Elastic File System file system for job storage. Jobs
+     * running on Fargate resources must specify a <code>platformVersion</code> of at least <code>1.4.0</code>.
+     * </p>
+     * 
+     * @param efsVolumeConfiguration
+     *        This parameter is specified when you are using an Amazon Elastic File System file system for job storage.
+     *        Jobs running on Fargate resources must specify a <code>platformVersion</code> of at least
+     *        <code>1.4.0</code>.
+     */
+
+    public void setEfsVolumeConfiguration(EFSVolumeConfiguration efsVolumeConfiguration) {
+        this.efsVolumeConfiguration = efsVolumeConfiguration;
+    }
+
+    /**
+     * <p>
+     * This parameter is specified when you are using an Amazon Elastic File System file system for job storage. Jobs
+     * running on Fargate resources must specify a <code>platformVersion</code> of at least <code>1.4.0</code>.
+     * </p>
+     * 
+     * @return This parameter is specified when you are using an Amazon Elastic File System file system for job storage.
+     *         Jobs running on Fargate resources must specify a <code>platformVersion</code> of at least
+     *         <code>1.4.0</code>.
+     */
+
+    public EFSVolumeConfiguration getEfsVolumeConfiguration() {
+        return this.efsVolumeConfiguration;
+    }
+
+    /**
+     * <p>
+     * This parameter is specified when you are using an Amazon Elastic File System file system for job storage. Jobs
+     * running on Fargate resources must specify a <code>platformVersion</code> of at least <code>1.4.0</code>.
+     * </p>
+     * 
+     * @param efsVolumeConfiguration
+     *        This parameter is specified when you are using an Amazon Elastic File System file system for job storage.
+     *        Jobs running on Fargate resources must specify a <code>platformVersion</code> of at least
+     *        <code>1.4.0</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Volume withEfsVolumeConfiguration(EFSVolumeConfiguration efsVolumeConfiguration) {
+        setEfsVolumeConfiguration(efsVolumeConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -199,7 +255,9 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
         if (getHost() != null)
             sb.append("Host: ").append(getHost()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getEfsVolumeConfiguration() != null)
+            sb.append("EfsVolumeConfiguration: ").append(getEfsVolumeConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -222,6 +280,10 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getEfsVolumeConfiguration() == null ^ this.getEfsVolumeConfiguration() == null)
+            return false;
+        if (other.getEfsVolumeConfiguration() != null && other.getEfsVolumeConfiguration().equals(this.getEfsVolumeConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -232,6 +294,7 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getHost() == null) ? 0 : getHost().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getEfsVolumeConfiguration() == null) ? 0 : getEfsVolumeConfiguration().hashCode());
         return hashCode;
     }
 

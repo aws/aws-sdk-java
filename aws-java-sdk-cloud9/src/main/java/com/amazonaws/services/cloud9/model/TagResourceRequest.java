@@ -163,7 +163,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getResourceARN() != null)
             sb.append("ResourceARN: ").append(getResourceARN()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

@@ -19,8 +19,16 @@ import javax.annotation.Generated;
  * The function used to train an <code>MLModel</code>. Training choices supported by Amazon ML include the following:
  * </p>
  * <ul>
- * <li> <code>SGD</code> - Stochastic Gradient Descent.</li>
- * <li> <code>RandomForest</code> - Random forest of decision trees.</li>
+ * <li>
+ * <p>
+ * <code>SGD</code> - Stochastic Gradient Descent.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>RandomForest</code> - Random forest of decision trees.
+ * </p>
+ * </li>
  * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

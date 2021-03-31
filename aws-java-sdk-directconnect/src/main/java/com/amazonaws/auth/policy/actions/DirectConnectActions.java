@@ -41,6 +41,8 @@ public enum DirectConnectActions implements Action {
     AssociateConnectionWithLag("directconnect:AssociateConnectionWithLag"),
     /** Action for the AssociateHostedConnection operation. */
     AssociateHostedConnection("directconnect:AssociateHostedConnection"),
+    /** Action for the AssociateMacSecKey operation. */
+    AssociateMacSecKey("directconnect:AssociateMacSecKey"),
     /** Action for the AssociateVirtualInterface operation. */
     AssociateVirtualInterface("directconnect:AssociateVirtualInterface"),
     /** Action for the ConfirmConnection operation. */
@@ -121,6 +123,8 @@ public enum DirectConnectActions implements Action {
     DescribeVirtualInterfaces("directconnect:DescribeVirtualInterfaces"),
     /** Action for the DisassociateConnectionFromLag operation. */
     DisassociateConnectionFromLag("directconnect:DisassociateConnectionFromLag"),
+    /** Action for the DisassociateMacSecKey operation. */
+    DisassociateMacSecKey("directconnect:DisassociateMacSecKey"),
     /** Action for the ListVirtualInterfaceTestHistory operation. */
     ListVirtualInterfaceTestHistory("directconnect:ListVirtualInterfaceTestHistory"),
     /** Action for the StartBgpFailoverTest operation. */
@@ -131,6 +135,8 @@ public enum DirectConnectActions implements Action {
     TagResource("directconnect:TagResource"),
     /** Action for the UntagResource operation. */
     UntagResource("directconnect:UntagResource"),
+    /** Action for the UpdateConnection operation. */
+    UpdateConnection("directconnect:UpdateConnection"),
     /** Action for the UpdateDirectConnectGatewayAssociation operation. */
     UpdateDirectConnectGatewayAssociation("directconnect:UpdateDirectConnectGatewayAssociation"),
     /** Action for the UpdateLag operation. */

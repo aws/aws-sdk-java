@@ -55,6 +55,11 @@ public class DeploymentTargetsStaxUnmarshaller implements Unmarshaller<Deploymen
                     continue;
                 }
 
+                if (context.testExpression("AccountsUrl", targetDepth)) {
+                    deploymentTargets.setAccountsUrl(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("OrganizationalUnitIds", targetDepth)) {
                     deploymentTargets.withOrganizationalUnitIds(new ArrayList<String>());
                     continue;

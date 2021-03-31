@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The connection endpoint for connecting an Amazon Redshift cluster through the proxy.
+ * The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/VpcEndpoint" target="_top">AWS API

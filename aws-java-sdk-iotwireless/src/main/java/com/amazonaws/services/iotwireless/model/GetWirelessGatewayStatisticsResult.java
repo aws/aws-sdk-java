@@ -35,6 +35,12 @@ public class GetWirelessGatewayStatisticsResult extends com.amazonaws.AmazonWebS
      * </p>
      */
     private String lastUplinkReceivedAt;
+    /**
+     * <p>
+     * The connection status of the wireless gateway.
+     * </p>
+     */
+    private String connectionStatus;
 
     /**
      * <p>
@@ -117,6 +123,65 @@ public class GetWirelessGatewayStatisticsResult extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * The connection status of the wireless gateway.
+     * </p>
+     * 
+     * @param connectionStatus
+     *        The connection status of the wireless gateway.
+     * @see ConnectionStatus
+     */
+
+    public void setConnectionStatus(String connectionStatus) {
+        this.connectionStatus = connectionStatus;
+    }
+
+    /**
+     * <p>
+     * The connection status of the wireless gateway.
+     * </p>
+     * 
+     * @return The connection status of the wireless gateway.
+     * @see ConnectionStatus
+     */
+
+    public String getConnectionStatus() {
+        return this.connectionStatus;
+    }
+
+    /**
+     * <p>
+     * The connection status of the wireless gateway.
+     * </p>
+     * 
+     * @param connectionStatus
+     *        The connection status of the wireless gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConnectionStatus
+     */
+
+    public GetWirelessGatewayStatisticsResult withConnectionStatus(String connectionStatus) {
+        setConnectionStatus(connectionStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The connection status of the wireless gateway.
+     * </p>
+     * 
+     * @param connectionStatus
+     *        The connection status of the wireless gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConnectionStatus
+     */
+
+    public GetWirelessGatewayStatisticsResult withConnectionStatus(ConnectionStatus connectionStatus) {
+        this.connectionStatus = connectionStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -131,7 +196,9 @@ public class GetWirelessGatewayStatisticsResult extends com.amazonaws.AmazonWebS
         if (getWirelessGatewayId() != null)
             sb.append("WirelessGatewayId: ").append(getWirelessGatewayId()).append(",");
         if (getLastUplinkReceivedAt() != null)
-            sb.append("LastUplinkReceivedAt: ").append(getLastUplinkReceivedAt());
+            sb.append("LastUplinkReceivedAt: ").append(getLastUplinkReceivedAt()).append(",");
+        if (getConnectionStatus() != null)
+            sb.append("ConnectionStatus: ").append(getConnectionStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -154,6 +221,10 @@ public class GetWirelessGatewayStatisticsResult extends com.amazonaws.AmazonWebS
             return false;
         if (other.getLastUplinkReceivedAt() != null && other.getLastUplinkReceivedAt().equals(this.getLastUplinkReceivedAt()) == false)
             return false;
+        if (other.getConnectionStatus() == null ^ this.getConnectionStatus() == null)
+            return false;
+        if (other.getConnectionStatus() != null && other.getConnectionStatus().equals(this.getConnectionStatus()) == false)
+            return false;
         return true;
     }
 
@@ -164,6 +235,7 @@ public class GetWirelessGatewayStatisticsResult extends com.amazonaws.AmazonWebS
 
         hashCode = prime * hashCode + ((getWirelessGatewayId() == null) ? 0 : getWirelessGatewayId().hashCode());
         hashCode = prime * hashCode + ((getLastUplinkReceivedAt() == null) ? 0 : getLastUplinkReceivedAt().hashCode());
+        hashCode = prime * hashCode + ((getConnectionStatus() == null) ? 0 : getConnectionStatus().hashCode());
         return hashCode;
     }
 

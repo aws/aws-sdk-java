@@ -879,6 +879,75 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Associates a MAC Security (MACsec) Connection Key Name (CKN)/ Connectivity Association Key (CAK) pair with an AWS
+     * Direct Connect dedicated connection.
+     * </p>
+     * <p>
+     * You must supply either the <code>secretARN,</code> or the CKN/CAK (<code>ckn</code> and <code>cak</code>) pair in
+     * the request.
+     * </p>
+     * <p>
+     * For information about MAC Security (MACsec) key considerations, see <a href=
+     * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-key-consideration"
+     * >MACsec pre-shared CKN/CAK key considerations </a> in the <i>AWS Direct Connect User Guide</i>.
+     * </p>
+     * 
+     * @param associateMacSecKeyRequest
+     * @return Result of the AssociateMacSecKey operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred.
+     * @throws DirectConnectClientException
+     *         One or more parameters are not valid.
+     * @sample AmazonDirectConnect.AssociateMacSecKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateMacSecKey"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateMacSecKeyResult associateMacSecKey(AssociateMacSecKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateMacSecKey(request);
+    }
+
+    @SdkInternalApi
+    final AssociateMacSecKeyResult executeAssociateMacSecKey(AssociateMacSecKeyRequest associateMacSecKeyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateMacSecKeyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateMacSecKeyRequest> request = null;
+        Response<AssociateMacSecKeyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateMacSecKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateMacSecKeyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateMacSecKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateMacSecKeyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AssociateMacSecKeyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Associates a virtual interface with a specified link aggregation group (LAG) or connection. Connectivity to AWS
      * is temporarily interrupted as the virtual interface is being migrated. If the target connection or LAG has an
      * associated virtual interface with a conflicting VLAN number or a conflicting IP address, the operation fails.
@@ -3633,6 +3702,67 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Removes the association between a MAC Security (MACsec) security key and an AWS Direct Connect dedicated
+     * connection.
+     * </p>
+     * 
+     * @param disassociateMacSecKeyRequest
+     * @return Result of the DisassociateMacSecKey operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred.
+     * @throws DirectConnectClientException
+     *         One or more parameters are not valid.
+     * @sample AmazonDirectConnect.DisassociateMacSecKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DisassociateMacSecKey"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateMacSecKeyResult disassociateMacSecKey(DisassociateMacSecKeyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateMacSecKey(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateMacSecKeyResult executeDisassociateMacSecKey(DisassociateMacSecKeyRequest disassociateMacSecKeyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateMacSecKeyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateMacSecKeyRequest> request = null;
+        Response<DisassociateMacSecKeyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateMacSecKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateMacSecKeyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateMacSecKey");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateMacSecKeyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DisassociateMacSecKeyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the virtual interface failover test history.
      * </p>
      * 
@@ -3954,6 +4084,80 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Updates the AWS Direct Connect dedicated connection configuration.
+     * </p>
+     * <p>
+     * You can update the following parameters for a connection:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The connection name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The connection's MAC Security (MACsec) encryption mode.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param updateConnectionRequest
+     * @return Result of the UpdateConnection operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred.
+     * @throws DirectConnectClientException
+     *         One or more parameters are not valid.
+     * @sample AmazonDirectConnect.UpdateConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateConnection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateConnectionResult updateConnection(UpdateConnectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateConnection(request);
+    }
+
+    @SdkInternalApi
+    final UpdateConnectionResult executeUpdateConnection(UpdateConnectionRequest updateConnectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateConnectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateConnectionRequest> request = null;
+        Response<UpdateConnectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateConnectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateConnectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConnection");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateConnectionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateConnectionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates the specified attributes of the Direct Connect gateway association.
      * </p>
      * <p>
@@ -4023,7 +4227,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * Updates the attributes of the specified link aggregation group (LAG).
      * </p>
      * <p>
-     * You can update the following attributes:
+     * You can update the following LAG attributes:
      * </p>
      * <ul>
      * <li>
@@ -4036,13 +4240,26 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
      * The value for the minimum number of connections that must be operational for the LAG itself to be operational.
      * </p>
      * </li>
-     * </ul>
+     * <li>
      * <p>
-     * When you create a LAG, the default value for the minimum number of operational connections is zero (0). If you
-     * update this value and the number of operational connections falls below the specified value, the LAG
-     * automatically goes down to avoid over-utilization of the remaining connections. Adjust this value with care, as
-     * it could force the LAG down if it is set higher than the current number of operational connections.
+     * The LAG's MACsec encryption mode.
      * </p>
+     * <p>
+     * AWS assigns this value to each connection which is part of the LAG.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The tags
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * If you adjust the threshold value for the minimum number of operational connections, ensure that the new value
+     * does not cause the LAG to fall below the threshold and become non-operational.
+     * </p>
+     * </note>
      * 
      * @param updateLagRequest
      * @return Result of the UpdateLag operation returned by the service.

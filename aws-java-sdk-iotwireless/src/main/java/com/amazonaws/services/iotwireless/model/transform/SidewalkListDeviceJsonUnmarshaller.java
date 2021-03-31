@@ -52,6 +52,20 @@ public class SidewalkListDeviceJsonUnmarshaller implements Unmarshaller<Sidewalk
                     context.nextToken();
                     sidewalkListDevice.setAmazonId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SidewalkId", targetDepth)) {
+                    context.nextToken();
+                    sidewalkListDevice.setSidewalkId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SidewalkManufacturingSn", targetDepth)) {
+                    context.nextToken();
+                    sidewalkListDevice.setSidewalkManufacturingSn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DeviceCertificates", targetDepth)) {
+                    context.nextToken();
+                    sidewalkListDevice.setDeviceCertificates(new ListUnmarshaller<CertificateList>(CertificateListJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

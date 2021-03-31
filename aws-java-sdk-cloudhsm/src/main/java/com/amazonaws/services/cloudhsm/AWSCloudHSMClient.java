@@ -54,13 +54,13 @@ import com.amazonaws.services.cloudhsm.model.transform.*;
  * <p>
  * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
  * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
- * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
- * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+ * href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+ * href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
  * </p>
  * <p>
  * <b>For information about the current version of AWS CloudHSM</b>, see <a href="http://aws.amazon.com/cloudhsm/">AWS
- * CloudHSM</a>, the <a href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and
- * the <a href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+ * CloudHSM</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and
+ * the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
  * </p>
  */
 @ThreadSafe
@@ -299,14 +299,14 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * <p>
      * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
      * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
      * </p>
      * <p>
      * <b>For information about the current version of AWS CloudHSM</b>, see <a
      * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
      * </p>
      * <p>
      * Adds or overwrites one or more tags for the specified AWS CloudHSM resource.
@@ -375,14 +375,14 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * <p>
      * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
      * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
      * </p>
      * <p>
      * <b>For information about the current version of AWS CloudHSM</b>, see <a
      * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
      * </p>
      * <p>
      * Creates a high-availability partition group. A high-availability partition group is a group of partitions that
@@ -450,14 +450,14 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * <p>
      * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
      * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
      * </p>
      * <p>
      * <b>For information about the current version of AWS CloudHSM</b>, see <a
      * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
      * </p>
      * <p>
      * Creates an uninitialized HSM instance.
@@ -536,14 +536,14 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * <p>
      * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
      * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
      * </p>
      * <p>
      * <b>For information about the current version of AWS CloudHSM</b>, see <a
      * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
      * </p>
      * <p>
      * Creates an HSM client.
@@ -610,14 +610,14 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * <p>
      * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
      * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
      * </p>
      * <p>
      * <b>For information about the current version of AWS CloudHSM</b>, see <a
      * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
      * </p>
      * <p>
      * Deletes a high-availability partition group.
@@ -684,14 +684,14 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * <p>
      * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
      * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
      * </p>
      * <p>
      * <b>For information about the current version of AWS CloudHSM</b>, see <a
      * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
      * </p>
      * <p>
      * Deletes an HSM. After completion, this operation cannot be undone and your key material cannot be recovered.
@@ -758,14 +758,14 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * <p>
      * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
      * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
      * </p>
      * <p>
      * <b>For information about the current version of AWS CloudHSM</b>, see <a
      * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
      * </p>
      * <p>
      * Deletes a client.
@@ -831,14 +831,14 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * <p>
      * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
      * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
      * </p>
      * <p>
      * <b>For information about the current version of AWS CloudHSM</b>, see <a
      * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
      * </p>
      * <p>
      * Retrieves information about a high-availability partition group.
@@ -905,14 +905,14 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * <p>
      * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
      * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
      * </p>
      * <p>
      * <b>For information about the current version of AWS CloudHSM</b>, see <a
      * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
      * </p>
      * <p>
      * Retrieves information about an HSM. You can identify the HSM by its ARN or its serial number.
@@ -984,14 +984,14 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * <p>
      * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
      * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
      * </p>
      * <p>
      * <b>For information about the current version of AWS CloudHSM</b>, see <a
      * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
      * </p>
      * <p>
      * Retrieves information about an HSM client.
@@ -1062,14 +1062,14 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * <p>
      * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
      * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
      * </p>
      * <p>
      * <b>For information about the current version of AWS CloudHSM</b>, see <a
      * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
      * </p>
      * <p>
      * Gets the configuration files necessary to connect to all high availability partition groups the client is
@@ -1136,14 +1136,14 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * <p>
      * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
      * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
      * </p>
      * <p>
      * <b>For information about the current version of AWS CloudHSM</b>, see <a
      * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
      * </p>
      * <p>
      * Lists the Availability Zones that have available AWS CloudHSM capacity.
@@ -1215,14 +1215,14 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * <p>
      * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
      * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
      * </p>
      * <p>
      * <b>For information about the current version of AWS CloudHSM</b>, see <a
      * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
      * </p>
      * <p>
      * Lists the high-availability partition groups for the account.
@@ -1298,14 +1298,14 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * <p>
      * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
      * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
      * </p>
      * <p>
      * <b>For information about the current version of AWS CloudHSM</b>, see <a
      * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
      * </p>
      * <p>
      * Retrieves the identifiers of all of the HSMs provisioned for the current customer.
@@ -1381,14 +1381,14 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * <p>
      * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
      * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
      * </p>
      * <p>
      * <b>For information about the current version of AWS CloudHSM</b>, see <a
      * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
      * </p>
      * <p>
      * Lists all of the clients.
@@ -1464,14 +1464,14 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * <p>
      * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
      * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
      * </p>
      * <p>
      * <b>For information about the current version of AWS CloudHSM</b>, see <a
      * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
      * </p>
      * <p>
      * Returns a list of all tags for the specified AWS CloudHSM resource.
@@ -1537,14 +1537,14 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * <p>
      * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
      * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
      * </p>
      * <p>
      * <b>For information about the current version of AWS CloudHSM</b>, see <a
      * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
      * </p>
      * <p>
      * Modifies an existing high-availability partition group.
@@ -1610,14 +1610,14 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * <p>
      * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
      * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
      * </p>
      * <p>
      * <b>For information about the current version of AWS CloudHSM</b>, see <a
      * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
      * </p>
      * <p>
      * Modifies an HSM.
@@ -1691,14 +1691,14 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * <p>
      * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
      * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
      * </p>
      * <p>
      * <b>For information about the current version of AWS CloudHSM</b>, see <a
      * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
      * </p>
      * <p>
      * Modifies the certificate used by the client.
@@ -1763,14 +1763,14 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
      * <p>
      * This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a
      * href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.
      * </p>
      * <p>
      * <b>For information about the current version of AWS CloudHSM</b>, see <a
      * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a>, the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
-     * href="http://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User Guide</a>, and the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/">AWS CloudHSM API Reference</a>.
      * </p>
      * <p>
      * Removes one or more tags from the specified AWS CloudHSM resource.

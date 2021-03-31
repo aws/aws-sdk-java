@@ -20,7 +20,11 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum CLMLanguageCode {
 
-    EnUS("en-US");
+    EnUS("en-US"),
+    HiIN("hi-IN"),
+    EsUS("es-US"),
+    EnGB("en-GB"),
+    EnAU("en-AU");
 
     private String value;
 

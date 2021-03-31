@@ -54,6 +54,19 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     }
 
     @Override
+    public java.util.concurrent.Future<AuthorizeEndpointAccessResult> authorizeEndpointAccessAsync(AuthorizeEndpointAccessRequest request) {
+
+        return authorizeEndpointAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AuthorizeEndpointAccessResult> authorizeEndpointAccessAsync(AuthorizeEndpointAccessRequest request,
+            com.amazonaws.handlers.AsyncHandler<AuthorizeEndpointAccessRequest, AuthorizeEndpointAccessResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<Snapshot> authorizeSnapshotAccessAsync(AuthorizeSnapshotAccessRequest request) {
 
         return authorizeSnapshotAccessAsync(request, null);
@@ -179,6 +192,19 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     @Override
     public java.util.concurrent.Future<ClusterSubnetGroup> createClusterSubnetGroupAsync(CreateClusterSubnetGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateClusterSubnetGroupRequest, ClusterSubnetGroup> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEndpointAccessResult> createEndpointAccessAsync(CreateEndpointAccessRequest request) {
+
+        return createEndpointAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEndpointAccessResult> createEndpointAccessAsync(CreateEndpointAccessRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateEndpointAccessRequest, CreateEndpointAccessResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -348,6 +374,19 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     @Override
     public java.util.concurrent.Future<DeleteClusterSubnetGroupResult> deleteClusterSubnetGroupAsync(DeleteClusterSubnetGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteClusterSubnetGroupRequest, DeleteClusterSubnetGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEndpointAccessResult> deleteEndpointAccessAsync(DeleteEndpointAccessRequest request) {
+
+        return deleteEndpointAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEndpointAccessResult> deleteEndpointAccessAsync(DeleteEndpointAccessRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteEndpointAccessRequest, DeleteEndpointAccessResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -735,6 +774,32 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     @Override
     public java.util.concurrent.Future<DefaultClusterParameters> describeDefaultClusterParametersAsync(DescribeDefaultClusterParametersRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeDefaultClusterParametersRequest, DefaultClusterParameters> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEndpointAccessResult> describeEndpointAccessAsync(DescribeEndpointAccessRequest request) {
+
+        return describeEndpointAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEndpointAccessResult> describeEndpointAccessAsync(DescribeEndpointAccessRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeEndpointAccessRequest, DescribeEndpointAccessResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEndpointAuthorizationResult> describeEndpointAuthorizationAsync(DescribeEndpointAuthorizationRequest request) {
+
+        return describeEndpointAuthorizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEndpointAuthorizationResult> describeEndpointAuthorizationAsync(DescribeEndpointAuthorizationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeEndpointAuthorizationRequest, DescribeEndpointAuthorizationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1418,6 +1483,19 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ModifyEndpointAccessResult> modifyEndpointAccessAsync(ModifyEndpointAccessRequest request) {
+
+        return modifyEndpointAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyEndpointAccessResult> modifyEndpointAccessAsync(ModifyEndpointAccessRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyEndpointAccessRequest, ModifyEndpointAccessResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<EventSubscription> modifyEventSubscriptionAsync(ModifyEventSubscriptionRequest request) {
 
         return modifyEventSubscriptionAsync(request, null);
@@ -1595,6 +1673,19 @@ public class AbstractAmazonRedshiftAsync extends AbstractAmazonRedshift implemen
     @Override
     public java.util.concurrent.Future<ClusterSecurityGroup> revokeClusterSecurityGroupIngressAsync(RevokeClusterSecurityGroupIngressRequest request,
             com.amazonaws.handlers.AsyncHandler<RevokeClusterSecurityGroupIngressRequest, ClusterSecurityGroup> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RevokeEndpointAccessResult> revokeEndpointAccessAsync(RevokeEndpointAccessRequest request) {
+
+        return revokeEndpointAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RevokeEndpointAccessResult> revokeEndpointAccessAsync(RevokeEndpointAccessRequest request,
+            com.amazonaws.handlers.AsyncHandler<RevokeEndpointAccessRequest, RevokeEndpointAccessResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

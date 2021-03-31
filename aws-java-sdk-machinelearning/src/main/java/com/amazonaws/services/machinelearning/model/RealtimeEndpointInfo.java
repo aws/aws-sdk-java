@@ -43,11 +43,9 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable, Structured
      * <p>
      * The URI that specifies where to send real-time prediction requests for the <code>MLModel</code>.
      * </p>
-     * <note><title>Note</title>
      * <p>
-     * The application must wait until the real-time endpoint is ready before using this URI.
+     * <b>Note:</b> The application must wait until the real-time endpoint is ready before using this URI.
      * </p>
-     * </note>
      */
     private String endpointUrl;
     /**
@@ -56,9 +54,21 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable, Structured
      * following values:
      * </p>
      * <ul>
-     * <li> <code>NONE</code> - Endpoint does not exist or was previously deleted.</li>
-     * <li> <code>READY</code> - Endpoint is ready to be used for real-time predictions.</li>
-     * <li> <code>UPDATING</code> - Updating/creating the endpoint.</li>
+     * <li>
+     * <p>
+     * <code>NONE</code> - Endpoint does not exist or was previously deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>READY</code> - Endpoint is ready to be used for real-time predictions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code> - Updating/creating the endpoint.
+     * </p>
+     * </li>
      * </ul>
      */
     private String endpointStatus;
@@ -159,18 +169,14 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable, Structured
      * <p>
      * The URI that specifies where to send real-time prediction requests for the <code>MLModel</code>.
      * </p>
-     * <note><title>Note</title>
      * <p>
-     * The application must wait until the real-time endpoint is ready before using this URI.
+     * <b>Note:</b> The application must wait until the real-time endpoint is ready before using this URI.
      * </p>
-     * </note>
      * 
      * @param endpointUrl
      *        The URI that specifies where to send real-time prediction requests for the <code>MLModel</code>.</p>
-     *        <note><title>Note</title>
      *        <p>
-     *        The application must wait until the real-time endpoint is ready before using this URI.
-     *        </p>
+     *        <b>Note:</b> The application must wait until the real-time endpoint is ready before using this URI.
      */
 
     public void setEndpointUrl(String endpointUrl) {
@@ -181,17 +187,13 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable, Structured
      * <p>
      * The URI that specifies where to send real-time prediction requests for the <code>MLModel</code>.
      * </p>
-     * <note><title>Note</title>
      * <p>
-     * The application must wait until the real-time endpoint is ready before using this URI.
+     * <b>Note:</b> The application must wait until the real-time endpoint is ready before using this URI.
      * </p>
-     * </note>
      * 
      * @return The URI that specifies where to send real-time prediction requests for the <code>MLModel</code>.</p>
-     *         <note><title>Note</title>
      *         <p>
-     *         The application must wait until the real-time endpoint is ready before using this URI.
-     *         </p>
+     *         <b>Note:</b> The application must wait until the real-time endpoint is ready before using this URI.
      */
 
     public String getEndpointUrl() {
@@ -202,18 +204,14 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable, Structured
      * <p>
      * The URI that specifies where to send real-time prediction requests for the <code>MLModel</code>.
      * </p>
-     * <note><title>Note</title>
      * <p>
-     * The application must wait until the real-time endpoint is ready before using this URI.
+     * <b>Note:</b> The application must wait until the real-time endpoint is ready before using this URI.
      * </p>
-     * </note>
      * 
      * @param endpointUrl
      *        The URI that specifies where to send real-time prediction requests for the <code>MLModel</code>.</p>
-     *        <note><title>Note</title>
      *        <p>
-     *        The application must wait until the real-time endpoint is ready before using this URI.
-     *        </p>
+     *        <b>Note:</b> The application must wait until the real-time endpoint is ready before using this URI.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -228,18 +226,42 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable, Structured
      * following values:
      * </p>
      * <ul>
-     * <li> <code>NONE</code> - Endpoint does not exist or was previously deleted.</li>
-     * <li> <code>READY</code> - Endpoint is ready to be used for real-time predictions.</li>
-     * <li> <code>UPDATING</code> - Updating/creating the endpoint.</li>
+     * <li>
+     * <p>
+     * <code>NONE</code> - Endpoint does not exist or was previously deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>READY</code> - Endpoint is ready to be used for real-time predictions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code> - Updating/creating the endpoint.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param endpointStatus
      *        The current status of the real-time endpoint for the <code>MLModel</code>. This element can have one of
      *        the following values: </p>
      *        <ul>
-     *        <li> <code>NONE</code> - Endpoint does not exist or was previously deleted.</li>
-     *        <li> <code>READY</code> - Endpoint is ready to be used for real-time predictions.</li>
-     *        <li> <code>UPDATING</code> - Updating/creating the endpoint.</li>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code> - Endpoint does not exist or was previously deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>READY</code> - Endpoint is ready to be used for real-time predictions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATING</code> - Updating/creating the endpoint.
+     *        </p>
+     *        </li>
      * @see RealtimeEndpointStatus
      */
 
@@ -253,17 +275,41 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable, Structured
      * following values:
      * </p>
      * <ul>
-     * <li> <code>NONE</code> - Endpoint does not exist or was previously deleted.</li>
-     * <li> <code>READY</code> - Endpoint is ready to be used for real-time predictions.</li>
-     * <li> <code>UPDATING</code> - Updating/creating the endpoint.</li>
+     * <li>
+     * <p>
+     * <code>NONE</code> - Endpoint does not exist or was previously deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>READY</code> - Endpoint is ready to be used for real-time predictions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code> - Updating/creating the endpoint.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The current status of the real-time endpoint for the <code>MLModel</code>. This element can have one of
      *         the following values: </p>
      *         <ul>
-     *         <li> <code>NONE</code> - Endpoint does not exist or was previously deleted.</li>
-     *         <li> <code>READY</code> - Endpoint is ready to be used for real-time predictions.</li>
-     *         <li> <code>UPDATING</code> - Updating/creating the endpoint.</li>
+     *         <li>
+     *         <p>
+     *         <code>NONE</code> - Endpoint does not exist or was previously deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>READY</code> - Endpoint is ready to be used for real-time predictions.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UPDATING</code> - Updating/creating the endpoint.
+     *         </p>
+     *         </li>
      * @see RealtimeEndpointStatus
      */
 
@@ -277,18 +323,42 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable, Structured
      * following values:
      * </p>
      * <ul>
-     * <li> <code>NONE</code> - Endpoint does not exist or was previously deleted.</li>
-     * <li> <code>READY</code> - Endpoint is ready to be used for real-time predictions.</li>
-     * <li> <code>UPDATING</code> - Updating/creating the endpoint.</li>
+     * <li>
+     * <p>
+     * <code>NONE</code> - Endpoint does not exist or was previously deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>READY</code> - Endpoint is ready to be used for real-time predictions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code> - Updating/creating the endpoint.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param endpointStatus
      *        The current status of the real-time endpoint for the <code>MLModel</code>. This element can have one of
      *        the following values: </p>
      *        <ul>
-     *        <li> <code>NONE</code> - Endpoint does not exist or was previously deleted.</li>
-     *        <li> <code>READY</code> - Endpoint is ready to be used for real-time predictions.</li>
-     *        <li> <code>UPDATING</code> - Updating/creating the endpoint.</li>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code> - Endpoint does not exist or was previously deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>READY</code> - Endpoint is ready to be used for real-time predictions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATING</code> - Updating/creating the endpoint.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RealtimeEndpointStatus
      */
@@ -304,18 +374,42 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable, Structured
      * following values:
      * </p>
      * <ul>
-     * <li> <code>NONE</code> - Endpoint does not exist or was previously deleted.</li>
-     * <li> <code>READY</code> - Endpoint is ready to be used for real-time predictions.</li>
-     * <li> <code>UPDATING</code> - Updating/creating the endpoint.</li>
+     * <li>
+     * <p>
+     * <code>NONE</code> - Endpoint does not exist or was previously deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>READY</code> - Endpoint is ready to be used for real-time predictions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code> - Updating/creating the endpoint.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param endpointStatus
      *        The current status of the real-time endpoint for the <code>MLModel</code>. This element can have one of
      *        the following values: </p>
      *        <ul>
-     *        <li> <code>NONE</code> - Endpoint does not exist or was previously deleted.</li>
-     *        <li> <code>READY</code> - Endpoint is ready to be used for real-time predictions.</li>
-     *        <li> <code>UPDATING</code> - Updating/creating the endpoint.</li>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code> - Endpoint does not exist or was previously deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>READY</code> - Endpoint is ready to be used for real-time predictions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATING</code> - Updating/creating the endpoint.
+     *        </p>
+     *        </li>
      * @see RealtimeEndpointStatus
      */
 
@@ -329,18 +423,42 @@ public class RealtimeEndpointInfo implements Serializable, Cloneable, Structured
      * following values:
      * </p>
      * <ul>
-     * <li> <code>NONE</code> - Endpoint does not exist or was previously deleted.</li>
-     * <li> <code>READY</code> - Endpoint is ready to be used for real-time predictions.</li>
-     * <li> <code>UPDATING</code> - Updating/creating the endpoint.</li>
+     * <li>
+     * <p>
+     * <code>NONE</code> - Endpoint does not exist or was previously deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>READY</code> - Endpoint is ready to be used for real-time predictions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code> - Updating/creating the endpoint.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param endpointStatus
      *        The current status of the real-time endpoint for the <code>MLModel</code>. This element can have one of
      *        the following values: </p>
      *        <ul>
-     *        <li> <code>NONE</code> - Endpoint does not exist or was previously deleted.</li>
-     *        <li> <code>READY</code> - Endpoint is ready to be used for real-time predictions.</li>
-     *        <li> <code>UPDATING</code> - Updating/creating the endpoint.</li>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code> - Endpoint does not exist or was previously deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>READY</code> - Endpoint is ready to be used for real-time predictions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATING</code> - Updating/creating the endpoint.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RealtimeEndpointStatus
      */

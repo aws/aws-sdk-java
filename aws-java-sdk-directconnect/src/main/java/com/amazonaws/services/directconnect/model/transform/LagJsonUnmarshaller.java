@@ -120,6 +120,20 @@ public class LagJsonUnmarshaller implements Unmarshaller<Lag, JsonUnmarshallerCo
                     context.nextToken();
                     lag.setProviderName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("macSecCapable", targetDepth)) {
+                    context.nextToken();
+                    lag.setMacSecCapable(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("encryptionMode", targetDepth)) {
+                    context.nextToken();
+                    lag.setEncryptionMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("macSecKeys", targetDepth)) {
+                    context.nextToken();
+                    lag.setMacSecKeys(new ListUnmarshaller<MacSecKey>(MacSecKeyJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -78,6 +78,13 @@ public class EndpointProperties implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private java.util.Date lastModifiedTime;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend
+     * read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).
+     * </p>
+     */
+    private String dataAccessRoleArn;
 
     /**
      * <p>
@@ -437,6 +444,52 @@ public class EndpointProperties implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend
+     * read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).
+     * </p>
+     * 
+     * @param dataAccessRoleArn
+     *        The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon
+     *        Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).
+     */
+
+    public void setDataAccessRoleArn(String dataAccessRoleArn) {
+        this.dataAccessRoleArn = dataAccessRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend
+     * read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon
+     *         Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).
+     */
+
+    public String getDataAccessRoleArn() {
+        return this.dataAccessRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon Comprehend
+     * read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).
+     * </p>
+     * 
+     * @param dataAccessRoleArn
+     *        The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that grants Amazon
+     *        Comprehend read access to trained custom models encrypted with a customer managed key (ModelKmsKeyId).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EndpointProperties withDataAccessRoleArn(String dataAccessRoleArn) {
+        setDataAccessRoleArn(dataAccessRoleArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -463,7 +516,9 @@ public class EndpointProperties implements Serializable, Cloneable, StructuredPo
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getLastModifiedTime() != null)
-            sb.append("LastModifiedTime: ").append(getLastModifiedTime());
+            sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
+        if (getDataAccessRoleArn() != null)
+            sb.append("DataAccessRoleArn: ").append(getDataAccessRoleArn());
         sb.append("}");
         return sb.toString();
     }
@@ -510,6 +565,10 @@ public class EndpointProperties implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getLastModifiedTime() != null && other.getLastModifiedTime().equals(this.getLastModifiedTime()) == false)
             return false;
+        if (other.getDataAccessRoleArn() == null ^ this.getDataAccessRoleArn() == null)
+            return false;
+        if (other.getDataAccessRoleArn() != null && other.getDataAccessRoleArn().equals(this.getDataAccessRoleArn()) == false)
+            return false;
         return true;
     }
 
@@ -526,6 +585,7 @@ public class EndpointProperties implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getCurrentInferenceUnits() == null) ? 0 : getCurrentInferenceUnits().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
+        hashCode = prime * hashCode + ((getDataAccessRoleArn() == null) ? 0 : getDataAccessRoleArn().hashCode());
         return hashCode;
     }
 

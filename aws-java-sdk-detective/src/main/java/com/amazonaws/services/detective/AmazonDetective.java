@@ -421,6 +421,25 @@ public interface AmazonDetective {
 
     /**
      * <p>
+     * Returns the tag values that are assigned to a behavior graph.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InternalServerException
+     *         The request was valid but failed because of a problem with the service.
+     * @throws ValidationException
+     *         The request parameters are invalid.
+     * @throws ResourceNotFoundException
+     *         The request refers to a nonexistent resource.
+     * @sample AmazonDetective.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
      * Rejects an invitation to contribute the account data to a behavior graph. This operation must be called by a
      * member account that has the <code>INVITED</code> status.
      * </p>
@@ -497,6 +516,44 @@ public interface AmazonDetective {
      *      target="_top">AWS API Documentation</a>
      */
     StartMonitoringMemberResult startMonitoringMember(StartMonitoringMemberRequest startMonitoringMemberRequest);
+
+    /**
+     * <p>
+     * Applies tag values to a behavior graph.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InternalServerException
+     *         The request was valid but failed because of a problem with the service.
+     * @throws ValidationException
+     *         The request parameters are invalid.
+     * @throws ResourceNotFoundException
+     *         The request refers to a nonexistent resource.
+     * @sample AmazonDetective.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes tags from a behavior graph.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InternalServerException
+     *         The request was valid but failed because of a problem with the service.
+     * @throws ValidationException
+     *         The request parameters are invalid.
+     * @throws ResourceNotFoundException
+     *         The request refers to a nonexistent resource.
+     * @sample AmazonDetective.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

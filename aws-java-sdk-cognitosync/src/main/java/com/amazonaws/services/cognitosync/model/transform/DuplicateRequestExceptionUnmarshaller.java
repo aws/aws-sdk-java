@@ -29,7 +29,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DuplicateRequestExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DuplicateRequestExceptionUnmarshaller() {
-        super(com.amazonaws.services.cognitosync.model.DuplicateRequestException.class, "DuplicateRequest");
+        super(com.amazonaws.services.cognitosync.model.DuplicateRequestException.class, "DuplicateRequestException");
     }
 
     @Override

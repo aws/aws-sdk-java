@@ -118,6 +118,24 @@ public class CreateConnectionResultJsonUnmarshaller implements Unmarshaller<Crea
                     context.nextToken();
                     createConnectionResult.setProviderName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("macSecCapable", targetDepth)) {
+                    context.nextToken();
+                    createConnectionResult.setMacSecCapable(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("portEncryptionStatus", targetDepth)) {
+                    context.nextToken();
+                    createConnectionResult.setPortEncryptionStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("encryptionMode", targetDepth)) {
+                    context.nextToken();
+                    createConnectionResult.setEncryptionMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("macSecKeys", targetDepth)) {
+                    context.nextToken();
+                    createConnectionResult.setMacSecKeys(new ListUnmarshaller<MacSecKey>(MacSecKeyJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -33,6 +33,8 @@ public class UpdateLagRequestMarshaller {
             .marshallLocationName("lagName").build();
     private static final MarshallingInfo<Integer> MINIMUMLINKS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("minimumLinks").build();
+    private static final MarshallingInfo<String> ENCRYPTIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryptionMode").build();
 
     private static final UpdateLagRequestMarshaller instance = new UpdateLagRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class UpdateLagRequestMarshaller {
             protocolMarshaller.marshall(updateLagRequest.getLagId(), LAGID_BINDING);
             protocolMarshaller.marshall(updateLagRequest.getLagName(), LAGNAME_BINDING);
             protocolMarshaller.marshall(updateLagRequest.getMinimumLinks(), MINIMUMLINKS_BINDING);
+            protocolMarshaller.marshall(updateLagRequest.getEncryptionMode(), ENCRYPTIONMODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

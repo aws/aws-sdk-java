@@ -49,6 +49,10 @@ public class DetectStackSetDriftRequestMarshaller implements Marshaller<Request<
             StackSetOperationPreferences operationPreferences = detectStackSetDriftRequest.getOperationPreferences();
             if (operationPreferences != null) {
 
+                if (operationPreferences.getRegionConcurrencyType() != null) {
+                    request.addParameter("OperationPreferences.RegionConcurrencyType", StringUtils.fromString(operationPreferences.getRegionConcurrencyType()));
+                }
+
                 if (operationPreferences.getRegionOrder().isEmpty()
                         && !((com.amazonaws.internal.SdkInternalList<String>) operationPreferences.getRegionOrder()).isAutoConstruct()) {
                     request.addParameter("OperationPreferences.RegionOrder", "");

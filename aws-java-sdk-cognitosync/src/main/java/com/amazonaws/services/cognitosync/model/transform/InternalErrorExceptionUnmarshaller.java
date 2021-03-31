@@ -29,7 +29,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InternalErrorExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InternalErrorExceptionUnmarshaller() {
-        super(com.amazonaws.services.cognitosync.model.InternalErrorException.class, "InternalError");
+        super(com.amazonaws.services.cognitosync.model.InternalErrorException.class, "InternalErrorException");
     }
 
     @Override

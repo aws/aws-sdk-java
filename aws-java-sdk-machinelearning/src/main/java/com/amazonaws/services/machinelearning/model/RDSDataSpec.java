@@ -62,7 +62,7 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b><code>percentBegin</code></b>
+     * <b> <code>percentBegin</code> </b>
      * </p>
      * <p>
      * Use <code>percentBegin</code> to indicate the beginning of the range of the data used to create the Datasource.
@@ -72,7 +72,7 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b><code>percentEnd</code></b>
+     * <b> <code>percentEnd</code> </b>
      * </p>
      * <p>
      * Use <code>percentEnd</code> to indicate the end of the range of the data used to create the Datasource. If you do
@@ -82,7 +82,7 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b><code>complement</code></b>
+     * <b> <code>complement</code> </b>
      * </p>
      * <p>
      * The <code>complement</code> parameter instructs Amazon ML to use the data that is not included in the range of
@@ -104,7 +104,7 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b><code>strategy</code></b>
+     * <b> <code>strategy</code> </b>
      * </p>
      * <p>
      * To change how Amazon ML splits the data for a datasource, use the <code>strategy</code> parameter.
@@ -197,7 +197,6 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * "excludedVariableNames": [ "F6" ] }
      * </p>
-     * <?oxy_insert_end>
      */
     private String dataSchema;
     /**
@@ -210,7 +209,7 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The role (DataPipelineDefaultResourceRole) assumed by an Amazon Elastic Compute Cloud (Amazon EC2) instance to
      * carry out the copy operation from Amazon RDS to an Amazon S3 task. For more information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
      * data pipelines.
      * </p>
      */
@@ -219,7 +218,7 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The role (DataPipelineDefaultRole) assumed by AWS Data Pipeline service to monitor the progress of the copy task
      * from Amazon RDS to Amazon S3. For more information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
      * data pipelines.
      * </p>
      */
@@ -419,7 +418,7 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b><code>percentBegin</code></b>
+     * <b> <code>percentBegin</code> </b>
      * </p>
      * <p>
      * Use <code>percentBegin</code> to indicate the beginning of the range of the data used to create the Datasource.
@@ -429,7 +428,7 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b><code>percentEnd</code></b>
+     * <b> <code>percentEnd</code> </b>
      * </p>
      * <p>
      * Use <code>percentEnd</code> to indicate the end of the range of the data used to create the Datasource. If you do
@@ -439,7 +438,7 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b><code>complement</code></b>
+     * <b> <code>complement</code> </b>
      * </p>
      * <p>
      * The <code>complement</code> parameter instructs Amazon ML to use the data that is not included in the range of
@@ -461,7 +460,7 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b><code>strategy</code></b>
+     * <b> <code>strategy</code> </b>
      * </p>
      * <p>
      * To change how Amazon ML splits the data for a datasource, use the <code>strategy</code> parameter.
@@ -520,7 +519,7 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b><code>percentBegin</code></b>
+     *        <b> <code>percentBegin</code> </b>
      *        </p>
      *        <p>
      *        Use <code>percentBegin</code> to indicate the beginning of the range of the data used to create the
@@ -530,7 +529,7 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b><code>percentEnd</code></b>
+     *        <b> <code>percentEnd</code> </b>
      *        </p>
      *        <p>
      *        Use <code>percentEnd</code> to indicate the end of the range of the data used to create the Datasource. If
@@ -540,7 +539,7 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b><code>complement</code></b>
+     *        <b> <code>complement</code> </b>
      *        </p>
      *        <p>
      *        The <code>complement</code> parameter instructs Amazon ML to use the data that is not included in the
@@ -563,7 +562,7 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b><code>strategy</code></b>
+     *        <b> <code>strategy</code> </b>
      *        </p>
      *        <p>
      *        To change how Amazon ML splits the data for a datasource, use the <code>strategy</code> parameter.
@@ -629,7 +628,7 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b><code>percentBegin</code></b>
+     * <b> <code>percentBegin</code> </b>
      * </p>
      * <p>
      * Use <code>percentBegin</code> to indicate the beginning of the range of the data used to create the Datasource.
@@ -639,7 +638,7 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b><code>percentEnd</code></b>
+     * <b> <code>percentEnd</code> </b>
      * </p>
      * <p>
      * Use <code>percentEnd</code> to indicate the end of the range of the data used to create the Datasource. If you do
@@ -649,7 +648,7 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b><code>complement</code></b>
+     * <b> <code>complement</code> </b>
      * </p>
      * <p>
      * The <code>complement</code> parameter instructs Amazon ML to use the data that is not included in the range of
@@ -671,7 +670,7 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b><code>strategy</code></b>
+     * <b> <code>strategy</code> </b>
      * </p>
      * <p>
      * To change how Amazon ML splits the data for a datasource, use the <code>strategy</code> parameter.
@@ -729,7 +728,7 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <b><code>percentBegin</code></b>
+     *         <b> <code>percentBegin</code> </b>
      *         </p>
      *         <p>
      *         Use <code>percentBegin</code> to indicate the beginning of the range of the data used to create the
@@ -739,7 +738,7 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <b><code>percentEnd</code></b>
+     *         <b> <code>percentEnd</code> </b>
      *         </p>
      *         <p>
      *         Use <code>percentEnd</code> to indicate the end of the range of the data used to create the Datasource.
@@ -749,7 +748,7 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <b><code>complement</code></b>
+     *         <b> <code>complement</code> </b>
      *         </p>
      *         <p>
      *         The <code>complement</code> parameter instructs Amazon ML to use the data that is not included in the
@@ -772,7 +771,7 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <b><code>strategy</code></b>
+     *         <b> <code>strategy</code> </b>
      *         </p>
      *         <p>
      *         To change how Amazon ML splits the data for a datasource, use the <code>strategy</code> parameter.
@@ -838,7 +837,7 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b><code>percentBegin</code></b>
+     * <b> <code>percentBegin</code> </b>
      * </p>
      * <p>
      * Use <code>percentBegin</code> to indicate the beginning of the range of the data used to create the Datasource.
@@ -848,7 +847,7 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b><code>percentEnd</code></b>
+     * <b> <code>percentEnd</code> </b>
      * </p>
      * <p>
      * Use <code>percentEnd</code> to indicate the end of the range of the data used to create the Datasource. If you do
@@ -858,7 +857,7 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b><code>complement</code></b>
+     * <b> <code>complement</code> </b>
      * </p>
      * <p>
      * The <code>complement</code> parameter instructs Amazon ML to use the data that is not included in the range of
@@ -880,7 +879,7 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b><code>strategy</code></b>
+     * <b> <code>strategy</code> </b>
      * </p>
      * <p>
      * To change how Amazon ML splits the data for a datasource, use the <code>strategy</code> parameter.
@@ -939,7 +938,7 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b><code>percentBegin</code></b>
+     *        <b> <code>percentBegin</code> </b>
      *        </p>
      *        <p>
      *        Use <code>percentBegin</code> to indicate the beginning of the range of the data used to create the
@@ -949,7 +948,7 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b><code>percentEnd</code></b>
+     *        <b> <code>percentEnd</code> </b>
      *        </p>
      *        <p>
      *        Use <code>percentEnd</code> to indicate the end of the range of the data used to create the Datasource. If
@@ -959,7 +958,7 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b><code>complement</code></b>
+     *        <b> <code>complement</code> </b>
      *        </p>
      *        <p>
      *        The <code>complement</code> parameter instructs Amazon ML to use the data that is not included in the
@@ -982,7 +981,7 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b><code>strategy</code></b>
+     *        <b> <code>strategy</code> </b>
      *        </p>
      *        <p>
      *        To change how Amazon ML splits the data for a datasource, use the <code>strategy</code> parameter.
@@ -1081,7 +1080,6 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * "excludedVariableNames": [ "F6" ] }
      * </p>
-     * <?oxy_insert_end>
      * 
      * @param dataSchema
      *        A JSON string that represents the schema for an Amazon RDS <code>DataSource</code>. The
@@ -1124,7 +1122,6 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        "excludedVariableNames": [ "F6" ] }
-     *        </p>
      */
 
     public void setDataSchema(String dataSchema) {
@@ -1174,7 +1171,6 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * "excludedVariableNames": [ "F6" ] }
      * </p>
-     * <?oxy_insert_end>
      * 
      * @return A JSON string that represents the schema for an Amazon RDS <code>DataSource</code>. The
      *         <code>DataSchema</code> defines the structure of the observation data in the data file(s) referenced in
@@ -1216,7 +1212,6 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <p>
      *         "excludedVariableNames": [ "F6" ] }
-     *         </p>
      */
 
     public String getDataSchema() {
@@ -1266,7 +1261,6 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * "excludedVariableNames": [ "F6" ] }
      * </p>
-     * <?oxy_insert_end>
      * 
      * @param dataSchema
      *        A JSON string that represents the schema for an Amazon RDS <code>DataSource</code>. The
@@ -1309,7 +1303,6 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        "excludedVariableNames": [ "F6" ] }
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1362,14 +1355,14 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The role (DataPipelineDefaultResourceRole) assumed by an Amazon Elastic Compute Cloud (Amazon EC2) instance to
      * carry out the copy operation from Amazon RDS to an Amazon S3 task. For more information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
      * data pipelines.
      * </p>
      * 
      * @param resourceRole
      *        The role (DataPipelineDefaultResourceRole) assumed by an Amazon Elastic Compute Cloud (Amazon EC2)
      *        instance to carry out the copy operation from Amazon RDS to an Amazon S3 task. For more information, see
-     *        <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     *        <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
      *        templates</a> for data pipelines.
      */
 
@@ -1381,13 +1374,13 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The role (DataPipelineDefaultResourceRole) assumed by an Amazon Elastic Compute Cloud (Amazon EC2) instance to
      * carry out the copy operation from Amazon RDS to an Amazon S3 task. For more information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
      * data pipelines.
      * </p>
      * 
      * @return The role (DataPipelineDefaultResourceRole) assumed by an Amazon Elastic Compute Cloud (Amazon EC2)
      *         instance to carry out the copy operation from Amazon RDS to an Amazon S3 task. For more information, see
-     *         <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     *         <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
      *         templates</a> for data pipelines.
      */
 
@@ -1399,14 +1392,14 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The role (DataPipelineDefaultResourceRole) assumed by an Amazon Elastic Compute Cloud (Amazon EC2) instance to
      * carry out the copy operation from Amazon RDS to an Amazon S3 task. For more information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
      * data pipelines.
      * </p>
      * 
      * @param resourceRole
      *        The role (DataPipelineDefaultResourceRole) assumed by an Amazon Elastic Compute Cloud (Amazon EC2)
      *        instance to carry out the copy operation from Amazon RDS to an Amazon S3 task. For more information, see
-     *        <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     *        <a href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
      *        templates</a> for data pipelines.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1420,14 +1413,14 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The role (DataPipelineDefaultRole) assumed by AWS Data Pipeline service to monitor the progress of the copy task
      * from Amazon RDS to Amazon S3. For more information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
      * data pipelines.
      * </p>
      * 
      * @param serviceRole
      *        The role (DataPipelineDefaultRole) assumed by AWS Data Pipeline service to monitor the progress of the
      *        copy task from Amazon RDS to Amazon S3. For more information, see <a
-     *        href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a>
+     *        href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a>
      *        for data pipelines.
      */
 
@@ -1439,14 +1432,14 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The role (DataPipelineDefaultRole) assumed by AWS Data Pipeline service to monitor the progress of the copy task
      * from Amazon RDS to Amazon S3. For more information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
      * data pipelines.
      * </p>
      * 
      * @return The role (DataPipelineDefaultRole) assumed by AWS Data Pipeline service to monitor the progress of the
      *         copy task from Amazon RDS to Amazon S3. For more information, see <a
-     *         href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a>
-     *         for data pipelines.
+     *         href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     *         templates</a> for data pipelines.
      */
 
     public String getServiceRole() {
@@ -1457,14 +1450,14 @@ public class RDSDataSpec implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The role (DataPipelineDefaultRole) assumed by AWS Data Pipeline service to monitor the progress of the copy task
      * from Amazon RDS to Amazon S3. For more information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
      * data pipelines.
      * </p>
      * 
      * @param serviceRole
      *        The role (DataPipelineDefaultRole) assumed by AWS Data Pipeline service to monitor the progress of the
      *        copy task from Amazon RDS to Amazon S3. For more information, see <a
-     *        href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a>
+     *        href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a>
      *        for data pipelines.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

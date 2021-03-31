@@ -163,7 +163,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getResourceARN() != null)
             sb.append("ResourceARN: ").append(getResourceARN()).append(",");
         if (getTagKeys() != null)
-            sb.append("TagKeys: ").append(getTagKeys());
+            sb.append("TagKeys: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

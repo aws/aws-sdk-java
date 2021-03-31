@@ -120,6 +120,20 @@ public class UpdateLagResultJsonUnmarshaller implements Unmarshaller<UpdateLagRe
                     context.nextToken();
                     updateLagResult.setProviderName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("macSecCapable", targetDepth)) {
+                    context.nextToken();
+                    updateLagResult.setMacSecCapable(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("encryptionMode", targetDepth)) {
+                    context.nextToken();
+                    updateLagResult.setEncryptionMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("macSecKeys", targetDepth)) {
+                    context.nextToken();
+                    updateLagResult.setMacSecKeys(new ListUnmarshaller<MacSecKey>(MacSecKeyJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

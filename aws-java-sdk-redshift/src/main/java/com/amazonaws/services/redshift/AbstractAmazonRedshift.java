@@ -49,6 +49,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
     }
 
     @Override
+    public AuthorizeEndpointAccessResult authorizeEndpointAccess(AuthorizeEndpointAccessRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public Snapshot authorizeSnapshotAccess(AuthorizeSnapshotAccessRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -95,6 +100,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
 
     @Override
     public ClusterSubnetGroup createClusterSubnetGroup(CreateClusterSubnetGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateEndpointAccessResult createEndpointAccess(CreateEndpointAccessRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -160,6 +170,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
 
     @Override
     public DeleteClusterSubnetGroupResult deleteClusterSubnetGroup(DeleteClusterSubnetGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteEndpointAccessResult deleteEndpointAccess(DeleteEndpointAccessRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -285,6 +300,16 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
 
     @Override
     public DefaultClusterParameters describeDefaultClusterParameters(DescribeDefaultClusterParametersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeEndpointAccessResult describeEndpointAccess(DescribeEndpointAccessRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeEndpointAuthorizationResult describeEndpointAuthorization(DescribeEndpointAuthorizationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -504,6 +529,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
     }
 
     @Override
+    public ModifyEndpointAccessResult modifyEndpointAccess(ModifyEndpointAccessRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public EventSubscription modifyEventSubscription(ModifyEventSubscriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -570,6 +600,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
 
     @Override
     public ClusterSecurityGroup revokeClusterSecurityGroupIngress(RevokeClusterSecurityGroupIngressRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RevokeEndpointAccessResult revokeEndpointAccess(RevokeEndpointAccessRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

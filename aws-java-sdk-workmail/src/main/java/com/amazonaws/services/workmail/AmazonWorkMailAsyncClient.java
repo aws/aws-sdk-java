@@ -282,6 +282,39 @@ public class AmazonWorkMailAsyncClient extends AmazonWorkMailClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CreateMobileDeviceAccessRuleResult> createMobileDeviceAccessRuleAsync(CreateMobileDeviceAccessRuleRequest request) {
+
+        return createMobileDeviceAccessRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMobileDeviceAccessRuleResult> createMobileDeviceAccessRuleAsync(final CreateMobileDeviceAccessRuleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateMobileDeviceAccessRuleRequest, CreateMobileDeviceAccessRuleResult> asyncHandler) {
+        final CreateMobileDeviceAccessRuleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateMobileDeviceAccessRuleResult>() {
+            @Override
+            public CreateMobileDeviceAccessRuleResult call() throws Exception {
+                CreateMobileDeviceAccessRuleResult result = null;
+
+                try {
+                    result = executeCreateMobileDeviceAccessRule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateOrganizationResult> createOrganizationAsync(CreateOrganizationRequest request) {
 
         return createOrganizationAsync(request, null);
@@ -497,6 +530,39 @@ public class AmazonWorkMailAsyncClient extends AmazonWorkMailClient implements A
 
                 try {
                     result = executeDeleteMailboxPermissions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMobileDeviceAccessRuleResult> deleteMobileDeviceAccessRuleAsync(DeleteMobileDeviceAccessRuleRequest request) {
+
+        return deleteMobileDeviceAccessRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMobileDeviceAccessRuleResult> deleteMobileDeviceAccessRuleAsync(final DeleteMobileDeviceAccessRuleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteMobileDeviceAccessRuleRequest, DeleteMobileDeviceAccessRuleResult> asyncHandler) {
+        final DeleteMobileDeviceAccessRuleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteMobileDeviceAccessRuleResult>() {
+            @Override
+            public DeleteMobileDeviceAccessRuleResult call() throws Exception {
+                DeleteMobileDeviceAccessRuleResult result = null;
+
+                try {
+                    result = executeDeleteMobileDeviceAccessRule(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1010,6 +1076,39 @@ public class AmazonWorkMailAsyncClient extends AmazonWorkMailClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetMobileDeviceAccessEffectResult> getMobileDeviceAccessEffectAsync(GetMobileDeviceAccessEffectRequest request) {
+
+        return getMobileDeviceAccessEffectAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMobileDeviceAccessEffectResult> getMobileDeviceAccessEffectAsync(final GetMobileDeviceAccessEffectRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetMobileDeviceAccessEffectRequest, GetMobileDeviceAccessEffectResult> asyncHandler) {
+        final GetMobileDeviceAccessEffectRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetMobileDeviceAccessEffectResult>() {
+            @Override
+            public GetMobileDeviceAccessEffectResult call() throws Exception {
+                GetMobileDeviceAccessEffectResult result = null;
+
+                try {
+                    result = executeGetMobileDeviceAccessEffect(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAccessControlRulesResult> listAccessControlRulesAsync(ListAccessControlRulesRequest request) {
 
         return listAccessControlRulesAsync(request, null);
@@ -1192,6 +1291,39 @@ public class AmazonWorkMailAsyncClient extends AmazonWorkMailClient implements A
 
                 try {
                     result = executeListMailboxPermissions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMobileDeviceAccessRulesResult> listMobileDeviceAccessRulesAsync(ListMobileDeviceAccessRulesRequest request) {
+
+        return listMobileDeviceAccessRulesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMobileDeviceAccessRulesResult> listMobileDeviceAccessRulesAsync(final ListMobileDeviceAccessRulesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListMobileDeviceAccessRulesRequest, ListMobileDeviceAccessRulesResult> asyncHandler) {
+        final ListMobileDeviceAccessRulesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListMobileDeviceAccessRulesResult>() {
+            @Override
+            public ListMobileDeviceAccessRulesResult call() throws Exception {
+                ListMobileDeviceAccessRulesResult result = null;
+
+                try {
+                    result = executeListMobileDeviceAccessRules(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1654,6 +1786,39 @@ public class AmazonWorkMailAsyncClient extends AmazonWorkMailClient implements A
 
                 try {
                     result = executeUpdateMailboxQuota(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMobileDeviceAccessRuleResult> updateMobileDeviceAccessRuleAsync(UpdateMobileDeviceAccessRuleRequest request) {
+
+        return updateMobileDeviceAccessRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMobileDeviceAccessRuleResult> updateMobileDeviceAccessRuleAsync(final UpdateMobileDeviceAccessRuleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateMobileDeviceAccessRuleRequest, UpdateMobileDeviceAccessRuleResult> asyncHandler) {
+        final UpdateMobileDeviceAccessRuleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateMobileDeviceAccessRuleResult>() {
+            @Override
+            public UpdateMobileDeviceAccessRuleResult call() throws Exception {
+                UpdateMobileDeviceAccessRuleResult result = null;
+
+                try {
+                    result = executeUpdateMobileDeviceAccessRule(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

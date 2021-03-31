@@ -40,11 +40,19 @@ public class CreateDataSourceFromRedshiftRequest extends com.amazonaws.AmazonWeb
      * <li>
      * <p>
      * DatabaseInformation -
-     * <ul>
-     * <li> <code>DatabaseName</code> - The name of the Amazon Redshift database.</li>
-     * <li> <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DatabaseName</code> - The name of the Amazon Redshift database.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -91,7 +99,6 @@ public class CreateDataSourceFromRedshiftRequest extends com.amazonaws.AmazonWeb
      * A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to create the
      * following:
      * </p>
-     * <p>
      * <ul>
      * <li>
      * <p>
@@ -105,7 +112,6 @@ public class CreateDataSourceFromRedshiftRequest extends com.amazonaws.AmazonWeb
      * </p>
      * </li>
      * </ul>
-     * </p>
      */
     private String roleARN;
     /**
@@ -206,11 +212,19 @@ public class CreateDataSourceFromRedshiftRequest extends com.amazonaws.AmazonWeb
      * <li>
      * <p>
      * DatabaseInformation -
-     * <ul>
-     * <li> <code>DatabaseName</code> - The name of the Amazon Redshift database.</li>
-     * <li> <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DatabaseName</code> - The name of the Amazon Redshift database.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -257,11 +271,19 @@ public class CreateDataSourceFromRedshiftRequest extends com.amazonaws.AmazonWeb
      *        <li>
      *        <p>
      *        DatabaseInformation -
-     *        <ul>
-     *        <li> <code>DatabaseName</code> - The name of the Amazon Redshift database.</li>
-     *        <li> <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</li>
-     *        </ul>
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DatabaseName</code> - The name of the Amazon Redshift database.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        <li>
      *        <p>
@@ -315,11 +337,19 @@ public class CreateDataSourceFromRedshiftRequest extends com.amazonaws.AmazonWeb
      * <li>
      * <p>
      * DatabaseInformation -
-     * <ul>
-     * <li> <code>DatabaseName</code> - The name of the Amazon Redshift database.</li>
-     * <li> <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DatabaseName</code> - The name of the Amazon Redshift database.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -365,11 +395,19 @@ public class CreateDataSourceFromRedshiftRequest extends com.amazonaws.AmazonWeb
      *         <li>
      *         <p>
      *         DatabaseInformation -
-     *         <ul>
-     *         <li> <code>DatabaseName</code> - The name of the Amazon Redshift database.</li>
-     *         <li> <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</li>
-     *         </ul>
      *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>DatabaseName</code> - The name of the Amazon Redshift database.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.
+     *         </p>
+     *         </li>
+     *         </ul>
      *         </li>
      *         <li>
      *         <p>
@@ -423,11 +461,19 @@ public class CreateDataSourceFromRedshiftRequest extends com.amazonaws.AmazonWeb
      * <li>
      * <p>
      * DatabaseInformation -
-     * <ul>
-     * <li> <code>DatabaseName</code> - The name of the Amazon Redshift database.</li>
-     * <li> <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DatabaseName</code> - The name of the Amazon Redshift database.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -474,11 +520,19 @@ public class CreateDataSourceFromRedshiftRequest extends com.amazonaws.AmazonWeb
      *        <li>
      *        <p>
      *        DatabaseInformation -
-     *        <ul>
-     *        <li> <code>DatabaseName</code> - The name of the Amazon Redshift database.</li>
-     *        <li> <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.</li>
-     *        </ul>
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DatabaseName</code> - The name of the Amazon Redshift database.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code> ClusterIdentifier</code> - The unique ID for the Amazon Redshift cluster.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        <li>
      *        <p>
@@ -531,7 +585,6 @@ public class CreateDataSourceFromRedshiftRequest extends com.amazonaws.AmazonWeb
      * A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to create the
      * following:
      * </p>
-     * <p>
      * <ul>
      * <li>
      * <p>
@@ -545,12 +598,10 @@ public class CreateDataSourceFromRedshiftRequest extends com.amazonaws.AmazonWeb
      * </p>
      * </li>
      * </ul>
-     * </p>
      * 
      * @param roleARN
      *        A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to
-     *        create the following: </p>
-     *        <p>
+     *        create the following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -563,7 +614,6 @@ public class CreateDataSourceFromRedshiftRequest extends com.amazonaws.AmazonWeb
      *        An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code>
      *        </p>
      *        </li>
-     *        </ul>
      */
 
     public void setRoleARN(String roleARN) {
@@ -575,7 +625,6 @@ public class CreateDataSourceFromRedshiftRequest extends com.amazonaws.AmazonWeb
      * A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to create the
      * following:
      * </p>
-     * <p>
      * <ul>
      * <li>
      * <p>
@@ -589,11 +638,9 @@ public class CreateDataSourceFromRedshiftRequest extends com.amazonaws.AmazonWeb
      * </p>
      * </li>
      * </ul>
-     * </p>
      * 
      * @return A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to
-     *         create the following: </p>
-     *         <p>
+     *         create the following:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -607,7 +654,6 @@ public class CreateDataSourceFromRedshiftRequest extends com.amazonaws.AmazonWeb
      *         <code>S3StagingLocation</code>
      *         </p>
      *         </li>
-     *         </ul>
      */
 
     public String getRoleARN() {
@@ -619,7 +665,6 @@ public class CreateDataSourceFromRedshiftRequest extends com.amazonaws.AmazonWeb
      * A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to create the
      * following:
      * </p>
-     * <p>
      * <ul>
      * <li>
      * <p>
@@ -633,12 +678,10 @@ public class CreateDataSourceFromRedshiftRequest extends com.amazonaws.AmazonWeb
      * </p>
      * </li>
      * </ul>
-     * </p>
      * 
      * @param roleARN
      *        A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to
-     *        create the following: </p>
-     *        <p>
+     *        create the following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -651,7 +694,6 @@ public class CreateDataSourceFromRedshiftRequest extends com.amazonaws.AmazonWeb
      *        An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the <code>S3StagingLocation</code>
      *        </p>
      *        </li>
-     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

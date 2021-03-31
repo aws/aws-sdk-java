@@ -25,16 +25,44 @@ public class DescribeEvaluationsRequest extends com.amazonaws.AmazonWebServiceRe
      * Use one of the following variable to filter a list of <code>Evaluation</code> objects:
      * </p>
      * <ul>
-     * <li> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</li>
-     * <li> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</li>
-     * <li> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b>
-     * <code>Name</code>.</li>
-     * <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</li>
-     * <li> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</li>
-     * <li> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in
-     * <code>Evaluation</code>.</li>
-     * <li> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL
-     * can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</li>
+     * <li>
+     * <p>
+     * <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b>
+     * <code>Name</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in
+     * <code>Evaluation</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can
+     * identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.
+     * </p>
+     * </li>
      * </ul>
      */
     private String filterVariable;
@@ -113,8 +141,16 @@ public class DescribeEvaluationsRequest extends com.amazonaws.AmazonWebServiceRe
      * A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.
      * </p>
      * <ul>
-     * <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     * <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     * <li>
+     * <p>
+     * <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Results are sorted by <code>FilterVariable</code>.
@@ -139,32 +175,88 @@ public class DescribeEvaluationsRequest extends com.amazonaws.AmazonWebServiceRe
      * Use one of the following variable to filter a list of <code>Evaluation</code> objects:
      * </p>
      * <ul>
-     * <li> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</li>
-     * <li> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</li>
-     * <li> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b>
-     * <code>Name</code>.</li>
-     * <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</li>
-     * <li> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</li>
-     * <li> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in
-     * <code>Evaluation</code>.</li>
-     * <li> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL
-     * can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</li>
+     * <li>
+     * <p>
+     * <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b>
+     * <code>Name</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in
+     * <code>Evaluation</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can
+     * identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param filterVariable
      *        Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p>
      *        <ul>
-     *        <li> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</li>
-     *        <li> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</li>
-     *        <li> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b>
-     *        <code>Name</code>.</li>
-     *        <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an
-     *        <code>Evaluation</code>.</li>
-     *        <li> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</li>
-     *        <li> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in
-     *        <code>Evaluation</code>.</li>
-     *        <li> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>.
-     *        The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</li>
+     *        <li>
+     *        <p>
+     *        <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b>
+     *        <code>Name</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IAMUser</code> - Sets the search criteria to the user account that invoked an
+     *        <code>Evaluation</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in
+     *        <code>Evaluation</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The
+     *        URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.
+     *        </p>
+     *        </li>
      * @see EvaluationFilterVariable
      */
 
@@ -177,31 +269,87 @@ public class DescribeEvaluationsRequest extends com.amazonaws.AmazonWebServiceRe
      * Use one of the following variable to filter a list of <code>Evaluation</code> objects:
      * </p>
      * <ul>
-     * <li> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</li>
-     * <li> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</li>
-     * <li> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b>
-     * <code>Name</code>.</li>
-     * <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</li>
-     * <li> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</li>
-     * <li> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in
-     * <code>Evaluation</code>.</li>
-     * <li> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL
-     * can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</li>
+     * <li>
+     * <p>
+     * <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b>
+     * <code>Name</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in
+     * <code>Evaluation</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can
+     * identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p>
      *         <ul>
-     *         <li> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</li>
-     *         <li> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</li>
-     *         <li> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b>
-     *         <code>Name</code>.</li>
-     *         <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an
-     *         <code>Evaluation</code>.</li>
-     *         <li> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</li>
-     *         <li> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in
-     *         <code>Evaluation</code>.</li>
-     *         <li> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>.
-     *         The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</li>
+     *         <li>
+     *         <p>
+     *         <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b>
+     *         <code>Name</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>IAMUser</code> - Sets the search criteria to the user account that invoked an
+     *         <code>Evaluation</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in
+     *         <code>Evaluation</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The
+     *         URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.
+     *         </p>
+     *         </li>
      * @see EvaluationFilterVariable
      */
 
@@ -214,32 +362,88 @@ public class DescribeEvaluationsRequest extends com.amazonaws.AmazonWebServiceRe
      * Use one of the following variable to filter a list of <code>Evaluation</code> objects:
      * </p>
      * <ul>
-     * <li> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</li>
-     * <li> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</li>
-     * <li> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b>
-     * <code>Name</code>.</li>
-     * <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</li>
-     * <li> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</li>
-     * <li> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in
-     * <code>Evaluation</code>.</li>
-     * <li> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL
-     * can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</li>
+     * <li>
+     * <p>
+     * <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b>
+     * <code>Name</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in
+     * <code>Evaluation</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can
+     * identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param filterVariable
      *        Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p>
      *        <ul>
-     *        <li> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</li>
-     *        <li> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</li>
-     *        <li> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b>
-     *        <code>Name</code>.</li>
-     *        <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an
-     *        <code>Evaluation</code>.</li>
-     *        <li> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</li>
-     *        <li> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in
-     *        <code>Evaluation</code>.</li>
-     *        <li> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>.
-     *        The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</li>
+     *        <li>
+     *        <p>
+     *        <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b>
+     *        <code>Name</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IAMUser</code> - Sets the search criteria to the user account that invoked an
+     *        <code>Evaluation</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in
+     *        <code>Evaluation</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The
+     *        URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EvaluationFilterVariable
      */
@@ -254,32 +458,88 @@ public class DescribeEvaluationsRequest extends com.amazonaws.AmazonWebServiceRe
      * Use one of the following variable to filter a list of <code>Evaluation</code> objects:
      * </p>
      * <ul>
-     * <li> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</li>
-     * <li> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</li>
-     * <li> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b>
-     * <code>Name</code>.</li>
-     * <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</li>
-     * <li> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</li>
-     * <li> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in
-     * <code>Evaluation</code>.</li>
-     * <li> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL
-     * can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</li>
+     * <li>
+     * <p>
+     * <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b>
+     * <code>Name</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in
+     * <code>Evaluation</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can
+     * identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param filterVariable
      *        Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p>
      *        <ul>
-     *        <li> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</li>
-     *        <li> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</li>
-     *        <li> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b>
-     *        <code>Name</code>.</li>
-     *        <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an
-     *        <code>Evaluation</code>.</li>
-     *        <li> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</li>
-     *        <li> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in
-     *        <code>Evaluation</code>.</li>
-     *        <li> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>.
-     *        The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</li>
+     *        <li>
+     *        <p>
+     *        <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b>
+     *        <code>Name</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IAMUser</code> - Sets the search criteria to the user account that invoked an
+     *        <code>Evaluation</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in
+     *        <code>Evaluation</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The
+     *        URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.
+     *        </p>
+     *        </li>
      * @see EvaluationFilterVariable
      */
 
@@ -292,32 +552,88 @@ public class DescribeEvaluationsRequest extends com.amazonaws.AmazonWebServiceRe
      * Use one of the following variable to filter a list of <code>Evaluation</code> objects:
      * </p>
      * <ul>
-     * <li> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</li>
-     * <li> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</li>
-     * <li> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b>
-     * <code>Name</code>.</li>
-     * <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.</li>
-     * <li> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</li>
-     * <li> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in
-     * <code>Evaluation</code>.</li>
-     * <li> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL
-     * can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</li>
+     * <li>
+     * <p>
+     * <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b>
+     * <code>Name</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IAMUser</code> - Sets the search criteria to the user account that invoked an <code>Evaluation</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in
+     * <code>Evaluation</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The URL can
+     * identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param filterVariable
      *        Use one of the following variable to filter a list of <code>Evaluation</code> objects:</p>
      *        <ul>
-     *        <li> <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.</li>
-     *        <li> <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.</li>
-     *        <li> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b>
-     *        <code>Name</code>.</li>
-     *        <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an
-     *        <code>Evaluation</code>.</li>
-     *        <li> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.</li>
-     *        <li> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in
-     *        <code>Evaluation</code>.</li>
-     *        <li> <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>.
-     *        The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.</li>
+     *        <li>
+     *        <p>
+     *        <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code> creation date.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b>
+     *        <code>Name</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IAMUser</code> - Sets the search criteria to the user account that invoked an
+     *        <code>Evaluation</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that was evaluated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in
+     *        <code>Evaluation</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>. The
+     *        URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EvaluationFilterVariable
      */
@@ -786,8 +1102,16 @@ public class DescribeEvaluationsRequest extends com.amazonaws.AmazonWebServiceRe
      * A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.
      * </p>
      * <ul>
-     * <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     * <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     * <li>
+     * <p>
+     * <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Results are sorted by <code>FilterVariable</code>.
@@ -796,8 +1120,16 @@ public class DescribeEvaluationsRequest extends com.amazonaws.AmazonWebServiceRe
      * @param sortOrder
      *        A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.</p>
      *        <ul>
-     *        <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     *        <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     *        <li>
+     *        <p>
+     *        <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Results are sorted by <code>FilterVariable</code>.
@@ -813,8 +1145,16 @@ public class DescribeEvaluationsRequest extends com.amazonaws.AmazonWebServiceRe
      * A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.
      * </p>
      * <ul>
-     * <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     * <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     * <li>
+     * <p>
+     * <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Results are sorted by <code>FilterVariable</code>.
@@ -822,8 +1162,16 @@ public class DescribeEvaluationsRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @return A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.</p>
      *         <ul>
-     *         <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     *         <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     *         <li>
+     *         <p>
+     *         <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Results are sorted by <code>FilterVariable</code>.
@@ -839,8 +1187,16 @@ public class DescribeEvaluationsRequest extends com.amazonaws.AmazonWebServiceRe
      * A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.
      * </p>
      * <ul>
-     * <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     * <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     * <li>
+     * <p>
+     * <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Results are sorted by <code>FilterVariable</code>.
@@ -849,8 +1205,16 @@ public class DescribeEvaluationsRequest extends com.amazonaws.AmazonWebServiceRe
      * @param sortOrder
      *        A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.</p>
      *        <ul>
-     *        <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     *        <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     *        <li>
+     *        <p>
+     *        <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Results are sorted by <code>FilterVariable</code>.
@@ -868,8 +1232,16 @@ public class DescribeEvaluationsRequest extends com.amazonaws.AmazonWebServiceRe
      * A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.
      * </p>
      * <ul>
-     * <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     * <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     * <li>
+     * <p>
+     * <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Results are sorted by <code>FilterVariable</code>.
@@ -878,8 +1250,16 @@ public class DescribeEvaluationsRequest extends com.amazonaws.AmazonWebServiceRe
      * @param sortOrder
      *        A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.</p>
      *        <ul>
-     *        <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     *        <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     *        <li>
+     *        <p>
+     *        <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Results are sorted by <code>FilterVariable</code>.
@@ -895,8 +1275,16 @@ public class DescribeEvaluationsRequest extends com.amazonaws.AmazonWebServiceRe
      * A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.
      * </p>
      * <ul>
-     * <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     * <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     * <li>
+     * <p>
+     * <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Results are sorted by <code>FilterVariable</code>.
@@ -905,8 +1293,16 @@ public class DescribeEvaluationsRequest extends com.amazonaws.AmazonWebServiceRe
      * @param sortOrder
      *        A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.</p>
      *        <ul>
-     *        <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     *        <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     *        <li>
+     *        <p>
+     *        <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Results are sorted by <code>FilterVariable</code>.

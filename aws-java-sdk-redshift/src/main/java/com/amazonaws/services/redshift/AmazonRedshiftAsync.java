@@ -166,6 +166,37 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
+     * Grants access to a cluster.
+     * </p>
+     * 
+     * @param authorizeEndpointAccessRequest
+     * @return A Java Future containing the result of the AuthorizeEndpointAccess operation returned by the service.
+     * @sample AmazonRedshiftAsync.AuthorizeEndpointAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeEndpointAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AuthorizeEndpointAccessResult> authorizeEndpointAccessAsync(AuthorizeEndpointAccessRequest authorizeEndpointAccessRequest);
+
+    /**
+     * <p>
+     * Grants access to a cluster.
+     * </p>
+     * 
+     * @param authorizeEndpointAccessRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AuthorizeEndpointAccess operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.AuthorizeEndpointAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AuthorizeEndpointAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AuthorizeEndpointAccessResult> authorizeEndpointAccessAsync(AuthorizeEndpointAccessRequest authorizeEndpointAccessRequest,
+            com.amazonaws.handlers.AsyncHandler<AuthorizeEndpointAccessRequest, AuthorizeEndpointAccessResult> asyncHandler);
+
+    /**
+     * <p>
      * Authorizes the specified AWS customer account to restore the specified snapshot.
      * </p>
      * <p>
@@ -579,6 +610,37 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      */
     java.util.concurrent.Future<ClusterSubnetGroup> createClusterSubnetGroupAsync(CreateClusterSubnetGroupRequest createClusterSubnetGroupRequest,
             com.amazonaws.handlers.AsyncHandler<CreateClusterSubnetGroupRequest, ClusterSubnetGroup> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a Redshift-managed VPC endpoint.
+     * </p>
+     * 
+     * @param createEndpointAccessRequest
+     * @return A Java Future containing the result of the CreateEndpointAccess operation returned by the service.
+     * @sample AmazonRedshiftAsync.CreateEndpointAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateEndpointAccess" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateEndpointAccessResult> createEndpointAccessAsync(CreateEndpointAccessRequest createEndpointAccessRequest);
+
+    /**
+     * <p>
+     * Creates a Redshift-managed VPC endpoint.
+     * </p>
+     * 
+     * @param createEndpointAccessRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateEndpointAccess operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.CreateEndpointAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateEndpointAccess" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateEndpointAccessResult> createEndpointAccessAsync(CreateEndpointAccessRequest createEndpointAccessRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateEndpointAccessRequest, CreateEndpointAccessResult> asyncHandler);
 
     /**
      * <p>
@@ -1170,6 +1232,37 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      */
     java.util.concurrent.Future<DeleteClusterSubnetGroupResult> deleteClusterSubnetGroupAsync(DeleteClusterSubnetGroupRequest deleteClusterSubnetGroupRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteClusterSubnetGroupRequest, DeleteClusterSubnetGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a Redshift-managed VPC endpoint.
+     * </p>
+     * 
+     * @param deleteEndpointAccessRequest
+     * @return A Java Future containing the result of the DeleteEndpointAccess operation returned by the service.
+     * @sample AmazonRedshiftAsync.DeleteEndpointAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteEndpointAccess" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteEndpointAccessResult> deleteEndpointAccessAsync(DeleteEndpointAccessRequest deleteEndpointAccessRequest);
+
+    /**
+     * <p>
+     * Deletes a Redshift-managed VPC endpoint.
+     * </p>
+     * 
+     * @param deleteEndpointAccessRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteEndpointAccess operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.DeleteEndpointAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteEndpointAccess" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteEndpointAccessResult> deleteEndpointAccessAsync(DeleteEndpointAccessRequest deleteEndpointAccessRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteEndpointAccessRequest, DeleteEndpointAccessResult> asyncHandler);
 
     /**
      * <p>
@@ -2063,6 +2156,72 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
     java.util.concurrent.Future<DefaultClusterParameters> describeDefaultClusterParametersAsync(
             DescribeDefaultClusterParametersRequest describeDefaultClusterParametersRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeDefaultClusterParametersRequest, DefaultClusterParameters> asyncHandler);
+
+    /**
+     * <p>
+     * Describes a Redshift-managed VPC endpoint.
+     * </p>
+     * 
+     * @param describeEndpointAccessRequest
+     * @return A Java Future containing the result of the DescribeEndpointAccess operation returned by the service.
+     * @sample AmazonRedshiftAsync.DescribeEndpointAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEndpointAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEndpointAccessResult> describeEndpointAccessAsync(DescribeEndpointAccessRequest describeEndpointAccessRequest);
+
+    /**
+     * <p>
+     * Describes a Redshift-managed VPC endpoint.
+     * </p>
+     * 
+     * @param describeEndpointAccessRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeEndpointAccess operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.DescribeEndpointAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEndpointAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEndpointAccessResult> describeEndpointAccessAsync(DescribeEndpointAccessRequest describeEndpointAccessRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeEndpointAccessRequest, DescribeEndpointAccessResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes an endpoint authorization.
+     * </p>
+     * 
+     * @param describeEndpointAuthorizationRequest
+     * @return A Java Future containing the result of the DescribeEndpointAuthorization operation returned by the
+     *         service.
+     * @sample AmazonRedshiftAsync.DescribeEndpointAuthorization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEndpointAuthorization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEndpointAuthorizationResult> describeEndpointAuthorizationAsync(
+            DescribeEndpointAuthorizationRequest describeEndpointAuthorizationRequest);
+
+    /**
+     * <p>
+     * Describes an endpoint authorization.
+     * </p>
+     * 
+     * @param describeEndpointAuthorizationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeEndpointAuthorization operation returned by the
+     *         service.
+     * @sample AmazonRedshiftAsyncHandler.DescribeEndpointAuthorization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeEndpointAuthorization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEndpointAuthorizationResult> describeEndpointAuthorizationAsync(
+            DescribeEndpointAuthorizationRequest describeEndpointAuthorizationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeEndpointAuthorizationRequest, DescribeEndpointAuthorizationResult> asyncHandler);
 
     /**
      * <p>
@@ -3633,6 +3792,37 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
+     * Modifies a Redshift-managed VPC endpoint.
+     * </p>
+     * 
+     * @param modifyEndpointAccessRequest
+     * @return A Java Future containing the result of the ModifyEndpointAccess operation returned by the service.
+     * @sample AmazonRedshiftAsync.ModifyEndpointAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyEndpointAccess" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyEndpointAccessResult> modifyEndpointAccessAsync(ModifyEndpointAccessRequest modifyEndpointAccessRequest);
+
+    /**
+     * <p>
+     * Modifies a Redshift-managed VPC endpoint.
+     * </p>
+     * 
+     * @param modifyEndpointAccessRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyEndpointAccess operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.ModifyEndpointAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyEndpointAccess" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyEndpointAccessResult> modifyEndpointAccessAsync(ModifyEndpointAccessRequest modifyEndpointAccessRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyEndpointAccessRequest, ModifyEndpointAccessResult> asyncHandler);
+
+    /**
+     * <p>
      * Modifies an existing Amazon Redshift event notification subscription.
      * </p>
      * 
@@ -4312,6 +4502,37 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
     java.util.concurrent.Future<ClusterSecurityGroup> revokeClusterSecurityGroupIngressAsync(
             RevokeClusterSecurityGroupIngressRequest revokeClusterSecurityGroupIngressRequest,
             com.amazonaws.handlers.AsyncHandler<RevokeClusterSecurityGroupIngressRequest, ClusterSecurityGroup> asyncHandler);
+
+    /**
+     * <p>
+     * Revokes access to a cluster.
+     * </p>
+     * 
+     * @param revokeEndpointAccessRequest
+     * @return A Java Future containing the result of the RevokeEndpointAccess operation returned by the service.
+     * @sample AmazonRedshiftAsync.RevokeEndpointAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeEndpointAccess" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<RevokeEndpointAccessResult> revokeEndpointAccessAsync(RevokeEndpointAccessRequest revokeEndpointAccessRequest);
+
+    /**
+     * <p>
+     * Revokes access to a cluster.
+     * </p>
+     * 
+     * @param revokeEndpointAccessRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RevokeEndpointAccess operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.RevokeEndpointAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/RevokeEndpointAccess" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<RevokeEndpointAccessResult> revokeEndpointAccessAsync(RevokeEndpointAccessRequest revokeEndpointAccessRequest,
+            com.amazonaws.handlers.AsyncHandler<RevokeEndpointAccessRequest, RevokeEndpointAccessResult> asyncHandler);
 
     /**
      * <p>

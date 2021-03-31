@@ -43,6 +43,8 @@ public class EndpointPropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTMODIFIEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> DATAACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataAccessRoleArn").build();
 
     private static final EndpointPropertiesMarshaller instance = new EndpointPropertiesMarshaller();
 
@@ -68,6 +70,7 @@ public class EndpointPropertiesMarshaller {
             protocolMarshaller.marshall(endpointProperties.getCurrentInferenceUnits(), CURRENTINFERENCEUNITS_BINDING);
             protocolMarshaller.marshall(endpointProperties.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(endpointProperties.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);
+            protocolMarshaller.marshall(endpointProperties.getDataAccessRoleArn(), DATAACCESSROLEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

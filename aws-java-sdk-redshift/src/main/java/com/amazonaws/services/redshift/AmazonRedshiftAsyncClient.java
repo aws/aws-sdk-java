@@ -349,6 +349,39 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<AuthorizeEndpointAccessResult> authorizeEndpointAccessAsync(AuthorizeEndpointAccessRequest request) {
+
+        return authorizeEndpointAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AuthorizeEndpointAccessResult> authorizeEndpointAccessAsync(final AuthorizeEndpointAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AuthorizeEndpointAccessRequest, AuthorizeEndpointAccessResult> asyncHandler) {
+        final AuthorizeEndpointAccessRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AuthorizeEndpointAccessResult>() {
+            @Override
+            public AuthorizeEndpointAccessResult call() throws Exception {
+                AuthorizeEndpointAccessResult result = null;
+
+                try {
+                    result = executeAuthorizeEndpointAccess(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<Snapshot> authorizeSnapshotAccessAsync(AuthorizeSnapshotAccessRequest request) {
 
         return authorizeSnapshotAccessAsync(request, null);
@@ -663,6 +696,39 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements A
 
                 try {
                     result = executeCreateClusterSubnetGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEndpointAccessResult> createEndpointAccessAsync(CreateEndpointAccessRequest request) {
+
+        return createEndpointAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEndpointAccessResult> createEndpointAccessAsync(final CreateEndpointAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateEndpointAccessRequest, CreateEndpointAccessResult> asyncHandler) {
+        final CreateEndpointAccessRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateEndpointAccessResult>() {
+            @Override
+            public CreateEndpointAccessResult call() throws Exception {
+                CreateEndpointAccessResult result = null;
+
+                try {
+                    result = executeCreateEndpointAccess(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1092,6 +1158,39 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements A
 
                 try {
                     result = executeDeleteClusterSubnetGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEndpointAccessResult> deleteEndpointAccessAsync(DeleteEndpointAccessRequest request) {
+
+        return deleteEndpointAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEndpointAccessResult> deleteEndpointAccessAsync(final DeleteEndpointAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteEndpointAccessRequest, DeleteEndpointAccessResult> asyncHandler) {
+        final DeleteEndpointAccessRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteEndpointAccessResult>() {
+            @Override
+            public DeleteEndpointAccessResult call() throws Exception {
+                DeleteEndpointAccessResult result = null;
+
+                try {
+                    result = executeDeleteEndpointAccess(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1861,6 +1960,73 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements A
 
                 try {
                     result = executeDescribeDefaultClusterParameters(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEndpointAccessResult> describeEndpointAccessAsync(DescribeEndpointAccessRequest request) {
+
+        return describeEndpointAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEndpointAccessResult> describeEndpointAccessAsync(final DescribeEndpointAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeEndpointAccessRequest, DescribeEndpointAccessResult> asyncHandler) {
+        final DescribeEndpointAccessRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeEndpointAccessResult>() {
+            @Override
+            public DescribeEndpointAccessResult call() throws Exception {
+                DescribeEndpointAccessResult result = null;
+
+                try {
+                    result = executeDescribeEndpointAccess(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEndpointAuthorizationResult> describeEndpointAuthorizationAsync(DescribeEndpointAuthorizationRequest request) {
+
+        return describeEndpointAuthorizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEndpointAuthorizationResult> describeEndpointAuthorizationAsync(
+            final DescribeEndpointAuthorizationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeEndpointAuthorizationRequest, DescribeEndpointAuthorizationResult> asyncHandler) {
+        final DescribeEndpointAuthorizationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeEndpointAuthorizationResult>() {
+            @Override
+            public DescribeEndpointAuthorizationResult call() throws Exception {
+                DescribeEndpointAuthorizationResult result = null;
+
+                try {
+                    result = executeDescribeEndpointAuthorization(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3198,6 +3364,39 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<ModifyEndpointAccessResult> modifyEndpointAccessAsync(ModifyEndpointAccessRequest request) {
+
+        return modifyEndpointAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyEndpointAccessResult> modifyEndpointAccessAsync(final ModifyEndpointAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyEndpointAccessRequest, ModifyEndpointAccessResult> asyncHandler) {
+        final ModifyEndpointAccessRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyEndpointAccessResult>() {
+            @Override
+            public ModifyEndpointAccessResult call() throws Exception {
+                ModifyEndpointAccessResult result = null;
+
+                try {
+                    result = executeModifyEndpointAccess(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<EventSubscription> modifyEventSubscriptionAsync(ModifyEventSubscriptionRequest request) {
 
         return modifyEventSubscriptionAsync(request, null);
@@ -3644,6 +3843,39 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements A
 
                 try {
                     result = executeRevokeClusterSecurityGroupIngress(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RevokeEndpointAccessResult> revokeEndpointAccessAsync(RevokeEndpointAccessRequest request) {
+
+        return revokeEndpointAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RevokeEndpointAccessResult> revokeEndpointAccessAsync(final RevokeEndpointAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RevokeEndpointAccessRequest, RevokeEndpointAccessResult> asyncHandler) {
+        final RevokeEndpointAccessRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RevokeEndpointAccessResult>() {
+            @Override
+            public RevokeEndpointAccessResult call() throws Exception {
+                RevokeEndpointAccessResult result = null;
+
+                try {
+                    result = executeRevokeEndpointAccess(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

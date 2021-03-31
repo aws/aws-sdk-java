@@ -29,7 +29,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LambdaThrottledExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private LambdaThrottledExceptionUnmarshaller() {
-        super(com.amazonaws.services.cognitosync.model.LambdaThrottledException.class, "LambdaThrottled");
+        super(com.amazonaws.services.cognitosync.model.LambdaThrottledException.class, "LambdaThrottledException");
     }
 
     @Override

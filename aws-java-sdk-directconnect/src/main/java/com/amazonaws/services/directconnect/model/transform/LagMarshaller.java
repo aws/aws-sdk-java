@@ -62,6 +62,12 @@ public class LagMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> PROVIDERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("providerName").build();
+    private static final MarshallingInfo<Boolean> MACSECCAPABLE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("macSecCapable").build();
+    private static final MarshallingInfo<String> ENCRYPTIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryptionMode").build();
+    private static final MarshallingInfo<List> MACSECKEYS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("macSecKeys").build();
 
     private static final LagMarshaller instance = new LagMarshaller();
 
@@ -96,6 +102,9 @@ public class LagMarshaller {
             protocolMarshaller.marshall(lag.getHasLogicalRedundancy(), HASLOGICALREDUNDANCY_BINDING);
             protocolMarshaller.marshall(lag.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(lag.getProviderName(), PROVIDERNAME_BINDING);
+            protocolMarshaller.marshall(lag.getMacSecCapable(), MACSECCAPABLE_BINDING);
+            protocolMarshaller.marshall(lag.getEncryptionMode(), ENCRYPTIONMODE_BINDING);
+            protocolMarshaller.marshall(lag.getMacSecKeys(), MACSECKEYS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

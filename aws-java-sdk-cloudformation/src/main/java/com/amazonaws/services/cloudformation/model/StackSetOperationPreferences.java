@@ -31,6 +31,7 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class StackSetOperationPreferences implements Serializable, Cloneable {
 
+    private String regionConcurrencyType;
     /**
      * <p>
      * The order of the Regions in where you want to perform the stack operation.
@@ -100,6 +101,46 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * </p>
      */
     private Integer maxConcurrentPercentage;
+
+    /**
+     * @param regionConcurrencyType
+     * @see RegionConcurrencyType
+     */
+
+    public void setRegionConcurrencyType(String regionConcurrencyType) {
+        this.regionConcurrencyType = regionConcurrencyType;
+    }
+
+    /**
+     * @return
+     * @see RegionConcurrencyType
+     */
+
+    public String getRegionConcurrencyType() {
+        return this.regionConcurrencyType;
+    }
+
+    /**
+     * @param regionConcurrencyType
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RegionConcurrencyType
+     */
+
+    public StackSetOperationPreferences withRegionConcurrencyType(String regionConcurrencyType) {
+        setRegionConcurrencyType(regionConcurrencyType);
+        return this;
+    }
+
+    /**
+     * @param regionConcurrencyType
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RegionConcurrencyType
+     */
+
+    public StackSetOperationPreferences withRegionConcurrencyType(RegionConcurrencyType regionConcurrencyType) {
+        this.regionConcurrencyType = regionConcurrencyType.toString();
+        return this;
+    }
 
     /**
      * <p>
@@ -574,6 +615,8 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getRegionConcurrencyType() != null)
+            sb.append("RegionConcurrencyType: ").append(getRegionConcurrencyType()).append(",");
         if (getRegionOrder() != null)
             sb.append("RegionOrder: ").append(getRegionOrder()).append(",");
         if (getFailureToleranceCount() != null)
@@ -598,6 +641,10 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
         if (obj instanceof StackSetOperationPreferences == false)
             return false;
         StackSetOperationPreferences other = (StackSetOperationPreferences) obj;
+        if (other.getRegionConcurrencyType() == null ^ this.getRegionConcurrencyType() == null)
+            return false;
+        if (other.getRegionConcurrencyType() != null && other.getRegionConcurrencyType().equals(this.getRegionConcurrencyType()) == false)
+            return false;
         if (other.getRegionOrder() == null ^ this.getRegionOrder() == null)
             return false;
         if (other.getRegionOrder() != null && other.getRegionOrder().equals(this.getRegionOrder()) == false)
@@ -626,6 +673,7 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getRegionConcurrencyType() == null) ? 0 : getRegionConcurrencyType().hashCode());
         hashCode = prime * hashCode + ((getRegionOrder() == null) ? 0 : getRegionOrder().hashCode());
         hashCode = prime * hashCode + ((getFailureToleranceCount() == null) ? 0 : getFailureToleranceCount().hashCode());
         hashCode = prime * hashCode + ((getFailureTolerancePercentage() == null) ? 0 : getFailureTolerancePercentage().hashCode());

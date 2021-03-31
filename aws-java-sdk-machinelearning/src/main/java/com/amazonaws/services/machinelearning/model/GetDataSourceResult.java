@@ -85,12 +85,32 @@ public class GetDataSourceResult extends com.amazonaws.AmazonWebServiceResult<co
      * The current status of the <code>DataSource</code>. This element can have one of the following values:
      * </p>
      * <ul>
-     * <li> <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</li>
-     * <li> <code>INPROGRESS</code> - The creation process is underway.</li>
-     * <li> <code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not
-     * usable.</li>
-     * <li> <code>COMPLETED</code> - The creation process completed successfully.</li>
-     * <li> <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</li>
+     * <li>
+     * <p>
+     * <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INPROGRESS</code> - The creation process is underway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not
+     * usable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>COMPLETED</code> - The creation process completed successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.
+     * </p>
+     * </li>
      * </ul>
      */
     private String status;
@@ -146,11 +166,9 @@ public class GetDataSourceResult extends com.amazonaws.AmazonWebServiceResult<co
      * <p>
      * The schema used by all of the data files of this <code>DataSource</code>.
      * </p>
-     * <note><title>Note</title>
      * <p>
-     * This parameter is provided as part of the verbose format.
+     * <b>Note:</b> This parameter is provided as part of the verbose format.
      * </p>
-     * </note>
      */
     private String dataSourceSchema;
 
@@ -537,23 +555,63 @@ public class GetDataSourceResult extends com.amazonaws.AmazonWebServiceResult<co
      * The current status of the <code>DataSource</code>. This element can have one of the following values:
      * </p>
      * <ul>
-     * <li> <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</li>
-     * <li> <code>INPROGRESS</code> - The creation process is underway.</li>
-     * <li> <code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not
-     * usable.</li>
-     * <li> <code>COMPLETED</code> - The creation process completed successfully.</li>
-     * <li> <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</li>
+     * <li>
+     * <p>
+     * <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INPROGRESS</code> - The creation process is underway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not
+     * usable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>COMPLETED</code> - The creation process completed successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The current status of the <code>DataSource</code>. This element can have one of the following values:</p>
      *        <ul>
-     *        <li> <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</li>
-     *        <li> <code>INPROGRESS</code> - The creation process is underway.</li>
-     *        <li> <code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is
-     *        not usable.</li>
-     *        <li> <code>COMPLETED</code> - The creation process completed successfully.</li>
-     *        <li> <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INPROGRESS</code> - The creation process is underway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not
+     *        usable.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>COMPLETED</code> - The creation process completed successfully.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.
+     *        </p>
+     *        </li>
      * @see EntityStatus
      */
 
@@ -566,22 +624,62 @@ public class GetDataSourceResult extends com.amazonaws.AmazonWebServiceResult<co
      * The current status of the <code>DataSource</code>. This element can have one of the following values:
      * </p>
      * <ul>
-     * <li> <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</li>
-     * <li> <code>INPROGRESS</code> - The creation process is underway.</li>
-     * <li> <code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not
-     * usable.</li>
-     * <li> <code>COMPLETED</code> - The creation process completed successfully.</li>
-     * <li> <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</li>
+     * <li>
+     * <p>
+     * <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INPROGRESS</code> - The creation process is underway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not
+     * usable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>COMPLETED</code> - The creation process completed successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The current status of the <code>DataSource</code>. This element can have one of the following values:</p>
      *         <ul>
-     *         <li> <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</li>
-     *         <li> <code>INPROGRESS</code> - The creation process is underway.</li>
-     *         <li> <code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It
-     *         is not usable.</li>
-     *         <li> <code>COMPLETED</code> - The creation process completed successfully.</li>
-     *         <li> <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</li>
+     *         <li>
+     *         <p>
+     *         <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>INPROGRESS</code> - The creation process is underway.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is
+     *         not usable.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>COMPLETED</code> - The creation process completed successfully.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.
+     *         </p>
+     *         </li>
      * @see EntityStatus
      */
 
@@ -594,23 +692,63 @@ public class GetDataSourceResult extends com.amazonaws.AmazonWebServiceResult<co
      * The current status of the <code>DataSource</code>. This element can have one of the following values:
      * </p>
      * <ul>
-     * <li> <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</li>
-     * <li> <code>INPROGRESS</code> - The creation process is underway.</li>
-     * <li> <code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not
-     * usable.</li>
-     * <li> <code>COMPLETED</code> - The creation process completed successfully.</li>
-     * <li> <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</li>
+     * <li>
+     * <p>
+     * <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INPROGRESS</code> - The creation process is underway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not
+     * usable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>COMPLETED</code> - The creation process completed successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The current status of the <code>DataSource</code>. This element can have one of the following values:</p>
      *        <ul>
-     *        <li> <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</li>
-     *        <li> <code>INPROGRESS</code> - The creation process is underway.</li>
-     *        <li> <code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is
-     *        not usable.</li>
-     *        <li> <code>COMPLETED</code> - The creation process completed successfully.</li>
-     *        <li> <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INPROGRESS</code> - The creation process is underway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not
+     *        usable.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>COMPLETED</code> - The creation process completed successfully.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EntityStatus
      */
@@ -625,23 +763,63 @@ public class GetDataSourceResult extends com.amazonaws.AmazonWebServiceResult<co
      * The current status of the <code>DataSource</code>. This element can have one of the following values:
      * </p>
      * <ul>
-     * <li> <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</li>
-     * <li> <code>INPROGRESS</code> - The creation process is underway.</li>
-     * <li> <code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not
-     * usable.</li>
-     * <li> <code>COMPLETED</code> - The creation process completed successfully.</li>
-     * <li> <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</li>
+     * <li>
+     * <p>
+     * <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INPROGRESS</code> - The creation process is underway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not
+     * usable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>COMPLETED</code> - The creation process completed successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The current status of the <code>DataSource</code>. This element can have one of the following values:</p>
      *        <ul>
-     *        <li> <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</li>
-     *        <li> <code>INPROGRESS</code> - The creation process is underway.</li>
-     *        <li> <code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is
-     *        not usable.</li>
-     *        <li> <code>COMPLETED</code> - The creation process completed successfully.</li>
-     *        <li> <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INPROGRESS</code> - The creation process is underway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not
+     *        usable.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>COMPLETED</code> - The creation process completed successfully.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.
+     *        </p>
+     *        </li>
      * @see EntityStatus
      */
 
@@ -654,23 +832,63 @@ public class GetDataSourceResult extends com.amazonaws.AmazonWebServiceResult<co
      * The current status of the <code>DataSource</code>. This element can have one of the following values:
      * </p>
      * <ul>
-     * <li> <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</li>
-     * <li> <code>INPROGRESS</code> - The creation process is underway.</li>
-     * <li> <code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not
-     * usable.</li>
-     * <li> <code>COMPLETED</code> - The creation process completed successfully.</li>
-     * <li> <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</li>
+     * <li>
+     * <p>
+     * <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INPROGRESS</code> - The creation process is underway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not
+     * usable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>COMPLETED</code> - The creation process completed successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The current status of the <code>DataSource</code>. This element can have one of the following values:</p>
      *        <ul>
-     *        <li> <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.</li>
-     *        <li> <code>INPROGRESS</code> - The creation process is underway.</li>
-     *        <li> <code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is
-     *        not usable.</li>
-     *        <li> <code>COMPLETED</code> - The creation process completed successfully.</li>
-     *        <li> <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.</li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING</code> - Amazon ML submitted a request to create a <code>DataSource</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INPROGRESS</code> - The creation process is underway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code> - The request to create a <code>DataSource</code> did not run to completion. It is not
+     *        usable.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>COMPLETED</code> - The creation process completed successfully.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETED</code> - The <code>DataSource</code> is marked as deleted. It is not usable.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EntityStatus
      */
@@ -1053,17 +1271,14 @@ public class GetDataSourceResult extends com.amazonaws.AmazonWebServiceResult<co
      * <p>
      * The schema used by all of the data files of this <code>DataSource</code>.
      * </p>
-     * <note><title>Note</title>
      * <p>
-     * This parameter is provided as part of the verbose format.
+     * <b>Note:</b> This parameter is provided as part of the verbose format.
      * </p>
-     * </note>
      * 
      * @param dataSourceSchema
-     *        The schema used by all of the data files of this <code>DataSource</code>.</p> <note><title>Note</title>
+     *        The schema used by all of the data files of this <code>DataSource</code>.</p>
      *        <p>
-     *        This parameter is provided as part of the verbose format.
-     *        </p>
+     *        <b>Note:</b> This parameter is provided as part of the verbose format.
      */
 
     public void setDataSourceSchema(String dataSourceSchema) {
@@ -1074,16 +1289,13 @@ public class GetDataSourceResult extends com.amazonaws.AmazonWebServiceResult<co
      * <p>
      * The schema used by all of the data files of this <code>DataSource</code>.
      * </p>
-     * <note><title>Note</title>
      * <p>
-     * This parameter is provided as part of the verbose format.
+     * <b>Note:</b> This parameter is provided as part of the verbose format.
      * </p>
-     * </note>
      * 
-     * @return The schema used by all of the data files of this <code>DataSource</code>.</p> <note><title>Note</title>
+     * @return The schema used by all of the data files of this <code>DataSource</code>.</p>
      *         <p>
-     *         This parameter is provided as part of the verbose format.
-     *         </p>
+     *         <b>Note:</b> This parameter is provided as part of the verbose format.
      */
 
     public String getDataSourceSchema() {
@@ -1094,17 +1306,14 @@ public class GetDataSourceResult extends com.amazonaws.AmazonWebServiceResult<co
      * <p>
      * The schema used by all of the data files of this <code>DataSource</code>.
      * </p>
-     * <note><title>Note</title>
      * <p>
-     * This parameter is provided as part of the verbose format.
+     * <b>Note:</b> This parameter is provided as part of the verbose format.
      * </p>
-     * </note>
      * 
      * @param dataSourceSchema
-     *        The schema used by all of the data files of this <code>DataSource</code>.</p> <note><title>Note</title>
+     *        The schema used by all of the data files of this <code>DataSource</code>.</p>
      *        <p>
-     *        This parameter is provided as part of the verbose format.
-     *        </p>
+     *        <b>Note:</b> This parameter is provided as part of the verbose format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

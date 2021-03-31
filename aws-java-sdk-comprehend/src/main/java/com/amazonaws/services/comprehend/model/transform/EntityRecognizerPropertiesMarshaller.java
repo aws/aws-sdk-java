@@ -53,6 +53,8 @@ public class EntityRecognizerPropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeKmsKeyId").build();
     private static final MarshallingInfo<StructuredPojo> VPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConfig").build();
+    private static final MarshallingInfo<String> MODELKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelKmsKeyId").build();
 
     private static final EntityRecognizerPropertiesMarshaller instance = new EntityRecognizerPropertiesMarshaller();
 
@@ -83,6 +85,7 @@ public class EntityRecognizerPropertiesMarshaller {
             protocolMarshaller.marshall(entityRecognizerProperties.getDataAccessRoleArn(), DATAACCESSROLEARN_BINDING);
             protocolMarshaller.marshall(entityRecognizerProperties.getVolumeKmsKeyId(), VOLUMEKMSKEYID_BINDING);
             protocolMarshaller.marshall(entityRecognizerProperties.getVpcConfig(), VPCCONFIG_BINDING);
+            protocolMarshaller.marshall(entityRecognizerProperties.getModelKmsKeyId(), MODELKMSKEYID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

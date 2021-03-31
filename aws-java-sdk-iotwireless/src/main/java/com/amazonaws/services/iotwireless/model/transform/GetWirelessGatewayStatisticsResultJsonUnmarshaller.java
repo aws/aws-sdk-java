@@ -56,6 +56,10 @@ public class GetWirelessGatewayStatisticsResultJsonUnmarshaller implements Unmar
                     context.nextToken();
                     getWirelessGatewayStatisticsResult.setLastUplinkReceivedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ConnectionStatus", targetDepth)) {
+                    context.nextToken();
+                    getWirelessGatewayStatisticsResult.setConnectionStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

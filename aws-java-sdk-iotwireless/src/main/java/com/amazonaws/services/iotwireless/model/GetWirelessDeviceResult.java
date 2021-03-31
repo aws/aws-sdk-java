@@ -78,6 +78,12 @@ public class GetWirelessDeviceResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private LoRaWANDevice loRaWAN;
+    /**
+     * <p>
+     * Sidewalk device object.
+     * </p>
+     */
+    private SidewalkDevice sidewalk;
 
     /**
      * <p>
@@ -465,6 +471,46 @@ public class GetWirelessDeviceResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * Sidewalk device object.
+     * </p>
+     * 
+     * @param sidewalk
+     *        Sidewalk device object.
+     */
+
+    public void setSidewalk(SidewalkDevice sidewalk) {
+        this.sidewalk = sidewalk;
+    }
+
+    /**
+     * <p>
+     * Sidewalk device object.
+     * </p>
+     * 
+     * @return Sidewalk device object.
+     */
+
+    public SidewalkDevice getSidewalk() {
+        return this.sidewalk;
+    }
+
+    /**
+     * <p>
+     * Sidewalk device object.
+     * </p>
+     * 
+     * @param sidewalk
+     *        Sidewalk device object.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetWirelessDeviceResult withSidewalk(SidewalkDevice sidewalk) {
+        setSidewalk(sidewalk);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -493,7 +539,9 @@ public class GetWirelessDeviceResult extends com.amazonaws.AmazonWebServiceResul
         if (getThingArn() != null)
             sb.append("ThingArn: ").append(getThingArn()).append(",");
         if (getLoRaWAN() != null)
-            sb.append("LoRaWAN: ").append(getLoRaWAN());
+            sb.append("LoRaWAN: ").append(getLoRaWAN()).append(",");
+        if (getSidewalk() != null)
+            sb.append("Sidewalk: ").append(getSidewalk());
         sb.append("}");
         return sb.toString();
     }
@@ -544,6 +592,10 @@ public class GetWirelessDeviceResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getLoRaWAN() != null && other.getLoRaWAN().equals(this.getLoRaWAN()) == false)
             return false;
+        if (other.getSidewalk() == null ^ this.getSidewalk() == null)
+            return false;
+        if (other.getSidewalk() != null && other.getSidewalk().equals(this.getSidewalk()) == false)
+            return false;
         return true;
     }
 
@@ -561,6 +613,7 @@ public class GetWirelessDeviceResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getThingName() == null) ? 0 : getThingName().hashCode());
         hashCode = prime * hashCode + ((getThingArn() == null) ? 0 : getThingArn().hashCode());
         hashCode = prime * hashCode + ((getLoRaWAN() == null) ? 0 : getLoRaWAN().hashCode());
+        hashCode = prime * hashCode + ((getSidewalk() == null) ? 0 : getSidewalk().hashCode());
         return hashCode;
     }
 

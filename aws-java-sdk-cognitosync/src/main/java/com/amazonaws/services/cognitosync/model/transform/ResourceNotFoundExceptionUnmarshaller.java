@@ -29,7 +29,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ResourceNotFoundExceptionUnmarshaller() {
-        super(com.amazonaws.services.cognitosync.model.ResourceNotFoundException.class, "ResourceNotFound");
+        super(com.amazonaws.services.cognitosync.model.ResourceNotFoundException.class, "ResourceNotFoundException");
     }
 
     @Override

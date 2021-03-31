@@ -244,6 +244,41 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
+     * Creates a new mobile device access rule for the specified Amazon WorkMail organization.
+     * </p>
+     * 
+     * @param createMobileDeviceAccessRuleRequest
+     * @return A Java Future containing the result of the CreateMobileDeviceAccessRule operation returned by the
+     *         service.
+     * @sample AmazonWorkMailAsync.CreateMobileDeviceAccessRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateMobileDeviceAccessRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateMobileDeviceAccessRuleResult> createMobileDeviceAccessRuleAsync(
+            CreateMobileDeviceAccessRuleRequest createMobileDeviceAccessRuleRequest);
+
+    /**
+     * <p>
+     * Creates a new mobile device access rule for the specified Amazon WorkMail organization.
+     * </p>
+     * 
+     * @param createMobileDeviceAccessRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateMobileDeviceAccessRule operation returned by the
+     *         service.
+     * @sample AmazonWorkMailAsyncHandler.CreateMobileDeviceAccessRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateMobileDeviceAccessRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateMobileDeviceAccessRuleResult> createMobileDeviceAccessRuleAsync(
+            CreateMobileDeviceAccessRuleRequest createMobileDeviceAccessRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateMobileDeviceAccessRuleRequest, CreateMobileDeviceAccessRuleResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new Amazon WorkMail organization. Optionally, you can choose to associate an existing AWS Directory
      * Service directory with your organization. If an AWS Directory Service directory ID is specified, the organization
      * alias must match the directory alias. If you choose not to associate an existing directory with your
@@ -492,6 +527,41 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
      */
     java.util.concurrent.Future<DeleteMailboxPermissionsResult> deleteMailboxPermissionsAsync(DeleteMailboxPermissionsRequest deleteMailboxPermissionsRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteMailboxPermissionsRequest, DeleteMailboxPermissionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a mobile device access rule for the specified Amazon WorkMail organization.
+     * </p>
+     * 
+     * @param deleteMobileDeviceAccessRuleRequest
+     * @return A Java Future containing the result of the DeleteMobileDeviceAccessRule operation returned by the
+     *         service.
+     * @sample AmazonWorkMailAsync.DeleteMobileDeviceAccessRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteMobileDeviceAccessRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteMobileDeviceAccessRuleResult> deleteMobileDeviceAccessRuleAsync(
+            DeleteMobileDeviceAccessRuleRequest deleteMobileDeviceAccessRuleRequest);
+
+    /**
+     * <p>
+     * Deletes a mobile device access rule for the specified Amazon WorkMail organization.
+     * </p>
+     * 
+     * @param deleteMobileDeviceAccessRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteMobileDeviceAccessRule operation returned by the
+     *         service.
+     * @sample AmazonWorkMailAsyncHandler.DeleteMobileDeviceAccessRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteMobileDeviceAccessRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteMobileDeviceAccessRuleResult> deleteMobileDeviceAccessRuleAsync(
+            DeleteMobileDeviceAccessRuleRequest deleteMobileDeviceAccessRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteMobileDeviceAccessRuleRequest, DeleteMobileDeviceAccessRuleResult> asyncHandler);
 
     /**
      * <p>
@@ -990,6 +1060,43 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
+     * Simulates the effect of the mobile device access rules for the given attributes of a sample access event. Use
+     * this method to test the effects of the current set of mobile device access rules for the Amazon WorkMail
+     * organization for a particular user's attributes.
+     * </p>
+     * 
+     * @param getMobileDeviceAccessEffectRequest
+     * @return A Java Future containing the result of the GetMobileDeviceAccessEffect operation returned by the service.
+     * @sample AmazonWorkMailAsync.GetMobileDeviceAccessEffect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMobileDeviceAccessEffect"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMobileDeviceAccessEffectResult> getMobileDeviceAccessEffectAsync(
+            GetMobileDeviceAccessEffectRequest getMobileDeviceAccessEffectRequest);
+
+    /**
+     * <p>
+     * Simulates the effect of the mobile device access rules for the given attributes of a sample access event. Use
+     * this method to test the effects of the current set of mobile device access rules for the Amazon WorkMail
+     * organization for a particular user's attributes.
+     * </p>
+     * 
+     * @param getMobileDeviceAccessEffectRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMobileDeviceAccessEffect operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.GetMobileDeviceAccessEffect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMobileDeviceAccessEffect"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMobileDeviceAccessEffectResult> getMobileDeviceAccessEffectAsync(
+            GetMobileDeviceAccessEffectRequest getMobileDeviceAccessEffectRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMobileDeviceAccessEffectRequest, GetMobileDeviceAccessEffectResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the access control rules for the specified organization.
      * </p>
      * 
@@ -1173,6 +1280,39 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
      */
     java.util.concurrent.Future<ListMailboxPermissionsResult> listMailboxPermissionsAsync(ListMailboxPermissionsRequest listMailboxPermissionsRequest,
             com.amazonaws.handlers.AsyncHandler<ListMailboxPermissionsRequest, ListMailboxPermissionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the mobile device access rules for the specified Amazon WorkMail organization.
+     * </p>
+     * 
+     * @param listMobileDeviceAccessRulesRequest
+     * @return A Java Future containing the result of the ListMobileDeviceAccessRules operation returned by the service.
+     * @sample AmazonWorkMailAsync.ListMobileDeviceAccessRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMobileDeviceAccessRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMobileDeviceAccessRulesResult> listMobileDeviceAccessRulesAsync(
+            ListMobileDeviceAccessRulesRequest listMobileDeviceAccessRulesRequest);
+
+    /**
+     * <p>
+     * Lists the mobile device access rules for the specified Amazon WorkMail organization.
+     * </p>
+     * 
+     * @param listMobileDeviceAccessRulesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListMobileDeviceAccessRules operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.ListMobileDeviceAccessRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMobileDeviceAccessRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMobileDeviceAccessRulesResult> listMobileDeviceAccessRulesAsync(
+            ListMobileDeviceAccessRulesRequest listMobileDeviceAccessRulesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListMobileDeviceAccessRulesRequest, ListMobileDeviceAccessRulesResult> asyncHandler);
 
     /**
      * <p>
@@ -1635,6 +1775,41 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
      */
     java.util.concurrent.Future<UpdateMailboxQuotaResult> updateMailboxQuotaAsync(UpdateMailboxQuotaRequest updateMailboxQuotaRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateMailboxQuotaRequest, UpdateMailboxQuotaResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a mobile device access rule for the specified Amazon WorkMail organization.
+     * </p>
+     * 
+     * @param updateMobileDeviceAccessRuleRequest
+     * @return A Java Future containing the result of the UpdateMobileDeviceAccessRule operation returned by the
+     *         service.
+     * @sample AmazonWorkMailAsync.UpdateMobileDeviceAccessRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateMobileDeviceAccessRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateMobileDeviceAccessRuleResult> updateMobileDeviceAccessRuleAsync(
+            UpdateMobileDeviceAccessRuleRequest updateMobileDeviceAccessRuleRequest);
+
+    /**
+     * <p>
+     * Updates a mobile device access rule for the specified Amazon WorkMail organization.
+     * </p>
+     * 
+     * @param updateMobileDeviceAccessRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateMobileDeviceAccessRule operation returned by the
+     *         service.
+     * @sample AmazonWorkMailAsyncHandler.UpdateMobileDeviceAccessRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateMobileDeviceAccessRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateMobileDeviceAccessRuleResult> updateMobileDeviceAccessRuleAsync(
+            UpdateMobileDeviceAccessRuleRequest updateMobileDeviceAccessRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateMobileDeviceAccessRuleRequest, UpdateMobileDeviceAccessRuleResult> asyncHandler);
 
     /**
      * <p>

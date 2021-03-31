@@ -84,6 +84,10 @@ public class GetWirelessDeviceResultJsonUnmarshaller implements Unmarshaller<Get
                     context.nextToken();
                     getWirelessDeviceResult.setLoRaWAN(LoRaWANDeviceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Sidewalk", targetDepth)) {
+                    context.nextToken();
+                    getWirelessDeviceResult.setSidewalk(SidewalkDeviceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

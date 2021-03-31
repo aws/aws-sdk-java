@@ -62,6 +62,14 @@ public class ConnectionMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> PROVIDERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("providerName").build();
+    private static final MarshallingInfo<Boolean> MACSECCAPABLE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("macSecCapable").build();
+    private static final MarshallingInfo<String> PORTENCRYPTIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("portEncryptionStatus").build();
+    private static final MarshallingInfo<String> ENCRYPTIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryptionMode").build();
+    private static final MarshallingInfo<List> MACSECKEYS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("macSecKeys").build();
 
     private static final ConnectionMarshaller instance = new ConnectionMarshaller();
 
@@ -96,6 +104,10 @@ public class ConnectionMarshaller {
             protocolMarshaller.marshall(connection.getHasLogicalRedundancy(), HASLOGICALREDUNDANCY_BINDING);
             protocolMarshaller.marshall(connection.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(connection.getProviderName(), PROVIDERNAME_BINDING);
+            protocolMarshaller.marshall(connection.getMacSecCapable(), MACSECCAPABLE_BINDING);
+            protocolMarshaller.marshall(connection.getPortEncryptionStatus(), PORTENCRYPTIONSTATUS_BINDING);
+            protocolMarshaller.marshall(connection.getEncryptionMode(), ENCRYPTIONMODE_BINDING);
+            protocolMarshaller.marshall(connection.getMacSecKeys(), MACSECKEYS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

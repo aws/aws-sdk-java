@@ -41,6 +41,8 @@ public class CreateEndpointRequestMarshaller {
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> DATAACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataAccessRoleArn").build();
 
     private static final CreateEndpointRequestMarshaller instance = new CreateEndpointRequestMarshaller();
 
@@ -63,6 +65,7 @@ public class CreateEndpointRequestMarshaller {
             protocolMarshaller.marshall(createEndpointRequest.getDesiredInferenceUnits(), DESIREDINFERENCEUNITS_BINDING);
             protocolMarshaller.marshall(createEndpointRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(createEndpointRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createEndpointRequest.getDataAccessRoleArn(), DATAACCESSROLEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

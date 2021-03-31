@@ -56,7 +56,11 @@ public class Prediction implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String predictedLabel;
-    /** The prediction value for <code>REGRESSION</code> <code>MLModel</code>. */
+    /**
+     * <p>
+     * The prediction value for <code>REGRESSION</code> <code>MLModel</code>.
+     * </p>
+     */
     private Float predictedValue;
 
     private com.amazonaws.internal.SdkInternalMap<String, Float> predictedScores;
@@ -104,7 +108,9 @@ public class Prediction implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The prediction value for <code>REGRESSION</code> <code>MLModel</code>.
+     * </p>
      * 
      * @param predictedValue
      *        The prediction value for <code>REGRESSION</code> <code>MLModel</code>.
@@ -115,7 +121,9 @@ public class Prediction implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The prediction value for <code>REGRESSION</code> <code>MLModel</code>.
+     * </p>
      * 
      * @return The prediction value for <code>REGRESSION</code> <code>MLModel</code>.
      */
@@ -125,7 +133,9 @@ public class Prediction implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The prediction value for <code>REGRESSION</code> <code>MLModel</code>.
+     * </p>
      * 
      * @param predictedValue
      *        The prediction value for <code>REGRESSION</code> <code>MLModel</code>.

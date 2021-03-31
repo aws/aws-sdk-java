@@ -142,6 +142,10 @@ public class UpdateStackSetRequestMarshaller implements Marshaller<Request<Updat
             StackSetOperationPreferences operationPreferences = updateStackSetRequest.getOperationPreferences();
             if (operationPreferences != null) {
 
+                if (operationPreferences.getRegionConcurrencyType() != null) {
+                    request.addParameter("OperationPreferences.RegionConcurrencyType", StringUtils.fromString(operationPreferences.getRegionConcurrencyType()));
+                }
+
                 if (operationPreferences.getRegionOrder().isEmpty()
                         && !((com.amazonaws.internal.SdkInternalList<String>) operationPreferences.getRegionOrder()).isAutoConstruct()) {
                     request.addParameter("OperationPreferences.RegionOrder", "");
@@ -209,6 +213,10 @@ public class UpdateStackSetRequestMarshaller implements Marshaller<Request<Updat
                         }
                         accountsListIndex++;
                     }
+                }
+
+                if (deploymentTargets.getAccountsUrl() != null) {
+                    request.addParameter("DeploymentTargets.AccountsUrl", StringUtils.fromString(deploymentTargets.getAccountsUrl()));
                 }
 
                 if (deploymentTargets.getOrganizationalUnitIds().isEmpty()

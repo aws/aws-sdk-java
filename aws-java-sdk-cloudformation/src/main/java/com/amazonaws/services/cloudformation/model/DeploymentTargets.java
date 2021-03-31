@@ -38,6 +38,8 @@ public class DeploymentTargets implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> accounts;
+
+    private String accountsUrl;
     /**
      * <p>
      * The organization root ID or organizational unit (OU) IDs to which StackSets deploys.
@@ -115,6 +117,32 @@ public class DeploymentTargets implements Serializable, Cloneable {
 
     public DeploymentTargets withAccounts(java.util.Collection<String> accounts) {
         setAccounts(accounts);
+        return this;
+    }
+
+    /**
+     * @param accountsUrl
+     */
+
+    public void setAccountsUrl(String accountsUrl) {
+        this.accountsUrl = accountsUrl;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getAccountsUrl() {
+        return this.accountsUrl;
+    }
+
+    /**
+     * @param accountsUrl
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeploymentTargets withAccountsUrl(String accountsUrl) {
+        setAccountsUrl(accountsUrl);
         return this;
     }
 
@@ -205,6 +233,8 @@ public class DeploymentTargets implements Serializable, Cloneable {
         sb.append("{");
         if (getAccounts() != null)
             sb.append("Accounts: ").append(getAccounts()).append(",");
+        if (getAccountsUrl() != null)
+            sb.append("AccountsUrl: ").append(getAccountsUrl()).append(",");
         if (getOrganizationalUnitIds() != null)
             sb.append("OrganizationalUnitIds: ").append(getOrganizationalUnitIds());
         sb.append("}");
@@ -225,6 +255,10 @@ public class DeploymentTargets implements Serializable, Cloneable {
             return false;
         if (other.getAccounts() != null && other.getAccounts().equals(this.getAccounts()) == false)
             return false;
+        if (other.getAccountsUrl() == null ^ this.getAccountsUrl() == null)
+            return false;
+        if (other.getAccountsUrl() != null && other.getAccountsUrl().equals(this.getAccountsUrl()) == false)
+            return false;
         if (other.getOrganizationalUnitIds() == null ^ this.getOrganizationalUnitIds() == null)
             return false;
         if (other.getOrganizationalUnitIds() != null && other.getOrganizationalUnitIds().equals(this.getOrganizationalUnitIds()) == false)
@@ -238,6 +272,7 @@ public class DeploymentTargets implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAccounts() == null) ? 0 : getAccounts().hashCode());
+        hashCode = prime * hashCode + ((getAccountsUrl() == null) ? 0 : getAccountsUrl().hashCode());
         hashCode = prime * hashCode + ((getOrganizationalUnitIds() == null) ? 0 : getOrganizationalUnitIds().hashCode());
         return hashCode;
     }

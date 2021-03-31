@@ -234,6 +234,28 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
+     * Creates a new mobile device access rule for the specified Amazon WorkMail organization.
+     * </p>
+     * 
+     * @param createMobileDeviceAccessRuleRequest
+     * @return Result of the CreateMobileDeviceAccessRule operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws LimitExceededException
+     *         The request exceeds the limit of the resource.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @sample AmazonWorkMail.CreateMobileDeviceAccessRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateMobileDeviceAccessRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateMobileDeviceAccessRuleResult createMobileDeviceAccessRule(CreateMobileDeviceAccessRuleRequest createMobileDeviceAccessRuleRequest);
+
+    /**
+     * <p>
      * Creates a new Amazon WorkMail organization. Optionally, you can choose to associate an existing AWS Directory
      * Service directory with your organization. If an AWS Directory Service directory ID is specified, the organization
      * alias must match the directory alias. If you choose not to associate an existing directory with your
@@ -429,6 +451,26 @@ public interface AmazonWorkMail {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteMailboxPermissionsResult deleteMailboxPermissions(DeleteMailboxPermissionsRequest deleteMailboxPermissionsRequest);
+
+    /**
+     * <p>
+     * Deletes a mobile device access rule for the specified Amazon WorkMail organization.
+     * </p>
+     * 
+     * @param deleteMobileDeviceAccessRuleRequest
+     * @return Result of the DeleteMobileDeviceAccessRule operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @sample AmazonWorkMail.DeleteMobileDeviceAccessRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteMobileDeviceAccessRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteMobileDeviceAccessRuleResult deleteMobileDeviceAccessRule(DeleteMobileDeviceAccessRuleRequest deleteMobileDeviceAccessRuleRequest);
 
     /**
      * <p>
@@ -785,6 +827,28 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
+     * Simulates the effect of the mobile device access rules for the given attributes of a sample access event. Use
+     * this method to test the effects of the current set of mobile device access rules for the Amazon WorkMail
+     * organization for a particular user's attributes.
+     * </p>
+     * 
+     * @param getMobileDeviceAccessEffectRequest
+     * @return Result of the GetMobileDeviceAccessEffect operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @sample AmazonWorkMail.GetMobileDeviceAccessEffect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMobileDeviceAccessEffect"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetMobileDeviceAccessEffectResult getMobileDeviceAccessEffect(GetMobileDeviceAccessEffectRequest getMobileDeviceAccessEffectRequest);
+
+    /**
+     * <p>
      * Lists the access control rules for the specified organization.
      * </p>
      * 
@@ -914,6 +978,26 @@ public interface AmazonWorkMail {
      *      target="_top">AWS API Documentation</a>
      */
     ListMailboxPermissionsResult listMailboxPermissions(ListMailboxPermissionsRequest listMailboxPermissionsRequest);
+
+    /**
+     * <p>
+     * Lists the mobile device access rules for the specified Amazon WorkMail organization.
+     * </p>
+     * 
+     * @param listMobileDeviceAccessRulesRequest
+     * @return Result of the ListMobileDeviceAccessRules operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @sample AmazonWorkMail.ListMobileDeviceAccessRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMobileDeviceAccessRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListMobileDeviceAccessRulesResult listMobileDeviceAccessRules(ListMobileDeviceAccessRulesRequest listMobileDeviceAccessRulesRequest);
 
     /**
      * <p>
@@ -1251,6 +1335,28 @@ public interface AmazonWorkMail {
      *      API Documentation</a>
      */
     UpdateMailboxQuotaResult updateMailboxQuota(UpdateMailboxQuotaRequest updateMailboxQuotaRequest);
+
+    /**
+     * <p>
+     * Updates a mobile device access rule for the specified Amazon WorkMail organization.
+     * </p>
+     * 
+     * @param updateMobileDeviceAccessRuleRequest
+     * @return Result of the UpdateMobileDeviceAccessRule operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @sample AmazonWorkMail.UpdateMobileDeviceAccessRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateMobileDeviceAccessRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateMobileDeviceAccessRuleResult updateMobileDeviceAccessRule(UpdateMobileDeviceAccessRuleRequest updateMobileDeviceAccessRuleRequest);
 
     /**
      * <p>

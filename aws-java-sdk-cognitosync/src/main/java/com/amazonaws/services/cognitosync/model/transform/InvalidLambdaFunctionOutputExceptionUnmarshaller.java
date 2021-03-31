@@ -29,7 +29,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InvalidLambdaFunctionOutputExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidLambdaFunctionOutputExceptionUnmarshaller() {
-        super(com.amazonaws.services.cognitosync.model.InvalidLambdaFunctionOutputException.class, "InvalidLambdaFunctionOutput");
+        super(com.amazonaws.services.cognitosync.model.InvalidLambdaFunctionOutputException.class, "InvalidLambdaFunctionOutputException");
     }
 
     @Override

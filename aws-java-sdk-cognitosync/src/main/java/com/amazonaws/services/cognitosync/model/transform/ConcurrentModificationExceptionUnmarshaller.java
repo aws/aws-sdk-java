@@ -29,7 +29,7 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConcurrentModificationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ConcurrentModificationExceptionUnmarshaller() {
-        super(com.amazonaws.services.cognitosync.model.ConcurrentModificationException.class, "ConcurrentModification");
+        super(com.amazonaws.services.cognitosync.model.ConcurrentModificationException.class, "ConcurrentModificationException");
     }
 
     @Override

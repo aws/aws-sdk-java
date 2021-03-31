@@ -914,6 +914,12 @@
       "type":"list",
       "member":{"shape":"Account"}
     },
+    "AccountsUrl":{
+      "type":"string",
+      "max":5120,
+      "min":1,
+      "pattern":"(s3://|http(s?)://).+"
+    },
     "AllowedValue":{"type":"string"},
     "AllowedValues":{
       "type":"list",
@@ -1629,6 +1635,7 @@
           "shape":"AccountList",
           "documentation":"<p>The names of one or more AWS accounts for which you want to deploy stack set updates.</p>"
         },
+        "AccountsUrl":{"shape":"AccountsUrl"},
         "OrganizationalUnitIds":{
           "shape":"OrganizationalUnitIdList",
           "documentation":"<p>The organization root ID or organizational unit (OU) IDs to which StackSets deploys.</p>"
@@ -3447,6 +3454,13 @@
       "type":"string",
       "pattern":"^[a-zA-Z0-9-]{1,128}$"
     },
+    "RegionConcurrencyType":{
+      "type":"string",
+      "enum":[
+        "SEQUENTIAL",
+        "PARALLEL"
+      ]
+    },
     "RegionList":{
       "type":"list",
       "member":{"shape":"Region"}
@@ -4803,6 +4817,7 @@
     "StackSetOperationPreferences":{
       "type":"structure",
       "members":{
+        "RegionConcurrencyType":{"shape":"RegionConcurrencyType"},
         "RegionOrder":{
           "shape":"RegionList",
           "documentation":"<p>The order of the Regions in where you want to perform the stack operation.</p>"

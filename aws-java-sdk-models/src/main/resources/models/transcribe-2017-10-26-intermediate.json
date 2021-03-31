@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -1487,6 +1487,18 @@
       "enums" : [ {
         "name" : "EnUS",
         "value" : "en-US"
+      }, {
+        "name" : "HiIN",
+        "value" : "hi-IN"
+      }, {
+        "name" : "EsUS",
+        "value" : "es-US"
+      }, {
+        "name" : "EnGB",
+        "value" : "en-GB"
+      }, {
+        "name" : "EnAU",
+        "value" : "en-AU"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.transcribe.enum.CLMLanguageCode",

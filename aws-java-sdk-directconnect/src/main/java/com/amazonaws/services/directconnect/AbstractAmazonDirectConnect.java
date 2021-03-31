@@ -80,6 +80,11 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     }
 
     @Override
+    public AssociateMacSecKeyResult associateMacSecKey(AssociateMacSecKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AssociateVirtualInterfaceResult associateVirtualInterface(AssociateVirtualInterfaceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -311,6 +316,11 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
     }
 
     @Override
+    public DisassociateMacSecKeyResult disassociateMacSecKey(DisassociateMacSecKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListVirtualInterfaceTestHistoryResult listVirtualInterfaceTestHistory(ListVirtualInterfaceTestHistoryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -332,6 +342,11 @@ public class AbstractAmazonDirectConnect implements AmazonDirectConnect {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateConnectionResult updateConnection(UpdateConnectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
