@@ -64,9 +64,17 @@ public class Ac3SettingsJsonUnmarshaller implements Unmarshaller<Ac3Settings, Js
                     context.nextToken();
                     ac3Settings.setDialnorm(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("dynamicRangeCompressionLine", targetDepth)) {
+                    context.nextToken();
+                    ac3Settings.setDynamicRangeCompressionLine(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("dynamicRangeCompressionProfile", targetDepth)) {
                     context.nextToken();
                     ac3Settings.setDynamicRangeCompressionProfile(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("dynamicRangeCompressionRf", targetDepth)) {
+                    context.nextToken();
+                    ac3Settings.setDynamicRangeCompressionRf(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lfeFilter", targetDepth)) {
                     context.nextToken();

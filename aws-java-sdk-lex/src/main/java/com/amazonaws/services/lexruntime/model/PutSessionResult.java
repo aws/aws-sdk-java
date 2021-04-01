@@ -60,8 +60,23 @@ public class PutSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * <p>
      * The next message that should be presented to the user.
      * </p>
+     * <p>
+     * You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT
+     * locales. In all other locales, the <code>message</code> field is null. You should use the
+     * <code>encodedMessage</code> field instead.
+     * </p>
      */
+    @Deprecated
     private String message;
+    /**
+     * <p>
+     * The next message that should be presented to the user.
+     * </p>
+     * <p>
+     * The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the value.
+     * </p>
+     */
+    private String encodedMessage;
     /**
      * <p>
      * The format of the response message. One of the following values:
@@ -411,11 +426,20 @@ public class PutSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * <p>
      * The next message that should be presented to the user.
      * </p>
+     * <p>
+     * You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT
+     * locales. In all other locales, the <code>message</code> field is null. You should use the
+     * <code>encodedMessage</code> field instead.
+     * </p>
      * 
      * @param message
-     *        The next message that should be presented to the user.
+     *        The next message that should be presented to the user.</p>
+     *        <p>
+     *        You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and
+     *        it-IT locales. In all other locales, the <code>message</code> field is null. You should use the
+     *        <code>encodedMessage</code> field instead.
      */
-
+    @Deprecated
     public void setMessage(String message) {
         this.message = message;
     }
@@ -424,10 +448,19 @@ public class PutSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * <p>
      * The next message that should be presented to the user.
      * </p>
+     * <p>
+     * You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT
+     * locales. In all other locales, the <code>message</code> field is null. You should use the
+     * <code>encodedMessage</code> field instead.
+     * </p>
      * 
-     * @return The next message that should be presented to the user.
+     * @return The next message that should be presented to the user.</p>
+     *         <p>
+     *         You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and
+     *         it-IT locales. In all other locales, the <code>message</code> field is null. You should use the
+     *         <code>encodedMessage</code> field instead.
      */
-
+    @Deprecated
     public String getMessage() {
         return this.message;
     }
@@ -436,14 +469,81 @@ public class PutSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * <p>
      * The next message that should be presented to the user.
      * </p>
+     * <p>
+     * You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT
+     * locales. In all other locales, the <code>message</code> field is null. You should use the
+     * <code>encodedMessage</code> field instead.
+     * </p>
      * 
      * @param message
-     *        The next message that should be presented to the user.
+     *        The next message that should be presented to the user.</p>
+     *        <p>
+     *        You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and
+     *        it-IT locales. In all other locales, the <code>message</code> field is null. You should use the
+     *        <code>encodedMessage</code> field instead.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+    @Deprecated
+    public PutSessionResult withMessage(String message) {
+        setMessage(message);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The next message that should be presented to the user.
+     * </p>
+     * <p>
+     * The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the value.
+     * </p>
+     * 
+     * @param encodedMessage
+     *        The next message that should be presented to the user.</p>
+     *        <p>
+     *        The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the
+     *        value.
+     */
+
+    public void setEncodedMessage(String encodedMessage) {
+        this.encodedMessage = encodedMessage;
+    }
+
+    /**
+     * <p>
+     * The next message that should be presented to the user.
+     * </p>
+     * <p>
+     * The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the value.
+     * </p>
+     * 
+     * @return The next message that should be presented to the user.</p>
+     *         <p>
+     *         The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use
+     *         the value.
+     */
+
+    public String getEncodedMessage() {
+        return this.encodedMessage;
+    }
+
+    /**
+     * <p>
+     * The next message that should be presented to the user.
+     * </p>
+     * <p>
+     * The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the value.
+     * </p>
+     * 
+     * @param encodedMessage
+     *        The next message that should be presented to the user.</p>
+     *        <p>
+     *        The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the
+     *        value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PutSessionResult withMessage(String message) {
-        setMessage(message);
+    public PutSessionResult withEncodedMessage(String encodedMessage) {
+        setEncodedMessage(encodedMessage);
         return this;
     }
 
@@ -1197,6 +1297,8 @@ public class PutSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
             sb.append("SessionAttributes: ").append(getSessionAttributes()).append(",");
         if (getMessage() != null)
             sb.append("Message: ").append("***Sensitive Data Redacted***").append(",");
+        if (getEncodedMessage() != null)
+            sb.append("EncodedMessage: ").append("***Sensitive Data Redacted***").append(",");
         if (getMessageFormat() != null)
             sb.append("MessageFormat: ").append(getMessageFormat()).append(",");
         if (getDialogState() != null)
@@ -1243,6 +1345,10 @@ public class PutSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
             return false;
         if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
             return false;
+        if (other.getEncodedMessage() == null ^ this.getEncodedMessage() == null)
+            return false;
+        if (other.getEncodedMessage() != null && other.getEncodedMessage().equals(this.getEncodedMessage()) == false)
+            return false;
         if (other.getMessageFormat() == null ^ this.getMessageFormat() == null)
             return false;
         if (other.getMessageFormat() != null && other.getMessageFormat().equals(this.getMessageFormat()) == false)
@@ -1280,6 +1386,7 @@ public class PutSessionResult extends com.amazonaws.AmazonWebServiceResult<com.a
         hashCode = prime * hashCode + ((getSlots() == null) ? 0 : getSlots().hashCode());
         hashCode = prime * hashCode + ((getSessionAttributes() == null) ? 0 : getSessionAttributes().hashCode());
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        hashCode = prime * hashCode + ((getEncodedMessage() == null) ? 0 : getEncodedMessage().hashCode());
         hashCode = prime * hashCode + ((getMessageFormat() == null) ? 0 : getMessageFormat().hashCode());
         hashCode = prime * hashCode + ((getDialogState() == null) ? 0 : getDialogState().hashCode());
         hashCode = prime * hashCode + ((getSlotToElicit() == null) ? 0 : getSlotToElicit().hashCode());

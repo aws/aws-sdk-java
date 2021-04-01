@@ -89,6 +89,11 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String sentimentResponse;
     /**
      * <p>
+     * You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT
+     * locales. In all other locales, the <code>message</code> field is null. You should use the
+     * <code>encodedMessage</code> field instead.
+     * </p>
+     * <p>
      * The message to convey to the user. The message can come from the bot's configuration or from a Lambda function.
      * </p>
      * <p>
@@ -106,7 +111,31 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * If the Lambda function returns a message, Amazon Lex passes it to the client in its response.
      * </p>
      */
+    @Deprecated
     private String message;
+    /**
+     * <p>
+     * The message to convey to the user. The message can come from the bot's configuration or from a Lambda function.
+     * </p>
+     * <p>
+     * If the intent is not configured with a Lambda function, or if the Lambda function returned <code>Delegate</code>
+     * as the <code>dialogAction.type</code> in its response, Amazon Lex decides on the next course of action and
+     * selects an appropriate message from the bot's configuration based on the current interaction context. For
+     * example, if Amazon Lex isn't able to understand user input, it uses a clarification prompt message.
+     * </p>
+     * <p>
+     * When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon Lex
+     * returns one message from each group in the response. The message field is an escaped JSON string containing the
+     * messages. For more information about the structure of the JSON string returned, see <a>msg-prompts-formats</a>.
+     * </p>
+     * <p>
+     * If the Lambda function returns a message, Amazon Lex passes it to the client in its response.
+     * </p>
+     * <p>
+     * The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the value.
+     * </p>
+     */
+    private String encodedMessage;
     /**
      * <p>
      * The format of the response message. One of the following values:
@@ -207,12 +236,33 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * The text used to process the request.
      * </p>
      * <p>
+     * You can use this field only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT
+     * locales. In all other locales, the <code>inputTranscript</code> field is null. You should use the
+     * <code>encodedInputTranscript</code> field instead.
+     * </p>
+     * <p>
      * If the input was an audio stream, the <code>inputTranscript</code> field contains the text extracted from the
      * audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this
      * information to determine if Amazon Lex is correctly processing the audio that you send.
      * </p>
      */
+    @Deprecated
     private String inputTranscript;
+    /**
+     * <p>
+     * The text used to process the request.
+     * </p>
+     * <p>
+     * If the input was an audio stream, the <code>encodedInputTranscript</code> field contains the text extracted from
+     * the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use
+     * this information to determine if Amazon Lex is correctly processing the audio that you send.
+     * </p>
+     * <p>
+     * The <code>encodedInputTranscript</code> field is base-64 encoded. You must decode the field before you can use
+     * the value.
+     * </p>
+     */
+    private String encodedInputTranscript;
     /**
      * <p>
      * The prompt (or statement) to convey to the user. This is based on the bot configuration and context. For example,
@@ -733,6 +783,11 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
+     * You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT
+     * locales. In all other locales, the <code>message</code> field is null. You should use the
+     * <code>encodedMessage</code> field instead.
+     * </p>
+     * <p>
      * The message to convey to the user. The message can come from the bot's configuration or from a Lambda function.
      * </p>
      * <p>
@@ -751,8 +806,13 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param message
+     *        You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and
+     *        it-IT locales. In all other locales, the <code>message</code> field is null. You should use the
+     *        <code>encodedMessage</code> field instead.</p>
+     *        <p>
      *        The message to convey to the user. The message can come from the bot's configuration or from a Lambda
-     *        function.</p>
+     *        function.
+     *        </p>
      *        <p>
      *        If the intent is not configured with a Lambda function, or if the Lambda function returned
      *        <code>Delegate</code> as the <code>dialogAction.type</code> in its response, Amazon Lex decides on the
@@ -769,9 +829,116 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      *        <p>
      *        If the Lambda function returns a message, Amazon Lex passes it to the client in its response.
      */
-
+    @Deprecated
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    /**
+     * <p>
+     * You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT
+     * locales. In all other locales, the <code>message</code> field is null. You should use the
+     * <code>encodedMessage</code> field instead.
+     * </p>
+     * <p>
+     * The message to convey to the user. The message can come from the bot's configuration or from a Lambda function.
+     * </p>
+     * <p>
+     * If the intent is not configured with a Lambda function, or if the Lambda function returned <code>Delegate</code>
+     * as the <code>dialogAction.type</code> in its response, Amazon Lex decides on the next course of action and
+     * selects an appropriate message from the bot's configuration based on the current interaction context. For
+     * example, if Amazon Lex isn't able to understand user input, it uses a clarification prompt message.
+     * </p>
+     * <p>
+     * When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon Lex
+     * returns one message from each group in the response. The message field is an escaped JSON string containing the
+     * messages. For more information about the structure of the JSON string returned, see <a>msg-prompts-formats</a>.
+     * </p>
+     * <p>
+     * If the Lambda function returns a message, Amazon Lex passes it to the client in its response.
+     * </p>
+     * 
+     * @return You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and
+     *         it-IT locales. In all other locales, the <code>message</code> field is null. You should use the
+     *         <code>encodedMessage</code> field instead.</p>
+     *         <p>
+     *         The message to convey to the user. The message can come from the bot's configuration or from a Lambda
+     *         function.
+     *         </p>
+     *         <p>
+     *         If the intent is not configured with a Lambda function, or if the Lambda function returned
+     *         <code>Delegate</code> as the <code>dialogAction.type</code> in its response, Amazon Lex decides on the
+     *         next course of action and selects an appropriate message from the bot's configuration based on the
+     *         current interaction context. For example, if Amazon Lex isn't able to understand user input, it uses a
+     *         clarification prompt message.
+     *         </p>
+     *         <p>
+     *         When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon
+     *         Lex returns one message from each group in the response. The message field is an escaped JSON string
+     *         containing the messages. For more information about the structure of the JSON string returned, see
+     *         <a>msg-prompts-formats</a>.
+     *         </p>
+     *         <p>
+     *         If the Lambda function returns a message, Amazon Lex passes it to the client in its response.
+     */
+    @Deprecated
+    public String getMessage() {
+        return this.message;
+    }
+
+    /**
+     * <p>
+     * You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT
+     * locales. In all other locales, the <code>message</code> field is null. You should use the
+     * <code>encodedMessage</code> field instead.
+     * </p>
+     * <p>
+     * The message to convey to the user. The message can come from the bot's configuration or from a Lambda function.
+     * </p>
+     * <p>
+     * If the intent is not configured with a Lambda function, or if the Lambda function returned <code>Delegate</code>
+     * as the <code>dialogAction.type</code> in its response, Amazon Lex decides on the next course of action and
+     * selects an appropriate message from the bot's configuration based on the current interaction context. For
+     * example, if Amazon Lex isn't able to understand user input, it uses a clarification prompt message.
+     * </p>
+     * <p>
+     * When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon Lex
+     * returns one message from each group in the response. The message field is an escaped JSON string containing the
+     * messages. For more information about the structure of the JSON string returned, see <a>msg-prompts-formats</a>.
+     * </p>
+     * <p>
+     * If the Lambda function returns a message, Amazon Lex passes it to the client in its response.
+     * </p>
+     * 
+     * @param message
+     *        You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and
+     *        it-IT locales. In all other locales, the <code>message</code> field is null. You should use the
+     *        <code>encodedMessage</code> field instead.</p>
+     *        <p>
+     *        The message to convey to the user. The message can come from the bot's configuration or from a Lambda
+     *        function.
+     *        </p>
+     *        <p>
+     *        If the intent is not configured with a Lambda function, or if the Lambda function returned
+     *        <code>Delegate</code> as the <code>dialogAction.type</code> in its response, Amazon Lex decides on the
+     *        next course of action and selects an appropriate message from the bot's configuration based on the current
+     *        interaction context. For example, if Amazon Lex isn't able to understand user input, it uses a
+     *        clarification prompt message.
+     *        </p>
+     *        <p>
+     *        When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon
+     *        Lex returns one message from each group in the response. The message field is an escaped JSON string
+     *        containing the messages. For more information about the structure of the JSON string returned, see
+     *        <a>msg-prompts-formats</a>.
+     *        </p>
+     *        <p>
+     *        If the Lambda function returns a message, Amazon Lex passes it to the client in its response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+    @Deprecated
+    public PostContentResult withMessage(String message) {
+        setMessage(message);
+        return this;
     }
 
     /**
@@ -791,6 +958,59 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * <p>
      * If the Lambda function returns a message, Amazon Lex passes it to the client in its response.
+     * </p>
+     * <p>
+     * The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the value.
+     * </p>
+     * 
+     * @param encodedMessage
+     *        The message to convey to the user. The message can come from the bot's configuration or from a Lambda
+     *        function.</p>
+     *        <p>
+     *        If the intent is not configured with a Lambda function, or if the Lambda function returned
+     *        <code>Delegate</code> as the <code>dialogAction.type</code> in its response, Amazon Lex decides on the
+     *        next course of action and selects an appropriate message from the bot's configuration based on the current
+     *        interaction context. For example, if Amazon Lex isn't able to understand user input, it uses a
+     *        clarification prompt message.
+     *        </p>
+     *        <p>
+     *        When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon
+     *        Lex returns one message from each group in the response. The message field is an escaped JSON string
+     *        containing the messages. For more information about the structure of the JSON string returned, see
+     *        <a>msg-prompts-formats</a>.
+     *        </p>
+     *        <p>
+     *        If the Lambda function returns a message, Amazon Lex passes it to the client in its response.
+     *        </p>
+     *        <p>
+     *        The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the
+     *        value.
+     */
+
+    public void setEncodedMessage(String encodedMessage) {
+        this.encodedMessage = encodedMessage;
+    }
+
+    /**
+     * <p>
+     * The message to convey to the user. The message can come from the bot's configuration or from a Lambda function.
+     * </p>
+     * <p>
+     * If the intent is not configured with a Lambda function, or if the Lambda function returned <code>Delegate</code>
+     * as the <code>dialogAction.type</code> in its response, Amazon Lex decides on the next course of action and
+     * selects an appropriate message from the bot's configuration based on the current interaction context. For
+     * example, if Amazon Lex isn't able to understand user input, it uses a clarification prompt message.
+     * </p>
+     * <p>
+     * When you create an intent you can assign messages to groups. When messages are assigned to groups Amazon Lex
+     * returns one message from each group in the response. The message field is an escaped JSON string containing the
+     * messages. For more information about the structure of the JSON string returned, see <a>msg-prompts-formats</a>.
+     * </p>
+     * <p>
+     * If the Lambda function returns a message, Amazon Lex passes it to the client in its response.
+     * </p>
+     * <p>
+     * The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the value.
      * </p>
      * 
      * @return The message to convey to the user. The message can come from the bot's configuration or from a Lambda
@@ -810,10 +1030,14 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      *         </p>
      *         <p>
      *         If the Lambda function returns a message, Amazon Lex passes it to the client in its response.
+     *         </p>
+     *         <p>
+     *         The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use
+     *         the value.
      */
 
-    public String getMessage() {
-        return this.message;
+    public String getEncodedMessage() {
+        return this.encodedMessage;
     }
 
     /**
@@ -834,8 +1058,11 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * If the Lambda function returns a message, Amazon Lex passes it to the client in its response.
      * </p>
+     * <p>
+     * The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the value.
+     * </p>
      * 
-     * @param message
+     * @param encodedMessage
      *        The message to convey to the user. The message can come from the bot's configuration or from a Lambda
      *        function.</p>
      *        <p>
@@ -853,11 +1080,15 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      *        </p>
      *        <p>
      *        If the Lambda function returns a message, Amazon Lex passes it to the client in its response.
+     *        </p>
+     *        <p>
+     *        The <code>encodedMessage</code> field is base-64 encoded. You must decode the field before you can use the
+     *        value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PostContentResult withMessage(String message) {
-        setMessage(message);
+    public PostContentResult withEncodedMessage(String encodedMessage) {
+        setEncodedMessage(encodedMessage);
         return this;
     }
 
@@ -1824,6 +2055,11 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * The text used to process the request.
      * </p>
      * <p>
+     * You can use this field only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT
+     * locales. In all other locales, the <code>inputTranscript</code> field is null. You should use the
+     * <code>encodedInputTranscript</code> field instead.
+     * </p>
+     * <p>
      * If the input was an audio stream, the <code>inputTranscript</code> field contains the text extracted from the
      * audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this
      * information to determine if Amazon Lex is correctly processing the audio that you send.
@@ -1832,11 +2068,16 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * @param inputTranscript
      *        The text used to process the request.</p>
      *        <p>
+     *        You can use this field only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and
+     *        it-IT locales. In all other locales, the <code>inputTranscript</code> field is null. You should use the
+     *        <code>encodedInputTranscript</code> field instead.
+     *        </p>
+     *        <p>
      *        If the input was an audio stream, the <code>inputTranscript</code> field contains the text extracted from
      *        the audio stream. This is the text that is actually processed to recognize intents and slot values. You
      *        can use this information to determine if Amazon Lex is correctly processing the audio that you send.
      */
-
+    @Deprecated
     public void setInputTranscript(String inputTranscript) {
         this.inputTranscript = inputTranscript;
     }
@@ -1846,6 +2087,11 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * The text used to process the request.
      * </p>
      * <p>
+     * You can use this field only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT
+     * locales. In all other locales, the <code>inputTranscript</code> field is null. You should use the
+     * <code>encodedInputTranscript</code> field instead.
+     * </p>
+     * <p>
      * If the input was an audio stream, the <code>inputTranscript</code> field contains the text extracted from the
      * audio stream. This is the text that is actually processed to recognize intents and slot values. You can use this
      * information to determine if Amazon Lex is correctly processing the audio that you send.
@@ -1853,11 +2099,16 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * 
      * @return The text used to process the request.</p>
      *         <p>
+     *         You can use this field only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and
+     *         it-IT locales. In all other locales, the <code>inputTranscript</code> field is null. You should use the
+     *         <code>encodedInputTranscript</code> field instead.
+     *         </p>
+     *         <p>
      *         If the input was an audio stream, the <code>inputTranscript</code> field contains the text extracted from
      *         the audio stream. This is the text that is actually processed to recognize intents and slot values. You
      *         can use this information to determine if Amazon Lex is correctly processing the audio that you send.
      */
-
+    @Deprecated
     public String getInputTranscript() {
         return this.inputTranscript;
     }
@@ -1865,6 +2116,11 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
     /**
      * <p>
      * The text used to process the request.
+     * </p>
+     * <p>
+     * You can use this field only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and it-IT
+     * locales. In all other locales, the <code>inputTranscript</code> field is null. You should use the
+     * <code>encodedInputTranscript</code> field instead.
      * </p>
      * <p>
      * If the input was an audio stream, the <code>inputTranscript</code> field contains the text extracted from the
@@ -1875,14 +2131,113 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * @param inputTranscript
      *        The text used to process the request.</p>
      *        <p>
+     *        You can use this field only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR, and
+     *        it-IT locales. In all other locales, the <code>inputTranscript</code> field is null. You should use the
+     *        <code>encodedInputTranscript</code> field instead.
+     *        </p>
+     *        <p>
      *        If the input was an audio stream, the <code>inputTranscript</code> field contains the text extracted from
      *        the audio stream. This is the text that is actually processed to recognize intents and slot values. You
      *        can use this information to determine if Amazon Lex is correctly processing the audio that you send.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public PostContentResult withInputTranscript(String inputTranscript) {
         setInputTranscript(inputTranscript);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The text used to process the request.
+     * </p>
+     * <p>
+     * If the input was an audio stream, the <code>encodedInputTranscript</code> field contains the text extracted from
+     * the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use
+     * this information to determine if Amazon Lex is correctly processing the audio that you send.
+     * </p>
+     * <p>
+     * The <code>encodedInputTranscript</code> field is base-64 encoded. You must decode the field before you can use
+     * the value.
+     * </p>
+     * 
+     * @param encodedInputTranscript
+     *        The text used to process the request.</p>
+     *        <p>
+     *        If the input was an audio stream, the <code>encodedInputTranscript</code> field contains the text
+     *        extracted from the audio stream. This is the text that is actually processed to recognize intents and slot
+     *        values. You can use this information to determine if Amazon Lex is correctly processing the audio that you
+     *        send.
+     *        </p>
+     *        <p>
+     *        The <code>encodedInputTranscript</code> field is base-64 encoded. You must decode the field before you can
+     *        use the value.
+     */
+
+    public void setEncodedInputTranscript(String encodedInputTranscript) {
+        this.encodedInputTranscript = encodedInputTranscript;
+    }
+
+    /**
+     * <p>
+     * The text used to process the request.
+     * </p>
+     * <p>
+     * If the input was an audio stream, the <code>encodedInputTranscript</code> field contains the text extracted from
+     * the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use
+     * this information to determine if Amazon Lex is correctly processing the audio that you send.
+     * </p>
+     * <p>
+     * The <code>encodedInputTranscript</code> field is base-64 encoded. You must decode the field before you can use
+     * the value.
+     * </p>
+     * 
+     * @return The text used to process the request.</p>
+     *         <p>
+     *         If the input was an audio stream, the <code>encodedInputTranscript</code> field contains the text
+     *         extracted from the audio stream. This is the text that is actually processed to recognize intents and
+     *         slot values. You can use this information to determine if Amazon Lex is correctly processing the audio
+     *         that you send.
+     *         </p>
+     *         <p>
+     *         The <code>encodedInputTranscript</code> field is base-64 encoded. You must decode the field before you
+     *         can use the value.
+     */
+
+    public String getEncodedInputTranscript() {
+        return this.encodedInputTranscript;
+    }
+
+    /**
+     * <p>
+     * The text used to process the request.
+     * </p>
+     * <p>
+     * If the input was an audio stream, the <code>encodedInputTranscript</code> field contains the text extracted from
+     * the audio stream. This is the text that is actually processed to recognize intents and slot values. You can use
+     * this information to determine if Amazon Lex is correctly processing the audio that you send.
+     * </p>
+     * <p>
+     * The <code>encodedInputTranscript</code> field is base-64 encoded. You must decode the field before you can use
+     * the value.
+     * </p>
+     * 
+     * @param encodedInputTranscript
+     *        The text used to process the request.</p>
+     *        <p>
+     *        If the input was an audio stream, the <code>encodedInputTranscript</code> field contains the text
+     *        extracted from the audio stream. This is the text that is actually processed to recognize intents and slot
+     *        values. You can use this information to determine if Amazon Lex is correctly processing the audio that you
+     *        send.
+     *        </p>
+     *        <p>
+     *        The <code>encodedInputTranscript</code> field is base-64 encoded. You must decode the field before you can
+     *        use the value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PostContentResult withEncodedInputTranscript(String encodedInputTranscript) {
+        setEncodedInputTranscript(encodedInputTranscript);
         return this;
     }
 
@@ -2154,6 +2509,8 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
             sb.append("SentimentResponse: ").append(getSentimentResponse()).append(",");
         if (getMessage() != null)
             sb.append("Message: ").append("***Sensitive Data Redacted***").append(",");
+        if (getEncodedMessage() != null)
+            sb.append("EncodedMessage: ").append("***Sensitive Data Redacted***").append(",");
         if (getMessageFormat() != null)
             sb.append("MessageFormat: ").append(getMessageFormat()).append(",");
         if (getDialogState() != null)
@@ -2162,6 +2519,8 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
             sb.append("SlotToElicit: ").append(getSlotToElicit()).append(",");
         if (getInputTranscript() != null)
             sb.append("InputTranscript: ").append(getInputTranscript()).append(",");
+        if (getEncodedInputTranscript() != null)
+            sb.append("EncodedInputTranscript: ").append("***Sensitive Data Redacted***").append(",");
         if (getAudioStream() != null)
             sb.append("AudioStream: ").append(getAudioStream()).append(",");
         if (getBotVersion() != null)
@@ -2216,6 +2575,10 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
             return false;
+        if (other.getEncodedMessage() == null ^ this.getEncodedMessage() == null)
+            return false;
+        if (other.getEncodedMessage() != null && other.getEncodedMessage().equals(this.getEncodedMessage()) == false)
+            return false;
         if (other.getMessageFormat() == null ^ this.getMessageFormat() == null)
             return false;
         if (other.getMessageFormat() != null && other.getMessageFormat().equals(this.getMessageFormat()) == false)
@@ -2231,6 +2594,10 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (other.getInputTranscript() == null ^ this.getInputTranscript() == null)
             return false;
         if (other.getInputTranscript() != null && other.getInputTranscript().equals(this.getInputTranscript()) == false)
+            return false;
+        if (other.getEncodedInputTranscript() == null ^ this.getEncodedInputTranscript() == null)
+            return false;
+        if (other.getEncodedInputTranscript() != null && other.getEncodedInputTranscript().equals(this.getEncodedInputTranscript()) == false)
             return false;
         if (other.getAudioStream() == null ^ this.getAudioStream() == null)
             return false;
@@ -2264,10 +2631,12 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getSessionAttributes() == null) ? 0 : getSessionAttributes().hashCode());
         hashCode = prime * hashCode + ((getSentimentResponse() == null) ? 0 : getSentimentResponse().hashCode());
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        hashCode = prime * hashCode + ((getEncodedMessage() == null) ? 0 : getEncodedMessage().hashCode());
         hashCode = prime * hashCode + ((getMessageFormat() == null) ? 0 : getMessageFormat().hashCode());
         hashCode = prime * hashCode + ((getDialogState() == null) ? 0 : getDialogState().hashCode());
         hashCode = prime * hashCode + ((getSlotToElicit() == null) ? 0 : getSlotToElicit().hashCode());
         hashCode = prime * hashCode + ((getInputTranscript() == null) ? 0 : getInputTranscript().hashCode());
+        hashCode = prime * hashCode + ((getEncodedInputTranscript() == null) ? 0 : getEncodedInputTranscript().hashCode());
         hashCode = prime * hashCode + ((getAudioStream() == null) ? 0 : getAudioStream().hashCode());
         hashCode = prime * hashCode + ((getBotVersion() == null) ? 0 : getBotVersion().hashCode());
         hashCode = prime * hashCode + ((getSessionId() == null) ? 0 : getSessionId().hashCode());

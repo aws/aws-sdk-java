@@ -89,12 +89,6 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                             new JsonErrorShapeMetadata().withErrorCode("InvalidOperationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.fms.model.transform.InvalidOperationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.fms.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.fms.model.transform.InvalidInputExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalErrorException").withExceptionUnmarshaller(
                                     com.amazonaws.services.fms.model.transform.InternalErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -103,6 +97,12 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidTypeException").withExceptionUnmarshaller(
                                     com.amazonaws.services.fms.model.transform.InvalidTypeExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fms.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fms.model.transform.InvalidInputExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.fms.model.AWSFMSException.class));
 
     public static AWSFMSClientBuilder builder() {

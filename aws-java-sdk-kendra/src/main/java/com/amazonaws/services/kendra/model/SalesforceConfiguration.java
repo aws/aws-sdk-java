@@ -81,7 +81,7 @@ public class SalesforceConfiguration implements Serializable, Cloneable, Structu
     private java.util.List<SalesforceStandardObjectConfiguration> standardObjectConfigurations;
     /**
      * <p>
-     * Specifies configuration information for the knowlege article types that Amazon Kendra indexes. Amazon Kendra
+     * Specifies configuration information for the knowledge article types that Amazon Kendra indexes. Amazon Kendra
      * indexes standard knowledge articles and the standard fields of knowledge articles, or the custom fields of custom
      * knowledge articles, but not both.
      * </p>
@@ -478,13 +478,13 @@ public class SalesforceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies configuration information for the knowlege article types that Amazon Kendra indexes. Amazon Kendra
+     * Specifies configuration information for the knowledge article types that Amazon Kendra indexes. Amazon Kendra
      * indexes standard knowledge articles and the standard fields of knowledge articles, or the custom fields of custom
      * knowledge articles, but not both.
      * </p>
      * 
      * @param knowledgeArticleConfiguration
-     *        Specifies configuration information for the knowlege article types that Amazon Kendra indexes. Amazon
+     *        Specifies configuration information for the knowledge article types that Amazon Kendra indexes. Amazon
      *        Kendra indexes standard knowledge articles and the standard fields of knowledge articles, or the custom
      *        fields of custom knowledge articles, but not both.
      */
@@ -495,12 +495,12 @@ public class SalesforceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies configuration information for the knowlege article types that Amazon Kendra indexes. Amazon Kendra
+     * Specifies configuration information for the knowledge article types that Amazon Kendra indexes. Amazon Kendra
      * indexes standard knowledge articles and the standard fields of knowledge articles, or the custom fields of custom
      * knowledge articles, but not both.
      * </p>
      * 
-     * @return Specifies configuration information for the knowlege article types that Amazon Kendra indexes. Amazon
+     * @return Specifies configuration information for the knowledge article types that Amazon Kendra indexes. Amazon
      *         Kendra indexes standard knowledge articles and the standard fields of knowledge articles, or the custom
      *         fields of custom knowledge articles, but not both.
      */
@@ -511,13 +511,13 @@ public class SalesforceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies configuration information for the knowlege article types that Amazon Kendra indexes. Amazon Kendra
+     * Specifies configuration information for the knowledge article types that Amazon Kendra indexes. Amazon Kendra
      * indexes standard knowledge articles and the standard fields of knowledge articles, or the custom fields of custom
      * knowledge articles, but not both.
      * </p>
      * 
      * @param knowledgeArticleConfiguration
-     *        Specifies configuration information for the knowlege article types that Amazon Kendra indexes. Amazon
+     *        Specifies configuration information for the knowledge article types that Amazon Kendra indexes. Amazon
      *        Kendra indexes standard knowledge articles and the standard fields of knowledge articles, or the custom
      *        fields of custom knowledge articles, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.

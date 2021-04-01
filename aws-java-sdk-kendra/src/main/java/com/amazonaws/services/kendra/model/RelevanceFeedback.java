@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides feedback on how relevant a document is to a search. Your application uses the <a>SubmitFeedback</a>
+ * Provides feedback on how relevant a document is to a search. Your application uses the <code>SubmitFeedback</code>
  * operation to provide relevance information.
  * </p>
  * 

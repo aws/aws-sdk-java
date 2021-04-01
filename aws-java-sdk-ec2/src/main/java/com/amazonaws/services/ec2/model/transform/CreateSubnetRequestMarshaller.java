@@ -83,6 +83,10 @@ public class CreateSubnetRequestMarshaller implements Marshaller<Request<CreateS
             request.addParameter("AvailabilityZoneId", StringUtils.fromString(createSubnetRequest.getAvailabilityZoneId()));
         }
 
+        if (createSubnetRequest.getCidrBlock() != null) {
+            request.addParameter("CidrBlock", StringUtils.fromString(createSubnetRequest.getCidrBlock()));
+        }
+
         if (createSubnetRequest.getIpv6CidrBlock() != null) {
             request.addParameter("Ipv6CidrBlock", StringUtils.fromString(createSubnetRequest.getIpv6CidrBlock()));
         }
@@ -93,10 +97,6 @@ public class CreateSubnetRequestMarshaller implements Marshaller<Request<CreateS
 
         if (createSubnetRequest.getVpcId() != null) {
             request.addParameter("VpcId", StringUtils.fromString(createSubnetRequest.getVpcId()));
-        }
-
-        if (createSubnetRequest.getCidrBlock() != null) {
-            request.addParameter("CidrBlock", StringUtils.fromString(createSubnetRequest.getCidrBlock()));
         }
 
         return request;

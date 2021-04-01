@@ -395,6 +395,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * @throws WAFUnavailableEntityException
      *         AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
      * @throws WAFSubscriptionNotFoundException
+     *         You tried to use a managed rule group that's available by subscription, but you aren't subscribed to it
+     *         yet.
      * @sample AWSWAFV2.CheckCapacity
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CheckCapacity" target="_top">AWS API
      *      Documentation</a>
@@ -709,6 +711,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * @throws WAFTagOperationInternalErrorException
      *         AWS WAF couldn’t perform your tagging operation because of an internal error. Retry your request.
      * @throws WAFSubscriptionNotFoundException
+     *         You tried to use a managed rule group that's available by subscription, but you aren't subscribed to it
+     *         yet.
      * @throws WAFNonexistentItemException
      *         AWS WAF couldn’t perform the operation because your resource doesn’t exist.
      * @throws WAFInvalidOperationException
@@ -828,6 +832,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * @throws WAFTagOperationInternalErrorException
      *         AWS WAF couldn’t perform your tagging operation because of an internal error. Retry your request.
      * @throws WAFSubscriptionNotFoundException
+     *         You tried to use a managed rule group that's available by subscription, but you aren't subscribed to it
+     *         yet.
      * @throws WAFInvalidOperationException
      *         The operation isn't valid.
      * @sample AWSWAFV2.CreateWebACL
@@ -3727,6 +3733,14 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * <p>
      * Updates the specified <a>IPSet</a>.
      * </p>
+     * <note>
+     * <p>
+     * This operation completely replaces any IP address specifications that you already have in the IP set with the
+     * ones that you provide to this call. If you want to add to or modify the addresses that are already in the IP set,
+     * retrieve those by calling <a>GetIPSet</a>, update them, and provide the complete updated array of IP addresses to
+     * this call.
+     * </p>
+     * </note>
      * 
      * @param updateIPSetRequest
      * @return Result of the UpdateIPSet operation returned by the service.
@@ -3980,6 +3994,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * @throws WAFUnavailableEntityException
      *         AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
      * @throws WAFSubscriptionNotFoundException
+     *         You tried to use a managed rule group that's available by subscription, but you aren't subscribed to it
+     *         yet.
      * @throws WAFInvalidOperationException
      *         The operation isn't valid.
      * @sample AWSWAFV2.UpdateRuleGroup
@@ -4093,6 +4109,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * @throws WAFUnavailableEntityException
      *         AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
      * @throws WAFSubscriptionNotFoundException
+     *         You tried to use a managed rule group that's available by subscription, but you aren't subscribed to it
+     *         yet.
      * @throws WAFInvalidOperationException
      *         The operation isn't valid.
      * @sample AWSWAFV2.UpdateWebACL

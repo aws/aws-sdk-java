@@ -80,6 +80,20 @@ public class ResourceViolationJsonUnmarshaller implements Unmarshaller<ResourceV
                     resourceViolation.setNetworkFirewallPolicyModifiedViolation(NetworkFirewallPolicyModifiedViolationJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
+                if (context.testExpression("DnsRuleGroupPriorityConflictViolation", targetDepth)) {
+                    context.nextToken();
+                    resourceViolation.setDnsRuleGroupPriorityConflictViolation(DnsRuleGroupPriorityConflictViolationJsonUnmarshaller.getInstance().unmarshall(
+                            context));
+                }
+                if (context.testExpression("DnsDuplicateRuleGroupViolation", targetDepth)) {
+                    context.nextToken();
+                    resourceViolation.setDnsDuplicateRuleGroupViolation(DnsDuplicateRuleGroupViolationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DnsRuleGroupLimitExceededViolation", targetDepth)) {
+                    context.nextToken();
+                    resourceViolation.setDnsRuleGroupLimitExceededViolation(DnsRuleGroupLimitExceededViolationJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

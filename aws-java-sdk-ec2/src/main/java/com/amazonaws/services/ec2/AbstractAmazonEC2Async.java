@@ -5625,6 +5625,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<GetFlowLogsIntegrationTemplateResult> getFlowLogsIntegrationTemplateAsync(GetFlowLogsIntegrationTemplateRequest request) {
+
+        return getFlowLogsIntegrationTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFlowLogsIntegrationTemplateResult> getFlowLogsIntegrationTemplateAsync(GetFlowLogsIntegrationTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetFlowLogsIntegrationTemplateRequest, GetFlowLogsIntegrationTemplateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetGroupsForCapacityReservationResult> getGroupsForCapacityReservationAsync(
             GetGroupsForCapacityReservationRequest request) {
 

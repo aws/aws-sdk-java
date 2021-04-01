@@ -28,6 +28,11 @@ public class AbstractAmazonRoute53Resolver implements AmazonRoute53Resolver {
     }
 
     @Override
+    public AssociateFirewallRuleGroupResult associateFirewallRuleGroup(AssociateFirewallRuleGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AssociateResolverEndpointIpAddressResult associateResolverEndpointIpAddress(AssociateResolverEndpointIpAddressRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -39,6 +44,21 @@ public class AbstractAmazonRoute53Resolver implements AmazonRoute53Resolver {
 
     @Override
     public AssociateResolverRuleResult associateResolverRule(AssociateResolverRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateFirewallDomainListResult createFirewallDomainList(CreateFirewallDomainListRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateFirewallRuleResult createFirewallRule(CreateFirewallRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateFirewallRuleGroupResult createFirewallRuleGroup(CreateFirewallRuleGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -58,6 +78,21 @@ public class AbstractAmazonRoute53Resolver implements AmazonRoute53Resolver {
     }
 
     @Override
+    public DeleteFirewallDomainListResult deleteFirewallDomainList(DeleteFirewallDomainListRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteFirewallRuleResult deleteFirewallRule(DeleteFirewallRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteFirewallRuleGroupResult deleteFirewallRuleGroup(DeleteFirewallRuleGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteResolverEndpointResult deleteResolverEndpoint(DeleteResolverEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -73,6 +108,11 @@ public class AbstractAmazonRoute53Resolver implements AmazonRoute53Resolver {
     }
 
     @Override
+    public DisassociateFirewallRuleGroupResult disassociateFirewallRuleGroup(DisassociateFirewallRuleGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisassociateResolverEndpointIpAddressResult disassociateResolverEndpointIpAddress(DisassociateResolverEndpointIpAddressRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -84,6 +124,31 @@ public class AbstractAmazonRoute53Resolver implements AmazonRoute53Resolver {
 
     @Override
     public DisassociateResolverRuleResult disassociateResolverRule(DisassociateResolverRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetFirewallConfigResult getFirewallConfig(GetFirewallConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetFirewallDomainListResult getFirewallDomainList(GetFirewallDomainListRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetFirewallRuleGroupResult getFirewallRuleGroup(GetFirewallRuleGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetFirewallRuleGroupAssociationResult getFirewallRuleGroupAssociation(GetFirewallRuleGroupAssociationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetFirewallRuleGroupPolicyResult getFirewallRuleGroupPolicy(GetFirewallRuleGroupPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -128,6 +193,41 @@ public class AbstractAmazonRoute53Resolver implements AmazonRoute53Resolver {
     }
 
     @Override
+    public ImportFirewallDomainsResult importFirewallDomains(ImportFirewallDomainsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListFirewallConfigsResult listFirewallConfigs(ListFirewallConfigsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListFirewallDomainListsResult listFirewallDomainLists(ListFirewallDomainListsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListFirewallDomainsResult listFirewallDomains(ListFirewallDomainsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListFirewallRuleGroupAssociationsResult listFirewallRuleGroupAssociations(ListFirewallRuleGroupAssociationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListFirewallRuleGroupsResult listFirewallRuleGroups(ListFirewallRuleGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListFirewallRulesResult listFirewallRules(ListFirewallRulesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListResolverDnssecConfigsResult listResolverDnssecConfigs(ListResolverDnssecConfigsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -168,6 +268,11 @@ public class AbstractAmazonRoute53Resolver implements AmazonRoute53Resolver {
     }
 
     @Override
+    public PutFirewallRuleGroupPolicyResult putFirewallRuleGroupPolicy(PutFirewallRuleGroupPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutResolverQueryLogConfigPolicyResult putResolverQueryLogConfigPolicy(PutResolverQueryLogConfigPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -184,6 +289,26 @@ public class AbstractAmazonRoute53Resolver implements AmazonRoute53Resolver {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateFirewallConfigResult updateFirewallConfig(UpdateFirewallConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateFirewallDomainsResult updateFirewallDomains(UpdateFirewallDomainsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateFirewallRuleResult updateFirewallRule(UpdateFirewallRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateFirewallRuleGroupAssociationResult updateFirewallRuleGroupAssociation(UpdateFirewallRuleGroupAssociationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

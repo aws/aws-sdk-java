@@ -28,7 +28,7 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The identifier of the index to add the documents to. You need to create the index first using the
-     * <a>CreateIndex</a> operation.
+     * <code>CreateIndex</code> operation.
      * </p>
      */
     private String indexId;
@@ -74,12 +74,12 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The identifier of the index to add the documents to. You need to create the index first using the
-     * <a>CreateIndex</a> operation.
+     * <code>CreateIndex</code> operation.
      * </p>
      * 
      * @param indexId
      *        The identifier of the index to add the documents to. You need to create the index first using the
-     *        <a>CreateIndex</a> operation.
+     *        <code>CreateIndex</code> operation.
      */
 
     public void setIndexId(String indexId) {
@@ -89,11 +89,11 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The identifier of the index to add the documents to. You need to create the index first using the
-     * <a>CreateIndex</a> operation.
+     * <code>CreateIndex</code> operation.
      * </p>
      * 
      * @return The identifier of the index to add the documents to. You need to create the index first using the
-     *         <a>CreateIndex</a> operation.
+     *         <code>CreateIndex</code> operation.
      */
 
     public String getIndexId() {
@@ -103,12 +103,12 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The identifier of the index to add the documents to. You need to create the index first using the
-     * <a>CreateIndex</a> operation.
+     * <code>CreateIndex</code> operation.
      * </p>
      * 
      * @param indexId
      *        The identifier of the index to add the documents to. You need to create the index first using the
-     *        <a>CreateIndex</a> operation.
+     *        <code>CreateIndex</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

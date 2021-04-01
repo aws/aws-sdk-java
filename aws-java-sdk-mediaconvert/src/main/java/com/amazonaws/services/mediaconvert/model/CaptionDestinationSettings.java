@@ -49,6 +49,8 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     private TeletextDestinationSettings teletextDestinationSettings;
     /** Settings specific to TTML caption outputs, including Pass style information (TtmlStylePassthrough). */
     private TtmlDestinationSettings ttmlDestinationSettings;
+    /** WEBVTT Destination Settings */
+    private WebvttDestinationSettings webvttDestinationSettings;
 
     /**
      * Burn-In Destination Settings.
@@ -372,6 +374,40 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
+     * WEBVTT Destination Settings
+     * 
+     * @param webvttDestinationSettings
+     *        WEBVTT Destination Settings
+     */
+
+    public void setWebvttDestinationSettings(WebvttDestinationSettings webvttDestinationSettings) {
+        this.webvttDestinationSettings = webvttDestinationSettings;
+    }
+
+    /**
+     * WEBVTT Destination Settings
+     * 
+     * @return WEBVTT Destination Settings
+     */
+
+    public WebvttDestinationSettings getWebvttDestinationSettings() {
+        return this.webvttDestinationSettings;
+    }
+
+    /**
+     * WEBVTT Destination Settings
+     * 
+     * @param webvttDestinationSettings
+     *        WEBVTT Destination Settings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CaptionDestinationSettings withWebvttDestinationSettings(WebvttDestinationSettings webvttDestinationSettings) {
+        setWebvttDestinationSettings(webvttDestinationSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -398,7 +434,9 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
         if (getTeletextDestinationSettings() != null)
             sb.append("TeletextDestinationSettings: ").append(getTeletextDestinationSettings()).append(",");
         if (getTtmlDestinationSettings() != null)
-            sb.append("TtmlDestinationSettings: ").append(getTtmlDestinationSettings());
+            sb.append("TtmlDestinationSettings: ").append(getTtmlDestinationSettings()).append(",");
+        if (getWebvttDestinationSettings() != null)
+            sb.append("WebvttDestinationSettings: ").append(getWebvttDestinationSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -445,6 +483,10 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
             return false;
         if (other.getTtmlDestinationSettings() != null && other.getTtmlDestinationSettings().equals(this.getTtmlDestinationSettings()) == false)
             return false;
+        if (other.getWebvttDestinationSettings() == null ^ this.getWebvttDestinationSettings() == null)
+            return false;
+        if (other.getWebvttDestinationSettings() != null && other.getWebvttDestinationSettings().equals(this.getWebvttDestinationSettings()) == false)
+            return false;
         return true;
     }
 
@@ -461,6 +503,7 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getSccDestinationSettings() == null) ? 0 : getSccDestinationSettings().hashCode());
         hashCode = prime * hashCode + ((getTeletextDestinationSettings() == null) ? 0 : getTeletextDestinationSettings().hashCode());
         hashCode = prime * hashCode + ((getTtmlDestinationSettings() == null) ? 0 : getTtmlDestinationSettings().hashCode());
+        hashCode = prime * hashCode + ((getWebvttDestinationSettings() == null) ? 0 : getWebvttDestinationSettings().hashCode());
         return hashCode;
     }
 

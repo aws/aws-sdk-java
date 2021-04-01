@@ -64,6 +64,10 @@ public class HlsSettingsJsonUnmarshaller implements Unmarshaller<HlsSettings, Js
                     context.nextToken();
                     hlsSettings.setAudioTrackType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("descriptiveVideoServiceFlag", targetDepth)) {
+                    context.nextToken();
+                    hlsSettings.setDescriptiveVideoServiceFlag(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("iFrameOnlyManifest", targetDepth)) {
                     context.nextToken();
                     hlsSettings.setIFrameOnlyManifest(context.getUnmarshaller(String.class).unmarshall(context));

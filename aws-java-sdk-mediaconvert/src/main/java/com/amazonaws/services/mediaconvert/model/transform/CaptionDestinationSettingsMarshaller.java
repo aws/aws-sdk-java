@@ -43,6 +43,8 @@ public class CaptionDestinationSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("teletextDestinationSettings").build();
     private static final MarshallingInfo<StructuredPojo> TTMLDESTINATIONSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ttmlDestinationSettings").build();
+    private static final MarshallingInfo<StructuredPojo> WEBVTTDESTINATIONSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("webvttDestinationSettings").build();
 
     private static final CaptionDestinationSettingsMarshaller instance = new CaptionDestinationSettingsMarshaller();
 
@@ -68,6 +70,7 @@ public class CaptionDestinationSettingsMarshaller {
             protocolMarshaller.marshall(captionDestinationSettings.getSccDestinationSettings(), SCCDESTINATIONSETTINGS_BINDING);
             protocolMarshaller.marshall(captionDestinationSettings.getTeletextDestinationSettings(), TELETEXTDESTINATIONSETTINGS_BINDING);
             protocolMarshaller.marshall(captionDestinationSettings.getTtmlDestinationSettings(), TTMLDESTINATIONSETTINGS_BINDING);
+            protocolMarshaller.marshall(captionDestinationSettings.getWebvttDestinationSettings(), WEBVTTDESTINATIONSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

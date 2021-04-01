@@ -34,12 +34,12 @@ public interface AWSkendraAsync extends AWSkendra {
 
     /**
      * <p>
-     * Removes one or more documents from an index. The documents must have been added with the <a>BatchPutDocument</a>
-     * operation.
+     * Removes one or more documents from an index. The documents must have been added with the
+     * <code>BatchPutDocument</code> operation.
      * </p>
      * <p>
      * The documents are deleted asynchronously. You can see the progress of the deletion by using AWS CloudWatch. Any
-     * error messages releated to the processing of the batch are sent to you CloudWatch log.
+     * error messages related to the processing of the batch are sent to you CloudWatch log.
      * </p>
      * 
      * @param batchDeleteDocumentRequest
@@ -52,12 +52,12 @@ public interface AWSkendraAsync extends AWSkendra {
 
     /**
      * <p>
-     * Removes one or more documents from an index. The documents must have been added with the <a>BatchPutDocument</a>
-     * operation.
+     * Removes one or more documents from an index. The documents must have been added with the
+     * <code>BatchPutDocument</code> operation.
      * </p>
      * <p>
      * The documents are deleted asynchronously. You can see the progress of the deletion by using AWS CloudWatch. Any
-     * error messages releated to the processing of the batch are sent to you CloudWatch log.
+     * error messages related to the processing of the batch are sent to you CloudWatch log.
      * </p>
      * 
      * @param batchDeleteDocumentRequest
@@ -203,12 +203,12 @@ public interface AWSkendraAsync extends AWSkendra {
     /**
      * <p>
      * Creates a new Amazon Kendra index. Index creation is an asynchronous operation. To determine if index creation
-     * has completed, check the <code>Status</code> field returned from a call to . The <code>Status</code> field is set
-     * to <code>ACTIVE</code> when the index is ready to use.
+     * has completed, check the <code>Status</code> field returned from a call to <code>DescribeIndex</code>. The
+     * <code>Status</code> field is set to <code>ACTIVE</code> when the index is ready to use.
      * </p>
      * <p>
-     * Once the index is active you can index your documents using the operation or using one of the supported data
-     * sources.
+     * Once the index is active you can index your documents using the <code>BatchPutDocument</code> operation or using
+     * one of the supported data sources.
      * </p>
      * 
      * @param createIndexRequest
@@ -222,12 +222,12 @@ public interface AWSkendraAsync extends AWSkendra {
     /**
      * <p>
      * Creates a new Amazon Kendra index. Index creation is an asynchronous operation. To determine if index creation
-     * has completed, check the <code>Status</code> field returned from a call to . The <code>Status</code> field is set
-     * to <code>ACTIVE</code> when the index is ready to use.
+     * has completed, check the <code>Status</code> field returned from a call to <code>DescribeIndex</code>. The
+     * <code>Status</code> field is set to <code>ACTIVE</code> when the index is ready to use.
      * </p>
      * <p>
-     * Once the index is active you can index your documents using the operation or using one of the supported data
-     * sources.
+     * Once the index is active you can index your documents using the <code>BatchPutDocument</code> operation or using
+     * one of the supported data sources.
      * </p>
      * 
      * @param createIndexRequest
@@ -277,8 +277,8 @@ public interface AWSkendraAsync extends AWSkendra {
     /**
      * <p>
      * Deletes an Amazon Kendra data source. An exception is not thrown if the data source is already being deleted.
-     * While the data source is being deleted, the <code>Status</code> field returned by a call to the operation is set
-     * to <code>DELETING</code>. For more information, see <a
+     * While the data source is being deleted, the <code>Status</code> field returned by a call to the
+     * <code>DescribeDataSource</code> operation is set to <code>DELETING</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting Data Sources</a>.
      * </p>
      * 
@@ -293,8 +293,8 @@ public interface AWSkendraAsync extends AWSkendra {
     /**
      * <p>
      * Deletes an Amazon Kendra data source. An exception is not thrown if the data source is already being deleted.
-     * While the data source is being deleted, the <code>Status</code> field returned by a call to the operation is set
-     * to <code>DELETING</code>. For more information, see <a
+     * While the data source is being deleted, the <code>Status</code> field returned by a call to the
+     * <code>DescribeDataSource</code> operation is set to <code>DELETING</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting Data Sources</a>.
      * </p>
      * 
@@ -345,7 +345,7 @@ public interface AWSkendraAsync extends AWSkendra {
     /**
      * <p>
      * Deletes an existing Amazon Kendra index. An exception is not thrown if the index is already being deleted. While
-     * the index is being deleted, the <code>Status</code> field returned by a call to the <a>DescribeIndex</a>
+     * the index is being deleted, the <code>Status</code> field returned by a call to the <code>DescribeIndex</code>
      * operation is set to <code>DELETING</code>.
      * </p>
      * 
@@ -360,7 +360,7 @@ public interface AWSkendraAsync extends AWSkendra {
     /**
      * <p>
      * Deletes an existing Amazon Kendra index. An exception is not thrown if the index is already being deleted. While
-     * the index is being deleted, the <code>Status</code> field returned by a call to the <a>DescribeIndex</a>
+     * the index is being deleted, the <code>Status</code> field returned by a call to the <code>DescribeIndex</code>
      * operation is set to <code>DELETING</code>.
      * </p>
      * 

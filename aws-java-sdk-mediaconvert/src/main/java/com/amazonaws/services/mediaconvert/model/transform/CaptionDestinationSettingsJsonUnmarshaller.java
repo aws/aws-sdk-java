@@ -80,6 +80,10 @@ public class CaptionDestinationSettingsJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     captionDestinationSettings.setTtmlDestinationSettings(TtmlDestinationSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("webvttDestinationSettings", targetDepth)) {
+                    context.nextToken();
+                    captionDestinationSettings.setWebvttDestinationSettings(WebvttDestinationSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

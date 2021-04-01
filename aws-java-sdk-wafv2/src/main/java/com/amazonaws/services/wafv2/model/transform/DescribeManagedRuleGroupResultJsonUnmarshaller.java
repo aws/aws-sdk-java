@@ -58,6 +58,22 @@ public class DescribeManagedRuleGroupResultJsonUnmarshaller implements Unmarshal
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("LabelNamespace", targetDepth)) {
+                    context.nextToken();
+                    describeManagedRuleGroupResult.setLabelNamespace(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AvailableLabels", targetDepth)) {
+                    context.nextToken();
+                    describeManagedRuleGroupResult.setAvailableLabels(new ListUnmarshaller<LabelSummary>(LabelSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("ConsumedLabels", targetDepth)) {
+                    context.nextToken();
+                    describeManagedRuleGroupResult.setConsumedLabels(new ListUnmarshaller<LabelSummary>(LabelSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

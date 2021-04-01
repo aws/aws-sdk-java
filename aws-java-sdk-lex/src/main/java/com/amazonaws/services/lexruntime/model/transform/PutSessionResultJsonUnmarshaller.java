@@ -53,6 +53,10 @@ public class PutSessionResultJsonUnmarshaller implements Unmarshaller<PutSession
                 context.setCurrentHeader("x-amz-lex-message");
                 putSessionResult.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
             }
+            if (context.getHeader("x-amz-lex-encoded-message") != null) {
+                context.setCurrentHeader("x-amz-lex-encoded-message");
+                putSessionResult.setEncodedMessage(context.getUnmarshaller(String.class).unmarshall(context));
+            }
             if (context.getHeader("x-amz-lex-message-format") != null) {
                 context.setCurrentHeader("x-amz-lex-message-format");
                 putSessionResult.setMessageFormat(context.getUnmarshaller(String.class).unmarshall(context));

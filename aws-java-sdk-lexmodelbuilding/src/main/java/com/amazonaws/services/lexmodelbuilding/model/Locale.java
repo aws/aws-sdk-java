@@ -29,7 +29,8 @@ public enum Locale {
     EsUS("es-US"),
     FrFR("fr-FR"),
     FrCA("fr-CA"),
-    ItIT("it-IT");
+    ItIT("it-IT"),
+    JaJP("ja-JP");
 
     private String value;
 

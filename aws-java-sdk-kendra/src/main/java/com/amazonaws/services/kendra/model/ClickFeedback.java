@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Gathers information about when a particular result was clicked by a user. Your application uses the
- * <a>SubmitFeedback</a> operation to provide click information.
+ * <code>SubmitFeedback</code> operation to provide click information.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ClickFeedback" target="_top">AWS API

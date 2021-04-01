@@ -100,6 +100,10 @@ public class StatementJsonUnmarshaller implements Unmarshaller<Statement, JsonUn
                     context.nextToken();
                     statement.setManagedRuleGroupStatement(ManagedRuleGroupStatementJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("LabelMatchStatement", targetDepth)) {
+                    context.nextToken();
+                    statement.setLabelMatchStatement(LabelMatchStatementJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

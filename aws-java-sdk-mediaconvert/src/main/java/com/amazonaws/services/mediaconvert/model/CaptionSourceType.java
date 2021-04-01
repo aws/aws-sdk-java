@@ -32,7 +32,8 @@ public enum CaptionSourceType {
     SMPTE_TT("SMPTE_TT"),
     TELETEXT("TELETEXT"),
     NULL_SOURCE("NULL_SOURCE"),
-    IMSC("IMSC");
+    IMSC("IMSC"),
+    WEBVTT("WEBVTT");
 
     private String value;
 

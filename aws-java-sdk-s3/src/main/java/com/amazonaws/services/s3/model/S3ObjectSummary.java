@@ -19,8 +19,7 @@ import java.util.Date;
 
 /**
  * Contains the summary of an object stored in an Amazon S3 bucket. This object
- * doesn't contain contain the
- * object's full metadata or any of its contents.
+ * doesn't contain the object's full metadata or any of its contents.
  * 
  * @see S3Object
  */

@@ -57,7 +57,7 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.List<DocumentMetadataConfiguration> documentMetadataConfigurationUpdates;
     /**
      * <p>
-     * Sets the number of addtional storage and query capacity units that should be used by the index. You can change
+     * Sets the number of additional storage and query capacity units that should be used by the index. You can change
      * the capacity of the index up to 5 times per day.
      * </p>
      * <p>
@@ -312,7 +312,7 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Sets the number of addtional storage and query capacity units that should be used by the index. You can change
+     * Sets the number of additional storage and query capacity units that should be used by the index. You can change
      * the capacity of the index up to 5 times per day.
      * </p>
      * <p>
@@ -321,7 +321,7 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param capacityUnits
-     *        Sets the number of addtional storage and query capacity units that should be used by the index. You can
+     *        Sets the number of additional storage and query capacity units that should be used by the index. You can
      *        change the capacity of the index up to 5 times per day.</p>
      *        <p>
      *        If you are using extra storage units, you can't reduce the storage capacity below that required to meet
@@ -334,7 +334,7 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Sets the number of addtional storage and query capacity units that should be used by the index. You can change
+     * Sets the number of additional storage and query capacity units that should be used by the index. You can change
      * the capacity of the index up to 5 times per day.
      * </p>
      * <p>
@@ -342,7 +342,7 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      * storage needs for your index.
      * </p>
      * 
-     * @return Sets the number of addtional storage and query capacity units that should be used by the index. You can
+     * @return Sets the number of additional storage and query capacity units that should be used by the index. You can
      *         change the capacity of the index up to 5 times per day.</p>
      *         <p>
      *         If you are using extra storage units, you can't reduce the storage capacity below that required to meet
@@ -355,7 +355,7 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Sets the number of addtional storage and query capacity units that should be used by the index. You can change
+     * Sets the number of additional storage and query capacity units that should be used by the index. You can change
      * the capacity of the index up to 5 times per day.
      * </p>
      * <p>
@@ -364,7 +364,7 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param capacityUnits
-     *        Sets the number of addtional storage and query capacity units that should be used by the index. You can
+     *        Sets the number of additional storage and query capacity units that should be used by the index. You can
      *        change the capacity of the index up to 5 times per day.</p>
      *        <p>
      *        If you are using extra storage units, you can't reduce the storage capacity below that required to meet

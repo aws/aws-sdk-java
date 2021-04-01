@@ -15667,6 +15667,89 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Generates a CloudFormation template that streamlines and automates the integration of VPC flow logs with Amazon
+     * Athena. This make it easier for you to query and gain insights from VPC flow logs data. Based on the information
+     * that you provide, we configure resources in the template to do the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Create a table in Athena that maps fields to a custom log format
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create a Lambda function that updates the table with new partitions on a daily, weekly, or monthly basis
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create a table partitioned between two timestamps in the past
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create a set of named queries in Athena that you can use to get started quickly
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getFlowLogsIntegrationTemplateRequest
+     * @return A Java Future containing the result of the GetFlowLogsIntegrationTemplate operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.GetFlowLogsIntegrationTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetFlowLogsIntegrationTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetFlowLogsIntegrationTemplateResult> getFlowLogsIntegrationTemplateAsync(
+            GetFlowLogsIntegrationTemplateRequest getFlowLogsIntegrationTemplateRequest);
+
+    /**
+     * <p>
+     * Generates a CloudFormation template that streamlines and automates the integration of VPC flow logs with Amazon
+     * Athena. This make it easier for you to query and gain insights from VPC flow logs data. Based on the information
+     * that you provide, we configure resources in the template to do the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Create a table in Athena that maps fields to a custom log format
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create a Lambda function that updates the table with new partitions on a daily, weekly, or monthly basis
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create a table partitioned between two timestamps in the past
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create a set of named queries in Athena that you can use to get started quickly
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getFlowLogsIntegrationTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetFlowLogsIntegrationTemplate operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.GetFlowLogsIntegrationTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetFlowLogsIntegrationTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetFlowLogsIntegrationTemplateResult> getFlowLogsIntegrationTemplateAsync(
+            GetFlowLogsIntegrationTemplateRequest getFlowLogsIntegrationTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<GetFlowLogsIntegrationTemplateRequest, GetFlowLogsIntegrationTemplateResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the resource groups to which a Capacity Reservation has been added.
      * </p>
      * 

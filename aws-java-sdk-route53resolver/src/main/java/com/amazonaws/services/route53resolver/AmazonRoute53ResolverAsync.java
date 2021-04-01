@@ -68,6 +68,39 @@ public interface AmazonRoute53ResolverAsync extends AmazonRoute53Resolver {
 
     /**
      * <p>
+     * Associates a <a>FirewallRuleGroup</a> with a VPC, to provide DNS filtering for the VPC.
+     * </p>
+     * 
+     * @param associateFirewallRuleGroupRequest
+     * @return A Java Future containing the result of the AssociateFirewallRuleGroup operation returned by the service.
+     * @sample AmazonRoute53ResolverAsync.AssociateFirewallRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/AssociateFirewallRuleGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateFirewallRuleGroupResult> associateFirewallRuleGroupAsync(
+            AssociateFirewallRuleGroupRequest associateFirewallRuleGroupRequest);
+
+    /**
+     * <p>
+     * Associates a <a>FirewallRuleGroup</a> with a VPC, to provide DNS filtering for the VPC.
+     * </p>
+     * 
+     * @param associateFirewallRuleGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateFirewallRuleGroup operation returned by the service.
+     * @sample AmazonRoute53ResolverAsyncHandler.AssociateFirewallRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/AssociateFirewallRuleGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateFirewallRuleGroupResult> associateFirewallRuleGroupAsync(
+            AssociateFirewallRuleGroupRequest associateFirewallRuleGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateFirewallRuleGroupRequest, AssociateFirewallRuleGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Adds IP addresses to an inbound or an outbound Resolver endpoint. If you want to add more than one IP address,
      * submit one <code>AssociateResolverEndpointIpAddress</code> request for each IP address.
      * </p>
@@ -214,6 +247,103 @@ public interface AmazonRoute53ResolverAsync extends AmazonRoute53Resolver {
      */
     java.util.concurrent.Future<AssociateResolverRuleResult> associateResolverRuleAsync(AssociateResolverRuleRequest associateResolverRuleRequest,
             com.amazonaws.handlers.AsyncHandler<AssociateResolverRuleRequest, AssociateResolverRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an empty firewall domain list for use in DNS Firewall rules. You can populate the domains for the new
+     * list with a file, using <a>ImportFirewallDomains</a>, or with domain strings, using <a>UpdateFirewallDomains</a>.
+     * </p>
+     * 
+     * @param createFirewallDomainListRequest
+     * @return A Java Future containing the result of the CreateFirewallDomainList operation returned by the service.
+     * @sample AmazonRoute53ResolverAsync.CreateFirewallDomainList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateFirewallDomainList"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateFirewallDomainListResult> createFirewallDomainListAsync(CreateFirewallDomainListRequest createFirewallDomainListRequest);
+
+    /**
+     * <p>
+     * Creates an empty firewall domain list for use in DNS Firewall rules. You can populate the domains for the new
+     * list with a file, using <a>ImportFirewallDomains</a>, or with domain strings, using <a>UpdateFirewallDomains</a>.
+     * </p>
+     * 
+     * @param createFirewallDomainListRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateFirewallDomainList operation returned by the service.
+     * @sample AmazonRoute53ResolverAsyncHandler.CreateFirewallDomainList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateFirewallDomainList"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateFirewallDomainListResult> createFirewallDomainListAsync(CreateFirewallDomainListRequest createFirewallDomainListRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateFirewallDomainListRequest, CreateFirewallDomainListResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a single DNS Firewall rule in the specified rule group, using the specified domain list.
+     * </p>
+     * 
+     * @param createFirewallRuleRequest
+     * @return A Java Future containing the result of the CreateFirewallRule operation returned by the service.
+     * @sample AmazonRoute53ResolverAsync.CreateFirewallRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateFirewallRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateFirewallRuleResult> createFirewallRuleAsync(CreateFirewallRuleRequest createFirewallRuleRequest);
+
+    /**
+     * <p>
+     * Creates a single DNS Firewall rule in the specified rule group, using the specified domain list.
+     * </p>
+     * 
+     * @param createFirewallRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateFirewallRule operation returned by the service.
+     * @sample AmazonRoute53ResolverAsyncHandler.CreateFirewallRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateFirewallRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateFirewallRuleResult> createFirewallRuleAsync(CreateFirewallRuleRequest createFirewallRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateFirewallRuleRequest, CreateFirewallRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an empty DNS Firewall rule group for filtering DNS network traffic in a VPC. You can add rules to the new
+     * rule group by calling <a>CreateFirewallRule</a>.
+     * </p>
+     * 
+     * @param createFirewallRuleGroupRequest
+     * @return A Java Future containing the result of the CreateFirewallRuleGroup operation returned by the service.
+     * @sample AmazonRoute53ResolverAsync.CreateFirewallRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateFirewallRuleGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateFirewallRuleGroupResult> createFirewallRuleGroupAsync(CreateFirewallRuleGroupRequest createFirewallRuleGroupRequest);
+
+    /**
+     * <p>
+     * Creates an empty DNS Firewall rule group for filtering DNS network traffic in a VPC. You can add rules to the new
+     * rule group by calling <a>CreateFirewallRule</a>.
+     * </p>
+     * 
+     * @param createFirewallRuleGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateFirewallRuleGroup operation returned by the service.
+     * @sample AmazonRoute53ResolverAsyncHandler.CreateFirewallRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateFirewallRuleGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateFirewallRuleGroupResult> createFirewallRuleGroupAsync(CreateFirewallRuleGroupRequest createFirewallRuleGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateFirewallRuleGroupRequest, CreateFirewallRuleGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -365,6 +495,99 @@ public interface AmazonRoute53ResolverAsync extends AmazonRoute53Resolver {
      */
     java.util.concurrent.Future<CreateResolverRuleResult> createResolverRuleAsync(CreateResolverRuleRequest createResolverRuleRequest,
             com.amazonaws.handlers.AsyncHandler<CreateResolverRuleRequest, CreateResolverRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified domain list.
+     * </p>
+     * 
+     * @param deleteFirewallDomainListRequest
+     * @return A Java Future containing the result of the DeleteFirewallDomainList operation returned by the service.
+     * @sample AmazonRoute53ResolverAsync.DeleteFirewallDomainList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteFirewallDomainList"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFirewallDomainListResult> deleteFirewallDomainListAsync(DeleteFirewallDomainListRequest deleteFirewallDomainListRequest);
+
+    /**
+     * <p>
+     * Deletes the specified domain list.
+     * </p>
+     * 
+     * @param deleteFirewallDomainListRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteFirewallDomainList operation returned by the service.
+     * @sample AmazonRoute53ResolverAsyncHandler.DeleteFirewallDomainList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteFirewallDomainList"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFirewallDomainListResult> deleteFirewallDomainListAsync(DeleteFirewallDomainListRequest deleteFirewallDomainListRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteFirewallDomainListRequest, DeleteFirewallDomainListResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified firewall rule.
+     * </p>
+     * 
+     * @param deleteFirewallRuleRequest
+     * @return A Java Future containing the result of the DeleteFirewallRule operation returned by the service.
+     * @sample AmazonRoute53ResolverAsync.DeleteFirewallRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteFirewallRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFirewallRuleResult> deleteFirewallRuleAsync(DeleteFirewallRuleRequest deleteFirewallRuleRequest);
+
+    /**
+     * <p>
+     * Deletes the specified firewall rule.
+     * </p>
+     * 
+     * @param deleteFirewallRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteFirewallRule operation returned by the service.
+     * @sample AmazonRoute53ResolverAsyncHandler.DeleteFirewallRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteFirewallRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFirewallRuleResult> deleteFirewallRuleAsync(DeleteFirewallRuleRequest deleteFirewallRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteFirewallRuleRequest, DeleteFirewallRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified firewall rule group.
+     * </p>
+     * 
+     * @param deleteFirewallRuleGroupRequest
+     * @return A Java Future containing the result of the DeleteFirewallRuleGroup operation returned by the service.
+     * @sample AmazonRoute53ResolverAsync.DeleteFirewallRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteFirewallRuleGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFirewallRuleGroupResult> deleteFirewallRuleGroupAsync(DeleteFirewallRuleGroupRequest deleteFirewallRuleGroupRequest);
+
+    /**
+     * <p>
+     * Deletes the specified firewall rule group.
+     * </p>
+     * 
+     * @param deleteFirewallRuleGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteFirewallRuleGroup operation returned by the service.
+     * @sample AmazonRoute53ResolverAsyncHandler.DeleteFirewallRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteFirewallRuleGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFirewallRuleGroupResult> deleteFirewallRuleGroupAsync(DeleteFirewallRuleGroupRequest deleteFirewallRuleGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteFirewallRuleGroupRequest, DeleteFirewallRuleGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -526,6 +749,41 @@ public interface AmazonRoute53ResolverAsync extends AmazonRoute53Resolver {
      */
     java.util.concurrent.Future<DeleteResolverRuleResult> deleteResolverRuleAsync(DeleteResolverRuleRequest deleteResolverRuleRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteResolverRuleRequest, DeleteResolverRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociates a <a>FirewallRuleGroup</a> from a VPC, to remove DNS filtering from the VPC.
+     * </p>
+     * 
+     * @param disassociateFirewallRuleGroupRequest
+     * @return A Java Future containing the result of the DisassociateFirewallRuleGroup operation returned by the
+     *         service.
+     * @sample AmazonRoute53ResolverAsync.DisassociateFirewallRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DisassociateFirewallRuleGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateFirewallRuleGroupResult> disassociateFirewallRuleGroupAsync(
+            DisassociateFirewallRuleGroupRequest disassociateFirewallRuleGroupRequest);
+
+    /**
+     * <p>
+     * Disassociates a <a>FirewallRuleGroup</a> from a VPC, to remove DNS filtering from the VPC.
+     * </p>
+     * 
+     * @param disassociateFirewallRuleGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateFirewallRuleGroup operation returned by the
+     *         service.
+     * @sample AmazonRoute53ResolverAsyncHandler.DisassociateFirewallRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DisassociateFirewallRuleGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateFirewallRuleGroupResult> disassociateFirewallRuleGroupAsync(
+            DisassociateFirewallRuleGroupRequest disassociateFirewallRuleGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateFirewallRuleGroupRequest, DisassociateFirewallRuleGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -693,6 +951,173 @@ public interface AmazonRoute53ResolverAsync extends AmazonRoute53Resolver {
      */
     java.util.concurrent.Future<DisassociateResolverRuleResult> disassociateResolverRuleAsync(DisassociateResolverRuleRequest disassociateResolverRuleRequest,
             com.amazonaws.handlers.AsyncHandler<DisassociateResolverRuleRequest, DisassociateResolverRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the configuration of the firewall behavior provided by DNS Firewall for a single Amazon virtual private
+     * cloud (VPC).
+     * </p>
+     * 
+     * @param getFirewallConfigRequest
+     * @return A Java Future containing the result of the GetFirewallConfig operation returned by the service.
+     * @sample AmazonRoute53ResolverAsync.GetFirewallConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetFirewallConfigResult> getFirewallConfigAsync(GetFirewallConfigRequest getFirewallConfigRequest);
+
+    /**
+     * <p>
+     * Retrieves the configuration of the firewall behavior provided by DNS Firewall for a single Amazon virtual private
+     * cloud (VPC).
+     * </p>
+     * 
+     * @param getFirewallConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetFirewallConfig operation returned by the service.
+     * @sample AmazonRoute53ResolverAsyncHandler.GetFirewallConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetFirewallConfigResult> getFirewallConfigAsync(GetFirewallConfigRequest getFirewallConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<GetFirewallConfigRequest, GetFirewallConfigResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the specified firewall domain list.
+     * </p>
+     * 
+     * @param getFirewallDomainListRequest
+     * @return A Java Future containing the result of the GetFirewallDomainList operation returned by the service.
+     * @sample AmazonRoute53ResolverAsync.GetFirewallDomainList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallDomainList"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetFirewallDomainListResult> getFirewallDomainListAsync(GetFirewallDomainListRequest getFirewallDomainListRequest);
+
+    /**
+     * <p>
+     * Retrieves the specified firewall domain list.
+     * </p>
+     * 
+     * @param getFirewallDomainListRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetFirewallDomainList operation returned by the service.
+     * @sample AmazonRoute53ResolverAsyncHandler.GetFirewallDomainList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallDomainList"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetFirewallDomainListResult> getFirewallDomainListAsync(GetFirewallDomainListRequest getFirewallDomainListRequest,
+            com.amazonaws.handlers.AsyncHandler<GetFirewallDomainListRequest, GetFirewallDomainListResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the specified firewall rule group.
+     * </p>
+     * 
+     * @param getFirewallRuleGroupRequest
+     * @return A Java Future containing the result of the GetFirewallRuleGroup operation returned by the service.
+     * @sample AmazonRoute53ResolverAsync.GetFirewallRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallRuleGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetFirewallRuleGroupResult> getFirewallRuleGroupAsync(GetFirewallRuleGroupRequest getFirewallRuleGroupRequest);
+
+    /**
+     * <p>
+     * Retrieves the specified firewall rule group.
+     * </p>
+     * 
+     * @param getFirewallRuleGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetFirewallRuleGroup operation returned by the service.
+     * @sample AmazonRoute53ResolverAsyncHandler.GetFirewallRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallRuleGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetFirewallRuleGroupResult> getFirewallRuleGroupAsync(GetFirewallRuleGroupRequest getFirewallRuleGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<GetFirewallRuleGroupRequest, GetFirewallRuleGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a firewall rule group association, which enables DNS filtering for a VPC with one rule group. A VPC can
+     * have more than one firewall rule group association, and a rule group can be associated with more than one VPC.
+     * </p>
+     * 
+     * @param getFirewallRuleGroupAssociationRequest
+     * @return A Java Future containing the result of the GetFirewallRuleGroupAssociation operation returned by the
+     *         service.
+     * @sample AmazonRoute53ResolverAsync.GetFirewallRuleGroupAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallRuleGroupAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetFirewallRuleGroupAssociationResult> getFirewallRuleGroupAssociationAsync(
+            GetFirewallRuleGroupAssociationRequest getFirewallRuleGroupAssociationRequest);
+
+    /**
+     * <p>
+     * Retrieves a firewall rule group association, which enables DNS filtering for a VPC with one rule group. A VPC can
+     * have more than one firewall rule group association, and a rule group can be associated with more than one VPC.
+     * </p>
+     * 
+     * @param getFirewallRuleGroupAssociationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetFirewallRuleGroupAssociation operation returned by the
+     *         service.
+     * @sample AmazonRoute53ResolverAsyncHandler.GetFirewallRuleGroupAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallRuleGroupAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetFirewallRuleGroupAssociationResult> getFirewallRuleGroupAssociationAsync(
+            GetFirewallRuleGroupAssociationRequest getFirewallRuleGroupAssociationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetFirewallRuleGroupAssociationRequest, GetFirewallRuleGroupAssociationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the AWS Identity and Access Management (AWS IAM) policy for sharing the specified rule group. You can use
+     * the policy to share the rule group using AWS Resource Access Manager (RAM).
+     * </p>
+     * 
+     * @param getFirewallRuleGroupPolicyRequest
+     * @return A Java Future containing the result of the GetFirewallRuleGroupPolicy operation returned by the service.
+     * @sample AmazonRoute53ResolverAsync.GetFirewallRuleGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallRuleGroupPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetFirewallRuleGroupPolicyResult> getFirewallRuleGroupPolicyAsync(
+            GetFirewallRuleGroupPolicyRequest getFirewallRuleGroupPolicyRequest);
+
+    /**
+     * <p>
+     * Returns the AWS Identity and Access Management (AWS IAM) policy for sharing the specified rule group. You can use
+     * the policy to share the rule group using AWS Resource Access Manager (RAM).
+     * </p>
+     * 
+     * @param getFirewallRuleGroupPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetFirewallRuleGroupPolicy operation returned by the service.
+     * @sample AmazonRoute53ResolverAsyncHandler.GetFirewallRuleGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallRuleGroupPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetFirewallRuleGroupPolicyResult> getFirewallRuleGroupPolicyAsync(
+            GetFirewallRuleGroupPolicyRequest getFirewallRuleGroupPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetFirewallRuleGroupPolicyRequest, GetFirewallRuleGroupPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -980,6 +1405,319 @@ public interface AmazonRoute53ResolverAsync extends AmazonRoute53Resolver {
 
     /**
      * <p>
+     * Imports domain names from a file into a domain list, for use in a DNS firewall rule group.
+     * </p>
+     * <p>
+     * Each domain specification in your domain list must satisfy the following requirements:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * It can optionally start with <code>*</code> (asterisk).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * With the exception of the optional starting asterisk, it must only contain the following characters:
+     * <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * It must be from 1-255 characters in length.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param importFirewallDomainsRequest
+     * @return A Java Future containing the result of the ImportFirewallDomains operation returned by the service.
+     * @sample AmazonRoute53ResolverAsync.ImportFirewallDomains
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ImportFirewallDomains"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ImportFirewallDomainsResult> importFirewallDomainsAsync(ImportFirewallDomainsRequest importFirewallDomainsRequest);
+
+    /**
+     * <p>
+     * Imports domain names from a file into a domain list, for use in a DNS firewall rule group.
+     * </p>
+     * <p>
+     * Each domain specification in your domain list must satisfy the following requirements:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * It can optionally start with <code>*</code> (asterisk).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * With the exception of the optional starting asterisk, it must only contain the following characters:
+     * <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * It must be from 1-255 characters in length.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param importFirewallDomainsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ImportFirewallDomains operation returned by the service.
+     * @sample AmazonRoute53ResolverAsyncHandler.ImportFirewallDomains
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ImportFirewallDomains"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ImportFirewallDomainsResult> importFirewallDomainsAsync(ImportFirewallDomainsRequest importFirewallDomainsRequest,
+            com.amazonaws.handlers.AsyncHandler<ImportFirewallDomainsRequest, ImportFirewallDomainsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the firewall configurations that you have defined. DNS Firewall uses the configurations to manage
+     * firewall behavior for your VPCs.
+     * </p>
+     * <p>
+     * A single call might return only a partial list of the configurations. For information, see
+     * <code>MaxResults</code>.
+     * </p>
+     * 
+     * @param listFirewallConfigsRequest
+     * @return A Java Future containing the result of the ListFirewallConfigs operation returned by the service.
+     * @sample AmazonRoute53ResolverAsync.ListFirewallConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListFirewallConfigsResult> listFirewallConfigsAsync(ListFirewallConfigsRequest listFirewallConfigsRequest);
+
+    /**
+     * <p>
+     * Retrieves the firewall configurations that you have defined. DNS Firewall uses the configurations to manage
+     * firewall behavior for your VPCs.
+     * </p>
+     * <p>
+     * A single call might return only a partial list of the configurations. For information, see
+     * <code>MaxResults</code>.
+     * </p>
+     * 
+     * @param listFirewallConfigsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListFirewallConfigs operation returned by the service.
+     * @sample AmazonRoute53ResolverAsyncHandler.ListFirewallConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListFirewallConfigsResult> listFirewallConfigsAsync(ListFirewallConfigsRequest listFirewallConfigsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListFirewallConfigsRequest, ListFirewallConfigsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the firewall domain lists that you have defined. For each firewall domain list, you can retrieve the
+     * domains that are defined for a list by calling <a>ListFirewallDomains</a>.
+     * </p>
+     * <p>
+     * A single call to this list operation might return only a partial list of the domain lists. For information, see
+     * <code>MaxResults</code>.
+     * </p>
+     * 
+     * @param listFirewallDomainListsRequest
+     * @return A Java Future containing the result of the ListFirewallDomainLists operation returned by the service.
+     * @sample AmazonRoute53ResolverAsync.ListFirewallDomainLists
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallDomainLists"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListFirewallDomainListsResult> listFirewallDomainListsAsync(ListFirewallDomainListsRequest listFirewallDomainListsRequest);
+
+    /**
+     * <p>
+     * Retrieves the firewall domain lists that you have defined. For each firewall domain list, you can retrieve the
+     * domains that are defined for a list by calling <a>ListFirewallDomains</a>.
+     * </p>
+     * <p>
+     * A single call to this list operation might return only a partial list of the domain lists. For information, see
+     * <code>MaxResults</code>.
+     * </p>
+     * 
+     * @param listFirewallDomainListsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListFirewallDomainLists operation returned by the service.
+     * @sample AmazonRoute53ResolverAsyncHandler.ListFirewallDomainLists
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallDomainLists"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListFirewallDomainListsResult> listFirewallDomainListsAsync(ListFirewallDomainListsRequest listFirewallDomainListsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListFirewallDomainListsRequest, ListFirewallDomainListsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the domains that you have defined for the specified firewall domain list.
+     * </p>
+     * <p>
+     * A single call might return only a partial list of the domains. For information, see <code>MaxResults</code>.
+     * </p>
+     * 
+     * @param listFirewallDomainsRequest
+     * @return A Java Future containing the result of the ListFirewallDomains operation returned by the service.
+     * @sample AmazonRoute53ResolverAsync.ListFirewallDomains
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallDomains"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListFirewallDomainsResult> listFirewallDomainsAsync(ListFirewallDomainsRequest listFirewallDomainsRequest);
+
+    /**
+     * <p>
+     * Retrieves the domains that you have defined for the specified firewall domain list.
+     * </p>
+     * <p>
+     * A single call might return only a partial list of the domains. For information, see <code>MaxResults</code>.
+     * </p>
+     * 
+     * @param listFirewallDomainsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListFirewallDomains operation returned by the service.
+     * @sample AmazonRoute53ResolverAsyncHandler.ListFirewallDomains
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallDomains"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListFirewallDomainsResult> listFirewallDomainsAsync(ListFirewallDomainsRequest listFirewallDomainsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListFirewallDomainsRequest, ListFirewallDomainsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the firewall rule group associations that you have defined. Each association enables DNS filtering for
+     * a VPC with one rule group.
+     * </p>
+     * <p>
+     * A single call might return only a partial list of the associations. For information, see <code>MaxResults</code>.
+     * </p>
+     * 
+     * @param listFirewallRuleGroupAssociationsRequest
+     * @return A Java Future containing the result of the ListFirewallRuleGroupAssociations operation returned by the
+     *         service.
+     * @sample AmazonRoute53ResolverAsync.ListFirewallRuleGroupAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRuleGroupAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListFirewallRuleGroupAssociationsResult> listFirewallRuleGroupAssociationsAsync(
+            ListFirewallRuleGroupAssociationsRequest listFirewallRuleGroupAssociationsRequest);
+
+    /**
+     * <p>
+     * Retrieves the firewall rule group associations that you have defined. Each association enables DNS filtering for
+     * a VPC with one rule group.
+     * </p>
+     * <p>
+     * A single call might return only a partial list of the associations. For information, see <code>MaxResults</code>.
+     * </p>
+     * 
+     * @param listFirewallRuleGroupAssociationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListFirewallRuleGroupAssociations operation returned by the
+     *         service.
+     * @sample AmazonRoute53ResolverAsyncHandler.ListFirewallRuleGroupAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRuleGroupAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListFirewallRuleGroupAssociationsResult> listFirewallRuleGroupAssociationsAsync(
+            ListFirewallRuleGroupAssociationsRequest listFirewallRuleGroupAssociationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListFirewallRuleGroupAssociationsRequest, ListFirewallRuleGroupAssociationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the minimal high-level information for the rule groups that you have defined.
+     * </p>
+     * <p>
+     * A single call might return only a partial list of the rule groups. For information, see <code>MaxResults</code>.
+     * </p>
+     * 
+     * @param listFirewallRuleGroupsRequest
+     * @return A Java Future containing the result of the ListFirewallRuleGroups operation returned by the service.
+     * @sample AmazonRoute53ResolverAsync.ListFirewallRuleGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRuleGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListFirewallRuleGroupsResult> listFirewallRuleGroupsAsync(ListFirewallRuleGroupsRequest listFirewallRuleGroupsRequest);
+
+    /**
+     * <p>
+     * Retrieves the minimal high-level information for the rule groups that you have defined.
+     * </p>
+     * <p>
+     * A single call might return only a partial list of the rule groups. For information, see <code>MaxResults</code>.
+     * </p>
+     * 
+     * @param listFirewallRuleGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListFirewallRuleGroups operation returned by the service.
+     * @sample AmazonRoute53ResolverAsyncHandler.ListFirewallRuleGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRuleGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListFirewallRuleGroupsResult> listFirewallRuleGroupsAsync(ListFirewallRuleGroupsRequest listFirewallRuleGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListFirewallRuleGroupsRequest, ListFirewallRuleGroupsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the firewall rules that you have defined for the specified firewall rule group. DNS Firewall uses the
+     * rules in a rule group to filter DNS network traffic for a VPC.
+     * </p>
+     * <p>
+     * A single call might return only a partial list of the rules. For information, see <code>MaxResults</code>.
+     * </p>
+     * 
+     * @param listFirewallRulesRequest
+     * @return A Java Future containing the result of the ListFirewallRules operation returned by the service.
+     * @sample AmazonRoute53ResolverAsync.ListFirewallRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListFirewallRulesResult> listFirewallRulesAsync(ListFirewallRulesRequest listFirewallRulesRequest);
+
+    /**
+     * <p>
+     * Retrieves the firewall rules that you have defined for the specified firewall rule group. DNS Firewall uses the
+     * rules in a rule group to filter DNS network traffic for a VPC.
+     * </p>
+     * <p>
+     * A single call might return only a partial list of the rules. For information, see <code>MaxResults</code>.
+     * </p>
+     * 
+     * @param listFirewallRulesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListFirewallRules operation returned by the service.
+     * @sample AmazonRoute53ResolverAsyncHandler.ListFirewallRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListFirewallRulesResult> listFirewallRulesAsync(ListFirewallRulesRequest listFirewallRulesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListFirewallRulesRequest, ListFirewallRulesResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the configurations for DNSSEC validation that are associated with the current AWS account.
      * </p>
      * 
@@ -1248,6 +1986,41 @@ public interface AmazonRoute53ResolverAsync extends AmazonRoute53Resolver {
 
     /**
      * <p>
+     * Attaches an AWS Identity and Access Management (AWS IAM) policy for sharing the rule group. You can use the
+     * policy to share the rule group using AWS Resource Access Manager (RAM).
+     * </p>
+     * 
+     * @param putFirewallRuleGroupPolicyRequest
+     * @return A Java Future containing the result of the PutFirewallRuleGroupPolicy operation returned by the service.
+     * @sample AmazonRoute53ResolverAsync.PutFirewallRuleGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutFirewallRuleGroupPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutFirewallRuleGroupPolicyResult> putFirewallRuleGroupPolicyAsync(
+            PutFirewallRuleGroupPolicyRequest putFirewallRuleGroupPolicyRequest);
+
+    /**
+     * <p>
+     * Attaches an AWS Identity and Access Management (AWS IAM) policy for sharing the rule group. You can use the
+     * policy to share the rule group using AWS Resource Access Manager (RAM).
+     * </p>
+     * 
+     * @param putFirewallRuleGroupPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutFirewallRuleGroupPolicy operation returned by the service.
+     * @sample AmazonRoute53ResolverAsyncHandler.PutFirewallRuleGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutFirewallRuleGroupPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutFirewallRuleGroupPolicyResult> putFirewallRuleGroupPolicyAsync(
+            PutFirewallRuleGroupPolicyRequest putFirewallRuleGroupPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<PutFirewallRuleGroupPolicyRequest, PutFirewallRuleGroupPolicyResult> asyncHandler);
+
+    /**
+     * <p>
      * Specifies an AWS account that you want to share a query logging configuration with, the query logging
      * configuration that you want to share, and the operations that you want the account to be able to perform on the
      * configuration.
@@ -1379,6 +2152,140 @@ public interface AmazonRoute53ResolverAsync extends AmazonRoute53Resolver {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the configuration of the firewall behavior provided by DNS Firewall for a single Amazon virtual private
+     * cloud (VPC).
+     * </p>
+     * 
+     * @param updateFirewallConfigRequest
+     * @return A Java Future containing the result of the UpdateFirewallConfig operation returned by the service.
+     * @sample AmazonRoute53ResolverAsync.UpdateFirewallConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFirewallConfigResult> updateFirewallConfigAsync(UpdateFirewallConfigRequest updateFirewallConfigRequest);
+
+    /**
+     * <p>
+     * Updates the configuration of the firewall behavior provided by DNS Firewall for a single Amazon virtual private
+     * cloud (VPC).
+     * </p>
+     * 
+     * @param updateFirewallConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateFirewallConfig operation returned by the service.
+     * @sample AmazonRoute53ResolverAsyncHandler.UpdateFirewallConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFirewallConfigResult> updateFirewallConfigAsync(UpdateFirewallConfigRequest updateFirewallConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateFirewallConfigRequest, UpdateFirewallConfigResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the firewall domain list from an array of domain specifications.
+     * </p>
+     * 
+     * @param updateFirewallDomainsRequest
+     * @return A Java Future containing the result of the UpdateFirewallDomains operation returned by the service.
+     * @sample AmazonRoute53ResolverAsync.UpdateFirewallDomains
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallDomains"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFirewallDomainsResult> updateFirewallDomainsAsync(UpdateFirewallDomainsRequest updateFirewallDomainsRequest);
+
+    /**
+     * <p>
+     * Updates the firewall domain list from an array of domain specifications.
+     * </p>
+     * 
+     * @param updateFirewallDomainsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateFirewallDomains operation returned by the service.
+     * @sample AmazonRoute53ResolverAsyncHandler.UpdateFirewallDomains
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallDomains"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFirewallDomainsResult> updateFirewallDomainsAsync(UpdateFirewallDomainsRequest updateFirewallDomainsRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateFirewallDomainsRequest, UpdateFirewallDomainsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the specified firewall rule.
+     * </p>
+     * 
+     * @param updateFirewallRuleRequest
+     * @return A Java Future containing the result of the UpdateFirewallRule operation returned by the service.
+     * @sample AmazonRoute53ResolverAsync.UpdateFirewallRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFirewallRuleResult> updateFirewallRuleAsync(UpdateFirewallRuleRequest updateFirewallRuleRequest);
+
+    /**
+     * <p>
+     * Updates the specified firewall rule.
+     * </p>
+     * 
+     * @param updateFirewallRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateFirewallRule operation returned by the service.
+     * @sample AmazonRoute53ResolverAsyncHandler.UpdateFirewallRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFirewallRuleResult> updateFirewallRuleAsync(UpdateFirewallRuleRequest updateFirewallRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateFirewallRuleRequest, UpdateFirewallRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Changes the association of a <a>FirewallRuleGroup</a> with a VPC. The association enables DNS filtering for the
+     * VPC.
+     * </p>
+     * 
+     * @param updateFirewallRuleGroupAssociationRequest
+     * @return A Java Future containing the result of the UpdateFirewallRuleGroupAssociation operation returned by the
+     *         service.
+     * @sample AmazonRoute53ResolverAsync.UpdateFirewallRuleGroupAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallRuleGroupAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFirewallRuleGroupAssociationResult> updateFirewallRuleGroupAssociationAsync(
+            UpdateFirewallRuleGroupAssociationRequest updateFirewallRuleGroupAssociationRequest);
+
+    /**
+     * <p>
+     * Changes the association of a <a>FirewallRuleGroup</a> with a VPC. The association enables DNS filtering for the
+     * VPC.
+     * </p>
+     * 
+     * @param updateFirewallRuleGroupAssociationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateFirewallRuleGroupAssociation operation returned by the
+     *         service.
+     * @sample AmazonRoute53ResolverAsyncHandler.UpdateFirewallRuleGroupAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallRuleGroupAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFirewallRuleGroupAssociationResult> updateFirewallRuleGroupAssociationAsync(
+            UpdateFirewallRuleGroupAssociationRequest updateFirewallRuleGroupAssociationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateFirewallRuleGroupAssociationRequest, UpdateFirewallRuleGroupAssociationResult> asyncHandler);
 
     /**
      * <p>

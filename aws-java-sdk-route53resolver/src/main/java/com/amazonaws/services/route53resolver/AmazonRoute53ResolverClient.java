@@ -138,6 +138,9 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
                             new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.route53resolver.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.route53resolver.model.transform.ConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("UnknownResourceException").withExceptionUnmarshaller(
                                     com.amazonaws.services.route53resolver.model.transform.UnknownResourceExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -146,6 +149,9 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceUnavailableException").withExceptionUnmarshaller(
                                     com.amazonaws.services.route53resolver.model.transform.ResourceUnavailableExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.route53resolver.model.transform.ValidationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServiceErrorException").withExceptionUnmarshaller(
                                     com.amazonaws.services.route53resolver.model.transform.InternalServiceErrorExceptionUnmarshaller.getInstance()))
@@ -198,6 +204,76 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/route53resolver/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/route53resolver/request.handler2s"));
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * Associates a <a>FirewallRuleGroup</a> with a VPC, to provide DNS filtering for the VPC.
+     * </p>
+     * 
+     * @param associateFirewallRuleGroupRequest
+     * @return Result of the AssociateFirewallRuleGroup operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ValidationException
+     * @throws LimitExceededException
+     *         The request caused one or more limits to be exceeded.
+     * @throws ConflictException
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.AssociateFirewallRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/AssociateFirewallRuleGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateFirewallRuleGroupResult associateFirewallRuleGroup(AssociateFirewallRuleGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateFirewallRuleGroup(request);
+    }
+
+    @SdkInternalApi
+    final AssociateFirewallRuleGroupResult executeAssociateFirewallRuleGroup(AssociateFirewallRuleGroupRequest associateFirewallRuleGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateFirewallRuleGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateFirewallRuleGroupRequest> request = null;
+        Response<AssociateFirewallRuleGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateFirewallRuleGroupRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(associateFirewallRuleGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateFirewallRuleGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateFirewallRuleGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AssociateFirewallRuleGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -433,6 +509,209 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
             HttpResponseHandler<AmazonWebServiceResponse<AssociateResolverRuleResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new AssociateResolverRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an empty firewall domain list for use in DNS Firewall rules. You can populate the domains for the new
+     * list with a file, using <a>ImportFirewallDomains</a>, or with domain strings, using <a>UpdateFirewallDomains</a>.
+     * </p>
+     * 
+     * @param createFirewallDomainListRequest
+     * @return Result of the CreateFirewallDomainList operation returned by the service.
+     * @throws LimitExceededException
+     *         The request caused one or more limits to be exceeded.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.CreateFirewallDomainList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateFirewallDomainList"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateFirewallDomainListResult createFirewallDomainList(CreateFirewallDomainListRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateFirewallDomainList(request);
+    }
+
+    @SdkInternalApi
+    final CreateFirewallDomainListResult executeCreateFirewallDomainList(CreateFirewallDomainListRequest createFirewallDomainListRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createFirewallDomainListRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateFirewallDomainListRequest> request = null;
+        Response<CreateFirewallDomainListResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateFirewallDomainListRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createFirewallDomainListRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFirewallDomainList");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateFirewallDomainListResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateFirewallDomainListResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a single DNS Firewall rule in the specified rule group, using the specified domain list.
+     * </p>
+     * 
+     * @param createFirewallRuleRequest
+     * @return Result of the CreateFirewallRule operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ValidationException
+     * @throws LimitExceededException
+     *         The request caused one or more limits to be exceeded.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.CreateFirewallRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateFirewallRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateFirewallRuleResult createFirewallRule(CreateFirewallRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateFirewallRule(request);
+    }
+
+    @SdkInternalApi
+    final CreateFirewallRuleResult executeCreateFirewallRule(CreateFirewallRuleRequest createFirewallRuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createFirewallRuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateFirewallRuleRequest> request = null;
+        Response<CreateFirewallRuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateFirewallRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFirewallRuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFirewallRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateFirewallRuleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateFirewallRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an empty DNS Firewall rule group for filtering DNS network traffic in a VPC. You can add rules to the new
+     * rule group by calling <a>CreateFirewallRule</a>.
+     * </p>
+     * 
+     * @param createFirewallRuleGroupRequest
+     * @return Result of the CreateFirewallRuleGroup operation returned by the service.
+     * @throws LimitExceededException
+     *         The request caused one or more limits to be exceeded.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.CreateFirewallRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateFirewallRuleGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateFirewallRuleGroupResult createFirewallRuleGroup(CreateFirewallRuleGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateFirewallRuleGroup(request);
+    }
+
+    @SdkInternalApi
+    final CreateFirewallRuleGroupResult executeCreateFirewallRuleGroup(CreateFirewallRuleGroupRequest createFirewallRuleGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createFirewallRuleGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateFirewallRuleGroupRequest> request = null;
+        Response<CreateFirewallRuleGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateFirewallRuleGroupRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createFirewallRuleGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFirewallRuleGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateFirewallRuleGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateFirewallRuleGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -687,6 +966,205 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
 
     /**
      * <p>
+     * Deletes the specified domain list.
+     * </p>
+     * 
+     * @param deleteFirewallDomainListRequest
+     * @return Result of the DeleteFirewallDomainList operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ConflictException
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.DeleteFirewallDomainList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteFirewallDomainList"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteFirewallDomainListResult deleteFirewallDomainList(DeleteFirewallDomainListRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFirewallDomainList(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFirewallDomainListResult executeDeleteFirewallDomainList(DeleteFirewallDomainListRequest deleteFirewallDomainListRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteFirewallDomainListRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteFirewallDomainListRequest> request = null;
+        Response<DeleteFirewallDomainListResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteFirewallDomainListRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteFirewallDomainListRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFirewallDomainList");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteFirewallDomainListResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteFirewallDomainListResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified firewall rule.
+     * </p>
+     * 
+     * @param deleteFirewallRuleRequest
+     * @return Result of the DeleteFirewallRule operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.DeleteFirewallRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteFirewallRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteFirewallRuleResult deleteFirewallRule(DeleteFirewallRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFirewallRule(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFirewallRuleResult executeDeleteFirewallRule(DeleteFirewallRuleRequest deleteFirewallRuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteFirewallRuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteFirewallRuleRequest> request = null;
+        Response<DeleteFirewallRuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteFirewallRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFirewallRuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFirewallRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteFirewallRuleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteFirewallRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified firewall rule group.
+     * </p>
+     * 
+     * @param deleteFirewallRuleGroupRequest
+     * @return Result of the DeleteFirewallRuleGroup operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ConflictException
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.DeleteFirewallRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteFirewallRuleGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteFirewallRuleGroupResult deleteFirewallRuleGroup(DeleteFirewallRuleGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFirewallRuleGroup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFirewallRuleGroupResult executeDeleteFirewallRuleGroup(DeleteFirewallRuleGroupRequest deleteFirewallRuleGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteFirewallRuleGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteFirewallRuleGroupRequest> request = null;
+        Response<DeleteFirewallRuleGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteFirewallRuleGroupRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteFirewallRuleGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFirewallRuleGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteFirewallRuleGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteFirewallRuleGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a Resolver endpoint. The effect of deleting a Resolver endpoint depends on whether it's an inbound or an
      * outbound Resolver endpoint:
      * </p>
@@ -908,6 +1386,74 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteResolverRuleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteResolverRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Disassociates a <a>FirewallRuleGroup</a> from a VPC, to remove DNS filtering from the VPC.
+     * </p>
+     * 
+     * @param disassociateFirewallRuleGroupRequest
+     * @return Result of the DisassociateFirewallRuleGroup operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws ConflictException
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.DisassociateFirewallRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DisassociateFirewallRuleGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateFirewallRuleGroupResult disassociateFirewallRuleGroup(DisassociateFirewallRuleGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateFirewallRuleGroup(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateFirewallRuleGroupResult executeDisassociateFirewallRuleGroup(DisassociateFirewallRuleGroupRequest disassociateFirewallRuleGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateFirewallRuleGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateFirewallRuleGroupRequest> request = null;
+        Response<DisassociateFirewallRuleGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateFirewallRuleGroupRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateFirewallRuleGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateFirewallRuleGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateFirewallRuleGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateFirewallRuleGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1147,6 +1693,337 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
             HttpResponseHandler<AmazonWebServiceResponse<DisassociateResolverRuleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DisassociateResolverRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the configuration of the firewall behavior provided by DNS Firewall for a single Amazon virtual private
+     * cloud (VPC).
+     * </p>
+     * 
+     * @param getFirewallConfigRequest
+     * @return Result of the GetFirewallConfig operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @throws ValidationException
+     * @sample AmazonRoute53Resolver.GetFirewallConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetFirewallConfigResult getFirewallConfig(GetFirewallConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetFirewallConfig(request);
+    }
+
+    @SdkInternalApi
+    final GetFirewallConfigResult executeGetFirewallConfig(GetFirewallConfigRequest getFirewallConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getFirewallConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetFirewallConfigRequest> request = null;
+        Response<GetFirewallConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetFirewallConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getFirewallConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFirewallConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetFirewallConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetFirewallConfigResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the specified firewall domain list.
+     * </p>
+     * 
+     * @param getFirewallDomainListRequest
+     * @return Result of the GetFirewallDomainList operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.GetFirewallDomainList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallDomainList"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetFirewallDomainListResult getFirewallDomainList(GetFirewallDomainListRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetFirewallDomainList(request);
+    }
+
+    @SdkInternalApi
+    final GetFirewallDomainListResult executeGetFirewallDomainList(GetFirewallDomainListRequest getFirewallDomainListRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getFirewallDomainListRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetFirewallDomainListRequest> request = null;
+        Response<GetFirewallDomainListResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetFirewallDomainListRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getFirewallDomainListRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFirewallDomainList");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetFirewallDomainListResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new GetFirewallDomainListResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the specified firewall rule group.
+     * </p>
+     * 
+     * @param getFirewallRuleGroupRequest
+     * @return Result of the GetFirewallRuleGroup operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.GetFirewallRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallRuleGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetFirewallRuleGroupResult getFirewallRuleGroup(GetFirewallRuleGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetFirewallRuleGroup(request);
+    }
+
+    @SdkInternalApi
+    final GetFirewallRuleGroupResult executeGetFirewallRuleGroup(GetFirewallRuleGroupRequest getFirewallRuleGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getFirewallRuleGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetFirewallRuleGroupRequest> request = null;
+        Response<GetFirewallRuleGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetFirewallRuleGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getFirewallRuleGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFirewallRuleGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetFirewallRuleGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetFirewallRuleGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a firewall rule group association, which enables DNS filtering for a VPC with one rule group. A VPC can
+     * have more than one firewall rule group association, and a rule group can be associated with more than one VPC.
+     * </p>
+     * 
+     * @param getFirewallRuleGroupAssociationRequest
+     * @return Result of the GetFirewallRuleGroupAssociation operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.GetFirewallRuleGroupAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallRuleGroupAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetFirewallRuleGroupAssociationResult getFirewallRuleGroupAssociation(GetFirewallRuleGroupAssociationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetFirewallRuleGroupAssociation(request);
+    }
+
+    @SdkInternalApi
+    final GetFirewallRuleGroupAssociationResult executeGetFirewallRuleGroupAssociation(
+            GetFirewallRuleGroupAssociationRequest getFirewallRuleGroupAssociationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getFirewallRuleGroupAssociationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetFirewallRuleGroupAssociationRequest> request = null;
+        Response<GetFirewallRuleGroupAssociationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetFirewallRuleGroupAssociationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getFirewallRuleGroupAssociationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFirewallRuleGroupAssociation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetFirewallRuleGroupAssociationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetFirewallRuleGroupAssociationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the AWS Identity and Access Management (AWS IAM) policy for sharing the specified rule group. You can use
+     * the policy to share the rule group using AWS Resource Access Manager (RAM).
+     * </p>
+     * 
+     * @param getFirewallRuleGroupPolicyRequest
+     * @return Result of the GetFirewallRuleGroupPolicy operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.GetFirewallRuleGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallRuleGroupPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetFirewallRuleGroupPolicyResult getFirewallRuleGroupPolicy(GetFirewallRuleGroupPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetFirewallRuleGroupPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetFirewallRuleGroupPolicyResult executeGetFirewallRuleGroupPolicy(GetFirewallRuleGroupPolicyRequest getFirewallRuleGroupPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getFirewallRuleGroupPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetFirewallRuleGroupPolicyRequest> request = null;
+        Response<GetFirewallRuleGroupPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetFirewallRuleGroupPolicyRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getFirewallRuleGroupPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFirewallRuleGroupPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetFirewallRuleGroupPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetFirewallRuleGroupPolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1692,6 +2569,509 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
             HttpResponseHandler<AmazonWebServiceResponse<GetResolverRulePolicyResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new GetResolverRulePolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Imports domain names from a file into a domain list, for use in a DNS firewall rule group.
+     * </p>
+     * <p>
+     * Each domain specification in your domain list must satisfy the following requirements:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * It can optionally start with <code>*</code> (asterisk).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * With the exception of the optional starting asterisk, it must only contain the following characters:
+     * <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * It must be from 1-255 characters in length.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param importFirewallDomainsRequest
+     * @return Result of the ImportFirewallDomains operation returned by the service.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws LimitExceededException
+     *         The request caused one or more limits to be exceeded.
+     * @throws ConflictException
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.ImportFirewallDomains
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ImportFirewallDomains"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ImportFirewallDomainsResult importFirewallDomains(ImportFirewallDomainsRequest request) {
+        request = beforeClientExecution(request);
+        return executeImportFirewallDomains(request);
+    }
+
+    @SdkInternalApi
+    final ImportFirewallDomainsResult executeImportFirewallDomains(ImportFirewallDomainsRequest importFirewallDomainsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(importFirewallDomainsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ImportFirewallDomainsRequest> request = null;
+        Response<ImportFirewallDomainsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ImportFirewallDomainsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(importFirewallDomainsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportFirewallDomains");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ImportFirewallDomainsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ImportFirewallDomainsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the firewall configurations that you have defined. DNS Firewall uses the configurations to manage
+     * firewall behavior for your VPCs.
+     * </p>
+     * <p>
+     * A single call might return only a partial list of the configurations. For information, see
+     * <code>MaxResults</code>.
+     * </p>
+     * 
+     * @param listFirewallConfigsRequest
+     * @return Result of the ListFirewallConfigs operation returned by the service.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.ListFirewallConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListFirewallConfigsResult listFirewallConfigs(ListFirewallConfigsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListFirewallConfigs(request);
+    }
+
+    @SdkInternalApi
+    final ListFirewallConfigsResult executeListFirewallConfigs(ListFirewallConfigsRequest listFirewallConfigsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listFirewallConfigsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListFirewallConfigsRequest> request = null;
+        Response<ListFirewallConfigsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListFirewallConfigsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFirewallConfigsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFirewallConfigs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListFirewallConfigsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListFirewallConfigsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the firewall domain lists that you have defined. For each firewall domain list, you can retrieve the
+     * domains that are defined for a list by calling <a>ListFirewallDomains</a>.
+     * </p>
+     * <p>
+     * A single call to this list operation might return only a partial list of the domain lists. For information, see
+     * <code>MaxResults</code>.
+     * </p>
+     * 
+     * @param listFirewallDomainListsRequest
+     * @return Result of the ListFirewallDomainLists operation returned by the service.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.ListFirewallDomainLists
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallDomainLists"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListFirewallDomainListsResult listFirewallDomainLists(ListFirewallDomainListsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListFirewallDomainLists(request);
+    }
+
+    @SdkInternalApi
+    final ListFirewallDomainListsResult executeListFirewallDomainLists(ListFirewallDomainListsRequest listFirewallDomainListsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listFirewallDomainListsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListFirewallDomainListsRequest> request = null;
+        Response<ListFirewallDomainListsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListFirewallDomainListsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listFirewallDomainListsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFirewallDomainLists");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListFirewallDomainListsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListFirewallDomainListsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the domains that you have defined for the specified firewall domain list.
+     * </p>
+     * <p>
+     * A single call might return only a partial list of the domains. For information, see <code>MaxResults</code>.
+     * </p>
+     * 
+     * @param listFirewallDomainsRequest
+     * @return Result of the ListFirewallDomains operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.ListFirewallDomains
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallDomains"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListFirewallDomainsResult listFirewallDomains(ListFirewallDomainsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListFirewallDomains(request);
+    }
+
+    @SdkInternalApi
+    final ListFirewallDomainsResult executeListFirewallDomains(ListFirewallDomainsRequest listFirewallDomainsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listFirewallDomainsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListFirewallDomainsRequest> request = null;
+        Response<ListFirewallDomainsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListFirewallDomainsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFirewallDomainsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFirewallDomains");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListFirewallDomainsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListFirewallDomainsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the firewall rule group associations that you have defined. Each association enables DNS filtering for
+     * a VPC with one rule group.
+     * </p>
+     * <p>
+     * A single call might return only a partial list of the associations. For information, see <code>MaxResults</code>.
+     * </p>
+     * 
+     * @param listFirewallRuleGroupAssociationsRequest
+     * @return Result of the ListFirewallRuleGroupAssociations operation returned by the service.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.ListFirewallRuleGroupAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRuleGroupAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListFirewallRuleGroupAssociationsResult listFirewallRuleGroupAssociations(ListFirewallRuleGroupAssociationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListFirewallRuleGroupAssociations(request);
+    }
+
+    @SdkInternalApi
+    final ListFirewallRuleGroupAssociationsResult executeListFirewallRuleGroupAssociations(
+            ListFirewallRuleGroupAssociationsRequest listFirewallRuleGroupAssociationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listFirewallRuleGroupAssociationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListFirewallRuleGroupAssociationsRequest> request = null;
+        Response<ListFirewallRuleGroupAssociationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListFirewallRuleGroupAssociationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listFirewallRuleGroupAssociationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFirewallRuleGroupAssociations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListFirewallRuleGroupAssociationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListFirewallRuleGroupAssociationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the minimal high-level information for the rule groups that you have defined.
+     * </p>
+     * <p>
+     * A single call might return only a partial list of the rule groups. For information, see <code>MaxResults</code>.
+     * </p>
+     * 
+     * @param listFirewallRuleGroupsRequest
+     * @return Result of the ListFirewallRuleGroups operation returned by the service.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.ListFirewallRuleGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRuleGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListFirewallRuleGroupsResult listFirewallRuleGroups(ListFirewallRuleGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListFirewallRuleGroups(request);
+    }
+
+    @SdkInternalApi
+    final ListFirewallRuleGroupsResult executeListFirewallRuleGroups(ListFirewallRuleGroupsRequest listFirewallRuleGroupsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listFirewallRuleGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListFirewallRuleGroupsRequest> request = null;
+        Response<ListFirewallRuleGroupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListFirewallRuleGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFirewallRuleGroupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFirewallRuleGroups");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListFirewallRuleGroupsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListFirewallRuleGroupsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the firewall rules that you have defined for the specified firewall rule group. DNS Firewall uses the
+     * rules in a rule group to filter DNS network traffic for a VPC.
+     * </p>
+     * <p>
+     * A single call might return only a partial list of the rules. For information, see <code>MaxResults</code>.
+     * </p>
+     * 
+     * @param listFirewallRulesRequest
+     * @return Result of the ListFirewallRules operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.ListFirewallRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListFirewallRulesResult listFirewallRules(ListFirewallRulesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListFirewallRules(request);
+    }
+
+    @SdkInternalApi
+    final ListFirewallRulesResult executeListFirewallRules(ListFirewallRulesRequest listFirewallRulesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listFirewallRulesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListFirewallRulesRequest> request = null;
+        Response<ListFirewallRulesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListFirewallRulesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFirewallRulesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFirewallRules");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListFirewallRulesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListFirewallRulesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2250,6 +3630,74 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
 
     /**
      * <p>
+     * Attaches an AWS Identity and Access Management (AWS IAM) policy for sharing the rule group. You can use the
+     * policy to share the rule group using AWS Resource Access Manager (RAM).
+     * </p>
+     * 
+     * @param putFirewallRuleGroupPolicyRequest
+     * @return Result of the PutFirewallRuleGroupPolicy operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.PutFirewallRuleGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutFirewallRuleGroupPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutFirewallRuleGroupPolicyResult putFirewallRuleGroupPolicy(PutFirewallRuleGroupPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutFirewallRuleGroupPolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutFirewallRuleGroupPolicyResult executePutFirewallRuleGroupPolicy(PutFirewallRuleGroupPolicyRequest putFirewallRuleGroupPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putFirewallRuleGroupPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutFirewallRuleGroupPolicyRequest> request = null;
+        Response<PutFirewallRuleGroupPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutFirewallRuleGroupPolicyRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putFirewallRuleGroupPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutFirewallRuleGroupPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutFirewallRuleGroupPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutFirewallRuleGroupPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Specifies an AWS account that you want to share a query logging configuration with, the query logging
      * configuration that you want to share, and the operations that you want the account to be able to perform on the
      * configuration.
@@ -2510,6 +3958,278 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the configuration of the firewall behavior provided by DNS Firewall for a single Amazon virtual private
+     * cloud (VPC).
+     * </p>
+     * 
+     * @param updateFirewallConfigRequest
+     * @return Result of the UpdateFirewallConfig operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.UpdateFirewallConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateFirewallConfigResult updateFirewallConfig(UpdateFirewallConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateFirewallConfig(request);
+    }
+
+    @SdkInternalApi
+    final UpdateFirewallConfigResult executeUpdateFirewallConfig(UpdateFirewallConfigRequest updateFirewallConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateFirewallConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateFirewallConfigRequest> request = null;
+        Response<UpdateFirewallConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateFirewallConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFirewallConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFirewallConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateFirewallConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateFirewallConfigResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the firewall domain list from an array of domain specifications.
+     * </p>
+     * 
+     * @param updateFirewallDomainsRequest
+     * @return Result of the UpdateFirewallDomains operation returned by the service.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws LimitExceededException
+     *         The request caused one or more limits to be exceeded.
+     * @throws ConflictException
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.UpdateFirewallDomains
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallDomains"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateFirewallDomainsResult updateFirewallDomains(UpdateFirewallDomainsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateFirewallDomains(request);
+    }
+
+    @SdkInternalApi
+    final UpdateFirewallDomainsResult executeUpdateFirewallDomains(UpdateFirewallDomainsRequest updateFirewallDomainsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateFirewallDomainsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateFirewallDomainsRequest> request = null;
+        Response<UpdateFirewallDomainsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateFirewallDomainsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFirewallDomainsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFirewallDomains");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateFirewallDomainsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new UpdateFirewallDomainsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the specified firewall rule.
+     * </p>
+     * 
+     * @param updateFirewallRuleRequest
+     * @return Result of the UpdateFirewallRule operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ValidationException
+     * @throws ConflictException
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.UpdateFirewallRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateFirewallRuleResult updateFirewallRule(UpdateFirewallRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateFirewallRule(request);
+    }
+
+    @SdkInternalApi
+    final UpdateFirewallRuleResult executeUpdateFirewallRule(UpdateFirewallRuleRequest updateFirewallRuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateFirewallRuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateFirewallRuleRequest> request = null;
+        Response<UpdateFirewallRuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateFirewallRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFirewallRuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFirewallRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateFirewallRuleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateFirewallRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Changes the association of a <a>FirewallRuleGroup</a> with a VPC. The association enables DNS filtering for the
+     * VPC.
+     * </p>
+     * 
+     * @param updateFirewallRuleGroupAssociationRequest
+     * @return Result of the UpdateFirewallRuleGroupAssociation operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ValidationException
+     * @throws ConflictException
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.UpdateFirewallRuleGroupAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallRuleGroupAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateFirewallRuleGroupAssociationResult updateFirewallRuleGroupAssociation(UpdateFirewallRuleGroupAssociationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateFirewallRuleGroupAssociation(request);
+    }
+
+    @SdkInternalApi
+    final UpdateFirewallRuleGroupAssociationResult executeUpdateFirewallRuleGroupAssociation(
+            UpdateFirewallRuleGroupAssociationRequest updateFirewallRuleGroupAssociationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateFirewallRuleGroupAssociationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateFirewallRuleGroupAssociationRequest> request = null;
+        Response<UpdateFirewallRuleGroupAssociationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateFirewallRuleGroupAssociationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateFirewallRuleGroupAssociationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFirewallRuleGroupAssociation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateFirewallRuleGroupAssociationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateFirewallRuleGroupAssociationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

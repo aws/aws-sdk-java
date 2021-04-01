@@ -125,6 +125,32 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
     private Boolean managedByFirewallManager;
     /**
      * <p>
+     * The label namespace prefix for this web ACL. All labels added by rules in this web ACL have this prefix.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The syntax for the label namespace prefix for a web ACL is the following:
+     * </p>
+     * <p>
+     * <code>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A fully
+     * qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and
+     * the label from the rule, separated by a colon:
+     * </p>
+     * <p>
+     * <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code>
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String labelNamespace;
+    /**
+     * <p>
      * A map of custom response keys and content bodies. When you create a rule with a block action, you can send a
      * custom response to the web request. You define these for the web ACL, and then use them in the rules and default
      * actions that you define in the web ACL.
@@ -862,6 +888,166 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The label namespace prefix for this web ACL. All labels added by rules in this web ACL have this prefix.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The syntax for the label namespace prefix for a web ACL is the following:
+     * </p>
+     * <p>
+     * <code>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A fully
+     * qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and
+     * the label from the rule, separated by a colon:
+     * </p>
+     * <p>
+     * <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param labelNamespace
+     *        The label namespace prefix for this web ACL. All labels added by rules in this web ACL have this prefix.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The syntax for the label namespace prefix for a web ACL is the following:
+     *        </p>
+     *        <p>
+     *        <code>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A
+     *        fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is
+     *        defined and the label from the rule, separated by a colon:
+     *        </p>
+     *        <p>
+     *        <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code>
+     *        </p>
+     *        </li>
+     */
+
+    public void setLabelNamespace(String labelNamespace) {
+        this.labelNamespace = labelNamespace;
+    }
+
+    /**
+     * <p>
+     * The label namespace prefix for this web ACL. All labels added by rules in this web ACL have this prefix.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The syntax for the label namespace prefix for a web ACL is the following:
+     * </p>
+     * <p>
+     * <code>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A fully
+     * qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and
+     * the label from the rule, separated by a colon:
+     * </p>
+     * <p>
+     * <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The label namespace prefix for this web ACL. All labels added by rules in this web ACL have this prefix.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The syntax for the label namespace prefix for a web ACL is the following:
+     *         </p>
+     *         <p>
+     *         <code>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A
+     *         fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is
+     *         defined and the label from the rule, separated by a colon:
+     *         </p>
+     *         <p>
+     *         <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code>
+     *         </p>
+     *         </li>
+     */
+
+    public String getLabelNamespace() {
+        return this.labelNamespace;
+    }
+
+    /**
+     * <p>
+     * The label namespace prefix for this web ACL. All labels added by rules in this web ACL have this prefix.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The syntax for the label namespace prefix for a web ACL is the following:
+     * </p>
+     * <p>
+     * <code>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A fully
+     * qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and
+     * the label from the rule, separated by a colon:
+     * </p>
+     * <p>
+     * <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param labelNamespace
+     *        The label namespace prefix for this web ACL. All labels added by rules in this web ACL have this prefix.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The syntax for the label namespace prefix for a web ACL is the following:
+     *        </p>
+     *        <p>
+     *        <code>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A
+     *        fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is
+     *        defined and the label from the rule, separated by a colon:
+     *        </p>
+     *        <p>
+     *        <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WebACL withLabelNamespace(String labelNamespace) {
+        setLabelNamespace(labelNamespace);
+        return this;
+    }
+
+    /**
+     * <p>
      * A map of custom response keys and content bodies. When you create a rule with a block action, you can send a
      * custom response to the web request. You define these for the web ACL, and then use them in the rules and default
      * actions that you define in the web ACL.
@@ -1039,6 +1225,8 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
             sb.append("PostProcessFirewallManagerRuleGroups: ").append(getPostProcessFirewallManagerRuleGroups()).append(",");
         if (getManagedByFirewallManager() != null)
             sb.append("ManagedByFirewallManager: ").append(getManagedByFirewallManager()).append(",");
+        if (getLabelNamespace() != null)
+            sb.append("LabelNamespace: ").append(getLabelNamespace()).append(",");
         if (getCustomResponseBodies() != null)
             sb.append("CustomResponseBodies: ").append(getCustomResponseBodies());
         sb.append("}");
@@ -1101,6 +1289,10 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getManagedByFirewallManager() != null && other.getManagedByFirewallManager().equals(this.getManagedByFirewallManager()) == false)
             return false;
+        if (other.getLabelNamespace() == null ^ this.getLabelNamespace() == null)
+            return false;
+        if (other.getLabelNamespace() != null && other.getLabelNamespace().equals(this.getLabelNamespace()) == false)
+            return false;
         if (other.getCustomResponseBodies() == null ^ this.getCustomResponseBodies() == null)
             return false;
         if (other.getCustomResponseBodies() != null && other.getCustomResponseBodies().equals(this.getCustomResponseBodies()) == false)
@@ -1124,6 +1316,7 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPreProcessFirewallManagerRuleGroups() == null) ? 0 : getPreProcessFirewallManagerRuleGroups().hashCode());
         hashCode = prime * hashCode + ((getPostProcessFirewallManagerRuleGroups() == null) ? 0 : getPostProcessFirewallManagerRuleGroups().hashCode());
         hashCode = prime * hashCode + ((getManagedByFirewallManager() == null) ? 0 : getManagedByFirewallManager().hashCode());
+        hashCode = prime * hashCode + ((getLabelNamespace() == null) ? 0 : getLabelNamespace().hashCode());
         hashCode = prime * hashCode + ((getCustomResponseBodies() == null) ? 0 : getCustomResponseBodies().hashCode());
         return hashCode;
     }

@@ -78,6 +78,12 @@ public class SampledHTTPRequestJsonUnmarshaller implements Unmarshaller<SampledH
                     context.nextToken();
                     sampledHTTPRequest.setResponseCodeSent(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("Labels", targetDepth)) {
+                    context.nextToken();
+                    sampledHTTPRequest.setLabels(new ListUnmarshaller<Label>(LabelJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

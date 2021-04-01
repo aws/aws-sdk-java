@@ -78,10 +78,26 @@ public class RuleGroupJsonUnmarshaller implements Unmarshaller<RuleGroup, JsonUn
                     context.nextToken();
                     ruleGroup.setVisibilityConfig(VisibilityConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("LabelNamespace", targetDepth)) {
+                    context.nextToken();
+                    ruleGroup.setLabelNamespace(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CustomResponseBodies", targetDepth)) {
                     context.nextToken();
                     ruleGroup.setCustomResponseBodies(new MapUnmarshaller<String, CustomResponseBody>(context.getUnmarshaller(String.class),
                             CustomResponseBodyJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("AvailableLabels", targetDepth)) {
+                    context.nextToken();
+                    ruleGroup.setAvailableLabels(new ListUnmarshaller<LabelSummary>(LabelSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("ConsumedLabels", targetDepth)) {
+                    context.nextToken();
+                    ruleGroup.setConsumedLabels(new ListUnmarshaller<LabelSummary>(LabelSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

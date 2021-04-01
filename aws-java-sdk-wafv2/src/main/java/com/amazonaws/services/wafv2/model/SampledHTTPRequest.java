@@ -79,6 +79,18 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private Integer responseCodeSent;
+    /**
+     * <p>
+     * Labels applied to the web request by matching rules. AWS WAF applies fully qualified labels to matching web
+     * requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule
+     * group or web ACL defines the label namespace.
+     * </p>
+     * <p>
+     * For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or
+     * <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>.
+     * </p>
+     */
+    private java.util.List<Label> labels;
 
     /**
      * <p>
@@ -435,6 +447,120 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * Labels applied to the web request by matching rules. AWS WAF applies fully qualified labels to matching web
+     * requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule
+     * group or web ACL defines the label namespace.
+     * </p>
+     * <p>
+     * For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or
+     * <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>.
+     * </p>
+     * 
+     * @return Labels applied to the web request by matching rules. AWS WAF applies fully qualified labels to matching
+     *         web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The
+     *         rule's rule group or web ACL defines the label namespace. </p>
+     *         <p>
+     *         For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or
+     *         <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>.
+     */
+
+    public java.util.List<Label> getLabels() {
+        return labels;
+    }
+
+    /**
+     * <p>
+     * Labels applied to the web request by matching rules. AWS WAF applies fully qualified labels to matching web
+     * requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule
+     * group or web ACL defines the label namespace.
+     * </p>
+     * <p>
+     * For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or
+     * <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>.
+     * </p>
+     * 
+     * @param labels
+     *        Labels applied to the web request by matching rules. AWS WAF applies fully qualified labels to matching
+     *        web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The
+     *        rule's rule group or web ACL defines the label namespace. </p>
+     *        <p>
+     *        For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or
+     *        <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>.
+     */
+
+    public void setLabels(java.util.Collection<Label> labels) {
+        if (labels == null) {
+            this.labels = null;
+            return;
+        }
+
+        this.labels = new java.util.ArrayList<Label>(labels);
+    }
+
+    /**
+     * <p>
+     * Labels applied to the web request by matching rules. AWS WAF applies fully qualified labels to matching web
+     * requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule
+     * group or web ACL defines the label namespace.
+     * </p>
+     * <p>
+     * For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or
+     * <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLabels(java.util.Collection)} or {@link #withLabels(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param labels
+     *        Labels applied to the web request by matching rules. AWS WAF applies fully qualified labels to matching
+     *        web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The
+     *        rule's rule group or web ACL defines the label namespace. </p>
+     *        <p>
+     *        For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or
+     *        <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SampledHTTPRequest withLabels(Label... labels) {
+        if (this.labels == null) {
+            setLabels(new java.util.ArrayList<Label>(labels.length));
+        }
+        for (Label ele : labels) {
+            this.labels.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Labels applied to the web request by matching rules. AWS WAF applies fully qualified labels to matching web
+     * requests. A fully qualified label is the concatenation of a label namespace and a rule label. The rule's rule
+     * group or web ACL defines the label namespace.
+     * </p>
+     * <p>
+     * For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or
+     * <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>.
+     * </p>
+     * 
+     * @param labels
+     *        Labels applied to the web request by matching rules. AWS WAF applies fully qualified labels to matching
+     *        web requests. A fully qualified label is the concatenation of a label namespace and a rule label. The
+     *        rule's rule group or web ACL defines the label namespace. </p>
+     *        <p>
+     *        For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code> or
+     *        <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SampledHTTPRequest withLabels(java.util.Collection<Label> labels) {
+        setLabels(labels);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -459,7 +585,9 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
         if (getRequestHeadersInserted() != null)
             sb.append("RequestHeadersInserted: ").append(getRequestHeadersInserted()).append(",");
         if (getResponseCodeSent() != null)
-            sb.append("ResponseCodeSent: ").append(getResponseCodeSent());
+            sb.append("ResponseCodeSent: ").append(getResponseCodeSent()).append(",");
+        if (getLabels() != null)
+            sb.append("Labels: ").append(getLabels());
         sb.append("}");
         return sb.toString();
     }
@@ -502,6 +630,10 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getResponseCodeSent() != null && other.getResponseCodeSent().equals(this.getResponseCodeSent()) == false)
             return false;
+        if (other.getLabels() == null ^ this.getLabels() == null)
+            return false;
+        if (other.getLabels() != null && other.getLabels().equals(this.getLabels()) == false)
+            return false;
         return true;
     }
 
@@ -517,6 +649,7 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getRuleNameWithinRuleGroup() == null) ? 0 : getRuleNameWithinRuleGroup().hashCode());
         hashCode = prime * hashCode + ((getRequestHeadersInserted() == null) ? 0 : getRequestHeadersInserted().hashCode());
         hashCode = prime * hashCode + ((getResponseCodeSent() == null) ? 0 : getResponseCodeSent().hashCode());
+        hashCode = prime * hashCode + ((getLabels() == null) ? 0 : getLabels().hashCode());
         return hashCode;
     }
 

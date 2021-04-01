@@ -90,6 +90,16 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
      */
     private String mpdProfile;
     /**
+     * Use this setting only when your output video stream has B-frames, which causes the initial presentation time
+     * stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles PTS when
+     * writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you want
+     * MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based (ZERO_BASED) to
+     * have MediaConvert ignore the initial PTS in the video stream and instead write the initial time stamp as zero in
+     * the manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero
+     * regardless of your choice here.
+     */
+    private String ptsOffsetHandlingForBFrames;
+    /**
      * When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment
      * Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
      */
@@ -831,6 +841,105 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * Use this setting only when your output video stream has B-frames, which causes the initial presentation time
+     * stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles PTS when
+     * writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you want
+     * MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based (ZERO_BASED) to
+     * have MediaConvert ignore the initial PTS in the video stream and instead write the initial time stamp as zero in
+     * the manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero
+     * regardless of your choice here.
+     * 
+     * @param ptsOffsetHandlingForBFrames
+     *        Use this setting only when your output video stream has B-frames, which causes the initial presentation
+     *        time stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles
+     *        PTS when writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when
+     *        you want MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based
+     *        (ZERO_BASED) to have MediaConvert ignore the initial PTS in the video stream and instead write the initial
+     *        time stamp as zero in the manifest. For outputs that don't have B-frames, the time stamps in your DASH
+     *        manifests start at zero regardless of your choice here.
+     * @see CmafPtsOffsetHandlingForBFrames
+     */
+
+    public void setPtsOffsetHandlingForBFrames(String ptsOffsetHandlingForBFrames) {
+        this.ptsOffsetHandlingForBFrames = ptsOffsetHandlingForBFrames;
+    }
+
+    /**
+     * Use this setting only when your output video stream has B-frames, which causes the initial presentation time
+     * stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles PTS when
+     * writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you want
+     * MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based (ZERO_BASED) to
+     * have MediaConvert ignore the initial PTS in the video stream and instead write the initial time stamp as zero in
+     * the manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero
+     * regardless of your choice here.
+     * 
+     * @return Use this setting only when your output video stream has B-frames, which causes the initial presentation
+     *         time stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles
+     *         PTS when writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when
+     *         you want MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based
+     *         (ZERO_BASED) to have MediaConvert ignore the initial PTS in the video stream and instead write the
+     *         initial time stamp as zero in the manifest. For outputs that don't have B-frames, the time stamps in your
+     *         DASH manifests start at zero regardless of your choice here.
+     * @see CmafPtsOffsetHandlingForBFrames
+     */
+
+    public String getPtsOffsetHandlingForBFrames() {
+        return this.ptsOffsetHandlingForBFrames;
+    }
+
+    /**
+     * Use this setting only when your output video stream has B-frames, which causes the initial presentation time
+     * stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles PTS when
+     * writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you want
+     * MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based (ZERO_BASED) to
+     * have MediaConvert ignore the initial PTS in the video stream and instead write the initial time stamp as zero in
+     * the manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero
+     * regardless of your choice here.
+     * 
+     * @param ptsOffsetHandlingForBFrames
+     *        Use this setting only when your output video stream has B-frames, which causes the initial presentation
+     *        time stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles
+     *        PTS when writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when
+     *        you want MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based
+     *        (ZERO_BASED) to have MediaConvert ignore the initial PTS in the video stream and instead write the initial
+     *        time stamp as zero in the manifest. For outputs that don't have B-frames, the time stamps in your DASH
+     *        manifests start at zero regardless of your choice here.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CmafPtsOffsetHandlingForBFrames
+     */
+
+    public CmafGroupSettings withPtsOffsetHandlingForBFrames(String ptsOffsetHandlingForBFrames) {
+        setPtsOffsetHandlingForBFrames(ptsOffsetHandlingForBFrames);
+        return this;
+    }
+
+    /**
+     * Use this setting only when your output video stream has B-frames, which causes the initial presentation time
+     * stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles PTS when
+     * writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you want
+     * MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based (ZERO_BASED) to
+     * have MediaConvert ignore the initial PTS in the video stream and instead write the initial time stamp as zero in
+     * the manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero
+     * regardless of your choice here.
+     * 
+     * @param ptsOffsetHandlingForBFrames
+     *        Use this setting only when your output video stream has B-frames, which causes the initial presentation
+     *        time stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles
+     *        PTS when writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when
+     *        you want MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based
+     *        (ZERO_BASED) to have MediaConvert ignore the initial PTS in the video stream and instead write the initial
+     *        time stamp as zero in the manifest. For outputs that don't have B-frames, the time stamps in your DASH
+     *        manifests start at zero regardless of your choice here.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CmafPtsOffsetHandlingForBFrames
+     */
+
+    public CmafGroupSettings withPtsOffsetHandlingForBFrames(CmafPtsOffsetHandlingForBFrames ptsOffsetHandlingForBFrames) {
+        this.ptsOffsetHandlingForBFrames = ptsOffsetHandlingForBFrames.toString();
+        return this;
+    }
+
+    /**
      * When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment
      * Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
      * 
@@ -1227,6 +1336,8 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
             sb.append("MinFinalSegmentLength: ").append(getMinFinalSegmentLength()).append(",");
         if (getMpdProfile() != null)
             sb.append("MpdProfile: ").append(getMpdProfile()).append(",");
+        if (getPtsOffsetHandlingForBFrames() != null)
+            sb.append("PtsOffsetHandlingForBFrames: ").append(getPtsOffsetHandlingForBFrames()).append(",");
         if (getSegmentControl() != null)
             sb.append("SegmentControl: ").append(getSegmentControl()).append(",");
         if (getSegmentLength() != null)
@@ -1305,6 +1416,10 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getMpdProfile() != null && other.getMpdProfile().equals(this.getMpdProfile()) == false)
             return false;
+        if (other.getPtsOffsetHandlingForBFrames() == null ^ this.getPtsOffsetHandlingForBFrames() == null)
+            return false;
+        if (other.getPtsOffsetHandlingForBFrames() != null && other.getPtsOffsetHandlingForBFrames().equals(this.getPtsOffsetHandlingForBFrames()) == false)
+            return false;
         if (other.getSegmentControl() == null ^ this.getSegmentControl() == null)
             return false;
         if (other.getSegmentControl() != null && other.getSegmentControl().equals(this.getSegmentControl()) == false)
@@ -1351,6 +1466,7 @@ public class CmafGroupSettings implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getMinBufferTime() == null) ? 0 : getMinBufferTime().hashCode());
         hashCode = prime * hashCode + ((getMinFinalSegmentLength() == null) ? 0 : getMinFinalSegmentLength().hashCode());
         hashCode = prime * hashCode + ((getMpdProfile() == null) ? 0 : getMpdProfile().hashCode());
+        hashCode = prime * hashCode + ((getPtsOffsetHandlingForBFrames() == null) ? 0 : getPtsOffsetHandlingForBFrames().hashCode());
         hashCode = prime * hashCode + ((getSegmentControl() == null) ? 0 : getSegmentControl().hashCode());
         hashCode = prime * hashCode + ((getSegmentLength() == null) ? 0 : getSegmentLength().hashCode());
         hashCode = prime * hashCode + ((getStreamInfResolution() == null) ? 0 : getStreamInfResolution().hashCode());

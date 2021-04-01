@@ -35,6 +35,8 @@ public class HlsSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioRenditionSets").build();
     private static final MarshallingInfo<String> AUDIOTRACKTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioTrackType").build();
+    private static final MarshallingInfo<String> DESCRIPTIVEVIDEOSERVICEFLAG_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("descriptiveVideoServiceFlag").build();
     private static final MarshallingInfo<String> IFRAMEONLYMANIFEST_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("iFrameOnlyManifest").build();
     private static final MarshallingInfo<String> SEGMENTMODIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -60,6 +62,7 @@ public class HlsSettingsMarshaller {
             protocolMarshaller.marshall(hlsSettings.getAudioOnlyContainer(), AUDIOONLYCONTAINER_BINDING);
             protocolMarshaller.marshall(hlsSettings.getAudioRenditionSets(), AUDIORENDITIONSETS_BINDING);
             protocolMarshaller.marshall(hlsSettings.getAudioTrackType(), AUDIOTRACKTYPE_BINDING);
+            protocolMarshaller.marshall(hlsSettings.getDescriptiveVideoServiceFlag(), DESCRIPTIVEVIDEOSERVICEFLAG_BINDING);
             protocolMarshaller.marshall(hlsSettings.getIFrameOnlyManifest(), IFRAMEONLYMANIFEST_BINDING);
             protocolMarshaller.marshall(hlsSettings.getSegmentModifier(), SEGMENTMODIFIER_BINDING);
         } catch (Exception e) {

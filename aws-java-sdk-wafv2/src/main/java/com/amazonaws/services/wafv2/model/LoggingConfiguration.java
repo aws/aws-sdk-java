@@ -20,7 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Defines an association between Amazon Kinesis Data Firehose destinations and a web ACL resource, for logging from AWS
- * WAF. As part of the association, you can specify parts of the standard logging fields to keep out of the logs.
+ * WAF. As part of the association, you can specify parts of the standard logging fields to keep out of the logs and you
+ * can specify filters so that you log only a subset of the logging records.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/LoggingConfiguration" target="_top">AWS API
@@ -61,6 +62,13 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
      * </p>
      */
     private Boolean managedByFirewallManager;
+    /**
+     * <p>
+     * Filtering that specifies which web requests are kept in the logs and which are dropped. You can filter on the
+     * rule action and on the web request labels that were applied by matching rules during web ACL evaluation.
+     * </p>
+     */
+    private LoggingFilter loggingFilter;
 
     /**
      * <p>
@@ -358,6 +366,55 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * Filtering that specifies which web requests are kept in the logs and which are dropped. You can filter on the
+     * rule action and on the web request labels that were applied by matching rules during web ACL evaluation.
+     * </p>
+     * 
+     * @param loggingFilter
+     *        Filtering that specifies which web requests are kept in the logs and which are dropped. You can filter on
+     *        the rule action and on the web request labels that were applied by matching rules during web ACL
+     *        evaluation.
+     */
+
+    public void setLoggingFilter(LoggingFilter loggingFilter) {
+        this.loggingFilter = loggingFilter;
+    }
+
+    /**
+     * <p>
+     * Filtering that specifies which web requests are kept in the logs and which are dropped. You can filter on the
+     * rule action and on the web request labels that were applied by matching rules during web ACL evaluation.
+     * </p>
+     * 
+     * @return Filtering that specifies which web requests are kept in the logs and which are dropped. You can filter on
+     *         the rule action and on the web request labels that were applied by matching rules during web ACL
+     *         evaluation.
+     */
+
+    public LoggingFilter getLoggingFilter() {
+        return this.loggingFilter;
+    }
+
+    /**
+     * <p>
+     * Filtering that specifies which web requests are kept in the logs and which are dropped. You can filter on the
+     * rule action and on the web request labels that were applied by matching rules during web ACL evaluation.
+     * </p>
+     * 
+     * @param loggingFilter
+     *        Filtering that specifies which web requests are kept in the logs and which are dropped. You can filter on
+     *        the rule action and on the web request labels that were applied by matching rules during web ACL
+     *        evaluation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoggingConfiguration withLoggingFilter(LoggingFilter loggingFilter) {
+        setLoggingFilter(loggingFilter);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -376,7 +433,9 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
         if (getRedactedFields() != null)
             sb.append("RedactedFields: ").append(getRedactedFields()).append(",");
         if (getManagedByFirewallManager() != null)
-            sb.append("ManagedByFirewallManager: ").append(getManagedByFirewallManager());
+            sb.append("ManagedByFirewallManager: ").append(getManagedByFirewallManager()).append(",");
+        if (getLoggingFilter() != null)
+            sb.append("LoggingFilter: ").append(getLoggingFilter());
         sb.append("}");
         return sb.toString();
     }
@@ -407,6 +466,10 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
             return false;
         if (other.getManagedByFirewallManager() != null && other.getManagedByFirewallManager().equals(this.getManagedByFirewallManager()) == false)
             return false;
+        if (other.getLoggingFilter() == null ^ this.getLoggingFilter() == null)
+            return false;
+        if (other.getLoggingFilter() != null && other.getLoggingFilter().equals(this.getLoggingFilter()) == false)
+            return false;
         return true;
     }
 
@@ -419,6 +482,7 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getLogDestinationConfigs() == null) ? 0 : getLogDestinationConfigs().hashCode());
         hashCode = prime * hashCode + ((getRedactedFields() == null) ? 0 : getRedactedFields().hashCode());
         hashCode = prime * hashCode + ((getManagedByFirewallManager() == null) ? 0 : getManagedByFirewallManager().hashCode());
+        hashCode = prime * hashCode + ((getLoggingFilter() == null) ? 0 : getLoggingFilter().hashCode());
         return hashCode;
     }
 

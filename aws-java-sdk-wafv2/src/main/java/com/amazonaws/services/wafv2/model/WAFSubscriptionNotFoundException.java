@@ -15,7 +15,9 @@ package com.amazonaws.services.wafv2.model;
 import javax.annotation.Generated;
 
 /**
- * <p/>
+ * <p>
+ * You tried to use a managed rule group that's available by subscription, but you aren't subscribed to it yet.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class WAFSubscriptionNotFoundException extends com.amazonaws.services.wafv2.model.AWSWAFV2Exception {

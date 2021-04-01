@@ -55,6 +55,10 @@ public class DashIsoGroupSettingsJsonUnmarshaller implements Unmarshaller<DashIs
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("audioChannelConfigSchemeIdUri", targetDepth)) {
+                    context.nextToken();
+                    dashIsoGroupSettings.setAudioChannelConfigSchemeIdUri(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("baseUrl", targetDepth)) {
                     context.nextToken();
                     dashIsoGroupSettings.setBaseUrl(context.getUnmarshaller(String.class).unmarshall(context));
@@ -90,6 +94,10 @@ public class DashIsoGroupSettingsJsonUnmarshaller implements Unmarshaller<DashIs
                 if (context.testExpression("mpdProfile", targetDepth)) {
                     context.nextToken();
                     dashIsoGroupSettings.setMpdProfile(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ptsOffsetHandlingForBFrames", targetDepth)) {
+                    context.nextToken();
+                    dashIsoGroupSettings.setPtsOffsetHandlingForBFrames(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("segmentControl", targetDepth)) {
                     context.nextToken();

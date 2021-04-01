@@ -67,6 +67,10 @@ public class PostContentResultJsonUnmarshaller implements Unmarshaller<PostConte
                 context.setCurrentHeader("x-amz-lex-message");
                 postContentResult.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
             }
+            if (context.getHeader("x-amz-lex-encoded-message") != null) {
+                context.setCurrentHeader("x-amz-lex-encoded-message");
+                postContentResult.setEncodedMessage(context.getUnmarshaller(String.class).unmarshall(context));
+            }
             if (context.getHeader("x-amz-lex-message-format") != null) {
                 context.setCurrentHeader("x-amz-lex-message-format");
                 postContentResult.setMessageFormat(context.getUnmarshaller(String.class).unmarshall(context));
@@ -82,6 +86,10 @@ public class PostContentResultJsonUnmarshaller implements Unmarshaller<PostConte
             if (context.getHeader("x-amz-lex-input-transcript") != null) {
                 context.setCurrentHeader("x-amz-lex-input-transcript");
                 postContentResult.setInputTranscript(context.getUnmarshaller(String.class).unmarshall(context));
+            }
+            if (context.getHeader("x-amz-lex-encoded-input-transcript") != null) {
+                context.setCurrentHeader("x-amz-lex-encoded-input-transcript");
+                postContentResult.setEncodedInputTranscript(context.getUnmarshaller(String.class).unmarshall(context));
             }
             if (context.getHeader("x-amz-lex-bot-version") != null) {
                 context.setCurrentHeader("x-amz-lex-bot-version");

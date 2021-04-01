@@ -85,42 +85,60 @@ public class ContainerService implements Serializable, Cloneable, StructuredPojo
      * The current state of the container service.
      * </p>
      * <p>
-     * The state can be:
+     * The following container service states are possible:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Pending</code> - The container service is being created.
+     * <code>PENDING</code> - The container service is being created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Ready</code> - The container service is created but does not have a container deployment.
+     * <code>READY</code> - The container service is running but it does not have an active container deployment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Disabled</code> - The container service is disabled.
+     * <code>DEPLOYING</code> - The container service is launching a container deployment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Updating</code> - The container service capacity or other setting is being updated.
+     * <code>RUNNING</code> - The container service is running and it has an active container deployment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Deploying</code> - The container service is launching a container deployment.
+     * <code>UPDATING</code> - The container service capacity or its custom domains are being updated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Running</code> - The container service is created and it has a container deployment.
+     * <code>DELETING</code> - The container service is being deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISABLED</code> - The container service is disabled, and its active deployment and containers, if any, are
+     * shut down.
      * </p>
      * </li>
      * </ul>
      */
     private String state;
+    /**
+     * <p>
+     * An object that describes the current state of the container service.
+     * </p>
+     * <note>
+     * <p>
+     * The state detail is populated only when a container service is in a <code>PENDING</code>, <code>DEPLOYING</code>,
+     * or <code>UPDATING</code> state.
+     * </p>
+     * </note>
+     */
+    private ContainerServiceStateDetail stateDetail;
     /**
      * <p>
      * The scale specification of the container service.
@@ -635,37 +653,43 @@ public class ContainerService implements Serializable, Cloneable, StructuredPojo
      * The current state of the container service.
      * </p>
      * <p>
-     * The state can be:
+     * The following container service states are possible:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Pending</code> - The container service is being created.
+     * <code>PENDING</code> - The container service is being created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Ready</code> - The container service is created but does not have a container deployment.
+     * <code>READY</code> - The container service is running but it does not have an active container deployment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Disabled</code> - The container service is disabled.
+     * <code>DEPLOYING</code> - The container service is launching a container deployment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Updating</code> - The container service capacity or other setting is being updated.
+     * <code>RUNNING</code> - The container service is running and it has an active container deployment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Deploying</code> - The container service is launching a container deployment.
+     * <code>UPDATING</code> - The container service capacity or its custom domains are being updated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Running</code> - The container service is created and it has a container deployment.
+     * <code>DELETING</code> - The container service is being deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISABLED</code> - The container service is disabled, and its active deployment and containers, if any, are
+     * shut down.
      * </p>
      * </li>
      * </ul>
@@ -673,37 +697,43 @@ public class ContainerService implements Serializable, Cloneable, StructuredPojo
      * @param state
      *        The current state of the container service.</p>
      *        <p>
-     *        The state can be:
+     *        The following container service states are possible:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Pending</code> - The container service is being created.
+     *        <code>PENDING</code> - The container service is being created.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Ready</code> - The container service is created but does not have a container deployment.
+     *        <code>READY</code> - The container service is running but it does not have an active container deployment.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Disabled</code> - The container service is disabled.
+     *        <code>DEPLOYING</code> - The container service is launching a container deployment.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Updating</code> - The container service capacity or other setting is being updated.
+     *        <code>RUNNING</code> - The container service is running and it has an active container deployment.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Deploying</code> - The container service is launching a container deployment.
+     *        <code>UPDATING</code> - The container service capacity or its custom domains are being updated.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Running</code> - The container service is created and it has a container deployment.
+     *        <code>DELETING</code> - The container service is being deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISABLED</code> - The container service is disabled, and its active deployment and containers, if
+     *        any, are shut down.
      *        </p>
      *        </li>
      * @see ContainerServiceState
@@ -718,74 +748,87 @@ public class ContainerService implements Serializable, Cloneable, StructuredPojo
      * The current state of the container service.
      * </p>
      * <p>
-     * The state can be:
+     * The following container service states are possible:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Pending</code> - The container service is being created.
+     * <code>PENDING</code> - The container service is being created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Ready</code> - The container service is created but does not have a container deployment.
+     * <code>READY</code> - The container service is running but it does not have an active container deployment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Disabled</code> - The container service is disabled.
+     * <code>DEPLOYING</code> - The container service is launching a container deployment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Updating</code> - The container service capacity or other setting is being updated.
+     * <code>RUNNING</code> - The container service is running and it has an active container deployment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Deploying</code> - The container service is launching a container deployment.
+     * <code>UPDATING</code> - The container service capacity or its custom domains are being updated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Running</code> - The container service is created and it has a container deployment.
+     * <code>DELETING</code> - The container service is being deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISABLED</code> - The container service is disabled, and its active deployment and containers, if any, are
+     * shut down.
      * </p>
      * </li>
      * </ul>
      * 
      * @return The current state of the container service.</p>
      *         <p>
-     *         The state can be:
+     *         The following container service states are possible:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>Pending</code> - The container service is being created.
+     *         <code>PENDING</code> - The container service is being created.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Ready</code> - The container service is created but does not have a container deployment.
+     *         <code>READY</code> - The container service is running but it does not have an active container
+     *         deployment.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Disabled</code> - The container service is disabled.
+     *         <code>DEPLOYING</code> - The container service is launching a container deployment.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Updating</code> - The container service capacity or other setting is being updated.
+     *         <code>RUNNING</code> - The container service is running and it has an active container deployment.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Deploying</code> - The container service is launching a container deployment.
+     *         <code>UPDATING</code> - The container service capacity or its custom domains are being updated.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Running</code> - The container service is created and it has a container deployment.
+     *         <code>DELETING</code> - The container service is being deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DISABLED</code> - The container service is disabled, and its active deployment and containers, if
+     *         any, are shut down.
      *         </p>
      *         </li>
      * @see ContainerServiceState
@@ -800,37 +843,43 @@ public class ContainerService implements Serializable, Cloneable, StructuredPojo
      * The current state of the container service.
      * </p>
      * <p>
-     * The state can be:
+     * The following container service states are possible:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Pending</code> - The container service is being created.
+     * <code>PENDING</code> - The container service is being created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Ready</code> - The container service is created but does not have a container deployment.
+     * <code>READY</code> - The container service is running but it does not have an active container deployment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Disabled</code> - The container service is disabled.
+     * <code>DEPLOYING</code> - The container service is launching a container deployment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Updating</code> - The container service capacity or other setting is being updated.
+     * <code>RUNNING</code> - The container service is running and it has an active container deployment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Deploying</code> - The container service is launching a container deployment.
+     * <code>UPDATING</code> - The container service capacity or its custom domains are being updated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Running</code> - The container service is created and it has a container deployment.
+     * <code>DELETING</code> - The container service is being deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISABLED</code> - The container service is disabled, and its active deployment and containers, if any, are
+     * shut down.
      * </p>
      * </li>
      * </ul>
@@ -838,37 +887,43 @@ public class ContainerService implements Serializable, Cloneable, StructuredPojo
      * @param state
      *        The current state of the container service.</p>
      *        <p>
-     *        The state can be:
+     *        The following container service states are possible:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Pending</code> - The container service is being created.
+     *        <code>PENDING</code> - The container service is being created.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Ready</code> - The container service is created but does not have a container deployment.
+     *        <code>READY</code> - The container service is running but it does not have an active container deployment.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Disabled</code> - The container service is disabled.
+     *        <code>DEPLOYING</code> - The container service is launching a container deployment.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Updating</code> - The container service capacity or other setting is being updated.
+     *        <code>RUNNING</code> - The container service is running and it has an active container deployment.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Deploying</code> - The container service is launching a container deployment.
+     *        <code>UPDATING</code> - The container service capacity or its custom domains are being updated.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Running</code> - The container service is created and it has a container deployment.
+     *        <code>DELETING</code> - The container service is being deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISABLED</code> - The container service is disabled, and its active deployment and containers, if
+     *        any, are shut down.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -885,37 +940,43 @@ public class ContainerService implements Serializable, Cloneable, StructuredPojo
      * The current state of the container service.
      * </p>
      * <p>
-     * The state can be:
+     * The following container service states are possible:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Pending</code> - The container service is being created.
+     * <code>PENDING</code> - The container service is being created.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Ready</code> - The container service is created but does not have a container deployment.
+     * <code>READY</code> - The container service is running but it does not have an active container deployment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Disabled</code> - The container service is disabled.
+     * <code>DEPLOYING</code> - The container service is launching a container deployment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Updating</code> - The container service capacity or other setting is being updated.
+     * <code>RUNNING</code> - The container service is running and it has an active container deployment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Deploying</code> - The container service is launching a container deployment.
+     * <code>UPDATING</code> - The container service capacity or its custom domains are being updated.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Running</code> - The container service is created and it has a container deployment.
+     * <code>DELETING</code> - The container service is being deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISABLED</code> - The container service is disabled, and its active deployment and containers, if any, are
+     * shut down.
      * </p>
      * </li>
      * </ul>
@@ -923,37 +984,43 @@ public class ContainerService implements Serializable, Cloneable, StructuredPojo
      * @param state
      *        The current state of the container service.</p>
      *        <p>
-     *        The state can be:
+     *        The following container service states are possible:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Pending</code> - The container service is being created.
+     *        <code>PENDING</code> - The container service is being created.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Ready</code> - The container service is created but does not have a container deployment.
+     *        <code>READY</code> - The container service is running but it does not have an active container deployment.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Disabled</code> - The container service is disabled.
+     *        <code>DEPLOYING</code> - The container service is launching a container deployment.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Updating</code> - The container service capacity or other setting is being updated.
+     *        <code>RUNNING</code> - The container service is running and it has an active container deployment.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Deploying</code> - The container service is launching a container deployment.
+     *        <code>UPDATING</code> - The container service capacity or its custom domains are being updated.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Running</code> - The container service is created and it has a container deployment.
+     *        <code>DELETING</code> - The container service is being deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISABLED</code> - The container service is disabled, and its active deployment and containers, if
+     *        any, are shut down.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -962,6 +1029,76 @@ public class ContainerService implements Serializable, Cloneable, StructuredPojo
 
     public ContainerService withState(ContainerServiceState state) {
         this.state = state.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object that describes the current state of the container service.
+     * </p>
+     * <note>
+     * <p>
+     * The state detail is populated only when a container service is in a <code>PENDING</code>, <code>DEPLOYING</code>,
+     * or <code>UPDATING</code> state.
+     * </p>
+     * </note>
+     * 
+     * @param stateDetail
+     *        An object that describes the current state of the container service.</p> <note>
+     *        <p>
+     *        The state detail is populated only when a container service is in a <code>PENDING</code>,
+     *        <code>DEPLOYING</code>, or <code>UPDATING</code> state.
+     *        </p>
+     */
+
+    public void setStateDetail(ContainerServiceStateDetail stateDetail) {
+        this.stateDetail = stateDetail;
+    }
+
+    /**
+     * <p>
+     * An object that describes the current state of the container service.
+     * </p>
+     * <note>
+     * <p>
+     * The state detail is populated only when a container service is in a <code>PENDING</code>, <code>DEPLOYING</code>,
+     * or <code>UPDATING</code> state.
+     * </p>
+     * </note>
+     * 
+     * @return An object that describes the current state of the container service.</p> <note>
+     *         <p>
+     *         The state detail is populated only when a container service is in a <code>PENDING</code>,
+     *         <code>DEPLOYING</code>, or <code>UPDATING</code> state.
+     *         </p>
+     */
+
+    public ContainerServiceStateDetail getStateDetail() {
+        return this.stateDetail;
+    }
+
+    /**
+     * <p>
+     * An object that describes the current state of the container service.
+     * </p>
+     * <note>
+     * <p>
+     * The state detail is populated only when a container service is in a <code>PENDING</code>, <code>DEPLOYING</code>,
+     * or <code>UPDATING</code> state.
+     * </p>
+     * </note>
+     * 
+     * @param stateDetail
+     *        An object that describes the current state of the container service.</p> <note>
+     *        <p>
+     *        The state detail is populated only when a container service is in a <code>PENDING</code>,
+     *        <code>DEPLOYING</code>, or <code>UPDATING</code> state.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerService withStateDetail(ContainerServiceStateDetail stateDetail) {
+        setStateDetail(stateDetail);
         return this;
     }
 
@@ -1563,6 +1700,8 @@ public class ContainerService implements Serializable, Cloneable, StructuredPojo
             sb.append("PowerId: ").append(getPowerId()).append(",");
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
+        if (getStateDetail() != null)
+            sb.append("StateDetail: ").append(getStateDetail()).append(",");
         if (getScale() != null)
             sb.append("Scale: ").append(getScale()).append(",");
         if (getCurrentDeployment() != null)
@@ -1629,6 +1768,10 @@ public class ContainerService implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
+        if (other.getStateDetail() == null ^ this.getStateDetail() == null)
+            return false;
+        if (other.getStateDetail() != null && other.getStateDetail().equals(this.getStateDetail()) == false)
+            return false;
         if (other.getScale() == null ^ this.getScale() == null)
             return false;
         if (other.getScale() != null && other.getScale().equals(this.getScale()) == false)
@@ -1678,6 +1821,7 @@ public class ContainerService implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getPower() == null) ? 0 : getPower().hashCode());
         hashCode = prime * hashCode + ((getPowerId() == null) ? 0 : getPowerId().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getStateDetail() == null) ? 0 : getStateDetail().hashCode());
         hashCode = prime * hashCode + ((getScale() == null) ? 0 : getScale().hashCode());
         hashCode = prime * hashCode + ((getCurrentDeployment() == null) ? 0 : getCurrentDeployment().hashCode());
         hashCode = prime * hashCode + ((getNextDeployment() == null) ? 0 : getNextDeployment().hashCode());

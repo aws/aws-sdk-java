@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies confguration information for indexing a single standard object.
+ * Specifies configuration information for indexing a single standard object.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SalesforceStandardObjectConfiguration"
@@ -42,7 +42,7 @@ public class SalesforceStandardObjectConfiguration implements Serializable, Clon
     private String documentDataFieldName;
     /**
      * <p>
-     * The name of the field in the standard object table that contains the document titleB.
+     * The name of the field in the standard object table that contains the document title.
      * </p>
      */
     private String documentTitleFieldName;
@@ -155,11 +155,11 @@ public class SalesforceStandardObjectConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * The name of the field in the standard object table that contains the document titleB.
+     * The name of the field in the standard object table that contains the document title.
      * </p>
      * 
      * @param documentTitleFieldName
-     *        The name of the field in the standard object table that contains the document titleB.
+     *        The name of the field in the standard object table that contains the document title.
      */
 
     public void setDocumentTitleFieldName(String documentTitleFieldName) {
@@ -168,10 +168,10 @@ public class SalesforceStandardObjectConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * The name of the field in the standard object table that contains the document titleB.
+     * The name of the field in the standard object table that contains the document title.
      * </p>
      * 
-     * @return The name of the field in the standard object table that contains the document titleB.
+     * @return The name of the field in the standard object table that contains the document title.
      */
 
     public String getDocumentTitleFieldName() {
@@ -180,11 +180,11 @@ public class SalesforceStandardObjectConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * The name of the field in the standard object table that contains the document titleB.
+     * The name of the field in the standard object table that contains the document title.
      * </p>
      * 
      * @param documentTitleFieldName
-     *        The name of the field in the standard object table that contains the document titleB.
+     *        The name of the field in the standard object table that contains the document title.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

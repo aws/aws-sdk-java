@@ -44,9 +44,21 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
      * through.
      */
     private Integer dialnorm;
-    /** Specify the absolute peak level for a signal with dynamic range compression. */
+    /**
+     * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
+     * the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert
+     * ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For
+     * information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
+     * Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+     */
     private String dynamicRangeCompressionLine;
-    /** Specify how the service limits the audio dynamic range when compressing the audio. */
+    /**
+     * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
+     * the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert
+     * ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For
+     * information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
+     * Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+     */
     private String dynamicRangeCompressionRf;
     /** When encoding 3/2 audio, controls whether the LFE channel is enabled */
     private String lfeControl;
@@ -408,10 +420,19 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the absolute peak level for a signal with dynamic range compression.
+     * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
+     * the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert
+     * ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For
+     * information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
+     * Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * 
      * @param dynamicRangeCompressionLine
-     *        Specify the absolute peak level for a signal with dynamic range compression.
+     *        Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the
+     *        metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this
+     *        setting, MediaConvert ignores any value you provide for Dynamic range compression profile
+     *        (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and
+     *        profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     *        https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * @see Eac3DynamicRangeCompressionLine
      */
 
@@ -420,9 +441,18 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the absolute peak level for a signal with dynamic range compression.
+     * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
+     * the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert
+     * ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For
+     * information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
+     * Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * 
-     * @return Specify the absolute peak level for a signal with dynamic range compression.
+     * @return Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the
+     *         metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this
+     *         setting, MediaConvert ignores any value you provide for Dynamic range compression profile
+     *         (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and
+     *         profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     *         https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * @see Eac3DynamicRangeCompressionLine
      */
 
@@ -431,10 +461,19 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the absolute peak level for a signal with dynamic range compression.
+     * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
+     * the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert
+     * ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For
+     * information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
+     * Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * 
      * @param dynamicRangeCompressionLine
-     *        Specify the absolute peak level for a signal with dynamic range compression.
+     *        Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the
+     *        metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this
+     *        setting, MediaConvert ignores any value you provide for Dynamic range compression profile
+     *        (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and
+     *        profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     *        https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3DynamicRangeCompressionLine
      */
@@ -445,10 +484,19 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the absolute peak level for a signal with dynamic range compression.
+     * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
+     * the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert
+     * ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For
+     * information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
+     * Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * 
      * @param dynamicRangeCompressionLine
-     *        Specify the absolute peak level for a signal with dynamic range compression.
+     *        Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the
+     *        metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this
+     *        setting, MediaConvert ignores any value you provide for Dynamic range compression profile
+     *        (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and
+     *        profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     *        https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3DynamicRangeCompressionLine
      */
@@ -459,10 +507,19 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify how the service limits the audio dynamic range when compressing the audio.
+     * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
+     * the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert
+     * ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For
+     * information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
+     * Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * 
      * @param dynamicRangeCompressionRf
-     *        Specify how the service limits the audio dynamic range when compressing the audio.
+     *        Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the
+     *        metadata in the Dolby Digital stream for the RF operating mode. Related setting: When you use this
+     *        setting, MediaConvert ignores any value you provide for Dynamic range compression profile
+     *        (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and
+     *        profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     *        https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * @see Eac3DynamicRangeCompressionRf
      */
 
@@ -471,9 +528,18 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify how the service limits the audio dynamic range when compressing the audio.
+     * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
+     * the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert
+     * ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For
+     * information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
+     * Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * 
-     * @return Specify how the service limits the audio dynamic range when compressing the audio.
+     * @return Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the
+     *         metadata in the Dolby Digital stream for the RF operating mode. Related setting: When you use this
+     *         setting, MediaConvert ignores any value you provide for Dynamic range compression profile
+     *         (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and
+     *         profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     *         https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * @see Eac3DynamicRangeCompressionRf
      */
 
@@ -482,10 +548,19 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify how the service limits the audio dynamic range when compressing the audio.
+     * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
+     * the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert
+     * ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For
+     * information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
+     * Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * 
      * @param dynamicRangeCompressionRf
-     *        Specify how the service limits the audio dynamic range when compressing the audio.
+     *        Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the
+     *        metadata in the Dolby Digital stream for the RF operating mode. Related setting: When you use this
+     *        setting, MediaConvert ignores any value you provide for Dynamic range compression profile
+     *        (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and
+     *        profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     *        https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3DynamicRangeCompressionRf
      */
@@ -496,10 +571,19 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify how the service limits the audio dynamic range when compressing the audio.
+     * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
+     * the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert
+     * ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For
+     * information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
+     * Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * 
      * @param dynamicRangeCompressionRf
-     *        Specify how the service limits the audio dynamic range when compressing the audio.
+     *        Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the
+     *        metadata in the Dolby Digital stream for the RF operating mode. Related setting: When you use this
+     *        setting, MediaConvert ignores any value you provide for Dynamic range compression profile
+     *        (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and
+     *        profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     *        https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3DynamicRangeCompressionRf
      */

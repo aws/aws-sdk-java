@@ -68,6 +68,12 @@ public class RuleJsonUnmarshaller implements Unmarshaller<Rule, JsonUnmarshaller
                     context.nextToken();
                     rule.setOverrideAction(OverrideActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("RuleLabels", targetDepth)) {
+                    context.nextToken();
+                    rule.setRuleLabels(new ListUnmarshaller<Label>(LabelJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("VisibilityConfig", targetDepth)) {
                     context.nextToken();
                     rule.setVisibilityConfig(VisibilityConfigJsonUnmarshaller.getInstance().unmarshall(context));

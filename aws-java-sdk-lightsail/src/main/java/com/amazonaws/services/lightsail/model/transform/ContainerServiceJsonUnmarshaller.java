@@ -86,6 +86,10 @@ public class ContainerServiceJsonUnmarshaller implements Unmarshaller<ContainerS
                     context.nextToken();
                     containerService.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("stateDetail", targetDepth)) {
+                    context.nextToken();
+                    containerService.setStateDetail(ContainerServiceStateDetailJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("scale", targetDepth)) {
                     context.nextToken();
                     containerService.setScale(context.getUnmarshaller(Integer.class).unmarshall(context));

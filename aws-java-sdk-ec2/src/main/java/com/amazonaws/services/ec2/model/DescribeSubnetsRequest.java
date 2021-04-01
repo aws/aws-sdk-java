@@ -78,6 +78,11 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
+     * <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>owner-id</code> - The ID of the AWS account that owns the subnet.
      * </p>
      * </li>
@@ -194,6 +199,11 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
+     * <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>owner-id</code> - The ID of the AWS account that owns the subnet.
      * </p>
      * </li>
@@ -280,6 +290,11 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      *         <p>
      *         <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block associated with the
      *         subnet.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.
      *         </p>
      *         </li>
      *         <li>
@@ -383,6 +398,11 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
+     * <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>owner-id</code> - The ID of the AWS account that owns the subnet.
      * </p>
      * </li>
@@ -470,6 +490,11 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      *        <p>
      *        <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block associated with the
      *        subnet.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.
      *        </p>
      *        </li>
      *        <li>
@@ -575,6 +600,11 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
+     * <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>owner-id</code> - The ID of the AWS account that owns the subnet.
      * </p>
      * </li>
@@ -667,6 +697,11 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      *        <p>
      *        <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block associated with the
      *        subnet.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.
      *        </p>
      *        </li>
      *        <li>
@@ -774,6 +809,11 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
+     * <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>owner-id</code> - The ID of the AWS account that owns the subnet.
      * </p>
      * </li>
@@ -861,6 +901,11 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest implements S
      *        <p>
      *        <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block associated with the
      *        subnet.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.
      *        </p>
      *        </li>
      *        <li>

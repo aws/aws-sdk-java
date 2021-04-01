@@ -18,8 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file, specify the URI of the input caption
- * source file. If your caption source is IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
+ * If your input captions are SCC, SMI, SRT, STL, TTML, WebVTT, or IMSC 1.1 in an xml file, specify the URI of the input
+ * caption source file. If your caption source is IMSC in an IMF package, use TrackSourceSettings instead of
+ * FileSoureSettings.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/FileSourceSettings" target="_top">AWS
  *      API Documentation</a>
@@ -43,7 +44,7 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
     private CaptionSourceFramerate framerate;
     /**
      * External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl',
-     * 'srt', 'xml', and 'smi'.
+     * 'srt', 'xml', 'smi', and 'vtt'.
      */
     private String sourceFile;
     /** Specifies a time delta in seconds to offset the captions from the source file. */
@@ -180,11 +181,11 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl',
-     * 'srt', 'xml', and 'smi'.
+     * 'srt', 'xml', 'smi', and 'vtt'.
      * 
      * @param sourceFile
      *        External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp',
-     *        'stl', 'srt', 'xml', and 'smi'.
+     *        'stl', 'srt', 'xml', 'smi', and 'vtt'.
      */
 
     public void setSourceFile(String sourceFile) {
@@ -193,10 +194,10 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl',
-     * 'srt', 'xml', and 'smi'.
+     * 'srt', 'xml', 'smi', and 'vtt'.
      * 
      * @return External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp',
-     *         'stl', 'srt', 'xml', and 'smi'.
+     *         'stl', 'srt', 'xml', 'smi', and 'vtt'.
      */
 
     public String getSourceFile() {
@@ -205,11 +206,11 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl',
-     * 'srt', 'xml', and 'smi'.
+     * 'srt', 'xml', 'smi', and 'vtt'.
      * 
      * @param sourceFile
      *        External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp',
-     *        'stl', 'srt', 'xml', and 'smi'.
+     *        'stl', 'srt', 'xml', 'smi', and 'vtt'.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

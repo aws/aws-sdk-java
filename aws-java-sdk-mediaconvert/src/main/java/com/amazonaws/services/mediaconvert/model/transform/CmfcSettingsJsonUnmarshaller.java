@@ -52,6 +52,22 @@ public class CmfcSettingsJsonUnmarshaller implements Unmarshaller<CmfcSettings, 
                     context.nextToken();
                     cmfcSettings.setAudioDuration(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("audioGroupId", targetDepth)) {
+                    context.nextToken();
+                    cmfcSettings.setAudioGroupId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("audioRenditionSets", targetDepth)) {
+                    context.nextToken();
+                    cmfcSettings.setAudioRenditionSets(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("audioTrackType", targetDepth)) {
+                    context.nextToken();
+                    cmfcSettings.setAudioTrackType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("descriptiveVideoServiceFlag", targetDepth)) {
+                    context.nextToken();
+                    cmfcSettings.setDescriptiveVideoServiceFlag(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("iFrameOnlyManifest", targetDepth)) {
                     context.nextToken();
                     cmfcSettings.setIFrameOnlyManifest(context.getUnmarshaller(String.class).unmarshall(context));

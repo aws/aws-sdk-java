@@ -77,6 +77,32 @@ public interface AmazonRoute53Resolver {
 
     /**
      * <p>
+     * Associates a <a>FirewallRuleGroup</a> with a VPC, to provide DNS filtering for the VPC.
+     * </p>
+     * 
+     * @param associateFirewallRuleGroupRequest
+     * @return Result of the AssociateFirewallRuleGroup operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ValidationException
+     * @throws LimitExceededException
+     *         The request caused one or more limits to be exceeded.
+     * @throws ConflictException
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.AssociateFirewallRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/AssociateFirewallRuleGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateFirewallRuleGroupResult associateFirewallRuleGroup(AssociateFirewallRuleGroupRequest associateFirewallRuleGroupRequest);
+
+    /**
+     * <p>
      * Adds IP addresses to an inbound or an outbound Resolver endpoint. If you want to add more than one IP address,
      * submit one <code>AssociateResolverEndpointIpAddress</code> request for each IP address.
      * </p>
@@ -185,6 +211,79 @@ public interface AmazonRoute53Resolver {
      *      target="_top">AWS API Documentation</a>
      */
     AssociateResolverRuleResult associateResolverRule(AssociateResolverRuleRequest associateResolverRuleRequest);
+
+    /**
+     * <p>
+     * Creates an empty firewall domain list for use in DNS Firewall rules. You can populate the domains for the new
+     * list with a file, using <a>ImportFirewallDomains</a>, or with domain strings, using <a>UpdateFirewallDomains</a>.
+     * </p>
+     * 
+     * @param createFirewallDomainListRequest
+     * @return Result of the CreateFirewallDomainList operation returned by the service.
+     * @throws LimitExceededException
+     *         The request caused one or more limits to be exceeded.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.CreateFirewallDomainList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateFirewallDomainList"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateFirewallDomainListResult createFirewallDomainList(CreateFirewallDomainListRequest createFirewallDomainListRequest);
+
+    /**
+     * <p>
+     * Creates a single DNS Firewall rule in the specified rule group, using the specified domain list.
+     * </p>
+     * 
+     * @param createFirewallRuleRequest
+     * @return Result of the CreateFirewallRule operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ValidationException
+     * @throws LimitExceededException
+     *         The request caused one or more limits to be exceeded.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.CreateFirewallRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateFirewallRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateFirewallRuleResult createFirewallRule(CreateFirewallRuleRequest createFirewallRuleRequest);
+
+    /**
+     * <p>
+     * Creates an empty DNS Firewall rule group for filtering DNS network traffic in a VPC. You can add rules to the new
+     * rule group by calling <a>CreateFirewallRule</a>.
+     * </p>
+     * 
+     * @param createFirewallRuleGroupRequest
+     * @return Result of the CreateFirewallRuleGroup operation returned by the service.
+     * @throws LimitExceededException
+     *         The request caused one or more limits to be exceeded.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.CreateFirewallRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateFirewallRuleGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateFirewallRuleGroupResult createFirewallRuleGroup(CreateFirewallRuleGroupRequest createFirewallRuleGroupRequest);
 
     /**
      * <p>
@@ -301,6 +400,75 @@ public interface AmazonRoute53Resolver {
 
     /**
      * <p>
+     * Deletes the specified domain list.
+     * </p>
+     * 
+     * @param deleteFirewallDomainListRequest
+     * @return Result of the DeleteFirewallDomainList operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ConflictException
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.DeleteFirewallDomainList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteFirewallDomainList"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteFirewallDomainListResult deleteFirewallDomainList(DeleteFirewallDomainListRequest deleteFirewallDomainListRequest);
+
+    /**
+     * <p>
+     * Deletes the specified firewall rule.
+     * </p>
+     * 
+     * @param deleteFirewallRuleRequest
+     * @return Result of the DeleteFirewallRule operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.DeleteFirewallRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteFirewallRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteFirewallRuleResult deleteFirewallRule(DeleteFirewallRuleRequest deleteFirewallRuleRequest);
+
+    /**
+     * <p>
+     * Deletes the specified firewall rule group.
+     * </p>
+     * 
+     * @param deleteFirewallRuleGroupRequest
+     * @return Result of the DeleteFirewallRuleGroup operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ConflictException
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.DeleteFirewallRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteFirewallRuleGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteFirewallRuleGroupResult deleteFirewallRuleGroup(DeleteFirewallRuleGroupRequest deleteFirewallRuleGroupRequest);
+
+    /**
+     * <p>
      * Deletes a Resolver endpoint. The effect of deleting a Resolver endpoint depends on whether it's an inbound or an
      * outbound Resolver endpoint:
      * </p>
@@ -402,6 +570,30 @@ public interface AmazonRoute53Resolver {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteResolverRuleResult deleteResolverRule(DeleteResolverRuleRequest deleteResolverRuleRequest);
+
+    /**
+     * <p>
+     * Disassociates a <a>FirewallRuleGroup</a> from a VPC, to remove DNS filtering from the VPC.
+     * </p>
+     * 
+     * @param disassociateFirewallRuleGroupRequest
+     * @return Result of the DisassociateFirewallRuleGroup operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws ConflictException
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.DisassociateFirewallRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DisassociateFirewallRuleGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateFirewallRuleGroupResult disassociateFirewallRuleGroup(DisassociateFirewallRuleGroupRequest disassociateFirewallRuleGroupRequest);
 
     /**
      * <p>
@@ -509,6 +701,121 @@ public interface AmazonRoute53Resolver {
      *      target="_top">AWS API Documentation</a>
      */
     DisassociateResolverRuleResult disassociateResolverRule(DisassociateResolverRuleRequest disassociateResolverRuleRequest);
+
+    /**
+     * <p>
+     * Retrieves the configuration of the firewall behavior provided by DNS Firewall for a single Amazon virtual private
+     * cloud (VPC).
+     * </p>
+     * 
+     * @param getFirewallConfigRequest
+     * @return Result of the GetFirewallConfig operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @throws ValidationException
+     * @sample AmazonRoute53Resolver.GetFirewallConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetFirewallConfigResult getFirewallConfig(GetFirewallConfigRequest getFirewallConfigRequest);
+
+    /**
+     * <p>
+     * Retrieves the specified firewall domain list.
+     * </p>
+     * 
+     * @param getFirewallDomainListRequest
+     * @return Result of the GetFirewallDomainList operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.GetFirewallDomainList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallDomainList"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetFirewallDomainListResult getFirewallDomainList(GetFirewallDomainListRequest getFirewallDomainListRequest);
+
+    /**
+     * <p>
+     * Retrieves the specified firewall rule group.
+     * </p>
+     * 
+     * @param getFirewallRuleGroupRequest
+     * @return Result of the GetFirewallRuleGroup operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.GetFirewallRuleGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallRuleGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetFirewallRuleGroupResult getFirewallRuleGroup(GetFirewallRuleGroupRequest getFirewallRuleGroupRequest);
+
+    /**
+     * <p>
+     * Retrieves a firewall rule group association, which enables DNS filtering for a VPC with one rule group. A VPC can
+     * have more than one firewall rule group association, and a rule group can be associated with more than one VPC.
+     * </p>
+     * 
+     * @param getFirewallRuleGroupAssociationRequest
+     * @return Result of the GetFirewallRuleGroupAssociation operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.GetFirewallRuleGroupAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallRuleGroupAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetFirewallRuleGroupAssociationResult getFirewallRuleGroupAssociation(GetFirewallRuleGroupAssociationRequest getFirewallRuleGroupAssociationRequest);
+
+    /**
+     * <p>
+     * Returns the AWS Identity and Access Management (AWS IAM) policy for sharing the specified rule group. You can use
+     * the policy to share the rule group using AWS Resource Access Manager (RAM).
+     * </p>
+     * 
+     * @param getFirewallRuleGroupPolicyRequest
+     * @return Result of the GetFirewallRuleGroupPolicy operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.GetFirewallRuleGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallRuleGroupPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetFirewallRuleGroupPolicyResult getFirewallRuleGroupPolicy(GetFirewallRuleGroupPolicyRequest getFirewallRuleGroupPolicyRequest);
 
     /**
      * <p>
@@ -706,6 +1013,208 @@ public interface AmazonRoute53Resolver {
      *      target="_top">AWS API Documentation</a>
      */
     GetResolverRulePolicyResult getResolverRulePolicy(GetResolverRulePolicyRequest getResolverRulePolicyRequest);
+
+    /**
+     * <p>
+     * Imports domain names from a file into a domain list, for use in a DNS firewall rule group.
+     * </p>
+     * <p>
+     * Each domain specification in your domain list must satisfy the following requirements:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * It can optionally start with <code>*</code> (asterisk).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * With the exception of the optional starting asterisk, it must only contain the following characters:
+     * <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * It must be from 1-255 characters in length.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param importFirewallDomainsRequest
+     * @return Result of the ImportFirewallDomains operation returned by the service.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws LimitExceededException
+     *         The request caused one or more limits to be exceeded.
+     * @throws ConflictException
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.ImportFirewallDomains
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ImportFirewallDomains"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ImportFirewallDomainsResult importFirewallDomains(ImportFirewallDomainsRequest importFirewallDomainsRequest);
+
+    /**
+     * <p>
+     * Retrieves the firewall configurations that you have defined. DNS Firewall uses the configurations to manage
+     * firewall behavior for your VPCs.
+     * </p>
+     * <p>
+     * A single call might return only a partial list of the configurations. For information, see
+     * <code>MaxResults</code>.
+     * </p>
+     * 
+     * @param listFirewallConfigsRequest
+     * @return Result of the ListFirewallConfigs operation returned by the service.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.ListFirewallConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListFirewallConfigsResult listFirewallConfigs(ListFirewallConfigsRequest listFirewallConfigsRequest);
+
+    /**
+     * <p>
+     * Retrieves the firewall domain lists that you have defined. For each firewall domain list, you can retrieve the
+     * domains that are defined for a list by calling <a>ListFirewallDomains</a>.
+     * </p>
+     * <p>
+     * A single call to this list operation might return only a partial list of the domain lists. For information, see
+     * <code>MaxResults</code>.
+     * </p>
+     * 
+     * @param listFirewallDomainListsRequest
+     * @return Result of the ListFirewallDomainLists operation returned by the service.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.ListFirewallDomainLists
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallDomainLists"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListFirewallDomainListsResult listFirewallDomainLists(ListFirewallDomainListsRequest listFirewallDomainListsRequest);
+
+    /**
+     * <p>
+     * Retrieves the domains that you have defined for the specified firewall domain list.
+     * </p>
+     * <p>
+     * A single call might return only a partial list of the domains. For information, see <code>MaxResults</code>.
+     * </p>
+     * 
+     * @param listFirewallDomainsRequest
+     * @return Result of the ListFirewallDomains operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.ListFirewallDomains
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallDomains"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListFirewallDomainsResult listFirewallDomains(ListFirewallDomainsRequest listFirewallDomainsRequest);
+
+    /**
+     * <p>
+     * Retrieves the firewall rule group associations that you have defined. Each association enables DNS filtering for
+     * a VPC with one rule group.
+     * </p>
+     * <p>
+     * A single call might return only a partial list of the associations. For information, see <code>MaxResults</code>.
+     * </p>
+     * 
+     * @param listFirewallRuleGroupAssociationsRequest
+     * @return Result of the ListFirewallRuleGroupAssociations operation returned by the service.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.ListFirewallRuleGroupAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRuleGroupAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListFirewallRuleGroupAssociationsResult listFirewallRuleGroupAssociations(ListFirewallRuleGroupAssociationsRequest listFirewallRuleGroupAssociationsRequest);
+
+    /**
+     * <p>
+     * Retrieves the minimal high-level information for the rule groups that you have defined.
+     * </p>
+     * <p>
+     * A single call might return only a partial list of the rule groups. For information, see <code>MaxResults</code>.
+     * </p>
+     * 
+     * @param listFirewallRuleGroupsRequest
+     * @return Result of the ListFirewallRuleGroups operation returned by the service.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.ListFirewallRuleGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRuleGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListFirewallRuleGroupsResult listFirewallRuleGroups(ListFirewallRuleGroupsRequest listFirewallRuleGroupsRequest);
+
+    /**
+     * <p>
+     * Retrieves the firewall rules that you have defined for the specified firewall rule group. DNS Firewall uses the
+     * rules in a rule group to filter DNS network traffic for a VPC.
+     * </p>
+     * <p>
+     * A single call might return only a partial list of the rules. For information, see <code>MaxResults</code>.
+     * </p>
+     * 
+     * @param listFirewallRulesRequest
+     * @return Result of the ListFirewallRules operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.ListFirewallRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListFirewallRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListFirewallRulesResult listFirewallRules(ListFirewallRulesRequest listFirewallRulesRequest);
 
     /**
      * <p>
@@ -907,6 +1416,30 @@ public interface AmazonRoute53Resolver {
 
     /**
      * <p>
+     * Attaches an AWS Identity and Access Management (AWS IAM) policy for sharing the rule group. You can use the
+     * policy to share the rule group using AWS Resource Access Manager (RAM).
+     * </p>
+     * 
+     * @param putFirewallRuleGroupPolicyRequest
+     * @return Result of the PutFirewallRuleGroupPolicy operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.PutFirewallRuleGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutFirewallRuleGroupPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutFirewallRuleGroupPolicyResult putFirewallRuleGroupPolicy(PutFirewallRuleGroupPolicyRequest putFirewallRuleGroupPolicyRequest);
+
+    /**
+     * <p>
      * Specifies an AWS account that you want to share a query logging configuration with, the query logging
      * configuration that you want to share, and the operations that you want the account to be able to perform on the
      * configuration.
@@ -1004,6 +1537,107 @@ public interface AmazonRoute53Resolver {
      *      API Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Updates the configuration of the firewall behavior provided by DNS Firewall for a single Amazon virtual private
+     * cloud (VPC).
+     * </p>
+     * 
+     * @param updateFirewallConfigRequest
+     * @return Result of the UpdateFirewallConfig operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.UpdateFirewallConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateFirewallConfigResult updateFirewallConfig(UpdateFirewallConfigRequest updateFirewallConfigRequest);
+
+    /**
+     * <p>
+     * Updates the firewall domain list from an array of domain specifications.
+     * </p>
+     * 
+     * @param updateFirewallDomainsRequest
+     * @return Result of the UpdateFirewallDomains operation returned by the service.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws LimitExceededException
+     *         The request caused one or more limits to be exceeded.
+     * @throws ConflictException
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.UpdateFirewallDomains
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallDomains"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateFirewallDomainsResult updateFirewallDomains(UpdateFirewallDomainsRequest updateFirewallDomainsRequest);
+
+    /**
+     * <p>
+     * Updates the specified firewall rule.
+     * </p>
+     * 
+     * @param updateFirewallRuleRequest
+     * @return Result of the UpdateFirewallRule operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ValidationException
+     * @throws ConflictException
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.UpdateFirewallRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateFirewallRuleResult updateFirewallRule(UpdateFirewallRuleRequest updateFirewallRuleRequest);
+
+    /**
+     * <p>
+     * Changes the association of a <a>FirewallRuleGroup</a> with a VPC. The association enables DNS filtering for the
+     * VPC.
+     * </p>
+     * 
+     * @param updateFirewallRuleGroupAssociationRequest
+     * @return Result of the UpdateFirewallRuleGroupAssociation operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ValidationException
+     * @throws ConflictException
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @sample AmazonRoute53Resolver.UpdateFirewallRuleGroupAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallRuleGroupAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateFirewallRuleGroupAssociationResult updateFirewallRuleGroupAssociation(
+            UpdateFirewallRuleGroupAssociationRequest updateFirewallRuleGroupAssociationRequest);
 
     /**
      * <p>

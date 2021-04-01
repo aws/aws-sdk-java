@@ -25,7 +25,8 @@ public enum ContainerServiceState {
     RUNNING("RUNNING"),
     UPDATING("UPDATING"),
     DELETING("DELETING"),
-    DISABLED("DISABLED");
+    DISABLED("DISABLED"),
+    DEPLOYING("DEPLOYING");
 
     private String value;
 

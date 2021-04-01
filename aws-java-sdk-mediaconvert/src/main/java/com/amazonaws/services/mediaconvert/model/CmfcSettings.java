@@ -39,6 +39,52 @@ public class CmfcSettings implements Serializable, Cloneable, StructuredPojo {
      */
     private String audioDuration;
     /**
+     * Specify the audio rendition group for this audio rendition. Specify up to one value for each audio output in your
+     * output group. This value appears in your HLS parent manifest in the EXT-X-MEDIA tag of TYPE=AUDIO, as the value
+     * for the GROUP-ID attribute. For example, if you specify "audio_aac_1" for Audio group ID, it appears in your
+     * manifest like this: #EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="audio_aac_1". Related setting: To associate the rendition
+     * group that this audio track belongs to with a video rendition, include the same value that you provide here for
+     * that video output's setting Audio rendition sets (audioRenditionSets).
+     */
+    private String audioGroupId;
+    /**
+     * List the audio rendition groups that you want included with this video rendition. Use a comma-separated list. For
+     * example, say you want to include the audio rendition groups that have the audio group IDs "audio_aac_1" and
+     * "audio_dolby". Then you would specify this value: "audio_aac_1, audio_dolby". Related setting: The rendition
+     * groups that you include in your comma-separated list should all match values that you specify in the setting Audio
+     * group ID (AudioGroupId) for audio renditions in the same output group as this video rendition. Default behavior:
+     * If you don't specify anything here and for Audio group ID, MediaConvert puts each audio variant in its own audio
+     * rendition group and associates it with every video variant. Each value in your list appears in your HLS parent
+     * manifest in the EXT-X-STREAM-INF tag as the value for the AUDIO attribute. To continue the previous example, say
+     * that the file name for the child manifest for your video rendition is "amazing_video_1.m3u8". Then, in your parent
+     * manifest, each value will appear on separate lines, like this: #EXT-X-STREAM-INF:AUDIO="audio_aac_1"...
+     * amazing_video_1.m3u8 #EXT-X-STREAM-INF:AUDIO="audio_dolby"... amazing_video_1.m3u8
+     */
+    private String audioRenditionSets;
+    /**
+     * Use this setting to control the values that MediaConvert puts in your HLS parent playlist to control how the
+     * client player selects which audio track to play. The other options for this setting determine the values that
+     * MediaConvert writes for the DEFAULT and AUTOSELECT attributes of the EXT-X-MEDIA entry for the audio variant. For
+     * more information about these attributes, see the Apple documentation article
+     * https://developer.apple.com/documentation
+     * /http_live_streaming/example_playlists_for_http_live_streaming/adding_alternate_media_to_a_playlist. Choose
+     * Alternate audio, auto select, default (ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT) to set DEFAULT=YES and AUTOSELECT=YES.
+     * Choose this value for only one variant in your output group. Choose Alternate audio, auto select, not default
+     * (ALTERNATE_AUDIO_AUTO_SELECT) to set DEFAULT=NO and AUTOSELECT=YES. Choose Alternate Audio, Not Auto Select to set
+     * DEFAULT=NO and AUTOSELECT=NO. When you don't specify a value for this setting, MediaConvert defaults to Alternate
+     * audio, auto select, default. When there is more than one variant in your output group, you must explicitly choose
+     * a value for this setting.
+     */
+    private String audioTrackType;
+    /**
+     * Specify whether to flag this audio track as descriptive video service (DVS) in your HLS parent manifest. When you
+     * choose Flag (FLAG), MediaConvert includes the parameter CHARACTERISTICS="public.accessibility.describes-video" in
+     * the EXT-X-MEDIA entry for this track. When you keep the default choice, Don't flag (DONT_FLAG), MediaConvert
+     * leaves this parameter out. The DVS flag can help with accessibility on Apple devices. For more information, see
+     * the Apple documentation.
+     */
+    private String descriptiveVideoServiceFlag;
+    /**
      * Choose Include (INCLUDE) to have MediaConvert generate an HLS child manifest that lists only the I-frames for
      * this rendition, in addition to your regular manifest for this rendition. You might use this manifest as part of a
      * workflow that creates preview functions for your video. MediaConvert adds both the I-frame only child manifest and
@@ -175,6 +221,390 @@ public class CmfcSettings implements Serializable, Cloneable, StructuredPojo {
 
     public CmfcSettings withAudioDuration(CmfcAudioDuration audioDuration) {
         this.audioDuration = audioDuration.toString();
+        return this;
+    }
+
+    /**
+     * Specify the audio rendition group for this audio rendition. Specify up to one value for each audio output in your
+     * output group. This value appears in your HLS parent manifest in the EXT-X-MEDIA tag of TYPE=AUDIO, as the value
+     * for the GROUP-ID attribute. For example, if you specify "audio_aac_1" for Audio group ID, it appears in your
+     * manifest like this: #EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="audio_aac_1". Related setting: To associate the rendition
+     * group that this audio track belongs to with a video rendition, include the same value that you provide here for
+     * that video output's setting Audio rendition sets (audioRenditionSets).
+     * 
+     * @param audioGroupId
+     *        Specify the audio rendition group for this audio rendition. Specify up to one value for each audio output
+     *        in your output group. This value appears in your HLS parent manifest in the EXT-X-MEDIA tag of TYPE=AUDIO,
+     *        as the value for the GROUP-ID attribute. For example, if you specify "audio_aac_1" for Audio group ID, it
+     *        appears in your manifest like this: #EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="audio_aac_1". Related setting: To
+     *        associate the rendition group that this audio track belongs to with a video rendition, include the same
+     *        value that you provide here for that video output's setting Audio rendition sets (audioRenditionSets).
+     */
+
+    public void setAudioGroupId(String audioGroupId) {
+        this.audioGroupId = audioGroupId;
+    }
+
+    /**
+     * Specify the audio rendition group for this audio rendition. Specify up to one value for each audio output in your
+     * output group. This value appears in your HLS parent manifest in the EXT-X-MEDIA tag of TYPE=AUDIO, as the value
+     * for the GROUP-ID attribute. For example, if you specify "audio_aac_1" for Audio group ID, it appears in your
+     * manifest like this: #EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="audio_aac_1". Related setting: To associate the rendition
+     * group that this audio track belongs to with a video rendition, include the same value that you provide here for
+     * that video output's setting Audio rendition sets (audioRenditionSets).
+     * 
+     * @return Specify the audio rendition group for this audio rendition. Specify up to one value for each audio output
+     *         in your output group. This value appears in your HLS parent manifest in the EXT-X-MEDIA tag of
+     *         TYPE=AUDIO, as the value for the GROUP-ID attribute. For example, if you specify "audio_aac_1" for Audio
+     *         group ID, it appears in your manifest like this: #EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="audio_aac_1". Related
+     *         setting: To associate the rendition group that this audio track belongs to with a video rendition,
+     *         include the same value that you provide here for that video output's setting Audio rendition sets
+     *         (audioRenditionSets).
+     */
+
+    public String getAudioGroupId() {
+        return this.audioGroupId;
+    }
+
+    /**
+     * Specify the audio rendition group for this audio rendition. Specify up to one value for each audio output in your
+     * output group. This value appears in your HLS parent manifest in the EXT-X-MEDIA tag of TYPE=AUDIO, as the value
+     * for the GROUP-ID attribute. For example, if you specify "audio_aac_1" for Audio group ID, it appears in your
+     * manifest like this: #EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="audio_aac_1". Related setting: To associate the rendition
+     * group that this audio track belongs to with a video rendition, include the same value that you provide here for
+     * that video output's setting Audio rendition sets (audioRenditionSets).
+     * 
+     * @param audioGroupId
+     *        Specify the audio rendition group for this audio rendition. Specify up to one value for each audio output
+     *        in your output group. This value appears in your HLS parent manifest in the EXT-X-MEDIA tag of TYPE=AUDIO,
+     *        as the value for the GROUP-ID attribute. For example, if you specify "audio_aac_1" for Audio group ID, it
+     *        appears in your manifest like this: #EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="audio_aac_1". Related setting: To
+     *        associate the rendition group that this audio track belongs to with a video rendition, include the same
+     *        value that you provide here for that video output's setting Audio rendition sets (audioRenditionSets).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CmfcSettings withAudioGroupId(String audioGroupId) {
+        setAudioGroupId(audioGroupId);
+        return this;
+    }
+
+    /**
+     * List the audio rendition groups that you want included with this video rendition. Use a comma-separated list. For
+     * example, say you want to include the audio rendition groups that have the audio group IDs "audio_aac_1" and
+     * "audio_dolby". Then you would specify this value: "audio_aac_1, audio_dolby". Related setting: The rendition
+     * groups that you include in your comma-separated list should all match values that you specify in the setting Audio
+     * group ID (AudioGroupId) for audio renditions in the same output group as this video rendition. Default behavior:
+     * If you don't specify anything here and for Audio group ID, MediaConvert puts each audio variant in its own audio
+     * rendition group and associates it with every video variant. Each value in your list appears in your HLS parent
+     * manifest in the EXT-X-STREAM-INF tag as the value for the AUDIO attribute. To continue the previous example, say
+     * that the file name for the child manifest for your video rendition is "amazing_video_1.m3u8". Then, in your parent
+     * manifest, each value will appear on separate lines, like this: #EXT-X-STREAM-INF:AUDIO="audio_aac_1"...
+     * amazing_video_1.m3u8 #EXT-X-STREAM-INF:AUDIO="audio_dolby"... amazing_video_1.m3u8
+     * 
+     * @param audioRenditionSets
+     *        List the audio rendition groups that you want included with this video rendition. Use a comma-separated
+     *        list. For example, say you want to include the audio rendition groups that have the audio group IDs
+     *        "audio_aac_1" and "audio_dolby". Then you would specify this value: "audio_aac_1, audio_dolby". Related
+     *        setting: The rendition groups that you include in your comma-separated list should all match values that
+     *        you specify in the setting Audio group ID (AudioGroupId) for audio renditions in the same output group as
+     *        this video rendition. Default behavior: If you don't specify anything here and for Audio group ID,
+     *        MediaConvert puts each audio variant in its own audio rendition group and associates it with every video
+     *        variant. Each value in your list appears in your HLS parent manifest in the EXT-X-STREAM-INF tag as the
+     *        value for the AUDIO attribute. To continue the previous example, say that the file name for the child
+     *        manifest for your video rendition is "amazing_video_1.m3u8". Then, in your parent manifest, each value
+     *        will appear on separate lines, like this: #EXT-X-STREAM-INF:AUDIO="audio_aac_1"... amazing_video_1.m3u8
+     *        #EXT-X-STREAM-INF:AUDIO="audio_dolby"... amazing_video_1.m3u8
+     */
+
+    public void setAudioRenditionSets(String audioRenditionSets) {
+        this.audioRenditionSets = audioRenditionSets;
+    }
+
+    /**
+     * List the audio rendition groups that you want included with this video rendition. Use a comma-separated list. For
+     * example, say you want to include the audio rendition groups that have the audio group IDs "audio_aac_1" and
+     * "audio_dolby". Then you would specify this value: "audio_aac_1, audio_dolby". Related setting: The rendition
+     * groups that you include in your comma-separated list should all match values that you specify in the setting Audio
+     * group ID (AudioGroupId) for audio renditions in the same output group as this video rendition. Default behavior:
+     * If you don't specify anything here and for Audio group ID, MediaConvert puts each audio variant in its own audio
+     * rendition group and associates it with every video variant. Each value in your list appears in your HLS parent
+     * manifest in the EXT-X-STREAM-INF tag as the value for the AUDIO attribute. To continue the previous example, say
+     * that the file name for the child manifest for your video rendition is "amazing_video_1.m3u8". Then, in your parent
+     * manifest, each value will appear on separate lines, like this: #EXT-X-STREAM-INF:AUDIO="audio_aac_1"...
+     * amazing_video_1.m3u8 #EXT-X-STREAM-INF:AUDIO="audio_dolby"... amazing_video_1.m3u8
+     * 
+     * @return List the audio rendition groups that you want included with this video rendition. Use a comma-separated
+     *         list. For example, say you want to include the audio rendition groups that have the audio group IDs
+     *         "audio_aac_1" and "audio_dolby". Then you would specify this value: "audio_aac_1, audio_dolby". Related
+     *         setting: The rendition groups that you include in your comma-separated list should all match values that
+     *         you specify in the setting Audio group ID (AudioGroupId) for audio renditions in the same output group as
+     *         this video rendition. Default behavior: If you don't specify anything here and for Audio group ID,
+     *         MediaConvert puts each audio variant in its own audio rendition group and associates it with every video
+     *         variant. Each value in your list appears in your HLS parent manifest in the EXT-X-STREAM-INF tag as the
+     *         value for the AUDIO attribute. To continue the previous example, say that the file name for the child
+     *         manifest for your video rendition is "amazing_video_1.m3u8". Then, in your parent manifest, each value
+     *         will appear on separate lines, like this: #EXT-X-STREAM-INF:AUDIO="audio_aac_1"... amazing_video_1.m3u8
+     *         #EXT-X-STREAM-INF:AUDIO="audio_dolby"... amazing_video_1.m3u8
+     */
+
+    public String getAudioRenditionSets() {
+        return this.audioRenditionSets;
+    }
+
+    /**
+     * List the audio rendition groups that you want included with this video rendition. Use a comma-separated list. For
+     * example, say you want to include the audio rendition groups that have the audio group IDs "audio_aac_1" and
+     * "audio_dolby". Then you would specify this value: "audio_aac_1, audio_dolby". Related setting: The rendition
+     * groups that you include in your comma-separated list should all match values that you specify in the setting Audio
+     * group ID (AudioGroupId) for audio renditions in the same output group as this video rendition. Default behavior:
+     * If you don't specify anything here and for Audio group ID, MediaConvert puts each audio variant in its own audio
+     * rendition group and associates it with every video variant. Each value in your list appears in your HLS parent
+     * manifest in the EXT-X-STREAM-INF tag as the value for the AUDIO attribute. To continue the previous example, say
+     * that the file name for the child manifest for your video rendition is "amazing_video_1.m3u8". Then, in your parent
+     * manifest, each value will appear on separate lines, like this: #EXT-X-STREAM-INF:AUDIO="audio_aac_1"...
+     * amazing_video_1.m3u8 #EXT-X-STREAM-INF:AUDIO="audio_dolby"... amazing_video_1.m3u8
+     * 
+     * @param audioRenditionSets
+     *        List the audio rendition groups that you want included with this video rendition. Use a comma-separated
+     *        list. For example, say you want to include the audio rendition groups that have the audio group IDs
+     *        "audio_aac_1" and "audio_dolby". Then you would specify this value: "audio_aac_1, audio_dolby". Related
+     *        setting: The rendition groups that you include in your comma-separated list should all match values that
+     *        you specify in the setting Audio group ID (AudioGroupId) for audio renditions in the same output group as
+     *        this video rendition. Default behavior: If you don't specify anything here and for Audio group ID,
+     *        MediaConvert puts each audio variant in its own audio rendition group and associates it with every video
+     *        variant. Each value in your list appears in your HLS parent manifest in the EXT-X-STREAM-INF tag as the
+     *        value for the AUDIO attribute. To continue the previous example, say that the file name for the child
+     *        manifest for your video rendition is "amazing_video_1.m3u8". Then, in your parent manifest, each value
+     *        will appear on separate lines, like this: #EXT-X-STREAM-INF:AUDIO="audio_aac_1"... amazing_video_1.m3u8
+     *        #EXT-X-STREAM-INF:AUDIO="audio_dolby"... amazing_video_1.m3u8
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CmfcSettings withAudioRenditionSets(String audioRenditionSets) {
+        setAudioRenditionSets(audioRenditionSets);
+        return this;
+    }
+
+    /**
+     * Use this setting to control the values that MediaConvert puts in your HLS parent playlist to control how the
+     * client player selects which audio track to play. The other options for this setting determine the values that
+     * MediaConvert writes for the DEFAULT and AUTOSELECT attributes of the EXT-X-MEDIA entry for the audio variant. For
+     * more information about these attributes, see the Apple documentation article
+     * https://developer.apple.com/documentation
+     * /http_live_streaming/example_playlists_for_http_live_streaming/adding_alternate_media_to_a_playlist. Choose
+     * Alternate audio, auto select, default (ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT) to set DEFAULT=YES and AUTOSELECT=YES.
+     * Choose this value for only one variant in your output group. Choose Alternate audio, auto select, not default
+     * (ALTERNATE_AUDIO_AUTO_SELECT) to set DEFAULT=NO and AUTOSELECT=YES. Choose Alternate Audio, Not Auto Select to set
+     * DEFAULT=NO and AUTOSELECT=NO. When you don't specify a value for this setting, MediaConvert defaults to Alternate
+     * audio, auto select, default. When there is more than one variant in your output group, you must explicitly choose
+     * a value for this setting.
+     * 
+     * @param audioTrackType
+     *        Use this setting to control the values that MediaConvert puts in your HLS parent playlist to control how
+     *        the client player selects which audio track to play. The other options for this setting determine the
+     *        values that MediaConvert writes for the DEFAULT and AUTOSELECT attributes of the EXT-X-MEDIA entry for the
+     *        audio variant. For more information about these attributes, see the Apple documentation article
+     *        https://developer.apple.com/documentation/http_live_streaming/example_playlists_for_http_live_streaming/
+     *        adding_alternate_media_to_a_playlist. Choose Alternate audio, auto select, default
+     *        (ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT) to set DEFAULT=YES and AUTOSELECT=YES. Choose this value for only
+     *        one variant in your output group. Choose Alternate audio, auto select, not default
+     *        (ALTERNATE_AUDIO_AUTO_SELECT) to set DEFAULT=NO and AUTOSELECT=YES. Choose Alternate Audio, Not Auto
+     *        Select to set DEFAULT=NO and AUTOSELECT=NO. When you don't specify a value for this setting, MediaConvert
+     *        defaults to Alternate audio, auto select, default. When there is more than one variant in your output
+     *        group, you must explicitly choose a value for this setting.
+     * @see CmfcAudioTrackType
+     */
+
+    public void setAudioTrackType(String audioTrackType) {
+        this.audioTrackType = audioTrackType;
+    }
+
+    /**
+     * Use this setting to control the values that MediaConvert puts in your HLS parent playlist to control how the
+     * client player selects which audio track to play. The other options for this setting determine the values that
+     * MediaConvert writes for the DEFAULT and AUTOSELECT attributes of the EXT-X-MEDIA entry for the audio variant. For
+     * more information about these attributes, see the Apple documentation article
+     * https://developer.apple.com/documentation
+     * /http_live_streaming/example_playlists_for_http_live_streaming/adding_alternate_media_to_a_playlist. Choose
+     * Alternate audio, auto select, default (ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT) to set DEFAULT=YES and AUTOSELECT=YES.
+     * Choose this value for only one variant in your output group. Choose Alternate audio, auto select, not default
+     * (ALTERNATE_AUDIO_AUTO_SELECT) to set DEFAULT=NO and AUTOSELECT=YES. Choose Alternate Audio, Not Auto Select to set
+     * DEFAULT=NO and AUTOSELECT=NO. When you don't specify a value for this setting, MediaConvert defaults to Alternate
+     * audio, auto select, default. When there is more than one variant in your output group, you must explicitly choose
+     * a value for this setting.
+     * 
+     * @return Use this setting to control the values that MediaConvert puts in your HLS parent playlist to control how
+     *         the client player selects which audio track to play. The other options for this setting determine the
+     *         values that MediaConvert writes for the DEFAULT and AUTOSELECT attributes of the EXT-X-MEDIA entry for
+     *         the audio variant. For more information about these attributes, see the Apple documentation article
+     *         https://developer.apple.com/documentation/http_live_streaming/example_playlists_for_http_live_streaming/
+     *         adding_alternate_media_to_a_playlist. Choose Alternate audio, auto select, default
+     *         (ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT) to set DEFAULT=YES and AUTOSELECT=YES. Choose this value for only
+     *         one variant in your output group. Choose Alternate audio, auto select, not default
+     *         (ALTERNATE_AUDIO_AUTO_SELECT) to set DEFAULT=NO and AUTOSELECT=YES. Choose Alternate Audio, Not Auto
+     *         Select to set DEFAULT=NO and AUTOSELECT=NO. When you don't specify a value for this setting, MediaConvert
+     *         defaults to Alternate audio, auto select, default. When there is more than one variant in your output
+     *         group, you must explicitly choose a value for this setting.
+     * @see CmfcAudioTrackType
+     */
+
+    public String getAudioTrackType() {
+        return this.audioTrackType;
+    }
+
+    /**
+     * Use this setting to control the values that MediaConvert puts in your HLS parent playlist to control how the
+     * client player selects which audio track to play. The other options for this setting determine the values that
+     * MediaConvert writes for the DEFAULT and AUTOSELECT attributes of the EXT-X-MEDIA entry for the audio variant. For
+     * more information about these attributes, see the Apple documentation article
+     * https://developer.apple.com/documentation
+     * /http_live_streaming/example_playlists_for_http_live_streaming/adding_alternate_media_to_a_playlist. Choose
+     * Alternate audio, auto select, default (ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT) to set DEFAULT=YES and AUTOSELECT=YES.
+     * Choose this value for only one variant in your output group. Choose Alternate audio, auto select, not default
+     * (ALTERNATE_AUDIO_AUTO_SELECT) to set DEFAULT=NO and AUTOSELECT=YES. Choose Alternate Audio, Not Auto Select to set
+     * DEFAULT=NO and AUTOSELECT=NO. When you don't specify a value for this setting, MediaConvert defaults to Alternate
+     * audio, auto select, default. When there is more than one variant in your output group, you must explicitly choose
+     * a value for this setting.
+     * 
+     * @param audioTrackType
+     *        Use this setting to control the values that MediaConvert puts in your HLS parent playlist to control how
+     *        the client player selects which audio track to play. The other options for this setting determine the
+     *        values that MediaConvert writes for the DEFAULT and AUTOSELECT attributes of the EXT-X-MEDIA entry for the
+     *        audio variant. For more information about these attributes, see the Apple documentation article
+     *        https://developer.apple.com/documentation/http_live_streaming/example_playlists_for_http_live_streaming/
+     *        adding_alternate_media_to_a_playlist. Choose Alternate audio, auto select, default
+     *        (ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT) to set DEFAULT=YES and AUTOSELECT=YES. Choose this value for only
+     *        one variant in your output group. Choose Alternate audio, auto select, not default
+     *        (ALTERNATE_AUDIO_AUTO_SELECT) to set DEFAULT=NO and AUTOSELECT=YES. Choose Alternate Audio, Not Auto
+     *        Select to set DEFAULT=NO and AUTOSELECT=NO. When you don't specify a value for this setting, MediaConvert
+     *        defaults to Alternate audio, auto select, default. When there is more than one variant in your output
+     *        group, you must explicitly choose a value for this setting.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CmfcAudioTrackType
+     */
+
+    public CmfcSettings withAudioTrackType(String audioTrackType) {
+        setAudioTrackType(audioTrackType);
+        return this;
+    }
+
+    /**
+     * Use this setting to control the values that MediaConvert puts in your HLS parent playlist to control how the
+     * client player selects which audio track to play. The other options for this setting determine the values that
+     * MediaConvert writes for the DEFAULT and AUTOSELECT attributes of the EXT-X-MEDIA entry for the audio variant. For
+     * more information about these attributes, see the Apple documentation article
+     * https://developer.apple.com/documentation
+     * /http_live_streaming/example_playlists_for_http_live_streaming/adding_alternate_media_to_a_playlist. Choose
+     * Alternate audio, auto select, default (ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT) to set DEFAULT=YES and AUTOSELECT=YES.
+     * Choose this value for only one variant in your output group. Choose Alternate audio, auto select, not default
+     * (ALTERNATE_AUDIO_AUTO_SELECT) to set DEFAULT=NO and AUTOSELECT=YES. Choose Alternate Audio, Not Auto Select to set
+     * DEFAULT=NO and AUTOSELECT=NO. When you don't specify a value for this setting, MediaConvert defaults to Alternate
+     * audio, auto select, default. When there is more than one variant in your output group, you must explicitly choose
+     * a value for this setting.
+     * 
+     * @param audioTrackType
+     *        Use this setting to control the values that MediaConvert puts in your HLS parent playlist to control how
+     *        the client player selects which audio track to play. The other options for this setting determine the
+     *        values that MediaConvert writes for the DEFAULT and AUTOSELECT attributes of the EXT-X-MEDIA entry for the
+     *        audio variant. For more information about these attributes, see the Apple documentation article
+     *        https://developer.apple.com/documentation/http_live_streaming/example_playlists_for_http_live_streaming/
+     *        adding_alternate_media_to_a_playlist. Choose Alternate audio, auto select, default
+     *        (ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT) to set DEFAULT=YES and AUTOSELECT=YES. Choose this value for only
+     *        one variant in your output group. Choose Alternate audio, auto select, not default
+     *        (ALTERNATE_AUDIO_AUTO_SELECT) to set DEFAULT=NO and AUTOSELECT=YES. Choose Alternate Audio, Not Auto
+     *        Select to set DEFAULT=NO and AUTOSELECT=NO. When you don't specify a value for this setting, MediaConvert
+     *        defaults to Alternate audio, auto select, default. When there is more than one variant in your output
+     *        group, you must explicitly choose a value for this setting.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CmfcAudioTrackType
+     */
+
+    public CmfcSettings withAudioTrackType(CmfcAudioTrackType audioTrackType) {
+        this.audioTrackType = audioTrackType.toString();
+        return this;
+    }
+
+    /**
+     * Specify whether to flag this audio track as descriptive video service (DVS) in your HLS parent manifest. When you
+     * choose Flag (FLAG), MediaConvert includes the parameter CHARACTERISTICS="public.accessibility.describes-video" in
+     * the EXT-X-MEDIA entry for this track. When you keep the default choice, Don't flag (DONT_FLAG), MediaConvert
+     * leaves this parameter out. The DVS flag can help with accessibility on Apple devices. For more information, see
+     * the Apple documentation.
+     * 
+     * @param descriptiveVideoServiceFlag
+     *        Specify whether to flag this audio track as descriptive video service (DVS) in your HLS parent manifest.
+     *        When you choose Flag (FLAG), MediaConvert includes the parameter
+     *        CHARACTERISTICS="public.accessibility.describes-video" in the EXT-X-MEDIA entry for this track. When you
+     *        keep the default choice, Don't flag (DONT_FLAG), MediaConvert leaves this parameter out. The DVS flag can
+     *        help with accessibility on Apple devices. For more information, see the Apple documentation.
+     * @see CmfcDescriptiveVideoServiceFlag
+     */
+
+    public void setDescriptiveVideoServiceFlag(String descriptiveVideoServiceFlag) {
+        this.descriptiveVideoServiceFlag = descriptiveVideoServiceFlag;
+    }
+
+    /**
+     * Specify whether to flag this audio track as descriptive video service (DVS) in your HLS parent manifest. When you
+     * choose Flag (FLAG), MediaConvert includes the parameter CHARACTERISTICS="public.accessibility.describes-video" in
+     * the EXT-X-MEDIA entry for this track. When you keep the default choice, Don't flag (DONT_FLAG), MediaConvert
+     * leaves this parameter out. The DVS flag can help with accessibility on Apple devices. For more information, see
+     * the Apple documentation.
+     * 
+     * @return Specify whether to flag this audio track as descriptive video service (DVS) in your HLS parent manifest.
+     *         When you choose Flag (FLAG), MediaConvert includes the parameter
+     *         CHARACTERISTICS="public.accessibility.describes-video" in the EXT-X-MEDIA entry for this track. When you
+     *         keep the default choice, Don't flag (DONT_FLAG), MediaConvert leaves this parameter out. The DVS flag can
+     *         help with accessibility on Apple devices. For more information, see the Apple documentation.
+     * @see CmfcDescriptiveVideoServiceFlag
+     */
+
+    public String getDescriptiveVideoServiceFlag() {
+        return this.descriptiveVideoServiceFlag;
+    }
+
+    /**
+     * Specify whether to flag this audio track as descriptive video service (DVS) in your HLS parent manifest. When you
+     * choose Flag (FLAG), MediaConvert includes the parameter CHARACTERISTICS="public.accessibility.describes-video" in
+     * the EXT-X-MEDIA entry for this track. When you keep the default choice, Don't flag (DONT_FLAG), MediaConvert
+     * leaves this parameter out. The DVS flag can help with accessibility on Apple devices. For more information, see
+     * the Apple documentation.
+     * 
+     * @param descriptiveVideoServiceFlag
+     *        Specify whether to flag this audio track as descriptive video service (DVS) in your HLS parent manifest.
+     *        When you choose Flag (FLAG), MediaConvert includes the parameter
+     *        CHARACTERISTICS="public.accessibility.describes-video" in the EXT-X-MEDIA entry for this track. When you
+     *        keep the default choice, Don't flag (DONT_FLAG), MediaConvert leaves this parameter out. The DVS flag can
+     *        help with accessibility on Apple devices. For more information, see the Apple documentation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CmfcDescriptiveVideoServiceFlag
+     */
+
+    public CmfcSettings withDescriptiveVideoServiceFlag(String descriptiveVideoServiceFlag) {
+        setDescriptiveVideoServiceFlag(descriptiveVideoServiceFlag);
+        return this;
+    }
+
+    /**
+     * Specify whether to flag this audio track as descriptive video service (DVS) in your HLS parent manifest. When you
+     * choose Flag (FLAG), MediaConvert includes the parameter CHARACTERISTICS="public.accessibility.describes-video" in
+     * the EXT-X-MEDIA entry for this track. When you keep the default choice, Don't flag (DONT_FLAG), MediaConvert
+     * leaves this parameter out. The DVS flag can help with accessibility on Apple devices. For more information, see
+     * the Apple documentation.
+     * 
+     * @param descriptiveVideoServiceFlag
+     *        Specify whether to flag this audio track as descriptive video service (DVS) in your HLS parent manifest.
+     *        When you choose Flag (FLAG), MediaConvert includes the parameter
+     *        CHARACTERISTICS="public.accessibility.describes-video" in the EXT-X-MEDIA entry for this track. When you
+     *        keep the default choice, Don't flag (DONT_FLAG), MediaConvert leaves this parameter out. The DVS flag can
+     *        help with accessibility on Apple devices. For more information, see the Apple documentation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CmfcDescriptiveVideoServiceFlag
+     */
+
+    public CmfcSettings withDescriptiveVideoServiceFlag(CmfcDescriptiveVideoServiceFlag descriptiveVideoServiceFlag) {
+        this.descriptiveVideoServiceFlag = descriptiveVideoServiceFlag.toString();
         return this;
     }
 
@@ -409,6 +839,14 @@ public class CmfcSettings implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getAudioDuration() != null)
             sb.append("AudioDuration: ").append(getAudioDuration()).append(",");
+        if (getAudioGroupId() != null)
+            sb.append("AudioGroupId: ").append(getAudioGroupId()).append(",");
+        if (getAudioRenditionSets() != null)
+            sb.append("AudioRenditionSets: ").append(getAudioRenditionSets()).append(",");
+        if (getAudioTrackType() != null)
+            sb.append("AudioTrackType: ").append(getAudioTrackType()).append(",");
+        if (getDescriptiveVideoServiceFlag() != null)
+            sb.append("DescriptiveVideoServiceFlag: ").append(getDescriptiveVideoServiceFlag()).append(",");
         if (getIFrameOnlyManifest() != null)
             sb.append("IFrameOnlyManifest: ").append(getIFrameOnlyManifest()).append(",");
         if (getScte35Esam() != null)
@@ -433,6 +871,22 @@ public class CmfcSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAudioDuration() != null && other.getAudioDuration().equals(this.getAudioDuration()) == false)
             return false;
+        if (other.getAudioGroupId() == null ^ this.getAudioGroupId() == null)
+            return false;
+        if (other.getAudioGroupId() != null && other.getAudioGroupId().equals(this.getAudioGroupId()) == false)
+            return false;
+        if (other.getAudioRenditionSets() == null ^ this.getAudioRenditionSets() == null)
+            return false;
+        if (other.getAudioRenditionSets() != null && other.getAudioRenditionSets().equals(this.getAudioRenditionSets()) == false)
+            return false;
+        if (other.getAudioTrackType() == null ^ this.getAudioTrackType() == null)
+            return false;
+        if (other.getAudioTrackType() != null && other.getAudioTrackType().equals(this.getAudioTrackType()) == false)
+            return false;
+        if (other.getDescriptiveVideoServiceFlag() == null ^ this.getDescriptiveVideoServiceFlag() == null)
+            return false;
+        if (other.getDescriptiveVideoServiceFlag() != null && other.getDescriptiveVideoServiceFlag().equals(this.getDescriptiveVideoServiceFlag()) == false)
+            return false;
         if (other.getIFrameOnlyManifest() == null ^ this.getIFrameOnlyManifest() == null)
             return false;
         if (other.getIFrameOnlyManifest() != null && other.getIFrameOnlyManifest().equals(this.getIFrameOnlyManifest()) == false)
@@ -454,6 +908,10 @@ public class CmfcSettings implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAudioDuration() == null) ? 0 : getAudioDuration().hashCode());
+        hashCode = prime * hashCode + ((getAudioGroupId() == null) ? 0 : getAudioGroupId().hashCode());
+        hashCode = prime * hashCode + ((getAudioRenditionSets() == null) ? 0 : getAudioRenditionSets().hashCode());
+        hashCode = prime * hashCode + ((getAudioTrackType() == null) ? 0 : getAudioTrackType().hashCode());
+        hashCode = prime * hashCode + ((getDescriptiveVideoServiceFlag() == null) ? 0 : getDescriptiveVideoServiceFlag().hashCode());
         hashCode = prime * hashCode + ((getIFrameOnlyManifest() == null) ? 0 : getIFrameOnlyManifest().hashCode());
         hashCode = prime * hashCode + ((getScte35Esam() == null) ? 0 : getScte35Esam().hashCode());
         hashCode = prime * hashCode + ((getScte35Source() == null) ? 0 : getScte35Source().hashCode());

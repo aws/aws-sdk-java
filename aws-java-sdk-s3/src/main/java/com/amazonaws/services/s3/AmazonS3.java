@@ -3040,7 +3040,7 @@ public interface AmazonS3 extends S3DirectSpi {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObject">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjects">AWS API Documentation</a>
      */
     public DeleteObjectsResult deleteObjects(DeleteObjectsRequest deleteObjectsRequest) throws SdkClientException,
             AmazonServiceException;

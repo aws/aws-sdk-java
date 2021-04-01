@@ -1,3 +1,40 @@
+# __1.11.990__ __2021-04-01__
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - MediaConvert now supports HLS ingest, sidecar WebVTT ingest, Teletext color & style passthrough to TTML subtitles, TTML to WebVTT subtitle conversion with style, & DRC profiles in AC3 audio.
+
+## __AWS WAFV2__
+  - ### Features
+    - Added support for ScopeDownStatement for ManagedRuleGroups, Labels, LabelMatchStatement, and LoggingFilter. For more information on these features, see the AWS WAF Developer Guide.
+
+## __AWSKendraFrontendService__
+  - ### Features
+    - AWS Kendra's ServiceNow data source now supports OAuth 2.0 authentication and knowledge article filtering via a ServiceNow query.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - VPC Flow Logs Service adds a new API, GetFlowLogsIntegrationTemplate, which generates CloudFormation templates for Athena. For more info, see https://docs.aws.amazon.com/console/vpc/flow-logs/athena
+
+## __Amazon Lex Model Building Service__
+  - ### Features
+    - Lex now supports the ja-JP locale
+
+## __Amazon Lex Runtime Service__
+  - ### Features
+    - Amazon Lex now supports base64-encoded message and input transcript fields.
+
+## __Amazon Lightsail__
+  - ### Features
+    - - This release adds support for state detail for Amazon Lightsail container services.
+
+## __Amazon Route 53 Resolver__
+  - ### Features
+    - Route 53 Resolver DNS Firewall is a firewall service that allows you to filter and regulate outbound DNS traffic for your VPCs.
+
+## __Firewall Management Service__
+  - ### Features
+    - Added Firewall Manager policy support for AWS Route 53 Resolver DNS Firewall.
+
 # __1.11.989__ __2021-03-31__
 ## __AWS Batch__
   - ### Features

@@ -55,6 +55,8 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
      */
     private java.util.List<ExcludedRule> excludedRules;
 
+    private Statement scopeDownStatement;
+
     /**
      * <p>
      * The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule
@@ -220,6 +222,32 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
     }
 
     /**
+     * @param scopeDownStatement
+     */
+
+    public void setScopeDownStatement(Statement scopeDownStatement) {
+        this.scopeDownStatement = scopeDownStatement;
+    }
+
+    /**
+     * @return
+     */
+
+    public Statement getScopeDownStatement() {
+        return this.scopeDownStatement;
+    }
+
+    /**
+     * @param scopeDownStatement
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ManagedRuleGroupStatement withScopeDownStatement(Statement scopeDownStatement) {
+        setScopeDownStatement(scopeDownStatement);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -236,7 +264,9 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getExcludedRules() != null)
-            sb.append("ExcludedRules: ").append(getExcludedRules());
+            sb.append("ExcludedRules: ").append(getExcludedRules()).append(",");
+        if (getScopeDownStatement() != null)
+            sb.append("ScopeDownStatement: ").append(getScopeDownStatement());
         sb.append("}");
         return sb.toString();
     }
@@ -263,6 +293,10 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
             return false;
         if (other.getExcludedRules() != null && other.getExcludedRules().equals(this.getExcludedRules()) == false)
             return false;
+        if (other.getScopeDownStatement() == null ^ this.getScopeDownStatement() == null)
+            return false;
+        if (other.getScopeDownStatement() != null && other.getScopeDownStatement().equals(this.getScopeDownStatement()) == false)
+            return false;
         return true;
     }
 
@@ -274,6 +308,7 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getVendorName() == null) ? 0 : getVendorName().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getExcludedRules() == null) ? 0 : getExcludedRules().hashCode());
+        hashCode = prime * hashCode + ((getScopeDownStatement() == null) ? 0 : getScopeDownStatement().hashCode());
         return hashCode;
     }
 

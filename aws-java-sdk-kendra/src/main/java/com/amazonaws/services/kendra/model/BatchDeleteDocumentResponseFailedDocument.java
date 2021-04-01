@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about documents that could not be removed from an index by the <a>BatchDeleteDocument</a>
+ * Provides information about documents that could not be removed from an index by the <code>BatchDeleteDocument</code>
  * operation.
  * </p>
  * 

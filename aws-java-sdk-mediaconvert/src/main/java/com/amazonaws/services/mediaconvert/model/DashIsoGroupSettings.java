@@ -33,6 +33,16 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
      */
     private java.util.List<DashAdditionalManifest> additionalManifests;
     /**
+     * Use this setting only when your audio codec is a Dolby one (AC3, EAC3, or Atmos) and your downstream workflow
+     * requires that your DASH manifest use the Dolby channel configuration tag, rather than the MPEG one. For example,
+     * you might need to use this to make dynamic ad insertion work. Specify which audio channel configuration scheme ID
+     * URI MediaConvert writes in your DASH manifest. Keep the default value, MPEG channel configuration
+     * (MPEG_CHANNEL_CONFIGURATION), to have MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose
+     * Dolby channel configuration (DOLBY_CHANNEL_CONFIGURATION) to have MediaConvert write this instead:
+     * tag:dolby.com,2014:dash:audio_channel_configuration:2011.
+     */
+    private String audioChannelConfigSchemeIdUri;
+    /**
      * A partial URI prefix that will be put in the manifest (.mpd) file at the top level BaseURL element. Can be used
      * if streams are delivered from a different URL than the manifest file.
      */
@@ -77,6 +87,16 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
      * (SINGLE_FILE).
      */
     private String mpdProfile;
+    /**
+     * Use this setting only when your output video stream has B-frames, which causes the initial presentation time
+     * stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles PTS when
+     * writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you want
+     * MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based (ZERO_BASED) to
+     * have MediaConvert ignore the initial PTS in the video stream and instead write the initial time stamp as zero in
+     * the manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero
+     * regardless of your choice here.
+     */
+    private String ptsOffsetHandlingForBFrames;
     /**
      * When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment
      * Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
@@ -172,6 +192,106 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
 
     public DashIsoGroupSettings withAdditionalManifests(java.util.Collection<DashAdditionalManifest> additionalManifests) {
         setAdditionalManifests(additionalManifests);
+        return this;
+    }
+
+    /**
+     * Use this setting only when your audio codec is a Dolby one (AC3, EAC3, or Atmos) and your downstream workflow
+     * requires that your DASH manifest use the Dolby channel configuration tag, rather than the MPEG one. For example,
+     * you might need to use this to make dynamic ad insertion work. Specify which audio channel configuration scheme ID
+     * URI MediaConvert writes in your DASH manifest. Keep the default value, MPEG channel configuration
+     * (MPEG_CHANNEL_CONFIGURATION), to have MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose
+     * Dolby channel configuration (DOLBY_CHANNEL_CONFIGURATION) to have MediaConvert write this instead:
+     * tag:dolby.com,2014:dash:audio_channel_configuration:2011.
+     * 
+     * @param audioChannelConfigSchemeIdUri
+     *        Use this setting only when your audio codec is a Dolby one (AC3, EAC3, or Atmos) and your downstream
+     *        workflow requires that your DASH manifest use the Dolby channel configuration tag, rather than the MPEG
+     *        one. For example, you might need to use this to make dynamic ad insertion work. Specify which audio
+     *        channel configuration scheme ID URI MediaConvert writes in your DASH manifest. Keep the default value,
+     *        MPEG channel configuration (MPEG_CHANNEL_CONFIGURATION), to have MediaConvert write this:
+     *        urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby channel configuration (DOLBY_CHANNEL_CONFIGURATION)
+     *        to have MediaConvert write this instead: tag:dolby.com,2014:dash:audio_channel_configuration:2011.
+     * @see DashIsoGroupAudioChannelConfigSchemeIdUri
+     */
+
+    public void setAudioChannelConfigSchemeIdUri(String audioChannelConfigSchemeIdUri) {
+        this.audioChannelConfigSchemeIdUri = audioChannelConfigSchemeIdUri;
+    }
+
+    /**
+     * Use this setting only when your audio codec is a Dolby one (AC3, EAC3, or Atmos) and your downstream workflow
+     * requires that your DASH manifest use the Dolby channel configuration tag, rather than the MPEG one. For example,
+     * you might need to use this to make dynamic ad insertion work. Specify which audio channel configuration scheme ID
+     * URI MediaConvert writes in your DASH manifest. Keep the default value, MPEG channel configuration
+     * (MPEG_CHANNEL_CONFIGURATION), to have MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose
+     * Dolby channel configuration (DOLBY_CHANNEL_CONFIGURATION) to have MediaConvert write this instead:
+     * tag:dolby.com,2014:dash:audio_channel_configuration:2011.
+     * 
+     * @return Use this setting only when your audio codec is a Dolby one (AC3, EAC3, or Atmos) and your downstream
+     *         workflow requires that your DASH manifest use the Dolby channel configuration tag, rather than the MPEG
+     *         one. For example, you might need to use this to make dynamic ad insertion work. Specify which audio
+     *         channel configuration scheme ID URI MediaConvert writes in your DASH manifest. Keep the default value,
+     *         MPEG channel configuration (MPEG_CHANNEL_CONFIGURATION), to have MediaConvert write this:
+     *         urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby channel configuration
+     *         (DOLBY_CHANNEL_CONFIGURATION) to have MediaConvert write this instead:
+     *         tag:dolby.com,2014:dash:audio_channel_configuration:2011.
+     * @see DashIsoGroupAudioChannelConfigSchemeIdUri
+     */
+
+    public String getAudioChannelConfigSchemeIdUri() {
+        return this.audioChannelConfigSchemeIdUri;
+    }
+
+    /**
+     * Use this setting only when your audio codec is a Dolby one (AC3, EAC3, or Atmos) and your downstream workflow
+     * requires that your DASH manifest use the Dolby channel configuration tag, rather than the MPEG one. For example,
+     * you might need to use this to make dynamic ad insertion work. Specify which audio channel configuration scheme ID
+     * URI MediaConvert writes in your DASH manifest. Keep the default value, MPEG channel configuration
+     * (MPEG_CHANNEL_CONFIGURATION), to have MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose
+     * Dolby channel configuration (DOLBY_CHANNEL_CONFIGURATION) to have MediaConvert write this instead:
+     * tag:dolby.com,2014:dash:audio_channel_configuration:2011.
+     * 
+     * @param audioChannelConfigSchemeIdUri
+     *        Use this setting only when your audio codec is a Dolby one (AC3, EAC3, or Atmos) and your downstream
+     *        workflow requires that your DASH manifest use the Dolby channel configuration tag, rather than the MPEG
+     *        one. For example, you might need to use this to make dynamic ad insertion work. Specify which audio
+     *        channel configuration scheme ID URI MediaConvert writes in your DASH manifest. Keep the default value,
+     *        MPEG channel configuration (MPEG_CHANNEL_CONFIGURATION), to have MediaConvert write this:
+     *        urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby channel configuration (DOLBY_CHANNEL_CONFIGURATION)
+     *        to have MediaConvert write this instead: tag:dolby.com,2014:dash:audio_channel_configuration:2011.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DashIsoGroupAudioChannelConfigSchemeIdUri
+     */
+
+    public DashIsoGroupSettings withAudioChannelConfigSchemeIdUri(String audioChannelConfigSchemeIdUri) {
+        setAudioChannelConfigSchemeIdUri(audioChannelConfigSchemeIdUri);
+        return this;
+    }
+
+    /**
+     * Use this setting only when your audio codec is a Dolby one (AC3, EAC3, or Atmos) and your downstream workflow
+     * requires that your DASH manifest use the Dolby channel configuration tag, rather than the MPEG one. For example,
+     * you might need to use this to make dynamic ad insertion work. Specify which audio channel configuration scheme ID
+     * URI MediaConvert writes in your DASH manifest. Keep the default value, MPEG channel configuration
+     * (MPEG_CHANNEL_CONFIGURATION), to have MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose
+     * Dolby channel configuration (DOLBY_CHANNEL_CONFIGURATION) to have MediaConvert write this instead:
+     * tag:dolby.com,2014:dash:audio_channel_configuration:2011.
+     * 
+     * @param audioChannelConfigSchemeIdUri
+     *        Use this setting only when your audio codec is a Dolby one (AC3, EAC3, or Atmos) and your downstream
+     *        workflow requires that your DASH manifest use the Dolby channel configuration tag, rather than the MPEG
+     *        one. For example, you might need to use this to make dynamic ad insertion work. Specify which audio
+     *        channel configuration scheme ID URI MediaConvert writes in your DASH manifest. Keep the default value,
+     *        MPEG channel configuration (MPEG_CHANNEL_CONFIGURATION), to have MediaConvert write this:
+     *        urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby channel configuration (DOLBY_CHANNEL_CONFIGURATION)
+     *        to have MediaConvert write this instead: tag:dolby.com,2014:dash:audio_channel_configuration:2011.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DashIsoGroupAudioChannelConfigSchemeIdUri
+     */
+
+    public DashIsoGroupSettings withAudioChannelConfigSchemeIdUri(DashIsoGroupAudioChannelConfigSchemeIdUri audioChannelConfigSchemeIdUri) {
+        this.audioChannelConfigSchemeIdUri = audioChannelConfigSchemeIdUri.toString();
         return this;
     }
 
@@ -629,6 +749,105 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
+     * Use this setting only when your output video stream has B-frames, which causes the initial presentation time
+     * stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles PTS when
+     * writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you want
+     * MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based (ZERO_BASED) to
+     * have MediaConvert ignore the initial PTS in the video stream and instead write the initial time stamp as zero in
+     * the manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero
+     * regardless of your choice here.
+     * 
+     * @param ptsOffsetHandlingForBFrames
+     *        Use this setting only when your output video stream has B-frames, which causes the initial presentation
+     *        time stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles
+     *        PTS when writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when
+     *        you want MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based
+     *        (ZERO_BASED) to have MediaConvert ignore the initial PTS in the video stream and instead write the initial
+     *        time stamp as zero in the manifest. For outputs that don't have B-frames, the time stamps in your DASH
+     *        manifests start at zero regardless of your choice here.
+     * @see DashIsoPtsOffsetHandlingForBFrames
+     */
+
+    public void setPtsOffsetHandlingForBFrames(String ptsOffsetHandlingForBFrames) {
+        this.ptsOffsetHandlingForBFrames = ptsOffsetHandlingForBFrames;
+    }
+
+    /**
+     * Use this setting only when your output video stream has B-frames, which causes the initial presentation time
+     * stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles PTS when
+     * writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you want
+     * MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based (ZERO_BASED) to
+     * have MediaConvert ignore the initial PTS in the video stream and instead write the initial time stamp as zero in
+     * the manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero
+     * regardless of your choice here.
+     * 
+     * @return Use this setting only when your output video stream has B-frames, which causes the initial presentation
+     *         time stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles
+     *         PTS when writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when
+     *         you want MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based
+     *         (ZERO_BASED) to have MediaConvert ignore the initial PTS in the video stream and instead write the
+     *         initial time stamp as zero in the manifest. For outputs that don't have B-frames, the time stamps in your
+     *         DASH manifests start at zero regardless of your choice here.
+     * @see DashIsoPtsOffsetHandlingForBFrames
+     */
+
+    public String getPtsOffsetHandlingForBFrames() {
+        return this.ptsOffsetHandlingForBFrames;
+    }
+
+    /**
+     * Use this setting only when your output video stream has B-frames, which causes the initial presentation time
+     * stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles PTS when
+     * writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you want
+     * MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based (ZERO_BASED) to
+     * have MediaConvert ignore the initial PTS in the video stream and instead write the initial time stamp as zero in
+     * the manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero
+     * regardless of your choice here.
+     * 
+     * @param ptsOffsetHandlingForBFrames
+     *        Use this setting only when your output video stream has B-frames, which causes the initial presentation
+     *        time stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles
+     *        PTS when writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when
+     *        you want MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based
+     *        (ZERO_BASED) to have MediaConvert ignore the initial PTS in the video stream and instead write the initial
+     *        time stamp as zero in the manifest. For outputs that don't have B-frames, the time stamps in your DASH
+     *        manifests start at zero regardless of your choice here.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DashIsoPtsOffsetHandlingForBFrames
+     */
+
+    public DashIsoGroupSettings withPtsOffsetHandlingForBFrames(String ptsOffsetHandlingForBFrames) {
+        setPtsOffsetHandlingForBFrames(ptsOffsetHandlingForBFrames);
+        return this;
+    }
+
+    /**
+     * Use this setting only when your output video stream has B-frames, which causes the initial presentation time
+     * stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles PTS when
+     * writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you want
+     * MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based (ZERO_BASED) to
+     * have MediaConvert ignore the initial PTS in the video stream and instead write the initial time stamp as zero in
+     * the manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero
+     * regardless of your choice here.
+     * 
+     * @param ptsOffsetHandlingForBFrames
+     *        Use this setting only when your output video stream has B-frames, which causes the initial presentation
+     *        time stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles
+     *        PTS when writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when
+     *        you want MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based
+     *        (ZERO_BASED) to have MediaConvert ignore the initial PTS in the video stream and instead write the initial
+     *        time stamp as zero in the manifest. For outputs that don't have B-frames, the time stamps in your DASH
+     *        manifests start at zero regardless of your choice here.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DashIsoPtsOffsetHandlingForBFrames
+     */
+
+    public DashIsoGroupSettings withPtsOffsetHandlingForBFrames(DashIsoPtsOffsetHandlingForBFrames ptsOffsetHandlingForBFrames) {
+        this.ptsOffsetHandlingForBFrames = ptsOffsetHandlingForBFrames.toString();
+        return this;
+    }
+
+    /**
      * When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment
      * Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
      * 
@@ -833,6 +1052,8 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
         sb.append("{");
         if (getAdditionalManifests() != null)
             sb.append("AdditionalManifests: ").append(getAdditionalManifests()).append(",");
+        if (getAudioChannelConfigSchemeIdUri() != null)
+            sb.append("AudioChannelConfigSchemeIdUri: ").append(getAudioChannelConfigSchemeIdUri()).append(",");
         if (getBaseUrl() != null)
             sb.append("BaseUrl: ").append(getBaseUrl()).append(",");
         if (getDestination() != null)
@@ -851,6 +1072,8 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
             sb.append("MinFinalSegmentLength: ").append(getMinFinalSegmentLength()).append(",");
         if (getMpdProfile() != null)
             sb.append("MpdProfile: ").append(getMpdProfile()).append(",");
+        if (getPtsOffsetHandlingForBFrames() != null)
+            sb.append("PtsOffsetHandlingForBFrames: ").append(getPtsOffsetHandlingForBFrames()).append(",");
         if (getSegmentControl() != null)
             sb.append("SegmentControl: ").append(getSegmentControl()).append(",");
         if (getSegmentLength() != null)
@@ -874,6 +1097,11 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
         if (other.getAdditionalManifests() == null ^ this.getAdditionalManifests() == null)
             return false;
         if (other.getAdditionalManifests() != null && other.getAdditionalManifests().equals(this.getAdditionalManifests()) == false)
+            return false;
+        if (other.getAudioChannelConfigSchemeIdUri() == null ^ this.getAudioChannelConfigSchemeIdUri() == null)
+            return false;
+        if (other.getAudioChannelConfigSchemeIdUri() != null
+                && other.getAudioChannelConfigSchemeIdUri().equals(this.getAudioChannelConfigSchemeIdUri()) == false)
             return false;
         if (other.getBaseUrl() == null ^ this.getBaseUrl() == null)
             return false;
@@ -911,6 +1139,10 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
             return false;
         if (other.getMpdProfile() != null && other.getMpdProfile().equals(this.getMpdProfile()) == false)
             return false;
+        if (other.getPtsOffsetHandlingForBFrames() == null ^ this.getPtsOffsetHandlingForBFrames() == null)
+            return false;
+        if (other.getPtsOffsetHandlingForBFrames() != null && other.getPtsOffsetHandlingForBFrames().equals(this.getPtsOffsetHandlingForBFrames()) == false)
+            return false;
         if (other.getSegmentControl() == null ^ this.getSegmentControl() == null)
             return false;
         if (other.getSegmentControl() != null && other.getSegmentControl().equals(this.getSegmentControl()) == false)
@@ -933,6 +1165,7 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAdditionalManifests() == null) ? 0 : getAdditionalManifests().hashCode());
+        hashCode = prime * hashCode + ((getAudioChannelConfigSchemeIdUri() == null) ? 0 : getAudioChannelConfigSchemeIdUri().hashCode());
         hashCode = prime * hashCode + ((getBaseUrl() == null) ? 0 : getBaseUrl().hashCode());
         hashCode = prime * hashCode + ((getDestination() == null) ? 0 : getDestination().hashCode());
         hashCode = prime * hashCode + ((getDestinationSettings() == null) ? 0 : getDestinationSettings().hashCode());
@@ -942,6 +1175,7 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getMinBufferTime() == null) ? 0 : getMinBufferTime().hashCode());
         hashCode = prime * hashCode + ((getMinFinalSegmentLength() == null) ? 0 : getMinFinalSegmentLength().hashCode());
         hashCode = prime * hashCode + ((getMpdProfile() == null) ? 0 : getMpdProfile().hashCode());
+        hashCode = prime * hashCode + ((getPtsOffsetHandlingForBFrames() == null) ? 0 : getPtsOffsetHandlingForBFrames().hashCode());
         hashCode = prime * hashCode + ((getSegmentControl() == null) ? 0 : getSegmentControl().hashCode());
         hashCode = prime * hashCode + ((getSegmentLength() == null) ? 0 : getSegmentLength().hashCode());
         hashCode = prime * hashCode + ((getWriteSegmentTimelineInRepresentation() == null) ? 0 : getWriteSegmentTimelineInRepresentation().hashCode());

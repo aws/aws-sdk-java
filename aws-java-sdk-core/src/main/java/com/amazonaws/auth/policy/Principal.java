@@ -15,7 +15,7 @@
 package com.amazonaws.auth.policy;
 
 /**
- * A principal is an AWS account or AWS web serivce, which is being allowed or denied access to a
+ * A principal is an AWS account or AWS web service, which is being allowed or denied access to a
  * resource through an access control policy. The principal is a property of the
  * {@link Statement} object, not directly the {@link Policy} object.
  * <p>

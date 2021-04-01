@@ -20983,6 +20983,86 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Generates a CloudFormation template that streamlines and automates the integration of VPC flow logs with Amazon
+     * Athena. This make it easier for you to query and gain insights from VPC flow logs data. Based on the information
+     * that you provide, we configure resources in the template to do the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Create a table in Athena that maps fields to a custom log format
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create a Lambda function that updates the table with new partitions on a daily, weekly, or monthly basis
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create a table partitioned between two timestamps in the past
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create a set of named queries in Athena that you can use to get started quickly
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getFlowLogsIntegrationTemplateRequest
+     * @return Result of the GetFlowLogsIntegrationTemplate operation returned by the service.
+     * @sample AmazonEC2.GetFlowLogsIntegrationTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetFlowLogsIntegrationTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetFlowLogsIntegrationTemplateResult getFlowLogsIntegrationTemplate(GetFlowLogsIntegrationTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetFlowLogsIntegrationTemplate(request);
+    }
+
+    @SdkInternalApi
+    final GetFlowLogsIntegrationTemplateResult executeGetFlowLogsIntegrationTemplate(GetFlowLogsIntegrationTemplateRequest getFlowLogsIntegrationTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getFlowLogsIntegrationTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetFlowLogsIntegrationTemplateRequest> request = null;
+        Response<GetFlowLogsIntegrationTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetFlowLogsIntegrationTemplateRequestMarshaller().marshall(super.beforeMarshalling(getFlowLogsIntegrationTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFlowLogsIntegrationTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetFlowLogsIntegrationTemplateResult> responseHandler = new StaxResponseHandler<GetFlowLogsIntegrationTemplateResult>(
+                    new GetFlowLogsIntegrationTemplateResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the resource groups to which a Capacity Reservation has been added.
      * </p>
      * 

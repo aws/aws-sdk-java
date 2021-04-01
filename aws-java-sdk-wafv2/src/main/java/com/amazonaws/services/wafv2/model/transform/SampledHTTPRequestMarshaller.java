@@ -42,6 +42,8 @@ public class SampledHTTPRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequestHeadersInserted").build();
     private static final MarshallingInfo<Integer> RESPONSECODESENT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResponseCodeSent").build();
+    private static final MarshallingInfo<List> LABELS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Labels").build();
 
     private static final SampledHTTPRequestMarshaller instance = new SampledHTTPRequestMarshaller();
 
@@ -66,6 +68,7 @@ public class SampledHTTPRequestMarshaller {
             protocolMarshaller.marshall(sampledHTTPRequest.getRuleNameWithinRuleGroup(), RULENAMEWITHINRULEGROUP_BINDING);
             protocolMarshaller.marshall(sampledHTTPRequest.getRequestHeadersInserted(), REQUESTHEADERSINSERTED_BINDING);
             protocolMarshaller.marshall(sampledHTTPRequest.getResponseCodeSent(), RESPONSECODESENT_BINDING);
+            protocolMarshaller.marshall(sampledHTTPRequest.getLabels(), LABELS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

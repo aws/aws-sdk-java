@@ -75,6 +75,27 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private NetworkFirewallPolicyModifiedViolation networkFirewallPolicyModifiedViolation;
+    /**
+     * <p>
+     * Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to
+     * associate with a VPC has the same priority as a rule group that's already associated.
+     * </p>
+     */
+    private DnsRuleGroupPriorityConflictViolation dnsRuleGroupPriorityConflictViolation;
+    /**
+     * <p>
+     * Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to
+     * associate with a VPC is already associated with the VPC and can't be associated again.
+     * </p>
+     */
+    private DnsDuplicateRuleGroupViolation dnsDuplicateRuleGroupViolation;
+    /**
+     * <p>
+     * Violation details for a DNS Firewall policy that indicates that the VPC reached the limit for associated DNS
+     * Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed.
+     * </p>
+     */
+    private DnsRuleGroupLimitExceededViolation dnsRuleGroupLimitExceededViolation;
 
     /**
      * <p>
@@ -390,6 +411,144 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to
+     * associate with a VPC has the same priority as a rule group that's already associated.
+     * </p>
+     * 
+     * @param dnsRuleGroupPriorityConflictViolation
+     *        Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to
+     *        associate with a VPC has the same priority as a rule group that's already associated.
+     */
+
+    public void setDnsRuleGroupPriorityConflictViolation(DnsRuleGroupPriorityConflictViolation dnsRuleGroupPriorityConflictViolation) {
+        this.dnsRuleGroupPriorityConflictViolation = dnsRuleGroupPriorityConflictViolation;
+    }
+
+    /**
+     * <p>
+     * Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to
+     * associate with a VPC has the same priority as a rule group that's already associated.
+     * </p>
+     * 
+     * @return Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried
+     *         to associate with a VPC has the same priority as a rule group that's already associated.
+     */
+
+    public DnsRuleGroupPriorityConflictViolation getDnsRuleGroupPriorityConflictViolation() {
+        return this.dnsRuleGroupPriorityConflictViolation;
+    }
+
+    /**
+     * <p>
+     * Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to
+     * associate with a VPC has the same priority as a rule group that's already associated.
+     * </p>
+     * 
+     * @param dnsRuleGroupPriorityConflictViolation
+     *        Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to
+     *        associate with a VPC has the same priority as a rule group that's already associated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceViolation withDnsRuleGroupPriorityConflictViolation(DnsRuleGroupPriorityConflictViolation dnsRuleGroupPriorityConflictViolation) {
+        setDnsRuleGroupPriorityConflictViolation(dnsRuleGroupPriorityConflictViolation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to
+     * associate with a VPC is already associated with the VPC and can't be associated again.
+     * </p>
+     * 
+     * @param dnsDuplicateRuleGroupViolation
+     *        Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to
+     *        associate with a VPC is already associated with the VPC and can't be associated again.
+     */
+
+    public void setDnsDuplicateRuleGroupViolation(DnsDuplicateRuleGroupViolation dnsDuplicateRuleGroupViolation) {
+        this.dnsDuplicateRuleGroupViolation = dnsDuplicateRuleGroupViolation;
+    }
+
+    /**
+     * <p>
+     * Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to
+     * associate with a VPC is already associated with the VPC and can't be associated again.
+     * </p>
+     * 
+     * @return Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried
+     *         to associate with a VPC is already associated with the VPC and can't be associated again.
+     */
+
+    public DnsDuplicateRuleGroupViolation getDnsDuplicateRuleGroupViolation() {
+        return this.dnsDuplicateRuleGroupViolation;
+    }
+
+    /**
+     * <p>
+     * Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to
+     * associate with a VPC is already associated with the VPC and can't be associated again.
+     * </p>
+     * 
+     * @param dnsDuplicateRuleGroupViolation
+     *        Violation detail for a DNS Firewall policy that indicates that a rule group that Firewall Manager tried to
+     *        associate with a VPC is already associated with the VPC and can't be associated again.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceViolation withDnsDuplicateRuleGroupViolation(DnsDuplicateRuleGroupViolation dnsDuplicateRuleGroupViolation) {
+        setDnsDuplicateRuleGroupViolation(dnsDuplicateRuleGroupViolation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Violation details for a DNS Firewall policy that indicates that the VPC reached the limit for associated DNS
+     * Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed.
+     * </p>
+     * 
+     * @param dnsRuleGroupLimitExceededViolation
+     *        Violation details for a DNS Firewall policy that indicates that the VPC reached the limit for associated
+     *        DNS Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed.
+     */
+
+    public void setDnsRuleGroupLimitExceededViolation(DnsRuleGroupLimitExceededViolation dnsRuleGroupLimitExceededViolation) {
+        this.dnsRuleGroupLimitExceededViolation = dnsRuleGroupLimitExceededViolation;
+    }
+
+    /**
+     * <p>
+     * Violation details for a DNS Firewall policy that indicates that the VPC reached the limit for associated DNS
+     * Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed.
+     * </p>
+     * 
+     * @return Violation details for a DNS Firewall policy that indicates that the VPC reached the limit for associated
+     *         DNS Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed.
+     */
+
+    public DnsRuleGroupLimitExceededViolation getDnsRuleGroupLimitExceededViolation() {
+        return this.dnsRuleGroupLimitExceededViolation;
+    }
+
+    /**
+     * <p>
+     * Violation details for a DNS Firewall policy that indicates that the VPC reached the limit for associated DNS
+     * Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed.
+     * </p>
+     * 
+     * @param dnsRuleGroupLimitExceededViolation
+     *        Violation details for a DNS Firewall policy that indicates that the VPC reached the limit for associated
+     *        DNS Firewall rule groups. Firewall Manager tried to associate another rule group with the VPC and failed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceViolation withDnsRuleGroupLimitExceededViolation(DnsRuleGroupLimitExceededViolation dnsRuleGroupLimitExceededViolation) {
+        setDnsRuleGroupLimitExceededViolation(dnsRuleGroupLimitExceededViolation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -414,7 +573,13 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
         if (getNetworkFirewallMissingExpectedRTViolation() != null)
             sb.append("NetworkFirewallMissingExpectedRTViolation: ").append(getNetworkFirewallMissingExpectedRTViolation()).append(",");
         if (getNetworkFirewallPolicyModifiedViolation() != null)
-            sb.append("NetworkFirewallPolicyModifiedViolation: ").append(getNetworkFirewallPolicyModifiedViolation());
+            sb.append("NetworkFirewallPolicyModifiedViolation: ").append(getNetworkFirewallPolicyModifiedViolation()).append(",");
+        if (getDnsRuleGroupPriorityConflictViolation() != null)
+            sb.append("DnsRuleGroupPriorityConflictViolation: ").append(getDnsRuleGroupPriorityConflictViolation()).append(",");
+        if (getDnsDuplicateRuleGroupViolation() != null)
+            sb.append("DnsDuplicateRuleGroupViolation: ").append(getDnsDuplicateRuleGroupViolation()).append(",");
+        if (getDnsRuleGroupLimitExceededViolation() != null)
+            sb.append("DnsRuleGroupLimitExceededViolation: ").append(getDnsRuleGroupLimitExceededViolation());
         sb.append("}");
         return sb.toString();
     }
@@ -462,6 +627,21 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
         if (other.getNetworkFirewallPolicyModifiedViolation() != null
                 && other.getNetworkFirewallPolicyModifiedViolation().equals(this.getNetworkFirewallPolicyModifiedViolation()) == false)
             return false;
+        if (other.getDnsRuleGroupPriorityConflictViolation() == null ^ this.getDnsRuleGroupPriorityConflictViolation() == null)
+            return false;
+        if (other.getDnsRuleGroupPriorityConflictViolation() != null
+                && other.getDnsRuleGroupPriorityConflictViolation().equals(this.getDnsRuleGroupPriorityConflictViolation()) == false)
+            return false;
+        if (other.getDnsDuplicateRuleGroupViolation() == null ^ this.getDnsDuplicateRuleGroupViolation() == null)
+            return false;
+        if (other.getDnsDuplicateRuleGroupViolation() != null
+                && other.getDnsDuplicateRuleGroupViolation().equals(this.getDnsDuplicateRuleGroupViolation()) == false)
+            return false;
+        if (other.getDnsRuleGroupLimitExceededViolation() == null ^ this.getDnsRuleGroupLimitExceededViolation() == null)
+            return false;
+        if (other.getDnsRuleGroupLimitExceededViolation() != null
+                && other.getDnsRuleGroupLimitExceededViolation().equals(this.getDnsRuleGroupLimitExceededViolation()) == false)
+            return false;
         return true;
     }
 
@@ -478,6 +658,9 @@ public class ResourceViolation implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode
                 + ((getNetworkFirewallMissingExpectedRTViolation() == null) ? 0 : getNetworkFirewallMissingExpectedRTViolation().hashCode());
         hashCode = prime * hashCode + ((getNetworkFirewallPolicyModifiedViolation() == null) ? 0 : getNetworkFirewallPolicyModifiedViolation().hashCode());
+        hashCode = prime * hashCode + ((getDnsRuleGroupPriorityConflictViolation() == null) ? 0 : getDnsRuleGroupPriorityConflictViolation().hashCode());
+        hashCode = prime * hashCode + ((getDnsDuplicateRuleGroupViolation() == null) ? 0 : getDnsDuplicateRuleGroupViolation().hashCode());
+        hashCode = prime * hashCode + ((getDnsRuleGroupLimitExceededViolation() == null) ? 0 : getDnsRuleGroupLimitExceededViolation().hashCode());
         return hashCode;
     }
 

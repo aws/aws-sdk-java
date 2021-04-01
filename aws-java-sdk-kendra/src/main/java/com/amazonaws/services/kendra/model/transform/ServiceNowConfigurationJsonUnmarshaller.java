@@ -70,6 +70,10 @@ public class ServiceNowConfigurationJsonUnmarshaller implements Unmarshaller<Ser
                     serviceNowConfiguration.setServiceCatalogConfiguration(ServiceNowServiceCatalogConfigurationJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
+                if (context.testExpression("AuthenticationType", targetDepth)) {
+                    context.nextToken();
+                    serviceNowConfiguration.setAuthenticationType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

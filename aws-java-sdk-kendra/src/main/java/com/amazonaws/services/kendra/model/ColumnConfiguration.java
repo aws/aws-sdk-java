@@ -49,7 +49,7 @@ public class ColumnConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * An array of objects that map database column names to the corresponding fields in an index. You must first create
-     * the fields in the index using the <a>UpdateIndex</a> operation.
+     * the fields in the index using the <code>UpdateIndex</code> operation.
      * </p>
      */
     private java.util.List<DataSourceToIndexFieldMapping> fieldMappings;
@@ -183,11 +183,11 @@ public class ColumnConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * An array of objects that map database column names to the corresponding fields in an index. You must first create
-     * the fields in the index using the <a>UpdateIndex</a> operation.
+     * the fields in the index using the <code>UpdateIndex</code> operation.
      * </p>
      * 
      * @return An array of objects that map database column names to the corresponding fields in an index. You must
-     *         first create the fields in the index using the <a>UpdateIndex</a> operation.
+     *         first create the fields in the index using the <code>UpdateIndex</code> operation.
      */
 
     public java.util.List<DataSourceToIndexFieldMapping> getFieldMappings() {
@@ -197,12 +197,12 @@ public class ColumnConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * An array of objects that map database column names to the corresponding fields in an index. You must first create
-     * the fields in the index using the <a>UpdateIndex</a> operation.
+     * the fields in the index using the <code>UpdateIndex</code> operation.
      * </p>
      * 
      * @param fieldMappings
      *        An array of objects that map database column names to the corresponding fields in an index. You must first
-     *        create the fields in the index using the <a>UpdateIndex</a> operation.
+     *        create the fields in the index using the <code>UpdateIndex</code> operation.
      */
 
     public void setFieldMappings(java.util.Collection<DataSourceToIndexFieldMapping> fieldMappings) {
@@ -217,7 +217,7 @@ public class ColumnConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * An array of objects that map database column names to the corresponding fields in an index. You must first create
-     * the fields in the index using the <a>UpdateIndex</a> operation.
+     * the fields in the index using the <code>UpdateIndex</code> operation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -227,7 +227,7 @@ public class ColumnConfiguration implements Serializable, Cloneable, StructuredP
      * 
      * @param fieldMappings
      *        An array of objects that map database column names to the corresponding fields in an index. You must first
-     *        create the fields in the index using the <a>UpdateIndex</a> operation.
+     *        create the fields in the index using the <code>UpdateIndex</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -244,12 +244,12 @@ public class ColumnConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * An array of objects that map database column names to the corresponding fields in an index. You must first create
-     * the fields in the index using the <a>UpdateIndex</a> operation.
+     * the fields in the index using the <code>UpdateIndex</code> operation.
      * </p>
      * 
      * @param fieldMappings
      *        An array of objects that map database column names to the corresponding fields in an index. You must first
-     *        create the fields in the index using the <a>UpdateIndex</a> operation.
+     *        create the fields in the index using the <code>UpdateIndex</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

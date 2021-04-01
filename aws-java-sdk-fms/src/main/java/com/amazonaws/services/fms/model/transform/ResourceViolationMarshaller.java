@@ -42,6 +42,12 @@ public class ResourceViolationMarshaller {
             .build();
     private static final MarshallingInfo<StructuredPojo> NETWORKFIREWALLPOLICYMODIFIEDVIOLATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NetworkFirewallPolicyModifiedViolation").build();
+    private static final MarshallingInfo<StructuredPojo> DNSRULEGROUPPRIORITYCONFLICTVIOLATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DnsRuleGroupPriorityConflictViolation").build();
+    private static final MarshallingInfo<StructuredPojo> DNSDUPLICATERULEGROUPVIOLATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DnsDuplicateRuleGroupViolation").build();
+    private static final MarshallingInfo<StructuredPojo> DNSRULEGROUPLIMITEXCEEDEDVIOLATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DnsRuleGroupLimitExceededViolation").build();
 
     private static final ResourceViolationMarshaller instance = new ResourceViolationMarshaller();
 
@@ -66,6 +72,9 @@ public class ResourceViolationMarshaller {
             protocolMarshaller.marshall(resourceViolation.getNetworkFirewallMissingSubnetViolation(), NETWORKFIREWALLMISSINGSUBNETVIOLATION_BINDING);
             protocolMarshaller.marshall(resourceViolation.getNetworkFirewallMissingExpectedRTViolation(), NETWORKFIREWALLMISSINGEXPECTEDRTVIOLATION_BINDING);
             protocolMarshaller.marshall(resourceViolation.getNetworkFirewallPolicyModifiedViolation(), NETWORKFIREWALLPOLICYMODIFIEDVIOLATION_BINDING);
+            protocolMarshaller.marshall(resourceViolation.getDnsRuleGroupPriorityConflictViolation(), DNSRULEGROUPPRIORITYCONFLICTVIOLATION_BINDING);
+            protocolMarshaller.marshall(resourceViolation.getDnsDuplicateRuleGroupViolation(), DNSDUPLICATERULEGROUPVIOLATION_BINDING);
+            protocolMarshaller.marshall(resourceViolation.getDnsRuleGroupLimitExceededViolation(), DNSRULEGROUPLIMITEXCEEDEDVIOLATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

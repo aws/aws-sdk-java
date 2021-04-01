@@ -34,8 +34,8 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
     /** Settings for embedded captions Source */
     private EmbeddedSourceSettings embeddedSourceSettings;
     /**
-     * If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file, specify the URI of the input
-     * caption source file. If your caption source is IMSC in an IMF package, use TrackSourceSettings instead of
+     * If your input captions are SCC, SMI, SRT, STL, TTML, WebVTT, or IMSC 1.1 in an xml file, specify the URI of the
+     * input caption source file. If your caption source is IMSC in an IMF package, use TrackSourceSettings instead of
      * FileSoureSettings.
      */
     private FileSourceSettings fileSourceSettings;
@@ -156,14 +156,14 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file, specify the URI of the input
-     * caption source file. If your caption source is IMSC in an IMF package, use TrackSourceSettings instead of
+     * If your input captions are SCC, SMI, SRT, STL, TTML, WebVTT, or IMSC 1.1 in an xml file, specify the URI of the
+     * input caption source file. If your caption source is IMSC in an IMF package, use TrackSourceSettings instead of
      * FileSoureSettings.
      * 
      * @param fileSourceSettings
-     *        If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file, specify the URI of the
-     *        input caption source file. If your caption source is IMSC in an IMF package, use TrackSourceSettings
-     *        instead of FileSoureSettings.
+     *        If your input captions are SCC, SMI, SRT, STL, TTML, WebVTT, or IMSC 1.1 in an xml file, specify the URI
+     *        of the input caption source file. If your caption source is IMSC in an IMF package, use
+     *        TrackSourceSettings instead of FileSoureSettings.
      */
 
     public void setFileSourceSettings(FileSourceSettings fileSourceSettings) {
@@ -171,13 +171,13 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file, specify the URI of the input
-     * caption source file. If your caption source is IMSC in an IMF package, use TrackSourceSettings instead of
+     * If your input captions are SCC, SMI, SRT, STL, TTML, WebVTT, or IMSC 1.1 in an xml file, specify the URI of the
+     * input caption source file. If your caption source is IMSC in an IMF package, use TrackSourceSettings instead of
      * FileSoureSettings.
      * 
-     * @return If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file, specify the URI of the
-     *         input caption source file. If your caption source is IMSC in an IMF package, use TrackSourceSettings
-     *         instead of FileSoureSettings.
+     * @return If your input captions are SCC, SMI, SRT, STL, TTML, WebVTT, or IMSC 1.1 in an xml file, specify the URI
+     *         of the input caption source file. If your caption source is IMSC in an IMF package, use
+     *         TrackSourceSettings instead of FileSoureSettings.
      */
 
     public FileSourceSettings getFileSourceSettings() {
@@ -185,14 +185,14 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file, specify the URI of the input
-     * caption source file. If your caption source is IMSC in an IMF package, use TrackSourceSettings instead of
+     * If your input captions are SCC, SMI, SRT, STL, TTML, WebVTT, or IMSC 1.1 in an xml file, specify the URI of the
+     * input caption source file. If your caption source is IMSC in an IMF package, use TrackSourceSettings instead of
      * FileSoureSettings.
      * 
      * @param fileSourceSettings
-     *        If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file, specify the URI of the
-     *        input caption source file. If your caption source is IMSC in an IMF package, use TrackSourceSettings
-     *        instead of FileSoureSettings.
+     *        If your input captions are SCC, SMI, SRT, STL, TTML, WebVTT, or IMSC 1.1 in an xml file, specify the URI
+     *        of the input caption source file. If your caption source is IMSC in an IMF package, use
+     *        TrackSourceSettings instead of FileSoureSettings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

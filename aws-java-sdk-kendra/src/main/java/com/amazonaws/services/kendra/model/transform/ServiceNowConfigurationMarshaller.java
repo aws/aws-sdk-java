@@ -37,6 +37,8 @@ public class ServiceNowConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KnowledgeArticleConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> SERVICECATALOGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceCatalogConfiguration").build();
+    private static final MarshallingInfo<String> AUTHENTICATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AuthenticationType").build();
 
     private static final ServiceNowConfigurationMarshaller instance = new ServiceNowConfigurationMarshaller();
 
@@ -59,6 +61,7 @@ public class ServiceNowConfigurationMarshaller {
             protocolMarshaller.marshall(serviceNowConfiguration.getServiceNowBuildVersion(), SERVICENOWBUILDVERSION_BINDING);
             protocolMarshaller.marshall(serviceNowConfiguration.getKnowledgeArticleConfiguration(), KNOWLEDGEARTICLECONFIGURATION_BINDING);
             protocolMarshaller.marshall(serviceNowConfiguration.getServiceCatalogConfiguration(), SERVICECATALOGCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(serviceNowConfiguration.getAuthenticationType(), AUTHENTICATIONTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

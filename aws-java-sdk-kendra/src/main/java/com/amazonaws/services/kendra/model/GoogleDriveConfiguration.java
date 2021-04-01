@@ -61,7 +61,7 @@ public class GoogleDriveConfiguration implements Serializable, Cloneable, Struct
      * </p>
      * <p>
      * If you are using the console, you can define index fields when creating the mapping. If you are using the API,
-     * you must first create the field using the <a>UpdateIndex</a> operation.
+     * you must first create the field using the <code>UpdateIndex</code> operation.
      * </p>
      */
     private java.util.List<DataSourceToIndexFieldMapping> fieldMappings;
@@ -343,13 +343,13 @@ public class GoogleDriveConfiguration implements Serializable, Cloneable, Struct
      * </p>
      * <p>
      * If you are using the console, you can define index fields when creating the mapping. If you are using the API,
-     * you must first create the field using the <a>UpdateIndex</a> operation.
+     * you must first create the field using the <code>UpdateIndex</code> operation.
      * </p>
      * 
      * @return Defines mapping between a field in the Google Drive and a Amazon Kendra index field.</p>
      *         <p>
      *         If you are using the console, you can define index fields when creating the mapping. If you are using the
-     *         API, you must first create the field using the <a>UpdateIndex</a> operation.
+     *         API, you must first create the field using the <code>UpdateIndex</code> operation.
      */
 
     public java.util.List<DataSourceToIndexFieldMapping> getFieldMappings() {
@@ -362,14 +362,14 @@ public class GoogleDriveConfiguration implements Serializable, Cloneable, Struct
      * </p>
      * <p>
      * If you are using the console, you can define index fields when creating the mapping. If you are using the API,
-     * you must first create the field using the <a>UpdateIndex</a> operation.
+     * you must first create the field using the <code>UpdateIndex</code> operation.
      * </p>
      * 
      * @param fieldMappings
      *        Defines mapping between a field in the Google Drive and a Amazon Kendra index field.</p>
      *        <p>
      *        If you are using the console, you can define index fields when creating the mapping. If you are using the
-     *        API, you must first create the field using the <a>UpdateIndex</a> operation.
+     *        API, you must first create the field using the <code>UpdateIndex</code> operation.
      */
 
     public void setFieldMappings(java.util.Collection<DataSourceToIndexFieldMapping> fieldMappings) {
@@ -387,7 +387,7 @@ public class GoogleDriveConfiguration implements Serializable, Cloneable, Struct
      * </p>
      * <p>
      * If you are using the console, you can define index fields when creating the mapping. If you are using the API,
-     * you must first create the field using the <a>UpdateIndex</a> operation.
+     * you must first create the field using the <code>UpdateIndex</code> operation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -399,7 +399,7 @@ public class GoogleDriveConfiguration implements Serializable, Cloneable, Struct
      *        Defines mapping between a field in the Google Drive and a Amazon Kendra index field.</p>
      *        <p>
      *        If you are using the console, you can define index fields when creating the mapping. If you are using the
-     *        API, you must first create the field using the <a>UpdateIndex</a> operation.
+     *        API, you must first create the field using the <code>UpdateIndex</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -419,14 +419,14 @@ public class GoogleDriveConfiguration implements Serializable, Cloneable, Struct
      * </p>
      * <p>
      * If you are using the console, you can define index fields when creating the mapping. If you are using the API,
-     * you must first create the field using the <a>UpdateIndex</a> operation.
+     * you must first create the field using the <code>UpdateIndex</code> operation.
      * </p>
      * 
      * @param fieldMappings
      *        Defines mapping between a field in the Google Drive and a Amazon Kendra index field.</p>
      *        <p>
      *        If you are using the console, you can define index fields when creating the mapping. If you are using the
-     *        API, you must first create the field using the <a>UpdateIndex</a> operation.
+     *        API, you must first create the field using the <code>UpdateIndex</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

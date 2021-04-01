@@ -100,6 +100,10 @@ public class WebACLJsonUnmarshaller implements Unmarshaller<WebACL, JsonUnmarsha
                     context.nextToken();
                     webACL.setManagedByFirewallManager(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("LabelNamespace", targetDepth)) {
+                    context.nextToken();
+                    webACL.setLabelNamespace(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CustomResponseBodies", targetDepth)) {
                     context.nextToken();
                     webACL.setCustomResponseBodies(new MapUnmarshaller<String, CustomResponseBody>(context.getUnmarshaller(String.class),

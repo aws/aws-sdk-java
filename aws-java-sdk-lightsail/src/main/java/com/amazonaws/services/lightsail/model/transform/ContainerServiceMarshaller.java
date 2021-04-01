@@ -47,6 +47,8 @@ public class ContainerServiceMarshaller {
             .marshallLocationName("powerId").build();
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("state").build();
+    private static final MarshallingInfo<StructuredPojo> STATEDETAIL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stateDetail").build();
     private static final MarshallingInfo<Integer> SCALE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("scale").build();
     private static final MarshallingInfo<StructuredPojo> CURRENTDEPLOYMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -89,6 +91,7 @@ public class ContainerServiceMarshaller {
             protocolMarshaller.marshall(containerService.getPower(), POWER_BINDING);
             protocolMarshaller.marshall(containerService.getPowerId(), POWERID_BINDING);
             protocolMarshaller.marshall(containerService.getState(), STATE_BINDING);
+            protocolMarshaller.marshall(containerService.getStateDetail(), STATEDETAIL_BINDING);
             protocolMarshaller.marshall(containerService.getScale(), SCALE_BINDING);
             protocolMarshaller.marshall(containerService.getCurrentDeployment(), CURRENTDEPLOYMENT_BINDING);
             protocolMarshaller.marshall(containerService.getNextDeployment(), NEXTDEPLOYMENT_BINDING);

@@ -12411,6 +12411,40 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<GetFlowLogsIntegrationTemplateResult> getFlowLogsIntegrationTemplateAsync(GetFlowLogsIntegrationTemplateRequest request) {
+
+        return getFlowLogsIntegrationTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFlowLogsIntegrationTemplateResult> getFlowLogsIntegrationTemplateAsync(
+            final GetFlowLogsIntegrationTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetFlowLogsIntegrationTemplateRequest, GetFlowLogsIntegrationTemplateResult> asyncHandler) {
+        final GetFlowLogsIntegrationTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetFlowLogsIntegrationTemplateResult>() {
+            @Override
+            public GetFlowLogsIntegrationTemplateResult call() throws Exception {
+                GetFlowLogsIntegrationTemplateResult result = null;
+
+                try {
+                    result = executeGetFlowLogsIntegrationTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetGroupsForCapacityReservationResult> getGroupsForCapacityReservationAsync(
             GetGroupsForCapacityReservationRequest request) {
 

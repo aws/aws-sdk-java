@@ -40,6 +40,8 @@ public class ServiceNowKnowledgeArticleConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentTitleFieldName").build();
     private static final MarshallingInfo<List> FIELDMAPPINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("FieldMappings").build();
+    private static final MarshallingInfo<String> FILTERQUERY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FilterQuery").build();
 
     private static final ServiceNowKnowledgeArticleConfigurationMarshaller instance = new ServiceNowKnowledgeArticleConfigurationMarshaller();
 
@@ -63,6 +65,7 @@ public class ServiceNowKnowledgeArticleConfigurationMarshaller {
             protocolMarshaller.marshall(serviceNowKnowledgeArticleConfiguration.getDocumentDataFieldName(), DOCUMENTDATAFIELDNAME_BINDING);
             protocolMarshaller.marshall(serviceNowKnowledgeArticleConfiguration.getDocumentTitleFieldName(), DOCUMENTTITLEFIELDNAME_BINDING);
             protocolMarshaller.marshall(serviceNowKnowledgeArticleConfiguration.getFieldMappings(), FIELDMAPPINGS_BINDING);
+            protocolMarshaller.marshall(serviceNowKnowledgeArticleConfiguration.getFilterQuery(), FILTERQUERY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

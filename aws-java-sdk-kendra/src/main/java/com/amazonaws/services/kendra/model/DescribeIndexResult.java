@@ -102,7 +102,7 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
     private String errorMessage;
     /**
      * <p>
-     * For enterprise edtion indexes, you can choose to use additional capacity to meet the needs of your application.
+     * For Enterprise edition indexes, you can choose to use additional capacity to meet the needs of your application.
      * This contains the capacity units used for the index. A 0 for the query capacity or the storage capacity indicates
      * that the index is using the default capacity for the index.
      * </p>
@@ -708,13 +708,13 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * For enterprise edtion indexes, you can choose to use additional capacity to meet the needs of your application.
+     * For Enterprise edition indexes, you can choose to use additional capacity to meet the needs of your application.
      * This contains the capacity units used for the index. A 0 for the query capacity or the storage capacity indicates
      * that the index is using the default capacity for the index.
      * </p>
      * 
      * @param capacityUnits
-     *        For enterprise edtion indexes, you can choose to use additional capacity to meet the needs of your
+     *        For Enterprise edition indexes, you can choose to use additional capacity to meet the needs of your
      *        application. This contains the capacity units used for the index. A 0 for the query capacity or the
      *        storage capacity indicates that the index is using the default capacity for the index.
      */
@@ -725,12 +725,12 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * For enterprise edtion indexes, you can choose to use additional capacity to meet the needs of your application.
+     * For Enterprise edition indexes, you can choose to use additional capacity to meet the needs of your application.
      * This contains the capacity units used for the index. A 0 for the query capacity or the storage capacity indicates
      * that the index is using the default capacity for the index.
      * </p>
      * 
-     * @return For enterprise edtion indexes, you can choose to use additional capacity to meet the needs of your
+     * @return For Enterprise edition indexes, you can choose to use additional capacity to meet the needs of your
      *         application. This contains the capacity units used for the index. A 0 for the query capacity or the
      *         storage capacity indicates that the index is using the default capacity for the index.
      */
@@ -741,13 +741,13 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * For enterprise edtion indexes, you can choose to use additional capacity to meet the needs of your application.
+     * For Enterprise edition indexes, you can choose to use additional capacity to meet the needs of your application.
      * This contains the capacity units used for the index. A 0 for the query capacity or the storage capacity indicates
      * that the index is using the default capacity for the index.
      * </p>
      * 
      * @param capacityUnits
-     *        For enterprise edtion indexes, you can choose to use additional capacity to meet the needs of your
+     *        For Enterprise edition indexes, you can choose to use additional capacity to meet the needs of your
      *        application. This contains the capacity units used for the index. A 0 for the query capacity or the
      *        storage capacity indicates that the index is using the default capacity for the index.
      * @return Returns a reference to this object so that method calls can be chained together.
