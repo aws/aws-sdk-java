@@ -41,6 +41,8 @@ public class CreateContainerRecipeRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("semanticVersion").build();
     private static final MarshallingInfo<List> COMPONENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("components").build();
+    private static final MarshallingInfo<StructuredPojo> INSTANCECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceConfiguration").build();
     private static final MarshallingInfo<String> DOCKERFILETEMPLATEDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dockerfileTemplateData").build();
     private static final MarshallingInfo<String> DOCKERFILETEMPLATEURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -84,6 +86,7 @@ public class CreateContainerRecipeRequestMarshaller {
             protocolMarshaller.marshall(createContainerRecipeRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createContainerRecipeRequest.getSemanticVersion(), SEMANTICVERSION_BINDING);
             protocolMarshaller.marshall(createContainerRecipeRequest.getComponents(), COMPONENTS_BINDING);
+            protocolMarshaller.marshall(createContainerRecipeRequest.getInstanceConfiguration(), INSTANCECONFIGURATION_BINDING);
             protocolMarshaller.marshall(createContainerRecipeRequest.getDockerfileTemplateData(), DOCKERFILETEMPLATEDATA_BINDING);
             protocolMarshaller.marshall(createContainerRecipeRequest.getDockerfileTemplateUri(), DOCKERFILETEMPLATEURI_BINDING);
             protocolMarshaller.marshall(createContainerRecipeRequest.getPlatformOverride(), PLATFORMOVERRIDE_BINDING);

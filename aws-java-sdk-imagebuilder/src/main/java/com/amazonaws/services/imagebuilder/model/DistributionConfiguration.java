@@ -48,7 +48,7 @@ public class DistributionConfiguration implements Serializable, Cloneable, Struc
     private String description;
     /**
      * <p>
-     * The distributions of the distribution configuration.
+     * The distribution objects that apply Region-specific settings for the deployment of the image to targeted Regions.
      * </p>
      */
     private java.util.List<Distribution> distributions;
@@ -199,10 +199,11 @@ public class DistributionConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The distributions of the distribution configuration.
+     * The distribution objects that apply Region-specific settings for the deployment of the image to targeted Regions.
      * </p>
      * 
-     * @return The distributions of the distribution configuration.
+     * @return The distribution objects that apply Region-specific settings for the deployment of the image to targeted
+     *         Regions.
      */
 
     public java.util.List<Distribution> getDistributions() {
@@ -211,11 +212,12 @@ public class DistributionConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The distributions of the distribution configuration.
+     * The distribution objects that apply Region-specific settings for the deployment of the image to targeted Regions.
      * </p>
      * 
      * @param distributions
-     *        The distributions of the distribution configuration.
+     *        The distribution objects that apply Region-specific settings for the deployment of the image to targeted
+     *        Regions.
      */
 
     public void setDistributions(java.util.Collection<Distribution> distributions) {
@@ -229,7 +231,7 @@ public class DistributionConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The distributions of the distribution configuration.
+     * The distribution objects that apply Region-specific settings for the deployment of the image to targeted Regions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -238,7 +240,8 @@ public class DistributionConfiguration implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param distributions
-     *        The distributions of the distribution configuration.
+     *        The distribution objects that apply Region-specific settings for the deployment of the image to targeted
+     *        Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -254,11 +257,12 @@ public class DistributionConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The distributions of the distribution configuration.
+     * The distribution objects that apply Region-specific settings for the deployment of the image to targeted Regions.
      * </p>
      * 
      * @param distributions
-     *        The distributions of the distribution configuration.
+     *        The distribution objects that apply Region-specific settings for the deployment of the image to targeted
+     *        Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -78,6 +78,12 @@ public class ContainerRecipe implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<ComponentConfiguration> components;
     /**
      * <p>
+     * A group of options that can be used to configure an instance for building and testing container images.
+     * </p>
+     */
+    private InstanceConfiguration instanceConfiguration;
+    /**
+     * <p>
      * Dockerfiles are text documents that are used to build Docker containers, and ensure that they contain all of the
      * elements required by the application running inside. The template data consists of contextual variables where
      * Image Builder places build information or scripts, based on your container image recipe.
@@ -517,6 +523,46 @@ public class ContainerRecipe implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * A group of options that can be used to configure an instance for building and testing container images.
+     * </p>
+     * 
+     * @param instanceConfiguration
+     *        A group of options that can be used to configure an instance for building and testing container images.
+     */
+
+    public void setInstanceConfiguration(InstanceConfiguration instanceConfiguration) {
+        this.instanceConfiguration = instanceConfiguration;
+    }
+
+    /**
+     * <p>
+     * A group of options that can be used to configure an instance for building and testing container images.
+     * </p>
+     * 
+     * @return A group of options that can be used to configure an instance for building and testing container images.
+     */
+
+    public InstanceConfiguration getInstanceConfiguration() {
+        return this.instanceConfiguration;
+    }
+
+    /**
+     * <p>
+     * A group of options that can be used to configure an instance for building and testing container images.
+     * </p>
+     * 
+     * @param instanceConfiguration
+     *        A group of options that can be used to configure an instance for building and testing container images.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerRecipe withInstanceConfiguration(InstanceConfiguration instanceConfiguration) {
+        setInstanceConfiguration(instanceConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
      * Dockerfiles are text documents that are used to build Docker containers, and ensure that they contain all of the
      * elements required by the application running inside. The template data consists of contextual variables where
      * Image Builder places build information or scripts, based on your container image recipe.
@@ -915,6 +961,8 @@ public class ContainerRecipe implements Serializable, Cloneable, StructuredPojo 
             sb.append("Version: ").append(getVersion()).append(",");
         if (getComponents() != null)
             sb.append("Components: ").append(getComponents()).append(",");
+        if (getInstanceConfiguration() != null)
+            sb.append("InstanceConfiguration: ").append(getInstanceConfiguration()).append(",");
         if (getDockerfileTemplateData() != null)
             sb.append("DockerfileTemplateData: ").append(getDockerfileTemplateData()).append(",");
         if (getKmsKeyId() != null)
@@ -977,6 +1025,10 @@ public class ContainerRecipe implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getComponents() != null && other.getComponents().equals(this.getComponents()) == false)
             return false;
+        if (other.getInstanceConfiguration() == null ^ this.getInstanceConfiguration() == null)
+            return false;
+        if (other.getInstanceConfiguration() != null && other.getInstanceConfiguration().equals(this.getInstanceConfiguration()) == false)
+            return false;
         if (other.getDockerfileTemplateData() == null ^ this.getDockerfileTemplateData() == null)
             return false;
         if (other.getDockerfileTemplateData() != null && other.getDockerfileTemplateData().equals(this.getDockerfileTemplateData()) == false)
@@ -1025,6 +1077,7 @@ public class ContainerRecipe implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getComponents() == null) ? 0 : getComponents().hashCode());
+        hashCode = prime * hashCode + ((getInstanceConfiguration() == null) ? 0 : getInstanceConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDockerfileTemplateData() == null) ? 0 : getDockerfileTemplateData().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());

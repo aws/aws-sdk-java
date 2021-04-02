@@ -45,6 +45,8 @@ public class ContainerRecipeMarshaller {
             .marshallLocationName("version").build();
     private static final MarshallingInfo<List> COMPONENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("components").build();
+    private static final MarshallingInfo<StructuredPojo> INSTANCECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceConfiguration").build();
     private static final MarshallingInfo<String> DOCKERFILETEMPLATEDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dockerfileTemplateData").build();
     private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -86,6 +88,7 @@ public class ContainerRecipeMarshaller {
             protocolMarshaller.marshall(containerRecipe.getOwner(), OWNER_BINDING);
             protocolMarshaller.marshall(containerRecipe.getVersion(), VERSION_BINDING);
             protocolMarshaller.marshall(containerRecipe.getComponents(), COMPONENTS_BINDING);
+            protocolMarshaller.marshall(containerRecipe.getInstanceConfiguration(), INSTANCECONFIGURATION_BINDING);
             protocolMarshaller.marshall(containerRecipe.getDockerfileTemplateData(), DOCKERFILETEMPLATEDATA_BINDING);
             protocolMarshaller.marshall(containerRecipe.getKmsKeyId(), KMSKEYID_BINDING);
             protocolMarshaller.marshall(containerRecipe.getEncrypted(), ENCRYPTED_BINDING);

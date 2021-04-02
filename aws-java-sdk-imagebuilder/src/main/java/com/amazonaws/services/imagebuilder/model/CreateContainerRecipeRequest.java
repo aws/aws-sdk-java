@@ -57,6 +57,12 @@ public class CreateContainerRecipeRequest extends com.amazonaws.AmazonWebService
     private java.util.List<ComponentConfiguration> components;
     /**
      * <p>
+     * A group of options that can be used to configure an instance for building and testing container images.
+     * </p>
+     */
+    private InstanceConfiguration instanceConfiguration;
+    /**
+     * <p>
      * The Dockerfile template used to build your image as an inline data blob.
      * </p>
      */
@@ -362,6 +368,46 @@ public class CreateContainerRecipeRequest extends com.amazonaws.AmazonWebService
 
     public CreateContainerRecipeRequest withComponents(java.util.Collection<ComponentConfiguration> components) {
         setComponents(components);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A group of options that can be used to configure an instance for building and testing container images.
+     * </p>
+     * 
+     * @param instanceConfiguration
+     *        A group of options that can be used to configure an instance for building and testing container images.
+     */
+
+    public void setInstanceConfiguration(InstanceConfiguration instanceConfiguration) {
+        this.instanceConfiguration = instanceConfiguration;
+    }
+
+    /**
+     * <p>
+     * A group of options that can be used to configure an instance for building and testing container images.
+     * </p>
+     * 
+     * @return A group of options that can be used to configure an instance for building and testing container images.
+     */
+
+    public InstanceConfiguration getInstanceConfiguration() {
+        return this.instanceConfiguration;
+    }
+
+    /**
+     * <p>
+     * A group of options that can be used to configure an instance for building and testing container images.
+     * </p>
+     * 
+     * @param instanceConfiguration
+     *        A group of options that can be used to configure an instance for building and testing container images.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateContainerRecipeRequest withInstanceConfiguration(InstanceConfiguration instanceConfiguration) {
+        setInstanceConfiguration(instanceConfiguration);
         return this;
     }
 
@@ -834,6 +880,8 @@ public class CreateContainerRecipeRequest extends com.amazonaws.AmazonWebService
             sb.append("SemanticVersion: ").append(getSemanticVersion()).append(",");
         if (getComponents() != null)
             sb.append("Components: ").append(getComponents()).append(",");
+        if (getInstanceConfiguration() != null)
+            sb.append("InstanceConfiguration: ").append(getInstanceConfiguration()).append(",");
         if (getDockerfileTemplateData() != null)
             sb.append("DockerfileTemplateData: ").append(getDockerfileTemplateData()).append(",");
         if (getDockerfileTemplateUri() != null)
@@ -888,6 +936,10 @@ public class CreateContainerRecipeRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getComponents() != null && other.getComponents().equals(this.getComponents()) == false)
             return false;
+        if (other.getInstanceConfiguration() == null ^ this.getInstanceConfiguration() == null)
+            return false;
+        if (other.getInstanceConfiguration() != null && other.getInstanceConfiguration().equals(this.getInstanceConfiguration()) == false)
+            return false;
         if (other.getDockerfileTemplateData() == null ^ this.getDockerfileTemplateData() == null)
             return false;
         if (other.getDockerfileTemplateData() != null && other.getDockerfileTemplateData().equals(this.getDockerfileTemplateData()) == false)
@@ -941,6 +993,7 @@ public class CreateContainerRecipeRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getSemanticVersion() == null) ? 0 : getSemanticVersion().hashCode());
         hashCode = prime * hashCode + ((getComponents() == null) ? 0 : getComponents().hashCode());
+        hashCode = prime * hashCode + ((getInstanceConfiguration() == null) ? 0 : getInstanceConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDockerfileTemplateData() == null) ? 0 : getDockerfileTemplateData().hashCode());
         hashCode = prime * hashCode + ((getDockerfileTemplateUri() == null) ? 0 : getDockerfileTemplateUri().hashCode());
         hashCode = prime * hashCode + ((getPlatformOverride() == null) ? 0 : getPlatformOverride().hashCode());

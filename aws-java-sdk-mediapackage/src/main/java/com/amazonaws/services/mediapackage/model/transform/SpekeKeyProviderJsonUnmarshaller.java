@@ -52,6 +52,10 @@ public class SpekeKeyProviderJsonUnmarshaller implements Unmarshaller<SpekeKeyPr
                     context.nextToken();
                     spekeKeyProvider.setCertificateArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("encryptionContractConfiguration", targetDepth)) {
+                    context.nextToken();
+                    spekeKeyProvider.setEncryptionContractConfiguration(EncryptionContractConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("resourceId", targetDepth)) {
                     context.nextToken();
                     spekeKeyProvider.setResourceId(context.getUnmarshaller(String.class).unmarshall(context));

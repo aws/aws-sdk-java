@@ -63,7 +63,7 @@ public class ListDistributionConfigurationsRequest extends com.amazonaws.AmazonW
      * </li>
      * </ul>
      * 
-     * @return The filters. </p>
+     * @return The filters.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -89,7 +89,7 @@ public class ListDistributionConfigurationsRequest extends com.amazonaws.AmazonW
      * </ul>
      * 
      * @param filters
-     *        The filters. </p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -125,7 +125,7 @@ public class ListDistributionConfigurationsRequest extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param filters
-     *        The filters. </p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -158,7 +158,7 @@ public class ListDistributionConfigurationsRequest extends com.amazonaws.AmazonW
      * </ul>
      * 
      * @param filters
-     *        The filters. </p>
+     *        The filters.</p>
      *        <ul>
      *        <li>
      *        <p>

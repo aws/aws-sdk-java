@@ -7,5 +7,4 @@ phases:
 
   build:
     commands:
-      - cd aws-sdk-java
       - mvn clean package -Dtest=!AgentMonitoringListenerTest,!AsynchronousAgentDispatcherTest,!RunCucumberTest,!*IntegrationTest -DfailIfNoTests=false -T1C

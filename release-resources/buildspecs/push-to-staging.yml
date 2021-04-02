@@ -27,6 +27,6 @@ phases:
      - SUBJECT="Build SUCCESS:PushStagedSdk"
      - RELEASE_ID=`(grep -w releaseId | cut -d= -f2) <$RELEASE_PROPERTIES`
      - echo $RELEASE_ID
-     - SNS_MESSAGE_BODY='{"jobName":"PushStagedSdk", "phase":"COMPLETED","result":"SUCCESS", "releaseId":"'"$RELEASE_ID"'"}'
+     - SNS_MESSAGE_BODY='{"jobName":"VerifyStagedSdk", "phase":"COMPLETED","result":"SUCCESS", "releaseId":"'"$RELEASE_ID"'"}'
      - aws --region us-west-2 sns publish --message "$SNS_MESSAGE_BODY" --topic $SNS_TOPIC --subject "$SUBJECT"
      - echo "Staging Done."

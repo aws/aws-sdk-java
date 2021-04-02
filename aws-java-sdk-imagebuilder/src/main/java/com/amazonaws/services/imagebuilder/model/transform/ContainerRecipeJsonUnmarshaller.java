@@ -82,6 +82,10 @@ public class ContainerRecipeJsonUnmarshaller implements Unmarshaller<ContainerRe
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("instanceConfiguration", targetDepth)) {
+                    context.nextToken();
+                    containerRecipe.setInstanceConfiguration(InstanceConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("dockerfileTemplateData", targetDepth)) {
                     context.nextToken();
                     containerRecipe.setDockerfileTemplateData(context.getUnmarshaller(String.class).unmarshall(context));

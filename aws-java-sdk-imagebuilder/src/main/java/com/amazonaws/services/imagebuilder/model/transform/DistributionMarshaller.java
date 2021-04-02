@@ -36,6 +36,8 @@ public class DistributionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containerDistributionConfiguration").build();
     private static final MarshallingInfo<List> LICENSECONFIGURATIONARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("licenseConfigurationArns").build();
+    private static final MarshallingInfo<List> LAUNCHTEMPLATECONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("launchTemplateConfigurations").build();
 
     private static final DistributionMarshaller instance = new DistributionMarshaller();
 
@@ -57,6 +59,7 @@ public class DistributionMarshaller {
             protocolMarshaller.marshall(distribution.getAmiDistributionConfiguration(), AMIDISTRIBUTIONCONFIGURATION_BINDING);
             protocolMarshaller.marshall(distribution.getContainerDistributionConfiguration(), CONTAINERDISTRIBUTIONCONFIGURATION_BINDING);
             protocolMarshaller.marshall(distribution.getLicenseConfigurationArns(), LICENSECONFIGURATIONARNS_BINDING);
+            protocolMarshaller.marshall(distribution.getLaunchTemplateConfigurations(), LAUNCHTEMPLATECONFIGURATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -66,6 +66,13 @@ public class DistributionJsonUnmarshaller implements Unmarshaller<Distribution, 
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("launchTemplateConfigurations", targetDepth)) {
+                    context.nextToken();
+                    distribution.setLaunchTemplateConfigurations(new ListUnmarshaller<LaunchTemplateConfiguration>(LaunchTemplateConfigurationJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
