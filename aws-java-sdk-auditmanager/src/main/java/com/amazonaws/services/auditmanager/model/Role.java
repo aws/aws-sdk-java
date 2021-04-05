@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The wrapper that contains AWS Audit Manager role information, such as the role type and IAM Amazon Resource Name
- * (ARN).
+ * The wrapper that contains the AWS Audit Manager role information of the current user, such as the role type and IAM
+ * Amazon Resource Name (ARN).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/Role" target="_top">AWS API

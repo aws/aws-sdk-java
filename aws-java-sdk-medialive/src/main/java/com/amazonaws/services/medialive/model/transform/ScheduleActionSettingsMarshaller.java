@@ -35,6 +35,10 @@ public class ScheduleActionSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputPrepareSettings").build();
     private static final MarshallingInfo<StructuredPojo> INPUTSWITCHSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputSwitchSettings").build();
+    private static final MarshallingInfo<StructuredPojo> MOTIONGRAPHICSIMAGEACTIVATESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("motionGraphicsImageActivateSettings").build();
+    private static final MarshallingInfo<StructuredPojo> MOTIONGRAPHICSIMAGEDEACTIVATESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("motionGraphicsImageDeactivateSettings").build();
     private static final MarshallingInfo<StructuredPojo> PAUSESTATESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pauseStateSettings").build();
     private static final MarshallingInfo<StructuredPojo> SCTE35RETURNTONETWORKSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -68,6 +72,8 @@ public class ScheduleActionSettingsMarshaller {
             protocolMarshaller.marshall(scheduleActionSettings.getHlsTimedMetadataSettings(), HLSTIMEDMETADATASETTINGS_BINDING);
             protocolMarshaller.marshall(scheduleActionSettings.getInputPrepareSettings(), INPUTPREPARESETTINGS_BINDING);
             protocolMarshaller.marshall(scheduleActionSettings.getInputSwitchSettings(), INPUTSWITCHSETTINGS_BINDING);
+            protocolMarshaller.marshall(scheduleActionSettings.getMotionGraphicsImageActivateSettings(), MOTIONGRAPHICSIMAGEACTIVATESETTINGS_BINDING);
+            protocolMarshaller.marshall(scheduleActionSettings.getMotionGraphicsImageDeactivateSettings(), MOTIONGRAPHICSIMAGEDEACTIVATESETTINGS_BINDING);
             protocolMarshaller.marshall(scheduleActionSettings.getPauseStateSettings(), PAUSESTATESETTINGS_BINDING);
             protocolMarshaller.marshall(scheduleActionSettings.getScte35ReturnToNetworkSettings(), SCTE35RETURNTONETWORKSETTINGS_BINDING);
             protocolMarshaller.marshall(scheduleActionSettings.getScte35SpliceInsertSettings(), SCTE35SPLICEINSERTSETTINGS_BINDING);

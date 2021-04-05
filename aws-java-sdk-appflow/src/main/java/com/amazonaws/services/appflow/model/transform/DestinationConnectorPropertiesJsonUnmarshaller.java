@@ -84,6 +84,10 @@ public class DestinationConnectorPropertiesJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     destinationConnectorProperties.setCustomerProfiles(CustomerProfilesDestinationPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Zendesk", targetDepth)) {
+                    context.nextToken();
+                    destinationConnectorProperties.setZendesk(ZendeskDestinationPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

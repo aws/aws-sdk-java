@@ -80,6 +80,10 @@ public class EncoderSettingsJsonUnmarshaller implements Unmarshaller<EncoderSett
                     context.nextToken();
                     encoderSettings.setGlobalConfiguration(GlobalConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("motionGraphicsConfiguration", targetDepth)) {
+                    context.nextToken();
+                    encoderSettings.setMotionGraphicsConfiguration(MotionGraphicsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("nielsenConfiguration", targetDepth)) {
                     context.nextToken();
                     encoderSettings.setNielsenConfiguration(NielsenConfigurationJsonUnmarshaller.getInstance().unmarshall(context));

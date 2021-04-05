@@ -95,7 +95,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @throws ResourceNotFoundException
@@ -118,7 +119,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @throws ResourceNotFoundException
@@ -141,7 +143,8 @@ public interface AWSAuditManager {
      * @throws ResourceNotFoundException
      *         The resource specified in the request cannot be found.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws InternalServerException
@@ -162,7 +165,8 @@ public interface AWSAuditManager {
      * @throws ResourceNotFoundException
      *         The resource specified in the request cannot be found.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws InternalServerException
@@ -183,7 +187,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @throws ResourceNotFoundException
@@ -206,7 +211,8 @@ public interface AWSAuditManager {
      * @throws ResourceNotFoundException
      *         The resource specified in the request cannot be found.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws InternalServerException
@@ -231,7 +237,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.CreateAssessment
@@ -252,7 +259,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.CreateAssessmentFramework
@@ -271,7 +279,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @throws ResourceNotFoundException
@@ -294,7 +303,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.CreateControl
@@ -315,7 +325,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.DeleteAssessment
@@ -336,7 +347,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.DeleteAssessmentFramework
@@ -355,7 +367,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @throws ResourceNotFoundException
@@ -378,7 +391,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.DeleteControl
@@ -397,7 +411,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @throws ResourceNotFoundException
@@ -418,7 +433,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @throws ResourceNotFoundException
@@ -440,7 +456,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @throws ResourceNotFoundException
@@ -480,7 +497,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.GetAssessment
@@ -501,7 +519,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.GetAssessmentFramework
@@ -520,7 +539,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @throws ResourceNotFoundException
@@ -539,7 +559,8 @@ public interface AWSAuditManager {
      * @param getChangeLogsRequest
      * @return Result of the GetChangeLogs operation returned by the service.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws ResourceNotFoundException
      *         The resource specified in the request cannot be found.
      * @throws ValidationException
@@ -564,7 +585,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.GetControl
@@ -583,7 +605,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.GetDelegations
@@ -604,7 +627,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.GetEvidence
@@ -625,7 +649,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.GetEvidenceByEvidenceFolder
@@ -646,7 +671,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.GetEvidenceFolder
@@ -665,7 +691,8 @@ public interface AWSAuditManager {
      * @throws ResourceNotFoundException
      *         The resource specified in the request cannot be found.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws InternalServerException
@@ -688,7 +715,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.GetEvidenceFoldersByAssessmentControl
@@ -709,7 +737,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @throws ResourceNotFoundException
@@ -728,7 +757,8 @@ public interface AWSAuditManager {
      * @param getServicesInScopeRequest
      * @return Result of the GetServicesInScope operation returned by the service.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws InternalServerException
@@ -747,7 +777,8 @@ public interface AWSAuditManager {
      * @param getSettingsRequest
      * @return Result of the GetSettings operation returned by the service.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.GetSettings
@@ -766,7 +797,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.ListAssessmentFrameworks
@@ -785,7 +817,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.ListAssessmentReports
@@ -802,7 +835,8 @@ public interface AWSAuditManager {
      * @param listAssessmentsRequest
      * @return Result of the ListAssessments operation returned by the service.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws InternalServerException
@@ -821,7 +855,8 @@ public interface AWSAuditManager {
      * @param listControlsRequest
      * @return Result of the ListControls operation returned by the service.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws InternalServerException
@@ -840,7 +875,8 @@ public interface AWSAuditManager {
      * @param listKeywordsForDataSourceRequest
      * @return Result of the ListKeywordsForDataSource operation returned by the service.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws InternalServerException
@@ -859,7 +895,8 @@ public interface AWSAuditManager {
      * @param listNotificationsRequest
      * @return Result of the ListNotifications operation returned by the service.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws InternalServerException
@@ -899,7 +936,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @throws ResourceNotFoundException
@@ -920,7 +958,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @throws ResourceNotFoundException
@@ -981,7 +1020,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.UpdateAssessment
@@ -1002,7 +1042,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.UpdateAssessmentControl
@@ -1023,7 +1064,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.UpdateAssessmentControlSetStatus
@@ -1044,7 +1086,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.UpdateAssessmentFramework
@@ -1065,7 +1108,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.UpdateAssessmentStatus
@@ -1086,7 +1130,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.UpdateControl
@@ -1105,7 +1150,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.UpdateSettings
@@ -1124,7 +1170,8 @@ public interface AWSAuditManager {
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @throws ResourceNotFoundException

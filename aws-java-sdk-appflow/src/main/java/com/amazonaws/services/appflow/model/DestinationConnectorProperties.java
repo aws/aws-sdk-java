@@ -83,6 +83,8 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
      */
     private CustomerProfilesDestinationProperties customerProfiles;
 
+    private ZendeskDestinationProperties zendesk;
+
     /**
      * <p>
      * The properties required to query Amazon Redshift.
@@ -444,6 +446,32 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
     }
 
     /**
+     * @param zendesk
+     */
+
+    public void setZendesk(ZendeskDestinationProperties zendesk) {
+        this.zendesk = zendesk;
+    }
+
+    /**
+     * @return
+     */
+
+    public ZendeskDestinationProperties getZendesk() {
+        return this.zendesk;
+    }
+
+    /**
+     * @param zendesk
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DestinationConnectorProperties withZendesk(ZendeskDestinationProperties zendesk) {
+        setZendesk(zendesk);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -472,7 +500,9 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
         if (getHoneycode() != null)
             sb.append("Honeycode: ").append(getHoneycode()).append(",");
         if (getCustomerProfiles() != null)
-            sb.append("CustomerProfiles: ").append(getCustomerProfiles());
+            sb.append("CustomerProfiles: ").append(getCustomerProfiles()).append(",");
+        if (getZendesk() != null)
+            sb.append("Zendesk: ").append(getZendesk());
         sb.append("}");
         return sb.toString();
     }
@@ -523,6 +553,10 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
             return false;
         if (other.getCustomerProfiles() != null && other.getCustomerProfiles().equals(this.getCustomerProfiles()) == false)
             return false;
+        if (other.getZendesk() == null ^ this.getZendesk() == null)
+            return false;
+        if (other.getZendesk() != null && other.getZendesk().equals(this.getZendesk()) == false)
+            return false;
         return true;
     }
 
@@ -540,6 +574,7 @@ public class DestinationConnectorProperties implements Serializable, Cloneable, 
         hashCode = prime * hashCode + ((getUpsolver() == null) ? 0 : getUpsolver().hashCode());
         hashCode = prime * hashCode + ((getHoneycode() == null) ? 0 : getHoneycode().hashCode());
         hashCode = prime * hashCode + ((getCustomerProfiles() == null) ? 0 : getCustomerProfiles().hashCode());
+        hashCode = prime * hashCode + ((getZendesk() == null) ? 0 : getZendesk().hashCode());
         return hashCode;
     }
 

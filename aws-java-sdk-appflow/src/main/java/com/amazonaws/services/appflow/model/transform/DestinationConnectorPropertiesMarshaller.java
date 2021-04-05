@@ -45,6 +45,8 @@ public class DestinationConnectorPropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Honeycode").build();
     private static final MarshallingInfo<StructuredPojo> CUSTOMERPROFILES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomerProfiles").build();
+    private static final MarshallingInfo<StructuredPojo> ZENDESK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Zendesk").build();
 
     private static final DestinationConnectorPropertiesMarshaller instance = new DestinationConnectorPropertiesMarshaller();
 
@@ -71,6 +73,7 @@ public class DestinationConnectorPropertiesMarshaller {
             protocolMarshaller.marshall(destinationConnectorProperties.getUpsolver(), UPSOLVER_BINDING);
             protocolMarshaller.marshall(destinationConnectorProperties.getHoneycode(), HONEYCODE_BINDING);
             protocolMarshaller.marshall(destinationConnectorProperties.getCustomerProfiles(), CUSTOMERPROFILES_BINDING);
+            protocolMarshaller.marshall(destinationConnectorProperties.getZendesk(), ZENDESK_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

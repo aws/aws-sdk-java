@@ -66,6 +66,16 @@ public class ScheduleActionSettingsJsonUnmarshaller implements Unmarshaller<Sche
                     context.nextToken();
                     scheduleActionSettings.setInputSwitchSettings(InputSwitchScheduleActionSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("motionGraphicsImageActivateSettings", targetDepth)) {
+                    context.nextToken();
+                    scheduleActionSettings.setMotionGraphicsImageActivateSettings(MotionGraphicsActivateScheduleActionSettingsJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
+                if (context.testExpression("motionGraphicsImageDeactivateSettings", targetDepth)) {
+                    context.nextToken();
+                    scheduleActionSettings.setMotionGraphicsImageDeactivateSettings(MotionGraphicsDeactivateScheduleActionSettingsJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
                 if (context.testExpression("pauseStateSettings", targetDepth)) {
                     context.nextToken();
                     scheduleActionSettings.setPauseStateSettings(PauseStateScheduleActionSettingsJsonUnmarshaller.getInstance().unmarshall(context));

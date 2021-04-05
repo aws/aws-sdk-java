@@ -34,6 +34,10 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     private InputPrepareScheduleActionSettings inputPrepareSettings;
     /** Action to switch the input */
     private InputSwitchScheduleActionSettings inputSwitchSettings;
+    /** Action to activate a motion graphics image overlay */
+    private MotionGraphicsActivateScheduleActionSettings motionGraphicsImageActivateSettings;
+    /** Action to deactivate a motion graphics image overlay */
+    private MotionGraphicsDeactivateScheduleActionSettings motionGraphicsImageDeactivateSettings;
     /** Action to pause or unpause one or both channel pipelines */
     private PauseStateScheduleActionSettings pauseStateSettings;
     /** Action to insert SCTE-35 return_to_network message */
@@ -180,6 +184,74 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
 
     public ScheduleActionSettings withInputSwitchSettings(InputSwitchScheduleActionSettings inputSwitchSettings) {
         setInputSwitchSettings(inputSwitchSettings);
+        return this;
+    }
+
+    /**
+     * Action to activate a motion graphics image overlay
+     * 
+     * @param motionGraphicsImageActivateSettings
+     *        Action to activate a motion graphics image overlay
+     */
+
+    public void setMotionGraphicsImageActivateSettings(MotionGraphicsActivateScheduleActionSettings motionGraphicsImageActivateSettings) {
+        this.motionGraphicsImageActivateSettings = motionGraphicsImageActivateSettings;
+    }
+
+    /**
+     * Action to activate a motion graphics image overlay
+     * 
+     * @return Action to activate a motion graphics image overlay
+     */
+
+    public MotionGraphicsActivateScheduleActionSettings getMotionGraphicsImageActivateSettings() {
+        return this.motionGraphicsImageActivateSettings;
+    }
+
+    /**
+     * Action to activate a motion graphics image overlay
+     * 
+     * @param motionGraphicsImageActivateSettings
+     *        Action to activate a motion graphics image overlay
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduleActionSettings withMotionGraphicsImageActivateSettings(MotionGraphicsActivateScheduleActionSettings motionGraphicsImageActivateSettings) {
+        setMotionGraphicsImageActivateSettings(motionGraphicsImageActivateSettings);
+        return this;
+    }
+
+    /**
+     * Action to deactivate a motion graphics image overlay
+     * 
+     * @param motionGraphicsImageDeactivateSettings
+     *        Action to deactivate a motion graphics image overlay
+     */
+
+    public void setMotionGraphicsImageDeactivateSettings(MotionGraphicsDeactivateScheduleActionSettings motionGraphicsImageDeactivateSettings) {
+        this.motionGraphicsImageDeactivateSettings = motionGraphicsImageDeactivateSettings;
+    }
+
+    /**
+     * Action to deactivate a motion graphics image overlay
+     * 
+     * @return Action to deactivate a motion graphics image overlay
+     */
+
+    public MotionGraphicsDeactivateScheduleActionSettings getMotionGraphicsImageDeactivateSettings() {
+        return this.motionGraphicsImageDeactivateSettings;
+    }
+
+    /**
+     * Action to deactivate a motion graphics image overlay
+     * 
+     * @param motionGraphicsImageDeactivateSettings
+     *        Action to deactivate a motion graphics image overlay
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduleActionSettings withMotionGraphicsImageDeactivateSettings(MotionGraphicsDeactivateScheduleActionSettings motionGraphicsImageDeactivateSettings) {
+        setMotionGraphicsImageDeactivateSettings(motionGraphicsImageDeactivateSettings);
         return this;
     }
 
@@ -407,6 +479,10 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
             sb.append("InputPrepareSettings: ").append(getInputPrepareSettings()).append(",");
         if (getInputSwitchSettings() != null)
             sb.append("InputSwitchSettings: ").append(getInputSwitchSettings()).append(",");
+        if (getMotionGraphicsImageActivateSettings() != null)
+            sb.append("MotionGraphicsImageActivateSettings: ").append(getMotionGraphicsImageActivateSettings()).append(",");
+        if (getMotionGraphicsImageDeactivateSettings() != null)
+            sb.append("MotionGraphicsImageDeactivateSettings: ").append(getMotionGraphicsImageDeactivateSettings()).append(",");
         if (getPauseStateSettings() != null)
             sb.append("PauseStateSettings: ").append(getPauseStateSettings()).append(",");
         if (getScte35ReturnToNetworkSettings() != null)
@@ -449,6 +525,16 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
             return false;
         if (other.getInputSwitchSettings() != null && other.getInputSwitchSettings().equals(this.getInputSwitchSettings()) == false)
             return false;
+        if (other.getMotionGraphicsImageActivateSettings() == null ^ this.getMotionGraphicsImageActivateSettings() == null)
+            return false;
+        if (other.getMotionGraphicsImageActivateSettings() != null
+                && other.getMotionGraphicsImageActivateSettings().equals(this.getMotionGraphicsImageActivateSettings()) == false)
+            return false;
+        if (other.getMotionGraphicsImageDeactivateSettings() == null ^ this.getMotionGraphicsImageDeactivateSettings() == null)
+            return false;
+        if (other.getMotionGraphicsImageDeactivateSettings() != null
+                && other.getMotionGraphicsImageDeactivateSettings().equals(this.getMotionGraphicsImageDeactivateSettings()) == false)
+            return false;
         if (other.getPauseStateSettings() == null ^ this.getPauseStateSettings() == null)
             return false;
         if (other.getPauseStateSettings() != null && other.getPauseStateSettings().equals(this.getPauseStateSettings()) == false)
@@ -487,6 +573,8 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getHlsTimedMetadataSettings() == null) ? 0 : getHlsTimedMetadataSettings().hashCode());
         hashCode = prime * hashCode + ((getInputPrepareSettings() == null) ? 0 : getInputPrepareSettings().hashCode());
         hashCode = prime * hashCode + ((getInputSwitchSettings() == null) ? 0 : getInputSwitchSettings().hashCode());
+        hashCode = prime * hashCode + ((getMotionGraphicsImageActivateSettings() == null) ? 0 : getMotionGraphicsImageActivateSettings().hashCode());
+        hashCode = prime * hashCode + ((getMotionGraphicsImageDeactivateSettings() == null) ? 0 : getMotionGraphicsImageDeactivateSettings().hashCode());
         hashCode = prime * hashCode + ((getPauseStateSettings() == null) ? 0 : getPauseStateSettings().hashCode());
         hashCode = prime * hashCode + ((getScte35ReturnToNetworkSettings() == null) ? 0 : getScte35ReturnToNetworkSettings().hashCode());
         hashCode = prime * hashCode + ((getScte35SpliceInsertSettings() == null) ? 0 : getScte35SpliceInsertSettings().hashCode());

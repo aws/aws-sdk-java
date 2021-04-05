@@ -191,7 +191,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @throws ResourceNotFoundException
@@ -258,7 +259,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @throws ResourceNotFoundException
@@ -325,7 +327,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ResourceNotFoundException
      *         The resource specified in the request cannot be found.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws InternalServerException
@@ -391,7 +394,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ResourceNotFoundException
      *         The resource specified in the request cannot be found.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws InternalServerException
@@ -457,7 +461,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @throws ResourceNotFoundException
@@ -524,7 +529,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ResourceNotFoundException
      *         The resource specified in the request cannot be found.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws InternalServerException
@@ -593,7 +599,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.CreateAssessment
@@ -656,7 +663,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.CreateAssessmentFramework
@@ -719,7 +727,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @throws ResourceNotFoundException
@@ -785,7 +794,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.CreateControl
@@ -848,7 +858,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.DeleteAssessment
@@ -911,7 +922,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.DeleteAssessmentFramework
@@ -974,7 +986,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @throws ResourceNotFoundException
@@ -1040,7 +1053,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.DeleteControl
@@ -1101,7 +1115,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @throws ResourceNotFoundException
@@ -1164,7 +1179,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @throws ResourceNotFoundException
@@ -1230,7 +1246,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @throws ResourceNotFoundException
@@ -1356,7 +1373,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.GetAssessment
@@ -1419,7 +1437,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.GetAssessmentFramework
@@ -1481,7 +1500,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @throws ResourceNotFoundException
@@ -1543,7 +1563,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @param getChangeLogsRequest
      * @return Result of the GetChangeLogs operation returned by the service.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws ResourceNotFoundException
      *         The resource specified in the request cannot be found.
      * @throws ValidationException
@@ -1610,7 +1631,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.GetControl
@@ -1671,7 +1693,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.GetDelegations
@@ -1734,7 +1757,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.GetEvidence
@@ -1797,7 +1821,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.GetEvidenceByEvidenceFolder
@@ -1862,7 +1887,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.GetEvidenceFolder
@@ -1923,7 +1949,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ResourceNotFoundException
      *         The resource specified in the request cannot be found.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws InternalServerException
@@ -1990,7 +2017,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.GetEvidenceFoldersByAssessmentControl
@@ -2055,7 +2083,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @throws ResourceNotFoundException
@@ -2118,7 +2147,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @param getServicesInScopeRequest
      * @return Result of the GetServicesInScope operation returned by the service.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws InternalServerException
@@ -2179,7 +2209,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @param getSettingsRequest
      * @return Result of the GetSettings operation returned by the service.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.GetSettings
@@ -2240,7 +2271,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.ListAssessmentFrameworks
@@ -2303,7 +2335,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.ListAssessmentReports
@@ -2363,7 +2396,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @param listAssessmentsRequest
      * @return Result of the ListAssessments operation returned by the service.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws InternalServerException
@@ -2424,7 +2458,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @param listControlsRequest
      * @return Result of the ListControls operation returned by the service.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws InternalServerException
@@ -2485,7 +2520,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @param listKeywordsForDataSourceRequest
      * @return Result of the ListKeywordsForDataSource operation returned by the service.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws InternalServerException
@@ -2548,7 +2584,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @param listNotificationsRequest
      * @return Result of the ListNotifications operation returned by the service.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws InternalServerException
@@ -2672,7 +2709,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @throws ResourceNotFoundException
@@ -2735,7 +2773,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @throws ResourceNotFoundException
@@ -2925,7 +2964,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.UpdateAssessment
@@ -2988,7 +3028,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.UpdateAssessmentControl
@@ -3053,7 +3094,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.UpdateAssessmentControlSetStatus
@@ -3119,7 +3161,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.UpdateAssessmentFramework
@@ -3184,7 +3227,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.UpdateAssessmentStatus
@@ -3248,7 +3292,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.UpdateControl
@@ -3309,7 +3354,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @sample AWSAuditManager.UpdateSettings
@@ -3370,7 +3416,8 @@ public class AWSAuditManagerClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The request has invalid or missing parameters.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS
+     *         Audit Manager settings page, and try again.
      * @throws InternalServerException
      *         An internal service error occurred during the processing of your request. Try again later.
      * @throws ResourceNotFoundException

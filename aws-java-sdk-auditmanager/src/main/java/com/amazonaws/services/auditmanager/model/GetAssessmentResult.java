@@ -25,6 +25,8 @@ public class GetAssessmentResult extends com.amazonaws.AmazonWebServiceResult<co
 
     private Assessment assessment;
 
+    private Role userRole;
+
     /**
      * @param assessment
      */
@@ -52,6 +54,32 @@ public class GetAssessmentResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * @param userRole
+     */
+
+    public void setUserRole(Role userRole) {
+        this.userRole = userRole;
+    }
+
+    /**
+     * @return
+     */
+
+    public Role getUserRole() {
+        return this.userRole;
+    }
+
+    /**
+     * @param userRole
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetAssessmentResult withUserRole(Role userRole) {
+        setUserRole(userRole);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -64,7 +92,9 @@ public class GetAssessmentResult extends com.amazonaws.AmazonWebServiceResult<co
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAssessment() != null)
-            sb.append("Assessment: ").append(getAssessment());
+            sb.append("Assessment: ").append(getAssessment()).append(",");
+        if (getUserRole() != null)
+            sb.append("UserRole: ").append(getUserRole());
         sb.append("}");
         return sb.toString();
     }
@@ -83,6 +113,10 @@ public class GetAssessmentResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getAssessment() != null && other.getAssessment().equals(this.getAssessment()) == false)
             return false;
+        if (other.getUserRole() == null ^ this.getUserRole() == null)
+            return false;
+        if (other.getUserRole() != null && other.getUserRole().equals(this.getUserRole()) == false)
+            return false;
         return true;
     }
 
@@ -92,6 +126,7 @@ public class GetAssessmentResult extends com.amazonaws.AmazonWebServiceResult<co
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAssessment() == null) ? 0 : getAssessment().hashCode());
+        hashCode = prime * hashCode + ((getUserRole() == null) ? 0 : getUserRole().hashCode());
         return hashCode;
     }
 

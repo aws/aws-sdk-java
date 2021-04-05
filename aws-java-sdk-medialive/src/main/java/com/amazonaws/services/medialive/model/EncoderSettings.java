@@ -39,6 +39,8 @@ public class EncoderSettings implements Serializable, Cloneable, StructuredPojo 
     private FeatureActivations featureActivations;
     /** Configuration settings that apply to the event as a whole. */
     private GlobalConfiguration globalConfiguration;
+    /** Settings for motion graphics. */
+    private MotionGraphicsConfiguration motionGraphicsConfiguration;
     /** Nielsen configuration settings. */
     private NielsenConfiguration nielsenConfiguration;
 
@@ -333,6 +335,40 @@ public class EncoderSettings implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * Settings for motion graphics.
+     * 
+     * @param motionGraphicsConfiguration
+     *        Settings for motion graphics.
+     */
+
+    public void setMotionGraphicsConfiguration(MotionGraphicsConfiguration motionGraphicsConfiguration) {
+        this.motionGraphicsConfiguration = motionGraphicsConfiguration;
+    }
+
+    /**
+     * Settings for motion graphics.
+     * 
+     * @return Settings for motion graphics.
+     */
+
+    public MotionGraphicsConfiguration getMotionGraphicsConfiguration() {
+        return this.motionGraphicsConfiguration;
+    }
+
+    /**
+     * Settings for motion graphics.
+     * 
+     * @param motionGraphicsConfiguration
+     *        Settings for motion graphics.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EncoderSettings withMotionGraphicsConfiguration(MotionGraphicsConfiguration motionGraphicsConfiguration) {
+        setMotionGraphicsConfiguration(motionGraphicsConfiguration);
+        return this;
+    }
+
+    /**
      * Nielsen configuration settings.
      * 
      * @param nielsenConfiguration
@@ -530,6 +566,8 @@ public class EncoderSettings implements Serializable, Cloneable, StructuredPojo 
             sb.append("FeatureActivations: ").append(getFeatureActivations()).append(",");
         if (getGlobalConfiguration() != null)
             sb.append("GlobalConfiguration: ").append(getGlobalConfiguration()).append(",");
+        if (getMotionGraphicsConfiguration() != null)
+            sb.append("MotionGraphicsConfiguration: ").append(getMotionGraphicsConfiguration()).append(",");
         if (getNielsenConfiguration() != null)
             sb.append("NielsenConfiguration: ").append(getNielsenConfiguration()).append(",");
         if (getOutputGroups() != null)
@@ -580,6 +618,10 @@ public class EncoderSettings implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getGlobalConfiguration() != null && other.getGlobalConfiguration().equals(this.getGlobalConfiguration()) == false)
             return false;
+        if (other.getMotionGraphicsConfiguration() == null ^ this.getMotionGraphicsConfiguration() == null)
+            return false;
+        if (other.getMotionGraphicsConfiguration() != null && other.getMotionGraphicsConfiguration().equals(this.getMotionGraphicsConfiguration()) == false)
+            return false;
         if (other.getNielsenConfiguration() == null ^ this.getNielsenConfiguration() == null)
             return false;
         if (other.getNielsenConfiguration() != null && other.getNielsenConfiguration().equals(this.getNielsenConfiguration()) == false)
@@ -611,6 +653,7 @@ public class EncoderSettings implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getCaptionDescriptions() == null) ? 0 : getCaptionDescriptions().hashCode());
         hashCode = prime * hashCode + ((getFeatureActivations() == null) ? 0 : getFeatureActivations().hashCode());
         hashCode = prime * hashCode + ((getGlobalConfiguration() == null) ? 0 : getGlobalConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getMotionGraphicsConfiguration() == null) ? 0 : getMotionGraphicsConfiguration().hashCode());
         hashCode = prime * hashCode + ((getNielsenConfiguration() == null) ? 0 : getNielsenConfiguration().hashCode());
         hashCode = prime * hashCode + ((getOutputGroups() == null) ? 0 : getOutputGroups().hashCode());
         hashCode = prime * hashCode + ((getTimecodeConfig() == null) ? 0 : getTimecodeConfig().hashCode());

@@ -1,3 +1,16 @@
+# __1.11.992__ __2021-04-05__
+## __AWS Audit Manager__
+  - ### Features
+    - AWS Audit Manager has updated the GetAssessment API operation to include a new response field called userRole. The userRole field indicates the role information and IAM ARN of the API caller.
+
+## __AWS Elemental MediaLive__
+  - ### Features
+    - MediaLive now support HTML5 Motion Graphics overlay
+
+## __Amazon Appflow__
+  - ### Features
+    - Added destination properties for Zendesk.
+
 # __1.11.991__ __2021-04-02__
 ## __AWS Elemental MediaPackage__
   - ### Features

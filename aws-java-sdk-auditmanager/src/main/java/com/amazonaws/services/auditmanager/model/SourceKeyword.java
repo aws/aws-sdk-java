@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The keyword to search for in AWS CloudTrail logs.
+ * The keyword to search for in AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS API names.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/SourceKeyword" target="_top">AWS API
@@ -36,7 +36,8 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
     private String keywordInputType;
     /**
      * <p>
-     * The value of the keyword used to search AWS CloudTrail logs when mapping a control data source.
+     * The value of the keyword used to search AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS
+     * API names when mapping a control data source.
      * </p>
      */
     private String keywordValue;
@@ -102,11 +103,13 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value of the keyword used to search AWS CloudTrail logs when mapping a control data source.
+     * The value of the keyword used to search AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS
+     * API names when mapping a control data source.
      * </p>
      * 
      * @param keywordValue
-     *        The value of the keyword used to search AWS CloudTrail logs when mapping a control data source.
+     *        The value of the keyword used to search AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks,
+     *        and AWS API names when mapping a control data source.
      */
 
     public void setKeywordValue(String keywordValue) {
@@ -115,10 +118,12 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value of the keyword used to search AWS CloudTrail logs when mapping a control data source.
+     * The value of the keyword used to search AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS
+     * API names when mapping a control data source.
      * </p>
      * 
-     * @return The value of the keyword used to search AWS CloudTrail logs when mapping a control data source.
+     * @return The value of the keyword used to search AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks,
+     *         and AWS API names when mapping a control data source.
      */
 
     public String getKeywordValue() {
@@ -127,11 +132,13 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value of the keyword used to search AWS CloudTrail logs when mapping a control data source.
+     * The value of the keyword used to search AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS
+     * API names when mapping a control data source.
      * </p>
      * 
      * @param keywordValue
-     *        The value of the keyword used to search AWS CloudTrail logs when mapping a control data source.
+     *        The value of the keyword used to search AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks,
+     *        and AWS API names when mapping a control data source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

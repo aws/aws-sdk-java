@@ -56,6 +56,14 @@ public class PipelineDetailJsonUnmarshaller implements Unmarshaller<PipelineDeta
                     context.nextToken();
                     pipelineDetail.setActiveInputSwitchActionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("activeMotionGraphicsActionName", targetDepth)) {
+                    context.nextToken();
+                    pipelineDetail.setActiveMotionGraphicsActionName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("activeMotionGraphicsUri", targetDepth)) {
+                    context.nextToken();
+                    pipelineDetail.setActiveMotionGraphicsUri(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("pipelineId", targetDepth)) {
                     context.nextToken();
                     pipelineDetail.setPipelineId(context.getUnmarshaller(String.class).unmarshall(context));

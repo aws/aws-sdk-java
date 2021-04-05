@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -103,7 +103,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -152,7 +152,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -201,7 +201,7 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "ValidationException",
@@ -250,7 +250,7 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "ValidationException",
@@ -299,7 +299,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -348,7 +348,7 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "ValidationException",
@@ -401,7 +401,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -450,7 +450,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -495,7 +495,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -548,7 +548,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -597,7 +597,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -646,7 +646,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -691,7 +691,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -744,7 +744,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -789,7 +789,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -838,7 +838,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -887,7 +887,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -977,7 +977,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -1026,7 +1026,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -1071,7 +1071,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -1116,7 +1116,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "ResourceNotFoundException",
@@ -1173,7 +1173,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -1218,7 +1218,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -1267,7 +1267,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -1316,7 +1316,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -1365,7 +1365,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -1410,7 +1410,7 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "ValidationException",
@@ -1463,7 +1463,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -1508,7 +1508,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -1553,7 +1553,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "ValidationException",
@@ -1598,7 +1598,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -1643,7 +1643,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -1688,7 +1688,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -1729,7 +1729,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "ValidationException",
@@ -1774,7 +1774,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "ValidationException",
@@ -1819,7 +1819,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "ValidationException",
@@ -1864,7 +1864,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "ValidationException",
@@ -1958,7 +1958,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -2007,7 +2007,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -2150,7 +2150,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -2199,7 +2199,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -2248,7 +2248,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -2297,7 +2297,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -2346,7 +2346,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -2395,7 +2395,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -2440,7 +2440,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -2485,7 +2485,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+        "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
         "httpStatusCode" : 403
       }, {
         "exceptionName" : "InternalServerException",
@@ -3173,7 +3173,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p> You do not have sufficient access to perform this action. </p>",
+      "documentation" : "<p> Your account is not registered with AWS Audit Manager. Check the delegated administrator setup on the AWS Audit Manager settings page, and try again. </p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "AccessDeniedException",
@@ -51898,6 +51898,75 @@
           "variableSetterType" : "Assessment"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "userRole",
+        "c2jShape" : "Role",
+        "deprecated" : false,
+        "documentation" : "",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**\n@param userRole \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withUserRole",
+        "getterDocumentation" : "/**\n@return */",
+        "getterMethodName" : "getUserRole",
+        "getterModel" : {
+          "returnType" : "Role",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "userRole",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "userRole",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "StructuredPojo",
+        "marshallingType" : "STRUCTURED",
+        "name" : "UserRole",
+        "sensitive" : false,
+        "setterDocumentation" : "/**\n@param userRole */",
+        "setterMethodName" : "setUserRole",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Role",
+          "variableName" : "userRole",
+          "variableType" : "Role",
+          "documentation" : "",
+          "simpleType" : "Role",
+          "variableSetterType" : "Role"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**\n@param userRole \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Role",
+          "variableName" : "userRole",
+          "variableType" : "Role",
+          "documentation" : "",
+          "simpleType" : "Role",
+          "variableSetterType" : "Role"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "Assessment" : {
@@ -51967,6 +52036,76 @@
             "documentation" : "",
             "simpleType" : "Assessment",
             "variableSetterType" : "Assessment"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "UserRole" : {
+          "c2jName" : "userRole",
+          "c2jShape" : "Role",
+          "deprecated" : false,
+          "documentation" : "",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**\n@param userRole \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withUserRole",
+          "getterDocumentation" : "/**\n@return */",
+          "getterMethodName" : "getUserRole",
+          "getterModel" : {
+            "returnType" : "Role",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "userRole",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "userRole",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "StructuredPojo",
+          "marshallingType" : "STRUCTURED",
+          "name" : "UserRole",
+          "sensitive" : false,
+          "setterDocumentation" : "/**\n@param userRole */",
+          "setterMethodName" : "setUserRole",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Role",
+            "variableName" : "userRole",
+            "variableType" : "Role",
+            "documentation" : "",
+            "simpleType" : "Role",
+            "variableSetterType" : "Role"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**\n@param userRole \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Role",
+            "variableName" : "userRole",
+            "variableType" : "Role",
+            "documentation" : "",
+            "simpleType" : "Role",
+            "variableSetterType" : "Role"
           },
           "xmlNameSpaceUri" : null
         }
@@ -69454,7 +69593,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p> The wrapper that contains AWS Audit Manager role information, such as the role type and IAM Amazon Resource Name (ARN). </p>",
+      "documentation" : "<p> The wrapper that contains the AWS Audit Manager role information of the current user, such as the role type and IAM Amazon Resource Name (ARN). </p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
@@ -72107,7 +72246,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p> The keyword to search for in AWS CloudTrail logs. </p>",
+      "documentation" : "<p> The keyword to search for in AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS API names. </p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
@@ -72191,12 +72330,12 @@
         "c2jName" : "keywordValue",
         "c2jShape" : "KeywordValue",
         "deprecated" : false,
-        "documentation" : "<p> The value of the keyword used to search AWS CloudTrail logs when mapping a control data source. </p>",
+        "documentation" : "<p> The value of the keyword used to search AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS API names when mapping a control data source. </p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p> The value of the keyword used to search AWS CloudTrail logs when mapping a control data source. </p>\n@param keywordValue The value of the keyword used to search AWS CloudTrail logs when mapping a control data source.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p> The value of the keyword used to search AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS API names when mapping a control data source. </p>\n@param keywordValue The value of the keyword used to search AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS API names when mapping a control data source.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withKeywordValue",
-        "getterDocumentation" : "/**<p> The value of the keyword used to search AWS CloudTrail logs when mapping a control data source. </p>\n@return The value of the keyword used to search AWS CloudTrail logs when mapping a control data source.*/",
+        "getterDocumentation" : "/**<p> The value of the keyword used to search AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS API names when mapping a control data source. </p>\n@return The value of the keyword used to search AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS API names when mapping a control data source.*/",
         "getterMethodName" : "getKeywordValue",
         "getterModel" : {
           "returnType" : "String",
@@ -72230,7 +72369,7 @@
         "marshallingType" : "STRING",
         "name" : "KeywordValue",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p> The value of the keyword used to search AWS CloudTrail logs when mapping a control data source. </p>\n@param keywordValue The value of the keyword used to search AWS CloudTrail logs when mapping a control data source.*/",
+        "setterDocumentation" : "/**<p> The value of the keyword used to search AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS API names when mapping a control data source. </p>\n@param keywordValue The value of the keyword used to search AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS API names when mapping a control data source.*/",
         "setterMethodName" : "setKeywordValue",
         "setterModel" : {
           "timestampFormat" : null,
@@ -72245,13 +72384,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p> The value of the keyword used to search AWS CloudTrail logs when mapping a control data source. </p>\n@param keywordValue The value of the keyword used to search AWS CloudTrail logs when mapping a control data source.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p> The value of the keyword used to search AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS API names when mapping a control data source. </p>\n@param keywordValue The value of the keyword used to search AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS API names when mapping a control data source.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "keywordValue",
           "variableType" : "String",
-          "documentation" : "<p> The value of the keyword used to search AWS CloudTrail logs when mapping a control data source. </p>",
+          "documentation" : "<p> The value of the keyword used to search AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS API names when mapping a control data source. </p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -72332,12 +72471,12 @@
           "c2jName" : "keywordValue",
           "c2jShape" : "KeywordValue",
           "deprecated" : false,
-          "documentation" : "<p> The value of the keyword used to search AWS CloudTrail logs when mapping a control data source. </p>",
+          "documentation" : "<p> The value of the keyword used to search AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS API names when mapping a control data source. </p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p> The value of the keyword used to search AWS CloudTrail logs when mapping a control data source. </p>\n@param keywordValue The value of the keyword used to search AWS CloudTrail logs when mapping a control data source.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p> The value of the keyword used to search AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS API names when mapping a control data source. </p>\n@param keywordValue The value of the keyword used to search AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS API names when mapping a control data source.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withKeywordValue",
-          "getterDocumentation" : "/**<p> The value of the keyword used to search AWS CloudTrail logs when mapping a control data source. </p>\n@return The value of the keyword used to search AWS CloudTrail logs when mapping a control data source.*/",
+          "getterDocumentation" : "/**<p> The value of the keyword used to search AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS API names when mapping a control data source. </p>\n@return The value of the keyword used to search AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS API names when mapping a control data source.*/",
           "getterMethodName" : "getKeywordValue",
           "getterModel" : {
             "returnType" : "String",
@@ -72371,7 +72510,7 @@
           "marshallingType" : "STRING",
           "name" : "KeywordValue",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p> The value of the keyword used to search AWS CloudTrail logs when mapping a control data source. </p>\n@param keywordValue The value of the keyword used to search AWS CloudTrail logs when mapping a control data source.*/",
+          "setterDocumentation" : "/**<p> The value of the keyword used to search AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS API names when mapping a control data source. </p>\n@param keywordValue The value of the keyword used to search AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS API names when mapping a control data source.*/",
           "setterMethodName" : "setKeywordValue",
           "setterModel" : {
             "timestampFormat" : null,
@@ -72386,13 +72525,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p> The value of the keyword used to search AWS CloudTrail logs when mapping a control data source. </p>\n@param keywordValue The value of the keyword used to search AWS CloudTrail logs when mapping a control data source.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p> The value of the keyword used to search AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS API names when mapping a control data source. </p>\n@param keywordValue The value of the keyword used to search AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS API names when mapping a control data source.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "keywordValue",
             "variableType" : "String",
-            "documentation" : "<p> The value of the keyword used to search AWS CloudTrail logs when mapping a control data source. </p>",
+            "documentation" : "<p> The value of the keyword used to search AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS API names when mapping a control data source. </p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
