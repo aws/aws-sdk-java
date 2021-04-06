@@ -28,7 +28,7 @@ import com.amazonaws.util.ValidationUtils;
  * string representation use ARN.toString(). For instance, for a string s, containing a well-formed ARN the
  * following should always be true:
  * <pre>
- * ARN theArn = ARN.fromString(s);
+ * ARN theArn = Arn.fromString(s);
  * s.equals(theArn.toString());
  * </pre>
  *

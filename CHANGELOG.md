@@ -1,3 +1,24 @@
+# __1.11.993__ __2021-04-06__
+## __AWS Cloud9__
+  - ### Features
+    - Documentation updates for Cloud9
+
+## __AWS Elemental MediaLive__
+  - ### Features
+    - MediaLive VPC outputs update to include Availability Zones, Security groups, Elastic Network Interfaces, and Subnet Ids in channel response
+
+## __AWS Kinesis Video__
+  - ### Features
+    - Update Netty to `4.1.61.Final`.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release adds support for storing EBS-backed AMIs in S3 and restoring them from S3 to enable cross-partition copying of AMIs
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Supports removing a label or labels from a parameter, enables ScheduledEndTime and ChangeDetails for StartChangeRequestExecution API, supports critical/security/other noncompliant count for patch API.
+
 # __1.11.992__ __2021-04-05__
 ## __AWS Audit Manager__
   - ### Features

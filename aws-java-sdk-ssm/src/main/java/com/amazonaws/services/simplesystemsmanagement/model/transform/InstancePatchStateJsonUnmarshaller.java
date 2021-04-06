@@ -124,6 +124,18 @@ public class InstancePatchStateJsonUnmarshaller implements Unmarshaller<Instance
                     context.nextToken();
                     instancePatchState.setRebootOption(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CriticalNonCompliantCount", targetDepth)) {
+                    context.nextToken();
+                    instancePatchState.setCriticalNonCompliantCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("SecurityNonCompliantCount", targetDepth)) {
+                    context.nextToken();
+                    instancePatchState.setSecurityNonCompliantCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("OtherNonCompliantCount", targetDepth)) {
+                    context.nextToken();
+                    instancePatchState.setOtherNonCompliantCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

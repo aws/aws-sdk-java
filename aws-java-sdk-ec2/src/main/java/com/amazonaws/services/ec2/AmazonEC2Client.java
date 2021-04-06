@@ -2975,7 +2975,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Initiates the copy of an AMI. You can copy an AMI from one Region to another, or from a Region to an AWS Outpost.
-     * You can't copy an AMI from an Outpost to a Region, from one Outpost to another, or within the same Outpost.
+     * You can't copy an AMI from an Outpost to a Region, from one Outpost to another, or within the same Outpost. To
+     * copy an AMI to another partition, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateStoreImageTask.html"
+     * >CreateStoreImageTask</a>.
      * </p>
      * <p>
      * To copy an AMI from one Region to another, specify the source Region using the <b>SourceRegion</b> parameter, and
@@ -2991,7 +2994,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * information, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon
      * EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
-     * <p/>
      * <p>
      * For more information about the prerequisites and limits when copying an AMI, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying an AMI</a> in the <i>Amazon
@@ -5134,6 +5136,74 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Starts a task that restores an AMI from an S3 object that was previously created by using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateStoreImageTask.html"
+     * >CreateStoreImageTask</a>.
+     * </p>
+     * <p>
+     * To use this API, you must have the required permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
+     * for storing and restoring AMIs using S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
+     * S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param createRestoreImageTaskRequest
+     * @return Result of the CreateRestoreImageTask operation returned by the service.
+     * @sample AmazonEC2.CreateRestoreImageTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRestoreImageTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateRestoreImageTaskResult createRestoreImageTask(CreateRestoreImageTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateRestoreImageTask(request);
+    }
+
+    @SdkInternalApi
+    final CreateRestoreImageTaskResult executeCreateRestoreImageTask(CreateRestoreImageTaskRequest createRestoreImageTaskRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createRestoreImageTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateRestoreImageTaskRequest> request = null;
+        Response<CreateRestoreImageTaskResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateRestoreImageTaskRequestMarshaller().marshall(super.beforeMarshalling(createRestoreImageTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRestoreImageTask");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateRestoreImageTaskResult> responseHandler = new StaxResponseHandler<CreateRestoreImageTaskResult>(
+                    new CreateRestoreImageTaskResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a route in a route table within a VPC.
      * </p>
      * <p>
@@ -5568,6 +5638,72 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateSpotDatafeedSubscriptionResult> responseHandler = new StaxResponseHandler<CreateSpotDatafeedSubscriptionResult>(
                     new CreateSpotDatafeedSubscriptionResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stores an AMI as a single object in an S3 bucket.
+     * </p>
+     * <p>
+     * To use this API, you must have the required permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
+     * for storing and restoring AMIs using S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
+     * S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param createStoreImageTaskRequest
+     * @return Result of the CreateStoreImageTask operation returned by the service.
+     * @sample AmazonEC2.CreateStoreImageTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateStoreImageTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateStoreImageTaskResult createStoreImageTask(CreateStoreImageTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateStoreImageTask(request);
+    }
+
+    @SdkInternalApi
+    final CreateStoreImageTaskResult executeCreateStoreImageTask(CreateStoreImageTaskRequest createStoreImageTaskRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createStoreImageTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateStoreImageTaskRequest> request = null;
+        Response<CreateStoreImageTaskResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateStoreImageTaskRequestMarshaller().marshall(super.beforeMarshalling(createStoreImageTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStoreImageTask");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateStoreImageTaskResult> responseHandler = new StaxResponseHandler<CreateStoreImageTaskResult>(
+                    new CreateStoreImageTaskResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -16551,6 +16687,81 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeStaleSecurityGroupsResult> responseHandler = new StaxResponseHandler<DescribeStaleSecurityGroupsResult>(
                     new DescribeStaleSecurityGroupsResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the progress of the AMI store tasks. You can describe the store tasks for specified AMIs. If you don't
+     * specify the AMIs, you get a paginated list of store tasks from the last 31 days.
+     * </p>
+     * <p>
+     * For each AMI task, the response indicates if the task is <code>InProgress</code>, <code>Completed</code>, or
+     * <code>Failed</code>. For tasks <code>InProgress</code>, the response shows the estimated progress as a
+     * percentage.
+     * </p>
+     * <p>
+     * Tasks are listed in reverse chronological order. Currently, only tasks from the past 31 days can be viewed.
+     * </p>
+     * <p>
+     * To use this API, you must have the required permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
+     * for storing and restoring AMIs using S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
+     * S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param describeStoreImageTasksRequest
+     * @return Result of the DescribeStoreImageTasks operation returned by the service.
+     * @sample AmazonEC2.DescribeStoreImageTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeStoreImageTasks" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeStoreImageTasksResult describeStoreImageTasks(DescribeStoreImageTasksRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeStoreImageTasks(request);
+    }
+
+    @SdkInternalApi
+    final DescribeStoreImageTasksResult executeDescribeStoreImageTasks(DescribeStoreImageTasksRequest describeStoreImageTasksRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeStoreImageTasksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeStoreImageTasksRequest> request = null;
+        Response<DescribeStoreImageTasksResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeStoreImageTasksRequestMarshaller().marshall(super.beforeMarshalling(describeStoreImageTasksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStoreImageTasks");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeStoreImageTasksResult> responseHandler = new StaxResponseHandler<DescribeStoreImageTasksResult>(
+                    new DescribeStoreImageTasksResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 

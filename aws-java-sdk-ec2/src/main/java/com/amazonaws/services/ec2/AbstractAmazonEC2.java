@@ -426,6 +426,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public CreateRestoreImageTaskResult createRestoreImageTask(CreateRestoreImageTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateRouteResult createRoute(CreateRouteRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -452,6 +457,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public CreateSpotDatafeedSubscriptionResult createSpotDatafeedSubscription(CreateSpotDatafeedSubscriptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateStoreImageTaskResult createStoreImageTask(CreateStoreImageTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -1518,6 +1528,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public DescribeStaleSecurityGroupsResult describeStaleSecurityGroups(DescribeStaleSecurityGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeStoreImageTasksResult describeStoreImageTasks(DescribeStoreImageTasksRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -84,6 +84,18 @@ public class DescribePatchGroupStateResultJsonUnmarshaller implements Unmarshall
                     context.nextToken();
                     describePatchGroupStateResult.setInstancesWithUnreportedNotApplicablePatches(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("InstancesWithCriticalNonCompliantPatches", targetDepth)) {
+                    context.nextToken();
+                    describePatchGroupStateResult.setInstancesWithCriticalNonCompliantPatches(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("InstancesWithSecurityNonCompliantPatches", targetDepth)) {
+                    context.nextToken();
+                    describePatchGroupStateResult.setInstancesWithSecurityNonCompliantPatches(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("InstancesWithOtherNonCompliantPatches", targetDepth)) {
+                    context.nextToken();
+                    describePatchGroupStateResult.setInstancesWithOtherNonCompliantPatches(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

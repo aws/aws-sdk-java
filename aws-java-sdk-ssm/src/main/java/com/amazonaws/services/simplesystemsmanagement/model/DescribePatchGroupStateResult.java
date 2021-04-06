@@ -86,6 +86,29 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private Integer instancesWithUnreportedNotApplicablePatches;
+    /**
+     * <p>
+     * The number of instances where patches that are specified as "Critical" for compliance reporting in the patch
+     * baseline are not installed. These patches might be missing, have failed installation, were rejected, or were
+     * installed but awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * </p>
+     */
+    private Integer instancesWithCriticalNonCompliantPatches;
+    /**
+     * <p>
+     * The number of instances where patches that are specified as "Security" in a patch advisory are not installed.
+     * These patches might be missing, have failed installation, were rejected, or were installed but awaiting a
+     * required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * </p>
+     */
+    private Integer instancesWithSecurityNonCompliantPatches;
+    /**
+     * <p>
+     * The number of instances with patches installed that are specified as other than "Critical" or "Security" but are
+     * not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     * </p>
+     */
+    private Integer instancesWithOtherNonCompliantPatches;
 
     /**
      * <p>
@@ -499,6 +522,159 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The number of instances where patches that are specified as "Critical" for compliance reporting in the patch
+     * baseline are not installed. These patches might be missing, have failed installation, were rejected, or were
+     * installed but awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * </p>
+     * 
+     * @param instancesWithCriticalNonCompliantPatches
+     *        The number of instances where patches that are specified as "Critical" for compliance reporting in the
+     *        patch baseline are not installed. These patches might be missing, have failed installation, were rejected,
+     *        or were installed but awaiting a required instance reboot. The status of these instances is
+     *        <code>NON_COMPLIANT</code>.
+     */
+
+    public void setInstancesWithCriticalNonCompliantPatches(Integer instancesWithCriticalNonCompliantPatches) {
+        this.instancesWithCriticalNonCompliantPatches = instancesWithCriticalNonCompliantPatches;
+    }
+
+    /**
+     * <p>
+     * The number of instances where patches that are specified as "Critical" for compliance reporting in the patch
+     * baseline are not installed. These patches might be missing, have failed installation, were rejected, or were
+     * installed but awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * </p>
+     * 
+     * @return The number of instances where patches that are specified as "Critical" for compliance reporting in the
+     *         patch baseline are not installed. These patches might be missing, have failed installation, were
+     *         rejected, or were installed but awaiting a required instance reboot. The status of these instances is
+     *         <code>NON_COMPLIANT</code>.
+     */
+
+    public Integer getInstancesWithCriticalNonCompliantPatches() {
+        return this.instancesWithCriticalNonCompliantPatches;
+    }
+
+    /**
+     * <p>
+     * The number of instances where patches that are specified as "Critical" for compliance reporting in the patch
+     * baseline are not installed. These patches might be missing, have failed installation, were rejected, or were
+     * installed but awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * </p>
+     * 
+     * @param instancesWithCriticalNonCompliantPatches
+     *        The number of instances where patches that are specified as "Critical" for compliance reporting in the
+     *        patch baseline are not installed. These patches might be missing, have failed installation, were rejected,
+     *        or were installed but awaiting a required instance reboot. The status of these instances is
+     *        <code>NON_COMPLIANT</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePatchGroupStateResult withInstancesWithCriticalNonCompliantPatches(Integer instancesWithCriticalNonCompliantPatches) {
+        setInstancesWithCriticalNonCompliantPatches(instancesWithCriticalNonCompliantPatches);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of instances where patches that are specified as "Security" in a patch advisory are not installed.
+     * These patches might be missing, have failed installation, were rejected, or were installed but awaiting a
+     * required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * </p>
+     * 
+     * @param instancesWithSecurityNonCompliantPatches
+     *        The number of instances where patches that are specified as "Security" in a patch advisory are not
+     *        installed. These patches might be missing, have failed installation, were rejected, or were installed but
+     *        awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     */
+
+    public void setInstancesWithSecurityNonCompliantPatches(Integer instancesWithSecurityNonCompliantPatches) {
+        this.instancesWithSecurityNonCompliantPatches = instancesWithSecurityNonCompliantPatches;
+    }
+
+    /**
+     * <p>
+     * The number of instances where patches that are specified as "Security" in a patch advisory are not installed.
+     * These patches might be missing, have failed installation, were rejected, or were installed but awaiting a
+     * required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * </p>
+     * 
+     * @return The number of instances where patches that are specified as "Security" in a patch advisory are not
+     *         installed. These patches might be missing, have failed installation, were rejected, or were installed but
+     *         awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     */
+
+    public Integer getInstancesWithSecurityNonCompliantPatches() {
+        return this.instancesWithSecurityNonCompliantPatches;
+    }
+
+    /**
+     * <p>
+     * The number of instances where patches that are specified as "Security" in a patch advisory are not installed.
+     * These patches might be missing, have failed installation, were rejected, or were installed but awaiting a
+     * required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * </p>
+     * 
+     * @param instancesWithSecurityNonCompliantPatches
+     *        The number of instances where patches that are specified as "Security" in a patch advisory are not
+     *        installed. These patches might be missing, have failed installation, were rejected, or were installed but
+     *        awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePatchGroupStateResult withInstancesWithSecurityNonCompliantPatches(Integer instancesWithSecurityNonCompliantPatches) {
+        setInstancesWithSecurityNonCompliantPatches(instancesWithSecurityNonCompliantPatches);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of instances with patches installed that are specified as other than "Critical" or "Security" but are
+     * not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     * </p>
+     * 
+     * @param instancesWithOtherNonCompliantPatches
+     *        The number of instances with patches installed that are specified as other than "Critical" or "Security"
+     *        but are not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     */
+
+    public void setInstancesWithOtherNonCompliantPatches(Integer instancesWithOtherNonCompliantPatches) {
+        this.instancesWithOtherNonCompliantPatches = instancesWithOtherNonCompliantPatches;
+    }
+
+    /**
+     * <p>
+     * The number of instances with patches installed that are specified as other than "Critical" or "Security" but are
+     * not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     * </p>
+     * 
+     * @return The number of instances with patches installed that are specified as other than "Critical" or "Security"
+     *         but are not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     */
+
+    public Integer getInstancesWithOtherNonCompliantPatches() {
+        return this.instancesWithOtherNonCompliantPatches;
+    }
+
+    /**
+     * <p>
+     * The number of instances with patches installed that are specified as other than "Critical" or "Security" but are
+     * not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     * </p>
+     * 
+     * @param instancesWithOtherNonCompliantPatches
+     *        The number of instances with patches installed that are specified as other than "Critical" or "Security"
+     *        but are not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePatchGroupStateResult withInstancesWithOtherNonCompliantPatches(Integer instancesWithOtherNonCompliantPatches) {
+        setInstancesWithOtherNonCompliantPatches(instancesWithOtherNonCompliantPatches);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -527,7 +703,13 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
         if (getInstancesWithNotApplicablePatches() != null)
             sb.append("InstancesWithNotApplicablePatches: ").append(getInstancesWithNotApplicablePatches()).append(",");
         if (getInstancesWithUnreportedNotApplicablePatches() != null)
-            sb.append("InstancesWithUnreportedNotApplicablePatches: ").append(getInstancesWithUnreportedNotApplicablePatches());
+            sb.append("InstancesWithUnreportedNotApplicablePatches: ").append(getInstancesWithUnreportedNotApplicablePatches()).append(",");
+        if (getInstancesWithCriticalNonCompliantPatches() != null)
+            sb.append("InstancesWithCriticalNonCompliantPatches: ").append(getInstancesWithCriticalNonCompliantPatches()).append(",");
+        if (getInstancesWithSecurityNonCompliantPatches() != null)
+            sb.append("InstancesWithSecurityNonCompliantPatches: ").append(getInstancesWithSecurityNonCompliantPatches()).append(",");
+        if (getInstancesWithOtherNonCompliantPatches() != null)
+            sb.append("InstancesWithOtherNonCompliantPatches: ").append(getInstancesWithOtherNonCompliantPatches());
         sb.append("}");
         return sb.toString();
     }
@@ -584,6 +766,21 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
         if (other.getInstancesWithUnreportedNotApplicablePatches() != null
                 && other.getInstancesWithUnreportedNotApplicablePatches().equals(this.getInstancesWithUnreportedNotApplicablePatches()) == false)
             return false;
+        if (other.getInstancesWithCriticalNonCompliantPatches() == null ^ this.getInstancesWithCriticalNonCompliantPatches() == null)
+            return false;
+        if (other.getInstancesWithCriticalNonCompliantPatches() != null
+                && other.getInstancesWithCriticalNonCompliantPatches().equals(this.getInstancesWithCriticalNonCompliantPatches()) == false)
+            return false;
+        if (other.getInstancesWithSecurityNonCompliantPatches() == null ^ this.getInstancesWithSecurityNonCompliantPatches() == null)
+            return false;
+        if (other.getInstancesWithSecurityNonCompliantPatches() != null
+                && other.getInstancesWithSecurityNonCompliantPatches().equals(this.getInstancesWithSecurityNonCompliantPatches()) == false)
+            return false;
+        if (other.getInstancesWithOtherNonCompliantPatches() == null ^ this.getInstancesWithOtherNonCompliantPatches() == null)
+            return false;
+        if (other.getInstancesWithOtherNonCompliantPatches() != null
+                && other.getInstancesWithOtherNonCompliantPatches().equals(this.getInstancesWithOtherNonCompliantPatches()) == false)
+            return false;
         return true;
     }
 
@@ -603,6 +800,9 @@ public class DescribePatchGroupStateResult extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getInstancesWithNotApplicablePatches() == null) ? 0 : getInstancesWithNotApplicablePatches().hashCode());
         hashCode = prime * hashCode
                 + ((getInstancesWithUnreportedNotApplicablePatches() == null) ? 0 : getInstancesWithUnreportedNotApplicablePatches().hashCode());
+        hashCode = prime * hashCode + ((getInstancesWithCriticalNonCompliantPatches() == null) ? 0 : getInstancesWithCriticalNonCompliantPatches().hashCode());
+        hashCode = prime * hashCode + ((getInstancesWithSecurityNonCompliantPatches() == null) ? 0 : getInstancesWithSecurityNonCompliantPatches().hashCode());
+        hashCode = prime * hashCode + ((getInstancesWithOtherNonCompliantPatches() == null) ? 0 : getInstancesWithOtherNonCompliantPatches().hashCode());
         return hashCode;
     }
 

@@ -124,7 +124,7 @@ public class StartChannelResultJsonUnmarshaller implements Unmarshaller<StartCha
                 }
                 if (context.testExpression("vpc", targetDepth)) {
                     context.nextToken();
-                    startChannelResult.setVpc(VpcOutputSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                    startChannelResult.setVpc(VpcOutputSettingsDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

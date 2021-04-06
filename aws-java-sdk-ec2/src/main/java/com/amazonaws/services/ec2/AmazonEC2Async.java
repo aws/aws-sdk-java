@@ -2114,7 +2114,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Initiates the copy of an AMI. You can copy an AMI from one Region to another, or from a Region to an AWS Outpost.
-     * You can't copy an AMI from an Outpost to a Region, from one Outpost to another, or within the same Outpost.
+     * You can't copy an AMI from an Outpost to a Region, from one Outpost to another, or within the same Outpost. To
+     * copy an AMI to another partition, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateStoreImageTask.html"
+     * >CreateStoreImageTask</a>.
      * </p>
      * <p>
      * To copy an AMI from one Region to another, specify the source Region using the <b>SourceRegion</b> parameter, and
@@ -2130,7 +2133,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * information, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon
      * EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
-     * <p/>
      * <p>
      * For more information about the prerequisites and limits when copying an AMI, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying an AMI</a> in the <i>Amazon
@@ -2149,7 +2151,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Initiates the copy of an AMI. You can copy an AMI from one Region to another, or from a Region to an AWS Outpost.
-     * You can't copy an AMI from an Outpost to a Region, from one Outpost to another, or within the same Outpost.
+     * You can't copy an AMI from an Outpost to a Region, from one Outpost to another, or within the same Outpost. To
+     * copy an AMI to another partition, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateStoreImageTask.html"
+     * >CreateStoreImageTask</a>.
      * </p>
      * <p>
      * To copy an AMI from one Region to another, specify the source Region using the <b>SourceRegion</b> parameter, and
@@ -2165,7 +2170,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * information, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon
      * EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
-     * <p/>
      * <p>
      * For more information about the prerequisites and limits when copying an AMI, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying an AMI</a> in the <i>Amazon
@@ -3872,6 +3876,61 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Starts a task that restores an AMI from an S3 object that was previously created by using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateStoreImageTask.html"
+     * >CreateStoreImageTask</a>.
+     * </p>
+     * <p>
+     * To use this API, you must have the required permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
+     * for storing and restoring AMIs using S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
+     * S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param createRestoreImageTaskRequest
+     * @return A Java Future containing the result of the CreateRestoreImageTask operation returned by the service.
+     * @sample AmazonEC2Async.CreateRestoreImageTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRestoreImageTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRestoreImageTaskResult> createRestoreImageTaskAsync(CreateRestoreImageTaskRequest createRestoreImageTaskRequest);
+
+    /**
+     * <p>
+     * Starts a task that restores an AMI from an S3 object that was previously created by using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateStoreImageTask.html"
+     * >CreateStoreImageTask</a>.
+     * </p>
+     * <p>
+     * To use this API, you must have the required permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
+     * for storing and restoring AMIs using S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
+     * S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param createRestoreImageTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateRestoreImageTask operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.CreateRestoreImageTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRestoreImageTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRestoreImageTaskResult> createRestoreImageTaskAsync(CreateRestoreImageTaskRequest createRestoreImageTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateRestoreImageTaskRequest, CreateRestoreImageTaskResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a route in a route table within a VPC.
      * </p>
      * <p>
@@ -4283,6 +4342,57 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<CreateSpotDatafeedSubscriptionResult> createSpotDatafeedSubscriptionAsync(
             CreateSpotDatafeedSubscriptionRequest createSpotDatafeedSubscriptionRequest,
             com.amazonaws.handlers.AsyncHandler<CreateSpotDatafeedSubscriptionRequest, CreateSpotDatafeedSubscriptionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stores an AMI as a single object in an S3 bucket.
+     * </p>
+     * <p>
+     * To use this API, you must have the required permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
+     * for storing and restoring AMIs using S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
+     * S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param createStoreImageTaskRequest
+     * @return A Java Future containing the result of the CreateStoreImageTask operation returned by the service.
+     * @sample AmazonEC2Async.CreateStoreImageTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateStoreImageTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateStoreImageTaskResult> createStoreImageTaskAsync(CreateStoreImageTaskRequest createStoreImageTaskRequest);
+
+    /**
+     * <p>
+     * Stores an AMI as a single object in an S3 bucket.
+     * </p>
+     * <p>
+     * To use this API, you must have the required permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
+     * for storing and restoring AMIs using S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
+     * S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param createStoreImageTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateStoreImageTask operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.CreateStoreImageTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateStoreImageTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateStoreImageTaskResult> createStoreImageTaskAsync(CreateStoreImageTaskRequest createStoreImageTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateStoreImageTaskRequest, CreateStoreImageTaskResult> asyncHandler);
 
     /**
      * <p>
@@ -12518,6 +12628,75 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<DescribeStaleSecurityGroupsResult> describeStaleSecurityGroupsAsync(
             DescribeStaleSecurityGroupsRequest describeStaleSecurityGroupsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeStaleSecurityGroupsRequest, DescribeStaleSecurityGroupsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the progress of the AMI store tasks. You can describe the store tasks for specified AMIs. If you don't
+     * specify the AMIs, you get a paginated list of store tasks from the last 31 days.
+     * </p>
+     * <p>
+     * For each AMI task, the response indicates if the task is <code>InProgress</code>, <code>Completed</code>, or
+     * <code>Failed</code>. For tasks <code>InProgress</code>, the response shows the estimated progress as a
+     * percentage.
+     * </p>
+     * <p>
+     * Tasks are listed in reverse chronological order. Currently, only tasks from the past 31 days can be viewed.
+     * </p>
+     * <p>
+     * To use this API, you must have the required permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
+     * for storing and restoring AMIs using S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
+     * S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param describeStoreImageTasksRequest
+     * @return A Java Future containing the result of the DescribeStoreImageTasks operation returned by the service.
+     * @sample AmazonEC2Async.DescribeStoreImageTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeStoreImageTasks" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeStoreImageTasksResult> describeStoreImageTasksAsync(DescribeStoreImageTasksRequest describeStoreImageTasksRequest);
+
+    /**
+     * <p>
+     * Describes the progress of the AMI store tasks. You can describe the store tasks for specified AMIs. If you don't
+     * specify the AMIs, you get a paginated list of store tasks from the last 31 days.
+     * </p>
+     * <p>
+     * For each AMI task, the response indicates if the task is <code>InProgress</code>, <code>Completed</code>, or
+     * <code>Failed</code>. For tasks <code>InProgress</code>, the response shows the estimated progress as a
+     * percentage.
+     * </p>
+     * <p>
+     * Tasks are listed in reverse chronological order. Currently, only tasks from the past 31 days can be viewed.
+     * </p>
+     * <p>
+     * To use this API, you must have the required permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
+     * for storing and restoring AMIs using S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
+     * S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param describeStoreImageTasksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeStoreImageTasks operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DescribeStoreImageTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeStoreImageTasks" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeStoreImageTasksResult> describeStoreImageTasksAsync(DescribeStoreImageTasksRequest describeStoreImageTasksRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeStoreImageTasksRequest, DescribeStoreImageTasksResult> asyncHandler);
 
     /**
      * <p>

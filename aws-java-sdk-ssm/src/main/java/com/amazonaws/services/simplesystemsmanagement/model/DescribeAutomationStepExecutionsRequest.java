@@ -53,7 +53,7 @@ public class DescribeAutomationStepExecutionsRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * A boolean that indicates whether to list step executions in reverse order by start time. The default value is
-     * false.
+     * 'false'.
      * </p>
      */
     private Boolean reverseOrder;
@@ -260,12 +260,12 @@ public class DescribeAutomationStepExecutionsRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * A boolean that indicates whether to list step executions in reverse order by start time. The default value is
-     * false.
+     * 'false'.
      * </p>
      * 
      * @param reverseOrder
      *        A boolean that indicates whether to list step executions in reverse order by start time. The default value
-     *        is false.
+     *        is 'false'.
      */
 
     public void setReverseOrder(Boolean reverseOrder) {
@@ -275,11 +275,11 @@ public class DescribeAutomationStepExecutionsRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * A boolean that indicates whether to list step executions in reverse order by start time. The default value is
-     * false.
+     * 'false'.
      * </p>
      * 
      * @return A boolean that indicates whether to list step executions in reverse order by start time. The default
-     *         value is false.
+     *         value is 'false'.
      */
 
     public Boolean getReverseOrder() {
@@ -289,12 +289,12 @@ public class DescribeAutomationStepExecutionsRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * A boolean that indicates whether to list step executions in reverse order by start time. The default value is
-     * false.
+     * 'false'.
      * </p>
      * 
      * @param reverseOrder
      *        A boolean that indicates whether to list step executions in reverse order by start time. The default value
-     *        is false.
+     *        is 'false'.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -306,11 +306,11 @@ public class DescribeAutomationStepExecutionsRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * A boolean that indicates whether to list step executions in reverse order by start time. The default value is
-     * false.
+     * 'false'.
      * </p>
      * 
      * @return A boolean that indicates whether to list step executions in reverse order by start time. The default
-     *         value is false.
+     *         value is 'false'.
      */
 
     public Boolean isReverseOrder() {

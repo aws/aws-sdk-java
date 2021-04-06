@@ -186,6 +186,29 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
      * </ul>
      */
     private String rebootOption;
+    /**
+     * <p>
+     * The number of instances where patches that are specified as "Critical" for compliance reporting in the patch
+     * baseline are not installed. These patches might be missing, have failed installation, were rejected, or were
+     * installed but awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * </p>
+     */
+    private Integer criticalNonCompliantCount;
+    /**
+     * <p>
+     * The number of instances where patches that are specified as "Security" in a patch advisory are not installed.
+     * These patches might be missing, have failed installation, were rejected, or were installed but awaiting a
+     * required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * </p>
+     */
+    private Integer securityNonCompliantCount;
+    /**
+     * <p>
+     * The number of instances with patches installed that are specified as other than "Critical" or "Security" but are
+     * not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     * </p>
+     */
+    private Integer otherNonCompliantCount;
 
     /**
      * <p>
@@ -1341,6 +1364,159 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The number of instances where patches that are specified as "Critical" for compliance reporting in the patch
+     * baseline are not installed. These patches might be missing, have failed installation, were rejected, or were
+     * installed but awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * </p>
+     * 
+     * @param criticalNonCompliantCount
+     *        The number of instances where patches that are specified as "Critical" for compliance reporting in the
+     *        patch baseline are not installed. These patches might be missing, have failed installation, were rejected,
+     *        or were installed but awaiting a required instance reboot. The status of these instances is
+     *        <code>NON_COMPLIANT</code>.
+     */
+
+    public void setCriticalNonCompliantCount(Integer criticalNonCompliantCount) {
+        this.criticalNonCompliantCount = criticalNonCompliantCount;
+    }
+
+    /**
+     * <p>
+     * The number of instances where patches that are specified as "Critical" for compliance reporting in the patch
+     * baseline are not installed. These patches might be missing, have failed installation, were rejected, or were
+     * installed but awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * </p>
+     * 
+     * @return The number of instances where patches that are specified as "Critical" for compliance reporting in the
+     *         patch baseline are not installed. These patches might be missing, have failed installation, were
+     *         rejected, or were installed but awaiting a required instance reboot. The status of these instances is
+     *         <code>NON_COMPLIANT</code>.
+     */
+
+    public Integer getCriticalNonCompliantCount() {
+        return this.criticalNonCompliantCount;
+    }
+
+    /**
+     * <p>
+     * The number of instances where patches that are specified as "Critical" for compliance reporting in the patch
+     * baseline are not installed. These patches might be missing, have failed installation, were rejected, or were
+     * installed but awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * </p>
+     * 
+     * @param criticalNonCompliantCount
+     *        The number of instances where patches that are specified as "Critical" for compliance reporting in the
+     *        patch baseline are not installed. These patches might be missing, have failed installation, were rejected,
+     *        or were installed but awaiting a required instance reboot. The status of these instances is
+     *        <code>NON_COMPLIANT</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstancePatchState withCriticalNonCompliantCount(Integer criticalNonCompliantCount) {
+        setCriticalNonCompliantCount(criticalNonCompliantCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of instances where patches that are specified as "Security" in a patch advisory are not installed.
+     * These patches might be missing, have failed installation, were rejected, or were installed but awaiting a
+     * required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * </p>
+     * 
+     * @param securityNonCompliantCount
+     *        The number of instances where patches that are specified as "Security" in a patch advisory are not
+     *        installed. These patches might be missing, have failed installation, were rejected, or were installed but
+     *        awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     */
+
+    public void setSecurityNonCompliantCount(Integer securityNonCompliantCount) {
+        this.securityNonCompliantCount = securityNonCompliantCount;
+    }
+
+    /**
+     * <p>
+     * The number of instances where patches that are specified as "Security" in a patch advisory are not installed.
+     * These patches might be missing, have failed installation, were rejected, or were installed but awaiting a
+     * required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * </p>
+     * 
+     * @return The number of instances where patches that are specified as "Security" in a patch advisory are not
+     *         installed. These patches might be missing, have failed installation, were rejected, or were installed but
+     *         awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     */
+
+    public Integer getSecurityNonCompliantCount() {
+        return this.securityNonCompliantCount;
+    }
+
+    /**
+     * <p>
+     * The number of instances where patches that are specified as "Security" in a patch advisory are not installed.
+     * These patches might be missing, have failed installation, were rejected, or were installed but awaiting a
+     * required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * </p>
+     * 
+     * @param securityNonCompliantCount
+     *        The number of instances where patches that are specified as "Security" in a patch advisory are not
+     *        installed. These patches might be missing, have failed installation, were rejected, or were installed but
+     *        awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstancePatchState withSecurityNonCompliantCount(Integer securityNonCompliantCount) {
+        setSecurityNonCompliantCount(securityNonCompliantCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of instances with patches installed that are specified as other than "Critical" or "Security" but are
+     * not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     * </p>
+     * 
+     * @param otherNonCompliantCount
+     *        The number of instances with patches installed that are specified as other than "Critical" or "Security"
+     *        but are not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     */
+
+    public void setOtherNonCompliantCount(Integer otherNonCompliantCount) {
+        this.otherNonCompliantCount = otherNonCompliantCount;
+    }
+
+    /**
+     * <p>
+     * The number of instances with patches installed that are specified as other than "Critical" or "Security" but are
+     * not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     * </p>
+     * 
+     * @return The number of instances with patches installed that are specified as other than "Critical" or "Security"
+     *         but are not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     */
+
+    public Integer getOtherNonCompliantCount() {
+        return this.otherNonCompliantCount;
+    }
+
+    /**
+     * <p>
+     * The number of instances with patches installed that are specified as other than "Critical" or "Security" but are
+     * not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     * </p>
+     * 
+     * @param otherNonCompliantCount
+     *        The number of instances with patches installed that are specified as other than "Critical" or "Security"
+     *        but are not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstancePatchState withOtherNonCompliantCount(Integer otherNonCompliantCount) {
+        setOtherNonCompliantCount(otherNonCompliantCount);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1389,7 +1565,13 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
         if (getLastNoRebootInstallOperationTime() != null)
             sb.append("LastNoRebootInstallOperationTime: ").append(getLastNoRebootInstallOperationTime()).append(",");
         if (getRebootOption() != null)
-            sb.append("RebootOption: ").append(getRebootOption());
+            sb.append("RebootOption: ").append(getRebootOption()).append(",");
+        if (getCriticalNonCompliantCount() != null)
+            sb.append("CriticalNonCompliantCount: ").append(getCriticalNonCompliantCount()).append(",");
+        if (getSecurityNonCompliantCount() != null)
+            sb.append("SecurityNonCompliantCount: ").append(getSecurityNonCompliantCount()).append(",");
+        if (getOtherNonCompliantCount() != null)
+            sb.append("OtherNonCompliantCount: ").append(getOtherNonCompliantCount());
         sb.append("}");
         return sb.toString();
     }
@@ -1481,6 +1663,18 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getRebootOption() != null && other.getRebootOption().equals(this.getRebootOption()) == false)
             return false;
+        if (other.getCriticalNonCompliantCount() == null ^ this.getCriticalNonCompliantCount() == null)
+            return false;
+        if (other.getCriticalNonCompliantCount() != null && other.getCriticalNonCompliantCount().equals(this.getCriticalNonCompliantCount()) == false)
+            return false;
+        if (other.getSecurityNonCompliantCount() == null ^ this.getSecurityNonCompliantCount() == null)
+            return false;
+        if (other.getSecurityNonCompliantCount() != null && other.getSecurityNonCompliantCount().equals(this.getSecurityNonCompliantCount()) == false)
+            return false;
+        if (other.getOtherNonCompliantCount() == null ^ this.getOtherNonCompliantCount() == null)
+            return false;
+        if (other.getOtherNonCompliantCount() != null && other.getOtherNonCompliantCount().equals(this.getOtherNonCompliantCount()) == false)
+            return false;
         return true;
     }
 
@@ -1508,6 +1702,9 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getOperation() == null) ? 0 : getOperation().hashCode());
         hashCode = prime * hashCode + ((getLastNoRebootInstallOperationTime() == null) ? 0 : getLastNoRebootInstallOperationTime().hashCode());
         hashCode = prime * hashCode + ((getRebootOption() == null) ? 0 : getRebootOption().hashCode());
+        hashCode = prime * hashCode + ((getCriticalNonCompliantCount() == null) ? 0 : getCriticalNonCompliantCount().hashCode());
+        hashCode = prime * hashCode + ((getSecurityNonCompliantCount() == null) ? 0 : getSecurityNonCompliantCount().hashCode());
+        hashCode = prime * hashCode + ((getOtherNonCompliantCount() == null) ? 0 : getOtherNonCompliantCount().hashCode());
         return hashCode;
     }
 

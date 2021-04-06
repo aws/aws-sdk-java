@@ -65,14 +65,21 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
     private String subnetId;
     /**
      * <p>
-     * The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. You can specify the AMI
-     * for the instance using an AMI alias or an AWS Systems Manager (SSM) path. The default AMI is used if the
-     * parameter isn't explicitly assigned a value in the request.
+     * The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for
+     * the instance, you must specify a valid AMI alias or a valid AWS Systems Manager (SSM) path.
+     * </p>
+     * <p>
+     * The default AMI is used if the parameter isn't explicitly assigned a value in the request.
      * </p>
      * <p>
      * <b>AMI aliases </b>
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * Amazon Linux 2: <code>amazonlinux-2-x86_64</code>
@@ -83,16 +90,16 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * Amazon Linux (default): <code>amazonlinux-1-x86_64</code>
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * <b>SSM paths</b>
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code>
@@ -101,11 +108,6 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * <li>
      * <p>
      * Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code>
      * </p>
      * </li>
      * </ul>
@@ -389,14 +391,21 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. You can specify the AMI
-     * for the instance using an AMI alias or an AWS Systems Manager (SSM) path. The default AMI is used if the
-     * parameter isn't explicitly assigned a value in the request.
+     * The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for
+     * the instance, you must specify a valid AMI alias or a valid AWS Systems Manager (SSM) path.
+     * </p>
+     * <p>
+     * The default AMI is used if the parameter isn't explicitly assigned a value in the request.
      * </p>
      * <p>
      * <b>AMI aliases </b>
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * Amazon Linux 2: <code>amazonlinux-2-x86_64</code>
@@ -407,16 +416,16 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * Amazon Linux (default): <code>amazonlinux-1-x86_64</code>
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * <b>SSM paths</b>
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code>
@@ -427,21 +436,23 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code>
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param imageId
-     *        The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. You can specify
-     *        the AMI for the instance using an AMI alias or an AWS Systems Manager (SSM) path. The default AMI is used
-     *        if the parameter isn't explicitly assigned a value in the request. </p>
+     *        The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI
+     *        for the instance, you must specify a valid AMI alias or a valid AWS Systems Manager (SSM) path.</p>
+     *        <p>
+     *        The default AMI is used if the parameter isn't explicitly assigned a value in the request.
+     *        </p>
      *        <p>
      *        <b>AMI aliases </b>
      *        </p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        Amazon Linux 2: <code>amazonlinux-2-x86_64</code>
@@ -452,16 +463,16 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      *        Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code>
      *        </p>
      *        </li>
-     *        <li>
-     *        <p>
-     *        Amazon Linux (default): <code>amazonlinux-1-x86_64</code>
-     *        </p>
-     *        </li>
      *        </ul>
      *        <p>
      *        <b>SSM paths</b>
      *        </p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code>
@@ -470,11 +481,6 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      *        <li>
      *        <p>
      *        Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code>
      *        </p>
      *        </li>
      */
@@ -485,14 +491,21 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. You can specify the AMI
-     * for the instance using an AMI alias or an AWS Systems Manager (SSM) path. The default AMI is used if the
-     * parameter isn't explicitly assigned a value in the request.
+     * The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for
+     * the instance, you must specify a valid AMI alias or a valid AWS Systems Manager (SSM) path.
+     * </p>
+     * <p>
+     * The default AMI is used if the parameter isn't explicitly assigned a value in the request.
      * </p>
      * <p>
      * <b>AMI aliases </b>
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * Amazon Linux 2: <code>amazonlinux-2-x86_64</code>
@@ -503,16 +516,16 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * Amazon Linux (default): <code>amazonlinux-1-x86_64</code>
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * <b>SSM paths</b>
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code>
@@ -523,20 +536,22 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code>
-     * </p>
-     * </li>
      * </ul>
      * 
-     * @return The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. You can specify
-     *         the AMI for the instance using an AMI alias or an AWS Systems Manager (SSM) path. The default AMI is used
-     *         if the parameter isn't explicitly assigned a value in the request. </p>
+     * @return The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an
+     *         AMI for the instance, you must specify a valid AMI alias or a valid AWS Systems Manager (SSM) path.</p>
+     *         <p>
+     *         The default AMI is used if the parameter isn't explicitly assigned a value in the request.
+     *         </p>
      *         <p>
      *         <b>AMI aliases </b>
      *         </p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b>
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         Amazon Linux 2: <code>amazonlinux-2-x86_64</code>
@@ -547,16 +562,16 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      *         Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code>
      *         </p>
      *         </li>
-     *         <li>
-     *         <p>
-     *         Amazon Linux (default): <code>amazonlinux-1-x86_64</code>
-     *         </p>
-     *         </li>
      *         </ul>
      *         <p>
      *         <b>SSM paths</b>
      *         </p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b>
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code>
@@ -567,11 +582,6 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      *         Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
      *         </p>
      *         </li>
-     *         <li>
-     *         <p>
-     *         Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code>
-     *         </p>
-     *         </li>
      */
 
     public String getImageId() {
@@ -580,14 +590,21 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. You can specify the AMI
-     * for the instance using an AMI alias or an AWS Systems Manager (SSM) path. The default AMI is used if the
-     * parameter isn't explicitly assigned a value in the request.
+     * The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for
+     * the instance, you must specify a valid AMI alias or a valid AWS Systems Manager (SSM) path.
+     * </p>
+     * <p>
+     * The default AMI is used if the parameter isn't explicitly assigned a value in the request.
      * </p>
      * <p>
      * <b>AMI aliases </b>
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * Amazon Linux 2: <code>amazonlinux-2-x86_64</code>
@@ -598,16 +615,16 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * Amazon Linux (default): <code>amazonlinux-1-x86_64</code>
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * <b>SSM paths</b>
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code>
@@ -618,21 +635,23 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code>
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param imageId
-     *        The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. You can specify
-     *        the AMI for the instance using an AMI alias or an AWS Systems Manager (SSM) path. The default AMI is used
-     *        if the parameter isn't explicitly assigned a value in the request. </p>
+     *        The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI
+     *        for the instance, you must specify a valid AMI alias or a valid AWS Systems Manager (SSM) path.</p>
+     *        <p>
+     *        The default AMI is used if the parameter isn't explicitly assigned a value in the request.
+     *        </p>
      *        <p>
      *        <b>AMI aliases </b>
      *        </p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        Amazon Linux 2: <code>amazonlinux-2-x86_64</code>
@@ -643,16 +662,16 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      *        Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code>
      *        </p>
      *        </li>
-     *        <li>
-     *        <p>
-     *        Amazon Linux (default): <code>amazonlinux-1-x86_64</code>
-     *        </p>
-     *        </li>
      *        </ul>
      *        <p>
      *        <b>SSM paths</b>
      *        </p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code>
@@ -661,11 +680,6 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      *        <li>
      *        <p>
      *        Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

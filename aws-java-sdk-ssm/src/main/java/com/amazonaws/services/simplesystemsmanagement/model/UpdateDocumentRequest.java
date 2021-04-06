@@ -52,9 +52,9 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
     private String versionName;
     /**
      * <p>
-     * (Required) The latest version of the document that you want to update. The latest document version can be
-     * specified using the $LATEST variable or by the version number. Updating a previous version of a document is not
-     * supported.
+     * The version of the document that you want to update. Currently, Systems Manager supports updating only the latest
+     * version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code>
+     * variable.
      * </p>
      */
     private String documentVersion;
@@ -273,15 +273,15 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * (Required) The latest version of the document that you want to update. The latest document version can be
-     * specified using the $LATEST variable or by the version number. Updating a previous version of a document is not
-     * supported.
+     * The version of the document that you want to update. Currently, Systems Manager supports updating only the latest
+     * version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code>
+     * variable.
      * </p>
      * 
      * @param documentVersion
-     *        (Required) The latest version of the document that you want to update. The latest document version can be
-     *        specified using the $LATEST variable or by the version number. Updating a previous version of a document
-     *        is not supported.
+     *        The version of the document that you want to update. Currently, Systems Manager supports updating only the
+     *        latest version of the document. You can specify the version number of the latest version or use the
+     *        <code>$LATEST</code> variable.
      */
 
     public void setDocumentVersion(String documentVersion) {
@@ -290,14 +290,14 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * (Required) The latest version of the document that you want to update. The latest document version can be
-     * specified using the $LATEST variable or by the version number. Updating a previous version of a document is not
-     * supported.
+     * The version of the document that you want to update. Currently, Systems Manager supports updating only the latest
+     * version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code>
+     * variable.
      * </p>
      * 
-     * @return (Required) The latest version of the document that you want to update. The latest document version can be
-     *         specified using the $LATEST variable or by the version number. Updating a previous version of a document
-     *         is not supported.
+     * @return The version of the document that you want to update. Currently, Systems Manager supports updating only
+     *         the latest version of the document. You can specify the version number of the latest version or use the
+     *         <code>$LATEST</code> variable.
      */
 
     public String getDocumentVersion() {
@@ -306,15 +306,15 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * (Required) The latest version of the document that you want to update. The latest document version can be
-     * specified using the $LATEST variable or by the version number. Updating a previous version of a document is not
-     * supported.
+     * The version of the document that you want to update. Currently, Systems Manager supports updating only the latest
+     * version of the document. You can specify the version number of the latest version or use the <code>$LATEST</code>
+     * variable.
      * </p>
      * 
      * @param documentVersion
-     *        (Required) The latest version of the document that you want to update. The latest document version can be
-     *        specified using the $LATEST variable or by the version number. Updating a previous version of a document
-     *        is not supported.
+     *        The version of the document that you want to update. Currently, Systems Manager supports updating only the
+     *        latest version of the document. You can specify the version number of the latest version or use the
+     *        <code>$LATEST</code> variable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

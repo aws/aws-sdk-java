@@ -74,8 +74,7 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
     private String resourceId;
     /**
      * <p>
-     * One or more tags. The value parameter is required, but if you don't want the tag to have a value, specify the
-     * parameter with no value, and we set the value to an empty string.
+     * One or more tags. The value parameter is required.
      * </p>
      * <important>
      * <p>
@@ -421,8 +420,7 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * One or more tags. The value parameter is required, but if you don't want the tag to have a value, specify the
-     * parameter with no value, and we set the value to an empty string.
+     * One or more tags. The value parameter is required.
      * </p>
      * <important>
      * <p>
@@ -430,8 +428,7 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * </important>
      * 
-     * @return One or more tags. The value parameter is required, but if you don't want the tag to have a value, specify
-     *         the parameter with no value, and we set the value to an empty string. </p> <important>
+     * @return One or more tags. The value parameter is required.</p> <important>
      *         <p>
      *         Do not enter personally identifiable information in this field.
      *         </p>
@@ -446,8 +443,7 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * One or more tags. The value parameter is required, but if you don't want the tag to have a value, specify the
-     * parameter with no value, and we set the value to an empty string.
+     * One or more tags. The value parameter is required.
      * </p>
      * <important>
      * <p>
@@ -456,8 +452,7 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * </important>
      * 
      * @param tags
-     *        One or more tags. The value parameter is required, but if you don't want the tag to have a value, specify
-     *        the parameter with no value, and we set the value to an empty string. </p> <important>
+     *        One or more tags. The value parameter is required.</p> <important>
      *        <p>
      *        Do not enter personally identifiable information in this field.
      *        </p>
@@ -474,8 +469,7 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * One or more tags. The value parameter is required, but if you don't want the tag to have a value, specify the
-     * parameter with no value, and we set the value to an empty string.
+     * One or more tags. The value parameter is required.
      * </p>
      * <important>
      * <p>
@@ -489,8 +483,7 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param tags
-     *        One or more tags. The value parameter is required, but if you don't want the tag to have a value, specify
-     *        the parameter with no value, and we set the value to an empty string. </p> <important>
+     *        One or more tags. The value parameter is required.</p> <important>
      *        <p>
      *        Do not enter personally identifiable information in this field.
      *        </p>
@@ -509,8 +502,7 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * One or more tags. The value parameter is required, but if you don't want the tag to have a value, specify the
-     * parameter with no value, and we set the value to an empty string.
+     * One or more tags. The value parameter is required.
      * </p>
      * <important>
      * <p>
@@ -519,8 +511,7 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
      * </important>
      * 
      * @param tags
-     *        One or more tags. The value parameter is required, but if you don't want the tag to have a value, specify
-     *        the parameter with no value, and we set the value to an empty string. </p> <important>
+     *        One or more tags. The value parameter is required.</p> <important>
      *        <p>
      *        Do not enter personally identifiable information in this field.
      *        </p>

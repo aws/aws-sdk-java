@@ -65,6 +65,12 @@ public class InstancePatchStateMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastNoRebootInstallOperationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> REBOOTOPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RebootOption").build();
+    private static final MarshallingInfo<Integer> CRITICALNONCOMPLIANTCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CriticalNonCompliantCount").build();
+    private static final MarshallingInfo<Integer> SECURITYNONCOMPLIANTCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecurityNonCompliantCount").build();
+    private static final MarshallingInfo<Integer> OTHERNONCOMPLIANTCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OtherNonCompliantCount").build();
 
     private static final InstancePatchStateMarshaller instance = new InstancePatchStateMarshaller();
 
@@ -101,6 +107,9 @@ public class InstancePatchStateMarshaller {
             protocolMarshaller.marshall(instancePatchState.getOperation(), OPERATION_BINDING);
             protocolMarshaller.marshall(instancePatchState.getLastNoRebootInstallOperationTime(), LASTNOREBOOTINSTALLOPERATIONTIME_BINDING);
             protocolMarshaller.marshall(instancePatchState.getRebootOption(), REBOOTOPTION_BINDING);
+            protocolMarshaller.marshall(instancePatchState.getCriticalNonCompliantCount(), CRITICALNONCOMPLIANTCOUNT_BINDING);
+            protocolMarshaller.marshall(instancePatchState.getSecurityNonCompliantCount(), SECURITYNONCOMPLIANTCOUNT_BINDING);
+            protocolMarshaller.marshall(instancePatchState.getOtherNonCompliantCount(), OTHERNONCOMPLIANTCOUNT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

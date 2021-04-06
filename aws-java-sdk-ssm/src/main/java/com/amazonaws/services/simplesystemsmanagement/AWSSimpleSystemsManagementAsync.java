@@ -2511,6 +2511,11 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Returns detailed information about command execution for an invocation or plugin.
      * </p>
+     * <p>
+     * <code>GetCommandInvocation</code> only gives the execution status of a plugin in a document. To get the command
+     * execution status on a specific instance, use <a>ListCommandInvocations</a>. To get the command execution status
+     * across instances, use <a>ListCommands</a>.
+     * </p>
      * 
      * @param getCommandInvocationRequest
      * @return A Java Future containing the result of the GetCommandInvocation operation returned by the service.
@@ -2523,6 +2528,11 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
     /**
      * <p>
      * Returns detailed information about command execution for an invocation or plugin.
+     * </p>
+     * <p>
+     * <code>GetCommandInvocation</code> only gives the execution status of a plugin in a document. To get the command
+     * execution status on a specific instance, use <a>ListCommandInvocations</a>. To get the command execution status
+     * across instances, use <a>ListCommands</a>.
      * </p>
      * 
      * @param getCommandInvocationRequest
@@ -3341,8 +3351,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * </li>
      * <li>
      * <p>
-     * You can't delete a parameter label. If you no longer want to use a parameter label, then you must move it to a
-     * different version of a parameter.
+     * If you no longer want to use a parameter label, then you can either delete it or move it to a different version
+     * of a parameter.
      * </p>
      * </li>
      * <li>
@@ -3406,8 +3416,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * </li>
      * <li>
      * <p>
-     * You can't delete a parameter label. If you no longer want to use a parameter label, then you must move it to a
-     * different version of a parameter.
+     * If you no longer want to use a parameter label, then you can either delete it or move it to a different version
+     * of a parameter.
      * </p>
      * </li>
      * <li>
@@ -4834,6 +4844,37 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<TerminateSessionResult> terminateSessionAsync(TerminateSessionRequest terminateSessionRequest,
             com.amazonaws.handlers.AsyncHandler<TerminateSessionRequest, TerminateSessionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Remove a label or labels from a parameter.
+     * </p>
+     * 
+     * @param unlabelParameterVersionRequest
+     * @return A Java Future containing the result of the UnlabelParameterVersion operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.UnlabelParameterVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UnlabelParameterVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UnlabelParameterVersionResult> unlabelParameterVersionAsync(UnlabelParameterVersionRequest unlabelParameterVersionRequest);
+
+    /**
+     * <p>
+     * Remove a label or labels from a parameter.
+     * </p>
+     * 
+     * @param unlabelParameterVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UnlabelParameterVersion operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.UnlabelParameterVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UnlabelParameterVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UnlabelParameterVersionResult> unlabelParameterVersionAsync(UnlabelParameterVersionRequest unlabelParameterVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<UnlabelParameterVersionRequest, UnlabelParameterVersionResult> asyncHandler);
 
     /**
      * <p>

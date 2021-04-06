@@ -2819,6 +2819,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<CreateRestoreImageTaskResult> createRestoreImageTaskAsync(CreateRestoreImageTaskRequest request) {
+
+        return createRestoreImageTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRestoreImageTaskResult> createRestoreImageTaskAsync(final CreateRestoreImageTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateRestoreImageTaskRequest, CreateRestoreImageTaskResult> asyncHandler) {
+        final CreateRestoreImageTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateRestoreImageTaskResult>() {
+            @Override
+            public CreateRestoreImageTaskResult call() throws Exception {
+                CreateRestoreImageTaskResult result = null;
+
+                try {
+                    result = executeCreateRestoreImageTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateRouteResult> createRouteAsync(CreateRouteRequest request) {
 
         return createRouteAsync(request, null);
@@ -3002,6 +3035,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeCreateSpotDatafeedSubscription(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateStoreImageTaskResult> createStoreImageTaskAsync(CreateStoreImageTaskRequest request) {
+
+        return createStoreImageTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateStoreImageTaskResult> createStoreImageTaskAsync(final CreateStoreImageTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateStoreImageTaskRequest, CreateStoreImageTaskResult> asyncHandler) {
+        final CreateStoreImageTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateStoreImageTaskResult>() {
+            @Override
+            public CreateStoreImageTaskResult call() throws Exception {
+                CreateStoreImageTaskResult result = null;
+
+                try {
+                    result = executeCreateStoreImageTask(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -9717,6 +9783,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeDescribeStaleSecurityGroups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStoreImageTasksResult> describeStoreImageTasksAsync(DescribeStoreImageTasksRequest request) {
+
+        return describeStoreImageTasksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStoreImageTasksResult> describeStoreImageTasksAsync(final DescribeStoreImageTasksRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeStoreImageTasksRequest, DescribeStoreImageTasksResult> asyncHandler) {
+        final DescribeStoreImageTasksRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeStoreImageTasksResult>() {
+            @Override
+            public DescribeStoreImageTasksResult call() throws Exception {
+                DescribeStoreImageTasksResult result = null;
+
+                try {
+                    result = executeDescribeStoreImageTasks(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

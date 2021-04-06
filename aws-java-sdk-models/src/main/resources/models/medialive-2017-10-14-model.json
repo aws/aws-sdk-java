@@ -4343,7 +4343,7 @@
           "documentation": "A collection of key-value pairs."
         },
         "Vpc": {
-          "shape": "VpcOutputSettings",
+          "shape": "VpcOutputSettingsDescription",
           "locationName": "vpc",
           "documentation": "Settings for VPC output"
         }
@@ -4474,7 +4474,7 @@
           "documentation": "A collection of key-value pairs."
         },
         "Vpc": {
-          "shape": "VpcOutputSettings",
+          "shape": "VpcOutputSettingsDescription",
           "locationName": "vpc",
           "documentation": "Settings for VPC output"
         }
@@ -5198,7 +5198,7 @@
           "documentation": "A collection of key-value pairs."
         },
         "Vpc": {
-          "shape": "VpcOutputSettings",
+          "shape": "VpcOutputSettingsDescription",
           "locationName": "vpc",
           "documentation": "Settings for VPC output"
         }
@@ -5621,7 +5621,7 @@
           "documentation": "A collection of key-value pairs."
         },
         "Vpc": {
-          "shape": "VpcOutputSettings",
+          "shape": "VpcOutputSettingsDescription",
           "locationName": "vpc",
           "documentation": "Settings for VPC output"
         }
@@ -13491,7 +13491,7 @@
           "documentation": "A collection of key-value pairs."
         },
         "Vpc": {
-          "shape": "VpcOutputSettings",
+          "shape": "VpcOutputSettingsDescription",
           "locationName": "vpc",
           "documentation": "Settings for VPC output"
         }
@@ -13771,7 +13771,7 @@
           "documentation": "A collection of key-value pairs."
         },
         "Vpc": {
-          "shape": "VpcOutputSettings",
+          "shape": "VpcOutputSettingsDescription",
           "locationName": "vpc",
           "documentation": "Settings for VPC output"
         }
@@ -15049,6 +15049,32 @@
       "required": [
         "SubnetIds"
       ]
+    },
+    "VpcOutputSettingsDescription": {
+      "type": "structure",
+      "members": {
+        "AvailabilityZones": {
+          "shape": "__listOf__string",
+          "locationName": "availabilityZones",
+          "documentation": "The Availability Zones where the vpc subnets are located.\nThe first Availability Zone applies to the first subnet in the list of subnets.\nThe second Availability Zone applies to the second subnet.\n"
+        },
+        "NetworkInterfaceIds": {
+          "shape": "__listOf__string",
+          "locationName": "networkInterfaceIds",
+          "documentation": "A list of Elastic Network Interfaces created by MediaLive in the customer's VPC\n"
+        },
+        "SecurityGroupIds": {
+          "shape": "__listOf__string",
+          "locationName": "securityGroupIds",
+          "documentation": "A list of up EC2 VPC security group IDs attached to the Output VPC network interfaces.\n"
+        },
+        "SubnetIds": {
+          "shape": "__listOf__string",
+          "locationName": "subnetIds",
+          "documentation": "A list of VPC subnet IDs from the same VPC.\nIf STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).\n"
+        }
+      },
+      "documentation": "The properties for a private VPC Output\n"
     },
     "WavCodingMode": {
       "type": "string",

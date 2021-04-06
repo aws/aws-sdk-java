@@ -101,6 +101,20 @@ public class StartChangeRequestExecutionRequest extends com.amazonaws.AmazonWebS
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The time that the requester expects the runbook workflow related to the change request to complete. The time is
+     * an estimate only that the requester provides for reviewers.
+     * </p>
+     */
+    private java.util.Date scheduledEndTime;
+    /**
+     * <p>
+     * User-provided details about the change. If no details are provided, content specified in the <b>Template
+     * information</b> section of the associated change template is added.
+     * </p>
+     */
+    private String changeDetails;
 
     /**
      * <p>
@@ -713,6 +727,98 @@ public class StartChangeRequestExecutionRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * The time that the requester expects the runbook workflow related to the change request to complete. The time is
+     * an estimate only that the requester provides for reviewers.
+     * </p>
+     * 
+     * @param scheduledEndTime
+     *        The time that the requester expects the runbook workflow related to the change request to complete. The
+     *        time is an estimate only that the requester provides for reviewers.
+     */
+
+    public void setScheduledEndTime(java.util.Date scheduledEndTime) {
+        this.scheduledEndTime = scheduledEndTime;
+    }
+
+    /**
+     * <p>
+     * The time that the requester expects the runbook workflow related to the change request to complete. The time is
+     * an estimate only that the requester provides for reviewers.
+     * </p>
+     * 
+     * @return The time that the requester expects the runbook workflow related to the change request to complete. The
+     *         time is an estimate only that the requester provides for reviewers.
+     */
+
+    public java.util.Date getScheduledEndTime() {
+        return this.scheduledEndTime;
+    }
+
+    /**
+     * <p>
+     * The time that the requester expects the runbook workflow related to the change request to complete. The time is
+     * an estimate only that the requester provides for reviewers.
+     * </p>
+     * 
+     * @param scheduledEndTime
+     *        The time that the requester expects the runbook workflow related to the change request to complete. The
+     *        time is an estimate only that the requester provides for reviewers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartChangeRequestExecutionRequest withScheduledEndTime(java.util.Date scheduledEndTime) {
+        setScheduledEndTime(scheduledEndTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * User-provided details about the change. If no details are provided, content specified in the <b>Template
+     * information</b> section of the associated change template is added.
+     * </p>
+     * 
+     * @param changeDetails
+     *        User-provided details about the change. If no details are provided, content specified in the <b>Template
+     *        information</b> section of the associated change template is added.
+     */
+
+    public void setChangeDetails(String changeDetails) {
+        this.changeDetails = changeDetails;
+    }
+
+    /**
+     * <p>
+     * User-provided details about the change. If no details are provided, content specified in the <b>Template
+     * information</b> section of the associated change template is added.
+     * </p>
+     * 
+     * @return User-provided details about the change. If no details are provided, content specified in the <b>Template
+     *         information</b> section of the associated change template is added.
+     */
+
+    public String getChangeDetails() {
+        return this.changeDetails;
+    }
+
+    /**
+     * <p>
+     * User-provided details about the change. If no details are provided, content specified in the <b>Template
+     * information</b> section of the associated change template is added.
+     * </p>
+     * 
+     * @param changeDetails
+     *        User-provided details about the change. If no details are provided, content specified in the <b>Template
+     *        information</b> section of the associated change template is added.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartChangeRequestExecutionRequest withChangeDetails(String changeDetails) {
+        setChangeDetails(changeDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -739,7 +845,11 @@ public class StartChangeRequestExecutionRequest extends com.amazonaws.AmazonWebS
         if (getRunbooks() != null)
             sb.append("Runbooks: ").append(getRunbooks()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getScheduledEndTime() != null)
+            sb.append("ScheduledEndTime: ").append(getScheduledEndTime()).append(",");
+        if (getChangeDetails() != null)
+            sb.append("ChangeDetails: ").append(getChangeDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -786,6 +896,14 @@ public class StartChangeRequestExecutionRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getScheduledEndTime() == null ^ this.getScheduledEndTime() == null)
+            return false;
+        if (other.getScheduledEndTime() != null && other.getScheduledEndTime().equals(this.getScheduledEndTime()) == false)
+            return false;
+        if (other.getChangeDetails() == null ^ this.getChangeDetails() == null)
+            return false;
+        if (other.getChangeDetails() != null && other.getChangeDetails().equals(this.getChangeDetails()) == false)
+            return false;
         return true;
     }
 
@@ -802,6 +920,8 @@ public class StartChangeRequestExecutionRequest extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getRunbooks() == null) ? 0 : getRunbooks().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getScheduledEndTime() == null) ? 0 : getScheduledEndTime().hashCode());
+        hashCode = prime * hashCode + ((getChangeDetails() == null) ? 0 : getChangeDetails().hashCode());
         return hashCode;
     }
 

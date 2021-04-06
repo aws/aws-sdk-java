@@ -123,7 +123,7 @@ public class ChannelJsonUnmarshaller implements Unmarshaller<Channel, JsonUnmars
                 }
                 if (context.testExpression("vpc", targetDepth)) {
                     context.nextToken();
-                    channel.setVpc(VpcOutputSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                    channel.setVpc(VpcOutputSettingsDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

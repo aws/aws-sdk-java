@@ -161,7 +161,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String keyId;
     /**
      * <p>
-     * Overwrite an existing parameter. If not specified, will default to "false".
+     * Overwrite an existing parameter. The default value is 'false'.
      * </p>
      */
     private Boolean overwrite;
@@ -1255,11 +1255,11 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Overwrite an existing parameter. If not specified, will default to "false".
+     * Overwrite an existing parameter. The default value is 'false'.
      * </p>
      * 
      * @param overwrite
-     *        Overwrite an existing parameter. If not specified, will default to "false".
+     *        Overwrite an existing parameter. The default value is 'false'.
      */
 
     public void setOverwrite(Boolean overwrite) {
@@ -1268,10 +1268,10 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Overwrite an existing parameter. If not specified, will default to "false".
+     * Overwrite an existing parameter. The default value is 'false'.
      * </p>
      * 
-     * @return Overwrite an existing parameter. If not specified, will default to "false".
+     * @return Overwrite an existing parameter. The default value is 'false'.
      */
 
     public Boolean getOverwrite() {
@@ -1280,11 +1280,11 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Overwrite an existing parameter. If not specified, will default to "false".
+     * Overwrite an existing parameter. The default value is 'false'.
      * </p>
      * 
      * @param overwrite
-     *        Overwrite an existing parameter. If not specified, will default to "false".
+     *        Overwrite an existing parameter. The default value is 'false'.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1295,10 +1295,10 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Overwrite an existing parameter. If not specified, will default to "false".
+     * Overwrite an existing parameter. The default value is 'false'.
      * </p>
      * 
-     * @return Overwrite an existing parameter. If not specified, will default to "false".
+     * @return Overwrite an existing parameter. The default value is 'false'.
      */
 
     public Boolean isOverwrite() {

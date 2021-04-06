@@ -63,7 +63,7 @@ public class DeleteChannelResult extends com.amazonaws.AmazonWebServiceResult<co
     /** A collection of key-value pairs. */
     private java.util.Map<String, String> tags;
     /** Settings for VPC output */
-    private VpcOutputSettings vpc;
+    private VpcOutputSettingsDescription vpc;
 
     /**
      * The unique arn of the channel.
@@ -805,7 +805,7 @@ public class DeleteChannelResult extends com.amazonaws.AmazonWebServiceResult<co
      *        Settings for VPC output
      */
 
-    public void setVpc(VpcOutputSettings vpc) {
+    public void setVpc(VpcOutputSettingsDescription vpc) {
         this.vpc = vpc;
     }
 
@@ -815,7 +815,7 @@ public class DeleteChannelResult extends com.amazonaws.AmazonWebServiceResult<co
      * @return Settings for VPC output
      */
 
-    public VpcOutputSettings getVpc() {
+    public VpcOutputSettingsDescription getVpc() {
         return this.vpc;
     }
 
@@ -827,7 +827,7 @@ public class DeleteChannelResult extends com.amazonaws.AmazonWebServiceResult<co
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DeleteChannelResult withVpc(VpcOutputSettings vpc) {
+    public DeleteChannelResult withVpc(VpcOutputSettingsDescription vpc) {
         setVpc(vpc);
         return this;
     }

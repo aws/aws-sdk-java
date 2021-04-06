@@ -4212,6 +4212,39 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     }
 
     @Override
+    public java.util.concurrent.Future<UnlabelParameterVersionResult> unlabelParameterVersionAsync(UnlabelParameterVersionRequest request) {
+
+        return unlabelParameterVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UnlabelParameterVersionResult> unlabelParameterVersionAsync(final UnlabelParameterVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UnlabelParameterVersionRequest, UnlabelParameterVersionResult> asyncHandler) {
+        final UnlabelParameterVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UnlabelParameterVersionResult>() {
+            @Override
+            public UnlabelParameterVersionResult call() throws Exception {
+                UnlabelParameterVersionResult result = null;
+
+                try {
+                    result = executeUnlabelParameterVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateAssociationResult> updateAssociationAsync(UpdateAssociationRequest request) {
 
         return updateAssociationAsync(request, null);

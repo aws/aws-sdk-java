@@ -1092,6 +1092,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<CreateRestoreImageTaskResult> createRestoreImageTaskAsync(CreateRestoreImageTaskRequest request) {
+
+        return createRestoreImageTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRestoreImageTaskResult> createRestoreImageTaskAsync(CreateRestoreImageTaskRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateRestoreImageTaskRequest, CreateRestoreImageTaskResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateRouteResult> createRouteAsync(CreateRouteRequest request) {
 
         return createRouteAsync(request, null);
@@ -1165,6 +1178,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     @Override
     public java.util.concurrent.Future<CreateSpotDatafeedSubscriptionResult> createSpotDatafeedSubscriptionAsync(CreateSpotDatafeedSubscriptionRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateSpotDatafeedSubscriptionRequest, CreateSpotDatafeedSubscriptionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateStoreImageTaskResult> createStoreImageTaskAsync(CreateStoreImageTaskRequest request) {
+
+        return createStoreImageTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateStoreImageTaskResult> createStoreImageTaskAsync(CreateStoreImageTaskRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateStoreImageTaskRequest, CreateStoreImageTaskResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -4390,6 +4416,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     @Override
     public java.util.concurrent.Future<DescribeStaleSecurityGroupsResult> describeStaleSecurityGroupsAsync(DescribeStaleSecurityGroupsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeStaleSecurityGroupsRequest, DescribeStaleSecurityGroupsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStoreImageTasksResult> describeStoreImageTasksAsync(DescribeStoreImageTasksRequest request) {
+
+        return describeStoreImageTasksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStoreImageTasksResult> describeStoreImageTasksAsync(DescribeStoreImageTasksRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeStoreImageTasksRequest, DescribeStoreImageTasksResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

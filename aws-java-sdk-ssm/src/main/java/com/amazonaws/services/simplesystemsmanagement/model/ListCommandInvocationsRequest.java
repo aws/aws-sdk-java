@@ -58,8 +58,8 @@ public class ListCommandInvocationsRequest extends com.amazonaws.AmazonWebServic
     private com.amazonaws.internal.SdkInternalList<CommandFilter> filters;
     /**
      * <p>
-     * (Optional) If set this returns the response of the command executions and any command output. By default this is
-     * set to False.
+     * (Optional) If set this returns the response of the command executions and any command output. The default value
+     * is 'false'.
      * </p>
      */
     private Boolean details;
@@ -305,13 +305,13 @@ public class ListCommandInvocationsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * (Optional) If set this returns the response of the command executions and any command output. By default this is
-     * set to False.
+     * (Optional) If set this returns the response of the command executions and any command output. The default value
+     * is 'false'.
      * </p>
      * 
      * @param details
-     *        (Optional) If set this returns the response of the command executions and any command output. By default
-     *        this is set to False.
+     *        (Optional) If set this returns the response of the command executions and any command output. The default
+     *        value is 'false'.
      */
 
     public void setDetails(Boolean details) {
@@ -320,12 +320,12 @@ public class ListCommandInvocationsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * (Optional) If set this returns the response of the command executions and any command output. By default this is
-     * set to False.
+     * (Optional) If set this returns the response of the command executions and any command output. The default value
+     * is 'false'.
      * </p>
      * 
-     * @return (Optional) If set this returns the response of the command executions and any command output. By default
-     *         this is set to False.
+     * @return (Optional) If set this returns the response of the command executions and any command output. The default
+     *         value is 'false'.
      */
 
     public Boolean getDetails() {
@@ -334,13 +334,13 @@ public class ListCommandInvocationsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * (Optional) If set this returns the response of the command executions and any command output. By default this is
-     * set to False.
+     * (Optional) If set this returns the response of the command executions and any command output. The default value
+     * is 'false'.
      * </p>
      * 
      * @param details
-     *        (Optional) If set this returns the response of the command executions and any command output. By default
-     *        this is set to False.
+     *        (Optional) If set this returns the response of the command executions and any command output. The default
+     *        value is 'false'.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -351,12 +351,12 @@ public class ListCommandInvocationsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * (Optional) If set this returns the response of the command executions and any command output. By default this is
-     * set to False.
+     * (Optional) If set this returns the response of the command executions and any command output. The default value
+     * is 'false'.
      * </p>
      * 
-     * @return (Optional) If set this returns the response of the command executions and any command output. By default
-     *         this is set to False.
+     * @return (Optional) If set this returns the response of the command executions and any command output. The default
+     *         value is 'false'.
      */
 
     public Boolean isDetails() {

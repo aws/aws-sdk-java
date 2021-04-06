@@ -65,7 +65,7 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     /** A collection of key-value pairs. */
     private java.util.Map<String, String> tags;
     /** Settings for VPC output */
-    private VpcOutputSettings vpc;
+    private VpcOutputSettingsDescription vpc;
 
     /**
      * The unique arn of the channel.
@@ -807,7 +807,7 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      *        Settings for VPC output
      */
 
-    public void setVpc(VpcOutputSettings vpc) {
+    public void setVpc(VpcOutputSettingsDescription vpc) {
         this.vpc = vpc;
     }
 
@@ -817,7 +817,7 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * @return Settings for VPC output
      */
 
-    public VpcOutputSettings getVpc() {
+    public VpcOutputSettingsDescription getVpc() {
         return this.vpc;
     }
 
@@ -829,7 +829,7 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Channel withVpc(VpcOutputSettings vpc) {
+    public Channel withVpc(VpcOutputSettingsDescription vpc) {
         setVpc(vpc);
         return this;
     }

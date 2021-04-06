@@ -4922,6 +4922,11 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * <p>
      * Returns detailed information about command execution for an invocation or plugin.
      * </p>
+     * <p>
+     * <code>GetCommandInvocation</code> only gives the execution status of a plugin in a document. To get the command
+     * execution status on a specific instance, use <a>ListCommandInvocations</a>. To get the command execution status
+     * across instances, use <a>ListCommands</a>.
+     * </p>
      * 
      * @param getCommandInvocationRequest
      * @return Result of the GetCommandInvocation operation returned by the service.
@@ -6412,8 +6417,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * </li>
      * <li>
      * <p>
-     * You can't delete a parameter label. If you no longer want to use a parameter label, then you must move it to a
-     * different version of a parameter.
+     * If you no longer want to use a parameter label, then you can either delete it or move it to a different version
+     * of a parameter.
      * </p>
      * </li>
      * <li>
@@ -9020,6 +9025,71 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<TerminateSessionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TerminateSessionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Remove a label or labels from a parameter.
+     * </p>
+     * 
+     * @param unlabelParameterVersionRequest
+     * @return Result of the UnlabelParameterVersion operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws TooManyUpdatesException
+     *         There are concurrent updates for a resource that supports one update at a time.
+     * @throws ParameterNotFoundException
+     *         The parameter could not be found. Verify the name and try again.
+     * @throws ParameterVersionNotFoundException
+     *         The specified parameter version was not found. Verify the parameter name and version, and try again.
+     * @sample AWSSimpleSystemsManagement.UnlabelParameterVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UnlabelParameterVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UnlabelParameterVersionResult unlabelParameterVersion(UnlabelParameterVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUnlabelParameterVersion(request);
+    }
+
+    @SdkInternalApi
+    final UnlabelParameterVersionResult executeUnlabelParameterVersion(UnlabelParameterVersionRequest unlabelParameterVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(unlabelParameterVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UnlabelParameterVersionRequest> request = null;
+        Response<UnlabelParameterVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UnlabelParameterVersionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(unlabelParameterVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UnlabelParameterVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UnlabelParameterVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UnlabelParameterVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

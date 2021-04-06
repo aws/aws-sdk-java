@@ -113,7 +113,7 @@ public class ChannelSummaryJsonUnmarshaller implements Unmarshaller<ChannelSumma
                 }
                 if (context.testExpression("vpc", targetDepth)) {
                     context.nextToken();
-                    channelSummary.setVpc(VpcOutputSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                    channelSummary.setVpc(VpcOutputSettingsDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

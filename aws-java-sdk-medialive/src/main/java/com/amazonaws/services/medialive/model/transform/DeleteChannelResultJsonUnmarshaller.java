@@ -123,7 +123,7 @@ public class DeleteChannelResultJsonUnmarshaller implements Unmarshaller<DeleteC
                 }
                 if (context.testExpression("vpc", targetDepth)) {
                     context.nextToken();
-                    deleteChannelResult.setVpc(VpcOutputSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                    deleteChannelResult.setVpc(VpcOutputSettingsDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

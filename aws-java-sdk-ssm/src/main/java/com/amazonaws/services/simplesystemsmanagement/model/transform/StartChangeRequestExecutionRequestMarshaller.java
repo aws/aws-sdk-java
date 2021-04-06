@@ -45,6 +45,10 @@ public class StartChangeRequestExecutionRequestMarshaller {
             .marshallLocationName("Runbooks").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<java.util.Date> SCHEDULEDENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScheduledEndTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> CHANGEDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChangeDetails").build();
 
     private static final StartChangeRequestExecutionRequestMarshaller instance = new StartChangeRequestExecutionRequestMarshaller();
 
@@ -70,6 +74,8 @@ public class StartChangeRequestExecutionRequestMarshaller {
             protocolMarshaller.marshall(startChangeRequestExecutionRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(startChangeRequestExecutionRequest.getRunbooks(), RUNBOOKS_BINDING);
             protocolMarshaller.marshall(startChangeRequestExecutionRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(startChangeRequestExecutionRequest.getScheduledEndTime(), SCHEDULEDENDTIME_BINDING);
+            protocolMarshaller.marshall(startChangeRequestExecutionRequest.getChangeDetails(), CHANGEDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

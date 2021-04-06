@@ -631,6 +631,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public UnlabelParameterVersionResult unlabelParameterVersion(UnlabelParameterVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateAssociationResult updateAssociation(UpdateAssociationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
