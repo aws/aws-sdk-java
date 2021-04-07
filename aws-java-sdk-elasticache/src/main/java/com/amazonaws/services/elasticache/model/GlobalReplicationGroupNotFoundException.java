@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The Global Datastore does not exist
+ * The Global datastore does not exist
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

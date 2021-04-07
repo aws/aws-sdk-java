@@ -45,13 +45,20 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
 
     /**
      * <p>
-     * Adds up to 50 cost allocation tags to the named resource. A cost allocation tag is a key-value pair where the key
-     * and value are case-sensitive. You can use cost allocation tags to categorize and track your AWS costs.
+     * A tag is a key-value pair where the key and value are case-sensitive. You can use tags to categorize and track
+     * all your ElastiCache resources, with the exception of global replication group. When you add or remove tags on
+     * replication groups, those actions will be replicated to all nodes in the replication group. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ResourceLevelPermissions.html">Resource
+     * -level permissions</a>.
      * </p>
      * <p>
-     * When you apply tags to your ElastiCache resources, AWS generates a cost allocation report as a comma-separated
-     * value (CSV) file with your usage and costs aggregated by your tags. You can apply tags that represent business
-     * categories (such as cost centers, application names, or owners) to organize your costs across multiple services.
+     * For example, you can use cost-allocation tags to your ElastiCache resources, AWS generates a cost allocation
+     * report as a comma-separated value (CSV) file with your usage and costs aggregated by your tags. You can apply
+     * tags that represent business categories (such as cost centers, application names, or owners) to organize your
+     * costs across multiple services.
+     * </p>
+     * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Tagging.html">Using Cost Allocation Tags in
      * Amazon ElastiCache</a> in the <i>ElastiCache User Guide</i>.
@@ -68,13 +75,20 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
 
     /**
      * <p>
-     * Adds up to 50 cost allocation tags to the named resource. A cost allocation tag is a key-value pair where the key
-     * and value are case-sensitive. You can use cost allocation tags to categorize and track your AWS costs.
+     * A tag is a key-value pair where the key and value are case-sensitive. You can use tags to categorize and track
+     * all your ElastiCache resources, with the exception of global replication group. When you add or remove tags on
+     * replication groups, those actions will be replicated to all nodes in the replication group. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ResourceLevelPermissions.html">Resource
+     * -level permissions</a>.
      * </p>
      * <p>
-     * When you apply tags to your ElastiCache resources, AWS generates a cost allocation report as a comma-separated
-     * value (CSV) file with your usage and costs aggregated by your tags. You can apply tags that represent business
-     * categories (such as cost centers, application names, or owners) to organize your costs across multiple services.
+     * For example, you can use cost-allocation tags to your ElastiCache resources, AWS generates a cost allocation
+     * report as a comma-separated value (CSV) file with your usage and costs aggregated by your tags. You can apply
+     * tags that represent business categories (such as cost centers, application names, or owners) to organize your
+     * costs across multiple services.
+     * </p>
+     * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Tagging.html">Using Cost Allocation Tags in
      * Amazon ElastiCache</a> in the <i>ElastiCache User Guide</i>.
@@ -700,7 +714,7 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      * <ul>
      * <li>
      * <p>
-     * The <b>GlobalReplicationGroupIdSuffix</b> is the name of the Global Datastore.
+     * The <b>GlobalReplicationGroupIdSuffix</b> is the name of the Global datastore.
      * </p>
      * </li>
      * <li>
@@ -732,7 +746,7 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      * <ul>
      * <li>
      * <p>
-     * The <b>GlobalReplicationGroupIdSuffix</b> is the name of the Global Datastore.
+     * The <b>GlobalReplicationGroupIdSuffix</b> is the name of the Global datastore.
      * </p>
      * </li>
      * <li>
@@ -764,7 +778,7 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      * </p>
      * <p>
      * This API can be used to create a standalone regional replication group or a secondary replication group
-     * associated with a Global Datastore.
+     * associated with a Global datastore.
      * </p>
      * <p>
      * A Redis (cluster mode disabled) replication group is a collection of clusters, where one of the clusters is a
@@ -818,7 +832,7 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
      * </p>
      * <p>
      * This API can be used to create a standalone regional replication group or a secondary replication group
-     * associated with a Global Datastore.
+     * associated with a Global datastore.
      * </p>
      * <p>
      * A Redis (cluster mode disabled) replication group is a collection of clusters, where one of the clusters is a
@@ -986,7 +1000,7 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
 
     /**
      * <p>
-     * Decreases the number of node groups in a Global Datastore
+     * Decreases the number of node groups in a Global datastore
      * </p>
      * 
      * @param decreaseNodeGroupsInGlobalReplicationGroupRequest
@@ -1002,7 +1016,7 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
 
     /**
      * <p>
-     * Decreases the number of node groups in a Global Datastore
+     * Decreases the number of node groups in a Global datastore
      * </p>
      * 
      * @param decreaseNodeGroupsInGlobalReplicationGroupRequest
@@ -1298,25 +1312,27 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
 
     /**
      * <p>
-     * Deleting a Global Datastore is a two-step process:
+     * Deleting a Global datastore is a two-step process:
      * </p>
      * <ul>
      * <li>
      * <p>
      * First, you must <a>DisassociateGlobalReplicationGroup</a> to remove the secondary clusters in the Global
-     * Datastore.
+     * datastore.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Once the Global Datastore contains only the primary cluster, you can use DeleteGlobalReplicationGroup API to
-     * delete the Global Datastore while retainining the primary cluster using Retain…= true.
+     * Once the Global datastore contains only the primary cluster, you can use the
+     * <code>DeleteGlobalReplicationGroup</code> API to delete the Global datastore while retainining the primary
+     * cluster using <code>RetainPrimaryReplicationGroup=true</code>.
      * </p>
      * </li>
      * </ul>
      * <p>
      * Since the Global Datastore has only a primary cluster, you can delete the Global Datastore while retaining the
-     * primary by setting <code>RetainPrimaryCluster=true</code>.
+     * primary by setting <code>RetainPrimaryReplicationGroup=true</code>. The primary cluster is never deleted when
+     * deleting a Global Datastore. It can only be deleted when it no longer is associated with any Global Datastore.
      * </p>
      * <p>
      * When you receive a successful response from this operation, Amazon ElastiCache immediately begins deleting the
@@ -1335,25 +1351,27 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
 
     /**
      * <p>
-     * Deleting a Global Datastore is a two-step process:
+     * Deleting a Global datastore is a two-step process:
      * </p>
      * <ul>
      * <li>
      * <p>
      * First, you must <a>DisassociateGlobalReplicationGroup</a> to remove the secondary clusters in the Global
-     * Datastore.
+     * datastore.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Once the Global Datastore contains only the primary cluster, you can use DeleteGlobalReplicationGroup API to
-     * delete the Global Datastore while retainining the primary cluster using Retain…= true.
+     * Once the Global datastore contains only the primary cluster, you can use the
+     * <code>DeleteGlobalReplicationGroup</code> API to delete the Global datastore while retainining the primary
+     * cluster using <code>RetainPrimaryReplicationGroup=true</code>.
      * </p>
      * </li>
      * </ul>
      * <p>
      * Since the Global Datastore has only a primary cluster, you can delete the Global Datastore while retaining the
-     * primary by setting <code>RetainPrimaryCluster=true</code>.
+     * primary by setting <code>RetainPrimaryReplicationGroup=true</code>. The primary cluster is never deleted when
+     * deleting a Global Datastore. It can only be deleted when it no longer is associated with any Global Datastore.
      * </p>
      * <p>
      * When you receive a successful response from this operation, Amazon ElastiCache immediately begins deleting the
@@ -1986,7 +2004,7 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
     /**
      * <p>
      * Returns information about a particular global replication group. If no identifier is specified, returns
-     * information about all Global Datastores.
+     * information about all Global datastores.
      * </p>
      * 
      * @param describeGlobalReplicationGroupsRequest
@@ -2002,7 +2020,7 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
     /**
      * <p>
      * Returns information about a particular global replication group. If no identifier is specified, returns
-     * information about all Global Datastores.
+     * information about all Global datastores.
      * </p>
      * 
      * @param describeGlobalReplicationGroupsRequest
@@ -2373,7 +2391,7 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
 
     /**
      * <p>
-     * Remove a secondary cluster from the Global Datastore using the Global Datastore name. The secondary cluster will
+     * Remove a secondary cluster from the Global datastore using the Global datastore name. The secondary cluster will
      * no longer receive updates from the primary cluster, but will remain as a standalone cluster in that AWS region.
      * </p>
      * 
@@ -2389,7 +2407,7 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
 
     /**
      * <p>
-     * Remove a secondary cluster from the Global Datastore using the Global Datastore name. The secondary cluster will
+     * Remove a secondary cluster from the Global datastore using the Global datastore name. The secondary cluster will
      * no longer receive updates from the primary cluster, but will remain as a standalone cluster in that AWS region.
      * </p>
      * 
@@ -2447,7 +2465,7 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
 
     /**
      * <p>
-     * Increase the number of node groups in the Global Datastore
+     * Increase the number of node groups in the Global datastore
      * </p>
      * 
      * @param increaseNodeGroupsInGlobalReplicationGroupRequest
@@ -2463,7 +2481,7 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
 
     /**
      * <p>
-     * Increase the number of node groups in the Global Datastore
+     * Increase the number of node groups in the Global datastore
      * </p>
      * 
      * @param increaseNodeGroupsInGlobalReplicationGroupRequest
@@ -2582,16 +2600,18 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
 
     /**
      * <p>
-     * Lists all cost allocation tags currently on the named resource. A <code>cost allocation tag</code> is a key-value
-     * pair where the key is case-sensitive and the value is optional. You can use cost allocation tags to categorize
-     * and track your AWS costs.
+     * Lists all tags currently on a named resource.
+     * </p>
+     * <p>
+     * A tag is a key-value pair where the key and value are case-sensitive. You can use tags to categorize and track
+     * all your ElastiCache resources, with the exception of global replication group. When you add or remove tags on
+     * replication groups, those actions will be replicated to all nodes in the replication group. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ResourceLevelPermissions.html">Resource
+     * -level permissions</a>.
      * </p>
      * <p>
      * If the cluster is not in the <i>available</i> state, <code>ListTagsForResource</code> returns an error.
-     * </p>
-     * <p>
-     * You can have a maximum of 50 cost allocation tags on an ElastiCache resource. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Tagging.html">Monitoring Costs with Tags</a>.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -2605,16 +2625,18 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
 
     /**
      * <p>
-     * Lists all cost allocation tags currently on the named resource. A <code>cost allocation tag</code> is a key-value
-     * pair where the key is case-sensitive and the value is optional. You can use cost allocation tags to categorize
-     * and track your AWS costs.
+     * Lists all tags currently on a named resource.
+     * </p>
+     * <p>
+     * A tag is a key-value pair where the key and value are case-sensitive. You can use tags to categorize and track
+     * all your ElastiCache resources, with the exception of global replication group. When you add or remove tags on
+     * replication groups, those actions will be replicated to all nodes in the replication group. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ResourceLevelPermissions.html">Resource
+     * -level permissions</a>.
      * </p>
      * <p>
      * If the cluster is not in the <i>available</i> state, <code>ListTagsForResource</code> returns an error.
-     * </p>
-     * <p>
-     * You can have a maximum of 50 cost allocation tags on an ElastiCache resource. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Tagging.html">Monitoring Costs with Tags</a>.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -2738,7 +2760,7 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
 
     /**
      * <p>
-     * Modifies the settings for a Global Datastore.
+     * Modifies the settings for a Global datastore.
      * </p>
      * 
      * @param modifyGlobalReplicationGroupRequest
@@ -2753,7 +2775,7 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
 
     /**
      * <p>
-     * Modifies the settings for a Global Datastore.
+     * Modifies the settings for a Global datastore.
      * </p>
      * 
      * @param modifyGlobalReplicationGroupRequest
@@ -3102,7 +3124,12 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
 
     /**
      * <p>
-     * Removes the tags identified by the <code>TagKeys</code> list from the named resource.
+     * Removes the tags identified by the <code>TagKeys</code> list from the named resource. A tag is a key-value pair
+     * where the key and value are case-sensitive. You can use tags to categorize and track all your ElastiCache
+     * resources, with the exception of global replication group. When you add or remove tags on replication groups,
+     * those actions will be replicated to all nodes in the replication group. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ResourceLevelPermissions.html"
+     * >Resource-level permissions</a>.
      * </p>
      * 
      * @param removeTagsFromResourceRequest
@@ -3116,7 +3143,12 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
 
     /**
      * <p>
-     * Removes the tags identified by the <code>TagKeys</code> list from the named resource.
+     * Removes the tags identified by the <code>TagKeys</code> list from the named resource. A tag is a key-value pair
+     * where the key and value are case-sensitive. You can use tags to categorize and track all your ElastiCache
+     * resources, with the exception of global replication group. When you add or remove tags on replication groups,
+     * those actions will be replicated to all nodes in the replication group. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ResourceLevelPermissions.html"
+     * >Resource-level permissions</a>.
      * </p>
      * 
      * @param removeTagsFromResourceRequest

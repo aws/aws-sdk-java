@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The Global Datastore name already exists.
+ * The Global datastore name already exists.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

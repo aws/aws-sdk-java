@@ -27,7 +27,7 @@ public class ModifyGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the Global Datastore
+     * The name of the Global datastore
      * </p>
      */
     private String globalReplicationGroupId;
@@ -41,13 +41,13 @@ public class ModifyGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
     private Boolean applyImmediately;
     /**
      * <p>
-     * A valid cache node type that you want to scale this Global Datastore to.
+     * A valid cache node type that you want to scale this Global datastore to.
      * </p>
      */
     private String cacheNodeType;
     /**
      * <p>
-     * The upgraded version of the cache engine to be run on the clusters in the Global Datastore.
+     * The upgraded version of the cache engine to be run on the clusters in the Global datastore.
      * </p>
      */
     private String engineVersion;
@@ -60,7 +60,7 @@ public class ModifyGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
     private String cacheParameterGroupName;
     /**
      * <p>
-     * A description of the Global Datastore
+     * A description of the Global datastore
      * </p>
      */
     private String globalReplicationGroupDescription;
@@ -74,11 +74,11 @@ public class ModifyGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the Global Datastore
+     * The name of the Global datastore
      * </p>
      * 
      * @param globalReplicationGroupId
-     *        The name of the Global Datastore
+     *        The name of the Global datastore
      */
 
     public void setGlobalReplicationGroupId(String globalReplicationGroupId) {
@@ -87,10 +87,10 @@ public class ModifyGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the Global Datastore
+     * The name of the Global datastore
      * </p>
      * 
-     * @return The name of the Global Datastore
+     * @return The name of the Global datastore
      */
 
     public String getGlobalReplicationGroupId() {
@@ -99,11 +99,11 @@ public class ModifyGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the Global Datastore
+     * The name of the Global datastore
      * </p>
      * 
      * @param globalReplicationGroupId
-     *        The name of the Global Datastore
+     *        The name of the Global datastore
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,11 +182,11 @@ public class ModifyGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A valid cache node type that you want to scale this Global Datastore to.
+     * A valid cache node type that you want to scale this Global datastore to.
      * </p>
      * 
      * @param cacheNodeType
-     *        A valid cache node type that you want to scale this Global Datastore to.
+     *        A valid cache node type that you want to scale this Global datastore to.
      */
 
     public void setCacheNodeType(String cacheNodeType) {
@@ -195,10 +195,10 @@ public class ModifyGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A valid cache node type that you want to scale this Global Datastore to.
+     * A valid cache node type that you want to scale this Global datastore to.
      * </p>
      * 
-     * @return A valid cache node type that you want to scale this Global Datastore to.
+     * @return A valid cache node type that you want to scale this Global datastore to.
      */
 
     public String getCacheNodeType() {
@@ -207,11 +207,11 @@ public class ModifyGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A valid cache node type that you want to scale this Global Datastore to.
+     * A valid cache node type that you want to scale this Global datastore to.
      * </p>
      * 
      * @param cacheNodeType
-     *        A valid cache node type that you want to scale this Global Datastore to.
+     *        A valid cache node type that you want to scale this Global datastore to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -222,11 +222,11 @@ public class ModifyGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The upgraded version of the cache engine to be run on the clusters in the Global Datastore.
+     * The upgraded version of the cache engine to be run on the clusters in the Global datastore.
      * </p>
      * 
      * @param engineVersion
-     *        The upgraded version of the cache engine to be run on the clusters in the Global Datastore.
+     *        The upgraded version of the cache engine to be run on the clusters in the Global datastore.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -235,10 +235,10 @@ public class ModifyGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The upgraded version of the cache engine to be run on the clusters in the Global Datastore.
+     * The upgraded version of the cache engine to be run on the clusters in the Global datastore.
      * </p>
      * 
-     * @return The upgraded version of the cache engine to be run on the clusters in the Global Datastore.
+     * @return The upgraded version of the cache engine to be run on the clusters in the Global datastore.
      */
 
     public String getEngineVersion() {
@@ -247,11 +247,11 @@ public class ModifyGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The upgraded version of the cache engine to be run on the clusters in the Global Datastore.
+     * The upgraded version of the cache engine to be run on the clusters in the Global datastore.
      * </p>
      * 
      * @param engineVersion
-     *        The upgraded version of the cache engine to be run on the clusters in the Global Datastore.
+     *        The upgraded version of the cache engine to be run on the clusters in the Global datastore.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -308,11 +308,11 @@ public class ModifyGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A description of the Global Datastore
+     * A description of the Global datastore
      * </p>
      * 
      * @param globalReplicationGroupDescription
-     *        A description of the Global Datastore
+     *        A description of the Global datastore
      */
 
     public void setGlobalReplicationGroupDescription(String globalReplicationGroupDescription) {
@@ -321,10 +321,10 @@ public class ModifyGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A description of the Global Datastore
+     * A description of the Global datastore
      * </p>
      * 
-     * @return A description of the Global Datastore
+     * @return A description of the Global datastore
      */
 
     public String getGlobalReplicationGroupDescription() {
@@ -333,11 +333,11 @@ public class ModifyGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A description of the Global Datastore
+     * A description of the Global datastore
      * </p>
      * 
      * @param globalReplicationGroupDescription
-     *        A description of the Global Datastore
+     *        A description of the Global datastore
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

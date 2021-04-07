@@ -64,7 +64,7 @@ public class BandwidthRateLimitInterval implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The days of the week component of the bandwidth rate limit interval, represented as ordinal numbers from 0 to 6,
-     * where 0 represents Sunday and 6 Saturday.
+     * where 0 represents Sunday and 6 represents Saturday.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Integer> daysOfWeek;
@@ -282,11 +282,11 @@ public class BandwidthRateLimitInterval implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The days of the week component of the bandwidth rate limit interval, represented as ordinal numbers from 0 to 6,
-     * where 0 represents Sunday and 6 Saturday.
+     * where 0 represents Sunday and 6 represents Saturday.
      * </p>
      * 
      * @return The days of the week component of the bandwidth rate limit interval, represented as ordinal numbers from
-     *         0 to 6, where 0 represents Sunday and 6 Saturday.
+     *         0 to 6, where 0 represents Sunday and 6 represents Saturday.
      */
 
     public java.util.List<Integer> getDaysOfWeek() {
@@ -299,12 +299,12 @@ public class BandwidthRateLimitInterval implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The days of the week component of the bandwidth rate limit interval, represented as ordinal numbers from 0 to 6,
-     * where 0 represents Sunday and 6 Saturday.
+     * where 0 represents Sunday and 6 represents Saturday.
      * </p>
      * 
      * @param daysOfWeek
      *        The days of the week component of the bandwidth rate limit interval, represented as ordinal numbers from 0
-     *        to 6, where 0 represents Sunday and 6 Saturday.
+     *        to 6, where 0 represents Sunday and 6 represents Saturday.
      */
 
     public void setDaysOfWeek(java.util.Collection<Integer> daysOfWeek) {
@@ -319,7 +319,7 @@ public class BandwidthRateLimitInterval implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The days of the week component of the bandwidth rate limit interval, represented as ordinal numbers from 0 to 6,
-     * where 0 represents Sunday and 6 Saturday.
+     * where 0 represents Sunday and 6 represents Saturday.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -329,7 +329,7 @@ public class BandwidthRateLimitInterval implements Serializable, Cloneable, Stru
      * 
      * @param daysOfWeek
      *        The days of the week component of the bandwidth rate limit interval, represented as ordinal numbers from 0
-     *        to 6, where 0 represents Sunday and 6 Saturday.
+     *        to 6, where 0 represents Sunday and 6 represents Saturday.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -346,12 +346,12 @@ public class BandwidthRateLimitInterval implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The days of the week component of the bandwidth rate limit interval, represented as ordinal numbers from 0 to 6,
-     * where 0 represents Sunday and 6 Saturday.
+     * where 0 represents Sunday and 6 represents Saturday.
      * </p>
      * 
      * @param daysOfWeek
      *        The days of the week component of the bandwidth rate limit interval, represented as ordinal numbers from 0
-     *        to 6, where 0 represents Sunday and 6 Saturday.
+     *        to 6, where 0 represents Sunday and 6 represents Saturday.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

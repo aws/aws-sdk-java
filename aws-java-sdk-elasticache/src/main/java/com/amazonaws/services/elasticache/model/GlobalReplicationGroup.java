@@ -24,7 +24,7 @@ import javax.annotation.Generated;
  * <ul>
  * <li>
  * <p>
- * The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global Datastore, which is what you use to
+ * The <b>GlobalReplicationGroupIdSuffix</b> represents the name of the Global datastore, which is what you use to
  * associate a secondary cluster.
  * </p>
  * </li>
@@ -38,25 +38,25 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Global Datastore
+     * The name of the Global datastore
      * </p>
      */
     private String globalReplicationGroupId;
     /**
      * <p>
-     * The optional description of the Global Datastore
+     * The optional description of the Global datastore
      * </p>
      */
     private String globalReplicationGroupDescription;
     /**
      * <p>
-     * The status of the Global Datastore
+     * The status of the Global datastore
      * </p>
      */
     private String status;
     /**
      * <p>
-     * The cache node type of the Global Datastore
+     * The cache node type of the Global datastore
      * </p>
      */
     private String cacheNodeType;
@@ -74,13 +74,13 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
     private String engineVersion;
     /**
      * <p>
-     * The replication groups that comprise the Global Datastore.
+     * The replication groups that comprise the Global datastore.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<GlobalReplicationGroupMember> members;
     /**
      * <p>
-     * A flag that indicates whether the Global Datastore is cluster enabled.
+     * A flag that indicates whether the Global datastore is cluster enabled.
      * </p>
      */
     private Boolean clusterEnabled;
@@ -135,11 +135,11 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Global Datastore
+     * The name of the Global datastore
      * </p>
      * 
      * @param globalReplicationGroupId
-     *        The name of the Global Datastore
+     *        The name of the Global datastore
      */
 
     public void setGlobalReplicationGroupId(String globalReplicationGroupId) {
@@ -148,10 +148,10 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Global Datastore
+     * The name of the Global datastore
      * </p>
      * 
-     * @return The name of the Global Datastore
+     * @return The name of the Global datastore
      */
 
     public String getGlobalReplicationGroupId() {
@@ -160,11 +160,11 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Global Datastore
+     * The name of the Global datastore
      * </p>
      * 
      * @param globalReplicationGroupId
-     *        The name of the Global Datastore
+     *        The name of the Global datastore
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +175,11 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The optional description of the Global Datastore
+     * The optional description of the Global datastore
      * </p>
      * 
      * @param globalReplicationGroupDescription
-     *        The optional description of the Global Datastore
+     *        The optional description of the Global datastore
      */
 
     public void setGlobalReplicationGroupDescription(String globalReplicationGroupDescription) {
@@ -188,10 +188,10 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The optional description of the Global Datastore
+     * The optional description of the Global datastore
      * </p>
      * 
-     * @return The optional description of the Global Datastore
+     * @return The optional description of the Global datastore
      */
 
     public String getGlobalReplicationGroupDescription() {
@@ -200,11 +200,11 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The optional description of the Global Datastore
+     * The optional description of the Global datastore
      * </p>
      * 
      * @param globalReplicationGroupDescription
-     *        The optional description of the Global Datastore
+     *        The optional description of the Global datastore
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -215,11 +215,11 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the Global Datastore
+     * The status of the Global datastore
      * </p>
      * 
      * @param status
-     *        The status of the Global Datastore
+     *        The status of the Global datastore
      */
 
     public void setStatus(String status) {
@@ -228,10 +228,10 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the Global Datastore
+     * The status of the Global datastore
      * </p>
      * 
-     * @return The status of the Global Datastore
+     * @return The status of the Global datastore
      */
 
     public String getStatus() {
@@ -240,11 +240,11 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the Global Datastore
+     * The status of the Global datastore
      * </p>
      * 
      * @param status
-     *        The status of the Global Datastore
+     *        The status of the Global datastore
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -255,11 +255,11 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The cache node type of the Global Datastore
+     * The cache node type of the Global datastore
      * </p>
      * 
      * @param cacheNodeType
-     *        The cache node type of the Global Datastore
+     *        The cache node type of the Global datastore
      */
 
     public void setCacheNodeType(String cacheNodeType) {
@@ -268,10 +268,10 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The cache node type of the Global Datastore
+     * The cache node type of the Global datastore
      * </p>
      * 
-     * @return The cache node type of the Global Datastore
+     * @return The cache node type of the Global datastore
      */
 
     public String getCacheNodeType() {
@@ -280,11 +280,11 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The cache node type of the Global Datastore
+     * The cache node type of the Global datastore
      * </p>
      * 
      * @param cacheNodeType
-     *        The cache node type of the Global Datastore
+     *        The cache node type of the Global datastore
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -375,10 +375,10 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The replication groups that comprise the Global Datastore.
+     * The replication groups that comprise the Global datastore.
      * </p>
      * 
-     * @return The replication groups that comprise the Global Datastore.
+     * @return The replication groups that comprise the Global datastore.
      */
 
     public java.util.List<GlobalReplicationGroupMember> getMembers() {
@@ -390,11 +390,11 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The replication groups that comprise the Global Datastore.
+     * The replication groups that comprise the Global datastore.
      * </p>
      * 
      * @param members
-     *        The replication groups that comprise the Global Datastore.
+     *        The replication groups that comprise the Global datastore.
      */
 
     public void setMembers(java.util.Collection<GlobalReplicationGroupMember> members) {
@@ -408,7 +408,7 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The replication groups that comprise the Global Datastore.
+     * The replication groups that comprise the Global datastore.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -417,7 +417,7 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
      * </p>
      * 
      * @param members
-     *        The replication groups that comprise the Global Datastore.
+     *        The replication groups that comprise the Global datastore.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -433,11 +433,11 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The replication groups that comprise the Global Datastore.
+     * The replication groups that comprise the Global datastore.
      * </p>
      * 
      * @param members
-     *        The replication groups that comprise the Global Datastore.
+     *        The replication groups that comprise the Global datastore.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -448,11 +448,11 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag that indicates whether the Global Datastore is cluster enabled.
+     * A flag that indicates whether the Global datastore is cluster enabled.
      * </p>
      * 
      * @param clusterEnabled
-     *        A flag that indicates whether the Global Datastore is cluster enabled.
+     *        A flag that indicates whether the Global datastore is cluster enabled.
      */
 
     public void setClusterEnabled(Boolean clusterEnabled) {
@@ -461,10 +461,10 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag that indicates whether the Global Datastore is cluster enabled.
+     * A flag that indicates whether the Global datastore is cluster enabled.
      * </p>
      * 
-     * @return A flag that indicates whether the Global Datastore is cluster enabled.
+     * @return A flag that indicates whether the Global datastore is cluster enabled.
      */
 
     public Boolean getClusterEnabled() {
@@ -473,11 +473,11 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag that indicates whether the Global Datastore is cluster enabled.
+     * A flag that indicates whether the Global datastore is cluster enabled.
      * </p>
      * 
      * @param clusterEnabled
-     *        A flag that indicates whether the Global Datastore is cluster enabled.
+     *        A flag that indicates whether the Global datastore is cluster enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -488,10 +488,10 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag that indicates whether the Global Datastore is cluster enabled.
+     * A flag that indicates whether the Global datastore is cluster enabled.
      * </p>
      * 
-     * @return A flag that indicates whether the Global Datastore is cluster enabled.
+     * @return A flag that indicates whether the Global datastore is cluster enabled.
      */
 
     public Boolean isClusterEnabled() {

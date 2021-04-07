@@ -158,7 +158,7 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     private com.amazonaws.internal.SdkInternalList<String> invalidUserList;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the storage used for the audit logs.
+     * The Amazon Resource Name (ARN) of the storage used for audit logs.
      * </p>
      */
     private String auditDestinationARN;
@@ -183,13 +183,34 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     private String fileShareName;
     /**
      * <p>
-     * Refresh cache information.
+     * Specifies refresh cache information for the file share.
      * </p>
      */
     private CacheAttributes cacheAttributes;
     /**
      * <p>
-     * The notification policy of the file share.
+     * The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to
+     * wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code>
+     * notification. Because clients can make many small writes to files, it's best to set this parameter for as long as
+     * possible to avoid generating multiple notifications for the same file in a small time period.
+     * </p>
+     * <note>
+     * <p>
+     * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the
+     * timing of the notification.
+     * </p>
+     * </note>
+     * <p>
+     * The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.
+     * </p>
+     * <p>
+     * <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code>
+     * </p>
+     * <p>
+     * The following example sets <code>NotificationPolicy</code> off.
+     * </p>
+     * <p>
+     * <code>{}</code>
      * </p>
      */
     private String notificationPolicy;
@@ -1265,11 +1286,11 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the storage used for the audit logs.
+     * The Amazon Resource Name (ARN) of the storage used for audit logs.
      * </p>
      * 
      * @param auditDestinationARN
-     *        The Amazon Resource Name (ARN) of the storage used for the audit logs.
+     *        The Amazon Resource Name (ARN) of the storage used for audit logs.
      */
 
     public void setAuditDestinationARN(String auditDestinationARN) {
@@ -1278,10 +1299,10 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the storage used for the audit logs.
+     * The Amazon Resource Name (ARN) of the storage used for audit logs.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the storage used for the audit logs.
+     * @return The Amazon Resource Name (ARN) of the storage used for audit logs.
      */
 
     public String getAuditDestinationARN() {
@@ -1290,11 +1311,11 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the storage used for the audit logs.
+     * The Amazon Resource Name (ARN) of the storage used for audit logs.
      * </p>
      * 
      * @param auditDestinationARN
-     *        The Amazon Resource Name (ARN) of the storage used for the audit logs.
+     *        The Amazon Resource Name (ARN) of the storage used for audit logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1444,11 +1465,11 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Refresh cache information.
+     * Specifies refresh cache information for the file share.
      * </p>
      * 
      * @param cacheAttributes
-     *        Refresh cache information.
+     *        Specifies refresh cache information for the file share.
      */
 
     public void setCacheAttributes(CacheAttributes cacheAttributes) {
@@ -1457,10 +1478,10 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Refresh cache information.
+     * Specifies refresh cache information for the file share.
      * </p>
      * 
-     * @return Refresh cache information.
+     * @return Specifies refresh cache information for the file share.
      */
 
     public CacheAttributes getCacheAttributes() {
@@ -1469,11 +1490,11 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Refresh cache information.
+     * Specifies refresh cache information for the file share.
      * </p>
      * 
      * @param cacheAttributes
-     *        Refresh cache information.
+     *        Specifies refresh cache information for the file share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1484,11 +1505,53 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The notification policy of the file share.
+     * The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to
+     * wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code>
+     * notification. Because clients can make many small writes to files, it's best to set this parameter for as long as
+     * possible to avoid generating multiple notifications for the same file in a small time period.
+     * </p>
+     * <note>
+     * <p>
+     * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the
+     * timing of the notification.
+     * </p>
+     * </note>
+     * <p>
+     * The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.
+     * </p>
+     * <p>
+     * <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code>
+     * </p>
+     * <p>
+     * The following example sets <code>NotificationPolicy</code> off.
+     * </p>
+     * <p>
+     * <code>{}</code>
      * </p>
      * 
      * @param notificationPolicy
-     *        The notification policy of the file share.
+     *        The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of
+     *        seconds to wait after the last point in time a client wrote to a file before generating an
+     *        <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best
+     *        to set this parameter for as long as possible to avoid generating multiple notifications for the same file
+     *        in a small time period.</p> <note>
+     *        <p>
+     *        <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only
+     *        the timing of the notification.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set
+     *        to 60.
+     *        </p>
+     *        <p>
+     *        <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code>
+     *        </p>
+     *        <p>
+     *        The following example sets <code>NotificationPolicy</code> off.
+     *        </p>
+     *        <p>
+     *        <code>{}</code>
      */
 
     public void setNotificationPolicy(String notificationPolicy) {
@@ -1497,10 +1560,52 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The notification policy of the file share.
+     * The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to
+     * wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code>
+     * notification. Because clients can make many small writes to files, it's best to set this parameter for as long as
+     * possible to avoid generating multiple notifications for the same file in a small time period.
+     * </p>
+     * <note>
+     * <p>
+     * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the
+     * timing of the notification.
+     * </p>
+     * </note>
+     * <p>
+     * The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.
+     * </p>
+     * <p>
+     * <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code>
+     * </p>
+     * <p>
+     * The following example sets <code>NotificationPolicy</code> off.
+     * </p>
+     * <p>
+     * <code>{}</code>
      * </p>
      * 
-     * @return The notification policy of the file share.
+     * @return The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of
+     *         seconds to wait after the last point in time a client wrote to a file before generating an
+     *         <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best
+     *         to set this parameter for as long as possible to avoid generating multiple notifications for the same
+     *         file in a small time period.</p> <note>
+     *         <p>
+     *         <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only
+     *         the timing of the notification.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set
+     *         to 60.
+     *         </p>
+     *         <p>
+     *         <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code>
+     *         </p>
+     *         <p>
+     *         The following example sets <code>NotificationPolicy</code> off.
+     *         </p>
+     *         <p>
+     *         <code>{}</code>
      */
 
     public String getNotificationPolicy() {
@@ -1509,11 +1614,53 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The notification policy of the file share.
+     * The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to
+     * wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code>
+     * notification. Because clients can make many small writes to files, it's best to set this parameter for as long as
+     * possible to avoid generating multiple notifications for the same file in a small time period.
+     * </p>
+     * <note>
+     * <p>
+     * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the
+     * timing of the notification.
+     * </p>
+     * </note>
+     * <p>
+     * The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.
+     * </p>
+     * <p>
+     * <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code>
+     * </p>
+     * <p>
+     * The following example sets <code>NotificationPolicy</code> off.
+     * </p>
+     * <p>
+     * <code>{}</code>
      * </p>
      * 
      * @param notificationPolicy
-     *        The notification policy of the file share.
+     *        The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of
+     *        seconds to wait after the last point in time a client wrote to a file before generating an
+     *        <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best
+     *        to set this parameter for as long as possible to avoid generating multiple notifications for the same file
+     *        in a small time period.</p> <note>
+     *        <p>
+     *        <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only
+     *        the timing of the notification.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set
+     *        to 60.
+     *        </p>
+     *        <p>
+     *        <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code>
+     *        </p>
+     *        <p>
+     *        The following example sets <code>NotificationPolicy</code> off.
+     *        </p>
+     *        <p>
+     *        <code>{}</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

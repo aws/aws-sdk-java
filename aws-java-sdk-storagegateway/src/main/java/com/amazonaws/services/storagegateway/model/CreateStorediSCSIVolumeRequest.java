@@ -66,8 +66,8 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
     private String diskId;
     /**
      * <p>
-     * The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this field if
-     * you want to create the iSCSI storage volume from a snapshot; otherwise, do not include this field. To list
+     * The snapshot ID (e.g., "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this field
+     * if you want to create the iSCSI storage volume from a snapshot; otherwise, do not include this field. To list
      * snapshots for your account use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
      * >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
@@ -76,8 +76,8 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
     private String snapshotId;
     /**
      * <p>
-     * Set to true <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to
-     * <code>false</code> to create an empty volume.
+     * Set to <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to <code>false</code>
+     * to create an empty volume.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
@@ -219,15 +219,15 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this field if
-     * you want to create the iSCSI storage volume from a snapshot; otherwise, do not include this field. To list
+     * The snapshot ID (e.g., "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this field
+     * if you want to create the iSCSI storage volume from a snapshot; otherwise, do not include this field. To list
      * snapshots for your account use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
      * >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      * </p>
      * 
      * @param snapshotId
-     *        The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this
+     *        The snapshot ID (e.g., "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this
      *        field if you want to create the iSCSI storage volume from a snapshot; otherwise, do not include this
      *        field. To list snapshots for your account use <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
@@ -240,14 +240,14 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this field if
-     * you want to create the iSCSI storage volume from a snapshot; otherwise, do not include this field. To list
+     * The snapshot ID (e.g., "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this field
+     * if you want to create the iSCSI storage volume from a snapshot; otherwise, do not include this field. To list
      * snapshots for your account use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
      * >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      * </p>
      * 
-     * @return The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this
+     * @return The snapshot ID (e.g., "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this
      *         field if you want to create the iSCSI storage volume from a snapshot; otherwise, do not include this
      *         field. To list snapshots for your account use <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
@@ -260,15 +260,15 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this field if
-     * you want to create the iSCSI storage volume from a snapshot; otherwise, do not include this field. To list
+     * The snapshot ID (e.g., "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this field
+     * if you want to create the iSCSI storage volume from a snapshot; otherwise, do not include this field. To list
      * snapshots for your account use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
      * >DescribeSnapshots</a> in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      * </p>
      * 
      * @param snapshotId
-     *        The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this
+     *        The snapshot ID (e.g., "snap-1122aabb") of the snapshot to restore as the new stored volume. Specify this
      *        field if you want to create the iSCSI storage volume from a snapshot; otherwise, do not include this
      *        field. To list snapshots for your account use <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html"
@@ -283,15 +283,15 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Set to true <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to
-     * <code>false</code> to create an empty volume.
+     * Set to <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to <code>false</code>
+     * to create an empty volume.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param preserveExistingData
-     *        Set to true <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to
+     *        Set to <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to
      *        <code>false</code> to create an empty volume.</p>
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
@@ -303,14 +303,14 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Set to true <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to
-     * <code>false</code> to create an empty volume.
+     * Set to <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to <code>false</code>
+     * to create an empty volume.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return Set to true <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to
+     * @return Set to <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to
      *         <code>false</code> to create an empty volume.</p>
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>
@@ -322,15 +322,15 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Set to true <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to
-     * <code>false</code> to create an empty volume.
+     * Set to <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to <code>false</code>
+     * to create an empty volume.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param preserveExistingData
-     *        Set to true <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to
+     *        Set to <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to
      *        <code>false</code> to create an empty volume.</p>
      *        <p>
      *        Valid Values: <code>true</code> | <code>false</code>
@@ -344,14 +344,14 @@ public class CreateStorediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Set to true <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to
-     * <code>false</code> to create an empty volume.
+     * Set to <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to <code>false</code>
+     * to create an empty volume.
      * </p>
      * <p>
      * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return Set to true <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to
+     * @return Set to <code>true</code> if you want to preserve the data on the local disk. Otherwise, set to
      *         <code>false</code> to create an empty volume.</p>
      *         <p>
      *         Valid Values: <code>true</code> | <code>false</code>

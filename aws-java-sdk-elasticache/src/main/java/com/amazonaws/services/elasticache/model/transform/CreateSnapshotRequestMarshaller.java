@@ -56,6 +56,25 @@ public class CreateSnapshotRequestMarshaller implements Marshaller<Request<Creat
             request.addParameter("KmsKeyId", StringUtils.fromString(createSnapshotRequest.getKmsKeyId()));
         }
 
+        if (!createSnapshotRequest.getTags().isEmpty() || !((com.amazonaws.internal.SdkInternalList<Tag>) createSnapshotRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createSnapshotRequest.getTags();
+            int tagsListIndex = 1;
+
+            for (Tag tagsListValue : tagsList) {
+                if (tagsListValue != null) {
+
+                    if (tagsListValue.getKey() != null) {
+                        request.addParameter("Tags.Tag." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
+                    }
+
+                    if (tagsListValue.getValue() != null) {
+                        request.addParameter("Tags.Tag." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                    }
+                }
+                tagsListIndex++;
+            }
+        }
+
         return request;
     }
 

@@ -35,7 +35,7 @@ public class Stream implements Serializable, Cloneable, StructuredPojo {
     private String channelArn;
     /**
      * <p>
-     * URL of the video master manifest, required by the video player to play the HLS stream.
+     * URL of the master playlist, required by the video player to play the HLS stream.
      * </p>
      */
     private String playbackUrl;
@@ -59,7 +59,7 @@ public class Stream implements Serializable, Cloneable, StructuredPojo {
     private String health;
     /**
      * <p>
-     * Number of current viewers of the stream.
+     * Number of current viewers of the stream. A value of -1 indicates that the request timed out; in this case, retry.
      * </p>
      */
     private Long viewerCount;
@@ -106,11 +106,11 @@ public class Stream implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * URL of the video master manifest, required by the video player to play the HLS stream.
+     * URL of the master playlist, required by the video player to play the HLS stream.
      * </p>
      * 
      * @param playbackUrl
-     *        URL of the video master manifest, required by the video player to play the HLS stream.
+     *        URL of the master playlist, required by the video player to play the HLS stream.
      */
 
     public void setPlaybackUrl(String playbackUrl) {
@@ -119,10 +119,10 @@ public class Stream implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * URL of the video master manifest, required by the video player to play the HLS stream.
+     * URL of the master playlist, required by the video player to play the HLS stream.
      * </p>
      * 
-     * @return URL of the video master manifest, required by the video player to play the HLS stream.
+     * @return URL of the master playlist, required by the video player to play the HLS stream.
      */
 
     public String getPlaybackUrl() {
@@ -131,11 +131,11 @@ public class Stream implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * URL of the video master manifest, required by the video player to play the HLS stream.
+     * URL of the master playlist, required by the video player to play the HLS stream.
      * </p>
      * 
      * @param playbackUrl
-     *        URL of the video master manifest, required by the video player to play the HLS stream.
+     *        URL of the master playlist, required by the video player to play the HLS stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -304,11 +304,12 @@ public class Stream implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Number of current viewers of the stream.
+     * Number of current viewers of the stream. A value of -1 indicates that the request timed out; in this case, retry.
      * </p>
      * 
      * @param viewerCount
-     *        Number of current viewers of the stream.
+     *        Number of current viewers of the stream. A value of -1 indicates that the request timed out; in this case,
+     *        retry.
      */
 
     public void setViewerCount(Long viewerCount) {
@@ -317,10 +318,11 @@ public class Stream implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Number of current viewers of the stream.
+     * Number of current viewers of the stream. A value of -1 indicates that the request timed out; in this case, retry.
      * </p>
      * 
-     * @return Number of current viewers of the stream.
+     * @return Number of current viewers of the stream. A value of -1 indicates that the request timed out; in this
+     *         case, retry.
      */
 
     public Long getViewerCount() {
@@ -329,11 +331,12 @@ public class Stream implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Number of current viewers of the stream.
+     * Number of current viewers of the stream. A value of -1 indicates that the request timed out; in this case, retry.
      * </p>
      * 
      * @param viewerCount
-     *        Number of current viewers of the stream.
+     *        Number of current viewers of the stream. A value of -1 indicates that the request timed out; in this case,
+     *        retry.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

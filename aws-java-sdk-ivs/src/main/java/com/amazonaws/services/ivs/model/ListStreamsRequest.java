@@ -33,7 +33,7 @@ public class ListStreamsRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String nextToken;
     /**
      * <p>
-     * Maximum number of streams to return.
+     * Maximum number of streams to return. Default: 50.
      * </p>
      */
     private Integer maxResults;
@@ -80,11 +80,11 @@ public class ListStreamsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Maximum number of streams to return.
+     * Maximum number of streams to return. Default: 50.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of streams to return.
+     *        Maximum number of streams to return. Default: 50.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -93,10 +93,10 @@ public class ListStreamsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Maximum number of streams to return.
+     * Maximum number of streams to return. Default: 50.
      * </p>
      * 
-     * @return Maximum number of streams to return.
+     * @return Maximum number of streams to return. Default: 50.
      */
 
     public Integer getMaxResults() {
@@ -105,11 +105,11 @@ public class ListStreamsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Maximum number of streams to return.
+     * Maximum number of streams to return. Default: 50.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of streams to return.
+     *        Maximum number of streams to return. Default: 50.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

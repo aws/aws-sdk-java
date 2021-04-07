@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Lists refresh cache information.
+ * The refresh cache information for the file share.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CacheAttributes" target="_top">AWS API
@@ -32,7 +32,7 @@ public class CacheAttributes implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Refreshes a file share's cache by using Time To Live (TTL). TTL is the length of time since the last refresh
      * after which access to the directory would cause the file gateway to first refresh that directory's contents from
-     * the Amazon S3 bucket. The TTL duration is in seconds.
+     * the Amazon S3 bucket or Amazon FSx file system. The TTL duration is in seconds.
      * </p>
      * <p>
      * Valid Values: 300 to 2,592,000 seconds (5 minutes to 30 days)
@@ -44,7 +44,7 @@ public class CacheAttributes implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Refreshes a file share's cache by using Time To Live (TTL). TTL is the length of time since the last refresh
      * after which access to the directory would cause the file gateway to first refresh that directory's contents from
-     * the Amazon S3 bucket. The TTL duration is in seconds.
+     * the Amazon S3 bucket or Amazon FSx file system. The TTL duration is in seconds.
      * </p>
      * <p>
      * Valid Values: 300 to 2,592,000 seconds (5 minutes to 30 days)
@@ -53,7 +53,7 @@ public class CacheAttributes implements Serializable, Cloneable, StructuredPojo 
      * @param cacheStaleTimeoutInSeconds
      *        Refreshes a file share's cache by using Time To Live (TTL). TTL is the length of time since the last
      *        refresh after which access to the directory would cause the file gateway to first refresh that directory's
-     *        contents from the Amazon S3 bucket. The TTL duration is in seconds.</p>
+     *        contents from the Amazon S3 bucket or Amazon FSx file system. The TTL duration is in seconds.</p>
      *        <p>
      *        Valid Values: 300 to 2,592,000 seconds (5 minutes to 30 days)
      */
@@ -66,7 +66,7 @@ public class CacheAttributes implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Refreshes a file share's cache by using Time To Live (TTL). TTL is the length of time since the last refresh
      * after which access to the directory would cause the file gateway to first refresh that directory's contents from
-     * the Amazon S3 bucket. The TTL duration is in seconds.
+     * the Amazon S3 bucket or Amazon FSx file system. The TTL duration is in seconds.
      * </p>
      * <p>
      * Valid Values: 300 to 2,592,000 seconds (5 minutes to 30 days)
@@ -74,7 +74,8 @@ public class CacheAttributes implements Serializable, Cloneable, StructuredPojo 
      * 
      * @return Refreshes a file share's cache by using Time To Live (TTL). TTL is the length of time since the last
      *         refresh after which access to the directory would cause the file gateway to first refresh that
-     *         directory's contents from the Amazon S3 bucket. The TTL duration is in seconds.</p>
+     *         directory's contents from the Amazon S3 bucket or Amazon FSx file system. The TTL duration is in
+     *         seconds.</p>
      *         <p>
      *         Valid Values: 300 to 2,592,000 seconds (5 minutes to 30 days)
      */
@@ -87,7 +88,7 @@ public class CacheAttributes implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Refreshes a file share's cache by using Time To Live (TTL). TTL is the length of time since the last refresh
      * after which access to the directory would cause the file gateway to first refresh that directory's contents from
-     * the Amazon S3 bucket. The TTL duration is in seconds.
+     * the Amazon S3 bucket or Amazon FSx file system. The TTL duration is in seconds.
      * </p>
      * <p>
      * Valid Values: 300 to 2,592,000 seconds (5 minutes to 30 days)
@@ -96,7 +97,7 @@ public class CacheAttributes implements Serializable, Cloneable, StructuredPojo 
      * @param cacheStaleTimeoutInSeconds
      *        Refreshes a file share's cache by using Time To Live (TTL). TTL is the length of time since the last
      *        refresh after which access to the directory would cause the file gateway to first refresh that directory's
-     *        contents from the Amazon S3 bucket. The TTL duration is in seconds.</p>
+     *        contents from the Amazon S3 bucket or Amazon FSx file system. The TTL duration is in seconds.</p>
      *        <p>
      *        Valid Values: 300 to 2,592,000 seconds (5 minutes to 30 days)
      * @return Returns a reference to this object so that method calls can be chained together.

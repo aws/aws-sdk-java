@@ -42,16 +42,25 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * Channel latency mode. Default: <code>LOW</code>.
+     * Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
+     * <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS
+     * console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
      * </p>
      */
     private String latencyMode;
     /**
      * <p>
-     * Whether the channel is authorized.
+     * Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.
      * </p>
      */
     private Boolean authorized;
+    /**
+     * <p>
+     * Recording-configuration ARN. A value other than an empty string indicates that recording is enabled. Default: ""
+     * (empty string, recording is disabled).
+     * </p>
+     */
+    private String recordingConfigurationArn;
     /**
      * <p>
      * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
@@ -141,11 +150,16 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Channel latency mode. Default: <code>LOW</code>.
+     * Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
+     * <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS
+     * console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
      * </p>
      * 
      * @param latencyMode
-     *        Channel latency mode. Default: <code>LOW</code>.
+     *        Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
+     *        <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the
+     *        Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard,
+     *        respectively.)
      * @see ChannelLatencyMode
      */
 
@@ -155,10 +169,15 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Channel latency mode. Default: <code>LOW</code>.
+     * Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
+     * <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS
+     * console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
      * </p>
      * 
-     * @return Channel latency mode. Default: <code>LOW</code>.
+     * @return Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
+     *         <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the
+     *         Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard,
+     *         respectively.)
      * @see ChannelLatencyMode
      */
 
@@ -168,11 +187,16 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Channel latency mode. Default: <code>LOW</code>.
+     * Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
+     * <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS
+     * console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
      * </p>
      * 
      * @param latencyMode
-     *        Channel latency mode. Default: <code>LOW</code>.
+     *        Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
+     *        <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the
+     *        Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard,
+     *        respectively.)
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelLatencyMode
      */
@@ -184,11 +208,16 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Channel latency mode. Default: <code>LOW</code>.
+     * Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
+     * <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the Amazon IVS
+     * console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
      * </p>
      * 
      * @param latencyMode
-     *        Channel latency mode. Default: <code>LOW</code>.
+     *        Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
+     *        <code>LOW</code> for near-real-time interaction with viewers. Default: <code>LOW</code>. (Note: In the
+     *        Amazon IVS console, <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard,
+     *        respectively.)
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelLatencyMode
      */
@@ -200,11 +229,11 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the channel is authorized.
+     * Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.
      * </p>
      * 
      * @param authorized
-     *        Whether the channel is authorized.
+     *        Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.
      */
 
     public void setAuthorized(Boolean authorized) {
@@ -213,10 +242,10 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the channel is authorized.
+     * Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.
      * </p>
      * 
-     * @return Whether the channel is authorized.
+     * @return Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.
      */
 
     public Boolean getAuthorized() {
@@ -225,11 +254,11 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the channel is authorized.
+     * Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.
      * </p>
      * 
      * @param authorized
-     *        Whether the channel is authorized.
+     *        Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -240,14 +269,60 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the channel is authorized.
+     * Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.
      * </p>
      * 
-     * @return Whether the channel is authorized.
+     * @return Whether the channel is private (enabled for playback authorization). Default: <code>false</code>.
      */
 
     public Boolean isAuthorized() {
         return this.authorized;
+    }
+
+    /**
+     * <p>
+     * Recording-configuration ARN. A value other than an empty string indicates that recording is enabled. Default: ""
+     * (empty string, recording is disabled).
+     * </p>
+     * 
+     * @param recordingConfigurationArn
+     *        Recording-configuration ARN. A value other than an empty string indicates that recording is enabled.
+     *        Default: "" (empty string, recording is disabled).
+     */
+
+    public void setRecordingConfigurationArn(String recordingConfigurationArn) {
+        this.recordingConfigurationArn = recordingConfigurationArn;
+    }
+
+    /**
+     * <p>
+     * Recording-configuration ARN. A value other than an empty string indicates that recording is enabled. Default: ""
+     * (empty string, recording is disabled).
+     * </p>
+     * 
+     * @return Recording-configuration ARN. A value other than an empty string indicates that recording is enabled.
+     *         Default: "" (empty string, recording is disabled).
+     */
+
+    public String getRecordingConfigurationArn() {
+        return this.recordingConfigurationArn;
+    }
+
+    /**
+     * <p>
+     * Recording-configuration ARN. A value other than an empty string indicates that recording is enabled. Default: ""
+     * (empty string, recording is disabled).
+     * </p>
+     * 
+     * @param recordingConfigurationArn
+     *        Recording-configuration ARN. A value other than an empty string indicates that recording is enabled.
+     *        Default: "" (empty string, recording is disabled).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ChannelSummary withRecordingConfigurationArn(String recordingConfigurationArn) {
+        setRecordingConfigurationArn(recordingConfigurationArn);
+        return this;
     }
 
     /**
@@ -338,6 +413,8 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
             sb.append("LatencyMode: ").append(getLatencyMode()).append(",");
         if (getAuthorized() != null)
             sb.append("Authorized: ").append(getAuthorized()).append(",");
+        if (getRecordingConfigurationArn() != null)
+            sb.append("RecordingConfigurationArn: ").append(getRecordingConfigurationArn()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -370,6 +447,10 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAuthorized() != null && other.getAuthorized().equals(this.getAuthorized()) == false)
             return false;
+        if (other.getRecordingConfigurationArn() == null ^ this.getRecordingConfigurationArn() == null)
+            return false;
+        if (other.getRecordingConfigurationArn() != null && other.getRecordingConfigurationArn().equals(this.getRecordingConfigurationArn()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -386,6 +467,7 @@ public class ChannelSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getLatencyMode() == null) ? 0 : getLatencyMode().hashCode());
         hashCode = prime * hashCode + ((getAuthorized() == null) ? 0 : getAuthorized().hashCode());
+        hashCode = prime * hashCode + ((getRecordingConfigurationArn() == null) ? 0 : getRecordingConfigurationArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

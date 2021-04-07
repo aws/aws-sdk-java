@@ -36,13 +36,14 @@ public class PlaybackKeyPairSummary implements Serializable, Cloneable, Structur
     private String arn;
     /**
      * <p>
-     * Key-pair name.
+     * An arbitrary string (a nickname) assigned to a playback key pair that helps the customer identify that resource.
+     * The value does not need to be unique.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>
+     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -89,11 +90,13 @@ public class PlaybackKeyPairSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Key-pair name.
+     * An arbitrary string (a nickname) assigned to a playback key pair that helps the customer identify that resource.
+     * The value does not need to be unique.
      * </p>
      * 
      * @param name
-     *        Key-pair name.
+     *        An arbitrary string (a nickname) assigned to a playback key pair that helps the customer identify that
+     *        resource. The value does not need to be unique.
      */
 
     public void setName(String name) {
@@ -102,10 +105,12 @@ public class PlaybackKeyPairSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Key-pair name.
+     * An arbitrary string (a nickname) assigned to a playback key pair that helps the customer identify that resource.
+     * The value does not need to be unique.
      * </p>
      * 
-     * @return Key-pair name.
+     * @return An arbitrary string (a nickname) assigned to a playback key pair that helps the customer identify that
+     *         resource. The value does not need to be unique.
      */
 
     public String getName() {
@@ -114,11 +119,13 @@ public class PlaybackKeyPairSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Key-pair name.
+     * An arbitrary string (a nickname) assigned to a playback key pair that helps the customer identify that resource.
+     * The value does not need to be unique.
      * </p>
      * 
      * @param name
-     *        Key-pair name.
+     *        An arbitrary string (a nickname) assigned to a playback key pair that helps the customer identify that
+     *        resource. The value does not need to be unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,10 +136,10 @@ public class PlaybackKeyPairSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>
+     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
      * </p>
      * 
-     * @return Array of 1-50 maps, each of the form <code>string:string (key:value)</code>
+     * @return Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -141,11 +148,11 @@ public class PlaybackKeyPairSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>
+     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
      * </p>
      * 
      * @param tags
-     *        Array of 1-50 maps, each of the form <code>string:string (key:value)</code>
+     *        Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -154,11 +161,11 @@ public class PlaybackKeyPairSummary implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>
+     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
      * </p>
      * 
      * @param tags
-     *        Array of 1-50 maps, each of the form <code>string:string (key:value)</code>
+     *        Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

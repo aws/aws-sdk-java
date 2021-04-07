@@ -33,6 +33,11 @@ public class AbstractAWSAccessAnalyzer implements AWSAccessAnalyzer {
     }
 
     @Override
+    public CancelPolicyGenerationResult cancelPolicyGeneration(CancelPolicyGenerationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateAccessPreviewResult createAccessPreview(CreateAccessPreviewRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -83,6 +88,11 @@ public class AbstractAWSAccessAnalyzer implements AWSAccessAnalyzer {
     }
 
     @Override
+    public GetGeneratedPolicyResult getGeneratedPolicy(GetGeneratedPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListAccessPreviewFindingsResult listAccessPreviewFindings(ListAccessPreviewFindingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -113,7 +123,17 @@ public class AbstractAWSAccessAnalyzer implements AWSAccessAnalyzer {
     }
 
     @Override
+    public ListPolicyGenerationsResult listPolicyGenerations(ListPolicyGenerationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartPolicyGenerationResult startPolicyGeneration(StartPolicyGenerationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

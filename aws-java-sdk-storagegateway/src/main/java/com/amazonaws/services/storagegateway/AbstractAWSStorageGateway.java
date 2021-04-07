@@ -68,6 +68,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
+    public AssociateFileSystemResult associateFileSystem(AssociateFileSystemRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AttachVolumeResult attachVolume(AttachVolumeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -208,6 +213,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
+    public DescribeFileSystemAssociationsResult describeFileSystemAssociations(DescribeFileSystemAssociationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeGatewayInformationResult describeGatewayInformation(DescribeGatewayInformationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -288,6 +298,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
+    public DisassociateFileSystemResult disassociateFileSystem(DisassociateFileSystemRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public JoinDomainResult joinDomain(JoinDomainRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -299,6 +314,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
 
     @Override
     public ListFileSharesResult listFileShares(ListFileSharesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListFileSystemAssociationsResult listFileSystemAssociations(ListFileSystemAssociationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -429,6 +449,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
 
     @Override
     public UpdateChapCredentialsResult updateChapCredentials(UpdateChapCredentialsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateFileSystemAssociationResult updateFileSystemAssociation(UpdateFileSystemAssociationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

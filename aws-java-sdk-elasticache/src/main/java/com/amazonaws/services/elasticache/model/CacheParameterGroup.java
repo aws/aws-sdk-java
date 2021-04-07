@@ -51,7 +51,7 @@ public class CacheParameterGroup implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
-     * Indicates whether the parameter group is associated with a Global Datastore
+     * Indicates whether the parameter group is associated with a Global datastore
      * </p>
      */
     private Boolean isGlobal;
@@ -211,11 +211,11 @@ public class CacheParameterGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the parameter group is associated with a Global Datastore
+     * Indicates whether the parameter group is associated with a Global datastore
      * </p>
      * 
      * @param isGlobal
-     *        Indicates whether the parameter group is associated with a Global Datastore
+     *        Indicates whether the parameter group is associated with a Global datastore
      */
 
     public void setIsGlobal(Boolean isGlobal) {
@@ -224,10 +224,10 @@ public class CacheParameterGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the parameter group is associated with a Global Datastore
+     * Indicates whether the parameter group is associated with a Global datastore
      * </p>
      * 
-     * @return Indicates whether the parameter group is associated with a Global Datastore
+     * @return Indicates whether the parameter group is associated with a Global datastore
      */
 
     public Boolean getIsGlobal() {
@@ -236,11 +236,11 @@ public class CacheParameterGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the parameter group is associated with a Global Datastore
+     * Indicates whether the parameter group is associated with a Global datastore
      * </p>
      * 
      * @param isGlobal
-     *        Indicates whether the parameter group is associated with a Global Datastore
+     *        Indicates whether the parameter group is associated with a Global datastore
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -251,10 +251,10 @@ public class CacheParameterGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the parameter group is associated with a Global Datastore
+     * Indicates whether the parameter group is associated with a Global datastore
      * </p>
      * 
-     * @return Indicates whether the parameter group is associated with a Global Datastore
+     * @return Indicates whether the parameter group is associated with a Global datastore
      */
 
     public Boolean isGlobal() {

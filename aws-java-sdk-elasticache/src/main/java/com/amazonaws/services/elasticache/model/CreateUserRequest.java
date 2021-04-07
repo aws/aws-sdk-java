@@ -61,6 +61,13 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private Boolean noPasswordRequired;
+    /**
+     * <p>
+     * A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag
+     * value, although null is accepted.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -348,6 +355,87 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag
+     * value, although null is accepted.
+     * </p>
+     * 
+     * @return A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by
+     *         a tag value, although null is accepted.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag
+     * value, although null is accepted.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a
+     *        tag value, although null is accepted.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag
+     * value, although null is accepted.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a
+     *        tag value, although null is accepted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateUserRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag
+     * value, although null is accepted.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a
+     *        tag value, although null is accepted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateUserRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -370,7 +458,9 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getAccessString() != null)
             sb.append("AccessString: ").append(getAccessString()).append(",");
         if (getNoPasswordRequired() != null)
-            sb.append("NoPasswordRequired: ").append(getNoPasswordRequired());
+            sb.append("NoPasswordRequired: ").append(getNoPasswordRequired()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -409,6 +499,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getNoPasswordRequired() != null && other.getNoPasswordRequired().equals(this.getNoPasswordRequired()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -423,6 +517,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getPasswords() == null) ? 0 : getPasswords().hashCode());
         hashCode = prime * hashCode + ((getAccessString() == null) ? 0 : getAccessString().hashCode());
         hashCode = prime * hashCode + ((getNoPasswordRequired() == null) ? 0 : getNoPasswordRequired().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

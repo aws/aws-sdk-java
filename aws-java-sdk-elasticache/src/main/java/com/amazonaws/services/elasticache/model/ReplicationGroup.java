@@ -40,7 +40,7 @@ public class ReplicationGroup implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
-     * The name of the Global Datastore and role of this replication group in the Global Datastore.
+     * The name of the Global datastore and role of this replication group in the Global datastore.
      * </p>
      */
     private GlobalReplicationGroupInfo globalReplicationGroupInfo;
@@ -303,11 +303,11 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Global Datastore and role of this replication group in the Global Datastore.
+     * The name of the Global datastore and role of this replication group in the Global datastore.
      * </p>
      * 
      * @param globalReplicationGroupInfo
-     *        The name of the Global Datastore and role of this replication group in the Global Datastore.
+     *        The name of the Global datastore and role of this replication group in the Global datastore.
      */
 
     public void setGlobalReplicationGroupInfo(GlobalReplicationGroupInfo globalReplicationGroupInfo) {
@@ -316,10 +316,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Global Datastore and role of this replication group in the Global Datastore.
+     * The name of the Global datastore and role of this replication group in the Global datastore.
      * </p>
      * 
-     * @return The name of the Global Datastore and role of this replication group in the Global Datastore.
+     * @return The name of the Global datastore and role of this replication group in the Global datastore.
      */
 
     public GlobalReplicationGroupInfo getGlobalReplicationGroupInfo() {
@@ -328,11 +328,11 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Global Datastore and role of this replication group in the Global Datastore.
+     * The name of the Global datastore and role of this replication group in the Global datastore.
      * </p>
      * 
      * @param globalReplicationGroupInfo
-     *        The name of the Global Datastore and role of this replication group in the Global Datastore.
+     *        The name of the Global datastore and role of this replication group in the Global datastore.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

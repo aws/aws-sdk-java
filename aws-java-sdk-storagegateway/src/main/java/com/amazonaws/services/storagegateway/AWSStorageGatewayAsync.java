@@ -365,7 +365,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>
      * Configures one or more gateway local disks as upload buffer for a specified gateway. This operation is supported
-     * for the stored volume, cached volume and tape gateway types.
+     * for the stored volume, cached volume, and tape gateway types.
      * </p>
      * <p>
      * In the request, you specify the gateway Amazon Resource Name (ARN) to which you want to add upload buffer, and
@@ -383,7 +383,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>
      * Configures one or more gateway local disks as upload buffer for a specified gateway. This operation is supported
-     * for the stored volume, cached volume and tape gateway types.
+     * for the stored volume, cached volume, and tape gateway types.
      * </p>
      * <p>
      * In the request, you specify the gateway Amazon Resource Name (ARN) to which you want to add upload buffer, and
@@ -512,6 +512,41 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      */
     java.util.concurrent.Future<AssignTapePoolResult> assignTapePoolAsync(AssignTapePoolRequest assignTapePoolRequest,
             com.amazonaws.handlers.AsyncHandler<AssignTapePoolRequest, AssignTapePoolResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associate an Amazon FSx file system with the Amazon FSx file gateway. After the association process is complete,
+     * the file shares on the Amazon FSx file system are available for access through the gateway. This operation only
+     * supports the Amazon FSx file gateway type.
+     * </p>
+     * 
+     * @param associateFileSystemRequest
+     * @return A Java Future containing the result of the AssociateFileSystem operation returned by the service.
+     * @sample AWSStorageGatewayAsync.AssociateFileSystem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AssociateFileSystem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateFileSystemResult> associateFileSystemAsync(AssociateFileSystemRequest associateFileSystemRequest);
+
+    /**
+     * <p>
+     * Associate an Amazon FSx file system with the Amazon FSx file gateway. After the association process is complete,
+     * the file shares on the Amazon FSx file system are available for access through the gateway. This operation only
+     * supports the Amazon FSx file gateway type.
+     * </p>
+     * 
+     * @param associateFileSystemRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateFileSystem operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.AssociateFileSystem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AssociateFileSystem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateFileSystemResult> associateFileSystemAsync(AssociateFileSystemRequest associateFileSystemRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateFileSystemRequest, AssociateFileSystemResult> asyncHandler);
 
     /**
      * <p>
@@ -817,9 +852,9 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * </p>
      * <p>
      * AWS Storage Gateway provides the ability to back up point-in-time snapshots of your data to Amazon Simple Storage
-     * (Amazon S3) for durable off-site recovery, as well as import the data to an Amazon Elastic Block Store (EBS)
-     * volume in Amazon Elastic Compute Cloud (EC2). You can take snapshots of your gateway volume on a scheduled or ad
-     * hoc basis. This API enables you to take an ad hoc snapshot. For more information, see <a
+     * (Amazon S3) for durable off-site recovery, and also import the data to an Amazon Elastic Block Store (EBS) volume
+     * in Amazon Elastic Compute Cloud (EC2). You can take snapshots of your gateway volume on a scheduled or ad hoc
+     * basis. This API enables you to take an ad hoc snapshot. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot"
      * >Editing a snapshot schedule</a>.
      * </p>
@@ -871,9 +906,9 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * </p>
      * <p>
      * AWS Storage Gateway provides the ability to back up point-in-time snapshots of your data to Amazon Simple Storage
-     * (Amazon S3) for durable off-site recovery, as well as import the data to an Amazon Elastic Block Store (EBS)
-     * volume in Amazon Elastic Compute Cloud (EC2). You can take snapshots of your gateway volume on a scheduled or ad
-     * hoc basis. This API enables you to take an ad hoc snapshot. For more information, see <a
+     * (Amazon S3) for durable off-site recovery, and also import the data to an Amazon Elastic Block Store (EBS) volume
+     * in Amazon Elastic Compute Cloud (EC2). You can take snapshots of your gateway volume on a scheduled or ad hoc
+     * basis. This API enables you to take an ad hoc snapshot. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot"
      * >Editing a snapshot schedule</a>.
      * </p>
@@ -1701,7 +1736,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Returns information about the most recent High Availability monitoring test that was performed on the host in a
+     * Returns information about the most recent high availability monitoring test that was performed on the host in a
      * cluster. If a test isn't performed, the status and start time in the response would be null.
      * </p>
      * 
@@ -1717,7 +1752,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Returns information about the most recent High Availability monitoring test that was performed on the host in a
+     * Returns information about the most recent high availability monitoring test that was performed on the host in a
      * cluster. If a test isn't performed, the status and start time in the response would be null.
      * </p>
      * 
@@ -1974,6 +2009,41 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      */
     java.util.concurrent.Future<DescribeChapCredentialsResult> describeChapCredentialsAsync(DescribeChapCredentialsRequest describeChapCredentialsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeChapCredentialsRequest, DescribeChapCredentialsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the file system association information. This operation is only supported for Amazon FSx file gateways.
+     * </p>
+     * 
+     * @param describeFileSystemAssociationsRequest
+     * @return A Java Future containing the result of the DescribeFileSystemAssociations operation returned by the
+     *         service.
+     * @sample AWSStorageGatewayAsync.DescribeFileSystemAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeFileSystemAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFileSystemAssociationsResult> describeFileSystemAssociationsAsync(
+            DescribeFileSystemAssociationsRequest describeFileSystemAssociationsRequest);
+
+    /**
+     * <p>
+     * Gets the file system association information. This operation is only supported for Amazon FSx file gateways.
+     * </p>
+     * 
+     * @param describeFileSystemAssociationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeFileSystemAssociations operation returned by the
+     *         service.
+     * @sample AWSStorageGatewayAsyncHandler.DescribeFileSystemAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeFileSystemAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFileSystemAssociationsResult> describeFileSystemAssociationsAsync(
+            DescribeFileSystemAssociationsRequest describeFileSystemAssociationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeFileSystemAssociationsRequest, DescribeFileSystemAssociationsResult> asyncHandler);
 
     /**
      * <p>
@@ -2605,6 +2675,41 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
+     * Disassociates an Amazon FSx file system from the specified gateway. After the disassociation process finishes,
+     * the gateway can no longer access the Amazon FSx file system. This operation is only supported in the Amazon FSx
+     * file gateway type.
+     * </p>
+     * 
+     * @param disassociateFileSystemRequest
+     * @return A Java Future containing the result of the DisassociateFileSystem operation returned by the service.
+     * @sample AWSStorageGatewayAsync.DisassociateFileSystem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DisassociateFileSystem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateFileSystemResult> disassociateFileSystemAsync(DisassociateFileSystemRequest disassociateFileSystemRequest);
+
+    /**
+     * <p>
+     * Disassociates an Amazon FSx file system from the specified gateway. After the disassociation process finishes,
+     * the gateway can no longer access the Amazon FSx file system. This operation is only supported in the Amazon FSx
+     * file gateway type.
+     * </p>
+     * 
+     * @param disassociateFileSystemRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateFileSystem operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.DisassociateFileSystem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DisassociateFileSystem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateFileSystemResult> disassociateFileSystemAsync(DisassociateFileSystemRequest disassociateFileSystemRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateFileSystemRequest, DisassociateFileSystemResult> asyncHandler);
+
+    /**
+     * <p>
      * Adds a file gateway to an Active Directory domain. This operation is only supported for file gateways that
      * support the SMB file protocol.
      * </p>
@@ -2715,6 +2820,41 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      */
     java.util.concurrent.Future<ListFileSharesResult> listFileSharesAsync(ListFileSharesRequest listFileSharesRequest,
             com.amazonaws.handlers.AsyncHandler<ListFileSharesRequest, ListFileSharesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a list of <code>FileSystemAssociationSummary</code> objects. Each object contains a summary of a file system
+     * association. This operation is only supported for Amazon FSx file gateways.
+     * </p>
+     * 
+     * @param listFileSystemAssociationsRequest
+     * @return A Java Future containing the result of the ListFileSystemAssociations operation returned by the service.
+     * @sample AWSStorageGatewayAsync.ListFileSystemAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListFileSystemAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListFileSystemAssociationsResult> listFileSystemAssociationsAsync(
+            ListFileSystemAssociationsRequest listFileSystemAssociationsRequest);
+
+    /**
+     * <p>
+     * Gets a list of <code>FileSystemAssociationSummary</code> objects. Each object contains a summary of a file system
+     * association. This operation is only supported for Amazon FSx file gateways.
+     * </p>
+     * 
+     * @param listFileSystemAssociationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListFileSystemAssociations operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.ListFileSystemAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListFileSystemAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListFileSystemAssociationsResult> listFileSystemAssociationsAsync(
+            ListFileSystemAssociationsRequest listFileSystemAssociationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListFileSystemAssociationsRequest, ListFileSystemAssociationsResult> asyncHandler);
 
     /**
      * <p>
@@ -3242,10 +3382,12 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Refreshes the cache for the specified file share. This operation finds objects in the Amazon S3 bucket that were
-     * added, removed, or replaced since the gateway last listed the bucket's contents and cached the results. This
-     * operation is only supported in the file gateway type. You can subscribe to be notified through an Amazon
-     * CloudWatch event when your RefreshCache operation completes. For more information, see <a href=
+     * Refreshes the cached inventory of objects for the specified file share. This operation finds objects in the
+     * Amazon S3 bucket that were added, removed, or replaced since the gateway last listed the bucket's contents and
+     * cached the results. This operation does not import files into the file gateway cache storage. It only updates the
+     * cached inventory to reflect changes in the inventory of the objects in the S3 bucket. This operation is only
+     * supported in the file gateway type. You can subscribe to be notified through an Amazon CloudWatch event when your
+     * <code>RefreshCache</code> operation completes. For more information, see <a href=
      * "https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification"
      * >Getting notified about file operations</a> in the <i>AWS Storage Gateway User Guide</i>.
      * </p>
@@ -3253,11 +3395,11 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * When this API is called, it only initiates the refresh operation. When the API call completes and returns a
      * success code, it doesn't necessarily mean that the file refresh has completed. You should use the
      * refresh-complete notification to determine that the operation has completed before you check for new files on the
-     * gateway file share. You can subscribe to be notified through an CloudWatch event when your
+     * gateway file share. You can subscribe to be notified through a CloudWatch event when your
      * <code>RefreshCache</code> operation completes.
      * </p>
      * <p>
-     * Throttle limit: This API is asynchronous so the gateway will accept no more than two refreshes at any time. We
+     * Throttle limit: This API is asynchronous, so the gateway will accept no more than two refreshes at any time. We
      * recommend using the refresh-complete CloudWatch event notification before issuing additional requests. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification"
@@ -3284,10 +3426,12 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Refreshes the cache for the specified file share. This operation finds objects in the Amazon S3 bucket that were
-     * added, removed, or replaced since the gateway last listed the bucket's contents and cached the results. This
-     * operation is only supported in the file gateway type. You can subscribe to be notified through an Amazon
-     * CloudWatch event when your RefreshCache operation completes. For more information, see <a href=
+     * Refreshes the cached inventory of objects for the specified file share. This operation finds objects in the
+     * Amazon S3 bucket that were added, removed, or replaced since the gateway last listed the bucket's contents and
+     * cached the results. This operation does not import files into the file gateway cache storage. It only updates the
+     * cached inventory to reflect changes in the inventory of the objects in the S3 bucket. This operation is only
+     * supported in the file gateway type. You can subscribe to be notified through an Amazon CloudWatch event when your
+     * <code>RefreshCache</code> operation completes. For more information, see <a href=
      * "https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification"
      * >Getting notified about file operations</a> in the <i>AWS Storage Gateway User Guide</i>.
      * </p>
@@ -3295,11 +3439,11 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * When this API is called, it only initiates the refresh operation. When the API call completes and returns a
      * success code, it doesn't necessarily mean that the file refresh has completed. You should use the
      * refresh-complete notification to determine that the operation has completed before you check for new files on the
-     * gateway file share. You can subscribe to be notified through an CloudWatch event when your
+     * gateway file share. You can subscribe to be notified through a CloudWatch event when your
      * <code>RefreshCache</code> operation completes.
      * </p>
      * <p>
-     * Throttle limit: This API is asynchronous so the gateway will accept no more than two refreshes at any time. We
+     * Throttle limit: This API is asynchronous, so the gateway will accept no more than two refreshes at any time. We
      * recommend using the refresh-complete CloudWatch event notification before issuing additional requests. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification"
@@ -4060,6 +4204,39 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      */
     java.util.concurrent.Future<UpdateChapCredentialsResult> updateChapCredentialsAsync(UpdateChapCredentialsRequest updateChapCredentialsRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateChapCredentialsRequest, UpdateChapCredentialsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a file system association. This operation is only supported in the Amazon FSx file gateway type.
+     * </p>
+     * 
+     * @param updateFileSystemAssociationRequest
+     * @return A Java Future containing the result of the UpdateFileSystemAssociation operation returned by the service.
+     * @sample AWSStorageGatewayAsync.UpdateFileSystemAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateFileSystemAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFileSystemAssociationResult> updateFileSystemAssociationAsync(
+            UpdateFileSystemAssociationRequest updateFileSystemAssociationRequest);
+
+    /**
+     * <p>
+     * Updates a file system association. This operation is only supported in the Amazon FSx file gateway type.
+     * </p>
+     * 
+     * @param updateFileSystemAssociationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateFileSystemAssociation operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.UpdateFileSystemAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateFileSystemAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFileSystemAssociationResult> updateFileSystemAssociationAsync(
+            UpdateFileSystemAssociationRequest updateFileSystemAssociationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateFileSystemAssociationRequest, UpdateFileSystemAssociationResult> asyncHandler);
 
     /**
      * <p>

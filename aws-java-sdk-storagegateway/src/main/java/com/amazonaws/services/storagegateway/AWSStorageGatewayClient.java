@@ -628,7 +628,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Configures one or more gateway local disks as upload buffer for a specified gateway. This operation is supported
-     * for the stored volume, cached volume and tape gateway types.
+     * for the stored volume, cached volume, and tape gateway types.
      * </p>
      * <p>
      * In the request, you specify the gateway Amazon Resource Name (ARN) to which you want to add upload buffer, and
@@ -827,6 +827,69 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<AssignTapePoolResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AssignTapePoolResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Associate an Amazon FSx file system with the Amazon FSx file gateway. After the association process is complete,
+     * the file shares on the Amazon FSx file system are available for access through the gateway. This operation only
+     * supports the Amazon FSx file gateway type.
+     * </p>
+     * 
+     * @param associateFileSystemRequest
+     * @return Result of the AssociateFileSystem operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.AssociateFileSystem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AssociateFileSystem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateFileSystemResult associateFileSystem(AssociateFileSystemRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateFileSystem(request);
+    }
+
+    @SdkInternalApi
+    final AssociateFileSystemResult executeAssociateFileSystem(AssociateFileSystemRequest associateFileSystemRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateFileSystemRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateFileSystemRequest> request = null;
+        Response<AssociateFileSystemResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateFileSystemRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateFileSystemRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateFileSystem");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateFileSystemResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AssociateFileSystemResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1267,9 +1330,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * AWS Storage Gateway provides the ability to back up point-in-time snapshots of your data to Amazon Simple Storage
-     * (Amazon S3) for durable off-site recovery, as well as import the data to an Amazon Elastic Block Store (EBS)
-     * volume in Amazon Elastic Compute Cloud (EC2). You can take snapshots of your gateway volume on a scheduled or ad
-     * hoc basis. This API enables you to take an ad hoc snapshot. For more information, see <a
+     * (Amazon S3) for durable off-site recovery, and also import the data to an Amazon Elastic Block Store (EBS) volume
+     * in Amazon Elastic Compute Cloud (EC2). You can take snapshots of your gateway volume on a scheduled or ad hoc
+     * basis. This API enables you to take an ad hoc snapshot. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot"
      * >Editing a snapshot schedule</a>.
      * </p>
@@ -2450,7 +2513,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Returns information about the most recent High Availability monitoring test that was performed on the host in a
+     * Returns information about the most recent high availability monitoring test that was performed on the host in a
      * cluster. If a test isn't performed, the status and start time in the response would be null.
      * </p>
      * 
@@ -2855,6 +2918,69 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
             HttpResponseHandler<AmazonWebServiceResponse<DescribeChapCredentialsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeChapCredentialsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the file system association information. This operation is only supported for Amazon FSx file gateways.
+     * </p>
+     * 
+     * @param describeFileSystemAssociationsRequest
+     * @return Result of the DescribeFileSystemAssociations operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.DescribeFileSystemAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeFileSystemAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeFileSystemAssociationsResult describeFileSystemAssociations(DescribeFileSystemAssociationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFileSystemAssociations(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFileSystemAssociationsResult executeDescribeFileSystemAssociations(DescribeFileSystemAssociationsRequest describeFileSystemAssociationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeFileSystemAssociationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeFileSystemAssociationsRequest> request = null;
+        Response<DescribeFileSystemAssociationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeFileSystemAssociationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeFileSystemAssociationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFileSystemAssociations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeFileSystemAssociationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeFileSystemAssociationsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3869,6 +3995,70 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Disassociates an Amazon FSx file system from the specified gateway. After the disassociation process finishes,
+     * the gateway can no longer access the Amazon FSx file system. This operation is only supported in the Amazon FSx
+     * file gateway type.
+     * </p>
+     * 
+     * @param disassociateFileSystemRequest
+     * @return Result of the DisassociateFileSystem operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.DisassociateFileSystem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DisassociateFileSystem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateFileSystemResult disassociateFileSystem(DisassociateFileSystemRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateFileSystem(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateFileSystemResult executeDisassociateFileSystem(DisassociateFileSystemRequest disassociateFileSystemRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateFileSystemRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateFileSystemRequest> request = null;
+        Response<DisassociateFileSystemResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateFileSystemRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateFileSystemRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateFileSystem");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateFileSystemResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateFileSystemResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Adds a file gateway to an Active Directory domain. This operation is only supported for file gateways that
      * support the SMB file protocol.
      * </p>
@@ -4051,6 +4241,70 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<ListFileSharesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListFileSharesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a list of <code>FileSystemAssociationSummary</code> objects. Each object contains a summary of a file system
+     * association. This operation is only supported for Amazon FSx file gateways.
+     * </p>
+     * 
+     * @param listFileSystemAssociationsRequest
+     * @return Result of the ListFileSystemAssociations operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.ListFileSystemAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListFileSystemAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListFileSystemAssociationsResult listFileSystemAssociations(ListFileSystemAssociationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListFileSystemAssociations(request);
+    }
+
+    @SdkInternalApi
+    final ListFileSystemAssociationsResult executeListFileSystemAssociations(ListFileSystemAssociationsRequest listFileSystemAssociationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listFileSystemAssociationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListFileSystemAssociationsRequest> request = null;
+        Response<ListFileSystemAssociationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListFileSystemAssociationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listFileSystemAssociationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFileSystemAssociations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListFileSystemAssociationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListFileSystemAssociationsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4732,10 +4986,12 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Refreshes the cache for the specified file share. This operation finds objects in the Amazon S3 bucket that were
-     * added, removed, or replaced since the gateway last listed the bucket's contents and cached the results. This
-     * operation is only supported in the file gateway type. You can subscribe to be notified through an Amazon
-     * CloudWatch event when your RefreshCache operation completes. For more information, see <a href=
+     * Refreshes the cached inventory of objects for the specified file share. This operation finds objects in the
+     * Amazon S3 bucket that were added, removed, or replaced since the gateway last listed the bucket's contents and
+     * cached the results. This operation does not import files into the file gateway cache storage. It only updates the
+     * cached inventory to reflect changes in the inventory of the objects in the S3 bucket. This operation is only
+     * supported in the file gateway type. You can subscribe to be notified through an Amazon CloudWatch event when your
+     * <code>RefreshCache</code> operation completes. For more information, see <a href=
      * "https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification"
      * >Getting notified about file operations</a> in the <i>AWS Storage Gateway User Guide</i>.
      * </p>
@@ -4743,11 +4999,11 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * When this API is called, it only initiates the refresh operation. When the API call completes and returns a
      * success code, it doesn't necessarily mean that the file refresh has completed. You should use the
      * refresh-complete notification to determine that the operation has completed before you check for new files on the
-     * gateway file share. You can subscribe to be notified through an CloudWatch event when your
+     * gateway file share. You can subscribe to be notified through a CloudWatch event when your
      * <code>RefreshCache</code> operation completes.
      * </p>
      * <p>
-     * Throttle limit: This API is asynchronous so the gateway will accept no more than two refreshes at any time. We
+     * Throttle limit: This API is asynchronous, so the gateway will accept no more than two refreshes at any time. We
      * recommend using the refresh-complete CloudWatch event notification before issuing additional requests. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification"
@@ -5774,6 +6030,69 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
             HttpResponseHandler<AmazonWebServiceResponse<UpdateChapCredentialsResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new UpdateChapCredentialsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a file system association. This operation is only supported in the Amazon FSx file gateway type.
+     * </p>
+     * 
+     * @param updateFileSystemAssociationRequest
+     * @return Result of the UpdateFileSystemAssociation operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.UpdateFileSystemAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateFileSystemAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateFileSystemAssociationResult updateFileSystemAssociation(UpdateFileSystemAssociationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateFileSystemAssociation(request);
+    }
+
+    @SdkInternalApi
+    final UpdateFileSystemAssociationResult executeUpdateFileSystemAssociation(UpdateFileSystemAssociationRequest updateFileSystemAssociationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateFileSystemAssociationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateFileSystemAssociationRequest> request = null;
+        Response<UpdateFileSystemAssociationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateFileSystemAssociationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateFileSystemAssociationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Storage Gateway");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFileSystemAssociation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateFileSystemAssociationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateFileSystemAssociationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

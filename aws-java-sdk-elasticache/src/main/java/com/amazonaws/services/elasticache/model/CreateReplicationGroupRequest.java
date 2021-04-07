@@ -62,7 +62,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     private String replicationGroupDescription;
     /**
      * <p>
-     * The name of the Global Datastore
+     * The name of the Global datastore
      * </p>
      */
     private String globalReplicationGroupId;
@@ -408,10 +408,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     private com.amazonaws.internal.SdkInternalList<String> securityGroupIds;
     /**
      * <p>
-     * A list of cost allocation tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=
+     * A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=
      * <code>myKey</code>, Value=<code>myKeyValue</code>. You can include multiple tags as shown following: Key=
      * <code>myKey</code>, Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>, Value=
-     * <code>mySecondKeyValue</code>.
+     * <code>mySecondKeyValue</code>. Tags on replication groups will be replicated to all nodes.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -840,11 +840,11 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the Global Datastore
+     * The name of the Global datastore
      * </p>
      * 
      * @param globalReplicationGroupId
-     *        The name of the Global Datastore
+     *        The name of the Global datastore
      */
 
     public void setGlobalReplicationGroupId(String globalReplicationGroupId) {
@@ -853,10 +853,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the Global Datastore
+     * The name of the Global datastore
      * </p>
      * 
-     * @return The name of the Global Datastore
+     * @return The name of the Global datastore
      */
 
     public String getGlobalReplicationGroupId() {
@@ -865,11 +865,11 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the Global Datastore
+     * The name of the Global datastore
      * </p>
      * 
      * @param globalReplicationGroupId
-     *        The name of the Global Datastore
+     *        The name of the Global datastore
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3201,16 +3201,16 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of cost allocation tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=
+     * A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=
      * <code>myKey</code>, Value=<code>myKeyValue</code>. You can include multiple tags as shown following: Key=
      * <code>myKey</code>, Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>, Value=
-     * <code>mySecondKeyValue</code>.
+     * <code>mySecondKeyValue</code>. Tags on replication groups will be replicated to all nodes.
      * </p>
      * 
-     * @return A list of cost allocation tags to be added to this resource. Tags are comma-separated key,value pairs
-     *         (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You can include multiple tags as shown
-     *         following: Key=<code>myKey</code>, Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>, Value=
-     *         <code>mySecondKeyValue</code>.
+     * @return A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=
+     *         <code>myKey</code>, Value=<code>myKeyValue</code>. You can include multiple tags as shown following: Key=
+     *         <code>myKey</code>, Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>, Value=
+     *         <code>mySecondKeyValue</code>. Tags on replication groups will be replicated to all nodes.
      */
 
     public java.util.List<Tag> getTags() {
@@ -3222,17 +3222,17 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of cost allocation tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=
+     * A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=
      * <code>myKey</code>, Value=<code>myKeyValue</code>. You can include multiple tags as shown following: Key=
      * <code>myKey</code>, Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>, Value=
-     * <code>mySecondKeyValue</code>.
+     * <code>mySecondKeyValue</code>. Tags on replication groups will be replicated to all nodes.
      * </p>
      * 
      * @param tags
-     *        A list of cost allocation tags to be added to this resource. Tags are comma-separated key,value pairs
-     *        (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You can include multiple tags as shown
-     *        following: Key=<code>myKey</code>, Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>, Value=
-     *        <code>mySecondKeyValue</code>.
+     *        A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=
+     *        <code>myKey</code>, Value=<code>myKeyValue</code>. You can include multiple tags as shown following: Key=
+     *        <code>myKey</code>, Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>, Value=
+     *        <code>mySecondKeyValue</code>. Tags on replication groups will be replicated to all nodes.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -3246,10 +3246,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of cost allocation tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=
+     * A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=
      * <code>myKey</code>, Value=<code>myKeyValue</code>. You can include multiple tags as shown following: Key=
      * <code>myKey</code>, Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>, Value=
-     * <code>mySecondKeyValue</code>.
+     * <code>mySecondKeyValue</code>. Tags on replication groups will be replicated to all nodes.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -3258,10 +3258,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param tags
-     *        A list of cost allocation tags to be added to this resource. Tags are comma-separated key,value pairs
-     *        (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You can include multiple tags as shown
-     *        following: Key=<code>myKey</code>, Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>, Value=
-     *        <code>mySecondKeyValue</code>.
+     *        A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=
+     *        <code>myKey</code>, Value=<code>myKeyValue</code>. You can include multiple tags as shown following: Key=
+     *        <code>myKey</code>, Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>, Value=
+     *        <code>mySecondKeyValue</code>. Tags on replication groups will be replicated to all nodes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3277,17 +3277,17 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of cost allocation tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=
+     * A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=
      * <code>myKey</code>, Value=<code>myKeyValue</code>. You can include multiple tags as shown following: Key=
      * <code>myKey</code>, Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>, Value=
-     * <code>mySecondKeyValue</code>.
+     * <code>mySecondKeyValue</code>. Tags on replication groups will be replicated to all nodes.
      * </p>
      * 
      * @param tags
-     *        A list of cost allocation tags to be added to this resource. Tags are comma-separated key,value pairs
-     *        (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You can include multiple tags as shown
-     *        following: Key=<code>myKey</code>, Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>, Value=
-     *        <code>mySecondKeyValue</code>.
+     *        A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=
+     *        <code>myKey</code>, Value=<code>myKeyValue</code>. You can include multiple tags as shown following: Key=
+     *        <code>myKey</code>, Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>, Value=
+     *        <code>mySecondKeyValue</code>. Tags on replication groups will be replicated to all nodes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

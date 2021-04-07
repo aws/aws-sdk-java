@@ -224,6 +224,70 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Cancels the requested policy generation.
+     * </p>
+     * 
+     * @param cancelPolicyGenerationRequest
+     * @return Result of the CancelPolicyGeneration operation returned by the service.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws InternalServerException
+     *         Internal server error.
+     * @throws ThrottlingException
+     *         Throttling limit exceeded error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSAccessAnalyzer.CancelPolicyGeneration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CancelPolicyGeneration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CancelPolicyGenerationResult cancelPolicyGeneration(CancelPolicyGenerationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelPolicyGeneration(request);
+    }
+
+    @SdkInternalApi
+    final CancelPolicyGenerationResult executeCancelPolicyGeneration(CancelPolicyGenerationRequest cancelPolicyGenerationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelPolicyGenerationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelPolicyGenerationRequest> request = null;
+        Response<CancelPolicyGenerationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelPolicyGenerationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelPolicyGenerationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelPolicyGeneration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelPolicyGenerationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CancelPolicyGenerationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates an access preview that allows you to preview Access Analyzer findings for your resource before deploying
      * resource permissions.
      * </p>
@@ -906,6 +970,69 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Retrieves the policy that was generated using <code>StartPolicyGeneration</code>.
+     * </p>
+     * 
+     * @param getGeneratedPolicyRequest
+     * @return Result of the GetGeneratedPolicy operation returned by the service.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws InternalServerException
+     *         Internal server error.
+     * @throws ThrottlingException
+     *         Throttling limit exceeded error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSAccessAnalyzer.GetGeneratedPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetGeneratedPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetGeneratedPolicyResult getGeneratedPolicy(GetGeneratedPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetGeneratedPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetGeneratedPolicyResult executeGetGeneratedPolicy(GetGeneratedPolicyRequest getGeneratedPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getGeneratedPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetGeneratedPolicyRequest> request = null;
+        Response<GetGeneratedPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetGeneratedPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGeneratedPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGeneratedPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetGeneratedPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetGeneratedPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves a list of access preview findings generated by the specified access preview.
      * </p>
      * 
@@ -1306,6 +1433,70 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Lists all of the policy generations requested in the last seven days.
+     * </p>
+     * 
+     * @param listPolicyGenerationsRequest
+     * @return Result of the ListPolicyGenerations operation returned by the service.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws InternalServerException
+     *         Internal server error.
+     * @throws ThrottlingException
+     *         Throttling limit exceeded error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSAccessAnalyzer.ListPolicyGenerations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListPolicyGenerations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListPolicyGenerationsResult listPolicyGenerations(ListPolicyGenerationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPolicyGenerations(request);
+    }
+
+    @SdkInternalApi
+    final ListPolicyGenerationsResult executeListPolicyGenerations(ListPolicyGenerationsRequest listPolicyGenerationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listPolicyGenerationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPolicyGenerationsRequest> request = null;
+        Response<ListPolicyGenerationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPolicyGenerationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPolicyGenerationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPolicyGenerations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListPolicyGenerationsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListPolicyGenerationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves a list of tags applied to the specified resource.
      * </p>
      * 
@@ -1360,6 +1551,74 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts the policy generation request.
+     * </p>
+     * 
+     * @param startPolicyGenerationRequest
+     * @return Result of the StartPolicyGeneration operation returned by the service.
+     * @throws ConflictException
+     *         A conflict exception error.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws InternalServerException
+     *         Internal server error.
+     * @throws ServiceQuotaExceededException
+     *         Service quote met error.
+     * @throws ThrottlingException
+     *         Throttling limit exceeded error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSAccessAnalyzer.StartPolicyGeneration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/StartPolicyGeneration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartPolicyGenerationResult startPolicyGeneration(StartPolicyGenerationRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartPolicyGeneration(request);
+    }
+
+    @SdkInternalApi
+    final StartPolicyGenerationResult executeStartPolicyGeneration(StartPolicyGenerationRequest startPolicyGenerationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startPolicyGenerationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartPolicyGenerationRequest> request = null;
+        Response<StartPolicyGenerationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartPolicyGenerationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startPolicyGenerationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartPolicyGeneration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartPolicyGenerationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new StartPolicyGenerationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

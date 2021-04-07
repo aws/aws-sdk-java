@@ -43,6 +43,11 @@ public class AbstractAmazonIVS implements AmazonIVS {
     }
 
     @Override
+    public CreateRecordingConfigurationResult createRecordingConfiguration(CreateRecordingConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateStreamKeyResult createStreamKey(CreateStreamKeyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -58,6 +63,11 @@ public class AbstractAmazonIVS implements AmazonIVS {
     }
 
     @Override
+    public DeleteRecordingConfigurationResult deleteRecordingConfiguration(DeleteRecordingConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteStreamKeyResult deleteStreamKey(DeleteStreamKeyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -69,6 +79,11 @@ public class AbstractAmazonIVS implements AmazonIVS {
 
     @Override
     public GetPlaybackKeyPairResult getPlaybackKeyPair(GetPlaybackKeyPairRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetRecordingConfigurationResult getRecordingConfiguration(GetRecordingConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -94,6 +109,11 @@ public class AbstractAmazonIVS implements AmazonIVS {
 
     @Override
     public ListPlaybackKeyPairsResult listPlaybackKeyPairs(ListPlaybackKeyPairsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListRecordingConfigurationsResult listRecordingConfigurations(ListRecordingConfigurationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

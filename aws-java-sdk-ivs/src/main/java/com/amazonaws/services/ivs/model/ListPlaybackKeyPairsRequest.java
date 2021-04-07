@@ -34,6 +34,7 @@ public class ListPlaybackKeyPairsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
+     * Default: 50.
      * </p>
      */
     private Integer maxResults;
@@ -81,11 +82,12 @@ public class ListPlaybackKeyPairsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
+     * Default: 50.
      * </p>
      * 
      * @param maxResults
      *        The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response
-     *        field.
+     *        field. Default: 50.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -95,10 +97,11 @@ public class ListPlaybackKeyPairsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
+     * Default: 50.
      * </p>
      * 
      * @return The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response
-     *         field.
+     *         field. Default: 50.
      */
 
     public Integer getMaxResults() {
@@ -108,11 +111,12 @@ public class ListPlaybackKeyPairsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
+     * Default: 50.
      * </p>
      * 
      * @param maxResults
      *        The first key pair to retrieve. This is used for pagination; see the <code>nextToken</code> response
-     *        field.
+     *        field. Default: 50.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

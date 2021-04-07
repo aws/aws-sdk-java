@@ -73,6 +73,25 @@ public class CreateUserRequestMarshaller implements Marshaller<Request<CreateUse
             request.addParameter("NoPasswordRequired", StringUtils.fromBoolean(createUserRequest.getNoPasswordRequired()));
         }
 
+        if (!createUserRequest.getTags().isEmpty() || !((com.amazonaws.internal.SdkInternalList<Tag>) createUserRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createUserRequest.getTags();
+            int tagsListIndex = 1;
+
+            for (Tag tagsListValue : tagsList) {
+                if (tagsListValue != null) {
+
+                    if (tagsListValue.getKey() != null) {
+                        request.addParameter("Tags.Tag." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
+                    }
+
+                    if (tagsListValue.getValue() != null) {
+                        request.addParameter("Tags.Tag." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                    }
+                }
+                tagsListIndex++;
+            }
+        }
+
         return request;
     }
 

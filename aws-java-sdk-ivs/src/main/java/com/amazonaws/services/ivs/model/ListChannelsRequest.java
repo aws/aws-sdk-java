@@ -33,13 +33,19 @@ public class ListChannelsRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String filterByName;
     /**
      * <p>
+     * Filters the channel list to match the specified recording-configuration ARN.
+     * </p>
+     */
+    private String filterByRecordingConfigurationArn;
+    /**
+     * <p>
      * The first channel to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * Maximum number of channels to return.
+     * Maximum number of channels to return. Default: 50.
      * </p>
      */
     private Integer maxResults;
@@ -86,6 +92,46 @@ public class ListChannelsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
+     * Filters the channel list to match the specified recording-configuration ARN.
+     * </p>
+     * 
+     * @param filterByRecordingConfigurationArn
+     *        Filters the channel list to match the specified recording-configuration ARN.
+     */
+
+    public void setFilterByRecordingConfigurationArn(String filterByRecordingConfigurationArn) {
+        this.filterByRecordingConfigurationArn = filterByRecordingConfigurationArn;
+    }
+
+    /**
+     * <p>
+     * Filters the channel list to match the specified recording-configuration ARN.
+     * </p>
+     * 
+     * @return Filters the channel list to match the specified recording-configuration ARN.
+     */
+
+    public String getFilterByRecordingConfigurationArn() {
+        return this.filterByRecordingConfigurationArn;
+    }
+
+    /**
+     * <p>
+     * Filters the channel list to match the specified recording-configuration ARN.
+     * </p>
+     * 
+     * @param filterByRecordingConfigurationArn
+     *        Filters the channel list to match the specified recording-configuration ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListChannelsRequest withFilterByRecordingConfigurationArn(String filterByRecordingConfigurationArn) {
+        setFilterByRecordingConfigurationArn(filterByRecordingConfigurationArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * The first channel to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
      * </p>
      * 
@@ -127,11 +173,11 @@ public class ListChannelsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Maximum number of channels to return.
+     * Maximum number of channels to return. Default: 50.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of channels to return.
+     *        Maximum number of channels to return. Default: 50.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -140,10 +186,10 @@ public class ListChannelsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Maximum number of channels to return.
+     * Maximum number of channels to return. Default: 50.
      * </p>
      * 
-     * @return Maximum number of channels to return.
+     * @return Maximum number of channels to return. Default: 50.
      */
 
     public Integer getMaxResults() {
@@ -152,11 +198,11 @@ public class ListChannelsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Maximum number of channels to return.
+     * Maximum number of channels to return. Default: 50.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of channels to return.
+     *        Maximum number of channels to return. Default: 50.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,6 +225,8 @@ public class ListChannelsRequest extends com.amazonaws.AmazonWebServiceRequest i
         sb.append("{");
         if (getFilterByName() != null)
             sb.append("FilterByName: ").append(getFilterByName()).append(",");
+        if (getFilterByRecordingConfigurationArn() != null)
+            sb.append("FilterByRecordingConfigurationArn: ").append(getFilterByRecordingConfigurationArn()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
@@ -201,6 +249,11 @@ public class ListChannelsRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getFilterByName() != null && other.getFilterByName().equals(this.getFilterByName()) == false)
             return false;
+        if (other.getFilterByRecordingConfigurationArn() == null ^ this.getFilterByRecordingConfigurationArn() == null)
+            return false;
+        if (other.getFilterByRecordingConfigurationArn() != null
+                && other.getFilterByRecordingConfigurationArn().equals(this.getFilterByRecordingConfigurationArn()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
@@ -218,6 +271,7 @@ public class ListChannelsRequest extends com.amazonaws.AmazonWebServiceRequest i
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getFilterByName() == null) ? 0 : getFilterByName().hashCode());
+        hashCode = prime * hashCode + ((getFilterByRecordingConfigurationArn() == null) ? 0 : getFilterByRecordingConfigurationArn().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;

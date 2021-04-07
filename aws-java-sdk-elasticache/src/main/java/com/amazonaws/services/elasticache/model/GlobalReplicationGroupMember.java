@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A member of a Global Datastore. It contains the Replication Group Id, the AWS region and the role of the replication
+ * A member of a Global datastore. It contains the Replication Group Id, the AWS region and the role of the replication
  * group.
  * </p>
  * 
@@ -29,13 +29,13 @@ public class GlobalReplicationGroupMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The replication group id of the Global Datastore member.
+     * The replication group id of the Global datastore member.
      * </p>
      */
     private String replicationGroupId;
     /**
      * <p>
-     * The AWS region of the Global Datastore member.
+     * The AWS region of the Global datastore member.
      * </p>
      */
     private String replicationGroupRegion;
@@ -60,11 +60,11 @@ public class GlobalReplicationGroupMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The replication group id of the Global Datastore member.
+     * The replication group id of the Global datastore member.
      * </p>
      * 
      * @param replicationGroupId
-     *        The replication group id of the Global Datastore member.
+     *        The replication group id of the Global datastore member.
      */
 
     public void setReplicationGroupId(String replicationGroupId) {
@@ -73,10 +73,10 @@ public class GlobalReplicationGroupMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The replication group id of the Global Datastore member.
+     * The replication group id of the Global datastore member.
      * </p>
      * 
-     * @return The replication group id of the Global Datastore member.
+     * @return The replication group id of the Global datastore member.
      */
 
     public String getReplicationGroupId() {
@@ -85,11 +85,11 @@ public class GlobalReplicationGroupMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The replication group id of the Global Datastore member.
+     * The replication group id of the Global datastore member.
      * </p>
      * 
      * @param replicationGroupId
-     *        The replication group id of the Global Datastore member.
+     *        The replication group id of the Global datastore member.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,11 +100,11 @@ public class GlobalReplicationGroupMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS region of the Global Datastore member.
+     * The AWS region of the Global datastore member.
      * </p>
      * 
      * @param replicationGroupRegion
-     *        The AWS region of the Global Datastore member.
+     *        The AWS region of the Global datastore member.
      */
 
     public void setReplicationGroupRegion(String replicationGroupRegion) {
@@ -113,10 +113,10 @@ public class GlobalReplicationGroupMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS region of the Global Datastore member.
+     * The AWS region of the Global datastore member.
      * </p>
      * 
-     * @return The AWS region of the Global Datastore member.
+     * @return The AWS region of the Global datastore member.
      */
 
     public String getReplicationGroupRegion() {
@@ -125,11 +125,11 @@ public class GlobalReplicationGroupMember implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS region of the Global Datastore member.
+     * The AWS region of the Global datastore member.
      * </p>
      * 
      * @param replicationGroupRegion
-     *        The AWS region of the Global Datastore member.
+     *        The AWS region of the Global datastore member.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

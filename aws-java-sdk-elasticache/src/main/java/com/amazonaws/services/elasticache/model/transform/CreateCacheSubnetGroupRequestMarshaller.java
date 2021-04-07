@@ -62,6 +62,26 @@ public class CreateCacheSubnetGroupRequestMarshaller implements Marshaller<Reque
             }
         }
 
+        if (!createCacheSubnetGroupRequest.getTags().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Tag>) createCacheSubnetGroupRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createCacheSubnetGroupRequest.getTags();
+            int tagsListIndex = 1;
+
+            for (Tag tagsListValue : tagsList) {
+                if (tagsListValue != null) {
+
+                    if (tagsListValue.getKey() != null) {
+                        request.addParameter("Tags.Tag." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
+                    }
+
+                    if (tagsListValue.getValue() != null) {
+                        request.addParameter("Tags.Tag." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                    }
+                }
+                tagsListIndex++;
+            }
+        }
+
         return request;
     }
 

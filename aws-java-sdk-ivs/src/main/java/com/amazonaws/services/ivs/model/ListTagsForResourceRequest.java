@@ -39,7 +39,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     private String nextToken;
     /**
      * <p>
-     * Maximum number of tags to return.
+     * Maximum number of tags to return. Default: 50.
      * </p>
      */
     private Integer maxResults;
@@ -126,11 +126,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Maximum number of tags to return.
+     * Maximum number of tags to return. Default: 50.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of tags to return.
+     *        Maximum number of tags to return. Default: 50.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -139,10 +139,10 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Maximum number of tags to return.
+     * Maximum number of tags to return. Default: 50.
      * </p>
      * 
-     * @return Maximum number of tags to return.
+     * @return Maximum number of tags to return. Default: 50.
      */
 
     public Integer getMaxResults() {
@@ -151,11 +151,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Maximum number of tags to return.
+     * Maximum number of tags to return. Default: 50.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of tags to return.
+     *        Maximum number of tags to return. Default: 50.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

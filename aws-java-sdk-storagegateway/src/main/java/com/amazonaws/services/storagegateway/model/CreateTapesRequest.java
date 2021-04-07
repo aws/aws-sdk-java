@@ -71,7 +71,7 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <note>
      * <p>
-     * The prefix must be 1 to 4 characters in length and must be one of the uppercase letters from A to Z.
+     * The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.
      * </p>
      * </note>
      */
@@ -352,7 +352,7 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <note>
      * <p>
-     * The prefix must be 1 to 4 characters in length and must be one of the uppercase letters from A to Z.
+     * The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.
      * </p>
      * </note>
      * 
@@ -360,7 +360,7 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        A prefix that you append to the barcode of the virtual tape you are creating. This prefix makes the
      *        barcode unique.</p> <note>
      *        <p>
-     *        The prefix must be 1 to 4 characters in length and must be one of the uppercase letters from A to Z.
+     *        The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.
      *        </p>
      */
 
@@ -375,14 +375,14 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <note>
      * <p>
-     * The prefix must be 1 to 4 characters in length and must be one of the uppercase letters from A to Z.
+     * The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.
      * </p>
      * </note>
      * 
      * @return A prefix that you append to the barcode of the virtual tape you are creating. This prefix makes the
      *         barcode unique.</p> <note>
      *         <p>
-     *         The prefix must be 1 to 4 characters in length and must be one of the uppercase letters from A to Z.
+     *         The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.
      *         </p>
      */
 
@@ -397,7 +397,7 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <note>
      * <p>
-     * The prefix must be 1 to 4 characters in length and must be one of the uppercase letters from A to Z.
+     * The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.
      * </p>
      * </note>
      * 
@@ -405,7 +405,7 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        A prefix that you append to the barcode of the virtual tape you are creating. This prefix makes the
      *        barcode unique.</p> <note>
      *        <p>
-     *        The prefix must be 1 to 4 characters in length and must be one of the uppercase letters from A to Z.
+     *        The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

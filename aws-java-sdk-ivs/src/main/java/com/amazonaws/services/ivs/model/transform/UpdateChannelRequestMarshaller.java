@@ -37,6 +37,8 @@ public class UpdateChannelRequestMarshaller {
             .marshallLocationName("type").build();
     private static final MarshallingInfo<Boolean> AUTHORIZED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authorized").build();
+    private static final MarshallingInfo<String> RECORDINGCONFIGURATIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("recordingConfigurationArn").build();
 
     private static final UpdateChannelRequestMarshaller instance = new UpdateChannelRequestMarshaller();
 
@@ -59,6 +61,7 @@ public class UpdateChannelRequestMarshaller {
             protocolMarshaller.marshall(updateChannelRequest.getLatencyMode(), LATENCYMODE_BINDING);
             protocolMarshaller.marshall(updateChannelRequest.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(updateChannelRequest.getAuthorized(), AUTHORIZED_BINDING);
+            protocolMarshaller.marshall(updateChannelRequest.getRecordingConfigurationArn(), RECORDINGCONFIGURATIONARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

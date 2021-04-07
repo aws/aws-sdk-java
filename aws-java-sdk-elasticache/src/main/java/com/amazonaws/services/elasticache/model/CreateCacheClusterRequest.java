@@ -368,7 +368,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
     private com.amazonaws.internal.SdkInternalList<String> securityGroupIds;
     /**
      * <p>
-     * A list of cost allocation tags to be added to this resource.
+     * A list of tags to be added to this resource.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -3021,10 +3021,10 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of cost allocation tags to be added to this resource.
+     * A list of tags to be added to this resource.
      * </p>
      * 
-     * @return A list of cost allocation tags to be added to this resource.
+     * @return A list of tags to be added to this resource.
      */
 
     public java.util.List<Tag> getTags() {
@@ -3036,11 +3036,11 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of cost allocation tags to be added to this resource.
+     * A list of tags to be added to this resource.
      * </p>
      * 
      * @param tags
-     *        A list of cost allocation tags to be added to this resource.
+     *        A list of tags to be added to this resource.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -3054,7 +3054,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of cost allocation tags to be added to this resource.
+     * A list of tags to be added to this resource.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -3063,7 +3063,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param tags
-     *        A list of cost allocation tags to be added to this resource.
+     *        A list of tags to be added to this resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3079,11 +3079,11 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of cost allocation tags to be added to this resource.
+     * A list of tags to be added to this resource.
      * </p>
      * 
      * @param tags
-     *        A list of cost allocation tags to be added to this resource.
+     *        A list of tags to be added to this resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

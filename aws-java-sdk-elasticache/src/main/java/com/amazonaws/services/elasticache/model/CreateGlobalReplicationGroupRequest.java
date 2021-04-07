@@ -27,21 +27,21 @@ public class CreateGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The suffix name of a Global Datastore. Amazon ElastiCache automatically applies a prefix to the Global Datastore
-     * ID when it is created. Each AWS Region has its own prefix. For instance, a Global Datastore ID created in the
+     * The suffix name of a Global datastore. Amazon ElastiCache automatically applies a prefix to the Global datastore
+     * ID when it is created. Each AWS Region has its own prefix. For instance, a Global datastore ID created in the
      * US-West-1 region will begin with "dsdfu" along with the suffix name you provide. The suffix, combined with the
-     * auto-generated prefix, guarantees uniqueness of the Global Datastore name across multiple regions.
+     * auto-generated prefix, guarantees uniqueness of the Global datastore name across multiple regions.
      * </p>
      * <p>
-     * For a full list of AWS Regions and their respective Global Datastore iD prefixes, see <a
+     * For a full list of AWS Regions and their respective Global datastore iD prefixes, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using the AWS
-     * CLI with Global Datastores </a>.
+     * CLI with Global datastores </a>.
      * </p>
      */
     private String globalReplicationGroupIdSuffix;
     /**
      * <p>
-     * Provides details of the Global Datastore
+     * Provides details of the Global datastore
      * </p>
      */
     private String globalReplicationGroupDescription;
@@ -54,27 +54,27 @@ public class CreateGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The suffix name of a Global Datastore. Amazon ElastiCache automatically applies a prefix to the Global Datastore
-     * ID when it is created. Each AWS Region has its own prefix. For instance, a Global Datastore ID created in the
+     * The suffix name of a Global datastore. Amazon ElastiCache automatically applies a prefix to the Global datastore
+     * ID when it is created. Each AWS Region has its own prefix. For instance, a Global datastore ID created in the
      * US-West-1 region will begin with "dsdfu" along with the suffix name you provide. The suffix, combined with the
-     * auto-generated prefix, guarantees uniqueness of the Global Datastore name across multiple regions.
+     * auto-generated prefix, guarantees uniqueness of the Global datastore name across multiple regions.
      * </p>
      * <p>
-     * For a full list of AWS Regions and their respective Global Datastore iD prefixes, see <a
+     * For a full list of AWS Regions and their respective Global datastore iD prefixes, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using the AWS
-     * CLI with Global Datastores </a>.
+     * CLI with Global datastores </a>.
      * </p>
      * 
      * @param globalReplicationGroupIdSuffix
-     *        The suffix name of a Global Datastore. Amazon ElastiCache automatically applies a prefix to the Global
-     *        Datastore ID when it is created. Each AWS Region has its own prefix. For instance, a Global Datastore ID
+     *        The suffix name of a Global datastore. Amazon ElastiCache automatically applies a prefix to the Global
+     *        datastore ID when it is created. Each AWS Region has its own prefix. For instance, a Global datastore ID
      *        created in the US-West-1 region will begin with "dsdfu" along with the suffix name you provide. The
-     *        suffix, combined with the auto-generated prefix, guarantees uniqueness of the Global Datastore name across
+     *        suffix, combined with the auto-generated prefix, guarantees uniqueness of the Global datastore name across
      *        multiple regions. </p>
      *        <p>
-     *        For a full list of AWS Regions and their respective Global Datastore iD prefixes, see <a
+     *        For a full list of AWS Regions and their respective Global datastore iD prefixes, see <a
      *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using
-     *        the AWS CLI with Global Datastores </a>.
+     *        the AWS CLI with Global datastores </a>.
      */
 
     public void setGlobalReplicationGroupIdSuffix(String globalReplicationGroupIdSuffix) {
@@ -83,26 +83,26 @@ public class CreateGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The suffix name of a Global Datastore. Amazon ElastiCache automatically applies a prefix to the Global Datastore
-     * ID when it is created. Each AWS Region has its own prefix. For instance, a Global Datastore ID created in the
+     * The suffix name of a Global datastore. Amazon ElastiCache automatically applies a prefix to the Global datastore
+     * ID when it is created. Each AWS Region has its own prefix. For instance, a Global datastore ID created in the
      * US-West-1 region will begin with "dsdfu" along with the suffix name you provide. The suffix, combined with the
-     * auto-generated prefix, guarantees uniqueness of the Global Datastore name across multiple regions.
+     * auto-generated prefix, guarantees uniqueness of the Global datastore name across multiple regions.
      * </p>
      * <p>
-     * For a full list of AWS Regions and their respective Global Datastore iD prefixes, see <a
+     * For a full list of AWS Regions and their respective Global datastore iD prefixes, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using the AWS
-     * CLI with Global Datastores </a>.
+     * CLI with Global datastores </a>.
      * </p>
      * 
-     * @return The suffix name of a Global Datastore. Amazon ElastiCache automatically applies a prefix to the Global
-     *         Datastore ID when it is created. Each AWS Region has its own prefix. For instance, a Global Datastore ID
+     * @return The suffix name of a Global datastore. Amazon ElastiCache automatically applies a prefix to the Global
+     *         datastore ID when it is created. Each AWS Region has its own prefix. For instance, a Global datastore ID
      *         created in the US-West-1 region will begin with "dsdfu" along with the suffix name you provide. The
-     *         suffix, combined with the auto-generated prefix, guarantees uniqueness of the Global Datastore name
+     *         suffix, combined with the auto-generated prefix, guarantees uniqueness of the Global datastore name
      *         across multiple regions. </p>
      *         <p>
-     *         For a full list of AWS Regions and their respective Global Datastore iD prefixes, see <a
+     *         For a full list of AWS Regions and their respective Global datastore iD prefixes, see <a
      *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using
-     *         the AWS CLI with Global Datastores </a>.
+     *         the AWS CLI with Global datastores </a>.
      */
 
     public String getGlobalReplicationGroupIdSuffix() {
@@ -111,27 +111,27 @@ public class CreateGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The suffix name of a Global Datastore. Amazon ElastiCache automatically applies a prefix to the Global Datastore
-     * ID when it is created. Each AWS Region has its own prefix. For instance, a Global Datastore ID created in the
+     * The suffix name of a Global datastore. Amazon ElastiCache automatically applies a prefix to the Global datastore
+     * ID when it is created. Each AWS Region has its own prefix. For instance, a Global datastore ID created in the
      * US-West-1 region will begin with "dsdfu" along with the suffix name you provide. The suffix, combined with the
-     * auto-generated prefix, guarantees uniqueness of the Global Datastore name across multiple regions.
+     * auto-generated prefix, guarantees uniqueness of the Global datastore name across multiple regions.
      * </p>
      * <p>
-     * For a full list of AWS Regions and their respective Global Datastore iD prefixes, see <a
+     * For a full list of AWS Regions and their respective Global datastore iD prefixes, see <a
      * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using the AWS
-     * CLI with Global Datastores </a>.
+     * CLI with Global datastores </a>.
      * </p>
      * 
      * @param globalReplicationGroupIdSuffix
-     *        The suffix name of a Global Datastore. Amazon ElastiCache automatically applies a prefix to the Global
-     *        Datastore ID when it is created. Each AWS Region has its own prefix. For instance, a Global Datastore ID
+     *        The suffix name of a Global datastore. Amazon ElastiCache automatically applies a prefix to the Global
+     *        datastore ID when it is created. Each AWS Region has its own prefix. For instance, a Global datastore ID
      *        created in the US-West-1 region will begin with "dsdfu" along with the suffix name you provide. The
-     *        suffix, combined with the auto-generated prefix, guarantees uniqueness of the Global Datastore name across
+     *        suffix, combined with the auto-generated prefix, guarantees uniqueness of the Global datastore name across
      *        multiple regions. </p>
      *        <p>
-     *        For a full list of AWS Regions and their respective Global Datastore iD prefixes, see <a
+     *        For a full list of AWS Regions and their respective Global datastore iD prefixes, see <a
      *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using
-     *        the AWS CLI with Global Datastores </a>.
+     *        the AWS CLI with Global datastores </a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,11 +142,11 @@ public class CreateGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Provides details of the Global Datastore
+     * Provides details of the Global datastore
      * </p>
      * 
      * @param globalReplicationGroupDescription
-     *        Provides details of the Global Datastore
+     *        Provides details of the Global datastore
      */
 
     public void setGlobalReplicationGroupDescription(String globalReplicationGroupDescription) {
@@ -155,10 +155,10 @@ public class CreateGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Provides details of the Global Datastore
+     * Provides details of the Global datastore
      * </p>
      * 
-     * @return Provides details of the Global Datastore
+     * @return Provides details of the Global datastore
      */
 
     public String getGlobalReplicationGroupDescription() {
@@ -167,11 +167,11 @@ public class CreateGlobalReplicationGroupRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Provides details of the Global Datastore
+     * Provides details of the Global datastore
      * </p>
      * 
      * @param globalReplicationGroupDescription
-     *        Provides details of the Global Datastore
+     *        Provides details of the Global datastore
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

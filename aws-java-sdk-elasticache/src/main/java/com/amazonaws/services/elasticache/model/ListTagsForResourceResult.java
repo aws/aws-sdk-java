@@ -29,17 +29,17 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A list of cost allocation tags as key-value pairs.
+     * A list of tags as key-value pairs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tagList;
 
     /**
      * <p>
-     * A list of cost allocation tags as key-value pairs.
+     * A list of tags as key-value pairs.
      * </p>
      * 
-     * @return A list of cost allocation tags as key-value pairs.
+     * @return A list of tags as key-value pairs.
      */
 
     public java.util.List<Tag> getTagList() {
@@ -51,11 +51,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A list of cost allocation tags as key-value pairs.
+     * A list of tags as key-value pairs.
      * </p>
      * 
      * @param tagList
-     *        A list of cost allocation tags as key-value pairs.
+     *        A list of tags as key-value pairs.
      */
 
     public void setTagList(java.util.Collection<Tag> tagList) {
@@ -69,7 +69,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A list of cost allocation tags as key-value pairs.
+     * A list of tags as key-value pairs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param tagList
-     *        A list of cost allocation tags as key-value pairs.
+     *        A list of tags as key-value pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A list of cost allocation tags as key-value pairs.
+     * A list of tags as key-value pairs.
      * </p>
      * 
      * @param tagList
-     *        A list of cost allocation tags as key-value pairs.
+     *        A list of tags as key-value pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

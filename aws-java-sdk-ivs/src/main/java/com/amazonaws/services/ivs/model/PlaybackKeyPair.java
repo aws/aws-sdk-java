@@ -36,7 +36,8 @@ public class PlaybackKeyPair implements Serializable, Cloneable, StructuredPojo 
     private String arn;
     /**
      * <p>
-     * Key-pair name.
+     * An arbitrary string (a nickname) assigned to a playback key pair that helps the customer identify that resource.
+     * The value does not need to be unique.
      * </p>
      */
     private String name;
@@ -95,11 +96,13 @@ public class PlaybackKeyPair implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Key-pair name.
+     * An arbitrary string (a nickname) assigned to a playback key pair that helps the customer identify that resource.
+     * The value does not need to be unique.
      * </p>
      * 
      * @param name
-     *        Key-pair name.
+     *        An arbitrary string (a nickname) assigned to a playback key pair that helps the customer identify that
+     *        resource. The value does not need to be unique.
      */
 
     public void setName(String name) {
@@ -108,10 +111,12 @@ public class PlaybackKeyPair implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Key-pair name.
+     * An arbitrary string (a nickname) assigned to a playback key pair that helps the customer identify that resource.
+     * The value does not need to be unique.
      * </p>
      * 
-     * @return Key-pair name.
+     * @return An arbitrary string (a nickname) assigned to a playback key pair that helps the customer identify that
+     *         resource. The value does not need to be unique.
      */
 
     public String getName() {
@@ -120,11 +125,13 @@ public class PlaybackKeyPair implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Key-pair name.
+     * An arbitrary string (a nickname) assigned to a playback key pair that helps the customer identify that resource.
+     * The value does not need to be unique.
      * </p>
      * 
      * @param name
-     *        Key-pair name.
+     *        An arbitrary string (a nickname) assigned to a playback key pair that helps the customer identify that
+     *        resource. The value does not need to be unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

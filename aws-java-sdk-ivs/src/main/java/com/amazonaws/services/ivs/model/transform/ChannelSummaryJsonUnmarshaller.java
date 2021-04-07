@@ -64,6 +64,10 @@ public class ChannelSummaryJsonUnmarshaller implements Unmarshaller<ChannelSumma
                     context.nextToken();
                     channelSummary.setAuthorized(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("recordingConfigurationArn", targetDepth)) {
+                    context.nextToken();
+                    channelSummary.setRecordingConfigurationArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     channelSummary.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))

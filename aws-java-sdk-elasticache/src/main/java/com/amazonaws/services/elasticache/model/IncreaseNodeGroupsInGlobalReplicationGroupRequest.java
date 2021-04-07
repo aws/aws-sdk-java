@@ -28,7 +28,7 @@ public class IncreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
 
     /**
      * <p>
-     * The name of the Global Datastore
+     * The name of the Global datastore
      * </p>
      */
     private String globalReplicationGroupId;
@@ -41,7 +41,7 @@ public class IncreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
     /**
      * <p>
      * Describes the replication group IDs, the AWS regions where they are stored and the shard configuration for each
-     * that comprise the Global Datastore
+     * that comprise the Global datastore
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<RegionalConfiguration> regionalConfigurations;
@@ -54,11 +54,11 @@ public class IncreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
 
     /**
      * <p>
-     * The name of the Global Datastore
+     * The name of the Global datastore
      * </p>
      * 
      * @param globalReplicationGroupId
-     *        The name of the Global Datastore
+     *        The name of the Global datastore
      */
 
     public void setGlobalReplicationGroupId(String globalReplicationGroupId) {
@@ -67,10 +67,10 @@ public class IncreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
 
     /**
      * <p>
-     * The name of the Global Datastore
+     * The name of the Global datastore
      * </p>
      * 
-     * @return The name of the Global Datastore
+     * @return The name of the Global datastore
      */
 
     public String getGlobalReplicationGroupId() {
@@ -79,11 +79,11 @@ public class IncreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
 
     /**
      * <p>
-     * The name of the Global Datastore
+     * The name of the Global datastore
      * </p>
      * 
      * @param globalReplicationGroupId
-     *        The name of the Global Datastore
+     *        The name of the Global datastore
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class IncreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
     /**
      * <p>
      * Describes the replication group IDs, the AWS regions where they are stored and the shard configuration for each
-     * that comprise the Global Datastore
+     * that comprise the Global datastore
      * </p>
      * 
      * @return Describes the replication group IDs, the AWS regions where they are stored and the shard configuration
-     *         for each that comprise the Global Datastore
+     *         for each that comprise the Global datastore
      */
 
     public java.util.List<RegionalConfiguration> getRegionalConfigurations() {
@@ -152,12 +152,12 @@ public class IncreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
     /**
      * <p>
      * Describes the replication group IDs, the AWS regions where they are stored and the shard configuration for each
-     * that comprise the Global Datastore
+     * that comprise the Global datastore
      * </p>
      * 
      * @param regionalConfigurations
      *        Describes the replication group IDs, the AWS regions where they are stored and the shard configuration for
-     *        each that comprise the Global Datastore
+     *        each that comprise the Global datastore
      */
 
     public void setRegionalConfigurations(java.util.Collection<RegionalConfiguration> regionalConfigurations) {
@@ -172,7 +172,7 @@ public class IncreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
     /**
      * <p>
      * Describes the replication group IDs, the AWS regions where they are stored and the shard configuration for each
-     * that comprise the Global Datastore
+     * that comprise the Global datastore
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -182,7 +182,7 @@ public class IncreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
      * 
      * @param regionalConfigurations
      *        Describes the replication group IDs, the AWS regions where they are stored and the shard configuration for
-     *        each that comprise the Global Datastore
+     *        each that comprise the Global datastore
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,12 +199,12 @@ public class IncreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
     /**
      * <p>
      * Describes the replication group IDs, the AWS regions where they are stored and the shard configuration for each
-     * that comprise the Global Datastore
+     * that comprise the Global datastore
      * </p>
      * 
      * @param regionalConfigurations
      *        Describes the replication group IDs, the AWS regions where they are stored and the shard configuration for
-     *        each that comprise the Global Datastore
+     *        each that comprise the Global datastore
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

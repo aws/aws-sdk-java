@@ -117,6 +117,39 @@ public class AWSAccessAnalyzerAsyncClient extends AWSAccessAnalyzerClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<CancelPolicyGenerationResult> cancelPolicyGenerationAsync(CancelPolicyGenerationRequest request) {
+
+        return cancelPolicyGenerationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelPolicyGenerationResult> cancelPolicyGenerationAsync(final CancelPolicyGenerationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CancelPolicyGenerationRequest, CancelPolicyGenerationResult> asyncHandler) {
+        final CancelPolicyGenerationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CancelPolicyGenerationResult>() {
+            @Override
+            public CancelPolicyGenerationResult call() throws Exception {
+                CancelPolicyGenerationResult result = null;
+
+                try {
+                    result = executeCancelPolicyGeneration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAccessPreviewResult> createAccessPreviewAsync(CreateAccessPreviewRequest request) {
 
         return createAccessPreviewAsync(request, null);
@@ -447,6 +480,39 @@ public class AWSAccessAnalyzerAsyncClient extends AWSAccessAnalyzerClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<GetGeneratedPolicyResult> getGeneratedPolicyAsync(GetGeneratedPolicyRequest request) {
+
+        return getGeneratedPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetGeneratedPolicyResult> getGeneratedPolicyAsync(final GetGeneratedPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetGeneratedPolicyRequest, GetGeneratedPolicyResult> asyncHandler) {
+        final GetGeneratedPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetGeneratedPolicyResult>() {
+            @Override
+            public GetGeneratedPolicyResult call() throws Exception {
+                GetGeneratedPolicyResult result = null;
+
+                try {
+                    result = executeGetGeneratedPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAccessPreviewFindingsResult> listAccessPreviewFindingsAsync(ListAccessPreviewFindingsRequest request) {
 
         return listAccessPreviewFindingsAsync(request, null);
@@ -645,6 +711,39 @@ public class AWSAccessAnalyzerAsyncClient extends AWSAccessAnalyzerClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListPolicyGenerationsResult> listPolicyGenerationsAsync(ListPolicyGenerationsRequest request) {
+
+        return listPolicyGenerationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPolicyGenerationsResult> listPolicyGenerationsAsync(final ListPolicyGenerationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPolicyGenerationsRequest, ListPolicyGenerationsResult> asyncHandler) {
+        final ListPolicyGenerationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPolicyGenerationsResult>() {
+            @Override
+            public ListPolicyGenerationsResult call() throws Exception {
+                ListPolicyGenerationsResult result = null;
+
+                try {
+                    result = executeListPolicyGenerations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -662,6 +761,39 @@ public class AWSAccessAnalyzerAsyncClient extends AWSAccessAnalyzerClient implem
 
                 try {
                     result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartPolicyGenerationResult> startPolicyGenerationAsync(StartPolicyGenerationRequest request) {
+
+        return startPolicyGenerationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartPolicyGenerationResult> startPolicyGenerationAsync(final StartPolicyGenerationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartPolicyGenerationRequest, StartPolicyGenerationResult> asyncHandler) {
+        final StartPolicyGenerationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartPolicyGenerationResult>() {
+            @Override
+            public StartPolicyGenerationResult call() throws Exception {
+                StartPolicyGenerationResult result = null;
+
+                try {
+                    result = executeStartPolicyGeneration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

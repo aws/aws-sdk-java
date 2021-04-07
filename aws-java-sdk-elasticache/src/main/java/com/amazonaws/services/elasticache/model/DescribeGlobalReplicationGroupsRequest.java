@@ -27,7 +27,7 @@ public class DescribeGlobalReplicationGroupsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The name of the Global Datastore
+     * The name of the Global datastore
      * </p>
      */
     private String globalReplicationGroupId;
@@ -48,18 +48,18 @@ public class DescribeGlobalReplicationGroupsRequest extends com.amazonaws.Amazon
     private String marker;
     /**
      * <p>
-     * Returns the list of members that comprise the Global Datastore.
+     * Returns the list of members that comprise the Global datastore.
      * </p>
      */
     private Boolean showMemberInfo;
 
     /**
      * <p>
-     * The name of the Global Datastore
+     * The name of the Global datastore
      * </p>
      * 
      * @param globalReplicationGroupId
-     *        The name of the Global Datastore
+     *        The name of the Global datastore
      */
 
     public void setGlobalReplicationGroupId(String globalReplicationGroupId) {
@@ -68,10 +68,10 @@ public class DescribeGlobalReplicationGroupsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The name of the Global Datastore
+     * The name of the Global datastore
      * </p>
      * 
-     * @return The name of the Global Datastore
+     * @return The name of the Global datastore
      */
 
     public String getGlobalReplicationGroupId() {
@@ -80,11 +80,11 @@ public class DescribeGlobalReplicationGroupsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The name of the Global Datastore
+     * The name of the Global datastore
      * </p>
      * 
      * @param globalReplicationGroupId
-     *        The name of the Global Datastore
+     *        The name of the Global datastore
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,11 +193,11 @@ public class DescribeGlobalReplicationGroupsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Returns the list of members that comprise the Global Datastore.
+     * Returns the list of members that comprise the Global datastore.
      * </p>
      * 
      * @param showMemberInfo
-     *        Returns the list of members that comprise the Global Datastore.
+     *        Returns the list of members that comprise the Global datastore.
      */
 
     public void setShowMemberInfo(Boolean showMemberInfo) {
@@ -206,10 +206,10 @@ public class DescribeGlobalReplicationGroupsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Returns the list of members that comprise the Global Datastore.
+     * Returns the list of members that comprise the Global datastore.
      * </p>
      * 
-     * @return Returns the list of members that comprise the Global Datastore.
+     * @return Returns the list of members that comprise the Global datastore.
      */
 
     public Boolean getShowMemberInfo() {
@@ -218,11 +218,11 @@ public class DescribeGlobalReplicationGroupsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Returns the list of members that comprise the Global Datastore.
+     * Returns the list of members that comprise the Global datastore.
      * </p>
      * 
      * @param showMemberInfo
-     *        Returns the list of members that comprise the Global Datastore.
+     *        Returns the list of members that comprise the Global datastore.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -233,10 +233,10 @@ public class DescribeGlobalReplicationGroupsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Returns the list of members that comprise the Global Datastore.
+     * Returns the list of members that comprise the Global datastore.
      * </p>
      * 
-     * @return Returns the list of members that comprise the Global Datastore.
+     * @return Returns the list of members that comprise the Global datastore.
      */
 
     public Boolean isShowMemberInfo() {

@@ -27,30 +27,30 @@ public class DisassociateGlobalReplicationGroupRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the Global Datastore
+     * The name of the Global datastore
      * </p>
      */
     private String globalReplicationGroupId;
     /**
      * <p>
-     * The name of the secondary cluster you wish to remove from the Global Datastore
+     * The name of the secondary cluster you wish to remove from the Global datastore
      * </p>
      */
     private String replicationGroupId;
     /**
      * <p>
-     * The AWS region of secondary cluster you wish to remove from the Global Datastore
+     * The AWS region of secondary cluster you wish to remove from the Global datastore
      * </p>
      */
     private String replicationGroupRegion;
 
     /**
      * <p>
-     * The name of the Global Datastore
+     * The name of the Global datastore
      * </p>
      * 
      * @param globalReplicationGroupId
-     *        The name of the Global Datastore
+     *        The name of the Global datastore
      */
 
     public void setGlobalReplicationGroupId(String globalReplicationGroupId) {
@@ -59,10 +59,10 @@ public class DisassociateGlobalReplicationGroupRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the Global Datastore
+     * The name of the Global datastore
      * </p>
      * 
-     * @return The name of the Global Datastore
+     * @return The name of the Global datastore
      */
 
     public String getGlobalReplicationGroupId() {
@@ -71,11 +71,11 @@ public class DisassociateGlobalReplicationGroupRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the Global Datastore
+     * The name of the Global datastore
      * </p>
      * 
      * @param globalReplicationGroupId
-     *        The name of the Global Datastore
+     *        The name of the Global datastore
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +86,11 @@ public class DisassociateGlobalReplicationGroupRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the secondary cluster you wish to remove from the Global Datastore
+     * The name of the secondary cluster you wish to remove from the Global datastore
      * </p>
      * 
      * @param replicationGroupId
-     *        The name of the secondary cluster you wish to remove from the Global Datastore
+     *        The name of the secondary cluster you wish to remove from the Global datastore
      */
 
     public void setReplicationGroupId(String replicationGroupId) {
@@ -99,10 +99,10 @@ public class DisassociateGlobalReplicationGroupRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the secondary cluster you wish to remove from the Global Datastore
+     * The name of the secondary cluster you wish to remove from the Global datastore
      * </p>
      * 
-     * @return The name of the secondary cluster you wish to remove from the Global Datastore
+     * @return The name of the secondary cluster you wish to remove from the Global datastore
      */
 
     public String getReplicationGroupId() {
@@ -111,11 +111,11 @@ public class DisassociateGlobalReplicationGroupRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the secondary cluster you wish to remove from the Global Datastore
+     * The name of the secondary cluster you wish to remove from the Global datastore
      * </p>
      * 
      * @param replicationGroupId
-     *        The name of the secondary cluster you wish to remove from the Global Datastore
+     *        The name of the secondary cluster you wish to remove from the Global datastore
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class DisassociateGlobalReplicationGroupRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The AWS region of secondary cluster you wish to remove from the Global Datastore
+     * The AWS region of secondary cluster you wish to remove from the Global datastore
      * </p>
      * 
      * @param replicationGroupRegion
-     *        The AWS region of secondary cluster you wish to remove from the Global Datastore
+     *        The AWS region of secondary cluster you wish to remove from the Global datastore
      */
 
     public void setReplicationGroupRegion(String replicationGroupRegion) {
@@ -139,10 +139,10 @@ public class DisassociateGlobalReplicationGroupRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The AWS region of secondary cluster you wish to remove from the Global Datastore
+     * The AWS region of secondary cluster you wish to remove from the Global datastore
      * </p>
      * 
-     * @return The AWS region of secondary cluster you wish to remove from the Global Datastore
+     * @return The AWS region of secondary cluster you wish to remove from the Global datastore
      */
 
     public String getReplicationGroupRegion() {
@@ -151,11 +151,11 @@ public class DisassociateGlobalReplicationGroupRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The AWS region of secondary cluster you wish to remove from the Global Datastore
+     * The AWS region of secondary cluster you wish to remove from the Global datastore
      * </p>
      * 
      * @param replicationGroupRegion
-     *        The AWS region of secondary cluster you wish to remove from the Global Datastore
+     *        The AWS region of secondary cluster you wish to remove from the Global datastore
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

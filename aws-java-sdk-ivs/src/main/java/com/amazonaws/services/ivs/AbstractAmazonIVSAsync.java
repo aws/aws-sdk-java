@@ -66,6 +66,19 @@ public class AbstractAmazonIVSAsync extends AbstractAmazonIVS implements AmazonI
     }
 
     @Override
+    public java.util.concurrent.Future<CreateRecordingConfigurationResult> createRecordingConfigurationAsync(CreateRecordingConfigurationRequest request) {
+
+        return createRecordingConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRecordingConfigurationResult> createRecordingConfigurationAsync(CreateRecordingConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateRecordingConfigurationRequest, CreateRecordingConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateStreamKeyResult> createStreamKeyAsync(CreateStreamKeyRequest request) {
 
         return createStreamKeyAsync(request, null);
@@ -105,6 +118,19 @@ public class AbstractAmazonIVSAsync extends AbstractAmazonIVS implements AmazonI
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteRecordingConfigurationResult> deleteRecordingConfigurationAsync(DeleteRecordingConfigurationRequest request) {
+
+        return deleteRecordingConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRecordingConfigurationResult> deleteRecordingConfigurationAsync(DeleteRecordingConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteRecordingConfigurationRequest, DeleteRecordingConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteStreamKeyResult> deleteStreamKeyAsync(DeleteStreamKeyRequest request) {
 
         return deleteStreamKeyAsync(request, null);
@@ -139,6 +165,19 @@ public class AbstractAmazonIVSAsync extends AbstractAmazonIVS implements AmazonI
     @Override
     public java.util.concurrent.Future<GetPlaybackKeyPairResult> getPlaybackKeyPairAsync(GetPlaybackKeyPairRequest request,
             com.amazonaws.handlers.AsyncHandler<GetPlaybackKeyPairRequest, GetPlaybackKeyPairResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRecordingConfigurationResult> getRecordingConfigurationAsync(GetRecordingConfigurationRequest request) {
+
+        return getRecordingConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRecordingConfigurationResult> getRecordingConfigurationAsync(GetRecordingConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetRecordingConfigurationRequest, GetRecordingConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -204,6 +243,19 @@ public class AbstractAmazonIVSAsync extends AbstractAmazonIVS implements AmazonI
     @Override
     public java.util.concurrent.Future<ListPlaybackKeyPairsResult> listPlaybackKeyPairsAsync(ListPlaybackKeyPairsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPlaybackKeyPairsRequest, ListPlaybackKeyPairsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRecordingConfigurationsResult> listRecordingConfigurationsAsync(ListRecordingConfigurationsRequest request) {
+
+        return listRecordingConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRecordingConfigurationsResult> listRecordingConfigurationsAsync(ListRecordingConfigurationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListRecordingConfigurationsRequest, ListRecordingConfigurationsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

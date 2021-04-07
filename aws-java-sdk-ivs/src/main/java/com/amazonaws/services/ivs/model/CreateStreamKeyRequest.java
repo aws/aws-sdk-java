@@ -33,7 +33,7 @@ public class CreateStreamKeyRequest extends com.amazonaws.AmazonWebServiceReques
     private String channelArn;
     /**
      * <p>
-     * See <a>Channel$tags</a>.
+     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -80,10 +80,10 @@ public class CreateStreamKeyRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * See <a>Channel$tags</a>.
+     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
      * </p>
      * 
-     * @return See <a>Channel$tags</a>.
+     * @return Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -92,11 +92,11 @@ public class CreateStreamKeyRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * See <a>Channel$tags</a>.
+     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
      * </p>
      * 
      * @param tags
-     *        See <a>Channel$tags</a>.
+     *        Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -105,11 +105,11 @@ public class CreateStreamKeyRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * See <a>Channel$tags</a>.
+     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
      * </p>
      * 
      * @param tags
-     *        See <a>Channel$tags</a>.
+     *        Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

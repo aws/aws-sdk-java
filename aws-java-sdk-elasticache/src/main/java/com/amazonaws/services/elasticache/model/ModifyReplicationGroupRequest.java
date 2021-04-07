@@ -67,9 +67,8 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     private Boolean automaticFailoverEnabled;
     /**
      * <p>
-     * A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
-     * Multi-AZ</a>.
+     * A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag
+     * value, although null is accepted.
      * </p>
      */
     private Boolean multiAZEnabled;
@@ -580,15 +579,13 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
-     * Multi-AZ</a>.
+     * A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag
+     * value, although null is accepted.
      * </p>
      * 
      * @param multiAZEnabled
-     *        A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
-     *        Multi-AZ</a>.
+     *        A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a
+     *        tag value, although null is accepted.
      */
 
     public void setMultiAZEnabled(Boolean multiAZEnabled) {
@@ -597,14 +594,12 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
-     * Multi-AZ</a>.
+     * A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag
+     * value, although null is accepted.
      * </p>
      * 
-     * @return A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
-     *         Multi-AZ</a>.
+     * @return A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by
+     *         a tag value, although null is accepted.
      */
 
     public Boolean getMultiAZEnabled() {
@@ -613,15 +608,13 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
-     * Multi-AZ</a>.
+     * A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag
+     * value, although null is accepted.
      * </p>
      * 
      * @param multiAZEnabled
-     *        A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
-     *        Multi-AZ</a>.
+     *        A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a
+     *        tag value, although null is accepted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -632,14 +625,12 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
-     * Multi-AZ</a>.
+     * A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag
+     * value, although null is accepted.
      * </p>
      * 
-     * @return A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime:
-     *         Multi-AZ</a>.
+     * @return A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by
+     *         a tag value, although null is accepted.
      */
 
     public Boolean isMultiAZEnabled() {

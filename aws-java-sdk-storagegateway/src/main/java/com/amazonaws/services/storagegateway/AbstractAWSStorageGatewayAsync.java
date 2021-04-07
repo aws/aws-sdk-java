@@ -106,6 +106,19 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway im
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateFileSystemResult> associateFileSystemAsync(AssociateFileSystemRequest request) {
+
+        return associateFileSystemAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateFileSystemResult> associateFileSystemAsync(AssociateFileSystemRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateFileSystemRequest, AssociateFileSystemResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<AttachVolumeResult> attachVolumeAsync(AttachVolumeRequest request) {
 
         return attachVolumeAsync(request, null);
@@ -478,6 +491,19 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway im
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeFileSystemAssociationsResult> describeFileSystemAssociationsAsync(DescribeFileSystemAssociationsRequest request) {
+
+        return describeFileSystemAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFileSystemAssociationsResult> describeFileSystemAssociationsAsync(DescribeFileSystemAssociationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeFileSystemAssociationsRequest, DescribeFileSystemAssociationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeGatewayInformationResult> describeGatewayInformationAsync(DescribeGatewayInformationRequest request) {
 
         return describeGatewayInformationAsync(request, null);
@@ -696,6 +722,19 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway im
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateFileSystemResult> disassociateFileSystemAsync(DisassociateFileSystemRequest request) {
+
+        return disassociateFileSystemAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateFileSystemResult> disassociateFileSystemAsync(DisassociateFileSystemRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateFileSystemRequest, DisassociateFileSystemResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<JoinDomainResult> joinDomainAsync(JoinDomainRequest request) {
 
         return joinDomainAsync(request, null);
@@ -732,6 +771,19 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway im
     @Override
     public java.util.concurrent.Future<ListFileSharesResult> listFileSharesAsync(ListFileSharesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListFileSharesRequest, ListFileSharesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFileSystemAssociationsResult> listFileSystemAssociationsAsync(ListFileSystemAssociationsRequest request) {
+
+        return listFileSystemAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFileSystemAssociationsResult> listFileSystemAssociationsAsync(ListFileSystemAssociationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListFileSystemAssociationsRequest, ListFileSystemAssociationsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1104,6 +1156,19 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway im
     @Override
     public java.util.concurrent.Future<UpdateChapCredentialsResult> updateChapCredentialsAsync(UpdateChapCredentialsRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateChapCredentialsRequest, UpdateChapCredentialsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFileSystemAssociationResult> updateFileSystemAssociationAsync(UpdateFileSystemAssociationRequest request) {
+
+        return updateFileSystemAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFileSystemAssociationResult> updateFileSystemAssociationAsync(UpdateFileSystemAssociationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateFileSystemAssociationRequest, UpdateFileSystemAssociationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

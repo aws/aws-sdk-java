@@ -37,6 +37,8 @@ public class ChannelSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("latencyMode").build();
     private static final MarshallingInfo<Boolean> AUTHORIZED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authorized").build();
+    private static final MarshallingInfo<String> RECORDINGCONFIGURATIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("recordingConfigurationArn").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
 
@@ -60,6 +62,7 @@ public class ChannelSummaryMarshaller {
             protocolMarshaller.marshall(channelSummary.getName(), NAME_BINDING);
             protocolMarshaller.marshall(channelSummary.getLatencyMode(), LATENCYMODE_BINDING);
             protocolMarshaller.marshall(channelSummary.getAuthorized(), AUTHORIZED_BINDING);
+            protocolMarshaller.marshall(channelSummary.getRecordingConfigurationArn(), RECORDINGCONFIGURATIONARN_BINDING);
             protocolMarshaller.marshall(channelSummary.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

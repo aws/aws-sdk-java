@@ -39,14 +39,16 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String name;
     /**
      * <p>
-     * Channel latency mode. Default: <code>LOW</code>.
+     * Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
+     * <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code>
+     * and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
      * </p>
      */
     private String latencyMode;
     /**
      * <p>
      * Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or
-     * bitrate, the stream probably will disconnect immediately.</i> Valid values:
+     * bitrate, the stream probably will disconnect immediately</i>. Valid values:
      * </p>
      * <ul>
      * <li>
@@ -63,17 +65,21 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * Default: <code>STANDARD</code>.
-     * </p>
      */
     private String type;
     /**
      * <p>
-     * Whether the channel is authorized. Default: <code>false</code>.
+     * Whether the channel is private (enabled for playback authorization).
      * </p>
      */
     private Boolean authorized;
+    /**
+     * <p>
+     * Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an
+     * empty string indicates that recording is enabled
+     * </p>
+     */
+    private String recordingConfigurationArn;
 
     /**
      * <p>
@@ -157,11 +163,15 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Channel latency mode. Default: <code>LOW</code>.
+     * Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
+     * <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code>
+     * and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
      * </p>
      * 
      * @param latencyMode
-     *        Channel latency mode. Default: <code>LOW</code>.
+     *        Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
+     *        <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console,
+     *        <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
      * @see ChannelLatencyMode
      */
 
@@ -171,10 +181,14 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Channel latency mode. Default: <code>LOW</code>.
+     * Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
+     * <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code>
+     * and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
      * </p>
      * 
-     * @return Channel latency mode. Default: <code>LOW</code>.
+     * @return Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
+     *         <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console,
+     *         <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
      * @see ChannelLatencyMode
      */
 
@@ -184,11 +198,15 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Channel latency mode. Default: <code>LOW</code>.
+     * Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
+     * <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code>
+     * and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
      * </p>
      * 
      * @param latencyMode
-     *        Channel latency mode. Default: <code>LOW</code>.
+     *        Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
+     *        <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console,
+     *        <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelLatencyMode
      */
@@ -200,11 +218,15 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Channel latency mode. Default: <code>LOW</code>.
+     * Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
+     * <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console, <code>LOW</code>
+     * and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
      * </p>
      * 
      * @param latencyMode
-     *        Channel latency mode. Default: <code>LOW</code>.
+     *        Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live video up to Full HD. Use
+     *        <code>LOW</code> for near-real-time interaction with viewers. (Note: In the Amazon IVS console,
+     *        <code>LOW</code> and <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelLatencyMode
      */
@@ -217,7 +239,7 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or
-     * bitrate, the stream probably will disconnect immediately.</i> Valid values:
+     * bitrate, the stream probably will disconnect immediately</i>. Valid values:
      * </p>
      * <ul>
      * <li>
@@ -234,13 +256,10 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * Default: <code>STANDARD</code>.
-     * </p>
      * 
      * @param type
      *        Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable
-     *        resolution or bitrate, the stream probably will disconnect immediately.</i> Valid values:</p>
+     *        resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -255,9 +274,6 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        is limited to the original input. Vertical resolution can be up to 480 and bitrate can be up to 1.5 Mbps.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        Default: <code>STANDARD</code>.
      * @see ChannelType
      */
 
@@ -268,7 +284,7 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or
-     * bitrate, the stream probably will disconnect immediately.</i> Valid values:
+     * bitrate, the stream probably will disconnect immediately</i>. Valid values:
      * </p>
      * <ul>
      * <li>
@@ -285,12 +301,9 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * Default: <code>STANDARD</code>.
-     * </p>
      * 
      * @return Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable
-     *         resolution or bitrate, the stream probably will disconnect immediately.</i> Valid values:</p>
+     *         resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -305,9 +318,6 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         is limited to the original input. Vertical resolution can be up to 480 and bitrate can be up to 1.5 Mbps.
      *         </p>
      *         </li>
-     *         </ul>
-     *         <p>
-     *         Default: <code>STANDARD</code>.
      * @see ChannelType
      */
 
@@ -318,7 +328,7 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or
-     * bitrate, the stream probably will disconnect immediately.</i> Valid values:
+     * bitrate, the stream probably will disconnect immediately</i>. Valid values:
      * </p>
      * <ul>
      * <li>
@@ -335,13 +345,10 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * Default: <code>STANDARD</code>.
-     * </p>
      * 
      * @param type
      *        Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable
-     *        resolution or bitrate, the stream probably will disconnect immediately.</i> Valid values:</p>
+     *        resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -356,9 +363,6 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        is limited to the original input. Vertical resolution can be up to 480 and bitrate can be up to 1.5 Mbps.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        Default: <code>STANDARD</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelType
      */
@@ -371,7 +375,7 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or
-     * bitrate, the stream probably will disconnect immediately.</i> Valid values:
+     * bitrate, the stream probably will disconnect immediately</i>. Valid values:
      * </p>
      * <ul>
      * <li>
@@ -388,13 +392,10 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * Default: <code>STANDARD</code>.
-     * </p>
      * 
      * @param type
      *        Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable
-     *        resolution or bitrate, the stream probably will disconnect immediately.</i> Valid values:</p>
+     *        resolution or bitrate, the stream probably will disconnect immediately</i>. Valid values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -409,9 +410,6 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        is limited to the original input. Vertical resolution can be up to 480 and bitrate can be up to 1.5 Mbps.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        Default: <code>STANDARD</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelType
      */
@@ -423,11 +421,11 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Whether the channel is authorized. Default: <code>false</code>.
+     * Whether the channel is private (enabled for playback authorization).
      * </p>
      * 
      * @param authorized
-     *        Whether the channel is authorized. Default: <code>false</code>.
+     *        Whether the channel is private (enabled for playback authorization).
      */
 
     public void setAuthorized(Boolean authorized) {
@@ -436,10 +434,10 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Whether the channel is authorized. Default: <code>false</code>.
+     * Whether the channel is private (enabled for playback authorization).
      * </p>
      * 
-     * @return Whether the channel is authorized. Default: <code>false</code>.
+     * @return Whether the channel is private (enabled for playback authorization).
      */
 
     public Boolean getAuthorized() {
@@ -448,11 +446,11 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Whether the channel is authorized. Default: <code>false</code>.
+     * Whether the channel is private (enabled for playback authorization).
      * </p>
      * 
      * @param authorized
-     *        Whether the channel is authorized. Default: <code>false</code>.
+     *        Whether the channel is private (enabled for playback authorization).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -463,14 +461,60 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Whether the channel is authorized. Default: <code>false</code>.
+     * Whether the channel is private (enabled for playback authorization).
      * </p>
      * 
-     * @return Whether the channel is authorized. Default: <code>false</code>.
+     * @return Whether the channel is private (enabled for playback authorization).
      */
 
     public Boolean isAuthorized() {
         return this.authorized;
+    }
+
+    /**
+     * <p>
+     * Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an
+     * empty string indicates that recording is enabled
+     * </p>
+     * 
+     * @param recordingConfigurationArn
+     *        Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than
+     *        an empty string indicates that recording is enabled
+     */
+
+    public void setRecordingConfigurationArn(String recordingConfigurationArn) {
+        this.recordingConfigurationArn = recordingConfigurationArn;
+    }
+
+    /**
+     * <p>
+     * Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an
+     * empty string indicates that recording is enabled
+     * </p>
+     * 
+     * @return Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than
+     *         an empty string indicates that recording is enabled
+     */
+
+    public String getRecordingConfigurationArn() {
+        return this.recordingConfigurationArn;
+    }
+
+    /**
+     * <p>
+     * Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than an
+     * empty string indicates that recording is enabled
+     * </p>
+     * 
+     * @param recordingConfigurationArn
+     *        Recording-configuration ARN. If this is set to an empty string, recording is disabled. A value other than
+     *        an empty string indicates that recording is enabled
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateChannelRequest withRecordingConfigurationArn(String recordingConfigurationArn) {
+        setRecordingConfigurationArn(recordingConfigurationArn);
+        return this;
     }
 
     /**
@@ -494,7 +538,9 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getAuthorized() != null)
-            sb.append("Authorized: ").append(getAuthorized());
+            sb.append("Authorized: ").append(getAuthorized()).append(",");
+        if (getRecordingConfigurationArn() != null)
+            sb.append("RecordingConfigurationArn: ").append(getRecordingConfigurationArn());
         sb.append("}");
         return sb.toString();
     }
@@ -529,6 +575,10 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getAuthorized() != null && other.getAuthorized().equals(this.getAuthorized()) == false)
             return false;
+        if (other.getRecordingConfigurationArn() == null ^ this.getRecordingConfigurationArn() == null)
+            return false;
+        if (other.getRecordingConfigurationArn() != null && other.getRecordingConfigurationArn().equals(this.getRecordingConfigurationArn()) == false)
+            return false;
         return true;
     }
 
@@ -542,6 +592,7 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getLatencyMode() == null) ? 0 : getLatencyMode().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getAuthorized() == null) ? 0 : getAuthorized().hashCode());
+        hashCode = prime * hashCode + ((getRecordingConfigurationArn() == null) ? 0 : getRecordingConfigurationArn().hashCode());
         return hashCode;
     }
 

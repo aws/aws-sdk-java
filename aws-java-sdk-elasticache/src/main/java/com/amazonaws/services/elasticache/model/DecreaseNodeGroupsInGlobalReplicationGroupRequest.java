@@ -28,7 +28,7 @@ public class DecreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
 
     /**
      * <p>
-     * The name of the Global Datastore
+     * The name of the Global datastore
      * </p>
      */
     private String globalReplicationGroupId;
@@ -66,11 +66,11 @@ public class DecreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
 
     /**
      * <p>
-     * The name of the Global Datastore
+     * The name of the Global datastore
      * </p>
      * 
      * @param globalReplicationGroupId
-     *        The name of the Global Datastore
+     *        The name of the Global datastore
      */
 
     public void setGlobalReplicationGroupId(String globalReplicationGroupId) {
@@ -79,10 +79,10 @@ public class DecreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
 
     /**
      * <p>
-     * The name of the Global Datastore
+     * The name of the Global datastore
      * </p>
      * 
-     * @return The name of the Global Datastore
+     * @return The name of the Global datastore
      */
 
     public String getGlobalReplicationGroupId() {
@@ -91,11 +91,11 @@ public class DecreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
 
     /**
      * <p>
-     * The name of the Global Datastore
+     * The name of the Global datastore
      * </p>
      * 
      * @param globalReplicationGroupId
-     *        The name of the Global Datastore
+     *        The name of the Global datastore
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

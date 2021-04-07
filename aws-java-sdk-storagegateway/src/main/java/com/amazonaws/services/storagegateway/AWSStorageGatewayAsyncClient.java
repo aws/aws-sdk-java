@@ -529,6 +529,39 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateFileSystemResult> associateFileSystemAsync(AssociateFileSystemRequest request) {
+
+        return associateFileSystemAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateFileSystemResult> associateFileSystemAsync(final AssociateFileSystemRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateFileSystemRequest, AssociateFileSystemResult> asyncHandler) {
+        final AssociateFileSystemRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateFileSystemResult>() {
+            @Override
+            public AssociateFileSystemResult call() throws Exception {
+                AssociateFileSystemResult result = null;
+
+                try {
+                    result = executeAssociateFileSystem(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AttachVolumeResult> attachVolumeAsync(AttachVolumeRequest request) {
 
         return attachVolumeAsync(request, null);
@@ -1461,6 +1494,40 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeFileSystemAssociationsResult> describeFileSystemAssociationsAsync(DescribeFileSystemAssociationsRequest request) {
+
+        return describeFileSystemAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFileSystemAssociationsResult> describeFileSystemAssociationsAsync(
+            final DescribeFileSystemAssociationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeFileSystemAssociationsRequest, DescribeFileSystemAssociationsResult> asyncHandler) {
+        final DescribeFileSystemAssociationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeFileSystemAssociationsResult>() {
+            @Override
+            public DescribeFileSystemAssociationsResult call() throws Exception {
+                DescribeFileSystemAssociationsResult result = null;
+
+                try {
+                    result = executeDescribeFileSystemAssociations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeGatewayInformationResult> describeGatewayInformationAsync(DescribeGatewayInformationRequest request) {
 
         return describeGatewayInformationAsync(request, null);
@@ -1979,6 +2046,39 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateFileSystemResult> disassociateFileSystemAsync(DisassociateFileSystemRequest request) {
+
+        return disassociateFileSystemAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateFileSystemResult> disassociateFileSystemAsync(final DisassociateFileSystemRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateFileSystemRequest, DisassociateFileSystemResult> asyncHandler) {
+        final DisassociateFileSystemRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateFileSystemResult>() {
+            @Override
+            public DisassociateFileSystemResult call() throws Exception {
+                DisassociateFileSystemResult result = null;
+
+                try {
+                    result = executeDisassociateFileSystem(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<JoinDomainResult> joinDomainAsync(JoinDomainRequest request) {
 
         return joinDomainAsync(request, null);
@@ -2064,6 +2164,39 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
 
                 try {
                     result = executeListFileShares(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFileSystemAssociationsResult> listFileSystemAssociationsAsync(ListFileSystemAssociationsRequest request) {
+
+        return listFileSystemAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFileSystemAssociationsResult> listFileSystemAssociationsAsync(final ListFileSystemAssociationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListFileSystemAssociationsRequest, ListFileSystemAssociationsResult> asyncHandler) {
+        final ListFileSystemAssociationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListFileSystemAssociationsResult>() {
+            @Override
+            public ListFileSystemAssociationsResult call() throws Exception {
+                ListFileSystemAssociationsResult result = null;
+
+                try {
+                    result = executeListFileSystemAssociations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2896,6 +3029,39 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
 
                 try {
                     result = executeUpdateChapCredentials(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFileSystemAssociationResult> updateFileSystemAssociationAsync(UpdateFileSystemAssociationRequest request) {
+
+        return updateFileSystemAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFileSystemAssociationResult> updateFileSystemAssociationAsync(final UpdateFileSystemAssociationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateFileSystemAssociationRequest, UpdateFileSystemAssociationResult> asyncHandler) {
+        final UpdateFileSystemAssociationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateFileSystemAssociationResult>() {
+            @Override
+            public UpdateFileSystemAssociationResult call() throws Exception {
+                UpdateFileSystemAssociationResult result = null;
+
+                try {
+                    result = executeUpdateFileSystemAssociation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

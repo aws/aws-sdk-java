@@ -55,6 +55,27 @@ public class PurchaseReservedCacheNodesOfferingRequestMarshaller implements
             request.addParameter("CacheNodeCount", StringUtils.fromInteger(purchaseReservedCacheNodesOfferingRequest.getCacheNodeCount()));
         }
 
+        if (!purchaseReservedCacheNodesOfferingRequest.getTags().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<Tag>) purchaseReservedCacheNodesOfferingRequest.getTags()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<Tag> tagsList = (com.amazonaws.internal.SdkInternalList<Tag>) purchaseReservedCacheNodesOfferingRequest
+                    .getTags();
+            int tagsListIndex = 1;
+
+            for (Tag tagsListValue : tagsList) {
+                if (tagsListValue != null) {
+
+                    if (tagsListValue.getKey() != null) {
+                        request.addParameter("Tags.Tag." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
+                    }
+
+                    if (tagsListValue.getValue() != null) {
+                        request.addParameter("Tags.Tag." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                    }
+                }
+                tagsListIndex++;
+            }
+        }
+
         return request;
     }
 
