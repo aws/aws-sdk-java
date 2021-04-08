@@ -89,6 +89,11 @@ public class AbstractAmazonAppStream implements AmazonAppStream {
     }
 
     @Override
+    public CreateUpdatedImageResult createUpdatedImage(CreateUpdatedImageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateUsageReportSubscriptionResult createUsageReportSubscription(CreateUsageReportSubscriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

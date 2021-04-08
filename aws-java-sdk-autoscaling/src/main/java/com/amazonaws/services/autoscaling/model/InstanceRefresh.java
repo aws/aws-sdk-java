@@ -110,6 +110,12 @@ public class InstanceRefresh implements Serializable, Cloneable {
      * </p>
      */
     private Integer instancesToUpdate;
+    /**
+     * <p>
+     * Additional progress details for an Auto Scaling group that has a warm pool.
+     * </p>
+     */
+    private InstanceRefreshProgressDetails progressDetails;
 
     /**
      * <p>
@@ -734,6 +740,46 @@ public class InstanceRefresh implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Additional progress details for an Auto Scaling group that has a warm pool.
+     * </p>
+     * 
+     * @param progressDetails
+     *        Additional progress details for an Auto Scaling group that has a warm pool.
+     */
+
+    public void setProgressDetails(InstanceRefreshProgressDetails progressDetails) {
+        this.progressDetails = progressDetails;
+    }
+
+    /**
+     * <p>
+     * Additional progress details for an Auto Scaling group that has a warm pool.
+     * </p>
+     * 
+     * @return Additional progress details for an Auto Scaling group that has a warm pool.
+     */
+
+    public InstanceRefreshProgressDetails getProgressDetails() {
+        return this.progressDetails;
+    }
+
+    /**
+     * <p>
+     * Additional progress details for an Auto Scaling group that has a warm pool.
+     * </p>
+     * 
+     * @param progressDetails
+     *        Additional progress details for an Auto Scaling group that has a warm pool.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceRefresh withProgressDetails(InstanceRefreshProgressDetails progressDetails) {
+        setProgressDetails(progressDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -760,7 +806,9 @@ public class InstanceRefresh implements Serializable, Cloneable {
         if (getPercentageComplete() != null)
             sb.append("PercentageComplete: ").append(getPercentageComplete()).append(",");
         if (getInstancesToUpdate() != null)
-            sb.append("InstancesToUpdate: ").append(getInstancesToUpdate());
+            sb.append("InstancesToUpdate: ").append(getInstancesToUpdate()).append(",");
+        if (getProgressDetails() != null)
+            sb.append("ProgressDetails: ").append(getProgressDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -807,6 +855,10 @@ public class InstanceRefresh implements Serializable, Cloneable {
             return false;
         if (other.getInstancesToUpdate() != null && other.getInstancesToUpdate().equals(this.getInstancesToUpdate()) == false)
             return false;
+        if (other.getProgressDetails() == null ^ this.getProgressDetails() == null)
+            return false;
+        if (other.getProgressDetails() != null && other.getProgressDetails().equals(this.getProgressDetails()) == false)
+            return false;
         return true;
     }
 
@@ -823,6 +875,7 @@ public class InstanceRefresh implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         hashCode = prime * hashCode + ((getPercentageComplete() == null) ? 0 : getPercentageComplete().hashCode());
         hashCode = prime * hashCode + ((getInstancesToUpdate() == null) ? 0 : getInstancesToUpdate().hashCode());
+        hashCode = prime * hashCode + ((getProgressDetails() == null) ? 0 : getProgressDetails().hashCode());
         return hashCode;
     }
 

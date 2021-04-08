@@ -854,6 +854,39 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteWarmPoolResult> deleteWarmPoolAsync(DeleteWarmPoolRequest request) {
+
+        return deleteWarmPoolAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWarmPoolResult> deleteWarmPoolAsync(final DeleteWarmPoolRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteWarmPoolRequest, DeleteWarmPoolResult> asyncHandler) {
+        final DeleteWarmPoolRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteWarmPoolResult>() {
+            @Override
+            public DeleteWarmPoolResult call() throws Exception {
+                DeleteWarmPoolResult result = null;
+
+                try {
+                    result = executeDeleteWarmPool(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAccountLimitsResult> describeAccountLimitsAsync(DescribeAccountLimitsRequest request) {
 
         return describeAccountLimitsAsync(request, null);
@@ -1838,6 +1871,39 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeWarmPoolResult> describeWarmPoolAsync(DescribeWarmPoolRequest request) {
+
+        return describeWarmPoolAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeWarmPoolResult> describeWarmPoolAsync(final DescribeWarmPoolRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeWarmPoolRequest, DescribeWarmPoolResult> asyncHandler) {
+        final DescribeWarmPoolRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeWarmPoolResult>() {
+            @Override
+            public DescribeWarmPoolResult call() throws Exception {
+                DescribeWarmPoolResult result = null;
+
+                try {
+                    result = executeDescribeWarmPool(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DetachInstancesResult> detachInstancesAsync(DetachInstancesRequest request) {
 
         return detachInstancesAsync(request, null);
@@ -2243,6 +2309,39 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient implem
 
                 try {
                     result = executePutScheduledUpdateGroupAction(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutWarmPoolResult> putWarmPoolAsync(PutWarmPoolRequest request) {
+
+        return putWarmPoolAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutWarmPoolResult> putWarmPoolAsync(final PutWarmPoolRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutWarmPoolRequest, PutWarmPoolResult> asyncHandler) {
+        final PutWarmPoolRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutWarmPoolResult>() {
+            @Override
+            public PutWarmPoolResult call() throws Exception {
+                PutWarmPoolResult result = null;
+
+                try {
+                    result = executePutWarmPool(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

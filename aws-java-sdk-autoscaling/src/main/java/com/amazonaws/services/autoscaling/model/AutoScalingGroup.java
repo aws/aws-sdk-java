@@ -196,6 +196,18 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * </p>
      */
     private Boolean capacityRebalance;
+    /**
+     * <p>
+     * The warm pool for the group.
+     * </p>
+     */
+    private WarmPoolConfiguration warmPoolConfiguration;
+    /**
+     * <p>
+     * The current size of the warm pool.
+     * </p>
+     */
+    private Integer warmPoolSize;
 
     /**
      * <p>
@@ -1613,6 +1625,86 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The warm pool for the group.
+     * </p>
+     * 
+     * @param warmPoolConfiguration
+     *        The warm pool for the group.
+     */
+
+    public void setWarmPoolConfiguration(WarmPoolConfiguration warmPoolConfiguration) {
+        this.warmPoolConfiguration = warmPoolConfiguration;
+    }
+
+    /**
+     * <p>
+     * The warm pool for the group.
+     * </p>
+     * 
+     * @return The warm pool for the group.
+     */
+
+    public WarmPoolConfiguration getWarmPoolConfiguration() {
+        return this.warmPoolConfiguration;
+    }
+
+    /**
+     * <p>
+     * The warm pool for the group.
+     * </p>
+     * 
+     * @param warmPoolConfiguration
+     *        The warm pool for the group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoScalingGroup withWarmPoolConfiguration(WarmPoolConfiguration warmPoolConfiguration) {
+        setWarmPoolConfiguration(warmPoolConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current size of the warm pool.
+     * </p>
+     * 
+     * @param warmPoolSize
+     *        The current size of the warm pool.
+     */
+
+    public void setWarmPoolSize(Integer warmPoolSize) {
+        this.warmPoolSize = warmPoolSize;
+    }
+
+    /**
+     * <p>
+     * The current size of the warm pool.
+     * </p>
+     * 
+     * @return The current size of the warm pool.
+     */
+
+    public Integer getWarmPoolSize() {
+        return this.warmPoolSize;
+    }
+
+    /**
+     * <p>
+     * The current size of the warm pool.
+     * </p>
+     * 
+     * @param warmPoolSize
+     *        The current size of the warm pool.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoScalingGroup withWarmPoolSize(Integer warmPoolSize) {
+        setWarmPoolSize(warmPoolSize);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1677,7 +1769,11 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         if (getMaxInstanceLifetime() != null)
             sb.append("MaxInstanceLifetime: ").append(getMaxInstanceLifetime()).append(",");
         if (getCapacityRebalance() != null)
-            sb.append("CapacityRebalance: ").append(getCapacityRebalance());
+            sb.append("CapacityRebalance: ").append(getCapacityRebalance()).append(",");
+        if (getWarmPoolConfiguration() != null)
+            sb.append("WarmPoolConfiguration: ").append(getWarmPoolConfiguration()).append(",");
+        if (getWarmPoolSize() != null)
+            sb.append("WarmPoolSize: ").append(getWarmPoolSize());
         sb.append("}");
         return sb.toString();
     }
@@ -1801,6 +1897,14 @@ public class AutoScalingGroup implements Serializable, Cloneable {
             return false;
         if (other.getCapacityRebalance() != null && other.getCapacityRebalance().equals(this.getCapacityRebalance()) == false)
             return false;
+        if (other.getWarmPoolConfiguration() == null ^ this.getWarmPoolConfiguration() == null)
+            return false;
+        if (other.getWarmPoolConfiguration() != null && other.getWarmPoolConfiguration().equals(this.getWarmPoolConfiguration()) == false)
+            return false;
+        if (other.getWarmPoolSize() == null ^ this.getWarmPoolSize() == null)
+            return false;
+        if (other.getWarmPoolSize() != null && other.getWarmPoolSize().equals(this.getWarmPoolSize()) == false)
+            return false;
         return true;
     }
 
@@ -1836,6 +1940,8 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getServiceLinkedRoleARN() == null) ? 0 : getServiceLinkedRoleARN().hashCode());
         hashCode = prime * hashCode + ((getMaxInstanceLifetime() == null) ? 0 : getMaxInstanceLifetime().hashCode());
         hashCode = prime * hashCode + ((getCapacityRebalance() == null) ? 0 : getCapacityRebalance().hashCode());
+        hashCode = prime * hashCode + ((getWarmPoolConfiguration() == null) ? 0 : getWarmPoolConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getWarmPoolSize() == null) ? 0 : getWarmPoolSize().hashCode());
         return hashCode;
     }
 

@@ -39,7 +39,11 @@ public enum DeploymentJobErrorCode {
     PostLaunchFileFailure("PostLaunchFileFailure"),
     BadPermissionError("BadPermissionError"),
     DownloadConditionFailed("DownloadConditionFailed"),
-    InternalServerError("InternalServerError");
+    BadLambdaAssociated("BadLambdaAssociated"),
+    InternalServerError("InternalServerError"),
+    RobotApplicationDoesNotExist("RobotApplicationDoesNotExist"),
+    DeploymentFleetDoesNotExist("DeploymentFleetDoesNotExist"),
+    FleetDeploymentTimeout("FleetDeploymentTimeout");
 
     private String value;
 

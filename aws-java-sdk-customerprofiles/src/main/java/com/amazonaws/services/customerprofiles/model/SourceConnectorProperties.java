@@ -18,6 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Specifies the information that is required to query a particular Amazon AppFlow connector. Customer Profiles supports
+ * Salesforce, Zendesk, Marketo, ServiceNow and Amazon S3.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/SourceConnectorProperties"
  *      target="_top">AWS API Documentation</a>
@@ -25,18 +29,44 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SourceConnectorProperties implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The properties that are applied when Marketo is being used as a source.
+     * </p>
+     */
     private MarketoSourceProperties marketo;
-
+    /**
+     * <p>
+     * The properties that are applied when Amazon S3 is being used as the flow source.
+     * </p>
+     */
     private S3SourceProperties s3;
-
+    /**
+     * <p>
+     * The properties that are applied when Salesforce is being used as a source.
+     * </p>
+     */
     private SalesforceSourceProperties salesforce;
-
+    /**
+     * <p>
+     * The properties that are applied when ServiceNow is being used as a source.
+     * </p>
+     */
     private ServiceNowSourceProperties serviceNow;
-
+    /**
+     * <p>
+     * The properties that are applied when using Zendesk as a flow source.
+     * </p>
+     */
     private ZendeskSourceProperties zendesk;
 
     /**
+     * <p>
+     * The properties that are applied when Marketo is being used as a source.
+     * </p>
+     * 
      * @param marketo
+     *        The properties that are applied when Marketo is being used as a source.
      */
 
     public void setMarketo(MarketoSourceProperties marketo) {
@@ -44,7 +74,11 @@ public class SourceConnectorProperties implements Serializable, Cloneable, Struc
     }
 
     /**
-     * @return
+     * <p>
+     * The properties that are applied when Marketo is being used as a source.
+     * </p>
+     * 
+     * @return The properties that are applied when Marketo is being used as a source.
      */
 
     public MarketoSourceProperties getMarketo() {
@@ -52,7 +86,12 @@ public class SourceConnectorProperties implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The properties that are applied when Marketo is being used as a source.
+     * </p>
+     * 
      * @param marketo
+     *        The properties that are applied when Marketo is being used as a source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -62,7 +101,12 @@ public class SourceConnectorProperties implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The properties that are applied when Amazon S3 is being used as the flow source.
+     * </p>
+     * 
      * @param s3
+     *        The properties that are applied when Amazon S3 is being used as the flow source.
      */
 
     public void setS3(S3SourceProperties s3) {
@@ -70,7 +114,11 @@ public class SourceConnectorProperties implements Serializable, Cloneable, Struc
     }
 
     /**
-     * @return
+     * <p>
+     * The properties that are applied when Amazon S3 is being used as the flow source.
+     * </p>
+     * 
+     * @return The properties that are applied when Amazon S3 is being used as the flow source.
      */
 
     public S3SourceProperties getS3() {
@@ -78,7 +126,12 @@ public class SourceConnectorProperties implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The properties that are applied when Amazon S3 is being used as the flow source.
+     * </p>
+     * 
      * @param s3
+     *        The properties that are applied when Amazon S3 is being used as the flow source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,7 +141,12 @@ public class SourceConnectorProperties implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The properties that are applied when Salesforce is being used as a source.
+     * </p>
+     * 
      * @param salesforce
+     *        The properties that are applied when Salesforce is being used as a source.
      */
 
     public void setSalesforce(SalesforceSourceProperties salesforce) {
@@ -96,7 +154,11 @@ public class SourceConnectorProperties implements Serializable, Cloneable, Struc
     }
 
     /**
-     * @return
+     * <p>
+     * The properties that are applied when Salesforce is being used as a source.
+     * </p>
+     * 
+     * @return The properties that are applied when Salesforce is being used as a source.
      */
 
     public SalesforceSourceProperties getSalesforce() {
@@ -104,7 +166,12 @@ public class SourceConnectorProperties implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The properties that are applied when Salesforce is being used as a source.
+     * </p>
+     * 
      * @param salesforce
+     *        The properties that are applied when Salesforce is being used as a source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,7 +181,12 @@ public class SourceConnectorProperties implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The properties that are applied when ServiceNow is being used as a source.
+     * </p>
+     * 
      * @param serviceNow
+     *        The properties that are applied when ServiceNow is being used as a source.
      */
 
     public void setServiceNow(ServiceNowSourceProperties serviceNow) {
@@ -122,7 +194,11 @@ public class SourceConnectorProperties implements Serializable, Cloneable, Struc
     }
 
     /**
-     * @return
+     * <p>
+     * The properties that are applied when ServiceNow is being used as a source.
+     * </p>
+     * 
+     * @return The properties that are applied when ServiceNow is being used as a source.
      */
 
     public ServiceNowSourceProperties getServiceNow() {
@@ -130,7 +206,12 @@ public class SourceConnectorProperties implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The properties that are applied when ServiceNow is being used as a source.
+     * </p>
+     * 
      * @param serviceNow
+     *        The properties that are applied when ServiceNow is being used as a source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,7 +221,12 @@ public class SourceConnectorProperties implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The properties that are applied when using Zendesk as a flow source.
+     * </p>
+     * 
      * @param zendesk
+     *        The properties that are applied when using Zendesk as a flow source.
      */
 
     public void setZendesk(ZendeskSourceProperties zendesk) {
@@ -148,7 +234,11 @@ public class SourceConnectorProperties implements Serializable, Cloneable, Struc
     }
 
     /**
-     * @return
+     * <p>
+     * The properties that are applied when using Zendesk as a flow source.
+     * </p>
+     * 
+     * @return The properties that are applied when using Zendesk as a flow source.
      */
 
     public ZendeskSourceProperties getZendesk() {
@@ -156,7 +246,12 @@ public class SourceConnectorProperties implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The properties that are applied when using Zendesk as a flow source.
+     * </p>
+     * 
      * @param zendesk
+     *        The properties that are applied when using Zendesk as a flow source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

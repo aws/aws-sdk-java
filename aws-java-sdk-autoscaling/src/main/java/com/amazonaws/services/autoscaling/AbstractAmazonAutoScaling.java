@@ -129,6 +129,11 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
+    public DeleteWarmPoolResult deleteWarmPool(DeleteWarmPoolRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeAccountLimitsResult describeAccountLimits(DescribeAccountLimitsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -299,6 +304,11 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
+    public DescribeWarmPoolResult describeWarmPool(DescribeWarmPoolRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DetachInstancesResult detachInstances(DetachInstancesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -360,6 +370,11 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
 
     @Override
     public PutScheduledUpdateGroupActionResult putScheduledUpdateGroupAction(PutScheduledUpdateGroupActionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutWarmPoolResult putWarmPool(PutWarmPoolRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

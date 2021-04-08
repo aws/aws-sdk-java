@@ -18,6 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * The configurations that control how Customer Profiles retrieves data from the source, Amazon AppFlow. Customer
+ * Profiles uses this information to create an AppFlow flow on behalf of customers.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/FlowDefinition" target="_top">AWS
  *      API Documentation</a>
@@ -25,20 +29,50 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class FlowDefinition implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * A description of the flow you want to create.
+     * </p>
+     */
     private String description;
-
+    /**
+     * <p>
+     * The specified name of the flow. Use underscores (_) or hyphens (-) only. Spaces are not allowed.
+     * </p>
+     */
     private String flowName;
-
+    /**
+     * <p>
+     * The Amazon Resource Name of the AWS Key Management Service (KMS) key you provide for encryption.
+     * </p>
+     */
     private String kmsArn;
-
+    /**
+     * <p>
+     * The configuration that controls how Customer Profiles retrieves data from the source.
+     * </p>
+     */
     private SourceFlowConfig sourceFlowConfig;
-
+    /**
+     * <p>
+     * A list of tasks that Customer Profiles performs while transferring the data in the flow run.
+     * </p>
+     */
     private java.util.List<Task> tasks;
-
+    /**
+     * <p>
+     * The trigger settings that determine how and when the flow runs.
+     * </p>
+     */
     private TriggerConfig triggerConfig;
 
     /**
+     * <p>
+     * A description of the flow you want to create.
+     * </p>
+     * 
      * @param description
+     *        A description of the flow you want to create.
      */
 
     public void setDescription(String description) {
@@ -46,7 +80,11 @@ public class FlowDefinition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * A description of the flow you want to create.
+     * </p>
+     * 
+     * @return A description of the flow you want to create.
      */
 
     public String getDescription() {
@@ -54,7 +92,12 @@ public class FlowDefinition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A description of the flow you want to create.
+     * </p>
+     * 
      * @param description
+     *        A description of the flow you want to create.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -64,7 +107,12 @@ public class FlowDefinition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The specified name of the flow. Use underscores (_) or hyphens (-) only. Spaces are not allowed.
+     * </p>
+     * 
      * @param flowName
+     *        The specified name of the flow. Use underscores (_) or hyphens (-) only. Spaces are not allowed.
      */
 
     public void setFlowName(String flowName) {
@@ -72,7 +120,11 @@ public class FlowDefinition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The specified name of the flow. Use underscores (_) or hyphens (-) only. Spaces are not allowed.
+     * </p>
+     * 
+     * @return The specified name of the flow. Use underscores (_) or hyphens (-) only. Spaces are not allowed.
      */
 
     public String getFlowName() {
@@ -80,7 +132,12 @@ public class FlowDefinition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The specified name of the flow. Use underscores (_) or hyphens (-) only. Spaces are not allowed.
+     * </p>
+     * 
      * @param flowName
+     *        The specified name of the flow. Use underscores (_) or hyphens (-) only. Spaces are not allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,7 +147,12 @@ public class FlowDefinition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name of the AWS Key Management Service (KMS) key you provide for encryption.
+     * </p>
+     * 
      * @param kmsArn
+     *        The Amazon Resource Name of the AWS Key Management Service (KMS) key you provide for encryption.
      */
 
     public void setKmsArn(String kmsArn) {
@@ -98,7 +160,11 @@ public class FlowDefinition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name of the AWS Key Management Service (KMS) key you provide for encryption.
+     * </p>
+     * 
+     * @return The Amazon Resource Name of the AWS Key Management Service (KMS) key you provide for encryption.
      */
 
     public String getKmsArn() {
@@ -106,7 +172,12 @@ public class FlowDefinition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name of the AWS Key Management Service (KMS) key you provide for encryption.
+     * </p>
+     * 
      * @param kmsArn
+     *        The Amazon Resource Name of the AWS Key Management Service (KMS) key you provide for encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,7 +187,12 @@ public class FlowDefinition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The configuration that controls how Customer Profiles retrieves data from the source.
+     * </p>
+     * 
      * @param sourceFlowConfig
+     *        The configuration that controls how Customer Profiles retrieves data from the source.
      */
 
     public void setSourceFlowConfig(SourceFlowConfig sourceFlowConfig) {
@@ -124,7 +200,11 @@ public class FlowDefinition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The configuration that controls how Customer Profiles retrieves data from the source.
+     * </p>
+     * 
+     * @return The configuration that controls how Customer Profiles retrieves data from the source.
      */
 
     public SourceFlowConfig getSourceFlowConfig() {
@@ -132,7 +212,12 @@ public class FlowDefinition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The configuration that controls how Customer Profiles retrieves data from the source.
+     * </p>
+     * 
      * @param sourceFlowConfig
+     *        The configuration that controls how Customer Profiles retrieves data from the source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,7 +227,11 @@ public class FlowDefinition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * A list of tasks that Customer Profiles performs while transferring the data in the flow run.
+     * </p>
+     * 
+     * @return A list of tasks that Customer Profiles performs while transferring the data in the flow run.
      */
 
     public java.util.List<Task> getTasks() {
@@ -150,7 +239,12 @@ public class FlowDefinition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A list of tasks that Customer Profiles performs while transferring the data in the flow run.
+     * </p>
+     * 
      * @param tasks
+     *        A list of tasks that Customer Profiles performs while transferring the data in the flow run.
      */
 
     public void setTasks(java.util.Collection<Task> tasks) {
@@ -164,12 +258,16 @@ public class FlowDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * A list of tasks that Customer Profiles performs while transferring the data in the flow run.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTasks(java.util.Collection)} or {@link #withTasks(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tasks
+     *        A list of tasks that Customer Profiles performs while transferring the data in the flow run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,7 +282,12 @@ public class FlowDefinition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A list of tasks that Customer Profiles performs while transferring the data in the flow run.
+     * </p>
+     * 
      * @param tasks
+     *        A list of tasks that Customer Profiles performs while transferring the data in the flow run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,7 +297,12 @@ public class FlowDefinition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The trigger settings that determine how and when the flow runs.
+     * </p>
+     * 
      * @param triggerConfig
+     *        The trigger settings that determine how and when the flow runs.
      */
 
     public void setTriggerConfig(TriggerConfig triggerConfig) {
@@ -202,7 +310,11 @@ public class FlowDefinition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The trigger settings that determine how and when the flow runs.
+     * </p>
+     * 
+     * @return The trigger settings that determine how and when the flow runs.
      */
 
     public TriggerConfig getTriggerConfig() {
@@ -210,7 +322,12 @@ public class FlowDefinition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The trigger settings that determine how and when the flow runs.
+     * </p>
+     * 
      * @param triggerConfig
+     *        The trigger settings that determine how and when the flow runs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

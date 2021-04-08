@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * The properties that are applied when Amazon S3 is being used as the flow source.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/S3SourceProperties"
  *      target="_top">AWS API Documentation</a>
@@ -25,12 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class S3SourceProperties implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The Amazon S3 bucket name where the source files are stored.
+     * </p>
+     */
     private String bucketName;
-
+    /**
+     * <p>
+     * The object key for the Amazon S3 bucket in which the source files are stored.
+     * </p>
+     */
     private String bucketPrefix;
 
     /**
+     * <p>
+     * The Amazon S3 bucket name where the source files are stored.
+     * </p>
+     * 
      * @param bucketName
+     *        The Amazon S3 bucket name where the source files are stored.
      */
 
     public void setBucketName(String bucketName) {
@@ -38,7 +55,11 @@ public class S3SourceProperties implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon S3 bucket name where the source files are stored.
+     * </p>
+     * 
+     * @return The Amazon S3 bucket name where the source files are stored.
      */
 
     public String getBucketName() {
@@ -46,7 +67,12 @@ public class S3SourceProperties implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The Amazon S3 bucket name where the source files are stored.
+     * </p>
+     * 
      * @param bucketName
+     *        The Amazon S3 bucket name where the source files are stored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +82,12 @@ public class S3SourceProperties implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The object key for the Amazon S3 bucket in which the source files are stored.
+     * </p>
+     * 
      * @param bucketPrefix
+     *        The object key for the Amazon S3 bucket in which the source files are stored.
      */
 
     public void setBucketPrefix(String bucketPrefix) {
@@ -64,7 +95,11 @@ public class S3SourceProperties implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * @return
+     * <p>
+     * The object key for the Amazon S3 bucket in which the source files are stored.
+     * </p>
+     * 
+     * @return The object key for the Amazon S3 bucket in which the source files are stored.
      */
 
     public String getBucketPrefix() {
@@ -72,7 +107,12 @@ public class S3SourceProperties implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The object key for the Amazon S3 bucket in which the source files are stored.
+     * </p>
+     * 
      * @param bucketPrefix
+     *        The object key for the Amazon S3 bucket in which the source files are stored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

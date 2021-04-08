@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * The properties that are applied when Salesforce is being used as a source.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/SalesforceSourceProperties"
  *      target="_top">AWS API Documentation</a>
@@ -25,14 +28,33 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SalesforceSourceProperties implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The object specified in the Salesforce flow source.
+     * </p>
+     */
     private String object;
-
+    /**
+     * <p>
+     * The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a
+     * flow.
+     * </p>
+     */
     private Boolean enableDynamicFieldUpdate;
-
+    /**
+     * <p>
+     * Indicates whether Amazon AppFlow includes deleted files in the flow run.
+     * </p>
+     */
     private Boolean includeDeletedRecords;
 
     /**
+     * <p>
+     * The object specified in the Salesforce flow source.
+     * </p>
+     * 
      * @param object
+     *        The object specified in the Salesforce flow source.
      */
 
     public void setObject(String object) {
@@ -40,7 +62,11 @@ public class SalesforceSourceProperties implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * <p>
+     * The object specified in the Salesforce flow source.
+     * </p>
+     * 
+     * @return The object specified in the Salesforce flow source.
      */
 
     public String getObject() {
@@ -48,7 +74,12 @@ public class SalesforceSourceProperties implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * The object specified in the Salesforce flow source.
+     * </p>
+     * 
      * @param object
+     *        The object specified in the Salesforce flow source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -58,7 +89,14 @@ public class SalesforceSourceProperties implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a
+     * flow.
+     * </p>
+     * 
      * @param enableDynamicFieldUpdate
+     *        The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while
+     *        running a flow.
      */
 
     public void setEnableDynamicFieldUpdate(Boolean enableDynamicFieldUpdate) {
@@ -66,7 +104,13 @@ public class SalesforceSourceProperties implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * <p>
+     * The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a
+     * flow.
+     * </p>
+     * 
+     * @return The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while
+     *         running a flow.
      */
 
     public Boolean getEnableDynamicFieldUpdate() {
@@ -74,7 +118,14 @@ public class SalesforceSourceProperties implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a
+     * flow.
+     * </p>
+     * 
      * @param enableDynamicFieldUpdate
+     *        The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while
+     *        running a flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,7 +135,13 @@ public class SalesforceSourceProperties implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * <p>
+     * The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a
+     * flow.
+     * </p>
+     * 
+     * @return The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while
+     *         running a flow.
      */
 
     public Boolean isEnableDynamicFieldUpdate() {
@@ -92,7 +149,12 @@ public class SalesforceSourceProperties implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Indicates whether Amazon AppFlow includes deleted files in the flow run.
+     * </p>
+     * 
      * @param includeDeletedRecords
+     *        Indicates whether Amazon AppFlow includes deleted files in the flow run.
      */
 
     public void setIncludeDeletedRecords(Boolean includeDeletedRecords) {
@@ -100,7 +162,11 @@ public class SalesforceSourceProperties implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates whether Amazon AppFlow includes deleted files in the flow run.
+     * </p>
+     * 
+     * @return Indicates whether Amazon AppFlow includes deleted files in the flow run.
      */
 
     public Boolean getIncludeDeletedRecords() {
@@ -108,7 +174,12 @@ public class SalesforceSourceProperties implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Indicates whether Amazon AppFlow includes deleted files in the flow run.
+     * </p>
+     * 
      * @param includeDeletedRecords
+     *        Indicates whether Amazon AppFlow includes deleted files in the flow run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -118,7 +189,11 @@ public class SalesforceSourceProperties implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates whether Amazon AppFlow includes deleted files in the flow run.
+     * </p>
+     * 
+     * @return Indicates whether Amazon AppFlow includes deleted files in the flow run.
      */
 
     public Boolean isIncludeDeletedRecords() {

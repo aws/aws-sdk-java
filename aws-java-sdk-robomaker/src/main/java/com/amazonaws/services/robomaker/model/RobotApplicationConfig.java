@@ -62,6 +62,19 @@ public class RobotApplicationConfig implements Serializable, Cloneable, Structur
      * </p>
      */
     private Boolean useDefaultUploadConfigurations;
+    /**
+     * <p>
+     * Information about tools configured for the robot application.
+     * </p>
+     */
+    private java.util.List<Tool> tools;
+    /**
+     * <p>
+     * A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal
+     * and rosbag record. The default is <code>False</code>.
+     * </p>
+     */
+    private Boolean useDefaultTools;
 
     /**
      * <p>
@@ -338,6 +351,136 @@ public class RobotApplicationConfig implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * Information about tools configured for the robot application.
+     * </p>
+     * 
+     * @return Information about tools configured for the robot application.
+     */
+
+    public java.util.List<Tool> getTools() {
+        return tools;
+    }
+
+    /**
+     * <p>
+     * Information about tools configured for the robot application.
+     * </p>
+     * 
+     * @param tools
+     *        Information about tools configured for the robot application.
+     */
+
+    public void setTools(java.util.Collection<Tool> tools) {
+        if (tools == null) {
+            this.tools = null;
+            return;
+        }
+
+        this.tools = new java.util.ArrayList<Tool>(tools);
+    }
+
+    /**
+     * <p>
+     * Information about tools configured for the robot application.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTools(java.util.Collection)} or {@link #withTools(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tools
+     *        Information about tools configured for the robot application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RobotApplicationConfig withTools(Tool... tools) {
+        if (this.tools == null) {
+            setTools(new java.util.ArrayList<Tool>(tools.length));
+        }
+        for (Tool ele : tools) {
+            this.tools.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about tools configured for the robot application.
+     * </p>
+     * 
+     * @param tools
+     *        Information about tools configured for the robot application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RobotApplicationConfig withTools(java.util.Collection<Tool> tools) {
+        setTools(tools);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal
+     * and rosbag record. The default is <code>False</code>.
+     * </p>
+     * 
+     * @param useDefaultTools
+     *        A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt,
+     *        terminal and rosbag record. The default is <code>False</code>.
+     */
+
+    public void setUseDefaultTools(Boolean useDefaultTools) {
+        this.useDefaultTools = useDefaultTools;
+    }
+
+    /**
+     * <p>
+     * A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal
+     * and rosbag record. The default is <code>False</code>.
+     * </p>
+     * 
+     * @return A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt,
+     *         terminal and rosbag record. The default is <code>False</code>.
+     */
+
+    public Boolean getUseDefaultTools() {
+        return this.useDefaultTools;
+    }
+
+    /**
+     * <p>
+     * A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal
+     * and rosbag record. The default is <code>False</code>.
+     * </p>
+     * 
+     * @param useDefaultTools
+     *        A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt,
+     *        terminal and rosbag record. The default is <code>False</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RobotApplicationConfig withUseDefaultTools(Boolean useDefaultTools) {
+        setUseDefaultTools(useDefaultTools);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt, terminal
+     * and rosbag record. The default is <code>False</code>.
+     * </p>
+     * 
+     * @return A Boolean indicating whether to use default robot application tools. The default tools are rviz, rqt,
+     *         terminal and rosbag record. The default is <code>False</code>.
+     */
+
+    public Boolean isUseDefaultTools() {
+        return this.useDefaultTools;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -358,7 +501,11 @@ public class RobotApplicationConfig implements Serializable, Cloneable, Structur
         if (getUploadConfigurations() != null)
             sb.append("UploadConfigurations: ").append(getUploadConfigurations()).append(",");
         if (getUseDefaultUploadConfigurations() != null)
-            sb.append("UseDefaultUploadConfigurations: ").append(getUseDefaultUploadConfigurations());
+            sb.append("UseDefaultUploadConfigurations: ").append(getUseDefaultUploadConfigurations()).append(",");
+        if (getTools() != null)
+            sb.append("Tools: ").append(getTools()).append(",");
+        if (getUseDefaultTools() != null)
+            sb.append("UseDefaultTools: ").append(getUseDefaultTools());
         sb.append("}");
         return sb.toString();
     }
@@ -394,6 +541,14 @@ public class RobotApplicationConfig implements Serializable, Cloneable, Structur
         if (other.getUseDefaultUploadConfigurations() != null
                 && other.getUseDefaultUploadConfigurations().equals(this.getUseDefaultUploadConfigurations()) == false)
             return false;
+        if (other.getTools() == null ^ this.getTools() == null)
+            return false;
+        if (other.getTools() != null && other.getTools().equals(this.getTools()) == false)
+            return false;
+        if (other.getUseDefaultTools() == null ^ this.getUseDefaultTools() == null)
+            return false;
+        if (other.getUseDefaultTools() != null && other.getUseDefaultTools().equals(this.getUseDefaultTools()) == false)
+            return false;
         return true;
     }
 
@@ -407,6 +562,8 @@ public class RobotApplicationConfig implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getLaunchConfig() == null) ? 0 : getLaunchConfig().hashCode());
         hashCode = prime * hashCode + ((getUploadConfigurations() == null) ? 0 : getUploadConfigurations().hashCode());
         hashCode = prime * hashCode + ((getUseDefaultUploadConfigurations() == null) ? 0 : getUseDefaultUploadConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getTools() == null) ? 0 : getTools().hashCode());
+        hashCode = prime * hashCode + ((getUseDefaultTools() == null) ? 0 : getUseDefaultTools().hashCode());
         return hashCode;
     }
 

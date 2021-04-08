@@ -158,6 +158,19 @@ public class AbstractAmazonAppStreamAsync extends AbstractAmazonAppStream implem
     }
 
     @Override
+    public java.util.concurrent.Future<CreateUpdatedImageResult> createUpdatedImageAsync(CreateUpdatedImageRequest request) {
+
+        return createUpdatedImageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUpdatedImageResult> createUpdatedImageAsync(CreateUpdatedImageRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateUpdatedImageRequest, CreateUpdatedImageResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateUsageReportSubscriptionResult> createUsageReportSubscriptionAsync(CreateUsageReportSubscriptionRequest request) {
 
         return createUsageReportSubscriptionAsync(request, null);

@@ -49,7 +49,11 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private java.util.Map<String, String> tags;
-
+    /**
+     * <p>
+     * The configuration that controls how Customer Profiles retrieves data from the source.
+     * </p>
+     */
     private FlowDefinition flowDefinition;
 
     /**
@@ -241,7 +245,12 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The configuration that controls how Customer Profiles retrieves data from the source.
+     * </p>
+     * 
      * @param flowDefinition
+     *        The configuration that controls how Customer Profiles retrieves data from the source.
      */
 
     public void setFlowDefinition(FlowDefinition flowDefinition) {
@@ -249,7 +258,11 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * The configuration that controls how Customer Profiles retrieves data from the source.
+     * </p>
+     * 
+     * @return The configuration that controls how Customer Profiles retrieves data from the source.
      */
 
     public FlowDefinition getFlowDefinition() {
@@ -257,7 +270,12 @@ public class PutIntegrationRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The configuration that controls how Customer Profiles retrieves data from the source.
+     * </p>
+     * 
      * @param flowDefinition
+     *        The configuration that controls how Customer Profiles retrieves data from the source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

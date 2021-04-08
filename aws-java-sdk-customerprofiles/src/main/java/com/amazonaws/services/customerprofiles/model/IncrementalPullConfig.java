@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Specifies the configuration used when importing incremental records from the source.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/IncrementalPullConfig"
  *      target="_top">AWS API Documentation</a>
@@ -25,10 +28,23 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class IncrementalPullConfig implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * A field that specifies the date time or timestamp field as the criteria to use when importing incremental records
+     * from the source.
+     * </p>
+     */
     private String datetimeTypeFieldName;
 
     /**
+     * <p>
+     * A field that specifies the date time or timestamp field as the criteria to use when importing incremental records
+     * from the source.
+     * </p>
+     * 
      * @param datetimeTypeFieldName
+     *        A field that specifies the date time or timestamp field as the criteria to use when importing incremental
+     *        records from the source.
      */
 
     public void setDatetimeTypeFieldName(String datetimeTypeFieldName) {
@@ -36,7 +52,13 @@ public class IncrementalPullConfig implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * <p>
+     * A field that specifies the date time or timestamp field as the criteria to use when importing incremental records
+     * from the source.
+     * </p>
+     * 
+     * @return A field that specifies the date time or timestamp field as the criteria to use when importing incremental
+     *         records from the source.
      */
 
     public String getDatetimeTypeFieldName() {
@@ -44,7 +66,14 @@ public class IncrementalPullConfig implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * A field that specifies the date time or timestamp field as the criteria to use when importing incremental records
+     * from the source.
+     * </p>
+     * 
      * @param datetimeTypeFieldName
+     *        A field that specifies the date time or timestamp field as the criteria to use when importing incremental
+     *        records from the source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

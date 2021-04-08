@@ -51,7 +51,7 @@ public class UploadConfiguration implements Serializable, Cloneable, StructuredP
     private String path;
     /**
      * <p>
-     * Specifies how to upload the files:
+     * Specifies when to upload the files:
      * </p>
      * <dl>
      * <dt>UPLOAD_ON_TERMINATE</dt>
@@ -209,7 +209,7 @@ public class UploadConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies how to upload the files:
+     * Specifies when to upload the files:
      * </p>
      * <dl>
      * <dt>UPLOAD_ON_TERMINATE</dt>
@@ -233,7 +233,7 @@ public class UploadConfiguration implements Serializable, Cloneable, StructuredP
      * </dl>
      * 
      * @param uploadBehavior
-     *        Specifies how to upload the files:</p>
+     *        Specifies when to upload the files:</p>
      *        <dl>
      *        <dt>UPLOAD_ON_TERMINATE</dt>
      *        <dd>
@@ -263,7 +263,7 @@ public class UploadConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies how to upload the files:
+     * Specifies when to upload the files:
      * </p>
      * <dl>
      * <dt>UPLOAD_ON_TERMINATE</dt>
@@ -286,7 +286,7 @@ public class UploadConfiguration implements Serializable, Cloneable, StructuredP
      * </dd>
      * </dl>
      * 
-     * @return Specifies how to upload the files:</p>
+     * @return Specifies when to upload the files:</p>
      *         <dl>
      *         <dt>UPLOAD_ON_TERMINATE</dt>
      *         <dd>
@@ -316,7 +316,7 @@ public class UploadConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies how to upload the files:
+     * Specifies when to upload the files:
      * </p>
      * <dl>
      * <dt>UPLOAD_ON_TERMINATE</dt>
@@ -340,7 +340,7 @@ public class UploadConfiguration implements Serializable, Cloneable, StructuredP
      * </dl>
      * 
      * @param uploadBehavior
-     *        Specifies how to upload the files:</p>
+     *        Specifies when to upload the files:</p>
      *        <dl>
      *        <dt>UPLOAD_ON_TERMINATE</dt>
      *        <dd>
@@ -372,7 +372,7 @@ public class UploadConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies how to upload the files:
+     * Specifies when to upload the files:
      * </p>
      * <dl>
      * <dt>UPLOAD_ON_TERMINATE</dt>
@@ -396,7 +396,7 @@ public class UploadConfiguration implements Serializable, Cloneable, StructuredP
      * </dl>
      * 
      * @param uploadBehavior
-     *        Specifies how to upload the files:</p>
+     *        Specifies when to upload the files:</p>
      *        <dl>
      *        <dt>UPLOAD_ON_TERMINATE</dt>
      *        <dd>

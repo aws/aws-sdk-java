@@ -276,6 +276,19 @@ public class AbstractAmazonAutoScalingAsync extends AbstractAmazonAutoScaling im
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteWarmPoolResult> deleteWarmPoolAsync(DeleteWarmPoolRequest request) {
+
+        return deleteWarmPoolAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWarmPoolResult> deleteWarmPoolAsync(DeleteWarmPoolRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteWarmPoolRequest, DeleteWarmPoolResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAccountLimitsResult> describeAccountLimitsAsync(DescribeAccountLimitsRequest request) {
 
         return describeAccountLimitsAsync(request, null);
@@ -878,6 +891,19 @@ public class AbstractAmazonAutoScalingAsync extends AbstractAmazonAutoScaling im
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeWarmPoolResult> describeWarmPoolAsync(DescribeWarmPoolRequest request) {
+
+        return describeWarmPoolAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeWarmPoolResult> describeWarmPoolAsync(DescribeWarmPoolRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeWarmPoolRequest, DescribeWarmPoolResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DetachInstancesResult> detachInstancesAsync(DetachInstancesRequest request) {
 
         return detachInstancesAsync(request, null);
@@ -1052,6 +1078,19 @@ public class AbstractAmazonAutoScalingAsync extends AbstractAmazonAutoScaling im
     @Override
     public java.util.concurrent.Future<PutScheduledUpdateGroupActionResult> putScheduledUpdateGroupActionAsync(PutScheduledUpdateGroupActionRequest request,
             com.amazonaws.handlers.AsyncHandler<PutScheduledUpdateGroupActionRequest, PutScheduledUpdateGroupActionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutWarmPoolResult> putWarmPoolAsync(PutWarmPoolRequest request) {
+
+        return putWarmPoolAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutWarmPoolResult> putWarmPoolAsync(PutWarmPoolRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutWarmPoolRequest, PutWarmPoolResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

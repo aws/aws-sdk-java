@@ -61,7 +61,10 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * Valid Values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> |
      * <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> | <code>Terminating:Wait</code> |
      * <code>Terminating:Proceed</code> | <code>Terminated</code> | <code>Detaching</code> | <code>Detached</code> |
-     * <code>EnteringStandby</code> | <code>Standby</code>
+     * <code>EnteringStandby</code> | <code>Standby</code> | <code>Warmed:Pending</code> |
+     * <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> | <code>Warmed:Terminating</code> |
+     * <code>Warmed:Terminating:Wait</code> | <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> |
+     * <code>Warmed:Stopped</code> | <code>Warmed:Running</code>
      * </p>
      */
     private String lifecycleState;
@@ -273,7 +276,10 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * Valid Values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> |
      * <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> | <code>Terminating:Wait</code> |
      * <code>Terminating:Proceed</code> | <code>Terminated</code> | <code>Detaching</code> | <code>Detached</code> |
-     * <code>EnteringStandby</code> | <code>Standby</code>
+     * <code>EnteringStandby</code> | <code>Standby</code> | <code>Warmed:Pending</code> |
+     * <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> | <code>Warmed:Terminating</code> |
+     * <code>Warmed:Terminating:Wait</code> | <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> |
+     * <code>Warmed:Stopped</code> | <code>Warmed:Running</code>
      * </p>
      * 
      * @param lifecycleState
@@ -285,7 +291,11 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      *        Valid Values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> |
      *        <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> |
      *        <code>Terminating:Wait</code> | <code>Terminating:Proceed</code> | <code>Terminated</code> |
-     *        <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> | <code>Standby</code>
+     *        <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> | <code>Standby</code> |
+     *        <code>Warmed:Pending</code> | <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> |
+     *        <code>Warmed:Terminating</code> | <code>Warmed:Terminating:Wait</code> |
+     *        <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> | <code>Warmed:Stopped</code> |
+     *        <code>Warmed:Running</code>
      */
 
     public void setLifecycleState(String lifecycleState) {
@@ -303,7 +313,10 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * Valid Values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> |
      * <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> | <code>Terminating:Wait</code> |
      * <code>Terminating:Proceed</code> | <code>Terminated</code> | <code>Detaching</code> | <code>Detached</code> |
-     * <code>EnteringStandby</code> | <code>Standby</code>
+     * <code>EnteringStandby</code> | <code>Standby</code> | <code>Warmed:Pending</code> |
+     * <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> | <code>Warmed:Terminating</code> |
+     * <code>Warmed:Terminating:Wait</code> | <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> |
+     * <code>Warmed:Stopped</code> | <code>Warmed:Running</code>
      * </p>
      * 
      * @return The lifecycle state for the instance. The <code>Quarantined</code> state is not used. For information
@@ -314,7 +327,11 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      *         Valid Values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> |
      *         <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> |
      *         <code>Terminating:Wait</code> | <code>Terminating:Proceed</code> | <code>Terminated</code> |
-     *         <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> | <code>Standby</code>
+     *         <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> | <code>Standby</code> |
+     *         <code>Warmed:Pending</code> | <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> |
+     *         <code>Warmed:Terminating</code> | <code>Warmed:Terminating:Wait</code> |
+     *         <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> | <code>Warmed:Stopped</code> |
+     *         <code>Warmed:Running</code>
      */
 
     public String getLifecycleState() {
@@ -332,7 +349,10 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      * Valid Values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> |
      * <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> | <code>Terminating:Wait</code> |
      * <code>Terminating:Proceed</code> | <code>Terminated</code> | <code>Detaching</code> | <code>Detached</code> |
-     * <code>EnteringStandby</code> | <code>Standby</code>
+     * <code>EnteringStandby</code> | <code>Standby</code> | <code>Warmed:Pending</code> |
+     * <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> | <code>Warmed:Terminating</code> |
+     * <code>Warmed:Terminating:Wait</code> | <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> |
+     * <code>Warmed:Stopped</code> | <code>Warmed:Running</code>
      * </p>
      * 
      * @param lifecycleState
@@ -344,7 +364,11 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
      *        Valid Values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code> |
      *        <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> |
      *        <code>Terminating:Wait</code> | <code>Terminating:Proceed</code> | <code>Terminated</code> |
-     *        <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> | <code>Standby</code>
+     *        <code>Detaching</code> | <code>Detached</code> | <code>EnteringStandby</code> | <code>Standby</code> |
+     *        <code>Warmed:Pending</code> | <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> |
+     *        <code>Warmed:Terminating</code> | <code>Warmed:Terminating:Wait</code> |
+     *        <code>Warmed:Terminating:Proceed</code> | <code>Warmed:Terminated</code> | <code>Warmed:Stopped</code> |
+     *        <code>Warmed:Running</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

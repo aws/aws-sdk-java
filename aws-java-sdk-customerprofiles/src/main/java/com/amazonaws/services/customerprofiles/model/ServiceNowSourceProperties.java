@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * The properties that are applied when ServiceNow is being used as a source.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ServiceNowSourceProperties"
  *      target="_top">AWS API Documentation</a>
@@ -25,10 +28,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ServiceNowSourceProperties implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The object specified in the ServiceNow flow source.
+     * </p>
+     */
     private String object;
 
     /**
+     * <p>
+     * The object specified in the ServiceNow flow source.
+     * </p>
+     * 
      * @param object
+     *        The object specified in the ServiceNow flow source.
      */
 
     public void setObject(String object) {
@@ -36,7 +49,11 @@ public class ServiceNowSourceProperties implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * <p>
+     * The object specified in the ServiceNow flow source.
+     * </p>
+     * 
+     * @return The object specified in the ServiceNow flow source.
      */
 
     public String getObject() {
@@ -44,7 +61,12 @@ public class ServiceNowSourceProperties implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * The object specified in the ServiceNow flow source.
+     * </p>
+     * 
      * @param object
+     *        The object specified in the ServiceNow flow source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

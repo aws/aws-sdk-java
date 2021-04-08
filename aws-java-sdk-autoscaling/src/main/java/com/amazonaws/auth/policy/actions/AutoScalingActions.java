@@ -59,6 +59,8 @@ public enum AutoScalingActions implements Action {
     DeleteScheduledAction("autoscaling:DeleteScheduledAction"),
     /** Action for the DeleteTags operation. */
     DeleteTags("autoscaling:DeleteTags"),
+    /** Action for the DeleteWarmPool operation. */
+    DeleteWarmPool("autoscaling:DeleteWarmPool"),
     /** Action for the DescribeAccountLimits operation. */
     DescribeAccountLimits("autoscaling:DescribeAccountLimits"),
     /** Action for the DescribeAdjustmentTypes operation. */
@@ -97,6 +99,8 @@ public enum AutoScalingActions implements Action {
     DescribeTags("autoscaling:DescribeTags"),
     /** Action for the DescribeTerminationPolicyTypes operation. */
     DescribeTerminationPolicyTypes("autoscaling:DescribeTerminationPolicyTypes"),
+    /** Action for the DescribeWarmPool operation. */
+    DescribeWarmPool("autoscaling:DescribeWarmPool"),
     /** Action for the DetachInstances operation. */
     DetachInstances("autoscaling:DetachInstances"),
     /** Action for the DetachLoadBalancerTargetGroups operation. */
@@ -121,6 +125,8 @@ public enum AutoScalingActions implements Action {
     PutScalingPolicy("autoscaling:PutScalingPolicy"),
     /** Action for the PutScheduledUpdateGroupAction operation. */
     PutScheduledUpdateGroupAction("autoscaling:PutScheduledUpdateGroupAction"),
+    /** Action for the PutWarmPool operation. */
+    PutWarmPool("autoscaling:PutWarmPool"),
     /** Action for the RecordLifecycleActionHeartbeat operation. */
     RecordLifecycleActionHeartbeat("autoscaling:RecordLifecycleActionHeartbeat"),
     /** Action for the ResumeProcesses operation. */

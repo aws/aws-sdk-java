@@ -24,7 +24,7 @@
  * Amazon Connect contact center.
  * </p>
  * <p>
- * If you're new to Amazon Connect, you might find it helpful to also review the <a
+ * If you're new to Amazon Connect , you might find it helpful to also review the <a
  * href="https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html">Amazon Connect Administrator
  * Guide</a>.
  * </p>

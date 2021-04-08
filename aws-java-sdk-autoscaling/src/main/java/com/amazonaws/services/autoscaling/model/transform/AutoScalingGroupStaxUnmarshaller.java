@@ -219,6 +219,16 @@ public class AutoScalingGroupStaxUnmarshaller implements Unmarshaller<AutoScalin
                     autoScalingGroup.setCapacityRebalance(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("WarmPoolConfiguration", targetDepth)) {
+                    autoScalingGroup.setWarmPoolConfiguration(WarmPoolConfigurationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("WarmPoolSize", targetDepth)) {
+                    autoScalingGroup.setWarmPoolSize(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return autoScalingGroup;

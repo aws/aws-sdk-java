@@ -101,6 +101,41 @@ public class DisableMetricsCollectionRequest extends com.amazonaws.AmazonWebServ
      * <code>GroupTotalCapacity</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolDesiredCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolWarmedCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolPendingCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolTerminatingCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolTotalCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupAndWarmPoolDesiredCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupAndWarmPoolTotalCapacity</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If you omit this parameter, all metrics are disabled.
@@ -218,6 +253,41 @@ public class DisableMetricsCollectionRequest extends com.amazonaws.AmazonWebServ
      * <code>GroupTotalCapacity</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolDesiredCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolWarmedCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolPendingCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolTerminatingCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolTotalCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupAndWarmPoolDesiredCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupAndWarmPoolTotalCapacity</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If you omit this parameter, all metrics are disabled.
@@ -288,6 +358,41 @@ public class DisableMetricsCollectionRequest extends com.amazonaws.AmazonWebServ
      *         <li>
      *         <p>
      *         <code>GroupTotalCapacity</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>WarmPoolDesiredCapacity</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>WarmPoolWarmedCapacity</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>WarmPoolPendingCapacity</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>WarmPoolTerminatingCapacity</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>WarmPoolTotalCapacity</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>GroupAndWarmPoolDesiredCapacity</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>GroupAndWarmPoolTotalCapacity</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -372,6 +477,41 @@ public class DisableMetricsCollectionRequest extends com.amazonaws.AmazonWebServ
      * <code>GroupTotalCapacity</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolDesiredCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolWarmedCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolPendingCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolTerminatingCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolTotalCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupAndWarmPoolDesiredCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupAndWarmPoolTotalCapacity</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If you omit this parameter, all metrics are disabled.
@@ -443,6 +583,41 @@ public class DisableMetricsCollectionRequest extends com.amazonaws.AmazonWebServ
      *        <li>
      *        <p>
      *        <code>GroupTotalCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>WarmPoolDesiredCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>WarmPoolWarmedCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>WarmPoolPendingCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>WarmPoolTerminatingCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>WarmPoolTotalCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GroupAndWarmPoolDesiredCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GroupAndWarmPoolTotalCapacity</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -529,6 +704,41 @@ public class DisableMetricsCollectionRequest extends com.amazonaws.AmazonWebServ
      * <code>GroupTotalCapacity</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolDesiredCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolWarmedCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolPendingCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolTerminatingCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolTotalCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupAndWarmPoolDesiredCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupAndWarmPoolTotalCapacity</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If you omit this parameter, all metrics are disabled.
@@ -605,6 +815,41 @@ public class DisableMetricsCollectionRequest extends com.amazonaws.AmazonWebServ
      *        <li>
      *        <p>
      *        <code>GroupTotalCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>WarmPoolDesiredCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>WarmPoolWarmedCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>WarmPoolPendingCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>WarmPoolTerminatingCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>WarmPoolTotalCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GroupAndWarmPoolDesiredCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GroupAndWarmPoolTotalCapacity</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -693,6 +938,41 @@ public class DisableMetricsCollectionRequest extends com.amazonaws.AmazonWebServ
      * <code>GroupTotalCapacity</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolDesiredCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolWarmedCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolPendingCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolTerminatingCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolTotalCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupAndWarmPoolDesiredCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupAndWarmPoolTotalCapacity</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If you omit this parameter, all metrics are disabled.
@@ -764,6 +1044,41 @@ public class DisableMetricsCollectionRequest extends com.amazonaws.AmazonWebServ
      *        <li>
      *        <p>
      *        <code>GroupTotalCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>WarmPoolDesiredCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>WarmPoolWarmedCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>WarmPoolPendingCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>WarmPoolTerminatingCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>WarmPoolTotalCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GroupAndWarmPoolDesiredCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GroupAndWarmPoolTotalCapacity</code>
      *        </p>
      *        </li>
      *        </ul>

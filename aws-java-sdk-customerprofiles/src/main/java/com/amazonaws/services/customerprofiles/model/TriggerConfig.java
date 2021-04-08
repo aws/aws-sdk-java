@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * The trigger settings that determine how and when Amazon AppFlow runs the specified flow.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/TriggerConfig" target="_top">AWS
  *      API Documentation</a>
@@ -25,12 +28,27 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TriggerConfig implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * Specifies the type of flow trigger. It can be OnDemand, Scheduled, or Event.
+     * </p>
+     */
     private String triggerType;
-
+    /**
+     * <p>
+     * Specifies the configuration details of a schedule-triggered flow that you define. Currently, these settings only
+     * apply to the Scheduled trigger type.
+     * </p>
+     */
     private TriggerProperties triggerProperties;
 
     /**
+     * <p>
+     * Specifies the type of flow trigger. It can be OnDemand, Scheduled, or Event.
+     * </p>
+     * 
      * @param triggerType
+     *        Specifies the type of flow trigger. It can be OnDemand, Scheduled, or Event.
      * @see TriggerType
      */
 
@@ -39,7 +57,11 @@ public class TriggerConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies the type of flow trigger. It can be OnDemand, Scheduled, or Event.
+     * </p>
+     * 
+     * @return Specifies the type of flow trigger. It can be OnDemand, Scheduled, or Event.
      * @see TriggerType
      */
 
@@ -48,7 +70,12 @@ public class TriggerConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies the type of flow trigger. It can be OnDemand, Scheduled, or Event.
+     * </p>
+     * 
      * @param triggerType
+     *        Specifies the type of flow trigger. It can be OnDemand, Scheduled, or Event.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TriggerType
      */
@@ -59,7 +86,12 @@ public class TriggerConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies the type of flow trigger. It can be OnDemand, Scheduled, or Event.
+     * </p>
+     * 
      * @param triggerType
+     *        Specifies the type of flow trigger. It can be OnDemand, Scheduled, or Event.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TriggerType
      */
@@ -70,7 +102,14 @@ public class TriggerConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies the configuration details of a schedule-triggered flow that you define. Currently, these settings only
+     * apply to the Scheduled trigger type.
+     * </p>
+     * 
      * @param triggerProperties
+     *        Specifies the configuration details of a schedule-triggered flow that you define. Currently, these
+     *        settings only apply to the Scheduled trigger type.
      */
 
     public void setTriggerProperties(TriggerProperties triggerProperties) {
@@ -78,7 +117,13 @@ public class TriggerConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies the configuration details of a schedule-triggered flow that you define. Currently, these settings only
+     * apply to the Scheduled trigger type.
+     * </p>
+     * 
+     * @return Specifies the configuration details of a schedule-triggered flow that you define. Currently, these
+     *         settings only apply to the Scheduled trigger type.
      */
 
     public TriggerProperties getTriggerProperties() {
@@ -86,7 +131,14 @@ public class TriggerConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies the configuration details of a schedule-triggered flow that you define. Currently, these settings only
+     * apply to the Scheduled trigger type.
+     * </p>
+     * 
      * @param triggerProperties
+     *        Specifies the configuration details of a schedule-triggered flow that you define. Currently, these
+     *        settings only apply to the Scheduled trigger type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -622,6 +622,31 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
+     * Deletes the warm pool for the specified Auto Scaling group.
+     * </p>
+     * 
+     * @param deleteWarmPoolRequest
+     * @return Result of the DeleteWarmPool operation returned by the service.
+     * @throws LimitExceededException
+     *         You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling
+     *         groups, launch configurations, or lifecycle hooks). For more information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html"
+     *         >DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+     * @throws ResourceContentionException
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
+     * @throws ScalingActivityInProgressException
+     *         The operation can't be performed because there are scaling activities in progress.
+     * @throws ResourceInUseException
+     *         The operation can't be performed because the resource is in use.
+     * @sample AmazonAutoScaling.DeleteWarmPool
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeleteWarmPool" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteWarmPoolResult deleteWarmPool(DeleteWarmPoolRequest deleteWarmPoolRequest);
+
+    /**
+     * <p>
      * Describes the current Amazon EC2 Auto Scaling resource quotas for your AWS account.
      * </p>
      * <p>
@@ -1172,6 +1197,29 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
+     * Describes a warm pool and its instances.
+     * </p>
+     * 
+     * @param describeWarmPoolRequest
+     * @return Result of the DescribeWarmPool operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value is not valid.
+     * @throws LimitExceededException
+     *         You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling
+     *         groups, launch configurations, or lifecycle hooks). For more information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html"
+     *         >DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+     * @throws ResourceContentionException
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
+     * @sample AmazonAutoScaling.DescribeWarmPool
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeWarmPool" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeWarmPoolResult describeWarmPool(DescribeWarmPoolRequest describeWarmPoolRequest);
+
+    /**
+     * <p>
      * Removes one or more instances from the specified Auto Scaling group.
      * </p>
      * <p>
@@ -1524,6 +1572,40 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
+     * Adds a warm pool to the specified Auto Scaling group. A warm pool is a pool of pre-initialized EC2 instances that
+     * sits alongside the Auto Scaling group. Whenever your application needs to scale out, the Auto Scaling group can
+     * draw on the warm pool to meet its new desired capacity. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html">Warm pools for
+     * Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
+     * This operation must be called from the Region in which the Auto Scaling group was created. This operation cannot
+     * be called on an Auto Scaling group that has a mixed instances policy or a launch template or launch configuration
+     * that requests Spot Instances.
+     * </p>
+     * <p>
+     * You can view the instances in the warm pool using the <a>DescribeWarmPool</a> API call. If you are no longer
+     * using a warm pool, you can delete it by calling the <a>DeleteWarmPool</a> API.
+     * </p>
+     * 
+     * @param putWarmPoolRequest
+     * @return Result of the PutWarmPool operation returned by the service.
+     * @throws LimitExceededException
+     *         You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example, Auto Scaling
+     *         groups, launch configurations, or lifecycle hooks). For more information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_DescribeAccountLimits.html"
+     *         >DescribeAccountLimits</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+     * @throws ResourceContentionException
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
+     * @sample AmazonAutoScaling.PutWarmPool
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutWarmPool" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PutWarmPoolResult putWarmPool(PutWarmPoolRequest putWarmPoolRequest);
+
+    /**
+     * <p>
      * Records a heartbeat for the lifecycle action associated with the specified token or instance. This extends the
      * timeout by the length of time defined using the <a>PutLifecycleHook</a> API call.
      * </p>
@@ -1561,8 +1643,8 @@ public interface AmazonAutoScaling {
      * </ol>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto Scaling
-     * lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon EC2 Auto Scaling
+     * lifecycle hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param recordLifecycleActionHeartbeatRequest
@@ -1650,7 +1732,8 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Updates the instance protection settings of the specified instances.
+     * Updates the instance protection settings of the specified instances. This operation cannot be called on instances
+     * in a warm pool.
      * </p>
      * <p>
      * For more information about preventing instances that are part of an Auto Scaling group from terminating on scale
@@ -1680,8 +1763,8 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Starts a new instance refresh operation, which triggers a rolling replacement of all previously launched
-     * instances in the Auto Scaling group with a new group of instances.
+     * Starts a new instance refresh operation, which triggers a rolling replacement of previously launched instances in
+     * the Auto Scaling group with a new group of instances.
      * </p>
      * <p>
      * If successful, this call creates a new instance refresh request with a unique ID that you can use to track its
@@ -1743,7 +1826,8 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
-     * Terminates the specified instance and optionally adjusts the desired group size.
+     * Terminates the specified instance and optionally adjusts the desired group size. This operation cannot be called
+     * on instances in a warm pool.
      * </p>
      * <p>
      * This call simply makes a termination request. The instance is not terminated immediately. When an instance is

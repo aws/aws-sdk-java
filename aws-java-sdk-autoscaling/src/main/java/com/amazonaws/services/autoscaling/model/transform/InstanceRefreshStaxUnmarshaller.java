@@ -82,6 +82,11 @@ public class InstanceRefreshStaxUnmarshaller implements Unmarshaller<InstanceRef
                     instanceRefresh.setInstancesToUpdate(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ProgressDetails", targetDepth)) {
+                    instanceRefresh.setProgressDetails(InstanceRefreshProgressDetailsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return instanceRefresh;

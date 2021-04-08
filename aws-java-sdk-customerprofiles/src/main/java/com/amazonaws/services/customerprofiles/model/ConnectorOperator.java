@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * The operation to be performed on the provided source fields.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ConnectorOperator"
  *      target="_top">AWS API Documentation</a>
@@ -25,18 +28,44 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConnectorOperator implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The operation to be performed on the provided Marketo source fields.
+     * </p>
+     */
     private String marketo;
-
+    /**
+     * <p>
+     * The operation to be performed on the provided Amazon S3 source fields.
+     * </p>
+     */
     private String s3;
-
+    /**
+     * <p>
+     * The operation to be performed on the provided Salesforce source fields.
+     * </p>
+     */
     private String salesforce;
-
+    /**
+     * <p>
+     * The operation to be performed on the provided ServiceNow source fields.
+     * </p>
+     */
     private String serviceNow;
-
+    /**
+     * <p>
+     * The operation to be performed on the provided Zendesk source fields.
+     * </p>
+     */
     private String zendesk;
 
     /**
+     * <p>
+     * The operation to be performed on the provided Marketo source fields.
+     * </p>
+     * 
      * @param marketo
+     *        The operation to be performed on the provided Marketo source fields.
      * @see MarketoConnectorOperator
      */
 
@@ -45,7 +74,11 @@ public class ConnectorOperator implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * <p>
+     * The operation to be performed on the provided Marketo source fields.
+     * </p>
+     * 
+     * @return The operation to be performed on the provided Marketo source fields.
      * @see MarketoConnectorOperator
      */
 
@@ -54,7 +87,12 @@ public class ConnectorOperator implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The operation to be performed on the provided Marketo source fields.
+     * </p>
+     * 
      * @param marketo
+     *        The operation to be performed on the provided Marketo source fields.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MarketoConnectorOperator
      */
@@ -65,7 +103,12 @@ public class ConnectorOperator implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The operation to be performed on the provided Marketo source fields.
+     * </p>
+     * 
      * @param marketo
+     *        The operation to be performed on the provided Marketo source fields.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MarketoConnectorOperator
      */
@@ -76,7 +119,12 @@ public class ConnectorOperator implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The operation to be performed on the provided Amazon S3 source fields.
+     * </p>
+     * 
      * @param s3
+     *        The operation to be performed on the provided Amazon S3 source fields.
      * @see S3ConnectorOperator
      */
 
@@ -85,7 +133,11 @@ public class ConnectorOperator implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * <p>
+     * The operation to be performed on the provided Amazon S3 source fields.
+     * </p>
+     * 
+     * @return The operation to be performed on the provided Amazon S3 source fields.
      * @see S3ConnectorOperator
      */
 
@@ -94,7 +146,12 @@ public class ConnectorOperator implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The operation to be performed on the provided Amazon S3 source fields.
+     * </p>
+     * 
      * @param s3
+     *        The operation to be performed on the provided Amazon S3 source fields.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see S3ConnectorOperator
      */
@@ -105,7 +162,12 @@ public class ConnectorOperator implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The operation to be performed on the provided Amazon S3 source fields.
+     * </p>
+     * 
      * @param s3
+     *        The operation to be performed on the provided Amazon S3 source fields.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see S3ConnectorOperator
      */
@@ -116,7 +178,12 @@ public class ConnectorOperator implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The operation to be performed on the provided Salesforce source fields.
+     * </p>
+     * 
      * @param salesforce
+     *        The operation to be performed on the provided Salesforce source fields.
      * @see SalesforceConnectorOperator
      */
 
@@ -125,7 +192,11 @@ public class ConnectorOperator implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * <p>
+     * The operation to be performed on the provided Salesforce source fields.
+     * </p>
+     * 
+     * @return The operation to be performed on the provided Salesforce source fields.
      * @see SalesforceConnectorOperator
      */
 
@@ -134,7 +205,12 @@ public class ConnectorOperator implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The operation to be performed on the provided Salesforce source fields.
+     * </p>
+     * 
      * @param salesforce
+     *        The operation to be performed on the provided Salesforce source fields.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SalesforceConnectorOperator
      */
@@ -145,7 +221,12 @@ public class ConnectorOperator implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The operation to be performed on the provided Salesforce source fields.
+     * </p>
+     * 
      * @param salesforce
+     *        The operation to be performed on the provided Salesforce source fields.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SalesforceConnectorOperator
      */
@@ -156,7 +237,12 @@ public class ConnectorOperator implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The operation to be performed on the provided ServiceNow source fields.
+     * </p>
+     * 
      * @param serviceNow
+     *        The operation to be performed on the provided ServiceNow source fields.
      * @see ServiceNowConnectorOperator
      */
 
@@ -165,7 +251,11 @@ public class ConnectorOperator implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * <p>
+     * The operation to be performed on the provided ServiceNow source fields.
+     * </p>
+     * 
+     * @return The operation to be performed on the provided ServiceNow source fields.
      * @see ServiceNowConnectorOperator
      */
 
@@ -174,7 +264,12 @@ public class ConnectorOperator implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The operation to be performed on the provided ServiceNow source fields.
+     * </p>
+     * 
      * @param serviceNow
+     *        The operation to be performed on the provided ServiceNow source fields.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServiceNowConnectorOperator
      */
@@ -185,7 +280,12 @@ public class ConnectorOperator implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The operation to be performed on the provided ServiceNow source fields.
+     * </p>
+     * 
      * @param serviceNow
+     *        The operation to be performed on the provided ServiceNow source fields.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ServiceNowConnectorOperator
      */
@@ -196,7 +296,12 @@ public class ConnectorOperator implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The operation to be performed on the provided Zendesk source fields.
+     * </p>
+     * 
      * @param zendesk
+     *        The operation to be performed on the provided Zendesk source fields.
      * @see ZendeskConnectorOperator
      */
 
@@ -205,7 +310,11 @@ public class ConnectorOperator implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * <p>
+     * The operation to be performed on the provided Zendesk source fields.
+     * </p>
+     * 
+     * @return The operation to be performed on the provided Zendesk source fields.
      * @see ZendeskConnectorOperator
      */
 
@@ -214,7 +323,12 @@ public class ConnectorOperator implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The operation to be performed on the provided Zendesk source fields.
+     * </p>
+     * 
      * @param zendesk
+     *        The operation to be performed on the provided Zendesk source fields.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ZendeskConnectorOperator
      */
@@ -225,7 +339,12 @@ public class ConnectorOperator implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The operation to be performed on the provided Zendesk source fields.
+     * </p>
+     * 
      * @param zendesk
+     *        The operation to be performed on the provided Zendesk source fields.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ZendeskConnectorOperator
      */

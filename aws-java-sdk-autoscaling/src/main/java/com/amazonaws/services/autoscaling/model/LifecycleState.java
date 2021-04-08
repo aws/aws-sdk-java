@@ -32,7 +32,16 @@ public enum LifecycleState {
     Detaching("Detaching"),
     Detached("Detached"),
     EnteringStandby("EnteringStandby"),
-    Standby("Standby");
+    Standby("Standby"),
+    WarmedPending("Warmed:Pending"),
+    WarmedPendingWait("Warmed:Pending:Wait"),
+    WarmedPendingProceed("Warmed:Pending:Proceed"),
+    WarmedTerminating("Warmed:Terminating"),
+    WarmedTerminatingWait("Warmed:Terminating:Wait"),
+    WarmedTerminatingProceed("Warmed:Terminating:Proceed"),
+    WarmedTerminated("Warmed:Terminated"),
+    WarmedStopped("Warmed:Stopped"),
+    WarmedRunning("Warmed:Running");
 
     private String value;
 

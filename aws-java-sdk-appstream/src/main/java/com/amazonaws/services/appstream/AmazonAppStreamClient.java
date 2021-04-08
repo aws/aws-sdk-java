@@ -363,7 +363,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @throws ConcurrentModificationException
      *         An API error occurred. Wait a few minutes and try again.
      * @throws IncompatibleImageException
-     *         The image does not support storage connectors.
+     *         The image can't be updated because it's not compatible for updates.
      * @throws OperationNotPermittedException
      *         The attempted operation is not permitted.
      * @sample AmazonAppStream.AssociateFleet
@@ -557,7 +557,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
      *         Support.
      * @throws IncompatibleImageException
-     *         The image does not support storage connectors.
+     *         The image can't be updated because it's not compatible for updates.
      * @sample AmazonAppStream.CopyImage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CopyImage" target="_top">AWS API
      *      Documentation</a>
@@ -704,7 +704,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @throws InvalidParameterCombinationException
      *         Indicates an incorrect combination of parameters, or a missing parameter.
      * @throws IncompatibleImageException
-     *         The image does not support storage connectors.
+     *         The image can't be updated because it's not compatible for updates.
      * @throws OperationNotPermittedException
      *         The attempted operation is not permitted.
      * @sample AmazonAppStream.CreateFleet
@@ -786,7 +786,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @throws InvalidParameterCombinationException
      *         Indicates an incorrect combination of parameters, or a missing parameter.
      * @throws IncompatibleImageException
-     *         The image does not support storage connectors.
+     *         The image can't be updated because it's not compatible for updates.
      * @throws OperationNotPermittedException
      *         The attempted operation is not permitted.
      * @sample AmazonAppStream.CreateImageBuilder
@@ -1023,6 +1023,82 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateStreamingURLResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateStreamingURLResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new image with the latest Windows operating system updates, driver updates, and AppStream 2.0 agent
+     * software.
+     * </p>
+     * <p>
+     * For more information, see the "Update an Image by Using Managed AppStream 2.0 Image Updates" section in <a
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/administer-images.html">Administer Your
+     * AppStream 2.0 Images</a>, in the <i>Amazon AppStream 2.0 Administration Guide</i>.
+     * </p>
+     * 
+     * @param createUpdatedImageRequest
+     * @return Result of the CreateUpdatedImage operation returned by the service.
+     * @throws LimitExceededException
+     *         The requested limit exceeds the permitted limit for an account.
+     * @throws InvalidAccountStatusException
+     *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
+     *         Support.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
+     * @throws ResourceAlreadyExistsException
+     *         The specified resource already exists.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ConcurrentModificationException
+     *         An API error occurred. Wait a few minutes and try again.
+     * @throws IncompatibleImageException
+     *         The image can't be updated because it's not compatible for updates.
+     * @sample AmazonAppStream.CreateUpdatedImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateUpdatedImage" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateUpdatedImageResult createUpdatedImage(CreateUpdatedImageRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateUpdatedImage(request);
+    }
+
+    @SdkInternalApi
+    final CreateUpdatedImageResult executeCreateUpdatedImage(CreateUpdatedImageRequest createUpdatedImageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createUpdatedImageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateUpdatedImageRequest> request = null;
+        Response<CreateUpdatedImageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateUpdatedImageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUpdatedImageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUpdatedImage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateUpdatedImageResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateUpdatedImageResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2768,7 +2844,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
      *         Support.
      * @throws IncompatibleImageException
-     *         The image does not support storage connectors.
+     *         The image can't be updated because it's not compatible for updates.
      * @sample AmazonAppStream.StartImageBuilder
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartImageBuilder" target="_top">AWS
      *      API Documentation</a>
@@ -3180,7 +3256,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      * @throws ConcurrentModificationException
      *         An API error occurred. Wait a few minutes and try again.
      * @throws IncompatibleImageException
-     *         The image does not support storage connectors.
+     *         The image can't be updated because it's not compatible for updates.
      * @throws OperationNotPermittedException
      *         The attempted operation is not permitted.
      * @sample AmazonAppStream.UpdateFleet
@@ -3314,7 +3390,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
      *         Support.
      * @throws IncompatibleImageException
-     *         The image does not support storage connectors.
+     *         The image can't be updated because it's not compatible for updates.
      * @throws OperationNotPermittedException
      *         The attempted operation is not permitted.
      * @throws ConcurrentModificationException

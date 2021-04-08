@@ -38,6 +38,10 @@ public class RobotApplicationConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("uploadConfigurations").build();
     private static final MarshallingInfo<Boolean> USEDEFAULTUPLOADCONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("useDefaultUploadConfigurations").build();
+    private static final MarshallingInfo<List> TOOLS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tools").build();
+    private static final MarshallingInfo<Boolean> USEDEFAULTTOOLS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("useDefaultTools").build();
 
     private static final RobotApplicationConfigMarshaller instance = new RobotApplicationConfigMarshaller();
 
@@ -60,6 +64,8 @@ public class RobotApplicationConfigMarshaller {
             protocolMarshaller.marshall(robotApplicationConfig.getLaunchConfig(), LAUNCHCONFIG_BINDING);
             protocolMarshaller.marshall(robotApplicationConfig.getUploadConfigurations(), UPLOADCONFIGURATIONS_BINDING);
             protocolMarshaller.marshall(robotApplicationConfig.getUseDefaultUploadConfigurations(), USEDEFAULTUPLOADCONFIGURATIONS_BINDING);
+            protocolMarshaller.marshall(robotApplicationConfig.getTools(), TOOLS_BINDING);
+            protocolMarshaller.marshall(robotApplicationConfig.getUseDefaultTools(), USEDEFAULTTOOLS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

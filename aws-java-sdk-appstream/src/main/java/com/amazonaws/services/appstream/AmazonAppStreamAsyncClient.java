@@ -618,6 +618,39 @@ public class AmazonAppStreamAsyncClient extends AmazonAppStreamClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateUpdatedImageResult> createUpdatedImageAsync(CreateUpdatedImageRequest request) {
+
+        return createUpdatedImageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUpdatedImageResult> createUpdatedImageAsync(final CreateUpdatedImageRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateUpdatedImageRequest, CreateUpdatedImageResult> asyncHandler) {
+        final CreateUpdatedImageRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateUpdatedImageResult>() {
+            @Override
+            public CreateUpdatedImageResult call() throws Exception {
+                CreateUpdatedImageResult result = null;
+
+                try {
+                    result = executeCreateUpdatedImage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateUsageReportSubscriptionResult> createUsageReportSubscriptionAsync(CreateUsageReportSubscriptionRequest request) {
 
         return createUsageReportSubscriptionAsync(request, null);

@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * A class for modeling different type of tasks. Task implementation varies based on the TaskType.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/Task" target="_top">AWS API
  *      Documentation</a>
@@ -25,18 +28,44 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Task implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The operation to be performed on the provided source fields.
+     * </p>
+     */
     private ConnectorOperator connectorOperator;
-
+    /**
+     * <p>
+     * A field in a destination connector, or a field value against which Amazon AppFlow validates a source field.
+     * </p>
+     */
     private String destinationField;
-
+    /**
+     * <p>
+     * The source fields to which a particular task is applied.
+     * </p>
+     */
     private java.util.List<String> sourceFields;
-
+    /**
+     * <p>
+     * A map used to store task-related information. The service looks for particular information based on the TaskType.
+     * </p>
+     */
     private java.util.Map<String, String> taskProperties;
-
+    /**
+     * <p>
+     * Specifies the particular task implementation that Amazon AppFlow performs.
+     * </p>
+     */
     private String taskType;
 
     /**
+     * <p>
+     * The operation to be performed on the provided source fields.
+     * </p>
+     * 
      * @param connectorOperator
+     *        The operation to be performed on the provided source fields.
      */
 
     public void setConnectorOperator(ConnectorOperator connectorOperator) {
@@ -44,7 +73,11 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The operation to be performed on the provided source fields.
+     * </p>
+     * 
+     * @return The operation to be performed on the provided source fields.
      */
 
     public ConnectorOperator getConnectorOperator() {
@@ -52,7 +85,12 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The operation to be performed on the provided source fields.
+     * </p>
+     * 
      * @param connectorOperator
+     *        The operation to be performed on the provided source fields.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -62,7 +100,13 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A field in a destination connector, or a field value against which Amazon AppFlow validates a source field.
+     * </p>
+     * 
      * @param destinationField
+     *        A field in a destination connector, or a field value against which Amazon AppFlow validates a source
+     *        field.
      */
 
     public void setDestinationField(String destinationField) {
@@ -70,7 +114,12 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * A field in a destination connector, or a field value against which Amazon AppFlow validates a source field.
+     * </p>
+     * 
+     * @return A field in a destination connector, or a field value against which Amazon AppFlow validates a source
+     *         field.
      */
 
     public String getDestinationField() {
@@ -78,7 +127,13 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A field in a destination connector, or a field value against which Amazon AppFlow validates a source field.
+     * </p>
+     * 
      * @param destinationField
+     *        A field in a destination connector, or a field value against which Amazon AppFlow validates a source
+     *        field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,7 +143,11 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The source fields to which a particular task is applied.
+     * </p>
+     * 
+     * @return The source fields to which a particular task is applied.
      */
 
     public java.util.List<String> getSourceFields() {
@@ -96,7 +155,12 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The source fields to which a particular task is applied.
+     * </p>
+     * 
      * @param sourceFields
+     *        The source fields to which a particular task is applied.
      */
 
     public void setSourceFields(java.util.Collection<String> sourceFields) {
@@ -110,12 +174,16 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The source fields to which a particular task is applied.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSourceFields(java.util.Collection)} or {@link #withSourceFields(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param sourceFields
+     *        The source fields to which a particular task is applied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,7 +198,12 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The source fields to which a particular task is applied.
+     * </p>
+     * 
      * @param sourceFields
+     *        The source fields to which a particular task is applied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,7 +213,12 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * A map used to store task-related information. The service looks for particular information based on the TaskType.
+     * </p>
+     * 
+     * @return A map used to store task-related information. The service looks for particular information based on the
+     *         TaskType.
      */
 
     public java.util.Map<String, String> getTaskProperties() {
@@ -148,7 +226,13 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A map used to store task-related information. The service looks for particular information based on the TaskType.
+     * </p>
+     * 
      * @param taskProperties
+     *        A map used to store task-related information. The service looks for particular information based on the
+     *        TaskType.
      */
 
     public void setTaskProperties(java.util.Map<String, String> taskProperties) {
@@ -156,7 +240,13 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A map used to store task-related information. The service looks for particular information based on the TaskType.
+     * </p>
+     * 
      * @param taskProperties
+     *        A map used to store task-related information. The service looks for particular information based on the
+     *        TaskType.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,7 +284,12 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies the particular task implementation that Amazon AppFlow performs.
+     * </p>
+     * 
      * @param taskType
+     *        Specifies the particular task implementation that Amazon AppFlow performs.
      * @see TaskType
      */
 
@@ -203,7 +298,11 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies the particular task implementation that Amazon AppFlow performs.
+     * </p>
+     * 
+     * @return Specifies the particular task implementation that Amazon AppFlow performs.
      * @see TaskType
      */
 
@@ -212,7 +311,12 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies the particular task implementation that Amazon AppFlow performs.
+     * </p>
+     * 
      * @param taskType
+     *        Specifies the particular task implementation that Amazon AppFlow performs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TaskType
      */
@@ -223,7 +327,12 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies the particular task implementation that Amazon AppFlow performs.
+     * </p>
+     * 
      * @param taskType
+     *        Specifies the particular task implementation that Amazon AppFlow performs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TaskType
      */

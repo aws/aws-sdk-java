@@ -78,12 +78,6 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.robomaker.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.robomaker.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ConcurrentDeploymentException").withExceptionUnmarshaller(
                                     com.amazonaws.services.robomaker.model.transform.ConcurrentDeploymentExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -99,11 +93,17 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                             new JsonErrorShapeMetadata().withErrorCode("IdempotentParameterMismatchException").withExceptionUnmarshaller(
                                     com.amazonaws.services.robomaker.model.transform.IdempotentParameterMismatchExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.robomaker.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.robomaker.model.transform.ResourceAlreadyExistsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.robomaker.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.robomaker.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.robomaker.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.robomaker.model.AWSRoboMakerException.class));
 
     public static AWSRoboMakerClientBuilder builder() {

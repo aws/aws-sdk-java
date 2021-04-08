@@ -18,6 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Specifies the configuration details that control the trigger for a flow. Currently, these settings only apply to the
+ * Scheduled trigger type.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/TriggerProperties"
  *      target="_top">AWS API Documentation</a>
@@ -25,10 +29,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TriggerProperties implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * Specifies the configuration details of a schedule-triggered flow that you define.
+     * </p>
+     */
     private ScheduledTriggerProperties scheduled;
 
     /**
+     * <p>
+     * Specifies the configuration details of a schedule-triggered flow that you define.
+     * </p>
+     * 
      * @param scheduled
+     *        Specifies the configuration details of a schedule-triggered flow that you define.
      */
 
     public void setScheduled(ScheduledTriggerProperties scheduled) {
@@ -36,7 +50,11 @@ public class TriggerProperties implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies the configuration details of a schedule-triggered flow that you define.
+     * </p>
+     * 
+     * @return Specifies the configuration details of a schedule-triggered flow that you define.
      */
 
     public ScheduledTriggerProperties getScheduled() {
@@ -44,7 +62,12 @@ public class TriggerProperties implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * Specifies the configuration details of a schedule-triggered flow that you define.
+     * </p>
+     * 
      * @param scheduled
+     *        Specifies the configuration details of a schedule-triggered flow that you define.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

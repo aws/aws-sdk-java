@@ -127,6 +127,12 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ImagePermissions imagePermissions;
+    /**
+     * <p>
+     * Describes the errors that are returned when a new image can't be created.
+     * </p>
+     */
+    private java.util.List<ResourceError> imageErrors;
 
     /**
      * <p>
@@ -932,6 +938,76 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Describes the errors that are returned when a new image can't be created.
+     * </p>
+     * 
+     * @return Describes the errors that are returned when a new image can't be created.
+     */
+
+    public java.util.List<ResourceError> getImageErrors() {
+        return imageErrors;
+    }
+
+    /**
+     * <p>
+     * Describes the errors that are returned when a new image can't be created.
+     * </p>
+     * 
+     * @param imageErrors
+     *        Describes the errors that are returned when a new image can't be created.
+     */
+
+    public void setImageErrors(java.util.Collection<ResourceError> imageErrors) {
+        if (imageErrors == null) {
+            this.imageErrors = null;
+            return;
+        }
+
+        this.imageErrors = new java.util.ArrayList<ResourceError>(imageErrors);
+    }
+
+    /**
+     * <p>
+     * Describes the errors that are returned when a new image can't be created.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setImageErrors(java.util.Collection)} or {@link #withImageErrors(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param imageErrors
+     *        Describes the errors that are returned when a new image can't be created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Image withImageErrors(ResourceError... imageErrors) {
+        if (this.imageErrors == null) {
+            setImageErrors(new java.util.ArrayList<ResourceError>(imageErrors.length));
+        }
+        for (ResourceError ele : imageErrors) {
+            this.imageErrors.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the errors that are returned when a new image can't be created.
+     * </p>
+     * 
+     * @param imageErrors
+     *        Describes the errors that are returned when a new image can't be created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Image withImageErrors(java.util.Collection<ResourceError> imageErrors) {
+        setImageErrors(imageErrors);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -974,7 +1050,9 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
         if (getAppstreamAgentVersion() != null)
             sb.append("AppstreamAgentVersion: ").append(getAppstreamAgentVersion()).append(",");
         if (getImagePermissions() != null)
-            sb.append("ImagePermissions: ").append(getImagePermissions());
+            sb.append("ImagePermissions: ").append(getImagePermissions()).append(",");
+        if (getImageErrors() != null)
+            sb.append("ImageErrors: ").append(getImageErrors());
         sb.append("}");
         return sb.toString();
     }
@@ -1053,6 +1131,10 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getImagePermissions() != null && other.getImagePermissions().equals(this.getImagePermissions()) == false)
             return false;
+        if (other.getImageErrors() == null ^ this.getImageErrors() == null)
+            return false;
+        if (other.getImageErrors() != null && other.getImageErrors().equals(this.getImageErrors()) == false)
+            return false;
         return true;
     }
 
@@ -1077,6 +1159,7 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPublicBaseImageReleasedDate() == null) ? 0 : getPublicBaseImageReleasedDate().hashCode());
         hashCode = prime * hashCode + ((getAppstreamAgentVersion() == null) ? 0 : getAppstreamAgentVersion().hashCode());
         hashCode = prime * hashCode + ((getImagePermissions() == null) ? 0 : getImagePermissions().hashCode());
+        hashCode = prime * hashCode + ((getImageErrors() == null) ? 0 : getImageErrors().hashCode());
         return hashCode;
     }
 

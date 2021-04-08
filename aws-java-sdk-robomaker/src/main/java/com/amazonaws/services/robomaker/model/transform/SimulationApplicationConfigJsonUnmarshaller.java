@@ -77,6 +77,16 @@ public class SimulationApplicationConfigJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     simulationApplicationConfig.setUseDefaultUploadConfigurations(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("tools", targetDepth)) {
+                    context.nextToken();
+                    simulationApplicationConfig.setTools(new ListUnmarshaller<Tool>(ToolJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("useDefaultTools", targetDepth)) {
+                    context.nextToken();
+                    simulationApplicationConfig.setUseDefaultTools(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -28,7 +28,9 @@ public enum ImageBuilderState {
     REBOOTING("REBOOTING"),
     SNAPSHOTTING("SNAPSHOTTING"),
     DELETING("DELETING"),
-    FAILED("FAILED");
+    FAILED("FAILED"),
+    UPDATING("UPDATING"),
+    PENDING_QUALIFICATION("PENDING_QUALIFICATION");
 
     private String value;
 

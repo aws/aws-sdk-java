@@ -140,7 +140,7 @@ public interface AmazonAppStream {
      * @throws ConcurrentModificationException
      *         An API error occurred. Wait a few minutes and try again.
      * @throws IncompatibleImageException
-     *         The image does not support storage connectors.
+     *         The image can't be updated because it's not compatible for updates.
      * @throws OperationNotPermittedException
      *         The attempted operation is not permitted.
      * @sample AmazonAppStream.AssociateFleet
@@ -204,7 +204,7 @@ public interface AmazonAppStream {
      *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
      *         Support.
      * @throws IncompatibleImageException
-     *         The image does not support storage connectors.
+     *         The image can't be updated because it's not compatible for updates.
      * @sample AmazonAppStream.CopyImage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CopyImage" target="_top">AWS API
      *      Documentation</a>
@@ -266,7 +266,7 @@ public interface AmazonAppStream {
      * @throws InvalidParameterCombinationException
      *         Indicates an incorrect combination of parameters, or a missing parameter.
      * @throws IncompatibleImageException
-     *         The image does not support storage connectors.
+     *         The image can't be updated because it's not compatible for updates.
      * @throws OperationNotPermittedException
      *         The attempted operation is not permitted.
      * @sample AmazonAppStream.CreateFleet
@@ -306,7 +306,7 @@ public interface AmazonAppStream {
      * @throws InvalidParameterCombinationException
      *         Indicates an incorrect combination of parameters, or a missing parameter.
      * @throws IncompatibleImageException
-     *         The image does not support storage connectors.
+     *         The image can't be updated because it's not compatible for updates.
      * @throws OperationNotPermittedException
      *         The attempted operation is not permitted.
      * @sample AmazonAppStream.CreateImageBuilder
@@ -382,6 +382,40 @@ public interface AmazonAppStream {
      *      API Documentation</a>
      */
     CreateStreamingURLResult createStreamingURL(CreateStreamingURLRequest createStreamingURLRequest);
+
+    /**
+     * <p>
+     * Creates a new image with the latest Windows operating system updates, driver updates, and AppStream 2.0 agent
+     * software.
+     * </p>
+     * <p>
+     * For more information, see the "Update an Image by Using Managed AppStream 2.0 Image Updates" section in <a
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/administer-images.html">Administer Your
+     * AppStream 2.0 Images</a>, in the <i>Amazon AppStream 2.0 Administration Guide</i>.
+     * </p>
+     * 
+     * @param createUpdatedImageRequest
+     * @return Result of the CreateUpdatedImage operation returned by the service.
+     * @throws LimitExceededException
+     *         The requested limit exceeds the permitted limit for an account.
+     * @throws InvalidAccountStatusException
+     *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
+     *         Support.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
+     * @throws ResourceAlreadyExistsException
+     *         The specified resource already exists.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ConcurrentModificationException
+     *         An API error occurred. Wait a few minutes and try again.
+     * @throws IncompatibleImageException
+     *         The image can't be updated because it's not compatible for updates.
+     * @sample AmazonAppStream.CreateUpdatedImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateUpdatedImage" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateUpdatedImageResult createUpdatedImage(CreateUpdatedImageRequest createUpdatedImageRequest);
 
     /**
      * <p>
@@ -926,7 +960,7 @@ public interface AmazonAppStream {
      *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
      *         Support.
      * @throws IncompatibleImageException
-     *         The image does not support storage connectors.
+     *         The image can't be updated because it's not compatible for updates.
      * @sample AmazonAppStream.StartImageBuilder
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartImageBuilder" target="_top">AWS
      *      API Documentation</a>
@@ -1085,7 +1119,7 @@ public interface AmazonAppStream {
      * @throws ConcurrentModificationException
      *         An API error occurred. Wait a few minutes and try again.
      * @throws IncompatibleImageException
-     *         The image does not support storage connectors.
+     *         The image can't be updated because it's not compatible for updates.
      * @throws OperationNotPermittedException
      *         The attempted operation is not permitted.
      * @sample AmazonAppStream.UpdateFleet
@@ -1134,7 +1168,7 @@ public interface AmazonAppStream {
      *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
      *         Support.
      * @throws IncompatibleImageException
-     *         The image does not support storage connectors.
+     *         The image can't be updated because it's not compatible for updates.
      * @throws OperationNotPermittedException
      *         The attempted operation is not permitted.
      * @throws ConcurrentModificationException

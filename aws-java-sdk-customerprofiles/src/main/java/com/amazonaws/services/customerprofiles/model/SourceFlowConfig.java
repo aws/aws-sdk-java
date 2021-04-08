@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Contains information about the configuration of the source connector used in the flow.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/SourceFlowConfig" target="_top">AWS
  *      API Documentation</a>
@@ -25,16 +28,42 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SourceFlowConfig implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The name of the AppFlow connector profile. This name must be unique for each connector profile in the AWS
+     * account.
+     * </p>
+     */
     private String connectorProfileName;
-
+    /**
+     * <p>
+     * The type of connector, such as Salesforce, Marketo, and so on.
+     * </p>
+     */
     private String connectorType;
-
+    /**
+     * <p>
+     * Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the fields
+     * specified in the configuration are used when querying for the incremental data pull.
+     * </p>
+     */
     private IncrementalPullConfig incrementalPullConfig;
-
+    /**
+     * <p>
+     * Specifies the information that is required to query a particular source connector.
+     * </p>
+     */
     private SourceConnectorProperties sourceConnectorProperties;
 
     /**
+     * <p>
+     * The name of the AppFlow connector profile. This name must be unique for each connector profile in the AWS
+     * account.
+     * </p>
+     * 
      * @param connectorProfileName
+     *        The name of the AppFlow connector profile. This name must be unique for each connector profile in the AWS
+     *        account.
      */
 
     public void setConnectorProfileName(String connectorProfileName) {
@@ -42,7 +71,13 @@ public class SourceFlowConfig implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the AppFlow connector profile. This name must be unique for each connector profile in the AWS
+     * account.
+     * </p>
+     * 
+     * @return The name of the AppFlow connector profile. This name must be unique for each connector profile in the AWS
+     *         account.
      */
 
     public String getConnectorProfileName() {
@@ -50,7 +85,14 @@ public class SourceFlowConfig implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The name of the AppFlow connector profile. This name must be unique for each connector profile in the AWS
+     * account.
+     * </p>
+     * 
      * @param connectorProfileName
+     *        The name of the AppFlow connector profile. This name must be unique for each connector profile in the AWS
+     *        account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -60,7 +102,12 @@ public class SourceFlowConfig implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The type of connector, such as Salesforce, Marketo, and so on.
+     * </p>
+     * 
      * @param connectorType
+     *        The type of connector, such as Salesforce, Marketo, and so on.
      * @see SourceConnectorType
      */
 
@@ -69,7 +116,11 @@ public class SourceFlowConfig implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * <p>
+     * The type of connector, such as Salesforce, Marketo, and so on.
+     * </p>
+     * 
+     * @return The type of connector, such as Salesforce, Marketo, and so on.
      * @see SourceConnectorType
      */
 
@@ -78,7 +129,12 @@ public class SourceFlowConfig implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The type of connector, such as Salesforce, Marketo, and so on.
+     * </p>
+     * 
      * @param connectorType
+     *        The type of connector, such as Salesforce, Marketo, and so on.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SourceConnectorType
      */
@@ -89,7 +145,12 @@ public class SourceFlowConfig implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The type of connector, such as Salesforce, Marketo, and so on.
+     * </p>
+     * 
      * @param connectorType
+     *        The type of connector, such as Salesforce, Marketo, and so on.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SourceConnectorType
      */
@@ -100,7 +161,14 @@ public class SourceFlowConfig implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the fields
+     * specified in the configuration are used when querying for the incremental data pull.
+     * </p>
+     * 
      * @param incrementalPullConfig
+     *        Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the
+     *        fields specified in the configuration are used when querying for the incremental data pull.
      */
 
     public void setIncrementalPullConfig(IncrementalPullConfig incrementalPullConfig) {
@@ -108,7 +176,13 @@ public class SourceFlowConfig implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * <p>
+     * Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the fields
+     * specified in the configuration are used when querying for the incremental data pull.
+     * </p>
+     * 
+     * @return Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided,
+     *         the fields specified in the configuration are used when querying for the incremental data pull.
      */
 
     public IncrementalPullConfig getIncrementalPullConfig() {
@@ -116,7 +190,14 @@ public class SourceFlowConfig implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the fields
+     * specified in the configuration are used when querying for the incremental data pull.
+     * </p>
+     * 
      * @param incrementalPullConfig
+     *        Defines the configuration for a scheduled incremental data pull. If a valid configuration is provided, the
+     *        fields specified in the configuration are used when querying for the incremental data pull.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,7 +207,12 @@ public class SourceFlowConfig implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Specifies the information that is required to query a particular source connector.
+     * </p>
+     * 
      * @param sourceConnectorProperties
+     *        Specifies the information that is required to query a particular source connector.
      */
 
     public void setSourceConnectorProperties(SourceConnectorProperties sourceConnectorProperties) {
@@ -134,7 +220,11 @@ public class SourceFlowConfig implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies the information that is required to query a particular source connector.
+     * </p>
+     * 
+     * @return Specifies the information that is required to query a particular source connector.
      */
 
     public SourceConnectorProperties getSourceConnectorProperties() {
@@ -142,7 +232,12 @@ public class SourceFlowConfig implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Specifies the information that is required to query a particular source connector.
+     * </p>
+     * 
      * @param sourceConnectorProperties
+     *        Specifies the information that is required to query a particular source connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

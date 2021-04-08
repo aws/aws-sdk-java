@@ -18,6 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Specifies the configuration details of a scheduled-trigger flow that you define. Currently, these settings only apply
+ * to the scheduled-trigger type.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ScheduledTriggerProperties"
  *      target="_top">AWS API Documentation</a>
@@ -25,22 +29,59 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ScheduledTriggerProperties implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The scheduling expression that determines the rate at which the schedule will run, for example rate (5 minutes).
+     * </p>
+     */
     private String scheduleExpression;
-
+    /**
+     * <p>
+     * Specifies whether a scheduled flow has an incremental data transfer or a complete data transfer for each flow
+     * run.
+     * </p>
+     */
     private String dataPullMode;
-
+    /**
+     * <p>
+     * Specifies the scheduled start time for a scheduled-trigger flow.
+     * </p>
+     */
     private java.util.Date scheduleStartTime;
-
+    /**
+     * <p>
+     * Specifies the scheduled end time for a scheduled-trigger flow.
+     * </p>
+     */
     private java.util.Date scheduleEndTime;
-
+    /**
+     * <p>
+     * Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as
+     * America/New_York.
+     * </p>
+     */
     private String timezone;
-
+    /**
+     * <p>
+     * Specifies the optional offset that is added to the time interval for a schedule-triggered flow.
+     * </p>
+     */
     private Long scheduleOffset;
-
+    /**
+     * <p>
+     * Specifies the date range for the records to import from the connector in the first flow run.
+     * </p>
+     */
     private java.util.Date firstExecutionFrom;
 
     /**
+     * <p>
+     * The scheduling expression that determines the rate at which the schedule will run, for example rate (5 minutes).
+     * </p>
+     * 
      * @param scheduleExpression
+     *        The scheduling expression that determines the rate at which the schedule will run, for example rate (5
+     *        minutes).
      */
 
     public void setScheduleExpression(String scheduleExpression) {
@@ -48,7 +89,12 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * <p>
+     * The scheduling expression that determines the rate at which the schedule will run, for example rate (5 minutes).
+     * </p>
+     * 
+     * @return The scheduling expression that determines the rate at which the schedule will run, for example rate (5
+     *         minutes).
      */
 
     public String getScheduleExpression() {
@@ -56,7 +102,13 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * The scheduling expression that determines the rate at which the schedule will run, for example rate (5 minutes).
+     * </p>
+     * 
      * @param scheduleExpression
+     *        The scheduling expression that determines the rate at which the schedule will run, for example rate (5
+     *        minutes).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,7 +118,14 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Specifies whether a scheduled flow has an incremental data transfer or a complete data transfer for each flow
+     * run.
+     * </p>
+     * 
      * @param dataPullMode
+     *        Specifies whether a scheduled flow has an incremental data transfer or a complete data transfer for each
+     *        flow run.
      * @see DataPullMode
      */
 
@@ -75,7 +134,13 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies whether a scheduled flow has an incremental data transfer or a complete data transfer for each flow
+     * run.
+     * </p>
+     * 
+     * @return Specifies whether a scheduled flow has an incremental data transfer or a complete data transfer for each
+     *         flow run.
      * @see DataPullMode
      */
 
@@ -84,7 +149,14 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Specifies whether a scheduled flow has an incremental data transfer or a complete data transfer for each flow
+     * run.
+     * </p>
+     * 
      * @param dataPullMode
+     *        Specifies whether a scheduled flow has an incremental data transfer or a complete data transfer for each
+     *        flow run.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataPullMode
      */
@@ -95,7 +167,14 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Specifies whether a scheduled flow has an incremental data transfer or a complete data transfer for each flow
+     * run.
+     * </p>
+     * 
      * @param dataPullMode
+     *        Specifies whether a scheduled flow has an incremental data transfer or a complete data transfer for each
+     *        flow run.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataPullMode
      */
@@ -106,7 +185,12 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Specifies the scheduled start time for a scheduled-trigger flow.
+     * </p>
+     * 
      * @param scheduleStartTime
+     *        Specifies the scheduled start time for a scheduled-trigger flow.
      */
 
     public void setScheduleStartTime(java.util.Date scheduleStartTime) {
@@ -114,7 +198,11 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies the scheduled start time for a scheduled-trigger flow.
+     * </p>
+     * 
+     * @return Specifies the scheduled start time for a scheduled-trigger flow.
      */
 
     public java.util.Date getScheduleStartTime() {
@@ -122,7 +210,12 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Specifies the scheduled start time for a scheduled-trigger flow.
+     * </p>
+     * 
      * @param scheduleStartTime
+     *        Specifies the scheduled start time for a scheduled-trigger flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,7 +225,12 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Specifies the scheduled end time for a scheduled-trigger flow.
+     * </p>
+     * 
      * @param scheduleEndTime
+     *        Specifies the scheduled end time for a scheduled-trigger flow.
      */
 
     public void setScheduleEndTime(java.util.Date scheduleEndTime) {
@@ -140,7 +238,11 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies the scheduled end time for a scheduled-trigger flow.
+     * </p>
+     * 
+     * @return Specifies the scheduled end time for a scheduled-trigger flow.
      */
 
     public java.util.Date getScheduleEndTime() {
@@ -148,7 +250,12 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Specifies the scheduled end time for a scheduled-trigger flow.
+     * </p>
+     * 
      * @param scheduleEndTime
+     *        Specifies the scheduled end time for a scheduled-trigger flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -158,7 +265,14 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as
+     * America/New_York.
+     * </p>
+     * 
      * @param timezone
+     *        Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as
+     *        America/New_York.
      */
 
     public void setTimezone(String timezone) {
@@ -166,7 +280,13 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as
+     * America/New_York.
+     * </p>
+     * 
+     * @return Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as
+     *         America/New_York.
      */
 
     public String getTimezone() {
@@ -174,7 +294,14 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as
+     * America/New_York.
+     * </p>
+     * 
      * @param timezone
+     *        Specifies the time zone used when referring to the date and time of a scheduled-triggered flow, such as
+     *        America/New_York.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,7 +311,12 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Specifies the optional offset that is added to the time interval for a schedule-triggered flow.
+     * </p>
+     * 
      * @param scheduleOffset
+     *        Specifies the optional offset that is added to the time interval for a schedule-triggered flow.
      */
 
     public void setScheduleOffset(Long scheduleOffset) {
@@ -192,7 +324,11 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies the optional offset that is added to the time interval for a schedule-triggered flow.
+     * </p>
+     * 
+     * @return Specifies the optional offset that is added to the time interval for a schedule-triggered flow.
      */
 
     public Long getScheduleOffset() {
@@ -200,7 +336,12 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Specifies the optional offset that is added to the time interval for a schedule-triggered flow.
+     * </p>
+     * 
      * @param scheduleOffset
+     *        Specifies the optional offset that is added to the time interval for a schedule-triggered flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -210,7 +351,12 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Specifies the date range for the records to import from the connector in the first flow run.
+     * </p>
+     * 
      * @param firstExecutionFrom
+     *        Specifies the date range for the records to import from the connector in the first flow run.
      */
 
     public void setFirstExecutionFrom(java.util.Date firstExecutionFrom) {
@@ -218,7 +364,11 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies the date range for the records to import from the connector in the first flow run.
+     * </p>
+     * 
+     * @return Specifies the date range for the records to import from the connector in the first flow run.
      */
 
     public java.util.Date getFirstExecutionFrom() {
@@ -226,7 +376,12 @@ public class ScheduledTriggerProperties implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Specifies the date range for the records to import from the connector in the first flow run.
+     * </p>
+     * 
      * @param firstExecutionFrom
+     *        Specifies the date range for the records to import from the connector in the first flow run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

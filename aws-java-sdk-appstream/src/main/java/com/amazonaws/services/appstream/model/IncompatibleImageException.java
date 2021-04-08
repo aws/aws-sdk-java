@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The image does not support storage connectors.
+ * The image can't be updated because it's not compatible for updates.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

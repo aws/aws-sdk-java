@@ -96,6 +96,41 @@ public class MetricCollectionType implements Serializable, Cloneable {
      * <code>GroupTotalCapacity</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolDesiredCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolWarmedCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolPendingCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolTerminatingCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolTotalCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupAndWarmPoolDesiredCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupAndWarmPoolTotalCapacity</code>
+     * </p>
+     * </li>
      * </ul>
      */
     private String metric;
@@ -170,6 +205,41 @@ public class MetricCollectionType implements Serializable, Cloneable {
      * <code>GroupTotalCapacity</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolDesiredCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolWarmedCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolPendingCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolTerminatingCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolTotalCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupAndWarmPoolDesiredCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupAndWarmPoolTotalCapacity</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param metric
@@ -238,6 +308,41 @@ public class MetricCollectionType implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>GroupTotalCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>WarmPoolDesiredCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>WarmPoolWarmedCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>WarmPoolPendingCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>WarmPoolTerminatingCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>WarmPoolTotalCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GroupAndWarmPoolDesiredCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GroupAndWarmPoolTotalCapacity</code>
      *        </p>
      *        </li>
      */
@@ -316,6 +421,41 @@ public class MetricCollectionType implements Serializable, Cloneable {
      * <code>GroupTotalCapacity</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolDesiredCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolWarmedCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolPendingCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolTerminatingCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolTotalCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupAndWarmPoolDesiredCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupAndWarmPoolTotalCapacity</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return One of the following metrics:</p>
@@ -383,6 +523,41 @@ public class MetricCollectionType implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         <code>GroupTotalCapacity</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>WarmPoolDesiredCapacity</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>WarmPoolWarmedCapacity</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>WarmPoolPendingCapacity</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>WarmPoolTerminatingCapacity</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>WarmPoolTotalCapacity</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>GroupAndWarmPoolDesiredCapacity</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>GroupAndWarmPoolTotalCapacity</code>
      *         </p>
      *         </li>
      */
@@ -461,6 +636,41 @@ public class MetricCollectionType implements Serializable, Cloneable {
      * <code>GroupTotalCapacity</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolDesiredCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolWarmedCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolPendingCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolTerminatingCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WarmPoolTotalCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupAndWarmPoolDesiredCapacity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GroupAndWarmPoolTotalCapacity</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param metric
@@ -529,6 +739,41 @@ public class MetricCollectionType implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>GroupTotalCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>WarmPoolDesiredCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>WarmPoolWarmedCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>WarmPoolPendingCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>WarmPoolTerminatingCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>WarmPoolTotalCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GroupAndWarmPoolDesiredCapacity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GroupAndWarmPoolTotalCapacity</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
