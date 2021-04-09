@@ -181,7 +181,7 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <li>
      * <p>
      * <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of Elastic Fabric Adapters (EFAs)
-     * per instance. (<code>true</code> | <code>false</code>).
+     * per instance.
      * </p>
      * </li>
      * <li>
@@ -567,7 +567,7 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <li>
      * <p>
      * <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of Elastic Fabric Adapters (EFAs)
-     * per instance. (<code>true</code> | <code>false</code>).
+     * per instance.
      * </p>
      * </li>
      * <li>
@@ -816,7 +816,7 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *         <li>
      *         <p>
      *         <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of Elastic Fabric Adapters
-     *         (EFAs) per instance. (<code>true</code> | <code>false</code>).
+     *         (EFAs) per instance.
      *         </p>
      *         </li>
      *         <li>
@@ -1076,7 +1076,7 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <li>
      * <p>
      * <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of Elastic Fabric Adapters (EFAs)
-     * per instance. (<code>true</code> | <code>false</code>).
+     * per instance.
      * </p>
      * </li>
      * <li>
@@ -1325,7 +1325,7 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <li>
      *        <p>
      *        <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of Elastic Fabric Adapters
-     *        (EFAs) per instance. (<code>true</code> | <code>false</code>).
+     *        (EFAs) per instance.
      *        </p>
      *        </li>
      *        <li>
@@ -1587,7 +1587,7 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <li>
      * <p>
      * <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of Elastic Fabric Adapters (EFAs)
-     * per instance. (<code>true</code> | <code>false</code>).
+     * per instance.
      * </p>
      * </li>
      * <li>
@@ -1841,7 +1841,7 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <li>
      *        <p>
      *        <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of Elastic Fabric Adapters
-     *        (EFAs) per instance. (<code>true</code> | <code>false</code>).
+     *        (EFAs) per instance.
      *        </p>
      *        </li>
      *        <li>
@@ -2105,7 +2105,7 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <li>
      * <p>
      * <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of Elastic Fabric Adapters (EFAs)
-     * per instance. (<code>true</code> | <code>false</code>).
+     * per instance.
      * </p>
      * </li>
      * <li>
@@ -2354,7 +2354,7 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <li>
      *        <p>
      *        <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of Elastic Fabric Adapters
-     *        (EFAs) per instance. (<code>true</code> | <code>false</code>).
+     *        (EFAs) per instance.
      *        </p>
      *        </li>
      *        <li>

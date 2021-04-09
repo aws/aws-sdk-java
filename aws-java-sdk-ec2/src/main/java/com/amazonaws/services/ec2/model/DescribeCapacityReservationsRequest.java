@@ -135,6 +135,11 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>start-date</code> - The date and time at which the Capacity Reservation was started.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>end-date</code> - The date and time at which the Capacity Reservation expires. When a Capacity Reservation
      * expires, the reserved capacity is released and you can no longer launch instances into it. The Capacity
      * Reservation's state changes to expired when it reaches its end date and time.
@@ -438,6 +443,11 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>start-date</code> - The date and time at which the Capacity Reservation was started.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>end-date</code> - The date and time at which the Capacity Reservation expires. When a Capacity Reservation
      * expires, the reserved capacity is released and you can no longer launch instances into it. The Capacity
      * Reservation's state changes to expired when it reaches its end date and time.
@@ -570,6 +580,11 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      *         </p>
      *         </li>
      *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>start-date</code> - The date and time at which the Capacity Reservation was started.
+     *         </p>
      *         </li>
      *         <li>
      *         <p>
@@ -716,6 +731,11 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>start-date</code> - The date and time at which the Capacity Reservation was started.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>end-date</code> - The date and time at which the Capacity Reservation expires. When a Capacity Reservation
      * expires, the reserved capacity is released and you can no longer launch instances into it. The Capacity
      * Reservation's state changes to expired when it reaches its end date and time.
@@ -849,6 +869,11 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>start-date</code> - The date and time at which the Capacity Reservation was started.
+     *        </p>
      *        </li>
      *        <li>
      *        <p>
@@ -997,6 +1022,11 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>start-date</code> - The date and time at which the Capacity Reservation was started.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>end-date</code> - The date and time at which the Capacity Reservation expires. When a Capacity Reservation
      * expires, the reserved capacity is released and you can no longer launch instances into it. The Capacity
      * Reservation's state changes to expired when it reaches its end date and time.
@@ -1135,6 +1165,11 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>start-date</code> - The date and time at which the Capacity Reservation was started.
+     *        </p>
      *        </li>
      *        <li>
      *        <p>
@@ -1285,6 +1320,11 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>start-date</code> - The date and time at which the Capacity Reservation was started.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>end-date</code> - The date and time at which the Capacity Reservation expires. When a Capacity Reservation
      * expires, the reserved capacity is released and you can no longer launch instances into it. The Capacity
      * Reservation's state changes to expired when it reaches its end date and time.
@@ -1418,6 +1458,11 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>start-date</code> - The date and time at which the Capacity Reservation was started.
+     *        </p>
      *        </li>
      *        <li>
      *        <p>

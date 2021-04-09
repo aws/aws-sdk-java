@@ -94,7 +94,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<InstancePrivateIpAddress> privateIpAddresses;
     /**
      * <p>
-     * Indicates whether to validate network traffic to or from this network interface.
+     * Indicates whether source/destination checking is enabled.
      * </p>
      */
     private Boolean sourceDestCheck;
@@ -667,11 +667,11 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether to validate network traffic to or from this network interface.
+     * Indicates whether source/destination checking is enabled.
      * </p>
      * 
      * @param sourceDestCheck
-     *        Indicates whether to validate network traffic to or from this network interface.
+     *        Indicates whether source/destination checking is enabled.
      */
 
     public void setSourceDestCheck(Boolean sourceDestCheck) {
@@ -680,10 +680,10 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether to validate network traffic to or from this network interface.
+     * Indicates whether source/destination checking is enabled.
      * </p>
      * 
-     * @return Indicates whether to validate network traffic to or from this network interface.
+     * @return Indicates whether source/destination checking is enabled.
      */
 
     public Boolean getSourceDestCheck() {
@@ -692,11 +692,11 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether to validate network traffic to or from this network interface.
+     * Indicates whether source/destination checking is enabled.
      * </p>
      * 
      * @param sourceDestCheck
-     *        Indicates whether to validate network traffic to or from this network interface.
+     *        Indicates whether source/destination checking is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -707,10 +707,10 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether to validate network traffic to or from this network interface.
+     * Indicates whether source/destination checking is enabled.
      * </p>
      * 
-     * @return Indicates whether to validate network traffic to or from this network interface.
+     * @return Indicates whether source/destination checking is enabled.
      */
 
     public Boolean isSourceDestCheck() {

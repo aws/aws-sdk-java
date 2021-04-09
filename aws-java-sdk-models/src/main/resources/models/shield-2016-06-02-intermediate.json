@@ -113,7 +113,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitsExceededException",
-        "documentation" : "<p>Exception that indicates that the operation would exceed a limit.</p> <p> <code>Type</code> is the type of limit that would be exceeded.</p> <p> <code>Limit</code> is the threshold that would be exceeded.</p>",
+        "documentation" : "<p>Exception that indicates that the operation would exceed a limit.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidParameterException",
@@ -227,7 +227,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitsExceededException",
-        "documentation" : "<p>Exception that indicates that the operation would exceed a limit.</p> <p> <code>Type</code> is the type of limit that would be exceeded.</p> <p> <code>Limit</code> is the threshold that would be exceeded.</p>",
+        "documentation" : "<p>Exception that indicates that the operation would exceed a limit.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ResourceNotFoundException",
@@ -341,7 +341,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitsExceededException",
-        "documentation" : "<p>Exception that indicates that the operation would exceed a limit.</p> <p> <code>Type</code> is the type of limit that would be exceeded.</p> <p> <code>Limit</code> is the threshold that would be exceeded.</p>",
+        "documentation" : "<p>Exception that indicates that the operation would exceed a limit.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ResourceAlreadyExistsException",
@@ -354,6 +354,10 @@
       }, {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>Exception indicating the specified resource does not exist. If available, this exception includes details in additional properties. </p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidParameterException",
+        "documentation" : "<p>Exception that indicates that the parameters passed to the API are invalid. If available, this exception includes details in additional properties. </p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -410,7 +414,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "LimitsExceededException",
-        "documentation" : "<p>Exception that indicates that the operation would exceed a limit.</p> <p> <code>Type</code> is the type of limit that would be exceeded.</p> <p> <code>Limit</code> is the threshold that would be exceeded.</p>",
+        "documentation" : "<p>Exception that indicates that the operation would exceed a limit.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -16527,7 +16531,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Exception that indicates that the operation would exceed a limit.</p> <p> <code>Type</code> is the type of limit that would be exceeded.</p> <p> <code>Limit</code> is the threshold that would be exceeded.</p>",
+      "documentation" : "<p>Exception that indicates that the operation would exceed a limit.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "LimitsExceededException",
@@ -16542,12 +16546,12 @@
         "c2jName" : "Type",
         "c2jShape" : "LimitType",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The type of limit that would be exceeded.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param type \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The type of limit that would be exceeded.</p>\n@param type The type of limit that would be exceeded.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withType",
-        "getterDocumentation" : "/**\n@return */",
+        "getterDocumentation" : "/**<p>The type of limit that would be exceeded.</p>\n@return The type of limit that would be exceeded.*/",
         "getterMethodName" : "getType",
         "getterModel" : {
           "returnType" : "String",
@@ -16581,7 +16585,7 @@
         "marshallingType" : "STRING",
         "name" : "Type",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n@param type */",
+        "setterDocumentation" : "/**<p>The type of limit that would be exceeded.</p>\n@param type The type of limit that would be exceeded.*/",
         "setterMethodName" : "setType",
         "setterModel" : {
           "timestampFormat" : null,
@@ -16596,13 +16600,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n@param type \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The type of limit that would be exceeded.</p>\n@param type The type of limit that would be exceeded.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "type",
           "variableType" : "String",
-          "documentation" : "",
+          "documentation" : "<p>The type of limit that would be exceeded.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -16611,12 +16615,12 @@
         "c2jName" : "Limit",
         "c2jShape" : "LimitNumber",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The threshold that would be exceeded.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param limit \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The threshold that would be exceeded.</p>\n@param limit The threshold that would be exceeded.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withLimit",
-        "getterDocumentation" : "/**\n@return */",
+        "getterDocumentation" : "/**<p>The threshold that would be exceeded.</p>\n@return The threshold that would be exceeded.*/",
         "getterMethodName" : "getLimit",
         "getterModel" : {
           "returnType" : "Long",
@@ -16650,7 +16654,7 @@
         "marshallingType" : "LONG",
         "name" : "Limit",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n@param limit */",
+        "setterDocumentation" : "/**<p>The threshold that would be exceeded.</p>\n@param limit The threshold that would be exceeded.*/",
         "setterMethodName" : "setLimit",
         "setterModel" : {
           "timestampFormat" : null,
@@ -16665,13 +16669,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n@param limit \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The threshold that would be exceeded.</p>\n@param limit The threshold that would be exceeded.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "limit",
           "variableType" : "Long",
-          "documentation" : "",
+          "documentation" : "<p>The threshold that would be exceeded.</p>",
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
@@ -16682,12 +16686,12 @@
           "c2jName" : "Limit",
           "c2jShape" : "LimitNumber",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The threshold that would be exceeded.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param limit \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The threshold that would be exceeded.</p>\n@param limit The threshold that would be exceeded.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withLimit",
-          "getterDocumentation" : "/**\n@return */",
+          "getterDocumentation" : "/**<p>The threshold that would be exceeded.</p>\n@return The threshold that would be exceeded.*/",
           "getterMethodName" : "getLimit",
           "getterModel" : {
             "returnType" : "Long",
@@ -16721,7 +16725,7 @@
           "marshallingType" : "LONG",
           "name" : "Limit",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n@param limit */",
+          "setterDocumentation" : "/**<p>The threshold that would be exceeded.</p>\n@param limit The threshold that would be exceeded.*/",
           "setterMethodName" : "setLimit",
           "setterModel" : {
             "timestampFormat" : null,
@@ -16736,13 +16740,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n@param limit \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The threshold that would be exceeded.</p>\n@param limit The threshold that would be exceeded.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "limit",
             "variableType" : "Long",
-            "documentation" : "",
+            "documentation" : "<p>The threshold that would be exceeded.</p>",
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
@@ -16752,12 +16756,12 @@
           "c2jName" : "Type",
           "c2jShape" : "LimitType",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The type of limit that would be exceeded.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param type \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The type of limit that would be exceeded.</p>\n@param type The type of limit that would be exceeded.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withType",
-          "getterDocumentation" : "/**\n@return */",
+          "getterDocumentation" : "/**<p>The type of limit that would be exceeded.</p>\n@return The type of limit that would be exceeded.*/",
           "getterMethodName" : "getType",
           "getterModel" : {
             "returnType" : "String",
@@ -16791,7 +16795,7 @@
           "marshallingType" : "STRING",
           "name" : "Type",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n@param type */",
+          "setterDocumentation" : "/**<p>The type of limit that would be exceeded.</p>\n@param type The type of limit that would be exceeded.*/",
           "setterMethodName" : "setType",
           "setterModel" : {
             "timestampFormat" : null,
@@ -16806,13 +16810,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n@param type \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The type of limit that would be exceeded.</p>\n@param type The type of limit that would be exceeded.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "type",
             "variableType" : "String",
-            "documentation" : "",
+            "documentation" : "<p>The type of limit that would be exceeded.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },

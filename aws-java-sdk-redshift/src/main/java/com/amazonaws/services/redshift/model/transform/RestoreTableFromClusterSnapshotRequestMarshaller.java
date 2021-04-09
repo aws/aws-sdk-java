@@ -74,6 +74,11 @@ public class RestoreTableFromClusterSnapshotRequestMarshaller implements
             request.addParameter("NewTableName", StringUtils.fromString(restoreTableFromClusterSnapshotRequest.getNewTableName()));
         }
 
+        if (restoreTableFromClusterSnapshotRequest.getEnableCaseSensitiveIdentifier() != null) {
+            request.addParameter("EnableCaseSensitiveIdentifier",
+                    StringUtils.fromBoolean(restoreTableFromClusterSnapshotRequest.getEnableCaseSensitiveIdentifier()));
+        }
+
         return request;
     }
 

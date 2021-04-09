@@ -124,7 +124,7 @@ public class NetworkInterface implements Serializable, Cloneable {
     private Boolean requesterManaged;
     /**
      * <p>
-     * Indicates whether traffic to or from the instance is validated.
+     * Indicates whether source/destination checking is enabled.
      * </p>
      */
     private Boolean sourceDestCheck;
@@ -939,11 +939,11 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether traffic to or from the instance is validated.
+     * Indicates whether source/destination checking is enabled.
      * </p>
      * 
      * @param sourceDestCheck
-     *        Indicates whether traffic to or from the instance is validated.
+     *        Indicates whether source/destination checking is enabled.
      */
 
     public void setSourceDestCheck(Boolean sourceDestCheck) {
@@ -952,10 +952,10 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether traffic to or from the instance is validated.
+     * Indicates whether source/destination checking is enabled.
      * </p>
      * 
-     * @return Indicates whether traffic to or from the instance is validated.
+     * @return Indicates whether source/destination checking is enabled.
      */
 
     public Boolean getSourceDestCheck() {
@@ -964,11 +964,11 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether traffic to or from the instance is validated.
+     * Indicates whether source/destination checking is enabled.
      * </p>
      * 
      * @param sourceDestCheck
-     *        Indicates whether traffic to or from the instance is validated.
+     *        Indicates whether source/destination checking is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -979,10 +979,10 @@ public class NetworkInterface implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether traffic to or from the instance is validated.
+     * Indicates whether source/destination checking is enabled.
      * </p>
      * 
-     * @return Indicates whether traffic to or from the instance is validated.
+     * @return Indicates whether source/destination checking is enabled.
      */
 
     public Boolean isSourceDestCheck() {

@@ -1,3 +1,16 @@
+# __1.11.996__ __2021-04-09__
+## __AWS Shield__
+  - ### Features
+    - CreateProtection now throws InvalidParameterException instead of InternalErrorException when system tags (tag with keys prefixed with "aws:") are passed in.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Add paginator support to DescribeStoreImageTasks and update documentation.
+
+## __Amazon Redshift__
+  - ### Features
+    - Add support for case sensitive table level restore
+
 # __1.11.995__ __2021-04-08__
 ## __AWS Resource Access Manager__
   - ### Features

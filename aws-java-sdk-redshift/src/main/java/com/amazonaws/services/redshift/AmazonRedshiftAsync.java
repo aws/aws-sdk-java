@@ -718,8 +718,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * The command returns a public key, which you must store in the HSM. In addition to creating the HSM certificate,
      * you must create an Amazon Redshift HSM configuration that provides a cluster the information needed to store and
      * use encryption keys in the HSM. For more information, go to <a
-     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware Security Modules</a> in
-     * the Amazon Redshift Cluster Management Guide.
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html#working-with-HSM">Hardware
+     * Security Modules</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
      * @param createHsmClientCertificateRequest
@@ -739,8 +739,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * The command returns a public key, which you must store in the HSM. In addition to creating the HSM certificate,
      * you must create an Amazon Redshift HSM configuration that provides a cluster the information needed to store and
      * use encryption keys in the HSM. For more information, go to <a
-     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html">Hardware Security Modules</a> in
-     * the Amazon Redshift Cluster Management Guide.
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html#working-with-HSM">Hardware
+     * Security Modules</a> in the <i>Amazon Redshift Cluster Management Guide</i>.
      * </p>
      * 
      * @param createHsmClientCertificateRequest

@@ -117,12 +117,7 @@ public interface AWSShield {
      * @throws NoAssociatedRoleException
      *         The ARN of the role that you specifed does not exist.
      * @throws LimitsExceededException
-     *         Exception that indicates that the operation would exceed a limit.</p>
-     *         <p>
-     *         <code>Type</code> is the type of limit that would be exceeded.
-     *         </p>
-     *         <p>
-     *         <code>Limit</code> is the threshold that would be exceeded.
+     *         Exception that indicates that the operation would exceed a limit.
      * @throws InvalidParameterException
      *         Exception that indicates that the parameters passed to the API are invalid. If available, this exception
      *         includes details in additional properties.
@@ -230,12 +225,7 @@ public interface AWSShield {
      *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
      *         request.
      * @throws LimitsExceededException
-     *         Exception that indicates that the operation would exceed a limit.</p>
-     *         <p>
-     *         <code>Type</code> is the type of limit that would be exceeded.
-     *         </p>
-     *         <p>
-     *         <code>Limit</code> is the threshold that would be exceeded.
+     *         Exception that indicates that the operation would exceed a limit.
      * @throws ResourceNotFoundException
      *         Exception indicating the specified resource does not exist. If available, this exception includes details
      *         in additional properties.
@@ -322,12 +312,7 @@ public interface AWSShield {
      * @throws InvalidOperationException
      *         Exception that indicates that the operation would not cause any change to occur.
      * @throws LimitsExceededException
-     *         Exception that indicates that the operation would exceed a limit.</p>
-     *         <p>
-     *         <code>Type</code> is the type of limit that would be exceeded.
-     *         </p>
-     *         <p>
-     *         <code>Limit</code> is the threshold that would be exceeded.
+     *         Exception that indicates that the operation would exceed a limit.
      * @throws ResourceAlreadyExistsException
      *         Exception indicating the specified resource already exists. If available, this exception includes details
      *         in additional properties.
@@ -337,6 +322,9 @@ public interface AWSShield {
      * @throws ResourceNotFoundException
      *         Exception indicating the specified resource does not exist. If available, this exception includes details
      *         in additional properties.
+     * @throws InvalidParameterException
+     *         Exception that indicates that the parameters passed to the API are invalid. If available, this exception
+     *         includes details in additional properties.
      * @sample AWSShield.CreateProtection
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtection" target="_top">AWS API
      *      Documentation</a>
@@ -367,12 +355,7 @@ public interface AWSShield {
      *         Exception that indicates that the parameters passed to the API are invalid. If available, this exception
      *         includes details in additional properties.
      * @throws LimitsExceededException
-     *         Exception that indicates that the operation would exceed a limit.</p>
-     *         <p>
-     *         <code>Type</code> is the type of limit that would be exceeded.
-     *         </p>
-     *         <p>
-     *         <code>Limit</code> is the threshold that would be exceeded.
+     *         Exception that indicates that the operation would exceed a limit.
      * @sample AWSShield.CreateProtectionGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtectionGroup" target="_top">AWS
      *      API Documentation</a>
