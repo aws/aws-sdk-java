@@ -47,6 +47,8 @@ public class CreateFileSystemFromBackupRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LustreConfiguration").build();
     private static final MarshallingInfo<String> STORAGETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StorageType").build();
+    private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KmsKeyId").build();
 
     private static final CreateFileSystemFromBackupRequestMarshaller instance = new CreateFileSystemFromBackupRequestMarshaller();
 
@@ -72,6 +74,7 @@ public class CreateFileSystemFromBackupRequestMarshaller {
             protocolMarshaller.marshall(createFileSystemFromBackupRequest.getWindowsConfiguration(), WINDOWSCONFIGURATION_BINDING);
             protocolMarshaller.marshall(createFileSystemFromBackupRequest.getLustreConfiguration(), LUSTRECONFIGURATION_BINDING);
             protocolMarshaller.marshall(createFileSystemFromBackupRequest.getStorageType(), STORAGETYPE_BINDING);
+            protocolMarshaller.marshall(createFileSystemFromBackupRequest.getKmsKeyId(), KMSKEYID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

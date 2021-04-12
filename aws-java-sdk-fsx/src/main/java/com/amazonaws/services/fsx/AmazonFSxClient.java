@@ -81,8 +81,14 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
                             new JsonErrorShapeMetadata().withErrorCode("InvalidImportPath").withExceptionUnmarshaller(
                                     com.amazonaws.services.fsx.model.transform.InvalidImportPathExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidSourceKmsKey").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.InvalidSourceKmsKeyExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidNetworkSettings").withExceptionUnmarshaller(
                                     com.amazonaws.services.fsx.model.transform.InvalidNetworkSettingsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("IncompatibleRegionForMultiAZ").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.IncompatibleRegionForMultiAZExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DataRepositoryTaskExecuting").withExceptionUnmarshaller(
                                     com.amazonaws.services.fsx.model.transform.DataRepositoryTaskExecutingExceptionUnmarshaller.getInstance()))
@@ -99,8 +105,14 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
                             new JsonErrorShapeMetadata().withErrorCode("BackupNotFound").withExceptionUnmarshaller(
                                     com.amazonaws.services.fsx.model.transform.BackupNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidDestinationKmsKey").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.InvalidDestinationKmsKeyExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceLimitExceeded").withExceptionUnmarshaller(
                                     com.amazonaws.services.fsx.model.transform.ServiceLimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("SourceBackupUnavailable").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.SourceBackupUnavailableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFound").withExceptionUnmarshaller(
                                     com.amazonaws.services.fsx.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
@@ -113,6 +125,9 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("MissingFileSystemConfiguration").withExceptionUnmarshaller(
                                     com.amazonaws.services.fsx.model.transform.MissingFileSystemConfigurationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("BackupBeingCopied").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.BackupBeingCopiedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("BackupRestoring").withExceptionUnmarshaller(
                                     com.amazonaws.services.fsx.model.transform.BackupRestoringExceptionUnmarshaller.getInstance()))
@@ -131,6 +146,9 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidExportPath").withExceptionUnmarshaller(
                                     com.amazonaws.services.fsx.model.transform.InvalidExportPathExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRegion").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.InvalidRegionExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ActiveDirectoryError").withExceptionUnmarshaller(
                                     com.amazonaws.services.fsx.model.transform.ActiveDirectoryErrorExceptionUnmarshaller.getInstance()))
@@ -340,6 +358,111 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
             HttpResponseHandler<AmazonWebServiceResponse<CancelDataRepositoryTaskResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CancelDataRepositoryTaskResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Copies an existing backup within the same AWS account to another Region (cross-Region copy) or within the same
+     * Region (in-Region copy). You can have up to five backup copy requests in progress to a single destination Region
+     * per account.
+     * </p>
+     * <p>
+     * You can use cross-Region backup copies for cross-region disaster recovery. You periodically take backups and copy
+     * them to another Region so that in the event of a disaster in the primary Region, you can restore from backup and
+     * recover availability quickly in the other Region. You can make cross-Region copies only within your AWS
+     * partition.
+     * </p>
+     * <p>
+     * You can also use backup copies to clone your file data set to another Region or within the same Region.
+     * </p>
+     * <p>
+     * You can use the <code>SourceRegion</code> parameter to specify the AWS Region from which the backup will be
+     * copied. For example, if you make the call from the <code>us-west-1</code> Region and want to copy a backup from
+     * the <code>us-east-2</code> Region, you specify <code>us-east-2</code> in the <code>SourceRegion</code> parameter
+     * to make a cross-Region copy. If you don't specify a Region, the backup copy is created in the same Region where
+     * the request is sent from (in-Region copy).
+     * </p>
+     * <p>
+     * For more information on creating backup copies, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/copy-backups.html"> Copying backups</a> in the
+     * <i>Amazon FSx for Windows User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/copy-backups.html">Copying backups</a> in the <i>Amazon
+     * FSx for Lustre User Guide</i>.
+     * </p>
+     * 
+     * @param copyBackupRequest
+     * @return Result of the CopyBackup operation returned by the service.
+     * @throws BadRequestException
+     *         A generic error indicating a failure with a client request.
+     * @throws BackupNotFoundException
+     *         No Amazon FSx backups were found based upon the supplied parameters.
+     * @throws ServiceLimitExceededException
+     *         An error indicating that a particular service limit was exceeded. You can increase some service limits by
+     *         contacting AWS Support.
+     * @throws UnsupportedOperationException
+     *         The requested operation is not supported for this resource or API.
+     * @throws IncompatibleParameterErrorException
+     *         The error returned when a second request is received with the same client request token but different
+     *         parameters settings. A client request token should always uniquely identify a single request.
+     * @throws InternalServerErrorException
+     *         A generic error indicating a server-side failure.
+     * @throws InvalidSourceKmsKeyException
+     *         The AWS Key Management Service (AWS KMS) key of the source backup is invalid.
+     * @throws InvalidDestinationKmsKeyException
+     *         The AWS Key Management Service (AWS KMS) key of the destination backup is invalid.
+     * @throws InvalidRegionException
+     *         The Region provided for <code>Source Region</code> is invalid or is in a different AWS partition.
+     * @throws SourceBackupUnavailableException
+     *         The request was rejected because the lifecycle status of the source backup is not <code>AVAILABLE</code>.
+     * @throws IncompatibleRegionForMultiAZException
+     *         Amazon FSx doesn't support Multi-AZ Windows File Server copy backup in the destination Region, so the
+     *         copied backup can't be restored.
+     * @sample AmazonFSx.CopyBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CopyBackup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CopyBackupResult copyBackup(CopyBackupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCopyBackup(request);
+    }
+
+    @SdkInternalApi
+    final CopyBackupResult executeCopyBackup(CopyBackupRequest copyBackupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(copyBackupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CopyBackupRequest> request = null;
+        Response<CopyBackupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CopyBackupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(copyBackupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FSx");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CopyBackup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CopyBackupResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CopyBackupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -833,6 +956,8 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
      *         parameters settings. A client request token should always uniquely identify a single request.
      * @throws InternalServerErrorException
      *         A generic error indicating a server-side failure.
+     * @throws BackupBeingCopiedException
+     *         You can't delete a backup while it's being copied.
      * @sample AmazonFSx.DeleteBackup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteBackup" target="_top">AWS API
      *      Documentation</a>

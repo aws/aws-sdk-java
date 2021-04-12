@@ -104,6 +104,8 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
      */
     private String storageType;
 
+    private String kmsKeyId;
+
     /**
      * @param backupId
      */
@@ -784,6 +786,32 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * @param kmsKeyId
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * @param kmsKeyId
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFileSystemFromBackupRequest withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -810,7 +838,9 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
         if (getLustreConfiguration() != null)
             sb.append("LustreConfiguration: ").append(getLustreConfiguration()).append(",");
         if (getStorageType() != null)
-            sb.append("StorageType: ").append(getStorageType());
+            sb.append("StorageType: ").append(getStorageType()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -857,6 +887,10 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false)
             return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
         return true;
     }
 
@@ -873,6 +907,7 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getWindowsConfiguration() == null) ? 0 : getWindowsConfiguration().hashCode());
         hashCode = prime * hashCode + ((getLustreConfiguration() == null) ? 0 : getLustreConfiguration().hashCode());
         hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         return hashCode;
     }
 

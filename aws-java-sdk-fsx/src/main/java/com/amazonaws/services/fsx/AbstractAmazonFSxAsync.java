@@ -53,6 +53,19 @@ public class AbstractAmazonFSxAsync extends AbstractAmazonFSx implements AmazonF
     }
 
     @Override
+    public java.util.concurrent.Future<CopyBackupResult> copyBackupAsync(CopyBackupRequest request) {
+
+        return copyBackupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CopyBackupResult> copyBackupAsync(CopyBackupRequest request,
+            com.amazonaws.handlers.AsyncHandler<CopyBackupRequest, CopyBackupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateBackupResult> createBackupAsync(CreateBackupRequest request) {
 
         return createBackupAsync(request, null);

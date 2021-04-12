@@ -19,22 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A backup of an Amazon FSx file system. For more information see:
+ * A backup of an Amazon FSx file system.
  * </p>
- * <ul>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working with backups for Windows
- * file systems</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working with backups for Lustre
- * file systems</a>
- * </p>
- * </li>
- * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/Backup" target="_top">AWS API Documentation</a>
  */
@@ -72,6 +58,11 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is transferring
      * the backup to S3.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>COPYING</code> - Amazon FSx is copying the backup.
      * </p>
      * </li>
      * <li>
@@ -140,6 +131,16 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ActiveDirectoryBackupAttributes directoryInformation;
+
+    private String ownerId;
+
+    private String sourceBackupId;
+    /**
+     * <p>
+     * The source Region of the backup. Specifies the Region from where this backup is copied.
+     * </p>
+     */
+    private String sourceBackupRegion;
 
     /**
      * <p>
@@ -210,6 +211,11 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>COPYING</code> - Amazon FSx is copying the backup.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>DELETED</code> - Amazon FSx deleted the backup and it is no longer available.
      * </p>
      * </li>
@@ -243,6 +249,11 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is
      *        transferring the backup to S3.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>COPYING</code> - Amazon FSx is copying the backup.
      *        </p>
      *        </li>
      *        <li>
@@ -291,6 +302,11 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>COPYING</code> - Amazon FSx is copying the backup.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>DELETED</code> - Amazon FSx deleted the backup and it is no longer available.
      * </p>
      * </li>
@@ -323,6 +339,11 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is
      *         transferring the backup to S3.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>COPYING</code> - Amazon FSx is copying the backup.
      *         </p>
      *         </li>
      *         <li>
@@ -371,6 +392,11 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>COPYING</code> - Amazon FSx is copying the backup.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>DELETED</code> - Amazon FSx deleted the backup and it is no longer available.
      * </p>
      * </li>
@@ -404,6 +430,11 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is
      *        transferring the backup to S3.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>COPYING</code> - Amazon FSx is copying the backup.
      *        </p>
      *        </li>
      *        <li>
@@ -454,6 +485,11 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * <code>COPYING</code> - Amazon FSx is copying the backup.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>DELETED</code> - Amazon FSx deleted the backup and it is no longer available.
      * </p>
      * </li>
@@ -487,6 +523,11 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is
      *        transferring the backup to S3.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>COPYING</code> - Amazon FSx is copying the backup.
      *        </p>
      *        </li>
      *        <li>
@@ -922,6 +963,98 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param ownerId
+     */
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getOwnerId() {
+        return this.ownerId;
+    }
+
+    /**
+     * @param ownerId
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Backup withOwnerId(String ownerId) {
+        setOwnerId(ownerId);
+        return this;
+    }
+
+    /**
+     * @param sourceBackupId
+     */
+
+    public void setSourceBackupId(String sourceBackupId) {
+        this.sourceBackupId = sourceBackupId;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getSourceBackupId() {
+        return this.sourceBackupId;
+    }
+
+    /**
+     * @param sourceBackupId
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Backup withSourceBackupId(String sourceBackupId) {
+        setSourceBackupId(sourceBackupId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The source Region of the backup. Specifies the Region from where this backup is copied.
+     * </p>
+     * 
+     * @param sourceBackupRegion
+     *        The source Region of the backup. Specifies the Region from where this backup is copied.
+     */
+
+    public void setSourceBackupRegion(String sourceBackupRegion) {
+        this.sourceBackupRegion = sourceBackupRegion;
+    }
+
+    /**
+     * <p>
+     * The source Region of the backup. Specifies the Region from where this backup is copied.
+     * </p>
+     * 
+     * @return The source Region of the backup. Specifies the Region from where this backup is copied.
+     */
+
+    public String getSourceBackupRegion() {
+        return this.sourceBackupRegion;
+    }
+
+    /**
+     * <p>
+     * The source Region of the backup. Specifies the Region from where this backup is copied.
+     * </p>
+     * 
+     * @param sourceBackupRegion
+     *        The source Region of the backup. Specifies the Region from where this backup is copied.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Backup withSourceBackupRegion(String sourceBackupRegion) {
+        setSourceBackupRegion(sourceBackupRegion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -954,7 +1087,13 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
         if (getFileSystem() != null)
             sb.append("FileSystem: ").append(getFileSystem()).append(",");
         if (getDirectoryInformation() != null)
-            sb.append("DirectoryInformation: ").append(getDirectoryInformation());
+            sb.append("DirectoryInformation: ").append(getDirectoryInformation()).append(",");
+        if (getOwnerId() != null)
+            sb.append("OwnerId: ").append(getOwnerId()).append(",");
+        if (getSourceBackupId() != null)
+            sb.append("SourceBackupId: ").append(getSourceBackupId()).append(",");
+        if (getSourceBackupRegion() != null)
+            sb.append("SourceBackupRegion: ").append(getSourceBackupRegion());
         sb.append("}");
         return sb.toString();
     }
@@ -1013,6 +1152,18 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDirectoryInformation() != null && other.getDirectoryInformation().equals(this.getDirectoryInformation()) == false)
             return false;
+        if (other.getOwnerId() == null ^ this.getOwnerId() == null)
+            return false;
+        if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false)
+            return false;
+        if (other.getSourceBackupId() == null ^ this.getSourceBackupId() == null)
+            return false;
+        if (other.getSourceBackupId() != null && other.getSourceBackupId().equals(this.getSourceBackupId()) == false)
+            return false;
+        if (other.getSourceBackupRegion() == null ^ this.getSourceBackupRegion() == null)
+            return false;
+        if (other.getSourceBackupRegion() != null && other.getSourceBackupRegion().equals(this.getSourceBackupRegion()) == false)
+            return false;
         return true;
     }
 
@@ -1032,6 +1183,9 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getFileSystem() == null) ? 0 : getFileSystem().hashCode());
         hashCode = prime * hashCode + ((getDirectoryInformation() == null) ? 0 : getDirectoryInformation().hashCode());
+        hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
+        hashCode = prime * hashCode + ((getSourceBackupId() == null) ? 0 : getSourceBackupId().hashCode());
+        hashCode = prime * hashCode + ((getSourceBackupRegion() == null) ? 0 : getSourceBackupRegion().hashCode());
         return hashCode;
     }
 

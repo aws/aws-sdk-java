@@ -118,7 +118,9 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * Specifies the IDs of the subnets that the file system will be accessible from. For Windows
      * <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the preferred file
      * server and one for the standby file server. You specify one of these subnets as the preferred subnet using the
-     * <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.
+     * <code>WindowsConfiguration &gt; PreferredSubnetID</code> property. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html"> Availability and
+     * durability: Single-AZ and Multi-AZ file systems</a>.
      * </p>
      * <p>
      * For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system deployment types and Lustre file
@@ -762,7 +764,9 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * Specifies the IDs of the subnets that the file system will be accessible from. For Windows
      * <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the preferred file
      * server and one for the standby file server. You specify one of these subnets as the preferred subnet using the
-     * <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.
+     * <code>WindowsConfiguration &gt; PreferredSubnetID</code> property. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html"> Availability and
+     * durability: Single-AZ and Multi-AZ file systems</a>.
      * </p>
      * <p>
      * For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system deployment types and Lustre file
@@ -772,7 +776,10 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * @return Specifies the IDs of the subnets that the file system will be accessible from. For Windows
      *         <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the
      *         preferred file server and one for the standby file server. You specify one of these subnets as the
-     *         preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
+     *         preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html"> Availability
+     *         and durability: Single-AZ and Multi-AZ file systems</a>.</p>
      *         <p>
      *         For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system deployment types and Lustre
      *         file systems, provide exactly one subnet ID. The file server is launched in that subnet's Availability
@@ -788,7 +795,9 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * Specifies the IDs of the subnets that the file system will be accessible from. For Windows
      * <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the preferred file
      * server and one for the standby file server. You specify one of these subnets as the preferred subnet using the
-     * <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.
+     * <code>WindowsConfiguration &gt; PreferredSubnetID</code> property. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html"> Availability and
+     * durability: Single-AZ and Multi-AZ file systems</a>.
      * </p>
      * <p>
      * For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system deployment types and Lustre file
@@ -799,7 +808,10 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      *        Specifies the IDs of the subnets that the file system will be accessible from. For Windows
      *        <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the
      *        preferred file server and one for the standby file server. You specify one of these subnets as the
-     *        preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
+     *        preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html"> Availability
+     *        and durability: Single-AZ and Multi-AZ file systems</a>.</p>
      *        <p>
      *        For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system deployment types and Lustre
      *        file systems, provide exactly one subnet ID. The file server is launched in that subnet's Availability
@@ -820,7 +832,9 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * Specifies the IDs of the subnets that the file system will be accessible from. For Windows
      * <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the preferred file
      * server and one for the standby file server. You specify one of these subnets as the preferred subnet using the
-     * <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.
+     * <code>WindowsConfiguration &gt; PreferredSubnetID</code> property. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html"> Availability and
+     * durability: Single-AZ and Multi-AZ file systems</a>.
      * </p>
      * <p>
      * For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system deployment types and Lustre file
@@ -836,7 +850,10 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      *        Specifies the IDs of the subnets that the file system will be accessible from. For Windows
      *        <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the
      *        preferred file server and one for the standby file server. You specify one of these subnets as the
-     *        preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
+     *        preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html"> Availability
+     *        and durability: Single-AZ and Multi-AZ file systems</a>.</p>
      *        <p>
      *        For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system deployment types and Lustre
      *        file systems, provide exactly one subnet ID. The file server is launched in that subnet's Availability
@@ -859,7 +876,9 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * Specifies the IDs of the subnets that the file system will be accessible from. For Windows
      * <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the preferred file
      * server and one for the standby file server. You specify one of these subnets as the preferred subnet using the
-     * <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.
+     * <code>WindowsConfiguration &gt; PreferredSubnetID</code> property. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html"> Availability and
+     * durability: Single-AZ and Multi-AZ file systems</a>.
      * </p>
      * <p>
      * For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system deployment types and Lustre file
@@ -870,7 +889,10 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      *        Specifies the IDs of the subnets that the file system will be accessible from. For Windows
      *        <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the
      *        preferred file server and one for the standby file server. You specify one of these subnets as the
-     *        preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p>
+     *        preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html"> Availability
+     *        and durability: Single-AZ and Multi-AZ file systems</a>.</p>
      *        <p>
      *        For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system deployment types and Lustre
      *        file systems, provide exactly one subnet ID. The file server is launched in that subnet's Availability

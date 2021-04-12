@@ -31,6 +31,8 @@ public class ActiveDirectoryBackupAttributesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainName").build();
     private static final MarshallingInfo<String> ACTIVEDIRECTORYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ActiveDirectoryId").build();
+    private static final MarshallingInfo<String> RESOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceARN").build();
 
     private static final ActiveDirectoryBackupAttributesMarshaller instance = new ActiveDirectoryBackupAttributesMarshaller();
 
@@ -50,6 +52,7 @@ public class ActiveDirectoryBackupAttributesMarshaller {
         try {
             protocolMarshaller.marshall(activeDirectoryBackupAttributes.getDomainName(), DOMAINNAME_BINDING);
             protocolMarshaller.marshall(activeDirectoryBackupAttributes.getActiveDirectoryId(), ACTIVEDIRECTORYID_BINDING);
+            protocolMarshaller.marshall(activeDirectoryBackupAttributes.getResourceARN(), RESOURCEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

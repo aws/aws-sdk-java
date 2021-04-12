@@ -20,7 +20,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * The configuration that Amazon FSx uses to join the Windows File Server instance to your self-managed (including
- * on-premises) Microsoft Active Directory (AD) directory.
+ * on-premises) Microsoft Active Directory (AD) directory. For more information, see <a
+ * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-managed-AD.html"> Using Amazon FSx with your
+ * self-managed Microsoft Active Directory</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/SelfManagedActiveDirectoryConfiguration"
@@ -77,28 +79,8 @@ public class SelfManagedActiveDirectoryConfiguration implements Serializable, Cl
     private String password;
     /**
      * <p>
-     * A list of up to two IP addresses of DNS servers or domain controllers in the self-managed AD directory. The IP
-     * addresses need to be either in the same VPC CIDR range as the one in which your Amazon FSx file system is being
-     * created, or in the private IP version 4 (IPv4) address ranges, as specified in <a
-     * href="http://www.faqs.org/rfcs/rfc1918.html">RFC 1918</a>:
+     * A list of up to two IP addresses of DNS servers or domain controllers in the self-managed AD directory.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 10.0.0.0 - 10.255.255.255 (10/8 prefix)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 172.16.0.0 - 172.31.255.255 (172.16/12 prefix)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 192.168.0.0 - 192.168.255.255 (192.168/16 prefix)
-     * </p>
-     * </li>
-     * </ul>
      */
     private java.util.List<String> dnsIps;
 
@@ -397,49 +379,10 @@ public class SelfManagedActiveDirectoryConfiguration implements Serializable, Cl
 
     /**
      * <p>
-     * A list of up to two IP addresses of DNS servers or domain controllers in the self-managed AD directory. The IP
-     * addresses need to be either in the same VPC CIDR range as the one in which your Amazon FSx file system is being
-     * created, or in the private IP version 4 (IPv4) address ranges, as specified in <a
-     * href="http://www.faqs.org/rfcs/rfc1918.html">RFC 1918</a>:
+     * A list of up to two IP addresses of DNS servers or domain controllers in the self-managed AD directory.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 10.0.0.0 - 10.255.255.255 (10/8 prefix)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 172.16.0.0 - 172.31.255.255 (172.16/12 prefix)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 192.168.0.0 - 192.168.255.255 (192.168/16 prefix)
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @return A list of up to two IP addresses of DNS servers or domain controllers in the self-managed AD directory.
-     *         The IP addresses need to be either in the same VPC CIDR range as the one in which your Amazon FSx file
-     *         system is being created, or in the private IP version 4 (IPv4) address ranges, as specified in <a
-     *         href="http://www.faqs.org/rfcs/rfc1918.html">RFC 1918</a>:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         10.0.0.0 - 10.255.255.255 (10/8 prefix)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         172.16.0.0 - 172.31.255.255 (172.16/12 prefix)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         192.168.0.0 - 192.168.255.255 (192.168/16 prefix)
-     *         </p>
-     *         </li>
      */
 
     public java.util.List<String> getDnsIps() {
@@ -448,50 +391,11 @@ public class SelfManagedActiveDirectoryConfiguration implements Serializable, Cl
 
     /**
      * <p>
-     * A list of up to two IP addresses of DNS servers or domain controllers in the self-managed AD directory. The IP
-     * addresses need to be either in the same VPC CIDR range as the one in which your Amazon FSx file system is being
-     * created, or in the private IP version 4 (IPv4) address ranges, as specified in <a
-     * href="http://www.faqs.org/rfcs/rfc1918.html">RFC 1918</a>:
+     * A list of up to two IP addresses of DNS servers or domain controllers in the self-managed AD directory.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 10.0.0.0 - 10.255.255.255 (10/8 prefix)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 172.16.0.0 - 172.31.255.255 (172.16/12 prefix)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 192.168.0.0 - 192.168.255.255 (192.168/16 prefix)
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param dnsIps
      *        A list of up to two IP addresses of DNS servers or domain controllers in the self-managed AD directory.
-     *        The IP addresses need to be either in the same VPC CIDR range as the one in which your Amazon FSx file
-     *        system is being created, or in the private IP version 4 (IPv4) address ranges, as specified in <a
-     *        href="http://www.faqs.org/rfcs/rfc1918.html">RFC 1918</a>:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        10.0.0.0 - 10.255.255.255 (10/8 prefix)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        172.16.0.0 - 172.31.255.255 (172.16/12 prefix)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        192.168.0.0 - 192.168.255.255 (192.168/16 prefix)
-     *        </p>
-     *        </li>
      */
 
     public void setDnsIps(java.util.Collection<String> dnsIps) {
@@ -505,28 +409,8 @@ public class SelfManagedActiveDirectoryConfiguration implements Serializable, Cl
 
     /**
      * <p>
-     * A list of up to two IP addresses of DNS servers or domain controllers in the self-managed AD directory. The IP
-     * addresses need to be either in the same VPC CIDR range as the one in which your Amazon FSx file system is being
-     * created, or in the private IP version 4 (IPv4) address ranges, as specified in <a
-     * href="http://www.faqs.org/rfcs/rfc1918.html">RFC 1918</a>:
+     * A list of up to two IP addresses of DNS servers or domain controllers in the self-managed AD directory.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 10.0.0.0 - 10.255.255.255 (10/8 prefix)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 172.16.0.0 - 172.31.255.255 (172.16/12 prefix)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 192.168.0.0 - 192.168.255.255 (192.168/16 prefix)
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setDnsIps(java.util.Collection)} or {@link #withDnsIps(java.util.Collection)} if you want to override the
@@ -535,25 +419,6 @@ public class SelfManagedActiveDirectoryConfiguration implements Serializable, Cl
      * 
      * @param dnsIps
      *        A list of up to two IP addresses of DNS servers or domain controllers in the self-managed AD directory.
-     *        The IP addresses need to be either in the same VPC CIDR range as the one in which your Amazon FSx file
-     *        system is being created, or in the private IP version 4 (IPv4) address ranges, as specified in <a
-     *        href="http://www.faqs.org/rfcs/rfc1918.html">RFC 1918</a>:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        10.0.0.0 - 10.255.255.255 (10/8 prefix)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        172.16.0.0 - 172.31.255.255 (172.16/12 prefix)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        192.168.0.0 - 192.168.255.255 (192.168/16 prefix)
-     *        </p>
-     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -569,50 +434,11 @@ public class SelfManagedActiveDirectoryConfiguration implements Serializable, Cl
 
     /**
      * <p>
-     * A list of up to two IP addresses of DNS servers or domain controllers in the self-managed AD directory. The IP
-     * addresses need to be either in the same VPC CIDR range as the one in which your Amazon FSx file system is being
-     * created, or in the private IP version 4 (IPv4) address ranges, as specified in <a
-     * href="http://www.faqs.org/rfcs/rfc1918.html">RFC 1918</a>:
+     * A list of up to two IP addresses of DNS servers or domain controllers in the self-managed AD directory.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 10.0.0.0 - 10.255.255.255 (10/8 prefix)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 172.16.0.0 - 172.31.255.255 (172.16/12 prefix)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 192.168.0.0 - 192.168.255.255 (192.168/16 prefix)
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param dnsIps
      *        A list of up to two IP addresses of DNS servers or domain controllers in the self-managed AD directory.
-     *        The IP addresses need to be either in the same VPC CIDR range as the one in which your Amazon FSx file
-     *        system is being created, or in the private IP version 4 (IPv4) address ranges, as specified in <a
-     *        href="http://www.faqs.org/rfcs/rfc1918.html">RFC 1918</a>:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        10.0.0.0 - 10.255.255.255 (10/8 prefix)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        172.16.0.0 - 172.31.255.255 (172.16/12 prefix)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        192.168.0.0 - 192.168.255.255 (192.168/16 prefix)
-     *        </p>
-     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

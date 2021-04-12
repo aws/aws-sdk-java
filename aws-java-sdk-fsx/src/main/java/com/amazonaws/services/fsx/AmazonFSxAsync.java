@@ -163,6 +163,87 @@ public interface AmazonFSxAsync extends AmazonFSx {
 
     /**
      * <p>
+     * Copies an existing backup within the same AWS account to another Region (cross-Region copy) or within the same
+     * Region (in-Region copy). You can have up to five backup copy requests in progress to a single destination Region
+     * per account.
+     * </p>
+     * <p>
+     * You can use cross-Region backup copies for cross-region disaster recovery. You periodically take backups and copy
+     * them to another Region so that in the event of a disaster in the primary Region, you can restore from backup and
+     * recover availability quickly in the other Region. You can make cross-Region copies only within your AWS
+     * partition.
+     * </p>
+     * <p>
+     * You can also use backup copies to clone your file data set to another Region or within the same Region.
+     * </p>
+     * <p>
+     * You can use the <code>SourceRegion</code> parameter to specify the AWS Region from which the backup will be
+     * copied. For example, if you make the call from the <code>us-west-1</code> Region and want to copy a backup from
+     * the <code>us-east-2</code> Region, you specify <code>us-east-2</code> in the <code>SourceRegion</code> parameter
+     * to make a cross-Region copy. If you don't specify a Region, the backup copy is created in the same Region where
+     * the request is sent from (in-Region copy).
+     * </p>
+     * <p>
+     * For more information on creating backup copies, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/copy-backups.html"> Copying backups</a> in the
+     * <i>Amazon FSx for Windows User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/copy-backups.html">Copying backups</a> in the <i>Amazon
+     * FSx for Lustre User Guide</i>.
+     * </p>
+     * 
+     * @param copyBackupRequest
+     * @return A Java Future containing the result of the CopyBackup operation returned by the service.
+     * @sample AmazonFSxAsync.CopyBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CopyBackup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CopyBackupResult> copyBackupAsync(CopyBackupRequest copyBackupRequest);
+
+    /**
+     * <p>
+     * Copies an existing backup within the same AWS account to another Region (cross-Region copy) or within the same
+     * Region (in-Region copy). You can have up to five backup copy requests in progress to a single destination Region
+     * per account.
+     * </p>
+     * <p>
+     * You can use cross-Region backup copies for cross-region disaster recovery. You periodically take backups and copy
+     * them to another Region so that in the event of a disaster in the primary Region, you can restore from backup and
+     * recover availability quickly in the other Region. You can make cross-Region copies only within your AWS
+     * partition.
+     * </p>
+     * <p>
+     * You can also use backup copies to clone your file data set to another Region or within the same Region.
+     * </p>
+     * <p>
+     * You can use the <code>SourceRegion</code> parameter to specify the AWS Region from which the backup will be
+     * copied. For example, if you make the call from the <code>us-west-1</code> Region and want to copy a backup from
+     * the <code>us-east-2</code> Region, you specify <code>us-east-2</code> in the <code>SourceRegion</code> parameter
+     * to make a cross-Region copy. If you don't specify a Region, the backup copy is created in the same Region where
+     * the request is sent from (in-Region copy).
+     * </p>
+     * <p>
+     * For more information on creating backup copies, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/copy-backups.html"> Copying backups</a> in the
+     * <i>Amazon FSx for Windows User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/copy-backups.html">Copying backups</a> in the <i>Amazon
+     * FSx for Lustre User Guide</i>.
+     * </p>
+     * 
+     * @param copyBackupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CopyBackup operation returned by the service.
+     * @sample AmazonFSxAsyncHandler.CopyBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CopyBackup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CopyBackupResult> copyBackupAsync(CopyBackupRequest copyBackupRequest,
+            com.amazonaws.handlers.AsyncHandler<CopyBackupRequest, CopyBackupResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a backup of an existing Amazon FSx file system. Creating regular backups for your file system is a best
      * practice, enabling you to restore a file system from a backup if an issue arises with the original file system.
      * </p>

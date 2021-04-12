@@ -118,6 +118,69 @@ public interface AmazonFSx {
 
     /**
      * <p>
+     * Copies an existing backup within the same AWS account to another Region (cross-Region copy) or within the same
+     * Region (in-Region copy). You can have up to five backup copy requests in progress to a single destination Region
+     * per account.
+     * </p>
+     * <p>
+     * You can use cross-Region backup copies for cross-region disaster recovery. You periodically take backups and copy
+     * them to another Region so that in the event of a disaster in the primary Region, you can restore from backup and
+     * recover availability quickly in the other Region. You can make cross-Region copies only within your AWS
+     * partition.
+     * </p>
+     * <p>
+     * You can also use backup copies to clone your file data set to another Region or within the same Region.
+     * </p>
+     * <p>
+     * You can use the <code>SourceRegion</code> parameter to specify the AWS Region from which the backup will be
+     * copied. For example, if you make the call from the <code>us-west-1</code> Region and want to copy a backup from
+     * the <code>us-east-2</code> Region, you specify <code>us-east-2</code> in the <code>SourceRegion</code> parameter
+     * to make a cross-Region copy. If you don't specify a Region, the backup copy is created in the same Region where
+     * the request is sent from (in-Region copy).
+     * </p>
+     * <p>
+     * For more information on creating backup copies, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/copy-backups.html"> Copying backups</a> in the
+     * <i>Amazon FSx for Windows User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/copy-backups.html">Copying backups</a> in the <i>Amazon
+     * FSx for Lustre User Guide</i>.
+     * </p>
+     * 
+     * @param copyBackupRequest
+     * @return Result of the CopyBackup operation returned by the service.
+     * @throws BadRequestException
+     *         A generic error indicating a failure with a client request.
+     * @throws BackupNotFoundException
+     *         No Amazon FSx backups were found based upon the supplied parameters.
+     * @throws ServiceLimitExceededException
+     *         An error indicating that a particular service limit was exceeded. You can increase some service limits by
+     *         contacting AWS Support.
+     * @throws UnsupportedOperationException
+     *         The requested operation is not supported for this resource or API.
+     * @throws IncompatibleParameterErrorException
+     *         The error returned when a second request is received with the same client request token but different
+     *         parameters settings. A client request token should always uniquely identify a single request.
+     * @throws InternalServerErrorException
+     *         A generic error indicating a server-side failure.
+     * @throws InvalidSourceKmsKeyException
+     *         The AWS Key Management Service (AWS KMS) key of the source backup is invalid.
+     * @throws InvalidDestinationKmsKeyException
+     *         The AWS Key Management Service (AWS KMS) key of the destination backup is invalid.
+     * @throws InvalidRegionException
+     *         The Region provided for <code>Source Region</code> is invalid or is in a different AWS partition.
+     * @throws SourceBackupUnavailableException
+     *         The request was rejected because the lifecycle status of the source backup is not <code>AVAILABLE</code>.
+     * @throws IncompatibleRegionForMultiAZException
+     *         Amazon FSx doesn't support Multi-AZ Windows File Server copy backup in the destination Region, so the
+     *         copied backup can't be restored.
+     * @sample AmazonFSx.CopyBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CopyBackup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CopyBackupResult copyBackup(CopyBackupRequest copyBackupRequest);
+
+    /**
+     * <p>
      * Creates a backup of an existing Amazon FSx file system. Creating regular backups for your file system is a best
      * practice, enabling you to restore a file system from a backup if an issue arises with the original file system.
      * </p>
@@ -427,6 +490,8 @@ public interface AmazonFSx {
      *         parameters settings. A client request token should always uniquely identify a single request.
      * @throws InternalServerErrorException
      *         A generic error indicating a server-side failure.
+     * @throws BackupBeingCopiedException
+     *         You can't delete a backup while it's being copied.
      * @sample AmazonFSx.DeleteBackup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteBackup" target="_top">AWS API
      *      Documentation</a>

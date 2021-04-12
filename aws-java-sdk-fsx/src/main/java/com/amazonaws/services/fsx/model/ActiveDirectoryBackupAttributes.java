@@ -41,6 +41,8 @@ public class ActiveDirectoryBackupAttributes implements Serializable, Cloneable,
      */
     private String activeDirectoryId;
 
+    private String resourceARN;
+
     /**
      * <p>
      * The fully qualified domain name of the self-managed AD directory.
@@ -122,6 +124,32 @@ public class ActiveDirectoryBackupAttributes implements Serializable, Cloneable,
     }
 
     /**
+     * @param resourceARN
+     */
+
+    public void setResourceARN(String resourceARN) {
+        this.resourceARN = resourceARN;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getResourceARN() {
+        return this.resourceARN;
+    }
+
+    /**
+     * @param resourceARN
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActiveDirectoryBackupAttributes withResourceARN(String resourceARN) {
+        setResourceARN(resourceARN);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +164,9 @@ public class ActiveDirectoryBackupAttributes implements Serializable, Cloneable,
         if (getDomainName() != null)
             sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getActiveDirectoryId() != null)
-            sb.append("ActiveDirectoryId: ").append(getActiveDirectoryId());
+            sb.append("ActiveDirectoryId: ").append(getActiveDirectoryId()).append(",");
+        if (getResourceARN() != null)
+            sb.append("ResourceARN: ").append(getResourceARN());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +189,10 @@ public class ActiveDirectoryBackupAttributes implements Serializable, Cloneable,
             return false;
         if (other.getActiveDirectoryId() != null && other.getActiveDirectoryId().equals(this.getActiveDirectoryId()) == false)
             return false;
+        if (other.getResourceARN() == null ^ this.getResourceARN() == null)
+            return false;
+        if (other.getResourceARN() != null && other.getResourceARN().equals(this.getResourceARN()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +203,7 @@ public class ActiveDirectoryBackupAttributes implements Serializable, Cloneable,
 
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
         hashCode = prime * hashCode + ((getActiveDirectoryId() == null) ? 0 : getActiveDirectoryId().hashCode());
+        hashCode = prime * hashCode + ((getResourceARN() == null) ? 0 : getResourceARN().hashCode());
         return hashCode;
     }
 

@@ -143,7 +143,7 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
      * </li>
      * <li>
      * <p>
-     * Can contain alphanumeric characters and the hyphen (-).
+     * Can contain alphanumeric characters, the underscore (_), and the hyphen (-).
      * </p>
      * </li>
      * <li>
@@ -848,7 +848,7 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
      * </li>
      * <li>
      * <p>
-     * Can contain alphanumeric characters and the hyphen (-).
+     * Can contain alphanumeric characters, the underscore (_), and the hyphen (-).
      * </p>
      * </li>
      * <li>
@@ -893,7 +893,7 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
      *         </li>
      *         <li>
      *         <p>
-     *         Can contain alphanumeric characters and the hyphen (-).
+     *         Can contain alphanumeric characters, the underscore (_), and the hyphen (-).
      *         </p>
      *         </li>
      *         <li>
@@ -945,7 +945,7 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
      * </li>
      * <li>
      * <p>
-     * Can contain alphanumeric characters and the hyphen (-).
+     * Can contain alphanumeric characters, the underscore (_), and the hyphen (-).
      * </p>
      * </li>
      * <li>
@@ -991,7 +991,7 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
      *        </li>
      *        <li>
      *        <p>
-     *        Can contain alphanumeric characters and the hyphen (-).
+     *        Can contain alphanumeric characters, the underscore (_), and the hyphen (-).
      *        </p>
      *        </li>
      *        <li>
@@ -1047,7 +1047,7 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
      * </li>
      * <li>
      * <p>
-     * Can contain alphanumeric characters and the hyphen (-).
+     * Can contain alphanumeric characters, the underscore (_), and the hyphen (-).
      * </p>
      * </li>
      * <li>
@@ -1098,7 +1098,7 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
      *        </li>
      *        <li>
      *        <p>
-     *        Can contain alphanumeric characters and the hyphen (-).
+     *        Can contain alphanumeric characters, the underscore (_), and the hyphen (-).
      *        </p>
      *        </li>
      *        <li>
@@ -1156,7 +1156,7 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
      * </li>
      * <li>
      * <p>
-     * Can contain alphanumeric characters and the hyphen (-).
+     * Can contain alphanumeric characters, the underscore (_), and the hyphen (-).
      * </p>
      * </li>
      * <li>
@@ -1202,7 +1202,7 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
      *        </li>
      *        <li>
      *        <p>
-     *        Can contain alphanumeric characters and the hyphen (-).
+     *        Can contain alphanumeric characters, the underscore (_), and the hyphen (-).
      *        </p>
      *        </li>
      *        <li>

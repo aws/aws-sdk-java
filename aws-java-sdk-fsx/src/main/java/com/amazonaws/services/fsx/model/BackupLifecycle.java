@@ -43,6 +43,11 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
+ * <code>COPYING</code> - Amazon FSx is copying the backup.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>DELETED</code> - Amazon FSx deleted the backup and it is no longer available.
  * </p>
  * </li>
@@ -61,7 +66,8 @@ public enum BackupLifecycle {
     TRANSFERRING("TRANSFERRING"),
     DELETED("DELETED"),
     FAILED("FAILED"),
-    PENDING("PENDING");
+    PENDING("PENDING"),
+    COPYING("COPYING");
 
     private String value;
 

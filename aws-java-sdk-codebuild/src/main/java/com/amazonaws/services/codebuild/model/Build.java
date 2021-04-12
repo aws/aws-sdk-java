@@ -312,6 +312,12 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A list of exported environment variables for this build.
      * </p>
+     * <p>
+     * Exported environment variables are used in conjunction with AWS CodePipeline to export environment variables from
+     * the current build stage to subsequent stages in the pipeline. For more information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working with
+     * variables</a> in the <i>AWS CodePipeline User Guide</i>.
+     * </p>
      */
     private java.util.List<ExportedEnvironmentVariable> exportedEnvironmentVariables;
     /**
@@ -2469,8 +2475,19 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A list of exported environment variables for this build.
      * </p>
+     * <p>
+     * Exported environment variables are used in conjunction with AWS CodePipeline to export environment variables from
+     * the current build stage to subsequent stages in the pipeline. For more information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working with
+     * variables</a> in the <i>AWS CodePipeline User Guide</i>.
+     * </p>
      * 
-     * @return A list of exported environment variables for this build.
+     * @return A list of exported environment variables for this build.</p>
+     *         <p>
+     *         Exported environment variables are used in conjunction with AWS CodePipeline to export environment
+     *         variables from the current build stage to subsequent stages in the pipeline. For more information, see <a
+     *         href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working with
+     *         variables</a> in the <i>AWS CodePipeline User Guide</i>.
      */
 
     public java.util.List<ExportedEnvironmentVariable> getExportedEnvironmentVariables() {
@@ -2481,9 +2498,20 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A list of exported environment variables for this build.
      * </p>
+     * <p>
+     * Exported environment variables are used in conjunction with AWS CodePipeline to export environment variables from
+     * the current build stage to subsequent stages in the pipeline. For more information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working with
+     * variables</a> in the <i>AWS CodePipeline User Guide</i>.
+     * </p>
      * 
      * @param exportedEnvironmentVariables
-     *        A list of exported environment variables for this build.
+     *        A list of exported environment variables for this build.</p>
+     *        <p>
+     *        Exported environment variables are used in conjunction with AWS CodePipeline to export environment
+     *        variables from the current build stage to subsequent stages in the pipeline. For more information, see <a
+     *        href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working with
+     *        variables</a> in the <i>AWS CodePipeline User Guide</i>.
      */
 
     public void setExportedEnvironmentVariables(java.util.Collection<ExportedEnvironmentVariable> exportedEnvironmentVariables) {
@@ -2500,13 +2528,24 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * A list of exported environment variables for this build.
      * </p>
      * <p>
+     * Exported environment variables are used in conjunction with AWS CodePipeline to export environment variables from
+     * the current build stage to subsequent stages in the pipeline. For more information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working with
+     * variables</a> in the <i>AWS CodePipeline User Guide</i>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setExportedEnvironmentVariables(java.util.Collection)} or
      * {@link #withExportedEnvironmentVariables(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param exportedEnvironmentVariables
-     *        A list of exported environment variables for this build.
+     *        A list of exported environment variables for this build.</p>
+     *        <p>
+     *        Exported environment variables are used in conjunction with AWS CodePipeline to export environment
+     *        variables from the current build stage to subsequent stages in the pipeline. For more information, see <a
+     *        href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working with
+     *        variables</a> in the <i>AWS CodePipeline User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2524,9 +2563,20 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A list of exported environment variables for this build.
      * </p>
+     * <p>
+     * Exported environment variables are used in conjunction with AWS CodePipeline to export environment variables from
+     * the current build stage to subsequent stages in the pipeline. For more information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working with
+     * variables</a> in the <i>AWS CodePipeline User Guide</i>.
+     * </p>
      * 
      * @param exportedEnvironmentVariables
-     *        A list of exported environment variables for this build.
+     *        A list of exported environment variables for this build.</p>
+     *        <p>
+     *        Exported environment variables are used in conjunction with AWS CodePipeline to export environment
+     *        variables from the current build stage to subsequent stages in the pipeline. For more information, see <a
+     *        href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working with
+     *        variables</a> in the <i>AWS CodePipeline User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

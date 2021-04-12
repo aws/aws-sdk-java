@@ -46,6 +46,30 @@
       "documentation":"<p>Cancels an existing Amazon FSx for Lustre data repository task if that task is in either the <code>PENDING</code> or <code>EXECUTING</code> state. When you cancel a task, Amazon FSx does the following.</p> <ul> <li> <p>Any files that FSx has already exported are not reverted.</p> </li> <li> <p>FSx continues to export any files that are \"in-flight\" when the cancel operation is received.</p> </li> <li> <p>FSx does not export any files that have not yet been exported.</p> </li> </ul>",
       "idempotent":true
     },
+    "CopyBackup":{
+      "name":"CopyBackup",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CopyBackupRequest"},
+      "output":{"shape":"CopyBackupResponse"},
+      "errors":[
+        {"shape":"BadRequest"},
+        {"shape":"BackupNotFound"},
+        {"shape":"ServiceLimitExceeded"},
+        {"shape":"UnsupportedOperation"},
+        {"shape":"IncompatibleParameterError"},
+        {"shape":"InternalServerError"},
+        {"shape":"InvalidSourceKmsKey"},
+        {"shape":"InvalidDestinationKmsKey"},
+        {"shape":"InvalidRegion"},
+        {"shape":"SourceBackupUnavailable"},
+        {"shape":"IncompatibleRegionForMultiAZ"}
+      ],
+      "documentation":"<p>Copies an existing backup within the same AWS account to another Region (cross-Region copy) or within the same Region (in-Region copy). You can have up to five backup copy requests in progress to a single destination Region per account.</p> <p>You can use cross-Region backup copies for cross-region disaster recovery. You periodically take backups and copy them to another Region so that in the event of a disaster in the primary Region, you can restore from backup and recover availability quickly in the other Region. You can make cross-Region copies only within your AWS partition.</p> <p> You can also use backup copies to clone your file data set to another Region or within the same Region.</p> <p>You can use the <code>SourceRegion</code> parameter to specify the AWS Region from which the backup will be copied. For example, if you make the call from the <code>us-west-1</code> Region and want to copy a backup from the <code>us-east-2</code> Region, you specify <code>us-east-2</code> in the <code>SourceRegion</code> parameter to make a cross-Region copy. If you don't specify a Region, the backup copy is created in the same Region where the request is sent from (in-Region copy).</p> <p>For more information on creating backup copies, see <a href=\"https://docs.aws.amazon.com/fsx/latest/WindowsGuide/copy-backups.html\"> Copying backups</a> in the <i>Amazon FSx for Windows User Guide</i> and <a href=\"https://docs.aws.amazon.com/fsx/latest/LustreGuide/copy-backups.html\">Copying backups</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p>",
+      "idempotent":true
+    },
     "CreateBackup":{
       "name":"CreateBackup",
       "http":{
@@ -143,7 +167,8 @@
         {"shape":"BackupNotFound"},
         {"shape":"BackupRestoring"},
         {"shape":"IncompatibleParameterError"},
-        {"shape":"InternalServerError"}
+        {"shape":"InternalServerError"},
+        {"shape":"BackupBeingCopied"}
       ],
       "documentation":"<p>Deletes an Amazon FSx backup, deleting its contents. After deletion, the backup no longer exists, and its data is gone.</p> <p>The <code>DeleteBackup</code> call returns instantly. The backup will not show up in later <code>DescribeBackups</code> calls.</p> <important> <p>The data in a deleted backup is also deleted and can't be recovered by any means.</p> </important>",
       "idempotent":true
@@ -334,7 +359,8 @@
         "ActiveDirectoryId":{
           "shape":"DirectoryId",
           "documentation":"<p>The ID of the AWS Managed Microsoft Active Directory instance to which the file system is joined.</p>"
-        }
+        },
+        "ResourceARN":{"shape":"ResourceARN"}
       },
       "documentation":"<p>The Microsoft AD attributes of the Amazon FSx for Windows File Server file system.</p>"
     },
@@ -425,7 +451,7 @@
       "members":{
         "Name":{
           "shape":"AlternateDNSName",
-          "documentation":"<p>The name of the DNS alias. The alias name has to meet the following requirements:</p> <ul> <li> <p>Formatted as a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example, <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>"
+          "documentation":"<p>The name of the DNS alias. The alias name has to meet the following requirements:</p> <ul> <li> <p>Formatted as a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example, <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>"
         },
         "Lifecycle":{
           "shape":"AliasLifecycle",
@@ -529,7 +555,7 @@
         },
         "Lifecycle":{
           "shape":"BackupLifecycle",
-          "documentation":"<p>The lifecycle status of the backup.</p> <ul> <li> <p> <code>AVAILABLE</code> - The backup is fully available.</p> </li> <li> <p> <code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx has not started creating the backup.</p> </li> <li> <p> <code>CREATING</code> - Amazon FSx is creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is transferring the backup to S3.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted the backup and it is no longer available.</p> </li> <li> <p> <code>FAILED</code> - Amazon FSx could not complete the backup.</p> </li> </ul>"
+          "documentation":"<p>The lifecycle status of the backup.</p> <ul> <li> <p> <code>AVAILABLE</code> - The backup is fully available.</p> </li> <li> <p> <code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx has not started creating the backup.</p> </li> <li> <p> <code>CREATING</code> - Amazon FSx is creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is transferring the backup to S3.</p> </li> <li> <p> <code>COPYING</code> - Amazon FSx is copying the backup.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted the backup and it is no longer available.</p> </li> <li> <p> <code>FAILED</code> - Amazon FSx could not complete the backup.</p> </li> </ul>"
         },
         "FailureDetails":{
           "shape":"BackupFailureDetails",
@@ -563,9 +589,24 @@
         "DirectoryInformation":{
           "shape":"ActiveDirectoryBackupAttributes",
           "documentation":"<p>The configuration of the self-managed Microsoft Active Directory (AD) to which the Windows File Server instance is joined.</p>"
+        },
+        "OwnerId":{"shape":"AWSAccountId"},
+        "SourceBackupId":{"shape":"BackupId"},
+        "SourceBackupRegion":{
+          "shape":"Region",
+          "documentation":"<p>The source Region of the backup. Specifies the Region from where this backup is copied.</p>"
         }
       },
-      "documentation":"<p>A backup of an Amazon FSx file system. For more information see:</p> <ul> <li> <p> <a href=\"https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html\">Working with backups for Windows file systems</a> </p> </li> <li> <p> <a href=\"https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html\">Working with backups for Lustre file systems</a> </p> </li> </ul>"
+      "documentation":"<p>A backup of an Amazon FSx file system.</p>"
+    },
+    "BackupBeingCopied":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ErrorMessage"},
+        "BackupId":{"shape":"BackupId"}
+      },
+      "documentation":"<p>You can't delete a backup while it's being copied.</p>",
+      "exception":true
     },
     "BackupFailureDetails":{
       "type":"structure",
@@ -579,7 +620,7 @@
     },
     "BackupId":{
       "type":"string",
-      "documentation":"<p>The ID of the backup. Specifies the backup to use if you're creating a file system from an existing backup.</p>",
+      "documentation":"<p>The ID of the source backup. Specifies the backup you are copying.</p>",
       "max":128,
       "min":12,
       "pattern":"^(backup-[0-9a-f]{8,})$"
@@ -600,14 +641,15 @@
     },
     "BackupLifecycle":{
       "type":"string",
-      "documentation":"<p>The lifecycle status of the backup.</p> <ul> <li> <p> <code>AVAILABLE</code> - The backup is fully available.</p> </li> <li> <p> <code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx has not started creating the backup.</p> </li> <li> <p> <code>CREATING</code> - Amazon FSx is creating the new user-intiated backup</p> </li> <li> <p> <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is backing up the file system.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted the backup and it is no longer available.</p> </li> <li> <p> <code>FAILED</code> - Amazon FSx could not complete the backup.</p> </li> </ul>",
+      "documentation":"<p>The lifecycle status of the backup.</p> <ul> <li> <p> <code>AVAILABLE</code> - The backup is fully available.</p> </li> <li> <p> <code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx has not started creating the backup.</p> </li> <li> <p> <code>CREATING</code> - Amazon FSx is creating the new user-intiated backup</p> </li> <li> <p> <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is backing up the file system.</p> </li> <li> <p> <code>COPYING</code> - Amazon FSx is copying the backup.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted the backup and it is no longer available.</p> </li> <li> <p> <code>FAILED</code> - Amazon FSx could not complete the backup.</p> </li> </ul>",
       "enum":[
         "AVAILABLE",
         "CREATING",
         "TRANSFERRING",
         "DELETED",
         "FAILED",
-        "PENDING"
+        "PENDING",
+        "COPYING"
       ]
     },
     "BackupNotFound":{
@@ -706,6 +748,36 @@
         }
       },
       "documentation":"<p>Provides a report detailing the data repository task results of the files processed that match the criteria specified in the report <code>Scope</code> parameter. FSx delivers the report to the file system's linked data repository in Amazon S3, using the path specified in the report <code>Path</code> parameter. You can specify whether or not a report gets generated for a task using the <code>Enabled</code> parameter.</p>"
+    },
+    "CopyBackupRequest":{
+      "type":"structure",
+      "required":["SourceBackupId"],
+      "members":{
+        "ClientRequestToken":{
+          "shape":"ClientRequestToken",
+          "idempotencyToken":true
+        },
+        "SourceBackupId":{
+          "shape":"SourceBackupId",
+          "documentation":"<p>The ID of the source backup. Specifies the ID of the backup that is being copied.</p>"
+        },
+        "SourceRegion":{
+          "shape":"Region",
+          "documentation":"<p>The source AWS Region of the backup. Specifies the AWS Region from which the backup is being copied. The source and destination Regions must be in the same AWS partition. If you don't specify a Region, it defaults to the Region where the request is sent from (in-Region copy).</p>"
+        },
+        "KmsKeyId":{"shape":"KmsKeyId"},
+        "CopyTags":{
+          "shape":"Flag",
+          "documentation":"<p>A boolean flag indicating whether tags from the source backup should be copied to the backup copy. This value defaults to false.</p> <p>If you set <code>CopyTags</code> to true and the source backup has existing tags, you can use the <code>Tags</code> parameter to create new tags, provided that the sum of the source backup tags and the new tags doesn't exceed 50. Both sets of tags are merged. If there are tag conflicts (for example, two tags with the same key but different values), the tags created with the <code>Tags</code> parameter take precedence.</p>"
+        },
+        "Tags":{"shape":"Tags"}
+      }
+    },
+    "CopyBackupResponse":{
+      "type":"structure",
+      "members":{
+        "Backup":{"shape":"Backup"}
+      }
     },
     "CreateBackupRequest":{
       "type":"structure",
@@ -807,7 +879,8 @@
         "StorageType":{
           "shape":"StorageType",
           "documentation":"<p>Sets the storage type for the Windows file system you're creating from a backup. Valid values are <code>SSD</code> and <code>HDD</code>.</p> <ul> <li> <p>Set to <code>SSD</code> to use solid state drive storage. Supported on all Windows deployment types.</p> </li> <li> <p>Set to <code>HDD</code> to use hard disk drive storage. Supported on <code>SINGLE_AZ_2</code> and <code>MULTI_AZ_1</code> Windows file system deployment types. </p> </li> </ul> <p> Default value is <code>SSD</code>. </p> <note> <p>HDD and SSD storage types have different minimum storage capacity requirements. A restored file system's storage capacity is tied to the file system that was backed up. You can create a file system that uses HDD storage from a backup of a file system that used SSD storage only if the original SSD file system had a storage capacity of at least 2000 GiB. </p> </note>"
-        }
+        },
+        "KmsKeyId":{"shape":"KmsKeyId"}
       },
       "documentation":"<p>The request object for the <code>CreateFileSystemFromBackup</code> operation.</p>"
     },
@@ -892,7 +965,7 @@
         },
         "SubnetIds":{
           "shape":"SubnetIds",
-          "documentation":"<p>Specifies the IDs of the subnets that the file system will be accessible from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the preferred file server and one for the standby file server. You specify one of these subnets as the preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p> <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system deployment types and Lustre file systems, provide exactly one subnet ID. The file server is launched in that subnet's Availability Zone.</p>"
+          "documentation":"<p>Specifies the IDs of the subnets that the file system will be accessible from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide exactly two subnet IDs, one for the preferred file server and one for the standby file server. You specify one of these subnets as the preferred subnet using the <code>WindowsConfiguration &gt; PreferredSubnetID</code> property. For more information, see <a href=\"https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html\"> Availability and durability: Single-AZ and Multi-AZ file systems</a>.</p> <p>For Windows <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> file system deployment types and Lustre file systems, provide exactly one subnet ID. The file server is launched in that subnet's Availability Zone.</p>"
         },
         "SecurityGroupIds":{
           "shape":"SecurityGroupIds",
@@ -960,7 +1033,7 @@
         },
         "Aliases":{
           "shape":"AlternateDNSNames",
-          "documentation":"<p>An array of one or more DNS alias names that you want to associate with the Amazon FSx file system. Aliases allow you to use existing DNS names to access the data in your Amazon FSx file system. You can associate up to 50 aliases with a file system at any time. You can associate additional DNS aliases after you create the file system using the AssociateFileSystemAliases operation. You can remove DNS aliases from the file system after it is created using the DisassociateFileSystemAliases operation. You only need to specify the alias name in the request payload.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html\">Working with DNS Aliases</a> and <a href=\"https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html\">Walkthrough 5: Using DNS aliases to access your file system</a>, including additional steps you must take to be able to access your file system using a DNS alias.</p> <p>An alias name has to meet the following requirements:</p> <ul> <li> <p>Formatted as a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example, <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>"
+          "documentation":"<p>An array of one or more DNS alias names that you want to associate with the Amazon FSx file system. Aliases allow you to use existing DNS names to access the data in your Amazon FSx file system. You can associate up to 50 aliases with a file system at any time. You can associate additional DNS aliases after you create the file system using the AssociateFileSystemAliases operation. You can remove DNS aliases from the file system after it is created using the DisassociateFileSystemAliases operation. You only need to specify the alias name in the request payload.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html\">Working with DNS Aliases</a> and <a href=\"https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html\">Walkthrough 5: Using DNS aliases to access your file system</a>, including additional steps you must take to be able to access your file system using a DNS alias.</p> <p>An alias name has to meet the following requirements:</p> <ul> <li> <p>Formatted as a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example, <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.</p>"
         }
       },
       "documentation":"<p>The configuration object for the Microsoft Windows file system used in <code>CreateFileSystem</code> and <code>CreateFileSystemFromBackup</code> operations.</p>"
@@ -1345,7 +1418,7 @@
       "members":{
         "Backups":{
           "shape":"Backups",
-          "documentation":"<p>Any array of backups.</p>"
+          "documentation":"<p>An array of backups.</p>"
         },
         "NextToken":{
           "shape":"NextToken",
@@ -1725,6 +1798,14 @@
       "documentation":"<p>The error returned when a second request is received with the same client request token but different parameters settings. A client request token should always uniquely identify a single request.</p>",
       "exception":true
     },
+    "IncompatibleRegionForMultiAZ":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ErrorMessage"}
+      },
+      "documentation":"<p>Amazon FSx doesn't support Multi-AZ Windows File Server copy backup in the destination Region, so the copied backup can't be restored.</p>",
+      "exception":true
+    },
     "InternalServerError":{
       "type":"structure",
       "members":{
@@ -1733,6 +1814,14 @@
       "documentation":"<p>A generic error indicating a server-side failure.</p>",
       "exception":true,
       "fault":true
+    },
+    "InvalidDestinationKmsKey":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ErrorMessage"}
+      },
+      "documentation":"<p>The AWS Key Management Service (AWS KMS) key of the destination backup is invalid.</p>",
+      "exception":true
     },
     "InvalidExportPath":{
       "type":"structure",
@@ -1766,6 +1855,22 @@
         "Message":{"shape":"ErrorMessage"}
       },
       "documentation":"<p>An invalid value for <code>PerUnitStorageThroughput</code> was provided. Please create your file system again, using a valid value.</p>",
+      "exception":true
+    },
+    "InvalidRegion":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ErrorMessage"}
+      },
+      "documentation":"<p>The Region provided for <code>Source Region</code> is invalid or is in a different AWS partition.</p>",
+      "exception":true
+    },
+    "InvalidSourceKmsKey":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ErrorMessage"}
+      },
+      "documentation":"<p>The AWS Key Management Service (AWS KMS) key of the source backup is invalid.</p>",
       "exception":true
     },
     "IpAddress":{
@@ -1942,6 +2047,12 @@
       "max":100,
       "min":0
     },
+    "Region":{
+      "type":"string",
+      "max":20,
+      "min":1,
+      "pattern":"^[a-z0-9-]{1,20}$"
+    },
     "ReportFormat":{
       "type":"string",
       "enum":["REPORT_CSV_20191124"]
@@ -2054,10 +2165,10 @@
         },
         "DnsIps":{
           "shape":"DnsIps",
-          "documentation":"<p>A list of up to two IP addresses of DNS servers or domain controllers in the self-managed AD directory. The IP addresses need to be either in the same VPC CIDR range as the one in which your Amazon FSx file system is being created, or in the private IP version 4 (IPv4) address ranges, as specified in <a href=\"http://www.faqs.org/rfcs/rfc1918.html\">RFC 1918</a>:</p> <ul> <li> <p>10.0.0.0 - 10.255.255.255 (10/8 prefix)</p> </li> <li> <p>172.16.0.0 - 172.31.255.255 (172.16/12 prefix)</p> </li> <li> <p>192.168.0.0 - 192.168.255.255 (192.168/16 prefix)</p> </li> </ul>"
+          "documentation":"<p>A list of up to two IP addresses of DNS servers or domain controllers in the self-managed AD directory. </p>"
         }
       },
-      "documentation":"<p>The configuration that Amazon FSx uses to join the Windows File Server instance to your self-managed (including on-premises) Microsoft Active Directory (AD) directory.</p>"
+      "documentation":"<p>The configuration that Amazon FSx uses to join the Windows File Server instance to your self-managed (including on-premises) Microsoft Active Directory (AD) directory. For more information, see <a href=\"https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-managed-AD.html\"> Using Amazon FSx with your self-managed Microsoft Active Directory</a>.</p>"
     },
     "SelfManagedActiveDirectoryConfigurationUpdates":{
       "type":"structure",
@@ -2084,7 +2195,9 @@
         "FILE_SYSTEM_COUNT",
         "TOTAL_THROUGHPUT_CAPACITY",
         "TOTAL_STORAGE",
-        "TOTAL_USER_INITIATED_BACKUPS"
+        "TOTAL_USER_INITIATED_BACKUPS",
+        "TOTAL_USER_TAGS",
+        "TOTAL_IN_PROGRESS_COPY_BACKUPS"
       ]
     },
     "ServiceLimitExceeded":{
@@ -2098,6 +2211,21 @@
         "Message":{"shape":"ErrorMessage"}
       },
       "documentation":"<p>An error indicating that a particular service limit was exceeded. You can increase some service limits by contacting AWS Support. </p>",
+      "exception":true
+    },
+    "SourceBackupId":{
+      "type":"string",
+      "max":128,
+      "min":12,
+      "pattern":"^(backup-[0-9a-f]{8,})$"
+    },
+    "SourceBackupUnavailable":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"ErrorMessage"},
+        "BackupId":{"shape":"BackupId"}
+      },
+      "documentation":"<p>The request was rejected because the lifecycle status of the source backup is not <code>AVAILABLE</code>.</p>",
       "exception":true
     },
     "StartTime":{"type":"timestamp"},
@@ -2357,7 +2485,7 @@
       "members":{
         "ActiveDirectoryId":{
           "shape":"DirectoryId",
-          "documentation":"<p>The ID for an existing Microsoft Active Directory instance that the file system should join when it's created.</p>"
+          "documentation":"<p>The ID for an existing AWS Managed Microsoft Active Directory instance that the file system is joined to.</p>"
         },
         "SelfManagedActiveDirectoryConfiguration":{"shape":"SelfManagedActiveDirectoryAttributes"},
         "DeploymentType":{
@@ -2370,7 +2498,7 @@
         },
         "PreferredSubnetId":{
           "shape":"SubnetId",
-          "documentation":"<p>For <code>MULTI_AZ_1</code> deployment types, it specifies the ID of the subnet where the preferred file server is located. Must be one of the two subnet IDs specified in <code>SubnetIds</code> property. Amazon FSx serves traffic from this subnet except in the event of a failover to the secondary file server.</p> <p>For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this value is the same as that for <code>SubnetIDs</code>. For more information, see <a href=\"https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources\">Availability and Durability: Single-AZ and Multi-AZ File Systems</a> </p>"
+          "documentation":"<p>For <code>MULTI_AZ_1</code> deployment types, it specifies the ID of the subnet where the preferred file server is located. Must be one of the two subnet IDs specified in <code>SubnetIds</code> property. Amazon FSx serves traffic from this subnet except in the event of a failover to the secondary file server.</p> <p>For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this value is the same as that for <code>SubnetIDs</code>. For more information, see <a href=\"https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources\">Availability and durability: Single-AZ and Multi-AZ file systems</a>.</p>"
         },
         "PreferredFileServerIp":{
           "shape":"IpAddress",
@@ -2378,7 +2506,7 @@
         },
         "ThroughputCapacity":{
           "shape":"MegabytesPerSecond",
-          "documentation":"<p>The throughput of an Amazon FSx file system, measured in megabytes per second.</p>"
+          "documentation":"<p>The throughput of the Amazon FSx file system, measured in megabytes per second.</p>"
         },
         "MaintenanceOperationsInProgress":{
           "shape":"FileSystemMaintenanceOperations",

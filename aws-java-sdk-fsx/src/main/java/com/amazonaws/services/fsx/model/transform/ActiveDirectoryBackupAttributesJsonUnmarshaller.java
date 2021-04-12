@@ -56,6 +56,10 @@ public class ActiveDirectoryBackupAttributesJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     activeDirectoryBackupAttributes.setActiveDirectoryId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ResourceARN", targetDepth)) {
+                    context.nextToken();
+                    activeDirectoryBackupAttributes.setResourceARN(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

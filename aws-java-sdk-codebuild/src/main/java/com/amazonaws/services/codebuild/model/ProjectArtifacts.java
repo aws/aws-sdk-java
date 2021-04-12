@@ -268,6 +268,8 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      */
     private String artifactIdentifier;
 
+    private String bucketOwnerAccess;
+
     /**
      * <p>
      * The type of build output artifact. Valid values include:
@@ -2215,6 +2217,55 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * @param bucketOwnerAccess
+     * @see BucketOwnerAccess
+     */
+
+    public void setBucketOwnerAccess(String bucketOwnerAccess) {
+        this.bucketOwnerAccess = bucketOwnerAccess;
+    }
+
+    /**
+     * @return
+     * @see BucketOwnerAccess
+     */
+
+    public String getBucketOwnerAccess() {
+        return this.bucketOwnerAccess;
+    }
+
+    /**
+     * @param bucketOwnerAccess
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BucketOwnerAccess
+     */
+
+    public ProjectArtifacts withBucketOwnerAccess(String bucketOwnerAccess) {
+        setBucketOwnerAccess(bucketOwnerAccess);
+        return this;
+    }
+
+    /**
+     * @param bucketOwnerAccess
+     * @see BucketOwnerAccess
+     */
+
+    public void setBucketOwnerAccess(BucketOwnerAccess bucketOwnerAccess) {
+        withBucketOwnerAccess(bucketOwnerAccess);
+    }
+
+    /**
+     * @param bucketOwnerAccess
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BucketOwnerAccess
+     */
+
+    public ProjectArtifacts withBucketOwnerAccess(BucketOwnerAccess bucketOwnerAccess) {
+        this.bucketOwnerAccess = bucketOwnerAccess.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2243,7 +2294,9 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
         if (getEncryptionDisabled() != null)
             sb.append("EncryptionDisabled: ").append(getEncryptionDisabled()).append(",");
         if (getArtifactIdentifier() != null)
-            sb.append("ArtifactIdentifier: ").append(getArtifactIdentifier());
+            sb.append("ArtifactIdentifier: ").append(getArtifactIdentifier()).append(",");
+        if (getBucketOwnerAccess() != null)
+            sb.append("BucketOwnerAccess: ").append(getBucketOwnerAccess());
         sb.append("}");
         return sb.toString();
     }
@@ -2294,6 +2347,10 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getArtifactIdentifier() != null && other.getArtifactIdentifier().equals(this.getArtifactIdentifier()) == false)
             return false;
+        if (other.getBucketOwnerAccess() == null ^ this.getBucketOwnerAccess() == null)
+            return false;
+        if (other.getBucketOwnerAccess() != null && other.getBucketOwnerAccess().equals(this.getBucketOwnerAccess()) == false)
+            return false;
         return true;
     }
 
@@ -2311,6 +2368,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getOverrideArtifactName() == null) ? 0 : getOverrideArtifactName().hashCode());
         hashCode = prime * hashCode + ((getEncryptionDisabled() == null) ? 0 : getEncryptionDisabled().hashCode());
         hashCode = prime * hashCode + ((getArtifactIdentifier() == null) ? 0 : getArtifactIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getBucketOwnerAccess() == null) ? 0 : getBucketOwnerAccess().hashCode());
         return hashCode;
     }
 

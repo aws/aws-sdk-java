@@ -257,7 +257,6 @@ public class BuildBatch implements Serializable, Cloneable, StructuredPojo {
      */
     private java.util.List<BuildGroup> buildGroups;
     /**
-     * <p/>
      * <p>
      * Specifies if session debugging is enabled for this batch build. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in
@@ -2079,7 +2078,6 @@ public class BuildBatch implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
      * <p>
      * Specifies if session debugging is enabled for this batch build. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in
@@ -2087,7 +2085,6 @@ public class BuildBatch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param debugSessionEnabled
-     *        <p>
      *        Specifies if session debugging is enabled for this batch build. For more information, see <a
      *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build
      *        in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.
@@ -2098,15 +2095,13 @@ public class BuildBatch implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
      * <p>
      * Specifies if session debugging is enabled for this batch build. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in
      * Session Manager</a>. Batch session debugging is not supported for matrix batch builds.
      * </p>
      * 
-     * @return <p>
-     *         Specifies if session debugging is enabled for this batch build. For more information, see <a
+     * @return Specifies if session debugging is enabled for this batch build. For more information, see <a
      *         href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running
      *         build in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.
      */
@@ -2116,7 +2111,6 @@ public class BuildBatch implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
      * <p>
      * Specifies if session debugging is enabled for this batch build. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in
@@ -2124,7 +2118,6 @@ public class BuildBatch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param debugSessionEnabled
-     *        <p>
      *        Specifies if session debugging is enabled for this batch build. For more information, see <a
      *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build
      *        in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.
@@ -2137,15 +2130,13 @@ public class BuildBatch implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
      * <p>
      * Specifies if session debugging is enabled for this batch build. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in
      * Session Manager</a>. Batch session debugging is not supported for matrix batch builds.
      * </p>
      * 
-     * @return <p>
-     *         Specifies if session debugging is enabled for this batch build. For more information, see <a
+     * @return Specifies if session debugging is enabled for this batch build. For more information, see <a
      *         href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running
      *         build in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.
      */

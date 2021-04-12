@@ -94,6 +94,18 @@ public class BackupJsonUnmarshaller implements Unmarshaller<Backup, JsonUnmarsha
                     context.nextToken();
                     backup.setDirectoryInformation(ActiveDirectoryBackupAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("OwnerId", targetDepth)) {
+                    context.nextToken();
+                    backup.setOwnerId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SourceBackupId", targetDepth)) {
+                    context.nextToken();
+                    backup.setSourceBackupId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SourceBackupRegion", targetDepth)) {
+                    context.nextToken();
+                    backup.setSourceBackupRegion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

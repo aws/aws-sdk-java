@@ -72,6 +72,10 @@ public class BuildArtifactsJsonUnmarshaller implements Unmarshaller<BuildArtifac
                     context.nextToken();
                     buildArtifacts.setArtifactIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("bucketOwnerAccess", targetDepth)) {
+                    context.nextToken();
+                    buildArtifacts.setBucketOwnerAccess(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

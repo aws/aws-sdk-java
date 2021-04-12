@@ -38,6 +38,11 @@ public class AbstractAmazonFSx implements AmazonFSx {
     }
 
     @Override
+    public CopyBackupResult copyBackup(CopyBackupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateBackupResult createBackup(CreateBackupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

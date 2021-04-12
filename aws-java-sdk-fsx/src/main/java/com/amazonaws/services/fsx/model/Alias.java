@@ -43,7 +43,7 @@ public class Alias implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Can contain alphanumeric characters and the hyphen (-).
+     * Can contain alphanumeric characters, the underscore (_), and the hyphen (-).
      * </p>
      * </li>
      * <li>
@@ -110,7 +110,7 @@ public class Alias implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Can contain alphanumeric characters and the hyphen (-).
+     * Can contain alphanumeric characters, the underscore (_), and the hyphen (-).
      * </p>
      * </li>
      * <li>
@@ -140,7 +140,7 @@ public class Alias implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        Can contain alphanumeric characters and the hyphen (-).
+     *        Can contain alphanumeric characters, the underscore (_), and the hyphen (-).
      *        </p>
      *        </li>
      *        <li>
@@ -176,7 +176,7 @@ public class Alias implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Can contain alphanumeric characters and the hyphen (-).
+     * Can contain alphanumeric characters, the underscore (_), and the hyphen (-).
      * </p>
      * </li>
      * <li>
@@ -205,7 +205,7 @@ public class Alias implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         Can contain alphanumeric characters and the hyphen (-).
+     *         Can contain alphanumeric characters, the underscore (_), and the hyphen (-).
      *         </p>
      *         </li>
      *         <li>
@@ -241,7 +241,7 @@ public class Alias implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Can contain alphanumeric characters and the hyphen (-).
+     * Can contain alphanumeric characters, the underscore (_), and the hyphen (-).
      * </p>
      * </li>
      * <li>
@@ -271,7 +271,7 @@ public class Alias implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        Can contain alphanumeric characters and the hyphen (-).
+     *        Can contain alphanumeric characters, the underscore (_), and the hyphen (-).
      *        </p>
      *        </li>
      *        <li>

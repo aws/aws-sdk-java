@@ -1,3 +1,12 @@
+# __1.11.997__ __2021-04-12__
+## __AWS CodeBuild__
+  - ### Features
+    - AWS CodeBuild now allows you to set the access permissions for build artifacts, project artifacts, and log files that are uploaded to an Amazon S3 bucket that is owned by another account.
+
+## __Amazon FSx__
+  - ### Features
+    - Support for cross-region and cross-account backup copies
+
 # __1.11.996__ __2021-04-09__
 ## __AWS Shield__
   - ### Features

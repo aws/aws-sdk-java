@@ -50,6 +50,12 @@ public class BackupMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FileSystem").build();
     private static final MarshallingInfo<StructuredPojo> DIRECTORYINFORMATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DirectoryInformation").build();
+    private static final MarshallingInfo<String> OWNERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("OwnerId").build();
+    private static final MarshallingInfo<String> SOURCEBACKUPID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceBackupId").build();
+    private static final MarshallingInfo<String> SOURCEBACKUPREGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceBackupRegion").build();
 
     private static final BackupMarshaller instance = new BackupMarshaller();
 
@@ -78,6 +84,9 @@ public class BackupMarshaller {
             protocolMarshaller.marshall(backup.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(backup.getFileSystem(), FILESYSTEM_BINDING);
             protocolMarshaller.marshall(backup.getDirectoryInformation(), DIRECTORYINFORMATION_BINDING);
+            protocolMarshaller.marshall(backup.getOwnerId(), OWNERID_BINDING);
+            protocolMarshaller.marshall(backup.getSourceBackupId(), SOURCEBACKUPID_BINDING);
+            protocolMarshaller.marshall(backup.getSourceBackupRegion(), SOURCEBACKUPREGION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

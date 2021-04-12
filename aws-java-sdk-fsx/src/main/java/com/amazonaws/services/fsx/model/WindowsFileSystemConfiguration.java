@@ -30,7 +30,7 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The ID for an existing Microsoft Active Directory instance that the file system should join when it's created.
+     * The ID for an existing AWS Managed Microsoft Active Directory instance that the file system is joined to.
      * </p>
      */
     private String activeDirectoryId;
@@ -91,7 +91,7 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      * For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this value is the same as that for
      * <code>SubnetIDs</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources"
-     * >Availability and Durability: Single-AZ and Multi-AZ File Systems</a>
+     * >Availability and durability: Single-AZ and Multi-AZ file systems</a>.
      * </p>
      */
     private String preferredSubnetId;
@@ -111,7 +111,7 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
     private String preferredFileServerIp;
     /**
      * <p>
-     * The throughput of an Amazon FSx file system, measured in megabytes per second.
+     * The throughput of the Amazon FSx file system, measured in megabytes per second.
      * </p>
      */
     private Integer throughputCapacity;
@@ -156,12 +156,11 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The ID for an existing Microsoft Active Directory instance that the file system should join when it's created.
+     * The ID for an existing AWS Managed Microsoft Active Directory instance that the file system is joined to.
      * </p>
      * 
      * @param activeDirectoryId
-     *        The ID for an existing Microsoft Active Directory instance that the file system should join when it's
-     *        created.
+     *        The ID for an existing AWS Managed Microsoft Active Directory instance that the file system is joined to.
      */
 
     public void setActiveDirectoryId(String activeDirectoryId) {
@@ -170,11 +169,10 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The ID for an existing Microsoft Active Directory instance that the file system should join when it's created.
+     * The ID for an existing AWS Managed Microsoft Active Directory instance that the file system is joined to.
      * </p>
      * 
-     * @return The ID for an existing Microsoft Active Directory instance that the file system should join when it's
-     *         created.
+     * @return The ID for an existing AWS Managed Microsoft Active Directory instance that the file system is joined to.
      */
 
     public String getActiveDirectoryId() {
@@ -183,12 +181,11 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The ID for an existing Microsoft Active Directory instance that the file system should join when it's created.
+     * The ID for an existing AWS Managed Microsoft Active Directory instance that the file system is joined to.
      * </p>
      * 
      * @param activeDirectoryId
-     *        The ID for an existing Microsoft Active Directory instance that the file system should join when it's
-     *        created.
+     *        The ID for an existing AWS Managed Microsoft Active Directory instance that the file system is joined to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -574,7 +571,7 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      * For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this value is the same as that for
      * <code>SubnetIDs</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources"
-     * >Availability and Durability: Single-AZ and Multi-AZ File Systems</a>
+     * >Availability and durability: Single-AZ and Multi-AZ file systems</a>.
      * </p>
      * 
      * @param preferredSubnetId
@@ -585,7 +582,7 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      *        For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this value is the same as that
      *        for <code>SubnetIDs</code>. For more information, see <a href=
      *        "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources"
-     *        >Availability and Durability: Single-AZ and Multi-AZ File Systems</a>
+     *        >Availability and durability: Single-AZ and Multi-AZ file systems</a>.
      */
 
     public void setPreferredSubnetId(String preferredSubnetId) {
@@ -602,7 +599,7 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      * For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this value is the same as that for
      * <code>SubnetIDs</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources"
-     * >Availability and Durability: Single-AZ and Multi-AZ File Systems</a>
+     * >Availability and durability: Single-AZ and Multi-AZ file systems</a>.
      * </p>
      * 
      * @return For <code>MULTI_AZ_1</code> deployment types, it specifies the ID of the subnet where the preferred file
@@ -612,7 +609,7 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      *         For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this value is the same as
      *         that for <code>SubnetIDs</code>. For more information, see <a href=
      *         "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources"
-     *         >Availability and Durability: Single-AZ and Multi-AZ File Systems</a>
+     *         >Availability and durability: Single-AZ and Multi-AZ file systems</a>.
      */
 
     public String getPreferredSubnetId() {
@@ -629,7 +626,7 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      * For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this value is the same as that for
      * <code>SubnetIDs</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources"
-     * >Availability and Durability: Single-AZ and Multi-AZ File Systems</a>
+     * >Availability and durability: Single-AZ and Multi-AZ file systems</a>.
      * </p>
      * 
      * @param preferredSubnetId
@@ -640,7 +637,7 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      *        For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this value is the same as that
      *        for <code>SubnetIDs</code>. For more information, see <a href=
      *        "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources"
-     *        >Availability and Durability: Single-AZ and Multi-AZ File Systems</a>
+     *        >Availability and durability: Single-AZ and Multi-AZ file systems</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -742,11 +739,11 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The throughput of an Amazon FSx file system, measured in megabytes per second.
+     * The throughput of the Amazon FSx file system, measured in megabytes per second.
      * </p>
      * 
      * @param throughputCapacity
-     *        The throughput of an Amazon FSx file system, measured in megabytes per second.
+     *        The throughput of the Amazon FSx file system, measured in megabytes per second.
      */
 
     public void setThroughputCapacity(Integer throughputCapacity) {
@@ -755,10 +752,10 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The throughput of an Amazon FSx file system, measured in megabytes per second.
+     * The throughput of the Amazon FSx file system, measured in megabytes per second.
      * </p>
      * 
-     * @return The throughput of an Amazon FSx file system, measured in megabytes per second.
+     * @return The throughput of the Amazon FSx file system, measured in megabytes per second.
      */
 
     public Integer getThroughputCapacity() {
@@ -767,11 +764,11 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The throughput of an Amazon FSx file system, measured in megabytes per second.
+     * The throughput of the Amazon FSx file system, measured in megabytes per second.
      * </p>
      * 
      * @param throughputCapacity
-     *        The throughput of an Amazon FSx file system, measured in megabytes per second.
+     *        The throughput of the Amazon FSx file system, measured in megabytes per second.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
