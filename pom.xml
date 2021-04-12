@@ -312,7 +312,6 @@
       <ion.java.version>1.0.2</ion.java.version>
       <junit.version>4.12</junit.version>
       <easymock.version>3.2</easymock.version>
-      <commons.logging.version>1.1.3</commons.logging.version>
       <jodatime.version>2.8.1</jodatime.version>
       <wiremock.version>1.55</wiremock.version>
       <log4j.version>1.2.17</log4j.version>
