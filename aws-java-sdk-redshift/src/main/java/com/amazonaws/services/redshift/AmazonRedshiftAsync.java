@@ -3486,6 +3486,37 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
+     * Modifies whether a cluster can use AQUA (Advanced Query Accelerator).
+     * </p>
+     * 
+     * @param modifyAquaConfigurationRequest
+     * @return A Java Future containing the result of the ModifyAquaConfiguration operation returned by the service.
+     * @sample AmazonRedshiftAsync.ModifyAquaConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyAquaConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyAquaConfigurationResult> modifyAquaConfigurationAsync(ModifyAquaConfigurationRequest modifyAquaConfigurationRequest);
+
+    /**
+     * <p>
+     * Modifies whether a cluster can use AQUA (Advanced Query Accelerator).
+     * </p>
+     * 
+     * @param modifyAquaConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyAquaConfiguration operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.ModifyAquaConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyAquaConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyAquaConfigurationResult> modifyAquaConfigurationAsync(ModifyAquaConfigurationRequest modifyAquaConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyAquaConfigurationRequest, ModifyAquaConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Modifies the settings for a cluster.
      * </p>
      * <p>

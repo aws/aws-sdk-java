@@ -4449,7 +4449,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * <p>
      * For more information about failing over an Amazon Aurora global database, see <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.managed-failover"
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-disaster-recovery.managed-failover"
      * >Managed planned failover for Amazon Aurora global databases</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * <note>
@@ -4480,7 +4480,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * <p>
      * For more information about failing over an Amazon Aurora global database, see <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.managed-failover"
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-disaster-recovery.managed-failover"
      * >Managed planned failover for Amazon Aurora global databases</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * <note>
@@ -6459,7 +6459,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC Security Groups.
+     * Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC security groups.
      * Required parameters for this API are one of CIDRIP, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and
      * either EC2SecurityGroupName or EC2SecurityGroupId).
      * </p>
@@ -6475,7 +6475,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC Security Groups.
+     * Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC security groups.
      * Required parameters for this API are one of CIDRIP, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and
      * either EC2SecurityGroupName or EC2SecurityGroupId).
      * </p>

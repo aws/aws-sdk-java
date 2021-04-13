@@ -75,7 +75,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * If a <code>SourceIds</code> value is supplied, <code>SourceType</code> must also be provided.
+     * If <code>SourceIds</code> are supplied, <code>SourceType</code> must also be provided.
      * </p>
      * </li>
      * <li>
@@ -404,7 +404,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * If a <code>SourceIds</code> value is supplied, <code>SourceType</code> must also be provided.
+     * If <code>SourceIds</code> are supplied, <code>SourceType</code> must also be provided.
      * </p>
      * </li>
      * <li>
@@ -448,7 +448,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      *         <ul>
      *         <li>
      *         <p>
-     *         If a <code>SourceIds</code> value is supplied, <code>SourceType</code> must also be provided.
+     *         If <code>SourceIds</code> are supplied, <code>SourceType</code> must also be provided.
      *         </p>
      *         </li>
      *         <li>
@@ -503,7 +503,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * If a <code>SourceIds</code> value is supplied, <code>SourceType</code> must also be provided.
+     * If <code>SourceIds</code> are supplied, <code>SourceType</code> must also be provided.
      * </p>
      * </li>
      * <li>
@@ -548,7 +548,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      *        <ul>
      *        <li>
      *        <p>
-     *        If a <code>SourceIds</code> value is supplied, <code>SourceType</code> must also be provided.
+     *        If <code>SourceIds</code> are supplied, <code>SourceType</code> must also be provided.
      *        </p>
      *        </li>
      *        <li>
@@ -605,7 +605,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * If a <code>SourceIds</code> value is supplied, <code>SourceType</code> must also be provided.
+     * If <code>SourceIds</code> are supplied, <code>SourceType</code> must also be provided.
      * </p>
      * </li>
      * <li>
@@ -655,7 +655,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      *        <ul>
      *        <li>
      *        <p>
-     *        If a <code>SourceIds</code> value is supplied, <code>SourceType</code> must also be provided.
+     *        If <code>SourceIds</code> are supplied, <code>SourceType</code> must also be provided.
      *        </p>
      *        </li>
      *        <li>
@@ -714,7 +714,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * If a <code>SourceIds</code> value is supplied, <code>SourceType</code> must also be provided.
+     * If <code>SourceIds</code> are supplied, <code>SourceType</code> must also be provided.
      * </p>
      * </li>
      * <li>
@@ -759,7 +759,7 @@ public class CreateEventSubscriptionRequest extends com.amazonaws.AmazonWebServi
      *        <ul>
      *        <li>
      *        <p>
-     *        If a <code>SourceIds</code> value is supplied, <code>SourceType</code> must also be provided.
+     *        If <code>SourceIds</code> are supplied, <code>SourceType</code> must also be provided.
      *        </p>
      *        </li>
      *        <li>

@@ -5572,6 +5572,66 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Modifies whether a cluster can use AQUA (Advanced Query Accelerator).
+     * </p>
+     * 
+     * @param modifyAquaConfigurationRequest
+     * @return Result of the ModifyAquaConfiguration operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws UnsupportedOperationException
+     *         The requested operation isn't supported.
+     * @sample AmazonRedshift.ModifyAquaConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyAquaConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ModifyAquaConfigurationResult modifyAquaConfiguration(ModifyAquaConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyAquaConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final ModifyAquaConfigurationResult executeModifyAquaConfiguration(ModifyAquaConfigurationRequest modifyAquaConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyAquaConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyAquaConfigurationRequest> request = null;
+        Response<ModifyAquaConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyAquaConfigurationRequestMarshaller().marshall(super.beforeMarshalling(modifyAquaConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyAquaConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyAquaConfigurationResult> responseHandler = new StaxResponseHandler<ModifyAquaConfigurationResult>(
+                    new ModifyAquaConfigurationResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Modifies the settings for a cluster.
      * </p>
      * <p>

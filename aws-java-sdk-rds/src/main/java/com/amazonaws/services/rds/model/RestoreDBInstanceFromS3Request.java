@@ -232,7 +232,7 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      * The time range each day during which automated backups are created if automated backups are enabled. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
-     * >The Backup Window</a> in the <i>Amazon RDS User Guide.</i>
+     * >Backup window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * Constraints:
@@ -1863,7 +1863,7 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      * The time range each day during which automated backups are created if automated backups are enabled. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
-     * >The Backup Window</a> in the <i>Amazon RDS User Guide.</i>
+     * >Backup window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * Constraints:
@@ -1895,7 +1895,7 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      *        The time range each day during which automated backups are created if automated backups are enabled. For
      *        more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
-     *        >The Backup Window</a> in the <i>Amazon RDS User Guide.</i> </p>
+     *        >Backup window</a> in the <i>Amazon RDS User Guide.</i> </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -1931,7 +1931,7 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      * The time range each day during which automated backups are created if automated backups are enabled. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
-     * >The Backup Window</a> in the <i>Amazon RDS User Guide.</i>
+     * >Backup window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * Constraints:
@@ -1962,7 +1962,7 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      * @return The time range each day during which automated backups are created if automated backups are enabled. For
      *         more information, see <a href=
      *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
-     *         >The Backup Window</a> in the <i>Amazon RDS User Guide.</i> </p>
+     *         >Backup window</a> in the <i>Amazon RDS User Guide.</i> </p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -1998,7 +1998,7 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      * The time range each day during which automated backups are created if automated backups are enabled. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
-     * >The Backup Window</a> in the <i>Amazon RDS User Guide.</i>
+     * >Backup window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * Constraints:
@@ -2030,7 +2030,7 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      *        The time range each day during which automated backups are created if automated backups are enabled. For
      *        more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
-     *        >The Backup Window</a> in the <i>Amazon RDS User Guide.</i> </p>
+     *        >Backup window</a> in the <i>Amazon RDS User Guide.</i> </p>
      *        <p>
      *        Constraints:
      *        </p>

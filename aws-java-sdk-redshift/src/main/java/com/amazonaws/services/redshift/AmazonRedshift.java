@@ -2176,6 +2176,23 @@ public interface AmazonRedshift {
 
     /**
      * <p>
+     * Modifies whether a cluster can use AQUA (Advanced Query Accelerator).
+     * </p>
+     * 
+     * @param modifyAquaConfigurationRequest
+     * @return Result of the ModifyAquaConfiguration operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws UnsupportedOperationException
+     *         The requested operation isn't supported.
+     * @sample AmazonRedshift.ModifyAquaConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyAquaConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ModifyAquaConfigurationResult modifyAquaConfiguration(ModifyAquaConfigurationRequest modifyAquaConfigurationRequest);
+
+    /**
+     * <p>
      * Modifies the settings for a cluster.
      * </p>
      * <p>

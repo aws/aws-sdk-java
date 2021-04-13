@@ -502,6 +502,30 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private Boolean availabilityZoneRelocation;
+    /**
+     * <p>
+     * The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is created.
+     * Possible values include the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * disabled - Don't use AQUA.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * auto - Amazon Redshift determines whether to use AQUA.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String aquaConfigurationStatus;
 
     /**
      * <p>
@@ -3682,6 +3706,205 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is created.
+     * Possible values include the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * disabled - Don't use AQUA.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * auto - Amazon Redshift determines whether to use AQUA.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param aquaConfigurationStatus
+     *        The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is
+     *        created. Possible values include the following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        disabled - Don't use AQUA.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        auto - Amazon Redshift determines whether to use AQUA.
+     *        </p>
+     *        </li>
+     * @see AquaConfigurationStatus
+     */
+
+    public void setAquaConfigurationStatus(String aquaConfigurationStatus) {
+        this.aquaConfigurationStatus = aquaConfigurationStatus;
+    }
+
+    /**
+     * <p>
+     * The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is created.
+     * Possible values include the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * disabled - Don't use AQUA.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * auto - Amazon Redshift determines whether to use AQUA.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is
+     *         created. Possible values include the following.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         disabled - Don't use AQUA.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         auto - Amazon Redshift determines whether to use AQUA.
+     *         </p>
+     *         </li>
+     * @see AquaConfigurationStatus
+     */
+
+    public String getAquaConfigurationStatus() {
+        return this.aquaConfigurationStatus;
+    }
+
+    /**
+     * <p>
+     * The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is created.
+     * Possible values include the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * disabled - Don't use AQUA.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * auto - Amazon Redshift determines whether to use AQUA.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param aquaConfigurationStatus
+     *        The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is
+     *        created. Possible values include the following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        disabled - Don't use AQUA.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        auto - Amazon Redshift determines whether to use AQUA.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AquaConfigurationStatus
+     */
+
+    public CreateClusterRequest withAquaConfigurationStatus(String aquaConfigurationStatus) {
+        setAquaConfigurationStatus(aquaConfigurationStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is created.
+     * Possible values include the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * disabled - Don't use AQUA.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * auto - Amazon Redshift determines whether to use AQUA.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param aquaConfigurationStatus
+     *        The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is
+     *        created. Possible values include the following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        disabled - Don't use AQUA.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        auto - Amazon Redshift determines whether to use AQUA.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AquaConfigurationStatus
+     */
+
+    public CreateClusterRequest withAquaConfigurationStatus(AquaConfigurationStatus aquaConfigurationStatus) {
+        this.aquaConfigurationStatus = aquaConfigurationStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3754,7 +3977,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getSnapshotScheduleIdentifier() != null)
             sb.append("SnapshotScheduleIdentifier: ").append(getSnapshotScheduleIdentifier()).append(",");
         if (getAvailabilityZoneRelocation() != null)
-            sb.append("AvailabilityZoneRelocation: ").append(getAvailabilityZoneRelocation());
+            sb.append("AvailabilityZoneRelocation: ").append(getAvailabilityZoneRelocation()).append(",");
+        if (getAquaConfigurationStatus() != null)
+            sb.append("AquaConfigurationStatus: ").append(getAquaConfigurationStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -3896,6 +4121,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getAvailabilityZoneRelocation() != null && other.getAvailabilityZoneRelocation().equals(this.getAvailabilityZoneRelocation()) == false)
             return false;
+        if (other.getAquaConfigurationStatus() == null ^ this.getAquaConfigurationStatus() == null)
+            return false;
+        if (other.getAquaConfigurationStatus() != null && other.getAquaConfigurationStatus().equals(this.getAquaConfigurationStatus()) == false)
+            return false;
         return true;
     }
 
@@ -3935,6 +4164,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getMaintenanceTrackName() == null) ? 0 : getMaintenanceTrackName().hashCode());
         hashCode = prime * hashCode + ((getSnapshotScheduleIdentifier() == null) ? 0 : getSnapshotScheduleIdentifier().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZoneRelocation() == null) ? 0 : getAvailabilityZoneRelocation().hashCode());
+        hashCode = prime * hashCode + ((getAquaConfigurationStatus() == null) ? 0 : getAquaConfigurationStatus().hashCode());
         return hashCode;
     }
 

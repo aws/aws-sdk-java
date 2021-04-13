@@ -128,6 +128,10 @@ public class AssumeRoleRequestMarshaller implements Marshaller<Request<AssumeRol
             request.addParameter("TokenCode", StringUtils.fromString(assumeRoleRequest.getTokenCode()));
         }
 
+        if (assumeRoleRequest.getSourceIdentity() != null) {
+            request.addParameter("SourceIdentity", StringUtils.fromString(assumeRoleRequest.getSourceIdentity()));
+        }
+
         return request;
     }
 

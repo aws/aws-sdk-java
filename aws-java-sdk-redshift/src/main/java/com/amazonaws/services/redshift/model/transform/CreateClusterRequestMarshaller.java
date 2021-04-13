@@ -210,6 +210,10 @@ public class CreateClusterRequestMarshaller implements Marshaller<Request<Create
             request.addParameter("AvailabilityZoneRelocation", StringUtils.fromBoolean(createClusterRequest.getAvailabilityZoneRelocation()));
         }
 
+        if (createClusterRequest.getAquaConfigurationStatus() != null) {
+            request.addParameter("AquaConfigurationStatus", StringUtils.fromString(createClusterRequest.getAquaConfigurationStatus()));
+        }
+
         return request;
     }
 

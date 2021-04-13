@@ -229,11 +229,16 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The number of days to retain automated backups. Setting this parameter to a positive number enables backups.
      * Setting this parameter to 0 disables automated backups.
      * </p>
+     * <note>
      * <p>
-     * Changing this parameter can result in an outage if you change from 0 to a non-zero value or from a non-zero value
-     * to 0. These changes are applied during the next maintenance window unless the <code>ApplyImmediately</code>
-     * parameter is enabled for this request. If you change the parameter from one non-zero value to another non-zero
-     * value, the change is asynchronously applied as soon as possible.
+     * Enabling and disabling backups can result in a brief I/O suspension that lasts from a few seconds to a few
+     * minutes, depending on the size and class of your DB instance.
+     * </p>
+     * </note>
+     * <p>
+     * These changes are applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter
+     * is enabled for this request. If you change the parameter from one non-zero value to another non-zero value, the
+     * change is asynchronously applied as soon as possible.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -276,7 +281,10 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The daily time range during which automated backups are created if automated backups are enabled, as determined
      * by the <code>BackupRetentionPeriod</code> parameter. Changing this parameter doesn't result in an outage and the
-     * change is asynchronously applied as soon as possible.
+     * change is asynchronously applied as soon as possible. The default is a 30-minute window selected at random from
+     * an 8-hour block of time for each AWS Region. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
+     * >Backup window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -320,6 +328,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * window is changed to include the current time, then changing this parameter will cause a reboot of the DB
      * instance. If moving this window to the current time, there must be at least 30 minutes between the current time
      * and end of the window to ensure pending changes are applied.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance"
+     * >Amazon RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * Default: Uses existing setting
@@ -2245,11 +2258,16 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The number of days to retain automated backups. Setting this parameter to a positive number enables backups.
      * Setting this parameter to 0 disables automated backups.
      * </p>
+     * <note>
      * <p>
-     * Changing this parameter can result in an outage if you change from 0 to a non-zero value or from a non-zero value
-     * to 0. These changes are applied during the next maintenance window unless the <code>ApplyImmediately</code>
-     * parameter is enabled for this request. If you change the parameter from one non-zero value to another non-zero
-     * value, the change is asynchronously applied as soon as possible.
+     * Enabling and disabling backups can result in a brief I/O suspension that lasts from a few seconds to a few
+     * minutes, depending on the size and class of your DB instance.
+     * </p>
+     * </note>
+     * <p>
+     * These changes are applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter
+     * is enabled for this request. If you change the parameter from one non-zero value to another non-zero value, the
+     * change is asynchronously applied as soon as possible.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -2289,12 +2307,16 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param backupRetentionPeriod
      *        The number of days to retain automated backups. Setting this parameter to a positive number enables
-     *        backups. Setting this parameter to 0 disables automated backups.</p>
+     *        backups. Setting this parameter to 0 disables automated backups.</p> <note>
      *        <p>
-     *        Changing this parameter can result in an outage if you change from 0 to a non-zero value or from a
-     *        non-zero value to 0. These changes are applied during the next maintenance window unless the
-     *        <code>ApplyImmediately</code> parameter is enabled for this request. If you change the parameter from one
-     *        non-zero value to another non-zero value, the change is asynchronously applied as soon as possible.
+     *        Enabling and disabling backups can result in a brief I/O suspension that lasts from a few seconds to a few
+     *        minutes, depending on the size and class of your DB instance.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        These changes are applied during the next maintenance window unless the <code>ApplyImmediately</code>
+     *        parameter is enabled for this request. If you change the parameter from one non-zero value to another
+     *        non-zero value, the change is asynchronously applied as soon as possible.
      *        </p>
      *        <p>
      *        <b>Amazon Aurora</b>
@@ -2341,11 +2363,16 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The number of days to retain automated backups. Setting this parameter to a positive number enables backups.
      * Setting this parameter to 0 disables automated backups.
      * </p>
+     * <note>
      * <p>
-     * Changing this parameter can result in an outage if you change from 0 to a non-zero value or from a non-zero value
-     * to 0. These changes are applied during the next maintenance window unless the <code>ApplyImmediately</code>
-     * parameter is enabled for this request. If you change the parameter from one non-zero value to another non-zero
-     * value, the change is asynchronously applied as soon as possible.
+     * Enabling and disabling backups can result in a brief I/O suspension that lasts from a few seconds to a few
+     * minutes, depending on the size and class of your DB instance.
+     * </p>
+     * </note>
+     * <p>
+     * These changes are applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter
+     * is enabled for this request. If you change the parameter from one non-zero value to another non-zero value, the
+     * change is asynchronously applied as soon as possible.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -2384,12 +2411,16 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * 
      * @return The number of days to retain automated backups. Setting this parameter to a positive number enables
-     *         backups. Setting this parameter to 0 disables automated backups.</p>
+     *         backups. Setting this parameter to 0 disables automated backups.</p> <note>
      *         <p>
-     *         Changing this parameter can result in an outage if you change from 0 to a non-zero value or from a
-     *         non-zero value to 0. These changes are applied during the next maintenance window unless the
-     *         <code>ApplyImmediately</code> parameter is enabled for this request. If you change the parameter from one
-     *         non-zero value to another non-zero value, the change is asynchronously applied as soon as possible.
+     *         Enabling and disabling backups can result in a brief I/O suspension that lasts from a few seconds to a
+     *         few minutes, depending on the size and class of your DB instance.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         These changes are applied during the next maintenance window unless the <code>ApplyImmediately</code>
+     *         parameter is enabled for this request. If you change the parameter from one non-zero value to another
+     *         non-zero value, the change is asynchronously applied as soon as possible.
      *         </p>
      *         <p>
      *         <b>Amazon Aurora</b>
@@ -2436,11 +2467,16 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The number of days to retain automated backups. Setting this parameter to a positive number enables backups.
      * Setting this parameter to 0 disables automated backups.
      * </p>
+     * <note>
      * <p>
-     * Changing this parameter can result in an outage if you change from 0 to a non-zero value or from a non-zero value
-     * to 0. These changes are applied during the next maintenance window unless the <code>ApplyImmediately</code>
-     * parameter is enabled for this request. If you change the parameter from one non-zero value to another non-zero
-     * value, the change is asynchronously applied as soon as possible.
+     * Enabling and disabling backups can result in a brief I/O suspension that lasts from a few seconds to a few
+     * minutes, depending on the size and class of your DB instance.
+     * </p>
+     * </note>
+     * <p>
+     * These changes are applied during the next maintenance window unless the <code>ApplyImmediately</code> parameter
+     * is enabled for this request. If you change the parameter from one non-zero value to another non-zero value, the
+     * change is asynchronously applied as soon as possible.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -2480,12 +2516,16 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param backupRetentionPeriod
      *        The number of days to retain automated backups. Setting this parameter to a positive number enables
-     *        backups. Setting this parameter to 0 disables automated backups.</p>
+     *        backups. Setting this parameter to 0 disables automated backups.</p> <note>
      *        <p>
-     *        Changing this parameter can result in an outage if you change from 0 to a non-zero value or from a
-     *        non-zero value to 0. These changes are applied during the next maintenance window unless the
-     *        <code>ApplyImmediately</code> parameter is enabled for this request. If you change the parameter from one
-     *        non-zero value to another non-zero value, the change is asynchronously applied as soon as possible.
+     *        Enabling and disabling backups can result in a brief I/O suspension that lasts from a few seconds to a few
+     *        minutes, depending on the size and class of your DB instance.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        These changes are applied during the next maintenance window unless the <code>ApplyImmediately</code>
+     *        parameter is enabled for this request. If you change the parameter from one non-zero value to another
+     *        non-zero value, the change is asynchronously applied as soon as possible.
      *        </p>
      *        <p>
      *        <b>Amazon Aurora</b>
@@ -2533,7 +2573,10 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The daily time range during which automated backups are created if automated backups are enabled, as determined
      * by the <code>BackupRetentionPeriod</code> parameter. Changing this parameter doesn't result in an outage and the
-     * change is asynchronously applied as soon as possible.
+     * change is asynchronously applied as soon as possible. The default is a 30-minute window selected at random from
+     * an 8-hour block of time for each AWS Region. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
+     * >Backup window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -2571,7 +2614,10 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * @param preferredBackupWindow
      *        The daily time range during which automated backups are created if automated backups are enabled, as
      *        determined by the <code>BackupRetentionPeriod</code> parameter. Changing this parameter doesn't result in
-     *        an outage and the change is asynchronously applied as soon as possible. </p>
+     *        an outage and the change is asynchronously applied as soon as possible. The default is a 30-minute window
+     *        selected at random from an 8-hour block of time for each AWS Region. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
+     *        >Backup window</a> in the <i>Amazon RDS User Guide.</i> </p>
      *        <p>
      *        <b>Amazon Aurora</b>
      *        </p>
@@ -2613,7 +2659,10 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The daily time range during which automated backups are created if automated backups are enabled, as determined
      * by the <code>BackupRetentionPeriod</code> parameter. Changing this parameter doesn't result in an outage and the
-     * change is asynchronously applied as soon as possible.
+     * change is asynchronously applied as soon as possible. The default is a 30-minute window selected at random from
+     * an 8-hour block of time for each AWS Region. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
+     * >Backup window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -2650,7 +2699,10 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @return The daily time range during which automated backups are created if automated backups are enabled, as
      *         determined by the <code>BackupRetentionPeriod</code> parameter. Changing this parameter doesn't result in
-     *         an outage and the change is asynchronously applied as soon as possible. </p>
+     *         an outage and the change is asynchronously applied as soon as possible. The default is a 30-minute window
+     *         selected at random from an 8-hour block of time for each AWS Region. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
+     *         >Backup window</a> in the <i>Amazon RDS User Guide.</i> </p>
      *         <p>
      *         <b>Amazon Aurora</b>
      *         </p>
@@ -2692,7 +2744,10 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The daily time range during which automated backups are created if automated backups are enabled, as determined
      * by the <code>BackupRetentionPeriod</code> parameter. Changing this parameter doesn't result in an outage and the
-     * change is asynchronously applied as soon as possible.
+     * change is asynchronously applied as soon as possible. The default is a 30-minute window selected at random from
+     * an 8-hour block of time for each AWS Region. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
+     * >Backup window</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
@@ -2730,7 +2785,10 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * @param preferredBackupWindow
      *        The daily time range during which automated backups are created if automated backups are enabled, as
      *        determined by the <code>BackupRetentionPeriod</code> parameter. Changing this parameter doesn't result in
-     *        an outage and the change is asynchronously applied as soon as possible. </p>
+     *        an outage and the change is asynchronously applied as soon as possible. The default is a 30-minute window
+     *        selected at random from an 8-hour block of time for each AWS Region. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
+     *        >Backup window</a> in the <i>Amazon RDS User Guide.</i> </p>
      *        <p>
      *        <b>Amazon Aurora</b>
      *        </p>
@@ -2780,6 +2838,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * and end of the window to ensure pending changes are applied.
      * </p>
      * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance"
+     * >Amazon RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * <p>
      * Default: Uses existing setting
      * </p>
      * <p>
@@ -2799,6 +2862,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        maintenance window is changed to include the current time, then changing this parameter will cause a
      *        reboot of the DB instance. If moving this window to the current time, there must be at least 30 minutes
      *        between the current time and end of the window to ensure pending changes are applied.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance"
+     *        >Amazon RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
+     *        </p>
      *        <p>
      *        Default: Uses existing setting
      *        </p>
@@ -2826,6 +2894,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * and end of the window to ensure pending changes are applied.
      * </p>
      * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance"
+     * >Amazon RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * <p>
      * Default: Uses existing setting
      * </p>
      * <p>
@@ -2844,6 +2917,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         and the maintenance window is changed to include the current time, then changing this parameter will
      *         cause a reboot of the DB instance. If moving this window to the current time, there must be at least 30
      *         minutes between the current time and end of the window to ensure pending changes are applied.</p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance"
+     *         >Amazon RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
+     *         </p>
      *         <p>
      *         Default: Uses existing setting
      *         </p>
@@ -2871,6 +2949,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * and end of the window to ensure pending changes are applied.
      * </p>
      * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance"
+     * >Amazon RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * <p>
      * Default: Uses existing setting
      * </p>
      * <p>
@@ -2890,6 +2973,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        maintenance window is changed to include the current time, then changing this parameter will cause a
      *        reboot of the DB instance. If moving this window to the current time, there must be at least 30 minutes
      *        between the current time and end of the window to ensure pending changes are applied.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance"
+     *        >Amazon RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i>
+     *        </p>
      *        <p>
      *        Default: Uses existing setting
      *        </p>

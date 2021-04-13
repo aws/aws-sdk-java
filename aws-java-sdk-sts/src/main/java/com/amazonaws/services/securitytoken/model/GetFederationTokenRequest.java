@@ -66,14 +66,14 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * that are granted by the session policies.
      * </p>
      * <p>
-     * The plain text that you use for both inline and managed session policies can't exceed 2,048 characters. The JSON
+     * The plaintext that you use for both inline and managed session policies can't exceed 2,048 characters. The JSON
      * policy characters can be any ASCII character from the space character to the end of the valid character list (
      * through \u00FF). It can also include the tab ( ), linefeed ( ), and carriage return ( ) characters.
      * </p>
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -89,7 +89,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * You must pass an inline or managed <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session policy</a>
      * to this operation. You can pass a single JSON policy document to use as an inline session policy. You can also
-     * specify up to 10 managed policies to use as managed session policies. The plain text that you use for both inline
+     * specify up to 10 managed policies to use as managed session policies. The plaintext that you use for both inline
      * and managed session policies can't exceed 2,048 characters. You can provide up to 10 managed policy ARNs. For
      * more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
@@ -116,7 +116,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -140,7 +140,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * Session Tags in STS</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * This parameter is optional. You can pass up to 50 session tags. The plain text session tag keys can’t exceed 128
+     * This parameter is optional. You can pass up to 50 session tags. The plaintext session tag keys can’t exceed 128
      * characters and the values can’t exceed 256 characters. For these and additional limits, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length"
      * >IAM and STS Character Limits</a> in the <i>IAM User Guide</i>.
@@ -148,7 +148,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -296,14 +296,14 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * that are granted by the session policies.
      * </p>
      * <p>
-     * The plain text that you use for both inline and managed session policies can't exceed 2,048 characters. The JSON
+     * The plaintext that you use for both inline and managed session policies can't exceed 2,048 characters. The JSON
      * policy characters can be any ASCII character from the space character to the end of the valid character list (
      * through \u00FF). It can also include the tab ( ), linefeed ( ), and carriage return ( ) characters.
      * </p>
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -336,15 +336,15 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      *        to the permissions that are granted by the session policies.
      *        </p>
      *        <p>
-     *        The plain text that you use for both inline and managed session policies can't exceed 2,048 characters.
-     *        The JSON policy characters can be any ASCII character from the space character to the end of the valid
+     *        The plaintext that you use for both inline and managed session policies can't exceed 2,048 characters. The
+     *        JSON policy characters can be any ASCII character from the space character to the end of the valid
      *        character list ( through \u00FF). It can also include the tab ( ), linefeed ( ), and carriage return ( )
      *        characters.
      *        </p>
      *        <note>
      *        <p>
      *        An AWS conversion compresses the passed session policies and session tags into a packed binary format that
-     *        has a separate limit. Your request can fail for this limit even if your plain text meets the other
+     *        has a separate limit. Your request can fail for this limit even if your plaintext meets the other
      *        requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
      *        policies and tags for your request are to the upper size limit.
      *        </p>
@@ -383,14 +383,14 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * that are granted by the session policies.
      * </p>
      * <p>
-     * The plain text that you use for both inline and managed session policies can't exceed 2,048 characters. The JSON
+     * The plaintext that you use for both inline and managed session policies can't exceed 2,048 characters. The JSON
      * policy characters can be any ASCII character from the space character to the end of the valid character list (
      * through \u00FF). It can also include the tab ( ), linefeed ( ), and carriage return ( ) characters.
      * </p>
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -422,7 +422,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      *         to the permissions that are granted by the session policies.
      *         </p>
      *         <p>
-     *         The plain text that you use for both inline and managed session policies can't exceed 2,048 characters.
+     *         The plaintext that you use for both inline and managed session policies can't exceed 2,048 characters.
      *         The JSON policy characters can be any ASCII character from the space character to the end of the valid
      *         character list ( through \u00FF). It can also include the tab ( ), linefeed ( ), and carriage return ( )
      *         characters.
@@ -430,7 +430,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      *         <note>
      *         <p>
      *         An AWS conversion compresses the passed session policies and session tags into a packed binary format
-     *         that has a separate limit. Your request can fail for this limit even if your plain text meets the other
+     *         that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
      *         requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
      *         policies and tags for your request are to the upper size limit.
      *         </p>
@@ -469,14 +469,14 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * that are granted by the session policies.
      * </p>
      * <p>
-     * The plain text that you use for both inline and managed session policies can't exceed 2,048 characters. The JSON
+     * The plaintext that you use for both inline and managed session policies can't exceed 2,048 characters. The JSON
      * policy characters can be any ASCII character from the space character to the end of the valid character list (
      * through \u00FF). It can also include the tab ( ), linefeed ( ), and carriage return ( ) characters.
      * </p>
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -509,15 +509,15 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      *        to the permissions that are granted by the session policies.
      *        </p>
      *        <p>
-     *        The plain text that you use for both inline and managed session policies can't exceed 2,048 characters.
-     *        The JSON policy characters can be any ASCII character from the space character to the end of the valid
+     *        The plaintext that you use for both inline and managed session policies can't exceed 2,048 characters. The
+     *        JSON policy characters can be any ASCII character from the space character to the end of the valid
      *        character list ( through \u00FF). It can also include the tab ( ), linefeed ( ), and carriage return ( )
      *        characters.
      *        </p>
      *        <note>
      *        <p>
      *        An AWS conversion compresses the passed session policies and session tags into a packed binary format that
-     *        has a separate limit. Your request can fail for this limit even if your plain text meets the other
+     *        has a separate limit. Your request can fail for this limit even if your plaintext meets the other
      *        requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
      *        policies and tags for your request are to the upper size limit.
      *        </p>
@@ -538,7 +538,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * You must pass an inline or managed <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session policy</a>
      * to this operation. You can pass a single JSON policy document to use as an inline session policy. You can also
-     * specify up to 10 managed policies to use as managed session policies. The plain text that you use for both inline
+     * specify up to 10 managed policies to use as managed session policies. The plaintext that you use for both inline
      * and managed session policies can't exceed 2,048 characters. You can provide up to 10 managed policy ARNs. For
      * more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
@@ -565,7 +565,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -578,7 +578,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      *         You must pass an inline or managed <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
      *         policy</a> to this operation. You can pass a single JSON policy document to use as an inline session
-     *         policy. You can also specify up to 10 managed policies to use as managed session policies. The plain text
+     *         policy. You can also specify up to 10 managed policies to use as managed session policies. The plaintext
      *         that you use for both inline and managed session policies can't exceed 2,048 characters. You can provide
      *         up to 10 managed policy ARNs. For more information about ARNs, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
@@ -605,7 +605,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      *         <note>
      *         <p>
      *         An AWS conversion compresses the passed session policies and session tags into a packed binary format
-     *         that has a separate limit. Your request can fail for this limit even if your plain text meets the other
+     *         that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
      *         requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
      *         policies and tags for your request are to the upper size limit.
      *         </p>
@@ -624,7 +624,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * You must pass an inline or managed <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session policy</a>
      * to this operation. You can pass a single JSON policy document to use as an inline session policy. You can also
-     * specify up to 10 managed policies to use as managed session policies. The plain text that you use for both inline
+     * specify up to 10 managed policies to use as managed session policies. The plaintext that you use for both inline
      * and managed session policies can't exceed 2,048 characters. You can provide up to 10 managed policy ARNs. For
      * more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
@@ -651,7 +651,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -665,7 +665,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      *        You must pass an inline or managed <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
      *        policy</a> to this operation. You can pass a single JSON policy document to use as an inline session
-     *        policy. You can also specify up to 10 managed policies to use as managed session policies. The plain text
+     *        policy. You can also specify up to 10 managed policies to use as managed session policies. The plaintext
      *        that you use for both inline and managed session policies can't exceed 2,048 characters. You can provide
      *        up to 10 managed policy ARNs. For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
@@ -692,7 +692,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      *        <note>
      *        <p>
      *        An AWS conversion compresses the passed session policies and session tags into a packed binary format that
-     *        has a separate limit. Your request can fail for this limit even if your plain text meets the other
+     *        has a separate limit. Your request can fail for this limit even if your plaintext meets the other
      *        requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
      *        policies and tags for your request are to the upper size limit.
      *        </p>
@@ -716,7 +716,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * You must pass an inline or managed <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session policy</a>
      * to this operation. You can pass a single JSON policy document to use as an inline session policy. You can also
-     * specify up to 10 managed policies to use as managed session policies. The plain text that you use for both inline
+     * specify up to 10 managed policies to use as managed session policies. The plaintext that you use for both inline
      * and managed session policies can't exceed 2,048 characters. You can provide up to 10 managed policy ARNs. For
      * more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
@@ -743,7 +743,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -762,7 +762,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      *        You must pass an inline or managed <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
      *        policy</a> to this operation. You can pass a single JSON policy document to use as an inline session
-     *        policy. You can also specify up to 10 managed policies to use as managed session policies. The plain text
+     *        policy. You can also specify up to 10 managed policies to use as managed session policies. The plaintext
      *        that you use for both inline and managed session policies can't exceed 2,048 characters. You can provide
      *        up to 10 managed policy ARNs. For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
@@ -789,7 +789,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      *        <note>
      *        <p>
      *        An AWS conversion compresses the passed session policies and session tags into a packed binary format that
-     *        has a separate limit. Your request can fail for this limit even if your plain text meets the other
+     *        has a separate limit. Your request can fail for this limit even if your plaintext meets the other
      *        requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
      *        policies and tags for your request are to the upper size limit.
      *        </p>
@@ -815,7 +815,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * You must pass an inline or managed <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session policy</a>
      * to this operation. You can pass a single JSON policy document to use as an inline session policy. You can also
-     * specify up to 10 managed policies to use as managed session policies. The plain text that you use for both inline
+     * specify up to 10 managed policies to use as managed session policies. The plaintext that you use for both inline
      * and managed session policies can't exceed 2,048 characters. You can provide up to 10 managed policy ARNs. For
      * more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
@@ -842,7 +842,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -856,7 +856,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      *        You must pass an inline or managed <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
      *        policy</a> to this operation. You can pass a single JSON policy document to use as an inline session
-     *        policy. You can also specify up to 10 managed policies to use as managed session policies. The plain text
+     *        policy. You can also specify up to 10 managed policies to use as managed session policies. The plaintext
      *        that you use for both inline and managed session policies can't exceed 2,048 characters. You can provide
      *        up to 10 managed policy ARNs. For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
@@ -883,7 +883,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      *        <note>
      *        <p>
      *        An AWS conversion compresses the passed session policies and session tags into a packed binary format that
-     *        has a separate limit. Your request can fail for this limit even if your plain text meets the other
+     *        has a separate limit. Your request can fail for this limit even if your plaintext meets the other
      *        requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
      *        policies and tags for your request are to the upper size limit.
      *        </p>
@@ -966,7 +966,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * Session Tags in STS</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * This parameter is optional. You can pass up to 50 session tags. The plain text session tag keys can’t exceed 128
+     * This parameter is optional. You can pass up to 50 session tags. The plaintext session tag keys can’t exceed 128
      * characters and the values can’t exceed 256 characters. For these and additional limits, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length"
      * >IAM and STS Character Limits</a> in the <i>IAM User Guide</i>.
@@ -974,7 +974,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -996,7 +996,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in
      *         STS</a> in the <i>IAM User Guide</i>.</p>
      *         <p>
-     *         This parameter is optional. You can pass up to 50 session tags. The plain text session tag keys can’t
+     *         This parameter is optional. You can pass up to 50 session tags. The plaintext session tag keys can’t
      *         exceed 128 characters and the values can’t exceed 256 characters. For these and additional limits, see <a
      *         href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length"
@@ -1005,7 +1005,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      *         <note>
      *         <p>
      *         An AWS conversion compresses the passed session policies and session tags into a packed binary format
-     *         that has a separate limit. Your request can fail for this limit even if your plain text meets the other
+     *         that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
      *         requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
      *         policies and tags for your request are to the upper size limit.
      *         </p>
@@ -1033,7 +1033,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * Session Tags in STS</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * This parameter is optional. You can pass up to 50 session tags. The plain text session tag keys can’t exceed 128
+     * This parameter is optional. You can pass up to 50 session tags. The plaintext session tag keys can’t exceed 128
      * characters and the values can’t exceed 256 characters. For these and additional limits, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length"
      * >IAM and STS Character Limits</a> in the <i>IAM User Guide</i>.
@@ -1041,7 +1041,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -1064,7 +1064,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in
      *        STS</a> in the <i>IAM User Guide</i>.</p>
      *        <p>
-     *        This parameter is optional. You can pass up to 50 session tags. The plain text session tag keys can’t
+     *        This parameter is optional. You can pass up to 50 session tags. The plaintext session tag keys can’t
      *        exceed 128 characters and the values can’t exceed 256 characters. For these and additional limits, see <a
      *        href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length"
@@ -1073,7 +1073,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      *        <note>
      *        <p>
      *        An AWS conversion compresses the passed session policies and session tags into a packed binary format that
-     *        has a separate limit. Your request can fail for this limit even if your plain text meets the other
+     *        has a separate limit. Your request can fail for this limit even if your plaintext meets the other
      *        requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
      *        policies and tags for your request are to the upper size limit.
      *        </p>
@@ -1106,7 +1106,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * Session Tags in STS</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * This parameter is optional. You can pass up to 50 session tags. The plain text session tag keys can’t exceed 128
+     * This parameter is optional. You can pass up to 50 session tags. The plaintext session tag keys can’t exceed 128
      * characters and the values can’t exceed 256 characters. For these and additional limits, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length"
      * >IAM and STS Character Limits</a> in the <i>IAM User Guide</i>.
@@ -1114,7 +1114,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -1142,7 +1142,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in
      *        STS</a> in the <i>IAM User Guide</i>.</p>
      *        <p>
-     *        This parameter is optional. You can pass up to 50 session tags. The plain text session tag keys can’t
+     *        This parameter is optional. You can pass up to 50 session tags. The plaintext session tag keys can’t
      *        exceed 128 characters and the values can’t exceed 256 characters. For these and additional limits, see <a
      *        href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length"
@@ -1151,7 +1151,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      *        <note>
      *        <p>
      *        An AWS conversion compresses the passed session policies and session tags into a packed binary format that
-     *        has a separate limit. Your request can fail for this limit even if your plain text meets the other
+     *        has a separate limit. Your request can fail for this limit even if your plaintext meets the other
      *        requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
      *        policies and tags for your request are to the upper size limit.
      *        </p>
@@ -1186,7 +1186,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * Session Tags in STS</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * This parameter is optional. You can pass up to 50 session tags. The plain text session tag keys can’t exceed 128
+     * This parameter is optional. You can pass up to 50 session tags. The plaintext session tag keys can’t exceed 128
      * characters and the values can’t exceed 256 characters. For these and additional limits, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length"
      * >IAM and STS Character Limits</a> in the <i>IAM User Guide</i>.
@@ -1194,7 +1194,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -1217,7 +1217,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in
      *        STS</a> in the <i>IAM User Guide</i>.</p>
      *        <p>
-     *        This parameter is optional. You can pass up to 50 session tags. The plain text session tag keys can’t
+     *        This parameter is optional. You can pass up to 50 session tags. The plaintext session tag keys can’t
      *        exceed 128 characters and the values can’t exceed 256 characters. For these and additional limits, see <a
      *        href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length"
@@ -1226,7 +1226,7 @@ public class GetFederationTokenRequest extends com.amazonaws.AmazonWebServiceReq
      *        <note>
      *        <p>
      *        An AWS conversion compresses the passed session policies and session tags into a packed binary format that
-     *        has a separate limit. Your request can fail for this limit even if your plain text meets the other
+     *        has a separate limit. Your request can fail for this limit even if your plaintext meets the other
      *        requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
      *        policies and tags for your request are to the upper size limit.
      *        </p>

@@ -82,6 +82,11 @@ public class AssumeRoleWithSAMLResultStaxUnmarshaller implements Unmarshaller<As
                     assumeRoleWithSAMLResult.setNameQualifier(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("SourceIdentity", targetDepth)) {
+                    assumeRoleWithSAMLResult.setSourceIdentity(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return assumeRoleWithSAMLResult;

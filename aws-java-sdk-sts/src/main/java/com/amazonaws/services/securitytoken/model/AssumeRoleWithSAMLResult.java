@@ -87,9 +87,28 @@ public class AssumeRoleWithSAMLResult extends com.amazonaws.AmazonWebServiceResu
     private String audience;
     /**
      * <p>
-     * A hash value based on the concatenation of the <code>Issuer</code> response value, the AWS account ID, and the
-     * friendly name (the last part of the ARN) of the SAML provider in IAM. The combination of
-     * <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a federated user.
+     * A hash value based on the concatenation of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The <code>Issuer</code> response value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The AWS account ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The friendly name (the last part of the ARN) of the SAML provider in IAM.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a
+     * federated user.
      * </p>
      * <p>
      * The following pseudocode shows how the hash value is calculated:
@@ -99,6 +118,28 @@ public class AssumeRoleWithSAMLResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private String nameQualifier;
+    /**
+     * <p>
+     * The value in the <code>SourceIdentity</code> attribute in the SAML assertion.
+     * </p>
+     * <p>
+     * You can require users to set a source identity value when they assume a role. You do this by using the
+     * <code>sts:SourceIdentity</code> condition key in a role trust policy. That way, actions that are taken with the
+     * role are associated with that user. After the source identity is set, the value cannot be changed. It is present
+     * in the request for all actions that are taken by the role and persists across <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts#iam-term-role-chaining"
+     * >chained role</a> sessions. You can configure your SAML identity provider to use an attribute associated with
+     * your users, like user name or email, as the source identity when calling <code>AssumeRoleWithSAML</code>. You do
+     * this by adding an attribute to the SAML assertion. For more information about using source identity, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
+     * and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-
+     * </p>
+     */
+    private String sourceIdentity;
 
     /**
      * <p>
@@ -475,9 +516,28 @@ public class AssumeRoleWithSAMLResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A hash value based on the concatenation of the <code>Issuer</code> response value, the AWS account ID, and the
-     * friendly name (the last part of the ARN) of the SAML provider in IAM. The combination of
-     * <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a federated user.
+     * A hash value based on the concatenation of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The <code>Issuer</code> response value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The AWS account ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The friendly name (the last part of the ARN) of the SAML provider in IAM.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a
+     * federated user.
      * </p>
      * <p>
      * The following pseudocode shows how the hash value is calculated:
@@ -487,9 +547,27 @@ public class AssumeRoleWithSAMLResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param nameQualifier
-     *        A hash value based on the concatenation of the <code>Issuer</code> response value, the AWS account ID, and
-     *        the friendly name (the last part of the ARN) of the SAML provider in IAM. The combination of
-     *        <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a federated user.
+     *        A hash value based on the concatenation of the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The <code>Issuer</code> response value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The AWS account ID.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The friendly name (the last part of the ARN) of the SAML provider in IAM.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a
+     *        federated user.
      *        </p>
      *        <p>
      *        The following pseudocode shows how the hash value is calculated:
@@ -504,9 +582,28 @@ public class AssumeRoleWithSAMLResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A hash value based on the concatenation of the <code>Issuer</code> response value, the AWS account ID, and the
-     * friendly name (the last part of the ARN) of the SAML provider in IAM. The combination of
-     * <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a federated user.
+     * A hash value based on the concatenation of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The <code>Issuer</code> response value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The AWS account ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The friendly name (the last part of the ARN) of the SAML provider in IAM.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a
+     * federated user.
      * </p>
      * <p>
      * The following pseudocode shows how the hash value is calculated:
@@ -515,9 +612,27 @@ public class AssumeRoleWithSAMLResult extends com.amazonaws.AmazonWebServiceResu
      * <code>BASE64 ( SHA1 ( "https://example.com/saml" + "123456789012" + "/MySAMLIdP" ) )</code>
      * </p>
      * 
-     * @return A hash value based on the concatenation of the <code>Issuer</code> response value, the AWS account ID,
-     *         and the friendly name (the last part of the ARN) of the SAML provider in IAM. The combination of
-     *         <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a federated user.
+     * @return A hash value based on the concatenation of the following:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The <code>Issuer</code> response value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The AWS account ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The friendly name (the last part of the ARN) of the SAML provider in IAM.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a
+     *         federated user.
      *         </p>
      *         <p>
      *         The following pseudocode shows how the hash value is calculated:
@@ -532,9 +647,28 @@ public class AssumeRoleWithSAMLResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A hash value based on the concatenation of the <code>Issuer</code> response value, the AWS account ID, and the
-     * friendly name (the last part of the ARN) of the SAML provider in IAM. The combination of
-     * <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a federated user.
+     * A hash value based on the concatenation of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The <code>Issuer</code> response value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The AWS account ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The friendly name (the last part of the ARN) of the SAML provider in IAM.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a
+     * federated user.
      * </p>
      * <p>
      * The following pseudocode shows how the hash value is calculated:
@@ -544,9 +678,27 @@ public class AssumeRoleWithSAMLResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param nameQualifier
-     *        A hash value based on the concatenation of the <code>Issuer</code> response value, the AWS account ID, and
-     *        the friendly name (the last part of the ARN) of the SAML provider in IAM. The combination of
-     *        <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a federated user.
+     *        A hash value based on the concatenation of the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The <code>Issuer</code> response value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The AWS account ID.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The friendly name (the last part of the ARN) of the SAML provider in IAM.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The combination of <code>NameQualifier</code> and <code>Subject</code> can be used to uniquely identify a
+     *        federated user.
      *        </p>
      *        <p>
      *        The following pseudocode shows how the hash value is calculated:
@@ -558,6 +710,148 @@ public class AssumeRoleWithSAMLResult extends com.amazonaws.AmazonWebServiceResu
 
     public AssumeRoleWithSAMLResult withNameQualifier(String nameQualifier) {
         setNameQualifier(nameQualifier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The value in the <code>SourceIdentity</code> attribute in the SAML assertion.
+     * </p>
+     * <p>
+     * You can require users to set a source identity value when they assume a role. You do this by using the
+     * <code>sts:SourceIdentity</code> condition key in a role trust policy. That way, actions that are taken with the
+     * role are associated with that user. After the source identity is set, the value cannot be changed. It is present
+     * in the request for all actions that are taken by the role and persists across <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts#iam-term-role-chaining"
+     * >chained role</a> sessions. You can configure your SAML identity provider to use an attribute associated with
+     * your users, like user name or email, as the source identity when calling <code>AssumeRoleWithSAML</code>. You do
+     * this by adding an attribute to the SAML assertion. For more information about using source identity, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
+     * and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-
+     * </p>
+     * 
+     * @param sourceIdentity
+     *        The value in the <code>SourceIdentity</code> attribute in the SAML assertion. </p>
+     *        <p>
+     *        You can require users to set a source identity value when they assume a role. You do this by using the
+     *        <code>sts:SourceIdentity</code> condition key in a role trust policy. That way, actions that are taken
+     *        with the role are associated with that user. After the source identity is set, the value cannot be
+     *        changed. It is present in the request for all actions that are taken by the role and persists across <a
+     *        href
+     *        ="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts#iam-term-role-chaining">
+     *        chained role</a> sessions. You can configure your SAML identity provider to use an attribute associated
+     *        with your users, like user name or email, as the source identity when calling
+     *        <code>AssumeRoleWithSAML</code>. You do this by adding an attribute to the SAML assertion. For more
+     *        information about using source identity, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     *        >Monitor and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
+     *        </p>
+     *        <p>
+     *        The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     *        alphanumeric characters with no spaces. You can also include underscores or any of the following
+     *        characters: =,.@-
+     */
+
+    public void setSourceIdentity(String sourceIdentity) {
+        this.sourceIdentity = sourceIdentity;
+    }
+
+    /**
+     * <p>
+     * The value in the <code>SourceIdentity</code> attribute in the SAML assertion.
+     * </p>
+     * <p>
+     * You can require users to set a source identity value when they assume a role. You do this by using the
+     * <code>sts:SourceIdentity</code> condition key in a role trust policy. That way, actions that are taken with the
+     * role are associated with that user. After the source identity is set, the value cannot be changed. It is present
+     * in the request for all actions that are taken by the role and persists across <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts#iam-term-role-chaining"
+     * >chained role</a> sessions. You can configure your SAML identity provider to use an attribute associated with
+     * your users, like user name or email, as the source identity when calling <code>AssumeRoleWithSAML</code>. You do
+     * this by adding an attribute to the SAML assertion. For more information about using source identity, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
+     * and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-
+     * </p>
+     * 
+     * @return The value in the <code>SourceIdentity</code> attribute in the SAML assertion. </p>
+     *         <p>
+     *         You can require users to set a source identity value when they assume a role. You do this by using the
+     *         <code>sts:SourceIdentity</code> condition key in a role trust policy. That way, actions that are taken
+     *         with the role are associated with that user. After the source identity is set, the value cannot be
+     *         changed. It is present in the request for all actions that are taken by the role and persists across <a
+     *         href
+     *         ="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts#iam-term-role-chaining"
+     *         >chained role</a> sessions. You can configure your SAML identity provider to use an attribute associated
+     *         with your users, like user name or email, as the source identity when calling
+     *         <code>AssumeRoleWithSAML</code>. You do this by adding an attribute to the SAML assertion. For more
+     *         information about using source identity, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     *         >Monitor and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
+     *         </p>
+     *         <p>
+     *         The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     *         alphanumeric characters with no spaces. You can also include underscores or any of the following
+     *         characters: =,.@-
+     */
+
+    public String getSourceIdentity() {
+        return this.sourceIdentity;
+    }
+
+    /**
+     * <p>
+     * The value in the <code>SourceIdentity</code> attribute in the SAML assertion.
+     * </p>
+     * <p>
+     * You can require users to set a source identity value when they assume a role. You do this by using the
+     * <code>sts:SourceIdentity</code> condition key in a role trust policy. That way, actions that are taken with the
+     * role are associated with that user. After the source identity is set, the value cannot be changed. It is present
+     * in the request for all actions that are taken by the role and persists across <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts#iam-term-role-chaining"
+     * >chained role</a> sessions. You can configure your SAML identity provider to use an attribute associated with
+     * your users, like user name or email, as the source identity when calling <code>AssumeRoleWithSAML</code>. You do
+     * this by adding an attribute to the SAML assertion. For more information about using source identity, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
+     * and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-
+     * </p>
+     * 
+     * @param sourceIdentity
+     *        The value in the <code>SourceIdentity</code> attribute in the SAML assertion. </p>
+     *        <p>
+     *        You can require users to set a source identity value when they assume a role. You do this by using the
+     *        <code>sts:SourceIdentity</code> condition key in a role trust policy. That way, actions that are taken
+     *        with the role are associated with that user. After the source identity is set, the value cannot be
+     *        changed. It is present in the request for all actions that are taken by the role and persists across <a
+     *        href
+     *        ="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts#iam-term-role-chaining">
+     *        chained role</a> sessions. You can configure your SAML identity provider to use an attribute associated
+     *        with your users, like user name or email, as the source identity when calling
+     *        <code>AssumeRoleWithSAML</code>. You do this by adding an attribute to the SAML assertion. For more
+     *        information about using source identity, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     *        >Monitor and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
+     *        </p>
+     *        <p>
+     *        The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     *        alphanumeric characters with no spaces. You can also include underscores or any of the following
+     *        characters: =,.@-
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssumeRoleWithSAMLResult withSourceIdentity(String sourceIdentity) {
+        setSourceIdentity(sourceIdentity);
         return this;
     }
 
@@ -588,7 +882,9 @@ public class AssumeRoleWithSAMLResult extends com.amazonaws.AmazonWebServiceResu
         if (getAudience() != null)
             sb.append("Audience: ").append(getAudience()).append(",");
         if (getNameQualifier() != null)
-            sb.append("NameQualifier: ").append(getNameQualifier());
+            sb.append("NameQualifier: ").append(getNameQualifier()).append(",");
+        if (getSourceIdentity() != null)
+            sb.append("SourceIdentity: ").append(getSourceIdentity());
         sb.append("}");
         return sb.toString();
     }
@@ -635,6 +931,10 @@ public class AssumeRoleWithSAMLResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getNameQualifier() != null && other.getNameQualifier().equals(this.getNameQualifier()) == false)
             return false;
+        if (other.getSourceIdentity() == null ^ this.getSourceIdentity() == null)
+            return false;
+        if (other.getSourceIdentity() != null && other.getSourceIdentity().equals(this.getSourceIdentity()) == false)
+            return false;
         return true;
     }
 
@@ -651,6 +951,7 @@ public class AssumeRoleWithSAMLResult extends com.amazonaws.AmazonWebServiceResu
         hashCode = prime * hashCode + ((getIssuer() == null) ? 0 : getIssuer().hashCode());
         hashCode = prime * hashCode + ((getAudience() == null) ? 0 : getAudience().hashCode());
         hashCode = prime * hashCode + ((getNameQualifier() == null) ? 0 : getNameQualifier().hashCode());
+        hashCode = prime * hashCode + ((getSourceIdentity() == null) ? 0 : getSourceIdentity().hashCode());
         return hashCode;
     }
 

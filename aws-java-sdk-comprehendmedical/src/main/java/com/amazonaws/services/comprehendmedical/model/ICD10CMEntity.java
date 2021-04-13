@@ -53,7 +53,7 @@ public class ICD10CMEntity implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Describes the specific type of entity with category of entities. InferICD10CM detects entities of the type
-     * <code>DX_NAME</code>.
+     * <code>DX_NAME</code> and <code>TIME_EXPRESSION</code>.
      * </p>
      */
     private String type;
@@ -246,12 +246,12 @@ public class ICD10CMEntity implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Describes the specific type of entity with category of entities. InferICD10CM detects entities of the type
-     * <code>DX_NAME</code>.
+     * <code>DX_NAME</code> and <code>TIME_EXPRESSION</code>.
      * </p>
      * 
      * @param type
      *        Describes the specific type of entity with category of entities. InferICD10CM detects entities of the type
-     *        <code>DX_NAME</code>.
+     *        <code>DX_NAME</code> and <code>TIME_EXPRESSION</code>.
      * @see ICD10CMEntityType
      */
 
@@ -262,11 +262,11 @@ public class ICD10CMEntity implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Describes the specific type of entity with category of entities. InferICD10CM detects entities of the type
-     * <code>DX_NAME</code>.
+     * <code>DX_NAME</code> and <code>TIME_EXPRESSION</code>.
      * </p>
      * 
      * @return Describes the specific type of entity with category of entities. InferICD10CM detects entities of the
-     *         type <code>DX_NAME</code>.
+     *         type <code>DX_NAME</code> and <code>TIME_EXPRESSION</code>.
      * @see ICD10CMEntityType
      */
 
@@ -277,12 +277,12 @@ public class ICD10CMEntity implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Describes the specific type of entity with category of entities. InferICD10CM detects entities of the type
-     * <code>DX_NAME</code>.
+     * <code>DX_NAME</code> and <code>TIME_EXPRESSION</code>.
      * </p>
      * 
      * @param type
      *        Describes the specific type of entity with category of entities. InferICD10CM detects entities of the type
-     *        <code>DX_NAME</code>.
+     *        <code>DX_NAME</code> and <code>TIME_EXPRESSION</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ICD10CMEntityType
      */
@@ -295,12 +295,12 @@ public class ICD10CMEntity implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Describes the specific type of entity with category of entities. InferICD10CM detects entities of the type
-     * <code>DX_NAME</code>.
+     * <code>DX_NAME</code> and <code>TIME_EXPRESSION</code>.
      * </p>
      * 
      * @param type
      *        Describes the specific type of entity with category of entities. InferICD10CM detects entities of the type
-     *        <code>DX_NAME</code>.
+     *        <code>DX_NAME</code> and <code>TIME_EXPRESSION</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ICD10CMEntityType
      */

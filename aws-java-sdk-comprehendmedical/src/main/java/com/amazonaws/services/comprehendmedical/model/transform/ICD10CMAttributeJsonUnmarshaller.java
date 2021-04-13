@@ -82,6 +82,14 @@ public class ICD10CMAttributeJsonUnmarshaller implements Unmarshaller<ICD10CMAtt
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("Category", targetDepth)) {
+                    context.nextToken();
+                    iCD10CMAttribute.setCategory(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("RelationshipType", targetDepth)) {
+                    context.nextToken();
+                    iCD10CMAttribute.setRelationshipType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

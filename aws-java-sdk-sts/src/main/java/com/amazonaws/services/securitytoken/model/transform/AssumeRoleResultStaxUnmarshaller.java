@@ -57,6 +57,11 @@ public class AssumeRoleResultStaxUnmarshaller implements Unmarshaller<AssumeRole
                     assumeRoleResult.setPackedPolicySize(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("SourceIdentity", targetDepth)) {
+                    assumeRoleResult.setSourceIdentity(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return assumeRoleResult;

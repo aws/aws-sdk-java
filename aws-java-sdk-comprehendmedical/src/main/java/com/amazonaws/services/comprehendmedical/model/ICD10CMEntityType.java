@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ICD10CMEntityType {
 
-    DX_NAME("DX_NAME");
+    DX_NAME("DX_NAME"),
+    TIME_EXPRESSION("TIME_EXPRESSION");
 
     private String value;
 
