@@ -511,6 +511,10 @@ public interface AmazonRoute53 {
      * all Route 53 DNS servers. When the NS and SOA records are available, the status of the zone changes to
      * <code>INSYNC</code>.
      * </p>
+     * <p>
+     * The <code>CreateHostedZone</code> request requires the caller to have an <code>ec2:DescribeVpcs</code>
+     * permission.
+     * </p>
      * 
      * @param createHostedZoneRequest
      *        A complex type that contains information about the request to create a public or private hosted zone.
@@ -1259,7 +1263,7 @@ public interface AmazonRoute53 {
 
     /**
      * <p>
-     * Deletes a key-signing key (KSK). Before you can delete a KSK, you must deactivate it. The KSK must be deactived
+     * Deletes a key-signing key (KSK). Before you can delete a KSK, you must deactivate it. The KSK must be deactivated
      * before you can delete it regardless of whether the hosted zone is enabled for DNSSEC signing.
      * </p>
      * 
@@ -2650,6 +2654,9 @@ public interface AmazonRoute53 {
      * Gets the value that Amazon Route 53 returns in response to a DNS request for a specified record name and type.
      * You can optionally specify the IP address of a DNS resolver, an EDNS0 client subnet IP address, and a subnet
      * mask.
+     * </p>
+     * <p>
+     * This call only supports querying public hosted zones.
      * </p>
      * 
      * @param testDNSAnswerRequest

@@ -307,7 +307,8 @@
         "VpcConfiguration":{
           "shape":"VpcConfiguration",
           "documentation":"<p>The VPC configuration to be provisioned for the host. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.</p>"
-        }
+        },
+        "Tags":{"shape":"TagList"}
       }
     },
     "CreateHostOutput":{
@@ -316,7 +317,8 @@
         "HostArn":{
           "shape":"HostArn",
           "documentation":"<p>The Amazon Resource Name (ARN) of the host to be created.</p>"
-        }
+        },
+        "Tags":{"shape":"TagList"}
       }
     },
     "DeleteConnectionInput":{
@@ -457,7 +459,12 @@
       "min":1,
       "pattern":".*"
     },
-    "HostStatus":{"type":"string"},
+    "HostStatus":{
+      "type":"string",
+      "max":64,
+      "min":1,
+      "pattern":".*"
+    },
     "HostStatusMessage":{"type":"string"},
     "LimitExceededException":{
       "type":"structure",

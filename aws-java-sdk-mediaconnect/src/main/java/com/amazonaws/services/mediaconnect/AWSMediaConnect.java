@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.mediaconnect.model.*;
+import com.amazonaws.services.mediaconnect.waiters.AWSMediaConnectWaiters;
 
 /**
  * Interface for accessing AWS MediaConnect.
@@ -683,5 +684,7 @@ public interface AWSMediaConnect {
      * @return The response metadata for the specified request, or null if none is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AWSMediaConnectWaiters waiters();
 
 }

@@ -37,6 +37,8 @@ public class OutputMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryption").build();
     private static final MarshallingInfo<String> ENTITLEMENTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("entitlementArn").build();
+    private static final MarshallingInfo<String> LISTENERADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("listenerAddress").build();
     private static final MarshallingInfo<String> MEDIALIVEINPUTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mediaLiveInputArn").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -71,6 +73,7 @@ public class OutputMarshaller {
             protocolMarshaller.marshall(output.getDestination(), DESTINATION_BINDING);
             protocolMarshaller.marshall(output.getEncryption(), ENCRYPTION_BINDING);
             protocolMarshaller.marshall(output.getEntitlementArn(), ENTITLEMENTARN_BINDING);
+            protocolMarshaller.marshall(output.getListenerAddress(), LISTENERADDRESS_BINDING);
             protocolMarshaller.marshall(output.getMediaLiveInputArn(), MEDIALIVEINPUTARN_BINDING);
             protocolMarshaller.marshall(output.getName(), NAME_BINDING);
             protocolMarshaller.marshall(output.getOutputArn(), OUTPUTARN_BINDING);

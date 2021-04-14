@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.codestarconnections.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,6 +36,8 @@ public class CreateHostRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProviderEndpoint").build();
     private static final MarshallingInfo<StructuredPojo> VPCCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConfiguration").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateHostRequestMarshaller instance = new CreateHostRequestMarshaller();
 
@@ -56,6 +59,7 @@ public class CreateHostRequestMarshaller {
             protocolMarshaller.marshall(createHostRequest.getProviderType(), PROVIDERTYPE_BINDING);
             protocolMarshaller.marshall(createHostRequest.getProviderEndpoint(), PROVIDERENDPOINT_BINDING);
             protocolMarshaller.marshall(createHostRequest.getVpcConfiguration(), VPCCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createHostRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

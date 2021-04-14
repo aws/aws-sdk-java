@@ -95,7 +95,7 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>"Service": "api-service.dnssec.route53.aws.internal"</code>
+     * <code>"Service": "dnssec.route53.aws.amazonaws.com"</code>
      * </p>
      * </li>
      * </ul>
@@ -261,7 +261,7 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>"Service": "api-service.dnssec.route53.aws.internal"</code>
+     * <code>"Service": "dnssec.route53.aws.amazonaws.com"</code>
      * </p>
      * </li>
      * </ul>
@@ -329,7 +329,7 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>"Service": "api-service.dnssec.route53.aws.internal"</code>
+     *        <code>"Service": "dnssec.route53.aws.amazonaws.com"</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -403,7 +403,7 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>"Service": "api-service.dnssec.route53.aws.internal"</code>
+     * <code>"Service": "dnssec.route53.aws.amazonaws.com"</code>
      * </p>
      * </li>
      * </ul>
@@ -470,7 +470,7 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>"Service": "api-service.dnssec.route53.aws.internal"</code>
+     *         <code>"Service": "dnssec.route53.aws.amazonaws.com"</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -544,7 +544,7 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>"Service": "api-service.dnssec.route53.aws.internal"</code>
+     * <code>"Service": "dnssec.route53.aws.amazonaws.com"</code>
      * </p>
      * </li>
      * </ul>
@@ -612,7 +612,7 @@ public class CreateKeySigningKeyRequest extends com.amazonaws.AmazonWebServiceRe
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>"Service": "api-service.dnssec.route53.aws.internal"</code>
+     *        <code>"Service": "dnssec.route53.aws.amazonaws.com"</code>
      *        </p>
      *        </li>
      *        </ul>

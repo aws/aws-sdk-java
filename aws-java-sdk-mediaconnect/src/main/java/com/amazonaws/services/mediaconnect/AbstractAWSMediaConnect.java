@@ -16,6 +16,7 @@ import javax.annotation.Generated;
 
 import com.amazonaws.services.mediaconnect.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.mediaconnect.waiters.AWSMediaConnectWaiters;
 
 /**
  * Abstract implementation of {@code AWSMediaConnect}. Convenient method forms pass through to the corresponding
@@ -169,6 +170,11 @@ public class AbstractAWSMediaConnect implements AWSMediaConnect {
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AWSMediaConnectWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 

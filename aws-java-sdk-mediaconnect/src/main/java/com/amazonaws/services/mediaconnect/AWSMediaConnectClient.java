@@ -40,6 +40,7 @@ import com.amazonaws.client.AwsSyncClientParams;
 import com.amazonaws.client.builder.AdvancedConfig;
 
 import com.amazonaws.services.mediaconnect.AWSMediaConnectClientBuilder;
+import com.amazonaws.services.mediaconnect.waiters.AWSMediaConnectWaiters;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -63,6 +64,8 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
 
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "mediaconnect";
+
+    private volatile AWSMediaConnectWaiters waiters;
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
@@ -1987,8 +1990,23 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
     }
 
     @Override
+    public AWSMediaConnectWaiters waiters() {
+        if (waiters == null) {
+            synchronized (this) {
+                if (waiters == null) {
+                    waiters = new AWSMediaConnectWaiters(this);
+                }
+            }
+        }
+        return waiters;
+    }
+
+    @Override
     public void shutdown() {
         super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

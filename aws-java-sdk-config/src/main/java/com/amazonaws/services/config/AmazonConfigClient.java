@@ -1621,6 +1621,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         </li>
      *         </ul>
      *         </li>
+     * @throws InvalidParameterValueException
+     *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @sample AmazonConfig.DeleteRemediationConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRemediationConfiguration"
      *      target="_top">AWS API Documentation</a>
@@ -2098,7 +2100,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
     /**
      * <p>
      * Returns a list of the conformance packs and their associated compliance status with the count of compliant and
-     * noncompliant AWS Config rules within each conformance pack.
+     * noncompliant AWS Config rules within each conformance pack. Also returns the total rule count which includes
+     * compliant rules, noncompliant rules, and rules that cannot be evaluated due to insufficient data.
      * </p>
      * <note>
      * <p>
@@ -3880,6 +3883,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws InvalidNextTokenException
      *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
      *         previous response to get the next page of results.
+     * @throws InvalidParameterValueException
+     *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @sample AmazonConfig.DescribeRemediationExecutionStatus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRemediationExecutionStatus"
      *      target="_top">AWS API Documentation</a>
@@ -4166,8 +4171,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Returns the count of compliant and noncompliant conformance packs across all AWS Accounts and AWS Regions. You
-     * can filter based on AWS Account ID or AWS Region.
+     * Returns the count of compliant and noncompliant conformance packs across all AWS Accounts and AWS Regions in an
+     * aggregator. You can filter based on AWS Account ID or AWS Region.
      * </p>
      * <note>
      * <p>

@@ -68,6 +68,10 @@ public class OutputJsonUnmarshaller implements Unmarshaller<Output, JsonUnmarsha
                     context.nextToken();
                     output.setEntitlementArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("listenerAddress", targetDepth)) {
+                    context.nextToken();
+                    output.setListenerAddress(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("mediaLiveInputArn", targetDepth)) {
                     context.nextToken();
                     output.setMediaLiveInputArn(context.getUnmarshaller(String.class).unmarshall(context));

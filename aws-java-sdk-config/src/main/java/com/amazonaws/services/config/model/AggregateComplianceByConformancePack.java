@@ -23,16 +23,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * name of the conformance pack, account ID, and region.
  * </p>
  * <p>
- * A conformance pack is compliant if all of the rules in that conformance packs are compliant. It is noncompliant if
- * any of the rules are not compliant.
+ * A conformance pack is compliant if all of the rules in a conformance packs are compliant. It is noncompliant if any
+ * of the rules are not compliant. The compliance status of a conformance pack is INSUFFICIENT_DATA only if all rules
+ * within a conformance pack cannot be evaluated due to insufficient data. If some of the rules in a conformance pack
+ * are compliant but the compliance status of other rules in that same conformance pack is INSUFFICIENT_DATA, the
+ * conformance pack shows compliant.
  * </p>
- * <note>
- * <p>
- * If a conformance pack has rules that return INSUFFICIENT_DATA, the conformance pack returns INSUFFICIENT_DATA only if
- * all the rules within that conformance pack return INSUFFICIENT_DATA. If some of the rules in a conformance pack are
- * compliant and others return INSUFFICIENT_DATA, the conformance pack shows compliant.
- * </p>
- * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/AggregateComplianceByConformancePack"
  *      target="_top">AWS API Documentation</a>

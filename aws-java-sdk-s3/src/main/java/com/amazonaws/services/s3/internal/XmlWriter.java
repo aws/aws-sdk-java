@@ -127,11 +127,20 @@ public class XmlWriter {
             case '"':
                 escape = "&quot;";
                 break;
+            case '\'' :
+                escape = "&apos;";
+                break;
             case '<':
                 escape = "&lt;";
                 break;
             case '>':
                 escape = "&gt;";
+                break;
+            case '\u0085':
+                escape = "&#133;";
+                break;
+            case '\u2028':
+                escape = "&#8232;";
                 break;
             default:
                 escape = null;

@@ -52,6 +52,8 @@ public class CreateHostRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
     private VpcConfiguration vpcConfiguration;
 
+    private java.util.List<Tag> tags;
+
     /**
      * <p>
      * The name of the host to be created. The name must be unique in the calling AWS account.
@@ -247,6 +249,58 @@ public class CreateHostRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * @param tags
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateHostRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param tags
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateHostRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -265,7 +319,9 @@ public class CreateHostRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getProviderEndpoint() != null)
             sb.append("ProviderEndpoint: ").append(getProviderEndpoint()).append(",");
         if (getVpcConfiguration() != null)
-            sb.append("VpcConfiguration: ").append(getVpcConfiguration());
+            sb.append("VpcConfiguration: ").append(getVpcConfiguration()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -296,6 +352,10 @@ public class CreateHostRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getVpcConfiguration() != null && other.getVpcConfiguration().equals(this.getVpcConfiguration()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -308,6 +368,7 @@ public class CreateHostRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getProviderType() == null) ? 0 : getProviderType().hashCode());
         hashCode = prime * hashCode + ((getProviderEndpoint() == null) ? 0 : getProviderEndpoint().hashCode());
         hashCode = prime * hashCode + ((getVpcConfiguration() == null) ? 0 : getVpcConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

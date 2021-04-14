@@ -922,7 +922,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * Returns a list of the conformance packs and their associated compliance status with the count of compliant and
-     * noncompliant AWS Config rules within each conformance pack.
+     * noncompliant AWS Config rules within each conformance pack. Also returns the total rule count which includes
+     * compliant rules, noncompliant rules, and rules that cannot be evaluated due to insufficient data.
      * </p>
      * <note>
      * <p>
@@ -945,7 +946,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * Returns a list of the conformance packs and their associated compliance status with the count of compliant and
-     * noncompliant AWS Config rules within each conformance pack.
+     * noncompliant AWS Config rules within each conformance pack. Also returns the total rule count which includes
+     * compliant rules, noncompliant rules, and rules that cannot be evaluated due to insufficient data.
      * </p>
      * <note>
      * <p>
@@ -2328,8 +2330,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * Returns the count of compliant and noncompliant conformance packs across all AWS Accounts and AWS Regions. You
-     * can filter based on AWS Account ID or AWS Region.
+     * Returns the count of compliant and noncompliant conformance packs across all AWS Accounts and AWS Regions in an
+     * aggregator. You can filter based on AWS Account ID or AWS Region.
      * </p>
      * <note>
      * <p>
@@ -2351,8 +2353,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * Returns the count of compliant and noncompliant conformance packs across all AWS Accounts and AWS Regions. You
-     * can filter based on AWS Account ID or AWS Region.
+     * Returns the count of compliant and noncompliant conformance packs across all AWS Accounts and AWS Regions in an
+     * aggregator. You can filter based on AWS Account ID or AWS Region.
      * </p>
      * <note>
      * <p>

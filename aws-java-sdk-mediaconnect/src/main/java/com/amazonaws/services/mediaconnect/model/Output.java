@@ -40,6 +40,13 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     /** The ARN of the entitlement on the originator''s flow. This value is relevant only on entitled flows. */
     private String entitlementArn;
     /**
+     * The IP address that the receiver requires in order to establish a connection with the flow. For public
+     * networking, the ListenerAddress is represented by the elastic IP address of the flow. For private networking, the
+     * ListenerAddress is represented by the elastic network interface IP address of the VPC. This field applies only to
+     * outputs that use the Zixi pull or SRT listener protocol.
+     */
+    private String listenerAddress;
+    /**
      * The input ARN of the AWS Elemental MediaLive channel. This parameter is relevant only for outputs that were added
      * by creating a MediaLive input.
      */
@@ -228,6 +235,58 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
 
     public Output withEntitlementArn(String entitlementArn) {
         setEntitlementArn(entitlementArn);
+        return this;
+    }
+
+    /**
+     * The IP address that the receiver requires in order to establish a connection with the flow. For public
+     * networking, the ListenerAddress is represented by the elastic IP address of the flow. For private networking, the
+     * ListenerAddress is represented by the elastic network interface IP address of the VPC. This field applies only to
+     * outputs that use the Zixi pull or SRT listener protocol.
+     * 
+     * @param listenerAddress
+     *        The IP address that the receiver requires in order to establish a connection with the flow. For public
+     *        networking, the ListenerAddress is represented by the elastic IP address of the flow. For private
+     *        networking, the ListenerAddress is represented by the elastic network interface IP address of the VPC.
+     *        This field applies only to outputs that use the Zixi pull or SRT listener protocol.
+     */
+
+    public void setListenerAddress(String listenerAddress) {
+        this.listenerAddress = listenerAddress;
+    }
+
+    /**
+     * The IP address that the receiver requires in order to establish a connection with the flow. For public
+     * networking, the ListenerAddress is represented by the elastic IP address of the flow. For private networking, the
+     * ListenerAddress is represented by the elastic network interface IP address of the VPC. This field applies only to
+     * outputs that use the Zixi pull or SRT listener protocol.
+     * 
+     * @return The IP address that the receiver requires in order to establish a connection with the flow. For public
+     *         networking, the ListenerAddress is represented by the elastic IP address of the flow. For private
+     *         networking, the ListenerAddress is represented by the elastic network interface IP address of the VPC.
+     *         This field applies only to outputs that use the Zixi pull or SRT listener protocol.
+     */
+
+    public String getListenerAddress() {
+        return this.listenerAddress;
+    }
+
+    /**
+     * The IP address that the receiver requires in order to establish a connection with the flow. For public
+     * networking, the ListenerAddress is represented by the elastic IP address of the flow. For private networking, the
+     * ListenerAddress is represented by the elastic network interface IP address of the VPC. This field applies only to
+     * outputs that use the Zixi pull or SRT listener protocol.
+     * 
+     * @param listenerAddress
+     *        The IP address that the receiver requires in order to establish a connection with the flow. For public
+     *        networking, the ListenerAddress is represented by the elastic IP address of the flow. For private
+     *        networking, the ListenerAddress is represented by the elastic network interface IP address of the VPC.
+     *        This field applies only to outputs that use the Zixi pull or SRT listener protocol.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Output withListenerAddress(String listenerAddress) {
+        setListenerAddress(listenerAddress);
         return this;
     }
 
@@ -463,6 +522,8 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
             sb.append("Encryption: ").append(getEncryption()).append(",");
         if (getEntitlementArn() != null)
             sb.append("EntitlementArn: ").append(getEntitlementArn()).append(",");
+        if (getListenerAddress() != null)
+            sb.append("ListenerAddress: ").append(getListenerAddress()).append(",");
         if (getMediaLiveInputArn() != null)
             sb.append("MediaLiveInputArn: ").append(getMediaLiveInputArn()).append(",");
         if (getName() != null)
@@ -510,6 +571,10 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEntitlementArn() != null && other.getEntitlementArn().equals(this.getEntitlementArn()) == false)
             return false;
+        if (other.getListenerAddress() == null ^ this.getListenerAddress() == null)
+            return false;
+        if (other.getListenerAddress() != null && other.getListenerAddress().equals(this.getListenerAddress()) == false)
+            return false;
         if (other.getMediaLiveInputArn() == null ^ this.getMediaLiveInputArn() == null)
             return false;
         if (other.getMediaLiveInputArn() != null && other.getMediaLiveInputArn().equals(this.getMediaLiveInputArn()) == false)
@@ -547,6 +612,7 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDestination() == null) ? 0 : getDestination().hashCode());
         hashCode = prime * hashCode + ((getEncryption() == null) ? 0 : getEncryption().hashCode());
         hashCode = prime * hashCode + ((getEntitlementArn() == null) ? 0 : getEntitlementArn().hashCode());
+        hashCode = prime * hashCode + ((getListenerAddress() == null) ? 0 : getListenerAddress().hashCode());
         hashCode = prime * hashCode + ((getMediaLiveInputArn() == null) ? 0 : getMediaLiveInputArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getOutputArn() == null) ? 0 : getOutputArn().hashCode());

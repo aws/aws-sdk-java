@@ -1,3 +1,20 @@
+# __1.11.999__ __2021-04-14__
+## __AWS CodeStar connections__
+  - ### Features
+    - This release adds tagging support for CodeStar Connections Host resources
+
+## __AWS Config__
+  - ### Features
+    - Add exception for DeleteRemediationConfiguration and DescribeRemediationExecutionStatus
+
+## __AWS MediaConnect__
+  - ### Features
+    - For flows that use Listener protocols, you can now easily locate an output's outbound IP address for a private internet. Additionally, MediaConnect now supports the Waiters feature that makes it easier to poll for the status of a flow until it reaches its desired state.
+
+## __Amazon Route 53__
+  - ### Features
+    - Documentation updates for route53
+
 # __1.11.998__ __2021-04-13__
 ## __AWS Comprehend Medical__
   - ### Features
