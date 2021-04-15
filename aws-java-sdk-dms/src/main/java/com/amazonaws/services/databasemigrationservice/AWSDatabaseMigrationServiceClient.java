@@ -1709,6 +1709,64 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
 
     /**
      * <p>
+     * Returns information about the possible endpoint settings available when you create an endpoint for a specific
+     * database engine.
+     * </p>
+     * 
+     * @param describeEndpointSettingsRequest
+     * @return Result of the DescribeEndpointSettings operation returned by the service.
+     * @sample AWSDatabaseMigrationService.DescribeEndpointSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpointSettings" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeEndpointSettingsResult describeEndpointSettings(DescribeEndpointSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEndpointSettings(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEndpointSettingsResult executeDescribeEndpointSettings(DescribeEndpointSettingsRequest describeEndpointSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeEndpointSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeEndpointSettingsRequest> request = null;
+        Response<DescribeEndpointSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeEndpointSettingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeEndpointSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Database Migration Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEndpointSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeEndpointSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeEndpointSettingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns information about the type of endpoints available.
      * </p>
      * 
@@ -3236,6 +3294,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *         The resource is in a state that prevents it from being used for database migration.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
+     * @throws KMSKeyNotAccessibleException
+     *         AWS DMS cannot access the AWS KMS key.
      * @sample AWSDatabaseMigrationService.MoveReplicationTask
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/MoveReplicationTask" target="_top">AWS API
      *      Documentation</a>
@@ -3820,6 +3880,8 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
      *         AWS DMS cannot access the AWS KMS key.
      * @throws ResourceQuotaExceededException
      *         The quota for this resource quota has been exceeded.
+     * @throws AccessDeniedException
+     *         AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
      * @sample AWSDatabaseMigrationService.TestConnection
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/TestConnection" target="_top">AWS API
      *      Documentation</a>

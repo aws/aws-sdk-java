@@ -737,7 +737,7 @@
     },
     "clientTokenType":{
       "type":"string",
-      "max":2048,
+      "max":20000,
       "min":4
     },
     "dateType":{"type":"timestamp"},

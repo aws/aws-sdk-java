@@ -276,6 +276,15 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     private String serverName;
     /**
      * <p>
+     * Use this attribute to convert <code>SDO_GEOMETRY</code> to <code>GEOJSON</code> format. By default, DMS calls the
+     * <code>SDO2GEOJSON</code> custom function if present and accessible. Or you can create your own custom function
+     * that mimics the operation of <code>SDOGEOJSON</code> and set <code>SpatialDataOptionToGeoJsonFunctionName</code>
+     * to call it instead.
+     * </p>
+     */
+    private String spatialDataOptionToGeoJsonFunctionName;
+    /**
+     * <p>
      * Endpoint connection user name.
      * </p>
      */
@@ -2126,6 +2135,64 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Use this attribute to convert <code>SDO_GEOMETRY</code> to <code>GEOJSON</code> format. By default, DMS calls the
+     * <code>SDO2GEOJSON</code> custom function if present and accessible. Or you can create your own custom function
+     * that mimics the operation of <code>SDOGEOJSON</code> and set <code>SpatialDataOptionToGeoJsonFunctionName</code>
+     * to call it instead.
+     * </p>
+     * 
+     * @param spatialDataOptionToGeoJsonFunctionName
+     *        Use this attribute to convert <code>SDO_GEOMETRY</code> to <code>GEOJSON</code> format. By default, DMS
+     *        calls the <code>SDO2GEOJSON</code> custom function if present and accessible. Or you can create your own
+     *        custom function that mimics the operation of <code>SDOGEOJSON</code> and set
+     *        <code>SpatialDataOptionToGeoJsonFunctionName</code> to call it instead.
+     */
+
+    public void setSpatialDataOptionToGeoJsonFunctionName(String spatialDataOptionToGeoJsonFunctionName) {
+        this.spatialDataOptionToGeoJsonFunctionName = spatialDataOptionToGeoJsonFunctionName;
+    }
+
+    /**
+     * <p>
+     * Use this attribute to convert <code>SDO_GEOMETRY</code> to <code>GEOJSON</code> format. By default, DMS calls the
+     * <code>SDO2GEOJSON</code> custom function if present and accessible. Or you can create your own custom function
+     * that mimics the operation of <code>SDOGEOJSON</code> and set <code>SpatialDataOptionToGeoJsonFunctionName</code>
+     * to call it instead.
+     * </p>
+     * 
+     * @return Use this attribute to convert <code>SDO_GEOMETRY</code> to <code>GEOJSON</code> format. By default, DMS
+     *         calls the <code>SDO2GEOJSON</code> custom function if present and accessible. Or you can create your own
+     *         custom function that mimics the operation of <code>SDOGEOJSON</code> and set
+     *         <code>SpatialDataOptionToGeoJsonFunctionName</code> to call it instead.
+     */
+
+    public String getSpatialDataOptionToGeoJsonFunctionName() {
+        return this.spatialDataOptionToGeoJsonFunctionName;
+    }
+
+    /**
+     * <p>
+     * Use this attribute to convert <code>SDO_GEOMETRY</code> to <code>GEOJSON</code> format. By default, DMS calls the
+     * <code>SDO2GEOJSON</code> custom function if present and accessible. Or you can create your own custom function
+     * that mimics the operation of <code>SDOGEOJSON</code> and set <code>SpatialDataOptionToGeoJsonFunctionName</code>
+     * to call it instead.
+     * </p>
+     * 
+     * @param spatialDataOptionToGeoJsonFunctionName
+     *        Use this attribute to convert <code>SDO_GEOMETRY</code> to <code>GEOJSON</code> format. By default, DMS
+     *        calls the <code>SDO2GEOJSON</code> custom function if present and accessible. Or you can create your own
+     *        custom function that mimics the operation of <code>SDOGEOJSON</code> and set
+     *        <code>SpatialDataOptionToGeoJsonFunctionName</code> to call it instead.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OracleSettings withSpatialDataOptionToGeoJsonFunctionName(String spatialDataOptionToGeoJsonFunctionName) {
+        setSpatialDataOptionToGeoJsonFunctionName(spatialDataOptionToGeoJsonFunctionName);
+        return this;
+    }
+
+    /**
+     * <p>
      * Endpoint connection user name.
      * </p>
      * 
@@ -2586,6 +2653,8 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
             sb.append("SecurityDbEncryptionName: ").append(getSecurityDbEncryptionName()).append(",");
         if (getServerName() != null)
             sb.append("ServerName: ").append(getServerName()).append(",");
+        if (getSpatialDataOptionToGeoJsonFunctionName() != null)
+            sb.append("SpatialDataOptionToGeoJsonFunctionName: ").append(getSpatialDataOptionToGeoJsonFunctionName()).append(",");
         if (getUsername() != null)
             sb.append("Username: ").append(getUsername()).append(",");
         if (getSecretsManagerAccessRoleArn() != null)
@@ -2726,6 +2795,11 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getServerName() != null && other.getServerName().equals(this.getServerName()) == false)
             return false;
+        if (other.getSpatialDataOptionToGeoJsonFunctionName() == null ^ this.getSpatialDataOptionToGeoJsonFunctionName() == null)
+            return false;
+        if (other.getSpatialDataOptionToGeoJsonFunctionName() != null
+                && other.getSpatialDataOptionToGeoJsonFunctionName().equals(this.getSpatialDataOptionToGeoJsonFunctionName()) == false)
+            return false;
         if (other.getUsername() == null ^ this.getUsername() == null)
             return false;
         if (other.getUsername() != null && other.getUsername().equals(this.getUsername()) == false)
@@ -2785,6 +2859,7 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSecurityDbEncryption() == null) ? 0 : getSecurityDbEncryption().hashCode());
         hashCode = prime * hashCode + ((getSecurityDbEncryptionName() == null) ? 0 : getSecurityDbEncryptionName().hashCode());
         hashCode = prime * hashCode + ((getServerName() == null) ? 0 : getServerName().hashCode());
+        hashCode = prime * hashCode + ((getSpatialDataOptionToGeoJsonFunctionName() == null) ? 0 : getSpatialDataOptionToGeoJsonFunctionName().hashCode());
         hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
         hashCode = prime * hashCode + ((getSecretsManagerAccessRoleArn() == null) ? 0 : getSecretsManagerAccessRoleArn().hashCode());
         hashCode = prime * hashCode + ((getSecretsManagerSecretId() == null) ? 0 : getSecretsManagerSecretId().hashCode());

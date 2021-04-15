@@ -67,8 +67,8 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the
-     * path with <code>file://</code>. When working with the DMS API, provide the JSON as the parameter value, for
-     * example: <code>--table-mappings file://mappingfile.json</code>
+     * path with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>. When working
+     * with the DMS API, provide the JSON as the parameter value.
      * </p>
      */
     private String tableMappings;
@@ -418,14 +418,15 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the
-     * path with <code>file://</code>. When working with the DMS API, provide the JSON as the parameter value, for
-     * example: <code>--table-mappings file://mappingfile.json</code>
+     * path with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>. When working
+     * with the DMS API, provide the JSON as the parameter value.
      * </p>
      * 
      * @param tableMappings
      *        When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings.
-     *        Precede the path with <code>file://</code>. When working with the DMS API, provide the JSON as the
-     *        parameter value, for example: <code>--table-mappings file://mappingfile.json</code>
+     *        Precede the path with <code>file://</code>. For example,
+     *        <code>--table-mappings file://mappingfile.json</code>. When working with the DMS API, provide the JSON as
+     *        the parameter value.
      */
 
     public void setTableMappings(String tableMappings) {
@@ -435,13 +436,14 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the
-     * path with <code>file://</code>. When working with the DMS API, provide the JSON as the parameter value, for
-     * example: <code>--table-mappings file://mappingfile.json</code>
+     * path with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>. When working
+     * with the DMS API, provide the JSON as the parameter value.
      * </p>
      * 
      * @return When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings.
-     *         Precede the path with <code>file://</code>. When working with the DMS API, provide the JSON as the
-     *         parameter value, for example: <code>--table-mappings file://mappingfile.json</code>
+     *         Precede the path with <code>file://</code>. For example,
+     *         <code>--table-mappings file://mappingfile.json</code>. When working with the DMS API, provide the JSON as
+     *         the parameter value.
      */
 
     public String getTableMappings() {
@@ -451,14 +453,15 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the
-     * path with <code>file://</code>. When working with the DMS API, provide the JSON as the parameter value, for
-     * example: <code>--table-mappings file://mappingfile.json</code>
+     * path with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>. When working
+     * with the DMS API, provide the JSON as the parameter value.
      * </p>
      * 
      * @param tableMappings
      *        When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings.
-     *        Precede the path with <code>file://</code>. When working with the DMS API, provide the JSON as the
-     *        parameter value, for example: <code>--table-mappings file://mappingfile.json</code>
+     *        Precede the path with <code>file://</code>. For example,
+     *        <code>--table-mappings file://mappingfile.json</code>. When working with the DMS API, provide the JSON as
+     *        the parameter value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

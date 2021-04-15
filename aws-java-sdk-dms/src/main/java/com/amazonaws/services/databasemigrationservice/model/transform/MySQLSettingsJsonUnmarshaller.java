@@ -52,6 +52,10 @@ public class MySQLSettingsJsonUnmarshaller implements Unmarshaller<MySQLSettings
                     context.nextToken();
                     mySQLSettings.setAfterConnectScript(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CleanSourceMetadataOnMismatch", targetDepth)) {
+                    context.nextToken();
+                    mySQLSettings.setCleanSourceMetadataOnMismatch(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("DatabaseName", targetDepth)) {
                     context.nextToken();
                     mySQLSettings.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));

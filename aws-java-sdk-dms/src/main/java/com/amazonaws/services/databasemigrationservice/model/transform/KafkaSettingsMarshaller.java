@@ -47,6 +47,20 @@ public class KafkaSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MessageMaxBytes").build();
     private static final MarshallingInfo<Boolean> INCLUDENULLANDEMPTY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeNullAndEmpty").build();
+    private static final MarshallingInfo<String> SECURITYPROTOCOL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecurityProtocol").build();
+    private static final MarshallingInfo<String> SSLCLIENTCERTIFICATEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SslClientCertificateArn").build();
+    private static final MarshallingInfo<String> SSLCLIENTKEYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SslClientKeyArn").build();
+    private static final MarshallingInfo<String> SSLCLIENTKEYPASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SslClientKeyPassword").build();
+    private static final MarshallingInfo<String> SSLCACERTIFICATEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SslCaCertificateArn").build();
+    private static final MarshallingInfo<String> SASLUSERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SaslUsername").build();
+    private static final MarshallingInfo<String> SASLPASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SaslPassword").build();
 
     private static final KafkaSettingsMarshaller instance = new KafkaSettingsMarshaller();
 
@@ -74,6 +88,13 @@ public class KafkaSettingsMarshaller {
             protocolMarshaller.marshall(kafkaSettings.getIncludeControlDetails(), INCLUDECONTROLDETAILS_BINDING);
             protocolMarshaller.marshall(kafkaSettings.getMessageMaxBytes(), MESSAGEMAXBYTES_BINDING);
             protocolMarshaller.marshall(kafkaSettings.getIncludeNullAndEmpty(), INCLUDENULLANDEMPTY_BINDING);
+            protocolMarshaller.marshall(kafkaSettings.getSecurityProtocol(), SECURITYPROTOCOL_BINDING);
+            protocolMarshaller.marshall(kafkaSettings.getSslClientCertificateArn(), SSLCLIENTCERTIFICATEARN_BINDING);
+            protocolMarshaller.marshall(kafkaSettings.getSslClientKeyArn(), SSLCLIENTKEYARN_BINDING);
+            protocolMarshaller.marshall(kafkaSettings.getSslClientKeyPassword(), SSLCLIENTKEYPASSWORD_BINDING);
+            protocolMarshaller.marshall(kafkaSettings.getSslCaCertificateArn(), SSLCACERTIFICATEARN_BINDING);
+            protocolMarshaller.marshall(kafkaSettings.getSaslUsername(), SASLUSERNAME_BINDING);
+            protocolMarshaller.marshall(kafkaSettings.getSaslPassword(), SASLPASSWORD_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

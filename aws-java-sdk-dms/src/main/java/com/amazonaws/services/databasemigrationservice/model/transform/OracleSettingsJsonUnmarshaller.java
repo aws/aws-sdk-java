@@ -164,6 +164,10 @@ public class OracleSettingsJsonUnmarshaller implements Unmarshaller<OracleSettin
                     context.nextToken();
                     oracleSettings.setServerName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SpatialDataOptionToGeoJsonFunctionName", targetDepth)) {
+                    context.nextToken();
+                    oracleSettings.setSpatialDataOptionToGeoJsonFunctionName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Username", targetDepth)) {
                     context.nextToken();
                     oracleSettings.setUsername(context.getUnmarshaller(String.class).unmarshall(context));

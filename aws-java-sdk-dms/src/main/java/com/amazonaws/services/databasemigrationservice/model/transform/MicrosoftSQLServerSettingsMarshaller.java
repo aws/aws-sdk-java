@@ -37,6 +37,8 @@ public class MicrosoftSQLServerSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ControlTablesFileGroup").build();
     private static final MarshallingInfo<String> PASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Password").build();
+    private static final MarshallingInfo<Boolean> QUERYSINGLEALWAYSONNODE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QuerySingleAlwaysOnNode").build();
     private static final MarshallingInfo<Boolean> READBACKUPONLY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReadBackupOnly").build();
     private static final MarshallingInfo<String> SAFEGUARDPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -47,6 +49,8 @@ public class MicrosoftSQLServerSettingsMarshaller {
             .marshallLocationName("Username").build();
     private static final MarshallingInfo<Boolean> USEBCPFULLLOAD_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UseBcpFullLoad").build();
+    private static final MarshallingInfo<Boolean> USETHIRDPARTYBACKUPDEVICE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UseThirdPartyBackupDevice").build();
     private static final MarshallingInfo<String> SECRETSMANAGERACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerAccessRoleArn").build();
     private static final MarshallingInfo<String> SECRETSMANAGERSECRETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -73,11 +77,13 @@ public class MicrosoftSQLServerSettingsMarshaller {
             protocolMarshaller.marshall(microsoftSQLServerSettings.getDatabaseName(), DATABASENAME_BINDING);
             protocolMarshaller.marshall(microsoftSQLServerSettings.getControlTablesFileGroup(), CONTROLTABLESFILEGROUP_BINDING);
             protocolMarshaller.marshall(microsoftSQLServerSettings.getPassword(), PASSWORD_BINDING);
+            protocolMarshaller.marshall(microsoftSQLServerSettings.getQuerySingleAlwaysOnNode(), QUERYSINGLEALWAYSONNODE_BINDING);
             protocolMarshaller.marshall(microsoftSQLServerSettings.getReadBackupOnly(), READBACKUPONLY_BINDING);
             protocolMarshaller.marshall(microsoftSQLServerSettings.getSafeguardPolicy(), SAFEGUARDPOLICY_BINDING);
             protocolMarshaller.marshall(microsoftSQLServerSettings.getServerName(), SERVERNAME_BINDING);
             protocolMarshaller.marshall(microsoftSQLServerSettings.getUsername(), USERNAME_BINDING);
             protocolMarshaller.marshall(microsoftSQLServerSettings.getUseBcpFullLoad(), USEBCPFULLLOAD_BINDING);
+            protocolMarshaller.marshall(microsoftSQLServerSettings.getUseThirdPartyBackupDevice(), USETHIRDPARTYBACKUPDEVICE_BINDING);
             protocolMarshaller.marshall(microsoftSQLServerSettings.getSecretsManagerAccessRoleArn(), SECRETSMANAGERACCESSROLEARN_BINDING);
             protocolMarshaller.marshall(microsoftSQLServerSettings.getSecretsManagerSecretId(), SECRETSMANAGERSECRETID_BINDING);
         } catch (Exception e) {

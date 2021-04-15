@@ -139,6 +139,11 @@ public class AbstractAWSDatabaseMigrationService implements AWSDatabaseMigration
     }
 
     @Override
+    public DescribeEndpointSettingsResult describeEndpointSettings(DescribeEndpointSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeEndpointTypesResult describeEndpointTypes(DescribeEndpointTypesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -62,6 +62,14 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
     private String password;
     /**
      * <p>
+     * Cleans and recreates table metadata information on the replication instance when a mismatch occurs. An example is
+     * a situation where running an alter DDL statement on a table might result in different information about the table
+     * cached in the replication instance.
+     * </p>
+     */
+    private Boolean querySingleAlwaysOnNode;
+    /**
+     * <p>
      * When this attribute is set to <code>Y</code>, AWS DMS only reads changes from transaction log backups and doesn't
      * read from the active transaction log file during ongoing replication. Setting this parameter to <code>Y</code>
      * enables you to control active transaction log file growth during full load and ongoing replication tasks.
@@ -108,6 +116,13 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
      * </p>
      */
     private Boolean useBcpFullLoad;
+    /**
+     * <p>
+     * When this attribute is set to <code>Y</code>, DMS processes third-party transaction log backups if they are
+     * created in native format.
+     * </p>
+     */
+    private Boolean useThirdPartyBackupDevice;
     /**
      * <p>
      * The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the
@@ -346,6 +361,74 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
     public MicrosoftSQLServerSettings withPassword(String password) {
         setPassword(password);
         return this;
+    }
+
+    /**
+     * <p>
+     * Cleans and recreates table metadata information on the replication instance when a mismatch occurs. An example is
+     * a situation where running an alter DDL statement on a table might result in different information about the table
+     * cached in the replication instance.
+     * </p>
+     * 
+     * @param querySingleAlwaysOnNode
+     *        Cleans and recreates table metadata information on the replication instance when a mismatch occurs. An
+     *        example is a situation where running an alter DDL statement on a table might result in different
+     *        information about the table cached in the replication instance.
+     */
+
+    public void setQuerySingleAlwaysOnNode(Boolean querySingleAlwaysOnNode) {
+        this.querySingleAlwaysOnNode = querySingleAlwaysOnNode;
+    }
+
+    /**
+     * <p>
+     * Cleans and recreates table metadata information on the replication instance when a mismatch occurs. An example is
+     * a situation where running an alter DDL statement on a table might result in different information about the table
+     * cached in the replication instance.
+     * </p>
+     * 
+     * @return Cleans and recreates table metadata information on the replication instance when a mismatch occurs. An
+     *         example is a situation where running an alter DDL statement on a table might result in different
+     *         information about the table cached in the replication instance.
+     */
+
+    public Boolean getQuerySingleAlwaysOnNode() {
+        return this.querySingleAlwaysOnNode;
+    }
+
+    /**
+     * <p>
+     * Cleans and recreates table metadata information on the replication instance when a mismatch occurs. An example is
+     * a situation where running an alter DDL statement on a table might result in different information about the table
+     * cached in the replication instance.
+     * </p>
+     * 
+     * @param querySingleAlwaysOnNode
+     *        Cleans and recreates table metadata information on the replication instance when a mismatch occurs. An
+     *        example is a situation where running an alter DDL statement on a table might result in different
+     *        information about the table cached in the replication instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MicrosoftSQLServerSettings withQuerySingleAlwaysOnNode(Boolean querySingleAlwaysOnNode) {
+        setQuerySingleAlwaysOnNode(querySingleAlwaysOnNode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Cleans and recreates table metadata information on the replication instance when a mismatch occurs. An example is
+     * a situation where running an alter DDL statement on a table might result in different information about the table
+     * cached in the replication instance.
+     * </p>
+     * 
+     * @return Cleans and recreates table metadata information on the replication instance when a mismatch occurs. An
+     *         example is a situation where running an alter DDL statement on a table might result in different
+     *         information about the table cached in the replication instance.
+     */
+
+    public Boolean isQuerySingleAlwaysOnNode() {
+        return this.querySingleAlwaysOnNode;
     }
 
     /**
@@ -737,6 +820,66 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
 
     /**
      * <p>
+     * When this attribute is set to <code>Y</code>, DMS processes third-party transaction log backups if they are
+     * created in native format.
+     * </p>
+     * 
+     * @param useThirdPartyBackupDevice
+     *        When this attribute is set to <code>Y</code>, DMS processes third-party transaction log backups if they
+     *        are created in native format.
+     */
+
+    public void setUseThirdPartyBackupDevice(Boolean useThirdPartyBackupDevice) {
+        this.useThirdPartyBackupDevice = useThirdPartyBackupDevice;
+    }
+
+    /**
+     * <p>
+     * When this attribute is set to <code>Y</code>, DMS processes third-party transaction log backups if they are
+     * created in native format.
+     * </p>
+     * 
+     * @return When this attribute is set to <code>Y</code>, DMS processes third-party transaction log backups if they
+     *         are created in native format.
+     */
+
+    public Boolean getUseThirdPartyBackupDevice() {
+        return this.useThirdPartyBackupDevice;
+    }
+
+    /**
+     * <p>
+     * When this attribute is set to <code>Y</code>, DMS processes third-party transaction log backups if they are
+     * created in native format.
+     * </p>
+     * 
+     * @param useThirdPartyBackupDevice
+     *        When this attribute is set to <code>Y</code>, DMS processes third-party transaction log backups if they
+     *        are created in native format.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MicrosoftSQLServerSettings withUseThirdPartyBackupDevice(Boolean useThirdPartyBackupDevice) {
+        setUseThirdPartyBackupDevice(useThirdPartyBackupDevice);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When this attribute is set to <code>Y</code>, DMS processes third-party transaction log backups if they are
+     * created in native format.
+     * </p>
+     * 
+     * @return When this attribute is set to <code>Y</code>, DMS processes third-party transaction log backups if they
+     *         are created in native format.
+     */
+
+    public Boolean isUseThirdPartyBackupDevice() {
+        return this.useThirdPartyBackupDevice;
+    }
+
+    /**
+     * <p>
      * The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as the trusted entity and grants the
      * required permissions to access the value in <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code>
      * has the value of the AWS Secrets Manager secret that allows access to the SQL Server endpoint.
@@ -927,6 +1070,8 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
             sb.append("ControlTablesFileGroup: ").append(getControlTablesFileGroup()).append(",");
         if (getPassword() != null)
             sb.append("Password: ").append("***Sensitive Data Redacted***").append(",");
+        if (getQuerySingleAlwaysOnNode() != null)
+            sb.append("QuerySingleAlwaysOnNode: ").append(getQuerySingleAlwaysOnNode()).append(",");
         if (getReadBackupOnly() != null)
             sb.append("ReadBackupOnly: ").append(getReadBackupOnly()).append(",");
         if (getSafeguardPolicy() != null)
@@ -937,6 +1082,8 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
             sb.append("Username: ").append(getUsername()).append(",");
         if (getUseBcpFullLoad() != null)
             sb.append("UseBcpFullLoad: ").append(getUseBcpFullLoad()).append(",");
+        if (getUseThirdPartyBackupDevice() != null)
+            sb.append("UseThirdPartyBackupDevice: ").append(getUseThirdPartyBackupDevice()).append(",");
         if (getSecretsManagerAccessRoleArn() != null)
             sb.append("SecretsManagerAccessRoleArn: ").append(getSecretsManagerAccessRoleArn()).append(",");
         if (getSecretsManagerSecretId() != null)
@@ -975,6 +1122,10 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
             return false;
         if (other.getPassword() != null && other.getPassword().equals(this.getPassword()) == false)
             return false;
+        if (other.getQuerySingleAlwaysOnNode() == null ^ this.getQuerySingleAlwaysOnNode() == null)
+            return false;
+        if (other.getQuerySingleAlwaysOnNode() != null && other.getQuerySingleAlwaysOnNode().equals(this.getQuerySingleAlwaysOnNode()) == false)
+            return false;
         if (other.getReadBackupOnly() == null ^ this.getReadBackupOnly() == null)
             return false;
         if (other.getReadBackupOnly() != null && other.getReadBackupOnly().equals(this.getReadBackupOnly()) == false)
@@ -994,6 +1145,10 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
         if (other.getUseBcpFullLoad() == null ^ this.getUseBcpFullLoad() == null)
             return false;
         if (other.getUseBcpFullLoad() != null && other.getUseBcpFullLoad().equals(this.getUseBcpFullLoad()) == false)
+            return false;
+        if (other.getUseThirdPartyBackupDevice() == null ^ this.getUseThirdPartyBackupDevice() == null)
+            return false;
+        if (other.getUseThirdPartyBackupDevice() != null && other.getUseThirdPartyBackupDevice().equals(this.getUseThirdPartyBackupDevice()) == false)
             return false;
         if (other.getSecretsManagerAccessRoleArn() == null ^ this.getSecretsManagerAccessRoleArn() == null)
             return false;
@@ -1016,11 +1171,13 @@ public class MicrosoftSQLServerSettings implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getDatabaseName() == null) ? 0 : getDatabaseName().hashCode());
         hashCode = prime * hashCode + ((getControlTablesFileGroup() == null) ? 0 : getControlTablesFileGroup().hashCode());
         hashCode = prime * hashCode + ((getPassword() == null) ? 0 : getPassword().hashCode());
+        hashCode = prime * hashCode + ((getQuerySingleAlwaysOnNode() == null) ? 0 : getQuerySingleAlwaysOnNode().hashCode());
         hashCode = prime * hashCode + ((getReadBackupOnly() == null) ? 0 : getReadBackupOnly().hashCode());
         hashCode = prime * hashCode + ((getSafeguardPolicy() == null) ? 0 : getSafeguardPolicy().hashCode());
         hashCode = prime * hashCode + ((getServerName() == null) ? 0 : getServerName().hashCode());
         hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
         hashCode = prime * hashCode + ((getUseBcpFullLoad() == null) ? 0 : getUseBcpFullLoad().hashCode());
+        hashCode = prime * hashCode + ((getUseThirdPartyBackupDevice() == null) ? 0 : getUseThirdPartyBackupDevice().hashCode());
         hashCode = prime * hashCode + ((getSecretsManagerAccessRoleArn() == null) ? 0 : getSecretsManagerAccessRoleArn().hashCode());
         hashCode = prime * hashCode + ((getSecretsManagerSecretId() == null) ? 0 : getSecretsManagerSecretId().hashCode());
         return hashCode;

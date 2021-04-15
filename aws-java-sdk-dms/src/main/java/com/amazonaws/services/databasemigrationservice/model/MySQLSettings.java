@@ -37,6 +37,14 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
     private String afterConnectScript;
     /**
      * <p>
+     * Adjusts the behavior of DMS when migrating from an SQL Server source database that is hosted as part of an Always
+     * On availability group cluster. If you need DMS to poll all the nodes in the Always On cluster for transaction
+     * backups, set this attribute to <code>false</code>.
+     * </p>
+     */
+    private Boolean cleanSourceMetadataOnMismatch;
+    /**
+     * <p>
      * Database name for the endpoint.
      * </p>
      */
@@ -190,6 +198,74 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
     public MySQLSettings withAfterConnectScript(String afterConnectScript) {
         setAfterConnectScript(afterConnectScript);
         return this;
+    }
+
+    /**
+     * <p>
+     * Adjusts the behavior of DMS when migrating from an SQL Server source database that is hosted as part of an Always
+     * On availability group cluster. If you need DMS to poll all the nodes in the Always On cluster for transaction
+     * backups, set this attribute to <code>false</code>.
+     * </p>
+     * 
+     * @param cleanSourceMetadataOnMismatch
+     *        Adjusts the behavior of DMS when migrating from an SQL Server source database that is hosted as part of an
+     *        Always On availability group cluster. If you need DMS to poll all the nodes in the Always On cluster for
+     *        transaction backups, set this attribute to <code>false</code>.
+     */
+
+    public void setCleanSourceMetadataOnMismatch(Boolean cleanSourceMetadataOnMismatch) {
+        this.cleanSourceMetadataOnMismatch = cleanSourceMetadataOnMismatch;
+    }
+
+    /**
+     * <p>
+     * Adjusts the behavior of DMS when migrating from an SQL Server source database that is hosted as part of an Always
+     * On availability group cluster. If you need DMS to poll all the nodes in the Always On cluster for transaction
+     * backups, set this attribute to <code>false</code>.
+     * </p>
+     * 
+     * @return Adjusts the behavior of DMS when migrating from an SQL Server source database that is hosted as part of
+     *         an Always On availability group cluster. If you need DMS to poll all the nodes in the Always On cluster
+     *         for transaction backups, set this attribute to <code>false</code>.
+     */
+
+    public Boolean getCleanSourceMetadataOnMismatch() {
+        return this.cleanSourceMetadataOnMismatch;
+    }
+
+    /**
+     * <p>
+     * Adjusts the behavior of DMS when migrating from an SQL Server source database that is hosted as part of an Always
+     * On availability group cluster. If you need DMS to poll all the nodes in the Always On cluster for transaction
+     * backups, set this attribute to <code>false</code>.
+     * </p>
+     * 
+     * @param cleanSourceMetadataOnMismatch
+     *        Adjusts the behavior of DMS when migrating from an SQL Server source database that is hosted as part of an
+     *        Always On availability group cluster. If you need DMS to poll all the nodes in the Always On cluster for
+     *        transaction backups, set this attribute to <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MySQLSettings withCleanSourceMetadataOnMismatch(Boolean cleanSourceMetadataOnMismatch) {
+        setCleanSourceMetadataOnMismatch(cleanSourceMetadataOnMismatch);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Adjusts the behavior of DMS when migrating from an SQL Server source database that is hosted as part of an Always
+     * On availability group cluster. If you need DMS to poll all the nodes in the Always On cluster for transaction
+     * backups, set this attribute to <code>false</code>.
+     * </p>
+     * 
+     * @return Adjusts the behavior of DMS when migrating from an SQL Server source database that is hosted as part of
+     *         an Always On availability group cluster. If you need DMS to poll all the nodes in the Always On cluster
+     *         for transaction backups, set this attribute to <code>false</code>.
+     */
+
+    public Boolean isCleanSourceMetadataOnMismatch() {
+        return this.cleanSourceMetadataOnMismatch;
     }
 
     /**
@@ -933,6 +1009,8 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getAfterConnectScript() != null)
             sb.append("AfterConnectScript: ").append(getAfterConnectScript()).append(",");
+        if (getCleanSourceMetadataOnMismatch() != null)
+            sb.append("CleanSourceMetadataOnMismatch: ").append(getCleanSourceMetadataOnMismatch()).append(",");
         if (getDatabaseName() != null)
             sb.append("DatabaseName: ").append(getDatabaseName()).append(",");
         if (getEventsPollInterval() != null)
@@ -974,6 +1052,11 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
         if (other.getAfterConnectScript() == null ^ this.getAfterConnectScript() == null)
             return false;
         if (other.getAfterConnectScript() != null && other.getAfterConnectScript().equals(this.getAfterConnectScript()) == false)
+            return false;
+        if (other.getCleanSourceMetadataOnMismatch() == null ^ this.getCleanSourceMetadataOnMismatch() == null)
+            return false;
+        if (other.getCleanSourceMetadataOnMismatch() != null
+                && other.getCleanSourceMetadataOnMismatch().equals(this.getCleanSourceMetadataOnMismatch()) == false)
             return false;
         if (other.getDatabaseName() == null ^ this.getDatabaseName() == null)
             return false;
@@ -1032,6 +1115,7 @@ public class MySQLSettings implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAfterConnectScript() == null) ? 0 : getAfterConnectScript().hashCode());
+        hashCode = prime * hashCode + ((getCleanSourceMetadataOnMismatch() == null) ? 0 : getCleanSourceMetadataOnMismatch().hashCode());
         hashCode = prime * hashCode + ((getDatabaseName() == null) ? 0 : getDatabaseName().hashCode());
         hashCode = prime * hashCode + ((getEventsPollInterval() == null) ? 0 : getEventsPollInterval().hashCode());
         hashCode = prime * hashCode + ((getTargetDbType() == null) ? 0 : getTargetDbType().hashCode());

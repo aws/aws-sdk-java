@@ -31,9 +31,12 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The broker location and port of the Kafka broker that hosts your Kafka instance. Specify the broker in the form
-     * <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example,
-     * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>.
+     * A comma-separated list of one or more broker locations in your Kafka cluster that host your Kafka instance.
+     * Specify each broker location in the form <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example,
+     * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and examples of specifying a
+     * list of broker locations, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a target for
+     * AWS Database Migration Service</a> in the <i>AWS Data Migration Service User Guide</i>.
      * </p>
      */
     private String broker;
@@ -103,18 +106,71 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Boolean includeNullAndEmpty;
+    /**
+     * <p>
+     * Set secure connection to a Kafka target endpoint using Transport Layer Security (TLS). Options include
+     * <code>ssl-encryption</code>, <code>ssl-authentication</code>, and <code>sasl-ssl</code>. <code>sasl-ssl</code>
+     * requires <code>SaslUsername</code> and <code>SaslPassword</code>.
+     * </p>
+     */
+    private String securityProtocol;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the client certificate used to securely connect to a Kafka target endpoint.
+     * </p>
+     */
+    private String sslClientCertificateArn;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the client private key used to securely connect to a Kafka target endpoint.
+     * </p>
+     */
+    private String sslClientKeyArn;
+    /**
+     * <p>
+     * The password for the client private key used to securely connect to a Kafka target endpoint.
+     * </p>
+     */
+    private String sslClientKeyPassword;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the private Certification Authority (CA) cert that AWS DMS uses to securely
+     * connect to your Kafka target endpoint.
+     * </p>
+     */
+    private String sslCaCertificateArn;
+    /**
+     * <p>
+     * The secure username you created when you first set up your MSK cluster to validate a client identity and make an
+     * encrypted connection between server and client using SASL-SSL authentication.
+     * </p>
+     */
+    private String saslUsername;
+    /**
+     * <p>
+     * The secure password you created when you first set up your MSK cluster to validate a client identity and make an
+     * encrypted connection between server and client using SASL-SSL authentication.
+     * </p>
+     */
+    private String saslPassword;
 
     /**
      * <p>
-     * The broker location and port of the Kafka broker that hosts your Kafka instance. Specify the broker in the form
-     * <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example,
-     * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>.
+     * A comma-separated list of one or more broker locations in your Kafka cluster that host your Kafka instance.
+     * Specify each broker location in the form <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example,
+     * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and examples of specifying a
+     * list of broker locations, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a target for
+     * AWS Database Migration Service</a> in the <i>AWS Data Migration Service User Guide</i>.
      * </p>
      * 
      * @param broker
-     *        The broker location and port of the Kafka broker that hosts your Kafka instance. Specify the broker in the
-     *        form <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example,
-     *        <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>.
+     *        A comma-separated list of one or more broker locations in your Kafka cluster that host your Kafka
+     *        instance. Specify each broker location in the form <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>
+     *        . For example, <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and
+     *        examples of specifying a list of broker locations, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a
+     *        target for AWS Database Migration Service</a> in the <i>AWS Data Migration Service User Guide</i>.
      */
 
     public void setBroker(String broker) {
@@ -123,14 +179,21 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The broker location and port of the Kafka broker that hosts your Kafka instance. Specify the broker in the form
-     * <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example,
-     * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>.
+     * A comma-separated list of one or more broker locations in your Kafka cluster that host your Kafka instance.
+     * Specify each broker location in the form <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example,
+     * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and examples of specifying a
+     * list of broker locations, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a target for
+     * AWS Database Migration Service</a> in the <i>AWS Data Migration Service User Guide</i>.
      * </p>
      * 
-     * @return The broker location and port of the Kafka broker that hosts your Kafka instance. Specify the broker in
-     *         the form <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example,
-     *         <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>.
+     * @return A comma-separated list of one or more broker locations in your Kafka cluster that host your Kafka
+     *         instance. Specify each broker location in the form
+     *         <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example,
+     *         <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and examples of
+     *         specifying a list of broker locations, see <a
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a
+     *         target for AWS Database Migration Service</a> in the <i>AWS Data Migration Service User Guide</i>.
      */
 
     public String getBroker() {
@@ -139,15 +202,21 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The broker location and port of the Kafka broker that hosts your Kafka instance. Specify the broker in the form
-     * <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example,
-     * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>.
+     * A comma-separated list of one or more broker locations in your Kafka cluster that host your Kafka instance.
+     * Specify each broker location in the form <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example,
+     * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and examples of specifying a
+     * list of broker locations, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a target for
+     * AWS Database Migration Service</a> in the <i>AWS Data Migration Service User Guide</i>.
      * </p>
      * 
      * @param broker
-     *        The broker location and port of the Kafka broker that hosts your Kafka instance. Specify the broker in the
-     *        form <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example,
-     *        <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>.
+     *        A comma-separated list of one or more broker locations in your Kafka cluster that host your Kafka
+     *        instance. Specify each broker location in the form <code> <i>broker-hostname-or-ip</i>:<i>port</i> </code>
+     *        . For example, <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more information and
+     *        examples of specifying a list of broker locations, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a
+     *        target for AWS Database Migration Service</a> in the <i>AWS Data Migration Service User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -706,6 +775,345 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Set secure connection to a Kafka target endpoint using Transport Layer Security (TLS). Options include
+     * <code>ssl-encryption</code>, <code>ssl-authentication</code>, and <code>sasl-ssl</code>. <code>sasl-ssl</code>
+     * requires <code>SaslUsername</code> and <code>SaslPassword</code>.
+     * </p>
+     * 
+     * @param securityProtocol
+     *        Set secure connection to a Kafka target endpoint using Transport Layer Security (TLS). Options include
+     *        <code>ssl-encryption</code>, <code>ssl-authentication</code>, and <code>sasl-ssl</code>.
+     *        <code>sasl-ssl</code> requires <code>SaslUsername</code> and <code>SaslPassword</code>.
+     * @see KafkaSecurityProtocol
+     */
+
+    public void setSecurityProtocol(String securityProtocol) {
+        this.securityProtocol = securityProtocol;
+    }
+
+    /**
+     * <p>
+     * Set secure connection to a Kafka target endpoint using Transport Layer Security (TLS). Options include
+     * <code>ssl-encryption</code>, <code>ssl-authentication</code>, and <code>sasl-ssl</code>. <code>sasl-ssl</code>
+     * requires <code>SaslUsername</code> and <code>SaslPassword</code>.
+     * </p>
+     * 
+     * @return Set secure connection to a Kafka target endpoint using Transport Layer Security (TLS). Options include
+     *         <code>ssl-encryption</code>, <code>ssl-authentication</code>, and <code>sasl-ssl</code>.
+     *         <code>sasl-ssl</code> requires <code>SaslUsername</code> and <code>SaslPassword</code>.
+     * @see KafkaSecurityProtocol
+     */
+
+    public String getSecurityProtocol() {
+        return this.securityProtocol;
+    }
+
+    /**
+     * <p>
+     * Set secure connection to a Kafka target endpoint using Transport Layer Security (TLS). Options include
+     * <code>ssl-encryption</code>, <code>ssl-authentication</code>, and <code>sasl-ssl</code>. <code>sasl-ssl</code>
+     * requires <code>SaslUsername</code> and <code>SaslPassword</code>.
+     * </p>
+     * 
+     * @param securityProtocol
+     *        Set secure connection to a Kafka target endpoint using Transport Layer Security (TLS). Options include
+     *        <code>ssl-encryption</code>, <code>ssl-authentication</code>, and <code>sasl-ssl</code>.
+     *        <code>sasl-ssl</code> requires <code>SaslUsername</code> and <code>SaslPassword</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see KafkaSecurityProtocol
+     */
+
+    public KafkaSettings withSecurityProtocol(String securityProtocol) {
+        setSecurityProtocol(securityProtocol);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set secure connection to a Kafka target endpoint using Transport Layer Security (TLS). Options include
+     * <code>ssl-encryption</code>, <code>ssl-authentication</code>, and <code>sasl-ssl</code>. <code>sasl-ssl</code>
+     * requires <code>SaslUsername</code> and <code>SaslPassword</code>.
+     * </p>
+     * 
+     * @param securityProtocol
+     *        Set secure connection to a Kafka target endpoint using Transport Layer Security (TLS). Options include
+     *        <code>ssl-encryption</code>, <code>ssl-authentication</code>, and <code>sasl-ssl</code>.
+     *        <code>sasl-ssl</code> requires <code>SaslUsername</code> and <code>SaslPassword</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see KafkaSecurityProtocol
+     */
+
+    public KafkaSettings withSecurityProtocol(KafkaSecurityProtocol securityProtocol) {
+        this.securityProtocol = securityProtocol.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the client certificate used to securely connect to a Kafka target endpoint.
+     * </p>
+     * 
+     * @param sslClientCertificateArn
+     *        The Amazon Resource Name (ARN) of the client certificate used to securely connect to a Kafka target
+     *        endpoint.
+     */
+
+    public void setSslClientCertificateArn(String sslClientCertificateArn) {
+        this.sslClientCertificateArn = sslClientCertificateArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the client certificate used to securely connect to a Kafka target endpoint.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the client certificate used to securely connect to a Kafka target
+     *         endpoint.
+     */
+
+    public String getSslClientCertificateArn() {
+        return this.sslClientCertificateArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the client certificate used to securely connect to a Kafka target endpoint.
+     * </p>
+     * 
+     * @param sslClientCertificateArn
+     *        The Amazon Resource Name (ARN) of the client certificate used to securely connect to a Kafka target
+     *        endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KafkaSettings withSslClientCertificateArn(String sslClientCertificateArn) {
+        setSslClientCertificateArn(sslClientCertificateArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the client private key used to securely connect to a Kafka target endpoint.
+     * </p>
+     * 
+     * @param sslClientKeyArn
+     *        The Amazon Resource Name (ARN) for the client private key used to securely connect to a Kafka target
+     *        endpoint.
+     */
+
+    public void setSslClientKeyArn(String sslClientKeyArn) {
+        this.sslClientKeyArn = sslClientKeyArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the client private key used to securely connect to a Kafka target endpoint.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the client private key used to securely connect to a Kafka target
+     *         endpoint.
+     */
+
+    public String getSslClientKeyArn() {
+        return this.sslClientKeyArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the client private key used to securely connect to a Kafka target endpoint.
+     * </p>
+     * 
+     * @param sslClientKeyArn
+     *        The Amazon Resource Name (ARN) for the client private key used to securely connect to a Kafka target
+     *        endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KafkaSettings withSslClientKeyArn(String sslClientKeyArn) {
+        setSslClientKeyArn(sslClientKeyArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The password for the client private key used to securely connect to a Kafka target endpoint.
+     * </p>
+     * 
+     * @param sslClientKeyPassword
+     *        The password for the client private key used to securely connect to a Kafka target endpoint.
+     */
+
+    public void setSslClientKeyPassword(String sslClientKeyPassword) {
+        this.sslClientKeyPassword = sslClientKeyPassword;
+    }
+
+    /**
+     * <p>
+     * The password for the client private key used to securely connect to a Kafka target endpoint.
+     * </p>
+     * 
+     * @return The password for the client private key used to securely connect to a Kafka target endpoint.
+     */
+
+    public String getSslClientKeyPassword() {
+        return this.sslClientKeyPassword;
+    }
+
+    /**
+     * <p>
+     * The password for the client private key used to securely connect to a Kafka target endpoint.
+     * </p>
+     * 
+     * @param sslClientKeyPassword
+     *        The password for the client private key used to securely connect to a Kafka target endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KafkaSettings withSslClientKeyPassword(String sslClientKeyPassword) {
+        setSslClientKeyPassword(sslClientKeyPassword);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the private Certification Authority (CA) cert that AWS DMS uses to securely
+     * connect to your Kafka target endpoint.
+     * </p>
+     * 
+     * @param sslCaCertificateArn
+     *        The Amazon Resource Name (ARN) for the private Certification Authority (CA) cert that AWS DMS uses to
+     *        securely connect to your Kafka target endpoint.
+     */
+
+    public void setSslCaCertificateArn(String sslCaCertificateArn) {
+        this.sslCaCertificateArn = sslCaCertificateArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the private Certification Authority (CA) cert that AWS DMS uses to securely
+     * connect to your Kafka target endpoint.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the private Certification Authority (CA) cert that AWS DMS uses to
+     *         securely connect to your Kafka target endpoint.
+     */
+
+    public String getSslCaCertificateArn() {
+        return this.sslCaCertificateArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the private Certification Authority (CA) cert that AWS DMS uses to securely
+     * connect to your Kafka target endpoint.
+     * </p>
+     * 
+     * @param sslCaCertificateArn
+     *        The Amazon Resource Name (ARN) for the private Certification Authority (CA) cert that AWS DMS uses to
+     *        securely connect to your Kafka target endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KafkaSettings withSslCaCertificateArn(String sslCaCertificateArn) {
+        setSslCaCertificateArn(sslCaCertificateArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The secure username you created when you first set up your MSK cluster to validate a client identity and make an
+     * encrypted connection between server and client using SASL-SSL authentication.
+     * </p>
+     * 
+     * @param saslUsername
+     *        The secure username you created when you first set up your MSK cluster to validate a client identity and
+     *        make an encrypted connection between server and client using SASL-SSL authentication.
+     */
+
+    public void setSaslUsername(String saslUsername) {
+        this.saslUsername = saslUsername;
+    }
+
+    /**
+     * <p>
+     * The secure username you created when you first set up your MSK cluster to validate a client identity and make an
+     * encrypted connection between server and client using SASL-SSL authentication.
+     * </p>
+     * 
+     * @return The secure username you created when you first set up your MSK cluster to validate a client identity and
+     *         make an encrypted connection between server and client using SASL-SSL authentication.
+     */
+
+    public String getSaslUsername() {
+        return this.saslUsername;
+    }
+
+    /**
+     * <p>
+     * The secure username you created when you first set up your MSK cluster to validate a client identity and make an
+     * encrypted connection between server and client using SASL-SSL authentication.
+     * </p>
+     * 
+     * @param saslUsername
+     *        The secure username you created when you first set up your MSK cluster to validate a client identity and
+     *        make an encrypted connection between server and client using SASL-SSL authentication.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KafkaSettings withSaslUsername(String saslUsername) {
+        setSaslUsername(saslUsername);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The secure password you created when you first set up your MSK cluster to validate a client identity and make an
+     * encrypted connection between server and client using SASL-SSL authentication.
+     * </p>
+     * 
+     * @param saslPassword
+     *        The secure password you created when you first set up your MSK cluster to validate a client identity and
+     *        make an encrypted connection between server and client using SASL-SSL authentication.
+     */
+
+    public void setSaslPassword(String saslPassword) {
+        this.saslPassword = saslPassword;
+    }
+
+    /**
+     * <p>
+     * The secure password you created when you first set up your MSK cluster to validate a client identity and make an
+     * encrypted connection between server and client using SASL-SSL authentication.
+     * </p>
+     * 
+     * @return The secure password you created when you first set up your MSK cluster to validate a client identity and
+     *         make an encrypted connection between server and client using SASL-SSL authentication.
+     */
+
+    public String getSaslPassword() {
+        return this.saslPassword;
+    }
+
+    /**
+     * <p>
+     * The secure password you created when you first set up your MSK cluster to validate a client identity and make an
+     * encrypted connection between server and client using SASL-SSL authentication.
+     * </p>
+     * 
+     * @param saslPassword
+     *        The secure password you created when you first set up your MSK cluster to validate a client identity and
+     *        make an encrypted connection between server and client using SASL-SSL authentication.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KafkaSettings withSaslPassword(String saslPassword) {
+        setSaslPassword(saslPassword);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -736,7 +1144,21 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
         if (getMessageMaxBytes() != null)
             sb.append("MessageMaxBytes: ").append(getMessageMaxBytes()).append(",");
         if (getIncludeNullAndEmpty() != null)
-            sb.append("IncludeNullAndEmpty: ").append(getIncludeNullAndEmpty());
+            sb.append("IncludeNullAndEmpty: ").append(getIncludeNullAndEmpty()).append(",");
+        if (getSecurityProtocol() != null)
+            sb.append("SecurityProtocol: ").append(getSecurityProtocol()).append(",");
+        if (getSslClientCertificateArn() != null)
+            sb.append("SslClientCertificateArn: ").append(getSslClientCertificateArn()).append(",");
+        if (getSslClientKeyArn() != null)
+            sb.append("SslClientKeyArn: ").append(getSslClientKeyArn()).append(",");
+        if (getSslClientKeyPassword() != null)
+            sb.append("SslClientKeyPassword: ").append("***Sensitive Data Redacted***").append(",");
+        if (getSslCaCertificateArn() != null)
+            sb.append("SslCaCertificateArn: ").append(getSslCaCertificateArn()).append(",");
+        if (getSaslUsername() != null)
+            sb.append("SaslUsername: ").append(getSaslUsername()).append(",");
+        if (getSaslPassword() != null)
+            sb.append("SaslPassword: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -791,6 +1213,34 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getIncludeNullAndEmpty() != null && other.getIncludeNullAndEmpty().equals(this.getIncludeNullAndEmpty()) == false)
             return false;
+        if (other.getSecurityProtocol() == null ^ this.getSecurityProtocol() == null)
+            return false;
+        if (other.getSecurityProtocol() != null && other.getSecurityProtocol().equals(this.getSecurityProtocol()) == false)
+            return false;
+        if (other.getSslClientCertificateArn() == null ^ this.getSslClientCertificateArn() == null)
+            return false;
+        if (other.getSslClientCertificateArn() != null && other.getSslClientCertificateArn().equals(this.getSslClientCertificateArn()) == false)
+            return false;
+        if (other.getSslClientKeyArn() == null ^ this.getSslClientKeyArn() == null)
+            return false;
+        if (other.getSslClientKeyArn() != null && other.getSslClientKeyArn().equals(this.getSslClientKeyArn()) == false)
+            return false;
+        if (other.getSslClientKeyPassword() == null ^ this.getSslClientKeyPassword() == null)
+            return false;
+        if (other.getSslClientKeyPassword() != null && other.getSslClientKeyPassword().equals(this.getSslClientKeyPassword()) == false)
+            return false;
+        if (other.getSslCaCertificateArn() == null ^ this.getSslCaCertificateArn() == null)
+            return false;
+        if (other.getSslCaCertificateArn() != null && other.getSslCaCertificateArn().equals(this.getSslCaCertificateArn()) == false)
+            return false;
+        if (other.getSaslUsername() == null ^ this.getSaslUsername() == null)
+            return false;
+        if (other.getSaslUsername() != null && other.getSaslUsername().equals(this.getSaslUsername()) == false)
+            return false;
+        if (other.getSaslPassword() == null ^ this.getSaslPassword() == null)
+            return false;
+        if (other.getSaslPassword() != null && other.getSaslPassword().equals(this.getSaslPassword()) == false)
+            return false;
         return true;
     }
 
@@ -809,6 +1259,13 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getIncludeControlDetails() == null) ? 0 : getIncludeControlDetails().hashCode());
         hashCode = prime * hashCode + ((getMessageMaxBytes() == null) ? 0 : getMessageMaxBytes().hashCode());
         hashCode = prime * hashCode + ((getIncludeNullAndEmpty() == null) ? 0 : getIncludeNullAndEmpty().hashCode());
+        hashCode = prime * hashCode + ((getSecurityProtocol() == null) ? 0 : getSecurityProtocol().hashCode());
+        hashCode = prime * hashCode + ((getSslClientCertificateArn() == null) ? 0 : getSslClientCertificateArn().hashCode());
+        hashCode = prime * hashCode + ((getSslClientKeyArn() == null) ? 0 : getSslClientKeyArn().hashCode());
+        hashCode = prime * hashCode + ((getSslClientKeyPassword() == null) ? 0 : getSslClientKeyPassword().hashCode());
+        hashCode = prime * hashCode + ((getSslCaCertificateArn() == null) ? 0 : getSslCaCertificateArn().hashCode());
+        hashCode = prime * hashCode + ((getSaslUsername() == null) ? 0 : getSaslUsername().hashCode());
+        hashCode = prime * hashCode + ((getSaslPassword() == null) ? 0 : getSaslPassword().hashCode());
         return hashCode;
     }
 

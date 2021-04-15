@@ -31,7 +31,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) used by the service access IAM role. It is a required parameter that enables DMS
-     * to write and read objects from an 3S bucket.
+     * to write and read objects from an S3 bucket.
      * </p>
      */
     private String serviceAccessRoleArn;
@@ -517,12 +517,12 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) used by the service access IAM role. It is a required parameter that enables DMS
-     * to write and read objects from an 3S bucket.
+     * to write and read objects from an S3 bucket.
      * </p>
      * 
      * @param serviceAccessRoleArn
      *        The Amazon Resource Name (ARN) used by the service access IAM role. It is a required parameter that
-     *        enables DMS to write and read objects from an 3S bucket.
+     *        enables DMS to write and read objects from an S3 bucket.
      */
 
     public void setServiceAccessRoleArn(String serviceAccessRoleArn) {
@@ -532,11 +532,11 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) used by the service access IAM role. It is a required parameter that enables DMS
-     * to write and read objects from an 3S bucket.
+     * to write and read objects from an S3 bucket.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) used by the service access IAM role. It is a required parameter that
-     *         enables DMS to write and read objects from an 3S bucket.
+     *         enables DMS to write and read objects from an S3 bucket.
      */
 
     public String getServiceAccessRoleArn() {
@@ -546,12 +546,12 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) used by the service access IAM role. It is a required parameter that enables DMS
-     * to write and read objects from an 3S bucket.
+     * to write and read objects from an S3 bucket.
      * </p>
      * 
      * @param serviceAccessRoleArn
      *        The Amazon Resource Name (ARN) used by the service access IAM role. It is a required parameter that
-     *        enables DMS to write and read objects from an 3S bucket.
+     *        enables DMS to write and read objects from an S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

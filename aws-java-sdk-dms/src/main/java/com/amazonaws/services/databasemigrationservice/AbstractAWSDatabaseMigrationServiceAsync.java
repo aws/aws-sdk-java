@@ -294,6 +294,19 @@ public class AbstractAWSDatabaseMigrationServiceAsync extends AbstractAWSDatabas
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeEndpointSettingsResult> describeEndpointSettingsAsync(DescribeEndpointSettingsRequest request) {
+
+        return describeEndpointSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEndpointSettingsResult> describeEndpointSettingsAsync(DescribeEndpointSettingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeEndpointSettingsRequest, DescribeEndpointSettingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeEndpointTypesResult> describeEndpointTypesAsync(DescribeEndpointTypesRequest request) {
 
         return describeEndpointTypesAsync(request, null);

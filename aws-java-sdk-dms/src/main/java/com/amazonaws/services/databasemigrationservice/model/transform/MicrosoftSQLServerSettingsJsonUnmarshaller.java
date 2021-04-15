@@ -68,6 +68,10 @@ public class MicrosoftSQLServerSettingsJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     microsoftSQLServerSettings.setPassword(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("QuerySingleAlwaysOnNode", targetDepth)) {
+                    context.nextToken();
+                    microsoftSQLServerSettings.setQuerySingleAlwaysOnNode(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("ReadBackupOnly", targetDepth)) {
                     context.nextToken();
                     microsoftSQLServerSettings.setReadBackupOnly(context.getUnmarshaller(Boolean.class).unmarshall(context));
@@ -87,6 +91,10 @@ public class MicrosoftSQLServerSettingsJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("UseBcpFullLoad", targetDepth)) {
                     context.nextToken();
                     microsoftSQLServerSettings.setUseBcpFullLoad(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("UseThirdPartyBackupDevice", targetDepth)) {
+                    context.nextToken();
+                    microsoftSQLServerSettings.setUseThirdPartyBackupDevice(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("SecretsManagerAccessRoleArn", targetDepth)) {
                     context.nextToken();

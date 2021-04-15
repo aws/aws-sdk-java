@@ -1,3 +1,12 @@
+# __1.11.1000__ __2021-04-15__
+## __AWS Database Migration Service__
+  - ### Features
+    - AWS DMS added support of TLS for Kafka endpoint. Added Describe endpoint setting API for DMS endpoints.
+
+## __AWS Security Token Service__
+  - ### Features
+    - STS now supports assume role with Web Identity using JWT token length upto 20000 characters
+
 # __1.11.999__ __2021-04-14__
 ## __AWS CodeStar connections__
   - ### Features

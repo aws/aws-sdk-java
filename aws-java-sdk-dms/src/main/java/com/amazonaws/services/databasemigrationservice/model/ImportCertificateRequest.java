@@ -289,7 +289,7 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getCertificateIdentifier() != null)
             sb.append("CertificateIdentifier: ").append(getCertificateIdentifier()).append(",");
         if (getCertificatePem() != null)
-            sb.append("CertificatePem: ").append(getCertificatePem()).append(",");
+            sb.append("CertificatePem: ").append("***Sensitive Data Redacted***").append(",");
         if (getCertificateWallet() != null)
             sb.append("CertificateWallet: ").append(getCertificateWallet()).append(",");
         if (getTags() != null)

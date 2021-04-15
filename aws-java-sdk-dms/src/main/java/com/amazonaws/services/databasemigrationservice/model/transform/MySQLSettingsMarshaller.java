@@ -29,6 +29,8 @@ public class MySQLSettingsMarshaller {
 
     private static final MarshallingInfo<String> AFTERCONNECTSCRIPT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AfterConnectScript").build();
+    private static final MarshallingInfo<Boolean> CLEANSOURCEMETADATAONMISMATCH_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CleanSourceMetadataOnMismatch").build();
     private static final MarshallingInfo<String> DATABASENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatabaseName").build();
     private static final MarshallingInfo<Integer> EVENTSPOLLINTERVAL_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -71,6 +73,7 @@ public class MySQLSettingsMarshaller {
 
         try {
             protocolMarshaller.marshall(mySQLSettings.getAfterConnectScript(), AFTERCONNECTSCRIPT_BINDING);
+            protocolMarshaller.marshall(mySQLSettings.getCleanSourceMetadataOnMismatch(), CLEANSOURCEMETADATAONMISMATCH_BINDING);
             protocolMarshaller.marshall(mySQLSettings.getDatabaseName(), DATABASENAME_BINDING);
             protocolMarshaller.marshall(mySQLSettings.getEventsPollInterval(), EVENTSPOLLINTERVAL_BINDING);
             protocolMarshaller.marshall(mySQLSettings.getTargetDbType(), TARGETDBTYPE_BINDING);

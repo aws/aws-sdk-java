@@ -85,6 +85,8 @@ public class OracleSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecurityDbEncryptionName").build();
     private static final MarshallingInfo<String> SERVERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerName").build();
+    private static final MarshallingInfo<String> SPATIALDATAOPTIONTOGEOJSONFUNCTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SpatialDataOptionToGeoJsonFunctionName").build();
     private static final MarshallingInfo<String> USERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Username").build();
     private static final MarshallingInfo<String> SECRETSMANAGERACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -141,6 +143,7 @@ public class OracleSettingsMarshaller {
             protocolMarshaller.marshall(oracleSettings.getSecurityDbEncryption(), SECURITYDBENCRYPTION_BINDING);
             protocolMarshaller.marshall(oracleSettings.getSecurityDbEncryptionName(), SECURITYDBENCRYPTIONNAME_BINDING);
             protocolMarshaller.marshall(oracleSettings.getServerName(), SERVERNAME_BINDING);
+            protocolMarshaller.marshall(oracleSettings.getSpatialDataOptionToGeoJsonFunctionName(), SPATIALDATAOPTIONTOGEOJSONFUNCTIONNAME_BINDING);
             protocolMarshaller.marshall(oracleSettings.getUsername(), USERNAME_BINDING);
             protocolMarshaller.marshall(oracleSettings.getSecretsManagerAccessRoleArn(), SECRETSMANAGERACCESSROLEARN_BINDING);
             protocolMarshaller.marshall(oracleSettings.getSecretsManagerSecretId(), SECRETSMANAGERSECRETID_BINDING);

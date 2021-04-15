@@ -938,6 +938,39 @@ public class AWSDatabaseMigrationServiceAsyncClient extends AWSDatabaseMigration
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeEndpointSettingsResult> describeEndpointSettingsAsync(DescribeEndpointSettingsRequest request) {
+
+        return describeEndpointSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEndpointSettingsResult> describeEndpointSettingsAsync(final DescribeEndpointSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeEndpointSettingsRequest, DescribeEndpointSettingsResult> asyncHandler) {
+        final DescribeEndpointSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeEndpointSettingsResult>() {
+            @Override
+            public DescribeEndpointSettingsResult call() throws Exception {
+                DescribeEndpointSettingsResult result = null;
+
+                try {
+                    result = executeDescribeEndpointSettings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeEndpointTypesResult> describeEndpointTypesAsync(DescribeEndpointTypesRequest request) {
 
         return describeEndpointTypesAsync(request, null);

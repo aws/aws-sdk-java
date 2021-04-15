@@ -579,6 +579,20 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
+     * Returns information about the possible endpoint settings available when you create an endpoint for a specific
+     * database engine.
+     * </p>
+     * 
+     * @param describeEndpointSettingsRequest
+     * @return Result of the DescribeEndpointSettings operation returned by the service.
+     * @sample AWSDatabaseMigrationService.DescribeEndpointSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpointSettings" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeEndpointSettingsResult describeEndpointSettings(DescribeEndpointSettingsRequest describeEndpointSettingsRequest);
+
+    /**
+     * <p>
      * Returns information about the type of endpoints available.
      * </p>
      * 
@@ -1061,6 +1075,8 @@ public interface AWSDatabaseMigrationService {
      *         The resource is in a state that prevents it from being used for database migration.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
+     * @throws KMSKeyNotAccessibleException
+     *         AWS DMS cannot access the AWS KMS key.
      * @sample AWSDatabaseMigrationService.MoveReplicationTask
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/MoveReplicationTask" target="_top">AWS API
      *      Documentation</a>
@@ -1259,6 +1275,8 @@ public interface AWSDatabaseMigrationService {
      *         AWS DMS cannot access the AWS KMS key.
      * @throws ResourceQuotaExceededException
      *         The quota for this resource quota has been exceeded.
+     * @throws AccessDeniedException
+     *         AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
      * @sample AWSDatabaseMigrationService.TestConnection
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/TestConnection" target="_top">AWS API
      *      Documentation</a>

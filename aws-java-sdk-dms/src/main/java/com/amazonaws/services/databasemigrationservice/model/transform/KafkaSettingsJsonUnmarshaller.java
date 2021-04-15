@@ -88,6 +88,34 @@ public class KafkaSettingsJsonUnmarshaller implements Unmarshaller<KafkaSettings
                     context.nextToken();
                     kafkaSettings.setIncludeNullAndEmpty(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("SecurityProtocol", targetDepth)) {
+                    context.nextToken();
+                    kafkaSettings.setSecurityProtocol(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SslClientCertificateArn", targetDepth)) {
+                    context.nextToken();
+                    kafkaSettings.setSslClientCertificateArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SslClientKeyArn", targetDepth)) {
+                    context.nextToken();
+                    kafkaSettings.setSslClientKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SslClientKeyPassword", targetDepth)) {
+                    context.nextToken();
+                    kafkaSettings.setSslClientKeyPassword(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SslCaCertificateArn", targetDepth)) {
+                    context.nextToken();
+                    kafkaSettings.setSslCaCertificateArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SaslUsername", targetDepth)) {
+                    context.nextToken();
+                    kafkaSettings.setSaslUsername(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SaslPassword", targetDepth)) {
+                    context.nextToken();
+                    kafkaSettings.setSaslPassword(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

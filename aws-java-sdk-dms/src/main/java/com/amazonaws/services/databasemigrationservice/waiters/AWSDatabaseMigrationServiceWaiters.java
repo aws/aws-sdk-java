@@ -130,9 +130,8 @@ public class AWSDatabaseMigrationServiceWaiters {
                 .withSdkFunction(new DescribeReplicationTasksFunction(client))
                 .withAcceptors(new ReplicationTaskStopped.IsStoppedMatcher(), new ReplicationTaskStopped.IsReadyMatcher(),
                         new ReplicationTaskStopped.IsCreatingMatcher(), new ReplicationTaskStopped.IsStartingMatcher(),
-                        new ReplicationTaskStopped.IsRunningMatcher(), new ReplicationTaskStopped.IsFailedMatcher(),
-                        new ReplicationTaskStopped.IsModifyingMatcher(), new ReplicationTaskStopped.IsTestingMatcher(),
-                        new ReplicationTaskStopped.IsDeletingMatcher())
+                        new ReplicationTaskStopped.IsFailedMatcher(), new ReplicationTaskStopped.IsModifyingMatcher(),
+                        new ReplicationTaskStopped.IsTestingMatcher(), new ReplicationTaskStopped.IsDeletingMatcher())
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(15)))
                 .withExecutorService(executorService).build();
     }
