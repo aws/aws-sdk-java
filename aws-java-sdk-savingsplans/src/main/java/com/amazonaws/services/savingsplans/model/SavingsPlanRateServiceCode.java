@@ -22,7 +22,9 @@ public enum SavingsPlanRateServiceCode {
 
     AmazonEC2("AmazonEC2"),
     AmazonECS("AmazonECS"),
-    AWSLambda("AWSLambda");
+    AmazonEKS("AmazonEKS"),
+    AWSLambda("AWSLambda"),
+    AmazonSageMaker("AmazonSageMaker");
 
     private String value;
 

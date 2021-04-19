@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum SupportedSavingsPlansType {
 
     COMPUTE_SP("COMPUTE_SP"),
-    EC2_INSTANCE_SP("EC2_INSTANCE_SP");
+    EC2_INSTANCE_SP("EC2_INSTANCE_SP"),
+    SAGEMAKER_SP("SAGEMAKER_SP");
 
     private String value;
 

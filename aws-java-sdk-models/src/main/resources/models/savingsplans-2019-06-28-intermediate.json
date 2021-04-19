@@ -22666,6 +22666,9 @@
       }, {
         "name" : "Lambda",
         "value" : "Lambda"
+      }, {
+        "name" : "SageMaker",
+        "value" : "SageMaker"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.savingsplans.enum.SavingsPlanProductType",
@@ -25045,8 +25048,14 @@
         "name" : "AmazonECS",
         "value" : "AmazonECS"
       }, {
+        "name" : "AmazonEKS",
+        "value" : "AmazonEKS"
+      }, {
         "name" : "AWSLambda",
         "value" : "AWSLambda"
+      }, {
+        "name" : "AmazonSageMaker",
+        "value" : "AmazonSageMaker"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.savingsplans.enum.SavingsPlanRateServiceCode",
@@ -25212,6 +25221,9 @@
       }, {
         "name" : "EC2Instance",
         "value" : "EC2Instance"
+      }, {
+        "name" : "SageMaker",
+        "value" : "SageMaker"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.savingsplans.enum.SavingsPlanType",

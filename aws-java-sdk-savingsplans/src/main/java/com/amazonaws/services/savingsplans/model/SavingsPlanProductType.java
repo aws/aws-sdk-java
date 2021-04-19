@@ -22,7 +22,8 @@ public enum SavingsPlanProductType {
 
     EC2("EC2"),
     Fargate("Fargate"),
-    Lambda("Lambda");
+    Lambda("Lambda"),
+    SageMaker("SageMaker");
 
     private String value;
 

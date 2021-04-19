@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum SavingsPlanType {
 
     Compute("Compute"),
-    EC2Instance("EC2Instance");
+    EC2Instance("EC2Instance"),
+    SageMaker("SageMaker");
 
     private String value;
 

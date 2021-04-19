@@ -1,3 +1,12 @@
+# __1.11.1001__ __2021-04-19__
+## __AWS Cost Explorer Service__
+  - ### Features
+    - Adding support for Sagemaker savings plans in GetSavingsPlansPurchaseRecommendation API
+
+## __AWS Savings Plans__
+  - ### Features
+    - Added support for Amazon SageMaker in Machine Learning Savings Plans
+
 # __1.11.1000__ __2021-04-15__
 ## __AWS Database Migration Service__
   - ### Features
