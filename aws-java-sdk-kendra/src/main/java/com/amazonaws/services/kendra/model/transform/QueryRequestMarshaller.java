@@ -40,6 +40,8 @@ public class QueryRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequestedDocumentAttributes").build();
     private static final MarshallingInfo<String> QUERYRESULTTYPEFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QueryResultTypeFilter").build();
+    private static final MarshallingInfo<List> DOCUMENTRELEVANCEOVERRIDECONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentRelevanceOverrideConfigurations").build();
     private static final MarshallingInfo<Integer> PAGENUMBER_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PageNumber").build();
     private static final MarshallingInfo<Integer> PAGESIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -73,6 +75,7 @@ public class QueryRequestMarshaller {
             protocolMarshaller.marshall(queryRequest.getFacets(), FACETS_BINDING);
             protocolMarshaller.marshall(queryRequest.getRequestedDocumentAttributes(), REQUESTEDDOCUMENTATTRIBUTES_BINDING);
             protocolMarshaller.marshall(queryRequest.getQueryResultTypeFilter(), QUERYRESULTTYPEFILTER_BINDING);
+            protocolMarshaller.marshall(queryRequest.getDocumentRelevanceOverrideConfigurations(), DOCUMENTRELEVANCEOVERRIDECONFIGURATIONS_BINDING);
             protocolMarshaller.marshall(queryRequest.getPageNumber(), PAGENUMBER_BINDING);
             protocolMarshaller.marshall(queryRequest.getPageSize(), PAGESIZE_BINDING);
             protocolMarshaller.marshall(queryRequest.getSortingConfiguration(), SORTINGCONFIGURATION_BINDING);

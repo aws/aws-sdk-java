@@ -170,22 +170,24 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>CAPABILITY_AUTO_EXPAND</code>
      * </p>
      * <p>
-     * Some templates contain macros. If your stack template contains one or more macros, and you choose to create a
-     * stack directly from the processed template, without first reviewing the resulting changes in a change set, you
-     * must acknowledge this capability. For more information, see <a
+     * Some templates reference macros. If your stack set template references one or more macros, you must create the
+     * stack set directly from the processed template, without first reviewing the resulting changes in a change set. To
+     * create the stack set directly, you must acknowledge this capability. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
      * CloudFormation Macros to Perform Custom Processing on Templates</a>.
      * </p>
-     * <note>
+     * <important>
      * <p>
-     * Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     * Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
+     * includes the <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
-     * capability, if you include a macro in your template the stack set operation will fail.
+     * capability for a stack set with service-managed permissions, if you reference a macro in your template the stack
+     * set operation will fail.
      * </p>
-     * </note></li>
+     * </important></li>
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> capabilities;
@@ -742,22 +744,24 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>CAPABILITY_AUTO_EXPAND</code>
      * </p>
      * <p>
-     * Some templates contain macros. If your stack template contains one or more macros, and you choose to create a
-     * stack directly from the processed template, without first reviewing the resulting changes in a change set, you
-     * must acknowledge this capability. For more information, see <a
+     * Some templates reference macros. If your stack set template references one or more macros, you must create the
+     * stack set directly from the processed template, without first reviewing the resulting changes in a change set. To
+     * create the stack set directly, you must acknowledge this capability. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
      * CloudFormation Macros to Perform Custom Processing on Templates</a>.
      * </p>
-     * <note>
+     * <important>
      * <p>
-     * Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     * Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
+     * includes the <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
-     * capability, if you include a macro in your template the stack set operation will fail.
+     * capability for a stack set with service-managed permissions, if you reference a macro in your template the stack
+     * set operation will fail.
      * </p>
-     * </note></li>
+     * </important></li>
      * </ul>
      * 
      * @return In some cases, you must explicitly acknowledge that your stack set template contains certain capabilities
@@ -856,22 +860,25 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <code>CAPABILITY_AUTO_EXPAND</code>
      *         </p>
      *         <p>
-     *         Some templates contain macros. If your stack template contains one or more macros, and you choose to
-     *         create a stack directly from the processed template, without first reviewing the resulting changes in a
-     *         change set, you must acknowledge this capability. For more information, see <a
+     *         Some templates reference macros. If your stack set template references one or more macros, you must
+     *         create the stack set directly from the processed template, without first reviewing the resulting changes
+     *         in a change set. To create the stack set directly, you must acknowledge this capability. For more
+     *         information, see <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
      *         CloudFormation Macros to Perform Custom Processing on Templates</a>.
      *         </p>
-     *         <note>
+     *         <important>
      *         <p>
-     *         Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     *         Stack sets with service-managed permissions do not currently support the use of macros in templates.
+     *         (This includes the <a href=
      *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      *         >AWS::Include</a> and <a
      *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *         >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
-     *         capability, if you include a macro in your template the stack set operation will fail.
+     *         capability for a stack set with service-managed permissions, if you reference a macro in your template
+     *         the stack set operation will fail.
      *         </p>
-     *         </note></li>
+     *         </important></li>
      * @see Capability
      */
 
@@ -978,22 +985,24 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>CAPABILITY_AUTO_EXPAND</code>
      * </p>
      * <p>
-     * Some templates contain macros. If your stack template contains one or more macros, and you choose to create a
-     * stack directly from the processed template, without first reviewing the resulting changes in a change set, you
-     * must acknowledge this capability. For more information, see <a
+     * Some templates reference macros. If your stack set template references one or more macros, you must create the
+     * stack set directly from the processed template, without first reviewing the resulting changes in a change set. To
+     * create the stack set directly, you must acknowledge this capability. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
      * CloudFormation Macros to Perform Custom Processing on Templates</a>.
      * </p>
-     * <note>
+     * <important>
      * <p>
-     * Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     * Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
+     * includes the <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
-     * capability, if you include a macro in your template the stack set operation will fail.
+     * capability for a stack set with service-managed permissions, if you reference a macro in your template the stack
+     * set operation will fail.
      * </p>
-     * </note></li>
+     * </important></li>
      * </ul>
      * 
      * @param capabilities
@@ -1093,22 +1102,24 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>CAPABILITY_AUTO_EXPAND</code>
      *        </p>
      *        <p>
-     *        Some templates contain macros. If your stack template contains one or more macros, and you choose to
-     *        create a stack directly from the processed template, without first reviewing the resulting changes in a
-     *        change set, you must acknowledge this capability. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
+     *        Some templates reference macros. If your stack set template references one or more macros, you must create
+     *        the stack set directly from the processed template, without first reviewing the resulting changes in a
+     *        change set. To create the stack set directly, you must acknowledge this capability. For more information,
+     *        see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
      *        CloudFormation Macros to Perform Custom Processing on Templates</a>.
      *        </p>
-     *        <note>
+     *        <important>
      *        <p>
-     *        Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     *        Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
+     *        includes the <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      *        >AWS::Include</a> and <a
      *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *        >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
-     *        capability, if you include a macro in your template the stack set operation will fail.
+     *        capability for a stack set with service-managed permissions, if you reference a macro in your template the
+     *        stack set operation will fail.
      *        </p>
-     *        </note></li>
+     *        </important></li>
      * @see Capability
      */
 
@@ -1217,22 +1228,24 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>CAPABILITY_AUTO_EXPAND</code>
      * </p>
      * <p>
-     * Some templates contain macros. If your stack template contains one or more macros, and you choose to create a
-     * stack directly from the processed template, without first reviewing the resulting changes in a change set, you
-     * must acknowledge this capability. For more information, see <a
+     * Some templates reference macros. If your stack set template references one or more macros, you must create the
+     * stack set directly from the processed template, without first reviewing the resulting changes in a change set. To
+     * create the stack set directly, you must acknowledge this capability. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
      * CloudFormation Macros to Perform Custom Processing on Templates</a>.
      * </p>
-     * <note>
+     * <important>
      * <p>
-     * Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     * Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
+     * includes the <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
-     * capability, if you include a macro in your template the stack set operation will fail.
+     * capability for a stack set with service-managed permissions, if you reference a macro in your template the stack
+     * set operation will fail.
      * </p>
-     * </note></li>
+     * </important></li>
      * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1337,22 +1350,24 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>CAPABILITY_AUTO_EXPAND</code>
      *        </p>
      *        <p>
-     *        Some templates contain macros. If your stack template contains one or more macros, and you choose to
-     *        create a stack directly from the processed template, without first reviewing the resulting changes in a
-     *        change set, you must acknowledge this capability. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
+     *        Some templates reference macros. If your stack set template references one or more macros, you must create
+     *        the stack set directly from the processed template, without first reviewing the resulting changes in a
+     *        change set. To create the stack set directly, you must acknowledge this capability. For more information,
+     *        see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
      *        CloudFormation Macros to Perform Custom Processing on Templates</a>.
      *        </p>
-     *        <note>
+     *        <important>
      *        <p>
-     *        Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     *        Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
+     *        includes the <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      *        >AWS::Include</a> and <a
      *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *        >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
-     *        capability, if you include a macro in your template the stack set operation will fail.
+     *        capability for a stack set with service-managed permissions, if you reference a macro in your template the
+     *        stack set operation will fail.
      *        </p>
-     *        </note></li>
+     *        </important></li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability
      */
@@ -1463,22 +1478,24 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>CAPABILITY_AUTO_EXPAND</code>
      * </p>
      * <p>
-     * Some templates contain macros. If your stack template contains one or more macros, and you choose to create a
-     * stack directly from the processed template, without first reviewing the resulting changes in a change set, you
-     * must acknowledge this capability. For more information, see <a
+     * Some templates reference macros. If your stack set template references one or more macros, you must create the
+     * stack set directly from the processed template, without first reviewing the resulting changes in a change set. To
+     * create the stack set directly, you must acknowledge this capability. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
      * CloudFormation Macros to Perform Custom Processing on Templates</a>.
      * </p>
-     * <note>
+     * <important>
      * <p>
-     * Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     * Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
+     * includes the <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
-     * capability, if you include a macro in your template the stack set operation will fail.
+     * capability for a stack set with service-managed permissions, if you reference a macro in your template the stack
+     * set operation will fail.
      * </p>
-     * </note></li>
+     * </important></li>
      * </ul>
      * 
      * @param capabilities
@@ -1578,22 +1595,24 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>CAPABILITY_AUTO_EXPAND</code>
      *        </p>
      *        <p>
-     *        Some templates contain macros. If your stack template contains one or more macros, and you choose to
-     *        create a stack directly from the processed template, without first reviewing the resulting changes in a
-     *        change set, you must acknowledge this capability. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
+     *        Some templates reference macros. If your stack set template references one or more macros, you must create
+     *        the stack set directly from the processed template, without first reviewing the resulting changes in a
+     *        change set. To create the stack set directly, you must acknowledge this capability. For more information,
+     *        see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
      *        CloudFormation Macros to Perform Custom Processing on Templates</a>.
      *        </p>
-     *        <note>
+     *        <important>
      *        <p>
-     *        Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     *        Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
+     *        includes the <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      *        >AWS::Include</a> and <a
      *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *        >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
-     *        capability, if you include a macro in your template the stack set operation will fail.
+     *        capability for a stack set with service-managed permissions, if you reference a macro in your template the
+     *        stack set operation will fail.
      *        </p>
-     *        </note></li>
+     *        </important></li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability
      */
@@ -1699,22 +1718,24 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>CAPABILITY_AUTO_EXPAND</code>
      * </p>
      * <p>
-     * Some templates contain macros. If your stack template contains one or more macros, and you choose to create a
-     * stack directly from the processed template, without first reviewing the resulting changes in a change set, you
-     * must acknowledge this capability. For more information, see <a
+     * Some templates reference macros. If your stack set template references one or more macros, you must create the
+     * stack set directly from the processed template, without first reviewing the resulting changes in a change set. To
+     * create the stack set directly, you must acknowledge this capability. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
      * CloudFormation Macros to Perform Custom Processing on Templates</a>.
      * </p>
-     * <note>
+     * <important>
      * <p>
-     * Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     * Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
+     * includes the <a href=
      * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
-     * capability, if you include a macro in your template the stack set operation will fail.
+     * capability for a stack set with service-managed permissions, if you reference a macro in your template the stack
+     * set operation will fail.
      * </p>
-     * </note></li>
+     * </important></li>
      * </ul>
      * 
      * @param capabilities
@@ -1814,22 +1835,24 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>CAPABILITY_AUTO_EXPAND</code>
      *        </p>
      *        <p>
-     *        Some templates contain macros. If your stack template contains one or more macros, and you choose to
-     *        create a stack directly from the processed template, without first reviewing the resulting changes in a
-     *        change set, you must acknowledge this capability. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
+     *        Some templates reference macros. If your stack set template references one or more macros, you must create
+     *        the stack set directly from the processed template, without first reviewing the resulting changes in a
+     *        change set. To create the stack set directly, you must acknowledge this capability. For more information,
+     *        see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
      *        CloudFormation Macros to Perform Custom Processing on Templates</a>.
      *        </p>
-     *        <note>
+     *        <important>
      *        <p>
-     *        Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     *        Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
+     *        includes the <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      *        >AWS::Include</a> and <a
      *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *        >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
-     *        capability, if you include a macro in your template the stack set operation will fail.
+     *        capability for a stack set with service-managed permissions, if you reference a macro in your template the
+     *        stack set operation will fail.
      *        </p>
-     *        </note></li>
+     *        </important></li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability
      */

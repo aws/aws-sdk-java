@@ -35,6 +35,8 @@ public class ConfigTypeDataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("antennaUplinkConfig").build();
     private static final MarshallingInfo<StructuredPojo> DATAFLOWENDPOINTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataflowEndpointConfig").build();
+    private static final MarshallingInfo<StructuredPojo> S3RECORDINGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("s3RecordingConfig").build();
     private static final MarshallingInfo<StructuredPojo> TRACKINGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("trackingConfig").build();
     private static final MarshallingInfo<StructuredPojo> UPLINKECHOCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -60,6 +62,7 @@ public class ConfigTypeDataMarshaller {
             protocolMarshaller.marshall(configTypeData.getAntennaDownlinkDemodDecodeConfig(), ANTENNADOWNLINKDEMODDECODECONFIG_BINDING);
             protocolMarshaller.marshall(configTypeData.getAntennaUplinkConfig(), ANTENNAUPLINKCONFIG_BINDING);
             protocolMarshaller.marshall(configTypeData.getDataflowEndpointConfig(), DATAFLOWENDPOINTCONFIG_BINDING);
+            protocolMarshaller.marshall(configTypeData.getS3RecordingConfig(), S3RECORDINGCONFIG_BINDING);
             protocolMarshaller.marshall(configTypeData.getTrackingConfig(), TRACKINGCONFIG_BINDING);
             protocolMarshaller.marshall(configTypeData.getUplinkEchoConfig(), UPLINKECHOCONFIG_BINDING);
         } catch (Exception e) {

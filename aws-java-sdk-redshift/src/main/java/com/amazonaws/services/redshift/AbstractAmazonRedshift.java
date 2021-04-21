@@ -44,6 +44,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
     }
 
     @Override
+    public AddPartnerResult addPartner(AddPartnerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ClusterSecurityGroup authorizeClusterSecurityGroupIngress(AuthorizeClusterSecurityGroupIngressRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -190,6 +195,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
 
     @Override
     public DeleteHsmConfigurationResult deleteHsmConfiguration(DeleteHsmConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeletePartnerResult deletePartner(DeletePartnerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -381,6 +391,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
     @Override
     public DescribeOrderableClusterOptionsResult describeOrderableClusterOptions() {
         return describeOrderableClusterOptions(new DescribeOrderableClusterOptionsRequest());
+    }
+
+    @Override
+    public DescribePartnersResult describePartners(DescribePartnersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -620,6 +635,11 @@ public class AbstractAmazonRedshift implements AmazonRedshift {
 
     @Override
     public Cluster rotateEncryptionKey(RotateEncryptionKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdatePartnerStatusResult updatePartnerStatus(UpdatePartnerStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -27,6 +27,8 @@ public enum RedshiftActions implements Action {
 
     /** Action for the AcceptReservedNodeExchange operation. */
     AcceptReservedNodeExchange("redshift:AcceptReservedNodeExchange"),
+    /** Action for the AddPartner operation. */
+    AddPartner("redshift:AddPartner"),
     /** Action for the AuthorizeClusterSecurityGroupIngress operation. */
     AuthorizeClusterSecurityGroupIngress("redshift:AuthorizeClusterSecurityGroupIngress"),
     /** Action for the AuthorizeEndpointAccess operation. */
@@ -87,6 +89,8 @@ public enum RedshiftActions implements Action {
     DeleteHsmClientCertificate("redshift:DeleteHsmClientCertificate"),
     /** Action for the DeleteHsmConfiguration operation. */
     DeleteHsmConfiguration("redshift:DeleteHsmConfiguration"),
+    /** Action for the DeletePartner operation. */
+    DeletePartner("redshift:DeletePartner"),
     /** Action for the DeleteScheduledAction operation. */
     DeleteScheduledAction("redshift:DeleteScheduledAction"),
     /** Action for the DeleteSnapshotCopyGrant operation. */
@@ -139,6 +143,8 @@ public enum RedshiftActions implements Action {
     DescribeNodeConfigurationOptions("redshift:DescribeNodeConfigurationOptions"),
     /** Action for the DescribeOrderableClusterOptions operation. */
     DescribeOrderableClusterOptions("redshift:DescribeOrderableClusterOptions"),
+    /** Action for the DescribePartners operation. */
+    DescribePartners("redshift:DescribePartners"),
     /** Action for the DescribeReservedNodeOfferings operation. */
     DescribeReservedNodeOfferings("redshift:DescribeReservedNodeOfferings"),
     /** Action for the DescribeReservedNodes operation. */
@@ -225,6 +231,8 @@ public enum RedshiftActions implements Action {
     RevokeSnapshotAccess("redshift:RevokeSnapshotAccess"),
     /** Action for the RotateEncryptionKey operation. */
     RotateEncryptionKey("redshift:RotateEncryptionKey"),
+    /** Action for the UpdatePartnerStatus operation. */
+    UpdatePartnerStatus("redshift:UpdatePartnerStatus"),
 
     ;
 

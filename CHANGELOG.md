@@ -1,3 +1,24 @@
+# __1.11.1002__ __2021-04-21__
+## __AWS CloudFormation__
+  - ### Features
+    - Added support for creating and updating stack sets with self-managed permissions from templates that reference macros.
+
+## __AWS Ground Station__
+  - ### Features
+    - Support new S3 Recording Config allowing customers to write downlink data directly to S3.
+
+## __AWSKendraFrontendService__
+  - ### Features
+    - Amazon Kendra now enables users to override index-level boosting configurations for each query.
+
+## __Amazon Detective__
+  - ### Features
+    - Added parameters to track the data volume in bytes for a member account. Deprecated the existing parameters that tracked the volume as a percentage of the allowed volume for a behavior graph. Changes reflected in MemberDetails object.
+
+## __Amazon Redshift__
+  - ### Features
+    - Add operations: AddPartner, DescribePartners, DeletePartner, and UpdatePartnerStatus to support tracking integration status with data partners.
+
 # __1.11.1001__ __2021-04-19__
 ## __AWS Cost Explorer Service__
   - ### Features

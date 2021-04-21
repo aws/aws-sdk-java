@@ -84,6 +84,14 @@ public class MemberDetailJsonUnmarshaller implements Unmarshaller<MemberDetail, 
                     context.nextToken();
                     memberDetail.setUpdatedTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
+                if (context.testExpression("VolumeUsageInBytes", targetDepth)) {
+                    context.nextToken();
+                    memberDetail.setVolumeUsageInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("VolumeUsageUpdatedTime", targetDepth)) {
+                    context.nextToken();
+                    memberDetail.setVolumeUsageUpdatedTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
                 if (context.testExpression("PercentOfGraphUtilization", targetDepth)) {
                     context.nextToken();
                     memberDetail.setPercentOfGraphUtilization(context.getUnmarshaller(Double.class).unmarshall(context));

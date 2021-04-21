@@ -93,6 +93,39 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
+     * Adds a partner integration to a cluster. This operation authorizes a partner to push status updates for the
+     * specified database. To complete the integration, you also set up the integration on the partner website.
+     * </p>
+     * 
+     * @param addPartnerRequest
+     * @return A Java Future containing the result of the AddPartner operation returned by the service.
+     * @sample AmazonRedshiftAsync.AddPartner
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AddPartner" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<AddPartnerResult> addPartnerAsync(AddPartnerRequest addPartnerRequest);
+
+    /**
+     * <p>
+     * Adds a partner integration to a cluster. This operation authorizes a partner to push status updates for the
+     * specified database. To complete the integration, you also set up the integration on the partner website.
+     * </p>
+     * 
+     * @param addPartnerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AddPartner operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.AddPartner
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AddPartner" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<AddPartnerResult> addPartnerAsync(AddPartnerRequest addPartnerRequest,
+            com.amazonaws.handlers.AsyncHandler<AddPartnerRequest, AddPartnerResult> asyncHandler);
+
+    /**
+     * <p>
      * Adds an inbound (ingress) rule to an Amazon Redshift security group. Depending on whether the application
      * accessing your cluster is running on the Internet or an Amazon EC2 instance, you can authorize inbound access to
      * either a Classless Interdomain Routing (CIDR)/Internet Protocol (IP) range or to an Amazon EC2 security group.
@@ -1358,6 +1391,39 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      */
     java.util.concurrent.Future<DeleteHsmConfigurationResult> deleteHsmConfigurationAsync(DeleteHsmConfigurationRequest deleteHsmConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteHsmConfigurationRequest, DeleteHsmConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a partner integration from a cluster. Data can still flow to the cluster until the integration is deleted
+     * at the partner's website.
+     * </p>
+     * 
+     * @param deletePartnerRequest
+     * @return A Java Future containing the result of the DeletePartner operation returned by the service.
+     * @sample AmazonRedshiftAsync.DeletePartner
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeletePartner" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePartnerResult> deletePartnerAsync(DeletePartnerRequest deletePartnerRequest);
+
+    /**
+     * <p>
+     * Deletes a partner integration from a cluster. Data can still flow to the cluster until the integration is deleted
+     * at the partner's website.
+     * </p>
+     * 
+     * @param deletePartnerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePartner operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.DeletePartner
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeletePartner" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePartnerResult> deletePartnerAsync(DeletePartnerRequest deletePartnerRequest,
+            com.amazonaws.handlers.AsyncHandler<DeletePartnerRequest, DeletePartnerResult> asyncHandler);
 
     /**
      * <p>
@@ -2670,6 +2736,37 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      */
     java.util.concurrent.Future<DescribeOrderableClusterOptionsResult> describeOrderableClusterOptionsAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeOrderableClusterOptionsRequest, DescribeOrderableClusterOptionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about the partner integrations defined for a cluster.
+     * </p>
+     * 
+     * @param describePartnersRequest
+     * @return A Java Future containing the result of the DescribePartners operation returned by the service.
+     * @sample AmazonRedshiftAsync.DescribePartners
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribePartners" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribePartnersResult> describePartnersAsync(DescribePartnersRequest describePartnersRequest);
+
+    /**
+     * <p>
+     * Returns information about the partner integrations defined for a cluster.
+     * </p>
+     * 
+     * @param describePartnersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribePartners operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.DescribePartners
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribePartners" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribePartnersResult> describePartnersAsync(DescribePartnersRequest describePartnersRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribePartnersRequest, DescribePartnersResult> asyncHandler);
 
     /**
      * <p>
@@ -4638,5 +4735,36 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      */
     java.util.concurrent.Future<Cluster> rotateEncryptionKeyAsync(RotateEncryptionKeyRequest rotateEncryptionKeyRequest,
             com.amazonaws.handlers.AsyncHandler<RotateEncryptionKeyRequest, Cluster> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the status of a partner integration.
+     * </p>
+     * 
+     * @param updatePartnerStatusRequest
+     * @return A Java Future containing the result of the UpdatePartnerStatus operation returned by the service.
+     * @sample AmazonRedshiftAsync.UpdatePartnerStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/UpdatePartnerStatus" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePartnerStatusResult> updatePartnerStatusAsync(UpdatePartnerStatusRequest updatePartnerStatusRequest);
+
+    /**
+     * <p>
+     * Updates the status of a partner integration.
+     * </p>
+     * 
+     * @param updatePartnerStatusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdatePartnerStatus operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.UpdatePartnerStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/UpdatePartnerStatus" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePartnerStatusResult> updatePartnerStatusAsync(UpdatePartnerStatusRequest updatePartnerStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdatePartnerStatusRequest, UpdatePartnerStatusResult> asyncHandler);
 
 }

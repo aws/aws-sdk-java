@@ -36,6 +36,12 @@ public class ConfigDetails implements Serializable, Cloneable, StructuredPojo {
     private AntennaDemodDecodeDetails antennaDemodDecodeDetails;
 
     private EndpointDetails endpointDetails;
+    /**
+     * <p>
+     * Details for an S3 recording <code>Config</code> in a contact.
+     * </p>
+     */
+    private S3RecordingDetails s3RecordingDetails;
 
     /**
      * <p>
@@ -104,6 +110,46 @@ public class ConfigDetails implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Details for an S3 recording <code>Config</code> in a contact.
+     * </p>
+     * 
+     * @param s3RecordingDetails
+     *        Details for an S3 recording <code>Config</code> in a contact.
+     */
+
+    public void setS3RecordingDetails(S3RecordingDetails s3RecordingDetails) {
+        this.s3RecordingDetails = s3RecordingDetails;
+    }
+
+    /**
+     * <p>
+     * Details for an S3 recording <code>Config</code> in a contact.
+     * </p>
+     * 
+     * @return Details for an S3 recording <code>Config</code> in a contact.
+     */
+
+    public S3RecordingDetails getS3RecordingDetails() {
+        return this.s3RecordingDetails;
+    }
+
+    /**
+     * <p>
+     * Details for an S3 recording <code>Config</code> in a contact.
+     * </p>
+     * 
+     * @param s3RecordingDetails
+     *        Details for an S3 recording <code>Config</code> in a contact.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConfigDetails withS3RecordingDetails(S3RecordingDetails s3RecordingDetails) {
+        setS3RecordingDetails(s3RecordingDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -118,7 +164,9 @@ public class ConfigDetails implements Serializable, Cloneable, StructuredPojo {
         if (getAntennaDemodDecodeDetails() != null)
             sb.append("AntennaDemodDecodeDetails: ").append(getAntennaDemodDecodeDetails()).append(",");
         if (getEndpointDetails() != null)
-            sb.append("EndpointDetails: ").append(getEndpointDetails());
+            sb.append("EndpointDetails: ").append(getEndpointDetails()).append(",");
+        if (getS3RecordingDetails() != null)
+            sb.append("S3RecordingDetails: ").append(getS3RecordingDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -141,6 +189,10 @@ public class ConfigDetails implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEndpointDetails() != null && other.getEndpointDetails().equals(this.getEndpointDetails()) == false)
             return false;
+        if (other.getS3RecordingDetails() == null ^ this.getS3RecordingDetails() == null)
+            return false;
+        if (other.getS3RecordingDetails() != null && other.getS3RecordingDetails().equals(this.getS3RecordingDetails()) == false)
+            return false;
         return true;
     }
 
@@ -151,6 +203,7 @@ public class ConfigDetails implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getAntennaDemodDecodeDetails() == null) ? 0 : getAntennaDemodDecodeDetails().hashCode());
         hashCode = prime * hashCode + ((getEndpointDetails() == null) ? 0 : getEndpointDetails().hashCode());
+        hashCode = prime * hashCode + ((getS3RecordingDetails() == null) ? 0 : getS3RecordingDetails().hashCode());
         return hashCode;
     }
 

@@ -315,6 +315,39 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<AddPartnerResult> addPartnerAsync(AddPartnerRequest request) {
+
+        return addPartnerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddPartnerResult> addPartnerAsync(final AddPartnerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AddPartnerRequest, AddPartnerResult> asyncHandler) {
+        final AddPartnerRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AddPartnerResult>() {
+            @Override
+            public AddPartnerResult call() throws Exception {
+                AddPartnerResult result = null;
+
+                try {
+                    result = executeAddPartner(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ClusterSecurityGroup> authorizeClusterSecurityGroupIngressAsync(AuthorizeClusterSecurityGroupIngressRequest request) {
 
         return authorizeClusterSecurityGroupIngressAsync(request, null);
@@ -1290,6 +1323,39 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements A
 
                 try {
                     result = executeDeleteHsmConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePartnerResult> deletePartnerAsync(DeletePartnerRequest request) {
+
+        return deletePartnerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePartnerResult> deletePartnerAsync(final DeletePartnerRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeletePartnerRequest, DeletePartnerResult> asyncHandler) {
+        final DeletePartnerRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeletePartnerResult>() {
+            @Override
+            public DeletePartnerResult call() throws Exception {
+                DeletePartnerResult result = null;
+
+                try {
+                    result = executeDeletePartner(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2449,6 +2515,39 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements A
             com.amazonaws.handlers.AsyncHandler<DescribeOrderableClusterOptionsRequest, DescribeOrderableClusterOptionsResult> asyncHandler) {
 
         return describeOrderableClusterOptionsAsync(new DescribeOrderableClusterOptionsRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePartnersResult> describePartnersAsync(DescribePartnersRequest request) {
+
+        return describePartnersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePartnersResult> describePartnersAsync(final DescribePartnersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribePartnersRequest, DescribePartnersResult> asyncHandler) {
+        final DescribePartnersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribePartnersResult>() {
+            @Override
+            public DescribePartnersResult call() throws Exception {
+                DescribePartnersResult result = null;
+
+                try {
+                    result = executeDescribePartners(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -3975,6 +4074,39 @@ public class AmazonRedshiftAsyncClient extends AmazonRedshiftClient implements A
 
                 try {
                     result = executeRotateEncryptionKey(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePartnerStatusResult> updatePartnerStatusAsync(UpdatePartnerStatusRequest request) {
+
+        return updatePartnerStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePartnerStatusResult> updatePartnerStatusAsync(final UpdatePartnerStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdatePartnerStatusRequest, UpdatePartnerStatusResult> asyncHandler) {
+        final UpdatePartnerStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdatePartnerStatusResult>() {
+            @Override
+            public UpdatePartnerStatusResult call() throws Exception {
+                UpdatePartnerStatusResult result = null;
+
+                try {
+                    result = executeUpdatePartnerStatus(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

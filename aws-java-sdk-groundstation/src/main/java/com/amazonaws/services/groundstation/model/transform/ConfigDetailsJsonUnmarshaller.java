@@ -56,6 +56,10 @@ public class ConfigDetailsJsonUnmarshaller implements Unmarshaller<ConfigDetails
                     context.nextToken();
                     configDetails.setEndpointDetails(EndpointDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("s3RecordingDetails", targetDepth)) {
+                    context.nextToken();
+                    configDetails.setS3RecordingDetails(S3RecordingDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

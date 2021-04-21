@@ -32,7 +32,9 @@ public class DescribeEndpointAuthorizationResult extends com.amazonaws.AmazonWeb
     private com.amazonaws.internal.SdkInternalList<EndpointAuthorization> endpointAuthorizationList;
     /**
      * <p>
-     * Reserved for Amazon Redshift internal use.
+     * An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this
+     * parameter is specified, the response includes only records beyond the marker, up to the value specified by the
+     * <code>MaxRecords</code> parameter.
      * </p>
      */
     private String marker;
@@ -112,11 +114,15 @@ public class DescribeEndpointAuthorizationResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Reserved for Amazon Redshift internal use.
+     * An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this
+     * parameter is specified, the response includes only records beyond the marker, up to the value specified by the
+     * <code>MaxRecords</code> parameter.
      * </p>
      * 
      * @param marker
-     *        Reserved for Amazon Redshift internal use.
+     *        An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If
+     *        this parameter is specified, the response includes only records beyond the marker, up to the value
+     *        specified by the <code>MaxRecords</code> parameter.
      */
 
     public void setMarker(String marker) {
@@ -125,10 +131,14 @@ public class DescribeEndpointAuthorizationResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Reserved for Amazon Redshift internal use.
+     * An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this
+     * parameter is specified, the response includes only records beyond the marker, up to the value specified by the
+     * <code>MaxRecords</code> parameter.
      * </p>
      * 
-     * @return Reserved for Amazon Redshift internal use.
+     * @return An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request.
+     *         If this parameter is specified, the response includes only records beyond the marker, up to the value
+     *         specified by the <code>MaxRecords</code> parameter.
      */
 
     public String getMarker() {
@@ -137,11 +147,15 @@ public class DescribeEndpointAuthorizationResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Reserved for Amazon Redshift internal use.
+     * An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this
+     * parameter is specified, the response includes only records beyond the marker, up to the value specified by the
+     * <code>MaxRecords</code> parameter.
      * </p>
      * 
      * @param marker
-     *        Reserved for Amazon Redshift internal use.
+     *        An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If
+     *        this parameter is specified, the response includes only records beyond the marker, up to the value
+     *        specified by the <code>MaxRecords</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

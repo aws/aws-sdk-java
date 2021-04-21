@@ -25,7 +25,8 @@ public enum ConfigCapabilityType {
     AntennaUplink("antenna-uplink"),
     DataflowEndpoint("dataflow-endpoint"),
     Tracking("tracking"),
-    UplinkEcho("uplink-echo");
+    UplinkEcho("uplink-echo"),
+    S3Recording("s3-recording");
 
     private String value;
 

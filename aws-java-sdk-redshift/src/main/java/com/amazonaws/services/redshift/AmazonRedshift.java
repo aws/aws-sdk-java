@@ -150,6 +150,26 @@ public interface AmazonRedshift {
 
     /**
      * <p>
+     * Adds a partner integration to a cluster. This operation authorizes a partner to push status updates for the
+     * specified database. To complete the integration, you also set up the integration on the partner website.
+     * </p>
+     * 
+     * @param addPartnerRequest
+     * @return Result of the AddPartner operation returned by the service.
+     * @throws PartnerNotFoundException
+     *         The name of the partner was not found.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws UnauthorizedPartnerIntegrationException
+     *         The partner integration is not authorized.
+     * @sample AmazonRedshift.AddPartner
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AddPartner" target="_top">AWS API
+     *      Documentation</a>
+     */
+    AddPartnerResult addPartner(AddPartnerRequest addPartnerRequest);
+
+    /**
+     * <p>
      * Adds an inbound (ingress) rule to an Amazon Redshift security group. Depending on whether the application
      * accessing your cluster is running on the Internet or an Amazon EC2 instance, you can authorize inbound access to
      * either a Classless Interdomain Routing (CIDR)/Internet Protocol (IP) range or to an Amazon EC2 security group.
@@ -1065,6 +1085,26 @@ public interface AmazonRedshift {
 
     /**
      * <p>
+     * Deletes a partner integration from a cluster. Data can still flow to the cluster until the integration is deleted
+     * at the partner's website.
+     * </p>
+     * 
+     * @param deletePartnerRequest
+     * @return Result of the DeletePartner operation returned by the service.
+     * @throws PartnerNotFoundException
+     *         The name of the partner was not found.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws UnauthorizedPartnerIntegrationException
+     *         The partner integration is not authorized.
+     * @sample AmazonRedshift.DeletePartner
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeletePartner" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeletePartnerResult deletePartner(DeletePartnerRequest deletePartnerRequest);
+
+    /**
+     * <p>
      * Deletes a scheduled action.
      * </p>
      * 
@@ -1711,6 +1751,23 @@ public interface AmazonRedshift {
      * @see #describeOrderableClusterOptions(DescribeOrderableClusterOptionsRequest)
      */
     DescribeOrderableClusterOptionsResult describeOrderableClusterOptions();
+
+    /**
+     * <p>
+     * Returns information about the partner integrations defined for a cluster.
+     * </p>
+     * 
+     * @param describePartnersRequest
+     * @return Result of the DescribePartners operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws UnauthorizedPartnerIntegrationException
+     *         The partner integration is not authorized.
+     * @sample AmazonRedshift.DescribePartners
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribePartners" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribePartnersResult describePartners(DescribePartnersRequest describePartnersRequest);
 
     /**
      * <p>
@@ -2998,6 +3055,25 @@ public interface AmazonRedshift {
      *      API Documentation</a>
      */
     Cluster rotateEncryptionKey(RotateEncryptionKeyRequest rotateEncryptionKeyRequest);
+
+    /**
+     * <p>
+     * Updates the status of a partner integration.
+     * </p>
+     * 
+     * @param updatePartnerStatusRequest
+     * @return Result of the UpdatePartnerStatus operation returned by the service.
+     * @throws PartnerNotFoundException
+     *         The name of the partner was not found.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws UnauthorizedPartnerIntegrationException
+     *         The partner integration is not authorized.
+     * @sample AmazonRedshift.UpdatePartnerStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/UpdatePartnerStatus" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdatePartnerStatusResult updatePartnerStatus(UpdatePartnerStatusRequest updatePartnerStatusRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

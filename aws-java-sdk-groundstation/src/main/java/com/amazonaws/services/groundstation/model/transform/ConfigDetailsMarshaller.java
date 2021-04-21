@@ -31,6 +31,8 @@ public class ConfigDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("antennaDemodDecodeDetails").build();
     private static final MarshallingInfo<StructuredPojo> ENDPOINTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endpointDetails").build();
+    private static final MarshallingInfo<StructuredPojo> S3RECORDINGDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("s3RecordingDetails").build();
 
     private static final ConfigDetailsMarshaller instance = new ConfigDetailsMarshaller();
 
@@ -50,6 +52,7 @@ public class ConfigDetailsMarshaller {
         try {
             protocolMarshaller.marshall(configDetails.getAntennaDemodDecodeDetails(), ANTENNADEMODDECODEDETAILS_BINDING);
             protocolMarshaller.marshall(configDetails.getEndpointDetails(), ENDPOINTDETAILS_BINDING);
+            protocolMarshaller.marshall(configDetails.getS3RecordingDetails(), S3RECORDINGDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

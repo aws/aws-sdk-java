@@ -51,13 +51,17 @@ public class DescribeEndpointAccessRequest extends com.amazonaws.AmazonWebServic
     private String vpcId;
     /**
      * <p>
-     * Reserved for Amazon Redshift internal use.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is included in the response so
+     * that the remaining results can be retrieved.
      * </p>
      */
     private Integer maxRecords;
     /**
      * <p>
-     * Reserved for Amazon Redshift internal use.
+     * An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this
+     * parameter is specified, the response includes only records beyond the marker, up to the value specified by the
+     * <code>MaxRecords</code> parameter.
      * </p>
      */
     private String marker;
@@ -224,11 +228,15 @@ public class DescribeEndpointAccessRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Reserved for Amazon Redshift internal use.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is included in the response so
+     * that the remaining results can be retrieved.
      * </p>
      * 
      * @param maxRecords
-     *        Reserved for Amazon Redshift internal use.
+     *        The maximum number of records to include in the response. If more records exist than the specified
+     *        <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is included in the response
+     *        so that the remaining results can be retrieved.
      */
 
     public void setMaxRecords(Integer maxRecords) {
@@ -237,10 +245,14 @@ public class DescribeEndpointAccessRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Reserved for Amazon Redshift internal use.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is included in the response so
+     * that the remaining results can be retrieved.
      * </p>
      * 
-     * @return Reserved for Amazon Redshift internal use.
+     * @return The maximum number of records to include in the response. If more records exist than the specified
+     *         <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is included in the
+     *         response so that the remaining results can be retrieved.
      */
 
     public Integer getMaxRecords() {
@@ -249,11 +261,15 @@ public class DescribeEndpointAccessRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Reserved for Amazon Redshift internal use.
+     * The maximum number of records to include in the response. If more records exist than the specified
+     * <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is included in the response so
+     * that the remaining results can be retrieved.
      * </p>
      * 
      * @param maxRecords
-     *        Reserved for Amazon Redshift internal use.
+     *        The maximum number of records to include in the response. If more records exist than the specified
+     *        <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is included in the response
+     *        so that the remaining results can be retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -264,11 +280,15 @@ public class DescribeEndpointAccessRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Reserved for Amazon Redshift internal use.
+     * An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this
+     * parameter is specified, the response includes only records beyond the marker, up to the value specified by the
+     * <code>MaxRecords</code> parameter.
      * </p>
      * 
      * @param marker
-     *        Reserved for Amazon Redshift internal use.
+     *        An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this
+     *        parameter is specified, the response includes only records beyond the marker, up to the value specified by
+     *        the <code>MaxRecords</code> parameter.
      */
 
     public void setMarker(String marker) {
@@ -277,10 +297,14 @@ public class DescribeEndpointAccessRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Reserved for Amazon Redshift internal use.
+     * An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this
+     * parameter is specified, the response includes only records beyond the marker, up to the value specified by the
+     * <code>MaxRecords</code> parameter.
      * </p>
      * 
-     * @return Reserved for Amazon Redshift internal use.
+     * @return An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this
+     *         parameter is specified, the response includes only records beyond the marker, up to the value specified
+     *         by the <code>MaxRecords</code> parameter.
      */
 
     public String getMarker() {
@@ -289,11 +313,15 @@ public class DescribeEndpointAccessRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Reserved for Amazon Redshift internal use.
+     * An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this
+     * parameter is specified, the response includes only records beyond the marker, up to the value specified by the
+     * <code>MaxRecords</code> parameter.
      * </p>
      * 
      * @param marker
-     *        Reserved for Amazon Redshift internal use.
+     *        An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this
+     *        parameter is specified, the response includes only records beyond the marker, up to the value specified by
+     *        the <code>MaxRecords</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -301,6 +301,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         exceptionUnmarshallers.add(new SubscriptionEventIdNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidSubscriptionStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidClusterSnapshotScheduleStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new UnauthorizedPartnerIntegrationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidUsageLimitExceptionUnmarshaller());
         exceptionUnmarshallers.add(new EndpointAuthorizationNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidClusterTrackExceptionUnmarshaller());
@@ -318,6 +319,7 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
         exceptionUnmarshallers.add(new BucketNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new EndpointAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new PartnerNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ScheduledActionQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidTableRestoreArgumentExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SnapshotCopyGrantAlreadyExistsExceptionUnmarshaller());
@@ -483,6 +485,68 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             }
 
             StaxResponseHandler<ReservedNode> responseHandler = new StaxResponseHandler<ReservedNode>(new ReservedNodeStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds a partner integration to a cluster. This operation authorizes a partner to push status updates for the
+     * specified database. To complete the integration, you also set up the integration on the partner website.
+     * </p>
+     * 
+     * @param addPartnerRequest
+     * @return Result of the AddPartner operation returned by the service.
+     * @throws PartnerNotFoundException
+     *         The name of the partner was not found.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws UnauthorizedPartnerIntegrationException
+     *         The partner integration is not authorized.
+     * @sample AmazonRedshift.AddPartner
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AddPartner" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public AddPartnerResult addPartner(AddPartnerRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddPartner(request);
+    }
+
+    @SdkInternalApi
+    final AddPartnerResult executeAddPartner(AddPartnerRequest addPartnerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(addPartnerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AddPartnerRequest> request = null;
+        Response<AddPartnerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AddPartnerRequestMarshaller().marshall(super.beforeMarshalling(addPartnerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddPartner");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<AddPartnerResult> responseHandler = new StaxResponseHandler<AddPartnerResult>(new AddPartnerResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -2691,6 +2755,68 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Deletes a partner integration from a cluster. Data can still flow to the cluster until the integration is deleted
+     * at the partner's website.
+     * </p>
+     * 
+     * @param deletePartnerRequest
+     * @return Result of the DeletePartner operation returned by the service.
+     * @throws PartnerNotFoundException
+     *         The name of the partner was not found.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws UnauthorizedPartnerIntegrationException
+     *         The partner integration is not authorized.
+     * @sample AmazonRedshift.DeletePartner
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeletePartner" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeletePartnerResult deletePartner(DeletePartnerRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeletePartner(request);
+    }
+
+    @SdkInternalApi
+    final DeletePartnerResult executeDeletePartner(DeletePartnerRequest deletePartnerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deletePartnerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeletePartnerRequest> request = null;
+        Response<DeletePartnerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeletePartnerRequestMarshaller().marshall(super.beforeMarshalling(deletePartnerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePartner");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeletePartnerResult> responseHandler = new StaxResponseHandler<DeletePartnerResult>(new DeletePartnerResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a scheduled action.
      * </p>
      * 
@@ -4431,6 +4557,66 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
     @Override
     public DescribeOrderableClusterOptionsResult describeOrderableClusterOptions() {
         return describeOrderableClusterOptions(new DescribeOrderableClusterOptionsRequest());
+    }
+
+    /**
+     * <p>
+     * Returns information about the partner integrations defined for a cluster.
+     * </p>
+     * 
+     * @param describePartnersRequest
+     * @return Result of the DescribePartners operation returned by the service.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws UnauthorizedPartnerIntegrationException
+     *         The partner integration is not authorized.
+     * @sample AmazonRedshift.DescribePartners
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribePartners" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribePartnersResult describePartners(DescribePartnersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribePartners(request);
+    }
+
+    @SdkInternalApi
+    final DescribePartnersResult executeDescribePartners(DescribePartnersRequest describePartnersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describePartnersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribePartnersRequest> request = null;
+        Response<DescribePartnersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribePartnersRequestMarshaller().marshall(super.beforeMarshalling(describePartnersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePartners");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribePartnersResult> responseHandler = new StaxResponseHandler<DescribePartnersResult>(
+                    new DescribePartnersResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -7528,6 +7714,68 @@ public class AmazonRedshiftClient extends AmazonWebServiceClient implements Amaz
             }
 
             StaxResponseHandler<Cluster> responseHandler = new StaxResponseHandler<Cluster>(new ClusterStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the status of a partner integration.
+     * </p>
+     * 
+     * @param updatePartnerStatusRequest
+     * @return Result of the UpdatePartnerStatus operation returned by the service.
+     * @throws PartnerNotFoundException
+     *         The name of the partner was not found.
+     * @throws ClusterNotFoundException
+     *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+     * @throws UnauthorizedPartnerIntegrationException
+     *         The partner integration is not authorized.
+     * @sample AmazonRedshift.UpdatePartnerStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/UpdatePartnerStatus" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdatePartnerStatusResult updatePartnerStatus(UpdatePartnerStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdatePartnerStatus(request);
+    }
+
+    @SdkInternalApi
+    final UpdatePartnerStatusResult executeUpdatePartnerStatus(UpdatePartnerStatusRequest updatePartnerStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updatePartnerStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdatePartnerStatusRequest> request = null;
+        Response<UpdatePartnerStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdatePartnerStatusRequestMarshaller().marshall(super.beforeMarshalling(updatePartnerStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePartnerStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UpdatePartnerStatusResult> responseHandler = new StaxResponseHandler<UpdatePartnerStatusResult>(
+                    new UpdatePartnerStatusResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 

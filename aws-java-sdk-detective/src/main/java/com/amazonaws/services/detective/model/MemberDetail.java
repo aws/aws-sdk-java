@@ -48,9 +48,6 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
     private String graphArn;
     /**
      * <p>
-     * Deprecated. Instead of <code>MasterId</code>, use <code>AdministratorId</code>.
-     * </p>
-     * <p>
      * The AWS account identifier of the administrator account for the behavior graph.
      * </p>
      */
@@ -143,6 +140,18 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date updatedTime;
     /**
      * <p>
+     * The data volume in bytes per day for the member account.
+     * </p>
+     */
+    private Long volumeUsageInBytes;
+    /**
+     * <p>
+     * The data and time when the member account data volume was last updated.
+     * </p>
+     */
+    private java.util.Date volumeUsageUpdatedTime;
+    /**
+     * <p>
      * The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent, and 100
      * indicates 100 percent.
      * </p>
@@ -155,12 +164,14 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      * represents 25% of the maximum allowed data volume.
      * </p>
      */
+    @Deprecated
     private Double percentOfGraphUtilization;
     /**
      * <p>
      * The date and time when the graph utilization percentage was last updated.
      * </p>
      */
+    @Deprecated
     private java.util.Date percentOfGraphUtilizationUpdatedTime;
 
     /**
@@ -285,15 +296,10 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Deprecated. Instead of <code>MasterId</code>, use <code>AdministratorId</code>.
-     * </p>
-     * <p>
      * The AWS account identifier of the administrator account for the behavior graph.
      * </p>
      * 
      * @param masterId
-     *        Deprecated. Instead of <code>MasterId</code>, use <code>AdministratorId</code>.</p>
-     *        <p>
      *        The AWS account identifier of the administrator account for the behavior graph.
      */
     @Deprecated
@@ -303,15 +309,10 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Deprecated. Instead of <code>MasterId</code>, use <code>AdministratorId</code>.
-     * </p>
-     * <p>
      * The AWS account identifier of the administrator account for the behavior graph.
      * </p>
      * 
-     * @return Deprecated. Instead of <code>MasterId</code>, use <code>AdministratorId</code>.</p>
-     *         <p>
-     *         The AWS account identifier of the administrator account for the behavior graph.
+     * @return The AWS account identifier of the administrator account for the behavior graph.
      */
     @Deprecated
     public String getMasterId() {
@@ -320,15 +321,10 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Deprecated. Instead of <code>MasterId</code>, use <code>AdministratorId</code>.
-     * </p>
-     * <p>
      * The AWS account identifier of the administrator account for the behavior graph.
      * </p>
      * 
      * @param masterId
-     *        Deprecated. Instead of <code>MasterId</code>, use <code>AdministratorId</code>.</p>
-     *        <p>
      *        The AWS account identifier of the administrator account for the behavior graph.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1013,6 +1009,86 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The data volume in bytes per day for the member account.
+     * </p>
+     * 
+     * @param volumeUsageInBytes
+     *        The data volume in bytes per day for the member account.
+     */
+
+    public void setVolumeUsageInBytes(Long volumeUsageInBytes) {
+        this.volumeUsageInBytes = volumeUsageInBytes;
+    }
+
+    /**
+     * <p>
+     * The data volume in bytes per day for the member account.
+     * </p>
+     * 
+     * @return The data volume in bytes per day for the member account.
+     */
+
+    public Long getVolumeUsageInBytes() {
+        return this.volumeUsageInBytes;
+    }
+
+    /**
+     * <p>
+     * The data volume in bytes per day for the member account.
+     * </p>
+     * 
+     * @param volumeUsageInBytes
+     *        The data volume in bytes per day for the member account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MemberDetail withVolumeUsageInBytes(Long volumeUsageInBytes) {
+        setVolumeUsageInBytes(volumeUsageInBytes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The data and time when the member account data volume was last updated.
+     * </p>
+     * 
+     * @param volumeUsageUpdatedTime
+     *        The data and time when the member account data volume was last updated.
+     */
+
+    public void setVolumeUsageUpdatedTime(java.util.Date volumeUsageUpdatedTime) {
+        this.volumeUsageUpdatedTime = volumeUsageUpdatedTime;
+    }
+
+    /**
+     * <p>
+     * The data and time when the member account data volume was last updated.
+     * </p>
+     * 
+     * @return The data and time when the member account data volume was last updated.
+     */
+
+    public java.util.Date getVolumeUsageUpdatedTime() {
+        return this.volumeUsageUpdatedTime;
+    }
+
+    /**
+     * <p>
+     * The data and time when the member account data volume was last updated.
+     * </p>
+     * 
+     * @param volumeUsageUpdatedTime
+     *        The data and time when the member account data volume was last updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MemberDetail withVolumeUsageUpdatedTime(java.util.Date volumeUsageUpdatedTime) {
+        setVolumeUsageUpdatedTime(volumeUsageUpdatedTime);
+        return this;
+    }
+
+    /**
+     * <p>
      * The member account data volume as a percentage of the maximum allowed data volume. 0 indicates 0 percent, and 100
      * indicates 100 percent.
      * </p>
@@ -1036,7 +1112,7 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      *        per day. If the data volume for the member account is 40 GB per day, then
      *        <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the maximum allowed data volume.
      */
-
+    @Deprecated
     public void setPercentOfGraphUtilization(Double percentOfGraphUtilization) {
         this.percentOfGraphUtilization = percentOfGraphUtilization;
     }
@@ -1065,7 +1141,7 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      *         per day. If the data volume for the member account is 40 GB per day, then
      *         <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the maximum allowed data volume.
      */
-
+    @Deprecated
     public Double getPercentOfGraphUtilization() {
         return this.percentOfGraphUtilization;
     }
@@ -1096,7 +1172,7 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      *        <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the maximum allowed data volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public MemberDetail withPercentOfGraphUtilization(Double percentOfGraphUtilization) {
         setPercentOfGraphUtilization(percentOfGraphUtilization);
         return this;
@@ -1110,7 +1186,7 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      * @param percentOfGraphUtilizationUpdatedTime
      *        The date and time when the graph utilization percentage was last updated.
      */
-
+    @Deprecated
     public void setPercentOfGraphUtilizationUpdatedTime(java.util.Date percentOfGraphUtilizationUpdatedTime) {
         this.percentOfGraphUtilizationUpdatedTime = percentOfGraphUtilizationUpdatedTime;
     }
@@ -1122,7 +1198,7 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return The date and time when the graph utilization percentage was last updated.
      */
-
+    @Deprecated
     public java.util.Date getPercentOfGraphUtilizationUpdatedTime() {
         return this.percentOfGraphUtilizationUpdatedTime;
     }
@@ -1136,7 +1212,7 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
      *        The date and time when the graph utilization percentage was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public MemberDetail withPercentOfGraphUtilizationUpdatedTime(java.util.Date percentOfGraphUtilizationUpdatedTime) {
         setPercentOfGraphUtilizationUpdatedTime(percentOfGraphUtilizationUpdatedTime);
         return this;
@@ -1172,6 +1248,10 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
             sb.append("InvitedTime: ").append(getInvitedTime()).append(",");
         if (getUpdatedTime() != null)
             sb.append("UpdatedTime: ").append(getUpdatedTime()).append(",");
+        if (getVolumeUsageInBytes() != null)
+            sb.append("VolumeUsageInBytes: ").append(getVolumeUsageInBytes()).append(",");
+        if (getVolumeUsageUpdatedTime() != null)
+            sb.append("VolumeUsageUpdatedTime: ").append(getVolumeUsageUpdatedTime()).append(",");
         if (getPercentOfGraphUtilization() != null)
             sb.append("PercentOfGraphUtilization: ").append(getPercentOfGraphUtilization()).append(",");
         if (getPercentOfGraphUtilizationUpdatedTime() != null)
@@ -1226,6 +1306,14 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getUpdatedTime() != null && other.getUpdatedTime().equals(this.getUpdatedTime()) == false)
             return false;
+        if (other.getVolumeUsageInBytes() == null ^ this.getVolumeUsageInBytes() == null)
+            return false;
+        if (other.getVolumeUsageInBytes() != null && other.getVolumeUsageInBytes().equals(this.getVolumeUsageInBytes()) == false)
+            return false;
+        if (other.getVolumeUsageUpdatedTime() == null ^ this.getVolumeUsageUpdatedTime() == null)
+            return false;
+        if (other.getVolumeUsageUpdatedTime() != null && other.getVolumeUsageUpdatedTime().equals(this.getVolumeUsageUpdatedTime()) == false)
+            return false;
         if (other.getPercentOfGraphUtilization() == null ^ this.getPercentOfGraphUtilization() == null)
             return false;
         if (other.getPercentOfGraphUtilization() != null && other.getPercentOfGraphUtilization().equals(this.getPercentOfGraphUtilization()) == false)
@@ -1252,6 +1340,8 @@ public class MemberDetail implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDisabledReason() == null) ? 0 : getDisabledReason().hashCode());
         hashCode = prime * hashCode + ((getInvitedTime() == null) ? 0 : getInvitedTime().hashCode());
         hashCode = prime * hashCode + ((getUpdatedTime() == null) ? 0 : getUpdatedTime().hashCode());
+        hashCode = prime * hashCode + ((getVolumeUsageInBytes() == null) ? 0 : getVolumeUsageInBytes().hashCode());
+        hashCode = prime * hashCode + ((getVolumeUsageUpdatedTime() == null) ? 0 : getVolumeUsageUpdatedTime().hashCode());
         hashCode = prime * hashCode + ((getPercentOfGraphUtilization() == null) ? 0 : getPercentOfGraphUtilization().hashCode());
         hashCode = prime * hashCode + ((getPercentOfGraphUtilizationUpdatedTime() == null) ? 0 : getPercentOfGraphUtilizationUpdatedTime().hashCode());
         return hashCode;

@@ -71,6 +71,24 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     private String queryResultTypeFilter;
     /**
      * <p>
+     * Overrides relevance tuning configurations of fields or attributes set at the index level.
+     * </p>
+     * <p>
+     * If you use this API to override the relevance tuning configured at the index level, but there is no relevance
+     * tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.
+     * </p>
+     * <p>
+     * If there is relevance tuning configured at the index level, but you do not use this API to override any relevance
+     * tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.
+     * </p>
+     * <p>
+     * If there is relevance tuning configured for fields at the index level, but you use this API to override only some
+     * of these fields, then for the fields you did not override, the importance is set to 1.
+     * </p>
+     */
+    private java.util.List<DocumentRelevanceConfiguration> documentRelevanceOverrideConfigurations;
+    /**
+     * <p>
      * Query results are returned in pages the size of the <code>PageSize</code> parameter. By default, Amazon Kendra
      * returns the first page of results. Use this parameter to get result pages after the first one.
      * </p>
@@ -486,6 +504,173 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
+     * Overrides relevance tuning configurations of fields or attributes set at the index level.
+     * </p>
+     * <p>
+     * If you use this API to override the relevance tuning configured at the index level, but there is no relevance
+     * tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.
+     * </p>
+     * <p>
+     * If there is relevance tuning configured at the index level, but you do not use this API to override any relevance
+     * tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.
+     * </p>
+     * <p>
+     * If there is relevance tuning configured for fields at the index level, but you use this API to override only some
+     * of these fields, then for the fields you did not override, the importance is set to 1.
+     * </p>
+     * 
+     * @return Overrides relevance tuning configurations of fields or attributes set at the index level.</p>
+     *         <p>
+     *         If you use this API to override the relevance tuning configured at the index level, but there is no
+     *         relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.
+     *         </p>
+     *         <p>
+     *         If there is relevance tuning configured at the index level, but you do not use this API to override any
+     *         relevance tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the
+     *         index level.
+     *         </p>
+     *         <p>
+     *         If there is relevance tuning configured for fields at the index level, but you use this API to override
+     *         only some of these fields, then for the fields you did not override, the importance is set to 1.
+     */
+
+    public java.util.List<DocumentRelevanceConfiguration> getDocumentRelevanceOverrideConfigurations() {
+        return documentRelevanceOverrideConfigurations;
+    }
+
+    /**
+     * <p>
+     * Overrides relevance tuning configurations of fields or attributes set at the index level.
+     * </p>
+     * <p>
+     * If you use this API to override the relevance tuning configured at the index level, but there is no relevance
+     * tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.
+     * </p>
+     * <p>
+     * If there is relevance tuning configured at the index level, but you do not use this API to override any relevance
+     * tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.
+     * </p>
+     * <p>
+     * If there is relevance tuning configured for fields at the index level, but you use this API to override only some
+     * of these fields, then for the fields you did not override, the importance is set to 1.
+     * </p>
+     * 
+     * @param documentRelevanceOverrideConfigurations
+     *        Overrides relevance tuning configurations of fields or attributes set at the index level.</p>
+     *        <p>
+     *        If you use this API to override the relevance tuning configured at the index level, but there is no
+     *        relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.
+     *        </p>
+     *        <p>
+     *        If there is relevance tuning configured at the index level, but you do not use this API to override any
+     *        relevance tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the
+     *        index level.
+     *        </p>
+     *        <p>
+     *        If there is relevance tuning configured for fields at the index level, but you use this API to override
+     *        only some of these fields, then for the fields you did not override, the importance is set to 1.
+     */
+
+    public void setDocumentRelevanceOverrideConfigurations(java.util.Collection<DocumentRelevanceConfiguration> documentRelevanceOverrideConfigurations) {
+        if (documentRelevanceOverrideConfigurations == null) {
+            this.documentRelevanceOverrideConfigurations = null;
+            return;
+        }
+
+        this.documentRelevanceOverrideConfigurations = new java.util.ArrayList<DocumentRelevanceConfiguration>(documentRelevanceOverrideConfigurations);
+    }
+
+    /**
+     * <p>
+     * Overrides relevance tuning configurations of fields or attributes set at the index level.
+     * </p>
+     * <p>
+     * If you use this API to override the relevance tuning configured at the index level, but there is no relevance
+     * tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.
+     * </p>
+     * <p>
+     * If there is relevance tuning configured at the index level, but you do not use this API to override any relevance
+     * tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.
+     * </p>
+     * <p>
+     * If there is relevance tuning configured for fields at the index level, but you use this API to override only some
+     * of these fields, then for the fields you did not override, the importance is set to 1.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDocumentRelevanceOverrideConfigurations(java.util.Collection)} or
+     * {@link #withDocumentRelevanceOverrideConfigurations(java.util.Collection)} if you want to override the existing
+     * values.
+     * </p>
+     * 
+     * @param documentRelevanceOverrideConfigurations
+     *        Overrides relevance tuning configurations of fields or attributes set at the index level.</p>
+     *        <p>
+     *        If you use this API to override the relevance tuning configured at the index level, but there is no
+     *        relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.
+     *        </p>
+     *        <p>
+     *        If there is relevance tuning configured at the index level, but you do not use this API to override any
+     *        relevance tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the
+     *        index level.
+     *        </p>
+     *        <p>
+     *        If there is relevance tuning configured for fields at the index level, but you use this API to override
+     *        only some of these fields, then for the fields you did not override, the importance is set to 1.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public QueryRequest withDocumentRelevanceOverrideConfigurations(DocumentRelevanceConfiguration... documentRelevanceOverrideConfigurations) {
+        if (this.documentRelevanceOverrideConfigurations == null) {
+            setDocumentRelevanceOverrideConfigurations(new java.util.ArrayList<DocumentRelevanceConfiguration>(documentRelevanceOverrideConfigurations.length));
+        }
+        for (DocumentRelevanceConfiguration ele : documentRelevanceOverrideConfigurations) {
+            this.documentRelevanceOverrideConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Overrides relevance tuning configurations of fields or attributes set at the index level.
+     * </p>
+     * <p>
+     * If you use this API to override the relevance tuning configured at the index level, but there is no relevance
+     * tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.
+     * </p>
+     * <p>
+     * If there is relevance tuning configured at the index level, but you do not use this API to override any relevance
+     * tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the index level.
+     * </p>
+     * <p>
+     * If there is relevance tuning configured for fields at the index level, but you use this API to override only some
+     * of these fields, then for the fields you did not override, the importance is set to 1.
+     * </p>
+     * 
+     * @param documentRelevanceOverrideConfigurations
+     *        Overrides relevance tuning configurations of fields or attributes set at the index level.</p>
+     *        <p>
+     *        If you use this API to override the relevance tuning configured at the index level, but there is no
+     *        relevance tuning configured at the index level, then Amazon Kendra does not apply any relevance tuning.
+     *        </p>
+     *        <p>
+     *        If there is relevance tuning configured at the index level, but you do not use this API to override any
+     *        relevance tuning in the index, then Amazon Kendra uses the relevance tuning that is configured at the
+     *        index level.
+     *        </p>
+     *        <p>
+     *        If there is relevance tuning configured for fields at the index level, but you use this API to override
+     *        only some of these fields, then for the fields you did not override, the importance is set to 1.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public QueryRequest withDocumentRelevanceOverrideConfigurations(java.util.Collection<DocumentRelevanceConfiguration> documentRelevanceOverrideConfigurations) {
+        setDocumentRelevanceOverrideConfigurations(documentRelevanceOverrideConfigurations);
+        return this;
+    }
+
+    /**
+     * <p>
      * Query results are returned in pages the size of the <code>PageSize</code> parameter. By default, Amazon Kendra
      * returns the first page of results. Use this parameter to get result pages after the first one.
      * </p>
@@ -765,6 +950,8 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
             sb.append("RequestedDocumentAttributes: ").append(getRequestedDocumentAttributes()).append(",");
         if (getQueryResultTypeFilter() != null)
             sb.append("QueryResultTypeFilter: ").append(getQueryResultTypeFilter()).append(",");
+        if (getDocumentRelevanceOverrideConfigurations() != null)
+            sb.append("DocumentRelevanceOverrideConfigurations: ").append(getDocumentRelevanceOverrideConfigurations()).append(",");
         if (getPageNumber() != null)
             sb.append("PageNumber: ").append(getPageNumber()).append(",");
         if (getPageSize() != null)
@@ -813,6 +1000,11 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
             return false;
         if (other.getQueryResultTypeFilter() != null && other.getQueryResultTypeFilter().equals(this.getQueryResultTypeFilter()) == false)
             return false;
+        if (other.getDocumentRelevanceOverrideConfigurations() == null ^ this.getDocumentRelevanceOverrideConfigurations() == null)
+            return false;
+        if (other.getDocumentRelevanceOverrideConfigurations() != null
+                && other.getDocumentRelevanceOverrideConfigurations().equals(this.getDocumentRelevanceOverrideConfigurations()) == false)
+            return false;
         if (other.getPageNumber() == null ^ this.getPageNumber() == null)
             return false;
         if (other.getPageNumber() != null && other.getPageNumber().equals(this.getPageNumber()) == false)
@@ -847,6 +1039,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
         hashCode = prime * hashCode + ((getFacets() == null) ? 0 : getFacets().hashCode());
         hashCode = prime * hashCode + ((getRequestedDocumentAttributes() == null) ? 0 : getRequestedDocumentAttributes().hashCode());
         hashCode = prime * hashCode + ((getQueryResultTypeFilter() == null) ? 0 : getQueryResultTypeFilter().hashCode());
+        hashCode = prime * hashCode + ((getDocumentRelevanceOverrideConfigurations() == null) ? 0 : getDocumentRelevanceOverrideConfigurations().hashCode());
         hashCode = prime * hashCode + ((getPageNumber() == null) ? 0 : getPageNumber().hashCode());
         hashCode = prime * hashCode + ((getPageSize() == null) ? 0 : getPageSize().hashCode());
         hashCode = prime * hashCode + ((getSortingConfiguration() == null) ? 0 : getSortingConfiguration().hashCode());

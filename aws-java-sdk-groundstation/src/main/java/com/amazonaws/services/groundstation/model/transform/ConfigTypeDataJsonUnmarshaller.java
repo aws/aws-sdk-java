@@ -64,6 +64,10 @@ public class ConfigTypeDataJsonUnmarshaller implements Unmarshaller<ConfigTypeDa
                     context.nextToken();
                     configTypeData.setDataflowEndpointConfig(DataflowEndpointConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("s3RecordingConfig", targetDepth)) {
+                    context.nextToken();
+                    configTypeData.setS3RecordingConfig(S3RecordingConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("trackingConfig", targetDepth)) {
                     context.nextToken();
                     configTypeData.setTrackingConfig(TrackingConfigJsonUnmarshaller.getInstance().unmarshall(context));
