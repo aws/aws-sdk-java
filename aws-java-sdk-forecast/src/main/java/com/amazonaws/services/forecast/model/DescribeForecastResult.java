@@ -55,6 +55,12 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
     private String datasetGroupArn;
     /**
      * <p>
+     * The estimated time in minutes for the forecast job to complete.
+     * </p>
+     */
+    private Long estimatedTimeRemainingInMinutes;
+    /**
+     * <p>
      * The status of the forecast. States include:
      * </p>
      * <ul>
@@ -359,6 +365,46 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
 
     public DescribeForecastResult withDatasetGroupArn(String datasetGroupArn) {
         setDatasetGroupArn(datasetGroupArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The estimated time in minutes for the forecast job to complete.
+     * </p>
+     * 
+     * @param estimatedTimeRemainingInMinutes
+     *        The estimated time in minutes for the forecast job to complete.
+     */
+
+    public void setEstimatedTimeRemainingInMinutes(Long estimatedTimeRemainingInMinutes) {
+        this.estimatedTimeRemainingInMinutes = estimatedTimeRemainingInMinutes;
+    }
+
+    /**
+     * <p>
+     * The estimated time in minutes for the forecast job to complete.
+     * </p>
+     * 
+     * @return The estimated time in minutes for the forecast job to complete.
+     */
+
+    public Long getEstimatedTimeRemainingInMinutes() {
+        return this.estimatedTimeRemainingInMinutes;
+    }
+
+    /**
+     * <p>
+     * The estimated time in minutes for the forecast job to complete.
+     * </p>
+     * 
+     * @param estimatedTimeRemainingInMinutes
+     *        The estimated time in minutes for the forecast job to complete.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeForecastResult withEstimatedTimeRemainingInMinutes(Long estimatedTimeRemainingInMinutes) {
+        setEstimatedTimeRemainingInMinutes(estimatedTimeRemainingInMinutes);
         return this;
     }
 
@@ -865,6 +911,8 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
             sb.append("PredictorArn: ").append(getPredictorArn()).append(",");
         if (getDatasetGroupArn() != null)
             sb.append("DatasetGroupArn: ").append(getDatasetGroupArn()).append(",");
+        if (getEstimatedTimeRemainingInMinutes() != null)
+            sb.append("EstimatedTimeRemainingInMinutes: ").append(getEstimatedTimeRemainingInMinutes()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getMessage() != null)
@@ -907,6 +955,11 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getDatasetGroupArn() != null && other.getDatasetGroupArn().equals(this.getDatasetGroupArn()) == false)
             return false;
+        if (other.getEstimatedTimeRemainingInMinutes() == null ^ this.getEstimatedTimeRemainingInMinutes() == null)
+            return false;
+        if (other.getEstimatedTimeRemainingInMinutes() != null
+                && other.getEstimatedTimeRemainingInMinutes().equals(this.getEstimatedTimeRemainingInMinutes()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -936,6 +989,7 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getForecastTypes() == null) ? 0 : getForecastTypes().hashCode());
         hashCode = prime * hashCode + ((getPredictorArn() == null) ? 0 : getPredictorArn().hashCode());
         hashCode = prime * hashCode + ((getDatasetGroupArn() == null) ? 0 : getDatasetGroupArn().hashCode());
+        hashCode = prime * hashCode + ((getEstimatedTimeRemainingInMinutes() == null) ? 0 : getEstimatedTimeRemainingInMinutes().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());

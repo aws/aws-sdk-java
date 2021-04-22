@@ -42,13 +42,23 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
     private String email;
     /**
      * <p>
-     * The AWS account ID of the Security Hub master account associated with this member account.
+     * This is replaced by <code>AdministratorID</code>.
+     * </p>
+     * <p>
+     * The AWS account ID of the Security Hub administrator account associated with this member account.
      * </p>
      */
+    @Deprecated
     private String masterId;
     /**
      * <p>
-     * The status of the relationship between the member account and its master account.
+     * The AWS account ID of the Security Hub administrator account associated with this member account.
+     * </p>
+     */
+    private String administratorId;
+    /**
+     * <p>
+     * The status of the relationship between the member account and its administrator account.
      * </p>
      * <p>
      * The status can have one of the following values:
@@ -56,14 +66,14 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CREATED</code> - Indicates that the master account added the member account, but has not yet invited the
-     * member account.
+     * <code>CREATED</code> - Indicates that the administrator account added the member account, but has not yet invited
+     * the member account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INVITED</code> - Indicates that the master account invited the member account. The member account has not
-     * yet responded to the invitation.
+     * <code>INVITED</code> - Indicates that the administrator account invited the member account. The member account
+     * has not yet responded to the invitation.
      * </p>
      * </li>
      * <li>
@@ -74,17 +84,18 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>REMOVED</code> - Indicates that the master account disassociated the member account.
+     * <code>REMOVED</code> - Indicates that the administrator account disassociated the member account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RESIGNED</code> - Indicates that the member account disassociated themselves from the master account.
+     * <code>RESIGNED</code> - Indicates that the member account disassociated themselves from the administrator
+     * account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DELETED</code> - Indicates that the master account deleted the member account.
+     * <code>DELETED</code> - Indicates that the administrator account deleted the member account.
      * </p>
      * </li>
      * </ul>
@@ -185,39 +196,54 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID of the Security Hub master account associated with this member account.
+     * This is replaced by <code>AdministratorID</code>.
+     * </p>
+     * <p>
+     * The AWS account ID of the Security Hub administrator account associated with this member account.
      * </p>
      * 
      * @param masterId
-     *        The AWS account ID of the Security Hub master account associated with this member account.
+     *        This is replaced by <code>AdministratorID</code>.</p>
+     *        <p>
+     *        The AWS account ID of the Security Hub administrator account associated with this member account.
      */
-
+    @Deprecated
     public void setMasterId(String masterId) {
         this.masterId = masterId;
     }
 
     /**
      * <p>
-     * The AWS account ID of the Security Hub master account associated with this member account.
+     * This is replaced by <code>AdministratorID</code>.
+     * </p>
+     * <p>
+     * The AWS account ID of the Security Hub administrator account associated with this member account.
      * </p>
      * 
-     * @return The AWS account ID of the Security Hub master account associated with this member account.
+     * @return This is replaced by <code>AdministratorID</code>.</p>
+     *         <p>
+     *         The AWS account ID of the Security Hub administrator account associated with this member account.
      */
-
+    @Deprecated
     public String getMasterId() {
         return this.masterId;
     }
 
     /**
      * <p>
-     * The AWS account ID of the Security Hub master account associated with this member account.
+     * This is replaced by <code>AdministratorID</code>.
+     * </p>
+     * <p>
+     * The AWS account ID of the Security Hub administrator account associated with this member account.
      * </p>
      * 
      * @param masterId
-     *        The AWS account ID of the Security Hub master account associated with this member account.
+     *        This is replaced by <code>AdministratorID</code>.</p>
+     *        <p>
+     *        The AWS account ID of the Security Hub administrator account associated with this member account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public Member withMasterId(String masterId) {
         setMasterId(masterId);
         return this;
@@ -225,7 +251,47 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the relationship between the member account and its master account.
+     * The AWS account ID of the Security Hub administrator account associated with this member account.
+     * </p>
+     * 
+     * @param administratorId
+     *        The AWS account ID of the Security Hub administrator account associated with this member account.
+     */
+
+    public void setAdministratorId(String administratorId) {
+        this.administratorId = administratorId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID of the Security Hub administrator account associated with this member account.
+     * </p>
+     * 
+     * @return The AWS account ID of the Security Hub administrator account associated with this member account.
+     */
+
+    public String getAdministratorId() {
+        return this.administratorId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID of the Security Hub administrator account associated with this member account.
+     * </p>
+     * 
+     * @param administratorId
+     *        The AWS account ID of the Security Hub administrator account associated with this member account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Member withAdministratorId(String administratorId) {
+        setAdministratorId(administratorId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the relationship between the member account and its administrator account.
      * </p>
      * <p>
      * The status can have one of the following values:
@@ -233,14 +299,14 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CREATED</code> - Indicates that the master account added the member account, but has not yet invited the
-     * member account.
+     * <code>CREATED</code> - Indicates that the administrator account added the member account, but has not yet invited
+     * the member account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INVITED</code> - Indicates that the master account invited the member account. The member account has not
-     * yet responded to the invitation.
+     * <code>INVITED</code> - Indicates that the administrator account invited the member account. The member account
+     * has not yet responded to the invitation.
      * </p>
      * </li>
      * <li>
@@ -251,37 +317,38 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>REMOVED</code> - Indicates that the master account disassociated the member account.
+     * <code>REMOVED</code> - Indicates that the administrator account disassociated the member account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RESIGNED</code> - Indicates that the member account disassociated themselves from the master account.
+     * <code>RESIGNED</code> - Indicates that the member account disassociated themselves from the administrator
+     * account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DELETED</code> - Indicates that the master account deleted the member account.
+     * <code>DELETED</code> - Indicates that the administrator account deleted the member account.
      * </p>
      * </li>
      * </ul>
      * 
      * @param memberStatus
-     *        The status of the relationship between the member account and its master account. </p>
+     *        The status of the relationship between the member account and its administrator account. </p>
      *        <p>
      *        The status can have one of the following values:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATED</code> - Indicates that the master account added the member account, but has not yet invited
-     *        the member account.
+     *        <code>CREATED</code> - Indicates that the administrator account added the member account, but has not yet
+     *        invited the member account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>INVITED</code> - Indicates that the master account invited the member account. The member account
-     *        has not yet responded to the invitation.
+     *        <code>INVITED</code> - Indicates that the administrator account invited the member account. The member
+     *        account has not yet responded to the invitation.
      *        </p>
      *        </li>
      *        <li>
@@ -292,18 +359,18 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>REMOVED</code> - Indicates that the master account disassociated the member account.
+     *        <code>REMOVED</code> - Indicates that the administrator account disassociated the member account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>RESIGNED</code> - Indicates that the member account disassociated themselves from the master
+     *        <code>RESIGNED</code> - Indicates that the member account disassociated themselves from the administrator
      *        account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DELETED</code> - Indicates that the master account deleted the member account.
+     *        <code>DELETED</code> - Indicates that the administrator account deleted the member account.
      *        </p>
      *        </li>
      */
@@ -314,7 +381,7 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the relationship between the member account and its master account.
+     * The status of the relationship between the member account and its administrator account.
      * </p>
      * <p>
      * The status can have one of the following values:
@@ -322,14 +389,14 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CREATED</code> - Indicates that the master account added the member account, but has not yet invited the
-     * member account.
+     * <code>CREATED</code> - Indicates that the administrator account added the member account, but has not yet invited
+     * the member account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INVITED</code> - Indicates that the master account invited the member account. The member account has not
-     * yet responded to the invitation.
+     * <code>INVITED</code> - Indicates that the administrator account invited the member account. The member account
+     * has not yet responded to the invitation.
      * </p>
      * </li>
      * <li>
@@ -340,36 +407,37 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>REMOVED</code> - Indicates that the master account disassociated the member account.
+     * <code>REMOVED</code> - Indicates that the administrator account disassociated the member account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RESIGNED</code> - Indicates that the member account disassociated themselves from the master account.
+     * <code>RESIGNED</code> - Indicates that the member account disassociated themselves from the administrator
+     * account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DELETED</code> - Indicates that the master account deleted the member account.
+     * <code>DELETED</code> - Indicates that the administrator account deleted the member account.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The status of the relationship between the member account and its master account. </p>
+     * @return The status of the relationship between the member account and its administrator account. </p>
      *         <p>
      *         The status can have one of the following values:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>CREATED</code> - Indicates that the master account added the member account, but has not yet
+     *         <code>CREATED</code> - Indicates that the administrator account added the member account, but has not yet
      *         invited the member account.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>INVITED</code> - Indicates that the master account invited the member account. The member account
-     *         has not yet responded to the invitation.
+     *         <code>INVITED</code> - Indicates that the administrator account invited the member account. The member
+     *         account has not yet responded to the invitation.
      *         </p>
      *         </li>
      *         <li>
@@ -380,18 +448,18 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>REMOVED</code> - Indicates that the master account disassociated the member account.
+     *         <code>REMOVED</code> - Indicates that the administrator account disassociated the member account.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>RESIGNED</code> - Indicates that the member account disassociated themselves from the master
+     *         <code>RESIGNED</code> - Indicates that the member account disassociated themselves from the administrator
      *         account.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>DELETED</code> - Indicates that the master account deleted the member account.
+     *         <code>DELETED</code> - Indicates that the administrator account deleted the member account.
      *         </p>
      *         </li>
      */
@@ -402,7 +470,7 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the relationship between the member account and its master account.
+     * The status of the relationship between the member account and its administrator account.
      * </p>
      * <p>
      * The status can have one of the following values:
@@ -410,14 +478,14 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CREATED</code> - Indicates that the master account added the member account, but has not yet invited the
-     * member account.
+     * <code>CREATED</code> - Indicates that the administrator account added the member account, but has not yet invited
+     * the member account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>INVITED</code> - Indicates that the master account invited the member account. The member account has not
-     * yet responded to the invitation.
+     * <code>INVITED</code> - Indicates that the administrator account invited the member account. The member account
+     * has not yet responded to the invitation.
      * </p>
      * </li>
      * <li>
@@ -428,37 +496,38 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>REMOVED</code> - Indicates that the master account disassociated the member account.
+     * <code>REMOVED</code> - Indicates that the administrator account disassociated the member account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RESIGNED</code> - Indicates that the member account disassociated themselves from the master account.
+     * <code>RESIGNED</code> - Indicates that the member account disassociated themselves from the administrator
+     * account.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DELETED</code> - Indicates that the master account deleted the member account.
+     * <code>DELETED</code> - Indicates that the administrator account deleted the member account.
      * </p>
      * </li>
      * </ul>
      * 
      * @param memberStatus
-     *        The status of the relationship between the member account and its master account. </p>
+     *        The status of the relationship between the member account and its administrator account. </p>
      *        <p>
      *        The status can have one of the following values:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATED</code> - Indicates that the master account added the member account, but has not yet invited
-     *        the member account.
+     *        <code>CREATED</code> - Indicates that the administrator account added the member account, but has not yet
+     *        invited the member account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>INVITED</code> - Indicates that the master account invited the member account. The member account
-     *        has not yet responded to the invitation.
+     *        <code>INVITED</code> - Indicates that the administrator account invited the member account. The member
+     *        account has not yet responded to the invitation.
      *        </p>
      *        </li>
      *        <li>
@@ -469,18 +538,18 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>REMOVED</code> - Indicates that the master account disassociated the member account.
+     *        <code>REMOVED</code> - Indicates that the administrator account disassociated the member account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>RESIGNED</code> - Indicates that the member account disassociated themselves from the master
+     *        <code>RESIGNED</code> - Indicates that the member account disassociated themselves from the administrator
      *        account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DELETED</code> - Indicates that the master account deleted the member account.
+     *        <code>DELETED</code> - Indicates that the administrator account deleted the member account.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -589,6 +658,8 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
             sb.append("Email: ").append(getEmail()).append(",");
         if (getMasterId() != null)
             sb.append("MasterId: ").append(getMasterId()).append(",");
+        if (getAdministratorId() != null)
+            sb.append("AdministratorId: ").append(getAdministratorId()).append(",");
         if (getMemberStatus() != null)
             sb.append("MemberStatus: ").append(getMemberStatus()).append(",");
         if (getInvitedAt() != null)
@@ -621,6 +692,10 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMasterId() != null && other.getMasterId().equals(this.getMasterId()) == false)
             return false;
+        if (other.getAdministratorId() == null ^ this.getAdministratorId() == null)
+            return false;
+        if (other.getAdministratorId() != null && other.getAdministratorId().equals(this.getAdministratorId()) == false)
+            return false;
         if (other.getMemberStatus() == null ^ this.getMemberStatus() == null)
             return false;
         if (other.getMemberStatus() != null && other.getMemberStatus().equals(this.getMemberStatus()) == false)
@@ -644,6 +719,7 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         hashCode = prime * hashCode + ((getEmail() == null) ? 0 : getEmail().hashCode());
         hashCode = prime * hashCode + ((getMasterId() == null) ? 0 : getMasterId().hashCode());
+        hashCode = prime * hashCode + ((getAdministratorId() == null) ? 0 : getAdministratorId().hashCode());
         hashCode = prime * hashCode + ((getMemberStatus() == null) ? 0 : getMemberStatus().hashCode());
         hashCode = prime * hashCode + ((getInvitedAt() == null) ? 0 : getInvitedAt().hashCode());
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());

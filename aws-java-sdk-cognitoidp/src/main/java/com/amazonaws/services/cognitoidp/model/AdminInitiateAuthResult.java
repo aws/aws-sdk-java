@@ -81,8 +81,21 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * </li>
      * <li>
      * <p>
-     * <code>NEW_PASSWORD_REQUIRED</code>: For users which are required to change their passwords after successful first
+     * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first
      * login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA types
+     * enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
+     * </p>
+     * <p>
+     * To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     * <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input
+     * to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To setup
+     * SMS MFA, users will need help from an administrator to add a phone number to their account and then call
+     * <code>InitiateAuth</code> again to restart sign-in.
      * </p>
      * </li>
      * </ul>
@@ -178,8 +191,21 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * </li>
      * <li>
      * <p>
-     * <code>NEW_PASSWORD_REQUIRED</code>: For users which are required to change their passwords after successful first
+     * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first
      * login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA types
+     * enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
+     * </p>
+     * <p>
+     * To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     * <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input
+     * to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To setup
+     * SMS MFA, users will need help from an administrator to add a phone number to their account and then call
+     * <code>InitiateAuth</code> again to restart sign-in.
      * </p>
      * </li>
      * </ul>
@@ -238,9 +264,23 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW_PASSWORD_REQUIRED</code>: For users which are required to change their passwords after
-     *        successful first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other
-     *        required attributes.
+     *        <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful
+     *        first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required
+     *        attributes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA
+     *        types enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code>
+     *        value.
+     *        </p>
+     *        <p>
+     *        To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     *        <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as
+     *        an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete
+     *        sign-in. To setup SMS MFA, users will need help from an administrator to add a phone number to their
+     *        account and then call <code>InitiateAuth</code> again to restart sign-in.
      *        </p>
      *        </li>
      * @see ChallengeNameType
@@ -305,8 +345,21 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * </li>
      * <li>
      * <p>
-     * <code>NEW_PASSWORD_REQUIRED</code>: For users which are required to change their passwords after successful first
+     * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first
      * login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA types
+     * enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
+     * </p>
+     * <p>
+     * To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     * <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input
+     * to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To setup
+     * SMS MFA, users will need help from an administrator to add a phone number to their account and then call
+     * <code>InitiateAuth</code> again to restart sign-in.
      * </p>
      * </li>
      * </ul>
@@ -364,9 +417,23 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *         </li>
      *         <li>
      *         <p>
-     *         <code>NEW_PASSWORD_REQUIRED</code>: For users which are required to change their passwords after
-     *         successful first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other
-     *         required attributes.
+     *         <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful
+     *         first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required
+     *         attributes.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The
+     *         MFA types enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code>
+     *         value.
+     *         </p>
+     *         <p>
+     *         To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     *         <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as
+     *         an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete
+     *         sign-in. To setup SMS MFA, users will need help from an administrator to add a phone number to their
+     *         account and then call <code>InitiateAuth</code> again to restart sign-in.
      *         </p>
      *         </li>
      * @see ChallengeNameType
@@ -431,8 +498,21 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * </li>
      * <li>
      * <p>
-     * <code>NEW_PASSWORD_REQUIRED</code>: For users which are required to change their passwords after successful first
+     * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first
      * login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA types
+     * enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
+     * </p>
+     * <p>
+     * To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     * <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input
+     * to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To setup
+     * SMS MFA, users will need help from an administrator to add a phone number to their account and then call
+     * <code>InitiateAuth</code> again to restart sign-in.
      * </p>
      * </li>
      * </ul>
@@ -491,9 +571,23 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW_PASSWORD_REQUIRED</code>: For users which are required to change their passwords after
-     *        successful first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other
-     *        required attributes.
+     *        <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful
+     *        first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required
+     *        attributes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA
+     *        types enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code>
+     *        value.
+     *        </p>
+     *        <p>
+     *        To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     *        <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as
+     *        an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete
+     *        sign-in. To setup SMS MFA, users will need help from an administrator to add a phone number to their
+     *        account and then call <code>InitiateAuth</code> again to restart sign-in.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -560,8 +654,21 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * </li>
      * <li>
      * <p>
-     * <code>NEW_PASSWORD_REQUIRED</code>: For users which are required to change their passwords after successful first
+     * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first
      * login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA types
+     * enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
+     * </p>
+     * <p>
+     * To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     * <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input
+     * to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To setup
+     * SMS MFA, users will need help from an administrator to add a phone number to their account and then call
+     * <code>InitiateAuth</code> again to restart sign-in.
      * </p>
      * </li>
      * </ul>
@@ -620,9 +727,23 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW_PASSWORD_REQUIRED</code>: For users which are required to change their passwords after
-     *        successful first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other
-     *        required attributes.
+     *        <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful
+     *        first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required
+     *        attributes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA
+     *        types enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code>
+     *        value.
+     *        </p>
+     *        <p>
+     *        To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     *        <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as
+     *        an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete
+     *        sign-in. To setup SMS MFA, users will need help from an administrator to add a phone number to their
+     *        account and then call <code>InitiateAuth</code> again to restart sign-in.
      *        </p>
      *        </li>
      * @see ChallengeNameType
@@ -687,8 +808,21 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      * </li>
      * <li>
      * <p>
-     * <code>NEW_PASSWORD_REQUIRED</code>: For users which are required to change their passwords after successful first
+     * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful first
      * login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required attributes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA types
+     * enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
+     * </p>
+     * <p>
+     * To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     * <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as an input
+     * to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete sign-in. To setup
+     * SMS MFA, users will need help from an administrator to add a phone number to their account and then call
+     * <code>InitiateAuth</code> again to restart sign-in.
      * </p>
      * </li>
      * </ul>
@@ -747,9 +881,23 @@ public class AdminInitiateAuthResult extends com.amazonaws.AmazonWebServiceResul
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW_PASSWORD_REQUIRED</code>: For users which are required to change their passwords after
-     *        successful first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other
-     *        required attributes.
+     *        <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their passwords after successful
+     *        first login. This challenge should be passed with <code>NEW_PASSWORD</code> and any other required
+     *        attributes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign-in. The MFA
+     *        types enabled for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code>
+     *        value.
+     *        </p>
+     *        <p>
+     *        To setup software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
+     *        <code>AssociateSoftwareToken</code>, and use the session returned by <code>VerifySoftwareToken</code> as
+     *        an input to <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code> to complete
+     *        sign-in. To setup SMS MFA, users will need help from an administrator to add a phone number to their
+     *        account and then call <code>InitiateAuth</code> again to restart sign-in.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

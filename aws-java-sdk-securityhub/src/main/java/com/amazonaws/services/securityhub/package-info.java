@@ -29,9 +29,9 @@
  * </p>
  * <p>
  * For example, if your Region is set to <code>us-west-2</code>, when you use <code> <a>CreateMembers</a> </code> to add
- * a member account to Security Hub, the association of the member account with the master account is created only in
- * the <code>us-west-2</code> Region. Security Hub must be enabled for the member account in the same Region that the
- * invitation was sent from.
+ * a member account to Security Hub, the association of the member account with the administrator account is created
+ * only in the <code>us-west-2</code> Region. Security Hub must be enabled for the member account in the same Region
+ * that the invitation was sent from.
  * </p>
  * <p>
  * The following throttling limits apply to using Security Hub API operations.

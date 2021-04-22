@@ -33,6 +33,8 @@ public class MemberMarshaller {
             .marshallLocationName("Email").build();
     private static final MarshallingInfo<String> MASTERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("MasterId").build();
+    private static final MarshallingInfo<String> ADMINISTRATORID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdministratorId").build();
     private static final MarshallingInfo<String> MEMBERSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MemberStatus").build();
     private static final MarshallingInfo<java.util.Date> INVITEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -59,6 +61,7 @@ public class MemberMarshaller {
             protocolMarshaller.marshall(member.getAccountId(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(member.getEmail(), EMAIL_BINDING);
             protocolMarshaller.marshall(member.getMasterId(), MASTERID_BINDING);
+            protocolMarshaller.marshall(member.getAdministratorId(), ADMINISTRATORID_BINDING);
             protocolMarshaller.marshall(member.getMemberStatus(), MEMBERSTATUS_BINDING);
             protocolMarshaller.marshall(member.getInvitedAt(), INVITEDAT_BINDING);
             protocolMarshaller.marshall(member.getUpdatedAt(), UPDATEDAT_BINDING);

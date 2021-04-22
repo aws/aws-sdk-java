@@ -180,6 +180,16 @@ public class ReplicationGroupStaxUnmarshaller implements Unmarshaller<Replicatio
                     continue;
                 }
 
+                if (context.testExpression("LogDeliveryConfigurations", targetDepth)) {
+                    replicationGroup.withLogDeliveryConfigurations(new ArrayList<LogDeliveryConfiguration>());
+                    continue;
+                }
+
+                if (context.testExpression("LogDeliveryConfigurations/LogDeliveryConfiguration", targetDepth)) {
+                    replicationGroup.withLogDeliveryConfigurations(LogDeliveryConfigurationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return replicationGroup;

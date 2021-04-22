@@ -80,6 +80,10 @@ public class DescribeDatasetImportJobResultJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     describeDatasetImportJobResult.setDataSource(DataSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("EstimatedTimeRemainingInMinutes", targetDepth)) {
+                    context.nextToken();
+                    describeDatasetImportJobResult.setEstimatedTimeRemainingInMinutes(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
                 if (context.testExpression("FieldStatistics", targetDepth)) {
                     context.nextToken();
                     describeDatasetImportJobResult.setFieldStatistics(new MapUnmarshaller<String, Statistics>(context.getUnmarshaller(String.class),

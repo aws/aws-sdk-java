@@ -27,19 +27,19 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The list of accounts to associate with the Security Hub master account. For each account, the list includes the
-     * account ID and optionally the email address.
+     * The list of accounts to associate with the Security Hub administrator account. For each account, the list
+     * includes the account ID and optionally the email address.
      * </p>
      */
     private java.util.List<AccountDetails> accountDetails;
 
     /**
      * <p>
-     * The list of accounts to associate with the Security Hub master account. For each account, the list includes the
-     * account ID and optionally the email address.
+     * The list of accounts to associate with the Security Hub administrator account. For each account, the list
+     * includes the account ID and optionally the email address.
      * </p>
      * 
-     * @return The list of accounts to associate with the Security Hub master account. For each account, the list
+     * @return The list of accounts to associate with the Security Hub administrator account. For each account, the list
      *         includes the account ID and optionally the email address.
      */
 
@@ -49,12 +49,12 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The list of accounts to associate with the Security Hub master account. For each account, the list includes the
-     * account ID and optionally the email address.
+     * The list of accounts to associate with the Security Hub administrator account. For each account, the list
+     * includes the account ID and optionally the email address.
      * </p>
      * 
      * @param accountDetails
-     *        The list of accounts to associate with the Security Hub master account. For each account, the list
+     *        The list of accounts to associate with the Security Hub administrator account. For each account, the list
      *        includes the account ID and optionally the email address.
      */
 
@@ -69,8 +69,8 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The list of accounts to associate with the Security Hub master account. For each account, the list includes the
-     * account ID and optionally the email address.
+     * The list of accounts to associate with the Security Hub administrator account. For each account, the list
+     * includes the account ID and optionally the email address.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,7 +79,7 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param accountDetails
-     *        The list of accounts to associate with the Security Hub master account. For each account, the list
+     *        The list of accounts to associate with the Security Hub administrator account. For each account, the list
      *        includes the account ID and optionally the email address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -96,12 +96,12 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The list of accounts to associate with the Security Hub master account. For each account, the list includes the
-     * account ID and optionally the email address.
+     * The list of accounts to associate with the Security Hub administrator account. For each account, the list
+     * includes the account ID and optionally the email address.
      * </p>
      * 
      * @param accountDetails
-     *        The list of accounts to associate with the Security Hub master account. For each account, the list
+     *        The list of accounts to associate with the Security Hub administrator account. For each account, the list
      *        includes the account ID and optionally the email address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

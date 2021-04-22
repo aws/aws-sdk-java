@@ -67,9 +67,9 @@ import com.amazonaws.services.securityhub.model.transform.*;
  * </p>
  * <p>
  * For example, if your Region is set to <code>us-west-2</code>, when you use <code> <a>CreateMembers</a> </code> to add
- * a member account to Security Hub, the association of the member account with the master account is created only in
- * the <code>us-west-2</code> Region. Security Hub must be enabled for the member account in the same Region that the
- * invitation was sent from.
+ * a member account to Security Hub, the association of the member account with the administrator account is created
+ * only in the <code>us-west-2</code> Region. Security Hub must be enabled for the member account in the same Region
+ * that the invitation was sent from.
  * </p>
  * <p>
  * The following throttling limits apply to using Security Hub API operations.
@@ -134,6 +134,9 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.securityhub.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.securityhub.model.transform.InvalidInputExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidAccessException").withExceptionUnmarshaller(
                                     com.amazonaws.services.securityhub.model.transform.InvalidAccessExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -148,9 +151,6 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.securityhub.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.securityhub.model.transform.InvalidInputExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.securityhub.model.AWSSecurityHubException.class));
 
     public static AWSSecurityHubClientBuilder builder() {
@@ -201,15 +201,95 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
-     * Accepts the invitation to be a member account and be monitored by the Security Hub master account that the
+     * Accepts the invitation to be a member account and be monitored by the Security Hub administrator account that the
      * invitation was sent from.
      * </p>
      * <p>
      * This operation is only used by member accounts that are not added through Organizations.
      * </p>
      * <p>
-     * When the member account accepts the invitation, permission is granted to the master account to view findings
-     * generated in the member account.
+     * When the member account accepts the invitation, permission is granted to the administrator account to view
+     * findings generated in the member account.
+     * </p>
+     * 
+     * @param acceptAdministratorInvitationRequest
+     * @return Result of the AcceptAdministratorInvitation operation returned by the service.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
+     * @throws LimitExceededException
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
+     * @throws ResourceNotFoundException
+     *         The request was rejected because we can't find the specified resource.
+     * @throws InvalidAccessException
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
+     * @sample AWSSecurityHub.AcceptAdministratorInvitation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AcceptAdministratorInvitation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AcceptAdministratorInvitationResult acceptAdministratorInvitation(AcceptAdministratorInvitationRequest request) {
+        request = beforeClientExecution(request);
+        return executeAcceptAdministratorInvitation(request);
+    }
+
+    @SdkInternalApi
+    final AcceptAdministratorInvitationResult executeAcceptAdministratorInvitation(AcceptAdministratorInvitationRequest acceptAdministratorInvitationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(acceptAdministratorInvitationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AcceptAdministratorInvitationRequest> request = null;
+        Response<AcceptAdministratorInvitationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AcceptAdministratorInvitationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(acceptAdministratorInvitationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptAdministratorInvitation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AcceptAdministratorInvitationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AcceptAdministratorInvitationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This method is deprecated. Instead, use <code>AcceptAdministratorInvitation</code>.
+     * </p>
+     * <p>
+     * Accepts the invitation to be a member account and be monitored by the Security Hub administrator account that the
+     * invitation was sent from.
+     * </p>
+     * <p>
+     * This operation is only used by member accounts that are not added through Organizations.
+     * </p>
+     * <p>
+     * When the member account accepts the invitation, permission is granted to the administrator account to view
+     * findings generated in the member account.
      * </p>
      * 
      * @param acceptInvitationRequest
@@ -231,6 +311,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public AcceptInvitationResult acceptInvitation(AcceptInvitationRequest request) {
         request = beforeClientExecution(request);
         return executeAcceptInvitation(request);
@@ -547,15 +628,15 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
     /**
      * <p>
      * Used by Security Hub customers to update information about their investigation into a finding. Requested by
-     * master accounts or member accounts. Master accounts can update findings for their account and their member
-     * accounts. Member accounts can update findings for their account.
+     * administrator accounts or member accounts. Administrator accounts can update findings for their account and their
+     * member accounts. Member accounts can update findings for their account.
      * </p>
      * <p>
      * Updates from <code>BatchUpdateFindings</code> do not affect the value of <code>UpdatedAt</code> for a finding.
      * </p>
      * <p>
-     * Master and member accounts can use <code>BatchUpdateFindings</code> to update the following finding fields and
-     * objects.
+     * Administrator and member accounts can use <code>BatchUpdateFindings</code> to update the following finding fields
+     * and objects.
      * </p>
      * <ul>
      * <li>
@@ -816,8 +897,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
     /**
      * <p>
      * Creates a member association in Security Hub between the specified accounts and the account used to make the
-     * request, which is the master account. If you are integrated with Organizations, then the master account is the
-     * Security Hub administrator account that is designated by the organization management account.
+     * request, which is the administrator account. If you are integrated with Organizations, then the administrator
+     * account is designated by the organization management account.
      * </p>
      * <p>
      * <code>CreateMembers</code> is always used to add accounts that are not organization members.
@@ -851,12 +932,12 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * account in Security Hub.
      * </p>
      * <p>
-     * A permissions policy is added that permits the master account to view the findings generated in the member
-     * account. When Security Hub is enabled in a member account, findings are sent to both the member and master
-     * accounts.
+     * A permissions policy is added that permits the administrator account to view the findings generated in the member
+     * account. When Security Hub is enabled in a member account, the member account findings are also visible to the
+     * administrator account.
      * </p>
      * <p>
-     * To remove the association between the master and member accounts, use the
+     * To remove the association between the administrator and member accounts, use the
      * <code> <a>DisassociateFromMasterAccount</a> </code> or <code> <a>DisassociateMembers</a> </code> operation.
      * </p>
      * 
@@ -1821,13 +1902,13 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * must submit one request per Region where you have enabled Security Hub.
      * </p>
      * <p>
-     * When you disable Security Hub for a master account, it doesn't disable Security Hub for any associated member
-     * accounts.
+     * When you disable Security Hub for an administrator account, it doesn't disable Security Hub for any associated
+     * member accounts.
      * </p>
      * <p>
      * When you disable Security Hub, your existing findings and insights and any Security Hub configuration settings
-     * are deleted after 90 days and cannot be recovered. Any standards that were enabled are disabled, and your master
-     * and member account associations are removed.
+     * are deleted after 90 days and cannot be recovered. Any standards that were enabled are disabled, and your
+     * administrator and member account associations are removed.
      * </p>
      * <p>
      * If you want to save your existing findings, you must export them before you disable Security Hub.
@@ -1895,11 +1976,88 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
-     * Disassociates the current Security Hub member account from the associated master account.
+     * Disassociates the current Security Hub member account from the associated administrator account.
      * </p>
      * <p>
      * This operation is only used by accounts that are not part of an organization. For organization accounts, only the
-     * master account (the designated Security Hub administrator) can disassociate a member account.
+     * administrator account can disassociate a member account.
+     * </p>
+     * 
+     * @param disassociateFromAdministratorAccountRequest
+     * @return Result of the DisassociateFromAdministratorAccount operation returned by the service.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
+     * @throws InvalidAccessException
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
+     * @throws LimitExceededException
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
+     * @throws ResourceNotFoundException
+     *         The request was rejected because we can't find the specified resource.
+     * @sample AWSSecurityHub.DisassociateFromAdministratorAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisassociateFromAdministratorAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateFromAdministratorAccountResult disassociateFromAdministratorAccount(DisassociateFromAdministratorAccountRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateFromAdministratorAccount(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateFromAdministratorAccountResult executeDisassociateFromAdministratorAccount(
+            DisassociateFromAdministratorAccountRequest disassociateFromAdministratorAccountRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateFromAdministratorAccountRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateFromAdministratorAccountRequest> request = null;
+        Response<DisassociateFromAdministratorAccountResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateFromAdministratorAccountRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateFromAdministratorAccountRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateFromAdministratorAccount");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateFromAdministratorAccountResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateFromAdministratorAccountResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This method is deprecated. Instead, use <code>DisassociateFromAdministratorAccount</code>.
+     * </p>
+     * <p>
+     * Disassociates the current Security Hub member account from the associated administrator account.
+     * </p>
+     * <p>
+     * This operation is only used by accounts that are not part of an organization. For organization accounts, only the
+     * administrator account can disassociate a member account.
      * </p>
      * 
      * @param disassociateFromMasterAccountRequest
@@ -1921,6 +2079,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DisassociateFromMasterAccountResult disassociateFromMasterAccount(DisassociateFromMasterAccountRequest request) {
         request = beforeClientExecution(request);
         return executeDisassociateFromMasterAccount(request);
@@ -1968,10 +2127,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
-     * Disassociates the specified member accounts from the associated master account.
+     * Disassociates the specified member accounts from the associated administrator account.
      * </p>
      * <p>
-     * Can be used to disassociate both accounts that are in an organization and accounts that were invited manually.
+     * Can be used to disassociate both accounts that are managed using Organizations and accounts that were invited
+     * manually.
      * </p>
      * 
      * @param disassociateMembersRequest
@@ -2270,6 +2430,78 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
             HttpResponseHandler<AmazonWebServiceResponse<EnableSecurityHubResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new EnableSecurityHubResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provides the details for the Security Hub administrator account for the current member account.
+     * </p>
+     * <p>
+     * Can be used by both member accounts that are managed using Organizations and accounts that were invited manually.
+     * </p>
+     * 
+     * @param getAdministratorAccountRequest
+     * @return Result of the GetAdministratorAccount operation returned by the service.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
+     * @throws InvalidAccessException
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
+     * @throws LimitExceededException
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
+     * @throws ResourceNotFoundException
+     *         The request was rejected because we can't find the specified resource.
+     * @sample AWSSecurityHub.GetAdministratorAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetAdministratorAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetAdministratorAccountResult getAdministratorAccount(GetAdministratorAccountRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAdministratorAccount(request);
+    }
+
+    @SdkInternalApi
+    final GetAdministratorAccountResult executeGetAdministratorAccount(GetAdministratorAccountRequest getAdministratorAccountRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAdministratorAccountRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAdministratorAccountRequest> request = null;
+        Response<GetAdministratorAccountResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAdministratorAccountRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getAdministratorAccountRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAdministratorAccount");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAdministratorAccountResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetAdministratorAccountResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2612,10 +2844,13 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
-     * Provides the details for the Security Hub master account for the current member account.
+     * This method is deprecated. Instead, use <code>GetAdministratorAccount</code>.
      * </p>
      * <p>
-     * Can be used by both member accounts that are in an organization and accounts that were invited manually.
+     * Provides the details for the Security Hub administrator account for the current member account.
+     * </p>
+     * <p>
+     * Can be used by both member accounts that are managed using Organizations and accounts that were invited manually.
      * </p>
      * 
      * @param getMasterAccountRequest
@@ -2637,6 +2872,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetMasterAccountResult getMasterAccount(GetMasterAccountRequest request) {
         request = beforeClientExecution(request);
         return executeGetMasterAccount(request);
@@ -2685,11 +2921,12 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * Returns the details for the Security Hub member accounts for the specified account IDs.
      * </p>
      * <p>
-     * A master account can be either a delegated Security Hub administrator account for an organization or a master
-     * account that enabled Security Hub manually.
+     * An administrator account can be either the delegated Security Hub administrator account for an organization or an
+     * administrator account that enabled Security Hub manually.
      * </p>
      * <p>
-     * The results include both member accounts that are in an organization and accounts that were invited manually.
+     * The results include both member accounts that are managed using Organizations and accounts that were invited
+     * manually.
      * </p>
      * 
      * @param getMembersRequest
@@ -2756,8 +2993,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
-     * Invites other AWS accounts to become member accounts for the Security Hub master account that the invitation is
-     * sent from.
+     * Invites other AWS accounts to become member accounts for the Security Hub administrator account that the
+     * invitation is sent from.
      * </p>
      * <p>
      * This operation is only used to invite accounts that do not belong to an organization. Organization accounts do
@@ -2768,8 +3005,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * action to create the member account in Security Hub.
      * </p>
      * <p>
-     * When the account owner enables Security Hub and accepts the invitation to become a member account, the master
-     * account can view the findings generated from the member account.
+     * When the account owner enables Security Hub and accepts the invitation to become a member account, the
+     * administrator account can view the findings generated from the member account.
      * </p>
      * 
      * @param inviteMembersRequest
@@ -2905,8 +3142,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * Lists all Security Hub membership invitations that were sent to the current AWS account.
      * </p>
      * <p>
-     * This operation is only used by accounts that do not belong to an organization. Organization accounts do not
-     * receive invitations.
+     * This operation is only used by accounts that are managed by invitation. Accounts that are managed using the
+     * integration with AWS Organizations do not receive invitations.
      * </p>
      * 
      * @param listInvitationsRequest
@@ -2971,7 +3208,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
-     * Lists details about all member accounts for the current Security Hub master account.
+     * Lists details about all member accounts for the current Security Hub administrator account.
      * </p>
      * <p>
      * The results include both member accounts that belong to an organization and member accounts that were invited

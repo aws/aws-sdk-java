@@ -74,6 +74,17 @@ public class PendingModifiedValuesStaxUnmarshaller implements Unmarshaller<Pendi
                     pendingModifiedValues.setAuthTokenStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("LogDeliveryConfigurations", targetDepth)) {
+                    pendingModifiedValues.withLogDeliveryConfigurations(new ArrayList<PendingLogDeliveryConfiguration>());
+                    continue;
+                }
+
+                if (context.testExpression("LogDeliveryConfigurations/member", targetDepth)) {
+                    pendingModifiedValues.withLogDeliveryConfigurations(PendingLogDeliveryConfigurationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return pendingModifiedValues;

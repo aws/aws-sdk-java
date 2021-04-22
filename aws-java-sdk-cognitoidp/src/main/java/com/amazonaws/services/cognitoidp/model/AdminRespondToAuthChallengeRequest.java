@@ -78,6 +78,12 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as email
@@ -359,6 +365,12 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as email
@@ -393,6 +405,12 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      *         <p>
      *         <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes,
      *         <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     *         <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
      *         </p>
      *         </li>
      *         </ul>
@@ -437,6 +455,12 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as email
@@ -472,6 +496,12 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      *        <p>
      *        <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes,
      *        <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     *        <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
      *        </p>
      *        </li>
      *        </ul>
@@ -516,6 +546,12 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as email
@@ -551,6 +587,12 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      *        <p>
      *        <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes,
      *        <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     *        <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
      *        </p>
      *        </li>
      *        </ul>

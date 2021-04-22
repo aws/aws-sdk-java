@@ -199,6 +199,22 @@ public class CacheClusterStaxUnmarshaller implements Unmarshaller<CacheCluster, 
                     cacheCluster.setARN(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ReplicationGroupLogDeliveryEnabled", targetDepth)) {
+                    cacheCluster.setReplicationGroupLogDeliveryEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("LogDeliveryConfigurations", targetDepth)) {
+                    cacheCluster.withLogDeliveryConfigurations(new ArrayList<LogDeliveryConfiguration>());
+                    continue;
+                }
+
+                if (context.testExpression("LogDeliveryConfigurations/LogDeliveryConfiguration", targetDepth)) {
+                    cacheCluster.withLogDeliveryConfigurations(LogDeliveryConfigurationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return cacheCluster;

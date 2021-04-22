@@ -95,8 +95,10 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you are
-     * initially creating a user pool.
+     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you are
+     * initially creating a user pool. You can use the <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html"
+     * >SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools.
      * </p>
      * </li>
      * <li>
@@ -596,8 +598,10 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you are
-     * initially creating a user pool.
+     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you are
+     * initially creating a user pool. You can use the <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html"
+     * >SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools.
      * </p>
      * </li>
      * <li>
@@ -617,8 +621,10 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when
-     *        you are initially creating a user pool.
+     *        <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you are
+     *        initially creating a user pool. You can use the <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html"
+     *        >SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools.
      *        </p>
      *        </li>
      *        <li>
@@ -645,8 +651,10 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you are
-     * initially creating a user pool.
+     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you are
+     * initially creating a user pool. You can use the <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html"
+     * >SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools.
      * </p>
      * </li>
      * <li>
@@ -665,8 +673,10 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when
-     *         you are initially creating a user pool.
+     *         <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you
+     *         are initially creating a user pool. You can use the <a href=
+     *         "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html"
+     *         >SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools.
      *         </p>
      *         </li>
      *         <li>
@@ -693,8 +703,10 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you are
-     * initially creating a user pool.
+     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you are
+     * initially creating a user pool. You can use the <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html"
+     * >SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools.
      * </p>
      * </li>
      * <li>
@@ -714,8 +726,10 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when
-     *        you are initially creating a user pool.
+     *        <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you are
+     *        initially creating a user pool. You can use the <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html"
+     *        >SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools.
      *        </p>
      *        </li>
      *        <li>
@@ -744,8 +758,10 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you are
-     * initially creating a user pool.
+     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you are
+     * initially creating a user pool. You can use the <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html"
+     * >SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools.
      * </p>
      * </li>
      * <li>
@@ -765,8 +781,10 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when
-     *        you are initially creating a user pool.
+     *        <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you are
+     *        initially creating a user pool. You can use the <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html"
+     *        >SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools.
      *        </p>
      *        </li>
      *        <li>
@@ -793,8 +811,10 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when you are
-     * initially creating a user pool.
+     * <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you are
+     * initially creating a user pool. You can use the <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html"
+     * >SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools.
      * </p>
      * </li>
      * <li>
@@ -814,8 +834,10 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ON</code> - MFA tokens are required for all user registrations. You can only specify required when
-     *        you are initially creating a user pool.
+     *        <code>ON</code> - MFA tokens are required for all user registrations. You can only specify ON when you are
+     *        initially creating a user pool. You can use the <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html"
+     *        >SetUserPoolMfaConfig</a> API operation to turn MFA "ON" for existing user pools.
      *        </p>
      *        </li>
      *        <li>

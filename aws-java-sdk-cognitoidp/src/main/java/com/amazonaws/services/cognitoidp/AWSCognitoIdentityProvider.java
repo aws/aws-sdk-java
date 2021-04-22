@@ -34,7 +34,9 @@ import com.amazonaws.services.cognitoidp.model.*;
  * This API reference provides information about user pools in Amazon Cognito User Pools.
  * </p>
  * <p>
- * For more information, see the Amazon Cognito Documentation.
+ * For more information, see the <a
+ * href="https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html">Amazon Cognito
+ * Documentation</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -393,7 +395,7 @@ public interface AWSCognitoIdentityProvider {
      * </p>
      * 
      * @param adminDisableUserRequest
-     *        Represents the request to disable any user as an administrator.
+     *        Represents the request to disable the user as an administrator.
      * @return Result of the AdminDisableUser operation returned by the service.
      * @throws ResourceNotFoundException
      *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
@@ -1505,7 +1507,7 @@ public interface AWSCognitoIdentityProvider {
 
     /**
      * <p>
-     * Deletes a group. Currently only groups with no members can be deleted.
+     * Deletes a group.
      * </p>
      * <p>
      * Calling this action requires developer credentials.

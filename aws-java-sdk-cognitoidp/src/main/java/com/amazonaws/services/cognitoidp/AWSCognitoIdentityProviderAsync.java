@@ -33,7 +33,9 @@ import com.amazonaws.services.cognitoidp.model.*;
  * This API reference provides information about user pools in Amazon Cognito User Pools.
  * </p>
  * <p>
- * For more information, see the Amazon Cognito Documentation.
+ * For more information, see the <a
+ * href="https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html">Amazon Cognito
+ * Documentation</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -401,7 +403,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * </p>
      * 
      * @param adminDisableUserRequest
-     *        Represents the request to disable any user as an administrator.
+     *        Represents the request to disable the user as an administrator.
      * @return A Java Future containing the result of the AdminDisableUser operation returned by the service.
      * @sample AWSCognitoIdentityProviderAsync.AdminDisableUser
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDisableUser" target="_top">AWS
@@ -418,7 +420,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * </p>
      * 
      * @param adminDisableUserRequest
-     *        Represents the request to disable any user as an administrator.
+     *        Represents the request to disable the user as an administrator.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1638,7 +1640,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Deletes a group. Currently only groups with no members can be deleted.
+     * Deletes a group.
      * </p>
      * <p>
      * Calling this action requires developer credentials.
@@ -1654,7 +1656,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Deletes a group. Currently only groups with no members can be deleted.
+     * Deletes a group.
      * </p>
      * <p>
      * Calling this action requires developer credentials.

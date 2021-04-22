@@ -1,3 +1,20 @@
+# __1.11.1003__ __2021-04-22__
+## __AWS SecurityHub__
+  - ### Features
+    - Replaced the term "master" with "administrator". Added new actions to replace AcceptInvitation, GetMasterAccount, and DisassociateFromMasterAccount. In Member, replaced MasterId with AdministratorId.
+
+## __Amazon Cognito Identity Provider__
+  - ### Features
+    - Documentation updates for cognito-idp
+
+## __Amazon ElastiCache__
+  - ### Features
+    - This release introduces log delivery of Redis slow log from Amazon ElastiCache.
+
+## __Amazon Forecast Service__
+  - ### Features
+    - This release adds EstimatedTimeRemaining minutes field to the DescribeDatasetImportJob, DescribePredictor, DescribeForecast API response which denotes the time remaining to complete the job IN_PROGRESS.
+
 # __1.11.1002__ __2021-04-21__
 ## __AWS CloudFormation__
   - ### Features

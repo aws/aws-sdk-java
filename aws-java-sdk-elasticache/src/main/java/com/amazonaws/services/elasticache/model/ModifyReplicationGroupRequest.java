@@ -318,6 +318,12 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private Boolean removeUserGroups;
+    /**
+     * <p>
+     * Specifies the destination, format and type of the logs.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<LogDeliveryConfigurationRequest> logDeliveryConfigurations;
 
     /**
      * <p>
@@ -2418,6 +2424,79 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * Specifies the destination, format and type of the logs.
+     * </p>
+     * 
+     * @return Specifies the destination, format and type of the logs.
+     */
+
+    public java.util.List<LogDeliveryConfigurationRequest> getLogDeliveryConfigurations() {
+        if (logDeliveryConfigurations == null) {
+            logDeliveryConfigurations = new com.amazonaws.internal.SdkInternalList<LogDeliveryConfigurationRequest>();
+        }
+        return logDeliveryConfigurations;
+    }
+
+    /**
+     * <p>
+     * Specifies the destination, format and type of the logs.
+     * </p>
+     * 
+     * @param logDeliveryConfigurations
+     *        Specifies the destination, format and type of the logs.
+     */
+
+    public void setLogDeliveryConfigurations(java.util.Collection<LogDeliveryConfigurationRequest> logDeliveryConfigurations) {
+        if (logDeliveryConfigurations == null) {
+            this.logDeliveryConfigurations = null;
+            return;
+        }
+
+        this.logDeliveryConfigurations = new com.amazonaws.internal.SdkInternalList<LogDeliveryConfigurationRequest>(logDeliveryConfigurations);
+    }
+
+    /**
+     * <p>
+     * Specifies the destination, format and type of the logs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLogDeliveryConfigurations(java.util.Collection)} or
+     * {@link #withLogDeliveryConfigurations(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param logDeliveryConfigurations
+     *        Specifies the destination, format and type of the logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyReplicationGroupRequest withLogDeliveryConfigurations(LogDeliveryConfigurationRequest... logDeliveryConfigurations) {
+        if (this.logDeliveryConfigurations == null) {
+            setLogDeliveryConfigurations(new com.amazonaws.internal.SdkInternalList<LogDeliveryConfigurationRequest>(logDeliveryConfigurations.length));
+        }
+        for (LogDeliveryConfigurationRequest ele : logDeliveryConfigurations) {
+            this.logDeliveryConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the destination, format and type of the logs.
+     * </p>
+     * 
+     * @param logDeliveryConfigurations
+     *        Specifies the destination, format and type of the logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyReplicationGroupRequest withLogDeliveryConfigurations(java.util.Collection<LogDeliveryConfigurationRequest> logDeliveryConfigurations) {
+        setLogDeliveryConfigurations(logDeliveryConfigurations);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2476,7 +2555,9 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         if (getUserGroupIdsToRemove() != null)
             sb.append("UserGroupIdsToRemove: ").append(getUserGroupIdsToRemove()).append(",");
         if (getRemoveUserGroups() != null)
-            sb.append("RemoveUserGroups: ").append(getRemoveUserGroups());
+            sb.append("RemoveUserGroups: ").append(getRemoveUserGroups()).append(",");
+        if (getLogDeliveryConfigurations() != null)
+            sb.append("LogDeliveryConfigurations: ").append(getLogDeliveryConfigurations());
         sb.append("}");
         return sb.toString();
     }
@@ -2587,6 +2668,10 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getRemoveUserGroups() != null && other.getRemoveUserGroups().equals(this.getRemoveUserGroups()) == false)
             return false;
+        if (other.getLogDeliveryConfigurations() == null ^ this.getLogDeliveryConfigurations() == null)
+            return false;
+        if (other.getLogDeliveryConfigurations() != null && other.getLogDeliveryConfigurations().equals(this.getLogDeliveryConfigurations()) == false)
+            return false;
         return true;
     }
 
@@ -2619,6 +2704,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getUserGroupIdsToAdd() == null) ? 0 : getUserGroupIdsToAdd().hashCode());
         hashCode = prime * hashCode + ((getUserGroupIdsToRemove() == null) ? 0 : getUserGroupIdsToRemove().hashCode());
         hashCode = prime * hashCode + ((getRemoveUserGroups() == null) ? 0 : getRemoveUserGroups().hashCode());
+        hashCode = prime * hashCode + ((getLogDeliveryConfigurations() == null) ? 0 : getLogDeliveryConfigurations().hashCode());
         return hashCode;
     }
 

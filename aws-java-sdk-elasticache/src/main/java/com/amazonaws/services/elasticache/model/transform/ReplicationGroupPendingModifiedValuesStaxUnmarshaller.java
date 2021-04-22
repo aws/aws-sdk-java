@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.elasticache.model.transform;
 
+import java.util.ArrayList;
+
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -67,6 +69,18 @@ public class ReplicationGroupPendingModifiedValuesStaxUnmarshaller implements Un
                     replicationGroupPendingModifiedValues.setUserGroups(UserGroupsUpdateStatusStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("LogDeliveryConfigurations", targetDepth)) {
+                    replicationGroupPendingModifiedValues.withLogDeliveryConfigurations(new ArrayList<PendingLogDeliveryConfiguration>());
+                    continue;
+                }
+
+                if (context.testExpression("LogDeliveryConfigurations/member", targetDepth)) {
+                    replicationGroupPendingModifiedValues.withLogDeliveryConfigurations(PendingLogDeliveryConfigurationStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return replicationGroupPendingModifiedValues;

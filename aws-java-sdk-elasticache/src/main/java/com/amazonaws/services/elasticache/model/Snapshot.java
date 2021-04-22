@@ -243,7 +243,7 @@ public class Snapshot implements Serializable, Cloneable {
      * </p>
      * <p>
      * For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1
-     * and 20.
+     * and 40.
      * </p>
      */
     private Integer numCacheNodes;
@@ -1726,14 +1726,14 @@ public class Snapshot implements Serializable, Cloneable {
      * </p>
      * <p>
      * For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1
-     * and 20.
+     * and 40.
      * </p>
      * 
      * @param numCacheNodes
      *        The number of cache nodes in the source cluster.</p>
      *        <p>
      *        For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be
-     *        between 1 and 20.
+     *        between 1 and 40.
      */
 
     public void setNumCacheNodes(Integer numCacheNodes) {
@@ -1746,13 +1746,13 @@ public class Snapshot implements Serializable, Cloneable {
      * </p>
      * <p>
      * For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1
-     * and 20.
+     * and 40.
      * </p>
      * 
      * @return The number of cache nodes in the source cluster.</p>
      *         <p>
      *         For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be
-     *         between 1 and 20.
+     *         between 1 and 40.
      */
 
     public Integer getNumCacheNodes() {
@@ -1765,14 +1765,14 @@ public class Snapshot implements Serializable, Cloneable {
      * </p>
      * <p>
      * For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1
-     * and 20.
+     * and 40.
      * </p>
      * 
      * @param numCacheNodes
      *        The number of cache nodes in the source cluster.</p>
      *        <p>
      *        For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be
-     *        between 1 and 20.
+     *        between 1 and 40.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

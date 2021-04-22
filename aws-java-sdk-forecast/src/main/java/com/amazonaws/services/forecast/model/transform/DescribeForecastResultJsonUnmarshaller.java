@@ -70,6 +70,10 @@ public class DescribeForecastResultJsonUnmarshaller implements Unmarshaller<Desc
                     context.nextToken();
                     describeForecastResult.setDatasetGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("EstimatedTimeRemainingInMinutes", targetDepth)) {
+                    context.nextToken();
+                    describeForecastResult.setEstimatedTimeRemainingInMinutes(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
                     describeForecastResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));

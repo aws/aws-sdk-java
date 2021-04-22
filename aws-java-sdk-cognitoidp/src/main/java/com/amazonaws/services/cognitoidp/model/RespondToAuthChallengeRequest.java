@@ -100,6 +100,12 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * <code>DEVICE_KEY</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
+     * </p>
+     * </li>
      * </ul>
      */
     private java.util.Map<String, String> challengeResponses;
@@ -424,6 +430,12 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * <code>DEVICE_KEY</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The challenge responses. These are inputs corresponding to the value of <code>ChallengeName</code>, for
@@ -467,6 +479,12 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      *         <p>
      *         <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code> requires
      *         plus <code>DEVICE_KEY</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     *         <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
      *         </p>
      *         </li>
      */
@@ -521,6 +539,12 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * <code>DEVICE_KEY</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param challengeResponses
@@ -565,6 +589,12 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code> requires
      *        plus <code>DEVICE_KEY</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     *        <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
      *        </p>
      *        </li>
      */
@@ -619,6 +649,12 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * <code>DEVICE_KEY</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param challengeResponses
@@ -663,6 +699,12 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code> requires
      *        plus <code>DEVICE_KEY</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     *        <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

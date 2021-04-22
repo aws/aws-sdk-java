@@ -115,6 +115,12 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
     private PredictorExecutionDetails predictorExecutionDetails;
     /**
      * <p>
+     * The estimated time in minutes for the predictor training job to complete.
+     * </p>
+     */
+    private Long estimatedTimeRemainingInMinutes;
+    /**
+     * <p>
      * An array of the ARNs of the dataset import jobs used to import training data for the predictor.
      * </p>
      */
@@ -885,6 +891,46 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
+     * The estimated time in minutes for the predictor training job to complete.
+     * </p>
+     * 
+     * @param estimatedTimeRemainingInMinutes
+     *        The estimated time in minutes for the predictor training job to complete.
+     */
+
+    public void setEstimatedTimeRemainingInMinutes(Long estimatedTimeRemainingInMinutes) {
+        this.estimatedTimeRemainingInMinutes = estimatedTimeRemainingInMinutes;
+    }
+
+    /**
+     * <p>
+     * The estimated time in minutes for the predictor training job to complete.
+     * </p>
+     * 
+     * @return The estimated time in minutes for the predictor training job to complete.
+     */
+
+    public Long getEstimatedTimeRemainingInMinutes() {
+        return this.estimatedTimeRemainingInMinutes;
+    }
+
+    /**
+     * <p>
+     * The estimated time in minutes for the predictor training job to complete.
+     * </p>
+     * 
+     * @param estimatedTimeRemainingInMinutes
+     *        The estimated time in minutes for the predictor training job to complete.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePredictorResult withEstimatedTimeRemainingInMinutes(Long estimatedTimeRemainingInMinutes) {
+        setEstimatedTimeRemainingInMinutes(estimatedTimeRemainingInMinutes);
+        return this;
+    }
+
+    /**
+     * <p>
      * An array of the ARNs of the dataset import jobs used to import training data for the predictor.
      * </p>
      * 
@@ -1547,6 +1593,8 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
             sb.append("EncryptionConfig: ").append(getEncryptionConfig()).append(",");
         if (getPredictorExecutionDetails() != null)
             sb.append("PredictorExecutionDetails: ").append(getPredictorExecutionDetails()).append(",");
+        if (getEstimatedTimeRemainingInMinutes() != null)
+            sb.append("EstimatedTimeRemainingInMinutes: ").append(getEstimatedTimeRemainingInMinutes()).append(",");
         if (getDatasetImportJobArns() != null)
             sb.append("DatasetImportJobArns: ").append(getDatasetImportJobArns()).append(",");
         if (getAutoMLAlgorithmArns() != null)
@@ -1629,6 +1677,11 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getPredictorExecutionDetails() != null && other.getPredictorExecutionDetails().equals(this.getPredictorExecutionDetails()) == false)
             return false;
+        if (other.getEstimatedTimeRemainingInMinutes() == null ^ this.getEstimatedTimeRemainingInMinutes() == null)
+            return false;
+        if (other.getEstimatedTimeRemainingInMinutes() != null
+                && other.getEstimatedTimeRemainingInMinutes().equals(this.getEstimatedTimeRemainingInMinutes()) == false)
+            return false;
         if (other.getDatasetImportJobArns() == null ^ this.getDatasetImportJobArns() == null)
             return false;
         if (other.getDatasetImportJobArns() != null && other.getDatasetImportJobArns().equals(this.getDatasetImportJobArns()) == false)
@@ -1675,6 +1728,7 @@ public class DescribePredictorResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getFeaturizationConfig() == null) ? 0 : getFeaturizationConfig().hashCode());
         hashCode = prime * hashCode + ((getEncryptionConfig() == null) ? 0 : getEncryptionConfig().hashCode());
         hashCode = prime * hashCode + ((getPredictorExecutionDetails() == null) ? 0 : getPredictorExecutionDetails().hashCode());
+        hashCode = prime * hashCode + ((getEstimatedTimeRemainingInMinutes() == null) ? 0 : getEstimatedTimeRemainingInMinutes().hashCode());
         hashCode = prime * hashCode + ((getDatasetImportJobArns() == null) ? 0 : getDatasetImportJobArns().hashCode());
         hashCode = prime * hashCode + ((getAutoMLAlgorithmArns() == null) ? 0 : getAutoMLAlgorithmArns().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());

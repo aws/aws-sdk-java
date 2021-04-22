@@ -30,7 +30,7 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The account ID of the Security Hub master account that the invitation was sent from.
+     * The account ID of the Security Hub administrator account that the invitation was sent from.
      * </p>
      */
     private String accountId;
@@ -48,18 +48,18 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date invitedAt;
     /**
      * <p>
-     * The current status of the association between the member and master accounts.
+     * The current status of the association between the member and administrator accounts.
      * </p>
      */
     private String memberStatus;
 
     /**
      * <p>
-     * The account ID of the Security Hub master account that the invitation was sent from.
+     * The account ID of the Security Hub administrator account that the invitation was sent from.
      * </p>
      * 
      * @param accountId
-     *        The account ID of the Security Hub master account that the invitation was sent from.
+     *        The account ID of the Security Hub administrator account that the invitation was sent from.
      */
 
     public void setAccountId(String accountId) {
@@ -68,10 +68,10 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The account ID of the Security Hub master account that the invitation was sent from.
+     * The account ID of the Security Hub administrator account that the invitation was sent from.
      * </p>
      * 
-     * @return The account ID of the Security Hub master account that the invitation was sent from.
+     * @return The account ID of the Security Hub administrator account that the invitation was sent from.
      */
 
     public String getAccountId() {
@@ -80,11 +80,11 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The account ID of the Security Hub master account that the invitation was sent from.
+     * The account ID of the Security Hub administrator account that the invitation was sent from.
      * </p>
      * 
      * @param accountId
-     *        The account ID of the Security Hub master account that the invitation was sent from.
+     *        The account ID of the Security Hub administrator account that the invitation was sent from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +175,11 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current status of the association between the member and master accounts.
+     * The current status of the association between the member and administrator accounts.
      * </p>
      * 
      * @param memberStatus
-     *        The current status of the association between the member and master accounts.
+     *        The current status of the association between the member and administrator accounts.
      */
 
     public void setMemberStatus(String memberStatus) {
@@ -188,10 +188,10 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current status of the association between the member and master accounts.
+     * The current status of the association between the member and administrator accounts.
      * </p>
      * 
-     * @return The current status of the association between the member and master accounts.
+     * @return The current status of the association between the member and administrator accounts.
      */
 
     public String getMemberStatus() {
@@ -200,11 +200,11 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current status of the association between the member and master accounts.
+     * The current status of the association between the member and administrator accounts.
      * </p>
      * 
      * @param memberStatus
-     *        The current status of the association between the member and master accounts.
+     *        The current status of the association between the member and administrator accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

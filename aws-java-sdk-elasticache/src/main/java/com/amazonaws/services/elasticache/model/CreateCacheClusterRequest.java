@@ -130,7 +130,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1
-     * and 20.
+     * and 40.
      * </p>
      * <p>
      * If you need more than 20 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request
@@ -513,6 +513,12 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> preferredOutpostArns;
+    /**
+     * <p>
+     * Specifies the destination, format and type of the logs.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<LogDeliveryConfigurationRequest> logDeliveryConfigurations;
 
     /**
      * Default constructor for CreateCacheClusterRequest object. Callers should use the setter or fluent setter
@@ -550,7 +556,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        The initial number of cache nodes that the cluster has.</p>
      *        <p>
      *        For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be
-     *        between 1 and 20.
+     *        between 1 and 40.
      *        </p>
      *        <p>
      *        If you need more than 20 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase
@@ -1464,7 +1470,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1
-     * and 20.
+     * and 40.
      * </p>
      * <p>
      * If you need more than 20 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request
@@ -1477,7 +1483,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        The initial number of cache nodes that the cluster has.</p>
      *        <p>
      *        For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be
-     *        between 1 and 20.
+     *        between 1 and 40.
      *        </p>
      *        <p>
      *        If you need more than 20 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase
@@ -1496,7 +1502,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1
-     * and 20.
+     * and 40.
      * </p>
      * <p>
      * If you need more than 20 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request
@@ -1508,7 +1514,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * @return The initial number of cache nodes that the cluster has.</p>
      *         <p>
      *         For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be
-     *         between 1 and 20.
+     *         between 1 and 40.
      *         </p>
      *         <p>
      *         If you need more than 20 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase
@@ -1527,7 +1533,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1
-     * and 20.
+     * and 40.
      * </p>
      * <p>
      * If you need more than 20 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request
@@ -1540,7 +1546,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        The initial number of cache nodes that the cluster has.</p>
      *        <p>
      *        For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be
-     *        between 1 and 20.
+     *        between 1 and 40.
      *        </p>
      *        <p>
      *        If you need more than 20 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase
@@ -4092,6 +4098,79 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Specifies the destination, format and type of the logs.
+     * </p>
+     * 
+     * @return Specifies the destination, format and type of the logs.
+     */
+
+    public java.util.List<LogDeliveryConfigurationRequest> getLogDeliveryConfigurations() {
+        if (logDeliveryConfigurations == null) {
+            logDeliveryConfigurations = new com.amazonaws.internal.SdkInternalList<LogDeliveryConfigurationRequest>();
+        }
+        return logDeliveryConfigurations;
+    }
+
+    /**
+     * <p>
+     * Specifies the destination, format and type of the logs.
+     * </p>
+     * 
+     * @param logDeliveryConfigurations
+     *        Specifies the destination, format and type of the logs.
+     */
+
+    public void setLogDeliveryConfigurations(java.util.Collection<LogDeliveryConfigurationRequest> logDeliveryConfigurations) {
+        if (logDeliveryConfigurations == null) {
+            this.logDeliveryConfigurations = null;
+            return;
+        }
+
+        this.logDeliveryConfigurations = new com.amazonaws.internal.SdkInternalList<LogDeliveryConfigurationRequest>(logDeliveryConfigurations);
+    }
+
+    /**
+     * <p>
+     * Specifies the destination, format and type of the logs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLogDeliveryConfigurations(java.util.Collection)} or
+     * {@link #withLogDeliveryConfigurations(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param logDeliveryConfigurations
+     *        Specifies the destination, format and type of the logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCacheClusterRequest withLogDeliveryConfigurations(LogDeliveryConfigurationRequest... logDeliveryConfigurations) {
+        if (this.logDeliveryConfigurations == null) {
+            setLogDeliveryConfigurations(new com.amazonaws.internal.SdkInternalList<LogDeliveryConfigurationRequest>(logDeliveryConfigurations.length));
+        }
+        for (LogDeliveryConfigurationRequest ele : logDeliveryConfigurations) {
+            this.logDeliveryConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the destination, format and type of the logs.
+     * </p>
+     * 
+     * @param logDeliveryConfigurations
+     *        Specifies the destination, format and type of the logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCacheClusterRequest withLogDeliveryConfigurations(java.util.Collection<LogDeliveryConfigurationRequest> logDeliveryConfigurations) {
+        setLogDeliveryConfigurations(logDeliveryConfigurations);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -4154,7 +4233,9 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
         if (getPreferredOutpostArn() != null)
             sb.append("PreferredOutpostArn: ").append(getPreferredOutpostArn()).append(",");
         if (getPreferredOutpostArns() != null)
-            sb.append("PreferredOutpostArns: ").append(getPreferredOutpostArns());
+            sb.append("PreferredOutpostArns: ").append(getPreferredOutpostArns()).append(",");
+        if (getLogDeliveryConfigurations() != null)
+            sb.append("LogDeliveryConfigurations: ").append(getLogDeliveryConfigurations());
         sb.append("}");
         return sb.toString();
     }
@@ -4273,6 +4354,10 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getPreferredOutpostArns() != null && other.getPreferredOutpostArns().equals(this.getPreferredOutpostArns()) == false)
             return false;
+        if (other.getLogDeliveryConfigurations() == null ^ this.getLogDeliveryConfigurations() == null)
+            return false;
+        if (other.getLogDeliveryConfigurations() != null && other.getLogDeliveryConfigurations().equals(this.getLogDeliveryConfigurations()) == false)
+            return false;
         return true;
     }
 
@@ -4307,6 +4392,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getOutpostMode() == null) ? 0 : getOutpostMode().hashCode());
         hashCode = prime * hashCode + ((getPreferredOutpostArn() == null) ? 0 : getPreferredOutpostArn().hashCode());
         hashCode = prime * hashCode + ((getPreferredOutpostArns() == null) ? 0 : getPreferredOutpostArns().hashCode());
+        hashCode = prime * hashCode + ((getLogDeliveryConfigurations() == null) ? 0 : getLogDeliveryConfigurations().hashCode());
         return hashCode;
     }
 

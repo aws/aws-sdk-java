@@ -28,6 +28,12 @@ public class AbstractAWSSecurityHub implements AWSSecurityHub {
     }
 
     @Override
+    public AcceptAdministratorInvitationResult acceptAdministratorInvitation(AcceptAdministratorInvitationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    @Deprecated
     public AcceptInvitationResult acceptInvitation(AcceptInvitationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -138,6 +144,12 @@ public class AbstractAWSSecurityHub implements AWSSecurityHub {
     }
 
     @Override
+    public DisassociateFromAdministratorAccountResult disassociateFromAdministratorAccount(DisassociateFromAdministratorAccountRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    @Deprecated
     public DisassociateFromMasterAccountResult disassociateFromMasterAccount(DisassociateFromMasterAccountRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -159,6 +171,11 @@ public class AbstractAWSSecurityHub implements AWSSecurityHub {
 
     @Override
     public EnableSecurityHubResult enableSecurityHub(EnableSecurityHubRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAdministratorAccountResult getAdministratorAccount(GetAdministratorAccountRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -188,6 +205,7 @@ public class AbstractAWSSecurityHub implements AWSSecurityHub {
     }
 
     @Override
+    @Deprecated
     public GetMasterAccountResult getMasterAccount(GetMasterAccountRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

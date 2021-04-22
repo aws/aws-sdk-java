@@ -96,6 +96,12 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
     private DataSource dataSource;
     /**
      * <p>
+     * The estimated time in minutes for the dataset import job to complete.
+     * </p>
+     */
+    private Long estimatedTimeRemainingInMinutes;
+    /**
+     * <p>
      * Statistical information about each field in the input data.
      * </p>
      */
@@ -645,6 +651,46 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
 
     public DescribeDatasetImportJobResult withDataSource(DataSource dataSource) {
         setDataSource(dataSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The estimated time in minutes for the dataset import job to complete.
+     * </p>
+     * 
+     * @param estimatedTimeRemainingInMinutes
+     *        The estimated time in minutes for the dataset import job to complete.
+     */
+
+    public void setEstimatedTimeRemainingInMinutes(Long estimatedTimeRemainingInMinutes) {
+        this.estimatedTimeRemainingInMinutes = estimatedTimeRemainingInMinutes;
+    }
+
+    /**
+     * <p>
+     * The estimated time in minutes for the dataset import job to complete.
+     * </p>
+     * 
+     * @return The estimated time in minutes for the dataset import job to complete.
+     */
+
+    public Long getEstimatedTimeRemainingInMinutes() {
+        return this.estimatedTimeRemainingInMinutes;
+    }
+
+    /**
+     * <p>
+     * The estimated time in minutes for the dataset import job to complete.
+     * </p>
+     * 
+     * @param estimatedTimeRemainingInMinutes
+     *        The estimated time in minutes for the dataset import job to complete.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDatasetImportJobResult withEstimatedTimeRemainingInMinutes(Long estimatedTimeRemainingInMinutes) {
+        setEstimatedTimeRemainingInMinutes(estimatedTimeRemainingInMinutes);
         return this;
     }
 
@@ -1232,6 +1278,8 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
             sb.append("GeolocationFormat: ").append(getGeolocationFormat()).append(",");
         if (getDataSource() != null)
             sb.append("DataSource: ").append(getDataSource()).append(",");
+        if (getEstimatedTimeRemainingInMinutes() != null)
+            sb.append("EstimatedTimeRemainingInMinutes: ").append(getEstimatedTimeRemainingInMinutes()).append(",");
         if (getFieldStatistics() != null)
             sb.append("FieldStatistics: ").append(getFieldStatistics()).append(",");
         if (getDataSize() != null)
@@ -1290,6 +1338,11 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getDataSource() != null && other.getDataSource().equals(this.getDataSource()) == false)
             return false;
+        if (other.getEstimatedTimeRemainingInMinutes() == null ^ this.getEstimatedTimeRemainingInMinutes() == null)
+            return false;
+        if (other.getEstimatedTimeRemainingInMinutes() != null
+                && other.getEstimatedTimeRemainingInMinutes().equals(this.getEstimatedTimeRemainingInMinutes()) == false)
+            return false;
         if (other.getFieldStatistics() == null ^ this.getFieldStatistics() == null)
             return false;
         if (other.getFieldStatistics() != null && other.getFieldStatistics().equals(this.getFieldStatistics()) == false)
@@ -1330,6 +1383,7 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getUseGeolocationForTimeZone() == null) ? 0 : getUseGeolocationForTimeZone().hashCode());
         hashCode = prime * hashCode + ((getGeolocationFormat() == null) ? 0 : getGeolocationFormat().hashCode());
         hashCode = prime * hashCode + ((getDataSource() == null) ? 0 : getDataSource().hashCode());
+        hashCode = prime * hashCode + ((getEstimatedTimeRemainingInMinutes() == null) ? 0 : getEstimatedTimeRemainingInMinutes().hashCode());
         hashCode = prime * hashCode + ((getFieldStatistics() == null) ? 0 : getFieldStatistics().hashCode());
         hashCode = prime * hashCode + ((getDataSize() == null) ? 0 : getDataSize().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());

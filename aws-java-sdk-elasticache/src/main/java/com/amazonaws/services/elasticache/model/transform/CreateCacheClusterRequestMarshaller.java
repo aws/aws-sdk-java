@@ -213,6 +213,70 @@ public class CreateCacheClusterRequestMarshaller implements Marshaller<Request<C
             }
         }
 
+        if (!createCacheClusterRequest.getLogDeliveryConfigurations().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<LogDeliveryConfigurationRequest>) createCacheClusterRequest.getLogDeliveryConfigurations())
+                        .isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<LogDeliveryConfigurationRequest> logDeliveryConfigurationsList = (com.amazonaws.internal.SdkInternalList<LogDeliveryConfigurationRequest>) createCacheClusterRequest
+                    .getLogDeliveryConfigurations();
+            int logDeliveryConfigurationsListIndex = 1;
+
+            for (LogDeliveryConfigurationRequest logDeliveryConfigurationsListValue : logDeliveryConfigurationsList) {
+                if (logDeliveryConfigurationsListValue != null) {
+
+                    if (logDeliveryConfigurationsListValue.getLogType() != null) {
+                        request.addParameter("LogDeliveryConfigurations.LogDeliveryConfigurationRequest." + logDeliveryConfigurationsListIndex + ".LogType",
+                                StringUtils.fromString(logDeliveryConfigurationsListValue.getLogType()));
+                    }
+
+                    if (logDeliveryConfigurationsListValue.getDestinationType() != null) {
+                        request.addParameter("LogDeliveryConfigurations.LogDeliveryConfigurationRequest." + logDeliveryConfigurationsListIndex
+                                + ".DestinationType", StringUtils.fromString(logDeliveryConfigurationsListValue.getDestinationType()));
+                    }
+
+                    {
+                        DestinationDetails destinationDetails = logDeliveryConfigurationsListValue.getDestinationDetails();
+                        if (destinationDetails != null) {
+
+                            {
+                                CloudWatchLogsDestinationDetails cloudWatchLogsDetails = destinationDetails.getCloudWatchLogsDetails();
+                                if (cloudWatchLogsDetails != null) {
+
+                                    if (cloudWatchLogsDetails.getLogGroup() != null) {
+                                        request.addParameter("LogDeliveryConfigurations.LogDeliveryConfigurationRequest." + logDeliveryConfigurationsListIndex
+                                                + ".DestinationDetails.CloudWatchLogsDetails.LogGroup",
+                                                StringUtils.fromString(cloudWatchLogsDetails.getLogGroup()));
+                                    }
+                                }
+                            }
+
+                            {
+                                KinesisFirehoseDestinationDetails kinesisFirehoseDetails = destinationDetails.getKinesisFirehoseDetails();
+                                if (kinesisFirehoseDetails != null) {
+
+                                    if (kinesisFirehoseDetails.getDeliveryStream() != null) {
+                                        request.addParameter("LogDeliveryConfigurations.LogDeliveryConfigurationRequest." + logDeliveryConfigurationsListIndex
+                                                + ".DestinationDetails.KinesisFirehoseDetails.DeliveryStream",
+                                                StringUtils.fromString(kinesisFirehoseDetails.getDeliveryStream()));
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    if (logDeliveryConfigurationsListValue.getLogFormat() != null) {
+                        request.addParameter("LogDeliveryConfigurations.LogDeliveryConfigurationRequest." + logDeliveryConfigurationsListIndex + ".LogFormat",
+                                StringUtils.fromString(logDeliveryConfigurationsListValue.getLogFormat()));
+                    }
+
+                    if (logDeliveryConfigurationsListValue.getEnabled() != null) {
+                        request.addParameter("LogDeliveryConfigurations.LogDeliveryConfigurationRequest." + logDeliveryConfigurationsListIndex + ".Enabled",
+                                StringUtils.fromBoolean(logDeliveryConfigurationsListValue.getEnabled()));
+                    }
+                }
+                logDeliveryConfigurationsListIndex++;
+            }
+        }
+
         return request;
     }
 

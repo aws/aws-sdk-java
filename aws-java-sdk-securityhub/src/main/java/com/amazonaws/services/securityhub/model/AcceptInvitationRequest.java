@@ -27,24 +27,24 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The account ID of the Security Hub master account that sent the invitation.
+     * The account ID of the Security Hub administrator account that sent the invitation.
      * </p>
      */
     private String masterId;
     /**
      * <p>
-     * The ID of the invitation sent from the Security Hub master account.
+     * The identifier of the invitation sent from the Security Hub administrator account.
      * </p>
      */
     private String invitationId;
 
     /**
      * <p>
-     * The account ID of the Security Hub master account that sent the invitation.
+     * The account ID of the Security Hub administrator account that sent the invitation.
      * </p>
      * 
      * @param masterId
-     *        The account ID of the Security Hub master account that sent the invitation.
+     *        The account ID of the Security Hub administrator account that sent the invitation.
      */
 
     public void setMasterId(String masterId) {
@@ -53,10 +53,10 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The account ID of the Security Hub master account that sent the invitation.
+     * The account ID of the Security Hub administrator account that sent the invitation.
      * </p>
      * 
-     * @return The account ID of the Security Hub master account that sent the invitation.
+     * @return The account ID of the Security Hub administrator account that sent the invitation.
      */
 
     public String getMasterId() {
@@ -65,11 +65,11 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The account ID of the Security Hub master account that sent the invitation.
+     * The account ID of the Security Hub administrator account that sent the invitation.
      * </p>
      * 
      * @param masterId
-     *        The account ID of the Security Hub master account that sent the invitation.
+     *        The account ID of the Security Hub administrator account that sent the invitation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID of the invitation sent from the Security Hub master account.
+     * The identifier of the invitation sent from the Security Hub administrator account.
      * </p>
      * 
      * @param invitationId
-     *        The ID of the invitation sent from the Security Hub master account.
+     *        The identifier of the invitation sent from the Security Hub administrator account.
      */
 
     public void setInvitationId(String invitationId) {
@@ -93,10 +93,10 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID of the invitation sent from the Security Hub master account.
+     * The identifier of the invitation sent from the Security Hub administrator account.
      * </p>
      * 
-     * @return The ID of the invitation sent from the Security Hub master account.
+     * @return The identifier of the invitation sent from the Security Hub administrator account.
      */
 
     public String getInvitationId() {
@@ -105,11 +105,11 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID of the invitation sent from the Security Hub master account.
+     * The identifier of the invitation sent from the Security Hub administrator account.
      * </p>
      * 
      * @param invitationId
-     *        The ID of the invitation sent from the Security Hub master account.
+     *        The identifier of the invitation sent from the Security Hub administrator account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

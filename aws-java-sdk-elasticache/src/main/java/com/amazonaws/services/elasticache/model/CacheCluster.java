@@ -234,7 +234,7 @@ public class CacheCluster implements Serializable, Cloneable {
      * </p>
      * <p>
      * For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1
-     * and 20.
+     * and 40.
      * </p>
      */
     private Integer numCacheNodes;
@@ -438,6 +438,18 @@ public class CacheCluster implements Serializable, Cloneable {
      * </p>
      */
     private String aRN;
+    /**
+     * <p>
+     * A boolean value indicating whether log delivery is enabled for the replication group.
+     * </p>
+     */
+    private Boolean replicationGroupLogDeliveryEnabled;
+    /**
+     * <p>
+     * Returns the destination, format and type of the logs.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<LogDeliveryConfiguration> logDeliveryConfigurations;
 
     /**
      * <p>
@@ -1700,14 +1712,14 @@ public class CacheCluster implements Serializable, Cloneable {
      * </p>
      * <p>
      * For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1
-     * and 20.
+     * and 40.
      * </p>
      * 
      * @param numCacheNodes
      *        The number of cache nodes in the cluster.</p>
      *        <p>
      *        For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be
-     *        between 1 and 20.
+     *        between 1 and 40.
      */
 
     public void setNumCacheNodes(Integer numCacheNodes) {
@@ -1720,13 +1732,13 @@ public class CacheCluster implements Serializable, Cloneable {
      * </p>
      * <p>
      * For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1
-     * and 20.
+     * and 40.
      * </p>
      * 
      * @return The number of cache nodes in the cluster.</p>
      *         <p>
      *         For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be
-     *         between 1 and 20.
+     *         between 1 and 40.
      */
 
     public Integer getNumCacheNodes() {
@@ -1739,14 +1751,14 @@ public class CacheCluster implements Serializable, Cloneable {
      * </p>
      * <p>
      * For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be between 1
-     * and 20.
+     * and 40.
      * </p>
      * 
      * @param numCacheNodes
      *        The number of cache nodes in the cluster.</p>
      *        <p>
      *        For clusters running Redis, this value must be 1. For clusters running Memcached, this value must be
-     *        between 1 and 20.
+     *        between 1 and 40.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3227,6 +3239,131 @@ public class CacheCluster implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A boolean value indicating whether log delivery is enabled for the replication group.
+     * </p>
+     * 
+     * @param replicationGroupLogDeliveryEnabled
+     *        A boolean value indicating whether log delivery is enabled for the replication group.
+     */
+
+    public void setReplicationGroupLogDeliveryEnabled(Boolean replicationGroupLogDeliveryEnabled) {
+        this.replicationGroupLogDeliveryEnabled = replicationGroupLogDeliveryEnabled;
+    }
+
+    /**
+     * <p>
+     * A boolean value indicating whether log delivery is enabled for the replication group.
+     * </p>
+     * 
+     * @return A boolean value indicating whether log delivery is enabled for the replication group.
+     */
+
+    public Boolean getReplicationGroupLogDeliveryEnabled() {
+        return this.replicationGroupLogDeliveryEnabled;
+    }
+
+    /**
+     * <p>
+     * A boolean value indicating whether log delivery is enabled for the replication group.
+     * </p>
+     * 
+     * @param replicationGroupLogDeliveryEnabled
+     *        A boolean value indicating whether log delivery is enabled for the replication group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CacheCluster withReplicationGroupLogDeliveryEnabled(Boolean replicationGroupLogDeliveryEnabled) {
+        setReplicationGroupLogDeliveryEnabled(replicationGroupLogDeliveryEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A boolean value indicating whether log delivery is enabled for the replication group.
+     * </p>
+     * 
+     * @return A boolean value indicating whether log delivery is enabled for the replication group.
+     */
+
+    public Boolean isReplicationGroupLogDeliveryEnabled() {
+        return this.replicationGroupLogDeliveryEnabled;
+    }
+
+    /**
+     * <p>
+     * Returns the destination, format and type of the logs.
+     * </p>
+     * 
+     * @return Returns the destination, format and type of the logs.
+     */
+
+    public java.util.List<LogDeliveryConfiguration> getLogDeliveryConfigurations() {
+        if (logDeliveryConfigurations == null) {
+            logDeliveryConfigurations = new com.amazonaws.internal.SdkInternalList<LogDeliveryConfiguration>();
+        }
+        return logDeliveryConfigurations;
+    }
+
+    /**
+     * <p>
+     * Returns the destination, format and type of the logs.
+     * </p>
+     * 
+     * @param logDeliveryConfigurations
+     *        Returns the destination, format and type of the logs.
+     */
+
+    public void setLogDeliveryConfigurations(java.util.Collection<LogDeliveryConfiguration> logDeliveryConfigurations) {
+        if (logDeliveryConfigurations == null) {
+            this.logDeliveryConfigurations = null;
+            return;
+        }
+
+        this.logDeliveryConfigurations = new com.amazonaws.internal.SdkInternalList<LogDeliveryConfiguration>(logDeliveryConfigurations);
+    }
+
+    /**
+     * <p>
+     * Returns the destination, format and type of the logs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLogDeliveryConfigurations(java.util.Collection)} or
+     * {@link #withLogDeliveryConfigurations(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param logDeliveryConfigurations
+     *        Returns the destination, format and type of the logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CacheCluster withLogDeliveryConfigurations(LogDeliveryConfiguration... logDeliveryConfigurations) {
+        if (this.logDeliveryConfigurations == null) {
+            setLogDeliveryConfigurations(new com.amazonaws.internal.SdkInternalList<LogDeliveryConfiguration>(logDeliveryConfigurations.length));
+        }
+        for (LogDeliveryConfiguration ele : logDeliveryConfigurations) {
+            this.logDeliveryConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns the destination, format and type of the logs.
+     * </p>
+     * 
+     * @param logDeliveryConfigurations
+     *        Returns the destination, format and type of the logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CacheCluster withLogDeliveryConfigurations(java.util.Collection<LogDeliveryConfiguration> logDeliveryConfigurations) {
+        setLogDeliveryConfigurations(logDeliveryConfigurations);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3293,7 +3430,11 @@ public class CacheCluster implements Serializable, Cloneable {
         if (getAtRestEncryptionEnabled() != null)
             sb.append("AtRestEncryptionEnabled: ").append(getAtRestEncryptionEnabled()).append(",");
         if (getARN() != null)
-            sb.append("ARN: ").append(getARN());
+            sb.append("ARN: ").append(getARN()).append(",");
+        if (getReplicationGroupLogDeliveryEnabled() != null)
+            sb.append("ReplicationGroupLogDeliveryEnabled: ").append(getReplicationGroupLogDeliveryEnabled()).append(",");
+        if (getLogDeliveryConfigurations() != null)
+            sb.append("LogDeliveryConfigurations: ").append(getLogDeliveryConfigurations());
         sb.append("}");
         return sb.toString();
     }
@@ -3420,6 +3561,15 @@ public class CacheCluster implements Serializable, Cloneable {
             return false;
         if (other.getARN() != null && other.getARN().equals(this.getARN()) == false)
             return false;
+        if (other.getReplicationGroupLogDeliveryEnabled() == null ^ this.getReplicationGroupLogDeliveryEnabled() == null)
+            return false;
+        if (other.getReplicationGroupLogDeliveryEnabled() != null
+                && other.getReplicationGroupLogDeliveryEnabled().equals(this.getReplicationGroupLogDeliveryEnabled()) == false)
+            return false;
+        if (other.getLogDeliveryConfigurations() == null ^ this.getLogDeliveryConfigurations() == null)
+            return false;
+        if (other.getLogDeliveryConfigurations() != null && other.getLogDeliveryConfigurations().equals(this.getLogDeliveryConfigurations()) == false)
+            return false;
         return true;
     }
 
@@ -3456,6 +3606,8 @@ public class CacheCluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTransitEncryptionEnabled() == null) ? 0 : getTransitEncryptionEnabled().hashCode());
         hashCode = prime * hashCode + ((getAtRestEncryptionEnabled() == null) ? 0 : getAtRestEncryptionEnabled().hashCode());
         hashCode = prime * hashCode + ((getARN() == null) ? 0 : getARN().hashCode());
+        hashCode = prime * hashCode + ((getReplicationGroupLogDeliveryEnabled() == null) ? 0 : getReplicationGroupLogDeliveryEnabled().hashCode());
+        hashCode = prime * hashCode + ((getLogDeliveryConfigurations() == null) ? 0 : getLogDeliveryConfigurations().hashCode());
         return hashCode;
     }
 
