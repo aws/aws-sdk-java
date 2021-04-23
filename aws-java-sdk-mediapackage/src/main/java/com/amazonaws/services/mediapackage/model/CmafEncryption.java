@@ -26,10 +26,62 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CmafEncryption implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * An optional 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the key for
+     * encrypting blocks. If you don't specify a value, then MediaPackage creates the constant initialization vector
+     * (IV).
+     */
+    private String constantInitializationVector;
     /** Time (in seconds) between each encryption key rotation. */
     private Integer keyRotationIntervalSeconds;
 
     private SpekeKeyProvider spekeKeyProvider;
+
+    /**
+     * An optional 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the key for
+     * encrypting blocks. If you don't specify a value, then MediaPackage creates the constant initialization vector
+     * (IV).
+     * 
+     * @param constantInitializationVector
+     *        An optional 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the
+     *        key for encrypting blocks. If you don't specify a value, then MediaPackage creates the constant
+     *        initialization vector (IV).
+     */
+
+    public void setConstantInitializationVector(String constantInitializationVector) {
+        this.constantInitializationVector = constantInitializationVector;
+    }
+
+    /**
+     * An optional 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the key for
+     * encrypting blocks. If you don't specify a value, then MediaPackage creates the constant initialization vector
+     * (IV).
+     * 
+     * @return An optional 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the
+     *         key for encrypting blocks. If you don't specify a value, then MediaPackage creates the constant
+     *         initialization vector (IV).
+     */
+
+    public String getConstantInitializationVector() {
+        return this.constantInitializationVector;
+    }
+
+    /**
+     * An optional 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the key for
+     * encrypting blocks. If you don't specify a value, then MediaPackage creates the constant initialization vector
+     * (IV).
+     * 
+     * @param constantInitializationVector
+     *        An optional 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the
+     *        key for encrypting blocks. If you don't specify a value, then MediaPackage creates the constant
+     *        initialization vector (IV).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CmafEncryption withConstantInitializationVector(String constantInitializationVector) {
+        setConstantInitializationVector(constantInitializationVector);
+        return this;
+    }
 
     /**
      * Time (in seconds) between each encryption key rotation.
@@ -103,6 +155,8 @@ public class CmafEncryption implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getConstantInitializationVector() != null)
+            sb.append("ConstantInitializationVector: ").append(getConstantInitializationVector()).append(",");
         if (getKeyRotationIntervalSeconds() != null)
             sb.append("KeyRotationIntervalSeconds: ").append(getKeyRotationIntervalSeconds()).append(",");
         if (getSpekeKeyProvider() != null)
@@ -121,6 +175,10 @@ public class CmafEncryption implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof CmafEncryption == false)
             return false;
         CmafEncryption other = (CmafEncryption) obj;
+        if (other.getConstantInitializationVector() == null ^ this.getConstantInitializationVector() == null)
+            return false;
+        if (other.getConstantInitializationVector() != null && other.getConstantInitializationVector().equals(this.getConstantInitializationVector()) == false)
+            return false;
         if (other.getKeyRotationIntervalSeconds() == null ^ this.getKeyRotationIntervalSeconds() == null)
             return false;
         if (other.getKeyRotationIntervalSeconds() != null && other.getKeyRotationIntervalSeconds().equals(this.getKeyRotationIntervalSeconds()) == false)
@@ -137,6 +195,7 @@ public class CmafEncryption implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getConstantInitializationVector() == null) ? 0 : getConstantInitializationVector().hashCode());
         hashCode = prime * hashCode + ((getKeyRotationIntervalSeconds() == null) ? 0 : getKeyRotationIntervalSeconds().hashCode());
         hashCode = prime * hashCode + ((getSpekeKeyProvider() == null) ? 0 : getSpekeKeyProvider().hashCode());
         return hashCode;

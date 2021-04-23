@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CmafEncryptionMarshaller {
 
+    private static final MarshallingInfo<String> CONSTANTINITIALIZATIONVECTOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("constantInitializationVector").build();
     private static final MarshallingInfo<Integer> KEYROTATIONINTERVALSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("keyRotationIntervalSeconds").build();
     private static final MarshallingInfo<StructuredPojo> SPEKEKEYPROVIDER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -48,6 +50,7 @@ public class CmafEncryptionMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(cmafEncryption.getConstantInitializationVector(), CONSTANTINITIALIZATIONVECTOR_BINDING);
             protocolMarshaller.marshall(cmafEncryption.getKeyRotationIntervalSeconds(), KEYROTATIONINTERVALSECONDS_BINDING);
             protocolMarshaller.marshall(cmafEncryption.getSpekeKeyProvider(), SPEKEKEYPROVIDER_BINDING);
         } catch (Exception e) {
