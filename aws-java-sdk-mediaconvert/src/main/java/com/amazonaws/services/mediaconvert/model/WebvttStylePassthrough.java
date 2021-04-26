@@ -15,8 +15,8 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * If your input captions format is teletext or teletext inside of STL, enable this setting to pass through style,
- * color, and position information to your WebVTT output captions.
+ * Choose Enabled (ENABLED) to have MediaConvert use the font style, color, and position information from the captions
+ * source in the input. Keep the default value, Disabled (DISABLED), for simplified output captions.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum WebvttStylePassthrough {

@@ -88,6 +88,10 @@ public class RepositoryAssociationJsonUnmarshaller implements Unmarshaller<Repos
                     context.nextToken();
                     repositoryAssociation.setCreatedTimeStamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("KMSKeyDetails", targetDepth)) {
+                    context.nextToken();
+                    repositoryAssociation.setKMSKeyDetails(KMSKeyDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

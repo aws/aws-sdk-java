@@ -18,8 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Specific settings required by destination type. Note that burnin_destination_settings are not available if the source
- * of the caption data is Embedded or Teletext.
+ * Settings related to one captions tab on the MediaConvert console. In your job JSON, an instance of captions
+ * DestinationSettings is equivalent to one captions tab in the console. Usually, one captions tab corresponds to one
+ * output captions track. Depending on your output captions format, one tab might correspond to a set of output captions
+ * tracks. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CaptionDestinationSettings"
  *      target="_top">AWS API Documentation</a>
@@ -27,36 +29,82 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CaptionDestinationSettings implements Serializable, Cloneable, StructuredPojo {
 
-    /** Burn-In Destination Settings. */
+    /**
+     * Settings related to burn-in captions. Set up burn-in captions in the same output as your video. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/burn-in-output-captions.html. When you work
+     * directly in your JSON job specification, include this object and any required children when you set
+     * destinationType to BURN_IN.
+     */
     private BurninDestinationSettings burninDestinationSettings;
     /**
-     * Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Other
-     * options are embedded with SCTE-20, burn-in, DVB-sub, IMSC, SCC, SRT, teletext, TTML, and web-VTT. If you are
-     * using SCTE-20, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that complies with the
-     * SCTE-43 spec. To create a non-compliant output where the embedded captions come first, choose Embedded plus
-     * SCTE-20 (EMBEDDED_PLUS_SCTE20).
+     * Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Note
+     * that your choice of video output container constrains your choice of output captions format. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/captions-support-tables.html. If you are using
+     * SCTE-20 and you want to create an output that complies with the SCTE-43 spec, choose SCTE-20 plus embedded
+     * (SCTE20_PLUS_EMBEDDED). To create a non-compliant output where the embedded captions come first, choose Embedded
+     * plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
      */
     private String destinationType;
-    /** DVB-Sub Destination Settings */
+    /**
+     * Settings related to DVB-Sub captions. Set up DVB-Sub captions in the same output as your video. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/dvb-sub-output-captions.html. When you work
+     * directly in your JSON job specification, include this object and any required children when you set
+     * destinationType to DVB_SUB.
+     */
     private DvbSubDestinationSettings dvbSubDestinationSettings;
-    /** Settings specific to embedded/ancillary caption outputs, including 608/708 Channel destination number. */
+    /**
+     * Settings related to CEA/EIA-608 and CEA/EIA-708 (also called embedded or ancillary) captions. Set up embedded
+     * captions in the same output as your video. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/embedded-output-captions.html. When you work directly in your
+     * JSON job specification, include this object and any required children when you set destinationType to EMBEDDED,
+     * EMBEDDED_PLUS_SCTE20, or SCTE20_PLUS_EMBEDDED.
+     */
     private EmbeddedDestinationSettings embeddedDestinationSettings;
-    /** Settings specific to IMSC caption outputs. */
+    /**
+     * Settings related to IMSC captions. IMSC is a sidecar format that holds captions in a file that is separate from
+     * the video container. Set up sidecar captions in the same output group, but different output from your video. For
+     * more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
+     * When you work directly in your JSON job specification, include this object and any required children when you set
+     * destinationType to IMSC.
+     */
     private ImscDestinationSettings imscDestinationSettings;
-    /** Settings for SCC caption output. */
+    /**
+     * Settings related to SCC captions. SCC is a sidecar format that holds captions in a file that is separate from the
+     * video container. Set up sidecar captions in the same output group, but different output from your video. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/scc-srt-output-captions.html. When you work
+     * directly in your JSON job specification, include this object and any required children when you set
+     * destinationType to SCC.
+     */
     private SccDestinationSettings sccDestinationSettings;
-    /** Settings for Teletext caption output */
+    /**
+     * Settings related to teletext captions. Set up teletext captions in the same output as your video. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/teletext-output-captions.html. When you work
+     * directly in your JSON job specification, include this object and any required children when you set
+     * destinationType to TELETEXT.
+     */
     private TeletextDestinationSettings teletextDestinationSettings;
-    /** Settings specific to TTML caption outputs, including Pass style information (TtmlStylePassthrough). */
+    /**
+     * Settings related to TTML captions. TTML is a sidecar format that holds captions in a file that is separate from
+     * the video container. Set up sidecar captions in the same output group, but different output from your video. For
+     * more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
+     * When you work directly in your JSON job specification, include this object and any required children when you set
+     * destinationType to TTML.
+     */
     private TtmlDestinationSettings ttmlDestinationSettings;
     /** WEBVTT Destination Settings */
     private WebvttDestinationSettings webvttDestinationSettings;
 
     /**
-     * Burn-In Destination Settings.
+     * Settings related to burn-in captions. Set up burn-in captions in the same output as your video. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/burn-in-output-captions.html. When you work
+     * directly in your JSON job specification, include this object and any required children when you set
+     * destinationType to BURN_IN.
      * 
      * @param burninDestinationSettings
-     *        Burn-In Destination Settings.
+     *        Settings related to burn-in captions. Set up burn-in captions in the same output as your video. For more
+     *        information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/burn-in-output-captions.html. When you
+     *        work directly in your JSON job specification, include this object and any required children when you set
+     *        destinationType to BURN_IN.
      */
 
     public void setBurninDestinationSettings(BurninDestinationSettings burninDestinationSettings) {
@@ -64,9 +112,15 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Burn-In Destination Settings.
+     * Settings related to burn-in captions. Set up burn-in captions in the same output as your video. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/burn-in-output-captions.html. When you work
+     * directly in your JSON job specification, include this object and any required children when you set
+     * destinationType to BURN_IN.
      * 
-     * @return Burn-In Destination Settings.
+     * @return Settings related to burn-in captions. Set up burn-in captions in the same output as your video. For more
+     *         information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/burn-in-output-captions.html. When
+     *         you work directly in your JSON job specification, include this object and any required children when you
+     *         set destinationType to BURN_IN.
      */
 
     public BurninDestinationSettings getBurninDestinationSettings() {
@@ -74,10 +128,16 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Burn-In Destination Settings.
+     * Settings related to burn-in captions. Set up burn-in captions in the same output as your video. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/burn-in-output-captions.html. When you work
+     * directly in your JSON job specification, include this object and any required children when you set
+     * destinationType to BURN_IN.
      * 
      * @param burninDestinationSettings
-     *        Burn-In Destination Settings.
+     *        Settings related to burn-in captions. Set up burn-in captions in the same output as your video. For more
+     *        information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/burn-in-output-captions.html. When you
+     *        work directly in your JSON job specification, include this object and any required children when you set
+     *        destinationType to BURN_IN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,18 +147,20 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Other
-     * options are embedded with SCTE-20, burn-in, DVB-sub, IMSC, SCC, SRT, teletext, TTML, and web-VTT. If you are
-     * using SCTE-20, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that complies with the
-     * SCTE-43 spec. To create a non-compliant output where the embedded captions come first, choose Embedded plus
-     * SCTE-20 (EMBEDDED_PLUS_SCTE20).
+     * Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Note
+     * that your choice of video output container constrains your choice of output captions format. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/captions-support-tables.html. If you are using
+     * SCTE-20 and you want to create an output that complies with the SCTE-43 spec, choose SCTE-20 plus embedded
+     * (SCTE20_PLUS_EMBEDDED). To create a non-compliant output where the embedded captions come first, choose Embedded
+     * plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
      * 
      * @param destinationType
      *        Specify the format for this set of captions on this output. The default format is embedded without
-     *        SCTE-20. Other options are embedded with SCTE-20, burn-in, DVB-sub, IMSC, SCC, SRT, teletext, TTML, and
-     *        web-VTT. If you are using SCTE-20, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output
-     *        that complies with the SCTE-43 spec. To create a non-compliant output where the embedded captions come
-     *        first, choose Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
+     *        SCTE-20. Note that your choice of video output container constrains your choice of output captions format.
+     *        For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/captions-support-tables.html.
+     *        If you are using SCTE-20 and you want to create an output that complies with the SCTE-43 spec, choose
+     *        SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED). To create a non-compliant output where the embedded captions
+     *        come first, choose Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
      * @see CaptionDestinationType
      */
 
@@ -107,17 +169,20 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Other
-     * options are embedded with SCTE-20, burn-in, DVB-sub, IMSC, SCC, SRT, teletext, TTML, and web-VTT. If you are
-     * using SCTE-20, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that complies with the
-     * SCTE-43 spec. To create a non-compliant output where the embedded captions come first, choose Embedded plus
-     * SCTE-20 (EMBEDDED_PLUS_SCTE20).
+     * Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Note
+     * that your choice of video output container constrains your choice of output captions format. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/captions-support-tables.html. If you are using
+     * SCTE-20 and you want to create an output that complies with the SCTE-43 spec, choose SCTE-20 plus embedded
+     * (SCTE20_PLUS_EMBEDDED). To create a non-compliant output where the embedded captions come first, choose Embedded
+     * plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
      * 
      * @return Specify the format for this set of captions on this output. The default format is embedded without
-     *         SCTE-20. Other options are embedded with SCTE-20, burn-in, DVB-sub, IMSC, SCC, SRT, teletext, TTML, and
-     *         web-VTT. If you are using SCTE-20, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an
-     *         output that complies with the SCTE-43 spec. To create a non-compliant output where the embedded captions
-     *         come first, choose Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
+     *         SCTE-20. Note that your choice of video output container constrains your choice of output captions
+     *         format. For more information, see
+     *         https://docs.aws.amazon.com/mediaconvert/latest/ug/captions-support-tables.html. If you are using SCTE-20
+     *         and you want to create an output that complies with the SCTE-43 spec, choose SCTE-20 plus embedded
+     *         (SCTE20_PLUS_EMBEDDED). To create a non-compliant output where the embedded captions come first, choose
+     *         Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
      * @see CaptionDestinationType
      */
 
@@ -126,18 +191,20 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Other
-     * options are embedded with SCTE-20, burn-in, DVB-sub, IMSC, SCC, SRT, teletext, TTML, and web-VTT. If you are
-     * using SCTE-20, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that complies with the
-     * SCTE-43 spec. To create a non-compliant output where the embedded captions come first, choose Embedded plus
-     * SCTE-20 (EMBEDDED_PLUS_SCTE20).
+     * Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Note
+     * that your choice of video output container constrains your choice of output captions format. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/captions-support-tables.html. If you are using
+     * SCTE-20 and you want to create an output that complies with the SCTE-43 spec, choose SCTE-20 plus embedded
+     * (SCTE20_PLUS_EMBEDDED). To create a non-compliant output where the embedded captions come first, choose Embedded
+     * plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
      * 
      * @param destinationType
      *        Specify the format for this set of captions on this output. The default format is embedded without
-     *        SCTE-20. Other options are embedded with SCTE-20, burn-in, DVB-sub, IMSC, SCC, SRT, teletext, TTML, and
-     *        web-VTT. If you are using SCTE-20, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output
-     *        that complies with the SCTE-43 spec. To create a non-compliant output where the embedded captions come
-     *        first, choose Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
+     *        SCTE-20. Note that your choice of video output container constrains your choice of output captions format.
+     *        For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/captions-support-tables.html.
+     *        If you are using SCTE-20 and you want to create an output that complies with the SCTE-43 spec, choose
+     *        SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED). To create a non-compliant output where the embedded captions
+     *        come first, choose Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CaptionDestinationType
      */
@@ -148,18 +215,20 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Other
-     * options are embedded with SCTE-20, burn-in, DVB-sub, IMSC, SCC, SRT, teletext, TTML, and web-VTT. If you are
-     * using SCTE-20, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that complies with the
-     * SCTE-43 spec. To create a non-compliant output where the embedded captions come first, choose Embedded plus
-     * SCTE-20 (EMBEDDED_PLUS_SCTE20).
+     * Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Note
+     * that your choice of video output container constrains your choice of output captions format. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/captions-support-tables.html. If you are using
+     * SCTE-20 and you want to create an output that complies with the SCTE-43 spec, choose SCTE-20 plus embedded
+     * (SCTE20_PLUS_EMBEDDED). To create a non-compliant output where the embedded captions come first, choose Embedded
+     * plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
      * 
      * @param destinationType
      *        Specify the format for this set of captions on this output. The default format is embedded without
-     *        SCTE-20. Other options are embedded with SCTE-20, burn-in, DVB-sub, IMSC, SCC, SRT, teletext, TTML, and
-     *        web-VTT. If you are using SCTE-20, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output
-     *        that complies with the SCTE-43 spec. To create a non-compliant output where the embedded captions come
-     *        first, choose Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
+     *        SCTE-20. Note that your choice of video output container constrains your choice of output captions format.
+     *        For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/captions-support-tables.html.
+     *        If you are using SCTE-20 and you want to create an output that complies with the SCTE-43 spec, choose
+     *        SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED). To create a non-compliant output where the embedded captions
+     *        come first, choose Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CaptionDestinationType
      */
@@ -170,10 +239,16 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * DVB-Sub Destination Settings
+     * Settings related to DVB-Sub captions. Set up DVB-Sub captions in the same output as your video. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/dvb-sub-output-captions.html. When you work
+     * directly in your JSON job specification, include this object and any required children when you set
+     * destinationType to DVB_SUB.
      * 
      * @param dvbSubDestinationSettings
-     *        DVB-Sub Destination Settings
+     *        Settings related to DVB-Sub captions. Set up DVB-Sub captions in the same output as your video. For more
+     *        information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/dvb-sub-output-captions.html. When you
+     *        work directly in your JSON job specification, include this object and any required children when you set
+     *        destinationType to DVB_SUB.
      */
 
     public void setDvbSubDestinationSettings(DvbSubDestinationSettings dvbSubDestinationSettings) {
@@ -181,9 +256,15 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * DVB-Sub Destination Settings
+     * Settings related to DVB-Sub captions. Set up DVB-Sub captions in the same output as your video. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/dvb-sub-output-captions.html. When you work
+     * directly in your JSON job specification, include this object and any required children when you set
+     * destinationType to DVB_SUB.
      * 
-     * @return DVB-Sub Destination Settings
+     * @return Settings related to DVB-Sub captions. Set up DVB-Sub captions in the same output as your video. For more
+     *         information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/dvb-sub-output-captions.html. When
+     *         you work directly in your JSON job specification, include this object and any required children when you
+     *         set destinationType to DVB_SUB.
      */
 
     public DvbSubDestinationSettings getDvbSubDestinationSettings() {
@@ -191,10 +272,16 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * DVB-Sub Destination Settings
+     * Settings related to DVB-Sub captions. Set up DVB-Sub captions in the same output as your video. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/dvb-sub-output-captions.html. When you work
+     * directly in your JSON job specification, include this object and any required children when you set
+     * destinationType to DVB_SUB.
      * 
      * @param dvbSubDestinationSettings
-     *        DVB-Sub Destination Settings
+     *        Settings related to DVB-Sub captions. Set up DVB-Sub captions in the same output as your video. For more
+     *        information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/dvb-sub-output-captions.html. When you
+     *        work directly in your JSON job specification, include this object and any required children when you set
+     *        destinationType to DVB_SUB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,10 +291,18 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Settings specific to embedded/ancillary caption outputs, including 608/708 Channel destination number.
+     * Settings related to CEA/EIA-608 and CEA/EIA-708 (also called embedded or ancillary) captions. Set up embedded
+     * captions in the same output as your video. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/embedded-output-captions.html. When you work directly in your
+     * JSON job specification, include this object and any required children when you set destinationType to EMBEDDED,
+     * EMBEDDED_PLUS_SCTE20, or SCTE20_PLUS_EMBEDDED.
      * 
      * @param embeddedDestinationSettings
-     *        Settings specific to embedded/ancillary caption outputs, including 608/708 Channel destination number.
+     *        Settings related to CEA/EIA-608 and CEA/EIA-708 (also called embedded or ancillary) captions. Set up
+     *        embedded captions in the same output as your video. For more information, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/embedded-output-captions.html. When you work directly
+     *        in your JSON job specification, include this object and any required children when you set destinationType
+     *        to EMBEDDED, EMBEDDED_PLUS_SCTE20, or SCTE20_PLUS_EMBEDDED.
      */
 
     public void setEmbeddedDestinationSettings(EmbeddedDestinationSettings embeddedDestinationSettings) {
@@ -215,9 +310,17 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Settings specific to embedded/ancillary caption outputs, including 608/708 Channel destination number.
+     * Settings related to CEA/EIA-608 and CEA/EIA-708 (also called embedded or ancillary) captions. Set up embedded
+     * captions in the same output as your video. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/embedded-output-captions.html. When you work directly in your
+     * JSON job specification, include this object and any required children when you set destinationType to EMBEDDED,
+     * EMBEDDED_PLUS_SCTE20, or SCTE20_PLUS_EMBEDDED.
      * 
-     * @return Settings specific to embedded/ancillary caption outputs, including 608/708 Channel destination number.
+     * @return Settings related to CEA/EIA-608 and CEA/EIA-708 (also called embedded or ancillary) captions. Set up
+     *         embedded captions in the same output as your video. For more information, see
+     *         https://docs.aws.amazon.com/mediaconvert/latest/ug/embedded-output-captions.html. When you work directly
+     *         in your JSON job specification, include this object and any required children when you set
+     *         destinationType to EMBEDDED, EMBEDDED_PLUS_SCTE20, or SCTE20_PLUS_EMBEDDED.
      */
 
     public EmbeddedDestinationSettings getEmbeddedDestinationSettings() {
@@ -225,10 +328,18 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Settings specific to embedded/ancillary caption outputs, including 608/708 Channel destination number.
+     * Settings related to CEA/EIA-608 and CEA/EIA-708 (also called embedded or ancillary) captions. Set up embedded
+     * captions in the same output as your video. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/embedded-output-captions.html. When you work directly in your
+     * JSON job specification, include this object and any required children when you set destinationType to EMBEDDED,
+     * EMBEDDED_PLUS_SCTE20, or SCTE20_PLUS_EMBEDDED.
      * 
      * @param embeddedDestinationSettings
-     *        Settings specific to embedded/ancillary caption outputs, including 608/708 Channel destination number.
+     *        Settings related to CEA/EIA-608 and CEA/EIA-708 (also called embedded or ancillary) captions. Set up
+     *        embedded captions in the same output as your video. For more information, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/embedded-output-captions.html. When you work directly
+     *        in your JSON job specification, include this object and any required children when you set destinationType
+     *        to EMBEDDED, EMBEDDED_PLUS_SCTE20, or SCTE20_PLUS_EMBEDDED.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -238,10 +349,19 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Settings specific to IMSC caption outputs.
+     * Settings related to IMSC captions. IMSC is a sidecar format that holds captions in a file that is separate from
+     * the video container. Set up sidecar captions in the same output group, but different output from your video. For
+     * more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
+     * When you work directly in your JSON job specification, include this object and any required children when you set
+     * destinationType to IMSC.
      * 
      * @param imscDestinationSettings
-     *        Settings specific to IMSC caption outputs.
+     *        Settings related to IMSC captions. IMSC is a sidecar format that holds captions in a file that is separate
+     *        from the video container. Set up sidecar captions in the same output group, but different output from your
+     *        video. For more information, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html. When you work
+     *        directly in your JSON job specification, include this object and any required children when you set
+     *        destinationType to IMSC.
      */
 
     public void setImscDestinationSettings(ImscDestinationSettings imscDestinationSettings) {
@@ -249,9 +369,18 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Settings specific to IMSC caption outputs.
+     * Settings related to IMSC captions. IMSC is a sidecar format that holds captions in a file that is separate from
+     * the video container. Set up sidecar captions in the same output group, but different output from your video. For
+     * more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
+     * When you work directly in your JSON job specification, include this object and any required children when you set
+     * destinationType to IMSC.
      * 
-     * @return Settings specific to IMSC caption outputs.
+     * @return Settings related to IMSC captions. IMSC is a sidecar format that holds captions in a file that is
+     *         separate from the video container. Set up sidecar captions in the same output group, but different output
+     *         from your video. For more information, see
+     *         https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html. When you work
+     *         directly in your JSON job specification, include this object and any required children when you set
+     *         destinationType to IMSC.
      */
 
     public ImscDestinationSettings getImscDestinationSettings() {
@@ -259,10 +388,19 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Settings specific to IMSC caption outputs.
+     * Settings related to IMSC captions. IMSC is a sidecar format that holds captions in a file that is separate from
+     * the video container. Set up sidecar captions in the same output group, but different output from your video. For
+     * more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
+     * When you work directly in your JSON job specification, include this object and any required children when you set
+     * destinationType to IMSC.
      * 
      * @param imscDestinationSettings
-     *        Settings specific to IMSC caption outputs.
+     *        Settings related to IMSC captions. IMSC is a sidecar format that holds captions in a file that is separate
+     *        from the video container. Set up sidecar captions in the same output group, but different output from your
+     *        video. For more information, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html. When you work
+     *        directly in your JSON job specification, include this object and any required children when you set
+     *        destinationType to IMSC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -272,10 +410,19 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Settings for SCC caption output.
+     * Settings related to SCC captions. SCC is a sidecar format that holds captions in a file that is separate from the
+     * video container. Set up sidecar captions in the same output group, but different output from your video. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/scc-srt-output-captions.html. When you work
+     * directly in your JSON job specification, include this object and any required children when you set
+     * destinationType to SCC.
      * 
      * @param sccDestinationSettings
-     *        Settings for SCC caption output.
+     *        Settings related to SCC captions. SCC is a sidecar format that holds captions in a file that is separate
+     *        from the video container. Set up sidecar captions in the same output group, but different output from your
+     *        video. For more information, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/scc-srt-output-captions.html. When you work directly in
+     *        your JSON job specification, include this object and any required children when you set destinationType to
+     *        SCC.
      */
 
     public void setSccDestinationSettings(SccDestinationSettings sccDestinationSettings) {
@@ -283,9 +430,18 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Settings for SCC caption output.
+     * Settings related to SCC captions. SCC is a sidecar format that holds captions in a file that is separate from the
+     * video container. Set up sidecar captions in the same output group, but different output from your video. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/scc-srt-output-captions.html. When you work
+     * directly in your JSON job specification, include this object and any required children when you set
+     * destinationType to SCC.
      * 
-     * @return Settings for SCC caption output.
+     * @return Settings related to SCC captions. SCC is a sidecar format that holds captions in a file that is separate
+     *         from the video container. Set up sidecar captions in the same output group, but different output from
+     *         your video. For more information, see
+     *         https://docs.aws.amazon.com/mediaconvert/latest/ug/scc-srt-output-captions.html. When you work directly
+     *         in your JSON job specification, include this object and any required children when you set
+     *         destinationType to SCC.
      */
 
     public SccDestinationSettings getSccDestinationSettings() {
@@ -293,10 +449,19 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Settings for SCC caption output.
+     * Settings related to SCC captions. SCC is a sidecar format that holds captions in a file that is separate from the
+     * video container. Set up sidecar captions in the same output group, but different output from your video. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/scc-srt-output-captions.html. When you work
+     * directly in your JSON job specification, include this object and any required children when you set
+     * destinationType to SCC.
      * 
      * @param sccDestinationSettings
-     *        Settings for SCC caption output.
+     *        Settings related to SCC captions. SCC is a sidecar format that holds captions in a file that is separate
+     *        from the video container. Set up sidecar captions in the same output group, but different output from your
+     *        video. For more information, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/scc-srt-output-captions.html. When you work directly in
+     *        your JSON job specification, include this object and any required children when you set destinationType to
+     *        SCC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -306,10 +471,16 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Settings for Teletext caption output
+     * Settings related to teletext captions. Set up teletext captions in the same output as your video. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/teletext-output-captions.html. When you work
+     * directly in your JSON job specification, include this object and any required children when you set
+     * destinationType to TELETEXT.
      * 
      * @param teletextDestinationSettings
-     *        Settings for Teletext caption output
+     *        Settings related to teletext captions. Set up teletext captions in the same output as your video. For more
+     *        information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/teletext-output-captions.html. When
+     *        you work directly in your JSON job specification, include this object and any required children when you
+     *        set destinationType to TELETEXT.
      */
 
     public void setTeletextDestinationSettings(TeletextDestinationSettings teletextDestinationSettings) {
@@ -317,9 +488,15 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Settings for Teletext caption output
+     * Settings related to teletext captions. Set up teletext captions in the same output as your video. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/teletext-output-captions.html. When you work
+     * directly in your JSON job specification, include this object and any required children when you set
+     * destinationType to TELETEXT.
      * 
-     * @return Settings for Teletext caption output
+     * @return Settings related to teletext captions. Set up teletext captions in the same output as your video. For
+     *         more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/teletext-output-captions.html.
+     *         When you work directly in your JSON job specification, include this object and any required children when
+     *         you set destinationType to TELETEXT.
      */
 
     public TeletextDestinationSettings getTeletextDestinationSettings() {
@@ -327,10 +504,16 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Settings for Teletext caption output
+     * Settings related to teletext captions. Set up teletext captions in the same output as your video. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/teletext-output-captions.html. When you work
+     * directly in your JSON job specification, include this object and any required children when you set
+     * destinationType to TELETEXT.
      * 
      * @param teletextDestinationSettings
-     *        Settings for Teletext caption output
+     *        Settings related to teletext captions. Set up teletext captions in the same output as your video. For more
+     *        information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/teletext-output-captions.html. When
+     *        you work directly in your JSON job specification, include this object and any required children when you
+     *        set destinationType to TELETEXT.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -340,10 +523,19 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Settings specific to TTML caption outputs, including Pass style information (TtmlStylePassthrough).
+     * Settings related to TTML captions. TTML is a sidecar format that holds captions in a file that is separate from
+     * the video container. Set up sidecar captions in the same output group, but different output from your video. For
+     * more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
+     * When you work directly in your JSON job specification, include this object and any required children when you set
+     * destinationType to TTML.
      * 
      * @param ttmlDestinationSettings
-     *        Settings specific to TTML caption outputs, including Pass style information (TtmlStylePassthrough).
+     *        Settings related to TTML captions. TTML is a sidecar format that holds captions in a file that is separate
+     *        from the video container. Set up sidecar captions in the same output group, but different output from your
+     *        video. For more information, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html. When you work
+     *        directly in your JSON job specification, include this object and any required children when you set
+     *        destinationType to TTML.
      */
 
     public void setTtmlDestinationSettings(TtmlDestinationSettings ttmlDestinationSettings) {
@@ -351,9 +543,18 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Settings specific to TTML caption outputs, including Pass style information (TtmlStylePassthrough).
+     * Settings related to TTML captions. TTML is a sidecar format that holds captions in a file that is separate from
+     * the video container. Set up sidecar captions in the same output group, but different output from your video. For
+     * more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
+     * When you work directly in your JSON job specification, include this object and any required children when you set
+     * destinationType to TTML.
      * 
-     * @return Settings specific to TTML caption outputs, including Pass style information (TtmlStylePassthrough).
+     * @return Settings related to TTML captions. TTML is a sidecar format that holds captions in a file that is
+     *         separate from the video container. Set up sidecar captions in the same output group, but different output
+     *         from your video. For more information, see
+     *         https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html. When you work
+     *         directly in your JSON job specification, include this object and any required children when you set
+     *         destinationType to TTML.
      */
 
     public TtmlDestinationSettings getTtmlDestinationSettings() {
@@ -361,10 +562,19 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
     }
 
     /**
-     * Settings specific to TTML caption outputs, including Pass style information (TtmlStylePassthrough).
+     * Settings related to TTML captions. TTML is a sidecar format that holds captions in a file that is separate from
+     * the video container. Set up sidecar captions in the same output group, but different output from your video. For
+     * more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html.
+     * When you work directly in your JSON job specification, include this object and any required children when you set
+     * destinationType to TTML.
      * 
      * @param ttmlDestinationSettings
-     *        Settings specific to TTML caption outputs, including Pass style information (TtmlStylePassthrough).
+     *        Settings related to TTML captions. TTML is a sidecar format that holds captions in a file that is separate
+     *        from the video container. Set up sidecar captions in the same output group, but different output from your
+     *        video. For more information, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html. When you work
+     *        directly in your JSON job specification, include this object and any required children when you set
+     *        destinationType to TTML.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

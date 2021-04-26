@@ -32,6 +32,8 @@ public enum UpdateParamType {
     MinSize("MinSize"),
     ReleaseVersion("ReleaseVersion"),
     PublicAccessCidrs("PublicAccessCidrs"),
+    LaunchTemplateName("LaunchTemplateName"),
+    LaunchTemplateVersion("LaunchTemplateVersion"),
     IdentityProviderConfig("IdentityProviderConfig"),
     EncryptionConfig("EncryptionConfig"),
     AddonVersion("AddonVersion"),

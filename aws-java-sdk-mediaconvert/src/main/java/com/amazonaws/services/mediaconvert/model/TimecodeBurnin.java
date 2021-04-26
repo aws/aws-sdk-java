@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Timecode burn-in (TimecodeBurnIn)--Burns the output timecode and specified prefix into the output.
+ * Settings for burning the output timecode and specified prefix into the output.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/TimecodeBurnin" target="_top">AWS API
  *      Documentation</a>

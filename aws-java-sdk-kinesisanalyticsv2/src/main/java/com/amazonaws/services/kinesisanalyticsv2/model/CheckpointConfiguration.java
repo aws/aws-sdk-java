@@ -83,7 +83,7 @@ public class CheckpointConfiguration implements Serializable, Cloneable, Structu
      * <note>
      * <p>
      * If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a
-     * <code>CheckpointInterval</code> vaue of 60000, even if this value is set to another value using this API or in
+     * <code>CheckpointInterval</code> value of 60000, even if this value is set to another value using this API or in
      * application code.
      * </p>
      * </note>
@@ -470,7 +470,7 @@ public class CheckpointConfiguration implements Serializable, Cloneable, Structu
      * <note>
      * <p>
      * If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a
-     * <code>CheckpointInterval</code> vaue of 60000, even if this value is set to another value using this API or in
+     * <code>CheckpointInterval</code> value of 60000, even if this value is set to another value using this API or in
      * application code.
      * </p>
      * </note>
@@ -479,8 +479,8 @@ public class CheckpointConfiguration implements Serializable, Cloneable, Structu
      *        Describes the interval in milliseconds between checkpoint operations. </p> <note>
      *        <p>
      *        If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
-     *        use a <code>CheckpointInterval</code> vaue of 60000, even if this value is set to another value using this
-     *        API or in application code.
+     *        use a <code>CheckpointInterval</code> value of 60000, even if this value is set to another value using
+     *        this API or in application code.
      *        </p>
      */
 
@@ -495,7 +495,7 @@ public class CheckpointConfiguration implements Serializable, Cloneable, Structu
      * <note>
      * <p>
      * If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a
-     * <code>CheckpointInterval</code> vaue of 60000, even if this value is set to another value using this API or in
+     * <code>CheckpointInterval</code> value of 60000, even if this value is set to another value using this API or in
      * application code.
      * </p>
      * </note>
@@ -503,7 +503,7 @@ public class CheckpointConfiguration implements Serializable, Cloneable, Structu
      * @return Describes the interval in milliseconds between checkpoint operations. </p> <note>
      *         <p>
      *         If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
-     *         use a <code>CheckpointInterval</code> vaue of 60000, even if this value is set to another value using
+     *         use a <code>CheckpointInterval</code> value of 60000, even if this value is set to another value using
      *         this API or in application code.
      *         </p>
      */
@@ -519,7 +519,7 @@ public class CheckpointConfiguration implements Serializable, Cloneable, Structu
      * <note>
      * <p>
      * If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a
-     * <code>CheckpointInterval</code> vaue of 60000, even if this value is set to another value using this API or in
+     * <code>CheckpointInterval</code> value of 60000, even if this value is set to another value using this API or in
      * application code.
      * </p>
      * </note>
@@ -528,8 +528,8 @@ public class CheckpointConfiguration implements Serializable, Cloneable, Structu
      *        Describes the interval in milliseconds between checkpoint operations. </p> <note>
      *        <p>
      *        If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
-     *        use a <code>CheckpointInterval</code> vaue of 60000, even if this value is set to another value using this
-     *        API or in application code.
+     *        use a <code>CheckpointInterval</code> value of 60000, even if this value is set to another value using
+     *        this API or in application code.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

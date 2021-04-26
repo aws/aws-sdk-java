@@ -2984,6 +2984,16 @@
       "max":2048
     },
     "MessageId":{"type":"string"},
+    "MessageType":{
+      "type":"string",
+      "documentation":"<p>Sidewalk device message type.</p>",
+      "enum":[
+        "CUSTOM_COMMAND_ID_NOTIFY",
+        "CUSTOM_COMMAND_ID_GET",
+        "CUSTOM_COMMAND_ID_SET",
+        "CUSTOM_COMMAND_ID_RESP"
+      ]
+    },
     "MinGwDiversity":{
       "type":"integer",
       "max":100,
@@ -3362,7 +3372,8 @@
         "Seq":{
           "shape":"Seq",
           "documentation":"<p>The sequence number.</p>"
-        }
+        },
+        "MessageType":{"shape":"MessageType"}
       },
       "documentation":"<p>Information about a Sidewalk router.</p>"
     },

@@ -33,7 +33,7 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
      * The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example:
      * </p>
      * <p>
-     * <code>s3://bucket-name/training-data.csv</code>
+     * <code>s3://bucket-name/folder-name/</code>
      * </p>
      */
     private String dataLocation;
@@ -43,14 +43,14 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
      * The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example:
      * </p>
      * <p>
-     * <code>s3://bucket-name/training-data.csv</code>
+     * <code>s3://bucket-name/folder-name/</code>
      * </p>
      * 
      * @param dataLocation
      *        The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For
      *        example: </p>
      *        <p>
-     *        <code>s3://bucket-name/training-data.csv</code>
+     *        <code>s3://bucket-name/folder-name/</code>
      */
 
     public void setDataLocation(String dataLocation) {
@@ -62,13 +62,13 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
      * The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example:
      * </p>
      * <p>
-     * <code>s3://bucket-name/training-data.csv</code>
+     * <code>s3://bucket-name/folder-name/</code>
      * </p>
      * 
      * @return The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For
      *         example: </p>
      *         <p>
-     *         <code>s3://bucket-name/training-data.csv</code>
+     *         <code>s3://bucket-name/folder-name/</code>
      */
 
     public String getDataLocation() {
@@ -80,14 +80,14 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
      * The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For example:
      * </p>
      * <p>
-     * <code>s3://bucket-name/training-data.csv</code>
+     * <code>s3://bucket-name/folder-name/</code>
      * </p>
      * 
      * @param dataLocation
      *        The path to the Amazon S3 bucket where the data that you want to upload to your dataset is stored. For
      *        example: </p>
      *        <p>
-     *        <code>s3://bucket-name/training-data.csv</code>
+     *        <code>s3://bucket-name/folder-name/</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

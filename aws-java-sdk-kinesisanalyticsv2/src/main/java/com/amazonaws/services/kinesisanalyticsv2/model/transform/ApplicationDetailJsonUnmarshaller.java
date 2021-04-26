@@ -96,6 +96,11 @@ public class ApplicationDetailJsonUnmarshaller implements Unmarshaller<Applicati
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("ApplicationMaintenanceConfigurationDescription", targetDepth)) {
+                    context.nextToken();
+                    applicationDetail.setApplicationMaintenanceConfigurationDescription(ApplicationMaintenanceConfigurationDescriptionJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

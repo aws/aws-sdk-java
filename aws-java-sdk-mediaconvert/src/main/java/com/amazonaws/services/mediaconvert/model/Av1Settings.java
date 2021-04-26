@@ -77,7 +77,10 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
      * control mode is QVBR.
      */
     private Integer maxBitrate;
-    /** Specify the number of B-frames. With AV1, MediaConvert supports only 7 or 15. */
+    /**
+     * Specify from the number of B-frames, in the range of 0-15. For AV1 encoding, we recommend using 7 or 15. Choose a
+     * larger number for a lower bitrate and smaller file size; choose a smaller number for better video quality.
+     */
     private Integer numberBFramesBetweenReferenceFrames;
     /**
      * Settings for quality-defined variable bitrate encoding with the AV1 codec. Required when you set Rate control
@@ -580,10 +583,13 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the number of B-frames. With AV1, MediaConvert supports only 7 or 15.
+     * Specify from the number of B-frames, in the range of 0-15. For AV1 encoding, we recommend using 7 or 15. Choose a
+     * larger number for a lower bitrate and smaller file size; choose a smaller number for better video quality.
      * 
      * @param numberBFramesBetweenReferenceFrames
-     *        Specify the number of B-frames. With AV1, MediaConvert supports only 7 or 15.
+     *        Specify from the number of B-frames, in the range of 0-15. For AV1 encoding, we recommend using 7 or 15.
+     *        Choose a larger number for a lower bitrate and smaller file size; choose a smaller number for better video
+     *        quality.
      */
 
     public void setNumberBFramesBetweenReferenceFrames(Integer numberBFramesBetweenReferenceFrames) {
@@ -591,9 +597,12 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the number of B-frames. With AV1, MediaConvert supports only 7 or 15.
+     * Specify from the number of B-frames, in the range of 0-15. For AV1 encoding, we recommend using 7 or 15. Choose a
+     * larger number for a lower bitrate and smaller file size; choose a smaller number for better video quality.
      * 
-     * @return Specify the number of B-frames. With AV1, MediaConvert supports only 7 or 15.
+     * @return Specify from the number of B-frames, in the range of 0-15. For AV1 encoding, we recommend using 7 or 15.
+     *         Choose a larger number for a lower bitrate and smaller file size; choose a smaller number for better
+     *         video quality.
      */
 
     public Integer getNumberBFramesBetweenReferenceFrames() {
@@ -601,10 +610,13 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the number of B-frames. With AV1, MediaConvert supports only 7 or 15.
+     * Specify from the number of B-frames, in the range of 0-15. For AV1 encoding, we recommend using 7 or 15. Choose a
+     * larger number for a lower bitrate and smaller file size; choose a smaller number for better video quality.
      * 
      * @param numberBFramesBetweenReferenceFrames
-     *        Specify the number of B-frames. With AV1, MediaConvert supports only 7 or 15.
+     *        Specify from the number of B-frames, in the range of 0-15. For AV1 encoding, we recommend using 7 or 15.
+     *        Choose a larger number for a lower bitrate and smaller file size; choose a smaller number for better video
+     *        quality.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

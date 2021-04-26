@@ -64,16 +64,28 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
      * without interruptions.
      */
     private String bufferModel;
-    /** Inserts DVB Network Information Table (NIT) at the specified table repetition interval. */
+    /**
+     * Use these settings to insert a DVB Network Information Table (NIT) in the transport stream of this output. When
+     * you work directly in your JSON job specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
+     */
     private DvbNitSettings dvbNitSettings;
-    /** Inserts DVB Service Description Table (NIT) at the specified table repetition interval. */
+    /**
+     * Use these settings to insert a DVB Service Description Table (SDT) in the transport stream of this output. When
+     * you work directly in your JSON job specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
+     */
     private DvbSdtSettings dvbSdtSettings;
     /**
      * Specify the packet identifiers (PIDs) for DVB subtitle data included in this output. Specify multiple PIDs as a
      * JSON array. Default is the range 460-479.
      */
     private java.util.List<Integer> dvbSubPids;
-    /** Inserts DVB Time and Date Table (TDT) at the specified table repetition interval. */
+    /**
+     * Use these settings to insert a DVB Time and Date Table (TDT) in the transport stream of this output. When you
+     * work directly in your JSON job specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
+     */
     private DvbTdtSettings dvbTdtSettings;
     /** Specify the packet identifier (PID) for DVB teletext data you include in this output. Default is 499. */
     private Integer dvbTeletextPid;
@@ -581,10 +593,14 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Inserts DVB Network Information Table (NIT) at the specified table repetition interval.
+     * Use these settings to insert a DVB Network Information Table (NIT) in the transport stream of this output. When
+     * you work directly in your JSON job specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      * 
      * @param dvbNitSettings
-     *        Inserts DVB Network Information Table (NIT) at the specified table repetition interval.
+     *        Use these settings to insert a DVB Network Information Table (NIT) in the transport stream of this output.
+     *        When you work directly in your JSON job specification, include this object only when your job has a
+     *        transport stream output and the container settings contain the object M2tsSettings.
      */
 
     public void setDvbNitSettings(DvbNitSettings dvbNitSettings) {
@@ -592,9 +608,13 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Inserts DVB Network Information Table (NIT) at the specified table repetition interval.
+     * Use these settings to insert a DVB Network Information Table (NIT) in the transport stream of this output. When
+     * you work directly in your JSON job specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      * 
-     * @return Inserts DVB Network Information Table (NIT) at the specified table repetition interval.
+     * @return Use these settings to insert a DVB Network Information Table (NIT) in the transport stream of this
+     *         output. When you work directly in your JSON job specification, include this object only when your job has
+     *         a transport stream output and the container settings contain the object M2tsSettings.
      */
 
     public DvbNitSettings getDvbNitSettings() {
@@ -602,10 +622,14 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Inserts DVB Network Information Table (NIT) at the specified table repetition interval.
+     * Use these settings to insert a DVB Network Information Table (NIT) in the transport stream of this output. When
+     * you work directly in your JSON job specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      * 
      * @param dvbNitSettings
-     *        Inserts DVB Network Information Table (NIT) at the specified table repetition interval.
+     *        Use these settings to insert a DVB Network Information Table (NIT) in the transport stream of this output.
+     *        When you work directly in your JSON job specification, include this object only when your job has a
+     *        transport stream output and the container settings contain the object M2tsSettings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -615,10 +639,14 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Inserts DVB Service Description Table (NIT) at the specified table repetition interval.
+     * Use these settings to insert a DVB Service Description Table (SDT) in the transport stream of this output. When
+     * you work directly in your JSON job specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      * 
      * @param dvbSdtSettings
-     *        Inserts DVB Service Description Table (NIT) at the specified table repetition interval.
+     *        Use these settings to insert a DVB Service Description Table (SDT) in the transport stream of this output.
+     *        When you work directly in your JSON job specification, include this object only when your job has a
+     *        transport stream output and the container settings contain the object M2tsSettings.
      */
 
     public void setDvbSdtSettings(DvbSdtSettings dvbSdtSettings) {
@@ -626,9 +654,13 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Inserts DVB Service Description Table (NIT) at the specified table repetition interval.
+     * Use these settings to insert a DVB Service Description Table (SDT) in the transport stream of this output. When
+     * you work directly in your JSON job specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      * 
-     * @return Inserts DVB Service Description Table (NIT) at the specified table repetition interval.
+     * @return Use these settings to insert a DVB Service Description Table (SDT) in the transport stream of this
+     *         output. When you work directly in your JSON job specification, include this object only when your job has
+     *         a transport stream output and the container settings contain the object M2tsSettings.
      */
 
     public DvbSdtSettings getDvbSdtSettings() {
@@ -636,10 +668,14 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Inserts DVB Service Description Table (NIT) at the specified table repetition interval.
+     * Use these settings to insert a DVB Service Description Table (SDT) in the transport stream of this output. When
+     * you work directly in your JSON job specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      * 
      * @param dvbSdtSettings
-     *        Inserts DVB Service Description Table (NIT) at the specified table repetition interval.
+     *        Use these settings to insert a DVB Service Description Table (SDT) in the transport stream of this output.
+     *        When you work directly in your JSON job specification, include this object only when your job has a
+     *        transport stream output and the container settings contain the object M2tsSettings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -719,10 +755,14 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Inserts DVB Time and Date Table (TDT) at the specified table repetition interval.
+     * Use these settings to insert a DVB Time and Date Table (TDT) in the transport stream of this output. When you
+     * work directly in your JSON job specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      * 
      * @param dvbTdtSettings
-     *        Inserts DVB Time and Date Table (TDT) at the specified table repetition interval.
+     *        Use these settings to insert a DVB Time and Date Table (TDT) in the transport stream of this output. When
+     *        you work directly in your JSON job specification, include this object only when your job has a transport
+     *        stream output and the container settings contain the object M2tsSettings.
      */
 
     public void setDvbTdtSettings(DvbTdtSettings dvbTdtSettings) {
@@ -730,9 +770,13 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Inserts DVB Time and Date Table (TDT) at the specified table repetition interval.
+     * Use these settings to insert a DVB Time and Date Table (TDT) in the transport stream of this output. When you
+     * work directly in your JSON job specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      * 
-     * @return Inserts DVB Time and Date Table (TDT) at the specified table repetition interval.
+     * @return Use these settings to insert a DVB Time and Date Table (TDT) in the transport stream of this output. When
+     *         you work directly in your JSON job specification, include this object only when your job has a transport
+     *         stream output and the container settings contain the object M2tsSettings.
      */
 
     public DvbTdtSettings getDvbTdtSettings() {
@@ -740,10 +784,14 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Inserts DVB Time and Date Table (TDT) at the specified table repetition interval.
+     * Use these settings to insert a DVB Time and Date Table (TDT) in the transport stream of this output. When you
+     * work directly in your JSON job specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      * 
      * @param dvbTdtSettings
-     *        Inserts DVB Time and Date Table (TDT) at the specified table repetition interval.
+     *        Use these settings to insert a DVB Time and Date Table (TDT) in the transport stream of this output. When
+     *        you work directly in your JSON job specification, include this object only when your job has a transport
+     *        stream output and the container settings contain the object M2tsSettings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -18,7 +18,8 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Set up captions in your outputs by first selecting them from your input here.
+ * Use captions selectors to specify the captions data from your input that you use in your outputs. You can use up to
+ * 20 captions selectors per input.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CaptionSelector" target="_top">AWS API
  *      Documentation</a>

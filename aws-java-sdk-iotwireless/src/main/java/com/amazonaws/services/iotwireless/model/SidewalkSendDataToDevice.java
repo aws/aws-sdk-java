@@ -35,6 +35,8 @@ public class SidewalkSendDataToDevice implements Serializable, Cloneable, Struct
      */
     private Integer seq;
 
+    private String messageType;
+
     /**
      * <p>
      * The sequence number.
@@ -76,6 +78,46 @@ public class SidewalkSendDataToDevice implements Serializable, Cloneable, Struct
     }
 
     /**
+     * @param messageType
+     * @see MessageType
+     */
+
+    public void setMessageType(String messageType) {
+        this.messageType = messageType;
+    }
+
+    /**
+     * @return
+     * @see MessageType
+     */
+
+    public String getMessageType() {
+        return this.messageType;
+    }
+
+    /**
+     * @param messageType
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MessageType
+     */
+
+    public SidewalkSendDataToDevice withMessageType(String messageType) {
+        setMessageType(messageType);
+        return this;
+    }
+
+    /**
+     * @param messageType
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MessageType
+     */
+
+    public SidewalkSendDataToDevice withMessageType(MessageType messageType) {
+        this.messageType = messageType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +130,9 @@ public class SidewalkSendDataToDevice implements Serializable, Cloneable, Struct
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSeq() != null)
-            sb.append("Seq: ").append(getSeq());
+            sb.append("Seq: ").append(getSeq()).append(",");
+        if (getMessageType() != null)
+            sb.append("MessageType: ").append(getMessageType());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +151,10 @@ public class SidewalkSendDataToDevice implements Serializable, Cloneable, Struct
             return false;
         if (other.getSeq() != null && other.getSeq().equals(this.getSeq()) == false)
             return false;
+        if (other.getMessageType() == null ^ this.getMessageType() == null)
+            return false;
+        if (other.getMessageType() != null && other.getMessageType().equals(this.getMessageType()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +164,7 @@ public class SidewalkSendDataToDevice implements Serializable, Cloneable, Struct
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getSeq() == null) ? 0 : getSeq().hashCode());
+        hashCode = prime * hashCode + ((getMessageType() == null) ? 0 : getMessageType().hashCode());
         return hashCode;
     }
 

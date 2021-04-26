@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Settings for MP4 segments in DASH
+ * These settings relate to the fragmented MP4 container for the segments in your DASH outputs.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/MpdSettings" target="_top">AWS API
  *      Documentation</a>

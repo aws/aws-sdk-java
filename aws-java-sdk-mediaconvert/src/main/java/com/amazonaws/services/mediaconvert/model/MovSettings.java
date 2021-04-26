@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Settings for MOV Container.
+ * These settings relate to your QuickTime MOV output container.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/MovSettings" target="_top">AWS API
  *      Documentation</a>

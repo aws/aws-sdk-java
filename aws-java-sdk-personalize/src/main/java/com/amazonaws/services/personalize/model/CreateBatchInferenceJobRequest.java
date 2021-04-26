@@ -40,8 +40,8 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
     private String solutionVersionArn;
     /**
      * <p>
-     * The ARN of the filter to apply to the batch inference job. For more information on using filters, see Using
-     * Filters with Amazon Personalize.
+     * The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..
      * </p>
      */
     private String filterArn;
@@ -67,7 +67,7 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input
-     * and out Amazon S3 buckets respectively.
+     * and output Amazon S3 buckets respectively.
      * </p>
      */
     private String roleArn;
@@ -166,13 +166,14 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ARN of the filter to apply to the batch inference job. For more information on using filters, see Using
-     * Filters with Amazon Personalize.
+     * The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..
      * </p>
      * 
      * @param filterArn
-     *        The ARN of the filter to apply to the batch inference job. For more information on using filters, see
-     *        Using Filters with Amazon Personalize.
+     *        The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch
+     *        Recommendations</a>..
      */
 
     public void setFilterArn(String filterArn) {
@@ -181,12 +182,13 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ARN of the filter to apply to the batch inference job. For more information on using filters, see Using
-     * Filters with Amazon Personalize.
+     * The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..
      * </p>
      * 
-     * @return The ARN of the filter to apply to the batch inference job. For more information on using filters, see
-     *         Using Filters with Amazon Personalize.
+     * @return The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a
+     *         href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch
+     *         Recommendations</a>..
      */
 
     public String getFilterArn() {
@@ -195,13 +197,14 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ARN of the filter to apply to the batch inference job. For more information on using filters, see Using
-     * Filters with Amazon Personalize.
+     * The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..
      * </p>
      * 
      * @param filterArn
-     *        The ARN of the filter to apply to the batch inference job. For more information on using filters, see
-     *        Using Filters with Amazon Personalize.
+     *        The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch
+     *        Recommendations</a>..
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -339,12 +342,12 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input
-     * and out Amazon S3 buckets respectively.
+     * and output Amazon S3 buckets respectively.
      * </p>
      * 
      * @param roleArn
      *        The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your
-     *        input and out Amazon S3 buckets respectively.
+     *        input and output Amazon S3 buckets respectively.
      */
 
     public void setRoleArn(String roleArn) {
@@ -354,11 +357,11 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input
-     * and out Amazon S3 buckets respectively.
+     * and output Amazon S3 buckets respectively.
      * </p>
      * 
      * @return The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your
-     *         input and out Amazon S3 buckets respectively.
+     *         input and output Amazon S3 buckets respectively.
      */
 
     public String getRoleArn() {
@@ -368,12 +371,12 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input
-     * and out Amazon S3 buckets respectively.
+     * and output Amazon S3 buckets respectively.
      * </p>
      * 
      * @param roleArn
      *        The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your
-     *        input and out Amazon S3 buckets respectively.
+     *        input and output Amazon S3 buckets respectively.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

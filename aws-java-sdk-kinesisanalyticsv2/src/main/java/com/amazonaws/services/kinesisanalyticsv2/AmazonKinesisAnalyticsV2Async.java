@@ -381,9 +381,14 @@ public interface AmazonKinesisAnalyticsV2Async extends AmazonKinesisAnalyticsV2 
      * available extension is the Apache Flink dashboard.
      * </p>
      * <p>
-     * The IAM role or user used to call this API defines the permissions to access the extension. Once the presigned
+     * The IAM role or user used to call this API defines the permissions to access the extension. After the presigned
      * URL is created, no additional permission is required to access this URL. IAM authorization policies for this API
      * are also enforced for every HTTP request that attempts to connect to the extension.
+     * </p>
+     * <p>
+     * You control the amount of time that the URL will be valid using the
+     * <code>SessionExpirationDurationInSeconds</code> parameter. If you do not provide this parameter, the returned URL
+     * is valid for twelve hours.
      * </p>
      * <note>
      * <p>
@@ -408,9 +413,14 @@ public interface AmazonKinesisAnalyticsV2Async extends AmazonKinesisAnalyticsV2 
      * available extension is the Apache Flink dashboard.
      * </p>
      * <p>
-     * The IAM role or user used to call this API defines the permissions to access the extension. Once the presigned
+     * The IAM role or user used to call this API defines the permissions to access the extension. After the presigned
      * URL is created, no additional permission is required to access this URL. IAM authorization policies for this API
      * are also enforced for every HTTP request that attempts to connect to the extension.
+     * </p>
+     * <p>
+     * You control the amount of time that the URL will be valid using the
+     * <code>SessionExpirationDurationInSeconds</code> parameter. If you do not provide this parameter, the returned URL
+     * is valid for twelve hours.
      * </p>
      * <note>
      * <p>
@@ -1146,5 +1156,48 @@ public interface AmazonKinesisAnalyticsV2Async extends AmazonKinesisAnalyticsV2 
      */
     java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest updateApplicationRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the configuration for the automatic maintenance that Kinesis Data Analytics performs on the application.
+     * For information about automatic application maintenance, see <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/maintenance.html">Kinesis Data Analytics for
+     * Apache Flink Maintenance</a>.
+     * </p>
+     * 
+     * @param updateApplicationMaintenanceConfigurationRequest
+     * @return A Java Future containing the result of the UpdateApplicationMaintenanceConfiguration operation returned
+     *         by the service.
+     * @sample AmazonKinesisAnalyticsV2Async.UpdateApplicationMaintenanceConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplicationMaintenanceConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateApplicationMaintenanceConfigurationResult> updateApplicationMaintenanceConfigurationAsync(
+            UpdateApplicationMaintenanceConfigurationRequest updateApplicationMaintenanceConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates the configuration for the automatic maintenance that Kinesis Data Analytics performs on the application.
+     * For information about automatic application maintenance, see <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/maintenance.html">Kinesis Data Analytics for
+     * Apache Flink Maintenance</a>.
+     * </p>
+     * 
+     * @param updateApplicationMaintenanceConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateApplicationMaintenanceConfiguration operation returned
+     *         by the service.
+     * @sample AmazonKinesisAnalyticsV2AsyncHandler.UpdateApplicationMaintenanceConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplicationMaintenanceConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateApplicationMaintenanceConfigurationResult> updateApplicationMaintenanceConfigurationAsync(
+            UpdateApplicationMaintenanceConfigurationRequest updateApplicationMaintenanceConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateApplicationMaintenanceConfigurationRequest, UpdateApplicationMaintenanceConfigurationResult> asyncHandler);
 
 }

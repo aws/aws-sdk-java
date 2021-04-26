@@ -18,8 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this feature for each
- * input or output individually. This setting is disabled by default.
+ * Use the image inserter feature to include a graphic overlay on your video. Enable or disable this feature for each
+ * input or output individually. For more information, see
+ * https://docs.aws.amazon.com/mediaconvert/latest/ug/graphic-overlay.html. This setting is disabled by default.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ImageInserter" target="_top">AWS API
  *      Documentation</a>

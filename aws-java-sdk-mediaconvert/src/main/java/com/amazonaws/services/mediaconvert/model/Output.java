@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * An output object describes the settings for a single output file or stream in an output group.
+ * Each output in your job is a collection of settings that describes how you want MediaConvert to encode a single
+ * output file or stream. For more information, see
+ * https://docs.aws.amazon.com/mediaconvert/latest/ug/create-outputs.html.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Output" target="_top">AWS API
  *      Documentation</a>
@@ -61,9 +63,8 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
      */
     private String preset;
     /**
-     * (VideoDescription) contains a group of video encoding settings. The specific video settings depend on the video
-     * codec that you choose when you specify a value for Video codec (codec). Include one instance of
-     * (VideoDescription) per output.
+     * VideoDescription contains a group of video encoding settings. The specific video settings depend on the video
+     * codec that you choose for the property codec. Include one instance of VideoDescription per output.
      */
     private VideoDescription videoDescription;
 
@@ -432,14 +433,12 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * (VideoDescription) contains a group of video encoding settings. The specific video settings depend on the video
-     * codec that you choose when you specify a value for Video codec (codec). Include one instance of
-     * (VideoDescription) per output.
+     * VideoDescription contains a group of video encoding settings. The specific video settings depend on the video
+     * codec that you choose for the property codec. Include one instance of VideoDescription per output.
      * 
      * @param videoDescription
-     *        (VideoDescription) contains a group of video encoding settings. The specific video settings depend on the
-     *        video codec that you choose when you specify a value for Video codec (codec). Include one instance of
-     *        (VideoDescription) per output.
+     *        VideoDescription contains a group of video encoding settings. The specific video settings depend on the
+     *        video codec that you choose for the property codec. Include one instance of VideoDescription per output.
      */
 
     public void setVideoDescription(VideoDescription videoDescription) {
@@ -447,13 +446,11 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * (VideoDescription) contains a group of video encoding settings. The specific video settings depend on the video
-     * codec that you choose when you specify a value for Video codec (codec). Include one instance of
-     * (VideoDescription) per output.
+     * VideoDescription contains a group of video encoding settings. The specific video settings depend on the video
+     * codec that you choose for the property codec. Include one instance of VideoDescription per output.
      * 
-     * @return (VideoDescription) contains a group of video encoding settings. The specific video settings depend on the
-     *         video codec that you choose when you specify a value for Video codec (codec). Include one instance of
-     *         (VideoDescription) per output.
+     * @return VideoDescription contains a group of video encoding settings. The specific video settings depend on the
+     *         video codec that you choose for the property codec. Include one instance of VideoDescription per output.
      */
 
     public VideoDescription getVideoDescription() {
@@ -461,14 +458,12 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * (VideoDescription) contains a group of video encoding settings. The specific video settings depend on the video
-     * codec that you choose when you specify a value for Video codec (codec). Include one instance of
-     * (VideoDescription) per output.
+     * VideoDescription contains a group of video encoding settings. The specific video settings depend on the video
+     * codec that you choose for the property codec. Include one instance of VideoDescription per output.
      * 
      * @param videoDescription
-     *        (VideoDescription) contains a group of video encoding settings. The specific video settings depend on the
-     *        video codec that you choose when you specify a value for Video codec (codec). Include one instance of
-     *        (VideoDescription) per output.
+     *        VideoDescription contains a group of video encoding settings. The specific video settings depend on the
+     *        video codec that you choose for the property codec. Include one instance of VideoDescription per output.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

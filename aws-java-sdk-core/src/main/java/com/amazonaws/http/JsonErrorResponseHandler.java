@@ -147,7 +147,7 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
                         return doLegacyUnmarshall(unmarshaller, jsonNode);
                     }
                 } catch (Exception e) {
-                    LOG.info("Unable to unmarshall exception content", e);
+                    LOG.debug("Unable to unmarshall exception content", e);
                     return null;
                 }
             }

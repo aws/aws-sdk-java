@@ -56,7 +56,7 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
     private java.util.Date creationDateTime;
     /**
      * <p>
-     * The date and time (in Unix time) that the dataset was last updated.
+     * The date and time (in Unix time) that the dataset import job status was last updated.
      * </p>
      */
     private java.util.Date lastUpdatedDateTime;
@@ -286,11 +286,11 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The date and time (in Unix time) that the dataset was last updated.
+     * The date and time (in Unix time) that the dataset import job status was last updated.
      * </p>
      * 
      * @param lastUpdatedDateTime
-     *        The date and time (in Unix time) that the dataset was last updated.
+     *        The date and time (in Unix time) that the dataset import job status was last updated.
      */
 
     public void setLastUpdatedDateTime(java.util.Date lastUpdatedDateTime) {
@@ -299,10 +299,10 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The date and time (in Unix time) that the dataset was last updated.
+     * The date and time (in Unix time) that the dataset import job status was last updated.
      * </p>
      * 
-     * @return The date and time (in Unix time) that the dataset was last updated.
+     * @return The date and time (in Unix time) that the dataset import job status was last updated.
      */
 
     public java.util.Date getLastUpdatedDateTime() {
@@ -311,11 +311,11 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The date and time (in Unix time) that the dataset was last updated.
+     * The date and time (in Unix time) that the dataset import job status was last updated.
      * </p>
      * 
      * @param lastUpdatedDateTime
-     *        The date and time (in Unix time) that the dataset was last updated.
+     *        The date and time (in Unix time) that the dataset import job status was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

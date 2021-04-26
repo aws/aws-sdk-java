@@ -49,8 +49,8 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     private String applicationName;
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code>, <code>FLINK-1_6</code>, or
-     * <code>FLINK-1_8</code>).
+     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
+     * , or <code>FLINK-1_11</code>).
      * </p>
      */
     private String runtimeEnvironment;
@@ -97,6 +97,12 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private java.util.List<CloudWatchLoggingOptionDescription> cloudWatchLoggingOptionDescriptions;
+    /**
+     * <p>
+     * Describes the time window for automatic application maintenance.
+     * </p>
+     */
+    private ApplicationMaintenanceConfigurationDescription applicationMaintenanceConfigurationDescription;
 
     /**
      * <p>
@@ -220,13 +226,13 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code>, <code>FLINK-1_6</code>, or
-     * <code>FLINK-1_8</code>).
+     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
+     * , or <code>FLINK-1_11</code>).
      * </p>
      * 
      * @param runtimeEnvironment
-     *        The runtime environment for the application (<code>SQL-1.0</code>, <code>FLINK-1_6</code>, or
-     *        <code>FLINK-1_8</code>).
+     *        The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>,
+     *        <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).
      * @see RuntimeEnvironment
      */
 
@@ -236,12 +242,12 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code>, <code>FLINK-1_6</code>, or
-     * <code>FLINK-1_8</code>).
+     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
+     * , or <code>FLINK-1_11</code>).
      * </p>
      * 
-     * @return The runtime environment for the application (<code>SQL-1.0</code>, <code>FLINK-1_6</code>, or
-     *         <code>FLINK-1_8</code>).
+     * @return The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>,
+     *         <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).
      * @see RuntimeEnvironment
      */
 
@@ -251,13 +257,13 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code>, <code>FLINK-1_6</code>, or
-     * <code>FLINK-1_8</code>).
+     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
+     * , or <code>FLINK-1_11</code>).
      * </p>
      * 
      * @param runtimeEnvironment
-     *        The runtime environment for the application (<code>SQL-1.0</code>, <code>FLINK-1_6</code>, or
-     *        <code>FLINK-1_8</code>).
+     *        The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>,
+     *        <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuntimeEnvironment
      */
@@ -269,13 +275,13 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code>, <code>FLINK-1_6</code>, or
-     * <code>FLINK-1_8</code>).
+     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
+     * , or <code>FLINK-1_11</code>).
      * </p>
      * 
      * @param runtimeEnvironment
-     *        The runtime environment for the application (<code>SQL-1.0</code>, <code>FLINK-1_6</code>, or
-     *        <code>FLINK-1_8</code>).
+     *        The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>,
+     *        <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuntimeEnvironment
      */
@@ -623,6 +629,47 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * Describes the time window for automatic application maintenance.
+     * </p>
+     * 
+     * @param applicationMaintenanceConfigurationDescription
+     *        Describes the time window for automatic application maintenance.
+     */
+
+    public void setApplicationMaintenanceConfigurationDescription(ApplicationMaintenanceConfigurationDescription applicationMaintenanceConfigurationDescription) {
+        this.applicationMaintenanceConfigurationDescription = applicationMaintenanceConfigurationDescription;
+    }
+
+    /**
+     * <p>
+     * Describes the time window for automatic application maintenance.
+     * </p>
+     * 
+     * @return Describes the time window for automatic application maintenance.
+     */
+
+    public ApplicationMaintenanceConfigurationDescription getApplicationMaintenanceConfigurationDescription() {
+        return this.applicationMaintenanceConfigurationDescription;
+    }
+
+    /**
+     * <p>
+     * Describes the time window for automatic application maintenance.
+     * </p>
+     * 
+     * @param applicationMaintenanceConfigurationDescription
+     *        Describes the time window for automatic application maintenance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationDetail withApplicationMaintenanceConfigurationDescription(
+            ApplicationMaintenanceConfigurationDescription applicationMaintenanceConfigurationDescription) {
+        setApplicationMaintenanceConfigurationDescription(applicationMaintenanceConfigurationDescription);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -655,7 +702,9 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
         if (getApplicationConfigurationDescription() != null)
             sb.append("ApplicationConfigurationDescription: ").append(getApplicationConfigurationDescription()).append(",");
         if (getCloudWatchLoggingOptionDescriptions() != null)
-            sb.append("CloudWatchLoggingOptionDescriptions: ").append(getCloudWatchLoggingOptionDescriptions());
+            sb.append("CloudWatchLoggingOptionDescriptions: ").append(getCloudWatchLoggingOptionDescriptions()).append(",");
+        if (getApplicationMaintenanceConfigurationDescription() != null)
+            sb.append("ApplicationMaintenanceConfigurationDescription: ").append(getApplicationMaintenanceConfigurationDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -716,6 +765,11 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
         if (other.getCloudWatchLoggingOptionDescriptions() != null
                 && other.getCloudWatchLoggingOptionDescriptions().equals(this.getCloudWatchLoggingOptionDescriptions()) == false)
             return false;
+        if (other.getApplicationMaintenanceConfigurationDescription() == null ^ this.getApplicationMaintenanceConfigurationDescription() == null)
+            return false;
+        if (other.getApplicationMaintenanceConfigurationDescription() != null
+                && other.getApplicationMaintenanceConfigurationDescription().equals(this.getApplicationMaintenanceConfigurationDescription()) == false)
+            return false;
         return true;
     }
 
@@ -735,6 +789,8 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getLastUpdateTimestamp() == null) ? 0 : getLastUpdateTimestamp().hashCode());
         hashCode = prime * hashCode + ((getApplicationConfigurationDescription() == null) ? 0 : getApplicationConfigurationDescription().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchLoggingOptionDescriptions() == null) ? 0 : getCloudWatchLoggingOptionDescriptions().hashCode());
+        hashCode = prime * hashCode
+                + ((getApplicationMaintenanceConfigurationDescription() == null) ? 0 : getApplicationMaintenanceConfigurationDescription().hashCode());
         return hashCode;
     }
 

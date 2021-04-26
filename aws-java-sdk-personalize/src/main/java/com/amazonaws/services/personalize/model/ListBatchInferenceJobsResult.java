@@ -31,7 +31,7 @@ public class ListBatchInferenceJobsResult extends com.amazonaws.AmazonWebService
     private java.util.List<BatchInferenceJobSummary> batchInferenceJobs;
     /**
      * <p>
-     * The token to use to retreive the next page of results. The value is <code>null</code> when there are no more
+     * The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more
      * results to return.
      * </p>
      */
@@ -109,12 +109,12 @@ public class ListBatchInferenceJobsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The token to use to retreive the next page of results. The value is <code>null</code> when there are no more
+     * The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more
      * results to return.
      * </p>
      * 
      * @param nextToken
-     *        The token to use to retreive the next page of results. The value is <code>null</code> when there are no
+     *        The token to use to retrieve the next page of results. The value is <code>null</code> when there are no
      *        more results to return.
      */
 
@@ -124,11 +124,11 @@ public class ListBatchInferenceJobsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The token to use to retreive the next page of results. The value is <code>null</code> when there are no more
+     * The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more
      * results to return.
      * </p>
      * 
-     * @return The token to use to retreive the next page of results. The value is <code>null</code> when there are no
+     * @return The token to use to retrieve the next page of results. The value is <code>null</code> when there are no
      *         more results to return.
      */
 
@@ -138,12 +138,12 @@ public class ListBatchInferenceJobsResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The token to use to retreive the next page of results. The value is <code>null</code> when there are no more
+     * The token to use to retrieve the next page of results. The value is <code>null</code> when there are no more
      * results to return.
      * </p>
      * 
      * @param nextToken
-     *        The token to use to retreive the next page of results. The value is <code>null</code> when there are no
+     *        The token to use to retrieve the next page of results. The value is <code>null</code> when there are no
      *        more results to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

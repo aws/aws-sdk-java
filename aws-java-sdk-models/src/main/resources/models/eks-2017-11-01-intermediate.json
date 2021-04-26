@@ -1791,6 +1791,9 @@
       }, {
         "name" : "AL2_ARM_64",
         "value" : "AL2_ARM_64"
+      }, {
+        "name" : "CUSTOM",
+        "value" : "CUSTOM"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.eks.enum.AMITypes",
@@ -45890,7 +45893,7 @@
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "minSize",
-        "c2jShape" : "Capacity",
+        "c2jShape" : "ZeroCapacity",
         "deprecated" : false,
         "documentation" : "<p>The minimum number of nodes that the managed node group can scale in to. This number must be greater than zero.</p>",
         "endpointDiscoveryId" : false,
@@ -46028,7 +46031,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "desiredSize",
-        "c2jShape" : "Capacity",
+        "c2jShape" : "ZeroCapacity",
         "deprecated" : false,
         "documentation" : "<p>The current number of nodes that the managed node group should maintain.</p>",
         "endpointDiscoveryId" : false,
@@ -46099,7 +46102,7 @@
       "membersAsMap" : {
         "DesiredSize" : {
           "c2jName" : "desiredSize",
-          "c2jShape" : "Capacity",
+          "c2jShape" : "ZeroCapacity",
           "deprecated" : false,
           "documentation" : "<p>The current number of nodes that the managed node group should maintain.</p>",
           "endpointDiscoveryId" : false,
@@ -46239,7 +46242,7 @@
         },
         "MinSize" : {
           "c2jName" : "minSize",
-          "c2jShape" : "Capacity",
+          "c2jShape" : "ZeroCapacity",
           "deprecated" : false,
           "documentation" : "<p>The minimum number of nodes that the managed node group can scale in to. This number must be greater than zero.</p>",
           "endpointDiscoveryId" : false,
@@ -61185,6 +61188,12 @@
       }, {
         "name" : "PublicAccessCidrs",
         "value" : "PublicAccessCidrs"
+      }, {
+        "name" : "LaunchTemplateName",
+        "value" : "LaunchTemplateName"
+      }, {
+        "name" : "LaunchTemplateVersion",
+        "value" : "LaunchTemplateVersion"
       }, {
         "name" : "IdentityProviderConfig",
         "value" : "IdentityProviderConfig"

@@ -283,9 +283,14 @@ public interface AmazonKinesisAnalyticsV2 {
      * available extension is the Apache Flink dashboard.
      * </p>
      * <p>
-     * The IAM role or user used to call this API defines the permissions to access the extension. Once the presigned
+     * The IAM role or user used to call this API defines the permissions to access the extension. After the presigned
      * URL is created, no additional permission is required to access this URL. IAM authorization policies for this API
      * are also enforced for every HTTP request that attempts to connect to the extension.
+     * </p>
+     * <p>
+     * You control the amount of time that the URL will be valid using the
+     * <code>SessionExpirationDurationInSeconds</code> parameter. If you do not provide this parameter, the returned URL
+     * is valid for twelve hours.
      * </p>
      * <note>
      * <p>
@@ -804,11 +809,43 @@ public interface AmazonKinesisAnalyticsV2 {
      *         The request JSON is not valid for the operation.
      * @throws InvalidApplicationConfigurationException
      *         The user-provided application configuration is not valid.
+     * @throws LimitExceededException
+     *         The number of allowed resources has been exceeded.
      * @sample AmazonKinesisAnalyticsV2.UpdateApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplication"
      *      target="_top">AWS API Documentation</a>
      */
     UpdateApplicationResult updateApplication(UpdateApplicationRequest updateApplicationRequest);
+
+    /**
+     * <p>
+     * Updates the configuration for the automatic maintenance that Kinesis Data Analytics performs on the application.
+     * For information about automatic application maintenance, see <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/maintenance.html">Kinesis Data Analytics for
+     * Apache Flink Maintenance</a>.
+     * </p>
+     * 
+     * @param updateApplicationMaintenanceConfigurationRequest
+     * @return Result of the UpdateApplicationMaintenanceConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Specified application can't be found.
+     * @throws ResourceInUseException
+     *         The application is not available for this operation.
+     * @throws InvalidArgumentException
+     *         The specified input parameter value is not valid.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modifications to an application. This error can be the result
+     *         of attempting to modify an application without using the current application ID.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not supported or a specified resource is not
+     *         valid for this operation.
+     * @sample AmazonKinesisAnalyticsV2.UpdateApplicationMaintenanceConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplicationMaintenanceConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateApplicationMaintenanceConfigurationResult updateApplicationMaintenanceConfiguration(
+            UpdateApplicationMaintenanceConfigurationRequest updateApplicationMaintenanceConfigurationRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

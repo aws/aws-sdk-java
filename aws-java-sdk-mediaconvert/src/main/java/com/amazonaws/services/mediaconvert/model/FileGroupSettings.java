@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to FILE_GROUP_SETTINGS.
+ * Settings related to your File output group. MediaConvert uses this group of settings to generate a single standalone
+ * file, rather than a streaming package. When you work directly in your JSON job specification, include this object and
+ * any required children when you set Type, under OutputGroupSettings, to FILE_GROUP_SETTINGS.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/FileGroupSettings" target="_top">AWS API
  *      Documentation</a>

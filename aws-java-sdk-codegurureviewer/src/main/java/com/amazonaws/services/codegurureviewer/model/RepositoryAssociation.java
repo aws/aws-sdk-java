@@ -149,6 +149,25 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      * </p>
      */
     private java.util.Date createdTimeStamp;
+    /**
+     * <p>
+     * A <code>KMSKeyDetails</code> object that contains:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The encryption option for this repository association. It is either owned by AWS Key Management Service (KMS) (
+     * <code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ID of the AWS KMS key that is associated with this respository association.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private KMSKeyDetails kMSKeyDetails;
 
     /**
      * <p>
@@ -1062,6 +1081,121 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * A <code>KMSKeyDetails</code> object that contains:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The encryption option for this repository association. It is either owned by AWS Key Management Service (KMS) (
+     * <code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ID of the AWS KMS key that is associated with this respository association.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param kMSKeyDetails
+     *        A <code>KMSKeyDetails</code> object that contains:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The encryption option for this repository association. It is either owned by AWS Key Management Service
+     *        (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The ID of the AWS KMS key that is associated with this respository association.
+     *        </p>
+     *        </li>
+     */
+
+    public void setKMSKeyDetails(KMSKeyDetails kMSKeyDetails) {
+        this.kMSKeyDetails = kMSKeyDetails;
+    }
+
+    /**
+     * <p>
+     * A <code>KMSKeyDetails</code> object that contains:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The encryption option for this repository association. It is either owned by AWS Key Management Service (KMS) (
+     * <code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ID of the AWS KMS key that is associated with this respository association.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return A <code>KMSKeyDetails</code> object that contains:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The encryption option for this repository association. It is either owned by AWS Key Management Service
+     *         (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The ID of the AWS KMS key that is associated with this respository association.
+     *         </p>
+     *         </li>
+     */
+
+    public KMSKeyDetails getKMSKeyDetails() {
+        return this.kMSKeyDetails;
+    }
+
+    /**
+     * <p>
+     * A <code>KMSKeyDetails</code> object that contains:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The encryption option for this repository association. It is either owned by AWS Key Management Service (KMS) (
+     * <code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ID of the AWS KMS key that is associated with this respository association.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param kMSKeyDetails
+     *        A <code>KMSKeyDetails</code> object that contains:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The encryption option for this repository association. It is either owned by AWS Key Management Service
+     *        (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The ID of the AWS KMS key that is associated with this respository association.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RepositoryAssociation withKMSKeyDetails(KMSKeyDetails kMSKeyDetails) {
+        setKMSKeyDetails(kMSKeyDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1092,7 +1226,9 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
         if (getLastUpdatedTimeStamp() != null)
             sb.append("LastUpdatedTimeStamp: ").append(getLastUpdatedTimeStamp()).append(",");
         if (getCreatedTimeStamp() != null)
-            sb.append("CreatedTimeStamp: ").append(getCreatedTimeStamp());
+            sb.append("CreatedTimeStamp: ").append(getCreatedTimeStamp()).append(",");
+        if (getKMSKeyDetails() != null)
+            sb.append("KMSKeyDetails: ").append(getKMSKeyDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -1147,6 +1283,10 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
             return false;
         if (other.getCreatedTimeStamp() != null && other.getCreatedTimeStamp().equals(this.getCreatedTimeStamp()) == false)
             return false;
+        if (other.getKMSKeyDetails() == null ^ this.getKMSKeyDetails() == null)
+            return false;
+        if (other.getKMSKeyDetails() != null && other.getKMSKeyDetails().equals(this.getKMSKeyDetails()) == false)
+            return false;
         return true;
     }
 
@@ -1165,6 +1305,7 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getStateReason() == null) ? 0 : getStateReason().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedTimeStamp() == null) ? 0 : getLastUpdatedTimeStamp().hashCode());
         hashCode = prime * hashCode + ((getCreatedTimeStamp() == null) ? 0 : getCreatedTimeStamp().hashCode());
+        hashCode = prime * hashCode + ((getKMSKeyDetails() == null) ? 0 : getKMSKeyDetails().hashCode());
         return hashCode;
     }
 

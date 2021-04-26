@@ -21,7 +21,6 @@ import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -69,7 +68,11 @@ public class JsonContent {
             return mapper.createObjectNode();
         }
         try {
-            return mapper.readTree(rawJsonContent);
+            JsonNode jsonNode = mapper.readTree(rawJsonContent);
+            if (jsonNode.isMissingNode()) {
+                return mapper.createObjectNode();
+            }
+            return jsonNode;
         } catch (Exception e) {
             LOG.debug("Unable to parse HTTP response content", e);
             return mapper.createObjectNode();

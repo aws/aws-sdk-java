@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Settings for video outputs
+ * Settings related to video encoding of your output. The specific video settings depend on the video codec that you
+ * choose. When you work directly in your JSON job specification, include one instance of Video description
+ * (VideoDescription) per output.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/VideoDescription" target="_top">AWS API
  *      Documentation</a>

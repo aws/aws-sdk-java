@@ -164,6 +164,11 @@ public class AbstractAmazonKinesisAnalyticsV2 implements AmazonKinesisAnalyticsV
     }
 
     @Override
+    public UpdateApplicationMaintenanceConfigurationResult updateApplicationMaintenanceConfiguration(UpdateApplicationMaintenanceConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public void shutdown() {
         throw new java.lang.UnsupportedOperationException();
     }

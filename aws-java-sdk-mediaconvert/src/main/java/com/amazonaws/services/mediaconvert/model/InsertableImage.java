@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Settings that specify how your still graphic overlay appears.
+ * These settings apply to a specific graphic overlay. You can include multiple overlays in your job.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/InsertableImage" target="_top">AWS API
  *      Documentation</a>

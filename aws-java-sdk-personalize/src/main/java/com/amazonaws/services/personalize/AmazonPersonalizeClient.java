@@ -486,6 +486,95 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Creates a job that exports data from your dataset to an Amazon S3 bucket. To allow Amazon Personalize to export
+     * the training data, you must specify an service-linked AWS Identity and Access Management (IAM) role that gives
+     * Amazon Personalize <code>PutObject</code> permissions for your Amazon S3 bucket. For information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/export-permissions.html">Dataset export job permissions
+     * requirements</a> in the Amazon Personalize developer guide.
+     * </p>
+     * <p>
+     * <b>Status</b>
+     * </p>
+     * <p>
+     * A dataset export job can be in one of the following states:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To get the status of the export job, call <a>DescribeDatasetExportJob</a>, and specify the Amazon Resource Name
+     * (ARN) of the dataset export job. The dataset export is complete when the status shows as ACTIVE. If the status
+     * shows as CREATE FAILED, the response includes a <code>failureReason</code> key, which describes why the job
+     * failed.
+     * </p>
+     * 
+     * @param createDatasetExportJobRequest
+     * @return Result of the CreateDatasetExportJob operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws ResourceNotFoundException
+     *         Could not find the specified resource.
+     * @throws ResourceAlreadyExistsException
+     *         The specified resource already exists.
+     * @throws LimitExceededException
+     *         The limit on the number of requests per second has been exceeded.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @sample AmazonPersonalize.CreateDatasetExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateDatasetExportJobResult createDatasetExportJob(CreateDatasetExportJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDatasetExportJob(request);
+    }
+
+    @SdkInternalApi
+    final CreateDatasetExportJobResult executeCreateDatasetExportJob(CreateDatasetExportJobRequest createDatasetExportJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createDatasetExportJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateDatasetExportJobRequest> request = null;
+        Response<CreateDatasetExportJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateDatasetExportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDatasetExportJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDatasetExportJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateDatasetExportJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateDatasetExportJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates an empty dataset group. A dataset group contains related datasets that supply data for training a model.
      * A dataset group can contain at most three datasets, one for each type of dataset:
      * </p>
@@ -641,8 +730,11 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
      * <p>
      * Creates a job that imports training data from your data source (an Amazon S3 bucket) to an Amazon Personalize
      * dataset. To allow Amazon Personalize to import the training data, you must specify an AWS Identity and Access
-     * Management (IAM) role that has permission to read from the data source, as Amazon Personalize makes a copy of
-     * your data and processes it in an internal AWS system.
+     * Management (IAM) service role that has permission to read from the data source, as Amazon Personalize makes a
+     * copy of your data and processes it in an internal AWS system. For information on granting access to your Amazon
+     * S3 bucket, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/granting-personalize-s3-access.html">Giving Amazon
+     * Personalize Access to Amazon S3 Resources</a>.
      * </p>
      * <important>
      * <p>
@@ -2008,6 +2100,67 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Describes the dataset export job created by <a>CreateDatasetExportJob</a>, including the export job status.
+     * </p>
+     * 
+     * @param describeDatasetExportJobRequest
+     * @return Result of the DescribeDatasetExportJob operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws ResourceNotFoundException
+     *         Could not find the specified resource.
+     * @sample AmazonPersonalize.DescribeDatasetExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeDatasetExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeDatasetExportJobResult describeDatasetExportJob(DescribeDatasetExportJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDatasetExportJob(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDatasetExportJobResult executeDescribeDatasetExportJob(DescribeDatasetExportJobRequest describeDatasetExportJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeDatasetExportJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDatasetExportJobRequest> request = null;
+        Response<DescribeDatasetExportJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDatasetExportJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeDatasetExportJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDatasetExportJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeDatasetExportJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeDatasetExportJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes the given dataset group. For more information on dataset groups, see <a>CreateDatasetGroup</a>.
      * </p>
      * 
@@ -2743,6 +2896,69 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<ListCampaignsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListCampaignsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of dataset export jobs that use the given dataset. When a dataset is not specified, all the
+     * dataset export jobs associated with the account are listed. The response provides the properties for each dataset
+     * export job, including the Amazon Resource Name (ARN). For more information on dataset export jobs, see
+     * <a>CreateDatasetExportJob</a>. For more information on datasets, see <a>CreateDataset</a>.
+     * </p>
+     * 
+     * @param listDatasetExportJobsRequest
+     * @return Result of the ListDatasetExportJobs operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws InvalidNextTokenException
+     *         The token is not valid.
+     * @sample AmazonPersonalize.ListDatasetExportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDatasetExportJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListDatasetExportJobsResult listDatasetExportJobs(ListDatasetExportJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDatasetExportJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListDatasetExportJobsResult executeListDatasetExportJobs(ListDatasetExportJobsRequest listDatasetExportJobsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDatasetExportJobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDatasetExportJobsRequest> request = null;
+        Response<ListDatasetExportJobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDatasetExportJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDatasetExportJobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDatasetExportJobs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDatasetExportJobsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListDatasetExportJobsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

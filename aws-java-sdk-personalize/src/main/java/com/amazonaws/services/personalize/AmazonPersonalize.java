@@ -257,6 +257,52 @@ public interface AmazonPersonalize {
 
     /**
      * <p>
+     * Creates a job that exports data from your dataset to an Amazon S3 bucket. To allow Amazon Personalize to export
+     * the training data, you must specify an service-linked AWS Identity and Access Management (IAM) role that gives
+     * Amazon Personalize <code>PutObject</code> permissions for your Amazon S3 bucket. For information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/export-permissions.html">Dataset export job permissions
+     * requirements</a> in the Amazon Personalize developer guide.
+     * </p>
+     * <p>
+     * <b>Status</b>
+     * </p>
+     * <p>
+     * A dataset export job can be in one of the following states:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To get the status of the export job, call <a>DescribeDatasetExportJob</a>, and specify the Amazon Resource Name
+     * (ARN) of the dataset export job. The dataset export is complete when the status shows as ACTIVE. If the status
+     * shows as CREATE FAILED, the response includes a <code>failureReason</code> key, which describes why the job
+     * failed.
+     * </p>
+     * 
+     * @param createDatasetExportJobRequest
+     * @return Result of the CreateDatasetExportJob operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws ResourceNotFoundException
+     *         Could not find the specified resource.
+     * @throws ResourceAlreadyExistsException
+     *         The specified resource already exists.
+     * @throws LimitExceededException
+     *         The limit on the number of requests per second has been exceeded.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @sample AmazonPersonalize.CreateDatasetExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateDatasetExportJobResult createDatasetExportJob(CreateDatasetExportJobRequest createDatasetExportJobRequest);
+
+    /**
+     * <p>
      * Creates an empty dataset group. A dataset group contains related datasets that supply data for training a model.
      * A dataset group can contain at most three datasets, one for each type of dataset:
      * </p>
@@ -370,8 +416,11 @@ public interface AmazonPersonalize {
      * <p>
      * Creates a job that imports training data from your data source (an Amazon S3 bucket) to an Amazon Personalize
      * dataset. To allow Amazon Personalize to import the training data, you must specify an AWS Identity and Access
-     * Management (IAM) role that has permission to read from the data source, as Amazon Personalize makes a copy of
-     * your data and processes it in an internal AWS system.
+     * Management (IAM) service role that has permission to read from the data source, as Amazon Personalize makes a
+     * copy of your data and processes it in an internal AWS system. For information on granting access to your Amazon
+     * S3 bucket, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/granting-personalize-s3-access.html">Giving Amazon
+     * Personalize Access to Amazon S3 Resources</a>.
      * </p>
      * <important>
      * <p>
@@ -1019,6 +1068,23 @@ public interface AmazonPersonalize {
 
     /**
      * <p>
+     * Describes the dataset export job created by <a>CreateDatasetExportJob</a>, including the export job status.
+     * </p>
+     * 
+     * @param describeDatasetExportJobRequest
+     * @return Result of the DescribeDatasetExportJob operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws ResourceNotFoundException
+     *         Could not find the specified resource.
+     * @sample AmazonPersonalize.DescribeDatasetExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeDatasetExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeDatasetExportJobResult describeDatasetExportJob(DescribeDatasetExportJobRequest describeDatasetExportJobRequest);
+
+    /**
+     * <p>
      * Describes the given dataset group. For more information on dataset groups, see <a>CreateDatasetGroup</a>.
      * </p>
      * 
@@ -1252,6 +1318,26 @@ public interface AmazonPersonalize {
      *      Documentation</a>
      */
     ListCampaignsResult listCampaigns(ListCampaignsRequest listCampaignsRequest);
+
+    /**
+     * <p>
+     * Returns a list of dataset export jobs that use the given dataset. When a dataset is not specified, all the
+     * dataset export jobs associated with the account are listed. The response provides the properties for each dataset
+     * export job, including the Amazon Resource Name (ARN). For more information on dataset export jobs, see
+     * <a>CreateDatasetExportJob</a>. For more information on datasets, see <a>CreateDataset</a>.
+     * </p>
+     * 
+     * @param listDatasetExportJobsRequest
+     * @return Result of the ListDatasetExportJobs operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws InvalidNextTokenException
+     *         The token is not valid.
+     * @sample AmazonPersonalize.ListDatasetExportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDatasetExportJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListDatasetExportJobsResult listDatasetExportJobs(ListDatasetExportJobsRequest listDatasetExportJobsRequest);
 
     /**
      * <p>

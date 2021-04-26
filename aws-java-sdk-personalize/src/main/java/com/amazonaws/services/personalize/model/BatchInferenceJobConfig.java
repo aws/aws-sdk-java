@@ -32,8 +32,9 @@ public class BatchInferenceJobConfig implements Serializable, Cloneable, Structu
      * <p>
      * A string to string map specifying the exploration configuration hyperparameters, including
      * <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount
-     * of item exploration Amazon Personalize uses when recommending items. See
-     * <a>native-recipe-new-item-USER_PERSONALIZATION</a>.
+     * of item exploration Amazon Personalize uses when recommending items. See <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     * >User-Personalization</a>.
      * </p>
      */
     private java.util.Map<String, String> itemExplorationConfig;
@@ -42,14 +43,16 @@ public class BatchInferenceJobConfig implements Serializable, Cloneable, Structu
      * <p>
      * A string to string map specifying the exploration configuration hyperparameters, including
      * <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount
-     * of item exploration Amazon Personalize uses when recommending items. See
-     * <a>native-recipe-new-item-USER_PERSONALIZATION</a>.
+     * of item exploration Amazon Personalize uses when recommending items. See <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     * >User-Personalization</a>.
      * </p>
      * 
      * @return A string to string map specifying the exploration configuration hyperparameters, including
      *         <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure
-     *         the amount of item exploration Amazon Personalize uses when recommending items. See
-     *         <a>native-recipe-new-item-USER_PERSONALIZATION</a>.
+     *         the amount of item exploration Amazon Personalize uses when recommending items. See <a href=
+     *         "https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     *         >User-Personalization</a>.
      */
 
     public java.util.Map<String, String> getItemExplorationConfig() {
@@ -60,15 +63,17 @@ public class BatchInferenceJobConfig implements Serializable, Cloneable, Structu
      * <p>
      * A string to string map specifying the exploration configuration hyperparameters, including
      * <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount
-     * of item exploration Amazon Personalize uses when recommending items. See
-     * <a>native-recipe-new-item-USER_PERSONALIZATION</a>.
+     * of item exploration Amazon Personalize uses when recommending items. See <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     * >User-Personalization</a>.
      * </p>
      * 
      * @param itemExplorationConfig
      *        A string to string map specifying the exploration configuration hyperparameters, including
      *        <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the
-     *        amount of item exploration Amazon Personalize uses when recommending items. See
-     *        <a>native-recipe-new-item-USER_PERSONALIZATION</a>.
+     *        amount of item exploration Amazon Personalize uses when recommending items. See <a href=
+     *        "https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     *        >User-Personalization</a>.
      */
 
     public void setItemExplorationConfig(java.util.Map<String, String> itemExplorationConfig) {
@@ -79,15 +84,17 @@ public class BatchInferenceJobConfig implements Serializable, Cloneable, Structu
      * <p>
      * A string to string map specifying the exploration configuration hyperparameters, including
      * <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount
-     * of item exploration Amazon Personalize uses when recommending items. See
-     * <a>native-recipe-new-item-USER_PERSONALIZATION</a>.
+     * of item exploration Amazon Personalize uses when recommending items. See <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     * >User-Personalization</a>.
      * </p>
      * 
      * @param itemExplorationConfig
      *        A string to string map specifying the exploration configuration hyperparameters, including
      *        <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want to use to configure the
-     *        amount of item exploration Amazon Personalize uses when recommending items. See
-     *        <a>native-recipe-new-item-USER_PERSONALIZATION</a>.
+     *        amount of item exploration Amazon Personalize uses when recommending items. See <a href=
+     *        "https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     *        >User-Personalization</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

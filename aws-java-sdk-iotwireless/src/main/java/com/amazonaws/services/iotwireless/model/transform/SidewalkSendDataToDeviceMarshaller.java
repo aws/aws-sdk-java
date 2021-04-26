@@ -29,6 +29,8 @@ public class SidewalkSendDataToDeviceMarshaller {
 
     private static final MarshallingInfo<Integer> SEQ_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Seq").build();
+    private static final MarshallingInfo<String> MESSAGETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MessageType").build();
 
     private static final SidewalkSendDataToDeviceMarshaller instance = new SidewalkSendDataToDeviceMarshaller();
 
@@ -47,6 +49,7 @@ public class SidewalkSendDataToDeviceMarshaller {
 
         try {
             protocolMarshaller.marshall(sidewalkSendDataToDevice.getSeq(), SEQ_BINDING);
+            protocolMarshaller.marshall(sidewalkSendDataToDevice.getMessageType(), MESSAGETYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

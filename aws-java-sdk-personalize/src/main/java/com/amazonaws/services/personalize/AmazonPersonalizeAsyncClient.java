@@ -176,6 +176,39 @@ public class AmazonPersonalizeAsyncClient extends AmazonPersonalizeClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<CreateDatasetExportJobResult> createDatasetExportJobAsync(CreateDatasetExportJobRequest request) {
+
+        return createDatasetExportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDatasetExportJobResult> createDatasetExportJobAsync(final CreateDatasetExportJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateDatasetExportJobRequest, CreateDatasetExportJobResult> asyncHandler) {
+        final CreateDatasetExportJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateDatasetExportJobResult>() {
+            @Override
+            public CreateDatasetExportJobResult call() throws Exception {
+                CreateDatasetExportJobResult result = null;
+
+                try {
+                    result = executeCreateDatasetExportJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDatasetGroupResult> createDatasetGroupAsync(CreateDatasetGroupRequest request) {
 
         return createDatasetGroupAsync(request, null);
@@ -770,6 +803,39 @@ public class AmazonPersonalizeAsyncClient extends AmazonPersonalizeClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeDatasetExportJobResult> describeDatasetExportJobAsync(DescribeDatasetExportJobRequest request) {
+
+        return describeDatasetExportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDatasetExportJobResult> describeDatasetExportJobAsync(final DescribeDatasetExportJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeDatasetExportJobRequest, DescribeDatasetExportJobResult> asyncHandler) {
+        final DescribeDatasetExportJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeDatasetExportJobResult>() {
+            @Override
+            public DescribeDatasetExportJobResult call() throws Exception {
+                DescribeDatasetExportJobResult result = null;
+
+                try {
+                    result = executeDescribeDatasetExportJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeDatasetGroupResult> describeDatasetGroupAsync(DescribeDatasetGroupRequest request) {
 
         return describeDatasetGroupAsync(request, null);
@@ -1151,6 +1217,39 @@ public class AmazonPersonalizeAsyncClient extends AmazonPersonalizeClient implem
 
                 try {
                     result = executeListCampaigns(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDatasetExportJobsResult> listDatasetExportJobsAsync(ListDatasetExportJobsRequest request) {
+
+        return listDatasetExportJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDatasetExportJobsResult> listDatasetExportJobsAsync(final ListDatasetExportJobsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDatasetExportJobsRequest, ListDatasetExportJobsResult> asyncHandler) {
+        final ListDatasetExportJobsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListDatasetExportJobsResult>() {
+            @Override
+            public ListDatasetExportJobsResult call() throws Exception {
+                ListDatasetExportJobsResult result = null;
+
+                try {
+                    result = executeListDatasetExportJobs(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

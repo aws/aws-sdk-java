@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Overlay motion graphics on top of your video at the time that you specify.
+ * Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all outputs in all
+ * output groups. For more information, see
+ * https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/MotionImageInserter" target="_top">AWS
  *      API Documentation</a>

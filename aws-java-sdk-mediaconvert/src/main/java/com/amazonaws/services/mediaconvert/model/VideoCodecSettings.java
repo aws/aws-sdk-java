@@ -34,9 +34,9 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     /** Required when you set Codec, under VideoDescription>CodecSettings to the value AV1. */
     private Av1Settings av1Settings;
     /**
-     * Required when you set your output video codec to AVC-Intra. For more information about the AVC-I settings, see
-     * the relevant specification. For detailed information about SD and HD in AVC-I, see
-     * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in AVC-I, see
+     * Required when you choose AVC-Intra for your output video codec. For more information about the AVC-Intra
+     * settings, see the relevant specification. For detailed information about SD and HD in AVC-Intra, see
+     * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in AVC-Intra, see
      * https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
      */
     private AvcIntraSettings avcIntraSettings;
@@ -94,15 +94,15 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Required when you set your output video codec to AVC-Intra. For more information about the AVC-I settings, see
-     * the relevant specification. For detailed information about SD and HD in AVC-I, see
-     * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in AVC-I, see
+     * Required when you choose AVC-Intra for your output video codec. For more information about the AVC-Intra
+     * settings, see the relevant specification. For detailed information about SD and HD in AVC-Intra, see
+     * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in AVC-Intra, see
      * https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
      * 
      * @param avcIntraSettings
-     *        Required when you set your output video codec to AVC-Intra. For more information about the AVC-I settings,
-     *        see the relevant specification. For detailed information about SD and HD in AVC-I, see
-     *        https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in AVC-I, see
+     *        Required when you choose AVC-Intra for your output video codec. For more information about the AVC-Intra
+     *        settings, see the relevant specification. For detailed information about SD and HD in AVC-Intra, see
+     *        https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in AVC-Intra, see
      *        https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
      */
 
@@ -111,14 +111,14 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Required when you set your output video codec to AVC-Intra. For more information about the AVC-I settings, see
-     * the relevant specification. For detailed information about SD and HD in AVC-I, see
-     * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in AVC-I, see
+     * Required when you choose AVC-Intra for your output video codec. For more information about the AVC-Intra
+     * settings, see the relevant specification. For detailed information about SD and HD in AVC-Intra, see
+     * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in AVC-Intra, see
      * https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
      * 
-     * @return Required when you set your output video codec to AVC-Intra. For more information about the AVC-I
-     *         settings, see the relevant specification. For detailed information about SD and HD in AVC-I, see
-     *         https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in AVC-I, see
+     * @return Required when you choose AVC-Intra for your output video codec. For more information about the AVC-Intra
+     *         settings, see the relevant specification. For detailed information about SD and HD in AVC-Intra, see
+     *         https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in AVC-Intra, see
      *         https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
      */
 
@@ -127,15 +127,15 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Required when you set your output video codec to AVC-Intra. For more information about the AVC-I settings, see
-     * the relevant specification. For detailed information about SD and HD in AVC-I, see
-     * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in AVC-I, see
+     * Required when you choose AVC-Intra for your output video codec. For more information about the AVC-Intra
+     * settings, see the relevant specification. For detailed information about SD and HD in AVC-Intra, see
+     * https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in AVC-Intra, see
      * https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
      * 
      * @param avcIntraSettings
-     *        Required when you set your output video codec to AVC-Intra. For more information about the AVC-I settings,
-     *        see the relevant specification. For detailed information about SD and HD in AVC-I, see
-     *        https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in AVC-I, see
+     *        Required when you choose AVC-Intra for your output video codec. For more information about the AVC-Intra
+     *        settings, see the relevant specification. For detailed information about SD and HD in AVC-Intra, see
+     *        https://ieeexplore.ieee.org/document/7290936. For information about 4K/2K in AVC-Intra, see
      *        https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

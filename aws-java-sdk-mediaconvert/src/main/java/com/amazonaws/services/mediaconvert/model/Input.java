@@ -18,7 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Specifies media input
+ * Use inputs to define the source files used in your transcoding job. For more information, see
+ * https://docs.aws.amazon.com/mediaconvert/latest/ug/specify-input-settings.html. You can use multiple video inputs to
+ * do input stitching. For more information, see
+ * https://docs.aws.amazon.com/mediaconvert/latest/ug/assembling-multiple-inputs-and-input-clips.html
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Input" target="_top">AWS API
  *      Documentation</a>
@@ -27,8 +30,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class Input implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * Specifies set of audio selectors within an input to combine. An input may have multiple audio selector groups.
-     * See "Audio Selector Group":#inputs-audio_selector_group for more information.
+     * Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a single output
+     * audio tab (AudioDescription). Note that, if you're working with embedded audio, it's simpler to assign multiple
+     * input tracks into a single audio selector rather than use an audio selector group.
      */
     private java.util.Map<String, AudioSelectorGroup> audioSelectorGroups;
     /**
@@ -148,15 +152,21 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      * https://docs.aws.amazon.com/console/mediaconvert/timecode.
      */
     private String timecodeStart;
-    /** Selector for video. */
+    /**
+     * Input video selectors contain the video settings for the input. Each of your inputs can have up to one video
+     * selector.
+     */
     private VideoSelector videoSelector;
 
     /**
-     * Specifies set of audio selectors within an input to combine. An input may have multiple audio selector groups.
-     * See "Audio Selector Group":#inputs-audio_selector_group for more information.
+     * Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a single output
+     * audio tab (AudioDescription). Note that, if you're working with embedded audio, it's simpler to assign multiple
+     * input tracks into a single audio selector rather than use an audio selector group.
      * 
-     * @return Specifies set of audio selectors within an input to combine. An input may have multiple audio selector
-     *         groups. See "Audio Selector Group":#inputs-audio_selector_group for more information.
+     * @return Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a
+     *         single output audio tab (AudioDescription). Note that, if you're working with embedded audio, it's
+     *         simpler to assign multiple input tracks into a single audio selector rather than use an audio selector
+     *         group.
      */
 
     public java.util.Map<String, AudioSelectorGroup> getAudioSelectorGroups() {
@@ -164,12 +174,14 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specifies set of audio selectors within an input to combine. An input may have multiple audio selector groups.
-     * See "Audio Selector Group":#inputs-audio_selector_group for more information.
+     * Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a single output
+     * audio tab (AudioDescription). Note that, if you're working with embedded audio, it's simpler to assign multiple
+     * input tracks into a single audio selector rather than use an audio selector group.
      * 
      * @param audioSelectorGroups
-     *        Specifies set of audio selectors within an input to combine. An input may have multiple audio selector
-     *        groups. See "Audio Selector Group":#inputs-audio_selector_group for more information.
+     *        Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a single
+     *        output audio tab (AudioDescription). Note that, if you're working with embedded audio, it's simpler to
+     *        assign multiple input tracks into a single audio selector rather than use an audio selector group.
      */
 
     public void setAudioSelectorGroups(java.util.Map<String, AudioSelectorGroup> audioSelectorGroups) {
@@ -177,12 +189,14 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specifies set of audio selectors within an input to combine. An input may have multiple audio selector groups.
-     * See "Audio Selector Group":#inputs-audio_selector_group for more information.
+     * Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a single output
+     * audio tab (AudioDescription). Note that, if you're working with embedded audio, it's simpler to assign multiple
+     * input tracks into a single audio selector rather than use an audio selector group.
      * 
      * @param audioSelectorGroups
-     *        Specifies set of audio selectors within an input to combine. An input may have multiple audio selector
-     *        groups. See "Audio Selector Group":#inputs-audio_selector_group for more information.
+     *        Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a single
+     *        output audio tab (AudioDescription). Note that, if you're working with embedded audio, it's simpler to
+     *        assign multiple input tracks into a single audio selector rather than use an audio selector group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1372,10 +1386,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Selector for video.
+     * Input video selectors contain the video settings for the input. Each of your inputs can have up to one video
+     * selector.
      * 
      * @param videoSelector
-     *        Selector for video.
+     *        Input video selectors contain the video settings for the input. Each of your inputs can have up to one
+     *        video selector.
      */
 
     public void setVideoSelector(VideoSelector videoSelector) {
@@ -1383,9 +1399,11 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Selector for video.
+     * Input video selectors contain the video settings for the input. Each of your inputs can have up to one video
+     * selector.
      * 
-     * @return Selector for video.
+     * @return Input video selectors contain the video settings for the input. Each of your inputs can have up to one
+     *         video selector.
      */
 
     public VideoSelector getVideoSelector() {
@@ -1393,10 +1411,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Selector for video.
+     * Input video selectors contain the video settings for the input. Each of your inputs can have up to one video
+     * selector.
      * 
      * @param videoSelector
-     *        Selector for video.
+     *        Input video selectors contain the video settings for the input. Each of your inputs can have up to one
+     *        video selector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

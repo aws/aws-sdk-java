@@ -392,4 +392,19 @@ public class AbstractAmazonKinesisAnalyticsV2Async extends AbstractAmazonKinesis
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Override
+    public java.util.concurrent.Future<UpdateApplicationMaintenanceConfigurationResult> updateApplicationMaintenanceConfigurationAsync(
+            UpdateApplicationMaintenanceConfigurationRequest request) {
+
+        return updateApplicationMaintenanceConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateApplicationMaintenanceConfigurationResult> updateApplicationMaintenanceConfigurationAsync(
+            UpdateApplicationMaintenanceConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateApplicationMaintenanceConfigurationRequest, UpdateApplicationMaintenanceConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
 }

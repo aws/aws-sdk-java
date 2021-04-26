@@ -18,7 +18,11 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Settings specific to IMSC caption outputs.
+ * Settings related to IMSC captions. IMSC is a sidecar format that holds captions in a file that is separate from the
+ * video container. Set up sidecar captions in the same output group, but different output from your video. For more
+ * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html. When you
+ * work directly in your JSON job specification, include this object and any required children when you set
+ * destinationType to IMSC.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ImscDestinationSettings"
  *      target="_top">AWS API Documentation</a>

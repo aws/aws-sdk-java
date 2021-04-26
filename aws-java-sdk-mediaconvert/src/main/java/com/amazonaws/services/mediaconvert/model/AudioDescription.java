@@ -18,7 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Description of audio output
+ * Settings related to one audio tab on the MediaConvert console. In your job JSON, an instance of AudioDescription is
+ * equivalent to one audio tab in the console. Usually, one audio tab corresponds to one output audio track. Depending
+ * on how you set up your input audio selectors and whether you use audio selector groups, one audio tab can correspond
+ * to a group of output audio tracks.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AudioDescription" target="_top">AWS API
  *      Documentation</a>
@@ -60,12 +63,8 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
      */
     private String audioTypeControl;
     /**
-     * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to audio
-     * encoding. The settings in this group vary depending on the value that you choose for Audio codec (Codec). For
-     * each codec enum that you choose, define the corresponding settings object. The following lists the codec enum,
-     * settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * MP3, Mp3Settings * WAV, WavSettings * AIFF,
-     * AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings * VORBIS, VorbisSettings *
-     * OPUS, OpusSettings
+     * Settings related to audio encoding. The settings in this group vary depending on the value that you choose for
+     * your audio codec.
      */
     private AudioCodecSettings codecSettings;
     /**
@@ -394,20 +393,12 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to audio
-     * encoding. The settings in this group vary depending on the value that you choose for Audio codec (Codec). For
-     * each codec enum that you choose, define the corresponding settings object. The following lists the codec enum,
-     * settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * MP3, Mp3Settings * WAV, WavSettings * AIFF,
-     * AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings * VORBIS, VorbisSettings *
-     * OPUS, OpusSettings
+     * Settings related to audio encoding. The settings in this group vary depending on the value that you choose for
+     * your audio codec.
      * 
      * @param codecSettings
-     *        Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to
-     *        audio encoding. The settings in this group vary depending on the value that you choose for Audio codec
-     *        (Codec). For each codec enum that you choose, define the corresponding settings object. The following
-     *        lists the codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * MP3, Mp3Settings *
-     *        WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS,
-     *        Eac3AtmosSettings * VORBIS, VorbisSettings * OPUS, OpusSettings
+     *        Settings related to audio encoding. The settings in this group vary depending on the value that you choose
+     *        for your audio codec.
      */
 
     public void setCodecSettings(AudioCodecSettings codecSettings) {
@@ -415,19 +406,11 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to audio
-     * encoding. The settings in this group vary depending on the value that you choose for Audio codec (Codec). For
-     * each codec enum that you choose, define the corresponding settings object. The following lists the codec enum,
-     * settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * MP3, Mp3Settings * WAV, WavSettings * AIFF,
-     * AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings * VORBIS, VorbisSettings *
-     * OPUS, OpusSettings
+     * Settings related to audio encoding. The settings in this group vary depending on the value that you choose for
+     * your audio codec.
      * 
-     * @return Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to
-     *         audio encoding. The settings in this group vary depending on the value that you choose for Audio codec
-     *         (Codec). For each codec enum that you choose, define the corresponding settings object. The following
-     *         lists the codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * MP3, Mp3Settings *
-     *         WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS,
-     *         Eac3AtmosSettings * VORBIS, VorbisSettings * OPUS, OpusSettings
+     * @return Settings related to audio encoding. The settings in this group vary depending on the value that you
+     *         choose for your audio codec.
      */
 
     public AudioCodecSettings getCodecSettings() {
@@ -435,20 +418,12 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to audio
-     * encoding. The settings in this group vary depending on the value that you choose for Audio codec (Codec). For
-     * each codec enum that you choose, define the corresponding settings object. The following lists the codec enum,
-     * settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * MP3, Mp3Settings * WAV, WavSettings * AIFF,
-     * AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings * VORBIS, VorbisSettings *
-     * OPUS, OpusSettings
+     * Settings related to audio encoding. The settings in this group vary depending on the value that you choose for
+     * your audio codec.
      * 
      * @param codecSettings
-     *        Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to
-     *        audio encoding. The settings in this group vary depending on the value that you choose for Audio codec
-     *        (Codec). For each codec enum that you choose, define the corresponding settings object. The following
-     *        lists the codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * MP3, Mp3Settings *
-     *        WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS,
-     *        Eac3AtmosSettings * VORBIS, VorbisSettings * OPUS, OpusSettings
+     *        Settings related to audio encoding. The settings in this group vary depending on the value that you choose
+     *        for your audio codec.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

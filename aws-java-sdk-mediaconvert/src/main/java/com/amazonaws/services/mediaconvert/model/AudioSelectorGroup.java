@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Group of Audio Selectors
+ * Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a single output
+ * audio tab (AudioDescription). Note that, if you're working with embedded audio, it's simpler to assign multiple input
+ * tracks into a single audio selector rather than use an audio selector group.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AudioSelectorGroup" target="_top">AWS
  *      API Documentation</a>

@@ -202,6 +202,35 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client keystore file for Kafka client side
+     * authentication (Optional).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the provided keystore (Optional).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple keys, so this is the password to
+     * access the client key to be used with the Kafka server side key (Optional).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of the Kafka client keystore
+     * password (if the user has the AWS Glue encrypt passwords setting selected).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the Kafka client key password (if the
+     * user has the AWS Glue encrypt passwords setting selected).
+     * </p>
+     * </li>
      * </ul>
      */
     private java.util.Map<String, String> connectionProperties;
@@ -590,6 +619,35 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client keystore file for Kafka client side
+     * authentication (Optional).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the provided keystore (Optional).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple keys, so this is the password to
+     * access the client key to be used with the Kafka server side key (Optional).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of the Kafka client keystore
+     * password (if the user has the AWS Glue encrypt passwords setting selected).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the Kafka client key password (if the
+     * user has the AWS Glue encrypt passwords setting selected).
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return These key-value pairs define parameters for the connection:</p>
@@ -740,6 +798,35 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client keystore file for Kafka client
+     *         side authentication (Optional).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the provided keystore (Optional).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple keys, so this is the password
+     *         to access the client key to be used with the Kafka server side key (Optional).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of the Kafka client
+     *         keystore password (if the user has the AWS Glue encrypt passwords setting selected).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the Kafka client key password
+     *         (if the user has the AWS Glue encrypt passwords setting selected).
      *         </p>
      *         </li>
      */
@@ -898,6 +985,35 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client keystore file for Kafka client side
+     * authentication (Optional).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the provided keystore (Optional).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple keys, so this is the password to
+     * access the client key to be used with the Kafka server side key (Optional).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of the Kafka client keystore
+     * password (if the user has the AWS Glue encrypt passwords setting selected).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the Kafka client key password (if the
+     * user has the AWS Glue encrypt passwords setting selected).
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param connectionProperties
@@ -1049,6 +1165,35 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client keystore file for Kafka client
+     *        side authentication (Optional).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the provided keystore (Optional).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple keys, so this is the password
+     *        to access the client key to be used with the Kafka server side key (Optional).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of the Kafka client keystore
+     *        password (if the user has the AWS Glue encrypt passwords setting selected).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the Kafka client key password
+     *        (if the user has the AWS Glue encrypt passwords setting selected).
      *        </p>
      *        </li>
      */
@@ -1207,6 +1352,35 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client keystore file for Kafka client side
+     * authentication (Optional).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the provided keystore (Optional).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple keys, so this is the password to
+     * access the client key to be used with the Kafka server side key (Optional).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of the Kafka client keystore
+     * password (if the user has the AWS Glue encrypt passwords setting selected).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the Kafka client key password (if the
+     * user has the AWS Glue encrypt passwords setting selected).
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param connectionProperties
@@ -1358,6 +1532,35 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client keystore file for Kafka client
+     *        side authentication (Optional).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the provided keystore (Optional).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple keys, so this is the password
+     *        to access the client key to be used with the Kafka server side key (Optional).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of the Kafka client keystore
+     *        password (if the user has the AWS Glue encrypt passwords setting selected).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the Kafka client key password
+     *        (if the user has the AWS Glue encrypt passwords setting selected).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

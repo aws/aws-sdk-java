@@ -60,6 +60,25 @@ public class AssociateRepositoryRequest extends com.amazonaws.AmazonWebServiceRe
      * </ul>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * A <code>KMSKeyDetails</code> object that contains:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The encryption option for this repository association. It is either owned by AWS Key Management Service (KMS) (
+     * <code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ID of the AWS KMS key that is associated with this respository association.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private KMSKeyDetails kMSKeyDetails;
 
     /**
      * <p>
@@ -309,6 +328,121 @@ public class AssociateRepositoryRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * A <code>KMSKeyDetails</code> object that contains:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The encryption option for this repository association. It is either owned by AWS Key Management Service (KMS) (
+     * <code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ID of the AWS KMS key that is associated with this respository association.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param kMSKeyDetails
+     *        A <code>KMSKeyDetails</code> object that contains:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The encryption option for this repository association. It is either owned by AWS Key Management Service
+     *        (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The ID of the AWS KMS key that is associated with this respository association.
+     *        </p>
+     *        </li>
+     */
+
+    public void setKMSKeyDetails(KMSKeyDetails kMSKeyDetails) {
+        this.kMSKeyDetails = kMSKeyDetails;
+    }
+
+    /**
+     * <p>
+     * A <code>KMSKeyDetails</code> object that contains:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The encryption option for this repository association. It is either owned by AWS Key Management Service (KMS) (
+     * <code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ID of the AWS KMS key that is associated with this respository association.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return A <code>KMSKeyDetails</code> object that contains:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The encryption option for this repository association. It is either owned by AWS Key Management Service
+     *         (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The ID of the AWS KMS key that is associated with this respository association.
+     *         </p>
+     *         </li>
+     */
+
+    public KMSKeyDetails getKMSKeyDetails() {
+        return this.kMSKeyDetails;
+    }
+
+    /**
+     * <p>
+     * A <code>KMSKeyDetails</code> object that contains:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The encryption option for this repository association. It is either owned by AWS Key Management Service (KMS) (
+     * <code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ID of the AWS KMS key that is associated with this respository association.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param kMSKeyDetails
+     *        A <code>KMSKeyDetails</code> object that contains:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The encryption option for this repository association. It is either owned by AWS Key Management Service
+     *        (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The ID of the AWS KMS key that is associated with this respository association.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociateRepositoryRequest withKMSKeyDetails(KMSKeyDetails kMSKeyDetails) {
+        setKMSKeyDetails(kMSKeyDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -325,7 +459,9 @@ public class AssociateRepositoryRequest extends com.amazonaws.AmazonWebServiceRe
         if (getClientRequestToken() != null)
             sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getKMSKeyDetails() != null)
+            sb.append("KMSKeyDetails: ").append(getKMSKeyDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -352,6 +488,10 @@ public class AssociateRepositoryRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getKMSKeyDetails() == null ^ this.getKMSKeyDetails() == null)
+            return false;
+        if (other.getKMSKeyDetails() != null && other.getKMSKeyDetails().equals(this.getKMSKeyDetails()) == false)
+            return false;
         return true;
     }
 
@@ -363,6 +503,7 @@ public class AssociateRepositoryRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getRepository() == null) ? 0 : getRepository().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getKMSKeyDetails() == null) ? 0 : getKMSKeyDetails().hashCode());
         return hashCode;
     }
 

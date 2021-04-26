@@ -1,3 +1,36 @@
+# __1.11.1005__ __2021-04-26__
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - Documentation updates for mediaconvert
+
+## __AWS Glue__
+  - ### Features
+    - Adding Kafka Client Auth Related Parameters
+
+## __AWS IoT Wireless__
+  - ### Features
+    - Add a new optional field MessageType to support Sidewalk devices in SendDataToWirelessDevice API
+
+## __Amazon CodeGuru Reviewer__
+  - ### Features
+    - Include KMS Key Details in Repository Association APIs to enable usage of customer managed KMS Keys.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Adding support for Red Hat Enterprise Linux with HA for Reserved Instances.
+
+## __Amazon Elastic Kubernetes Service__
+  - ### Features
+    - This release updates existing Amazon EKS input validation so customers will see an InvalidParameterException instead of a ParamValidationError when they enter 0 for minSize and/or desiredSize. It also adds LaunchTemplate information to update responses and a new "CUSTOM" value for AMIType.
+
+## __Amazon Kinesis Analytics__
+  - ### Features
+    - Amazon Kinesis Data Analytics now supports custom application maintenance configuration using UpdateApplicationMaintenanceConfiguration API for Apache Flink applications. Customers will have visibility when their application is under maintenance status using 'MAINTENANCE' application status.
+
+## __Amazon Personalize__
+  - ### Features
+    - Added support for exporting data imported into an Amazon Personalize dataset to a specified data source (Amazon S3 bucket).
+
 # __1.11.1004__ __2021-04-23__
 ## __AWS Elemental MediaPackage__
   - ### Features

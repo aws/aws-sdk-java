@@ -24,7 +24,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <ul>
  * <li>
  * <p>
- * <code>PullRequest</code> - A code review that is automatically triggered by a pull request on an assocaited
+ * <code>PullRequest</code> - A code review that is automatically triggered by a pull request on an associated
  * repository. Because this type of code review is automatically generated, you cannot specify this code review type
  * using <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
  * <code>CreateCodeReview</code> </a>.
@@ -33,7 +33,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <li>
  * <p>
  * <code>RepositoryAnalysis</code> - A code review that analyzes all code under a specified branch in an associated
- * respository. The assocated repository is specified using its ARN in <a
+ * repository. The associated repository is specified using its ARN in <a
  * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview"> <code>CreateCodeReview</code>
  * </a>.
  * </p>
@@ -48,7 +48,7 @@ public class CodeReviewType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A code review that analyzes all code under a specified branch in an associated respository. The assocated
+     * A code review that analyzes all code under a specified branch in an associated repository. The associated
      * repository is specified using its ARN in <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
      * <code>CreateCodeReview</code> </a>.
@@ -58,14 +58,14 @@ public class CodeReviewType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A code review that analyzes all code under a specified branch in an associated respository. The assocated
+     * A code review that analyzes all code under a specified branch in an associated repository. The associated
      * repository is specified using its ARN in <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
      * <code>CreateCodeReview</code> </a>.
      * </p>
      * 
      * @param repositoryAnalysis
-     *        A code review that analyzes all code under a specified branch in an associated respository. The assocated
+     *        A code review that analyzes all code under a specified branch in an associated repository. The associated
      *        repository is specified using its ARN in <a
      *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
      *        <code>CreateCodeReview</code> </a>.
@@ -77,13 +77,13 @@ public class CodeReviewType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A code review that analyzes all code under a specified branch in an associated respository. The assocated
+     * A code review that analyzes all code under a specified branch in an associated repository. The associated
      * repository is specified using its ARN in <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
      * <code>CreateCodeReview</code> </a>.
      * </p>
      * 
-     * @return A code review that analyzes all code under a specified branch in an associated respository. The assocated
+     * @return A code review that analyzes all code under a specified branch in an associated repository. The associated
      *         repository is specified using its ARN in <a
      *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
      *         <code>CreateCodeReview</code> </a>.
@@ -95,14 +95,14 @@ public class CodeReviewType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A code review that analyzes all code under a specified branch in an associated respository. The assocated
+     * A code review that analyzes all code under a specified branch in an associated repository. The associated
      * repository is specified using its ARN in <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
      * <code>CreateCodeReview</code> </a>.
      * </p>
      * 
      * @param repositoryAnalysis
-     *        A code review that analyzes all code under a specified branch in an associated respository. The assocated
+     *        A code review that analyzes all code under a specified branch in an associated repository. The associated
      *        repository is specified using its ARN in <a
      *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
      *        <code>CreateCodeReview</code> </a>.

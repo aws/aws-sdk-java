@@ -54,8 +54,8 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
     private Long applicationVersionId;
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code>, <code>FLINK-1_6</code>, or
-     * <code>FLINK-1_8</code>).
+     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
+     * , or <code>FLINK-1_11</code>).
      * </p>
      */
     private String runtimeEnvironment;
@@ -241,13 +241,13 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code>, <code>FLINK-1_6</code>, or
-     * <code>FLINK-1_8</code>).
+     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
+     * , or <code>FLINK-1_11</code>).
      * </p>
      * 
      * @param runtimeEnvironment
-     *        The runtime environment for the application (<code>SQL-1.0</code>, <code>FLINK-1_6</code>, or
-     *        <code>FLINK-1_8</code>).
+     *        The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>,
+     *        <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).
      * @see RuntimeEnvironment
      */
 
@@ -257,12 +257,12 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code>, <code>FLINK-1_6</code>, or
-     * <code>FLINK-1_8</code>).
+     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
+     * , or <code>FLINK-1_11</code>).
      * </p>
      * 
-     * @return The runtime environment for the application (<code>SQL-1.0</code>, <code>FLINK-1_6</code>, or
-     *         <code>FLINK-1_8</code>).
+     * @return The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>,
+     *         <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).
      * @see RuntimeEnvironment
      */
 
@@ -272,13 +272,13 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code>, <code>FLINK-1_6</code>, or
-     * <code>FLINK-1_8</code>).
+     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
+     * , or <code>FLINK-1_11</code>).
      * </p>
      * 
      * @param runtimeEnvironment
-     *        The runtime environment for the application (<code>SQL-1.0</code>, <code>FLINK-1_6</code>, or
-     *        <code>FLINK-1_8</code>).
+     *        The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>,
+     *        <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuntimeEnvironment
      */
@@ -290,13 +290,13 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code>, <code>FLINK-1_6</code>, or
-     * <code>FLINK-1_8</code>).
+     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
+     * , or <code>FLINK-1_11</code>).
      * </p>
      * 
      * @param runtimeEnvironment
-     *        The runtime environment for the application (<code>SQL-1.0</code>, <code>FLINK-1_6</code>, or
-     *        <code>FLINK-1_8</code>).
+     *        The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>,
+     *        <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuntimeEnvironment
      */

@@ -79,7 +79,7 @@ public class CheckpointConfigurationUpdate implements Serializable, Cloneable, S
      * <note>
      * <p>
      * If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a
-     * <code>CheckpointInterval</code> vaue of 60000, even if this value is set to another value using this API or in
+     * <code>CheckpointInterval</code> value of 60000, even if this value is set to another value using this API or in
      * application code.
      * </p>
      * </note>
@@ -462,7 +462,7 @@ public class CheckpointConfigurationUpdate implements Serializable, Cloneable, S
      * <note>
      * <p>
      * If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a
-     * <code>CheckpointInterval</code> vaue of 60000, even if this value is set to another value using this API or in
+     * <code>CheckpointInterval</code> value of 60000, even if this value is set to another value using this API or in
      * application code.
      * </p>
      * </note>
@@ -471,8 +471,8 @@ public class CheckpointConfigurationUpdate implements Serializable, Cloneable, S
      *        Describes updates to the interval in milliseconds between checkpoint operations.</p> <note>
      *        <p>
      *        If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
-     *        use a <code>CheckpointInterval</code> vaue of 60000, even if this value is set to another value using this
-     *        API or in application code.
+     *        use a <code>CheckpointInterval</code> value of 60000, even if this value is set to another value using
+     *        this API or in application code.
      *        </p>
      */
 
@@ -487,7 +487,7 @@ public class CheckpointConfigurationUpdate implements Serializable, Cloneable, S
      * <note>
      * <p>
      * If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a
-     * <code>CheckpointInterval</code> vaue of 60000, even if this value is set to another value using this API or in
+     * <code>CheckpointInterval</code> value of 60000, even if this value is set to another value using this API or in
      * application code.
      * </p>
      * </note>
@@ -495,7 +495,7 @@ public class CheckpointConfigurationUpdate implements Serializable, Cloneable, S
      * @return Describes updates to the interval in milliseconds between checkpoint operations.</p> <note>
      *         <p>
      *         If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
-     *         use a <code>CheckpointInterval</code> vaue of 60000, even if this value is set to another value using
+     *         use a <code>CheckpointInterval</code> value of 60000, even if this value is set to another value using
      *         this API or in application code.
      *         </p>
      */
@@ -511,7 +511,7 @@ public class CheckpointConfigurationUpdate implements Serializable, Cloneable, S
      * <note>
      * <p>
      * If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a
-     * <code>CheckpointInterval</code> vaue of 60000, even if this value is set to another value using this API or in
+     * <code>CheckpointInterval</code> value of 60000, even if this value is set to another value using this API or in
      * application code.
      * </p>
      * </note>
@@ -520,8 +520,8 @@ public class CheckpointConfigurationUpdate implements Serializable, Cloneable, S
      *        Describes updates to the interval in milliseconds between checkpoint operations.</p> <note>
      *        <p>
      *        If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
-     *        use a <code>CheckpointInterval</code> vaue of 60000, even if this value is set to another value using this
-     *        API or in application code.
+     *        use a <code>CheckpointInterval</code> value of 60000, even if this value is set to another value using
+     *        this API or in application code.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

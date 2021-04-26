@@ -47900,6 +47900,62 @@
       },
       "wrapper" : false
     },
+    "MessageType" : {
+      "c2jName" : "MessageType",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>Sidewalk device message type.</p>",
+      "endpointDiscoveryMembers" : null,
+      "enums" : [ {
+        "name" : "CUSTOM_COMMAND_ID_NOTIFY",
+        "value" : "CUSTOM_COMMAND_ID_NOTIFY"
+      }, {
+        "name" : "CUSTOM_COMMAND_ID_GET",
+        "value" : "CUSTOM_COMMAND_ID_GET"
+      }, {
+        "name" : "CUSTOM_COMMAND_ID_SET",
+        "value" : "CUSTOM_COMMAND_ID_SET"
+      }, {
+        "name" : "CUSTOM_COMMAND_ID_RESP",
+        "value" : "CUSTOM_COMMAND_ID_RESP"
+      } ],
+      "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotwireless.enum.MessageType",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.iotwireless.enum",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "MessageType",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "MessageType",
+        "variableName" : "messageType",
+        "variableType" : "MessageType",
+        "documentation" : null,
+        "simpleType" : "MessageType",
+        "variableSetterType" : "MessageType"
+      },
+      "wrapper" : false
+    },
     "OtaaV10X" : {
       "c2jName" : "OtaaV1_0_x",
       "customization" : {
@@ -54101,8 +54157,147 @@
           "variableSetterType" : "Integer"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "MessageType",
+        "c2jShape" : "MessageType",
+        "deprecated" : false,
+        "documentation" : "",
+        "endpointDiscoveryId" : false,
+        "enumType" : "MessageType",
+        "fluentSetterDocumentation" : "/**\n@param messageType \n@return Returns a reference to this object so that method calls can be chained together.\n@see MessageType*/",
+        "fluentSetterMethodName" : "withMessageType",
+        "getterDocumentation" : "/**\n@return \n@see MessageType*/",
+        "getterMethodName" : "getMessageType",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "MessageType",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "MessageType",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "MessageType",
+        "sensitive" : false,
+        "setterDocumentation" : "/**\n@param messageType \n@see MessageType*/",
+        "setterMethodName" : "setMessageType",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "messageType",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**\n@param messageType \n@return Returns a reference to this object so that method calls can be chained together.\n@see MessageType*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "messageType",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
+        "MessageType" : {
+          "c2jName" : "MessageType",
+          "c2jShape" : "MessageType",
+          "deprecated" : false,
+          "documentation" : "",
+          "endpointDiscoveryId" : false,
+          "enumType" : "MessageType",
+          "fluentSetterDocumentation" : "/**\n@param messageType \n@return Returns a reference to this object so that method calls can be chained together.\n@see MessageType*/",
+          "fluentSetterMethodName" : "withMessageType",
+          "getterDocumentation" : "/**\n@return \n@see MessageType*/",
+          "getterMethodName" : "getMessageType",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "MessageType",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "MessageType",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "MessageType",
+          "sensitive" : false,
+          "setterDocumentation" : "/**\n@param messageType \n@see MessageType*/",
+          "setterMethodName" : "setMessageType",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "messageType",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**\n@param messageType \n@return Returns a reference to this object so that method calls can be chained together.\n@see MessageType*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "messageType",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "Seq" : {
           "c2jName" : "Seq",
           "c2jShape" : "Seq",

@@ -18,7 +18,8 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Selector for video.
+ * Input video selectors contain the video settings for the input. Each of your inputs can have up to one video
+ * selector.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/VideoSelector" target="_top">AWS API
  *      Documentation</a>

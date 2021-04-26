@@ -22,7 +22,8 @@ public enum AMITypes {
 
     AL2_x86_64("AL2_x86_64"),
     AL2_x86_64_GPU("AL2_x86_64_GPU"),
-    AL2_ARM_64("AL2_ARM_64");
+    AL2_ARM_64("AL2_ARM_64"),
+    CUSTOM("CUSTOM");
 
     private String value;
 

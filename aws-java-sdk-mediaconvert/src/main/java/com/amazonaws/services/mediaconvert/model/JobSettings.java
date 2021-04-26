@@ -33,7 +33,7 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
      * triggered ad avails.
      */
     private AvailBlanking availBlanking;
-    /** Settings for Event Signaling And Messaging (ESAM). */
+    /** Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings. */
     private EsamSettings esam;
     /**
      * Use Inputs (inputs) to define source file used in the transcode job. There can be multiple inputs add in a job.
@@ -42,7 +42,8 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<Input> inputs;
     /**
      * Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all outputs in
-     * all output groups.
+     * all output groups. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
      */
     private MotionImageInserter motionImageInserter;
     /**
@@ -71,7 +72,10 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
      * CMAF_GROUP_SETTINGS, CmafGroupSettings
      */
     private java.util.List<OutputGroup> outputGroups;
-    /** Contains settings used to acquire and adjust timecode information from inputs. */
+    /**
+     * These settings control how the service handles timecodes throughout the job. These settings don't affect input
+     * clipping.
+     */
     private TimecodeConfig timecodeConfig;
     /**
      * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To include timed
@@ -155,10 +159,11 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Settings for Event Signaling And Messaging (ESAM).
+     * Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings.
      * 
      * @param esam
-     *        Settings for Event Signaling And Messaging (ESAM).
+     *        Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these
+     *        settings.
      */
 
     public void setEsam(EsamSettings esam) {
@@ -166,9 +171,10 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Settings for Event Signaling And Messaging (ESAM).
+     * Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings.
      * 
-     * @return Settings for Event Signaling And Messaging (ESAM).
+     * @return Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these
+     *         settings.
      */
 
     public EsamSettings getEsam() {
@@ -176,10 +182,11 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Settings for Event Signaling And Messaging (ESAM).
+     * Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings.
      * 
      * @param esam
-     *        Settings for Event Signaling And Messaging (ESAM).
+     *        Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these
+     *        settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -260,11 +267,13 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all outputs in
-     * all output groups.
+     * all output groups. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
      * 
      * @param motionImageInserter
      *        Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all
-     *        outputs in all output groups.
+     *        outputs in all output groups. For more information, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
      */
 
     public void setMotionImageInserter(MotionImageInserter motionImageInserter) {
@@ -273,10 +282,12 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all outputs in
-     * all output groups.
+     * all output groups. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
      * 
      * @return Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all
-     *         outputs in all output groups.
+     *         outputs in all output groups. For more information, see
+     *         https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
      */
 
     public MotionImageInserter getMotionImageInserter() {
@@ -285,11 +296,13 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all outputs in
-     * all output groups.
+     * all output groups. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
      * 
      * @param motionImageInserter
      *        Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all
-     *        outputs in all output groups.
+     *        outputs in all output groups. For more information, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -528,10 +541,12 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Contains settings used to acquire and adjust timecode information from inputs.
+     * These settings control how the service handles timecodes throughout the job. These settings don't affect input
+     * clipping.
      * 
      * @param timecodeConfig
-     *        Contains settings used to acquire and adjust timecode information from inputs.
+     *        These settings control how the service handles timecodes throughout the job. These settings don't affect
+     *        input clipping.
      */
 
     public void setTimecodeConfig(TimecodeConfig timecodeConfig) {
@@ -539,9 +554,11 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Contains settings used to acquire and adjust timecode information from inputs.
+     * These settings control how the service handles timecodes throughout the job. These settings don't affect input
+     * clipping.
      * 
-     * @return Contains settings used to acquire and adjust timecode information from inputs.
+     * @return These settings control how the service handles timecodes throughout the job. These settings don't affect
+     *         input clipping.
      */
 
     public TimecodeConfig getTimecodeConfig() {
@@ -549,10 +566,12 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Contains settings used to acquire and adjust timecode information from inputs.
+     * These settings control how the service handles timecodes throughout the job. These settings don't affect input
+     * clipping.
      * 
      * @param timecodeConfig
-     *        Contains settings used to acquire and adjust timecode information from inputs.
+     *        These settings control how the service handles timecodes throughout the job. These settings don't affect
+     *        input clipping.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

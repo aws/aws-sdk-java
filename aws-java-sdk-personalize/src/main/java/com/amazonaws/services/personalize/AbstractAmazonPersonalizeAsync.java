@@ -67,6 +67,19 @@ public class AbstractAmazonPersonalizeAsync extends AbstractAmazonPersonalize im
     }
 
     @Override
+    public java.util.concurrent.Future<CreateDatasetExportJobResult> createDatasetExportJobAsync(CreateDatasetExportJobRequest request) {
+
+        return createDatasetExportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDatasetExportJobResult> createDatasetExportJobAsync(CreateDatasetExportJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateDatasetExportJobRequest, CreateDatasetExportJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDatasetGroupResult> createDatasetGroupAsync(CreateDatasetGroupRequest request) {
 
         return createDatasetGroupAsync(request, null);
@@ -301,6 +314,19 @@ public class AbstractAmazonPersonalizeAsync extends AbstractAmazonPersonalize im
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeDatasetExportJobResult> describeDatasetExportJobAsync(DescribeDatasetExportJobRequest request) {
+
+        return describeDatasetExportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDatasetExportJobResult> describeDatasetExportJobAsync(DescribeDatasetExportJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeDatasetExportJobRequest, DescribeDatasetExportJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeDatasetGroupResult> describeDatasetGroupAsync(DescribeDatasetGroupRequest request) {
 
         return describeDatasetGroupAsync(request, null);
@@ -452,6 +478,19 @@ public class AbstractAmazonPersonalizeAsync extends AbstractAmazonPersonalize im
     @Override
     public java.util.concurrent.Future<ListCampaignsResult> listCampaignsAsync(ListCampaignsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListCampaignsRequest, ListCampaignsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDatasetExportJobsResult> listDatasetExportJobsAsync(ListDatasetExportJobsRequest request) {
+
+        return listDatasetExportJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDatasetExportJobsResult> listDatasetExportJobsAsync(ListDatasetExportJobsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDatasetExportJobsRequest, ListDatasetExportJobsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

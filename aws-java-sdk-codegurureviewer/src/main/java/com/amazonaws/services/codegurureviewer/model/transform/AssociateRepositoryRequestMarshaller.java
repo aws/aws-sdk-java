@@ -38,6 +38,8 @@ public class AssociateRepositoryRequestMarshaller {
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<StructuredPojo> KMSKEYDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KMSKeyDetails").build();
 
     private static final AssociateRepositoryRequestMarshaller instance = new AssociateRepositoryRequestMarshaller();
 
@@ -58,6 +60,7 @@ public class AssociateRepositoryRequestMarshaller {
             protocolMarshaller.marshall(associateRepositoryRequest.getRepository(), REPOSITORY_BINDING);
             protocolMarshaller.marshall(associateRepositoryRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(associateRepositoryRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(associateRepositoryRequest.getKMSKeyDetails(), KMSKEYDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
