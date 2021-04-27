@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -75809,7 +75809,7 @@
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "id",
-        "c2jShape" : "UUID",
+        "c2jShape" : "ControlSetName",
         "deprecated" : false,
         "documentation" : "<p> The unique identifier for the control set. </p>",
         "endpointDiscoveryId" : false,
@@ -76256,7 +76256,7 @@
         },
         "Id" : {
           "c2jName" : "id",
-          "c2jShape" : "UUID",
+          "c2jShape" : "ControlSetName",
           "deprecated" : false,
           "documentation" : "<p> The unique identifier for the control set. </p>",
           "endpointDiscoveryId" : false,

@@ -1,3 +1,8 @@
+# __1.11.1006__ __2021-04-27__
+## __AWS Audit Manager__
+  - ### Features
+    - This release restricts using backslashes in control, assessment, and framework names. The controlSetName field of the UpdateAssessmentFrameworkControlSet API now allows strings without backslashes.
+
 # __1.11.1005__ __2021-04-26__
 ## __AWS Elemental MediaConvert__
   - ### Features
