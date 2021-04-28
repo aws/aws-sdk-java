@@ -58,6 +58,10 @@ public class CmafPackageJsonUnmarshaller implements Unmarshaller<CmafPackage, Js
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("includeEncoderConfigurationInSegments", targetDepth)) {
+                    context.nextToken();
+                    cmafPackage.setIncludeEncoderConfigurationInSegments(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("segmentDurationSeconds", targetDepth)) {
                     context.nextToken();
                     cmafPackage.setSegmentDurationSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));

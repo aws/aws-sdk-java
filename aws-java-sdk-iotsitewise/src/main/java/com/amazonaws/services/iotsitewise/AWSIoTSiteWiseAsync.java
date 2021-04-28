@@ -1403,6 +1403,81 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
+     * Get interpolated values for an asset property for a specified time interval, during a period of time. For
+     * example, you can use the this operation to return the interpolated temperature values for a wind turbine every 24
+     * hours over a duration of 7 days.
+     * </p>
+     * <p>
+     * To identify an asset property, you must specify one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The <code>assetId</code> and <code>propertyId</code> of an asset property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A <code>propertyAlias</code>, which is a data stream alias (for example,
+     * <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html"
+     * >UpdateAssetProperty</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getInterpolatedAssetPropertyValuesRequest
+     * @return A Java Future containing the result of the GetInterpolatedAssetPropertyValues operation returned by the
+     *         service.
+     * @sample AWSIoTSiteWiseAsync.GetInterpolatedAssetPropertyValues
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GetInterpolatedAssetPropertyValues"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetInterpolatedAssetPropertyValuesResult> getInterpolatedAssetPropertyValuesAsync(
+            GetInterpolatedAssetPropertyValuesRequest getInterpolatedAssetPropertyValuesRequest);
+
+    /**
+     * <p>
+     * Get interpolated values for an asset property for a specified time interval, during a period of time. For
+     * example, you can use the this operation to return the interpolated temperature values for a wind turbine every 24
+     * hours over a duration of 7 days.
+     * </p>
+     * <p>
+     * To identify an asset property, you must specify one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The <code>assetId</code> and <code>propertyId</code> of an asset property.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A <code>propertyAlias</code>, which is a data stream alias (for example,
+     * <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset property's alias, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html"
+     * >UpdateAssetProperty</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getInterpolatedAssetPropertyValuesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetInterpolatedAssetPropertyValues operation returned by the
+     *         service.
+     * @sample AWSIoTSiteWiseAsyncHandler.GetInterpolatedAssetPropertyValues
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GetInterpolatedAssetPropertyValues"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetInterpolatedAssetPropertyValuesResult> getInterpolatedAssetPropertyValuesAsync(
+            GetInterpolatedAssetPropertyValuesRequest getInterpolatedAssetPropertyValuesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetInterpolatedAssetPropertyValuesRequest, GetInterpolatedAssetPropertyValuesResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves a paginated list of access policies for an identity (an AWS SSO user, an AWS SSO group, or an IAM user)
      * or an AWS IoT SiteWise Monitor resource (a portal or project).
      * </p>

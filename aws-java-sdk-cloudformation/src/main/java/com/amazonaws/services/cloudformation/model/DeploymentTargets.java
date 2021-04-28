@@ -38,7 +38,11 @@ public class DeploymentTargets implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> accounts;
-
+    /**
+     * <p>
+     * Returns the value of the AccountsUrl property.
+     * </p>
+     */
     private String accountsUrl;
     /**
      * <p>
@@ -121,7 +125,12 @@ public class DeploymentTargets implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Returns the value of the AccountsUrl property.
+     * </p>
+     * 
      * @param accountsUrl
+     *        Returns the value of the AccountsUrl property.
      */
 
     public void setAccountsUrl(String accountsUrl) {
@@ -129,7 +138,11 @@ public class DeploymentTargets implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Returns the value of the AccountsUrl property.
+     * </p>
+     * 
+     * @return Returns the value of the AccountsUrl property.
      */
 
     public String getAccountsUrl() {
@@ -137,7 +150,12 @@ public class DeploymentTargets implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Returns the value of the AccountsUrl property.
+     * </p>
+     * 
      * @param accountsUrl
+     *        Returns the value of the AccountsUrl property.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

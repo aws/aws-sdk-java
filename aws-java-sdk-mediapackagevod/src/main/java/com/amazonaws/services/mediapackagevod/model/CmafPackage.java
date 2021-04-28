@@ -30,6 +30,12 @@ public class CmafPackage implements Serializable, Cloneable, StructuredPojo {
     /** A list of HLS manifest configurations. */
     private java.util.List<HlsManifest> hlsManifests;
     /**
+     * When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter
+     * Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of
+     * in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
+     */
+    private Boolean includeEncoderConfigurationInSegments;
+    /**
      * Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source
      * fragment duration.
      */
@@ -124,6 +130,70 @@ public class CmafPackage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter
+     * Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of
+     * in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
+     * 
+     * @param includeEncoderConfigurationInSegments
+     *        When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence
+     *        Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video
+     *        segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets
+     *        during content playback.
+     */
+
+    public void setIncludeEncoderConfigurationInSegments(Boolean includeEncoderConfigurationInSegments) {
+        this.includeEncoderConfigurationInSegments = includeEncoderConfigurationInSegments;
+    }
+
+    /**
+     * When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter
+     * Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of
+     * in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
+     * 
+     * @return When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence
+     *         Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video
+     *         segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets
+     *         during content playback.
+     */
+
+    public Boolean getIncludeEncoderConfigurationInSegments() {
+        return this.includeEncoderConfigurationInSegments;
+    }
+
+    /**
+     * When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter
+     * Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of
+     * in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
+     * 
+     * @param includeEncoderConfigurationInSegments
+     *        When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence
+     *        Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video
+     *        segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets
+     *        during content playback.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CmafPackage withIncludeEncoderConfigurationInSegments(Boolean includeEncoderConfigurationInSegments) {
+        setIncludeEncoderConfigurationInSegments(includeEncoderConfigurationInSegments);
+        return this;
+    }
+
+    /**
+     * When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter
+     * Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of
+     * in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
+     * 
+     * @return When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence
+     *         Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video
+     *         segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets
+     *         during content playback.
+     */
+
+    public Boolean isIncludeEncoderConfigurationInSegments() {
+        return this.includeEncoderConfigurationInSegments;
+    }
+
+    /**
      * Duration (in seconds) of each fragment. Actual fragments will be rounded to the nearest multiple of the source
      * fragment duration.
      * 
@@ -179,6 +249,8 @@ public class CmafPackage implements Serializable, Cloneable, StructuredPojo {
             sb.append("Encryption: ").append(getEncryption()).append(",");
         if (getHlsManifests() != null)
             sb.append("HlsManifests: ").append(getHlsManifests()).append(",");
+        if (getIncludeEncoderConfigurationInSegments() != null)
+            sb.append("IncludeEncoderConfigurationInSegments: ").append(getIncludeEncoderConfigurationInSegments()).append(",");
         if (getSegmentDurationSeconds() != null)
             sb.append("SegmentDurationSeconds: ").append(getSegmentDurationSeconds());
         sb.append("}");
@@ -203,6 +275,11 @@ public class CmafPackage implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getHlsManifests() != null && other.getHlsManifests().equals(this.getHlsManifests()) == false)
             return false;
+        if (other.getIncludeEncoderConfigurationInSegments() == null ^ this.getIncludeEncoderConfigurationInSegments() == null)
+            return false;
+        if (other.getIncludeEncoderConfigurationInSegments() != null
+                && other.getIncludeEncoderConfigurationInSegments().equals(this.getIncludeEncoderConfigurationInSegments()) == false)
+            return false;
         if (other.getSegmentDurationSeconds() == null ^ this.getSegmentDurationSeconds() == null)
             return false;
         if (other.getSegmentDurationSeconds() != null && other.getSegmentDurationSeconds().equals(this.getSegmentDurationSeconds()) == false)
@@ -217,6 +294,7 @@ public class CmafPackage implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getEncryption() == null) ? 0 : getEncryption().hashCode());
         hashCode = prime * hashCode + ((getHlsManifests() == null) ? 0 : getHlsManifests().hashCode());
+        hashCode = prime * hashCode + ((getIncludeEncoderConfigurationInSegments() == null) ? 0 : getIncludeEncoderConfigurationInSegments().hashCode());
         hashCode = prime * hashCode + ((getSegmentDurationSeconds() == null) ? 0 : getSegmentDurationSeconds().hashCode());
         return hashCode;
     }

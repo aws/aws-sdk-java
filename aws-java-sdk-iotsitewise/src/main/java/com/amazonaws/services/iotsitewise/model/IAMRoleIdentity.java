@@ -32,8 +32,8 @@ public class IAMRoleIdentity implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The ARN of the IAM role. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.htmll#identifiers-arns">IAM ARNs</a>
-     * in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      */
     private String arn;
@@ -41,14 +41,14 @@ public class IAMRoleIdentity implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The ARN of the IAM role. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.htmll#identifiers-arns">IAM ARNs</a>
-     * in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * 
      * @param arn
      *        The ARN of the IAM role. For more information, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.htmll#identifiers-arns">IAM
-     *        ARNs</a> in the <i>IAM User Guide</i>.
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the
+     *        <i>IAM User Guide</i>.
      */
 
     public void setArn(String arn) {
@@ -58,13 +58,13 @@ public class IAMRoleIdentity implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The ARN of the IAM role. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.htmll#identifiers-arns">IAM ARNs</a>
-     * in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * 
      * @return The ARN of the IAM role. For more information, see <a
-     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.htmll#identifiers-arns">IAM
-     *         ARNs</a> in the <i>IAM User Guide</i>.
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the
+     *         <i>IAM User Guide</i>.
      */
 
     public String getArn() {
@@ -74,14 +74,14 @@ public class IAMRoleIdentity implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The ARN of the IAM role. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.htmll#identifiers-arns">IAM ARNs</a>
-     * in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM
+     * User Guide</i>.
      * </p>
      * 
      * @param arn
      *        The ARN of the IAM role. For more information, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.htmll#identifiers-arns">IAM
-     *        ARNs</a> in the <i>IAM User Guide</i>.
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the
+     *        <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

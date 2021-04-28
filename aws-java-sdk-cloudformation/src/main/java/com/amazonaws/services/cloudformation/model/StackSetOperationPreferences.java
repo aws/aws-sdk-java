@@ -31,6 +31,11 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class StackSetOperationPreferences implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The concurrency type of deploying StackSets operations in regions, could be in parallel or one region at a time.
+     * </p>
+     */
     private String regionConcurrencyType;
     /**
      * <p>
@@ -103,7 +108,13 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
     private Integer maxConcurrentPercentage;
 
     /**
+     * <p>
+     * The concurrency type of deploying StackSets operations in regions, could be in parallel or one region at a time.
+     * </p>
+     * 
      * @param regionConcurrencyType
+     *        The concurrency type of deploying StackSets operations in regions, could be in parallel or one region at a
+     *        time.
      * @see RegionConcurrencyType
      */
 
@@ -112,7 +123,12 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The concurrency type of deploying StackSets operations in regions, could be in parallel or one region at a time.
+     * </p>
+     * 
+     * @return The concurrency type of deploying StackSets operations in regions, could be in parallel or one region at
+     *         a time.
      * @see RegionConcurrencyType
      */
 
@@ -121,7 +137,13 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The concurrency type of deploying StackSets operations in regions, could be in parallel or one region at a time.
+     * </p>
+     * 
      * @param regionConcurrencyType
+     *        The concurrency type of deploying StackSets operations in regions, could be in parallel or one region at a
+     *        time.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RegionConcurrencyType
      */
@@ -132,7 +154,13 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The concurrency type of deploying StackSets operations in regions, could be in parallel or one region at a time.
+     * </p>
+     * 
      * @param regionConcurrencyType
+     *        The concurrency type of deploying StackSets operations in regions, could be in parallel or one region at a
+     *        time.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RegionConcurrencyType
      */

@@ -32,6 +32,8 @@ public class CmafPackageMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryption").build();
     private static final MarshallingInfo<List> HLSMANIFESTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("hlsManifests").build();
+    private static final MarshallingInfo<Boolean> INCLUDEENCODERCONFIGURATIONINSEGMENTS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("includeEncoderConfigurationInSegments").build();
     private static final MarshallingInfo<Integer> SEGMENTDURATIONSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("segmentDurationSeconds").build();
 
@@ -53,6 +55,7 @@ public class CmafPackageMarshaller {
         try {
             protocolMarshaller.marshall(cmafPackage.getEncryption(), ENCRYPTION_BINDING);
             protocolMarshaller.marshall(cmafPackage.getHlsManifests(), HLSMANIFESTS_BINDING);
+            protocolMarshaller.marshall(cmafPackage.getIncludeEncoderConfigurationInSegments(), INCLUDEENCODERCONFIGURATIONINSEGMENTS_BINDING);
             protocolMarshaller.marshall(cmafPackage.getSegmentDurationSeconds(), SEGMENTDURATIONSECONDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

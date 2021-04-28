@@ -194,6 +194,11 @@ public class AbstractAWSIoTSiteWise implements AWSIoTSiteWise {
     }
 
     @Override
+    public GetInterpolatedAssetPropertyValuesResult getInterpolatedAssetPropertyValues(GetInterpolatedAssetPropertyValuesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListAccessPoliciesResult listAccessPolicies(ListAccessPoliciesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

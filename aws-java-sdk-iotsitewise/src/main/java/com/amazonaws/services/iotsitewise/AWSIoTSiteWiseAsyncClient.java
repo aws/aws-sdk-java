@@ -1176,6 +1176,41 @@ public class AWSIoTSiteWiseAsyncClient extends AWSIoTSiteWiseClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetInterpolatedAssetPropertyValuesResult> getInterpolatedAssetPropertyValuesAsync(
+            GetInterpolatedAssetPropertyValuesRequest request) {
+
+        return getInterpolatedAssetPropertyValuesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInterpolatedAssetPropertyValuesResult> getInterpolatedAssetPropertyValuesAsync(
+            final GetInterpolatedAssetPropertyValuesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetInterpolatedAssetPropertyValuesRequest, GetInterpolatedAssetPropertyValuesResult> asyncHandler) {
+        final GetInterpolatedAssetPropertyValuesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetInterpolatedAssetPropertyValuesResult>() {
+            @Override
+            public GetInterpolatedAssetPropertyValuesResult call() throws Exception {
+                GetInterpolatedAssetPropertyValuesResult result = null;
+
+                try {
+                    result = executeGetInterpolatedAssetPropertyValues(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAccessPoliciesResult> listAccessPoliciesAsync(ListAccessPoliciesRequest request) {
 
         return listAccessPoliciesAsync(request, null);

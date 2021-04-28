@@ -461,6 +461,21 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetInterpolatedAssetPropertyValuesResult> getInterpolatedAssetPropertyValuesAsync(
+            GetInterpolatedAssetPropertyValuesRequest request) {
+
+        return getInterpolatedAssetPropertyValuesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInterpolatedAssetPropertyValuesResult> getInterpolatedAssetPropertyValuesAsync(
+            GetInterpolatedAssetPropertyValuesRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetInterpolatedAssetPropertyValuesRequest, GetInterpolatedAssetPropertyValuesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAccessPoliciesResult> listAccessPoliciesAsync(ListAccessPoliciesRequest request) {
 
         return listAccessPoliciesAsync(request, null);

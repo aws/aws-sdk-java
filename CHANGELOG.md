@@ -1,3 +1,24 @@
+# __1.11.1007__ __2021-04-28__
+## __AWS CloudFormation__
+  - ### Features
+    - Add CallAs parameter to GetTemplateSummary to enable use with StackSets delegated administrator integration
+
+## __AWS Elemental MediaPackage VOD__
+  - ### Features
+    - MediaPackage now offers the option to place your Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) encoder metadata in every video segment instead of in the init fragment for DASH and CMAF endpoints.
+
+## __AWS IoT SiteWise__
+  - ### Features
+    - AWS IoT SiteWise interpolation API will get interpolated values for an asset property per specified time interval during a period of time.
+
+## __Amazon Connect Service__
+  - ### Features
+    - Updated max number of tags that can be attached from 200 to 50. MaxContacts is now an optional parameter for the UpdateQueueMaxContact API.
+
+## __AmazonNimbleStudio__
+  - ### Features
+    - Amazon Nimble Studio is a virtual studio service that empowers visual effects, animation, and interactive content teams to create content securely within a scalable, private cloud service.
+
 # __1.11.1006__ __2021-04-27__
 ## __AWS Audit Manager__
   - ### Features

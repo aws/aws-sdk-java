@@ -58,6 +58,10 @@ public class DashPackageJsonUnmarshaller implements Unmarshaller<DashPackage, Js
                     context.nextToken();
                     dashPackage.setEncryption(DashEncryptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("includeEncoderConfigurationInSegments", targetDepth)) {
+                    context.nextToken();
+                    dashPackage.setIncludeEncoderConfigurationInSegments(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("periodTriggers", targetDepth)) {
                     context.nextToken();
                     dashPackage.setPeriodTriggers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
