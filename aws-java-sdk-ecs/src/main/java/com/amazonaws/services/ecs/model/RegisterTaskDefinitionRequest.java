@@ -353,7 +353,20 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </note>
      */
     private String ipcMode;
-
+    /**
+     * <p>
+     * The configuration details for the App Mesh proxy.
+     * </p>
+     * <p>
+     * For tasks hosted on Amazon EC2 instances, the container instances require at least version <code>1.26.0</code> of
+     * the container agent and at least version <code>1.26.0-1</code> of the <code>ecs-init</code> package to enable a
+     * proxy configuration. If your container instances are launched from the Amazon ECS-optimized AMI version
+     * <code>20190301</code> or later, then they contain the required versions of the container agent and
+     * <code>ecs-init</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon ECS-optimized AMI
+     * versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     */
     private ProxyConfiguration proxyConfiguration;
     /**
      * <p>
@@ -361,6 +374,21 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InferenceAccelerator> inferenceAccelerators;
+    /**
+     * <p>
+     * The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of
+     * ephemeral storage available, beyond the default amount, for tasks hosted on AWS Fargate. For more information,
+     * see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task
+     * storage</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is only supported for tasks hosted on AWS Fargate using platform version <code>1.4.0</code> or
+     * later.
+     * </p>
+     * </note>
+     */
+    private EphemeralStorage ephemeralStorage;
 
     /**
      * <p>
@@ -3174,7 +3202,29 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The configuration details for the App Mesh proxy.
+     * </p>
+     * <p>
+     * For tasks hosted on Amazon EC2 instances, the container instances require at least version <code>1.26.0</code> of
+     * the container agent and at least version <code>1.26.0-1</code> of the <code>ecs-init</code> package to enable a
+     * proxy configuration. If your container instances are launched from the Amazon ECS-optimized AMI version
+     * <code>20190301</code> or later, then they contain the required versions of the container agent and
+     * <code>ecs-init</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon ECS-optimized AMI
+     * versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
      * @param proxyConfiguration
+     *        The configuration details for the App Mesh proxy.</p>
+     *        <p>
+     *        For tasks hosted on Amazon EC2 instances, the container instances require at least version
+     *        <code>1.26.0</code> of the container agent and at least version <code>1.26.0-1</code> of the
+     *        <code>ecs-init</code> package to enable a proxy configuration. If your container instances are launched
+     *        from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain the required
+     *        versions of the container agent and <code>ecs-init</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon
+     *        ECS-optimized AMI versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setProxyConfiguration(ProxyConfiguration proxyConfiguration) {
@@ -3182,7 +3232,28 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * @return
+     * <p>
+     * The configuration details for the App Mesh proxy.
+     * </p>
+     * <p>
+     * For tasks hosted on Amazon EC2 instances, the container instances require at least version <code>1.26.0</code> of
+     * the container agent and at least version <code>1.26.0-1</code> of the <code>ecs-init</code> package to enable a
+     * proxy configuration. If your container instances are launched from the Amazon ECS-optimized AMI version
+     * <code>20190301</code> or later, then they contain the required versions of the container agent and
+     * <code>ecs-init</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon ECS-optimized AMI
+     * versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return The configuration details for the App Mesh proxy.</p>
+     *         <p>
+     *         For tasks hosted on Amazon EC2 instances, the container instances require at least version
+     *         <code>1.26.0</code> of the container agent and at least version <code>1.26.0-1</code> of the
+     *         <code>ecs-init</code> package to enable a proxy configuration. If your container instances are launched
+     *         from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain the required
+     *         versions of the container agent and <code>ecs-init</code>. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon
+     *         ECS-optimized AMI versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public ProxyConfiguration getProxyConfiguration() {
@@ -3190,7 +3261,29 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The configuration details for the App Mesh proxy.
+     * </p>
+     * <p>
+     * For tasks hosted on Amazon EC2 instances, the container instances require at least version <code>1.26.0</code> of
+     * the container agent and at least version <code>1.26.0-1</code> of the <code>ecs-init</code> package to enable a
+     * proxy configuration. If your container instances are launched from the Amazon ECS-optimized AMI version
+     * <code>20190301</code> or later, then they contain the required versions of the container agent and
+     * <code>ecs-init</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon ECS-optimized AMI
+     * versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
      * @param proxyConfiguration
+     *        The configuration details for the App Mesh proxy.</p>
+     *        <p>
+     *        For tasks hosted on Amazon EC2 instances, the container instances require at least version
+     *        <code>1.26.0</code> of the container agent and at least version <code>1.26.0-1</code> of the
+     *        <code>ecs-init</code> package to enable a proxy configuration. If your container instances are launched
+     *        from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain the required
+     *        versions of the container agent and <code>ecs-init</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon
+     *        ECS-optimized AMI versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3273,6 +3366,97 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of
+     * ephemeral storage available, beyond the default amount, for tasks hosted on AWS Fargate. For more information,
+     * see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task
+     * storage</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is only supported for tasks hosted on AWS Fargate using platform version <code>1.4.0</code> or
+     * later.
+     * </p>
+     * </note>
+     * 
+     * @param ephemeralStorage
+     *        The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total
+     *        amount of ephemeral storage available, beyond the default amount, for tasks hosted on AWS Fargate. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task
+     *        storage</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.</p> <note>
+     *        <p>
+     *        This parameter is only supported for tasks hosted on AWS Fargate using platform version <code>1.4.0</code>
+     *        or later.
+     *        </p>
+     */
+
+    public void setEphemeralStorage(EphemeralStorage ephemeralStorage) {
+        this.ephemeralStorage = ephemeralStorage;
+    }
+
+    /**
+     * <p>
+     * The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of
+     * ephemeral storage available, beyond the default amount, for tasks hosted on AWS Fargate. For more information,
+     * see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task
+     * storage</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is only supported for tasks hosted on AWS Fargate using platform version <code>1.4.0</code> or
+     * later.
+     * </p>
+     * </note>
+     * 
+     * @return The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total
+     *         amount of ephemeral storage available, beyond the default amount, for tasks hosted on AWS Fargate. For
+     *         more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task
+     *         storage</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.</p> <note>
+     *         <p>
+     *         This parameter is only supported for tasks hosted on AWS Fargate using platform version
+     *         <code>1.4.0</code> or later.
+     *         </p>
+     */
+
+    public EphemeralStorage getEphemeralStorage() {
+        return this.ephemeralStorage;
+    }
+
+    /**
+     * <p>
+     * The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of
+     * ephemeral storage available, beyond the default amount, for tasks hosted on AWS Fargate. For more information,
+     * see <a href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task
+     * storage</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is only supported for tasks hosted on AWS Fargate using platform version <code>1.4.0</code> or
+     * later.
+     * </p>
+     * </note>
+     * 
+     * @param ephemeralStorage
+     *        The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total
+     *        amount of ephemeral storage available, beyond the default amount, for tasks hosted on AWS Fargate. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate task
+     *        storage</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.</p> <note>
+     *        <p>
+     *        This parameter is only supported for tasks hosted on AWS Fargate using platform version <code>1.4.0</code>
+     *        or later.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterTaskDefinitionRequest withEphemeralStorage(EphemeralStorage ephemeralStorage) {
+        setEphemeralStorage(ephemeralStorage);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3313,7 +3497,9 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
         if (getProxyConfiguration() != null)
             sb.append("ProxyConfiguration: ").append(getProxyConfiguration()).append(",");
         if (getInferenceAccelerators() != null)
-            sb.append("InferenceAccelerators: ").append(getInferenceAccelerators());
+            sb.append("InferenceAccelerators: ").append(getInferenceAccelerators()).append(",");
+        if (getEphemeralStorage() != null)
+            sb.append("EphemeralStorage: ").append(getEphemeralStorage());
         sb.append("}");
         return sb.toString();
     }
@@ -3388,6 +3574,10 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getInferenceAccelerators() != null && other.getInferenceAccelerators().equals(this.getInferenceAccelerators()) == false)
             return false;
+        if (other.getEphemeralStorage() == null ^ this.getEphemeralStorage() == null)
+            return false;
+        if (other.getEphemeralStorage() != null && other.getEphemeralStorage().equals(this.getEphemeralStorage()) == false)
+            return false;
         return true;
     }
 
@@ -3411,6 +3601,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getIpcMode() == null) ? 0 : getIpcMode().hashCode());
         hashCode = prime * hashCode + ((getProxyConfiguration() == null) ? 0 : getProxyConfiguration().hashCode());
         hashCode = prime * hashCode + ((getInferenceAccelerators() == null) ? 0 : getInferenceAccelerators().hashCode());
+        hashCode = prime * hashCode + ((getEphemeralStorage() == null) ? 0 : getEphemeralStorage().hashCode());
         return hashCode;
     }
 

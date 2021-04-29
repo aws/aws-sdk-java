@@ -226,7 +226,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note> <important>
      * <p>
@@ -546,7 +546,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </ul>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      */
@@ -570,7 +570,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      */
@@ -600,7 +600,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      */
@@ -614,7 +614,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      */
@@ -629,7 +629,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      */
@@ -723,14 +723,22 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--ulimit</code> option to
      * <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. Valid naming
-     * values are displayed in the <a>Ulimit</a> data type. This parameter requires version 1.18 of the Docker Remote
-     * API or greater on your container instance. To check the Docker Remote API version on your container instance, log
-     * in to your container instance and run the following command:
-     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
+     * values are displayed in the <a>Ulimit</a> data type.
+     * </p>
+     * <p>
+     * Amazon ECS tasks hosted on Fargate use the default resource limit values set by the operating system with the
+     * exception of the <code>nofile</code> resource limit parameter which Fargate overrides. The <code>nofile</code>
+     * resource limit sets a restriction on the number of open files that a container can use. The default
+     * <code>nofile</code> soft limit is <code>1024</code> and hard limit is <code>4096</code>.
+     * </p>
+     * <p>
+     * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      */
@@ -1965,7 +1973,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note> <important>
      * <p>
@@ -1987,7 +1995,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         <code>--link</code> option to <a
      *         href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *         <p>
-     *         This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     *         This parameter is not supported for Windows containers.
      *         </p>
      *         </note> <important>
      *         <p>
@@ -2018,7 +2026,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note> <important>
      * <p>
@@ -2040,7 +2048,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <code>--link</code> option to <a
      *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     *        This parameter is not supported for Windows containers.
      *        </p>
      *        </note> <important>
      *        <p>
@@ -2073,7 +2081,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note> <important>
      * <p>
@@ -2100,7 +2108,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <code>--link</code> option to <a
      *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     *        This parameter is not supported for Windows containers.
      *        </p>
      *        </note> <important>
      *        <p>
@@ -2135,7 +2143,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note> <important>
      * <p>
@@ -2157,7 +2165,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <code>--link</code> option to <a
      *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     *        This parameter is not supported for Windows containers.
      *        </p>
      *        </note> <important>
      *        <p>
@@ -4391,7 +4399,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </ul>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      * 
@@ -4445,7 +4453,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        </ul>
      *        <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     *        This parameter is not supported for Windows containers.
      *        </p>
      */
 
@@ -4504,7 +4512,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </ul>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      * 
@@ -4557,7 +4565,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         </ul>
      *         <note>
      *         <p>
-     *         This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     *         This parameter is not supported for Windows containers.
      *         </p>
      */
 
@@ -4616,7 +4624,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </ul>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      * 
@@ -4670,7 +4678,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        </ul>
      *        <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     *        This parameter is not supported for Windows containers.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -4756,7 +4764,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      * 
@@ -4766,7 +4774,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p> <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     *        This parameter is not supported for Windows containers.
      *        </p>
      */
 
@@ -4783,7 +4791,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      * 
@@ -4792,7 +4800,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *         of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p> <note>
      *         <p>
-     *         This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     *         This parameter is not supported for Windows containers.
      *         </p>
      */
 
@@ -4809,7 +4817,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      * 
@@ -4819,7 +4827,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p> <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     *        This parameter is not supported for Windows containers.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -4838,7 +4846,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      * 
@@ -4847,7 +4855,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *         of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p> <note>
      *         <p>
-     *         This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     *         This parameter is not supported for Windows containers.
      *         </p>
      */
 
@@ -4985,7 +4993,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      * 
@@ -4997,7 +5005,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <code>--read-only</code> option to <a
      *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     *        This parameter is not supported for Windows containers.
      *        </p>
      */
 
@@ -5015,7 +5023,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      * 
@@ -5026,7 +5034,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         <code>--read-only</code> option to <a
      *         href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *         <p>
-     *         This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     *         This parameter is not supported for Windows containers.
      *         </p>
      */
 
@@ -5044,7 +5052,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      * 
@@ -5056,7 +5064,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <code>--read-only</code> option to <a
      *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     *        This parameter is not supported for Windows containers.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -5076,7 +5084,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      * 
@@ -5087,7 +5095,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         <code>--read-only</code> option to <a
      *         href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *         <p>
-     *         This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     *         This parameter is not supported for Windows containers.
      *         </p>
      */
 
@@ -5104,7 +5112,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      * 
@@ -5114,7 +5122,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         <code>--dns</code> option to <a
      *         href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *         <p>
-     *         This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     *         This parameter is not supported for Windows containers.
      *         </p>
      */
 
@@ -5134,7 +5142,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      * 
@@ -5145,7 +5153,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <code>--dns</code> option to <a
      *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     *        This parameter is not supported for Windows containers.
      *        </p>
      */
 
@@ -5167,7 +5175,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      * <p>
@@ -5183,7 +5191,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <code>--dns</code> option to <a
      *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     *        This parameter is not supported for Windows containers.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -5207,7 +5215,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      * 
@@ -5218,7 +5226,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <code>--dns</code> option to <a
      *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     *        This parameter is not supported for Windows containers.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -5238,7 +5246,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      * 
@@ -5249,7 +5257,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         <code>--dns-search</code> option to <a
      *         href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *         <p>
-     *         This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     *         This parameter is not supported for Windows containers.
      *         </p>
      */
 
@@ -5270,7 +5278,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      * 
@@ -5282,7 +5290,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <code>--dns-search</code> option to <a
      *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     *        This parameter is not supported for Windows containers.
      *        </p>
      */
 
@@ -5305,7 +5313,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      * <p>
@@ -5322,7 +5330,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <code>--dns-search</code> option to <a
      *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     *        This parameter is not supported for Windows containers.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -5347,7 +5355,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      * 
@@ -5359,7 +5367,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        <code>--dns-search</code> option to <a
      *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     *        This parameter is not supported for Windows containers.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -6117,14 +6125,22 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--ulimit</code> option to
      * <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. Valid naming
-     * values are displayed in the <a>Ulimit</a> data type. This parameter requires version 1.18 of the Docker Remote
-     * API or greater on your container instance. To check the Docker Remote API version on your container instance, log
-     * in to your container instance and run the following command:
-     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
+     * values are displayed in the <a>Ulimit</a> data type.
+     * </p>
+     * <p>
+     * Amazon ECS tasks hosted on Fargate use the default resource limit values set by the operating system with the
+     * exception of the <code>nofile</code> resource limit parameter which Fargate overrides. The <code>nofile</code>
+     * resource limit sets a restriction on the number of open files that a container can use. The default
+     * <code>nofile</code> soft limit is <code>1024</code> and hard limit is <code>4096</code>.
+     * </p>
+     * <p>
+     * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      * 
@@ -6135,12 +6151,21 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *         <code>--ulimit</code> option to <a
      *         href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. Valid naming
-     *         values are displayed in the <a>Ulimit</a> data type. This parameter requires version 1.18 of the Docker
-     *         Remote API or greater on your container instance. To check the Docker Remote API version on your
-     *         container instance, log in to your container instance and run the following command:
-     *         <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p> <note>
+     *         values are displayed in the <a>Ulimit</a> data type.</p>
      *         <p>
-     *         This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     *         Amazon ECS tasks hosted on Fargate use the default resource limit values set by the operating system with
+     *         the exception of the <code>nofile</code> resource limit parameter which Fargate overrides. The
+     *         <code>nofile</code> resource limit sets a restriction on the number of open files that a container can
+     *         use. The default <code>nofile</code> soft limit is <code>1024</code> and hard limit is <code>4096</code>.
+     *         </p>
+     *         <p>
+     *         This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
+     *         check the Docker Remote API version on your container instance, log in to your container instance and run
+     *         the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
+     *         </p>
+     *         <note>
+     *         <p>
+     *         This parameter is not supported for Windows containers.
      *         </p>
      */
 
@@ -6158,14 +6183,22 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--ulimit</code> option to
      * <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. Valid naming
-     * values are displayed in the <a>Ulimit</a> data type. This parameter requires version 1.18 of the Docker Remote
-     * API or greater on your container instance. To check the Docker Remote API version on your container instance, log
-     * in to your container instance and run the following command:
-     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
+     * values are displayed in the <a>Ulimit</a> data type.
+     * </p>
+     * <p>
+     * Amazon ECS tasks hosted on Fargate use the default resource limit values set by the operating system with the
+     * exception of the <code>nofile</code> resource limit parameter which Fargate overrides. The <code>nofile</code>
+     * resource limit sets a restriction on the number of open files that a container can use. The default
+     * <code>nofile</code> soft limit is <code>1024</code> and hard limit is <code>4096</code>.
+     * </p>
+     * <p>
+     * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      * 
@@ -6176,12 +6209,21 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and
      *        the <code>--ulimit</code> option to <a
      *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. Valid naming
-     *        values are displayed in the <a>Ulimit</a> data type. This parameter requires version 1.18 of the Docker
-     *        Remote API or greater on your container instance. To check the Docker Remote API version on your container
-     *        instance, log in to your container instance and run the following command:
-     *        <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p> <note>
+     *        values are displayed in the <a>Ulimit</a> data type.</p>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     *        Amazon ECS tasks hosted on Fargate use the default resource limit values set by the operating system with
+     *        the exception of the <code>nofile</code> resource limit parameter which Fargate overrides. The
+     *        <code>nofile</code> resource limit sets a restriction on the number of open files that a container can
+     *        use. The default <code>nofile</code> soft limit is <code>1024</code> and hard limit is <code>4096</code>.
+     *        </p>
+     *        <p>
+     *        This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
+     *        check the Docker Remote API version on your container instance, log in to your container instance and run
+     *        the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This parameter is not supported for Windows containers.
      *        </p>
      */
 
@@ -6201,14 +6243,22 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--ulimit</code> option to
      * <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. Valid naming
-     * values are displayed in the <a>Ulimit</a> data type. This parameter requires version 1.18 of the Docker Remote
-     * API or greater on your container instance. To check the Docker Remote API version on your container instance, log
-     * in to your container instance and run the following command:
-     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
+     * values are displayed in the <a>Ulimit</a> data type.
+     * </p>
+     * <p>
+     * Amazon ECS tasks hosted on Fargate use the default resource limit values set by the operating system with the
+     * exception of the <code>nofile</code> resource limit parameter which Fargate overrides. The <code>nofile</code>
+     * resource limit sets a restriction on the number of open files that a container can use. The default
+     * <code>nofile</code> soft limit is <code>1024</code> and hard limit is <code>4096</code>.
+     * </p>
+     * <p>
+     * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      * <p>
@@ -6224,12 +6274,21 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and
      *        the <code>--ulimit</code> option to <a
      *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. Valid naming
-     *        values are displayed in the <a>Ulimit</a> data type. This parameter requires version 1.18 of the Docker
-     *        Remote API or greater on your container instance. To check the Docker Remote API version on your container
-     *        instance, log in to your container instance and run the following command:
-     *        <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p> <note>
+     *        values are displayed in the <a>Ulimit</a> data type.</p>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     *        Amazon ECS tasks hosted on Fargate use the default resource limit values set by the operating system with
+     *        the exception of the <code>nofile</code> resource limit parameter which Fargate overrides. The
+     *        <code>nofile</code> resource limit sets a restriction on the number of open files that a container can
+     *        use. The default <code>nofile</code> soft limit is <code>1024</code> and hard limit is <code>4096</code>.
+     *        </p>
+     *        <p>
+     *        This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
+     *        check the Docker Remote API version on your container instance, log in to your container instance and run
+     *        the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This parameter is not supported for Windows containers.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -6251,14 +6310,22 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--ulimit</code> option to
      * <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. Valid naming
-     * values are displayed in the <a>Ulimit</a> data type. This parameter requires version 1.18 of the Docker Remote
-     * API or greater on your container instance. To check the Docker Remote API version on your container instance, log
-     * in to your container instance and run the following command:
-     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
+     * values are displayed in the <a>Ulimit</a> data type.
+     * </p>
+     * <p>
+     * Amazon ECS tasks hosted on Fargate use the default resource limit values set by the operating system with the
+     * exception of the <code>nofile</code> resource limit parameter which Fargate overrides. The <code>nofile</code>
+     * resource limit sets a restriction on the number of open files that a container can use. The default
+     * <code>nofile</code> soft limit is <code>1024</code> and hard limit is <code>4096</code>.
+     * </p>
+     * <p>
+     * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
+     * Docker Remote API version on your container instance, log in to your container instance and run the following
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     * This parameter is not supported for Windows containers.
      * </p>
      * </note>
      * 
@@ -6269,12 +6336,21 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and
      *        the <code>--ulimit</code> option to <a
      *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. Valid naming
-     *        values are displayed in the <a>Ulimit</a> data type. This parameter requires version 1.18 of the Docker
-     *        Remote API or greater on your container instance. To check the Docker Remote API version on your container
-     *        instance, log in to your container instance and run the following command:
-     *        <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p> <note>
+     *        values are displayed in the <a>Ulimit</a> data type.</p>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks that use the awsvpc network mode.
+     *        Amazon ECS tasks hosted on Fargate use the default resource limit values set by the operating system with
+     *        the exception of the <code>nofile</code> resource limit parameter which Fargate overrides. The
+     *        <code>nofile</code> resource limit sets a restriction on the number of open files that a container can
+     *        use. The default <code>nofile</code> soft limit is <code>1024</code> and hard limit is <code>4096</code>.
+     *        </p>
+     *        <p>
+     *        This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
+     *        check the Docker Remote API version on your container instance, log in to your container instance and run
+     *        the following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This parameter is not supported for Windows containers.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

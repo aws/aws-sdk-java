@@ -23,10 +23,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PutAccountSettingDefaultResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The current setting for a resource.
+     * </p>
+     */
     private Setting setting;
 
     /**
+     * <p>
+     * The current setting for a resource.
+     * </p>
+     * 
      * @param setting
+     *        The current setting for a resource.
      */
 
     public void setSetting(Setting setting) {
@@ -34,7 +44,11 @@ public class PutAccountSettingDefaultResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
-     * @return
+     * <p>
+     * The current setting for a resource.
+     * </p>
+     * 
+     * @return The current setting for a resource.
      */
 
     public Setting getSetting() {
@@ -42,7 +56,12 @@ public class PutAccountSettingDefaultResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The current setting for a resource.
+     * </p>
+     * 
      * @param setting
+     *        The current setting for a resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

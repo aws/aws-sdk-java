@@ -28,6 +28,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AutoScalingGroupProviderUpdate implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The managed scaling settings for the Auto Scaling group capacity provider.
+     * </p>
+     */
     private ManagedScaling managedScaling;
     /**
      * <p>
@@ -56,7 +61,12 @@ public class AutoScalingGroupProviderUpdate implements Serializable, Cloneable, 
     private String managedTerminationProtection;
 
     /**
+     * <p>
+     * The managed scaling settings for the Auto Scaling group capacity provider.
+     * </p>
+     * 
      * @param managedScaling
+     *        The managed scaling settings for the Auto Scaling group capacity provider.
      */
 
     public void setManagedScaling(ManagedScaling managedScaling) {
@@ -64,7 +74,11 @@ public class AutoScalingGroupProviderUpdate implements Serializable, Cloneable, 
     }
 
     /**
-     * @return
+     * <p>
+     * The managed scaling settings for the Auto Scaling group capacity provider.
+     * </p>
+     * 
+     * @return The managed scaling settings for the Auto Scaling group capacity provider.
      */
 
     public ManagedScaling getManagedScaling() {
@@ -72,7 +86,12 @@ public class AutoScalingGroupProviderUpdate implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * The managed scaling settings for the Auto Scaling group capacity provider.
+     * </p>
+     * 
      * @param managedScaling
+     *        The managed scaling settings for the Auto Scaling group capacity provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

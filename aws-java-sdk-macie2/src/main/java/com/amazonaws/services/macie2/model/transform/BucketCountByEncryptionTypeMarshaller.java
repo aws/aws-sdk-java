@@ -33,6 +33,8 @@ public class BucketCountByEncryptionTypeMarshaller {
             .marshallLocationName("s3Managed").build();
     private static final MarshallingInfo<Long> UNENCRYPTED_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("unencrypted").build();
+    private static final MarshallingInfo<Long> UNKNOWN_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("unknown").build();
 
     private static final BucketCountByEncryptionTypeMarshaller instance = new BucketCountByEncryptionTypeMarshaller();
 
@@ -53,6 +55,7 @@ public class BucketCountByEncryptionTypeMarshaller {
             protocolMarshaller.marshall(bucketCountByEncryptionType.getKmsManaged(), KMSMANAGED_BINDING);
             protocolMarshaller.marshall(bucketCountByEncryptionType.getS3Managed(), S3MANAGED_BINDING);
             protocolMarshaller.marshall(bucketCountByEncryptionType.getUnencrypted(), UNENCRYPTED_BINDING);
+            protocolMarshaller.marshall(bucketCountByEncryptionType.getUnknown(), UNKNOWN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

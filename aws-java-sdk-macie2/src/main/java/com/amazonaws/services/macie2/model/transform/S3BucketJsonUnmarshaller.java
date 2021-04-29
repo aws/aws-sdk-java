@@ -48,6 +48,10 @@ public class S3BucketJsonUnmarshaller implements Unmarshaller<S3Bucket, JsonUnma
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("allowsUnencryptedObjectUploads", targetDepth)) {
+                    context.nextToken();
+                    s3Bucket.setAllowsUnencryptedObjectUploads(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
                     s3Bucket.setArn(context.getUnmarshaller(String.class).unmarshall(context));

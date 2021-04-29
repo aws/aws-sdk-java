@@ -52,6 +52,10 @@ public class BucketMetadataJsonUnmarshaller implements Unmarshaller<BucketMetada
                     context.nextToken();
                     bucketMetadata.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("allowsUnencryptedObjectUploads", targetDepth)) {
+                    context.nextToken();
+                    bucketMetadata.setAllowsUnencryptedObjectUploads(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("bucketArn", targetDepth)) {
                     context.nextToken();
                     bucketMetadata.setBucketArn(context.getUnmarshaller(String.class).unmarshall(context));

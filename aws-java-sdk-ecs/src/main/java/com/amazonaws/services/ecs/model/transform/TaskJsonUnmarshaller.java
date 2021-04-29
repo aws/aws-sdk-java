@@ -194,6 +194,10 @@ public class TaskJsonUnmarshaller implements Unmarshaller<Task, JsonUnmarshaller
                     context.nextToken();
                     task.setVersion(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("ephemeralStorage", targetDepth)) {
+                    context.nextToken();
+                    task.setEphemeralStorage(EphemeralStorageJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

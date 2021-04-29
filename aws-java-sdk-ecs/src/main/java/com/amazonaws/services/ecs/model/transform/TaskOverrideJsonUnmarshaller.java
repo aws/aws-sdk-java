@@ -77,6 +77,10 @@ public class TaskOverrideJsonUnmarshaller implements Unmarshaller<TaskOverride, 
                     context.nextToken();
                     taskOverride.setTaskRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ephemeralStorage", targetDepth)) {
+                    context.nextToken();
+                    taskOverride.setEphemeralStorage(EphemeralStorageJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

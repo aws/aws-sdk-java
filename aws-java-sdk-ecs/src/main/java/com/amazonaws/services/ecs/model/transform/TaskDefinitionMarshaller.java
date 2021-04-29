@@ -72,6 +72,8 @@ public class TaskDefinitionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deregisteredAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> REGISTEREDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("registeredBy").build();
+    private static final MarshallingInfo<StructuredPojo> EPHEMERALSTORAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ephemeralStorage").build();
 
     private static final TaskDefinitionMarshaller instance = new TaskDefinitionMarshaller();
 
@@ -111,6 +113,7 @@ public class TaskDefinitionMarshaller {
             protocolMarshaller.marshall(taskDefinition.getRegisteredAt(), REGISTEREDAT_BINDING);
             protocolMarshaller.marshall(taskDefinition.getDeregisteredAt(), DEREGISTEREDAT_BINDING);
             protocolMarshaller.marshall(taskDefinition.getRegisteredBy(), REGISTEREDBY_BINDING);
+            protocolMarshaller.marshall(taskDefinition.getEphemeralStorage(), EPHEMERALSTORAGE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

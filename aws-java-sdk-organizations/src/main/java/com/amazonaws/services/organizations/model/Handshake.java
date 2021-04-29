@@ -25,8 +25,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * requests and responses.
  * </p>
  * <p>
- * <b>Note:</b> Handshakes that are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after entering
- * that state After that they are deleted.
+ * <b>Note:</b> Handshakes that are <code>CANCELED</code>, <code>ACCEPTED</code>, or <code>DECLINED</code> show up in
+ * lists for only 30 days after entering that state After that they are deleted.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/Handshake" target="_top">AWS API

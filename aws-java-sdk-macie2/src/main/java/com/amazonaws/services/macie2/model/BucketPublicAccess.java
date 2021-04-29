@@ -54,7 +54,7 @@ public class BucketPublicAccess implements Serializable, Cloneable, StructuredPo
     private String effectivePermission;
     /**
      * <p>
-     * The account-level and bucket-level permissions for the bucket.
+     * The account-level and bucket-level permissions settings for the bucket.
      * </p>
      */
     private BucketPermissionConfiguration permissionConfiguration;
@@ -272,11 +272,11 @@ public class BucketPublicAccess implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The account-level and bucket-level permissions for the bucket.
+     * The account-level and bucket-level permissions settings for the bucket.
      * </p>
      * 
      * @param permissionConfiguration
-     *        The account-level and bucket-level permissions for the bucket.
+     *        The account-level and bucket-level permissions settings for the bucket.
      */
 
     public void setPermissionConfiguration(BucketPermissionConfiguration permissionConfiguration) {
@@ -285,10 +285,10 @@ public class BucketPublicAccess implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The account-level and bucket-level permissions for the bucket.
+     * The account-level and bucket-level permissions settings for the bucket.
      * </p>
      * 
-     * @return The account-level and bucket-level permissions for the bucket.
+     * @return The account-level and bucket-level permissions settings for the bucket.
      */
 
     public BucketPermissionConfiguration getPermissionConfiguration() {
@@ -297,11 +297,11 @@ public class BucketPublicAccess implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The account-level and bucket-level permissions for the bucket.
+     * The account-level and bucket-level permissions settings for the bucket.
      * </p>
      * 
      * @param permissionConfiguration
-     *        The account-level and bucket-level permissions for the bucket.
+     *        The account-level and bucket-level permissions settings for the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

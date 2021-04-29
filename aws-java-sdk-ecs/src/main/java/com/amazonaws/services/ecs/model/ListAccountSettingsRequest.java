@@ -43,6 +43,12 @@ public class ListAccountSettingsRequest extends com.amazonaws.AmazonWebServiceRe
      * The ARN of the principal, which can be an IAM user, IAM role, or the root user. If this field is omitted, the
      * account settings are listed only for the authenticated user.
      * </p>
+     * <note>
+     * <p>
+     * Federated users assume the account setting of the root user and can't have explicit account settings set for
+     * them.
+     * </p>
+     * </note>
      */
     private String principalArn;
     /**
@@ -190,10 +196,20 @@ public class ListAccountSettingsRequest extends com.amazonaws.AmazonWebServiceRe
      * The ARN of the principal, which can be an IAM user, IAM role, or the root user. If this field is omitted, the
      * account settings are listed only for the authenticated user.
      * </p>
+     * <note>
+     * <p>
+     * Federated users assume the account setting of the root user and can't have explicit account settings set for
+     * them.
+     * </p>
+     * </note>
      * 
      * @param principalArn
      *        The ARN of the principal, which can be an IAM user, IAM role, or the root user. If this field is omitted,
-     *        the account settings are listed only for the authenticated user.
+     *        the account settings are listed only for the authenticated user.</p> <note>
+     *        <p>
+     *        Federated users assume the account setting of the root user and can't have explicit account settings set
+     *        for them.
+     *        </p>
      */
 
     public void setPrincipalArn(String principalArn) {
@@ -205,9 +221,19 @@ public class ListAccountSettingsRequest extends com.amazonaws.AmazonWebServiceRe
      * The ARN of the principal, which can be an IAM user, IAM role, or the root user. If this field is omitted, the
      * account settings are listed only for the authenticated user.
      * </p>
+     * <note>
+     * <p>
+     * Federated users assume the account setting of the root user and can't have explicit account settings set for
+     * them.
+     * </p>
+     * </note>
      * 
      * @return The ARN of the principal, which can be an IAM user, IAM role, or the root user. If this field is omitted,
-     *         the account settings are listed only for the authenticated user.
+     *         the account settings are listed only for the authenticated user.</p> <note>
+     *         <p>
+     *         Federated users assume the account setting of the root user and can't have explicit account settings set
+     *         for them.
+     *         </p>
      */
 
     public String getPrincipalArn() {
@@ -219,10 +245,20 @@ public class ListAccountSettingsRequest extends com.amazonaws.AmazonWebServiceRe
      * The ARN of the principal, which can be an IAM user, IAM role, or the root user. If this field is omitted, the
      * account settings are listed only for the authenticated user.
      * </p>
+     * <note>
+     * <p>
+     * Federated users assume the account setting of the root user and can't have explicit account settings set for
+     * them.
+     * </p>
+     * </note>
      * 
      * @param principalArn
      *        The ARN of the principal, which can be an IAM user, IAM role, or the root user. If this field is omitted,
-     *        the account settings are listed only for the authenticated user.
+     *        the account settings are listed only for the authenticated user.</p> <note>
+     *        <p>
+     *        Federated users assume the account setting of the root user and can't have explicit account settings set
+     *        for them.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

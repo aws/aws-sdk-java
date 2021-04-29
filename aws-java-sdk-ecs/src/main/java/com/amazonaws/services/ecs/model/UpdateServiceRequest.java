@@ -92,7 +92,11 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private DeploymentConfiguration deploymentConfiguration;
-
+    /**
+     * <p>
+     * An object representing the network configuration for the service.
+     * </p>
+     */
     private NetworkConfiguration networkConfiguration;
     /**
      * <p>
@@ -679,7 +683,12 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * An object representing the network configuration for the service.
+     * </p>
+     * 
      * @param networkConfiguration
+     *        An object representing the network configuration for the service.
      */
 
     public void setNetworkConfiguration(NetworkConfiguration networkConfiguration) {
@@ -687,7 +696,11 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * An object representing the network configuration for the service.
+     * </p>
+     * 
+     * @return An object representing the network configuration for the service.
      */
 
     public NetworkConfiguration getNetworkConfiguration() {
@@ -695,7 +708,12 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * An object representing the network configuration for the service.
+     * </p>
+     * 
      * @param networkConfiguration
+     *        An object representing the network configuration for the service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

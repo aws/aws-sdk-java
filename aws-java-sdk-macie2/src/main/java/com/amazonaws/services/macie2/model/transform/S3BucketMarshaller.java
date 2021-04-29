@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class S3BucketMarshaller {
 
+    private static final MarshallingInfo<String> ALLOWSUNENCRYPTEDOBJECTUPLOADS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("allowsUnencryptedObjectUploads").build();
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -59,6 +61,7 @@ public class S3BucketMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(s3Bucket.getAllowsUnencryptedObjectUploads(), ALLOWSUNENCRYPTEDOBJECTUPLOADS_BINDING);
             protocolMarshaller.marshall(s3Bucket.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(s3Bucket.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(s3Bucket.getDefaultServerSideEncryption(), DEFAULTSERVERSIDEENCRYPTION_BINDING);

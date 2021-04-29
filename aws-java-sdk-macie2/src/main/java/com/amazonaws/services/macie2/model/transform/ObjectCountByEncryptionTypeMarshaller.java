@@ -35,6 +35,8 @@ public class ObjectCountByEncryptionTypeMarshaller {
             .marshallLocationName("s3Managed").build();
     private static final MarshallingInfo<Long> UNENCRYPTED_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("unencrypted").build();
+    private static final MarshallingInfo<Long> UNKNOWN_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("unknown").build();
 
     private static final ObjectCountByEncryptionTypeMarshaller instance = new ObjectCountByEncryptionTypeMarshaller();
 
@@ -56,6 +58,7 @@ public class ObjectCountByEncryptionTypeMarshaller {
             protocolMarshaller.marshall(objectCountByEncryptionType.getKmsManaged(), KMSMANAGED_BINDING);
             protocolMarshaller.marshall(objectCountByEncryptionType.getS3Managed(), S3MANAGED_BINDING);
             protocolMarshaller.marshall(objectCountByEncryptionType.getUnencrypted(), UNENCRYPTED_BINDING);
+            protocolMarshaller.marshall(objectCountByEncryptionType.getUnknown(), UNKNOWN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -64,6 +64,10 @@ public class ObjectCountByEncryptionTypeJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     objectCountByEncryptionType.setUnencrypted(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("unknown", targetDepth)) {
+                    context.nextToken();
+                    objectCountByEncryptionType.setUnknown(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

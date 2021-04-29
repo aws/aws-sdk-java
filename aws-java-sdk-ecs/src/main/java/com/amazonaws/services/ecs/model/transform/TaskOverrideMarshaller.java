@@ -40,6 +40,8 @@ public class TaskOverrideMarshaller {
             .marshallLocationName("memory").build();
     private static final MarshallingInfo<String> TASKROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taskRoleArn").build();
+    private static final MarshallingInfo<StructuredPojo> EPHEMERALSTORAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ephemeralStorage").build();
 
     private static final TaskOverrideMarshaller instance = new TaskOverrideMarshaller();
 
@@ -63,6 +65,7 @@ public class TaskOverrideMarshaller {
             protocolMarshaller.marshall(taskOverride.getExecutionRoleArn(), EXECUTIONROLEARN_BINDING);
             protocolMarshaller.marshall(taskOverride.getMemory(), MEMORY_BINDING);
             protocolMarshaller.marshall(taskOverride.getTaskRoleArn(), TASKROLEARN_BINDING);
+            protocolMarshaller.marshall(taskOverride.getEphemeralStorage(), EPHEMERALSTORAGE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

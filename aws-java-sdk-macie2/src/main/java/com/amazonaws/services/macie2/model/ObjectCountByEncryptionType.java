@@ -56,6 +56,13 @@ public class ObjectCountByEncryptionType implements Serializable, Cloneable, Str
      * </p>
      */
     private Long unencrypted;
+    /**
+     * <p>
+     * The total number of objects that Amazon Macie doesn't have current encryption metadata for. Macie can't provide
+     * current data about the encryption settings for these objects.
+     * </p>
+     */
+    private Long unknown;
 
     /**
      * <p>
@@ -239,6 +246,52 @@ public class ObjectCountByEncryptionType implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * The total number of objects that Amazon Macie doesn't have current encryption metadata for. Macie can't provide
+     * current data about the encryption settings for these objects.
+     * </p>
+     * 
+     * @param unknown
+     *        The total number of objects that Amazon Macie doesn't have current encryption metadata for. Macie can't
+     *        provide current data about the encryption settings for these objects.
+     */
+
+    public void setUnknown(Long unknown) {
+        this.unknown = unknown;
+    }
+
+    /**
+     * <p>
+     * The total number of objects that Amazon Macie doesn't have current encryption metadata for. Macie can't provide
+     * current data about the encryption settings for these objects.
+     * </p>
+     * 
+     * @return The total number of objects that Amazon Macie doesn't have current encryption metadata for. Macie can't
+     *         provide current data about the encryption settings for these objects.
+     */
+
+    public Long getUnknown() {
+        return this.unknown;
+    }
+
+    /**
+     * <p>
+     * The total number of objects that Amazon Macie doesn't have current encryption metadata for. Macie can't provide
+     * current data about the encryption settings for these objects.
+     * </p>
+     * 
+     * @param unknown
+     *        The total number of objects that Amazon Macie doesn't have current encryption metadata for. Macie can't
+     *        provide current data about the encryption settings for these objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ObjectCountByEncryptionType withUnknown(Long unknown) {
+        setUnknown(unknown);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -257,7 +310,9 @@ public class ObjectCountByEncryptionType implements Serializable, Cloneable, Str
         if (getS3Managed() != null)
             sb.append("S3Managed: ").append(getS3Managed()).append(",");
         if (getUnencrypted() != null)
-            sb.append("Unencrypted: ").append(getUnencrypted());
+            sb.append("Unencrypted: ").append(getUnencrypted()).append(",");
+        if (getUnknown() != null)
+            sb.append("Unknown: ").append(getUnknown());
         sb.append("}");
         return sb.toString();
     }
@@ -288,6 +343,10 @@ public class ObjectCountByEncryptionType implements Serializable, Cloneable, Str
             return false;
         if (other.getUnencrypted() != null && other.getUnencrypted().equals(this.getUnencrypted()) == false)
             return false;
+        if (other.getUnknown() == null ^ this.getUnknown() == null)
+            return false;
+        if (other.getUnknown() != null && other.getUnknown().equals(this.getUnknown()) == false)
+            return false;
         return true;
     }
 
@@ -300,6 +359,7 @@ public class ObjectCountByEncryptionType implements Serializable, Cloneable, Str
         hashCode = prime * hashCode + ((getKmsManaged() == null) ? 0 : getKmsManaged().hashCode());
         hashCode = prime * hashCode + ((getS3Managed() == null) ? 0 : getS3Managed().hashCode());
         hashCode = prime * hashCode + ((getUnencrypted() == null) ? 0 : getUnencrypted().hashCode());
+        hashCode = prime * hashCode + ((getUnknown() == null) ? 0 : getUnknown().hashCode());
         return hashCode;
     }
 

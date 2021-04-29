@@ -29,7 +29,7 @@ import javax.annotation.Generated;
  * <ul>
  * <li>
  * <p>
- * ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the management account from the organization. You can't
+ * ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account from the organization. You can't
  * remove the management account. Instead, after you remove all member accounts, delete the organization itself.
  * </p>
  * </li>
@@ -126,7 +126,7 @@ import javax.annotation.Generated;
  * <li>
  * <p>
  * MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China. To create an organization, the
- * master must have an valid business license. For more information, contact customer support.
+ * master must have a valid business license. For more information, contact customer support.
  * </p>
  * </li>
  * <li>

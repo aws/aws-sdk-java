@@ -23,10 +23,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateServicePrimaryTaskSetResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Details about the task set.
+     * </p>
+     */
     private TaskSet taskSet;
 
     /**
+     * <p>
+     * Details about the task set.
+     * </p>
+     * 
      * @param taskSet
+     *        Details about the task set.
      */
 
     public void setTaskSet(TaskSet taskSet) {
@@ -34,7 +44,11 @@ public class UpdateServicePrimaryTaskSetResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * @return
+     * <p>
+     * Details about the task set.
+     * </p>
+     * 
+     * @return Details about the task set.
      */
 
     public TaskSet getTaskSet() {
@@ -42,7 +56,12 @@ public class UpdateServicePrimaryTaskSetResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * Details about the task set.
+     * </p>
+     * 
      * @param taskSet
+     *        Details about the task set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

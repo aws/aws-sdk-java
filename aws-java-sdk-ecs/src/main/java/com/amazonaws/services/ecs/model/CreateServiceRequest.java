@@ -104,14 +104,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private com.amazonaws.internal.SdkInternalList<LoadBalancer> loadBalancers;
     /**
      * <p>
-     * The details of the service discovery registries to assign to this service. For more information, see <a
+     * The details of the service discovery registry to associate with this service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.
      * </p>
      * <note>
      * <p>
-     * Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For more
-     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a>.
+     * Each service may be associated with one service registry. Multiple service registries per service isn't
+     * supported.
      * </p>
      * </note>
      */
@@ -285,7 +284,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String schedulingStrategy;
     /**
      * <p>
-     * The deployment controller to use for the service.
+     * The deployment controller to use for the service. If no deployment controller is specified, the default value of
+     * <code>ECS</code> is used.
      * </p>
      */
     private DeploymentController deploymentController;
@@ -971,25 +971,22 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The details of the service discovery registries to assign to this service. For more information, see <a
+     * The details of the service discovery registry to associate with this service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.
      * </p>
      * <note>
      * <p>
-     * Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For more
-     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a>.
+     * Each service may be associated with one service registry. Multiple service registries per service isn't
+     * supported.
      * </p>
      * </note>
      * 
-     * @return The details of the service discovery registries to assign to this service. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * @return The details of the service discovery registry to associate with this service. For more information, see
+     *         <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *         discovery</a>.</p> <note>
      *         <p>
-     *         Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For
-     *         more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
-     *         platform versions</a>.
+     *         Each service may be associated with one service registry. Multiple service registries per service isn't
+     *         supported.
      *         </p>
      */
 
@@ -1002,26 +999,23 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The details of the service discovery registries to assign to this service. For more information, see <a
+     * The details of the service discovery registry to associate with this service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.
      * </p>
      * <note>
      * <p>
-     * Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For more
-     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a>.
+     * Each service may be associated with one service registry. Multiple service registries per service isn't
+     * supported.
      * </p>
      * </note>
      * 
      * @param serviceRegistries
-     *        The details of the service discovery registries to assign to this service. For more information, see <a
+     *        The details of the service discovery registry to associate with this service. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *        discovery</a>.</p> <note>
      *        <p>
-     *        Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For
-     *        more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
-     *        platform versions</a>.
+     *        Each service may be associated with one service registry. Multiple service registries per service isn't
+     *        supported.
      *        </p>
      */
 
@@ -1036,14 +1030,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The details of the service discovery registries to assign to this service. For more information, see <a
+     * The details of the service discovery registry to associate with this service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.
      * </p>
      * <note>
      * <p>
-     * Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For more
-     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a>.
+     * Each service may be associated with one service registry. Multiple service registries per service isn't
+     * supported.
      * </p>
      * </note>
      * <p>
@@ -1053,14 +1046,12 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param serviceRegistries
-     *        The details of the service discovery registries to assign to this service. For more information, see <a
+     *        The details of the service discovery registry to associate with this service. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *        discovery</a>.</p> <note>
      *        <p>
-     *        Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For
-     *        more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
-     *        platform versions</a>.
+     *        Each service may be associated with one service registry. Multiple service registries per service isn't
+     *        supported.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1077,26 +1068,23 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The details of the service discovery registries to assign to this service. For more information, see <a
+     * The details of the service discovery registry to associate with this service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service discovery</a>.
      * </p>
      * <note>
      * <p>
-     * Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For more
-     * information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a>.
+     * Each service may be associated with one service registry. Multiple service registries per service isn't
+     * supported.
      * </p>
      * </note>
      * 
      * @param serviceRegistries
-     *        The details of the service discovery registries to assign to this service. For more information, see <a
+     *        The details of the service discovery registry to associate with this service. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
      *        discovery</a>.</p> <note>
      *        <p>
-     *        Service discovery is supported for Fargate tasks if you are using platform version v1.1.0 or later. For
-     *        more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
-     *        platform versions</a>.
+     *        Each service may be associated with one service registry. Multiple service registries per service isn't
+     *        supported.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2389,11 +2377,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The deployment controller to use for the service.
+     * The deployment controller to use for the service. If no deployment controller is specified, the default value of
+     * <code>ECS</code> is used.
      * </p>
      * 
      * @param deploymentController
-     *        The deployment controller to use for the service.
+     *        The deployment controller to use for the service. If no deployment controller is specified, the default
+     *        value of <code>ECS</code> is used.
      */
 
     public void setDeploymentController(DeploymentController deploymentController) {
@@ -2402,10 +2392,12 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The deployment controller to use for the service.
+     * The deployment controller to use for the service. If no deployment controller is specified, the default value of
+     * <code>ECS</code> is used.
      * </p>
      * 
-     * @return The deployment controller to use for the service.
+     * @return The deployment controller to use for the service. If no deployment controller is specified, the default
+     *         value of <code>ECS</code> is used.
      */
 
     public DeploymentController getDeploymentController() {
@@ -2414,11 +2406,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The deployment controller to use for the service.
+     * The deployment controller to use for the service. If no deployment controller is specified, the default value of
+     * <code>ECS</code> is used.
      * </p>
      * 
      * @param deploymentController
-     *        The deployment controller to use for the service.
+     *        The deployment controller to use for the service. If no deployment controller is specified, the default
+     *        value of <code>ECS</code> is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

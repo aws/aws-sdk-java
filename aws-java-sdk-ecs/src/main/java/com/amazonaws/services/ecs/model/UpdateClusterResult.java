@@ -23,10 +23,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateClusterResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Details about the cluster.
+     * </p>
+     */
     private Cluster cluster;
 
     /**
+     * <p>
+     * Details about the cluster.
+     * </p>
+     * 
      * @param cluster
+     *        Details about the cluster.
      */
 
     public void setCluster(Cluster cluster) {
@@ -34,7 +44,11 @@ public class UpdateClusterResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * @return
+     * <p>
+     * Details about the cluster.
+     * </p>
+     * 
+     * @return Details about the cluster.
      */
 
     public Cluster getCluster() {
@@ -42,7 +56,12 @@ public class UpdateClusterResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * Details about the cluster.
+     * </p>
+     * 
      * @param cluster
+     *        Details about the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

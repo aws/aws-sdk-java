@@ -61,6 +61,11 @@ public class GetBucketStatisticsResultJsonUnmarshaller implements Unmarshaller<G
                     context.nextToken();
                     getBucketStatisticsResult.setBucketCountByEncryptionType(BucketCountByEncryptionTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("bucketCountByObjectEncryptionRequirement", targetDepth)) {
+                    context.nextToken();
+                    getBucketStatisticsResult.setBucketCountByObjectEncryptionRequirement(BucketCountPolicyAllowsUnencryptedObjectUploadsJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
                 if (context.testExpression("bucketCountBySharedAccessType", targetDepth)) {
                     context.nextToken();
                     getBucketStatisticsResult.setBucketCountBySharedAccessType(BucketCountBySharedAccessTypeJsonUnmarshaller.getInstance().unmarshall(context));

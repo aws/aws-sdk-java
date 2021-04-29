@@ -54,7 +54,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * An array that lists specific character sequences (keywords), one of which must be within proximity
      * (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each
-     * keyword can contain 4 - 90 characters. Keywords aren't case sensitive.
+     * keyword can contain 3 - 90 characters. Keywords aren't case sensitive.
      * </p>
      */
     private java.util.List<String> keywords;
@@ -299,12 +299,12 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * An array that lists specific character sequences (keywords), one of which must be within proximity
      * (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each
-     * keyword can contain 4 - 90 characters. Keywords aren't case sensitive.
+     * keyword can contain 3 - 90 characters. Keywords aren't case sensitive.
      * </p>
      * 
      * @return An array that lists specific character sequences (keywords), one of which must be within proximity
      *         (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords.
-     *         Each keyword can contain 4 - 90 characters. Keywords aren't case sensitive.
+     *         Each keyword can contain 3 - 90 characters. Keywords aren't case sensitive.
      */
 
     public java.util.List<String> getKeywords() {
@@ -315,13 +315,13 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * An array that lists specific character sequences (keywords), one of which must be within proximity
      * (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each
-     * keyword can contain 4 - 90 characters. Keywords aren't case sensitive.
+     * keyword can contain 3 - 90 characters. Keywords aren't case sensitive.
      * </p>
      * 
      * @param keywords
      *        An array that lists specific character sequences (keywords), one of which must be within proximity
      *        (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords.
-     *        Each keyword can contain 4 - 90 characters. Keywords aren't case sensitive.
+     *        Each keyword can contain 3 - 90 characters. Keywords aren't case sensitive.
      */
 
     public void setKeywords(java.util.Collection<String> keywords) {
@@ -337,7 +337,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * An array that lists specific character sequences (keywords), one of which must be within proximity
      * (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each
-     * keyword can contain 4 - 90 characters. Keywords aren't case sensitive.
+     * keyword can contain 3 - 90 characters. Keywords aren't case sensitive.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -348,7 +348,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * @param keywords
      *        An array that lists specific character sequences (keywords), one of which must be within proximity
      *        (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords.
-     *        Each keyword can contain 4 - 90 characters. Keywords aren't case sensitive.
+     *        Each keyword can contain 3 - 90 characters. Keywords aren't case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -366,13 +366,13 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * An array that lists specific character sequences (keywords), one of which must be within proximity
      * (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each
-     * keyword can contain 4 - 90 characters. Keywords aren't case sensitive.
+     * keyword can contain 3 - 90 characters. Keywords aren't case sensitive.
      * </p>
      * 
      * @param keywords
      *        An array that lists specific character sequences (keywords), one of which must be within proximity
      *        (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords.
-     *        Each keyword can contain 4 - 90 characters. Keywords aren't case sensitive.
+     *        Each keyword can contain 3 - 90 characters. Keywords aren't case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

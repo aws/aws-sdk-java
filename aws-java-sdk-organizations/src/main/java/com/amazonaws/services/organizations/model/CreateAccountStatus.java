@@ -48,7 +48,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
     private String accountName;
     /**
      * <p>
-     * The status of the request.
+     * The status of the asynchronous request to create an AWS account.
      * </p>
      */
     private String state;
@@ -88,8 +88,8 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you have reached the limit on the number of
-     * accounts in your organization.
+     * ACCOUNT_LIMIT_EXCEEDED: The account couldn't be created because you reached the limit on the number of accounts
+     * in your organization.
      * </p>
      * </li>
      * <li>
@@ -134,7 +134,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * <li>
      * <p>
      * INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
-     * problem persists, contact Customer Support.
+     * problem persists, contact AWS Customer Support.
      * </p>
      * </li>
      * <li>
@@ -273,11 +273,11 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the request.
+     * The status of the asynchronous request to create an AWS account.
      * </p>
      * 
      * @param state
-     *        The status of the request.
+     *        The status of the asynchronous request to create an AWS account.
      * @see CreateAccountState
      */
 
@@ -287,10 +287,10 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the request.
+     * The status of the asynchronous request to create an AWS account.
      * </p>
      * 
-     * @return The status of the request.
+     * @return The status of the asynchronous request to create an AWS account.
      * @see CreateAccountState
      */
 
@@ -300,11 +300,11 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the request.
+     * The status of the asynchronous request to create an AWS account.
      * </p>
      * 
      * @param state
-     *        The status of the request.
+     *        The status of the asynchronous request to create an AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CreateAccountState
      */
@@ -316,11 +316,11 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the request.
+     * The status of the asynchronous request to create an AWS account.
      * </p>
      * 
      * @param state
-     *        The status of the request.
+     *        The status of the asynchronous request to create an AWS account.
      * @see CreateAccountState
      */
 
@@ -330,11 +330,11 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the request.
+     * The status of the asynchronous request to create an AWS account.
      * </p>
      * 
      * @param state
-     *        The status of the request.
+     *        The status of the asynchronous request to create an AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CreateAccountState
      */
@@ -538,8 +538,8 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you have reached the limit on the number of
-     * accounts in your organization.
+     * ACCOUNT_LIMIT_EXCEEDED: The account couldn't be created because you reached the limit on the number of accounts
+     * in your organization.
      * </p>
      * </li>
      * <li>
@@ -584,7 +584,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * <li>
      * <p>
      * INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
-     * problem persists, contact Customer Support.
+     * problem persists, contact AWS Customer Support.
      * </p>
      * </li>
      * <li>
@@ -617,8 +617,8 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        <ul>
      *        <li>
      *        <p>
-     *        ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you have reached the limit on the number
-     *        of accounts in your organization.
+     *        ACCOUNT_LIMIT_EXCEEDED: The account couldn't be created because you reached the limit on the number of
+     *        accounts in your organization.
      *        </p>
      *        </li>
      *        <li>
@@ -663,7 +663,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        <li>
      *        <p>
      *        INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
-     *        problem persists, contact Customer Support.
+     *        problem persists, contact AWS Customer Support.
      *        </p>
      *        </li>
      *        <li>
@@ -704,8 +704,8 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you have reached the limit on the number of
-     * accounts in your organization.
+     * ACCOUNT_LIMIT_EXCEEDED: The account couldn't be created because you reached the limit on the number of accounts
+     * in your organization.
      * </p>
      * </li>
      * <li>
@@ -750,7 +750,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * <li>
      * <p>
      * INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
-     * problem persists, contact Customer Support.
+     * problem persists, contact AWS Customer Support.
      * </p>
      * </li>
      * <li>
@@ -782,8 +782,8 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *         <ul>
      *         <li>
      *         <p>
-     *         ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you have reached the limit on the number
-     *         of accounts in your organization.
+     *         ACCOUNT_LIMIT_EXCEEDED: The account couldn't be created because you reached the limit on the number of
+     *         accounts in your organization.
      *         </p>
      *         </li>
      *         <li>
@@ -828,7 +828,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *         <li>
      *         <p>
      *         INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If
-     *         the problem persists, contact Customer Support.
+     *         the problem persists, contact AWS Customer Support.
      *         </p>
      *         </li>
      *         <li>
@@ -869,8 +869,8 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you have reached the limit on the number of
-     * accounts in your organization.
+     * ACCOUNT_LIMIT_EXCEEDED: The account couldn't be created because you reached the limit on the number of accounts
+     * in your organization.
      * </p>
      * </li>
      * <li>
@@ -915,7 +915,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * <li>
      * <p>
      * INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
-     * problem persists, contact Customer Support.
+     * problem persists, contact AWS Customer Support.
      * </p>
      * </li>
      * <li>
@@ -948,8 +948,8 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        <ul>
      *        <li>
      *        <p>
-     *        ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you have reached the limit on the number
-     *        of accounts in your organization.
+     *        ACCOUNT_LIMIT_EXCEEDED: The account couldn't be created because you reached the limit on the number of
+     *        accounts in your organization.
      *        </p>
      *        </li>
      *        <li>
@@ -994,7 +994,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        <li>
      *        <p>
      *        INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
-     *        problem persists, contact Customer Support.
+     *        problem persists, contact AWS Customer Support.
      *        </p>
      *        </li>
      *        <li>
@@ -1037,8 +1037,8 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you have reached the limit on the number of
-     * accounts in your organization.
+     * ACCOUNT_LIMIT_EXCEEDED: The account couldn't be created because you reached the limit on the number of accounts
+     * in your organization.
      * </p>
      * </li>
      * <li>
@@ -1083,7 +1083,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * <li>
      * <p>
      * INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
-     * problem persists, contact Customer Support.
+     * problem persists, contact AWS Customer Support.
      * </p>
      * </li>
      * <li>
@@ -1116,8 +1116,8 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        <ul>
      *        <li>
      *        <p>
-     *        ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you have reached the limit on the number
-     *        of accounts in your organization.
+     *        ACCOUNT_LIMIT_EXCEEDED: The account couldn't be created because you reached the limit on the number of
+     *        accounts in your organization.
      *        </p>
      *        </li>
      *        <li>
@@ -1162,7 +1162,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        <li>
      *        <p>
      *        INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
-     *        problem persists, contact Customer Support.
+     *        problem persists, contact AWS Customer Support.
      *        </p>
      *        </li>
      *        <li>
@@ -1203,8 +1203,8 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * <ul>
      * <li>
      * <p>
-     * ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you have reached the limit on the number of
-     * accounts in your organization.
+     * ACCOUNT_LIMIT_EXCEEDED: The account couldn't be created because you reached the limit on the number of accounts
+     * in your organization.
      * </p>
      * </li>
      * <li>
@@ -1249,7 +1249,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * <li>
      * <p>
      * INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
-     * problem persists, contact Customer Support.
+     * problem persists, contact AWS Customer Support.
      * </p>
      * </li>
      * <li>
@@ -1282,8 +1282,8 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        <ul>
      *        <li>
      *        <p>
-     *        ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you have reached the limit on the number
-     *        of accounts in your organization.
+     *        ACCOUNT_LIMIT_EXCEEDED: The account couldn't be created because you reached the limit on the number of
+     *        accounts in your organization.
      *        </p>
      *        </li>
      *        <li>
@@ -1328,7 +1328,7 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        <li>
      *        <p>
      *        INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
-     *        problem persists, contact Customer Support.
+     *        problem persists, contact AWS Customer Support.
      *        </p>
      *        </li>
      *        <li>

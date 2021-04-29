@@ -23,10 +23,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteCapacityProviderResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The details of the capacity provider.
+     * </p>
+     */
     private CapacityProvider capacityProvider;
 
     /**
+     * <p>
+     * The details of the capacity provider.
+     * </p>
+     * 
      * @param capacityProvider
+     *        The details of the capacity provider.
      */
 
     public void setCapacityProvider(CapacityProvider capacityProvider) {
@@ -34,7 +44,11 @@ public class DeleteCapacityProviderResult extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * @return
+     * <p>
+     * The details of the capacity provider.
+     * </p>
+     * 
+     * @return The details of the capacity provider.
      */
 
     public CapacityProvider getCapacityProvider() {
@@ -42,7 +56,12 @@ public class DeleteCapacityProviderResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The details of the capacity provider.
+     * </p>
+     * 
      * @param capacityProvider
+     *        The details of the capacity provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

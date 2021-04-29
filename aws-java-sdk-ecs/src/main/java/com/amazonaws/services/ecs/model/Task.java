@@ -386,6 +386,12 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Long version;
+    /**
+     * <p>
+     * The ephemeral storage settings for the task.
+     * </p>
+     */
+    private EphemeralStorage ephemeralStorage;
 
     /**
      * <p>
@@ -3046,6 +3052,46 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The ephemeral storage settings for the task.
+     * </p>
+     * 
+     * @param ephemeralStorage
+     *        The ephemeral storage settings for the task.
+     */
+
+    public void setEphemeralStorage(EphemeralStorage ephemeralStorage) {
+        this.ephemeralStorage = ephemeralStorage;
+    }
+
+    /**
+     * <p>
+     * The ephemeral storage settings for the task.
+     * </p>
+     * 
+     * @return The ephemeral storage settings for the task.
+     */
+
+    public EphemeralStorage getEphemeralStorage() {
+        return this.ephemeralStorage;
+    }
+
+    /**
+     * <p>
+     * The ephemeral storage settings for the task.
+     * </p>
+     * 
+     * @param ephemeralStorage
+     *        The ephemeral storage settings for the task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Task withEphemeralStorage(EphemeralStorage ephemeralStorage) {
+        setEphemeralStorage(ephemeralStorage);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3124,7 +3170,9 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
         if (getTaskDefinitionArn() != null)
             sb.append("TaskDefinitionArn: ").append(getTaskDefinitionArn()).append(",");
         if (getVersion() != null)
-            sb.append("Version: ").append(getVersion());
+            sb.append("Version: ").append(getVersion()).append(",");
+        if (getEphemeralStorage() != null)
+            sb.append("EphemeralStorage: ").append(getEphemeralStorage());
         sb.append("}");
         return sb.toString();
     }
@@ -3275,6 +3323,10 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
             return false;
+        if (other.getEphemeralStorage() == null ^ this.getEphemeralStorage() == null)
+            return false;
+        if (other.getEphemeralStorage() != null && other.getEphemeralStorage().equals(this.getEphemeralStorage()) == false)
+            return false;
         return true;
     }
 
@@ -3317,6 +3369,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTaskArn() == null) ? 0 : getTaskArn().hashCode());
         hashCode = prime * hashCode + ((getTaskDefinitionArn() == null) ? 0 : getTaskDefinitionArn().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
+        hashCode = prime * hashCode + ((getEphemeralStorage() == null) ? 0 : getEphemeralStorage().hashCode());
         return hashCode;
     }
 

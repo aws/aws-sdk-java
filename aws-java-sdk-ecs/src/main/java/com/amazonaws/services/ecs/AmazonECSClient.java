@@ -3981,12 +3981,21 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * differs depending on whether your container instance was launched with the Amazon ECS-optimized AMI or another
      * operating system.
      * </p>
+     * <note>
      * <p>
-     * <code>UpdateContainerAgent</code> requires the Amazon ECS-optimized AMI or Amazon Linux with the
+     * The <code>UpdateContainerAgent</code> API isn't supported for container instances using the Amazon ECS-optimized
+     * Amazon Linux 2 (arm64) AMI. To update the container agent, you can update the <code>ecs-init</code> package which
+     * will update the agent. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/agent-update-ecs-ami.html">Updating the Amazon
+     * ECS container agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * </note>
+     * <p>
+     * The <code>UpdateContainerAgent</code> API requires an Amazon ECS-optimized AMI or Amazon Linux AMI with the
      * <code>ecs-init</code> service installed and running. For help updating the Amazon ECS container agent on other
      * operating systems, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent"
-     * >Manually Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer
+     * >Manually updating the Amazon ECS container agent</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.
      * </p>
      * 

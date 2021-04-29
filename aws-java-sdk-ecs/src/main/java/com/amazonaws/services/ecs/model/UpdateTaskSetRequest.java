@@ -44,7 +44,11 @@ public class UpdateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String taskSet;
-
+    /**
+     * <p>
+     * A floating-point percentage of the desired number of tasks to place and keep running in the task set.
+     * </p>
+     */
     private Scale scale;
 
     /**
@@ -174,7 +178,12 @@ public class UpdateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * A floating-point percentage of the desired number of tasks to place and keep running in the task set.
+     * </p>
+     * 
      * @param scale
+     *        A floating-point percentage of the desired number of tasks to place and keep running in the task set.
      */
 
     public void setScale(Scale scale) {
@@ -182,7 +191,11 @@ public class UpdateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * A floating-point percentage of the desired number of tasks to place and keep running in the task set.
+     * </p>
+     * 
+     * @return A floating-point percentage of the desired number of tasks to place and keep running in the task set.
      */
 
     public Scale getScale() {
@@ -190,7 +203,12 @@ public class UpdateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * A floating-point percentage of the desired number of tasks to place and keep running in the task set.
+     * </p>
+     * 
      * @param scale
+     *        A floating-point percentage of the desired number of tasks to place and keep running in the task set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

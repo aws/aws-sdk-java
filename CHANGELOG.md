@@ -1,3 +1,20 @@
+# __1.11.1008__ __2021-04-29__
+## __AWS Organizations__
+  - ### Features
+    - Minor text updates for AWS Organizations API Reference
+
+## __Amazon Chime__
+  - ### Features
+    - Increase AppInstanceUserId length to 64 characters
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - Add support for EphemeralStorage on TaskDefinition and TaskOverride
+
+## __Amazon Macie 2__
+  - ### Features
+    - The Amazon Macie API now provides S3 bucket metadata that indicates whether a bucket policy requires server-side encryption of objects when objects are uploaded to the bucket.
+
 # __1.11.1007__ __2021-04-28__
 ## __AWS CloudFormation__
   - ### Features

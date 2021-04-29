@@ -38,14 +38,21 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
     private BucketCountByEffectivePermission bucketCountByEffectivePermission;
     /**
      * <p>
-     * The total number of buckets, grouped by default server-side encryption type. This object also reports the total
-     * number of buckets that don't encrypt new objects by default.
+     * The total number of buckets that use certain types of server-side encryption to encrypt new objects by default.
+     * This object also reports the total number of buckets that don't encrypt new objects by default.
      * </p>
      */
     private BucketCountByEncryptionType bucketCountByEncryptionType;
     /**
      * <p>
-     * The total number of buckets that are shared with another AWS account.
+     * The total number of buckets whose bucket policies do and don't require server-side encryption of objects when
+     * objects are uploaded to the buckets.
+     * </p>
+     */
+    private BucketCountPolicyAllowsUnencryptedObjectUploads bucketCountByObjectEncryptionRequirement;
+    /**
+     * <p>
+     * The total number of buckets that are and aren't shared with another AWS account.
      * </p>
      */
     private BucketCountBySharedAccessType bucketCountBySharedAccessType;
@@ -206,13 +213,13 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of buckets, grouped by default server-side encryption type. This object also reports the total
-     * number of buckets that don't encrypt new objects by default.
+     * The total number of buckets that use certain types of server-side encryption to encrypt new objects by default.
+     * This object also reports the total number of buckets that don't encrypt new objects by default.
      * </p>
      * 
      * @param bucketCountByEncryptionType
-     *        The total number of buckets, grouped by default server-side encryption type. This object also reports the
-     *        total number of buckets that don't encrypt new objects by default.
+     *        The total number of buckets that use certain types of server-side encryption to encrypt new objects by
+     *        default. This object also reports the total number of buckets that don't encrypt new objects by default.
      */
 
     public void setBucketCountByEncryptionType(BucketCountByEncryptionType bucketCountByEncryptionType) {
@@ -221,12 +228,12 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of buckets, grouped by default server-side encryption type. This object also reports the total
-     * number of buckets that don't encrypt new objects by default.
+     * The total number of buckets that use certain types of server-side encryption to encrypt new objects by default.
+     * This object also reports the total number of buckets that don't encrypt new objects by default.
      * </p>
      * 
-     * @return The total number of buckets, grouped by default server-side encryption type. This object also reports the
-     *         total number of buckets that don't encrypt new objects by default.
+     * @return The total number of buckets that use certain types of server-side encryption to encrypt new objects by
+     *         default. This object also reports the total number of buckets that don't encrypt new objects by default.
      */
 
     public BucketCountByEncryptionType getBucketCountByEncryptionType() {
@@ -235,13 +242,13 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of buckets, grouped by default server-side encryption type. This object also reports the total
-     * number of buckets that don't encrypt new objects by default.
+     * The total number of buckets that use certain types of server-side encryption to encrypt new objects by default.
+     * This object also reports the total number of buckets that don't encrypt new objects by default.
      * </p>
      * 
      * @param bucketCountByEncryptionType
-     *        The total number of buckets, grouped by default server-side encryption type. This object also reports the
-     *        total number of buckets that don't encrypt new objects by default.
+     *        The total number of buckets that use certain types of server-side encryption to encrypt new objects by
+     *        default. This object also reports the total number of buckets that don't encrypt new objects by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -252,11 +259,58 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of buckets that are shared with another AWS account.
+     * The total number of buckets whose bucket policies do and don't require server-side encryption of objects when
+     * objects are uploaded to the buckets.
+     * </p>
+     * 
+     * @param bucketCountByObjectEncryptionRequirement
+     *        The total number of buckets whose bucket policies do and don't require server-side encryption of objects
+     *        when objects are uploaded to the buckets.
+     */
+
+    public void setBucketCountByObjectEncryptionRequirement(BucketCountPolicyAllowsUnencryptedObjectUploads bucketCountByObjectEncryptionRequirement) {
+        this.bucketCountByObjectEncryptionRequirement = bucketCountByObjectEncryptionRequirement;
+    }
+
+    /**
+     * <p>
+     * The total number of buckets whose bucket policies do and don't require server-side encryption of objects when
+     * objects are uploaded to the buckets.
+     * </p>
+     * 
+     * @return The total number of buckets whose bucket policies do and don't require server-side encryption of objects
+     *         when objects are uploaded to the buckets.
+     */
+
+    public BucketCountPolicyAllowsUnencryptedObjectUploads getBucketCountByObjectEncryptionRequirement() {
+        return this.bucketCountByObjectEncryptionRequirement;
+    }
+
+    /**
+     * <p>
+     * The total number of buckets whose bucket policies do and don't require server-side encryption of objects when
+     * objects are uploaded to the buckets.
+     * </p>
+     * 
+     * @param bucketCountByObjectEncryptionRequirement
+     *        The total number of buckets whose bucket policies do and don't require server-side encryption of objects
+     *        when objects are uploaded to the buckets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetBucketStatisticsResult withBucketCountByObjectEncryptionRequirement(
+            BucketCountPolicyAllowsUnencryptedObjectUploads bucketCountByObjectEncryptionRequirement) {
+        setBucketCountByObjectEncryptionRequirement(bucketCountByObjectEncryptionRequirement);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The total number of buckets that are and aren't shared with another AWS account.
      * </p>
      * 
      * @param bucketCountBySharedAccessType
-     *        The total number of buckets that are shared with another AWS account.
+     *        The total number of buckets that are and aren't shared with another AWS account.
      */
 
     public void setBucketCountBySharedAccessType(BucketCountBySharedAccessType bucketCountBySharedAccessType) {
@@ -265,10 +319,10 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of buckets that are shared with another AWS account.
+     * The total number of buckets that are and aren't shared with another AWS account.
      * </p>
      * 
-     * @return The total number of buckets that are shared with another AWS account.
+     * @return The total number of buckets that are and aren't shared with another AWS account.
      */
 
     public BucketCountBySharedAccessType getBucketCountBySharedAccessType() {
@@ -277,11 +331,11 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of buckets that are shared with another AWS account.
+     * The total number of buckets that are and aren't shared with another AWS account.
      * </p>
      * 
      * @param bucketCountBySharedAccessType
-     *        The total number of buckets that are shared with another AWS account.
+     *        The total number of buckets that are and aren't shared with another AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -745,6 +799,8 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
             sb.append("BucketCountByEffectivePermission: ").append(getBucketCountByEffectivePermission()).append(",");
         if (getBucketCountByEncryptionType() != null)
             sb.append("BucketCountByEncryptionType: ").append(getBucketCountByEncryptionType()).append(",");
+        if (getBucketCountByObjectEncryptionRequirement() != null)
+            sb.append("BucketCountByObjectEncryptionRequirement: ").append(getBucketCountByObjectEncryptionRequirement()).append(",");
         if (getBucketCountBySharedAccessType() != null)
             sb.append("BucketCountBySharedAccessType: ").append(getBucketCountBySharedAccessType()).append(",");
         if (getClassifiableObjectCount() != null)
@@ -789,6 +845,11 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
         if (other.getBucketCountByEncryptionType() == null ^ this.getBucketCountByEncryptionType() == null)
             return false;
         if (other.getBucketCountByEncryptionType() != null && other.getBucketCountByEncryptionType().equals(this.getBucketCountByEncryptionType()) == false)
+            return false;
+        if (other.getBucketCountByObjectEncryptionRequirement() == null ^ this.getBucketCountByObjectEncryptionRequirement() == null)
+            return false;
+        if (other.getBucketCountByObjectEncryptionRequirement() != null
+                && other.getBucketCountByObjectEncryptionRequirement().equals(this.getBucketCountByObjectEncryptionRequirement()) == false)
             return false;
         if (other.getBucketCountBySharedAccessType() == null ^ this.getBucketCountBySharedAccessType() == null)
             return false;
@@ -839,6 +900,7 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getBucketCount() == null) ? 0 : getBucketCount().hashCode());
         hashCode = prime * hashCode + ((getBucketCountByEffectivePermission() == null) ? 0 : getBucketCountByEffectivePermission().hashCode());
         hashCode = prime * hashCode + ((getBucketCountByEncryptionType() == null) ? 0 : getBucketCountByEncryptionType().hashCode());
+        hashCode = prime * hashCode + ((getBucketCountByObjectEncryptionRequirement() == null) ? 0 : getBucketCountByObjectEncryptionRequirement().hashCode());
         hashCode = prime * hashCode + ((getBucketCountBySharedAccessType() == null) ? 0 : getBucketCountBySharedAccessType().hashCode());
         hashCode = prime * hashCode + ((getClassifiableObjectCount() == null) ? 0 : getClassifiableObjectCount().hashCode());
         hashCode = prime * hashCode + ((getClassifiableSizeInBytes() == null) ? 0 : getClassifiableSizeInBytes().hashCode());

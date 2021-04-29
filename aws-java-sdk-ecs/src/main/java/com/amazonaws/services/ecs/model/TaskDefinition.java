@@ -398,6 +398,12 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String registeredBy;
+    /**
+     * <p>
+     * The ephemeral storage settings to use for tasks run with the task definition.
+     * </p>
+     */
+    private EphemeralStorage ephemeralStorage;
 
     /**
      * <p>
@@ -3552,6 +3558,46 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The ephemeral storage settings to use for tasks run with the task definition.
+     * </p>
+     * 
+     * @param ephemeralStorage
+     *        The ephemeral storage settings to use for tasks run with the task definition.
+     */
+
+    public void setEphemeralStorage(EphemeralStorage ephemeralStorage) {
+        this.ephemeralStorage = ephemeralStorage;
+    }
+
+    /**
+     * <p>
+     * The ephemeral storage settings to use for tasks run with the task definition.
+     * </p>
+     * 
+     * @return The ephemeral storage settings to use for tasks run with the task definition.
+     */
+
+    public EphemeralStorage getEphemeralStorage() {
+        return this.ephemeralStorage;
+    }
+
+    /**
+     * <p>
+     * The ephemeral storage settings to use for tasks run with the task definition.
+     * </p>
+     * 
+     * @param ephemeralStorage
+     *        The ephemeral storage settings to use for tasks run with the task definition.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TaskDefinition withEphemeralStorage(EphemeralStorage ephemeralStorage) {
+        setEphemeralStorage(ephemeralStorage);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3606,7 +3652,9 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
         if (getDeregisteredAt() != null)
             sb.append("DeregisteredAt: ").append(getDeregisteredAt()).append(",");
         if (getRegisteredBy() != null)
-            sb.append("RegisteredBy: ").append(getRegisteredBy());
+            sb.append("RegisteredBy: ").append(getRegisteredBy()).append(",");
+        if (getEphemeralStorage() != null)
+            sb.append("EphemeralStorage: ").append(getEphemeralStorage());
         sb.append("}");
         return sb.toString();
     }
@@ -3709,6 +3757,10 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRegisteredBy() != null && other.getRegisteredBy().equals(this.getRegisteredBy()) == false)
             return false;
+        if (other.getEphemeralStorage() == null ^ this.getEphemeralStorage() == null)
+            return false;
+        if (other.getEphemeralStorage() != null && other.getEphemeralStorage().equals(this.getEphemeralStorage()) == false)
+            return false;
         return true;
     }
 
@@ -3739,6 +3791,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRegisteredAt() == null) ? 0 : getRegisteredAt().hashCode());
         hashCode = prime * hashCode + ((getDeregisteredAt() == null) ? 0 : getDeregisteredAt().hashCode());
         hashCode = prime * hashCode + ((getRegisteredBy() == null) ? 0 : getRegisteredBy().hashCode());
+        hashCode = prime * hashCode + ((getEphemeralStorage() == null) ? 0 : getEphemeralStorage().hashCode());
         return hashCode;
     }
 
