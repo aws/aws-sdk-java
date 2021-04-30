@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+ * The precondition in one or more of the request fields evaluated to <code>false</code>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

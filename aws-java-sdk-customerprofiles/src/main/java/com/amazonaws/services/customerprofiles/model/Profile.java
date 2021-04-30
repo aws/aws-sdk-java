@@ -42,7 +42,7 @@ public class Profile implements Serializable, Cloneable, StructuredPojo {
     private String accountNumber;
     /**
      * <p>
-     * Any additional information relevant to the customer's profile.
+     * Any additional information relevant to the customer’s profile.
      * </p>
      */
     private String additionalInformation;
@@ -114,7 +114,7 @@ public class Profile implements Serializable, Cloneable, StructuredPojo {
     private String businessPhoneNumber;
     /**
      * <p>
-     * The customer's email address, which has not been specified as a personal or business address.
+     * The customer’s email address, which has not been specified as a personal or business address.
      * </p>
      */
     private String emailAddress;
@@ -243,11 +243,11 @@ public class Profile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Any additional information relevant to the customer's profile.
+     * Any additional information relevant to the customer’s profile.
      * </p>
      * 
      * @param additionalInformation
-     *        Any additional information relevant to the customer's profile.
+     *        Any additional information relevant to the customer’s profile.
      */
 
     public void setAdditionalInformation(String additionalInformation) {
@@ -256,10 +256,10 @@ public class Profile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Any additional information relevant to the customer's profile.
+     * Any additional information relevant to the customer’s profile.
      * </p>
      * 
-     * @return Any additional information relevant to the customer's profile.
+     * @return Any additional information relevant to the customer’s profile.
      */
 
     public String getAdditionalInformation() {
@@ -268,11 +268,11 @@ public class Profile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Any additional information relevant to the customer's profile.
+     * Any additional information relevant to the customer’s profile.
      * </p>
      * 
      * @param additionalInformation
-     *        Any additional information relevant to the customer's profile.
+     *        Any additional information relevant to the customer’s profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -761,11 +761,11 @@ public class Profile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The customer's email address, which has not been specified as a personal or business address.
+     * The customer’s email address, which has not been specified as a personal or business address.
      * </p>
      * 
      * @param emailAddress
-     *        The customer's email address, which has not been specified as a personal or business address.
+     *        The customer’s email address, which has not been specified as a personal or business address.
      */
 
     public void setEmailAddress(String emailAddress) {
@@ -774,10 +774,10 @@ public class Profile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The customer's email address, which has not been specified as a personal or business address.
+     * The customer’s email address, which has not been specified as a personal or business address.
      * </p>
      * 
-     * @return The customer's email address, which has not been specified as a personal or business address.
+     * @return The customer’s email address, which has not been specified as a personal or business address.
      */
 
     public String getEmailAddress() {
@@ -786,11 +786,11 @@ public class Profile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The customer's email address, which has not been specified as a personal or business address.
+     * The customer’s email address, which has not been specified as a personal or business address.
      * </p>
      * 
      * @param emailAddress
-     *        The customer's email address, which has not been specified as a personal or business address.
+     *        The customer’s email address, which has not been specified as a personal or business address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -50,7 +50,7 @@ public class CachePolicyConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A comment to describe the cache policy.
+     * A comment to describe the cache policy. The comment cannot be longer than 128 characters.
      * </p>
      */
     private String comment;
@@ -109,11 +109,11 @@ public class CachePolicyConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A comment to describe the cache policy.
+     * A comment to describe the cache policy. The comment cannot be longer than 128 characters.
      * </p>
      * 
      * @param comment
-     *        A comment to describe the cache policy.
+     *        A comment to describe the cache policy. The comment cannot be longer than 128 characters.
      */
 
     public void setComment(String comment) {
@@ -122,10 +122,10 @@ public class CachePolicyConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A comment to describe the cache policy.
+     * A comment to describe the cache policy. The comment cannot be longer than 128 characters.
      * </p>
      * 
-     * @return A comment to describe the cache policy.
+     * @return A comment to describe the cache policy. The comment cannot be longer than 128 characters.
      */
 
     public String getComment() {
@@ -134,11 +134,11 @@ public class CachePolicyConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A comment to describe the cache policy.
+     * A comment to describe the cache policy. The comment cannot be longer than 128 characters.
      * </p>
      * 
      * @param comment
-     *        A comment to describe the cache policy.
+     *        A comment to describe the cache policy. The comment cannot be longer than 128 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -452,6 +452,39 @@ public class AmazonCustomerProfilesAsyncClient extends AmazonCustomerProfilesCli
     }
 
     @Override
+    public java.util.concurrent.Future<GetMatchesResult> getMatchesAsync(GetMatchesRequest request) {
+
+        return getMatchesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMatchesResult> getMatchesAsync(final GetMatchesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetMatchesRequest, GetMatchesResult> asyncHandler) {
+        final GetMatchesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetMatchesResult>() {
+            @Override
+            public GetMatchesResult call() throws Exception {
+                GetMatchesResult result = null;
+
+                try {
+                    result = executeGetMatches(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetProfileObjectTypeResult> getProfileObjectTypeAsync(GetProfileObjectTypeRequest request) {
 
         return getProfileObjectTypeAsync(request, null);
@@ -734,6 +767,39 @@ public class AmazonCustomerProfilesAsyncClient extends AmazonCustomerProfilesCli
 
                 try {
                     result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<MergeProfilesResult> mergeProfilesAsync(MergeProfilesRequest request) {
+
+        return mergeProfilesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<MergeProfilesResult> mergeProfilesAsync(final MergeProfilesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<MergeProfilesRequest, MergeProfilesResult> asyncHandler) {
+        final MergeProfilesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<MergeProfilesResult>() {
+            @Override
+            public MergeProfilesResult call() throws Exception {
+                MergeProfilesResult result = null;
+
+                try {
+                    result = executeMergeProfiles(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

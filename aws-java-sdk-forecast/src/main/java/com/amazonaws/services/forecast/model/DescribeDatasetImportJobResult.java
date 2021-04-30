@@ -96,7 +96,7 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
     private DataSource dataSource;
     /**
      * <p>
-     * The estimated time in minutes for the dataset import job to complete.
+     * The estimated time remaining in minutes for the dataset import job to complete.
      * </p>
      */
     private Long estimatedTimeRemainingInMinutes;
@@ -656,11 +656,11 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The estimated time in minutes for the dataset import job to complete.
+     * The estimated time remaining in minutes for the dataset import job to complete.
      * </p>
      * 
      * @param estimatedTimeRemainingInMinutes
-     *        The estimated time in minutes for the dataset import job to complete.
+     *        The estimated time remaining in minutes for the dataset import job to complete.
      */
 
     public void setEstimatedTimeRemainingInMinutes(Long estimatedTimeRemainingInMinutes) {
@@ -669,10 +669,10 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The estimated time in minutes for the dataset import job to complete.
+     * The estimated time remaining in minutes for the dataset import job to complete.
      * </p>
      * 
-     * @return The estimated time in minutes for the dataset import job to complete.
+     * @return The estimated time remaining in minutes for the dataset import job to complete.
      */
 
     public Long getEstimatedTimeRemainingInMinutes() {
@@ -681,11 +681,11 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The estimated time in minutes for the dataset import job to complete.
+     * The estimated time remaining in minutes for the dataset import job to complete.
      * </p>
      * 
      * @param estimatedTimeRemainingInMinutes
-     *        The estimated time in minutes for the dataset import job to complete.
+     *        The estimated time remaining in minutes for the dataset import job to complete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

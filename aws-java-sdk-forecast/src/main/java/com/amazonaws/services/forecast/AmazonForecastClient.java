@@ -1291,6 +1291,103 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Deletes an entire resource tree. This operation will delete the parent resource and its child resources.
+     * </p>
+     * <p>
+     * Child resources are resources that were created from another resource. For example, when a forecast is generated
+     * from a predictor, the forecast is the child resource and the predictor is the parent resource.
+     * </p>
+     * <p>
+     * Amazon Forecast resources possess the following parent-child resource hierarchies:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Dataset Group</b>: predictors, predictor backtest export jobs, forecasts, forecast export jobs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Dataset</b>: dataset import jobs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Predictor</b>: predictor backtest export jobs, forecasts, forecast export jobs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Forecast</b>: forecast export jobs
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * <code>DeleteResourceTree</code> will only delete Amazon Forecast resources, and will not delete datasets or
+     * exported files stored in Amazon S3.
+     * </p>
+     * </note>
+     * 
+     * @param deleteResourceTreeRequest
+     * @return Result of the DeleteResourceTree operation returned by the service.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @sample AmazonForecast.DeleteResourceTree
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteResourceTree" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteResourceTreeResult deleteResourceTree(DeleteResourceTreeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteResourceTree(request);
+    }
+
+    @SdkInternalApi
+    final DeleteResourceTreeResult executeDeleteResourceTree(DeleteResourceTreeRequest deleteResourceTreeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteResourceTreeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteResourceTreeRequest> request = null;
+        Response<DeleteResourceTreeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteResourceTreeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteResourceTreeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteResourceTree");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteResourceTreeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteResourceTreeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes an Amazon Forecast dataset created using the <a>CreateDataset</a> operation.
      * </p>
      * <p>

@@ -34,7 +34,7 @@ public class FieldLevelEncryptionConfig implements Serializable, Cloneable {
     private String callerReference;
     /**
      * <p>
-     * An optional comment about the configuration.
+     * An optional comment about the configuration. The comment cannot be longer than 128 characters.
      * </p>
      */
     private String comment;
@@ -95,11 +95,11 @@ public class FieldLevelEncryptionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An optional comment about the configuration.
+     * An optional comment about the configuration. The comment cannot be longer than 128 characters.
      * </p>
      * 
      * @param comment
-     *        An optional comment about the configuration.
+     *        An optional comment about the configuration. The comment cannot be longer than 128 characters.
      */
 
     public void setComment(String comment) {
@@ -108,10 +108,10 @@ public class FieldLevelEncryptionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An optional comment about the configuration.
+     * An optional comment about the configuration. The comment cannot be longer than 128 characters.
      * </p>
      * 
-     * @return An optional comment about the configuration.
+     * @return An optional comment about the configuration. The comment cannot be longer than 128 characters.
      */
 
     public String getComment() {
@@ -120,11 +120,11 @@ public class FieldLevelEncryptionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An optional comment about the configuration.
+     * An optional comment about the configuration. The comment cannot be longer than 128 characters.
      * </p>
      * 
      * @param comment
-     *        An optional comment about the configuration.
+     *        An optional comment about the configuration. The comment cannot be longer than 128 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

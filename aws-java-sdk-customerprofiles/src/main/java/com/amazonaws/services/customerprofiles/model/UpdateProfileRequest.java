@@ -39,7 +39,7 @@ public class UpdateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String profileId;
     /**
      * <p>
-     * Any additional information relevant to the customer's profile.
+     * Any additional information relevant to the customer’s profile.
      * </p>
      */
     private String additionalInformation;
@@ -93,7 +93,7 @@ public class UpdateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String gender;
     /**
      * <p>
-     * The customer's phone number, which has not been specified as a mobile, home, or business number.
+     * The customer’s phone number, which has not been specified as a mobile, home, or business number.
      * </p>
      */
     private String phoneNumber;
@@ -117,7 +117,7 @@ public class UpdateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String businessPhoneNumber;
     /**
      * <p>
-     * The customer's email address, which has not been specified as a personal or business address.
+     * The customer’s email address, which has not been specified as a personal or business address.
      * </p>
      */
     private String emailAddress;
@@ -246,11 +246,11 @@ public class UpdateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Any additional information relevant to the customer's profile.
+     * Any additional information relevant to the customer’s profile.
      * </p>
      * 
      * @param additionalInformation
-     *        Any additional information relevant to the customer's profile.
+     *        Any additional information relevant to the customer’s profile.
      */
 
     public void setAdditionalInformation(String additionalInformation) {
@@ -259,10 +259,10 @@ public class UpdateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Any additional information relevant to the customer's profile.
+     * Any additional information relevant to the customer’s profile.
      * </p>
      * 
-     * @return Any additional information relevant to the customer's profile.
+     * @return Any additional information relevant to the customer’s profile.
      */
 
     public String getAdditionalInformation() {
@@ -271,11 +271,11 @@ public class UpdateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Any additional information relevant to the customer's profile.
+     * Any additional information relevant to the customer’s profile.
      * </p>
      * 
      * @param additionalInformation
-     *        Any additional information relevant to the customer's profile.
+     *        Any additional information relevant to the customer’s profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -644,11 +644,11 @@ public class UpdateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The customer's phone number, which has not been specified as a mobile, home, or business number.
+     * The customer’s phone number, which has not been specified as a mobile, home, or business number.
      * </p>
      * 
      * @param phoneNumber
-     *        The customer's phone number, which has not been specified as a mobile, home, or business number.
+     *        The customer’s phone number, which has not been specified as a mobile, home, or business number.
      */
 
     public void setPhoneNumber(String phoneNumber) {
@@ -657,10 +657,10 @@ public class UpdateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The customer's phone number, which has not been specified as a mobile, home, or business number.
+     * The customer’s phone number, which has not been specified as a mobile, home, or business number.
      * </p>
      * 
-     * @return The customer's phone number, which has not been specified as a mobile, home, or business number.
+     * @return The customer’s phone number, which has not been specified as a mobile, home, or business number.
      */
 
     public String getPhoneNumber() {
@@ -669,11 +669,11 @@ public class UpdateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The customer's phone number, which has not been specified as a mobile, home, or business number.
+     * The customer’s phone number, which has not been specified as a mobile, home, or business number.
      * </p>
      * 
      * @param phoneNumber
-     *        The customer's phone number, which has not been specified as a mobile, home, or business number.
+     *        The customer’s phone number, which has not been specified as a mobile, home, or business number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -804,11 +804,11 @@ public class UpdateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The customer's email address, which has not been specified as a personal or business address.
+     * The customer’s email address, which has not been specified as a personal or business address.
      * </p>
      * 
      * @param emailAddress
-     *        The customer's email address, which has not been specified as a personal or business address.
+     *        The customer’s email address, which has not been specified as a personal or business address.
      */
 
     public void setEmailAddress(String emailAddress) {
@@ -817,10 +817,10 @@ public class UpdateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The customer's email address, which has not been specified as a personal or business address.
+     * The customer’s email address, which has not been specified as a personal or business address.
      * </p>
      * 
-     * @return The customer's email address, which has not been specified as a personal or business address.
+     * @return The customer’s email address, which has not been specified as a personal or business address.
      */
 
     public String getEmailAddress() {
@@ -829,11 +829,11 @@ public class UpdateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The customer's email address, which has not been specified as a personal or business address.
+     * The customer’s email address, which has not been specified as a personal or business address.
      * </p>
      * 
      * @param emailAddress
-     *        The customer's email address, which has not been specified as a personal or business address.
+     *        The customer’s email address, which has not been specified as a personal or business address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

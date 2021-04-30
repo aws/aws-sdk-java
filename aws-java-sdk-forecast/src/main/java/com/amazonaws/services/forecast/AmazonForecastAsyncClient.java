@@ -542,6 +542,39 @@ public class AmazonForecastAsyncClient extends AmazonForecastClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteResourceTreeResult> deleteResourceTreeAsync(DeleteResourceTreeRequest request) {
+
+        return deleteResourceTreeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourceTreeResult> deleteResourceTreeAsync(final DeleteResourceTreeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteResourceTreeRequest, DeleteResourceTreeResult> asyncHandler) {
+        final DeleteResourceTreeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteResourceTreeResult>() {
+            @Override
+            public DeleteResourceTreeResult call() throws Exception {
+                DeleteResourceTreeResult result = null;
+
+                try {
+                    result = executeDeleteResourceTree(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeDatasetResult> describeDatasetAsync(DescribeDatasetRequest request) {
 
         return describeDatasetAsync(request, null);

@@ -33,6 +33,8 @@ public class ChangeMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Entity").build();
     private static final MarshallingInfo<String> DETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Details").build();
+    private static final MarshallingInfo<String> CHANGENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChangeName").build();
 
     private static final ChangeMarshaller instance = new ChangeMarshaller();
 
@@ -53,6 +55,7 @@ public class ChangeMarshaller {
             protocolMarshaller.marshall(change.getChangeType(), CHANGETYPE_BINDING);
             protocolMarshaller.marshall(change.getEntity(), ENTITY_BINDING);
             protocolMarshaller.marshall(change.getDetails(), DETAILS_BINDING);
+            protocolMarshaller.marshall(change.getChangeName(), CHANGENAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

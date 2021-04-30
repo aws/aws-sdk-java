@@ -22,7 +22,8 @@ public enum RobotSoftwareSuiteVersionType {
 
     Kinetic("Kinetic"),
     Melodic("Melodic"),
-    Dashing("Dashing");
+    Dashing("Dashing"),
+    Foxy("Foxy");
 
     private String value;
 

@@ -45,7 +45,7 @@ public class KeyGroupConfig implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> items;
     /**
      * <p>
-     * A comment to describe the key group.
+     * A comment to describe the key group. The comment cannot be longer than 128 characters.
      * </p>
      */
     private String comment;
@@ -165,11 +165,11 @@ public class KeyGroupConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A comment to describe the key group.
+     * A comment to describe the key group. The comment cannot be longer than 128 characters.
      * </p>
      * 
      * @param comment
-     *        A comment to describe the key group.
+     *        A comment to describe the key group. The comment cannot be longer than 128 characters.
      */
 
     public void setComment(String comment) {
@@ -178,10 +178,10 @@ public class KeyGroupConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A comment to describe the key group.
+     * A comment to describe the key group. The comment cannot be longer than 128 characters.
      * </p>
      * 
-     * @return A comment to describe the key group.
+     * @return A comment to describe the key group. The comment cannot be longer than 128 characters.
      */
 
     public String getComment() {
@@ -190,11 +190,11 @@ public class KeyGroupConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A comment to describe the key group.
+     * A comment to describe the key group. The comment cannot be longer than 128 characters.
      * </p>
      * 
      * @param comment
-     *        A comment to describe the key group.
+     *        A comment to describe the key group. The comment cannot be longer than 128 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -88,6 +88,11 @@ public class CacheBehaviorStaxUnmarshaller implements Unmarshaller<CacheBehavior
                     continue;
                 }
 
+                if (context.testExpression("FunctionAssociations", targetDepth)) {
+                    cacheBehavior.setFunctionAssociations(FunctionAssociationsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("FieldLevelEncryptionId", targetDepth)) {
                     cacheBehavior.setFieldLevelEncryptionId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

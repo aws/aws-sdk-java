@@ -507,6 +507,38 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
                             }
                         }
 
+                        {
+                            FunctionAssociations functionAssociations = defaultCacheBehavior.getFunctionAssociations();
+                            if (functionAssociations != null) {
+                                xmlWriter.startElement("FunctionAssociations");
+
+                                if (functionAssociations.getQuantity() != null) {
+                                    xmlWriter.startElement("Quantity").value(functionAssociations.getQuantity()).endElement();
+                                }
+
+                                com.amazonaws.internal.SdkInternalList<FunctionAssociation> functionAssociationsItemsList = (com.amazonaws.internal.SdkInternalList<FunctionAssociation>) functionAssociations
+                                        .getItems();
+                                if (!functionAssociationsItemsList.isEmpty() || !functionAssociationsItemsList.isAutoConstruct()) {
+                                    xmlWriter.startElement("Items");
+
+                                    for (FunctionAssociation functionAssociationsItemsListValue : functionAssociationsItemsList) {
+                                        xmlWriter.startElement("FunctionAssociation");
+
+                                        if (functionAssociationsItemsListValue.getFunctionARN() != null) {
+                                            xmlWriter.startElement("FunctionARN").value(functionAssociationsItemsListValue.getFunctionARN()).endElement();
+                                        }
+
+                                        if (functionAssociationsItemsListValue.getEventType() != null) {
+                                            xmlWriter.startElement("EventType").value(functionAssociationsItemsListValue.getEventType()).endElement();
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                    xmlWriter.endElement();
+                                }
+                                xmlWriter.endElement();
+                            }
+                        }
+
                         if (defaultCacheBehavior.getFieldLevelEncryptionId() != null) {
                             xmlWriter.startElement("FieldLevelEncryptionId").value(defaultCacheBehavior.getFieldLevelEncryptionId()).endElement();
                         }
@@ -812,6 +844,39 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
                                                 if (lambdaFunctionAssociationsItemsListValue.getIncludeBody() != null) {
                                                     xmlWriter.startElement("IncludeBody").value(lambdaFunctionAssociationsItemsListValue.getIncludeBody())
                                                             .endElement();
+                                                }
+                                                xmlWriter.endElement();
+                                            }
+                                            xmlWriter.endElement();
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                }
+
+                                {
+                                    FunctionAssociations functionAssociations = cacheBehaviorsItemsListValue.getFunctionAssociations();
+                                    if (functionAssociations != null) {
+                                        xmlWriter.startElement("FunctionAssociations");
+
+                                        if (functionAssociations.getQuantity() != null) {
+                                            xmlWriter.startElement("Quantity").value(functionAssociations.getQuantity()).endElement();
+                                        }
+
+                                        com.amazonaws.internal.SdkInternalList<FunctionAssociation> functionAssociationsItemsList = (com.amazonaws.internal.SdkInternalList<FunctionAssociation>) functionAssociations
+                                                .getItems();
+                                        if (!functionAssociationsItemsList.isEmpty() || !functionAssociationsItemsList.isAutoConstruct()) {
+                                            xmlWriter.startElement("Items");
+
+                                            for (FunctionAssociation functionAssociationsItemsListValue : functionAssociationsItemsList) {
+                                                xmlWriter.startElement("FunctionAssociation");
+
+                                                if (functionAssociationsItemsListValue.getFunctionARN() != null) {
+                                                    xmlWriter.startElement("FunctionARN").value(functionAssociationsItemsListValue.getFunctionARN())
+                                                            .endElement();
+                                                }
+
+                                                if (functionAssociationsItemsListValue.getEventType() != null) {
+                                                    xmlWriter.startElement("EventType").value(functionAssociationsItemsListValue.getEventType()).endElement();
                                                 }
                                                 xmlWriter.endElement();
                                             }

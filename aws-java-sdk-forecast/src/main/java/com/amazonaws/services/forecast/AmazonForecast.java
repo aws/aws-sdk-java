@@ -590,6 +590,61 @@ public interface AmazonForecast {
 
     /**
      * <p>
+     * Deletes an entire resource tree. This operation will delete the parent resource and its child resources.
+     * </p>
+     * <p>
+     * Child resources are resources that were created from another resource. For example, when a forecast is generated
+     * from a predictor, the forecast is the child resource and the predictor is the parent resource.
+     * </p>
+     * <p>
+     * Amazon Forecast resources possess the following parent-child resource hierarchies:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Dataset Group</b>: predictors, predictor backtest export jobs, forecasts, forecast export jobs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Dataset</b>: dataset import jobs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Predictor</b>: predictor backtest export jobs, forecasts, forecast export jobs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Forecast</b>: forecast export jobs
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * <code>DeleteResourceTree</code> will only delete Amazon Forecast resources, and will not delete datasets or
+     * exported files stored in Amazon S3.
+     * </p>
+     * </note>
+     * 
+     * @param deleteResourceTreeRequest
+     * @return Result of the DeleteResourceTree operation returned by the service.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @sample AmazonForecast.DeleteResourceTree
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteResourceTree" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteResourceTreeResult deleteResourceTree(DeleteResourceTreeRequest deleteResourceTreeRequest);
+
+    /**
+     * <p>
      * Describes an Amazon Forecast dataset created using the <a>CreateDataset</a> operation.
      * </p>
      * <p>

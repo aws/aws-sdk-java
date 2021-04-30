@@ -189,6 +189,13 @@ public class CacheBehavior implements Serializable, Cloneable {
     private LambdaFunctionAssociations lambdaFunctionAssociations;
     /**
      * <p>
+     * A list of CloudFront functions that are associated with this cache behavior. CloudFront functions must be
+     * published to the <code>LIVE</code> stage to associate them with a cache behavior.
+     * </p>
+     */
+    private FunctionAssociations functionAssociations;
+    /**
+     * <p>
      * The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront to use for
      * encrypting specific fields of data for this cache behavior.
      * </p>
@@ -211,6 +218,10 @@ public class CacheBehavior implements Serializable, Cloneable {
      * >Creating cache policies</a> or <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
      * the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * <p>
+     * A <code>CacheBehavior</code> must include either a <code>CachePolicyId</code> or <code>ForwardedValues</code>. We
+     * recommend that you use a <code>CachePolicyId</code>.
      * </p>
      */
     private String cachePolicyId;
@@ -246,6 +257,10 @@ public class CacheBehavior implements Serializable, Cloneable {
      * >Creating origin request policies</a> or <a href=
      * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html"
      * >Using the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * <p>
+     * A <code>CacheBehavior</code> must include either a <code>CachePolicyId</code> or <code>ForwardedValues</code>. We
+     * recommend that you use a <code>CachePolicyId</code>.
      * </p>
      * <p>
      * A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
@@ -1375,6 +1390,52 @@ public class CacheBehavior implements Serializable, Cloneable {
 
     /**
      * <p>
+     * A list of CloudFront functions that are associated with this cache behavior. CloudFront functions must be
+     * published to the <code>LIVE</code> stage to associate them with a cache behavior.
+     * </p>
+     * 
+     * @param functionAssociations
+     *        A list of CloudFront functions that are associated with this cache behavior. CloudFront functions must be
+     *        published to the <code>LIVE</code> stage to associate them with a cache behavior.
+     */
+
+    public void setFunctionAssociations(FunctionAssociations functionAssociations) {
+        this.functionAssociations = functionAssociations;
+    }
+
+    /**
+     * <p>
+     * A list of CloudFront functions that are associated with this cache behavior. CloudFront functions must be
+     * published to the <code>LIVE</code> stage to associate them with a cache behavior.
+     * </p>
+     * 
+     * @return A list of CloudFront functions that are associated with this cache behavior. CloudFront functions must be
+     *         published to the <code>LIVE</code> stage to associate them with a cache behavior.
+     */
+
+    public FunctionAssociations getFunctionAssociations() {
+        return this.functionAssociations;
+    }
+
+    /**
+     * <p>
+     * A list of CloudFront functions that are associated with this cache behavior. CloudFront functions must be
+     * published to the <code>LIVE</code> stage to associate them with a cache behavior.
+     * </p>
+     * 
+     * @param functionAssociations
+     *        A list of CloudFront functions that are associated with this cache behavior. CloudFront functions must be
+     *        published to the <code>LIVE</code> stage to associate them with a cache behavior.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CacheBehavior withFunctionAssociations(FunctionAssociations functionAssociations) {
+        setFunctionAssociations(functionAssociations);
+        return this;
+    }
+
+    /**
+     * <p>
      * The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront to use for
      * encrypting specific fields of data for this cache behavior.
      * </p>
@@ -1486,6 +1547,10 @@ public class CacheBehavior implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
      * the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
+     * <p>
+     * A <code>CacheBehavior</code> must include either a <code>CachePolicyId</code> or <code>ForwardedValues</code>. We
+     * recommend that you use a <code>CachePolicyId</code>.
+     * </p>
      * 
      * @param cachePolicyId
      *        The unique identifier of the cache policy that is attached to this cache behavior. For more information,
@@ -1493,7 +1558,10 @@ public class CacheBehavior implements Serializable, Cloneable {
      *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
      *        >Creating cache policies</a> or <a href=
      *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html"
-     *        >Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        >Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     *        <p>
+     *        A <code>CacheBehavior</code> must include either a <code>CachePolicyId</code> or
+     *        <code>ForwardedValues</code>. We recommend that you use a <code>CachePolicyId</code>.
      */
 
     public void setCachePolicyId(String cachePolicyId) {
@@ -1509,13 +1577,20 @@ public class CacheBehavior implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
      * the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
+     * <p>
+     * A <code>CacheBehavior</code> must include either a <code>CachePolicyId</code> or <code>ForwardedValues</code>. We
+     * recommend that you use a <code>CachePolicyId</code>.
+     * </p>
      * 
      * @return The unique identifier of the cache policy that is attached to this cache behavior. For more information,
      *         see <a href=
      *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
      *         >Creating cache policies</a> or <a href=
      *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html"
-     *         >Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *         >Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     *         <p>
+     *         A <code>CacheBehavior</code> must include either a <code>CachePolicyId</code> or
+     *         <code>ForwardedValues</code>. We recommend that you use a <code>CachePolicyId</code>.
      */
 
     public String getCachePolicyId() {
@@ -1531,6 +1606,10 @@ public class CacheBehavior implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
      * the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
+     * <p>
+     * A <code>CacheBehavior</code> must include either a <code>CachePolicyId</code> or <code>ForwardedValues</code>. We
+     * recommend that you use a <code>CachePolicyId</code>.
+     * </p>
      * 
      * @param cachePolicyId
      *        The unique identifier of the cache policy that is attached to this cache behavior. For more information,
@@ -1538,7 +1617,10 @@ public class CacheBehavior implements Serializable, Cloneable {
      *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
      *        >Creating cache policies</a> or <a href=
      *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html"
-     *        >Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        >Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     *        <p>
+     *        A <code>CacheBehavior</code> must include either a <code>CachePolicyId</code> or
+     *        <code>ForwardedValues</code>. We recommend that you use a <code>CachePolicyId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1640,6 +1722,10 @@ public class CacheBehavior implements Serializable, Cloneable {
      * >Using the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
+     * A <code>CacheBehavior</code> must include either a <code>CachePolicyId</code> or <code>ForwardedValues</code>. We
+     * recommend that you use a <code>CachePolicyId</code>.
+     * </p>
+     * <p>
      * A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
      * </p>
      * 
@@ -1662,6 +1748,10 @@ public class CacheBehavior implements Serializable, Cloneable {
      *        >Creating origin request policies</a> or <a href=
      *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html"
      *        >Using the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        A <code>CacheBehavior</code> must include either a <code>CachePolicyId</code> or
+     *        <code>ForwardedValues</code>. We recommend that you use a <code>CachePolicyId</code>.
      *        </p>
      *        <p>
      *        A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
@@ -1694,6 +1784,10 @@ public class CacheBehavior implements Serializable, Cloneable {
      * >Using the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
+     * A <code>CacheBehavior</code> must include either a <code>CachePolicyId</code> or <code>ForwardedValues</code>. We
+     * recommend that you use a <code>CachePolicyId</code>.
+     * </p>
+     * <p>
      * A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
      * </p>
      * 
@@ -1715,6 +1809,10 @@ public class CacheBehavior implements Serializable, Cloneable {
      *         >Creating origin request policies</a> or <a href=
      *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html"
      *         >Using the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *         </p>
+     *         <p>
+     *         A <code>CacheBehavior</code> must include either a <code>CachePolicyId</code> or
+     *         <code>ForwardedValues</code>. We recommend that you use a <code>CachePolicyId</code>.
      *         </p>
      *         <p>
      *         A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
@@ -1747,6 +1845,10 @@ public class CacheBehavior implements Serializable, Cloneable {
      * >Using the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
+     * A <code>CacheBehavior</code> must include either a <code>CachePolicyId</code> or <code>ForwardedValues</code>. We
+     * recommend that you use a <code>CachePolicyId</code>.
+     * </p>
+     * <p>
      * A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
      * </p>
      * 
@@ -1769,6 +1871,10 @@ public class CacheBehavior implements Serializable, Cloneable {
      *        >Creating origin request policies</a> or <a href=
      *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html"
      *        >Using the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        A <code>CacheBehavior</code> must include either a <code>CachePolicyId</code> or
+     *        <code>ForwardedValues</code>. We recommend that you use a <code>CachePolicyId</code>.
      *        </p>
      *        <p>
      *        A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
@@ -2173,6 +2279,8 @@ public class CacheBehavior implements Serializable, Cloneable {
             sb.append("Compress: ").append(getCompress()).append(",");
         if (getLambdaFunctionAssociations() != null)
             sb.append("LambdaFunctionAssociations: ").append(getLambdaFunctionAssociations()).append(",");
+        if (getFunctionAssociations() != null)
+            sb.append("FunctionAssociations: ").append(getFunctionAssociations()).append(",");
         if (getFieldLevelEncryptionId() != null)
             sb.append("FieldLevelEncryptionId: ").append(getFieldLevelEncryptionId()).append(",");
         if (getRealtimeLogConfigArn() != null)
@@ -2239,6 +2347,10 @@ public class CacheBehavior implements Serializable, Cloneable {
             return false;
         if (other.getLambdaFunctionAssociations() != null && other.getLambdaFunctionAssociations().equals(this.getLambdaFunctionAssociations()) == false)
             return false;
+        if (other.getFunctionAssociations() == null ^ this.getFunctionAssociations() == null)
+            return false;
+        if (other.getFunctionAssociations() != null && other.getFunctionAssociations().equals(this.getFunctionAssociations()) == false)
+            return false;
         if (other.getFieldLevelEncryptionId() == null ^ this.getFieldLevelEncryptionId() == null)
             return false;
         if (other.getFieldLevelEncryptionId() != null && other.getFieldLevelEncryptionId().equals(this.getFieldLevelEncryptionId()) == false)
@@ -2288,6 +2400,7 @@ public class CacheBehavior implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSmoothStreaming() == null) ? 0 : getSmoothStreaming().hashCode());
         hashCode = prime * hashCode + ((getCompress() == null) ? 0 : getCompress().hashCode());
         hashCode = prime * hashCode + ((getLambdaFunctionAssociations() == null) ? 0 : getLambdaFunctionAssociations().hashCode());
+        hashCode = prime * hashCode + ((getFunctionAssociations() == null) ? 0 : getFunctionAssociations().hashCode());
         hashCode = prime * hashCode + ((getFieldLevelEncryptionId() == null) ? 0 : getFieldLevelEncryptionId().hashCode());
         hashCode = prime * hashCode + ((getRealtimeLogConfigArn() == null) ? 0 : getRealtimeLogConfigArn().hashCode());
         hashCode = prime * hashCode + ((getCachePolicyId() == null) ? 0 : getCachePolicyId().hashCode());

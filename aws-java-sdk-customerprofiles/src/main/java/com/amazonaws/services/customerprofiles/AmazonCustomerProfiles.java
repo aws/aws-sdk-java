@@ -325,6 +325,95 @@ public interface AmazonCustomerProfiles {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and subject to change.
+     * </p>
+     * <p>
+     * Before calling this API, use <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a> or
+     * <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a>
+     * to enable identity resolution: set <code>Matching</code> to true.
+     * </p>
+     * <p>
+     * GetMatches returns potentially matching profiles, based on the results of the latest run of a machine learning
+     * process.
+     * </p>
+     * <important>
+     * <p>
+     * Amazon Connect runs a batch process every Saturday at 12AM UTC to identify matching profiles. The results are
+     * returned up to seven days after the Saturday run.
+     * </p>
+     * </important>
+     * <p>
+     * Amazon Connect uses the following profile attributes to identify matches:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * PhoneNumber
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HomePhoneNumber
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * BusinessPhoneNumber
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MobilePhoneNumber
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EmailAddress
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PersonalEmailAddress
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * BusinessEmailAddress
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FullName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * BusinessName
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getMatchesRequest
+     * @return Result of the GetMatches operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The requested resource does not exist, or access was denied.
+     * @throws ThrottlingException
+     *         You exceeded the maximum number of requests.
+     * @throws InternalServerException
+     *         An internal service error occurred.
+     * @sample AmazonCustomerProfiles.GetMatches
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetMatches" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetMatchesResult getMatches(GetMatchesRequest getMatchesRequest);
+
+    /**
+     * <p>
      * Returns the object types for a specific domain.
      * </p>
      * 
@@ -534,6 +623,88 @@ public interface AmazonCustomerProfiles {
 
     /**
      * <p>
+     * This API is in preview release for Amazon Connect and subject to change.
+     * </p>
+     * <p>
+     * Runs an AWS Lambda job that does the following:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * All the profileKeys in the <code>ProfileToBeMerged</code> will be moved to the main profile.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * All the objects in the <code>ProfileToBeMerged</code> will be moved to the main profile.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * All the <code>ProfileToBeMerged</code> will be deleted at the end.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * All the profileKeys in the <code>ProfileIdsToBeMerged</code> will be moved to the main profile.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Standard fields are merged as follows:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Fields are always "union"-ed if there are no conflicts in standard fields or attributeKeys.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When there are conflicting fields:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * If no <code>SourceProfileIds</code> entry is specified, the main Profile value is always taken.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If a <code>SourceProfileIds</code> entry is specified, the specified profileId is always taken, even if it is a
+     * NULL value.
+     * </p>
+     * </li>
+     * </ol>
+     * </li>
+     * </ol>
+     * </li>
+     * </ol>
+     * <p>
+     * You can use MergeProfiles together with <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>, which
+     * returns potentially matching profiles, or use it with the results of another matching system. After profiles have
+     * been merged, they cannot be separated (unmerged).
+     * </p>
+     * 
+     * @param mergeProfilesRequest
+     * @return Result of the MergeProfiles operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws ResourceNotFoundException
+     *         The requested resource does not exist, or access was denied.
+     * @throws ThrottlingException
+     *         You exceeded the maximum number of requests.
+     * @throws InternalServerException
+     *         An internal service error occurred.
+     * @sample AmazonCustomerProfiles.MergeProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/MergeProfiles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    MergeProfilesResult mergeProfiles(MergeProfilesRequest mergeProfilesRequest);
+
+    /**
+     * <p>
      * Adds an integration between the service and a third-party service, which includes Amazon AppFlow and Amazon
      * Connect.
      * </p>
@@ -700,7 +871,7 @@ public interface AmazonCustomerProfiles {
      * Updates the properties of a domain, including creating or selecting a dead letter queue or an encryption key.
      * </p>
      * <p>
-     * Once a domain is created, the name can’t be changed.
+     * After a domain is created, the name can’t be changed.
      * </p>
      * 
      * @param updateDomainRequest

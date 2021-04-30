@@ -69,6 +69,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     }
 
     @Override
+    public CreateFunctionResult createFunction(CreateFunctionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateInvalidationResult createInvalidation(CreateInvalidationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -134,6 +139,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     }
 
     @Override
+    public DeleteFunctionResult deleteFunction(DeleteFunctionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteKeyGroupResult deleteKeyGroup(DeleteKeyGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -160,6 +170,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
 
     @Override
     public DeleteStreamingDistributionResult deleteStreamingDistribution(DeleteStreamingDistributionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeFunctionResult describeFunction(DescribeFunctionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -210,6 +225,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
 
     @Override
     public GetFieldLevelEncryptionProfileConfigResult getFieldLevelEncryptionProfileConfig(GetFieldLevelEncryptionProfileConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetFunctionResult getFunction(GetFunctionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -319,6 +339,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     }
 
     @Override
+    public ListFunctionsResult listFunctions(ListFunctionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListInvalidationsResult listInvalidations(ListInvalidationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -354,7 +379,17 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     }
 
     @Override
+    public PublishFunctionResult publishFunction(PublishFunctionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TestFunctionResult testFunction(TestFunctionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -385,6 +420,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
 
     @Override
     public UpdateFieldLevelEncryptionProfileResult updateFieldLevelEncryptionProfile(UpdateFieldLevelEncryptionProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateFunctionResult updateFunction(UpdateFunctionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

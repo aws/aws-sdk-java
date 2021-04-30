@@ -37,6 +37,8 @@ public class UpdateDomainRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultEncryptionKey").build();
     private static final MarshallingInfo<String> DEADLETTERQUEUEURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeadLetterQueueUrl").build();
+    private static final MarshallingInfo<StructuredPojo> MATCHING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Matching").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
 
@@ -60,6 +62,7 @@ public class UpdateDomainRequestMarshaller {
             protocolMarshaller.marshall(updateDomainRequest.getDefaultExpirationDays(), DEFAULTEXPIRATIONDAYS_BINDING);
             protocolMarshaller.marshall(updateDomainRequest.getDefaultEncryptionKey(), DEFAULTENCRYPTIONKEY_BINDING);
             protocolMarshaller.marshall(updateDomainRequest.getDeadLetterQueueUrl(), DEADLETTERQUEUEURL_BINDING);
+            protocolMarshaller.marshall(updateDomainRequest.getMatching(), MATCHING_BINDING);
             protocolMarshaller.marshall(updateDomainRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

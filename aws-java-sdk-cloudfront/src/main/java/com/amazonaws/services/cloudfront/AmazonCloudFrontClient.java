@@ -285,8 +285,10 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         exceptionUnmarshallers.add(new FieldLevelEncryptionProfileAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new MissingBodyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyOriginsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new FunctionSizeLimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidTTLOrderExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyDistributionsWithSingleFunctionARNExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new UnsupportedOperationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new BatchTooLargeExceptionUnmarshaller());
         exceptionUnmarshallers.add(new RealtimeLogConfigInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidResponseCodeExceptionUnmarshaller());
@@ -309,9 +311,11 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         exceptionUnmarshallers.add(new TooManyCookieNamesInWhiteListExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TrustedKeyGroupDoesNotExistExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchDistributionExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new FunctionInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidViewerCertificateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyCachePoliciesExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyQueryStringsInCachePolicyExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new FunctionAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CachePolicyInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDefaultRootObjectExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyCloudFrontOriginAccessIdentitiesExceptionUnmarshaller());
@@ -327,6 +331,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         exceptionUnmarshallers.add(new TooManyCookiesInOriginRequestPolicyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new IllegalDeleteExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidOriginExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TestFunctionFailedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidGeoRestrictionParameterExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TrustedSignerDoesNotExistExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidWebACLIdExceptionUnmarshaller());
@@ -343,6 +348,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         exceptionUnmarshallers.add(new NoSuchOriginExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyQueryStringsInOriginRequestPolicyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyTrustedSignersExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyFunctionsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyDistributionsWithFunctionAssociationsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyStreamingDistributionsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new PublicKeyInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new PreconditionFailedExceptionUnmarshaller());
@@ -352,15 +359,19 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         exceptionUnmarshallers.add(new CachePolicyAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyOriginCustomHeadersExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidLocationCodeExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyFunctionAssociationsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new FieldLevelEncryptionProfileSizeExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyCertificatesExceptionUnmarshaller());
         exceptionUnmarshallers.add(new QueryArgProfileEmptyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyRealtimeLogConfigsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidQueryStringParametersExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NoSuchFunctionExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyHeadersInCachePolicyExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new RealtimeLogConfigOwnerMismatchExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchFieldLevelEncryptionProfileExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchResourceExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InconsistentQuantitiesExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidFunctionAssociationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidLambdaFunctionAssociationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyLambdaFunctionAssociationsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DistributionNotDisabledExceptionUnmarshaller());
@@ -699,6 +710,18 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         Your request contains more Lambda function associations than are allowed per distribution.
      * @throws InvalidLambdaFunctionAssociationException
      *         The specified Lambda function association is invalid.
+     * @throws TooManyDistributionsWithFunctionAssociationsException
+     *         You have reached the maximum number of distributions that are associated with a CloudFront function. For
+     *         more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyFunctionAssociationsException
+     *         You have reached the maximum number of CloudFront function associations for this distribution. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws InvalidFunctionAssociationException
+     *         A CloudFront function association is invalid.
      * @throws InvalidOriginReadTimeoutException
      *         The read timeout specified for the origin is not valid.
      * @throws InvalidOriginKeepaliveTimeoutException
@@ -737,6 +760,10 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
      * @throws TrustedKeyGroupDoesNotExistException
      *         The specified key group does not exist.
+     * @throws NoSuchRealtimeLogConfigException
+     *         The real-time log configuration does not exist.
+     * @throws RealtimeLogConfigOwnerMismatchException
+     *         The specified real-time log configuration belongs to a different AWS account.
      * @sample AmazonCloudFront.CreateDistribution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistribution" target="_top">AWS
      *      API Documentation</a>
@@ -887,6 +914,18 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         Your request contains more Lambda function associations than are allowed per distribution.
      * @throws InvalidLambdaFunctionAssociationException
      *         The specified Lambda function association is invalid.
+     * @throws TooManyDistributionsWithFunctionAssociationsException
+     *         You have reached the maximum number of distributions that are associated with a CloudFront function. For
+     *         more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyFunctionAssociationsException
+     *         You have reached the maximum number of CloudFront function associations for this distribution. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws InvalidFunctionAssociationException
+     *         A CloudFront function association is invalid.
      * @throws InvalidOriginReadTimeoutException
      *         The read timeout specified for the origin is not valid.
      * @throws InvalidOriginKeepaliveTimeoutException
@@ -925,6 +964,10 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
      * @throws TrustedKeyGroupDoesNotExistException
      *         The specified key group does not exist.
+     * @throws NoSuchRealtimeLogConfigException
+     *         The real-time log configuration does not exist.
+     * @throws RealtimeLogConfigOwnerMismatchException
+     *         The specified real-time log configuration belongs to a different AWS account.
      * @sample AmazonCloudFront.CreateDistributionWithTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistributionWithTags"
      *      target="_top">AWS API Documentation</a>
@@ -1122,6 +1165,89 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Creates a CloudFront function.
+     * </p>
+     * <p>
+     * To create a function, you provide the function code and some configuration information about the function. The
+     * response contains an Amazon Resource Name (ARN) that uniquely identifies the function.
+     * </p>
+     * <p>
+     * When you create a function, it’s in the <code>DEVELOPMENT</code> stage. In this stage, you can test the function
+     * with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.
+     * </p>
+     * <p>
+     * When you’re ready to use your function with a CloudFront distribution, use <code>PublishFunction</code> to copy
+     * the function from the <code>DEVELOPMENT</code> stage to <code>LIVE</code>. When it’s live, you can attach the
+     * function to a distribution’s cache behavior, using the function’s ARN.
+     * </p>
+     * 
+     * @param createFunctionRequest
+     * @return Result of the CreateFunction operation returned by the service.
+     * @throws TooManyFunctionsException
+     *         You have reached the maximum number of CloudFront functions for this AWS account. For more information,
+     *         see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas
+     *         </a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws FunctionAlreadyExistsException
+     *         A function with the same name already exists in this AWS account. To create a function, you must provide
+     *         a unique name. To update an existing function, use <code>UpdateFunction</code>.
+     * @throws FunctionSizeLimitExceededException
+     *         The function is too large. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @sample AmazonCloudFront.CreateFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateFunctionResult createFunction(CreateFunctionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateFunction(request);
+    }
+
+    @SdkInternalApi
+    final CreateFunctionResult executeCreateFunction(CreateFunctionRequest createFunctionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createFunctionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateFunctionRequest> request = null;
+        Response<CreateFunctionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateFunctionRequestMarshaller().marshall(super.beforeMarshalling(createFunctionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFunction");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateFunctionResult> responseHandler = new StaxResponseHandler<CreateFunctionResult>(
+                    new CreateFunctionResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Create a new invalidation.
      * </p>
      * 
@@ -1293,6 +1419,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         Access denied.
      * @throws NoSuchDistributionException
      *         The specified distribution does not exist.
+     * @throws UnsupportedOperationException
+     *         This operation is not supported in this region.
      * @sample AmazonCloudFront.CreateMonitoringSubscription
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateMonitoringSubscription"
      *      target="_top">AWS API Documentation</a>
@@ -1801,7 +1929,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchCachePolicyException
      *         The cache policy does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @throws IllegalDeleteException
      *         You cannot delete a managed policy.
      * @throws CachePolicyInUseException
@@ -1870,7 +1998,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchCloudFrontOriginAccessIdentityException
      *         The specified origin access identity does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @throws CloudFrontOriginAccessIdentityInUseException
      *         The Origin Access Identity specified is already in use.
      * @sample AmazonCloudFront.DeleteCloudFrontOriginAccessIdentity
@@ -2002,7 +2130,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchDistributionException
      *         The specified distribution does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @sample AmazonCloudFront.DeleteDistribution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistribution" target="_top">AWS
      *      API Documentation</a>
@@ -2066,7 +2194,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchFieldLevelEncryptionConfigException
      *         The specified configuration for field-level encryption doesn't exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @throws FieldLevelEncryptionConfigInUseException
      *         The specified configuration for field-level encryption is in use.
      * @sample AmazonCloudFront.DeleteFieldLevelEncryptionConfig
@@ -2133,7 +2261,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchFieldLevelEncryptionProfileException
      *         The specified profile for field-level encryption doesn't exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @throws FieldLevelEncryptionProfileInUseException
      *         The specified profile for field-level encryption is in use.
      * @sample AmazonCloudFront.DeleteFieldLevelEncryptionProfile
@@ -2188,6 +2316,78 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Deletes a CloudFront function.
+     * </p>
+     * <p>
+     * You cannot delete a function if it’s associated with a cache behavior. First, update your distributions to remove
+     * the function association from all cache behaviors, then delete the function.
+     * </p>
+     * <p>
+     * To delete a function, you must provide the function’s name and version (<code>ETag</code> value). To get these
+     * values, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.
+     * </p>
+     * 
+     * @param deleteFunctionRequest
+     * @return Result of the DeleteFunction operation returned by the service.
+     * @throws InvalidIfMatchVersionException
+     *         The <code>If-Match</code> version is missing or not valid.
+     * @throws NoSuchFunctionExistsException
+     *         The function does not exist.
+     * @throws FunctionInUseException
+     *         Cannot delete the function because it’s attached to one or more cache behaviors.
+     * @throws PreconditionFailedException
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
+     * @sample AmazonCloudFront.DeleteFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteFunctionResult deleteFunction(DeleteFunctionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteFunction(request);
+    }
+
+    @SdkInternalApi
+    final DeleteFunctionResult executeDeleteFunction(DeleteFunctionRequest deleteFunctionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteFunctionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteFunctionRequest> request = null;
+        Response<DeleteFunctionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteFunctionRequestMarshaller().marshall(super.beforeMarshalling(deleteFunctionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFunction");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteFunctionResult> responseHandler = new StaxResponseHandler<DeleteFunctionResult>(
+                    new DeleteFunctionResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a key group.
      * </p>
      * <p>
@@ -2206,7 +2406,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchResourceException
      *         A resource that was specified is not valid.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @throws ResourceInUseException
      *         Cannot delete this resource because it is in use.
      * @sample AmazonCloudFront.DeleteKeyGroup
@@ -2269,6 +2469,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         Access denied.
      * @throws NoSuchDistributionException
      *         The specified distribution does not exist.
+     * @throws UnsupportedOperationException
+     *         This operation is not supported in this region.
      * @sample AmazonCloudFront.DeleteMonitoringSubscription
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteMonitoringSubscription"
      *      target="_top">AWS API Documentation</a>
@@ -2341,7 +2543,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchOriginRequestPolicyException
      *         The origin request policy does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @throws IllegalDeleteException
      *         You cannot delete a managed policy.
      * @throws OriginRequestPolicyInUseException
@@ -2411,7 +2613,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchPublicKeyException
      *         The specified public key doesn't exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @sample AmazonCloudFront.DeletePublicKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeletePublicKey" target="_top">AWS API
      *      Documentation</a>
@@ -2614,7 +2816,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchStreamingDistributionException
      *         The specified streaming distribution does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @sample AmazonCloudFront.DeleteStreamingDistribution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
@@ -2653,6 +2855,69 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<DeleteStreamingDistributionResult> responseHandler = new StaxResponseHandler<DeleteStreamingDistributionResult>(
                     new DeleteStreamingDistributionResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets configuration information and metadata about a CloudFront function, but not the function’s code. To get a
+     * function’s code, use <code>GetFunction</code>.
+     * </p>
+     * <p>
+     * To get configuration information and metadata about a function, you must provide the function’s name and stage.
+     * To get these values, you can use <code>ListFunctions</code>.
+     * </p>
+     * 
+     * @param describeFunctionRequest
+     * @return Result of the DescribeFunction operation returned by the service.
+     * @throws NoSuchFunctionExistsException
+     *         The function does not exist.
+     * @sample AmazonCloudFront.DescribeFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DescribeFunction" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeFunctionResult describeFunction(DescribeFunctionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeFunction(request);
+    }
+
+    @SdkInternalApi
+    final DescribeFunctionResult executeDescribeFunction(DescribeFunctionRequest describeFunctionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeFunctionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeFunctionRequest> request = null;
+        Response<DescribeFunctionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeFunctionRequestMarshaller().marshall(super.beforeMarshalling(describeFunctionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFunction");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeFunctionResult> responseHandler = new StaxResponseHandler<DescribeFunctionResult>(
+                    new DescribeFunctionResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -3302,6 +3567,69 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Gets the code of a CloudFront function. To get configuration information and metadata about a function, use
+     * <code>DescribeFunction</code>.
+     * </p>
+     * <p>
+     * To get a function’s code, you must provide the function’s name and stage. To get these values, you can use
+     * <code>ListFunctions</code>.
+     * </p>
+     * 
+     * @param getFunctionRequest
+     * @return Result of the GetFunction operation returned by the service.
+     * @throws NoSuchFunctionExistsException
+     *         The function does not exist.
+     * @sample AmazonCloudFront.GetFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetFunctionResult getFunction(GetFunctionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetFunction(request);
+    }
+
+    @SdkInternalApi
+    final GetFunctionResult executeGetFunction(GetFunctionRequest getFunctionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getFunctionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetFunctionRequest> request = null;
+        Response<GetFunctionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetFunctionRequestMarshaller().marshall(super.beforeMarshalling(getFunctionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFunction");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetFunctionResult> responseHandler = new StaxResponseHandler<GetFunctionResult>(new GetFunctionResultStaxUnmarshaller(), false,
+                    false);
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Get the information about an invalidation.
      * </p>
      * 
@@ -3502,6 +3830,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         Access denied.
      * @throws NoSuchDistributionException
      *         The specified distribution does not exist.
+     * @throws UnsupportedOperationException
+     *         This operation is not supported in this region.
      * @sample AmazonCloudFront.GetMonitoringSubscription
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetMonitoringSubscription"
      *      target="_top">AWS API Documentation</a>
@@ -4661,6 +4991,73 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Gets a list of all CloudFront functions in your AWS account.
+     * </p>
+     * <p>
+     * You can optionally apply a filter to return only the functions that are in the specified stage, either
+     * <code>DEVELOPMENT</code> or <code>LIVE</code>.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listFunctionsRequest
+     * @return Result of the ListFunctions operation returned by the service.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @sample AmazonCloudFront.ListFunctions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListFunctions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListFunctionsResult listFunctions(ListFunctionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListFunctions(request);
+    }
+
+    @SdkInternalApi
+    final ListFunctionsResult executeListFunctions(ListFunctionsRequest listFunctionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listFunctionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListFunctionsRequest> request = null;
+        Response<ListFunctionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListFunctionsRequestMarshaller().marshall(super.beforeMarshalling(listFunctionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFunctions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListFunctionsResult> responseHandler = new StaxResponseHandler<ListFunctionsResult>(new ListFunctionsResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists invalidation batches.
      * </p>
      * 
@@ -5109,6 +5506,80 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Publishes a CloudFront function by copying the function code from the <code>DEVELOPMENT</code> stage to
+     * <code>LIVE</code>. This automatically updates all cache behaviors that are using this function to use the newly
+     * published copy in the <code>LIVE</code> stage.
+     * </p>
+     * <p>
+     * When a function is published to the <code>LIVE</code> stage, you can attach the function to a distribution’s
+     * cache behavior, using the function’s Amazon Resource Name (ARN).
+     * </p>
+     * <p>
+     * To publish a function, you must provide the function’s name and version (<code>ETag</code> value). To get these
+     * values, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.
+     * </p>
+     * 
+     * @param publishFunctionRequest
+     * @return Result of the PublishFunction operation returned by the service.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @throws InvalidIfMatchVersionException
+     *         The <code>If-Match</code> version is missing or not valid.
+     * @throws NoSuchFunctionExistsException
+     *         The function does not exist.
+     * @throws PreconditionFailedException
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
+     * @sample AmazonCloudFront.PublishFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/PublishFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PublishFunctionResult publishFunction(PublishFunctionRequest request) {
+        request = beforeClientExecution(request);
+        return executePublishFunction(request);
+    }
+
+    @SdkInternalApi
+    final PublishFunctionResult executePublishFunction(PublishFunctionRequest publishFunctionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(publishFunctionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PublishFunctionRequest> request = null;
+        Response<PublishFunctionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PublishFunctionRequestMarshaller().marshall(super.beforeMarshalling(publishFunctionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PublishFunction");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<PublishFunctionResult> responseHandler = new StaxResponseHandler<PublishFunctionResult>(
+                    new PublishFunctionResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Add tags to a CloudFront resource.
      * </p>
      * 
@@ -5160,6 +5631,83 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
             }
 
             StaxResponseHandler<TagResourceResult> responseHandler = new StaxResponseHandler<TagResourceResult>(new TagResourceResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Tests a CloudFront function.
+     * </p>
+     * <p>
+     * To test a function, you provide an <i>event object</i> that represents an HTTP request or response that your
+     * CloudFront distribution could receive in production. CloudFront runs the function, passing it the event object
+     * that you provided, and returns the function’s result (the modified event object) in the response. The response
+     * also contains function logs and error messages, if any exist. For more information about testing functions, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function"
+     * >Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * <p>
+     * To test a function, you provide the function’s name and version (<code>ETag</code> value) along with the event
+     * object. To get the function’s name and version, you can use <code>ListFunctions</code> and
+     * <code>DescribeFunction</code>.
+     * </p>
+     * 
+     * @param testFunctionRequest
+     * @return Result of the TestFunction operation returned by the service.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @throws InvalidIfMatchVersionException
+     *         The <code>If-Match</code> version is missing or not valid.
+     * @throws NoSuchFunctionExistsException
+     *         The function does not exist.
+     * @throws TestFunctionFailedException
+     *         The CloudFront function failed.
+     * @sample AmazonCloudFront.TestFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TestFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TestFunctionResult testFunction(TestFunctionRequest request) {
+        request = beforeClientExecution(request);
+        return executeTestFunction(request);
+    }
+
+    @SdkInternalApi
+    final TestFunctionResult executeTestFunction(TestFunctionRequest testFunctionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(testFunctionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TestFunctionRequest> request = null;
+        Response<TestFunctionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TestFunctionRequestMarshaller().marshall(super.beforeMarshalling(testFunctionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TestFunction");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<TestFunctionResult> responseHandler = new StaxResponseHandler<TestFunctionResult>(new TestFunctionResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -5277,7 +5825,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchCachePolicyException
      *         The cache policy does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @throws CachePolicyAlreadyExistsException
      *         A cache policy with this name already exists. You must provide a unique name. To modify an existing cache
      *         policy, use <code>UpdateCachePolicy</code>.
@@ -5362,7 +5910,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchCloudFrontOriginAccessIdentityException
      *         The specified origin access identity does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @throws InvalidArgumentException
      *         An argument is invalid.
      * @throws InconsistentQuantitiesException
@@ -5548,7 +6096,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchDistributionException
      *         The specified distribution does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @throws TooManyDistributionCNAMEsException
      *         Your request contains more CNAMEs than are allowed per distribution.
      * @throws InvalidDefaultRootObjectException
@@ -5623,6 +6171,18 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         Your request contains more Lambda function associations than are allowed per distribution.
      * @throws InvalidLambdaFunctionAssociationException
      *         The specified Lambda function association is invalid.
+     * @throws TooManyDistributionsWithFunctionAssociationsException
+     *         You have reached the maximum number of distributions that are associated with a CloudFront function. For
+     *         more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyFunctionAssociationsException
+     *         You have reached the maximum number of CloudFront function associations for this distribution. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws InvalidFunctionAssociationException
+     *         A CloudFront function association is invalid.
      * @throws InvalidOriginReadTimeoutException
      *         The read timeout specified for the origin is not valid.
      * @throws InvalidOriginKeepaliveTimeoutException
@@ -5661,6 +6221,10 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
      * @throws TrustedKeyGroupDoesNotExistException
      *         The specified key group does not exist.
+     * @throws NoSuchRealtimeLogConfigException
+     *         The real-time log configuration does not exist.
+     * @throws RealtimeLogConfigOwnerMismatchException
+     *         The specified real-time log configuration belongs to a different AWS account.
      * @sample AmazonCloudFront.UpdateDistribution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistribution" target="_top">AWS
      *      API Documentation</a>
@@ -5732,7 +6296,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchFieldLevelEncryptionConfigException
      *         The specified configuration for field-level encryption doesn't exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @throws TooManyFieldLevelEncryptionQueryArgProfilesException
      *         The maximum number of query arg profiles for field-level encryption have been created.
      * @throws TooManyFieldLevelEncryptionContentTypeProfilesException
@@ -5813,7 +6377,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchFieldLevelEncryptionProfileException
      *         The specified profile for field-level encryption doesn't exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @throws FieldLevelEncryptionProfileSizeExceededException
      *         The maximum size of a profile for field-level encryption was exceeded.
      * @throws TooManyFieldLevelEncryptionEncryptionEntitiesException
@@ -5872,6 +6436,82 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Updates a CloudFront function.
+     * </p>
+     * <p>
+     * You can update a function’s code or the comment that describes the function. You cannot update a function’s name.
+     * </p>
+     * <p>
+     * To update a function, you provide the function’s name and version (<code>ETag</code> value) along with the
+     * updated function code. To get the name and version, you can use <code>ListFunctions</code> and
+     * <code>DescribeFunction</code>.
+     * </p>
+     * 
+     * @param updateFunctionRequest
+     * @return Result of the UpdateFunction operation returned by the service.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @throws InvalidIfMatchVersionException
+     *         The <code>If-Match</code> version is missing or not valid.
+     * @throws NoSuchFunctionExistsException
+     *         The function does not exist.
+     * @throws PreconditionFailedException
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
+     * @throws FunctionSizeLimitExceededException
+     *         The function is too large. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @sample AmazonCloudFront.UpdateFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateFunctionResult updateFunction(UpdateFunctionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateFunction(request);
+    }
+
+    @SdkInternalApi
+    final UpdateFunctionResult executeUpdateFunction(UpdateFunctionRequest updateFunctionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateFunctionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateFunctionRequest> request = null;
+        Response<UpdateFunctionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateFunctionRequestMarshaller().marshall(super.beforeMarshalling(updateFunctionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFunction");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UpdateFunctionResult> responseHandler = new StaxResponseHandler<UpdateFunctionResult>(
+                    new UpdateFunctionResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates a key group.
      * </p>
      * <p>
@@ -5904,7 +6544,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchResourceException
      *         A resource that was specified is not valid.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @throws KeyGroupAlreadyExistsException
      *         A key group with this name already exists. You must provide a unique name. To modify an existing key
      *         group, use <code>UpdateKeyGroup</code>.
@@ -6007,7 +6647,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchOriginRequestPolicyException
      *         The origin request policy does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @throws OriginRequestPolicyAlreadyExistsException
      *         An origin request policy with this name already exists. You must provide a unique name. To modify an
      *         existing origin request policy, use <code>UpdateOriginRequestPolicy</code>.
@@ -6095,7 +6735,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchPublicKeyException
      *         The specified public key doesn't exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @sample AmazonCloudFront.UpdatePublicKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdatePublicKey" target="_top">AWS API
      *      Documentation</a>
@@ -6254,7 +6894,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchStreamingDistributionException
      *         The specified streaming distribution does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @throws TooManyStreamingDistributionCNAMEsException
      *         Your request contains more CNAMEs than are allowed per distribution.
      * @throws InvalidArgumentException

@@ -37,6 +37,8 @@ public enum CloudFrontActions implements Action {
     CreateFieldLevelEncryptionConfig("cloudfront:CreateFieldLevelEncryptionConfig"),
     /** Action for the CreateFieldLevelEncryptionProfile operation. */
     CreateFieldLevelEncryptionProfile("cloudfront:CreateFieldLevelEncryptionProfile"),
+    /** Action for the CreateFunction operation. */
+    CreateFunction("cloudfront:CreateFunction"),
     /** Action for the CreateInvalidation operation. */
     CreateInvalidation("cloudfront:CreateInvalidation"),
     /** Action for the CreateKeyGroup operation. */
@@ -63,6 +65,8 @@ public enum CloudFrontActions implements Action {
     DeleteFieldLevelEncryptionConfig("cloudfront:DeleteFieldLevelEncryptionConfig"),
     /** Action for the DeleteFieldLevelEncryptionProfile operation. */
     DeleteFieldLevelEncryptionProfile("cloudfront:DeleteFieldLevelEncryptionProfile"),
+    /** Action for the DeleteFunction operation. */
+    DeleteFunction("cloudfront:DeleteFunction"),
     /** Action for the DeleteKeyGroup operation. */
     DeleteKeyGroup("cloudfront:DeleteKeyGroup"),
     /** Action for the DeleteMonitoringSubscription operation. */
@@ -75,6 +79,8 @@ public enum CloudFrontActions implements Action {
     DeleteRealtimeLogConfig("cloudfront:DeleteRealtimeLogConfig"),
     /** Action for the DeleteStreamingDistribution operation. */
     DeleteStreamingDistribution("cloudfront:DeleteStreamingDistribution"),
+    /** Action for the DescribeFunction operation. */
+    DescribeFunction("cloudfront:DescribeFunction"),
     /** Action for the GetCachePolicy operation. */
     GetCachePolicy("cloudfront:GetCachePolicy"),
     /** Action for the GetCachePolicyConfig operation. */
@@ -95,6 +101,8 @@ public enum CloudFrontActions implements Action {
     GetFieldLevelEncryptionProfile("cloudfront:GetFieldLevelEncryptionProfile"),
     /** Action for the GetFieldLevelEncryptionProfileConfig operation. */
     GetFieldLevelEncryptionProfileConfig("cloudfront:GetFieldLevelEncryptionProfileConfig"),
+    /** Action for the GetFunction operation. */
+    GetFunction("cloudfront:GetFunction"),
     /** Action for the GetInvalidation operation. */
     GetInvalidation("cloudfront:GetInvalidation"),
     /** Action for the GetKeyGroup operation. */
@@ -137,6 +145,8 @@ public enum CloudFrontActions implements Action {
     ListFieldLevelEncryptionConfigs("cloudfront:ListFieldLevelEncryptionConfigs"),
     /** Action for the ListFieldLevelEncryptionProfiles operation. */
     ListFieldLevelEncryptionProfiles("cloudfront:ListFieldLevelEncryptionProfiles"),
+    /** Action for the ListFunctions operation. */
+    ListFunctions("cloudfront:ListFunctions"),
     /** Action for the ListInvalidations operation. */
     ListInvalidations("cloudfront:ListInvalidations"),
     /** Action for the ListKeyGroups operation. */
@@ -151,8 +161,12 @@ public enum CloudFrontActions implements Action {
     ListStreamingDistributions("cloudfront:ListStreamingDistributions"),
     /** Action for the ListTagsForResource operation. */
     ListTagsForResource("cloudfront:ListTagsForResource"),
+    /** Action for the PublishFunction operation. */
+    PublishFunction("cloudfront:PublishFunction"),
     /** Action for the TagResource operation. */
     TagResource("cloudfront:TagResource"),
+    /** Action for the TestFunction operation. */
+    TestFunction("cloudfront:TestFunction"),
     /** Action for the UntagResource operation. */
     UntagResource("cloudfront:UntagResource"),
     /** Action for the UpdateCachePolicy operation. */
@@ -165,6 +179,8 @@ public enum CloudFrontActions implements Action {
     UpdateFieldLevelEncryptionConfig("cloudfront:UpdateFieldLevelEncryptionConfig"),
     /** Action for the UpdateFieldLevelEncryptionProfile operation. */
     UpdateFieldLevelEncryptionProfile("cloudfront:UpdateFieldLevelEncryptionProfile"),
+    /** Action for the UpdateFunction operation. */
+    UpdateFunction("cloudfront:UpdateFunction"),
     /** Action for the UpdateKeyGroup operation. */
     UpdateKeyGroup("cloudfront:UpdateKeyGroup"),
     /** Action for the UpdateOriginRequestPolicy operation. */

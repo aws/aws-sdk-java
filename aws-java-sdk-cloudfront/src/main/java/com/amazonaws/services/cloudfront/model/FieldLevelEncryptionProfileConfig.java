@@ -40,7 +40,7 @@ public class FieldLevelEncryptionProfileConfig implements Serializable, Cloneabl
     private String callerReference;
     /**
      * <p>
-     * An optional comment for the field-level encryption profile.
+     * An optional comment for the field-level encryption profile. The comment cannot be longer than 128 characters.
      * </p>
      */
     private String comment;
@@ -134,11 +134,12 @@ public class FieldLevelEncryptionProfileConfig implements Serializable, Cloneabl
 
     /**
      * <p>
-     * An optional comment for the field-level encryption profile.
+     * An optional comment for the field-level encryption profile. The comment cannot be longer than 128 characters.
      * </p>
      * 
      * @param comment
-     *        An optional comment for the field-level encryption profile.
+     *        An optional comment for the field-level encryption profile. The comment cannot be longer than 128
+     *        characters.
      */
 
     public void setComment(String comment) {
@@ -147,10 +148,11 @@ public class FieldLevelEncryptionProfileConfig implements Serializable, Cloneabl
 
     /**
      * <p>
-     * An optional comment for the field-level encryption profile.
+     * An optional comment for the field-level encryption profile. The comment cannot be longer than 128 characters.
      * </p>
      * 
-     * @return An optional comment for the field-level encryption profile.
+     * @return An optional comment for the field-level encryption profile. The comment cannot be longer than 128
+     *         characters.
      */
 
     public String getComment() {
@@ -159,11 +161,12 @@ public class FieldLevelEncryptionProfileConfig implements Serializable, Cloneabl
 
     /**
      * <p>
-     * An optional comment for the field-level encryption profile.
+     * An optional comment for the field-level encryption profile. The comment cannot be longer than 128 characters.
      * </p>
      * 
      * @param comment
-     *        An optional comment for the field-level encryption profile.
+     *        An optional comment for the field-level encryption profile. The comment cannot be longer than 128
+     *        characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

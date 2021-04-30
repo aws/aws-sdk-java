@@ -47,6 +47,12 @@ public class Change implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String details;
+    /**
+     * <p>
+     * Optional name for the change.
+     * </p>
+     */
+    private String changeName;
 
     /**
      * <p>
@@ -175,6 +181,46 @@ public class Change implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Optional name for the change.
+     * </p>
+     * 
+     * @param changeName
+     *        Optional name for the change.
+     */
+
+    public void setChangeName(String changeName) {
+        this.changeName = changeName;
+    }
+
+    /**
+     * <p>
+     * Optional name for the change.
+     * </p>
+     * 
+     * @return Optional name for the change.
+     */
+
+    public String getChangeName() {
+        return this.changeName;
+    }
+
+    /**
+     * <p>
+     * Optional name for the change.
+     * </p>
+     * 
+     * @param changeName
+     *        Optional name for the change.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Change withChangeName(String changeName) {
+        setChangeName(changeName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -191,7 +237,9 @@ public class Change implements Serializable, Cloneable, StructuredPojo {
         if (getEntity() != null)
             sb.append("Entity: ").append(getEntity()).append(",");
         if (getDetails() != null)
-            sb.append("Details: ").append(getDetails());
+            sb.append("Details: ").append(getDetails()).append(",");
+        if (getChangeName() != null)
+            sb.append("ChangeName: ").append(getChangeName());
         sb.append("}");
         return sb.toString();
     }
@@ -218,6 +266,10 @@ public class Change implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDetails() != null && other.getDetails().equals(this.getDetails()) == false)
             return false;
+        if (other.getChangeName() == null ^ this.getChangeName() == null)
+            return false;
+        if (other.getChangeName() != null && other.getChangeName().equals(this.getChangeName()) == false)
+            return false;
         return true;
     }
 
@@ -229,6 +281,7 @@ public class Change implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getChangeType() == null) ? 0 : getChangeType().hashCode());
         hashCode = prime * hashCode + ((getEntity() == null) ? 0 : getEntity().hashCode());
         hashCode = prime * hashCode + ((getDetails() == null) ? 0 : getDetails().hashCode());
+        hashCode = prime * hashCode + ((getChangeName() == null) ? 0 : getChangeName().hashCode());
         return hashCode;
     }
 

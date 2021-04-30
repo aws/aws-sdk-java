@@ -49,7 +49,7 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable, Clone
     private String callerReference;
     /**
      * <p>
-     * Any comments you want to include about the origin access identity.
+     * An optional comment to describe the origin access identity. The comment cannot be longer than 128 characters.
      * </p>
      */
     private String comment;
@@ -208,11 +208,12 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable, Clone
 
     /**
      * <p>
-     * Any comments you want to include about the origin access identity.
+     * An optional comment to describe the origin access identity. The comment cannot be longer than 128 characters.
      * </p>
      * 
      * @param comment
-     *        Any comments you want to include about the origin access identity.
+     *        An optional comment to describe the origin access identity. The comment cannot be longer than 128
+     *        characters.
      */
 
     public void setComment(String comment) {
@@ -221,10 +222,11 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable, Clone
 
     /**
      * <p>
-     * Any comments you want to include about the origin access identity.
+     * An optional comment to describe the origin access identity. The comment cannot be longer than 128 characters.
      * </p>
      * 
-     * @return Any comments you want to include about the origin access identity.
+     * @return An optional comment to describe the origin access identity. The comment cannot be longer than 128
+     *         characters.
      */
 
     public String getComment() {
@@ -233,11 +235,12 @@ public class CloudFrontOriginAccessIdentityConfig implements Serializable, Clone
 
     /**
      * <p>
-     * Any comments you want to include about the origin access identity.
+     * An optional comment to describe the origin access identity. The comment cannot be longer than 128 characters.
      * </p>
      * 
      * @param comment
-     *        Any comments you want to include about the origin access identity.
+     *        An optional comment to describe the origin access identity. The comment cannot be longer than 128
+     *        characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

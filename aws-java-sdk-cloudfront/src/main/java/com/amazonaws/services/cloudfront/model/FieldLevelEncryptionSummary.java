@@ -40,7 +40,7 @@ public class FieldLevelEncryptionSummary implements Serializable, Cloneable {
     private java.util.Date lastModifiedTime;
     /**
      * <p>
-     * An optional comment about the field-level encryption item.
+     * An optional comment about the field-level encryption item. The comment cannot be longer than 128 characters.
      * </p>
      */
     private String comment;
@@ -139,11 +139,12 @@ public class FieldLevelEncryptionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An optional comment about the field-level encryption item.
+     * An optional comment about the field-level encryption item. The comment cannot be longer than 128 characters.
      * </p>
      * 
      * @param comment
-     *        An optional comment about the field-level encryption item.
+     *        An optional comment about the field-level encryption item. The comment cannot be longer than 128
+     *        characters.
      */
 
     public void setComment(String comment) {
@@ -152,10 +153,11 @@ public class FieldLevelEncryptionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An optional comment about the field-level encryption item.
+     * An optional comment about the field-level encryption item. The comment cannot be longer than 128 characters.
      * </p>
      * 
-     * @return An optional comment about the field-level encryption item.
+     * @return An optional comment about the field-level encryption item. The comment cannot be longer than 128
+     *         characters.
      */
 
     public String getComment() {
@@ -164,11 +166,12 @@ public class FieldLevelEncryptionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An optional comment about the field-level encryption item.
+     * An optional comment about the field-level encryption item. The comment cannot be longer than 128 characters.
      * </p>
      * 
      * @param comment
-     *        An optional comment about the field-level encryption item.
+     *        An optional comment about the field-level encryption item. The comment cannot be longer than 128
+     *        characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

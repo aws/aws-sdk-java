@@ -962,6 +962,107 @@ public interface AmazonForecastAsync extends AmazonForecast {
 
     /**
      * <p>
+     * Deletes an entire resource tree. This operation will delete the parent resource and its child resources.
+     * </p>
+     * <p>
+     * Child resources are resources that were created from another resource. For example, when a forecast is generated
+     * from a predictor, the forecast is the child resource and the predictor is the parent resource.
+     * </p>
+     * <p>
+     * Amazon Forecast resources possess the following parent-child resource hierarchies:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Dataset Group</b>: predictors, predictor backtest export jobs, forecasts, forecast export jobs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Dataset</b>: dataset import jobs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Predictor</b>: predictor backtest export jobs, forecasts, forecast export jobs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Forecast</b>: forecast export jobs
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * <code>DeleteResourceTree</code> will only delete Amazon Forecast resources, and will not delete datasets or
+     * exported files stored in Amazon S3.
+     * </p>
+     * </note>
+     * 
+     * @param deleteResourceTreeRequest
+     * @return A Java Future containing the result of the DeleteResourceTree operation returned by the service.
+     * @sample AmazonForecastAsync.DeleteResourceTree
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteResourceTree" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResourceTreeResult> deleteResourceTreeAsync(DeleteResourceTreeRequest deleteResourceTreeRequest);
+
+    /**
+     * <p>
+     * Deletes an entire resource tree. This operation will delete the parent resource and its child resources.
+     * </p>
+     * <p>
+     * Child resources are resources that were created from another resource. For example, when a forecast is generated
+     * from a predictor, the forecast is the child resource and the predictor is the parent resource.
+     * </p>
+     * <p>
+     * Amazon Forecast resources possess the following parent-child resource hierarchies:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Dataset Group</b>: predictors, predictor backtest export jobs, forecasts, forecast export jobs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Dataset</b>: dataset import jobs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Predictor</b>: predictor backtest export jobs, forecasts, forecast export jobs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Forecast</b>: forecast export jobs
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * <code>DeleteResourceTree</code> will only delete Amazon Forecast resources, and will not delete datasets or
+     * exported files stored in Amazon S3.
+     * </p>
+     * </note>
+     * 
+     * @param deleteResourceTreeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteResourceTree operation returned by the service.
+     * @sample AmazonForecastAsyncHandler.DeleteResourceTree
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteResourceTree" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResourceTreeResult> deleteResourceTreeAsync(DeleteResourceTreeRequest deleteResourceTreeRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteResourceTreeRequest, DeleteResourceTreeResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes an Amazon Forecast dataset created using the <a>CreateDataset</a> operation.
      * </p>
      * <p>

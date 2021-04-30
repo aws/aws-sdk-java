@@ -316,6 +316,18 @@ public interface AmazonCloudFront {
      *         Your request contains more Lambda function associations than are allowed per distribution.
      * @throws InvalidLambdaFunctionAssociationException
      *         The specified Lambda function association is invalid.
+     * @throws TooManyDistributionsWithFunctionAssociationsException
+     *         You have reached the maximum number of distributions that are associated with a CloudFront function. For
+     *         more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyFunctionAssociationsException
+     *         You have reached the maximum number of CloudFront function associations for this distribution. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws InvalidFunctionAssociationException
+     *         A CloudFront function association is invalid.
      * @throws InvalidOriginReadTimeoutException
      *         The read timeout specified for the origin is not valid.
      * @throws InvalidOriginKeepaliveTimeoutException
@@ -354,6 +366,10 @@ public interface AmazonCloudFront {
      *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
      * @throws TrustedKeyGroupDoesNotExistException
      *         The specified key group does not exist.
+     * @throws NoSuchRealtimeLogConfigException
+     *         The real-time log configuration does not exist.
+     * @throws RealtimeLogConfigOwnerMismatchException
+     *         The specified real-time log configuration belongs to a different AWS account.
      * @sample AmazonCloudFront.CreateDistribution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistribution" target="_top">AWS
      *      API Documentation</a>
@@ -461,6 +477,18 @@ public interface AmazonCloudFront {
      *         Your request contains more Lambda function associations than are allowed per distribution.
      * @throws InvalidLambdaFunctionAssociationException
      *         The specified Lambda function association is invalid.
+     * @throws TooManyDistributionsWithFunctionAssociationsException
+     *         You have reached the maximum number of distributions that are associated with a CloudFront function. For
+     *         more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyFunctionAssociationsException
+     *         You have reached the maximum number of CloudFront function associations for this distribution. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws InvalidFunctionAssociationException
+     *         A CloudFront function association is invalid.
      * @throws InvalidOriginReadTimeoutException
      *         The read timeout specified for the origin is not valid.
      * @throws InvalidOriginKeepaliveTimeoutException
@@ -499,6 +527,10 @@ public interface AmazonCloudFront {
      *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
      * @throws TrustedKeyGroupDoesNotExistException
      *         The specified key group does not exist.
+     * @throws NoSuchRealtimeLogConfigException
+     *         The real-time log configuration does not exist.
+     * @throws RealtimeLogConfigOwnerMismatchException
+     *         The specified real-time log configuration belongs to a different AWS account.
      * @sample AmazonCloudFront.CreateDistributionWithTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistributionWithTags"
      *      target="_top">AWS API Documentation</a>
@@ -562,6 +594,46 @@ public interface AmazonCloudFront {
      *      target="_top">AWS API Documentation</a>
      */
     CreateFieldLevelEncryptionProfileResult createFieldLevelEncryptionProfile(CreateFieldLevelEncryptionProfileRequest createFieldLevelEncryptionProfileRequest);
+
+    /**
+     * <p>
+     * Creates a CloudFront function.
+     * </p>
+     * <p>
+     * To create a function, you provide the function code and some configuration information about the function. The
+     * response contains an Amazon Resource Name (ARN) that uniquely identifies the function.
+     * </p>
+     * <p>
+     * When you create a function, it’s in the <code>DEVELOPMENT</code> stage. In this stage, you can test the function
+     * with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.
+     * </p>
+     * <p>
+     * When you’re ready to use your function with a CloudFront distribution, use <code>PublishFunction</code> to copy
+     * the function from the <code>DEVELOPMENT</code> stage to <code>LIVE</code>. When it’s live, you can attach the
+     * function to a distribution’s cache behavior, using the function’s ARN.
+     * </p>
+     * 
+     * @param createFunctionRequest
+     * @return Result of the CreateFunction operation returned by the service.
+     * @throws TooManyFunctionsException
+     *         You have reached the maximum number of CloudFront functions for this AWS account. For more information,
+     *         see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas
+     *         </a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws FunctionAlreadyExistsException
+     *         A function with the same name already exists in this AWS account. To create a function, you must provide
+     *         a unique name. To update an existing function, use <code>UpdateFunction</code>.
+     * @throws FunctionSizeLimitExceededException
+     *         The function is too large. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @sample AmazonCloudFront.CreateFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateFunctionResult createFunction(CreateFunctionRequest createFunctionRequest);
 
     /**
      * <p>
@@ -650,6 +722,8 @@ public interface AmazonCloudFront {
      *         Access denied.
      * @throws NoSuchDistributionException
      *         The specified distribution does not exist.
+     * @throws UnsupportedOperationException
+     *         This operation is not supported in this region.
      * @sample AmazonCloudFront.CreateMonitoringSubscription
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateMonitoringSubscription"
      *      target="_top">AWS API Documentation</a>
@@ -899,7 +973,7 @@ public interface AmazonCloudFront {
      * @throws NoSuchCachePolicyException
      *         The cache policy does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @throws IllegalDeleteException
      *         You cannot delete a managed policy.
      * @throws CachePolicyInUseException
@@ -925,7 +999,7 @@ public interface AmazonCloudFront {
      * @throws NoSuchCloudFrontOriginAccessIdentityException
      *         The specified origin access identity does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @throws CloudFrontOriginAccessIdentityInUseException
      *         The Origin Access Identity specified is already in use.
      * @sample AmazonCloudFront.DeleteCloudFrontOriginAccessIdentity
@@ -1013,7 +1087,7 @@ public interface AmazonCloudFront {
      * @throws NoSuchDistributionException
      *         The specified distribution does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @sample AmazonCloudFront.DeleteDistribution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistribution" target="_top">AWS
      *      API Documentation</a>
@@ -1034,7 +1108,7 @@ public interface AmazonCloudFront {
      * @throws NoSuchFieldLevelEncryptionConfigException
      *         The specified configuration for field-level encryption doesn't exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @throws FieldLevelEncryptionConfigInUseException
      *         The specified configuration for field-level encryption is in use.
      * @sample AmazonCloudFront.DeleteFieldLevelEncryptionConfig
@@ -1057,7 +1131,7 @@ public interface AmazonCloudFront {
      * @throws NoSuchFieldLevelEncryptionProfileException
      *         The specified profile for field-level encryption doesn't exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @throws FieldLevelEncryptionProfileInUseException
      *         The specified profile for field-level encryption is in use.
      * @sample AmazonCloudFront.DeleteFieldLevelEncryptionProfile
@@ -1065,6 +1139,35 @@ public interface AmazonCloudFront {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteFieldLevelEncryptionProfileResult deleteFieldLevelEncryptionProfile(DeleteFieldLevelEncryptionProfileRequest deleteFieldLevelEncryptionProfileRequest);
+
+    /**
+     * <p>
+     * Deletes a CloudFront function.
+     * </p>
+     * <p>
+     * You cannot delete a function if it’s associated with a cache behavior. First, update your distributions to remove
+     * the function association from all cache behaviors, then delete the function.
+     * </p>
+     * <p>
+     * To delete a function, you must provide the function’s name and version (<code>ETag</code> value). To get these
+     * values, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.
+     * </p>
+     * 
+     * @param deleteFunctionRequest
+     * @return Result of the DeleteFunction operation returned by the service.
+     * @throws InvalidIfMatchVersionException
+     *         The <code>If-Match</code> version is missing or not valid.
+     * @throws NoSuchFunctionExistsException
+     *         The function does not exist.
+     * @throws FunctionInUseException
+     *         Cannot delete the function because it’s attached to one or more cache behaviors.
+     * @throws PreconditionFailedException
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
+     * @sample AmazonCloudFront.DeleteFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteFunctionResult deleteFunction(DeleteFunctionRequest deleteFunctionRequest);
 
     /**
      * <p>
@@ -1086,7 +1189,7 @@ public interface AmazonCloudFront {
      * @throws NoSuchResourceException
      *         A resource that was specified is not valid.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @throws ResourceInUseException
      *         Cannot delete this resource because it is in use.
      * @sample AmazonCloudFront.DeleteKeyGroup
@@ -1106,6 +1209,8 @@ public interface AmazonCloudFront {
      *         Access denied.
      * @throws NoSuchDistributionException
      *         The specified distribution does not exist.
+     * @throws UnsupportedOperationException
+     *         This operation is not supported in this region.
      * @sample AmazonCloudFront.DeleteMonitoringSubscription
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteMonitoringSubscription"
      *      target="_top">AWS API Documentation</a>
@@ -1135,7 +1240,7 @@ public interface AmazonCloudFront {
      * @throws NoSuchOriginRequestPolicyException
      *         The origin request policy does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @throws IllegalDeleteException
      *         You cannot delete a managed policy.
      * @throws OriginRequestPolicyInUseException
@@ -1162,7 +1267,7 @@ public interface AmazonCloudFront {
      * @throws NoSuchPublicKeyException
      *         The specified public key doesn't exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @sample AmazonCloudFront.DeletePublicKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeletePublicKey" target="_top">AWS API
      *      Documentation</a>
@@ -1279,12 +1384,32 @@ public interface AmazonCloudFront {
      * @throws NoSuchStreamingDistributionException
      *         The specified streaming distribution does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @sample AmazonCloudFront.DeleteStreamingDistribution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     DeleteStreamingDistributionResult deleteStreamingDistribution(DeleteStreamingDistributionRequest deleteStreamingDistributionRequest);
+
+    /**
+     * <p>
+     * Gets configuration information and metadata about a CloudFront function, but not the function’s code. To get a
+     * function’s code, use <code>GetFunction</code>.
+     * </p>
+     * <p>
+     * To get configuration information and metadata about a function, you must provide the function’s name and stage.
+     * To get these values, you can use <code>ListFunctions</code>.
+     * </p>
+     * 
+     * @param describeFunctionRequest
+     * @return Result of the DescribeFunction operation returned by the service.
+     * @throws NoSuchFunctionExistsException
+     *         The function does not exist.
+     * @sample AmazonCloudFront.DescribeFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DescribeFunction" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeFunctionResult describeFunction(DescribeFunctionRequest describeFunctionRequest);
 
     /**
      * <p>
@@ -1491,6 +1616,26 @@ public interface AmazonCloudFront {
 
     /**
      * <p>
+     * Gets the code of a CloudFront function. To get configuration information and metadata about a function, use
+     * <code>DescribeFunction</code>.
+     * </p>
+     * <p>
+     * To get a function’s code, you must provide the function’s name and stage. To get these values, you can use
+     * <code>ListFunctions</code>.
+     * </p>
+     * 
+     * @param getFunctionRequest
+     * @return Result of the GetFunction operation returned by the service.
+     * @throws NoSuchFunctionExistsException
+     *         The function does not exist.
+     * @sample AmazonCloudFront.GetFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetFunctionResult getFunction(GetFunctionRequest getFunctionRequest);
+
+    /**
+     * <p>
      * Get the information about an invalidation.
      * </p>
      * 
@@ -1563,6 +1708,8 @@ public interface AmazonCloudFront {
      *         Access denied.
      * @throws NoSuchDistributionException
      *         The specified distribution does not exist.
+     * @throws UnsupportedOperationException
+     *         This operation is not supported in this region.
      * @sample AmazonCloudFront.GetMonitoringSubscription
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetMonitoringSubscription"
      *      target="_top">AWS API Documentation</a>
@@ -1943,6 +2090,31 @@ public interface AmazonCloudFront {
 
     /**
      * <p>
+     * Gets a list of all CloudFront functions in your AWS account.
+     * </p>
+     * <p>
+     * You can optionally apply a filter to return only the functions that are in the specified stage, either
+     * <code>DEVELOPMENT</code> or <code>LIVE</code>.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listFunctionsRequest
+     * @return Result of the ListFunctions operation returned by the service.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @sample AmazonCloudFront.ListFunctions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListFunctions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListFunctionsResult listFunctions(ListFunctionsRequest listFunctionsRequest);
+
+    /**
+     * <p>
      * Lists invalidation batches.
      * </p>
      * 
@@ -2091,6 +2263,37 @@ public interface AmazonCloudFront {
 
     /**
      * <p>
+     * Publishes a CloudFront function by copying the function code from the <code>DEVELOPMENT</code> stage to
+     * <code>LIVE</code>. This automatically updates all cache behaviors that are using this function to use the newly
+     * published copy in the <code>LIVE</code> stage.
+     * </p>
+     * <p>
+     * When a function is published to the <code>LIVE</code> stage, you can attach the function to a distribution’s
+     * cache behavior, using the function’s Amazon Resource Name (ARN).
+     * </p>
+     * <p>
+     * To publish a function, you must provide the function’s name and version (<code>ETag</code> value). To get these
+     * values, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.
+     * </p>
+     * 
+     * @param publishFunctionRequest
+     * @return Result of the PublishFunction operation returned by the service.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @throws InvalidIfMatchVersionException
+     *         The <code>If-Match</code> version is missing or not valid.
+     * @throws NoSuchFunctionExistsException
+     *         The function does not exist.
+     * @throws PreconditionFailedException
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
+     * @sample AmazonCloudFront.PublishFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/PublishFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PublishFunctionResult publishFunction(PublishFunctionRequest publishFunctionRequest);
+
+    /**
+     * <p>
      * Add tags to a CloudFront resource.
      * </p>
      * 
@@ -2110,6 +2313,41 @@ public interface AmazonCloudFront {
      *      Documentation</a>
      */
     TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Tests a CloudFront function.
+     * </p>
+     * <p>
+     * To test a function, you provide an <i>event object</i> that represents an HTTP request or response that your
+     * CloudFront distribution could receive in production. CloudFront runs the function, passing it the event object
+     * that you provided, and returns the function’s result (the modified event object) in the response. The response
+     * also contains function logs and error messages, if any exist. For more information about testing functions, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function"
+     * >Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * <p>
+     * To test a function, you provide the function’s name and version (<code>ETag</code> value) along with the event
+     * object. To get the function’s name and version, you can use <code>ListFunctions</code> and
+     * <code>DescribeFunction</code>.
+     * </p>
+     * 
+     * @param testFunctionRequest
+     * @return Result of the TestFunction operation returned by the service.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @throws InvalidIfMatchVersionException
+     *         The <code>If-Match</code> version is missing or not valid.
+     * @throws NoSuchFunctionExistsException
+     *         The function does not exist.
+     * @throws TestFunctionFailedException
+     *         The CloudFront function failed.
+     * @sample AmazonCloudFront.TestFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TestFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TestFunctionResult testFunction(TestFunctionRequest testFunctionRequest);
 
     /**
      * <p>
@@ -2175,7 +2413,7 @@ public interface AmazonCloudFront {
      * @throws NoSuchCachePolicyException
      *         The cache policy does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @throws CachePolicyAlreadyExistsException
      *         A cache policy with this name already exists. You must provide a unique name. To modify an existing cache
      *         policy, use <code>UpdateCachePolicy</code>.
@@ -2217,7 +2455,7 @@ public interface AmazonCloudFront {
      * @throws NoSuchCloudFrontOriginAccessIdentityException
      *         The specified origin access identity does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @throws InvalidArgumentException
      *         An argument is invalid.
      * @throws InconsistentQuantitiesException
@@ -2359,7 +2597,7 @@ public interface AmazonCloudFront {
      * @throws NoSuchDistributionException
      *         The specified distribution does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @throws TooManyDistributionCNAMEsException
      *         Your request contains more CNAMEs than are allowed per distribution.
      * @throws InvalidDefaultRootObjectException
@@ -2434,6 +2672,18 @@ public interface AmazonCloudFront {
      *         Your request contains more Lambda function associations than are allowed per distribution.
      * @throws InvalidLambdaFunctionAssociationException
      *         The specified Lambda function association is invalid.
+     * @throws TooManyDistributionsWithFunctionAssociationsException
+     *         You have reached the maximum number of distributions that are associated with a CloudFront function. For
+     *         more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyFunctionAssociationsException
+     *         You have reached the maximum number of CloudFront function associations for this distribution. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws InvalidFunctionAssociationException
+     *         A CloudFront function association is invalid.
      * @throws InvalidOriginReadTimeoutException
      *         The read timeout specified for the origin is not valid.
      * @throws InvalidOriginKeepaliveTimeoutException
@@ -2472,6 +2722,10 @@ public interface AmazonCloudFront {
      *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
      * @throws TrustedKeyGroupDoesNotExistException
      *         The specified key group does not exist.
+     * @throws NoSuchRealtimeLogConfigException
+     *         The real-time log configuration does not exist.
+     * @throws RealtimeLogConfigOwnerMismatchException
+     *         The specified real-time log configuration belongs to a different AWS account.
      * @sample AmazonCloudFront.UpdateDistribution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistribution" target="_top">AWS
      *      API Documentation</a>
@@ -2500,7 +2754,7 @@ public interface AmazonCloudFront {
      * @throws NoSuchFieldLevelEncryptionConfigException
      *         The specified configuration for field-level encryption doesn't exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @throws TooManyFieldLevelEncryptionQueryArgProfilesException
      *         The maximum number of query arg profiles for field-level encryption have been created.
      * @throws TooManyFieldLevelEncryptionContentTypeProfilesException
@@ -2537,7 +2791,7 @@ public interface AmazonCloudFront {
      * @throws NoSuchFieldLevelEncryptionProfileException
      *         The specified profile for field-level encryption doesn't exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @throws FieldLevelEncryptionProfileSizeExceededException
      *         The maximum size of a profile for field-level encryption was exceeded.
      * @throws TooManyFieldLevelEncryptionEncryptionEntitiesException
@@ -2549,6 +2803,39 @@ public interface AmazonCloudFront {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateFieldLevelEncryptionProfileResult updateFieldLevelEncryptionProfile(UpdateFieldLevelEncryptionProfileRequest updateFieldLevelEncryptionProfileRequest);
+
+    /**
+     * <p>
+     * Updates a CloudFront function.
+     * </p>
+     * <p>
+     * You can update a function’s code or the comment that describes the function. You cannot update a function’s name.
+     * </p>
+     * <p>
+     * To update a function, you provide the function’s name and version (<code>ETag</code> value) along with the
+     * updated function code. To get the name and version, you can use <code>ListFunctions</code> and
+     * <code>DescribeFunction</code>.
+     * </p>
+     * 
+     * @param updateFunctionRequest
+     * @return Result of the UpdateFunction operation returned by the service.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @throws InvalidIfMatchVersionException
+     *         The <code>If-Match</code> version is missing or not valid.
+     * @throws NoSuchFunctionExistsException
+     *         The function does not exist.
+     * @throws PreconditionFailedException
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
+     * @throws FunctionSizeLimitExceededException
+     *         The function is too large. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @sample AmazonCloudFront.UpdateFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateFunctionResult updateFunction(UpdateFunctionRequest updateFunctionRequest);
 
     /**
      * <p>
@@ -2584,7 +2871,7 @@ public interface AmazonCloudFront {
      * @throws NoSuchResourceException
      *         A resource that was specified is not valid.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @throws KeyGroupAlreadyExistsException
      *         A key group with this name already exists. You must provide a unique name. To modify an existing key
      *         group, use <code>UpdateKeyGroup</code>.
@@ -2644,7 +2931,7 @@ public interface AmazonCloudFront {
      * @throws NoSuchOriginRequestPolicyException
      *         The origin request policy does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @throws OriginRequestPolicyAlreadyExistsException
      *         An origin request policy with this name already exists. You must provide a unique name. To modify an
      *         existing origin request policy, use <code>UpdateOriginRequestPolicy</code>.
@@ -2689,7 +2976,7 @@ public interface AmazonCloudFront {
      * @throws NoSuchPublicKeyException
      *         The specified public key doesn't exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @sample AmazonCloudFront.UpdatePublicKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdatePublicKey" target="_top">AWS API
      *      Documentation</a>
@@ -2762,7 +3049,7 @@ public interface AmazonCloudFront {
      * @throws NoSuchStreamingDistributionException
      *         The specified streaming distribution does not exist.
      * @throws PreconditionFailedException
-     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     *         The precondition in one or more of the request fields evaluated to <code>false</code>.
      * @throws TooManyStreamingDistributionCNAMEsException
      *         Your request contains more CNAMEs than are allowed per distribution.
      * @throws InvalidArgumentException

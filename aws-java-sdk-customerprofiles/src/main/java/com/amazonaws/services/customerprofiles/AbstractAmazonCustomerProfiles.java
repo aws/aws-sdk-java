@@ -83,6 +83,11 @@ public class AbstractAmazonCustomerProfiles implements AmazonCustomerProfiles {
     }
 
     @Override
+    public GetMatchesResult getMatches(GetMatchesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetProfileObjectTypeResult getProfileObjectType(GetProfileObjectTypeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -124,6 +129,11 @@ public class AbstractAmazonCustomerProfiles implements AmazonCustomerProfiles {
 
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public MergeProfilesResult mergeProfiles(MergeProfilesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

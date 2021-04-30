@@ -1,3 +1,28 @@
+# __1.11.1009__ __2021-04-30__
+## __AWS Marketplace Catalog Service__
+  - ### Features
+    - Allows user defined names for Changes in a ChangeSet. Users can use ChangeNames to reference properties in another Change within a ChangeSet. This feature allows users to make changes to an entity when the entity identifier is not yet available while constructing the StartChangeSet request.
+
+## __AWS RoboMaker__
+  - ### Features
+    - Adds ROS2 Foxy as a supported Robot Software Suite Version and Gazebo 11 as a supported Simulation Software Suite Version
+
+## __Amazon CloudFront__
+  - ### Features
+    - CloudFront now supports CloudFront Functions, a native feature of CloudFront that enables you to write lightweight functions in JavaScript for high-scale, latency-sensitive CDN customizations.
+
+## __Amazon Connect Customer Profiles__
+  - ### Features
+    - This release introduces GetMatches and MergeProfiles APIs to fetch and merge duplicate profiles
+
+## __Amazon Forecast Service__
+  - ### Features
+    - Added new DeleteResourceTree operation that helps in deleting all the child resources of a given resource including the given resource.
+
+## __Amazon Personalize__
+  - ### Features
+    - Update URL for dataset export job documentation.
+
 # __1.11.1008__ __2021-04-29__
 ## __AWS Organizations__
   - ### Features

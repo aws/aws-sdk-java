@@ -171,6 +171,19 @@ public class AbstractAmazonCustomerProfilesAsync extends AbstractAmazonCustomerP
     }
 
     @Override
+    public java.util.concurrent.Future<GetMatchesResult> getMatchesAsync(GetMatchesRequest request) {
+
+        return getMatchesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMatchesResult> getMatchesAsync(GetMatchesRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetMatchesRequest, GetMatchesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetProfileObjectTypeResult> getProfileObjectTypeAsync(GetProfileObjectTypeRequest request) {
 
         return getProfileObjectTypeAsync(request, null);
@@ -283,6 +296,19 @@ public class AbstractAmazonCustomerProfilesAsync extends AbstractAmazonCustomerP
     @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<MergeProfilesResult> mergeProfilesAsync(MergeProfilesRequest request) {
+
+        return mergeProfilesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<MergeProfilesResult> mergeProfilesAsync(MergeProfilesRequest request,
+            com.amazonaws.handlers.AsyncHandler<MergeProfilesRequest, MergeProfilesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

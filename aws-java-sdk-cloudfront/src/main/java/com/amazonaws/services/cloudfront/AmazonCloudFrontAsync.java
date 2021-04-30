@@ -349,6 +349,63 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
+     * Creates a CloudFront function.
+     * </p>
+     * <p>
+     * To create a function, you provide the function code and some configuration information about the function. The
+     * response contains an Amazon Resource Name (ARN) that uniquely identifies the function.
+     * </p>
+     * <p>
+     * When you create a function, it’s in the <code>DEVELOPMENT</code> stage. In this stage, you can test the function
+     * with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.
+     * </p>
+     * <p>
+     * When you’re ready to use your function with a CloudFront distribution, use <code>PublishFunction</code> to copy
+     * the function from the <code>DEVELOPMENT</code> stage to <code>LIVE</code>. When it’s live, you can attach the
+     * function to a distribution’s cache behavior, using the function’s ARN.
+     * </p>
+     * 
+     * @param createFunctionRequest
+     * @return A Java Future containing the result of the CreateFunction operation returned by the service.
+     * @sample AmazonCloudFrontAsync.CreateFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateFunctionResult> createFunctionAsync(CreateFunctionRequest createFunctionRequest);
+
+    /**
+     * <p>
+     * Creates a CloudFront function.
+     * </p>
+     * <p>
+     * To create a function, you provide the function code and some configuration information about the function. The
+     * response contains an Amazon Resource Name (ARN) that uniquely identifies the function.
+     * </p>
+     * <p>
+     * When you create a function, it’s in the <code>DEVELOPMENT</code> stage. In this stage, you can test the function
+     * with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.
+     * </p>
+     * <p>
+     * When you’re ready to use your function with a CloudFront distribution, use <code>PublishFunction</code> to copy
+     * the function from the <code>DEVELOPMENT</code> stage to <code>LIVE</code>. When it’s live, you can attach the
+     * function to a distribution’s cache behavior, using the function’s ARN.
+     * </p>
+     * 
+     * @param createFunctionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateFunction operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.CreateFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateFunctionResult> createFunctionAsync(CreateFunctionRequest createFunctionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateFunctionRequest, CreateFunctionResult> asyncHandler);
+
+    /**
+     * <p>
      * Create a new invalidation.
      * </p>
      * 
@@ -1060,6 +1117,53 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
+     * Deletes a CloudFront function.
+     * </p>
+     * <p>
+     * You cannot delete a function if it’s associated with a cache behavior. First, update your distributions to remove
+     * the function association from all cache behaviors, then delete the function.
+     * </p>
+     * <p>
+     * To delete a function, you must provide the function’s name and version (<code>ETag</code> value). To get these
+     * values, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.
+     * </p>
+     * 
+     * @param deleteFunctionRequest
+     * @return A Java Future containing the result of the DeleteFunction operation returned by the service.
+     * @sample AmazonCloudFrontAsync.DeleteFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFunctionResult> deleteFunctionAsync(DeleteFunctionRequest deleteFunctionRequest);
+
+    /**
+     * <p>
+     * Deletes a CloudFront function.
+     * </p>
+     * <p>
+     * You cannot delete a function if it’s associated with a cache behavior. First, update your distributions to remove
+     * the function association from all cache behaviors, then delete the function.
+     * </p>
+     * <p>
+     * To delete a function, you must provide the function’s name and version (<code>ETag</code> value). To get these
+     * values, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.
+     * </p>
+     * 
+     * @param deleteFunctionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteFunction operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.DeleteFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFunctionResult> deleteFunctionAsync(DeleteFunctionRequest deleteFunctionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteFunctionRequest, DeleteFunctionResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a key group.
      * </p>
      * <p>
@@ -1429,6 +1533,47 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
     java.util.concurrent.Future<DeleteStreamingDistributionResult> deleteStreamingDistributionAsync(
             DeleteStreamingDistributionRequest deleteStreamingDistributionRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteStreamingDistributionRequest, DeleteStreamingDistributionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets configuration information and metadata about a CloudFront function, but not the function’s code. To get a
+     * function’s code, use <code>GetFunction</code>.
+     * </p>
+     * <p>
+     * To get configuration information and metadata about a function, you must provide the function’s name and stage.
+     * To get these values, you can use <code>ListFunctions</code>.
+     * </p>
+     * 
+     * @param describeFunctionRequest
+     * @return A Java Future containing the result of the DescribeFunction operation returned by the service.
+     * @sample AmazonCloudFrontAsync.DescribeFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DescribeFunction" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFunctionResult> describeFunctionAsync(DescribeFunctionRequest describeFunctionRequest);
+
+    /**
+     * <p>
+     * Gets configuration information and metadata about a CloudFront function, but not the function’s code. To get a
+     * function’s code, use <code>GetFunction</code>.
+     * </p>
+     * <p>
+     * To get configuration information and metadata about a function, you must provide the function’s name and stage.
+     * To get these values, you can use <code>ListFunctions</code>.
+     * </p>
+     * 
+     * @param describeFunctionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeFunction operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.DescribeFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DescribeFunction" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFunctionResult> describeFunctionAsync(DescribeFunctionRequest describeFunctionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeFunctionRequest, DescribeFunctionResult> asyncHandler);
 
     /**
      * <p>
@@ -1821,6 +1966,47 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
     java.util.concurrent.Future<GetFieldLevelEncryptionProfileConfigResult> getFieldLevelEncryptionProfileConfigAsync(
             GetFieldLevelEncryptionProfileConfigRequest getFieldLevelEncryptionProfileConfigRequest,
             com.amazonaws.handlers.AsyncHandler<GetFieldLevelEncryptionProfileConfigRequest, GetFieldLevelEncryptionProfileConfigResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the code of a CloudFront function. To get configuration information and metadata about a function, use
+     * <code>DescribeFunction</code>.
+     * </p>
+     * <p>
+     * To get a function’s code, you must provide the function’s name and stage. To get these values, you can use
+     * <code>ListFunctions</code>.
+     * </p>
+     * 
+     * @param getFunctionRequest
+     * @return A Java Future containing the result of the GetFunction operation returned by the service.
+     * @sample AmazonCloudFrontAsync.GetFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetFunctionResult> getFunctionAsync(GetFunctionRequest getFunctionRequest);
+
+    /**
+     * <p>
+     * Gets the code of a CloudFront function. To get configuration information and metadata about a function, use
+     * <code>DescribeFunction</code>.
+     * </p>
+     * <p>
+     * To get a function’s code, you must provide the function’s name and stage. To get these values, you can use
+     * <code>ListFunctions</code>.
+     * </p>
+     * 
+     * @param getFunctionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetFunction operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.GetFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetFunctionResult> getFunctionAsync(GetFunctionRequest getFunctionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetFunctionRequest, GetFunctionResult> asyncHandler);
 
     /**
      * <p>
@@ -2697,6 +2883,57 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
+     * Gets a list of all CloudFront functions in your AWS account.
+     * </p>
+     * <p>
+     * You can optionally apply a filter to return only the functions that are in the specified stage, either
+     * <code>DEVELOPMENT</code> or <code>LIVE</code>.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listFunctionsRequest
+     * @return A Java Future containing the result of the ListFunctions operation returned by the service.
+     * @sample AmazonCloudFrontAsync.ListFunctions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListFunctions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListFunctionsResult> listFunctionsAsync(ListFunctionsRequest listFunctionsRequest);
+
+    /**
+     * <p>
+     * Gets a list of all CloudFront functions in your AWS account.
+     * </p>
+     * <p>
+     * You can optionally apply a filter to return only the functions that are in the specified stage, either
+     * <code>DEVELOPMENT</code> or <code>LIVE</code>.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listFunctionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListFunctions operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.ListFunctions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListFunctions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListFunctionsResult> listFunctionsAsync(ListFunctionsRequest listFunctionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListFunctionsRequest, ListFunctionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists invalidation batches.
      * </p>
      * 
@@ -2968,6 +3205,57 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
+     * Publishes a CloudFront function by copying the function code from the <code>DEVELOPMENT</code> stage to
+     * <code>LIVE</code>. This automatically updates all cache behaviors that are using this function to use the newly
+     * published copy in the <code>LIVE</code> stage.
+     * </p>
+     * <p>
+     * When a function is published to the <code>LIVE</code> stage, you can attach the function to a distribution’s
+     * cache behavior, using the function’s Amazon Resource Name (ARN).
+     * </p>
+     * <p>
+     * To publish a function, you must provide the function’s name and version (<code>ETag</code> value). To get these
+     * values, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.
+     * </p>
+     * 
+     * @param publishFunctionRequest
+     * @return A Java Future containing the result of the PublishFunction operation returned by the service.
+     * @sample AmazonCloudFrontAsync.PublishFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/PublishFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PublishFunctionResult> publishFunctionAsync(PublishFunctionRequest publishFunctionRequest);
+
+    /**
+     * <p>
+     * Publishes a CloudFront function by copying the function code from the <code>DEVELOPMENT</code> stage to
+     * <code>LIVE</code>. This automatically updates all cache behaviors that are using this function to use the newly
+     * published copy in the <code>LIVE</code> stage.
+     * </p>
+     * <p>
+     * When a function is published to the <code>LIVE</code> stage, you can attach the function to a distribution’s
+     * cache behavior, using the function’s Amazon Resource Name (ARN).
+     * </p>
+     * <p>
+     * To publish a function, you must provide the function’s name and version (<code>ETag</code> value). To get these
+     * values, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.
+     * </p>
+     * 
+     * @param publishFunctionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PublishFunction operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.PublishFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/PublishFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PublishFunctionResult> publishFunctionAsync(PublishFunctionRequest publishFunctionRequest,
+            com.amazonaws.handlers.AsyncHandler<PublishFunctionRequest, PublishFunctionResult> asyncHandler);
+
+    /**
+     * <p>
      * Add tags to a CloudFront resource.
      * </p>
      * 
@@ -2998,6 +3286,65 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      */
     java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Tests a CloudFront function.
+     * </p>
+     * <p>
+     * To test a function, you provide an <i>event object</i> that represents an HTTP request or response that your
+     * CloudFront distribution could receive in production. CloudFront runs the function, passing it the event object
+     * that you provided, and returns the function’s result (the modified event object) in the response. The response
+     * also contains function logs and error messages, if any exist. For more information about testing functions, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function"
+     * >Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * <p>
+     * To test a function, you provide the function’s name and version (<code>ETag</code> value) along with the event
+     * object. To get the function’s name and version, you can use <code>ListFunctions</code> and
+     * <code>DescribeFunction</code>.
+     * </p>
+     * 
+     * @param testFunctionRequest
+     * @return A Java Future containing the result of the TestFunction operation returned by the service.
+     * @sample AmazonCloudFrontAsync.TestFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TestFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TestFunctionResult> testFunctionAsync(TestFunctionRequest testFunctionRequest);
+
+    /**
+     * <p>
+     * Tests a CloudFront function.
+     * </p>
+     * <p>
+     * To test a function, you provide an <i>event object</i> that represents an HTTP request or response that your
+     * CloudFront distribution could receive in production. CloudFront runs the function, passing it the event object
+     * that you provided, and returns the function’s result (the modified event object) in the response. The response
+     * also contains function logs and error messages, if any exist. For more information about testing functions, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function"
+     * >Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * <p>
+     * To test a function, you provide the function’s name and version (<code>ETag</code> value) along with the event
+     * object. To get the function’s name and version, you can use <code>ListFunctions</code> and
+     * <code>DescribeFunction</code>.
+     * </p>
+     * 
+     * @param testFunctionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TestFunction operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.TestFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TestFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TestFunctionResult> testFunctionAsync(TestFunctionRequest testFunctionRequest,
+            com.amazonaws.handlers.AsyncHandler<TestFunctionRequest, TestFunctionResult> asyncHandler);
 
     /**
      * <p>
@@ -3462,6 +3809,53 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
     java.util.concurrent.Future<UpdateFieldLevelEncryptionProfileResult> updateFieldLevelEncryptionProfileAsync(
             UpdateFieldLevelEncryptionProfileRequest updateFieldLevelEncryptionProfileRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateFieldLevelEncryptionProfileRequest, UpdateFieldLevelEncryptionProfileResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a CloudFront function.
+     * </p>
+     * <p>
+     * You can update a function’s code or the comment that describes the function. You cannot update a function’s name.
+     * </p>
+     * <p>
+     * To update a function, you provide the function’s name and version (<code>ETag</code> value) along with the
+     * updated function code. To get the name and version, you can use <code>ListFunctions</code> and
+     * <code>DescribeFunction</code>.
+     * </p>
+     * 
+     * @param updateFunctionRequest
+     * @return A Java Future containing the result of the UpdateFunction operation returned by the service.
+     * @sample AmazonCloudFrontAsync.UpdateFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFunctionResult> updateFunctionAsync(UpdateFunctionRequest updateFunctionRequest);
+
+    /**
+     * <p>
+     * Updates a CloudFront function.
+     * </p>
+     * <p>
+     * You can update a function’s code or the comment that describes the function. You cannot update a function’s name.
+     * </p>
+     * <p>
+     * To update a function, you provide the function’s name and version (<code>ETag</code> value) along with the
+     * updated function code. To get the name and version, you can use <code>ListFunctions</code> and
+     * <code>DescribeFunction</code>.
+     * </p>
+     * 
+     * @param updateFunctionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateFunction operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.UpdateFunction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFunction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFunctionResult> updateFunctionAsync(UpdateFunctionRequest updateFunctionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateFunctionRequest, UpdateFunctionResult> asyncHandler);
 
     /**
      * <p>

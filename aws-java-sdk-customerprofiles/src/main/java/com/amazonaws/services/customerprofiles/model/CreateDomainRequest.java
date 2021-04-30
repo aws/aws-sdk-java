@@ -54,6 +54,12 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String deadLetterQueueUrl;
     /**
      * <p>
+     * The process of matching duplicate profiles. This process runs every Saturday at 12AM.
+     * </p>
+     */
+    private MatchingRequest matching;
+    /**
+     * <p>
      * The tags used to organize, track, or control access for this resource.
      * </p>
      */
@@ -239,6 +245,46 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
+     * The process of matching duplicate profiles. This process runs every Saturday at 12AM.
+     * </p>
+     * 
+     * @param matching
+     *        The process of matching duplicate profiles. This process runs every Saturday at 12AM.
+     */
+
+    public void setMatching(MatchingRequest matching) {
+        this.matching = matching;
+    }
+
+    /**
+     * <p>
+     * The process of matching duplicate profiles. This process runs every Saturday at 12AM.
+     * </p>
+     * 
+     * @return The process of matching duplicate profiles. This process runs every Saturday at 12AM.
+     */
+
+    public MatchingRequest getMatching() {
+        return this.matching;
+    }
+
+    /**
+     * <p>
+     * The process of matching duplicate profiles. This process runs every Saturday at 12AM.
+     * </p>
+     * 
+     * @param matching
+     *        The process of matching duplicate profiles. This process runs every Saturday at 12AM.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDomainRequest withMatching(MatchingRequest matching) {
+        setMatching(matching);
+        return this;
+    }
+
+    /**
+     * <p>
      * The tags used to organize, track, or control access for this resource.
      * </p>
      * 
@@ -325,6 +371,8 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("DefaultEncryptionKey: ").append(getDefaultEncryptionKey()).append(",");
         if (getDeadLetterQueueUrl() != null)
             sb.append("DeadLetterQueueUrl: ").append(getDeadLetterQueueUrl()).append(",");
+        if (getMatching() != null)
+            sb.append("Matching: ").append(getMatching()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -357,6 +405,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getDeadLetterQueueUrl() != null && other.getDeadLetterQueueUrl().equals(this.getDeadLetterQueueUrl()) == false)
             return false;
+        if (other.getMatching() == null ^ this.getMatching() == null)
+            return false;
+        if (other.getMatching() != null && other.getMatching().equals(this.getMatching()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -373,6 +425,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getDefaultExpirationDays() == null) ? 0 : getDefaultExpirationDays().hashCode());
         hashCode = prime * hashCode + ((getDefaultEncryptionKey() == null) ? 0 : getDefaultEncryptionKey().hashCode());
         hashCode = prime * hashCode + ((getDeadLetterQueueUrl() == null) ? 0 : getDeadLetterQueueUrl().hashCode());
+        hashCode = prime * hashCode + ((getMatching() == null) ? 0 : getMatching().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

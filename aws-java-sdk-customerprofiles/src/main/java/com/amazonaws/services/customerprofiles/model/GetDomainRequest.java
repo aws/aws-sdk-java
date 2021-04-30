@@ -27,18 +27,18 @@ public class GetDomainRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A unique name for the domain.
+     * The unique name of the domain.
      * </p>
      */
     private String domainName;
 
     /**
      * <p>
-     * A unique name for the domain.
+     * The unique name of the domain.
      * </p>
      * 
      * @param domainName
-     *        A unique name for the domain.
+     *        The unique name of the domain.
      */
 
     public void setDomainName(String domainName) {
@@ -47,10 +47,10 @@ public class GetDomainRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A unique name for the domain.
+     * The unique name of the domain.
      * </p>
      * 
-     * @return A unique name for the domain.
+     * @return The unique name of the domain.
      */
 
     public String getDomainName() {
@@ -59,11 +59,11 @@ public class GetDomainRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A unique name for the domain.
+     * The unique name of the domain.
      * </p>
      * 
      * @param domainName
-     *        A unique name for the domain.
+     *        The unique name of the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

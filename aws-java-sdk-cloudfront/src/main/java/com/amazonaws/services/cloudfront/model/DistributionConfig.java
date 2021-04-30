@@ -127,17 +127,7 @@ public class DistributionConfig implements Serializable, Cloneable {
     private CustomErrorResponses customErrorResponses;
     /**
      * <p>
-     * Any comments you want to include about the distribution.
-     * </p>
-     * <p>
-     * If you don't want to specify a comment, include an empty <code>Comment</code> element.
-     * </p>
-     * <p>
-     * To delete an existing comment, update the distribution configuration and include an empty <code>Comment</code>
-     * element.
-     * </p>
-     * <p>
-     * To add or change a comment, update the distribution configuration and specify the new comment.
+     * An optional comment to describe the distribution. The comment cannot be longer than 128 characters.
      * </p>
      */
     private String comment;
@@ -921,30 +911,11 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any comments you want to include about the distribution.
-     * </p>
-     * <p>
-     * If you don't want to specify a comment, include an empty <code>Comment</code> element.
-     * </p>
-     * <p>
-     * To delete an existing comment, update the distribution configuration and include an empty <code>Comment</code>
-     * element.
-     * </p>
-     * <p>
-     * To add or change a comment, update the distribution configuration and specify the new comment.
+     * An optional comment to describe the distribution. The comment cannot be longer than 128 characters.
      * </p>
      * 
      * @param comment
-     *        Any comments you want to include about the distribution.</p>
-     *        <p>
-     *        If you don't want to specify a comment, include an empty <code>Comment</code> element.
-     *        </p>
-     *        <p>
-     *        To delete an existing comment, update the distribution configuration and include an empty
-     *        <code>Comment</code> element.
-     *        </p>
-     *        <p>
-     *        To add or change a comment, update the distribution configuration and specify the new comment.
+     *        An optional comment to describe the distribution. The comment cannot be longer than 128 characters.
      */
 
     public void setComment(String comment) {
@@ -953,29 +924,10 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any comments you want to include about the distribution.
-     * </p>
-     * <p>
-     * If you don't want to specify a comment, include an empty <code>Comment</code> element.
-     * </p>
-     * <p>
-     * To delete an existing comment, update the distribution configuration and include an empty <code>Comment</code>
-     * element.
-     * </p>
-     * <p>
-     * To add or change a comment, update the distribution configuration and specify the new comment.
+     * An optional comment to describe the distribution. The comment cannot be longer than 128 characters.
      * </p>
      * 
-     * @return Any comments you want to include about the distribution.</p>
-     *         <p>
-     *         If you don't want to specify a comment, include an empty <code>Comment</code> element.
-     *         </p>
-     *         <p>
-     *         To delete an existing comment, update the distribution configuration and include an empty
-     *         <code>Comment</code> element.
-     *         </p>
-     *         <p>
-     *         To add or change a comment, update the distribution configuration and specify the new comment.
+     * @return An optional comment to describe the distribution. The comment cannot be longer than 128 characters.
      */
 
     public String getComment() {
@@ -984,30 +936,11 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any comments you want to include about the distribution.
-     * </p>
-     * <p>
-     * If you don't want to specify a comment, include an empty <code>Comment</code> element.
-     * </p>
-     * <p>
-     * To delete an existing comment, update the distribution configuration and include an empty <code>Comment</code>
-     * element.
-     * </p>
-     * <p>
-     * To add or change a comment, update the distribution configuration and specify the new comment.
+     * An optional comment to describe the distribution. The comment cannot be longer than 128 characters.
      * </p>
      * 
      * @param comment
-     *        Any comments you want to include about the distribution.</p>
-     *        <p>
-     *        If you don't want to specify a comment, include an empty <code>Comment</code> element.
-     *        </p>
-     *        <p>
-     *        To delete an existing comment, update the distribution configuration and include an empty
-     *        <code>Comment</code> element.
-     *        </p>
-     *        <p>
-     *        To add or change a comment, update the distribution configuration and specify the new comment.
+     *        An optional comment to describe the distribution. The comment cannot be longer than 128 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

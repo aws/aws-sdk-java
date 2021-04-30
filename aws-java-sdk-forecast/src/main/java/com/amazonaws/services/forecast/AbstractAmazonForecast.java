@@ -98,6 +98,11 @@ public class AbstractAmazonForecast implements AmazonForecast {
     }
 
     @Override
+    public DeleteResourceTreeResult deleteResourceTree(DeleteResourceTreeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeDatasetResult describeDataset(DescribeDatasetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

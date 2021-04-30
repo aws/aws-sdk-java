@@ -55,7 +55,7 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
     private String datasetGroupArn;
     /**
      * <p>
-     * The estimated time in minutes for the forecast job to complete.
+     * The estimated time remaining in minutes for the forecast job to complete.
      * </p>
      */
     private Long estimatedTimeRemainingInMinutes;
@@ -370,11 +370,11 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The estimated time in minutes for the forecast job to complete.
+     * The estimated time remaining in minutes for the forecast job to complete.
      * </p>
      * 
      * @param estimatedTimeRemainingInMinutes
-     *        The estimated time in minutes for the forecast job to complete.
+     *        The estimated time remaining in minutes for the forecast job to complete.
      */
 
     public void setEstimatedTimeRemainingInMinutes(Long estimatedTimeRemainingInMinutes) {
@@ -383,10 +383,10 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The estimated time in minutes for the forecast job to complete.
+     * The estimated time remaining in minutes for the forecast job to complete.
      * </p>
      * 
-     * @return The estimated time in minutes for the forecast job to complete.
+     * @return The estimated time remaining in minutes for the forecast job to complete.
      */
 
     public Long getEstimatedTimeRemainingInMinutes() {
@@ -395,11 +395,11 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The estimated time in minutes for the forecast job to complete.
+     * The estimated time remaining in minutes for the forecast job to complete.
      * </p>
      * 
      * @param estimatedTimeRemainingInMinutes
-     *        The estimated time in minutes for the forecast job to complete.
+     *        The estimated time remaining in minutes for the forecast job to complete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

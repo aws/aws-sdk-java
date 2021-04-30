@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A product entity contains data that describes your product, its supported features, and how it can be used or
- * launched by your customer.
+ * An entity contains data that describes your product, its supported features, and how it can be used or launched by
+ * your customer.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/Entity" target="_top">AWS API

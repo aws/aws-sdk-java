@@ -60,6 +60,10 @@ public class ChangeJsonUnmarshaller implements Unmarshaller<Change, JsonUnmarsha
                     context.nextToken();
                     change.setDetails(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ChangeName", targetDepth)) {
+                    context.nextToken();
+                    change.setChangeName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

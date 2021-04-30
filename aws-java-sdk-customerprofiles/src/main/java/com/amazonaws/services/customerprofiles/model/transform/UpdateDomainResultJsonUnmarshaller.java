@@ -64,6 +64,10 @@ public class UpdateDomainResultJsonUnmarshaller implements Unmarshaller<UpdateDo
                     context.nextToken();
                     updateDomainResult.setDeadLetterQueueUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Matching", targetDepth)) {
+                    context.nextToken();
+                    updateDomainResult.setMatching(MatchingResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
                     updateDomainResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

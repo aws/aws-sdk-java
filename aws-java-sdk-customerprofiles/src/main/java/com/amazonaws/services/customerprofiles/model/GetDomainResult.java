@@ -57,6 +57,12 @@ public class GetDomainResult extends com.amazonaws.AmazonWebServiceResult<com.am
     private DomainStats stats;
     /**
      * <p>
+     * The process of matching duplicate profiles. This process runs every Saturday at 12AM.
+     * </p>
+     */
+    private MatchingResponse matching;
+    /**
+     * <p>
      * The timestamp of when the domain was created.
      * </p>
      */
@@ -288,6 +294,46 @@ public class GetDomainResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
+     * The process of matching duplicate profiles. This process runs every Saturday at 12AM.
+     * </p>
+     * 
+     * @param matching
+     *        The process of matching duplicate profiles. This process runs every Saturday at 12AM.
+     */
+
+    public void setMatching(MatchingResponse matching) {
+        this.matching = matching;
+    }
+
+    /**
+     * <p>
+     * The process of matching duplicate profiles. This process runs every Saturday at 12AM.
+     * </p>
+     * 
+     * @return The process of matching duplicate profiles. This process runs every Saturday at 12AM.
+     */
+
+    public MatchingResponse getMatching() {
+        return this.matching;
+    }
+
+    /**
+     * <p>
+     * The process of matching duplicate profiles. This process runs every Saturday at 12AM.
+     * </p>
+     * 
+     * @param matching
+     *        The process of matching duplicate profiles. This process runs every Saturday at 12AM.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDomainResult withMatching(MatchingResponse matching) {
+        setMatching(matching);
+        return this;
+    }
+
+    /**
+     * <p>
      * The timestamp of when the domain was created.
      * </p>
      * 
@@ -456,6 +502,8 @@ public class GetDomainResult extends com.amazonaws.AmazonWebServiceResult<com.am
             sb.append("DeadLetterQueueUrl: ").append(getDeadLetterQueueUrl()).append(",");
         if (getStats() != null)
             sb.append("Stats: ").append(getStats()).append(",");
+        if (getMatching() != null)
+            sb.append("Matching: ").append(getMatching()).append(",");
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getLastUpdatedAt() != null)
@@ -496,6 +544,10 @@ public class GetDomainResult extends com.amazonaws.AmazonWebServiceResult<com.am
             return false;
         if (other.getStats() != null && other.getStats().equals(this.getStats()) == false)
             return false;
+        if (other.getMatching() == null ^ this.getMatching() == null)
+            return false;
+        if (other.getMatching() != null && other.getMatching().equals(this.getMatching()) == false)
+            return false;
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
@@ -521,6 +573,7 @@ public class GetDomainResult extends com.amazonaws.AmazonWebServiceResult<com.am
         hashCode = prime * hashCode + ((getDefaultEncryptionKey() == null) ? 0 : getDefaultEncryptionKey().hashCode());
         hashCode = prime * hashCode + ((getDeadLetterQueueUrl() == null) ? 0 : getDeadLetterQueueUrl().hashCode());
         hashCode = prime * hashCode + ((getStats() == null) ? 0 : getStats().hashCode());
+        hashCode = prime * hashCode + ((getMatching() == null) ? 0 : getMatching().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedAt() == null) ? 0 : getLastUpdatedAt().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

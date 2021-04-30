@@ -112,6 +112,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     }
 
     @Override
+    public java.util.concurrent.Future<CreateFunctionResult> createFunctionAsync(CreateFunctionRequest request) {
+
+        return createFunctionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFunctionResult> createFunctionAsync(CreateFunctionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateFunctionRequest, CreateFunctionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateInvalidationResult> createInvalidationAsync(CreateInvalidationRequest request) {
 
         return createInvalidationAsync(request, null);
@@ -289,6 +302,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteFunctionResult> deleteFunctionAsync(DeleteFunctionRequest request) {
+
+        return deleteFunctionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFunctionResult> deleteFunctionAsync(DeleteFunctionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteFunctionRequest, DeleteFunctionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteKeyGroupResult> deleteKeyGroupAsync(DeleteKeyGroupRequest request) {
 
         return deleteKeyGroupAsync(request, null);
@@ -362,6 +388,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     @Override
     public java.util.concurrent.Future<DeleteStreamingDistributionResult> deleteStreamingDistributionAsync(DeleteStreamingDistributionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteStreamingDistributionRequest, DeleteStreamingDistributionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFunctionResult> describeFunctionAsync(DescribeFunctionRequest request) {
+
+        return describeFunctionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFunctionResult> describeFunctionAsync(DescribeFunctionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeFunctionRequest, DescribeFunctionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -498,6 +537,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     public java.util.concurrent.Future<GetFieldLevelEncryptionProfileConfigResult> getFieldLevelEncryptionProfileConfigAsync(
             GetFieldLevelEncryptionProfileConfigRequest request,
             com.amazonaws.handlers.AsyncHandler<GetFieldLevelEncryptionProfileConfigRequest, GetFieldLevelEncryptionProfileConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFunctionResult> getFunctionAsync(GetFunctionRequest request) {
+
+        return getFunctionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFunctionResult> getFunctionAsync(GetFunctionRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetFunctionRequest, GetFunctionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -788,6 +840,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     }
 
     @Override
+    public java.util.concurrent.Future<ListFunctionsResult> listFunctionsAsync(ListFunctionsRequest request) {
+
+        return listFunctionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFunctionsResult> listFunctionsAsync(ListFunctionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListFunctionsRequest, ListFunctionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListInvalidationsResult> listInvalidationsAsync(ListInvalidationsRequest request) {
 
         return listInvalidationsAsync(request, null);
@@ -879,6 +944,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     }
 
     @Override
+    public java.util.concurrent.Future<PublishFunctionResult> publishFunctionAsync(PublishFunctionRequest request) {
+
+        return publishFunctionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PublishFunctionResult> publishFunctionAsync(PublishFunctionRequest request,
+            com.amazonaws.handlers.AsyncHandler<PublishFunctionRequest, PublishFunctionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);
@@ -887,6 +965,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TestFunctionResult> testFunctionAsync(TestFunctionRequest request) {
+
+        return testFunctionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TestFunctionResult> testFunctionAsync(TestFunctionRequest request,
+            com.amazonaws.handlers.AsyncHandler<TestFunctionRequest, TestFunctionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -971,6 +1062,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     public java.util.concurrent.Future<UpdateFieldLevelEncryptionProfileResult> updateFieldLevelEncryptionProfileAsync(
             UpdateFieldLevelEncryptionProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateFieldLevelEncryptionProfileRequest, UpdateFieldLevelEncryptionProfileResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFunctionResult> updateFunctionAsync(UpdateFunctionRequest request) {
+
+        return updateFunctionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFunctionResult> updateFunctionAsync(UpdateFunctionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateFunctionRequest, UpdateFunctionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

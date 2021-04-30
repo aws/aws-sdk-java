@@ -52,7 +52,7 @@ public class PublicKeySummary implements Serializable, Cloneable {
     private String encodedKey;
     /**
      * <p>
-     * A comment to describe the public key.
+     * A comment to describe the public key. The comment cannot be longer than 128 characters.
      * </p>
      */
     private String comment;
@@ -219,11 +219,11 @@ public class PublicKeySummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A comment to describe the public key.
+     * A comment to describe the public key. The comment cannot be longer than 128 characters.
      * </p>
      * 
      * @param comment
-     *        A comment to describe the public key.
+     *        A comment to describe the public key. The comment cannot be longer than 128 characters.
      */
 
     public void setComment(String comment) {
@@ -232,10 +232,10 @@ public class PublicKeySummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A comment to describe the public key.
+     * A comment to describe the public key. The comment cannot be longer than 128 characters.
      * </p>
      * 
-     * @return A comment to describe the public key.
+     * @return A comment to describe the public key. The comment cannot be longer than 128 characters.
      */
 
     public String getComment() {
@@ -244,11 +244,11 @@ public class PublicKeySummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A comment to describe the public key.
+     * A comment to describe the public key. The comment cannot be longer than 128 characters.
      * </p>
      * 
      * @param comment
-     *        A comment to describe the public key.
+     *        A comment to describe the public key. The comment cannot be longer than 128 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
