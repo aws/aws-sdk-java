@@ -71,7 +71,7 @@ public interface AmazonSageMaker {
      * @param addAssociationRequest
      * @return Result of the AddAssociation operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @throws ResourceLimitExceededException
      *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
      *         created.
@@ -120,7 +120,7 @@ public interface AmazonSageMaker {
      * @param associateTrialComponentRequest
      * @return Result of the AssociateTrialComponent operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @throws ResourceLimitExceededException
      *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
      *         created.
@@ -137,6 +137,13 @@ public interface AmazonSageMaker {
      * For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
      * SageMaker ML Lineage Tracking</a>.
      * </p>
+     * <note>
+     * <p>
+     * <code>CreateAction</code> can only be invoked from within an SageMaker managed environment. This includes
+     * SageMaker training jobs, processing jobs, transform jobs, and SageMaker notebooks. A call to
+     * <code>CreateAction</code> from outside one of these environments results in an error.
+     * </p>
+     * </note>
      * 
      * @param createActionRequest
      * @return Result of the CreateAction operation returned by the service.
@@ -176,7 +183,7 @@ public interface AmazonSageMaker {
      *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @sample AmazonSageMaker.CreateApp
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateApp" target="_top">AWS API
      *      Documentation</a>
@@ -192,7 +199,7 @@ public interface AmazonSageMaker {
      * @param createAppImageConfigRequest
      * @return Result of the CreateAppImageConfig operation returned by the service.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @sample AmazonSageMaker.CreateAppImageConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAppImageConfig" target="_top">AWS
      *      API Documentation</a>
@@ -206,6 +213,13 @@ public interface AmazonSageMaker {
      * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon SageMaker ML Lineage
      * Tracking</a>.
      * </p>
+     * <note>
+     * <p>
+     * <code>CreateArtifact</code> can only be invoked from within an SageMaker managed environment. This includes
+     * SageMaker training jobs, processing jobs, transform jobs, and SageMaker notebooks. A call to
+     * <code>CreateArtifact</code> from outside one of these environments results in an error.
+     * </p>
+     * </note>
      * 
      * @param createArtifactRequest
      * @return Result of the CreateArtifact operation returned by the service.
@@ -234,7 +248,7 @@ public interface AmazonSageMaker {
      * @param createAutoMLJobRequest
      * @return Result of the CreateAutoMLJob operation returned by the service.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @throws ResourceLimitExceededException
      *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
      *         created.
@@ -314,7 +328,7 @@ public interface AmazonSageMaker {
      * @param createCompilationJobRequest
      * @return Result of the CreateCompilationJob operation returned by the service.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @throws ResourceLimitExceededException
      *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
      *         created.
@@ -331,6 +345,13 @@ public interface AmazonSageMaker {
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon SageMaker ML Lineage
      * Tracking</a>.
      * </p>
+     * <note>
+     * <p>
+     * <code>CreateContext</code> can only be invoked from within an SageMaker managed environment. This includes
+     * SageMaker training jobs, processing jobs, transform jobs, and SageMaker notebooks. A call to
+     * <code>CreateContext</code> from outside one of these environments results in an error.
+     * </p>
+     * </note>
      * 
      * @param createContextRequest
      * @return Result of the CreateContext operation returned by the service.
@@ -355,7 +376,7 @@ public interface AmazonSageMaker {
      *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @sample AmazonSageMaker.CreateDataQualityJobDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDataQualityJobDefinition"
      *      target="_top">AWS API Documentation</a>
@@ -370,7 +391,7 @@ public interface AmazonSageMaker {
      * @param createDeviceFleetRequest
      * @return Result of the CreateDeviceFleet operation returned by the service.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @throws ResourceLimitExceededException
      *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
      *         created.
@@ -440,7 +461,7 @@ public interface AmazonSageMaker {
      *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @sample AmazonSageMaker.CreateDomain
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDomain" target="_top">AWS API
      *      Documentation</a>
@@ -637,9 +658,9 @@ public interface AmazonSageMaker {
      * remaining inputs constant.
      * </p>
      * <p>
-     * When you use Amazon SageMaker Studio or the Amazon SageMaker Python SDK, all experiments, trials, and trial
-     * components are automatically tracked, logged, and indexed. When you use the AWS SDK for Python (Boto), you must
-     * use the logging APIs provided by the SDK.
+     * When you use SageMaker Studio or the SageMaker Python SDK, all experiments, trials, and trial components are
+     * automatically tracked, logged, and indexed. When you use the AWS SDK for Python (Boto), you must use the logging
+     * APIs provided by the SDK.
      * </p>
      * <p>
      * You can add tags to experiments, trials, trial components and then use the <a>Search</a> API to search for the
@@ -689,7 +710,7 @@ public interface AmazonSageMaker {
      * @param createFeatureGroupRequest
      * @return Result of the CreateFeatureGroup operation returned by the service.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @throws ResourceLimitExceededException
      *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
      *         created.
@@ -710,7 +731,7 @@ public interface AmazonSageMaker {
      *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @sample AmazonSageMaker.CreateFlowDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateFlowDefinition" target="_top">AWS
      *      API Documentation</a>
@@ -729,7 +750,7 @@ public interface AmazonSageMaker {
      *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @sample AmazonSageMaker.CreateHumanTaskUi
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHumanTaskUi" target="_top">AWS
      *      API Documentation</a>
@@ -747,7 +768,7 @@ public interface AmazonSageMaker {
      * @param createHyperParameterTuningJobRequest
      * @return Result of the CreateHyperParameterTuningJob operation returned by the service.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @throws ResourceLimitExceededException
      *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
      *         created.
@@ -767,7 +788,7 @@ public interface AmazonSageMaker {
      * @param createImageRequest
      * @return Result of the CreateImage operation returned by the service.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @throws ResourceLimitExceededException
      *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
      *         created.
@@ -786,12 +807,12 @@ public interface AmazonSageMaker {
      * @param createImageVersionRequest
      * @return Result of the CreateImageVersion operation returned by the service.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @throws ResourceLimitExceededException
      *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.CreateImageVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateImageVersion" target="_top">AWS
      *      API Documentation</a>
@@ -856,7 +877,7 @@ public interface AmazonSageMaker {
      * @param createLabelingJobRequest
      * @return Result of the CreateLabelingJob operation returned by the service.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @throws ResourceLimitExceededException
      *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
      *         created.
@@ -922,7 +943,7 @@ public interface AmazonSageMaker {
      *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @sample AmazonSageMaker.CreateModelBiasJobDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelBiasJobDefinition"
      *      target="_top">AWS API Documentation</a>
@@ -940,7 +961,7 @@ public interface AmazonSageMaker {
      *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @sample AmazonSageMaker.CreateModelExplainabilityJobDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelExplainabilityJobDefinition"
      *      target="_top">AWS API Documentation</a>
@@ -981,7 +1002,8 @@ public interface AmazonSageMaker {
      * @param createModelPackageRequest
      * @return Result of the CreateModelPackage operation returned by the service.
      * @throws ConflictException
-     *         There was a conflict when you attempted to modify an experiment, trial, or trial component.
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
      * @throws ResourceLimitExceededException
      *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
      *         created.
@@ -1019,7 +1041,7 @@ public interface AmazonSageMaker {
      *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @sample AmazonSageMaker.CreateModelQualityJobDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelQualityJobDefinition"
      *      target="_top">AWS API Documentation</a>
@@ -1038,7 +1060,7 @@ public interface AmazonSageMaker {
      *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @sample AmazonSageMaker.CreateMonitoringSchedule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateMonitoringSchedule"
      *      target="_top">AWS API Documentation</a>
@@ -1157,7 +1179,7 @@ public interface AmazonSageMaker {
      * @param createPipelineRequest
      * @return Result of the CreatePipeline operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @throws ResourceLimitExceededException
      *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
      *         created.
@@ -1185,7 +1207,7 @@ public interface AmazonSageMaker {
      * @param createPresignedDomainUrlRequest
      * @return Result of the CreatePresignedDomainUrl operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.CreatePresignedDomainUrl
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedDomainUrl"
      *      target="_top">AWS API Documentation</a>
@@ -1237,12 +1259,12 @@ public interface AmazonSageMaker {
      * @param createProcessingJobRequest
      * @return Result of the CreateProcessingJob operation returned by the service.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @throws ResourceLimitExceededException
      *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.CreateProcessingJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateProcessingJob" target="_top">AWS
      *      API Documentation</a>
@@ -1304,7 +1326,7 @@ public interface AmazonSageMaker {
      * <code>OutputDataConfig</code> - Identifies the Amazon S3 bucket where you want Amazon SageMaker to save the
      * results of model training.
      * </p>
-     * <p/></li>
+     * </li>
      * <li>
      * <p>
      * <code>ResourceConfig</code> - Identifies the resources, ML compute instances, and ML storage volumes to deploy
@@ -1329,13 +1351,19 @@ public interface AmazonSageMaker {
      * <li>
      * <p>
      * <code>StoppingCondition</code> - To help cap training costs, use <code>MaxRuntimeInSeconds</code> to set a time
-     * limit for training. Use <code>MaxWaitTimeInSeconds</code> to specify how long you are willing to wait for a
-     * managed spot training job to complete.
+     * limit for training. Use <code>MaxWaitTimeInSeconds</code> to specify how long a managed spot training job has to
+     * complete.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>Environment</code> - The environment variables to set in the Docker container.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RetryStrategy</code> - The number of times to retry the job when the job fails due to an
+     * <code>InternalServerError</code>.
      * </p>
      * </li>
      * </ul>
@@ -1347,12 +1375,12 @@ public interface AmazonSageMaker {
      * @param createTrainingJobRequest
      * @return Result of the CreateTrainingJob operation returned by the service.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @throws ResourceLimitExceededException
      *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.CreateTrainingJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrainingJob" target="_top">AWS
      *      API Documentation</a>
@@ -1410,12 +1438,12 @@ public interface AmazonSageMaker {
      * @param createTransformJobRequest
      * @return Result of the CreateTransformJob operation returned by the service.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @throws ResourceLimitExceededException
      *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.CreateTransformJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTransformJob" target="_top">AWS
      *      API Documentation</a>
@@ -1424,13 +1452,13 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Creates an Amazon SageMaker <i>trial</i>. A trial is a set of steps called <i>trial components</i> that produce a
-     * machine learning model. A trial is part of a single Amazon SageMaker <i>experiment</i>.
+     * Creates an SageMaker <i>trial</i>. A trial is a set of steps called <i>trial components</i> that produce a
+     * machine learning model. A trial is part of a single SageMaker <i>experiment</i>.
      * </p>
      * <p>
-     * When you use Amazon SageMaker Studio or the Amazon SageMaker Python SDK, all experiments, trials, and trial
-     * components are automatically tracked, logged, and indexed. When you use the AWS SDK for Python (Boto), you must
-     * use the logging APIs provided by the SDK.
+     * When you use SageMaker Studio or the SageMaker Python SDK, all experiments, trials, and trial components are
+     * automatically tracked, logged, and indexed. When you use the AWS SDK for Python (Boto), you must use the logging
+     * APIs provided by the SDK.
      * </p>
      * <p>
      * You can add tags to a trial and then use the <a>Search</a> API to search for the tags.
@@ -1443,7 +1471,7 @@ public interface AmazonSageMaker {
      * @param createTrialRequest
      * @return Result of the CreateTrial operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @throws ResourceLimitExceededException
      *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
      *         created.
@@ -1462,18 +1490,18 @@ public interface AmazonSageMaker {
      * Trial components include pre-processing jobs, training jobs, and batch transform jobs.
      * </p>
      * <p>
-     * When you use Amazon SageMaker Studio or the Amazon SageMaker Python SDK, all experiments, trials, and trial
-     * components are automatically tracked, logged, and indexed. When you use the AWS SDK for Python (Boto), you must
-     * use the logging APIs provided by the SDK.
+     * When you use SageMaker Studio or the SageMaker Python SDK, all experiments, trials, and trial components are
+     * automatically tracked, logged, and indexed. When you use the AWS SDK for Python (Boto), you must use the logging
+     * APIs provided by the SDK.
      * </p>
      * <p>
      * You can add tags to a trial component and then use the <a>Search</a> API to search for the tags.
      * </p>
      * <note>
      * <p>
-     * <code>CreateTrialComponent</code> can only be invoked from within an Amazon SageMaker managed environment. This
-     * includes Amazon SageMaker training jobs, processing jobs, transform jobs, and Amazon SageMaker notebooks. A call
-     * to <code>CreateTrialComponent</code> from outside one of these environments results in an error.
+     * <code>CreateTrialComponent</code> can only be invoked from within an SageMaker managed environment. This includes
+     * SageMaker training jobs, processing jobs, transform jobs, and SageMaker notebooks. A call to
+     * <code>CreateTrialComponent</code> from outside one of these environments results in an error.
      * </p>
      * </note>
      * 
@@ -1503,7 +1531,7 @@ public interface AmazonSageMaker {
      *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @sample AmazonSageMaker.CreateUserProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateUserProfile" target="_top">AWS
      *      API Documentation</a>
@@ -1554,7 +1582,7 @@ public interface AmazonSageMaker {
      * @param createWorkteamRequest
      * @return Result of the CreateWorkteam operation returned by the service.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @throws ResourceLimitExceededException
      *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
      *         created.
@@ -1572,7 +1600,7 @@ public interface AmazonSageMaker {
      * @param deleteActionRequest
      * @return Result of the DeleteAction operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DeleteAction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAction" target="_top">AWS API
      *      Documentation</a>
@@ -1600,9 +1628,9 @@ public interface AmazonSageMaker {
      * @param deleteAppRequest
      * @return Result of the DeleteApp operation returned by the service.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DeleteApp
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteApp" target="_top">AWS API
      *      Documentation</a>
@@ -1617,7 +1645,7 @@ public interface AmazonSageMaker {
      * @param deleteAppImageConfigRequest
      * @return Result of the DeleteAppImageConfig operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DeleteAppImageConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAppImageConfig" target="_top">AWS
      *      API Documentation</a>
@@ -1632,7 +1660,7 @@ public interface AmazonSageMaker {
      * @param deleteArtifactRequest
      * @return Result of the DeleteArtifact operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DeleteArtifact
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteArtifact" target="_top">AWS API
      *      Documentation</a>
@@ -1647,7 +1675,7 @@ public interface AmazonSageMaker {
      * @param deleteAssociationRequest
      * @return Result of the DeleteAssociation operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DeleteAssociation
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAssociation" target="_top">AWS
      *      API Documentation</a>
@@ -1675,7 +1703,7 @@ public interface AmazonSageMaker {
      * @param deleteContextRequest
      * @return Result of the DeleteContext operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DeleteContext
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteContext" target="_top">AWS API
      *      Documentation</a>
@@ -1690,7 +1718,7 @@ public interface AmazonSageMaker {
      * @param deleteDataQualityJobDefinitionRequest
      * @return Result of the DeleteDataQualityJobDefinition operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DeleteDataQualityJobDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteDataQualityJobDefinition"
      *      target="_top">AWS API Documentation</a>
@@ -1705,7 +1733,7 @@ public interface AmazonSageMaker {
      * @param deleteDeviceFleetRequest
      * @return Result of the DeleteDeviceFleet operation returned by the service.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @sample AmazonSageMaker.DeleteDeviceFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteDeviceFleet" target="_top">AWS
      *      API Documentation</a>
@@ -1722,9 +1750,9 @@ public interface AmazonSageMaker {
      * @param deleteDomainRequest
      * @return Result of the DeleteDomain operation returned by the service.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DeleteDomain
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteDomain" target="_top">AWS API
      *      Documentation</a>
@@ -1772,14 +1800,14 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Deletes an Amazon SageMaker experiment. All trials associated with the experiment must be deleted first. Use the
+     * Deletes an SageMaker experiment. All trials associated with the experiment must be deleted first. Use the
      * <a>ListTrials</a> API to get a list of the trials associated with the experiment.
      * </p>
      * 
      * @param deleteExperimentRequest
      * @return Result of the DeleteExperiment operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DeleteExperiment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteExperiment" target="_top">AWS API
      *      Documentation</a>
@@ -1800,7 +1828,7 @@ public interface AmazonSageMaker {
      * @param deleteFeatureGroupRequest
      * @return Result of the DeleteFeatureGroup operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DeleteFeatureGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteFeatureGroup" target="_top">AWS
      *      API Documentation</a>
@@ -1815,9 +1843,9 @@ public interface AmazonSageMaker {
      * @param deleteFlowDefinitionRequest
      * @return Result of the DeleteFlowDefinition operation returned by the service.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DeleteFlowDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteFlowDefinition" target="_top">AWS
      *      API Documentation</a>
@@ -1836,7 +1864,7 @@ public interface AmazonSageMaker {
      * @param deleteHumanTaskUiRequest
      * @return Result of the DeleteHumanTaskUi operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DeleteHumanTaskUi
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHumanTaskUi" target="_top">AWS
      *      API Documentation</a>
@@ -1851,9 +1879,9 @@ public interface AmazonSageMaker {
      * @param deleteImageRequest
      * @return Result of the DeleteImage operation returned by the service.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DeleteImage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteImage" target="_top">AWS API
      *      Documentation</a>
@@ -1868,9 +1896,9 @@ public interface AmazonSageMaker {
      * @param deleteImageVersionRequest
      * @return Result of the DeleteImageVersion operation returned by the service.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DeleteImageVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteImageVersion" target="_top">AWS
      *      API Documentation</a>
@@ -1900,7 +1928,7 @@ public interface AmazonSageMaker {
      * @param deleteModelBiasJobDefinitionRequest
      * @return Result of the DeleteModelBiasJobDefinition operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DeleteModelBiasJobDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelBiasJobDefinition"
      *      target="_top">AWS API Documentation</a>
@@ -1915,7 +1943,7 @@ public interface AmazonSageMaker {
      * @param deleteModelExplainabilityJobDefinitionRequest
      * @return Result of the DeleteModelExplainabilityJobDefinition operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DeleteModelExplainabilityJobDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelExplainabilityJobDefinition"
      *      target="_top">AWS API Documentation</a>
@@ -1935,7 +1963,8 @@ public interface AmazonSageMaker {
      * @param deleteModelPackageRequest
      * @return Result of the DeleteModelPackage operation returned by the service.
      * @throws ConflictException
-     *         There was a conflict when you attempted to modify an experiment, trial, or trial component.
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
      * @sample AmazonSageMaker.DeleteModelPackage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelPackage" target="_top">AWS
      *      API Documentation</a>
@@ -1976,7 +2005,7 @@ public interface AmazonSageMaker {
      * @param deleteModelQualityJobDefinitionRequest
      * @return Result of the DeleteModelQualityJobDefinition operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DeleteModelQualityJobDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelQualityJobDefinition"
      *      target="_top">AWS API Documentation</a>
@@ -1992,7 +2021,7 @@ public interface AmazonSageMaker {
      * @param deleteMonitoringScheduleRequest
      * @return Result of the DeleteMonitoringSchedule operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DeleteMonitoringSchedule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteMonitoringSchedule"
      *      target="_top">AWS API Documentation</a>
@@ -2035,13 +2064,15 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Deletes a pipeline if there are no in-progress executions.
+     * Deletes a pipeline if there are no running instances of the pipeline. To delete a pipeline, you must stop all
+     * running instances of the pipeline using the <code>StopPipelineExecution</code> API. When you delete a pipeline,
+     * all instances of the pipeline are deleted.
      * </p>
      * 
      * @param deletePipelineRequest
      * @return Result of the DeletePipeline operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DeletePipeline
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeletePipeline" target="_top">AWS API
      *      Documentation</a>
@@ -2092,7 +2123,7 @@ public interface AmazonSageMaker {
      * @param deleteTrialRequest
      * @return Result of the DeleteTrial operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DeleteTrial
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTrial" target="_top">AWS API
      *      Documentation</a>
@@ -2109,7 +2140,7 @@ public interface AmazonSageMaker {
      * @param deleteTrialComponentRequest
      * @return Result of the DeleteTrialComponent operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DeleteTrialComponent
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTrialComponent" target="_top">AWS
      *      API Documentation</a>
@@ -2125,9 +2156,9 @@ public interface AmazonSageMaker {
      * @param deleteUserProfileRequest
      * @return Result of the DeleteUserProfile operation returned by the service.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DeleteUserProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteUserProfile" target="_top">AWS
      *      API Documentation</a>
@@ -2195,7 +2226,7 @@ public interface AmazonSageMaker {
      * @param describeActionRequest
      * @return Result of the DescribeAction operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribeAction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAction" target="_top">AWS API
      *      Documentation</a>
@@ -2223,7 +2254,7 @@ public interface AmazonSageMaker {
      * @param describeAppRequest
      * @return Result of the DescribeApp operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribeApp
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeApp" target="_top">AWS API
      *      Documentation</a>
@@ -2238,7 +2269,7 @@ public interface AmazonSageMaker {
      * @param describeAppImageConfigRequest
      * @return Result of the DescribeAppImageConfig operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribeAppImageConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAppImageConfig"
      *      target="_top">AWS API Documentation</a>
@@ -2253,7 +2284,7 @@ public interface AmazonSageMaker {
      * @param describeArtifactRequest
      * @return Result of the DescribeArtifact operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribeArtifact
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeArtifact" target="_top">AWS API
      *      Documentation</a>
@@ -2268,7 +2299,7 @@ public interface AmazonSageMaker {
      * @param describeAutoMLJobRequest
      * @return Result of the DescribeAutoMLJob operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribeAutoMLJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAutoMLJob" target="_top">AWS
      *      API Documentation</a>
@@ -2300,7 +2331,7 @@ public interface AmazonSageMaker {
      * @param describeCompilationJobRequest
      * @return Result of the DescribeCompilationJob operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribeCompilationJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeCompilationJob"
      *      target="_top">AWS API Documentation</a>
@@ -2315,7 +2346,7 @@ public interface AmazonSageMaker {
      * @param describeContextRequest
      * @return Result of the DescribeContext operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribeContext
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeContext" target="_top">AWS API
      *      Documentation</a>
@@ -2330,7 +2361,7 @@ public interface AmazonSageMaker {
      * @param describeDataQualityJobDefinitionRequest
      * @return Result of the DescribeDataQualityJobDefinition operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribeDataQualityJobDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDataQualityJobDefinition"
      *      target="_top">AWS API Documentation</a>
@@ -2345,7 +2376,7 @@ public interface AmazonSageMaker {
      * @param describeDeviceRequest
      * @return Result of the DescribeDevice operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribeDevice
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDevice" target="_top">AWS API
      *      Documentation</a>
@@ -2360,7 +2391,7 @@ public interface AmazonSageMaker {
      * @param describeDeviceFleetRequest
      * @return Result of the DescribeDeviceFleet operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribeDeviceFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDeviceFleet" target="_top">AWS
      *      API Documentation</a>
@@ -2375,7 +2406,7 @@ public interface AmazonSageMaker {
      * @param describeDomainRequest
      * @return Result of the DescribeDomain operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribeDomain
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDomain" target="_top">AWS API
      *      Documentation</a>
@@ -2390,7 +2421,7 @@ public interface AmazonSageMaker {
      * @param describeEdgePackagingJobRequest
      * @return Result of the DescribeEdgePackagingJob operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribeEdgePackagingJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeEdgePackagingJob"
      *      target="_top">AWS API Documentation</a>
@@ -2431,7 +2462,7 @@ public interface AmazonSageMaker {
      * @param describeExperimentRequest
      * @return Result of the DescribeExperiment operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribeExperiment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeExperiment" target="_top">AWS
      *      API Documentation</a>
@@ -2447,7 +2478,7 @@ public interface AmazonSageMaker {
      * @param describeFeatureGroupRequest
      * @return Result of the DescribeFeatureGroup operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribeFeatureGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeFeatureGroup" target="_top">AWS
      *      API Documentation</a>
@@ -2462,7 +2493,7 @@ public interface AmazonSageMaker {
      * @param describeFlowDefinitionRequest
      * @return Result of the DescribeFlowDefinition operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribeFlowDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeFlowDefinition"
      *      target="_top">AWS API Documentation</a>
@@ -2477,7 +2508,7 @@ public interface AmazonSageMaker {
      * @param describeHumanTaskUiRequest
      * @return Result of the DescribeHumanTaskUi operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribeHumanTaskUi
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHumanTaskUi" target="_top">AWS
      *      API Documentation</a>
@@ -2492,7 +2523,7 @@ public interface AmazonSageMaker {
      * @param describeHyperParameterTuningJobRequest
      * @return Result of the DescribeHyperParameterTuningJob operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribeHyperParameterTuningJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHyperParameterTuningJob"
      *      target="_top">AWS API Documentation</a>
@@ -2507,7 +2538,7 @@ public interface AmazonSageMaker {
      * @param describeImageRequest
      * @return Result of the DescribeImage operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribeImage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImage" target="_top">AWS API
      *      Documentation</a>
@@ -2522,7 +2553,7 @@ public interface AmazonSageMaker {
      * @param describeImageVersionRequest
      * @return Result of the DescribeImageVersion operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribeImageVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeImageVersion" target="_top">AWS
      *      API Documentation</a>
@@ -2537,7 +2568,7 @@ public interface AmazonSageMaker {
      * @param describeLabelingJobRequest
      * @return Result of the DescribeLabelingJob operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribeLabelingJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeLabelingJob" target="_top">AWS
      *      API Documentation</a>
@@ -2565,7 +2596,7 @@ public interface AmazonSageMaker {
      * @param describeModelBiasJobDefinitionRequest
      * @return Result of the DescribeModelBiasJobDefinition operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribeModelBiasJobDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelBiasJobDefinition"
      *      target="_top">AWS API Documentation</a>
@@ -2580,7 +2611,7 @@ public interface AmazonSageMaker {
      * @param describeModelExplainabilityJobDefinitionRequest
      * @return Result of the DescribeModelExplainabilityJobDefinition operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribeModelExplainabilityJobDefinition
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelExplainabilityJobDefinition"
@@ -2627,7 +2658,7 @@ public interface AmazonSageMaker {
      * @param describeModelQualityJobDefinitionRequest
      * @return Result of the DescribeModelQualityJobDefinition operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribeModelQualityJobDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelQualityJobDefinition"
      *      target="_top">AWS API Documentation</a>
@@ -2642,7 +2673,7 @@ public interface AmazonSageMaker {
      * @param describeMonitoringScheduleRequest
      * @return Result of the DescribeMonitoringSchedule operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribeMonitoringSchedule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeMonitoringSchedule"
      *      target="_top">AWS API Documentation</a>
@@ -2690,7 +2721,7 @@ public interface AmazonSageMaker {
      * @param describePipelineRequest
      * @return Result of the DescribePipeline operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribePipeline
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribePipeline" target="_top">AWS API
      *      Documentation</a>
@@ -2705,7 +2736,7 @@ public interface AmazonSageMaker {
      * @param describePipelineDefinitionForExecutionRequest
      * @return Result of the DescribePipelineDefinitionForExecution operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribePipelineDefinitionForExecution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribePipelineDefinitionForExecution"
      *      target="_top">AWS API Documentation</a>
@@ -2721,7 +2752,7 @@ public interface AmazonSageMaker {
      * @param describePipelineExecutionRequest
      * @return Result of the DescribePipelineExecution operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribePipelineExecution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribePipelineExecution"
      *      target="_top">AWS API Documentation</a>
@@ -2736,7 +2767,7 @@ public interface AmazonSageMaker {
      * @param describeProcessingJobRequest
      * @return Result of the DescribeProcessingJob operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribeProcessingJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeProcessingJob"
      *      target="_top">AWS API Documentation</a>
@@ -2784,7 +2815,7 @@ public interface AmazonSageMaker {
      * @param describeTrainingJobRequest
      * @return Result of the DescribeTrainingJob operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribeTrainingJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrainingJob" target="_top">AWS
      *      API Documentation</a>
@@ -2799,7 +2830,7 @@ public interface AmazonSageMaker {
      * @param describeTransformJobRequest
      * @return Result of the DescribeTransformJob operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribeTransformJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTransformJob" target="_top">AWS
      *      API Documentation</a>
@@ -2814,7 +2845,7 @@ public interface AmazonSageMaker {
      * @param describeTrialRequest
      * @return Result of the DescribeTrial operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribeTrial
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrial" target="_top">AWS API
      *      Documentation</a>
@@ -2829,7 +2860,7 @@ public interface AmazonSageMaker {
      * @param describeTrialComponentRequest
      * @return Result of the DescribeTrialComponent operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribeTrialComponent
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrialComponent"
      *      target="_top">AWS API Documentation</a>
@@ -2844,7 +2875,7 @@ public interface AmazonSageMaker {
      * @param describeUserProfileRequest
      * @return Result of the DescribeUserProfile operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DescribeUserProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeUserProfile" target="_top">AWS
      *      API Documentation</a>
@@ -2916,7 +2947,7 @@ public interface AmazonSageMaker {
      * @param disassociateTrialComponentRequest
      * @return Result of the DisassociateTrialComponent operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.DisassociateTrialComponent
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DisassociateTrialComponent"
      *      target="_top">AWS API Documentation</a>
@@ -3003,7 +3034,7 @@ public interface AmazonSageMaker {
      * @param listActionsRequest
      * @return Result of the ListActions operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.ListActions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListActions" target="_top">AWS API
      *      Documentation</a>
@@ -3058,7 +3089,7 @@ public interface AmazonSageMaker {
      * @param listArtifactsRequest
      * @return Result of the ListArtifacts operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.ListArtifacts
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListArtifacts" target="_top">AWS API
      *      Documentation</a>
@@ -3073,7 +3104,7 @@ public interface AmazonSageMaker {
      * @param listAssociationsRequest
      * @return Result of the ListAssociations operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.ListAssociations
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAssociations" target="_top">AWS API
      *      Documentation</a>
@@ -3101,7 +3132,7 @@ public interface AmazonSageMaker {
      * @param listCandidatesForAutoMLJobRequest
      * @return Result of the ListCandidatesForAutoMLJob operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.ListCandidatesForAutoMLJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListCandidatesForAutoMLJob"
      *      target="_top">AWS API Documentation</a>
@@ -3146,7 +3177,7 @@ public interface AmazonSageMaker {
      * @param listContextsRequest
      * @return Result of the ListContexts operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.ListContexts
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListContexts" target="_top">AWS API
      *      Documentation</a>
@@ -3320,7 +3351,7 @@ public interface AmazonSageMaker {
      * @param listImageVersionsRequest
      * @return Result of the ListImageVersions operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.ListImageVersions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListImageVersions" target="_top">AWS
      *      API Documentation</a>
@@ -3362,7 +3393,7 @@ public interface AmazonSageMaker {
      * @param listLabelingJobsForWorkteamRequest
      * @return Result of the ListLabelingJobsForWorkteam operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.ListLabelingJobsForWorkteam
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListLabelingJobsForWorkteam"
      *      target="_top">AWS API Documentation</a>
@@ -3510,7 +3541,7 @@ public interface AmazonSageMaker {
      * @param listPipelineExecutionStepsRequest
      * @return Result of the ListPipelineExecutionSteps operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.ListPipelineExecutionSteps
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPipelineExecutionSteps"
      *      target="_top">AWS API Documentation</a>
@@ -3525,7 +3556,7 @@ public interface AmazonSageMaker {
      * @param listPipelineExecutionsRequest
      * @return Result of the ListPipelineExecutions operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.ListPipelineExecutions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPipelineExecutions"
      *      target="_top">AWS API Documentation</a>
@@ -3540,7 +3571,7 @@ public interface AmazonSageMaker {
      * @param listPipelineParametersForExecutionRequest
      * @return Result of the ListPipelineParametersForExecution operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.ListPipelineParametersForExecution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListPipelineParametersForExecution"
      *      target="_top">AWS API Documentation</a>
@@ -3622,16 +3653,18 @@ public interface AmazonSageMaker {
      * <p>
      * When <code>StatusEquals</code> and <code>MaxResults</code> are set at the same time, the <code>MaxResults</code>
      * number of training jobs are first retrieved ignoring the <code>StatusEquals</code> parameter and then they are
-     * filtered by the <code>StatusEquals</code> parameter, which is returned as a response. For example, if
-     * <code>ListTrainingJobs</code> is invoked with the following parameters:
+     * filtered by the <code>StatusEquals</code> parameter, which is returned as a response.
+     * </p>
+     * <p>
+     * For example, if <code>ListTrainingJobs</code> is invoked with the following parameters:
      * </p>
      * <p>
      * <code>{ ... MaxResults: 100, StatusEquals: InProgress ... }</code>
      * </p>
      * <p>
-     * Then, 100 trainings jobs with any status including those other than <code>InProgress</code> are selected first
-     * (sorted according the creation time, from the latest to the oldest) and those with status <code>InProgress</code>
-     * are returned.
+     * First, 100 trainings jobs with any status, including those other than <code>InProgress</code>, are selected
+     * (sorted according to the creation time, from the most current to the oldest). Next, those with a status of
+     * <code>InProgress</code> are returned.
      * </p>
      * <p>
      * You can quickly test the API using the following AWS CLI code.
@@ -3658,7 +3691,7 @@ public interface AmazonSageMaker {
      * @param listTrainingJobsForHyperParameterTuningJobRequest
      * @return Result of the ListTrainingJobsForHyperParameterTuningJob operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.ListTrainingJobsForHyperParameterTuningJob
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingJobsForHyperParameterTuningJob"
@@ -3707,7 +3740,7 @@ public interface AmazonSageMaker {
      * @param listTrialComponentsRequest
      * @return Result of the ListTrialComponents operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.ListTrialComponents
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrialComponents" target="_top">AWS
      *      API Documentation</a>
@@ -3725,7 +3758,7 @@ public interface AmazonSageMaker {
      * @param listTrialsRequest
      * @return Result of the ListTrials operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.ListTrials
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrials" target="_top">AWS API
      *      Documentation</a>
@@ -3812,7 +3845,7 @@ public interface AmazonSageMaker {
      * @param renderUiTemplateRequest
      * @return Result of the RenderUiTemplate operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.RenderUiTemplate
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RenderUiTemplate" target="_top">AWS API
      *      Documentation</a>
@@ -3851,7 +3884,7 @@ public interface AmazonSageMaker {
      * @param startMonitoringScheduleRequest
      * @return Result of the StartMonitoringSchedule operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.StartMonitoringSchedule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartMonitoringSchedule"
      *      target="_top">AWS API Documentation</a>
@@ -3885,7 +3918,7 @@ public interface AmazonSageMaker {
      * @param startPipelineExecutionRequest
      * @return Result of the StartPipelineExecution operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @throws ResourceLimitExceededException
      *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
      *         created.
@@ -3903,7 +3936,7 @@ public interface AmazonSageMaker {
      * @param stopAutoMLJobRequest
      * @return Result of the StopAutoMLJob operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.StopAutoMLJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopAutoMLJob" target="_top">AWS API
      *      Documentation</a>
@@ -3927,7 +3960,7 @@ public interface AmazonSageMaker {
      * @param stopCompilationJobRequest
      * @return Result of the StopCompilationJob operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.StopCompilationJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopCompilationJob" target="_top">AWS
      *      API Documentation</a>
@@ -3960,7 +3993,7 @@ public interface AmazonSageMaker {
      * @param stopHyperParameterTuningJobRequest
      * @return Result of the StopHyperParameterTuningJob operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.StopHyperParameterTuningJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopHyperParameterTuningJob"
      *      target="_top">AWS API Documentation</a>
@@ -3976,7 +4009,7 @@ public interface AmazonSageMaker {
      * @param stopLabelingJobRequest
      * @return Result of the StopLabelingJob operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.StopLabelingJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopLabelingJob" target="_top">AWS API
      *      Documentation</a>
@@ -3991,7 +4024,7 @@ public interface AmazonSageMaker {
      * @param stopMonitoringScheduleRequest
      * @return Result of the StopMonitoringSchedule operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.StopMonitoringSchedule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopMonitoringSchedule"
      *      target="_top">AWS API Documentation</a>
@@ -4026,7 +4059,7 @@ public interface AmazonSageMaker {
      * @param stopPipelineExecutionRequest
      * @return Result of the StopPipelineExecution operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.StopPipelineExecution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopPipelineExecution"
      *      target="_top">AWS API Documentation</a>
@@ -4041,7 +4074,7 @@ public interface AmazonSageMaker {
      * @param stopProcessingJobRequest
      * @return Result of the StopProcessingJob operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.StopProcessingJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopProcessingJob" target="_top">AWS
      *      API Documentation</a>
@@ -4062,7 +4095,7 @@ public interface AmazonSageMaker {
      * @param stopTrainingJobRequest
      * @return Result of the StopTrainingJob operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.StopTrainingJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopTrainingJob" target="_top">AWS API
      *      Documentation</a>
@@ -4082,7 +4115,7 @@ public interface AmazonSageMaker {
      * @param stopTransformJobRequest
      * @return Result of the StopTransformJob operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.StopTransformJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopTransformJob" target="_top">AWS API
      *      Documentation</a>
@@ -4097,9 +4130,10 @@ public interface AmazonSageMaker {
      * @param updateActionRequest
      * @return Result of the UpdateAction operation returned by the service.
      * @throws ConflictException
-     *         There was a conflict when you attempted to modify an experiment, trial, or trial component.
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.UpdateAction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateAction" target="_top">AWS API
      *      Documentation</a>
@@ -4114,7 +4148,7 @@ public interface AmazonSageMaker {
      * @param updateAppImageConfigRequest
      * @return Result of the UpdateAppImageConfig operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.UpdateAppImageConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateAppImageConfig" target="_top">AWS
      *      API Documentation</a>
@@ -4129,9 +4163,10 @@ public interface AmazonSageMaker {
      * @param updateArtifactRequest
      * @return Result of the UpdateArtifact operation returned by the service.
      * @throws ConflictException
-     *         There was a conflict when you attempted to modify an experiment, trial, or trial component.
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.UpdateArtifact
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateArtifact" target="_top">AWS API
      *      Documentation</a>
@@ -4159,9 +4194,10 @@ public interface AmazonSageMaker {
      * @param updateContextRequest
      * @return Result of the UpdateContext operation returned by the service.
      * @throws ConflictException
-     *         There was a conflict when you attempted to modify an experiment, trial, or trial component.
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.UpdateContext
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateContext" target="_top">AWS API
      *      Documentation</a>
@@ -4176,7 +4212,7 @@ public interface AmazonSageMaker {
      * @param updateDeviceFleetRequest
      * @return Result of the UpdateDeviceFleet operation returned by the service.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @sample AmazonSageMaker.UpdateDeviceFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateDeviceFleet" target="_top">AWS
      *      API Documentation</a>
@@ -4207,9 +4243,9 @@ public interface AmazonSageMaker {
      *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.UpdateDomain
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateDomain" target="_top">AWS API
      *      Documentation</a>
@@ -4279,9 +4315,10 @@ public interface AmazonSageMaker {
      * @param updateExperimentRequest
      * @return Result of the UpdateExperiment operation returned by the service.
      * @throws ConflictException
-     *         There was a conflict when you attempted to modify an experiment, trial, or trial component.
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.UpdateExperiment
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateExperiment" target="_top">AWS API
      *      Documentation</a>
@@ -4297,9 +4334,9 @@ public interface AmazonSageMaker {
      * @param updateImageRequest
      * @return Result of the UpdateImage operation returned by the service.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.UpdateImage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateImage" target="_top">AWS API
      *      Documentation</a>
@@ -4330,7 +4367,7 @@ public interface AmazonSageMaker {
      *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.UpdateMonitoringSchedule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateMonitoringSchedule"
      *      target="_top">AWS API Documentation</a>
@@ -4380,7 +4417,7 @@ public interface AmazonSageMaker {
      * @param updatePipelineRequest
      * @return Result of the UpdatePipeline operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.UpdatePipeline
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdatePipeline" target="_top">AWS API
      *      Documentation</a>
@@ -4395,7 +4432,7 @@ public interface AmazonSageMaker {
      * @param updatePipelineExecutionRequest
      * @return Result of the UpdatePipelineExecution operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.UpdatePipelineExecution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdatePipelineExecution"
      *      target="_top">AWS API Documentation</a>
@@ -4410,7 +4447,7 @@ public interface AmazonSageMaker {
      * @param updateTrainingJobRequest
      * @return Result of the UpdateTrainingJob operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.UpdateTrainingJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateTrainingJob" target="_top">AWS
      *      API Documentation</a>
@@ -4425,9 +4462,10 @@ public interface AmazonSageMaker {
      * @param updateTrialRequest
      * @return Result of the UpdateTrial operation returned by the service.
      * @throws ConflictException
-     *         There was a conflict when you attempted to modify an experiment, trial, or trial component.
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.UpdateTrial
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateTrial" target="_top">AWS API
      *      Documentation</a>
@@ -4442,9 +4480,10 @@ public interface AmazonSageMaker {
      * @param updateTrialComponentRequest
      * @return Result of the UpdateTrialComponent operation returned by the service.
      * @throws ConflictException
-     *         There was a conflict when you attempted to modify an experiment, trial, or trial component.
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.UpdateTrialComponent
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateTrialComponent" target="_top">AWS
      *      API Documentation</a>
@@ -4462,9 +4501,9 @@ public interface AmazonSageMaker {
      *         You have exceeded an Amazon SageMaker resource limit. For example, you might have too many training jobs
      *         created.
      * @throws ResourceInUseException
-     *         Resource being accessed is in use.
+     *         The resource being accessed is in use.
      * @throws ResourceNotFoundException
-     *         Resource being access is not found.
+     *         The resource being accessed was not found.
      * @sample AmazonSageMaker.UpdateUserProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateUserProfile" target="_top">AWS
      *      API Documentation</a>

@@ -209,8 +209,8 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
      * the CA. If successful, this action returns the Amazon Resource Name (ARN) of the CA.
      * </p>
      * <p>
-     * ACM Private CAA assets that are stored in Amazon S3 can be protected with encryption. For more information, see
-     * <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#crl-encryption">Encrypting Your
+     * ACM Private CA assets that are stored in Amazon S3 can be protected with encryption. For more information, see <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#crl-encryption">Encrypting Your
      * CRLs</a>.
      * </p>
      * <note>
@@ -304,9 +304,10 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
      * </p>
      * </note>
      * <p>
-     * ACM Private CAA assets that are stored in Amazon S3 can be protected with encryption. For more information, see
-     * <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaAuditReport.html#audit-report-encryption">
-     * Encrypting Your Audit Reports</a>.
+     * ACM Private CA assets that are stored in Amazon S3 can be protected with encryption. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaAuditReport.html#audit-report-encryption">Encrypting
+     * Your Audit Reports</a>.
      * </p>
      * 
      * @param createCertificateAuthorityAuditReportRequest

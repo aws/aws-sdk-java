@@ -36,7 +36,8 @@ public class RecommendationRelatedEvent implements Serializable, Cloneable, Stru
     private String name;
     /**
      * <p>
-     * A <code>ResourceCollection</code> object that contains arrays of the names of AWS CloudFormation stacks.
+     * A <code>ResourceCollection</code> object that contains arrays of the names of AWS CloudFormation stacks. You can
+     * specify up to 500 AWS CloudFormation stacks.
      * </p>
      */
     private java.util.List<RecommendationRelatedEventResource> resources;
@@ -83,10 +84,12 @@ public class RecommendationRelatedEvent implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * A <code>ResourceCollection</code> object that contains arrays of the names of AWS CloudFormation stacks.
+     * A <code>ResourceCollection</code> object that contains arrays of the names of AWS CloudFormation stacks. You can
+     * specify up to 500 AWS CloudFormation stacks.
      * </p>
      * 
      * @return A <code>ResourceCollection</code> object that contains arrays of the names of AWS CloudFormation stacks.
+     *         You can specify up to 500 AWS CloudFormation stacks.
      */
 
     public java.util.List<RecommendationRelatedEventResource> getResources() {
@@ -95,11 +98,13 @@ public class RecommendationRelatedEvent implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * A <code>ResourceCollection</code> object that contains arrays of the names of AWS CloudFormation stacks.
+     * A <code>ResourceCollection</code> object that contains arrays of the names of AWS CloudFormation stacks. You can
+     * specify up to 500 AWS CloudFormation stacks.
      * </p>
      * 
      * @param resources
      *        A <code>ResourceCollection</code> object that contains arrays of the names of AWS CloudFormation stacks.
+     *        You can specify up to 500 AWS CloudFormation stacks.
      */
 
     public void setResources(java.util.Collection<RecommendationRelatedEventResource> resources) {
@@ -113,7 +118,8 @@ public class RecommendationRelatedEvent implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * A <code>ResourceCollection</code> object that contains arrays of the names of AWS CloudFormation stacks.
+     * A <code>ResourceCollection</code> object that contains arrays of the names of AWS CloudFormation stacks. You can
+     * specify up to 500 AWS CloudFormation stacks.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -123,6 +129,7 @@ public class RecommendationRelatedEvent implements Serializable, Cloneable, Stru
      * 
      * @param resources
      *        A <code>ResourceCollection</code> object that contains arrays of the names of AWS CloudFormation stacks.
+     *        You can specify up to 500 AWS CloudFormation stacks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +145,13 @@ public class RecommendationRelatedEvent implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * A <code>ResourceCollection</code> object that contains arrays of the names of AWS CloudFormation stacks.
+     * A <code>ResourceCollection</code> object that contains arrays of the names of AWS CloudFormation stacks. You can
+     * specify up to 500 AWS CloudFormation stacks.
      * </p>
      * 
      * @param resources
      *        A <code>ResourceCollection</code> object that contains arrays of the names of AWS CloudFormation stacks.
+     *        You can specify up to 500 AWS CloudFormation stacks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

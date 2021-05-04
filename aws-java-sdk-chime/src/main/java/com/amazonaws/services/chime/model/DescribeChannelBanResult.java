@@ -25,18 +25,18 @@ public class DescribeChannelBanResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The the details of the ban.
+     * The details of the ban.
      * </p>
      */
     private ChannelBan channelBan;
 
     /**
      * <p>
-     * The the details of the ban.
+     * The details of the ban.
      * </p>
      * 
      * @param channelBan
-     *        The the details of the ban.
+     *        The details of the ban.
      */
 
     public void setChannelBan(ChannelBan channelBan) {
@@ -45,10 +45,10 @@ public class DescribeChannelBanResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The the details of the ban.
+     * The details of the ban.
      * </p>
      * 
-     * @return The the details of the ban.
+     * @return The details of the ban.
      */
 
     public ChannelBan getChannelBan() {
@@ -57,11 +57,11 @@ public class DescribeChannelBanResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The the details of the ban.
+     * The details of the ban.
      * </p>
      * 
      * @param channelBan
-     *        The the details of the ban.
+     *        The details of the ban.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

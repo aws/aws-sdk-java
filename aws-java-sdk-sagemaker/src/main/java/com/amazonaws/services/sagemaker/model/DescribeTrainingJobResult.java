@@ -273,9 +273,9 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     private VpcConfig vpcConfig;
     /**
      * <p>
-     * Specifies a limit to how long a model training job can run. It also specifies the maximum time to wait for a spot
-     * instance. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to cap model
-     * training costs.
+     * Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training
+     * job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to
+     * cap model training costs.
      * </p>
      * <p>
      * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination
@@ -413,6 +413,12 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private String profilingStatus;
+    /**
+     * <p>
+     * The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
+     * </p>
+     */
+    private RetryStrategy retryStrategy;
     /**
      * <p>
      * The environment variables to set in the Docker container.
@@ -2364,9 +2370,9 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Specifies a limit to how long a model training job can run. It also specifies the maximum time to wait for a spot
-     * instance. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to cap model
-     * training costs.
+     * Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training
+     * job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to
+     * cap model training costs.
      * </p>
      * <p>
      * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination
@@ -2375,9 +2381,9 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param stoppingCondition
-     *        Specifies a limit to how long a model training job can run. It also specifies the maximum time to wait for
-     *        a spot instance. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API
-     *        to cap model training costs.</p>
+     *        Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot
+     *        training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job.
+     *        Use this API to cap model training costs.</p>
      *        <p>
      *        To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job
      *        termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the
@@ -2390,9 +2396,9 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Specifies a limit to how long a model training job can run. It also specifies the maximum time to wait for a spot
-     * instance. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to cap model
-     * training costs.
+     * Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training
+     * job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to
+     * cap model training costs.
      * </p>
      * <p>
      * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination
@@ -2400,9 +2406,9 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * training are not lost.
      * </p>
      * 
-     * @return Specifies a limit to how long a model training job can run. It also specifies the maximum time to wait
-     *         for a spot instance. When the job reaches the time limit, Amazon SageMaker ends the training job. Use
-     *         this API to cap model training costs.</p>
+     * @return Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot
+     *         training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training
+     *         job. Use this API to cap model training costs.</p>
      *         <p>
      *         To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job
      *         termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so
@@ -2415,9 +2421,9 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Specifies a limit to how long a model training job can run. It also specifies the maximum time to wait for a spot
-     * instance. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to cap model
-     * training costs.
+     * Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training
+     * job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to
+     * cap model training costs.
      * </p>
      * <p>
      * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination
@@ -2426,9 +2432,9 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param stoppingCondition
-     *        Specifies a limit to how long a model training job can run. It also specifies the maximum time to wait for
-     *        a spot instance. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API
-     *        to cap model training costs.</p>
+     *        Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot
+     *        training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job.
+     *        Use this API to cap model training costs.</p>
      *        <p>
      *        To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job
      *        termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the
@@ -3604,6 +3610,46 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
+     * The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
+     * </p>
+     * 
+     * @param retryStrategy
+     *        The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
+     */
+
+    public void setRetryStrategy(RetryStrategy retryStrategy) {
+        this.retryStrategy = retryStrategy;
+    }
+
+    /**
+     * <p>
+     * The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
+     * </p>
+     * 
+     * @return The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
+     */
+
+    public RetryStrategy getRetryStrategy() {
+        return this.retryStrategy;
+    }
+
+    /**
+     * <p>
+     * The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
+     * </p>
+     * 
+     * @param retryStrategy
+     *        The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withRetryStrategy(RetryStrategy retryStrategy) {
+        setRetryStrategy(retryStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
      * The environment variables to set in the Docker container.
      * </p>
      * 
@@ -3758,6 +3804,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
             sb.append("ProfilerRuleEvaluationStatuses: ").append(getProfilerRuleEvaluationStatuses()).append(",");
         if (getProfilingStatus() != null)
             sb.append("ProfilingStatus: ").append(getProfilingStatus()).append(",");
+        if (getRetryStrategy() != null)
+            sb.append("RetryStrategy: ").append(getRetryStrategy()).append(",");
         if (getEnvironment() != null)
             sb.append("Environment: ").append(getEnvironment());
         sb.append("}");
@@ -3928,6 +3976,10 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getProfilingStatus() != null && other.getProfilingStatus().equals(this.getProfilingStatus()) == false)
             return false;
+        if (other.getRetryStrategy() == null ^ this.getRetryStrategy() == null)
+            return false;
+        if (other.getRetryStrategy() != null && other.getRetryStrategy().equals(this.getRetryStrategy()) == false)
+            return false;
         if (other.getEnvironment() == null ^ this.getEnvironment() == null)
             return false;
         if (other.getEnvironment() != null && other.getEnvironment().equals(this.getEnvironment()) == false)
@@ -3978,6 +4030,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getProfilerRuleConfigurations() == null) ? 0 : getProfilerRuleConfigurations().hashCode());
         hashCode = prime * hashCode + ((getProfilerRuleEvaluationStatuses() == null) ? 0 : getProfilerRuleEvaluationStatuses().hashCode());
         hashCode = prime * hashCode + ((getProfilingStatus() == null) ? 0 : getProfilingStatus().hashCode());
+        hashCode = prime * hashCode + ((getRetryStrategy() == null) ? 0 : getRetryStrategy().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         return hashCode;
     }

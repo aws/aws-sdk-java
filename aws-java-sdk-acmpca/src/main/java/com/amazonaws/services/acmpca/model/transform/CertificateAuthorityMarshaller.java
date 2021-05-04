@@ -53,6 +53,8 @@ public class CertificateAuthorityMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RevocationConfiguration").build();
     private static final MarshallingInfo<java.util.Date> RESTORABLEUNTIL_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RestorableUntil").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> KEYSTORAGESECURITYSTANDARD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KeyStorageSecurityStandard").build();
 
     private static final CertificateAuthorityMarshaller instance = new CertificateAuthorityMarshaller();
 
@@ -83,6 +85,7 @@ public class CertificateAuthorityMarshaller {
             protocolMarshaller.marshall(certificateAuthority.getCertificateAuthorityConfiguration(), CERTIFICATEAUTHORITYCONFIGURATION_BINDING);
             protocolMarshaller.marshall(certificateAuthority.getRevocationConfiguration(), REVOCATIONCONFIGURATION_BINDING);
             protocolMarshaller.marshall(certificateAuthority.getRestorableUntil(), RESTORABLEUNTIL_BINDING);
+            protocolMarshaller.marshall(certificateAuthority.getKeyStorageSecurityStandard(), KEYSTORAGESECURITYSTANDARD_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

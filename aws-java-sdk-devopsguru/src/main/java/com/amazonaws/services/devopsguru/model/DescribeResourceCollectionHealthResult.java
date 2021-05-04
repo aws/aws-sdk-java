@@ -33,6 +33,13 @@ public class DescribeResourceCollectionHealthResult extends com.amazonaws.Amazon
     private java.util.List<CloudFormationHealth> cloudFormation;
     /**
      * <p>
+     * An array of <code>ServiceHealth</code> objects that describes the health of the AWS services associated with the
+     * resources in the collection.
+     * </p>
+     */
+    private java.util.List<ServiceHealth> service;
+    /**
+     * <p>
      * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
      * this value is null.
      * </p>
@@ -119,6 +126,84 @@ public class DescribeResourceCollectionHealthResult extends com.amazonaws.Amazon
 
     /**
      * <p>
+     * An array of <code>ServiceHealth</code> objects that describes the health of the AWS services associated with the
+     * resources in the collection.
+     * </p>
+     * 
+     * @return An array of <code>ServiceHealth</code> objects that describes the health of the AWS services associated
+     *         with the resources in the collection.
+     */
+
+    public java.util.List<ServiceHealth> getService() {
+        return service;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ServiceHealth</code> objects that describes the health of the AWS services associated with the
+     * resources in the collection.
+     * </p>
+     * 
+     * @param service
+     *        An array of <code>ServiceHealth</code> objects that describes the health of the AWS services associated
+     *        with the resources in the collection.
+     */
+
+    public void setService(java.util.Collection<ServiceHealth> service) {
+        if (service == null) {
+            this.service = null;
+            return;
+        }
+
+        this.service = new java.util.ArrayList<ServiceHealth>(service);
+    }
+
+    /**
+     * <p>
+     * An array of <code>ServiceHealth</code> objects that describes the health of the AWS services associated with the
+     * resources in the collection.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setService(java.util.Collection)} or {@link #withService(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param service
+     *        An array of <code>ServiceHealth</code> objects that describes the health of the AWS services associated
+     *        with the resources in the collection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeResourceCollectionHealthResult withService(ServiceHealth... service) {
+        if (this.service == null) {
+            setService(new java.util.ArrayList<ServiceHealth>(service.length));
+        }
+        for (ServiceHealth ele : service) {
+            this.service.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ServiceHealth</code> objects that describes the health of the AWS services associated with the
+     * resources in the collection.
+     * </p>
+     * 
+     * @param service
+     *        An array of <code>ServiceHealth</code> objects that describes the health of the AWS services associated
+     *        with the resources in the collection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeResourceCollectionHealthResult withService(java.util.Collection<ServiceHealth> service) {
+        setService(service);
+        return this;
+    }
+
+    /**
+     * <p>
      * The pagination token to use to retrieve the next page of results for this operation. If there are no more pages,
      * this value is null.
      * </p>
@@ -177,6 +262,8 @@ public class DescribeResourceCollectionHealthResult extends com.amazonaws.Amazon
         sb.append("{");
         if (getCloudFormation() != null)
             sb.append("CloudFormation: ").append(getCloudFormation()).append(",");
+        if (getService() != null)
+            sb.append("Service: ").append(getService()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
@@ -197,6 +284,10 @@ public class DescribeResourceCollectionHealthResult extends com.amazonaws.Amazon
             return false;
         if (other.getCloudFormation() != null && other.getCloudFormation().equals(this.getCloudFormation()) == false)
             return false;
+        if (other.getService() == null ^ this.getService() == null)
+            return false;
+        if (other.getService() != null && other.getService().equals(this.getService()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
@@ -210,6 +301,7 @@ public class DescribeResourceCollectionHealthResult extends com.amazonaws.Amazon
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCloudFormation() == null) ? 0 : getCloudFormation().hashCode());
+        hashCode = prime * hashCode + ((getService() == null) ? 0 : getService().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }

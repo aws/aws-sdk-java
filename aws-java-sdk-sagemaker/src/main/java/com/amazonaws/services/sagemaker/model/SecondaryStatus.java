@@ -34,7 +34,8 @@ public enum SecondaryStatus {
     Failed("Failed"),
     Interrupted("Interrupted"),
     MaxWaitTimeExceeded("MaxWaitTimeExceeded"),
-    Updating("Updating");
+    Updating("Updating"),
+    Restarting("Restarting");
 
     private String value;
 

@@ -38,6 +38,12 @@ public class ListRecommendationsRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * A locale that specifies the language to use for recommendations.
+     * </p>
+     */
+    private String locale;
 
     /**
      * <p>
@@ -126,6 +132,65 @@ public class ListRecommendationsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * A locale that specifies the language to use for recommendations.
+     * </p>
+     * 
+     * @param locale
+     *        A locale that specifies the language to use for recommendations.
+     * @see Locale
+     */
+
+    public void setLocale(String locale) {
+        this.locale = locale;
+    }
+
+    /**
+     * <p>
+     * A locale that specifies the language to use for recommendations.
+     * </p>
+     * 
+     * @return A locale that specifies the language to use for recommendations.
+     * @see Locale
+     */
+
+    public String getLocale() {
+        return this.locale;
+    }
+
+    /**
+     * <p>
+     * A locale that specifies the language to use for recommendations.
+     * </p>
+     * 
+     * @param locale
+     *        A locale that specifies the language to use for recommendations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Locale
+     */
+
+    public ListRecommendationsRequest withLocale(String locale) {
+        setLocale(locale);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A locale that specifies the language to use for recommendations.
+     * </p>
+     * 
+     * @param locale
+     *        A locale that specifies the language to use for recommendations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Locale
+     */
+
+    public ListRecommendationsRequest withLocale(Locale locale) {
+        this.locale = locale.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -140,7 +205,9 @@ public class ListRecommendationsRequest extends com.amazonaws.AmazonWebServiceRe
         if (getInsightId() != null)
             sb.append("InsightId: ").append(getInsightId()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getLocale() != null)
+            sb.append("Locale: ").append(getLocale());
         sb.append("}");
         return sb.toString();
     }
@@ -163,6 +230,10 @@ public class ListRecommendationsRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getLocale() == null ^ this.getLocale() == null)
+            return false;
+        if (other.getLocale() != null && other.getLocale().equals(this.getLocale()) == false)
+            return false;
         return true;
     }
 
@@ -173,6 +244,7 @@ public class ListRecommendationsRequest extends com.amazonaws.AmazonWebServiceRe
 
         hashCode = prime * hashCode + ((getInsightId() == null) ? 0 : getInsightId().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getLocale() == null) ? 0 : getLocale().hashCode());
         return hashCode;
     }
 

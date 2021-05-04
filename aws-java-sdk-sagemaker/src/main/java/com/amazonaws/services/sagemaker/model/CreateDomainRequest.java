@@ -66,6 +66,9 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be unique per
      * resource. Tags are searchable using the <code>Search</code> API.
      * </p>
+     * <p>
+     * Tags that you specify for the Domain are also added to all Apps that the Domain launches.
+     * </p>
      */
     private java.util.List<Tag> tags;
     /**
@@ -389,9 +392,14 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be unique per
      * resource. Tags are searchable using the <code>Search</code> API.
      * </p>
+     * <p>
+     * Tags that you specify for the Domain are also added to all Apps that the Domain launches.
+     * </p>
      * 
      * @return Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be
-     *         unique per resource. Tags are searchable using the <code>Search</code> API.
+     *         unique per resource. Tags are searchable using the <code>Search</code> API.</p>
+     *         <p>
+     *         Tags that you specify for the Domain are also added to all Apps that the Domain launches.
      */
 
     public java.util.List<Tag> getTags() {
@@ -403,10 +411,15 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be unique per
      * resource. Tags are searchable using the <code>Search</code> API.
      * </p>
+     * <p>
+     * Tags that you specify for the Domain are also added to all Apps that the Domain launches.
+     * </p>
      * 
      * @param tags
      *        Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be
-     *        unique per resource. Tags are searchable using the <code>Search</code> API.
+     *        unique per resource. Tags are searchable using the <code>Search</code> API.</p>
+     *        <p>
+     *        Tags that you specify for the Domain are also added to all Apps that the Domain launches.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -424,6 +437,9 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * resource. Tags are searchable using the <code>Search</code> API.
      * </p>
      * <p>
+     * Tags that you specify for the Domain are also added to all Apps that the Domain launches.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
@@ -431,7 +447,9 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param tags
      *        Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be
-     *        unique per resource. Tags are searchable using the <code>Search</code> API.
+     *        unique per resource. Tags are searchable using the <code>Search</code> API.</p>
+     *        <p>
+     *        Tags that you specify for the Domain are also added to all Apps that the Domain launches.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -450,10 +468,15 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be unique per
      * resource. Tags are searchable using the <code>Search</code> API.
      * </p>
+     * <p>
+     * Tags that you specify for the Domain are also added to all Apps that the Domain launches.
+     * </p>
      * 
      * @param tags
      *        Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be
-     *        unique per resource. Tags are searchable using the <code>Search</code> API.
+     *        unique per resource. Tags are searchable using the <code>Search</code> API.</p>
+     *        <p>
+     *        Tags that you specify for the Domain are also added to all Apps that the Domain launches.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

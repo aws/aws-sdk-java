@@ -41,6 +41,8 @@ public class ProactiveInsightSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PredictionTimeRange").build();
     private static final MarshallingInfo<StructuredPojo> RESOURCECOLLECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceCollection").build();
+    private static final MarshallingInfo<StructuredPojo> SERVICECOLLECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceCollection").build();
 
     private static final ProactiveInsightSummaryMarshaller instance = new ProactiveInsightSummaryMarshaller();
 
@@ -65,6 +67,7 @@ public class ProactiveInsightSummaryMarshaller {
             protocolMarshaller.marshall(proactiveInsightSummary.getInsightTimeRange(), INSIGHTTIMERANGE_BINDING);
             protocolMarshaller.marshall(proactiveInsightSummary.getPredictionTimeRange(), PREDICTIONTIMERANGE_BINDING);
             protocolMarshaller.marshall(proactiveInsightSummary.getResourceCollection(), RESOURCECOLLECTION_BINDING);
+            protocolMarshaller.marshall(proactiveInsightSummary.getServiceCollection(), SERVICECOLLECTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -33,7 +33,7 @@ public class CreateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
     private String domainId;
     /**
      * <p>
-     * A name for the UserProfile.
+     * A name for the UserProfile. This value is not case sensitive.
      * </p>
      */
     private String userProfileName;
@@ -56,6 +56,9 @@ public class CreateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Each tag consists of a key and an optional value. Tag keys must be unique per resource.
+     * </p>
+     * <p>
+     * Tags that you specify for the User Profile are also added to all Apps that the User Profile launches.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -108,11 +111,11 @@ public class CreateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A name for the UserProfile.
+     * A name for the UserProfile. This value is not case sensitive.
      * </p>
      * 
      * @param userProfileName
-     *        A name for the UserProfile.
+     *        A name for the UserProfile. This value is not case sensitive.
      */
 
     public void setUserProfileName(String userProfileName) {
@@ -121,10 +124,10 @@ public class CreateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A name for the UserProfile.
+     * A name for the UserProfile. This value is not case sensitive.
      * </p>
      * 
-     * @return A name for the UserProfile.
+     * @return A name for the UserProfile. This value is not case sensitive.
      */
 
     public String getUserProfileName() {
@@ -133,11 +136,11 @@ public class CreateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A name for the UserProfile.
+     * A name for the UserProfile. This value is not case sensitive.
      * </p>
      * 
      * @param userProfileName
-     *        A name for the UserProfile.
+     *        A name for the UserProfile. This value is not case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -254,8 +257,13 @@ public class CreateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Each tag consists of a key and an optional value. Tag keys must be unique per resource.
      * </p>
+     * <p>
+     * Tags that you specify for the User Profile are also added to all Apps that the User Profile launches.
+     * </p>
      * 
-     * @return Each tag consists of a key and an optional value. Tag keys must be unique per resource.
+     * @return Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
+     *         <p>
+     *         Tags that you specify for the User Profile are also added to all Apps that the User Profile launches.
      */
 
     public java.util.List<Tag> getTags() {
@@ -266,9 +274,14 @@ public class CreateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Each tag consists of a key and an optional value. Tag keys must be unique per resource.
      * </p>
+     * <p>
+     * Tags that you specify for the User Profile are also added to all Apps that the User Profile launches.
+     * </p>
      * 
      * @param tags
-     *        Each tag consists of a key and an optional value. Tag keys must be unique per resource.
+     *        Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
+     *        <p>
+     *        Tags that you specify for the User Profile are also added to all Apps that the User Profile launches.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -285,13 +298,18 @@ public class CreateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
      * Each tag consists of a key and an optional value. Tag keys must be unique per resource.
      * </p>
      * <p>
+     * Tags that you specify for the User Profile are also added to all Apps that the User Profile launches.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
-     *        Each tag consists of a key and an optional value. Tag keys must be unique per resource.
+     *        Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
+     *        <p>
+     *        Tags that you specify for the User Profile are also added to all Apps that the User Profile launches.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -309,9 +327,14 @@ public class CreateUserProfileRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Each tag consists of a key and an optional value. Tag keys must be unique per resource.
      * </p>
+     * <p>
+     * Tags that you specify for the User Profile are also added to all Apps that the User Profile launches.
+     * </p>
      * 
      * @param tags
-     *        Each tag consists of a key and an optional value. Tag keys must be unique per resource.
+     *        Each tag consists of a key and an optional value. Tag keys must be unique per resource.</p>
+     *        <p>
+     *        Tags that you specify for the User Profile are also added to all Apps that the User Profile launches.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

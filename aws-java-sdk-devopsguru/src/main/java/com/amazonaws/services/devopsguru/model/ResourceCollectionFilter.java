@@ -30,8 +30,8 @@ public class ResourceCollectionFilter implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Information about AWS CloudFormation stacks. You can use stacks to specify which AWS resources in your account to
-     * analyze. For more information, see <a
+     * Information about AWS CloudFormation stacks. You can use up to 500 stacks to specify which AWS resources in your
+     * account to analyze. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the <i>AWS
      * CloudFormation User Guide</i>.
      * </p>
@@ -40,15 +40,15 @@ public class ResourceCollectionFilter implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Information about AWS CloudFormation stacks. You can use stacks to specify which AWS resources in your account to
-     * analyze. For more information, see <a
+     * Information about AWS CloudFormation stacks. You can use up to 500 stacks to specify which AWS resources in your
+     * account to analyze. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the <i>AWS
      * CloudFormation User Guide</i>.
      * </p>
      * 
      * @param cloudFormation
-     *        Information about AWS CloudFormation stacks. You can use stacks to specify which AWS resources in your
-     *        account to analyze. For more information, see <a
+     *        Information about AWS CloudFormation stacks. You can use up to 500 stacks to specify which AWS resources
+     *        in your account to analyze. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the <i>AWS
      *        CloudFormation User Guide</i>.
      */
@@ -59,14 +59,14 @@ public class ResourceCollectionFilter implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Information about AWS CloudFormation stacks. You can use stacks to specify which AWS resources in your account to
-     * analyze. For more information, see <a
+     * Information about AWS CloudFormation stacks. You can use up to 500 stacks to specify which AWS resources in your
+     * account to analyze. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the <i>AWS
      * CloudFormation User Guide</i>.
      * </p>
      * 
-     * @return Information about AWS CloudFormation stacks. You can use stacks to specify which AWS resources in your
-     *         account to analyze. For more information, see <a
+     * @return Information about AWS CloudFormation stacks. You can use up to 500 stacks to specify which AWS resources
+     *         in your account to analyze. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the
      *         <i>AWS CloudFormation User Guide</i>.
      */
@@ -77,15 +77,15 @@ public class ResourceCollectionFilter implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Information about AWS CloudFormation stacks. You can use stacks to specify which AWS resources in your account to
-     * analyze. For more information, see <a
+     * Information about AWS CloudFormation stacks. You can use up to 500 stacks to specify which AWS resources in your
+     * account to analyze. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the <i>AWS
      * CloudFormation User Guide</i>.
      * </p>
      * 
      * @param cloudFormation
-     *        Information about AWS CloudFormation stacks. You can use stacks to specify which AWS resources in your
-     *        account to analyze. For more information, see <a
+     *        Information about AWS CloudFormation stacks. You can use up to 500 stacks to specify which AWS resources
+     *        in your account to analyze. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the <i>AWS
      *        CloudFormation User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

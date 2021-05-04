@@ -68,6 +68,11 @@ public class AbstractAmazonDevOpsGuru implements AmazonDevOpsGuru {
     }
 
     @Override
+    public GetCostEstimationResult getCostEstimation(GetCostEstimationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetResourceCollectionResult getResourceCollection(GetResourceCollectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -109,6 +114,11 @@ public class AbstractAmazonDevOpsGuru implements AmazonDevOpsGuru {
 
     @Override
     public SearchInsightsResult searchInsights(SearchInsightsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartCostEstimationResult startCostEstimation(StartCostEstimationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

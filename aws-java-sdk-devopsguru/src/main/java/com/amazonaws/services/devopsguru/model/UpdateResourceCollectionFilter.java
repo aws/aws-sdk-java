@@ -30,18 +30,18 @@ public class UpdateResourceCollectionFilter implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * An collection of AWS CloudFormation stacks.
+     * An collection of AWS CloudFormation stacks. You can specify up to 500 AWS CloudFormation stacks.
      * </p>
      */
     private UpdateCloudFormationCollectionFilter cloudFormation;
 
     /**
      * <p>
-     * An collection of AWS CloudFormation stacks.
+     * An collection of AWS CloudFormation stacks. You can specify up to 500 AWS CloudFormation stacks.
      * </p>
      * 
      * @param cloudFormation
-     *        An collection of AWS CloudFormation stacks.
+     *        An collection of AWS CloudFormation stacks. You can specify up to 500 AWS CloudFormation stacks.
      */
 
     public void setCloudFormation(UpdateCloudFormationCollectionFilter cloudFormation) {
@@ -50,10 +50,10 @@ public class UpdateResourceCollectionFilter implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * An collection of AWS CloudFormation stacks.
+     * An collection of AWS CloudFormation stacks. You can specify up to 500 AWS CloudFormation stacks.
      * </p>
      * 
-     * @return An collection of AWS CloudFormation stacks.
+     * @return An collection of AWS CloudFormation stacks. You can specify up to 500 AWS CloudFormation stacks.
      */
 
     public UpdateCloudFormationCollectionFilter getCloudFormation() {
@@ -62,11 +62,11 @@ public class UpdateResourceCollectionFilter implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * An collection of AWS CloudFormation stacks.
+     * An collection of AWS CloudFormation stacks. You can specify up to 500 AWS CloudFormation stacks.
      * </p>
      * 
      * @param cloudFormation
-     *        An collection of AWS CloudFormation stacks.
+     *        An collection of AWS CloudFormation stacks. You can specify up to 500 AWS CloudFormation stacks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

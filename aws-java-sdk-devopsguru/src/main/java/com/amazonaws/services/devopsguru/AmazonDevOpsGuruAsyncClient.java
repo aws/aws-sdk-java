@@ -358,6 +358,39 @@ public class AmazonDevOpsGuruAsyncClient extends AmazonDevOpsGuruClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetCostEstimationResult> getCostEstimationAsync(GetCostEstimationRequest request) {
+
+        return getCostEstimationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCostEstimationResult> getCostEstimationAsync(final GetCostEstimationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCostEstimationRequest, GetCostEstimationResult> asyncHandler) {
+        final GetCostEstimationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCostEstimationResult>() {
+            @Override
+            public GetCostEstimationResult call() throws Exception {
+                GetCostEstimationResult result = null;
+
+                try {
+                    result = executeGetCostEstimation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetResourceCollectionResult> getResourceCollectionAsync(GetResourceCollectionRequest request) {
 
         return getResourceCollectionAsync(request, null);
@@ -639,6 +672,39 @@ public class AmazonDevOpsGuruAsyncClient extends AmazonDevOpsGuruClient implemen
 
                 try {
                     result = executeSearchInsights(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartCostEstimationResult> startCostEstimationAsync(StartCostEstimationRequest request) {
+
+        return startCostEstimationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartCostEstimationResult> startCostEstimationAsync(final StartCostEstimationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartCostEstimationRequest, StartCostEstimationResult> asyncHandler) {
+        final StartCostEstimationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartCostEstimationResult>() {
+            @Override
+            public StartCostEstimationResult call() throws Exception {
+                StartCostEstimationResult result = null;
+
+                try {
+                    result = executeStartCostEstimation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

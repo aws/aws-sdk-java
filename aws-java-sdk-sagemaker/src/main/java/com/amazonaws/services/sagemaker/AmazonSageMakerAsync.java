@@ -193,6 +193,13 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
      * SageMaker ML Lineage Tracking</a>.
      * </p>
+     * <note>
+     * <p>
+     * <code>CreateAction</code> can only be invoked from within an SageMaker managed environment. This includes
+     * SageMaker training jobs, processing jobs, transform jobs, and SageMaker notebooks. A call to
+     * <code>CreateAction</code> from outside one of these environments results in an error.
+     * </p>
+     * </note>
      * 
      * @param createActionRequest
      * @return A Java Future containing the result of the CreateAction operation returned by the service.
@@ -209,6 +216,13 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
      * SageMaker ML Lineage Tracking</a>.
      * </p>
+     * <note>
+     * <p>
+     * <code>CreateAction</code> can only be invoked from within an SageMaker managed environment. This includes
+     * SageMaker training jobs, processing jobs, transform jobs, and SageMaker notebooks. A call to
+     * <code>CreateAction</code> from outside one of these environments results in an error.
+     * </p>
+     * </note>
      * 
      * @param createActionRequest
      * @param asyncHandler
@@ -331,6 +345,13 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon SageMaker ML Lineage
      * Tracking</a>.
      * </p>
+     * <note>
+     * <p>
+     * <code>CreateArtifact</code> can only be invoked from within an SageMaker managed environment. This includes
+     * SageMaker training jobs, processing jobs, transform jobs, and SageMaker notebooks. A call to
+     * <code>CreateArtifact</code> from outside one of these environments results in an error.
+     * </p>
+     * </note>
      * 
      * @param createArtifactRequest
      * @return A Java Future containing the result of the CreateArtifact operation returned by the service.
@@ -347,6 +368,13 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon SageMaker ML Lineage
      * Tracking</a>.
      * </p>
+     * <note>
+     * <p>
+     * <code>CreateArtifact</code> can only be invoked from within an SageMaker managed environment. This includes
+     * SageMaker training jobs, processing jobs, transform jobs, and SageMaker notebooks. A call to
+     * <code>CreateArtifact</code> from outside one of these environments results in an error.
+     * </p>
+     * </note>
      * 
      * @param createArtifactRequest
      * @param asyncHandler
@@ -575,6 +603,13 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon SageMaker ML Lineage
      * Tracking</a>.
      * </p>
+     * <note>
+     * <p>
+     * <code>CreateContext</code> can only be invoked from within an SageMaker managed environment. This includes
+     * SageMaker training jobs, processing jobs, transform jobs, and SageMaker notebooks. A call to
+     * <code>CreateContext</code> from outside one of these environments results in an error.
+     * </p>
+     * </note>
      * 
      * @param createContextRequest
      * @return A Java Future containing the result of the CreateContext operation returned by the service.
@@ -591,6 +626,13 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon SageMaker ML Lineage
      * Tracking</a>.
      * </p>
+     * <note>
+     * <p>
+     * <code>CreateContext</code> can only be invoked from within an SageMaker managed environment. This includes
+     * SageMaker training jobs, processing jobs, transform jobs, and SageMaker notebooks. A call to
+     * <code>CreateContext</code> from outside one of these environments results in an error.
+     * </p>
+     * </note>
      * 
      * @param createContextRequest
      * @param asyncHandler
@@ -1167,9 +1209,9 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * remaining inputs constant.
      * </p>
      * <p>
-     * When you use Amazon SageMaker Studio or the Amazon SageMaker Python SDK, all experiments, trials, and trial
-     * components are automatically tracked, logged, and indexed. When you use the AWS SDK for Python (Boto), you must
-     * use the logging APIs provided by the SDK.
+     * When you use SageMaker Studio or the SageMaker Python SDK, all experiments, trials, and trial components are
+     * automatically tracked, logged, and indexed. When you use the AWS SDK for Python (Boto), you must use the logging
+     * APIs provided by the SDK.
      * </p>
      * <p>
      * You can add tags to experiments, trials, trial components and then use the <a>Search</a> API to search for the
@@ -1205,9 +1247,9 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * remaining inputs constant.
      * </p>
      * <p>
-     * When you use Amazon SageMaker Studio or the Amazon SageMaker Python SDK, all experiments, trials, and trial
-     * components are automatically tracked, logged, and indexed. When you use the AWS SDK for Python (Boto), you must
-     * use the logging APIs provided by the SDK.
+     * When you use SageMaker Studio or the SageMaker Python SDK, all experiments, trials, and trial components are
+     * automatically tracked, logged, and indexed. When you use the AWS SDK for Python (Boto), you must use the logging
+     * APIs provided by the SDK.
      * </p>
      * <p>
      * You can add tags to experiments, trials, trial components and then use the <a>Search</a> API to search for the
@@ -2415,7 +2457,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * <code>OutputDataConfig</code> - Identifies the Amazon S3 bucket where you want Amazon SageMaker to save the
      * results of model training.
      * </p>
-     * <p/></li>
+     * </li>
      * <li>
      * <p>
      * <code>ResourceConfig</code> - Identifies the resources, ML compute instances, and ML storage volumes to deploy
@@ -2440,13 +2482,19 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * <li>
      * <p>
      * <code>StoppingCondition</code> - To help cap training costs, use <code>MaxRuntimeInSeconds</code> to set a time
-     * limit for training. Use <code>MaxWaitTimeInSeconds</code> to specify how long you are willing to wait for a
-     * managed spot training job to complete.
+     * limit for training. Use <code>MaxWaitTimeInSeconds</code> to specify how long a managed spot training job has to
+     * complete.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>Environment</code> - The environment variables to set in the Docker container.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RetryStrategy</code> - The number of times to retry the job when the job fails due to an
+     * <code>InternalServerError</code>.
      * </p>
      * </li>
      * </ul>
@@ -2501,7 +2549,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * <code>OutputDataConfig</code> - Identifies the Amazon S3 bucket where you want Amazon SageMaker to save the
      * results of model training.
      * </p>
-     * <p/></li>
+     * </li>
      * <li>
      * <p>
      * <code>ResourceConfig</code> - Identifies the resources, ML compute instances, and ML storage volumes to deploy
@@ -2526,13 +2574,19 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * <li>
      * <p>
      * <code>StoppingCondition</code> - To help cap training costs, use <code>MaxRuntimeInSeconds</code> to set a time
-     * limit for training. Use <code>MaxWaitTimeInSeconds</code> to specify how long you are willing to wait for a
-     * managed spot training job to complete.
+     * limit for training. Use <code>MaxWaitTimeInSeconds</code> to specify how long a managed spot training job has to
+     * complete.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>Environment</code> - The environment variables to set in the Docker container.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RetryStrategy</code> - The number of times to retry the job when the job fails due to an
+     * <code>InternalServerError</code>.
      * </p>
      * </li>
      * </ul>
@@ -2673,13 +2727,13 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Creates an Amazon SageMaker <i>trial</i>. A trial is a set of steps called <i>trial components</i> that produce a
-     * machine learning model. A trial is part of a single Amazon SageMaker <i>experiment</i>.
+     * Creates an SageMaker <i>trial</i>. A trial is a set of steps called <i>trial components</i> that produce a
+     * machine learning model. A trial is part of a single SageMaker <i>experiment</i>.
      * </p>
      * <p>
-     * When you use Amazon SageMaker Studio or the Amazon SageMaker Python SDK, all experiments, trials, and trial
-     * components are automatically tracked, logged, and indexed. When you use the AWS SDK for Python (Boto), you must
-     * use the logging APIs provided by the SDK.
+     * When you use SageMaker Studio or the SageMaker Python SDK, all experiments, trials, and trial components are
+     * automatically tracked, logged, and indexed. When you use the AWS SDK for Python (Boto), you must use the logging
+     * APIs provided by the SDK.
      * </p>
      * <p>
      * You can add tags to a trial and then use the <a>Search</a> API to search for the tags.
@@ -2699,13 +2753,13 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Creates an Amazon SageMaker <i>trial</i>. A trial is a set of steps called <i>trial components</i> that produce a
-     * machine learning model. A trial is part of a single Amazon SageMaker <i>experiment</i>.
+     * Creates an SageMaker <i>trial</i>. A trial is a set of steps called <i>trial components</i> that produce a
+     * machine learning model. A trial is part of a single SageMaker <i>experiment</i>.
      * </p>
      * <p>
-     * When you use Amazon SageMaker Studio or the Amazon SageMaker Python SDK, all experiments, trials, and trial
-     * components are automatically tracked, logged, and indexed. When you use the AWS SDK for Python (Boto), you must
-     * use the logging APIs provided by the SDK.
+     * When you use SageMaker Studio or the SageMaker Python SDK, all experiments, trials, and trial components are
+     * automatically tracked, logged, and indexed. When you use the AWS SDK for Python (Boto), you must use the logging
+     * APIs provided by the SDK.
      * </p>
      * <p>
      * You can add tags to a trial and then use the <a>Search</a> API to search for the tags.
@@ -2737,18 +2791,18 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * Trial components include pre-processing jobs, training jobs, and batch transform jobs.
      * </p>
      * <p>
-     * When you use Amazon SageMaker Studio or the Amazon SageMaker Python SDK, all experiments, trials, and trial
-     * components are automatically tracked, logged, and indexed. When you use the AWS SDK for Python (Boto), you must
-     * use the logging APIs provided by the SDK.
+     * When you use SageMaker Studio or the SageMaker Python SDK, all experiments, trials, and trial components are
+     * automatically tracked, logged, and indexed. When you use the AWS SDK for Python (Boto), you must use the logging
+     * APIs provided by the SDK.
      * </p>
      * <p>
      * You can add tags to a trial component and then use the <a>Search</a> API to search for the tags.
      * </p>
      * <note>
      * <p>
-     * <code>CreateTrialComponent</code> can only be invoked from within an Amazon SageMaker managed environment. This
-     * includes Amazon SageMaker training jobs, processing jobs, transform jobs, and Amazon SageMaker notebooks. A call
-     * to <code>CreateTrialComponent</code> from outside one of these environments results in an error.
+     * <code>CreateTrialComponent</code> can only be invoked from within an SageMaker managed environment. This includes
+     * SageMaker training jobs, processing jobs, transform jobs, and SageMaker notebooks. A call to
+     * <code>CreateTrialComponent</code> from outside one of these environments results in an error.
      * </p>
      * </note>
      * 
@@ -2769,18 +2823,18 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * Trial components include pre-processing jobs, training jobs, and batch transform jobs.
      * </p>
      * <p>
-     * When you use Amazon SageMaker Studio or the Amazon SageMaker Python SDK, all experiments, trials, and trial
-     * components are automatically tracked, logged, and indexed. When you use the AWS SDK for Python (Boto), you must
-     * use the logging APIs provided by the SDK.
+     * When you use SageMaker Studio or the SageMaker Python SDK, all experiments, trials, and trial components are
+     * automatically tracked, logged, and indexed. When you use the AWS SDK for Python (Boto), you must use the logging
+     * APIs provided by the SDK.
      * </p>
      * <p>
      * You can add tags to a trial component and then use the <a>Search</a> API to search for the tags.
      * </p>
      * <note>
      * <p>
-     * <code>CreateTrialComponent</code> can only be invoked from within an Amazon SageMaker managed environment. This
-     * includes Amazon SageMaker training jobs, processing jobs, transform jobs, and Amazon SageMaker notebooks. A call
-     * to <code>CreateTrialComponent</code> from outside one of these environments results in an error.
+     * <code>CreateTrialComponent</code> can only be invoked from within an SageMaker managed environment. This includes
+     * SageMaker training jobs, processing jobs, transform jobs, and SageMaker notebooks. A call to
+     * <code>CreateTrialComponent</code> from outside one of these environments results in an error.
      * </p>
      * </note>
      * 
@@ -3383,7 +3437,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Deletes an Amazon SageMaker experiment. All trials associated with the experiment must be deleted first. Use the
+     * Deletes an SageMaker experiment. All trials associated with the experiment must be deleted first. Use the
      * <a>ListTrials</a> API to get a list of the trials associated with the experiment.
      * </p>
      * 
@@ -3397,7 +3451,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Deletes an Amazon SageMaker experiment. All trials associated with the experiment must be deleted first. Use the
+     * Deletes an SageMaker experiment. All trials associated with the experiment must be deleted first. Use the
      * <a>ListTrials</a> API to get a list of the trials associated with the experiment.
      * </p>
      * 
@@ -3949,7 +4003,9 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Deletes a pipeline if there are no in-progress executions.
+     * Deletes a pipeline if there are no running instances of the pipeline. To delete a pipeline, you must stop all
+     * running instances of the pipeline using the <code>StopPipelineExecution</code> API. When you delete a pipeline,
+     * all instances of the pipeline are deleted.
      * </p>
      * 
      * @param deletePipelineRequest
@@ -3962,7 +4018,9 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Deletes a pipeline if there are no in-progress executions.
+     * Deletes a pipeline if there are no running instances of the pipeline. To delete a pipeline, you must stop all
+     * running instances of the pipeline using the <code>StopPipelineExecution</code> API. When you delete a pipeline,
+     * all instances of the pipeline are deleted.
      * </p>
      * 
      * @param deletePipelineRequest
@@ -7516,16 +7574,18 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * <p>
      * When <code>StatusEquals</code> and <code>MaxResults</code> are set at the same time, the <code>MaxResults</code>
      * number of training jobs are first retrieved ignoring the <code>StatusEquals</code> parameter and then they are
-     * filtered by the <code>StatusEquals</code> parameter, which is returned as a response. For example, if
-     * <code>ListTrainingJobs</code> is invoked with the following parameters:
+     * filtered by the <code>StatusEquals</code> parameter, which is returned as a response.
+     * </p>
+     * <p>
+     * For example, if <code>ListTrainingJobs</code> is invoked with the following parameters:
      * </p>
      * <p>
      * <code>{ ... MaxResults: 100, StatusEquals: InProgress ... }</code>
      * </p>
      * <p>
-     * Then, 100 trainings jobs with any status including those other than <code>InProgress</code> are selected first
-     * (sorted according the creation time, from the latest to the oldest) and those with status <code>InProgress</code>
-     * are returned.
+     * First, 100 trainings jobs with any status, including those other than <code>InProgress</code>, are selected
+     * (sorted according to the creation time, from the most current to the oldest). Next, those with a status of
+     * <code>InProgress</code> are returned.
      * </p>
      * <p>
      * You can quickly test the API using the following AWS CLI code.
@@ -7551,16 +7611,18 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * <p>
      * When <code>StatusEquals</code> and <code>MaxResults</code> are set at the same time, the <code>MaxResults</code>
      * number of training jobs are first retrieved ignoring the <code>StatusEquals</code> parameter and then they are
-     * filtered by the <code>StatusEquals</code> parameter, which is returned as a response. For example, if
-     * <code>ListTrainingJobs</code> is invoked with the following parameters:
+     * filtered by the <code>StatusEquals</code> parameter, which is returned as a response.
+     * </p>
+     * <p>
+     * For example, if <code>ListTrainingJobs</code> is invoked with the following parameters:
      * </p>
      * <p>
      * <code>{ ... MaxResults: 100, StatusEquals: InProgress ... }</code>
      * </p>
      * <p>
-     * Then, 100 trainings jobs with any status including those other than <code>InProgress</code> are selected first
-     * (sorted according the creation time, from the latest to the oldest) and those with status <code>InProgress</code>
-     * are returned.
+     * First, 100 trainings jobs with any status, including those other than <code>InProgress</code>, are selected
+     * (sorted according to the creation time, from the most current to the oldest). Next, those with a status of
+     * <code>InProgress</code> are returned.
      * </p>
      * <p>
      * You can quickly test the API using the following AWS CLI code.

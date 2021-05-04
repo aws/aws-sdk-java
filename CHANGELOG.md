@@ -1,3 +1,24 @@
+# __1.11.1011__ __2021-05-04__
+## __AWS Certificate Manager Private Certificate Authority__
+  - ### Features
+    - This release adds the KeyStorageSecurityStandard parameter to the CreateCertificateAuthority API to allow customers to mandate a security standard to which the CA key will be stored within.
+
+## __AWS Health APIs and Notifications__
+  - ### Features
+    - Documentation updates for health
+
+## __Amazon Chime__
+  - ### Features
+    - This release adds the ability to search for and order international phone numbers for Amazon Chime SIP media applications.
+
+## __Amazon DevOps Guru__
+  - ### Features
+    - Added GetCostEstimation and StartCostEstimation to get the monthly resource usage cost and added ability to view resource health by AWS service name and to search insights be AWS service name.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - Enable retrying Training and Tuning Jobs that fail with InternalServerError by setting RetryStrategy.
+
 # __1.11.1010__ __2021-05-03__
 ## __AWS SecurityHub__
   - ### Features

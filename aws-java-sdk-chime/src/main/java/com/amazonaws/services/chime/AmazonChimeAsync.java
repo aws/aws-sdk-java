@@ -479,16 +479,15 @@ public interface AmazonChimeAsync extends AmazonChime {
     /**
      * <p>
      * Updates phone number product types or calling names. You can update one attribute at a time for each
-     * <code>UpdatePhoneNumberRequestItem</code> . For example, you can update either the product type or the calling
-     * name.
+     * <code>UpdatePhoneNumberRequestItem</code>. For example, you can update the product type or the calling name.
      * </p>
      * <p>
-     * For product types, choose from Amazon Chime Business Calling and Amazon Chime Voice Connector. For toll-free
-     * numbers, you must use the Amazon Chime Voice Connector product type.
+     * For toll-free numbers, you cannot use the Amazon Chime Business Calling product type. For numbers outside the US,
+     * you must use the Amazon Chime SIP Media Application Dial-In product type.
      * </p>
      * <p>
-     * Updates to outbound calling names can take up to 72 hours to complete. Pending updates to outbound calling names
-     * must be complete before you can request another update.
+     * Updates to outbound calling names can take 72 hours to complete. Pending updates to outbound calling names must
+     * be complete before you can request another update.
      * </p>
      * 
      * @param batchUpdatePhoneNumberRequest
@@ -502,16 +501,15 @@ public interface AmazonChimeAsync extends AmazonChime {
     /**
      * <p>
      * Updates phone number product types or calling names. You can update one attribute at a time for each
-     * <code>UpdatePhoneNumberRequestItem</code> . For example, you can update either the product type or the calling
-     * name.
+     * <code>UpdatePhoneNumberRequestItem</code>. For example, you can update the product type or the calling name.
      * </p>
      * <p>
-     * For product types, choose from Amazon Chime Business Calling and Amazon Chime Voice Connector. For toll-free
-     * numbers, you must use the Amazon Chime Voice Connector product type.
+     * For toll-free numbers, you cannot use the Amazon Chime Business Calling product type. For numbers outside the US,
+     * you must use the Amazon Chime SIP Media Application Dial-In product type.
      * </p>
      * <p>
-     * Updates to outbound calling names can take up to 72 hours to complete. Pending updates to outbound calling names
-     * must be complete before you can request another update.
+     * Updates to outbound calling names can take 72 hours to complete. Pending updates to outbound calling names must
+     * be complete before you can request another update.
      * </p>
      * 
      * @param batchUpdatePhoneNumberRequest
@@ -1249,8 +1247,9 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Creates an order for phone numbers to be provisioned. Choose from Amazon Chime Business Calling and Amazon Chime
-     * Voice Connector product types. For toll-free numbers, you must use the Amazon Chime Voice Connector product type.
+     * Creates an order for phone numbers to be provisioned. For toll-free numbers, you cannot use the Amazon Chime
+     * Business Calling product type. For numbers outside the US, you must use the Amazon Chime SIP Media Application
+     * Dial-In product type.
      * </p>
      * 
      * @param createPhoneNumberOrderRequest
@@ -1263,8 +1262,9 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Creates an order for phone numbers to be provisioned. Choose from Amazon Chime Business Calling and Amazon Chime
-     * Voice Connector product types. For toll-free numbers, you must use the Amazon Chime Voice Connector product type.
+     * Creates an order for phone numbers to be provisioned. For toll-free numbers, you cannot use the Amazon Chime
+     * Business Calling product type. For numbers outside the US, you must use the Amazon Chime SIP Media Application
+     * Dial-In product type.
      * </p>
      * 
      * @param createPhoneNumberOrderRequest
@@ -2112,7 +2112,7 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Moves the specified phone number into the <b>Deletionqueue</b>. A phone number must be disassociated from any
+     * Moves the specified phone number into the <b>Deletion queue</b>. A phone number must be disassociated from any
      * users or Amazon Chime Voice Connectors before it can be deleted.
      * </p>
      * <p>
@@ -2129,7 +2129,7 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Moves the specified phone number into the <b>Deletionqueue</b>. A phone number must be disassociated from any
+     * Moves the specified phone number into the <b>Deletion queue</b>. A phone number must be disassociated from any
      * users or Amazon Chime Voice Connectors before it can be deleted.
      * </p>
      * <p>
@@ -4572,7 +4572,7 @@ public interface AmazonChimeAsync extends AmazonChime {
     /**
      * <p>
      * List all the messages in a channel. Returns a paginated list of <code>ChannelMessages</code>. By default, sorted
-     * by creation timestamp in descending order .
+     * by creation timestamp in descending order.
      * </p>
      * <note>
      * <p>
@@ -4596,7 +4596,7 @@ public interface AmazonChimeAsync extends AmazonChime {
     /**
      * <p>
      * List all the messages in a channel. Returns a paginated list of <code>ChannelMessages</code>. By default, sorted
-     * by creation timestamp in descending order .
+     * by creation timestamp in descending order.
      * </p>
      * <note>
      * <p>
@@ -5077,6 +5077,41 @@ public interface AmazonChimeAsync extends AmazonChime {
      */
     java.util.concurrent.Future<ListSipRulesResult> listSipRulesAsync(ListSipRulesRequest listSipRulesRequest,
             com.amazonaws.handlers.AsyncHandler<ListSipRulesRequest, ListSipRulesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists supported phone number countries.
+     * </p>
+     * 
+     * @param listSupportedPhoneNumberCountriesRequest
+     * @return A Java Future containing the result of the ListSupportedPhoneNumberCountries operation returned by the
+     *         service.
+     * @sample AmazonChimeAsync.ListSupportedPhoneNumberCountries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListSupportedPhoneNumberCountries"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSupportedPhoneNumberCountriesResult> listSupportedPhoneNumberCountriesAsync(
+            ListSupportedPhoneNumberCountriesRequest listSupportedPhoneNumberCountriesRequest);
+
+    /**
+     * <p>
+     * Lists supported phone number countries.
+     * </p>
+     * 
+     * @param listSupportedPhoneNumberCountriesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSupportedPhoneNumberCountries operation returned by the
+     *         service.
+     * @sample AmazonChimeAsyncHandler.ListSupportedPhoneNumberCountries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListSupportedPhoneNumberCountries"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSupportedPhoneNumberCountriesResult> listSupportedPhoneNumberCountriesAsync(
+            ListSupportedPhoneNumberCountriesRequest listSupportedPhoneNumberCountriesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSupportedPhoneNumberCountriesRequest, ListSupportedPhoneNumberCountriesResult> asyncHandler);
 
     /**
      * <p>
@@ -5940,7 +5975,10 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Searches phone numbers that can be ordered.
+     * Searches for phone numbers that can be ordered. For US numbers, provide at least one of the following search
+     * filters: <code>AreaCode</code>, <code>City</code>, <code>State</code>, or <code>TollFreePrefix</code>. If you
+     * provide <code>City</code>, you must also provide <code>State</code>. Numbers outside the US only support the
+     * <code>PhoneNumberType</code> filter, which you must use.
      * </p>
      * 
      * @param searchAvailablePhoneNumbersRequest
@@ -5954,7 +5992,10 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Searches phone numbers that can be ordered.
+     * Searches for phone numbers that can be ordered. For US numbers, provide at least one of the following search
+     * filters: <code>AreaCode</code>, <code>City</code>, <code>State</code>, or <code>TollFreePrefix</code>. If you
+     * provide <code>City</code>, you must also provide <code>State</code>. Numbers outside the US only support the
+     * <code>PhoneNumberType</code> filter, which you must use.
      * </p>
      * 
      * @param searchAvailablePhoneNumbersRequest
@@ -6548,11 +6589,12 @@ public interface AmazonChimeAsync extends AmazonChime {
      * in one action.
      * </p>
      * <p>
-     * For toll-free numbers, you must use the Amazon Chime Voice Connector product type.
+     * For toll-free numbers, you cannot use the Amazon Chime Business Calling product type. For numbers outside the
+     * U.S., you must use the Amazon Chime SIP Media Application Dial-In product type.
      * </p>
      * <p>
-     * Updates to outbound calling names can take up to 72 hours to complete. Pending updates to outbound calling names
-     * must be complete before you can request another update.
+     * Updates to outbound calling names can take 72 hours to complete. Pending updates to outbound calling names must
+     * be complete before you can request another update.
      * </p>
      * 
      * @param updatePhoneNumberRequest
@@ -6570,11 +6612,12 @@ public interface AmazonChimeAsync extends AmazonChime {
      * in one action.
      * </p>
      * <p>
-     * For toll-free numbers, you must use the Amazon Chime Voice Connector product type.
+     * For toll-free numbers, you cannot use the Amazon Chime Business Calling product type. For numbers outside the
+     * U.S., you must use the Amazon Chime SIP Media Application Dial-In product type.
      * </p>
      * <p>
-     * Updates to outbound calling names can take up to 72 hours to complete. Pending updates to outbound calling names
-     * must be complete before you can request another update.
+     * Updates to outbound calling names can take 72 hours to complete. Pending updates to outbound calling names must
+     * be complete before you can request another update.
      * </p>
      * 
      * @param updatePhoneNumberRequest

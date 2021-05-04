@@ -99,6 +99,8 @@ public class TrainingJobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DebugRuleEvaluationStatuses").build();
     private static final MarshallingInfo<Map> ENVIRONMENT_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Environment").build();
+    private static final MarshallingInfo<StructuredPojo> RETRYSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RetryStrategy").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
 
@@ -153,6 +155,7 @@ public class TrainingJobMarshaller {
             protocolMarshaller.marshall(trainingJob.getTensorBoardOutputConfig(), TENSORBOARDOUTPUTCONFIG_BINDING);
             protocolMarshaller.marshall(trainingJob.getDebugRuleEvaluationStatuses(), DEBUGRULEEVALUATIONSTATUSES_BINDING);
             protocolMarshaller.marshall(trainingJob.getEnvironment(), ENVIRONMENT_BINDING);
+            protocolMarshaller.marshall(trainingJob.getRetryStrategy(), RETRYSTRATEGY_BINDING);
             protocolMarshaller.marshall(trainingJob.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

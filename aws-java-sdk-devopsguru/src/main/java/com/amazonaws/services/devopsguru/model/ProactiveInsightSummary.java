@@ -58,6 +58,12 @@ public class ProactiveInsightSummary implements Serializable, Cloneable, Structu
     private PredictionTimeRange predictionTimeRange;
 
     private ResourceCollection resourceCollection;
+    /**
+     * <p>
+     * A collection of the names of AWS services.
+     * </p>
+     */
+    private ServiceCollection serviceCollection;
 
     /**
      * <p>
@@ -336,6 +342,46 @@ public class ProactiveInsightSummary implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * A collection of the names of AWS services.
+     * </p>
+     * 
+     * @param serviceCollection
+     *        A collection of the names of AWS services.
+     */
+
+    public void setServiceCollection(ServiceCollection serviceCollection) {
+        this.serviceCollection = serviceCollection;
+    }
+
+    /**
+     * <p>
+     * A collection of the names of AWS services.
+     * </p>
+     * 
+     * @return A collection of the names of AWS services.
+     */
+
+    public ServiceCollection getServiceCollection() {
+        return this.serviceCollection;
+    }
+
+    /**
+     * <p>
+     * A collection of the names of AWS services.
+     * </p>
+     * 
+     * @param serviceCollection
+     *        A collection of the names of AWS services.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProactiveInsightSummary withServiceCollection(ServiceCollection serviceCollection) {
+        setServiceCollection(serviceCollection);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -360,7 +406,9 @@ public class ProactiveInsightSummary implements Serializable, Cloneable, Structu
         if (getPredictionTimeRange() != null)
             sb.append("PredictionTimeRange: ").append(getPredictionTimeRange()).append(",");
         if (getResourceCollection() != null)
-            sb.append("ResourceCollection: ").append(getResourceCollection());
+            sb.append("ResourceCollection: ").append(getResourceCollection()).append(",");
+        if (getServiceCollection() != null)
+            sb.append("ServiceCollection: ").append(getServiceCollection());
         sb.append("}");
         return sb.toString();
     }
@@ -403,6 +451,10 @@ public class ProactiveInsightSummary implements Serializable, Cloneable, Structu
             return false;
         if (other.getResourceCollection() != null && other.getResourceCollection().equals(this.getResourceCollection()) == false)
             return false;
+        if (other.getServiceCollection() == null ^ this.getServiceCollection() == null)
+            return false;
+        if (other.getServiceCollection() != null && other.getServiceCollection().equals(this.getServiceCollection()) == false)
+            return false;
         return true;
     }
 
@@ -418,6 +470,7 @@ public class ProactiveInsightSummary implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getInsightTimeRange() == null) ? 0 : getInsightTimeRange().hashCode());
         hashCode = prime * hashCode + ((getPredictionTimeRange() == null) ? 0 : getPredictionTimeRange().hashCode());
         hashCode = prime * hashCode + ((getResourceCollection() == null) ? 0 : getResourceCollection().hashCode());
+        hashCode = prime * hashCode + ((getServiceCollection() == null) ? 0 : getServiceCollection().hashCode());
         return hashCode;
     }
 

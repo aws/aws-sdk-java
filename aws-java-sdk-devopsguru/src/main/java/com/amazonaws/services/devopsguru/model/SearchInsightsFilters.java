@@ -42,6 +42,12 @@ public class SearchInsightsFilters implements Serializable, Cloneable, Structure
     private java.util.List<String> statuses;
 
     private ResourceCollection resourceCollection;
+    /**
+     * <p>
+     * A collection of the names of AWS services.
+     * </p>
+     */
+    private ServiceCollection serviceCollection;
 
     /**
      * <p>
@@ -266,6 +272,46 @@ public class SearchInsightsFilters implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * A collection of the names of AWS services.
+     * </p>
+     * 
+     * @param serviceCollection
+     *        A collection of the names of AWS services.
+     */
+
+    public void setServiceCollection(ServiceCollection serviceCollection) {
+        this.serviceCollection = serviceCollection;
+    }
+
+    /**
+     * <p>
+     * A collection of the names of AWS services.
+     * </p>
+     * 
+     * @return A collection of the names of AWS services.
+     */
+
+    public ServiceCollection getServiceCollection() {
+        return this.serviceCollection;
+    }
+
+    /**
+     * <p>
+     * A collection of the names of AWS services.
+     * </p>
+     * 
+     * @param serviceCollection
+     *        A collection of the names of AWS services.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchInsightsFilters withServiceCollection(ServiceCollection serviceCollection) {
+        setServiceCollection(serviceCollection);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -282,7 +328,9 @@ public class SearchInsightsFilters implements Serializable, Cloneable, Structure
         if (getStatuses() != null)
             sb.append("Statuses: ").append(getStatuses()).append(",");
         if (getResourceCollection() != null)
-            sb.append("ResourceCollection: ").append(getResourceCollection());
+            sb.append("ResourceCollection: ").append(getResourceCollection()).append(",");
+        if (getServiceCollection() != null)
+            sb.append("ServiceCollection: ").append(getServiceCollection());
         sb.append("}");
         return sb.toString();
     }
@@ -309,6 +357,10 @@ public class SearchInsightsFilters implements Serializable, Cloneable, Structure
             return false;
         if (other.getResourceCollection() != null && other.getResourceCollection().equals(this.getResourceCollection()) == false)
             return false;
+        if (other.getServiceCollection() == null ^ this.getServiceCollection() == null)
+            return false;
+        if (other.getServiceCollection() != null && other.getServiceCollection().equals(this.getServiceCollection()) == false)
+            return false;
         return true;
     }
 
@@ -320,6 +372,7 @@ public class SearchInsightsFilters implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getSeverities() == null) ? 0 : getSeverities().hashCode());
         hashCode = prime * hashCode + ((getStatuses() == null) ? 0 : getStatuses().hashCode());
         hashCode = prime * hashCode + ((getResourceCollection() == null) ? 0 : getResourceCollection().hashCode());
+        hashCode = prime * hashCode + ((getServiceCollection() == null) ? 0 : getServiceCollection().hashCode());
         return hashCode;
     }
 

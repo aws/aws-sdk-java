@@ -88,7 +88,7 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For more information about <code>RecordIO</code>, see <a href="https://mxnet.apache.org/api/faq/recordio">Create
      * a Dataset Using RecordIO</a> in the MXNet documentation. For more information about <code>TFRecord</code>, see <a
-     * href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming TFRecord data</a> in the
+     * href="https://www.tensorflow.org/guide/data#consuming_tfrecord_data">Consuming TFRecord data</a> in the
      * TensorFlow documentation.
      * </p>
      * </note>
@@ -293,7 +293,7 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For more information about <code>RecordIO</code>, see <a href="https://mxnet.apache.org/api/faq/recordio">Create
      * a Dataset Using RecordIO</a> in the MXNet documentation. For more information about <code>TFRecord</code>, see <a
-     * href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming TFRecord data</a> in the
+     * href="https://www.tensorflow.org/guide/data#consuming_tfrecord_data">Consuming TFRecord data</a> in the
      * TensorFlow documentation.
      * </p>
      * </note>
@@ -337,8 +337,8 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
      *        For more information about <code>RecordIO</code>, see <a
      *        href="https://mxnet.apache.org/api/faq/recordio">Create a Dataset Using RecordIO</a> in the MXNet
      *        documentation. For more information about <code>TFRecord</code>, see <a
-     *        href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming TFRecord data</a> in
-     *        the TensorFlow documentation.
+     *        href="https://www.tensorflow.org/guide/data#consuming_tfrecord_data">Consuming TFRecord data</a> in the
+     *        TensorFlow documentation.
      *        </p>
      * @see SplitType
      */
@@ -386,7 +386,7 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For more information about <code>RecordIO</code>, see <a href="https://mxnet.apache.org/api/faq/recordio">Create
      * a Dataset Using RecordIO</a> in the MXNet documentation. For more information about <code>TFRecord</code>, see <a
-     * href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming TFRecord data</a> in the
+     * href="https://www.tensorflow.org/guide/data#consuming_tfrecord_data">Consuming TFRecord data</a> in the
      * TensorFlow documentation.
      * </p>
      * </note>
@@ -429,8 +429,8 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
      *         For more information about <code>RecordIO</code>, see <a
      *         href="https://mxnet.apache.org/api/faq/recordio">Create a Dataset Using RecordIO</a> in the MXNet
      *         documentation. For more information about <code>TFRecord</code>, see <a
-     *         href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming TFRecord data</a> in
-     *         the TensorFlow documentation.
+     *         href="https://www.tensorflow.org/guide/data#consuming_tfrecord_data">Consuming TFRecord data</a> in the
+     *         TensorFlow documentation.
      *         </p>
      * @see SplitType
      */
@@ -478,7 +478,7 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For more information about <code>RecordIO</code>, see <a href="https://mxnet.apache.org/api/faq/recordio">Create
      * a Dataset Using RecordIO</a> in the MXNet documentation. For more information about <code>TFRecord</code>, see <a
-     * href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming TFRecord data</a> in the
+     * href="https://www.tensorflow.org/guide/data#consuming_tfrecord_data">Consuming TFRecord data</a> in the
      * TensorFlow documentation.
      * </p>
      * </note>
@@ -522,8 +522,8 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
      *        For more information about <code>RecordIO</code>, see <a
      *        href="https://mxnet.apache.org/api/faq/recordio">Create a Dataset Using RecordIO</a> in the MXNet
      *        documentation. For more information about <code>TFRecord</code>, see <a
-     *        href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming TFRecord data</a> in
-     *        the TensorFlow documentation.
+     *        href="https://www.tensorflow.org/guide/data#consuming_tfrecord_data">Consuming TFRecord data</a> in the
+     *        TensorFlow documentation.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SplitType
@@ -573,7 +573,7 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For more information about <code>RecordIO</code>, see <a href="https://mxnet.apache.org/api/faq/recordio">Create
      * a Dataset Using RecordIO</a> in the MXNet documentation. For more information about <code>TFRecord</code>, see <a
-     * href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming TFRecord data</a> in the
+     * href="https://www.tensorflow.org/guide/data#consuming_tfrecord_data">Consuming TFRecord data</a> in the
      * TensorFlow documentation.
      * </p>
      * </note>
@@ -617,8 +617,8 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
      *        For more information about <code>RecordIO</code>, see <a
      *        href="https://mxnet.apache.org/api/faq/recordio">Create a Dataset Using RecordIO</a> in the MXNet
      *        documentation. For more information about <code>TFRecord</code>, see <a
-     *        href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming TFRecord data</a> in
-     *        the TensorFlow documentation.
+     *        href="https://www.tensorflow.org/guide/data#consuming_tfrecord_data">Consuming TFRecord data</a> in the
+     *        TensorFlow documentation.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SplitType

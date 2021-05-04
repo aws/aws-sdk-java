@@ -34,6 +34,8 @@ public class SearchInsightsFiltersMarshaller {
             .marshallLocationName("Statuses").build();
     private static final MarshallingInfo<StructuredPojo> RESOURCECOLLECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceCollection").build();
+    private static final MarshallingInfo<StructuredPojo> SERVICECOLLECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceCollection").build();
 
     private static final SearchInsightsFiltersMarshaller instance = new SearchInsightsFiltersMarshaller();
 
@@ -54,6 +56,7 @@ public class SearchInsightsFiltersMarshaller {
             protocolMarshaller.marshall(searchInsightsFilters.getSeverities(), SEVERITIES_BINDING);
             protocolMarshaller.marshall(searchInsightsFilters.getStatuses(), STATUSES_BINDING);
             protocolMarshaller.marshall(searchInsightsFilters.getResourceCollection(), RESOURCECOLLECTION_BINDING);
+            protocolMarshaller.marshall(searchInsightsFilters.getServiceCollection(), SERVICECOLLECTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -35,7 +35,9 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * If conflicting or duplicate certificate information is supplied during certificate issuance, ACM Private CA
-     * applies <a href="xxxxx">order of operation rules</a> to determine what information is used.
+     * applies <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations"
+     * >order of operation rules</a> to determine what information is used.
      * </p>
      */
     private ApiPassthrough apiPassthrough;
@@ -164,7 +166,9 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * If conflicting or duplicate certificate information is supplied during certificate issuance, ACM Private CA
-     * applies <a href="xxxxx">order of operation rules</a> to determine what information is used.
+     * applies <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations"
+     * >order of operation rules</a> to determine what information is used.
      * </p>
      * 
      * @param apiPassthrough
@@ -175,7 +179,9 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      *        Templates</a>.</p>
      *        <p>
      *        If conflicting or duplicate certificate information is supplied during certificate issuance, ACM Private
-     *        CA applies <a href="xxxxx">order of operation rules</a> to determine what information is used.
+     *        CA applies <a href=
+     *        "https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations"
+     *        >order of operation rules</a> to determine what information is used.
      */
 
     public void setApiPassthrough(ApiPassthrough apiPassthrough) {
@@ -192,7 +198,9 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * If conflicting or duplicate certificate information is supplied during certificate issuance, ACM Private CA
-     * applies <a href="xxxxx">order of operation rules</a> to determine what information is used.
+     * applies <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations"
+     * >order of operation rules</a> to determine what information is used.
      * </p>
      * 
      * @return Specifies X.509 certificate information to be included in the issued certificate. An
@@ -202,7 +210,9 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      *         Templates</a>.</p>
      *         <p>
      *         If conflicting or duplicate certificate information is supplied during certificate issuance, ACM Private
-     *         CA applies <a href="xxxxx">order of operation rules</a> to determine what information is used.
+     *         CA applies <a href=
+     *         "https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations"
+     *         >order of operation rules</a> to determine what information is used.
      */
 
     public ApiPassthrough getApiPassthrough() {
@@ -219,7 +229,9 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * If conflicting or duplicate certificate information is supplied during certificate issuance, ACM Private CA
-     * applies <a href="xxxxx">order of operation rules</a> to determine what information is used.
+     * applies <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations"
+     * >order of operation rules</a> to determine what information is used.
      * </p>
      * 
      * @param apiPassthrough
@@ -230,7 +242,9 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      *        Templates</a>.</p>
      *        <p>
      *        If conflicting or duplicate certificate information is supplied during certificate issuance, ACM Private
-     *        CA applies <a href="xxxxx">order of operation rules</a> to determine what information is used.
+     *        CA applies <a href=
+     *        "https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations"
+     *        >order of operation rules</a> to determine what information is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

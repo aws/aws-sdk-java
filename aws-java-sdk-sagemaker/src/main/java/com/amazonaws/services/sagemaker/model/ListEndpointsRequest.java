@@ -46,7 +46,7 @@ public class ListEndpointsRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String nextToken;
     /**
      * <p>
-     * The maximum number of endpoints to return in the response.
+     * The maximum number of endpoints to return in the response. This value defaults to 10.
      * </p>
      */
     private Integer maxResults;
@@ -254,11 +254,11 @@ public class ListEndpointsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The maximum number of endpoints to return in the response.
+     * The maximum number of endpoints to return in the response. This value defaults to 10.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of endpoints to return in the response.
+     *        The maximum number of endpoints to return in the response. This value defaults to 10.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -267,10 +267,10 @@ public class ListEndpointsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The maximum number of endpoints to return in the response.
+     * The maximum number of endpoints to return in the response. This value defaults to 10.
      * </p>
      * 
-     * @return The maximum number of endpoints to return in the response.
+     * @return The maximum number of endpoints to return in the response. This value defaults to 10.
      */
 
     public Integer getMaxResults() {
@@ -279,11 +279,11 @@ public class ListEndpointsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The maximum number of endpoints to return in the response.
+     * The maximum number of endpoints to return in the response. This value defaults to 10.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of endpoints to return in the response.
+     *        The maximum number of endpoints to return in the response. This value defaults to 10.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

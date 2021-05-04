@@ -55,6 +55,12 @@ public class DescribeResourceCollectionHealthResultJsonUnmarshaller implements U
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("Service", targetDepth)) {
+                    context.nextToken();
+                    describeResourceCollectionHealthResult.setService(new ListUnmarshaller<ServiceHealth>(ServiceHealthJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();
                     describeResourceCollectionHealthResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));

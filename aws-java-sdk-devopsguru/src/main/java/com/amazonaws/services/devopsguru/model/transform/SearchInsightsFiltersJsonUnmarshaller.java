@@ -64,6 +64,10 @@ public class SearchInsightsFiltersJsonUnmarshaller implements Unmarshaller<Searc
                     context.nextToken();
                     searchInsightsFilters.setResourceCollection(ResourceCollectionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ServiceCollection", targetDepth)) {
+                    context.nextToken();
+                    searchInsightsFilters.setServiceCollection(ServiceCollectionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

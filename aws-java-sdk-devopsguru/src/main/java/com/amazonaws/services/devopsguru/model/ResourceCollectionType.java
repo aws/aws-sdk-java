@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ResourceCollectionType {
 
-    AWS_CLOUD_FORMATION("AWS_CLOUD_FORMATION");
+    AWS_CLOUD_FORMATION("AWS_CLOUD_FORMATION"),
+    AWS_SERVICE("AWS_SERVICE");
 
     private String value;
 

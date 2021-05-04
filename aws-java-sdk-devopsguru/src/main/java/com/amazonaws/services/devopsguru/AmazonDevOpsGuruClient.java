@@ -595,7 +595,8 @@ public class AmazonDevOpsGuruClient extends AmazonWebServiceClient implements Am
      * Returns the number of open proactive insights, open reactive insights, and the Mean Time to Recover (MTTR) for
      * all closed insights in resource collections in your account. You specify the type of AWS resources collection.
      * The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to
-     * analyze only the AWS resources that are defined in the stacks.
+     * analyze only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation
+     * stacks.
      * </p>
      * 
      * @param describeResourceCollectionHealthRequest
@@ -734,9 +735,79 @@ public class AmazonDevOpsGuruClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Returns an estimate of the monthly cost for DevOps Guru to analyze your AWS resources. For more information, see
+     * <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html">Estimate your Amazon DevOps
+     * Guru costs</a> and <a href="http://aws.amazon.com/devops-guru/pricing/">Amazon DevOps Guru pricing</a>.
+     * </p>
+     * 
+     * @param getCostEstimationRequest
+     * @return Result of the GetCostEstimation operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions. For
+     *         more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
+     * @throws InternalServerException
+     *         An internal failure in an Amazon service occurred.
+     * @throws ResourceNotFoundException
+     *         A requested resource could not be found
+     * @throws ThrottlingException
+     *         The request was denied due to a request throttling.
+     * @throws ValidationException
+     *         Contains information about data passed in to a field during a request that is not valid.
+     * @sample AmazonDevOpsGuru.GetCostEstimation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/GetCostEstimation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetCostEstimationResult getCostEstimation(GetCostEstimationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCostEstimation(request);
+    }
+
+    @SdkInternalApi
+    final GetCostEstimationResult executeGetCostEstimation(GetCostEstimationRequest getCostEstimationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCostEstimationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCostEstimationRequest> request = null;
+        Response<GetCostEstimationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCostEstimationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCostEstimationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DevOps Guru");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCostEstimation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCostEstimationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetCostEstimationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns lists AWS resources that are of the specified resource collection type. The one type of AWS resource
      * collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze only the AWS
-     * resources that are defined in the stacks.
+     * resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
      * </p>
      * 
      * @param getResourceCollectionRequest
@@ -1366,9 +1437,80 @@ public class AmazonDevOpsGuruClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Starts the creation of an estimate of the monthly cost to analyze your AWS resources.
+     * </p>
+     * 
+     * @param startCostEstimationRequest
+     * @return Result of the StartCostEstimation operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions. For
+     *         more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide</i>.
+     * @throws ConflictException
+     *         An exception that is thrown when a conflict occurs.
+     * @throws InternalServerException
+     *         An internal failure in an Amazon service occurred.
+     * @throws ResourceNotFoundException
+     *         A requested resource could not be found
+     * @throws ThrottlingException
+     *         The request was denied due to a request throttling.
+     * @throws ValidationException
+     *         Contains information about data passed in to a field during a request that is not valid.
+     * @sample AmazonDevOpsGuru.StartCostEstimation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/StartCostEstimation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartCostEstimationResult startCostEstimation(StartCostEstimationRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartCostEstimation(request);
+    }
+
+    @SdkInternalApi
+    final StartCostEstimationResult executeStartCostEstimation(StartCostEstimationRequest startCostEstimationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startCostEstimationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartCostEstimationRequest> request = null;
+        Response<StartCostEstimationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartCostEstimationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startCostEstimationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DevOps Guru");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartCostEstimation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartCostEstimationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartCostEstimationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates the collection of resources that DevOps Guru analyzes. The one type of AWS resource collection supported
      * is AWS CloudFormation stacks. DevOps Guru can be configured to analyze only the AWS resources that are defined in
-     * the stacks. This method also creates the IAM role required for you to use DevOps Guru.
+     * the stacks. You can specify up to 500 AWS CloudFormation stacks. This method also creates the IAM role required
+     * for you to use DevOps Guru.
      * </p>
      * 
      * @param updateResourceCollectionRequest

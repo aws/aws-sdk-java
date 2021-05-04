@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum PhoneNumberProductType {
 
     BusinessCalling("BusinessCalling"),
-    VoiceConnector("VoiceConnector");
+    VoiceConnector("VoiceConnector"),
+    SipMediaApplicationDialIn("SipMediaApplicationDialIn");
 
     private String value;
 

@@ -101,6 +101,10 @@ public class CertificateAuthorityJsonUnmarshaller implements Unmarshaller<Certif
                     context.nextToken();
                     certificateAuthority.setRestorableUntil(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("KeyStorageSecurityStandard", targetDepth)) {
+                    context.nextToken();
+                    certificateAuthority.setKeyStorageSecurityStandard(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

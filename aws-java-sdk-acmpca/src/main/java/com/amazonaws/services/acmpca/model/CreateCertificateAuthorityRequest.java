@@ -61,6 +61,21 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
     private String idempotencyToken;
     /**
      * <p>
+     * Specifies a cryptographic key management compliance standard used for handling CA keys.
+     * </p>
+     * <p>
+     * Default: FIPS_140_2_LEVEL_3_OR_HIGHER
+     * </p>
+     * <p>
+     * Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this
+     * parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message
+     * "A certificate authority cannot be created in this region with the specified security standard."
+     * </p>
+     */
+    private String keyStorageSecurityStandard;
+    /**
+     * <p>
      * Key-value pairs that will be attached to the new private CA. You can associate up to 50 tags with a private CA.
      * For information using tags with IAM to manage permissions, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
@@ -313,6 +328,133 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
+     * Specifies a cryptographic key management compliance standard used for handling CA keys.
+     * </p>
+     * <p>
+     * Default: FIPS_140_2_LEVEL_3_OR_HIGHER
+     * </p>
+     * <p>
+     * Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this
+     * parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message
+     * "A certificate authority cannot be created in this region with the specified security standard."
+     * </p>
+     * 
+     * @param keyStorageSecurityStandard
+     *        Specifies a cryptographic key management compliance standard used for handling CA keys.</p>
+     *        <p>
+     *        Default: FIPS_140_2_LEVEL_3_OR_HIGHER
+     *        </p>
+     *        <p>
+     *        Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify
+     *        this parameter and value when creating a CA in that Region. Specifying a different value (or no value)
+     *        results in an <code>InvalidArgsException</code> with the message
+     *        "A certificate authority cannot be created in this region with the specified security standard."
+     * @see KeyStorageSecurityStandard
+     */
+
+    public void setKeyStorageSecurityStandard(String keyStorageSecurityStandard) {
+        this.keyStorageSecurityStandard = keyStorageSecurityStandard;
+    }
+
+    /**
+     * <p>
+     * Specifies a cryptographic key management compliance standard used for handling CA keys.
+     * </p>
+     * <p>
+     * Default: FIPS_140_2_LEVEL_3_OR_HIGHER
+     * </p>
+     * <p>
+     * Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this
+     * parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message
+     * "A certificate authority cannot be created in this region with the specified security standard."
+     * </p>
+     * 
+     * @return Specifies a cryptographic key management compliance standard used for handling CA keys.</p>
+     *         <p>
+     *         Default: FIPS_140_2_LEVEL_3_OR_HIGHER
+     *         </p>
+     *         <p>
+     *         Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify
+     *         this parameter and value when creating a CA in that Region. Specifying a different value (or no value)
+     *         results in an <code>InvalidArgsException</code> with the message
+     *         "A certificate authority cannot be created in this region with the specified security standard."
+     * @see KeyStorageSecurityStandard
+     */
+
+    public String getKeyStorageSecurityStandard() {
+        return this.keyStorageSecurityStandard;
+    }
+
+    /**
+     * <p>
+     * Specifies a cryptographic key management compliance standard used for handling CA keys.
+     * </p>
+     * <p>
+     * Default: FIPS_140_2_LEVEL_3_OR_HIGHER
+     * </p>
+     * <p>
+     * Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this
+     * parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message
+     * "A certificate authority cannot be created in this region with the specified security standard."
+     * </p>
+     * 
+     * @param keyStorageSecurityStandard
+     *        Specifies a cryptographic key management compliance standard used for handling CA keys.</p>
+     *        <p>
+     *        Default: FIPS_140_2_LEVEL_3_OR_HIGHER
+     *        </p>
+     *        <p>
+     *        Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify
+     *        this parameter and value when creating a CA in that Region. Specifying a different value (or no value)
+     *        results in an <code>InvalidArgsException</code> with the message
+     *        "A certificate authority cannot be created in this region with the specified security standard."
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see KeyStorageSecurityStandard
+     */
+
+    public CreateCertificateAuthorityRequest withKeyStorageSecurityStandard(String keyStorageSecurityStandard) {
+        setKeyStorageSecurityStandard(keyStorageSecurityStandard);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a cryptographic key management compliance standard used for handling CA keys.
+     * </p>
+     * <p>
+     * Default: FIPS_140_2_LEVEL_3_OR_HIGHER
+     * </p>
+     * <p>
+     * Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this
+     * parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message
+     * "A certificate authority cannot be created in this region with the specified security standard."
+     * </p>
+     * 
+     * @param keyStorageSecurityStandard
+     *        Specifies a cryptographic key management compliance standard used for handling CA keys.</p>
+     *        <p>
+     *        Default: FIPS_140_2_LEVEL_3_OR_HIGHER
+     *        </p>
+     *        <p>
+     *        Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify
+     *        this parameter and value when creating a CA in that Region. Specifying a different value (or no value)
+     *        results in an <code>InvalidArgsException</code> with the message
+     *        "A certificate authority cannot be created in this region with the specified security standard."
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see KeyStorageSecurityStandard
+     */
+
+    public CreateCertificateAuthorityRequest withKeyStorageSecurityStandard(KeyStorageSecurityStandard keyStorageSecurityStandard) {
+        this.keyStorageSecurityStandard = keyStorageSecurityStandard.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * Key-value pairs that will be attached to the new private CA. You can associate up to 50 tags with a private CA.
      * For information using tags with IAM to manage permissions, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
@@ -425,6 +567,8 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
             sb.append("CertificateAuthorityType: ").append(getCertificateAuthorityType()).append(",");
         if (getIdempotencyToken() != null)
             sb.append("IdempotencyToken: ").append(getIdempotencyToken()).append(",");
+        if (getKeyStorageSecurityStandard() != null)
+            sb.append("KeyStorageSecurityStandard: ").append(getKeyStorageSecurityStandard()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -458,6 +602,10 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getIdempotencyToken() != null && other.getIdempotencyToken().equals(this.getIdempotencyToken()) == false)
             return false;
+        if (other.getKeyStorageSecurityStandard() == null ^ this.getKeyStorageSecurityStandard() == null)
+            return false;
+        if (other.getKeyStorageSecurityStandard() != null && other.getKeyStorageSecurityStandard().equals(this.getKeyStorageSecurityStandard()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -474,6 +622,7 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getRevocationConfiguration() == null) ? 0 : getRevocationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCertificateAuthorityType() == null) ? 0 : getCertificateAuthorityType().hashCode());
         hashCode = prime * hashCode + ((getIdempotencyToken() == null) ? 0 : getIdempotencyToken().hashCode());
+        hashCode = prime * hashCode + ((getKeyStorageSecurityStandard() == null) ? 0 : getKeyStorageSecurityStandard().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

@@ -28,7 +28,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * CA.
  * </p>
  * <p>
- * ACM Private CAA assets that are stored in Amazon S3 can be protected with encryption. For more information, see <a
+ * ACM Private CA assets that are stored in Amazon S3 can be protected with encryption. For more information, see <a
  * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#crl-encryption">Encrypting Your CRLs</a>.
  * </p>
  * <p>

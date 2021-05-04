@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * There was a conflict when you attempted to modify an experiment, trial, or trial component.
+ * There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code> or
+ * <code>Artifact</code>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

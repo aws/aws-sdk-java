@@ -25,24 +25,24 @@ public class DescribeInsightResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * An <code>ProactiveInsight</code> object that represents the requested insight.
+     * A <code>ProactiveInsight</code> object that represents the requested insight.
      * </p>
      */
     private ProactiveInsight proactiveInsight;
     /**
      * <p>
-     * An <code>ReactiveInsight</code> object that represents the requested insight.
+     * A <code>ReactiveInsight</code> object that represents the requested insight.
      * </p>
      */
     private ReactiveInsight reactiveInsight;
 
     /**
      * <p>
-     * An <code>ProactiveInsight</code> object that represents the requested insight.
+     * A <code>ProactiveInsight</code> object that represents the requested insight.
      * </p>
      * 
      * @param proactiveInsight
-     *        An <code>ProactiveInsight</code> object that represents the requested insight.
+     *        A <code>ProactiveInsight</code> object that represents the requested insight.
      */
 
     public void setProactiveInsight(ProactiveInsight proactiveInsight) {
@@ -51,10 +51,10 @@ public class DescribeInsightResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * An <code>ProactiveInsight</code> object that represents the requested insight.
+     * A <code>ProactiveInsight</code> object that represents the requested insight.
      * </p>
      * 
-     * @return An <code>ProactiveInsight</code> object that represents the requested insight.
+     * @return A <code>ProactiveInsight</code> object that represents the requested insight.
      */
 
     public ProactiveInsight getProactiveInsight() {
@@ -63,11 +63,11 @@ public class DescribeInsightResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * An <code>ProactiveInsight</code> object that represents the requested insight.
+     * A <code>ProactiveInsight</code> object that represents the requested insight.
      * </p>
      * 
      * @param proactiveInsight
-     *        An <code>ProactiveInsight</code> object that represents the requested insight.
+     *        A <code>ProactiveInsight</code> object that represents the requested insight.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,11 +78,11 @@ public class DescribeInsightResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * An <code>ReactiveInsight</code> object that represents the requested insight.
+     * A <code>ReactiveInsight</code> object that represents the requested insight.
      * </p>
      * 
      * @param reactiveInsight
-     *        An <code>ReactiveInsight</code> object that represents the requested insight.
+     *        A <code>ReactiveInsight</code> object that represents the requested insight.
      */
 
     public void setReactiveInsight(ReactiveInsight reactiveInsight) {
@@ -91,10 +91,10 @@ public class DescribeInsightResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * An <code>ReactiveInsight</code> object that represents the requested insight.
+     * A <code>ReactiveInsight</code> object that represents the requested insight.
      * </p>
      * 
-     * @return An <code>ReactiveInsight</code> object that represents the requested insight.
+     * @return A <code>ReactiveInsight</code> object that represents the requested insight.
      */
 
     public ReactiveInsight getReactiveInsight() {
@@ -103,11 +103,11 @@ public class DescribeInsightResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * An <code>ReactiveInsight</code> object that represents the requested insight.
+     * A <code>ReactiveInsight</code> object that represents the requested insight.
      * </p>
      * 
      * @param reactiveInsight
-     *        An <code>ReactiveInsight</code> object that represents the requested insight.
+     *        A <code>ReactiveInsight</code> object that represents the requested insight.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

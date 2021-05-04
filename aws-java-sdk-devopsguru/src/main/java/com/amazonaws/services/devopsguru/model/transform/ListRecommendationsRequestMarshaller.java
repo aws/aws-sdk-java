@@ -31,6 +31,8 @@ public class ListRecommendationsRequestMarshaller {
             .marshallLocationName("InsightId").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<String> LOCALE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Locale").build();
 
     private static final ListRecommendationsRequestMarshaller instance = new ListRecommendationsRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class ListRecommendationsRequestMarshaller {
         try {
             protocolMarshaller.marshall(listRecommendationsRequest.getInsightId(), INSIGHTID_BINDING);
             protocolMarshaller.marshall(listRecommendationsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listRecommendationsRequest.getLocale(), LOCALE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

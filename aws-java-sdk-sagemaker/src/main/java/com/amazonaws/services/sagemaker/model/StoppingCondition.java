@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies a limit to how long a model training or compilation job can run. It also specifies how long you are willing
- * to wait for a managed spot training job to complete. When the job reaches the time limit, Amazon SageMaker ends the
- * training or compilation job. Use this API to cap model training costs.
+ * Specifies a limit to how long a model training job, model compilation job, or hyperparameter tuning job can run. It
+ * also specifies how long a managed Spot training job has to complete. When the job reaches the time limit, Amazon
+ * SageMaker ends the training or compilation job. Use this API to cap model training costs.
  * </p>
  * <p>
  * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for
@@ -49,32 +49,53 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The maximum length of time, in seconds, that the training or compilation job can run. If job does not complete
-     * during this time, Amazon SageMaker ends the job. If value is not specified, default value is 1 day. The maximum
-     * value is 28 days.
+     * The maximum length of time, in seconds, that a training or compilation job can run. If the job does not complete
+     * during this time, Amazon SageMaker ends the job.
+     * </p>
+     * <p>
+     * When <code>RetryStrategy</code> is specified in the job request, <code>MaxRuntimeInSeconds</code> specifies the
+     * maximum time for all of the attempts in total, not each individual attempt.
+     * </p>
+     * <p>
+     * The default value is 1 day. The maximum value is 28 days.
      * </p>
      */
     private Integer maxRuntimeInSeconds;
     /**
      * <p>
-     * The maximum length of time, in seconds, how long you are willing to wait for a managed spot training job to
-     * complete. It is the amount of time spent waiting for Spot capacity plus the amount of time the training job runs.
-     * It must be equal to or greater than <code>MaxRuntimeInSeconds</code>.
+     * The maximum length of time, in seconds, that a managed Spot training job has to complete. It is the amount of
+     * time spent waiting for Spot capacity plus the amount of time the job can run. It must be equal to or greater than
+     * <code>MaxRuntimeInSeconds</code>. If the job does not complete during this time, Amazon SageMaker ends the job.
+     * </p>
+     * <p>
+     * When <code>RetryStrategy</code> is specified in the job request, <code>MaxWaitTimeInSeconds</code> specifies the
+     * maximum time for all of the attempts in total, not each individual attempt.
      * </p>
      */
     private Integer maxWaitTimeInSeconds;
 
     /**
      * <p>
-     * The maximum length of time, in seconds, that the training or compilation job can run. If job does not complete
-     * during this time, Amazon SageMaker ends the job. If value is not specified, default value is 1 day. The maximum
-     * value is 28 days.
+     * The maximum length of time, in seconds, that a training or compilation job can run. If the job does not complete
+     * during this time, Amazon SageMaker ends the job.
+     * </p>
+     * <p>
+     * When <code>RetryStrategy</code> is specified in the job request, <code>MaxRuntimeInSeconds</code> specifies the
+     * maximum time for all of the attempts in total, not each individual attempt.
+     * </p>
+     * <p>
+     * The default value is 1 day. The maximum value is 28 days.
      * </p>
      * 
      * @param maxRuntimeInSeconds
-     *        The maximum length of time, in seconds, that the training or compilation job can run. If job does not
-     *        complete during this time, Amazon SageMaker ends the job. If value is not specified, default value is 1
-     *        day. The maximum value is 28 days.
+     *        The maximum length of time, in seconds, that a training or compilation job can run. If the job does not
+     *        complete during this time, Amazon SageMaker ends the job.</p>
+     *        <p>
+     *        When <code>RetryStrategy</code> is specified in the job request, <code>MaxRuntimeInSeconds</code>
+     *        specifies the maximum time for all of the attempts in total, not each individual attempt.
+     *        </p>
+     *        <p>
+     *        The default value is 1 day. The maximum value is 28 days.
      */
 
     public void setMaxRuntimeInSeconds(Integer maxRuntimeInSeconds) {
@@ -83,14 +104,25 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The maximum length of time, in seconds, that the training or compilation job can run. If job does not complete
-     * during this time, Amazon SageMaker ends the job. If value is not specified, default value is 1 day. The maximum
-     * value is 28 days.
+     * The maximum length of time, in seconds, that a training or compilation job can run. If the job does not complete
+     * during this time, Amazon SageMaker ends the job.
+     * </p>
+     * <p>
+     * When <code>RetryStrategy</code> is specified in the job request, <code>MaxRuntimeInSeconds</code> specifies the
+     * maximum time for all of the attempts in total, not each individual attempt.
+     * </p>
+     * <p>
+     * The default value is 1 day. The maximum value is 28 days.
      * </p>
      * 
-     * @return The maximum length of time, in seconds, that the training or compilation job can run. If job does not
-     *         complete during this time, Amazon SageMaker ends the job. If value is not specified, default value is 1
-     *         day. The maximum value is 28 days.
+     * @return The maximum length of time, in seconds, that a training or compilation job can run. If the job does not
+     *         complete during this time, Amazon SageMaker ends the job.</p>
+     *         <p>
+     *         When <code>RetryStrategy</code> is specified in the job request, <code>MaxRuntimeInSeconds</code>
+     *         specifies the maximum time for all of the attempts in total, not each individual attempt.
+     *         </p>
+     *         <p>
+     *         The default value is 1 day. The maximum value is 28 days.
      */
 
     public Integer getMaxRuntimeInSeconds() {
@@ -99,15 +131,26 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The maximum length of time, in seconds, that the training or compilation job can run. If job does not complete
-     * during this time, Amazon SageMaker ends the job. If value is not specified, default value is 1 day. The maximum
-     * value is 28 days.
+     * The maximum length of time, in seconds, that a training or compilation job can run. If the job does not complete
+     * during this time, Amazon SageMaker ends the job.
+     * </p>
+     * <p>
+     * When <code>RetryStrategy</code> is specified in the job request, <code>MaxRuntimeInSeconds</code> specifies the
+     * maximum time for all of the attempts in total, not each individual attempt.
+     * </p>
+     * <p>
+     * The default value is 1 day. The maximum value is 28 days.
      * </p>
      * 
      * @param maxRuntimeInSeconds
-     *        The maximum length of time, in seconds, that the training or compilation job can run. If job does not
-     *        complete during this time, Amazon SageMaker ends the job. If value is not specified, default value is 1
-     *        day. The maximum value is 28 days.
+     *        The maximum length of time, in seconds, that a training or compilation job can run. If the job does not
+     *        complete during this time, Amazon SageMaker ends the job.</p>
+     *        <p>
+     *        When <code>RetryStrategy</code> is specified in the job request, <code>MaxRuntimeInSeconds</code>
+     *        specifies the maximum time for all of the attempts in total, not each individual attempt.
+     *        </p>
+     *        <p>
+     *        The default value is 1 day. The maximum value is 28 days.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -118,15 +161,23 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The maximum length of time, in seconds, how long you are willing to wait for a managed spot training job to
-     * complete. It is the amount of time spent waiting for Spot capacity plus the amount of time the training job runs.
-     * It must be equal to or greater than <code>MaxRuntimeInSeconds</code>.
+     * The maximum length of time, in seconds, that a managed Spot training job has to complete. It is the amount of
+     * time spent waiting for Spot capacity plus the amount of time the job can run. It must be equal to or greater than
+     * <code>MaxRuntimeInSeconds</code>. If the job does not complete during this time, Amazon SageMaker ends the job.
+     * </p>
+     * <p>
+     * When <code>RetryStrategy</code> is specified in the job request, <code>MaxWaitTimeInSeconds</code> specifies the
+     * maximum time for all of the attempts in total, not each individual attempt.
      * </p>
      * 
      * @param maxWaitTimeInSeconds
-     *        The maximum length of time, in seconds, how long you are willing to wait for a managed spot training job
-     *        to complete. It is the amount of time spent waiting for Spot capacity plus the amount of time the training
-     *        job runs. It must be equal to or greater than <code>MaxRuntimeInSeconds</code>.
+     *        The maximum length of time, in seconds, that a managed Spot training job has to complete. It is the amount
+     *        of time spent waiting for Spot capacity plus the amount of time the job can run. It must be equal to or
+     *        greater than <code>MaxRuntimeInSeconds</code>. If the job does not complete during this time, Amazon
+     *        SageMaker ends the job.</p>
+     *        <p>
+     *        When <code>RetryStrategy</code> is specified in the job request, <code>MaxWaitTimeInSeconds</code>
+     *        specifies the maximum time for all of the attempts in total, not each individual attempt.
      */
 
     public void setMaxWaitTimeInSeconds(Integer maxWaitTimeInSeconds) {
@@ -135,14 +186,22 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The maximum length of time, in seconds, how long you are willing to wait for a managed spot training job to
-     * complete. It is the amount of time spent waiting for Spot capacity plus the amount of time the training job runs.
-     * It must be equal to or greater than <code>MaxRuntimeInSeconds</code>.
+     * The maximum length of time, in seconds, that a managed Spot training job has to complete. It is the amount of
+     * time spent waiting for Spot capacity plus the amount of time the job can run. It must be equal to or greater than
+     * <code>MaxRuntimeInSeconds</code>. If the job does not complete during this time, Amazon SageMaker ends the job.
+     * </p>
+     * <p>
+     * When <code>RetryStrategy</code> is specified in the job request, <code>MaxWaitTimeInSeconds</code> specifies the
+     * maximum time for all of the attempts in total, not each individual attempt.
      * </p>
      * 
-     * @return The maximum length of time, in seconds, how long you are willing to wait for a managed spot training job
-     *         to complete. It is the amount of time spent waiting for Spot capacity plus the amount of time the
-     *         training job runs. It must be equal to or greater than <code>MaxRuntimeInSeconds</code>.
+     * @return The maximum length of time, in seconds, that a managed Spot training job has to complete. It is the
+     *         amount of time spent waiting for Spot capacity plus the amount of time the job can run. It must be equal
+     *         to or greater than <code>MaxRuntimeInSeconds</code>. If the job does not complete during this time,
+     *         Amazon SageMaker ends the job.</p>
+     *         <p>
+     *         When <code>RetryStrategy</code> is specified in the job request, <code>MaxWaitTimeInSeconds</code>
+     *         specifies the maximum time for all of the attempts in total, not each individual attempt.
      */
 
     public Integer getMaxWaitTimeInSeconds() {
@@ -151,15 +210,23 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The maximum length of time, in seconds, how long you are willing to wait for a managed spot training job to
-     * complete. It is the amount of time spent waiting for Spot capacity plus the amount of time the training job runs.
-     * It must be equal to or greater than <code>MaxRuntimeInSeconds</code>.
+     * The maximum length of time, in seconds, that a managed Spot training job has to complete. It is the amount of
+     * time spent waiting for Spot capacity plus the amount of time the job can run. It must be equal to or greater than
+     * <code>MaxRuntimeInSeconds</code>. If the job does not complete during this time, Amazon SageMaker ends the job.
+     * </p>
+     * <p>
+     * When <code>RetryStrategy</code> is specified in the job request, <code>MaxWaitTimeInSeconds</code> specifies the
+     * maximum time for all of the attempts in total, not each individual attempt.
      * </p>
      * 
      * @param maxWaitTimeInSeconds
-     *        The maximum length of time, in seconds, how long you are willing to wait for a managed spot training job
-     *        to complete. It is the amount of time spent waiting for Spot capacity plus the amount of time the training
-     *        job runs. It must be equal to or greater than <code>MaxRuntimeInSeconds</code>.
+     *        The maximum length of time, in seconds, that a managed Spot training job has to complete. It is the amount
+     *        of time spent waiting for Spot capacity plus the amount of time the job can run. It must be equal to or
+     *        greater than <code>MaxRuntimeInSeconds</code>. If the job does not complete during this time, Amazon
+     *        SageMaker ends the job.</p>
+     *        <p>
+     *        When <code>RetryStrategy</code> is specified in the job request, <code>MaxWaitTimeInSeconds</code>
+     *        specifies the maximum time for all of the attempts in total, not each individual attempt.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

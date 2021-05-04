@@ -120,6 +120,21 @@ public class CertificateAuthority implements Serializable, Cloneable, Structured
      * </p>
      */
     private java.util.Date restorableUntil;
+    /**
+     * <p>
+     * Defines a cryptographic key management compliance standard used for handling CA keys.
+     * </p>
+     * <p>
+     * Default: FIPS_140_2_LEVEL_3_OR_HIGHER
+     * </p>
+     * <p>
+     * Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this
+     * parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message
+     * "A certificate authority cannot be created in this region with the specified security standard."
+     * </p>
+     */
+    private String keyStorageSecurityStandard;
 
     /**
      * <p>
@@ -723,6 +738,133 @@ public class CertificateAuthority implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * Defines a cryptographic key management compliance standard used for handling CA keys.
+     * </p>
+     * <p>
+     * Default: FIPS_140_2_LEVEL_3_OR_HIGHER
+     * </p>
+     * <p>
+     * Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this
+     * parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message
+     * "A certificate authority cannot be created in this region with the specified security standard."
+     * </p>
+     * 
+     * @param keyStorageSecurityStandard
+     *        Defines a cryptographic key management compliance standard used for handling CA keys. </p>
+     *        <p>
+     *        Default: FIPS_140_2_LEVEL_3_OR_HIGHER
+     *        </p>
+     *        <p>
+     *        Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify
+     *        this parameter and value when creating a CA in that Region. Specifying a different value (or no value)
+     *        results in an <code>InvalidArgsException</code> with the message
+     *        "A certificate authority cannot be created in this region with the specified security standard."
+     * @see KeyStorageSecurityStandard
+     */
+
+    public void setKeyStorageSecurityStandard(String keyStorageSecurityStandard) {
+        this.keyStorageSecurityStandard = keyStorageSecurityStandard;
+    }
+
+    /**
+     * <p>
+     * Defines a cryptographic key management compliance standard used for handling CA keys.
+     * </p>
+     * <p>
+     * Default: FIPS_140_2_LEVEL_3_OR_HIGHER
+     * </p>
+     * <p>
+     * Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this
+     * parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message
+     * "A certificate authority cannot be created in this region with the specified security standard."
+     * </p>
+     * 
+     * @return Defines a cryptographic key management compliance standard used for handling CA keys. </p>
+     *         <p>
+     *         Default: FIPS_140_2_LEVEL_3_OR_HIGHER
+     *         </p>
+     *         <p>
+     *         Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify
+     *         this parameter and value when creating a CA in that Region. Specifying a different value (or no value)
+     *         results in an <code>InvalidArgsException</code> with the message
+     *         "A certificate authority cannot be created in this region with the specified security standard."
+     * @see KeyStorageSecurityStandard
+     */
+
+    public String getKeyStorageSecurityStandard() {
+        return this.keyStorageSecurityStandard;
+    }
+
+    /**
+     * <p>
+     * Defines a cryptographic key management compliance standard used for handling CA keys.
+     * </p>
+     * <p>
+     * Default: FIPS_140_2_LEVEL_3_OR_HIGHER
+     * </p>
+     * <p>
+     * Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this
+     * parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message
+     * "A certificate authority cannot be created in this region with the specified security standard."
+     * </p>
+     * 
+     * @param keyStorageSecurityStandard
+     *        Defines a cryptographic key management compliance standard used for handling CA keys. </p>
+     *        <p>
+     *        Default: FIPS_140_2_LEVEL_3_OR_HIGHER
+     *        </p>
+     *        <p>
+     *        Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify
+     *        this parameter and value when creating a CA in that Region. Specifying a different value (or no value)
+     *        results in an <code>InvalidArgsException</code> with the message
+     *        "A certificate authority cannot be created in this region with the specified security standard."
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see KeyStorageSecurityStandard
+     */
+
+    public CertificateAuthority withKeyStorageSecurityStandard(String keyStorageSecurityStandard) {
+        setKeyStorageSecurityStandard(keyStorageSecurityStandard);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Defines a cryptographic key management compliance standard used for handling CA keys.
+     * </p>
+     * <p>
+     * Default: FIPS_140_2_LEVEL_3_OR_HIGHER
+     * </p>
+     * <p>
+     * Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this
+     * parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message
+     * "A certificate authority cannot be created in this region with the specified security standard."
+     * </p>
+     * 
+     * @param keyStorageSecurityStandard
+     *        Defines a cryptographic key management compliance standard used for handling CA keys. </p>
+     *        <p>
+     *        Default: FIPS_140_2_LEVEL_3_OR_HIGHER
+     *        </p>
+     *        <p>
+     *        Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify
+     *        this parameter and value when creating a CA in that Region. Specifying a different value (or no value)
+     *        results in an <code>InvalidArgsException</code> with the message
+     *        "A certificate authority cannot be created in this region with the specified security standard."
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see KeyStorageSecurityStandard
+     */
+
+    public CertificateAuthority withKeyStorageSecurityStandard(KeyStorageSecurityStandard keyStorageSecurityStandard) {
+        this.keyStorageSecurityStandard = keyStorageSecurityStandard.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -759,7 +901,9 @@ public class CertificateAuthority implements Serializable, Cloneable, Structured
         if (getRevocationConfiguration() != null)
             sb.append("RevocationConfiguration: ").append(getRevocationConfiguration()).append(",");
         if (getRestorableUntil() != null)
-            sb.append("RestorableUntil: ").append(getRestorableUntil());
+            sb.append("RestorableUntil: ").append(getRestorableUntil()).append(",");
+        if (getKeyStorageSecurityStandard() != null)
+            sb.append("KeyStorageSecurityStandard: ").append(getKeyStorageSecurityStandard());
         sb.append("}");
         return sb.toString();
     }
@@ -827,6 +971,10 @@ public class CertificateAuthority implements Serializable, Cloneable, Structured
             return false;
         if (other.getRestorableUntil() != null && other.getRestorableUntil().equals(this.getRestorableUntil()) == false)
             return false;
+        if (other.getKeyStorageSecurityStandard() == null ^ this.getKeyStorageSecurityStandard() == null)
+            return false;
+        if (other.getKeyStorageSecurityStandard() != null && other.getKeyStorageSecurityStandard().equals(this.getKeyStorageSecurityStandard()) == false)
+            return false;
         return true;
     }
 
@@ -848,6 +996,7 @@ public class CertificateAuthority implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getCertificateAuthorityConfiguration() == null) ? 0 : getCertificateAuthorityConfiguration().hashCode());
         hashCode = prime * hashCode + ((getRevocationConfiguration() == null) ? 0 : getRevocationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getRestorableUntil() == null) ? 0 : getRestorableUntil().hashCode());
+        hashCode = prime * hashCode + ((getKeyStorageSecurityStandard() == null) ? 0 : getKeyStorageSecurityStandard().hashCode());
         return hashCode;
     }
 

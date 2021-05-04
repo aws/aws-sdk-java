@@ -53,13 +53,13 @@ public class EventFilter implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> services;
     /**
      * <p>
-     * A list of AWS regions.
+     * A list of AWS Regions.
      * </p>
      */
     private java.util.List<String> regions;
     /**
      * <p>
-     * A list of AWS availability zones.
+     * A list of AWS Availability Zones.
      * </p>
      */
     private java.util.List<String> availabilityZones;
@@ -347,10 +347,10 @@ public class EventFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of AWS regions.
+     * A list of AWS Regions.
      * </p>
      * 
-     * @return A list of AWS regions.
+     * @return A list of AWS Regions.
      */
 
     public java.util.List<String> getRegions() {
@@ -359,11 +359,11 @@ public class EventFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of AWS regions.
+     * A list of AWS Regions.
      * </p>
      * 
      * @param regions
-     *        A list of AWS regions.
+     *        A list of AWS Regions.
      */
 
     public void setRegions(java.util.Collection<String> regions) {
@@ -377,7 +377,7 @@ public class EventFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of AWS regions.
+     * A list of AWS Regions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -386,7 +386,7 @@ public class EventFilter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param regions
-     *        A list of AWS regions.
+     *        A list of AWS Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -402,11 +402,11 @@ public class EventFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of AWS regions.
+     * A list of AWS Regions.
      * </p>
      * 
      * @param regions
-     *        A list of AWS regions.
+     *        A list of AWS Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -417,10 +417,10 @@ public class EventFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of AWS availability zones.
+     * A list of AWS Availability Zones.
      * </p>
      * 
-     * @return A list of AWS availability zones.
+     * @return A list of AWS Availability Zones.
      */
 
     public java.util.List<String> getAvailabilityZones() {
@@ -429,11 +429,11 @@ public class EventFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of AWS availability zones.
+     * A list of AWS Availability Zones.
      * </p>
      * 
      * @param availabilityZones
-     *        A list of AWS availability zones.
+     *        A list of AWS Availability Zones.
      */
 
     public void setAvailabilityZones(java.util.Collection<String> availabilityZones) {
@@ -447,7 +447,7 @@ public class EventFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of AWS availability zones.
+     * A list of AWS Availability Zones.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -456,7 +456,7 @@ public class EventFilter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param availabilityZones
-     *        A list of AWS availability zones.
+     *        A list of AWS Availability Zones.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -472,11 +472,11 @@ public class EventFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of AWS availability zones.
+     * A list of AWS Availability Zones.
      * </p>
      * 
      * @param availabilityZones
-     *        A list of AWS availability zones.
+     *        A list of AWS Availability Zones.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

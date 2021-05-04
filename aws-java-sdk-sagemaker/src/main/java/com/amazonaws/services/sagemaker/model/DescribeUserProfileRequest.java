@@ -33,7 +33,7 @@ public class DescribeUserProfileRequest extends com.amazonaws.AmazonWebServiceRe
     private String domainId;
     /**
      * <p>
-     * The user profile name.
+     * The user profile name. This value is not case sensitive.
      * </p>
      */
     private String userProfileName;
@@ -80,11 +80,11 @@ public class DescribeUserProfileRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The user profile name.
+     * The user profile name. This value is not case sensitive.
      * </p>
      * 
      * @param userProfileName
-     *        The user profile name.
+     *        The user profile name. This value is not case sensitive.
      */
 
     public void setUserProfileName(String userProfileName) {
@@ -93,10 +93,10 @@ public class DescribeUserProfileRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The user profile name.
+     * The user profile name. This value is not case sensitive.
      * </p>
      * 
-     * @return The user profile name.
+     * @return The user profile name. This value is not case sensitive.
      */
 
     public String getUserProfileName() {
@@ -105,11 +105,11 @@ public class DescribeUserProfileRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The user profile name.
+     * The user profile name. This value is not case sensitive.
      * </p>
      * 
      * @param userProfileName
-     *        The user profile name.
+     *        The user profile name. This value is not case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

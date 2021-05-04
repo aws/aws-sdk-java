@@ -220,6 +220,10 @@ public class DescribeTrainingJobResultJsonUnmarshaller implements Unmarshaller<D
                     context.nextToken();
                     describeTrainingJobResult.setProfilingStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("RetryStrategy", targetDepth)) {
+                    context.nextToken();
+                    describeTrainingJobResult.setRetryStrategy(RetryStrategyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Environment", targetDepth)) {
                     context.nextToken();
                     describeTrainingJobResult.setEnvironment(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context

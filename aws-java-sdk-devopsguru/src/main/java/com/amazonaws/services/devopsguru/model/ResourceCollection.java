@@ -21,7 +21,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * A collection of AWS resources supported by DevOps Guru. The one type of AWS resource collection supported is AWS
  * CloudFormation stacks. DevOps Guru can be configured to analyze only the AWS resources that are defined in the
- * stacks.
+ * stacks. You can specify up to 500 AWS CloudFormation stacks.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ResourceCollection" target="_top">AWS API
@@ -33,6 +33,7 @@ public class ResourceCollection implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * An array of the names of AWS CloudFormation stacks. The stacks define AWS resources that DevOps Guru analyzes.
+     * You can specify up to 500 AWS CloudFormation stacks.
      * </p>
      */
     private CloudFormationCollection cloudFormation;
@@ -40,11 +41,12 @@ public class ResourceCollection implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * An array of the names of AWS CloudFormation stacks. The stacks define AWS resources that DevOps Guru analyzes.
+     * You can specify up to 500 AWS CloudFormation stacks.
      * </p>
      * 
      * @param cloudFormation
      *        An array of the names of AWS CloudFormation stacks. The stacks define AWS resources that DevOps Guru
-     *        analyzes.
+     *        analyzes. You can specify up to 500 AWS CloudFormation stacks.
      */
 
     public void setCloudFormation(CloudFormationCollection cloudFormation) {
@@ -54,10 +56,11 @@ public class ResourceCollection implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * An array of the names of AWS CloudFormation stacks. The stacks define AWS resources that DevOps Guru analyzes.
+     * You can specify up to 500 AWS CloudFormation stacks.
      * </p>
      * 
      * @return An array of the names of AWS CloudFormation stacks. The stacks define AWS resources that DevOps Guru
-     *         analyzes.
+     *         analyzes. You can specify up to 500 AWS CloudFormation stacks.
      */
 
     public CloudFormationCollection getCloudFormation() {
@@ -67,11 +70,12 @@ public class ResourceCollection implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * An array of the names of AWS CloudFormation stacks. The stacks define AWS resources that DevOps Guru analyzes.
+     * You can specify up to 500 AWS CloudFormation stacks.
      * </p>
      * 
      * @param cloudFormation
      *        An array of the names of AWS CloudFormation stacks. The stacks define AWS resources that DevOps Guru
-     *        analyzes.
+     *        analyzes. You can specify up to 500 AWS CloudFormation stacks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

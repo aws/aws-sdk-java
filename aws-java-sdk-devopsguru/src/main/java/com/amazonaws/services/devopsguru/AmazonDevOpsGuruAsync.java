@@ -271,7 +271,8 @@ public interface AmazonDevOpsGuruAsync extends AmazonDevOpsGuru {
      * Returns the number of open proactive insights, open reactive insights, and the Mean Time to Recover (MTTR) for
      * all closed insights in resource collections in your account. You specify the type of AWS resources collection.
      * The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to
-     * analyze only the AWS resources that are defined in the stacks.
+     * analyze only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation
+     * stacks.
      * </p>
      * 
      * @param describeResourceCollectionHealthRequest
@@ -289,7 +290,8 @@ public interface AmazonDevOpsGuruAsync extends AmazonDevOpsGuru {
      * Returns the number of open proactive insights, open reactive insights, and the Mean Time to Recover (MTTR) for
      * all closed insights in resource collections in your account. You specify the type of AWS resources collection.
      * The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to
-     * analyze only the AWS resources that are defined in the stacks.
+     * analyze only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation
+     * stacks.
      * </p>
      * 
      * @param describeResourceCollectionHealthRequest
@@ -346,9 +348,44 @@ public interface AmazonDevOpsGuruAsync extends AmazonDevOpsGuru {
 
     /**
      * <p>
+     * Returns an estimate of the monthly cost for DevOps Guru to analyze your AWS resources. For more information, see
+     * <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html">Estimate your Amazon DevOps
+     * Guru costs</a> and <a href="http://aws.amazon.com/devops-guru/pricing/">Amazon DevOps Guru pricing</a>.
+     * </p>
+     * 
+     * @param getCostEstimationRequest
+     * @return A Java Future containing the result of the GetCostEstimation operation returned by the service.
+     * @sample AmazonDevOpsGuruAsync.GetCostEstimation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/GetCostEstimation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCostEstimationResult> getCostEstimationAsync(GetCostEstimationRequest getCostEstimationRequest);
+
+    /**
+     * <p>
+     * Returns an estimate of the monthly cost for DevOps Guru to analyze your AWS resources. For more information, see
+     * <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html">Estimate your Amazon DevOps
+     * Guru costs</a> and <a href="http://aws.amazon.com/devops-guru/pricing/">Amazon DevOps Guru pricing</a>.
+     * </p>
+     * 
+     * @param getCostEstimationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCostEstimation operation returned by the service.
+     * @sample AmazonDevOpsGuruAsyncHandler.GetCostEstimation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/GetCostEstimation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCostEstimationResult> getCostEstimationAsync(GetCostEstimationRequest getCostEstimationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCostEstimationRequest, GetCostEstimationResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns lists AWS resources that are of the specified resource collection type. The one type of AWS resource
      * collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze only the AWS
-     * resources that are defined in the stacks.
+     * resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
      * </p>
      * 
      * @param getResourceCollectionRequest
@@ -363,7 +400,7 @@ public interface AmazonDevOpsGuruAsync extends AmazonDevOpsGuru {
      * <p>
      * Returns lists AWS resources that are of the specified resource collection type. The one type of AWS resource
      * collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze only the AWS
-     * resources that are defined in the stacks.
+     * resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
      * </p>
      * 
      * @param getResourceCollectionRequest
@@ -657,9 +694,41 @@ public interface AmazonDevOpsGuruAsync extends AmazonDevOpsGuru {
 
     /**
      * <p>
+     * Starts the creation of an estimate of the monthly cost to analyze your AWS resources.
+     * </p>
+     * 
+     * @param startCostEstimationRequest
+     * @return A Java Future containing the result of the StartCostEstimation operation returned by the service.
+     * @sample AmazonDevOpsGuruAsync.StartCostEstimation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/StartCostEstimation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartCostEstimationResult> startCostEstimationAsync(StartCostEstimationRequest startCostEstimationRequest);
+
+    /**
+     * <p>
+     * Starts the creation of an estimate of the monthly cost to analyze your AWS resources.
+     * </p>
+     * 
+     * @param startCostEstimationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartCostEstimation operation returned by the service.
+     * @sample AmazonDevOpsGuruAsyncHandler.StartCostEstimation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/StartCostEstimation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartCostEstimationResult> startCostEstimationAsync(StartCostEstimationRequest startCostEstimationRequest,
+            com.amazonaws.handlers.AsyncHandler<StartCostEstimationRequest, StartCostEstimationResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates the collection of resources that DevOps Guru analyzes. The one type of AWS resource collection supported
      * is AWS CloudFormation stacks. DevOps Guru can be configured to analyze only the AWS resources that are defined in
-     * the stacks. This method also creates the IAM role required for you to use DevOps Guru.
+     * the stacks. You can specify up to 500 AWS CloudFormation stacks. This method also creates the IAM role required
+     * for you to use DevOps Guru.
      * </p>
      * 
      * @param updateResourceCollectionRequest
@@ -674,7 +743,8 @@ public interface AmazonDevOpsGuruAsync extends AmazonDevOpsGuru {
      * <p>
      * Updates the collection of resources that DevOps Guru analyzes. The one type of AWS resource collection supported
      * is AWS CloudFormation stacks. DevOps Guru can be configured to analyze only the AWS resources that are defined in
-     * the stacks. This method also creates the IAM role required for you to use DevOps Guru.
+     * the stacks. You can specify up to 500 AWS CloudFormation stacks. This method also creates the IAM role required
+     * for you to use DevOps Guru.
      * </p>
      * 
      * @param updateResourceCollectionRequest

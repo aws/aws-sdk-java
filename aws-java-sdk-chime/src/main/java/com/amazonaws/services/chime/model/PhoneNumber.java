@@ -42,6 +42,12 @@ public class PhoneNumber implements Serializable, Cloneable, StructuredPojo {
     private String e164PhoneNumber;
     /**
      * <p>
+     * The phone number country. Format: ISO 3166-1 alpha-2.
+     * </p>
+     */
+    private String country;
+    /**
+     * <p>
      * The phone number type.
      * </p>
      */
@@ -178,6 +184,46 @@ public class PhoneNumber implements Serializable, Cloneable, StructuredPojo {
 
     public PhoneNumber withE164PhoneNumber(String e164PhoneNumber) {
         setE164PhoneNumber(e164PhoneNumber);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The phone number country. Format: ISO 3166-1 alpha-2.
+     * </p>
+     * 
+     * @param country
+     *        The phone number country. Format: ISO 3166-1 alpha-2.
+     */
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    /**
+     * <p>
+     * The phone number country. Format: ISO 3166-1 alpha-2.
+     * </p>
+     * 
+     * @return The phone number country. Format: ISO 3166-1 alpha-2.
+     */
+
+    public String getCountry() {
+        return this.country;
+    }
+
+    /**
+     * <p>
+     * The phone number country. Format: ISO 3166-1 alpha-2.
+     * </p>
+     * 
+     * @param country
+     *        The phone number country. Format: ISO 3166-1 alpha-2.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PhoneNumber withCountry(String country) {
+        setCountry(country);
         return this;
     }
 
@@ -703,6 +749,8 @@ public class PhoneNumber implements Serializable, Cloneable, StructuredPojo {
             sb.append("PhoneNumberId: ").append(getPhoneNumberId()).append(",");
         if (getE164PhoneNumber() != null)
             sb.append("E164PhoneNumber: ").append("***Sensitive Data Redacted***").append(",");
+        if (getCountry() != null)
+            sb.append("Country: ").append(getCountry()).append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getProductType() != null)
@@ -744,6 +792,10 @@ public class PhoneNumber implements Serializable, Cloneable, StructuredPojo {
         if (other.getE164PhoneNumber() == null ^ this.getE164PhoneNumber() == null)
             return false;
         if (other.getE164PhoneNumber() != null && other.getE164PhoneNumber().equals(this.getE164PhoneNumber()) == false)
+            return false;
+        if (other.getCountry() == null ^ this.getCountry() == null)
+            return false;
+        if (other.getCountry() != null && other.getCountry().equals(this.getCountry()) == false)
             return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
@@ -795,6 +847,7 @@ public class PhoneNumber implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getPhoneNumberId() == null) ? 0 : getPhoneNumberId().hashCode());
         hashCode = prime * hashCode + ((getE164PhoneNumber() == null) ? 0 : getE164PhoneNumber().hashCode());
+        hashCode = prime * hashCode + ((getCountry() == null) ? 0 : getCountry().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getProductType() == null) ? 0 : getProductType().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());

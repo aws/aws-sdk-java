@@ -58,7 +58,9 @@ public class LabelingJobOutputConfig implements Serializable, Cloneable, Structu
     private String kmsKeyId;
     /**
      * <p>
-     * An Amazon Simple Notification Service (Amazon SNS) output topic ARN.
+     * An Amazon Simple Notification Service (Amazon SNS) output topic ARN. Provide a <code>SnsTopicArn</code> if you
+     * want to do real time chaining to another streaming job and receive an Amazon SNS notifications each time a data
+     * object is submitted by a worker.
      * </p>
      * <p>
      * If you provide an <code>SnsTopicArn</code> in <code>OutputConfig</code>, when workers complete labeling tasks,
@@ -250,7 +252,9 @@ public class LabelingJobOutputConfig implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * An Amazon Simple Notification Service (Amazon SNS) output topic ARN.
+     * An Amazon Simple Notification Service (Amazon SNS) output topic ARN. Provide a <code>SnsTopicArn</code> if you
+     * want to do real time chaining to another streaming job and receive an Amazon SNS notifications each time a data
+     * object is submitted by a worker.
      * </p>
      * <p>
      * If you provide an <code>SnsTopicArn</code> in <code>OutputConfig</code>, when workers complete labeling tasks,
@@ -263,7 +267,9 @@ public class LabelingJobOutputConfig implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @param snsTopicArn
-     *        An Amazon Simple Notification Service (Amazon SNS) output topic ARN.</p>
+     *        An Amazon Simple Notification Service (Amazon SNS) output topic ARN. Provide a <code>SnsTopicArn</code> if
+     *        you want to do real time chaining to another streaming job and receive an Amazon SNS notifications each
+     *        time a data object is submitted by a worker.</p>
      *        <p>
      *        If you provide an <code>SnsTopicArn</code> in <code>OutputConfig</code>, when workers complete labeling
      *        tasks, Ground Truth will send labeling task output data to the SNS output topic you specify here.
@@ -280,7 +286,9 @@ public class LabelingJobOutputConfig implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * An Amazon Simple Notification Service (Amazon SNS) output topic ARN.
+     * An Amazon Simple Notification Service (Amazon SNS) output topic ARN. Provide a <code>SnsTopicArn</code> if you
+     * want to do real time chaining to another streaming job and receive an Amazon SNS notifications each time a data
+     * object is submitted by a worker.
      * </p>
      * <p>
      * If you provide an <code>SnsTopicArn</code> in <code>OutputConfig</code>, when workers complete labeling tasks,
@@ -292,7 +300,9 @@ public class LabelingJobOutputConfig implements Serializable, Cloneable, Structu
      * >Receive Output Data from a Streaming Labeling Job</a>.
      * </p>
      * 
-     * @return An Amazon Simple Notification Service (Amazon SNS) output topic ARN.</p>
+     * @return An Amazon Simple Notification Service (Amazon SNS) output topic ARN. Provide a <code>SnsTopicArn</code>
+     *         if you want to do real time chaining to another streaming job and receive an Amazon SNS notifications
+     *         each time a data object is submitted by a worker.</p>
      *         <p>
      *         If you provide an <code>SnsTopicArn</code> in <code>OutputConfig</code>, when workers complete labeling
      *         tasks, Ground Truth will send labeling task output data to the SNS output topic you specify here.
@@ -309,7 +319,9 @@ public class LabelingJobOutputConfig implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * An Amazon Simple Notification Service (Amazon SNS) output topic ARN.
+     * An Amazon Simple Notification Service (Amazon SNS) output topic ARN. Provide a <code>SnsTopicArn</code> if you
+     * want to do real time chaining to another streaming job and receive an Amazon SNS notifications each time a data
+     * object is submitted by a worker.
      * </p>
      * <p>
      * If you provide an <code>SnsTopicArn</code> in <code>OutputConfig</code>, when workers complete labeling tasks,
@@ -322,7 +334,9 @@ public class LabelingJobOutputConfig implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @param snsTopicArn
-     *        An Amazon Simple Notification Service (Amazon SNS) output topic ARN.</p>
+     *        An Amazon Simple Notification Service (Amazon SNS) output topic ARN. Provide a <code>SnsTopicArn</code> if
+     *        you want to do real time chaining to another streaming job and receive an Amazon SNS notifications each
+     *        time a data object is submitted by a worker.</p>
      *        <p>
      *        If you provide an <code>SnsTopicArn</code> in <code>OutputConfig</code>, when workers complete labeling
      *        tasks, Ground Truth will send labeling task output data to the SNS output topic you specify here.
