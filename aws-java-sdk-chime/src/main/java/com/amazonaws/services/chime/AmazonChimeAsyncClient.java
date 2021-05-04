@@ -293,6 +293,39 @@ public class AmazonChimeAsyncClient extends AmazonChimeClient implements AmazonC
     }
 
     @Override
+    public java.util.concurrent.Future<BatchCreateChannelMembershipResult> batchCreateChannelMembershipAsync(BatchCreateChannelMembershipRequest request) {
+
+        return batchCreateChannelMembershipAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchCreateChannelMembershipResult> batchCreateChannelMembershipAsync(final BatchCreateChannelMembershipRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchCreateChannelMembershipRequest, BatchCreateChannelMembershipResult> asyncHandler) {
+        final BatchCreateChannelMembershipRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchCreateChannelMembershipResult>() {
+            @Override
+            public BatchCreateChannelMembershipResult call() throws Exception {
+                BatchCreateChannelMembershipResult result = null;
+
+                try {
+                    result = executeBatchCreateChannelMembership(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchCreateRoomMembershipResult> batchCreateRoomMembershipAsync(BatchCreateRoomMembershipRequest request) {
 
         return batchCreateRoomMembershipAsync(request, null);

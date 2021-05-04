@@ -1,0 +1,242 @@
+/*
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.finspacedata.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * Set short term API credentials.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/Credentials" target="_top">AWS API
+ *      Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class Credentials implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * The access key identifier.
+     * </p>
+     */
+    private String accessKeyId;
+    /**
+     * <p>
+     * The access key.
+     * </p>
+     */
+    private String secretAccessKey;
+    /**
+     * <p>
+     * The session token.
+     * </p>
+     */
+    private String sessionToken;
+
+    /**
+     * <p>
+     * The access key identifier.
+     * </p>
+     * 
+     * @param accessKeyId
+     *        The access key identifier.
+     */
+
+    public void setAccessKeyId(String accessKeyId) {
+        this.accessKeyId = accessKeyId;
+    }
+
+    /**
+     * <p>
+     * The access key identifier.
+     * </p>
+     * 
+     * @return The access key identifier.
+     */
+
+    public String getAccessKeyId() {
+        return this.accessKeyId;
+    }
+
+    /**
+     * <p>
+     * The access key identifier.
+     * </p>
+     * 
+     * @param accessKeyId
+     *        The access key identifier.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Credentials withAccessKeyId(String accessKeyId) {
+        setAccessKeyId(accessKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The access key.
+     * </p>
+     * 
+     * @param secretAccessKey
+     *        The access key.
+     */
+
+    public void setSecretAccessKey(String secretAccessKey) {
+        this.secretAccessKey = secretAccessKey;
+    }
+
+    /**
+     * <p>
+     * The access key.
+     * </p>
+     * 
+     * @return The access key.
+     */
+
+    public String getSecretAccessKey() {
+        return this.secretAccessKey;
+    }
+
+    /**
+     * <p>
+     * The access key.
+     * </p>
+     * 
+     * @param secretAccessKey
+     *        The access key.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Credentials withSecretAccessKey(String secretAccessKey) {
+        setSecretAccessKey(secretAccessKey);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The session token.
+     * </p>
+     * 
+     * @param sessionToken
+     *        The session token.
+     */
+
+    public void setSessionToken(String sessionToken) {
+        this.sessionToken = sessionToken;
+    }
+
+    /**
+     * <p>
+     * The session token.
+     * </p>
+     * 
+     * @return The session token.
+     */
+
+    public String getSessionToken() {
+        return this.sessionToken;
+    }
+
+    /**
+     * <p>
+     * The session token.
+     * </p>
+     * 
+     * @param sessionToken
+     *        The session token.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Credentials withSessionToken(String sessionToken) {
+        setSessionToken(sessionToken);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getAccessKeyId() != null)
+            sb.append("AccessKeyId: ").append(getAccessKeyId()).append(",");
+        if (getSecretAccessKey() != null)
+            sb.append("SecretAccessKey: ").append(getSecretAccessKey()).append(",");
+        if (getSessionToken() != null)
+            sb.append("SessionToken: ").append(getSessionToken());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof Credentials == false)
+            return false;
+        Credentials other = (Credentials) obj;
+        if (other.getAccessKeyId() == null ^ this.getAccessKeyId() == null)
+            return false;
+        if (other.getAccessKeyId() != null && other.getAccessKeyId().equals(this.getAccessKeyId()) == false)
+            return false;
+        if (other.getSecretAccessKey() == null ^ this.getSecretAccessKey() == null)
+            return false;
+        if (other.getSecretAccessKey() != null && other.getSecretAccessKey().equals(this.getSecretAccessKey()) == false)
+            return false;
+        if (other.getSessionToken() == null ^ this.getSessionToken() == null)
+            return false;
+        if (other.getSessionToken() != null && other.getSessionToken().equals(this.getSessionToken()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getAccessKeyId() == null) ? 0 : getAccessKeyId().hashCode());
+        hashCode = prime * hashCode + ((getSecretAccessKey() == null) ? 0 : getSecretAccessKey().hashCode());
+        hashCode = prime * hashCode + ((getSessionToken() == null) ? 0 : getSessionToken().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public Credentials clone() {
+        try {
+            return (Credentials) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.finspacedata.model.transform.CredentialsMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

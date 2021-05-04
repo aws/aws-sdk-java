@@ -46,8 +46,8 @@ public class CreateMeetingDialOutRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * Token used by the Amazon Chime SDK attendee. Call the <a
-     * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Attendee.htmlCreateAttendee">CreateAttendee</a>
-     * action to get a join token.
+     * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a> action to
+     * get a join token.
      * </p>
      */
     private String joinToken;
@@ -175,14 +175,14 @@ public class CreateMeetingDialOutRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * Token used by the Amazon Chime SDK attendee. Call the <a
-     * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Attendee.htmlCreateAttendee">CreateAttendee</a>
-     * action to get a join token.
+     * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a> action to
+     * get a join token.
      * </p>
      * 
      * @param joinToken
      *        Token used by the Amazon Chime SDK attendee. Call the <a
-     *        href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Attendee.htmlCreateAttendee"
-     *        >CreateAttendee</a> action to get a join token.
+     *        href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a>
+     *        action to get a join token.
      */
 
     public void setJoinToken(String joinToken) {
@@ -192,13 +192,13 @@ public class CreateMeetingDialOutRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * Token used by the Amazon Chime SDK attendee. Call the <a
-     * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Attendee.htmlCreateAttendee">CreateAttendee</a>
-     * action to get a join token.
+     * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a> action to
+     * get a join token.
      * </p>
      * 
      * @return Token used by the Amazon Chime SDK attendee. Call the <a
-     *         href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Attendee.htmlCreateAttendee"
-     *         >CreateAttendee</a> action to get a join token.
+     *         href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a>
+     *         action to get a join token.
      */
 
     public String getJoinToken() {
@@ -208,14 +208,14 @@ public class CreateMeetingDialOutRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * Token used by the Amazon Chime SDK attendee. Call the <a
-     * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Attendee.htmlCreateAttendee">CreateAttendee</a>
-     * action to get a join token.
+     * href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a> action to
+     * get a join token.
      * </p>
      * 
      * @param joinToken
      *        Token used by the Amazon Chime SDK attendee. Call the <a
-     *        href="https://docs.aws.amazon.com/chime/latest/APIReference/API_Attendee.htmlCreateAttendee"
-     *        >CreateAttendee</a> action to get a join token.
+     *        href="https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html">CreateAttendee</a>
+     *        action to get a join token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

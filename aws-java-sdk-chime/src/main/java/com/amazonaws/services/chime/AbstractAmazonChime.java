@@ -54,6 +54,11 @@ public class AbstractAmazonChime implements AmazonChime {
     }
 
     @Override
+    public BatchCreateChannelMembershipResult batchCreateChannelMembership(BatchCreateChannelMembershipRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchCreateRoomMembershipResult batchCreateRoomMembership(BatchCreateRoomMembershipRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -576,6 +576,84 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Adds a specified number of users to a channel.
+     * </p>
+     * 
+     * @param batchCreateChannelMembershipRequest
+     * @return Result of the BatchCreateChannelMembership operation returned by the service.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @sample AmazonChime.BatchCreateChannelMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchCreateChannelMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchCreateChannelMembershipResult batchCreateChannelMembership(BatchCreateChannelMembershipRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchCreateChannelMembership(request);
+    }
+
+    @SdkInternalApi
+    final BatchCreateChannelMembershipResult executeBatchCreateChannelMembership(BatchCreateChannelMembershipRequest batchCreateChannelMembershipRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchCreateChannelMembershipRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchCreateChannelMembershipRequest> request = null;
+        Response<BatchCreateChannelMembershipResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchCreateChannelMembershipRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(batchCreateChannelMembershipRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchCreateChannelMembership");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "messaging-";
+                String resolvedHostPrefix = String.format("messaging-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchCreateChannelMembershipResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new BatchCreateChannelMembershipResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Adds up to 50 members to a chat room in an Amazon Chime Enterprise account. Members can be users or bots. The
      * member role designates whether the member is a chat room administrator or a general chat room member.
      * </p>
@@ -3284,10 +3362,10 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
-     * Deletes an attendee from the specified Amazon Chime SDK meeting and deletes their <code>JoinToken</code> .
+     * Deletes an attendee from the specified Amazon Chime SDK meeting and deletes their <code>JoinToken</code>.
      * Attendees are automatically deleted when a Amazon Chime SDK meeting is deleted. For more information about the
      * Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon
-     * Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> .
+     * Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
      * </p>
      * 
      * @param deleteAttendeeRequest
@@ -3538,6 +3616,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *         The client is permanently forbidden from making the request.
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
@@ -3840,9 +3920,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
-     * Deletes the specified Amazon Chime SDK meeting. When a meeting is deleted, its attendees are also deleted,
-     * clients connected to the meeting are disconnected, and clients can no longer join the meeting. For more
-     * information about the Amazon Chime SDK, see <a
+     * Deletes the specified Amazon Chime SDK meeting. The operation deletes all attendees, disconnects all clients, and
+     * prevents new clients from joining the meeting. For more information about the Amazon Chime SDK, see <a
      * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
      * <i>Amazon Chime Developer Guide</i>.
      * </p>
@@ -8255,7 +8334,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
     /**
      * <p>
      * Lists the Amazon Chime accounts under the administrator's AWS account. You can filter accounts by account name
-     * prefix. To find out which Amazon Chime account a user belongs to, toucan filter by the user's email address,
+     * prefix. To find out which Amazon Chime account a user belongs to, you can filter by the user's email address,
      * which returns one account result.
      * </p>
      * 
@@ -9193,7 +9272,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <ul>
      * <li>
      * <p>
-     * Use privacy = <code>PUBLIC</code> to retrieve all public channels in the account
+     * Use privacy = <code>PUBLIC</code> to retrieve all public channels in the account.
      * </p>
      * </li>
      * <li>

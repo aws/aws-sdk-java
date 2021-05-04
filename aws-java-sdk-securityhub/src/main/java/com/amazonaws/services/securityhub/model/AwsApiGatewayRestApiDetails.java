@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * contains information about a REST API in version 1 of Amazon API Gateway.
+ * Contains information about a REST API in version 1 of Amazon API Gateway.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsApiGatewayRestApiDetails"

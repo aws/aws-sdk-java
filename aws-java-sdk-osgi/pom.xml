@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.1010-SNAPSHOT</version>
+    <version>1.11.1010</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -15,6 +15,18 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-finspacedata</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-finspace</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-nimblestudio</artifactId>
         <groupId>com.amazonaws</groupId>
@@ -1706,6 +1718,18 @@
                               </taglet>
                           </taglets>
                           <groups>
+                              <group>
+                                  <title>FinSpace Public API</title>
+                                  <packages>com.amazonaws.services.finspacedata*</packages>
+                              </group>
+                              <group>
+                                  <title>FinSpace User Environment Management</title>
+                                  <packages>com.amazonaws.services.finspace*</packages>
+                              </group>
+                              <group>
+                                  <title>FinSpace Public API</title>
+                                  <packages>com.amazonaws.services.finspace*</packages>
+                              </group>
                               <group>
                                   <title>AmazonNimbleStudio</title>
                                   <packages>com.amazonaws.services.nimblestudio*</packages>

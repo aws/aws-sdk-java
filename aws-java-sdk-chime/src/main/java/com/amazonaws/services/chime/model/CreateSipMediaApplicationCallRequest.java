@@ -27,13 +27,13 @@ public class CreateSipMediaApplicationCallRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The phone number that a user calls from.
+     * The phone number that a user calls from. This is a phone number in your Amazon Chime phone number inventory.
      * </p>
      */
     private String fromPhoneNumber;
     /**
      * <p>
-     * The phone number that the user dials in order to connect to a meeting.
+     * The phone number that the service should call.
      * </p>
      */
     private String toPhoneNumber;
@@ -46,11 +46,12 @@ public class CreateSipMediaApplicationCallRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The phone number that a user calls from.
+     * The phone number that a user calls from. This is a phone number in your Amazon Chime phone number inventory.
      * </p>
      * 
      * @param fromPhoneNumber
-     *        The phone number that a user calls from.
+     *        The phone number that a user calls from. This is a phone number in your Amazon Chime phone number
+     *        inventory.
      */
 
     public void setFromPhoneNumber(String fromPhoneNumber) {
@@ -59,10 +60,11 @@ public class CreateSipMediaApplicationCallRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The phone number that a user calls from.
+     * The phone number that a user calls from. This is a phone number in your Amazon Chime phone number inventory.
      * </p>
      * 
-     * @return The phone number that a user calls from.
+     * @return The phone number that a user calls from. This is a phone number in your Amazon Chime phone number
+     *         inventory.
      */
 
     public String getFromPhoneNumber() {
@@ -71,11 +73,12 @@ public class CreateSipMediaApplicationCallRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The phone number that a user calls from.
+     * The phone number that a user calls from. This is a phone number in your Amazon Chime phone number inventory.
      * </p>
      * 
      * @param fromPhoneNumber
-     *        The phone number that a user calls from.
+     *        The phone number that a user calls from. This is a phone number in your Amazon Chime phone number
+     *        inventory.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +89,11 @@ public class CreateSipMediaApplicationCallRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The phone number that the user dials in order to connect to a meeting.
+     * The phone number that the service should call.
      * </p>
      * 
      * @param toPhoneNumber
-     *        The phone number that the user dials in order to connect to a meeting.
+     *        The phone number that the service should call.
      */
 
     public void setToPhoneNumber(String toPhoneNumber) {
@@ -99,10 +102,10 @@ public class CreateSipMediaApplicationCallRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The phone number that the user dials in order to connect to a meeting.
+     * The phone number that the service should call.
      * </p>
      * 
-     * @return The phone number that the user dials in order to connect to a meeting.
+     * @return The phone number that the service should call.
      */
 
     public String getToPhoneNumber() {
@@ -111,11 +114,11 @@ public class CreateSipMediaApplicationCallRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The phone number that the user dials in order to connect to a meeting.
+     * The phone number that the service should call.
      * </p>
      * 
      * @param toPhoneNumber
-     *        The phone number that the user dials in order to connect to a meeting.
+     *        The phone number that the service should call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

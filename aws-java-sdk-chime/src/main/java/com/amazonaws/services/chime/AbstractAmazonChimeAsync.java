@@ -99,6 +99,19 @@ public class AbstractAmazonChimeAsync extends AbstractAmazonChime implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<BatchCreateChannelMembershipResult> batchCreateChannelMembershipAsync(BatchCreateChannelMembershipRequest request) {
+
+        return batchCreateChannelMembershipAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchCreateChannelMembershipResult> batchCreateChannelMembershipAsync(BatchCreateChannelMembershipRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchCreateChannelMembershipRequest, BatchCreateChannelMembershipResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchCreateRoomMembershipResult> batchCreateRoomMembershipAsync(BatchCreateRoomMembershipRequest request) {
 
         return batchCreateRoomMembershipAsync(request, null);

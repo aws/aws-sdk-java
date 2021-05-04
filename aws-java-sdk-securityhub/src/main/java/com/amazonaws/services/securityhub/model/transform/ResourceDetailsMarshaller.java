@@ -47,8 +47,14 @@ public class ResourceDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsEc2Vpc").build();
     private static final MarshallingInfo<StructuredPojo> AWSEC2EIP_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsEc2Eip").build();
+    private static final MarshallingInfo<StructuredPojo> AWSEC2SUBNET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsEc2Subnet").build();
+    private static final MarshallingInfo<StructuredPojo> AWSEC2NETWORKACL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsEc2NetworkAcl").build();
     private static final MarshallingInfo<StructuredPojo> AWSELBV2LOADBALANCER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsElbv2LoadBalancer").build();
+    private static final MarshallingInfo<StructuredPojo> AWSELASTICBEANSTALKENVIRONMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsElasticBeanstalkEnvironment").build();
     private static final MarshallingInfo<StructuredPojo> AWSELASTICSEARCHDOMAIN_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsElasticsearchDomain").build();
     private static final MarshallingInfo<StructuredPojo> AWSS3BUCKET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -139,7 +145,10 @@ public class ResourceDetailsMarshaller {
             protocolMarshaller.marshall(resourceDetails.getAwsEc2Volume(), AWSEC2VOLUME_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsEc2Vpc(), AWSEC2VPC_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsEc2Eip(), AWSEC2EIP_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsEc2Subnet(), AWSEC2SUBNET_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsEc2NetworkAcl(), AWSEC2NETWORKACL_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsElbv2LoadBalancer(), AWSELBV2LOADBALANCER_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsElasticBeanstalkEnvironment(), AWSELASTICBEANSTALKENVIRONMENT_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsElasticsearchDomain(), AWSELASTICSEARCHDOMAIN_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsS3Bucket(), AWSS3BUCKET_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsS3AccountPublicAccessBlock(), AWSS3ACCOUNTPUBLICACCESSBLOCK_BINDING);

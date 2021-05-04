@@ -259,6 +259,41 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Adds a specified number of users to a channel.
+     * </p>
+     * 
+     * @param batchCreateChannelMembershipRequest
+     * @return A Java Future containing the result of the BatchCreateChannelMembership operation returned by the
+     *         service.
+     * @sample AmazonChimeAsync.BatchCreateChannelMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchCreateChannelMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchCreateChannelMembershipResult> batchCreateChannelMembershipAsync(
+            BatchCreateChannelMembershipRequest batchCreateChannelMembershipRequest);
+
+    /**
+     * <p>
+     * Adds a specified number of users to a channel.
+     * </p>
+     * 
+     * @param batchCreateChannelMembershipRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchCreateChannelMembership operation returned by the
+     *         service.
+     * @sample AmazonChimeAsyncHandler.BatchCreateChannelMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchCreateChannelMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchCreateChannelMembershipResult> batchCreateChannelMembershipAsync(
+            BatchCreateChannelMembershipRequest batchCreateChannelMembershipRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchCreateChannelMembershipRequest, BatchCreateChannelMembershipResult> asyncHandler);
+
+    /**
+     * <p>
      * Adds up to 50 members to a chat room in an Amazon Chime Enterprise account. Members can be users or bots. The
      * member role designates whether the member is a chat room administrator or a general chat room member.
      * </p>
@@ -1751,10 +1786,10 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Deletes an attendee from the specified Amazon Chime SDK meeting and deletes their <code>JoinToken</code> .
+     * Deletes an attendee from the specified Amazon Chime SDK meeting and deletes their <code>JoinToken</code>.
      * Attendees are automatically deleted when a Amazon Chime SDK meeting is deleted. For more information about the
      * Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon
-     * Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> .
+     * Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
      * </p>
      * 
      * @param deleteAttendeeRequest
@@ -1767,10 +1802,10 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Deletes an attendee from the specified Amazon Chime SDK meeting and deletes their <code>JoinToken</code> .
+     * Deletes an attendee from the specified Amazon Chime SDK meeting and deletes their <code>JoinToken</code>.
      * Attendees are automatically deleted when a Amazon Chime SDK meeting is deleted. For more information about the
      * Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon
-     * Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> .
+     * Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
      * </p>
      * 
      * @param deleteAttendeeRequest
@@ -2040,9 +2075,8 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Deletes the specified Amazon Chime SDK meeting. When a meeting is deleted, its attendees are also deleted,
-     * clients connected to the meeting are disconnected, and clients can no longer join the meeting. For more
-     * information about the Amazon Chime SDK, see <a
+     * Deletes the specified Amazon Chime SDK meeting. The operation deletes all attendees, disconnects all clients, and
+     * prevents new clients from joining the meeting. For more information about the Amazon Chime SDK, see <a
      * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
      * <i>Amazon Chime Developer Guide</i>.
      * </p>
@@ -2057,9 +2091,8 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Deletes the specified Amazon Chime SDK meeting. When a meeting is deleted, its attendees are also deleted,
-     * clients connected to the meeting are disconnected, and clients can no longer join the meeting. For more
-     * information about the Amazon Chime SDK, see <a
+     * Deletes the specified Amazon Chime SDK meeting. The operation deletes all attendees, disconnects all clients, and
+     * prevents new clients from joining the meeting. For more information about the Amazon Chime SDK, see <a
      * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
      * <i>Amazon Chime Developer Guide</i>.
      * </p>
@@ -4179,7 +4212,7 @@ public interface AmazonChimeAsync extends AmazonChime {
     /**
      * <p>
      * Lists the Amazon Chime accounts under the administrator's AWS account. You can filter accounts by account name
-     * prefix. To find out which Amazon Chime account a user belongs to, toucan filter by the user's email address,
+     * prefix. To find out which Amazon Chime account a user belongs to, you can filter by the user's email address,
      * which returns one account result.
      * </p>
      * 
@@ -4194,7 +4227,7 @@ public interface AmazonChimeAsync extends AmazonChime {
     /**
      * <p>
      * Lists the Amazon Chime accounts under the administrator's AWS account. You can filter accounts by account name
-     * prefix. To find out which Amazon Chime account a user belongs to, toucan filter by the user's email address,
+     * prefix. To find out which Amazon Chime account a user belongs to, you can filter by the user's email address,
      * which returns one account result.
      * </p>
      * 
@@ -4643,7 +4676,7 @@ public interface AmazonChimeAsync extends AmazonChime {
      * <ul>
      * <li>
      * <p>
-     * Use privacy = <code>PUBLIC</code> to retrieve all public channels in the account
+     * Use privacy = <code>PUBLIC</code> to retrieve all public channels in the account.
      * </p>
      * </li>
      * <li>
@@ -4679,7 +4712,7 @@ public interface AmazonChimeAsync extends AmazonChime {
      * <ul>
      * <li>
      * <p>
-     * Use privacy = <code>PUBLIC</code> to retrieve all public channels in the account
+     * Use privacy = <code>PUBLIC</code> to retrieve all public channels in the account.
      * </p>
      * </li>
      * <li>

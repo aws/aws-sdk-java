@@ -96,10 +96,28 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     private AwsEc2EipDetails awsEc2Eip;
     /**
      * <p>
+     * Details about a subnet in EC2.
+     * </p>
+     */
+    private AwsEc2SubnetDetails awsEc2Subnet;
+    /**
+     * <p>
+     * Details about an EC2 network access control list (ACL).
+     * </p>
+     */
+    private AwsEc2NetworkAclDetails awsEc2NetworkAcl;
+    /**
+     * <p>
      * Details about a load balancer.
      * </p>
      */
     private AwsElbv2LoadBalancerDetails awsElbv2LoadBalancer;
+    /**
+     * <p>
+     * Details about an Elastic Beanstalk environment.
+     * </p>
+     */
+    private AwsElasticBeanstalkEnvironmentDetails awsElasticBeanstalkEnvironment;
     /**
      * <p>
      * Details for an Elasticsearch domain.
@@ -672,6 +690,86 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * Details about a subnet in EC2.
+     * </p>
+     * 
+     * @param awsEc2Subnet
+     *        Details about a subnet in EC2.
+     */
+
+    public void setAwsEc2Subnet(AwsEc2SubnetDetails awsEc2Subnet) {
+        this.awsEc2Subnet = awsEc2Subnet;
+    }
+
+    /**
+     * <p>
+     * Details about a subnet in EC2.
+     * </p>
+     * 
+     * @return Details about a subnet in EC2.
+     */
+
+    public AwsEc2SubnetDetails getAwsEc2Subnet() {
+        return this.awsEc2Subnet;
+    }
+
+    /**
+     * <p>
+     * Details about a subnet in EC2.
+     * </p>
+     * 
+     * @param awsEc2Subnet
+     *        Details about a subnet in EC2.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsEc2Subnet(AwsEc2SubnetDetails awsEc2Subnet) {
+        setAwsEc2Subnet(awsEc2Subnet);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about an EC2 network access control list (ACL).
+     * </p>
+     * 
+     * @param awsEc2NetworkAcl
+     *        Details about an EC2 network access control list (ACL).
+     */
+
+    public void setAwsEc2NetworkAcl(AwsEc2NetworkAclDetails awsEc2NetworkAcl) {
+        this.awsEc2NetworkAcl = awsEc2NetworkAcl;
+    }
+
+    /**
+     * <p>
+     * Details about an EC2 network access control list (ACL).
+     * </p>
+     * 
+     * @return Details about an EC2 network access control list (ACL).
+     */
+
+    public AwsEc2NetworkAclDetails getAwsEc2NetworkAcl() {
+        return this.awsEc2NetworkAcl;
+    }
+
+    /**
+     * <p>
+     * Details about an EC2 network access control list (ACL).
+     * </p>
+     * 
+     * @param awsEc2NetworkAcl
+     *        Details about an EC2 network access control list (ACL).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsEc2NetworkAcl(AwsEc2NetworkAclDetails awsEc2NetworkAcl) {
+        setAwsEc2NetworkAcl(awsEc2NetworkAcl);
+        return this;
+    }
+
+    /**
+     * <p>
      * Details about a load balancer.
      * </p>
      * 
@@ -707,6 +805,46 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     public ResourceDetails withAwsElbv2LoadBalancer(AwsElbv2LoadBalancerDetails awsElbv2LoadBalancer) {
         setAwsElbv2LoadBalancer(awsElbv2LoadBalancer);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about an Elastic Beanstalk environment.
+     * </p>
+     * 
+     * @param awsElasticBeanstalkEnvironment
+     *        Details about an Elastic Beanstalk environment.
+     */
+
+    public void setAwsElasticBeanstalkEnvironment(AwsElasticBeanstalkEnvironmentDetails awsElasticBeanstalkEnvironment) {
+        this.awsElasticBeanstalkEnvironment = awsElasticBeanstalkEnvironment;
+    }
+
+    /**
+     * <p>
+     * Details about an Elastic Beanstalk environment.
+     * </p>
+     * 
+     * @return Details about an Elastic Beanstalk environment.
+     */
+
+    public AwsElasticBeanstalkEnvironmentDetails getAwsElasticBeanstalkEnvironment() {
+        return this.awsElasticBeanstalkEnvironment;
+    }
+
+    /**
+     * <p>
+     * Details about an Elastic Beanstalk environment.
+     * </p>
+     * 
+     * @param awsElasticBeanstalkEnvironment
+     *        Details about an Elastic Beanstalk environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsElasticBeanstalkEnvironment(AwsElasticBeanstalkEnvironmentDetails awsElasticBeanstalkEnvironment) {
+        setAwsElasticBeanstalkEnvironment(awsElasticBeanstalkEnvironment);
         return this;
     }
 
@@ -2147,8 +2285,14 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
             sb.append("AwsEc2Vpc: ").append(getAwsEc2Vpc()).append(",");
         if (getAwsEc2Eip() != null)
             sb.append("AwsEc2Eip: ").append(getAwsEc2Eip()).append(",");
+        if (getAwsEc2Subnet() != null)
+            sb.append("AwsEc2Subnet: ").append(getAwsEc2Subnet()).append(",");
+        if (getAwsEc2NetworkAcl() != null)
+            sb.append("AwsEc2NetworkAcl: ").append(getAwsEc2NetworkAcl()).append(",");
         if (getAwsElbv2LoadBalancer() != null)
             sb.append("AwsElbv2LoadBalancer: ").append(getAwsElbv2LoadBalancer()).append(",");
+        if (getAwsElasticBeanstalkEnvironment() != null)
+            sb.append("AwsElasticBeanstalkEnvironment: ").append(getAwsElasticBeanstalkEnvironment()).append(",");
         if (getAwsElasticsearchDomain() != null)
             sb.append("AwsElasticsearchDomain: ").append(getAwsElasticsearchDomain()).append(",");
         if (getAwsS3Bucket() != null)
@@ -2264,9 +2408,22 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getAwsEc2Eip() != null && other.getAwsEc2Eip().equals(this.getAwsEc2Eip()) == false)
             return false;
+        if (other.getAwsEc2Subnet() == null ^ this.getAwsEc2Subnet() == null)
+            return false;
+        if (other.getAwsEc2Subnet() != null && other.getAwsEc2Subnet().equals(this.getAwsEc2Subnet()) == false)
+            return false;
+        if (other.getAwsEc2NetworkAcl() == null ^ this.getAwsEc2NetworkAcl() == null)
+            return false;
+        if (other.getAwsEc2NetworkAcl() != null && other.getAwsEc2NetworkAcl().equals(this.getAwsEc2NetworkAcl()) == false)
+            return false;
         if (other.getAwsElbv2LoadBalancer() == null ^ this.getAwsElbv2LoadBalancer() == null)
             return false;
         if (other.getAwsElbv2LoadBalancer() != null && other.getAwsElbv2LoadBalancer().equals(this.getAwsElbv2LoadBalancer()) == false)
+            return false;
+        if (other.getAwsElasticBeanstalkEnvironment() == null ^ this.getAwsElasticBeanstalkEnvironment() == null)
+            return false;
+        if (other.getAwsElasticBeanstalkEnvironment() != null
+                && other.getAwsElasticBeanstalkEnvironment().equals(this.getAwsElasticBeanstalkEnvironment()) == false)
             return false;
         if (other.getAwsElasticsearchDomain() == null ^ this.getAwsElasticsearchDomain() == null)
             return false;
@@ -2415,7 +2572,10 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getAwsEc2Volume() == null) ? 0 : getAwsEc2Volume().hashCode());
         hashCode = prime * hashCode + ((getAwsEc2Vpc() == null) ? 0 : getAwsEc2Vpc().hashCode());
         hashCode = prime * hashCode + ((getAwsEc2Eip() == null) ? 0 : getAwsEc2Eip().hashCode());
+        hashCode = prime * hashCode + ((getAwsEc2Subnet() == null) ? 0 : getAwsEc2Subnet().hashCode());
+        hashCode = prime * hashCode + ((getAwsEc2NetworkAcl() == null) ? 0 : getAwsEc2NetworkAcl().hashCode());
         hashCode = prime * hashCode + ((getAwsElbv2LoadBalancer() == null) ? 0 : getAwsElbv2LoadBalancer().hashCode());
+        hashCode = prime * hashCode + ((getAwsElasticBeanstalkEnvironment() == null) ? 0 : getAwsElasticBeanstalkEnvironment().hashCode());
         hashCode = prime * hashCode + ((getAwsElasticsearchDomain() == null) ? 0 : getAwsElasticsearchDomain().hashCode());
         hashCode = prime * hashCode + ((getAwsS3Bucket() == null) ? 0 : getAwsS3Bucket().hashCode());
         hashCode = prime * hashCode + ((getAwsS3AccountPublicAccessBlock() == null) ? 0 : getAwsS3AccountPublicAccessBlock().hashCode());

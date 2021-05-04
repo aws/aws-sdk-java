@@ -84,9 +84,21 @@ public class ResourceDetailsJsonUnmarshaller implements Unmarshaller<ResourceDet
                     context.nextToken();
                     resourceDetails.setAwsEc2Eip(AwsEc2EipDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AwsEc2Subnet", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsEc2Subnet(AwsEc2SubnetDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsEc2NetworkAcl", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsEc2NetworkAcl(AwsEc2NetworkAclDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("AwsElbv2LoadBalancer", targetDepth)) {
                     context.nextToken();
                     resourceDetails.setAwsElbv2LoadBalancer(AwsElbv2LoadBalancerDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsElasticBeanstalkEnvironment", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsElasticBeanstalkEnvironment(AwsElasticBeanstalkEnvironmentDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AwsElasticsearchDomain", targetDepth)) {
                     context.nextToken();

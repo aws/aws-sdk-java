@@ -132,6 +132,13 @@ public interface AWSSecurityHub {
      * This method is deprecated. Instead, use <code>AcceptAdministratorInvitation</code>.
      * </p>
      * <p>
+     * The Security Hub console continues to use <code>AcceptInvitation</code>. It will eventually change to use
+     * <code>AcceptAdministratorInvitation</code>. Any IAM policies that specifically control access to this function
+     * must continue to use <code>AcceptInvitation</code>. You should also add
+     * <code>AcceptAdministratorInvitation</code> to your policies to ensure that the correct permissions are in place
+     * after the console begins to use <code>AcceptAdministratorInvitation</code>.
+     * </p>
+     * <p>
      * Accepts the invitation to be a member account and be monitored by the Security Hub administrator account that the
      * invitation was sent from.
      * </p>
@@ -923,6 +930,13 @@ public interface AWSSecurityHub {
      * This method is deprecated. Instead, use <code>DisassociateFromAdministratorAccount</code>.
      * </p>
      * <p>
+     * The Security Hub console continues to use <code>DisassociateFromMasterAccount</code>. It will eventually change
+     * to use <code>DisassociateFromAdministratorAccount</code>. Any IAM policies that specifically control access to
+     * this function must continue to use <code>DisassociateFromMasterAccount</code>. You should also add
+     * <code>DisassociateFromAdministratorAccount</code> to your policies to ensure that the correct permissions are in
+     * place after the console begins to use <code>DisassociateFromAdministratorAccount</code>.
+     * </p>
+     * <p>
      * Disassociates the current Security Hub member account from the associated administrator account.
      * </p>
      * <p>
@@ -1245,6 +1259,13 @@ public interface AWSSecurityHub {
     /**
      * <p>
      * This method is deprecated. Instead, use <code>GetAdministratorAccount</code>.
+     * </p>
+     * <p>
+     * The Security Hub console continues to use <code>GetMasterAccount</code>. It will eventually change to use
+     * <code>GetAdministratorAccount</code>. Any IAM policies that specifically control access to this function must
+     * continue to use <code>GetMasterAccount</code>. You should also add <code>GetAdministratorAccount</code> to your
+     * policies to ensure that the correct permissions are in place after the console begins to use
+     * <code>GetAdministratorAccount</code>.
      * </p>
      * <p>
      * Provides the details for the Security Hub administrator account for the current member account.
