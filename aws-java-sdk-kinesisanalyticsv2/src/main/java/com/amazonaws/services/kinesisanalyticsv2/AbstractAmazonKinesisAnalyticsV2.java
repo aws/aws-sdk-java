@@ -139,6 +139,11 @@ public class AbstractAmazonKinesisAnalyticsV2 implements AmazonKinesisAnalyticsV
     }
 
     @Override
+    public RollbackApplicationResult rollbackApplication(RollbackApplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartApplicationResult startApplication(StartApplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -118,7 +118,7 @@ public class Evidence implements Serializable, Cloneable, StructuredPojo {
     private String id;
     /**
      * <p>
-     * Specifies whether the evidence is inclded in the assessment report.
+     * Specifies whether the evidence is included in the assessment report.
      * </p>
      */
     private String assessmentReportSelection;
@@ -761,11 +761,11 @@ public class Evidence implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the evidence is inclded in the assessment report.
+     * Specifies whether the evidence is included in the assessment report.
      * </p>
      * 
      * @param assessmentReportSelection
-     *        Specifies whether the evidence is inclded in the assessment report.
+     *        Specifies whether the evidence is included in the assessment report.
      */
 
     public void setAssessmentReportSelection(String assessmentReportSelection) {
@@ -774,10 +774,10 @@ public class Evidence implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the evidence is inclded in the assessment report.
+     * Specifies whether the evidence is included in the assessment report.
      * </p>
      * 
-     * @return Specifies whether the evidence is inclded in the assessment report.
+     * @return Specifies whether the evidence is included in the assessment report.
      */
 
     public String getAssessmentReportSelection() {
@@ -786,11 +786,11 @@ public class Evidence implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the evidence is inclded in the assessment report.
+     * Specifies whether the evidence is included in the assessment report.
      * </p>
      * 
      * @param assessmentReportSelection
-     *        Specifies whether the evidence is inclded in the assessment report.
+     *        Specifies whether the evidence is included in the assessment report.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

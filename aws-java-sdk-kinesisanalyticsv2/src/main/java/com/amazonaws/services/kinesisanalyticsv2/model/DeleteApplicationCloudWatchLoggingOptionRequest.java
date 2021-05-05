@@ -34,7 +34,8 @@ public class DeleteApplicationCloudWatchLoggingOptionRequest extends com.amazona
     private String applicationName;
     /**
      * <p>
-     * The version ID of the application. You can retrieve the application version ID using <a>DescribeApplication</a>.
+     * The version ID of the application. You must provide the <code>ApplicationVersionID</code> or the
+     * <code>ConditionalToken</code>. You can retrieve the application version ID using <a>DescribeApplication</a>.
      * </p>
      */
     private Long currentApplicationVersionId;
@@ -45,6 +46,14 @@ public class DeleteApplicationCloudWatchLoggingOptionRequest extends com.amazona
      * </p>
      */
     private String cloudWatchLoggingOptionId;
+    /**
+     * <p>
+     * A value you use to implement strong concurrency for application updates. You must provide the
+     * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>.
+     * </p>
+     */
+    private String conditionalToken;
 
     /**
      * <p>
@@ -88,11 +97,13 @@ public class DeleteApplicationCloudWatchLoggingOptionRequest extends com.amazona
 
     /**
      * <p>
-     * The version ID of the application. You can retrieve the application version ID using <a>DescribeApplication</a>.
+     * The version ID of the application. You must provide the <code>ApplicationVersionID</code> or the
+     * <code>ConditionalToken</code>. You can retrieve the application version ID using <a>DescribeApplication</a>.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        The version ID of the application. You can retrieve the application version ID using
+     *        The version ID of the application. You must provide the <code>ApplicationVersionID</code> or the
+     *        <code>ConditionalToken</code>. You can retrieve the application version ID using
      *        <a>DescribeApplication</a>.
      */
 
@@ -102,10 +113,12 @@ public class DeleteApplicationCloudWatchLoggingOptionRequest extends com.amazona
 
     /**
      * <p>
-     * The version ID of the application. You can retrieve the application version ID using <a>DescribeApplication</a>.
+     * The version ID of the application. You must provide the <code>ApplicationVersionID</code> or the
+     * <code>ConditionalToken</code>. You can retrieve the application version ID using <a>DescribeApplication</a>.
      * </p>
      * 
-     * @return The version ID of the application. You can retrieve the application version ID using
+     * @return The version ID of the application. You must provide the <code>ApplicationVersionID</code> or the
+     *         <code>ConditionalToken</code>. You can retrieve the application version ID using
      *         <a>DescribeApplication</a>.
      */
 
@@ -115,11 +128,13 @@ public class DeleteApplicationCloudWatchLoggingOptionRequest extends com.amazona
 
     /**
      * <p>
-     * The version ID of the application. You can retrieve the application version ID using <a>DescribeApplication</a>.
+     * The version ID of the application. You must provide the <code>ApplicationVersionID</code> or the
+     * <code>ConditionalToken</code>. You can retrieve the application version ID using <a>DescribeApplication</a>.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        The version ID of the application. You can retrieve the application version ID using
+     *        The version ID of the application. You must provide the <code>ApplicationVersionID</code> or the
+     *        <code>ConditionalToken</code>. You can retrieve the application version ID using
      *        <a>DescribeApplication</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -176,6 +191,58 @@ public class DeleteApplicationCloudWatchLoggingOptionRequest extends com.amazona
     }
 
     /**
+     * <p>
+     * A value you use to implement strong concurrency for application updates. You must provide the
+     * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>.
+     * </p>
+     * 
+     * @param conditionalToken
+     *        A value you use to implement strong concurrency for application updates. You must provide the
+     *        <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current
+     *        <code>ConditionalToken</code> using <a>DescribeApplication</a>.
+     */
+
+    public void setConditionalToken(String conditionalToken) {
+        this.conditionalToken = conditionalToken;
+    }
+
+    /**
+     * <p>
+     * A value you use to implement strong concurrency for application updates. You must provide the
+     * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>.
+     * </p>
+     * 
+     * @return A value you use to implement strong concurrency for application updates. You must provide the
+     *         <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current
+     *         <code>ConditionalToken</code> using <a>DescribeApplication</a>.
+     */
+
+    public String getConditionalToken() {
+        return this.conditionalToken;
+    }
+
+    /**
+     * <p>
+     * A value you use to implement strong concurrency for application updates. You must provide the
+     * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>.
+     * </p>
+     * 
+     * @param conditionalToken
+     *        A value you use to implement strong concurrency for application updates. You must provide the
+     *        <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current
+     *        <code>ConditionalToken</code> using <a>DescribeApplication</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteApplicationCloudWatchLoggingOptionRequest withConditionalToken(String conditionalToken) {
+        setConditionalToken(conditionalToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -192,7 +259,9 @@ public class DeleteApplicationCloudWatchLoggingOptionRequest extends com.amazona
         if (getCurrentApplicationVersionId() != null)
             sb.append("CurrentApplicationVersionId: ").append(getCurrentApplicationVersionId()).append(",");
         if (getCloudWatchLoggingOptionId() != null)
-            sb.append("CloudWatchLoggingOptionId: ").append(getCloudWatchLoggingOptionId());
+            sb.append("CloudWatchLoggingOptionId: ").append(getCloudWatchLoggingOptionId()).append(",");
+        if (getConditionalToken() != null)
+            sb.append("ConditionalToken: ").append(getConditionalToken());
         sb.append("}");
         return sb.toString();
     }
@@ -219,6 +288,10 @@ public class DeleteApplicationCloudWatchLoggingOptionRequest extends com.amazona
             return false;
         if (other.getCloudWatchLoggingOptionId() != null && other.getCloudWatchLoggingOptionId().equals(this.getCloudWatchLoggingOptionId()) == false)
             return false;
+        if (other.getConditionalToken() == null ^ this.getConditionalToken() == null)
+            return false;
+        if (other.getConditionalToken() != null && other.getConditionalToken().equals(this.getConditionalToken()) == false)
+            return false;
         return true;
     }
 
@@ -230,6 +303,7 @@ public class DeleteApplicationCloudWatchLoggingOptionRequest extends com.amazona
         hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
         hashCode = prime * hashCode + ((getCurrentApplicationVersionId() == null) ? 0 : getCurrentApplicationVersionId().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchLoggingOptionId() == null) ? 0 : getCloudWatchLoggingOptionId().hashCode());
+        hashCode = prime * hashCode + ((getConditionalToken() == null) ? 0 : getConditionalToken().hashCode());
         return hashCode;
     }
 

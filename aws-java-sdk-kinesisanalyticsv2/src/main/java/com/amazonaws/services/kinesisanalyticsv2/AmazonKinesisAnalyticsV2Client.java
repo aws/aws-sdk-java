@@ -1744,6 +1744,86 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Reverts the application to the previous running version. You can roll back an application if you suspect it is
+     * stuck in a transient status.
+     * </p>
+     * <p>
+     * You can roll back an application only if it is in the <code>UPDATING</code> or <code>AUTOSCALING</code> status.
+     * </p>
+     * <p>
+     * When you rollback an application, it loads state data from the last successful snapshot. If the application has
+     * no snapshots, Kinesis Data Analytics rejects the rollback request.
+     * </p>
+     * <p>
+     * This action is not supported for Kinesis Data Analytics for SQL applications.
+     * </p>
+     * 
+     * @param rollbackApplicationRequest
+     * @return Result of the RollbackApplication operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Specified application can't be found.
+     * @throws InvalidArgumentException
+     *         The specified input parameter value is not valid.
+     * @throws ResourceInUseException
+     *         The application is not available for this operation.
+     * @throws InvalidRequestException
+     *         The request JSON is not valid for the operation.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modifications to an application. This error can be the result
+     *         of attempting to modify an application without using the current application ID.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not supported or a specified resource is not
+     *         valid for this operation.
+     * @sample AmazonKinesisAnalyticsV2.RollbackApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/RollbackApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RollbackApplicationResult rollbackApplication(RollbackApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeRollbackApplication(request);
+    }
+
+    @SdkInternalApi
+    final RollbackApplicationResult executeRollbackApplication(RollbackApplicationRequest rollbackApplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(rollbackApplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RollbackApplicationRequest> request = null;
+        Response<RollbackApplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RollbackApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(rollbackApplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RollbackApplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RollbackApplicationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RollbackApplicationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Starts the specified Kinesis Data Analytics application. After creating an application, you must exclusively call
      * this operation to start your application.
      * </p>

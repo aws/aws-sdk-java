@@ -101,6 +101,18 @@ public class ApplicationDetailJsonUnmarshaller implements Unmarshaller<Applicati
                     applicationDetail.setApplicationMaintenanceConfigurationDescription(ApplicationMaintenanceConfigurationDescriptionJsonUnmarshaller
                             .getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ApplicationVersionUpdatedFrom", targetDepth)) {
+                    context.nextToken();
+                    applicationDetail.setApplicationVersionUpdatedFrom(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("ApplicationVersionRolledBackFrom", targetDepth)) {
+                    context.nextToken();
+                    applicationDetail.setApplicationVersionRolledBackFrom(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("ConditionalToken", targetDepth)) {
+                    context.nextToken();
+                    applicationDetail.setConditionalToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -53,6 +53,12 @@ public class ApplicationDetailMarshaller {
     private static final MarshallingInfo<StructuredPojo> APPLICATIONMAINTENANCECONFIGURATIONDESCRIPTION_BINDING = MarshallingInfo
             .builder(MarshallingType.STRUCTURED).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ApplicationMaintenanceConfigurationDescription").build();
+    private static final MarshallingInfo<Long> APPLICATIONVERSIONUPDATEDFROM_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationVersionUpdatedFrom").build();
+    private static final MarshallingInfo<Long> APPLICATIONVERSIONROLLEDBACKFROM_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationVersionRolledBackFrom").build();
+    private static final MarshallingInfo<String> CONDITIONALTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConditionalToken").build();
 
     private static final ApplicationDetailMarshaller instance = new ApplicationDetailMarshaller();
 
@@ -83,6 +89,9 @@ public class ApplicationDetailMarshaller {
             protocolMarshaller.marshall(applicationDetail.getCloudWatchLoggingOptionDescriptions(), CLOUDWATCHLOGGINGOPTIONDESCRIPTIONS_BINDING);
             protocolMarshaller.marshall(applicationDetail.getApplicationMaintenanceConfigurationDescription(),
                     APPLICATIONMAINTENANCECONFIGURATIONDESCRIPTION_BINDING);
+            protocolMarshaller.marshall(applicationDetail.getApplicationVersionUpdatedFrom(), APPLICATIONVERSIONUPDATEDFROM_BINDING);
+            protocolMarshaller.marshall(applicationDetail.getApplicationVersionRolledBackFrom(), APPLICATIONVERSIONROLLEDBACKFROM_BINDING);
+            protocolMarshaller.marshall(applicationDetail.getConditionalToken(), CONDITIONALTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -42,7 +42,7 @@ public class AutoMLSecurityConfig implements Serializable, Cloneable, Structured
     private Boolean enableInterContainerTrafficEncryption;
     /**
      * <p>
-     * VPC configuration.
+     * The VPC configuration.
      * </p>
      */
     private VpcConfig vpcConfig;
@@ -141,11 +141,11 @@ public class AutoMLSecurityConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * VPC configuration.
+     * The VPC configuration.
      * </p>
      * 
      * @param vpcConfig
-     *        VPC configuration.
+     *        The VPC configuration.
      */
 
     public void setVpcConfig(VpcConfig vpcConfig) {
@@ -154,10 +154,10 @@ public class AutoMLSecurityConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * VPC configuration.
+     * The VPC configuration.
      * </p>
      * 
-     * @return VPC configuration.
+     * @return The VPC configuration.
      */
 
     public VpcConfig getVpcConfig() {
@@ -166,11 +166,11 @@ public class AutoMLSecurityConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * VPC configuration.
+     * The VPC configuration.
      * </p>
      * 
      * @param vpcConfig
-     *        VPC configuration.
+     *        The VPC configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

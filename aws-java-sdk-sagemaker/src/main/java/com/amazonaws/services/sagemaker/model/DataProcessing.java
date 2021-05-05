@@ -65,7 +65,8 @@ public class DataProcessing implements Serializable, Cloneable, StructuredPojo {
      * Specifies the source of the data to join with the transformed data. The valid values are <code>None</code> and
      * <code>Input</code>. The default value is <code>None</code>, which specifies not to join the input with the
      * transformed data. If you want the batch transform job to join the original input data with the transformed data,
-     * set <code>JoinSource</code> to <code>Input</code>.
+     * set <code>JoinSource</code> to <code>Input</code>. You can specify <code>OutputFilter</code> as an additional
+     * filter to select a portion of the joined dataset and store it in the output file.
      * </p>
      * <p>
      * For JSON or JSONLines objects, such as a JSON array, Amazon SageMaker adds the transformed data to the input JSON
@@ -75,9 +76,14 @@ public class DataProcessing implements Serializable, Cloneable, StructuredPojo {
      * <code>SageMakerOutput</code>.
      * </p>
      * <p>
-     * For CSV files, Amazon SageMaker combines the transformed data with the input data at the end of the input data
-     * and stores it in the output file. The joined data has the joined input data followed by the transformed data and
-     * the output is a CSV file.
+     * For CSV data, Amazon SageMaker takes each row as a JSON array and joins the transformed data with the input by
+     * appending each transformed row to the end of the input. The joined data has the original input data followed by
+     * the transformed data and the output is a CSV file.
+     * </p>
+     * <p>
+     * For information on how joining in applied, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#batch-transform-data-processing-workflow"
+     * >Workflow for Associating Inferences with Input Records</a>.
      * </p>
      */
     private String joinSource;
@@ -254,7 +260,8 @@ public class DataProcessing implements Serializable, Cloneable, StructuredPojo {
      * Specifies the source of the data to join with the transformed data. The valid values are <code>None</code> and
      * <code>Input</code>. The default value is <code>None</code>, which specifies not to join the input with the
      * transformed data. If you want the batch transform job to join the original input data with the transformed data,
-     * set <code>JoinSource</code> to <code>Input</code>.
+     * set <code>JoinSource</code> to <code>Input</code>. You can specify <code>OutputFilter</code> as an additional
+     * filter to select a portion of the joined dataset and store it in the output file.
      * </p>
      * <p>
      * For JSON or JSONLines objects, such as a JSON array, Amazon SageMaker adds the transformed data to the input JSON
@@ -264,16 +271,23 @@ public class DataProcessing implements Serializable, Cloneable, StructuredPojo {
      * <code>SageMakerOutput</code>.
      * </p>
      * <p>
-     * For CSV files, Amazon SageMaker combines the transformed data with the input data at the end of the input data
-     * and stores it in the output file. The joined data has the joined input data followed by the transformed data and
-     * the output is a CSV file.
+     * For CSV data, Amazon SageMaker takes each row as a JSON array and joins the transformed data with the input by
+     * appending each transformed row to the end of the input. The joined data has the original input data followed by
+     * the transformed data and the output is a CSV file.
+     * </p>
+     * <p>
+     * For information on how joining in applied, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#batch-transform-data-processing-workflow"
+     * >Workflow for Associating Inferences with Input Records</a>.
      * </p>
      * 
      * @param joinSource
      *        Specifies the source of the data to join with the transformed data. The valid values are <code>None</code>
      *        and <code>Input</code>. The default value is <code>None</code>, which specifies not to join the input with
      *        the transformed data. If you want the batch transform job to join the original input data with the
-     *        transformed data, set <code>JoinSource</code> to <code>Input</code>. </p>
+     *        transformed data, set <code>JoinSource</code> to <code>Input</code>. You can specify
+     *        <code>OutputFilter</code> as an additional filter to select a portion of the joined dataset and store it
+     *        in the output file.</p>
      *        <p>
      *        For JSON or JSONLines objects, such as a JSON array, Amazon SageMaker adds the transformed data to the
      *        input JSON object in an attribute called <code>SageMakerOutput</code>. The joined result for JSON must be
@@ -282,9 +296,14 @@ public class DataProcessing implements Serializable, Cloneable, StructuredPojo {
      *        results are stored in <code>SageMakerOutput</code>.
      *        </p>
      *        <p>
-     *        For CSV files, Amazon SageMaker combines the transformed data with the input data at the end of the input
-     *        data and stores it in the output file. The joined data has the joined input data followed by the
-     *        transformed data and the output is a CSV file.
+     *        For CSV data, Amazon SageMaker takes each row as a JSON array and joins the transformed data with the
+     *        input by appending each transformed row to the end of the input. The joined data has the original input
+     *        data followed by the transformed data and the output is a CSV file.
+     *        </p>
+     *        <p>
+     *        For information on how joining in applied, see <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#batch-transform-data-processing-workflow"
+     *        >Workflow for Associating Inferences with Input Records</a>.
      * @see JoinSource
      */
 
@@ -297,7 +316,8 @@ public class DataProcessing implements Serializable, Cloneable, StructuredPojo {
      * Specifies the source of the data to join with the transformed data. The valid values are <code>None</code> and
      * <code>Input</code>. The default value is <code>None</code>, which specifies not to join the input with the
      * transformed data. If you want the batch transform job to join the original input data with the transformed data,
-     * set <code>JoinSource</code> to <code>Input</code>.
+     * set <code>JoinSource</code> to <code>Input</code>. You can specify <code>OutputFilter</code> as an additional
+     * filter to select a portion of the joined dataset and store it in the output file.
      * </p>
      * <p>
      * For JSON or JSONLines objects, such as a JSON array, Amazon SageMaker adds the transformed data to the input JSON
@@ -307,15 +327,22 @@ public class DataProcessing implements Serializable, Cloneable, StructuredPojo {
      * <code>SageMakerOutput</code>.
      * </p>
      * <p>
-     * For CSV files, Amazon SageMaker combines the transformed data with the input data at the end of the input data
-     * and stores it in the output file. The joined data has the joined input data followed by the transformed data and
-     * the output is a CSV file.
+     * For CSV data, Amazon SageMaker takes each row as a JSON array and joins the transformed data with the input by
+     * appending each transformed row to the end of the input. The joined data has the original input data followed by
+     * the transformed data and the output is a CSV file.
+     * </p>
+     * <p>
+     * For information on how joining in applied, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#batch-transform-data-processing-workflow"
+     * >Workflow for Associating Inferences with Input Records</a>.
      * </p>
      * 
      * @return Specifies the source of the data to join with the transformed data. The valid values are
      *         <code>None</code> and <code>Input</code>. The default value is <code>None</code>, which specifies not to
      *         join the input with the transformed data. If you want the batch transform job to join the original input
-     *         data with the transformed data, set <code>JoinSource</code> to <code>Input</code>. </p>
+     *         data with the transformed data, set <code>JoinSource</code> to <code>Input</code>. You can specify
+     *         <code>OutputFilter</code> as an additional filter to select a portion of the joined dataset and store it
+     *         in the output file.</p>
      *         <p>
      *         For JSON or JSONLines objects, such as a JSON array, Amazon SageMaker adds the transformed data to the
      *         input JSON object in an attribute called <code>SageMakerOutput</code>. The joined result for JSON must be
@@ -324,9 +351,14 @@ public class DataProcessing implements Serializable, Cloneable, StructuredPojo {
      *         the results are stored in <code>SageMakerOutput</code>.
      *         </p>
      *         <p>
-     *         For CSV files, Amazon SageMaker combines the transformed data with the input data at the end of the input
-     *         data and stores it in the output file. The joined data has the joined input data followed by the
-     *         transformed data and the output is a CSV file.
+     *         For CSV data, Amazon SageMaker takes each row as a JSON array and joins the transformed data with the
+     *         input by appending each transformed row to the end of the input. The joined data has the original input
+     *         data followed by the transformed data and the output is a CSV file.
+     *         </p>
+     *         <p>
+     *         For information on how joining in applied, see <a href=
+     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#batch-transform-data-processing-workflow"
+     *         >Workflow for Associating Inferences with Input Records</a>.
      * @see JoinSource
      */
 
@@ -339,7 +371,8 @@ public class DataProcessing implements Serializable, Cloneable, StructuredPojo {
      * Specifies the source of the data to join with the transformed data. The valid values are <code>None</code> and
      * <code>Input</code>. The default value is <code>None</code>, which specifies not to join the input with the
      * transformed data. If you want the batch transform job to join the original input data with the transformed data,
-     * set <code>JoinSource</code> to <code>Input</code>.
+     * set <code>JoinSource</code> to <code>Input</code>. You can specify <code>OutputFilter</code> as an additional
+     * filter to select a portion of the joined dataset and store it in the output file.
      * </p>
      * <p>
      * For JSON or JSONLines objects, such as a JSON array, Amazon SageMaker adds the transformed data to the input JSON
@@ -349,16 +382,23 @@ public class DataProcessing implements Serializable, Cloneable, StructuredPojo {
      * <code>SageMakerOutput</code>.
      * </p>
      * <p>
-     * For CSV files, Amazon SageMaker combines the transformed data with the input data at the end of the input data
-     * and stores it in the output file. The joined data has the joined input data followed by the transformed data and
-     * the output is a CSV file.
+     * For CSV data, Amazon SageMaker takes each row as a JSON array and joins the transformed data with the input by
+     * appending each transformed row to the end of the input. The joined data has the original input data followed by
+     * the transformed data and the output is a CSV file.
+     * </p>
+     * <p>
+     * For information on how joining in applied, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#batch-transform-data-processing-workflow"
+     * >Workflow for Associating Inferences with Input Records</a>.
      * </p>
      * 
      * @param joinSource
      *        Specifies the source of the data to join with the transformed data. The valid values are <code>None</code>
      *        and <code>Input</code>. The default value is <code>None</code>, which specifies not to join the input with
      *        the transformed data. If you want the batch transform job to join the original input data with the
-     *        transformed data, set <code>JoinSource</code> to <code>Input</code>. </p>
+     *        transformed data, set <code>JoinSource</code> to <code>Input</code>. You can specify
+     *        <code>OutputFilter</code> as an additional filter to select a portion of the joined dataset and store it
+     *        in the output file.</p>
      *        <p>
      *        For JSON or JSONLines objects, such as a JSON array, Amazon SageMaker adds the transformed data to the
      *        input JSON object in an attribute called <code>SageMakerOutput</code>. The joined result for JSON must be
@@ -367,9 +407,14 @@ public class DataProcessing implements Serializable, Cloneable, StructuredPojo {
      *        results are stored in <code>SageMakerOutput</code>.
      *        </p>
      *        <p>
-     *        For CSV files, Amazon SageMaker combines the transformed data with the input data at the end of the input
-     *        data and stores it in the output file. The joined data has the joined input data followed by the
-     *        transformed data and the output is a CSV file.
+     *        For CSV data, Amazon SageMaker takes each row as a JSON array and joins the transformed data with the
+     *        input by appending each transformed row to the end of the input. The joined data has the original input
+     *        data followed by the transformed data and the output is a CSV file.
+     *        </p>
+     *        <p>
+     *        For information on how joining in applied, see <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#batch-transform-data-processing-workflow"
+     *        >Workflow for Associating Inferences with Input Records</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JoinSource
      */
@@ -384,7 +429,8 @@ public class DataProcessing implements Serializable, Cloneable, StructuredPojo {
      * Specifies the source of the data to join with the transformed data. The valid values are <code>None</code> and
      * <code>Input</code>. The default value is <code>None</code>, which specifies not to join the input with the
      * transformed data. If you want the batch transform job to join the original input data with the transformed data,
-     * set <code>JoinSource</code> to <code>Input</code>.
+     * set <code>JoinSource</code> to <code>Input</code>. You can specify <code>OutputFilter</code> as an additional
+     * filter to select a portion of the joined dataset and store it in the output file.
      * </p>
      * <p>
      * For JSON or JSONLines objects, such as a JSON array, Amazon SageMaker adds the transformed data to the input JSON
@@ -394,16 +440,23 @@ public class DataProcessing implements Serializable, Cloneable, StructuredPojo {
      * <code>SageMakerOutput</code>.
      * </p>
      * <p>
-     * For CSV files, Amazon SageMaker combines the transformed data with the input data at the end of the input data
-     * and stores it in the output file. The joined data has the joined input data followed by the transformed data and
-     * the output is a CSV file.
+     * For CSV data, Amazon SageMaker takes each row as a JSON array and joins the transformed data with the input by
+     * appending each transformed row to the end of the input. The joined data has the original input data followed by
+     * the transformed data and the output is a CSV file.
+     * </p>
+     * <p>
+     * For information on how joining in applied, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#batch-transform-data-processing-workflow"
+     * >Workflow for Associating Inferences with Input Records</a>.
      * </p>
      * 
      * @param joinSource
      *        Specifies the source of the data to join with the transformed data. The valid values are <code>None</code>
      *        and <code>Input</code>. The default value is <code>None</code>, which specifies not to join the input with
      *        the transformed data. If you want the batch transform job to join the original input data with the
-     *        transformed data, set <code>JoinSource</code> to <code>Input</code>. </p>
+     *        transformed data, set <code>JoinSource</code> to <code>Input</code>. You can specify
+     *        <code>OutputFilter</code> as an additional filter to select a portion of the joined dataset and store it
+     *        in the output file.</p>
      *        <p>
      *        For JSON or JSONLines objects, such as a JSON array, Amazon SageMaker adds the transformed data to the
      *        input JSON object in an attribute called <code>SageMakerOutput</code>. The joined result for JSON must be
@@ -412,9 +465,14 @@ public class DataProcessing implements Serializable, Cloneable, StructuredPojo {
      *        results are stored in <code>SageMakerOutput</code>.
      *        </p>
      *        <p>
-     *        For CSV files, Amazon SageMaker combines the transformed data with the input data at the end of the input
-     *        data and stores it in the output file. The joined data has the joined input data followed by the
-     *        transformed data and the output is a CSV file.
+     *        For CSV data, Amazon SageMaker takes each row as a JSON array and joins the transformed data with the
+     *        input by appending each transformed row to the end of the input. The joined data has the original input
+     *        data followed by the transformed data and the output is a CSV file.
+     *        </p>
+     *        <p>
+     *        For information on how joining in applied, see <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#batch-transform-data-processing-workflow"
+     *        >Workflow for Associating Inferences with Input Records</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JoinSource
      */

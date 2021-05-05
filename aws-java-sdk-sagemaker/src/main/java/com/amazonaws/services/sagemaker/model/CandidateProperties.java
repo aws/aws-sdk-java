@@ -30,18 +30,18 @@ public class CandidateProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The S3 prefix to the artifacts generated for an AutoML candidate.
+     * The Amazon S3 prefix to the artifacts generated for an AutoML candidate.
      * </p>
      */
     private CandidateArtifactLocations candidateArtifactLocations;
 
     /**
      * <p>
-     * The S3 prefix to the artifacts generated for an AutoML candidate.
+     * The Amazon S3 prefix to the artifacts generated for an AutoML candidate.
      * </p>
      * 
      * @param candidateArtifactLocations
-     *        The S3 prefix to the artifacts generated for an AutoML candidate.
+     *        The Amazon S3 prefix to the artifacts generated for an AutoML candidate.
      */
 
     public void setCandidateArtifactLocations(CandidateArtifactLocations candidateArtifactLocations) {
@@ -50,10 +50,10 @@ public class CandidateProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The S3 prefix to the artifacts generated for an AutoML candidate.
+     * The Amazon S3 prefix to the artifacts generated for an AutoML candidate.
      * </p>
      * 
-     * @return The S3 prefix to the artifacts generated for an AutoML candidate.
+     * @return The Amazon S3 prefix to the artifacts generated for an AutoML candidate.
      */
 
     public CandidateArtifactLocations getCandidateArtifactLocations() {
@@ -62,11 +62,11 @@ public class CandidateProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The S3 prefix to the artifacts generated for an AutoML candidate.
+     * The Amazon S3 prefix to the artifacts generated for an AutoML candidate.
      * </p>
      * 
      * @param candidateArtifactLocations
-     *        The S3 prefix to the artifacts generated for an AutoML candidate.
+     *        The Amazon S3 prefix to the artifacts generated for an AutoML candidate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

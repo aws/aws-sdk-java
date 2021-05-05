@@ -32,7 +32,9 @@ public enum AutoMLJobSecondaryStatus {
     CandidateDefinitionsGenerated("CandidateDefinitionsGenerated"),
     GeneratingExplainabilityReport("GeneratingExplainabilityReport"),
     Completed("Completed"),
-    ExplainabilityError("ExplainabilityError");
+    ExplainabilityError("ExplainabilityError"),
+    DeployingModel("DeployingModel"),
+    ModelDeploymentError("ModelDeploymentError");
 
     private String value;
 

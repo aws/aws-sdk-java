@@ -958,6 +958,59 @@ public interface AmazonKinesisAnalyticsV2Async extends AmazonKinesisAnalyticsV2 
 
     /**
      * <p>
+     * Reverts the application to the previous running version. You can roll back an application if you suspect it is
+     * stuck in a transient status.
+     * </p>
+     * <p>
+     * You can roll back an application only if it is in the <code>UPDATING</code> or <code>AUTOSCALING</code> status.
+     * </p>
+     * <p>
+     * When you rollback an application, it loads state data from the last successful snapshot. If the application has
+     * no snapshots, Kinesis Data Analytics rejects the rollback request.
+     * </p>
+     * <p>
+     * This action is not supported for Kinesis Data Analytics for SQL applications.
+     * </p>
+     * 
+     * @param rollbackApplicationRequest
+     * @return A Java Future containing the result of the RollbackApplication operation returned by the service.
+     * @sample AmazonKinesisAnalyticsV2Async.RollbackApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/RollbackApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RollbackApplicationResult> rollbackApplicationAsync(RollbackApplicationRequest rollbackApplicationRequest);
+
+    /**
+     * <p>
+     * Reverts the application to the previous running version. You can roll back an application if you suspect it is
+     * stuck in a transient status.
+     * </p>
+     * <p>
+     * You can roll back an application only if it is in the <code>UPDATING</code> or <code>AUTOSCALING</code> status.
+     * </p>
+     * <p>
+     * When you rollback an application, it loads state data from the last successful snapshot. If the application has
+     * no snapshots, Kinesis Data Analytics rejects the rollback request.
+     * </p>
+     * <p>
+     * This action is not supported for Kinesis Data Analytics for SQL applications.
+     * </p>
+     * 
+     * @param rollbackApplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RollbackApplication operation returned by the service.
+     * @sample AmazonKinesisAnalyticsV2AsyncHandler.RollbackApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/RollbackApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RollbackApplicationResult> rollbackApplicationAsync(RollbackApplicationRequest rollbackApplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<RollbackApplicationRequest, RollbackApplicationResult> asyncHandler);
+
+    /**
+     * <p>
      * Starts the specified Kinesis Data Analytics application. After creating an application, you must exclusively call
      * this operation to start your application.
      * </p>

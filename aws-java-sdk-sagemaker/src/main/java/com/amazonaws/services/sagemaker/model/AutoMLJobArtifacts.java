@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Artifacts that are generation during a job.
+ * The artifacts that are generated during an AutoML job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLJobArtifacts" target="_top">AWS API
@@ -30,24 +30,24 @@ public class AutoMLJobArtifacts implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The URL to the notebook location.
+     * The URL of the notebook location.
      * </p>
      */
     private String candidateDefinitionNotebookLocation;
     /**
      * <p>
-     * The URL to the notebook location.
+     * The URL of the notebook location.
      * </p>
      */
     private String dataExplorationNotebookLocation;
 
     /**
      * <p>
-     * The URL to the notebook location.
+     * The URL of the notebook location.
      * </p>
      * 
      * @param candidateDefinitionNotebookLocation
-     *        The URL to the notebook location.
+     *        The URL of the notebook location.
      */
 
     public void setCandidateDefinitionNotebookLocation(String candidateDefinitionNotebookLocation) {
@@ -56,10 +56,10 @@ public class AutoMLJobArtifacts implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The URL to the notebook location.
+     * The URL of the notebook location.
      * </p>
      * 
-     * @return The URL to the notebook location.
+     * @return The URL of the notebook location.
      */
 
     public String getCandidateDefinitionNotebookLocation() {
@@ -68,11 +68,11 @@ public class AutoMLJobArtifacts implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The URL to the notebook location.
+     * The URL of the notebook location.
      * </p>
      * 
      * @param candidateDefinitionNotebookLocation
-     *        The URL to the notebook location.
+     *        The URL of the notebook location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class AutoMLJobArtifacts implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The URL to the notebook location.
+     * The URL of the notebook location.
      * </p>
      * 
      * @param dataExplorationNotebookLocation
-     *        The URL to the notebook location.
+     *        The URL of the notebook location.
      */
 
     public void setDataExplorationNotebookLocation(String dataExplorationNotebookLocation) {
@@ -96,10 +96,10 @@ public class AutoMLJobArtifacts implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The URL to the notebook location.
+     * The URL of the notebook location.
      * </p>
      * 
-     * @return The URL to the notebook location.
+     * @return The URL of the notebook location.
      */
 
     public String getDataExplorationNotebookLocation() {
@@ -108,11 +108,11 @@ public class AutoMLJobArtifacts implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The URL to the notebook location.
+     * The URL of the notebook location.
      * </p>
      * 
      * @param dataExplorationNotebookLocation
-     *        The URL to the notebook location.
+     *        The URL of the notebook location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

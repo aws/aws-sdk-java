@@ -2012,6 +2012,7 @@
     },
     "CreateAssessmentFrameworkControlSet":{
       "type":"structure",
+      "required":["name"],
       "members":{
         "name":{
           "shape":"ControlSetName",
@@ -2586,7 +2587,7 @@
         },
         "assessmentReportSelection":{
           "shape":"String",
-          "documentation":"<p> Specifies whether the evidence is inclded in the assessment report. </p>"
+          "documentation":"<p> Specifies whether the evidence is included in the assessment report. </p>"
         }
       },
       "documentation":"<p> A record that contains the information needed to demonstrate compliance with the requirements specified by a control. Examples of evidence include change activity triggered by a user, or a system configuration snapshot. </p>"
@@ -4017,6 +4018,7 @@
     },
     "UpdateAssessmentFrameworkControlSet":{
       "type":"structure",
+      "required":["name"],
       "members":{
         "id":{
           "shape":"ControlSetName",

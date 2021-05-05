@@ -33,6 +33,8 @@ public class AddApplicationVpcConfigurationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CurrentApplicationVersionId").build();
     private static final MarshallingInfo<StructuredPojo> VPCCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConfiguration").build();
+    private static final MarshallingInfo<String> CONDITIONALTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConditionalToken").build();
 
     private static final AddApplicationVpcConfigurationRequestMarshaller instance = new AddApplicationVpcConfigurationRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class AddApplicationVpcConfigurationRequestMarshaller {
             protocolMarshaller.marshall(addApplicationVpcConfigurationRequest.getApplicationName(), APPLICATIONNAME_BINDING);
             protocolMarshaller.marshall(addApplicationVpcConfigurationRequest.getCurrentApplicationVersionId(), CURRENTAPPLICATIONVERSIONID_BINDING);
             protocolMarshaller.marshall(addApplicationVpcConfigurationRequest.getVpcConfiguration(), VPCCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(addApplicationVpcConfigurationRequest.getConditionalToken(), CONDITIONALTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

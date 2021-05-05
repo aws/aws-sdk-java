@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the steps for a Candidate, and what step it is working on.
+ * Information about the steps for a candidate and what step it is working on.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLCandidateStep" target="_top">AWS API
@@ -30,30 +30,30 @@ public class AutoMLCandidateStep implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Whether the Candidate is at the transform, training, or processing step.
+     * Whether the candidate is at the transform, training, or processing step.
      * </p>
      */
     private String candidateStepType;
     /**
      * <p>
-     * The ARN for the Candidate's step.
+     * The ARN for the candidate's step.
      * </p>
      */
     private String candidateStepArn;
     /**
      * <p>
-     * The name for the Candidate's step.
+     * The name for the candidate's step.
      * </p>
      */
     private String candidateStepName;
 
     /**
      * <p>
-     * Whether the Candidate is at the transform, training, or processing step.
+     * Whether the candidate is at the transform, training, or processing step.
      * </p>
      * 
      * @param candidateStepType
-     *        Whether the Candidate is at the transform, training, or processing step.
+     *        Whether the candidate is at the transform, training, or processing step.
      * @see CandidateStepType
      */
 
@@ -63,10 +63,10 @@ public class AutoMLCandidateStep implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Whether the Candidate is at the transform, training, or processing step.
+     * Whether the candidate is at the transform, training, or processing step.
      * </p>
      * 
-     * @return Whether the Candidate is at the transform, training, or processing step.
+     * @return Whether the candidate is at the transform, training, or processing step.
      * @see CandidateStepType
      */
 
@@ -76,11 +76,11 @@ public class AutoMLCandidateStep implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Whether the Candidate is at the transform, training, or processing step.
+     * Whether the candidate is at the transform, training, or processing step.
      * </p>
      * 
      * @param candidateStepType
-     *        Whether the Candidate is at the transform, training, or processing step.
+     *        Whether the candidate is at the transform, training, or processing step.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CandidateStepType
      */
@@ -92,11 +92,11 @@ public class AutoMLCandidateStep implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Whether the Candidate is at the transform, training, or processing step.
+     * Whether the candidate is at the transform, training, or processing step.
      * </p>
      * 
      * @param candidateStepType
-     *        Whether the Candidate is at the transform, training, or processing step.
+     *        Whether the candidate is at the transform, training, or processing step.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CandidateStepType
      */
@@ -108,11 +108,11 @@ public class AutoMLCandidateStep implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The ARN for the Candidate's step.
+     * The ARN for the candidate's step.
      * </p>
      * 
      * @param candidateStepArn
-     *        The ARN for the Candidate's step.
+     *        The ARN for the candidate's step.
      */
 
     public void setCandidateStepArn(String candidateStepArn) {
@@ -121,10 +121,10 @@ public class AutoMLCandidateStep implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The ARN for the Candidate's step.
+     * The ARN for the candidate's step.
      * </p>
      * 
-     * @return The ARN for the Candidate's step.
+     * @return The ARN for the candidate's step.
      */
 
     public String getCandidateStepArn() {
@@ -133,11 +133,11 @@ public class AutoMLCandidateStep implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The ARN for the Candidate's step.
+     * The ARN for the candidate's step.
      * </p>
      * 
      * @param candidateStepArn
-     *        The ARN for the Candidate's step.
+     *        The ARN for the candidate's step.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,11 +148,11 @@ public class AutoMLCandidateStep implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name for the Candidate's step.
+     * The name for the candidate's step.
      * </p>
      * 
      * @param candidateStepName
-     *        The name for the Candidate's step.
+     *        The name for the candidate's step.
      */
 
     public void setCandidateStepName(String candidateStepName) {
@@ -161,10 +161,10 @@ public class AutoMLCandidateStep implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name for the Candidate's step.
+     * The name for the candidate's step.
      * </p>
      * 
-     * @return The name for the Candidate's step.
+     * @return The name for the candidate's step.
      */
 
     public String getCandidateStepName() {
@@ -173,11 +173,11 @@ public class AutoMLCandidateStep implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name for the Candidate's step.
+     * The name for the candidate's step.
      * </p>
      * 
      * @param candidateStepName
-     *        The name for the Candidate's step.
+     *        The name for the candidate's step.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

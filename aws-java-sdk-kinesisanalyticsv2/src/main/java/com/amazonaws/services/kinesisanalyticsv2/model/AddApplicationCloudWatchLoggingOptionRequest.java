@@ -34,7 +34,8 @@ public class AddApplicationCloudWatchLoggingOptionRequest extends com.amazonaws.
     private String applicationName;
     /**
      * <p>
-     * The version ID of the Kinesis Data Analytics application. You can retrieve the application version ID using
+     * The version ID of the Kinesis Data Analytics application. You must provide the <code>ApplicationVersionID</code>
+     * or the <code>ConditionalToken</code>.You can retrieve the application version ID using
      * <a>DescribeApplication</a>.
      * </p>
      */
@@ -45,6 +46,14 @@ public class AddApplicationCloudWatchLoggingOptionRequest extends com.amazonaws.
      * </p>
      */
     private CloudWatchLoggingOption cloudWatchLoggingOption;
+    /**
+     * <p>
+     * A value you use to implement strong concurrency for application updates. You must provide the
+     * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>.
+     * </p>
+     */
+    private String conditionalToken;
 
     /**
      * <p>
@@ -88,13 +97,15 @@ public class AddApplicationCloudWatchLoggingOptionRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The version ID of the Kinesis Data Analytics application. You can retrieve the application version ID using
+     * The version ID of the Kinesis Data Analytics application. You must provide the <code>ApplicationVersionID</code>
+     * or the <code>ConditionalToken</code>.You can retrieve the application version ID using
      * <a>DescribeApplication</a>.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        The version ID of the Kinesis Data Analytics application. You can retrieve the application version ID
-     *        using <a>DescribeApplication</a>.
+     *        The version ID of the Kinesis Data Analytics application. You must provide the
+     *        <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can retrieve the application
+     *        version ID using <a>DescribeApplication</a>.
      */
 
     public void setCurrentApplicationVersionId(Long currentApplicationVersionId) {
@@ -103,12 +114,14 @@ public class AddApplicationCloudWatchLoggingOptionRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The version ID of the Kinesis Data Analytics application. You can retrieve the application version ID using
+     * The version ID of the Kinesis Data Analytics application. You must provide the <code>ApplicationVersionID</code>
+     * or the <code>ConditionalToken</code>.You can retrieve the application version ID using
      * <a>DescribeApplication</a>.
      * </p>
      * 
-     * @return The version ID of the Kinesis Data Analytics application. You can retrieve the application version ID
-     *         using <a>DescribeApplication</a>.
+     * @return The version ID of the Kinesis Data Analytics application. You must provide the
+     *         <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can retrieve the application
+     *         version ID using <a>DescribeApplication</a>.
      */
 
     public Long getCurrentApplicationVersionId() {
@@ -117,13 +130,15 @@ public class AddApplicationCloudWatchLoggingOptionRequest extends com.amazonaws.
 
     /**
      * <p>
-     * The version ID of the Kinesis Data Analytics application. You can retrieve the application version ID using
+     * The version ID of the Kinesis Data Analytics application. You must provide the <code>ApplicationVersionID</code>
+     * or the <code>ConditionalToken</code>.You can retrieve the application version ID using
      * <a>DescribeApplication</a>.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        The version ID of the Kinesis Data Analytics application. You can retrieve the application version ID
-     *        using <a>DescribeApplication</a>.
+     *        The version ID of the Kinesis Data Analytics application. You must provide the
+     *        <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.You can retrieve the application
+     *        version ID using <a>DescribeApplication</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,6 +188,58 @@ public class AddApplicationCloudWatchLoggingOptionRequest extends com.amazonaws.
     }
 
     /**
+     * <p>
+     * A value you use to implement strong concurrency for application updates. You must provide the
+     * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>.
+     * </p>
+     * 
+     * @param conditionalToken
+     *        A value you use to implement strong concurrency for application updates. You must provide the
+     *        <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current
+     *        <code>ConditionalToken</code> using <a>DescribeApplication</a>.
+     */
+
+    public void setConditionalToken(String conditionalToken) {
+        this.conditionalToken = conditionalToken;
+    }
+
+    /**
+     * <p>
+     * A value you use to implement strong concurrency for application updates. You must provide the
+     * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>.
+     * </p>
+     * 
+     * @return A value you use to implement strong concurrency for application updates. You must provide the
+     *         <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current
+     *         <code>ConditionalToken</code> using <a>DescribeApplication</a>.
+     */
+
+    public String getConditionalToken() {
+        return this.conditionalToken;
+    }
+
+    /**
+     * <p>
+     * A value you use to implement strong concurrency for application updates. You must provide the
+     * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>.
+     * </p>
+     * 
+     * @param conditionalToken
+     *        A value you use to implement strong concurrency for application updates. You must provide the
+     *        <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current
+     *        <code>ConditionalToken</code> using <a>DescribeApplication</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AddApplicationCloudWatchLoggingOptionRequest withConditionalToken(String conditionalToken) {
+        setConditionalToken(conditionalToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -189,7 +256,9 @@ public class AddApplicationCloudWatchLoggingOptionRequest extends com.amazonaws.
         if (getCurrentApplicationVersionId() != null)
             sb.append("CurrentApplicationVersionId: ").append(getCurrentApplicationVersionId()).append(",");
         if (getCloudWatchLoggingOption() != null)
-            sb.append("CloudWatchLoggingOption: ").append(getCloudWatchLoggingOption());
+            sb.append("CloudWatchLoggingOption: ").append(getCloudWatchLoggingOption()).append(",");
+        if (getConditionalToken() != null)
+            sb.append("ConditionalToken: ").append(getConditionalToken());
         sb.append("}");
         return sb.toString();
     }
@@ -216,6 +285,10 @@ public class AddApplicationCloudWatchLoggingOptionRequest extends com.amazonaws.
             return false;
         if (other.getCloudWatchLoggingOption() != null && other.getCloudWatchLoggingOption().equals(this.getCloudWatchLoggingOption()) == false)
             return false;
+        if (other.getConditionalToken() == null ^ this.getConditionalToken() == null)
+            return false;
+        if (other.getConditionalToken() != null && other.getConditionalToken().equals(this.getConditionalToken()) == false)
+            return false;
         return true;
     }
 
@@ -227,6 +300,7 @@ public class AddApplicationCloudWatchLoggingOptionRequest extends com.amazonaws.
         hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
         hashCode = prime * hashCode + ((getCurrentApplicationVersionId() == null) ? 0 : getCurrentApplicationVersionId().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchLoggingOption() == null) ? 0 : getCloudWatchLoggingOption().hashCode());
+        hashCode = prime * hashCode + ((getConditionalToken() == null) ? 0 : getConditionalToken().hashCode());
         return hashCode;
     }
 

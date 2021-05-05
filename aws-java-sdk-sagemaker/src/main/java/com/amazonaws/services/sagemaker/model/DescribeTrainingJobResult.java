@@ -209,7 +209,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>PreparingTrainingStack</code>
+     * <code>PreparingTraining</code>
      * </p>
      * </li>
      * <li>
@@ -1113,7 +1113,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>PreparingTrainingStack</code>
+     * <code>PreparingTraining</code>
      * </p>
      * </li>
      * <li>
@@ -1231,7 +1231,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PreparingTrainingStack</code>
+     *        <code>PreparingTraining</code>
      *        </p>
      *        </li>
      *        <li>
@@ -1354,7 +1354,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>PreparingTrainingStack</code>
+     * <code>PreparingTraining</code>
      * </p>
      * </li>
      * <li>
@@ -1471,7 +1471,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *         </li>
      *         <li>
      *         <p>
-     *         <code>PreparingTrainingStack</code>
+     *         <code>PreparingTraining</code>
      *         </p>
      *         </li>
      *         <li>
@@ -1594,7 +1594,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>PreparingTrainingStack</code>
+     * <code>PreparingTraining</code>
      * </p>
      * </li>
      * <li>
@@ -1712,7 +1712,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PreparingTrainingStack</code>
+     *        <code>PreparingTraining</code>
      *        </p>
      *        </li>
      *        <li>
@@ -1837,7 +1837,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>PreparingTrainingStack</code>
+     * <code>PreparingTraining</code>
      * </p>
      * </li>
      * <li>
@@ -1955,7 +1955,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PreparingTrainingStack</code>
+     *        <code>PreparingTraining</code>
      *        </p>
      *        </li>
      *        <li>

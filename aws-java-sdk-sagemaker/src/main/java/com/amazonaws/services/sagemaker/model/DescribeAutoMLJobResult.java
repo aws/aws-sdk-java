@@ -92,7 +92,7 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
     private java.util.Date lastModifiedTime;
     /**
      * <p>
-     * Returns the job's FailureReason.
+     * Returns the failure reason for an AutoML job, when applicable.
      * </p>
      */
     private String failureReason;
@@ -104,13 +104,13 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
     private java.util.List<AutoMLPartialFailureReason> partialFailureReasons;
     /**
      * <p>
-     * Returns the job's BestCandidate.
+     * Returns the job's best <code>AutoMLCandidate</code>.
      * </p>
      */
     private AutoMLCandidate bestCandidate;
     /**
      * <p>
-     * Returns the status of the AutoML job's AutoMLJobStatus.
+     * Returns the status of the AutoML job.
      * </p>
      */
     private String autoMLJobStatus;
@@ -122,23 +122,37 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
     private String autoMLJobSecondaryStatus;
     /**
      * <p>
-     * Returns the job's output from GenerateCandidateDefinitionsOnly.
+     * Indicates whether the output for an AutoML job generates candidate definitions only.
      * </p>
      */
     private Boolean generateCandidateDefinitionsOnly;
     /**
      * <p>
-     * Returns information on the job's artifacts found in AutoMLJobArtifacts.
+     * Returns information on the job's artifacts found in <code>AutoMLJobArtifacts</code>.
      * </p>
      */
     private AutoMLJobArtifacts autoMLJobArtifacts;
     /**
      * <p>
-     * This contains ProblemType, AutoMLJobObjective and CompletionCriteria. If you do not provide these values, they
-     * are auto-inferred. If you do provide them, they are the values you provide.
+     * This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code> and <code>CompletionCriteria</code>. If
+     * you do not provide these values, they are auto-inferred. If you do provide them, the values used are the ones you
+     * provide.
      * </p>
      */
     private ResolvedAttributes resolvedAttributes;
+    /**
+     * <p>
+     * Indicates whether the model was deployed automatically to an endpoint and the name of that endpoint if deployed
+     * automatically.
+     * </p>
+     */
+    private ModelDeployConfig modelDeployConfig;
+    /**
+     * <p>
+     * Provides information about endpoint for the model deployment.
+     * </p>
+     */
+    private ModelDeployResult modelDeployResult;
 
     /**
      * <p>
@@ -637,11 +651,11 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Returns the job's FailureReason.
+     * Returns the failure reason for an AutoML job, when applicable.
      * </p>
      * 
      * @param failureReason
-     *        Returns the job's FailureReason.
+     *        Returns the failure reason for an AutoML job, when applicable.
      */
 
     public void setFailureReason(String failureReason) {
@@ -650,10 +664,10 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Returns the job's FailureReason.
+     * Returns the failure reason for an AutoML job, when applicable.
      * </p>
      * 
-     * @return Returns the job's FailureReason.
+     * @return Returns the failure reason for an AutoML job, when applicable.
      */
 
     public String getFailureReason() {
@@ -662,11 +676,11 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Returns the job's FailureReason.
+     * Returns the failure reason for an AutoML job, when applicable.
      * </p>
      * 
      * @param failureReason
-     *        Returns the job's FailureReason.
+     *        Returns the failure reason for an AutoML job, when applicable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -747,11 +761,11 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Returns the job's BestCandidate.
+     * Returns the job's best <code>AutoMLCandidate</code>.
      * </p>
      * 
      * @param bestCandidate
-     *        Returns the job's BestCandidate.
+     *        Returns the job's best <code>AutoMLCandidate</code>.
      */
 
     public void setBestCandidate(AutoMLCandidate bestCandidate) {
@@ -760,10 +774,10 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Returns the job's BestCandidate.
+     * Returns the job's best <code>AutoMLCandidate</code>.
      * </p>
      * 
-     * @return Returns the job's BestCandidate.
+     * @return Returns the job's best <code>AutoMLCandidate</code>.
      */
 
     public AutoMLCandidate getBestCandidate() {
@@ -772,11 +786,11 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Returns the job's BestCandidate.
+     * Returns the job's best <code>AutoMLCandidate</code>.
      * </p>
      * 
      * @param bestCandidate
-     *        Returns the job's BestCandidate.
+     *        Returns the job's best <code>AutoMLCandidate</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -787,11 +801,11 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Returns the status of the AutoML job's AutoMLJobStatus.
+     * Returns the status of the AutoML job.
      * </p>
      * 
      * @param autoMLJobStatus
-     *        Returns the status of the AutoML job's AutoMLJobStatus.
+     *        Returns the status of the AutoML job.
      * @see AutoMLJobStatus
      */
 
@@ -801,10 +815,10 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Returns the status of the AutoML job's AutoMLJobStatus.
+     * Returns the status of the AutoML job.
      * </p>
      * 
-     * @return Returns the status of the AutoML job's AutoMLJobStatus.
+     * @return Returns the status of the AutoML job.
      * @see AutoMLJobStatus
      */
 
@@ -814,11 +828,11 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Returns the status of the AutoML job's AutoMLJobStatus.
+     * Returns the status of the AutoML job.
      * </p>
      * 
      * @param autoMLJobStatus
-     *        Returns the status of the AutoML job's AutoMLJobStatus.
+     *        Returns the status of the AutoML job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLJobStatus
      */
@@ -830,11 +844,11 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Returns the status of the AutoML job's AutoMLJobStatus.
+     * Returns the status of the AutoML job.
      * </p>
      * 
      * @param autoMLJobStatus
-     *        Returns the status of the AutoML job's AutoMLJobStatus.
+     *        Returns the status of the AutoML job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLJobStatus
      */
@@ -905,11 +919,11 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Returns the job's output from GenerateCandidateDefinitionsOnly.
+     * Indicates whether the output for an AutoML job generates candidate definitions only.
      * </p>
      * 
      * @param generateCandidateDefinitionsOnly
-     *        Returns the job's output from GenerateCandidateDefinitionsOnly.
+     *        Indicates whether the output for an AutoML job generates candidate definitions only.
      */
 
     public void setGenerateCandidateDefinitionsOnly(Boolean generateCandidateDefinitionsOnly) {
@@ -918,10 +932,10 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Returns the job's output from GenerateCandidateDefinitionsOnly.
+     * Indicates whether the output for an AutoML job generates candidate definitions only.
      * </p>
      * 
-     * @return Returns the job's output from GenerateCandidateDefinitionsOnly.
+     * @return Indicates whether the output for an AutoML job generates candidate definitions only.
      */
 
     public Boolean getGenerateCandidateDefinitionsOnly() {
@@ -930,11 +944,11 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Returns the job's output from GenerateCandidateDefinitionsOnly.
+     * Indicates whether the output for an AutoML job generates candidate definitions only.
      * </p>
      * 
      * @param generateCandidateDefinitionsOnly
-     *        Returns the job's output from GenerateCandidateDefinitionsOnly.
+     *        Indicates whether the output for an AutoML job generates candidate definitions only.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -945,10 +959,10 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Returns the job's output from GenerateCandidateDefinitionsOnly.
+     * Indicates whether the output for an AutoML job generates candidate definitions only.
      * </p>
      * 
-     * @return Returns the job's output from GenerateCandidateDefinitionsOnly.
+     * @return Indicates whether the output for an AutoML job generates candidate definitions only.
      */
 
     public Boolean isGenerateCandidateDefinitionsOnly() {
@@ -957,11 +971,11 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Returns information on the job's artifacts found in AutoMLJobArtifacts.
+     * Returns information on the job's artifacts found in <code>AutoMLJobArtifacts</code>.
      * </p>
      * 
      * @param autoMLJobArtifacts
-     *        Returns information on the job's artifacts found in AutoMLJobArtifacts.
+     *        Returns information on the job's artifacts found in <code>AutoMLJobArtifacts</code>.
      */
 
     public void setAutoMLJobArtifacts(AutoMLJobArtifacts autoMLJobArtifacts) {
@@ -970,10 +984,10 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Returns information on the job's artifacts found in AutoMLJobArtifacts.
+     * Returns information on the job's artifacts found in <code>AutoMLJobArtifacts</code>.
      * </p>
      * 
-     * @return Returns information on the job's artifacts found in AutoMLJobArtifacts.
+     * @return Returns information on the job's artifacts found in <code>AutoMLJobArtifacts</code>.
      */
 
     public AutoMLJobArtifacts getAutoMLJobArtifacts() {
@@ -982,11 +996,11 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Returns information on the job's artifacts found in AutoMLJobArtifacts.
+     * Returns information on the job's artifacts found in <code>AutoMLJobArtifacts</code>.
      * </p>
      * 
      * @param autoMLJobArtifacts
-     *        Returns information on the job's artifacts found in AutoMLJobArtifacts.
+     *        Returns information on the job's artifacts found in <code>AutoMLJobArtifacts</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -997,13 +1011,15 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * This contains ProblemType, AutoMLJobObjective and CompletionCriteria. If you do not provide these values, they
-     * are auto-inferred. If you do provide them, they are the values you provide.
+     * This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code> and <code>CompletionCriteria</code>. If
+     * you do not provide these values, they are auto-inferred. If you do provide them, the values used are the ones you
+     * provide.
      * </p>
      * 
      * @param resolvedAttributes
-     *        This contains ProblemType, AutoMLJobObjective and CompletionCriteria. If you do not provide these values,
-     *        they are auto-inferred. If you do provide them, they are the values you provide.
+     *        This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code> and
+     *        <code>CompletionCriteria</code>. If you do not provide these values, they are auto-inferred. If you do
+     *        provide them, the values used are the ones you provide.
      */
 
     public void setResolvedAttributes(ResolvedAttributes resolvedAttributes) {
@@ -1012,12 +1028,14 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * This contains ProblemType, AutoMLJobObjective and CompletionCriteria. If you do not provide these values, they
-     * are auto-inferred. If you do provide them, they are the values you provide.
+     * This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code> and <code>CompletionCriteria</code>. If
+     * you do not provide these values, they are auto-inferred. If you do provide them, the values used are the ones you
+     * provide.
      * </p>
      * 
-     * @return This contains ProblemType, AutoMLJobObjective and CompletionCriteria. If you do not provide these values,
-     *         they are auto-inferred. If you do provide them, they are the values you provide.
+     * @return This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code> and
+     *         <code>CompletionCriteria</code>. If you do not provide these values, they are auto-inferred. If you do
+     *         provide them, the values used are the ones you provide.
      */
 
     public ResolvedAttributes getResolvedAttributes() {
@@ -1026,18 +1044,106 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * This contains ProblemType, AutoMLJobObjective and CompletionCriteria. If you do not provide these values, they
-     * are auto-inferred. If you do provide them, they are the values you provide.
+     * This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code> and <code>CompletionCriteria</code>. If
+     * you do not provide these values, they are auto-inferred. If you do provide them, the values used are the ones you
+     * provide.
      * </p>
      * 
      * @param resolvedAttributes
-     *        This contains ProblemType, AutoMLJobObjective and CompletionCriteria. If you do not provide these values,
-     *        they are auto-inferred. If you do provide them, they are the values you provide.
+     *        This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code> and
+     *        <code>CompletionCriteria</code>. If you do not provide these values, they are auto-inferred. If you do
+     *        provide them, the values used are the ones you provide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAutoMLJobResult withResolvedAttributes(ResolvedAttributes resolvedAttributes) {
         setResolvedAttributes(resolvedAttributes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the model was deployed automatically to an endpoint and the name of that endpoint if deployed
+     * automatically.
+     * </p>
+     * 
+     * @param modelDeployConfig
+     *        Indicates whether the model was deployed automatically to an endpoint and the name of that endpoint if
+     *        deployed automatically.
+     */
+
+    public void setModelDeployConfig(ModelDeployConfig modelDeployConfig) {
+        this.modelDeployConfig = modelDeployConfig;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the model was deployed automatically to an endpoint and the name of that endpoint if deployed
+     * automatically.
+     * </p>
+     * 
+     * @return Indicates whether the model was deployed automatically to an endpoint and the name of that endpoint if
+     *         deployed automatically.
+     */
+
+    public ModelDeployConfig getModelDeployConfig() {
+        return this.modelDeployConfig;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the model was deployed automatically to an endpoint and the name of that endpoint if deployed
+     * automatically.
+     * </p>
+     * 
+     * @param modelDeployConfig
+     *        Indicates whether the model was deployed automatically to an endpoint and the name of that endpoint if
+     *        deployed automatically.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAutoMLJobResult withModelDeployConfig(ModelDeployConfig modelDeployConfig) {
+        setModelDeployConfig(modelDeployConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides information about endpoint for the model deployment.
+     * </p>
+     * 
+     * @param modelDeployResult
+     *        Provides information about endpoint for the model deployment.
+     */
+
+    public void setModelDeployResult(ModelDeployResult modelDeployResult) {
+        this.modelDeployResult = modelDeployResult;
+    }
+
+    /**
+     * <p>
+     * Provides information about endpoint for the model deployment.
+     * </p>
+     * 
+     * @return Provides information about endpoint for the model deployment.
+     */
+
+    public ModelDeployResult getModelDeployResult() {
+        return this.modelDeployResult;
+    }
+
+    /**
+     * <p>
+     * Provides information about endpoint for the model deployment.
+     * </p>
+     * 
+     * @param modelDeployResult
+     *        Provides information about endpoint for the model deployment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAutoMLJobResult withModelDeployResult(ModelDeployResult modelDeployResult) {
+        setModelDeployResult(modelDeployResult);
         return this;
     }
 
@@ -1090,7 +1196,11 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
         if (getAutoMLJobArtifacts() != null)
             sb.append("AutoMLJobArtifacts: ").append(getAutoMLJobArtifacts()).append(",");
         if (getResolvedAttributes() != null)
-            sb.append("ResolvedAttributes: ").append(getResolvedAttributes());
+            sb.append("ResolvedAttributes: ").append(getResolvedAttributes()).append(",");
+        if (getModelDeployConfig() != null)
+            sb.append("ModelDeployConfig: ").append(getModelDeployConfig()).append(",");
+        if (getModelDeployResult() != null)
+            sb.append("ModelDeployResult: ").append(getModelDeployResult());
         sb.append("}");
         return sb.toString();
     }
@@ -1182,6 +1292,14 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getResolvedAttributes() != null && other.getResolvedAttributes().equals(this.getResolvedAttributes()) == false)
             return false;
+        if (other.getModelDeployConfig() == null ^ this.getModelDeployConfig() == null)
+            return false;
+        if (other.getModelDeployConfig() != null && other.getModelDeployConfig().equals(this.getModelDeployConfig()) == false)
+            return false;
+        if (other.getModelDeployResult() == null ^ this.getModelDeployResult() == null)
+            return false;
+        if (other.getModelDeployResult() != null && other.getModelDeployResult().equals(this.getModelDeployResult()) == false)
+            return false;
         return true;
     }
 
@@ -1209,6 +1327,8 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getGenerateCandidateDefinitionsOnly() == null) ? 0 : getGenerateCandidateDefinitionsOnly().hashCode());
         hashCode = prime * hashCode + ((getAutoMLJobArtifacts() == null) ? 0 : getAutoMLJobArtifacts().hashCode());
         hashCode = prime * hashCode + ((getResolvedAttributes() == null) ? 0 : getResolvedAttributes().hashCode());
+        hashCode = prime * hashCode + ((getModelDeployConfig() == null) ? 0 : getModelDeployConfig().hashCode());
+        hashCode = prime * hashCode + ((getModelDeployResult() == null) ? 0 : getModelDeployResult().hashCode());
         return hashCode;
     }
 

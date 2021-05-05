@@ -63,13 +63,13 @@ public class ListAutoMLJobsRequest extends com.amazonaws.AmazonWebServiceRequest
     private String statusEquals;
     /**
      * <p>
-     * The sort order for the results. The default is Descending.
+     * The sort order for the results. The default is <code>Descending</code>.
      * </p>
      */
     private String sortOrder;
     /**
      * <p>
-     * The parameter by which to sort the results. The default is AutoMLJobName.
+     * The parameter by which to sort the results. The default is <code>Name</code>.
      * </p>
      */
     private String sortBy;
@@ -348,11 +348,11 @@ public class ListAutoMLJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The sort order for the results. The default is Descending.
+     * The sort order for the results. The default is <code>Descending</code>.
      * </p>
      * 
      * @param sortOrder
-     *        The sort order for the results. The default is Descending.
+     *        The sort order for the results. The default is <code>Descending</code>.
      * @see AutoMLSortOrder
      */
 
@@ -362,10 +362,10 @@ public class ListAutoMLJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The sort order for the results. The default is Descending.
+     * The sort order for the results. The default is <code>Descending</code>.
      * </p>
      * 
-     * @return The sort order for the results. The default is Descending.
+     * @return The sort order for the results. The default is <code>Descending</code>.
      * @see AutoMLSortOrder
      */
 
@@ -375,11 +375,11 @@ public class ListAutoMLJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The sort order for the results. The default is Descending.
+     * The sort order for the results. The default is <code>Descending</code>.
      * </p>
      * 
      * @param sortOrder
-     *        The sort order for the results. The default is Descending.
+     *        The sort order for the results. The default is <code>Descending</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLSortOrder
      */
@@ -391,11 +391,11 @@ public class ListAutoMLJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The sort order for the results. The default is Descending.
+     * The sort order for the results. The default is <code>Descending</code>.
      * </p>
      * 
      * @param sortOrder
-     *        The sort order for the results. The default is Descending.
+     *        The sort order for the results. The default is <code>Descending</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLSortOrder
      */
@@ -407,11 +407,11 @@ public class ListAutoMLJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The parameter by which to sort the results. The default is AutoMLJobName.
+     * The parameter by which to sort the results. The default is <code>Name</code>.
      * </p>
      * 
      * @param sortBy
-     *        The parameter by which to sort the results. The default is AutoMLJobName.
+     *        The parameter by which to sort the results. The default is <code>Name</code>.
      * @see AutoMLSortBy
      */
 
@@ -421,10 +421,10 @@ public class ListAutoMLJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The parameter by which to sort the results. The default is AutoMLJobName.
+     * The parameter by which to sort the results. The default is <code>Name</code>.
      * </p>
      * 
-     * @return The parameter by which to sort the results. The default is AutoMLJobName.
+     * @return The parameter by which to sort the results. The default is <code>Name</code>.
      * @see AutoMLSortBy
      */
 
@@ -434,11 +434,11 @@ public class ListAutoMLJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The parameter by which to sort the results. The default is AutoMLJobName.
+     * The parameter by which to sort the results. The default is <code>Name</code>.
      * </p>
      * 
      * @param sortBy
-     *        The parameter by which to sort the results. The default is AutoMLJobName.
+     *        The parameter by which to sort the results. The default is <code>Name</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLSortBy
      */
@@ -450,11 +450,11 @@ public class ListAutoMLJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The parameter by which to sort the results. The default is AutoMLJobName.
+     * The parameter by which to sort the results. The default is <code>Name</code>.
      * </p>
      * 
      * @param sortBy
-     *        The parameter by which to sort the results. The default is AutoMLJobName.
+     *        The parameter by which to sort the results. The default is <code>Name</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLSortBy
      */

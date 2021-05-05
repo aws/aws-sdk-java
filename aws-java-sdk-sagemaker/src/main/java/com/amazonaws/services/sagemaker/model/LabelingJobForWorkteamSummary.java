@@ -40,7 +40,11 @@ public class LabelingJobForWorkteamSummary implements Serializable, Cloneable, S
      * </p>
      */
     private String jobReferenceCode;
-    /** <p/> */
+    /**
+     * <p>
+     * The AWS account ID of the account used to start the labeling job.
+     * </p>
+     */
     private String workRequesterAccountId;
     /**
      * <p>
@@ -142,9 +146,12 @@ public class LabelingJobForWorkteamSummary implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The AWS account ID of the account used to start the labeling job.
+     * </p>
      * 
      * @param workRequesterAccountId
+     *        The AWS account ID of the account used to start the labeling job.
      */
 
     public void setWorkRequesterAccountId(String workRequesterAccountId) {
@@ -152,9 +159,11 @@ public class LabelingJobForWorkteamSummary implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The AWS account ID of the account used to start the labeling job.
+     * </p>
      * 
-     * @return
+     * @return The AWS account ID of the account used to start the labeling job.
      */
 
     public String getWorkRequesterAccountId() {
@@ -162,9 +171,12 @@ public class LabelingJobForWorkteamSummary implements Serializable, Cloneable, S
     }
 
     /**
-     * <p/>
+     * <p>
+     * The AWS account ID of the account used to start the labeling job.
+     * </p>
      * 
      * @param workRequesterAccountId
+     *        The AWS account ID of the account used to start the labeling job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -328,6 +328,19 @@ public class AbstractAmazonKinesisAnalyticsV2Async extends AbstractAmazonKinesis
     }
 
     @Override
+    public java.util.concurrent.Future<RollbackApplicationResult> rollbackApplicationAsync(RollbackApplicationRequest request) {
+
+        return rollbackApplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RollbackApplicationResult> rollbackApplicationAsync(RollbackApplicationRequest request,
+            com.amazonaws.handlers.AsyncHandler<RollbackApplicationRequest, RollbackApplicationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StartApplicationResult> startApplicationAsync(StartApplicationRequest request) {
 
         return startApplicationAsync(request, null);

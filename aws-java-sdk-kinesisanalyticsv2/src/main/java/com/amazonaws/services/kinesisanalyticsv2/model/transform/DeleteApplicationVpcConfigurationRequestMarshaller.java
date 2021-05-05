@@ -33,6 +33,8 @@ public class DeleteApplicationVpcConfigurationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CurrentApplicationVersionId").build();
     private static final MarshallingInfo<String> VPCCONFIGURATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConfigurationId").build();
+    private static final MarshallingInfo<String> CONDITIONALTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConditionalToken").build();
 
     private static final DeleteApplicationVpcConfigurationRequestMarshaller instance = new DeleteApplicationVpcConfigurationRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class DeleteApplicationVpcConfigurationRequestMarshaller {
             protocolMarshaller.marshall(deleteApplicationVpcConfigurationRequest.getApplicationName(), APPLICATIONNAME_BINDING);
             protocolMarshaller.marshall(deleteApplicationVpcConfigurationRequest.getCurrentApplicationVersionId(), CURRENTAPPLICATIONVERSIONID_BINDING);
             protocolMarshaller.marshall(deleteApplicationVpcConfigurationRequest.getVpcConfigurationId(), VPCCONFIGURATIONID_BINDING);
+            protocolMarshaller.marshall(deleteApplicationVpcConfigurationRequest.getConditionalToken(), CONDITIONALTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

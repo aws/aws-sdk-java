@@ -8,7 +8,7 @@
       "skip" : true
     },
     "calculateCRC32FromCompressedData" : false,
-    "contentTypeOverride" : null,
+    "contentTypeOverride" : "application/x-amz-json-1.1",
     "convenienceTypeOverloads" : [ ],
     "customClientConfigFactory" : null,
     "customCodeTemplates" : null,

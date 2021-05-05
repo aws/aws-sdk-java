@@ -33,7 +33,8 @@ public class AddApplicationVpcConfigurationRequest extends com.amazonaws.AmazonW
     private String applicationName;
     /**
      * <p>
-     * The version of the application to which you want to add the VPC configuration. You can use the
+     * The version of the application to which you want to add the VPC configuration. You must provide the
+     * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You can use the
      * <a>DescribeApplication</a> operation to get the current application version. If the version specified is not the
      * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
@@ -45,6 +46,14 @@ public class AddApplicationVpcConfigurationRequest extends com.amazonaws.AmazonW
      * </p>
      */
     private VpcConfiguration vpcConfiguration;
+    /**
+     * <p>
+     * A value you use to implement strong concurrency for application updates. You must provide the
+     * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>.
+     * </p>
+     */
+    private String conditionalToken;
 
     /**
      * <p>
@@ -88,13 +97,15 @@ public class AddApplicationVpcConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The version of the application to which you want to add the VPC configuration. You can use the
+     * The version of the application to which you want to add the VPC configuration. You must provide the
+     * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You can use the
      * <a>DescribeApplication</a> operation to get the current application version. If the version specified is not the
      * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        The version of the application to which you want to add the VPC configuration. You can use the
+     *        The version of the application to which you want to add the VPC configuration. You must provide the
+     *        <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You can use the
      *        <a>DescribeApplication</a> operation to get the current application version. If the version specified is
      *        not the current version, the <code>ConcurrentModificationException</code> is returned.
      */
@@ -105,12 +116,14 @@ public class AddApplicationVpcConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The version of the application to which you want to add the VPC configuration. You can use the
+     * The version of the application to which you want to add the VPC configuration. You must provide the
+     * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You can use the
      * <a>DescribeApplication</a> operation to get the current application version. If the version specified is not the
      * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      * 
-     * @return The version of the application to which you want to add the VPC configuration. You can use the
+     * @return The version of the application to which you want to add the VPC configuration. You must provide the
+     *         <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You can use the
      *         <a>DescribeApplication</a> operation to get the current application version. If the version specified is
      *         not the current version, the <code>ConcurrentModificationException</code> is returned.
      */
@@ -121,13 +134,15 @@ public class AddApplicationVpcConfigurationRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The version of the application to which you want to add the VPC configuration. You can use the
+     * The version of the application to which you want to add the VPC configuration. You must provide the
+     * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You can use the
      * <a>DescribeApplication</a> operation to get the current application version. If the version specified is not the
      * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        The version of the application to which you want to add the VPC configuration. You can use the
+     *        The version of the application to which you want to add the VPC configuration. You must provide the
+     *        <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You can use the
      *        <a>DescribeApplication</a> operation to get the current application version. If the version specified is
      *        not the current version, the <code>ConcurrentModificationException</code> is returned.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -179,6 +194,58 @@ public class AddApplicationVpcConfigurationRequest extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * A value you use to implement strong concurrency for application updates. You must provide the
+     * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>.
+     * </p>
+     * 
+     * @param conditionalToken
+     *        A value you use to implement strong concurrency for application updates. You must provide the
+     *        <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current
+     *        <code>ConditionalToken</code> using <a>DescribeApplication</a>.
+     */
+
+    public void setConditionalToken(String conditionalToken) {
+        this.conditionalToken = conditionalToken;
+    }
+
+    /**
+     * <p>
+     * A value you use to implement strong concurrency for application updates. You must provide the
+     * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>.
+     * </p>
+     * 
+     * @return A value you use to implement strong concurrency for application updates. You must provide the
+     *         <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current
+     *         <code>ConditionalToken</code> using <a>DescribeApplication</a>.
+     */
+
+    public String getConditionalToken() {
+        return this.conditionalToken;
+    }
+
+    /**
+     * <p>
+     * A value you use to implement strong concurrency for application updates. You must provide the
+     * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>.
+     * </p>
+     * 
+     * @param conditionalToken
+     *        A value you use to implement strong concurrency for application updates. You must provide the
+     *        <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current
+     *        <code>ConditionalToken</code> using <a>DescribeApplication</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AddApplicationVpcConfigurationRequest withConditionalToken(String conditionalToken) {
+        setConditionalToken(conditionalToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -195,7 +262,9 @@ public class AddApplicationVpcConfigurationRequest extends com.amazonaws.AmazonW
         if (getCurrentApplicationVersionId() != null)
             sb.append("CurrentApplicationVersionId: ").append(getCurrentApplicationVersionId()).append(",");
         if (getVpcConfiguration() != null)
-            sb.append("VpcConfiguration: ").append(getVpcConfiguration());
+            sb.append("VpcConfiguration: ").append(getVpcConfiguration()).append(",");
+        if (getConditionalToken() != null)
+            sb.append("ConditionalToken: ").append(getConditionalToken());
         sb.append("}");
         return sb.toString();
     }
@@ -222,6 +291,10 @@ public class AddApplicationVpcConfigurationRequest extends com.amazonaws.AmazonW
             return false;
         if (other.getVpcConfiguration() != null && other.getVpcConfiguration().equals(this.getVpcConfiguration()) == false)
             return false;
+        if (other.getConditionalToken() == null ^ this.getConditionalToken() == null)
+            return false;
+        if (other.getConditionalToken() != null && other.getConditionalToken().equals(this.getConditionalToken()) == false)
+            return false;
         return true;
     }
 
@@ -233,6 +306,7 @@ public class AddApplicationVpcConfigurationRequest extends com.amazonaws.AmazonW
         hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode());
         hashCode = prime * hashCode + ((getCurrentApplicationVersionId() == null) ? 0 : getCurrentApplicationVersionId().hashCode());
         hashCode = prime * hashCode + ((getVpcConfiguration() == null) ? 0 : getVpcConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getConditionalToken() == null) ? 0 : getConditionalToken().hashCode());
         return hashCode;
     }
 

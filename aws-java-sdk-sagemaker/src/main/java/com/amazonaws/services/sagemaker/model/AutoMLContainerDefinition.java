@@ -43,7 +43,7 @@ public class AutoMLContainerDefinition implements Serializable, Cloneable, Struc
     private String modelDataUrl;
     /**
      * <p>
-     * Environment variables to set in the container. For more information, see .
+     * The environment variables to set in the container. For more information, see .
      * </p>
      */
     private java.util.Map<String, String> environment;
@@ -130,10 +130,10 @@ public class AutoMLContainerDefinition implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Environment variables to set in the container. For more information, see .
+     * The environment variables to set in the container. For more information, see .
      * </p>
      * 
-     * @return Environment variables to set in the container. For more information, see .
+     * @return The environment variables to set in the container. For more information, see .
      */
 
     public java.util.Map<String, String> getEnvironment() {
@@ -142,11 +142,11 @@ public class AutoMLContainerDefinition implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Environment variables to set in the container. For more information, see .
+     * The environment variables to set in the container. For more information, see .
      * </p>
      * 
      * @param environment
-     *        Environment variables to set in the container. For more information, see .
+     *        The environment variables to set in the container. For more information, see .
      */
 
     public void setEnvironment(java.util.Map<String, String> environment) {
@@ -155,11 +155,11 @@ public class AutoMLContainerDefinition implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Environment variables to set in the container. For more information, see .
+     * The environment variables to set in the container. For more information, see .
      * </p>
      * 
      * @param environment
-     *        Environment variables to set in the container. For more information, see .
+     *        The environment variables to set in the container. For more information, see .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

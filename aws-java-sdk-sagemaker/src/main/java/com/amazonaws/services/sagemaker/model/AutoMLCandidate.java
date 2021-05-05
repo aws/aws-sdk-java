@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An Autopilot job returns recommendations, or candidates. Each candidate has futher details about the steps involed,
+ * An Autopilot job returns recommendations, or candidates. Each candidate has futher details about the steps involved
  * and the status.
  * </p>
  * 
@@ -31,7 +31,7 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The candidate name.
+     * The name of the candidate.
      * </p>
      */
     private String candidateName;
@@ -39,13 +39,13 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
     private FinalAutoMLJobObjectiveMetric finalAutoMLJobObjectiveMetric;
     /**
      * <p>
-     * The objective status.
+     * The objective's status.
      * </p>
      */
     private String objectiveStatus;
     /**
      * <p>
-     * The candidate's steps.
+     * Information about the candidate's steps.
      * </p>
      */
     private java.util.List<AutoMLCandidateStep> candidateSteps;
@@ -57,7 +57,7 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
     private String candidateStatus;
     /**
      * <p>
-     * The inference containers.
+     * Information about the inference container definitions.
      * </p>
      */
     private java.util.List<AutoMLContainerDefinition> inferenceContainers;
@@ -94,11 +94,11 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The candidate name.
+     * The name of the candidate.
      * </p>
      * 
      * @param candidateName
-     *        The candidate name.
+     *        The name of the candidate.
      */
 
     public void setCandidateName(String candidateName) {
@@ -107,10 +107,10 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The candidate name.
+     * The name of the candidate.
      * </p>
      * 
-     * @return The candidate name.
+     * @return The name of the candidate.
      */
 
     public String getCandidateName() {
@@ -119,11 +119,11 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The candidate name.
+     * The name of the candidate.
      * </p>
      * 
      * @param candidateName
-     *        The candidate name.
+     *        The name of the candidate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,11 +160,11 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The objective status.
+     * The objective's status.
      * </p>
      * 
      * @param objectiveStatus
-     *        The objective status.
+     *        The objective's status.
      * @see ObjectiveStatus
      */
 
@@ -174,10 +174,10 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The objective status.
+     * The objective's status.
      * </p>
      * 
-     * @return The objective status.
+     * @return The objective's status.
      * @see ObjectiveStatus
      */
 
@@ -187,11 +187,11 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The objective status.
+     * The objective's status.
      * </p>
      * 
      * @param objectiveStatus
-     *        The objective status.
+     *        The objective's status.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ObjectiveStatus
      */
@@ -203,11 +203,11 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The objective status.
+     * The objective's status.
      * </p>
      * 
      * @param objectiveStatus
-     *        The objective status.
+     *        The objective's status.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ObjectiveStatus
      */
@@ -219,10 +219,10 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The candidate's steps.
+     * Information about the candidate's steps.
      * </p>
      * 
-     * @return The candidate's steps.
+     * @return Information about the candidate's steps.
      */
 
     public java.util.List<AutoMLCandidateStep> getCandidateSteps() {
@@ -231,11 +231,11 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The candidate's steps.
+     * Information about the candidate's steps.
      * </p>
      * 
      * @param candidateSteps
-     *        The candidate's steps.
+     *        Information about the candidate's steps.
      */
 
     public void setCandidateSteps(java.util.Collection<AutoMLCandidateStep> candidateSteps) {
@@ -249,7 +249,7 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The candidate's steps.
+     * Information about the candidate's steps.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -258,7 +258,7 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param candidateSteps
-     *        The candidate's steps.
+     *        Information about the candidate's steps.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -274,11 +274,11 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The candidate's steps.
+     * Information about the candidate's steps.
      * </p>
      * 
      * @param candidateSteps
-     *        The candidate's steps.
+     *        Information about the candidate's steps.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -348,10 +348,10 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The inference containers.
+     * Information about the inference container definitions.
      * </p>
      * 
-     * @return The inference containers.
+     * @return Information about the inference container definitions.
      */
 
     public java.util.List<AutoMLContainerDefinition> getInferenceContainers() {
@@ -360,11 +360,11 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The inference containers.
+     * Information about the inference container definitions.
      * </p>
      * 
      * @param inferenceContainers
-     *        The inference containers.
+     *        Information about the inference container definitions.
      */
 
     public void setInferenceContainers(java.util.Collection<AutoMLContainerDefinition> inferenceContainers) {
@@ -378,7 +378,7 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The inference containers.
+     * Information about the inference container definitions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -387,7 +387,7 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param inferenceContainers
-     *        The inference containers.
+     *        Information about the inference container definitions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -403,11 +403,11 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The inference containers.
+     * Information about the inference container definitions.
      * </p>
      * 
      * @param inferenceContainers
-     *        The inference containers.
+     *        Information about the inference container definitions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

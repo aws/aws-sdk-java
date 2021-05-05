@@ -129,6 +129,14 @@ public class DescribeAutoMLJobResultJsonUnmarshaller implements Unmarshaller<Des
                     context.nextToken();
                     describeAutoMLJobResult.setResolvedAttributes(ResolvedAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ModelDeployConfig", targetDepth)) {
+                    context.nextToken();
+                    describeAutoMLJobResult.setModelDeployConfig(ModelDeployConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ModelDeployResult", targetDepth)) {
+                    context.nextToken();
+                    describeAutoMLJobResult.setModelDeployResult(ModelDeployResultJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

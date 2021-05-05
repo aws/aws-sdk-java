@@ -33,6 +33,8 @@ public class DeleteApplicationCloudWatchLoggingOptionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CurrentApplicationVersionId").build();
     private static final MarshallingInfo<String> CLOUDWATCHLOGGINGOPTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CloudWatchLoggingOptionId").build();
+    private static final MarshallingInfo<String> CONDITIONALTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConditionalToken").build();
 
     private static final DeleteApplicationCloudWatchLoggingOptionRequestMarshaller instance = new DeleteApplicationCloudWatchLoggingOptionRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class DeleteApplicationCloudWatchLoggingOptionRequestMarshaller {
             protocolMarshaller.marshall(deleteApplicationCloudWatchLoggingOptionRequest.getApplicationName(), APPLICATIONNAME_BINDING);
             protocolMarshaller.marshall(deleteApplicationCloudWatchLoggingOptionRequest.getCurrentApplicationVersionId(), CURRENTAPPLICATIONVERSIONID_BINDING);
             protocolMarshaller.marshall(deleteApplicationCloudWatchLoggingOptionRequest.getCloudWatchLoggingOptionId(), CLOUDWATCHLOGGINGOPTIONID_BINDING);
+            protocolMarshaller.marshall(deleteApplicationCloudWatchLoggingOptionRequest.getConditionalToken(), CONDITIONALTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

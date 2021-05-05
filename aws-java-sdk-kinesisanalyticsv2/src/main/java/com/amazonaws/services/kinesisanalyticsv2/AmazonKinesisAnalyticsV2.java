@@ -665,6 +665,44 @@ public interface AmazonKinesisAnalyticsV2 {
 
     /**
      * <p>
+     * Reverts the application to the previous running version. You can roll back an application if you suspect it is
+     * stuck in a transient status.
+     * </p>
+     * <p>
+     * You can roll back an application only if it is in the <code>UPDATING</code> or <code>AUTOSCALING</code> status.
+     * </p>
+     * <p>
+     * When you rollback an application, it loads state data from the last successful snapshot. If the application has
+     * no snapshots, Kinesis Data Analytics rejects the rollback request.
+     * </p>
+     * <p>
+     * This action is not supported for Kinesis Data Analytics for SQL applications.
+     * </p>
+     * 
+     * @param rollbackApplicationRequest
+     * @return Result of the RollbackApplication operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Specified application can't be found.
+     * @throws InvalidArgumentException
+     *         The specified input parameter value is not valid.
+     * @throws ResourceInUseException
+     *         The application is not available for this operation.
+     * @throws InvalidRequestException
+     *         The request JSON is not valid for the operation.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modifications to an application. This error can be the result
+     *         of attempting to modify an application without using the current application ID.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not supported or a specified resource is not
+     *         valid for this operation.
+     * @sample AmazonKinesisAnalyticsV2.RollbackApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/RollbackApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RollbackApplicationResult rollbackApplication(RollbackApplicationRequest rollbackApplicationRequest);
+
+    /**
+     * <p>
      * Starts the specified Kinesis Data Analytics application. After creating an application, you must exclusively call
      * this operation to start your application.
      * </p>

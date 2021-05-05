@@ -23,7 +23,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <p>
  * Model artifacts are the output that results from training a model, and typically consist of trained parameters, a
- * model defintion that desribes how to compute inferences, and other metadata.
+ * model defintion that describes how to compute inferences, and other metadata.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelArtifacts" target="_top">AWS API

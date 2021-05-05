@@ -25,7 +25,7 @@ public class ListCandidatesForAutoMLJobResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Summaries about the Candidates.
+     * Summaries about the <code>AutoMLCandidates</code>.
      * </p>
      */
     private java.util.List<AutoMLCandidate> candidates;
@@ -39,10 +39,10 @@ public class ListCandidatesForAutoMLJobResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Summaries about the Candidates.
+     * Summaries about the <code>AutoMLCandidates</code>.
      * </p>
      * 
-     * @return Summaries about the Candidates.
+     * @return Summaries about the <code>AutoMLCandidates</code>.
      */
 
     public java.util.List<AutoMLCandidate> getCandidates() {
@@ -51,11 +51,11 @@ public class ListCandidatesForAutoMLJobResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Summaries about the Candidates.
+     * Summaries about the <code>AutoMLCandidates</code>.
      * </p>
      * 
      * @param candidates
-     *        Summaries about the Candidates.
+     *        Summaries about the <code>AutoMLCandidates</code>.
      */
 
     public void setCandidates(java.util.Collection<AutoMLCandidate> candidates) {
@@ -69,7 +69,7 @@ public class ListCandidatesForAutoMLJobResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Summaries about the Candidates.
+     * Summaries about the <code>AutoMLCandidates</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class ListCandidatesForAutoMLJobResult extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param candidates
-     *        Summaries about the Candidates.
+     *        Summaries about the <code>AutoMLCandidates</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class ListCandidatesForAutoMLJobResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Summaries about the Candidates.
+     * Summaries about the <code>AutoMLCandidates</code>.
      * </p>
      * 
      * @param candidates
-     *        Summaries about the Candidates.
+     *        Summaries about the <code>AutoMLCandidates</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

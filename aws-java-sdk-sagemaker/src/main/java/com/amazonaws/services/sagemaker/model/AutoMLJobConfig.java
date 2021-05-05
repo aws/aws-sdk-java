@@ -36,7 +36,7 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
     private AutoMLJobCompletionCriteria completionCriteria;
     /**
      * <p>
-     * Security configuration for traffic encryption or Amazon VPC settings.
+     * The security configuration for traffic encryption or Amazon VPC settings.
      * </p>
      */
     private AutoMLSecurityConfig securityConfig;
@@ -83,11 +83,11 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Security configuration for traffic encryption or Amazon VPC settings.
+     * The security configuration for traffic encryption or Amazon VPC settings.
      * </p>
      * 
      * @param securityConfig
-     *        Security configuration for traffic encryption or Amazon VPC settings.
+     *        The security configuration for traffic encryption or Amazon VPC settings.
      */
 
     public void setSecurityConfig(AutoMLSecurityConfig securityConfig) {
@@ -96,10 +96,10 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Security configuration for traffic encryption or Amazon VPC settings.
+     * The security configuration for traffic encryption or Amazon VPC settings.
      * </p>
      * 
-     * @return Security configuration for traffic encryption or Amazon VPC settings.
+     * @return The security configuration for traffic encryption or Amazon VPC settings.
      */
 
     public AutoMLSecurityConfig getSecurityConfig() {
@@ -108,11 +108,11 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Security configuration for traffic encryption or Amazon VPC settings.
+     * The security configuration for traffic encryption or Amazon VPC settings.
      * </p>
      * 
      * @param securityConfig
-     *        Security configuration for traffic encryption or Amazon VPC settings.
+     *        The security configuration for traffic encryption or Amazon VPC settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

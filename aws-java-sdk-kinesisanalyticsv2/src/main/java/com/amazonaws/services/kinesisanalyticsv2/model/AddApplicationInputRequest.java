@@ -33,7 +33,8 @@ public class AddApplicationInputRequest extends com.amazonaws.AmazonWebServiceRe
     private String applicationName;
     /**
      * <p>
-     * The current version of your application. You can use the <a>DescribeApplication</a> operation to find the current
+     * The current version of your application. You must provide the <code>ApplicationVersionID</code> or the
+     * <code>ConditionalToken</code>.You can use the <a>DescribeApplication</a> operation to find the current
      * application version.
      * </p>
      */
@@ -87,13 +88,15 @@ public class AddApplicationInputRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The current version of your application. You can use the <a>DescribeApplication</a> operation to find the current
+     * The current version of your application. You must provide the <code>ApplicationVersionID</code> or the
+     * <code>ConditionalToken</code>.You can use the <a>DescribeApplication</a> operation to find the current
      * application version.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        The current version of your application. You can use the <a>DescribeApplication</a> operation to find the
-     *        current application version.
+     *        The current version of your application. You must provide the <code>ApplicationVersionID</code> or the
+     *        <code>ConditionalToken</code>.You can use the <a>DescribeApplication</a> operation to find the current
+     *        application version.
      */
 
     public void setCurrentApplicationVersionId(Long currentApplicationVersionId) {
@@ -102,12 +105,14 @@ public class AddApplicationInputRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The current version of your application. You can use the <a>DescribeApplication</a> operation to find the current
+     * The current version of your application. You must provide the <code>ApplicationVersionID</code> or the
+     * <code>ConditionalToken</code>.You can use the <a>DescribeApplication</a> operation to find the current
      * application version.
      * </p>
      * 
-     * @return The current version of your application. You can use the <a>DescribeApplication</a> operation to find the
-     *         current application version.
+     * @return The current version of your application. You must provide the <code>ApplicationVersionID</code> or the
+     *         <code>ConditionalToken</code>.You can use the <a>DescribeApplication</a> operation to find the current
+     *         application version.
      */
 
     public Long getCurrentApplicationVersionId() {
@@ -116,13 +121,15 @@ public class AddApplicationInputRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The current version of your application. You can use the <a>DescribeApplication</a> operation to find the current
+     * The current version of your application. You must provide the <code>ApplicationVersionID</code> or the
+     * <code>ConditionalToken</code>.You can use the <a>DescribeApplication</a> operation to find the current
      * application version.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        The current version of your application. You can use the <a>DescribeApplication</a> operation to find the
-     *        current application version.
+     *        The current version of your application. You must provide the <code>ApplicationVersionID</code> or the
+     *        <code>ConditionalToken</code>.You can use the <a>DescribeApplication</a> operation to find the current
+     *        application version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

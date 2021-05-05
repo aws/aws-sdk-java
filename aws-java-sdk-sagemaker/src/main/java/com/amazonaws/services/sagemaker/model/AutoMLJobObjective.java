@@ -40,30 +40,30 @@ public class AutoMLJobObjective implements Serializable, Cloneable, StructuredPo
      * <li>
      * <p>
      * <code>MSE</code>: The mean squared error (MSE) is the average of the squared differences between the predicted
-     * and actual values. It is used for regression. MSE values are always positive, the better a model is at predicting
-     * the actual values the smaller the MSE value. When the data contains outliers, they tend to dominate the MSE which
-     * might cause subpar prediction performance.
+     * and actual values. It is used for regression. MSE values are always positive: the better a model is at predicting
+     * the actual values, the smaller the MSE value. When the data contains outliers, they tend to dominate the MSE,
+     * which might cause subpar prediction performance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Accuracy</code>: The ratio of the number correctly classified items to the total number (correctly and
-     * incorrectly) classified. It is used for binary and multiclass classification. Measures how close the predicted
-     * class values are to the actual values. Accuracy values vary between zero and one, one being perfect accuracy and
-     * zero perfect inaccuracy.
+     * <code>Accuracy</code>: The ratio of the number of correctly classified items to the total number of (correctly
+     * and incorrectly) classified items. It is used for binary and multiclass classification. It measures how close the
+     * predicted class values are to the actual values. Accuracy values vary between zero and one: one indicates perfect
+     * accuracy and zero indicates perfect inaccuracy.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>F1</code>: The F1 score is the harmonic mean of the precision and recall. It is used for binary
      * classification into classes traditionally referred to as positive and negative. Predictions are said to be true
-     * when they match their actual (correct) class; false when they do not. Precision is the ratio of the true positive
-     * predictions to all positive predictions (including the false positives) in a data set and measures the quality of
-     * the prediction when it predicts the positive class. Recall (or sensitivity) is the ratio of the true positive
-     * predictions to all actual positive instances and measures how completely a model predicts the actual class
-     * members in a data set. The standard F1 score weighs precision and recall equally. But which metric is paramount
-     * typically depends on specific aspects of a problem. F1 scores vary between zero and one, one being the best
-     * possible performance and zero the worst.
+     * when they match their actual (correct) class and false when they do not. Precision is the ratio of the true
+     * positive predictions to all positive predictions (including the false positives) in a data set and measures the
+     * quality of the prediction when it predicts the positive class. Recall (or sensitivity) is the ratio of the true
+     * positive predictions to all actual positive instances and measures how completely a model predicts the actual
+     * class members in a data set. The standard F1 score weighs precision and recall equally. But which metric is
+     * paramount typically depends on specific aspects of a problem. F1 scores vary between zero and one: one indicates
+     * the best possible performance and zero the worst.
      * </p>
      * </li>
      * <li>
@@ -76,18 +76,19 @@ public class AutoMLJobObjective implements Serializable, Cloneable, StructuredPo
      * positives but more false negatives. AUC is the area under this receiver operating characteristic curve and so
      * provides an aggregated measure of the model performance across all possible classification thresholds. The AUC
      * score can also be interpreted as the probability that a randomly selected positive data point is more likely to
-     * be predicted positive than a randomly selected negative example. AUC scores vary between zero and one, one being
-     * perfect accuracy and one half not better than a random classifier. Values less that one half predict worse than a
-     * random predictor and such consistently bad predictors can be inverted to obtain better than random predictors.
+     * be predicted positive than a randomly selected negative example. AUC scores vary between zero and one: a score of
+     * one indicates perfect accuracy and a score of one half indicates that the prediction is not better than a random
+     * classifier. Values under one half predict less accurately than a random predictor. But such consistently bad
+     * predictors can simply be inverted to obtain better than random predictors.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>F1macro</code>: The F1macro score applies F1 scoring to multiclass classification. In this context, you
      * have multiple classes to predict. You just calculate the precision and recall for each class as you did for the
-     * positive class in binary classification. Then used these values to calculate the F1 score for each class and
-     * average them to obtain the F1macro score. F1macro scores vary between zero and one, one being the best possible
-     * performance and zero the worst.
+     * positive class in binary classification. Then, use these values to calculate the F1 score for each class and
+     * average them to obtain the F1macro score. F1macro scores vary between zero and one: one indicates the best
+     * possible performance and zero the worst.
      * </p>
      * </li>
      * </ul>
@@ -126,30 +127,30 @@ public class AutoMLJobObjective implements Serializable, Cloneable, StructuredPo
      * <li>
      * <p>
      * <code>MSE</code>: The mean squared error (MSE) is the average of the squared differences between the predicted
-     * and actual values. It is used for regression. MSE values are always positive, the better a model is at predicting
-     * the actual values the smaller the MSE value. When the data contains outliers, they tend to dominate the MSE which
-     * might cause subpar prediction performance.
+     * and actual values. It is used for regression. MSE values are always positive: the better a model is at predicting
+     * the actual values, the smaller the MSE value. When the data contains outliers, they tend to dominate the MSE,
+     * which might cause subpar prediction performance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Accuracy</code>: The ratio of the number correctly classified items to the total number (correctly and
-     * incorrectly) classified. It is used for binary and multiclass classification. Measures how close the predicted
-     * class values are to the actual values. Accuracy values vary between zero and one, one being perfect accuracy and
-     * zero perfect inaccuracy.
+     * <code>Accuracy</code>: The ratio of the number of correctly classified items to the total number of (correctly
+     * and incorrectly) classified items. It is used for binary and multiclass classification. It measures how close the
+     * predicted class values are to the actual values. Accuracy values vary between zero and one: one indicates perfect
+     * accuracy and zero indicates perfect inaccuracy.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>F1</code>: The F1 score is the harmonic mean of the precision and recall. It is used for binary
      * classification into classes traditionally referred to as positive and negative. Predictions are said to be true
-     * when they match their actual (correct) class; false when they do not. Precision is the ratio of the true positive
-     * predictions to all positive predictions (including the false positives) in a data set and measures the quality of
-     * the prediction when it predicts the positive class. Recall (or sensitivity) is the ratio of the true positive
-     * predictions to all actual positive instances and measures how completely a model predicts the actual class
-     * members in a data set. The standard F1 score weighs precision and recall equally. But which metric is paramount
-     * typically depends on specific aspects of a problem. F1 scores vary between zero and one, one being the best
-     * possible performance and zero the worst.
+     * when they match their actual (correct) class and false when they do not. Precision is the ratio of the true
+     * positive predictions to all positive predictions (including the false positives) in a data set and measures the
+     * quality of the prediction when it predicts the positive class. Recall (or sensitivity) is the ratio of the true
+     * positive predictions to all actual positive instances and measures how completely a model predicts the actual
+     * class members in a data set. The standard F1 score weighs precision and recall equally. But which metric is
+     * paramount typically depends on specific aspects of a problem. F1 scores vary between zero and one: one indicates
+     * the best possible performance and zero the worst.
      * </p>
      * </li>
      * <li>
@@ -162,18 +163,19 @@ public class AutoMLJobObjective implements Serializable, Cloneable, StructuredPo
      * positives but more false negatives. AUC is the area under this receiver operating characteristic curve and so
      * provides an aggregated measure of the model performance across all possible classification thresholds. The AUC
      * score can also be interpreted as the probability that a randomly selected positive data point is more likely to
-     * be predicted positive than a randomly selected negative example. AUC scores vary between zero and one, one being
-     * perfect accuracy and one half not better than a random classifier. Values less that one half predict worse than a
-     * random predictor and such consistently bad predictors can be inverted to obtain better than random predictors.
+     * be predicted positive than a randomly selected negative example. AUC scores vary between zero and one: a score of
+     * one indicates perfect accuracy and a score of one half indicates that the prediction is not better than a random
+     * classifier. Values under one half predict less accurately than a random predictor. But such consistently bad
+     * predictors can simply be inverted to obtain better than random predictors.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>F1macro</code>: The F1macro score applies F1 scoring to multiclass classification. In this context, you
      * have multiple classes to predict. You just calculate the precision and recall for each class as you did for the
-     * positive class in binary classification. Then used these values to calculate the F1 score for each class and
-     * average them to obtain the F1macro score. F1macro scores vary between zero and one, one being the best possible
-     * performance and zero the worst.
+     * positive class in binary classification. Then, use these values to calculate the F1 score for each class and
+     * average them to obtain the F1macro score. F1macro scores vary between zero and one: one indicates the best
+     * possible performance and zero the worst.
      * </p>
      * </li>
      * </ul>
@@ -208,30 +210,30 @@ public class AutoMLJobObjective implements Serializable, Cloneable, StructuredPo
      *        <li>
      *        <p>
      *        <code>MSE</code>: The mean squared error (MSE) is the average of the squared differences between the
-     *        predicted and actual values. It is used for regression. MSE values are always positive, the better a model
-     *        is at predicting the actual values the smaller the MSE value. When the data contains outliers, they tend
-     *        to dominate the MSE which might cause subpar prediction performance.
+     *        predicted and actual values. It is used for regression. MSE values are always positive: the better a model
+     *        is at predicting the actual values, the smaller the MSE value. When the data contains outliers, they tend
+     *        to dominate the MSE, which might cause subpar prediction performance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Accuracy</code>: The ratio of the number correctly classified items to the total number (correctly
-     *        and incorrectly) classified. It is used for binary and multiclass classification. Measures how close the
-     *        predicted class values are to the actual values. Accuracy values vary between zero and one, one being
-     *        perfect accuracy and zero perfect inaccuracy.
+     *        <code>Accuracy</code>: The ratio of the number of correctly classified items to the total number of
+     *        (correctly and incorrectly) classified items. It is used for binary and multiclass classification. It
+     *        measures how close the predicted class values are to the actual values. Accuracy values vary between zero
+     *        and one: one indicates perfect accuracy and zero indicates perfect inaccuracy.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>F1</code>: The F1 score is the harmonic mean of the precision and recall. It is used for binary
      *        classification into classes traditionally referred to as positive and negative. Predictions are said to be
-     *        true when they match their actual (correct) class; false when they do not. Precision is the ratio of the
-     *        true positive predictions to all positive predictions (including the false positives) in a data set and
-     *        measures the quality of the prediction when it predicts the positive class. Recall (or sensitivity) is the
-     *        ratio of the true positive predictions to all actual positive instances and measures how completely a
+     *        true when they match their actual (correct) class and false when they do not. Precision is the ratio of
+     *        the true positive predictions to all positive predictions (including the false positives) in a data set
+     *        and measures the quality of the prediction when it predicts the positive class. Recall (or sensitivity) is
+     *        the ratio of the true positive predictions to all actual positive instances and measures how completely a
      *        model predicts the actual class members in a data set. The standard F1 score weighs precision and recall
      *        equally. But which metric is paramount typically depends on specific aspects of a problem. F1 scores vary
-     *        between zero and one, one being the best possible performance and zero the worst.
+     *        between zero and one: one indicates the best possible performance and zero the worst.
      *        </p>
      *        </li>
      *        <li>
@@ -245,18 +247,19 @@ public class AutoMLJobObjective implements Serializable, Cloneable, StructuredPo
      *        receiver operating characteristic curve and so provides an aggregated measure of the model performance
      *        across all possible classification thresholds. The AUC score can also be interpreted as the probability
      *        that a randomly selected positive data point is more likely to be predicted positive than a randomly
-     *        selected negative example. AUC scores vary between zero and one, one being perfect accuracy and one half
-     *        not better than a random classifier. Values less that one half predict worse than a random predictor and
-     *        such consistently bad predictors can be inverted to obtain better than random predictors.
+     *        selected negative example. AUC scores vary between zero and one: a score of one indicates perfect accuracy
+     *        and a score of one half indicates that the prediction is not better than a random classifier. Values under
+     *        one half predict less accurately than a random predictor. But such consistently bad predictors can simply
+     *        be inverted to obtain better than random predictors.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>F1macro</code>: The F1macro score applies F1 scoring to multiclass classification. In this context,
      *        you have multiple classes to predict. You just calculate the precision and recall for each class as you
-     *        did for the positive class in binary classification. Then used these values to calculate the F1 score for
-     *        each class and average them to obtain the F1macro score. F1macro scores vary between zero and one, one
-     *        being the best possible performance and zero the worst.
+     *        did for the positive class in binary classification. Then, use these values to calculate the F1 score for
+     *        each class and average them to obtain the F1macro score. F1macro scores vary between zero and one: one
+     *        indicates the best possible performance and zero the worst.
      *        </p>
      *        </li>
      *        </ul>
@@ -298,30 +301,30 @@ public class AutoMLJobObjective implements Serializable, Cloneable, StructuredPo
      * <li>
      * <p>
      * <code>MSE</code>: The mean squared error (MSE) is the average of the squared differences between the predicted
-     * and actual values. It is used for regression. MSE values are always positive, the better a model is at predicting
-     * the actual values the smaller the MSE value. When the data contains outliers, they tend to dominate the MSE which
-     * might cause subpar prediction performance.
+     * and actual values. It is used for regression. MSE values are always positive: the better a model is at predicting
+     * the actual values, the smaller the MSE value. When the data contains outliers, they tend to dominate the MSE,
+     * which might cause subpar prediction performance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Accuracy</code>: The ratio of the number correctly classified items to the total number (correctly and
-     * incorrectly) classified. It is used for binary and multiclass classification. Measures how close the predicted
-     * class values are to the actual values. Accuracy values vary between zero and one, one being perfect accuracy and
-     * zero perfect inaccuracy.
+     * <code>Accuracy</code>: The ratio of the number of correctly classified items to the total number of (correctly
+     * and incorrectly) classified items. It is used for binary and multiclass classification. It measures how close the
+     * predicted class values are to the actual values. Accuracy values vary between zero and one: one indicates perfect
+     * accuracy and zero indicates perfect inaccuracy.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>F1</code>: The F1 score is the harmonic mean of the precision and recall. It is used for binary
      * classification into classes traditionally referred to as positive and negative. Predictions are said to be true
-     * when they match their actual (correct) class; false when they do not. Precision is the ratio of the true positive
-     * predictions to all positive predictions (including the false positives) in a data set and measures the quality of
-     * the prediction when it predicts the positive class. Recall (or sensitivity) is the ratio of the true positive
-     * predictions to all actual positive instances and measures how completely a model predicts the actual class
-     * members in a data set. The standard F1 score weighs precision and recall equally. But which metric is paramount
-     * typically depends on specific aspects of a problem. F1 scores vary between zero and one, one being the best
-     * possible performance and zero the worst.
+     * when they match their actual (correct) class and false when they do not. Precision is the ratio of the true
+     * positive predictions to all positive predictions (including the false positives) in a data set and measures the
+     * quality of the prediction when it predicts the positive class. Recall (or sensitivity) is the ratio of the true
+     * positive predictions to all actual positive instances and measures how completely a model predicts the actual
+     * class members in a data set. The standard F1 score weighs precision and recall equally. But which metric is
+     * paramount typically depends on specific aspects of a problem. F1 scores vary between zero and one: one indicates
+     * the best possible performance and zero the worst.
      * </p>
      * </li>
      * <li>
@@ -334,18 +337,19 @@ public class AutoMLJobObjective implements Serializable, Cloneable, StructuredPo
      * positives but more false negatives. AUC is the area under this receiver operating characteristic curve and so
      * provides an aggregated measure of the model performance across all possible classification thresholds. The AUC
      * score can also be interpreted as the probability that a randomly selected positive data point is more likely to
-     * be predicted positive than a randomly selected negative example. AUC scores vary between zero and one, one being
-     * perfect accuracy and one half not better than a random classifier. Values less that one half predict worse than a
-     * random predictor and such consistently bad predictors can be inverted to obtain better than random predictors.
+     * be predicted positive than a randomly selected negative example. AUC scores vary between zero and one: a score of
+     * one indicates perfect accuracy and a score of one half indicates that the prediction is not better than a random
+     * classifier. Values under one half predict less accurately than a random predictor. But such consistently bad
+     * predictors can simply be inverted to obtain better than random predictors.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>F1macro</code>: The F1macro score applies F1 scoring to multiclass classification. In this context, you
      * have multiple classes to predict. You just calculate the precision and recall for each class as you did for the
-     * positive class in binary classification. Then used these values to calculate the F1 score for each class and
-     * average them to obtain the F1macro score. F1macro scores vary between zero and one, one being the best possible
-     * performance and zero the worst.
+     * positive class in binary classification. Then, use these values to calculate the F1 score for each class and
+     * average them to obtain the F1macro score. F1macro scores vary between zero and one: one indicates the best
+     * possible performance and zero the worst.
      * </p>
      * </li>
      * </ul>
@@ -380,30 +384,31 @@ public class AutoMLJobObjective implements Serializable, Cloneable, StructuredPo
      *         <li>
      *         <p>
      *         <code>MSE</code>: The mean squared error (MSE) is the average of the squared differences between the
-     *         predicted and actual values. It is used for regression. MSE values are always positive, the better a
-     *         model is at predicting the actual values the smaller the MSE value. When the data contains outliers, they
-     *         tend to dominate the MSE which might cause subpar prediction performance.
+     *         predicted and actual values. It is used for regression. MSE values are always positive: the better a
+     *         model is at predicting the actual values, the smaller the MSE value. When the data contains outliers,
+     *         they tend to dominate the MSE, which might cause subpar prediction performance.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Accuracy</code>: The ratio of the number correctly classified items to the total number (correctly
-     *         and incorrectly) classified. It is used for binary and multiclass classification. Measures how close the
-     *         predicted class values are to the actual values. Accuracy values vary between zero and one, one being
-     *         perfect accuracy and zero perfect inaccuracy.
+     *         <code>Accuracy</code>: The ratio of the number of correctly classified items to the total number of
+     *         (correctly and incorrectly) classified items. It is used for binary and multiclass classification. It
+     *         measures how close the predicted class values are to the actual values. Accuracy values vary between zero
+     *         and one: one indicates perfect accuracy and zero indicates perfect inaccuracy.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>F1</code>: The F1 score is the harmonic mean of the precision and recall. It is used for binary
      *         classification into classes traditionally referred to as positive and negative. Predictions are said to
-     *         be true when they match their actual (correct) class; false when they do not. Precision is the ratio of
-     *         the true positive predictions to all positive predictions (including the false positives) in a data set
-     *         and measures the quality of the prediction when it predicts the positive class. Recall (or sensitivity)
-     *         is the ratio of the true positive predictions to all actual positive instances and measures how
-     *         completely a model predicts the actual class members in a data set. The standard F1 score weighs
+     *         be true when they match their actual (correct) class and false when they do not. Precision is the ratio
+     *         of the true positive predictions to all positive predictions (including the false positives) in a data
+     *         set and measures the quality of the prediction when it predicts the positive class. Recall (or
+     *         sensitivity) is the ratio of the true positive predictions to all actual positive instances and measures
+     *         how completely a model predicts the actual class members in a data set. The standard F1 score weighs
      *         precision and recall equally. But which metric is paramount typically depends on specific aspects of a
-     *         problem. F1 scores vary between zero and one, one being the best possible performance and zero the worst.
+     *         problem. F1 scores vary between zero and one: one indicates the best possible performance and zero the
+     *         worst.
      *         </p>
      *         </li>
      *         <li>
@@ -417,18 +422,19 @@ public class AutoMLJobObjective implements Serializable, Cloneable, StructuredPo
      *         area under this receiver operating characteristic curve and so provides an aggregated measure of the
      *         model performance across all possible classification thresholds. The AUC score can also be interpreted as
      *         the probability that a randomly selected positive data point is more likely to be predicted positive than
-     *         a randomly selected negative example. AUC scores vary between zero and one, one being perfect accuracy
-     *         and one half not better than a random classifier. Values less that one half predict worse than a random
-     *         predictor and such consistently bad predictors can be inverted to obtain better than random predictors.
+     *         a randomly selected negative example. AUC scores vary between zero and one: a score of one indicates
+     *         perfect accuracy and a score of one half indicates that the prediction is not better than a random
+     *         classifier. Values under one half predict less accurately than a random predictor. But such consistently
+     *         bad predictors can simply be inverted to obtain better than random predictors.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>F1macro</code>: The F1macro score applies F1 scoring to multiclass classification. In this context,
      *         you have multiple classes to predict. You just calculate the precision and recall for each class as you
-     *         did for the positive class in binary classification. Then used these values to calculate the F1 score for
-     *         each class and average them to obtain the F1macro score. F1macro scores vary between zero and one, one
-     *         being the best possible performance and zero the worst.
+     *         did for the positive class in binary classification. Then, use these values to calculate the F1 score for
+     *         each class and average them to obtain the F1macro score. F1macro scores vary between zero and one: one
+     *         indicates the best possible performance and zero the worst.
      *         </p>
      *         </li>
      *         </ul>
@@ -470,30 +476,30 @@ public class AutoMLJobObjective implements Serializable, Cloneable, StructuredPo
      * <li>
      * <p>
      * <code>MSE</code>: The mean squared error (MSE) is the average of the squared differences between the predicted
-     * and actual values. It is used for regression. MSE values are always positive, the better a model is at predicting
-     * the actual values the smaller the MSE value. When the data contains outliers, they tend to dominate the MSE which
-     * might cause subpar prediction performance.
+     * and actual values. It is used for regression. MSE values are always positive: the better a model is at predicting
+     * the actual values, the smaller the MSE value. When the data contains outliers, they tend to dominate the MSE,
+     * which might cause subpar prediction performance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Accuracy</code>: The ratio of the number correctly classified items to the total number (correctly and
-     * incorrectly) classified. It is used for binary and multiclass classification. Measures how close the predicted
-     * class values are to the actual values. Accuracy values vary between zero and one, one being perfect accuracy and
-     * zero perfect inaccuracy.
+     * <code>Accuracy</code>: The ratio of the number of correctly classified items to the total number of (correctly
+     * and incorrectly) classified items. It is used for binary and multiclass classification. It measures how close the
+     * predicted class values are to the actual values. Accuracy values vary between zero and one: one indicates perfect
+     * accuracy and zero indicates perfect inaccuracy.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>F1</code>: The F1 score is the harmonic mean of the precision and recall. It is used for binary
      * classification into classes traditionally referred to as positive and negative. Predictions are said to be true
-     * when they match their actual (correct) class; false when they do not. Precision is the ratio of the true positive
-     * predictions to all positive predictions (including the false positives) in a data set and measures the quality of
-     * the prediction when it predicts the positive class. Recall (or sensitivity) is the ratio of the true positive
-     * predictions to all actual positive instances and measures how completely a model predicts the actual class
-     * members in a data set. The standard F1 score weighs precision and recall equally. But which metric is paramount
-     * typically depends on specific aspects of a problem. F1 scores vary between zero and one, one being the best
-     * possible performance and zero the worst.
+     * when they match their actual (correct) class and false when they do not. Precision is the ratio of the true
+     * positive predictions to all positive predictions (including the false positives) in a data set and measures the
+     * quality of the prediction when it predicts the positive class. Recall (or sensitivity) is the ratio of the true
+     * positive predictions to all actual positive instances and measures how completely a model predicts the actual
+     * class members in a data set. The standard F1 score weighs precision and recall equally. But which metric is
+     * paramount typically depends on specific aspects of a problem. F1 scores vary between zero and one: one indicates
+     * the best possible performance and zero the worst.
      * </p>
      * </li>
      * <li>
@@ -506,18 +512,19 @@ public class AutoMLJobObjective implements Serializable, Cloneable, StructuredPo
      * positives but more false negatives. AUC is the area under this receiver operating characteristic curve and so
      * provides an aggregated measure of the model performance across all possible classification thresholds. The AUC
      * score can also be interpreted as the probability that a randomly selected positive data point is more likely to
-     * be predicted positive than a randomly selected negative example. AUC scores vary between zero and one, one being
-     * perfect accuracy and one half not better than a random classifier. Values less that one half predict worse than a
-     * random predictor and such consistently bad predictors can be inverted to obtain better than random predictors.
+     * be predicted positive than a randomly selected negative example. AUC scores vary between zero and one: a score of
+     * one indicates perfect accuracy and a score of one half indicates that the prediction is not better than a random
+     * classifier. Values under one half predict less accurately than a random predictor. But such consistently bad
+     * predictors can simply be inverted to obtain better than random predictors.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>F1macro</code>: The F1macro score applies F1 scoring to multiclass classification. In this context, you
      * have multiple classes to predict. You just calculate the precision and recall for each class as you did for the
-     * positive class in binary classification. Then used these values to calculate the F1 score for each class and
-     * average them to obtain the F1macro score. F1macro scores vary between zero and one, one being the best possible
-     * performance and zero the worst.
+     * positive class in binary classification. Then, use these values to calculate the F1 score for each class and
+     * average them to obtain the F1macro score. F1macro scores vary between zero and one: one indicates the best
+     * possible performance and zero the worst.
      * </p>
      * </li>
      * </ul>
@@ -552,30 +559,30 @@ public class AutoMLJobObjective implements Serializable, Cloneable, StructuredPo
      *        <li>
      *        <p>
      *        <code>MSE</code>: The mean squared error (MSE) is the average of the squared differences between the
-     *        predicted and actual values. It is used for regression. MSE values are always positive, the better a model
-     *        is at predicting the actual values the smaller the MSE value. When the data contains outliers, they tend
-     *        to dominate the MSE which might cause subpar prediction performance.
+     *        predicted and actual values. It is used for regression. MSE values are always positive: the better a model
+     *        is at predicting the actual values, the smaller the MSE value. When the data contains outliers, they tend
+     *        to dominate the MSE, which might cause subpar prediction performance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Accuracy</code>: The ratio of the number correctly classified items to the total number (correctly
-     *        and incorrectly) classified. It is used for binary and multiclass classification. Measures how close the
-     *        predicted class values are to the actual values. Accuracy values vary between zero and one, one being
-     *        perfect accuracy and zero perfect inaccuracy.
+     *        <code>Accuracy</code>: The ratio of the number of correctly classified items to the total number of
+     *        (correctly and incorrectly) classified items. It is used for binary and multiclass classification. It
+     *        measures how close the predicted class values are to the actual values. Accuracy values vary between zero
+     *        and one: one indicates perfect accuracy and zero indicates perfect inaccuracy.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>F1</code>: The F1 score is the harmonic mean of the precision and recall. It is used for binary
      *        classification into classes traditionally referred to as positive and negative. Predictions are said to be
-     *        true when they match their actual (correct) class; false when they do not. Precision is the ratio of the
-     *        true positive predictions to all positive predictions (including the false positives) in a data set and
-     *        measures the quality of the prediction when it predicts the positive class. Recall (or sensitivity) is the
-     *        ratio of the true positive predictions to all actual positive instances and measures how completely a
+     *        true when they match their actual (correct) class and false when they do not. Precision is the ratio of
+     *        the true positive predictions to all positive predictions (including the false positives) in a data set
+     *        and measures the quality of the prediction when it predicts the positive class. Recall (or sensitivity) is
+     *        the ratio of the true positive predictions to all actual positive instances and measures how completely a
      *        model predicts the actual class members in a data set. The standard F1 score weighs precision and recall
      *        equally. But which metric is paramount typically depends on specific aspects of a problem. F1 scores vary
-     *        between zero and one, one being the best possible performance and zero the worst.
+     *        between zero and one: one indicates the best possible performance and zero the worst.
      *        </p>
      *        </li>
      *        <li>
@@ -589,18 +596,19 @@ public class AutoMLJobObjective implements Serializable, Cloneable, StructuredPo
      *        receiver operating characteristic curve and so provides an aggregated measure of the model performance
      *        across all possible classification thresholds. The AUC score can also be interpreted as the probability
      *        that a randomly selected positive data point is more likely to be predicted positive than a randomly
-     *        selected negative example. AUC scores vary between zero and one, one being perfect accuracy and one half
-     *        not better than a random classifier. Values less that one half predict worse than a random predictor and
-     *        such consistently bad predictors can be inverted to obtain better than random predictors.
+     *        selected negative example. AUC scores vary between zero and one: a score of one indicates perfect accuracy
+     *        and a score of one half indicates that the prediction is not better than a random classifier. Values under
+     *        one half predict less accurately than a random predictor. But such consistently bad predictors can simply
+     *        be inverted to obtain better than random predictors.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>F1macro</code>: The F1macro score applies F1 scoring to multiclass classification. In this context,
      *        you have multiple classes to predict. You just calculate the precision and recall for each class as you
-     *        did for the positive class in binary classification. Then used these values to calculate the F1 score for
-     *        each class and average them to obtain the F1macro score. F1macro scores vary between zero and one, one
-     *        being the best possible performance and zero the worst.
+     *        did for the positive class in binary classification. Then, use these values to calculate the F1 score for
+     *        each class and average them to obtain the F1macro score. F1macro scores vary between zero and one: one
+     *        indicates the best possible performance and zero the worst.
      *        </p>
      *        </li>
      *        </ul>
@@ -644,30 +652,30 @@ public class AutoMLJobObjective implements Serializable, Cloneable, StructuredPo
      * <li>
      * <p>
      * <code>MSE</code>: The mean squared error (MSE) is the average of the squared differences between the predicted
-     * and actual values. It is used for regression. MSE values are always positive, the better a model is at predicting
-     * the actual values the smaller the MSE value. When the data contains outliers, they tend to dominate the MSE which
-     * might cause subpar prediction performance.
+     * and actual values. It is used for regression. MSE values are always positive: the better a model is at predicting
+     * the actual values, the smaller the MSE value. When the data contains outliers, they tend to dominate the MSE,
+     * which might cause subpar prediction performance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Accuracy</code>: The ratio of the number correctly classified items to the total number (correctly and
-     * incorrectly) classified. It is used for binary and multiclass classification. Measures how close the predicted
-     * class values are to the actual values. Accuracy values vary between zero and one, one being perfect accuracy and
-     * zero perfect inaccuracy.
+     * <code>Accuracy</code>: The ratio of the number of correctly classified items to the total number of (correctly
+     * and incorrectly) classified items. It is used for binary and multiclass classification. It measures how close the
+     * predicted class values are to the actual values. Accuracy values vary between zero and one: one indicates perfect
+     * accuracy and zero indicates perfect inaccuracy.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>F1</code>: The F1 score is the harmonic mean of the precision and recall. It is used for binary
      * classification into classes traditionally referred to as positive and negative. Predictions are said to be true
-     * when they match their actual (correct) class; false when they do not. Precision is the ratio of the true positive
-     * predictions to all positive predictions (including the false positives) in a data set and measures the quality of
-     * the prediction when it predicts the positive class. Recall (or sensitivity) is the ratio of the true positive
-     * predictions to all actual positive instances and measures how completely a model predicts the actual class
-     * members in a data set. The standard F1 score weighs precision and recall equally. But which metric is paramount
-     * typically depends on specific aspects of a problem. F1 scores vary between zero and one, one being the best
-     * possible performance and zero the worst.
+     * when they match their actual (correct) class and false when they do not. Precision is the ratio of the true
+     * positive predictions to all positive predictions (including the false positives) in a data set and measures the
+     * quality of the prediction when it predicts the positive class. Recall (or sensitivity) is the ratio of the true
+     * positive predictions to all actual positive instances and measures how completely a model predicts the actual
+     * class members in a data set. The standard F1 score weighs precision and recall equally. But which metric is
+     * paramount typically depends on specific aspects of a problem. F1 scores vary between zero and one: one indicates
+     * the best possible performance and zero the worst.
      * </p>
      * </li>
      * <li>
@@ -680,18 +688,19 @@ public class AutoMLJobObjective implements Serializable, Cloneable, StructuredPo
      * positives but more false negatives. AUC is the area under this receiver operating characteristic curve and so
      * provides an aggregated measure of the model performance across all possible classification thresholds. The AUC
      * score can also be interpreted as the probability that a randomly selected positive data point is more likely to
-     * be predicted positive than a randomly selected negative example. AUC scores vary between zero and one, one being
-     * perfect accuracy and one half not better than a random classifier. Values less that one half predict worse than a
-     * random predictor and such consistently bad predictors can be inverted to obtain better than random predictors.
+     * be predicted positive than a randomly selected negative example. AUC scores vary between zero and one: a score of
+     * one indicates perfect accuracy and a score of one half indicates that the prediction is not better than a random
+     * classifier. Values under one half predict less accurately than a random predictor. But such consistently bad
+     * predictors can simply be inverted to obtain better than random predictors.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>F1macro</code>: The F1macro score applies F1 scoring to multiclass classification. In this context, you
      * have multiple classes to predict. You just calculate the precision and recall for each class as you did for the
-     * positive class in binary classification. Then used these values to calculate the F1 score for each class and
-     * average them to obtain the F1macro score. F1macro scores vary between zero and one, one being the best possible
-     * performance and zero the worst.
+     * positive class in binary classification. Then, use these values to calculate the F1 score for each class and
+     * average them to obtain the F1macro score. F1macro scores vary between zero and one: one indicates the best
+     * possible performance and zero the worst.
      * </p>
      * </li>
      * </ul>
@@ -726,30 +735,30 @@ public class AutoMLJobObjective implements Serializable, Cloneable, StructuredPo
      *        <li>
      *        <p>
      *        <code>MSE</code>: The mean squared error (MSE) is the average of the squared differences between the
-     *        predicted and actual values. It is used for regression. MSE values are always positive, the better a model
-     *        is at predicting the actual values the smaller the MSE value. When the data contains outliers, they tend
-     *        to dominate the MSE which might cause subpar prediction performance.
+     *        predicted and actual values. It is used for regression. MSE values are always positive: the better a model
+     *        is at predicting the actual values, the smaller the MSE value. When the data contains outliers, they tend
+     *        to dominate the MSE, which might cause subpar prediction performance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Accuracy</code>: The ratio of the number correctly classified items to the total number (correctly
-     *        and incorrectly) classified. It is used for binary and multiclass classification. Measures how close the
-     *        predicted class values are to the actual values. Accuracy values vary between zero and one, one being
-     *        perfect accuracy and zero perfect inaccuracy.
+     *        <code>Accuracy</code>: The ratio of the number of correctly classified items to the total number of
+     *        (correctly and incorrectly) classified items. It is used for binary and multiclass classification. It
+     *        measures how close the predicted class values are to the actual values. Accuracy values vary between zero
+     *        and one: one indicates perfect accuracy and zero indicates perfect inaccuracy.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>F1</code>: The F1 score is the harmonic mean of the precision and recall. It is used for binary
      *        classification into classes traditionally referred to as positive and negative. Predictions are said to be
-     *        true when they match their actual (correct) class; false when they do not. Precision is the ratio of the
-     *        true positive predictions to all positive predictions (including the false positives) in a data set and
-     *        measures the quality of the prediction when it predicts the positive class. Recall (or sensitivity) is the
-     *        ratio of the true positive predictions to all actual positive instances and measures how completely a
+     *        true when they match their actual (correct) class and false when they do not. Precision is the ratio of
+     *        the true positive predictions to all positive predictions (including the false positives) in a data set
+     *        and measures the quality of the prediction when it predicts the positive class. Recall (or sensitivity) is
+     *        the ratio of the true positive predictions to all actual positive instances and measures how completely a
      *        model predicts the actual class members in a data set. The standard F1 score weighs precision and recall
      *        equally. But which metric is paramount typically depends on specific aspects of a problem. F1 scores vary
-     *        between zero and one, one being the best possible performance and zero the worst.
+     *        between zero and one: one indicates the best possible performance and zero the worst.
      *        </p>
      *        </li>
      *        <li>
@@ -763,18 +772,19 @@ public class AutoMLJobObjective implements Serializable, Cloneable, StructuredPo
      *        receiver operating characteristic curve and so provides an aggregated measure of the model performance
      *        across all possible classification thresholds. The AUC score can also be interpreted as the probability
      *        that a randomly selected positive data point is more likely to be predicted positive than a randomly
-     *        selected negative example. AUC scores vary between zero and one, one being perfect accuracy and one half
-     *        not better than a random classifier. Values less that one half predict worse than a random predictor and
-     *        such consistently bad predictors can be inverted to obtain better than random predictors.
+     *        selected negative example. AUC scores vary between zero and one: a score of one indicates perfect accuracy
+     *        and a score of one half indicates that the prediction is not better than a random classifier. Values under
+     *        one half predict less accurately than a random predictor. But such consistently bad predictors can simply
+     *        be inverted to obtain better than random predictors.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>F1macro</code>: The F1macro score applies F1 scoring to multiclass classification. In this context,
      *        you have multiple classes to predict. You just calculate the precision and recall for each class as you
-     *        did for the positive class in binary classification. Then used these values to calculate the F1 score for
-     *        each class and average them to obtain the F1macro score. F1macro scores vary between zero and one, one
-     *        being the best possible performance and zero the worst.
+     *        did for the positive class in binary classification. Then, use these values to calculate the F1 score for
+     *        each class and average them to obtain the F1macro score. F1macro scores vary between zero and one: one
+     *        indicates the best possible performance and zero the worst.
      *        </p>
      *        </li>
      *        </ul>

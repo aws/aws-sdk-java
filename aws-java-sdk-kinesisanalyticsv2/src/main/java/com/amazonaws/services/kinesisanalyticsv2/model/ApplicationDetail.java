@@ -103,6 +103,26 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private ApplicationMaintenanceConfigurationDescription applicationMaintenanceConfigurationDescription;
+    /**
+     * <p>
+     * The previous application version before the latest application update. <a>RollbackApplication</a> reverts the
+     * application to this version.
+     * </p>
+     */
+    private Long applicationVersionUpdatedFrom;
+    /**
+     * <p>
+     * If you reverted the application using <a>RollbackApplication</a>, the application version when
+     * <code>RollbackApplication</code> was called.
+     * </p>
+     */
+    private Long applicationVersionRolledBackFrom;
+    /**
+     * <p>
+     * A value you use to implement strong concurrency for application updates.
+     * </p>
+     */
+    private String conditionalToken;
 
     /**
      * <p>
@@ -670,6 +690,138 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The previous application version before the latest application update. <a>RollbackApplication</a> reverts the
+     * application to this version.
+     * </p>
+     * 
+     * @param applicationVersionUpdatedFrom
+     *        The previous application version before the latest application update. <a>RollbackApplication</a> reverts
+     *        the application to this version.
+     */
+
+    public void setApplicationVersionUpdatedFrom(Long applicationVersionUpdatedFrom) {
+        this.applicationVersionUpdatedFrom = applicationVersionUpdatedFrom;
+    }
+
+    /**
+     * <p>
+     * The previous application version before the latest application update. <a>RollbackApplication</a> reverts the
+     * application to this version.
+     * </p>
+     * 
+     * @return The previous application version before the latest application update. <a>RollbackApplication</a> reverts
+     *         the application to this version.
+     */
+
+    public Long getApplicationVersionUpdatedFrom() {
+        return this.applicationVersionUpdatedFrom;
+    }
+
+    /**
+     * <p>
+     * The previous application version before the latest application update. <a>RollbackApplication</a> reverts the
+     * application to this version.
+     * </p>
+     * 
+     * @param applicationVersionUpdatedFrom
+     *        The previous application version before the latest application update. <a>RollbackApplication</a> reverts
+     *        the application to this version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationDetail withApplicationVersionUpdatedFrom(Long applicationVersionUpdatedFrom) {
+        setApplicationVersionUpdatedFrom(applicationVersionUpdatedFrom);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If you reverted the application using <a>RollbackApplication</a>, the application version when
+     * <code>RollbackApplication</code> was called.
+     * </p>
+     * 
+     * @param applicationVersionRolledBackFrom
+     *        If you reverted the application using <a>RollbackApplication</a>, the application version when
+     *        <code>RollbackApplication</code> was called.
+     */
+
+    public void setApplicationVersionRolledBackFrom(Long applicationVersionRolledBackFrom) {
+        this.applicationVersionRolledBackFrom = applicationVersionRolledBackFrom;
+    }
+
+    /**
+     * <p>
+     * If you reverted the application using <a>RollbackApplication</a>, the application version when
+     * <code>RollbackApplication</code> was called.
+     * </p>
+     * 
+     * @return If you reverted the application using <a>RollbackApplication</a>, the application version when
+     *         <code>RollbackApplication</code> was called.
+     */
+
+    public Long getApplicationVersionRolledBackFrom() {
+        return this.applicationVersionRolledBackFrom;
+    }
+
+    /**
+     * <p>
+     * If you reverted the application using <a>RollbackApplication</a>, the application version when
+     * <code>RollbackApplication</code> was called.
+     * </p>
+     * 
+     * @param applicationVersionRolledBackFrom
+     *        If you reverted the application using <a>RollbackApplication</a>, the application version when
+     *        <code>RollbackApplication</code> was called.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationDetail withApplicationVersionRolledBackFrom(Long applicationVersionRolledBackFrom) {
+        setApplicationVersionRolledBackFrom(applicationVersionRolledBackFrom);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value you use to implement strong concurrency for application updates.
+     * </p>
+     * 
+     * @param conditionalToken
+     *        A value you use to implement strong concurrency for application updates.
+     */
+
+    public void setConditionalToken(String conditionalToken) {
+        this.conditionalToken = conditionalToken;
+    }
+
+    /**
+     * <p>
+     * A value you use to implement strong concurrency for application updates.
+     * </p>
+     * 
+     * @return A value you use to implement strong concurrency for application updates.
+     */
+
+    public String getConditionalToken() {
+        return this.conditionalToken;
+    }
+
+    /**
+     * <p>
+     * A value you use to implement strong concurrency for application updates.
+     * </p>
+     * 
+     * @param conditionalToken
+     *        A value you use to implement strong concurrency for application updates.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationDetail withConditionalToken(String conditionalToken) {
+        setConditionalToken(conditionalToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -704,7 +856,13 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
         if (getCloudWatchLoggingOptionDescriptions() != null)
             sb.append("CloudWatchLoggingOptionDescriptions: ").append(getCloudWatchLoggingOptionDescriptions()).append(",");
         if (getApplicationMaintenanceConfigurationDescription() != null)
-            sb.append("ApplicationMaintenanceConfigurationDescription: ").append(getApplicationMaintenanceConfigurationDescription());
+            sb.append("ApplicationMaintenanceConfigurationDescription: ").append(getApplicationMaintenanceConfigurationDescription()).append(",");
+        if (getApplicationVersionUpdatedFrom() != null)
+            sb.append("ApplicationVersionUpdatedFrom: ").append(getApplicationVersionUpdatedFrom()).append(",");
+        if (getApplicationVersionRolledBackFrom() != null)
+            sb.append("ApplicationVersionRolledBackFrom: ").append(getApplicationVersionRolledBackFrom()).append(",");
+        if (getConditionalToken() != null)
+            sb.append("ConditionalToken: ").append(getConditionalToken());
         sb.append("}");
         return sb.toString();
     }
@@ -770,6 +928,20 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
         if (other.getApplicationMaintenanceConfigurationDescription() != null
                 && other.getApplicationMaintenanceConfigurationDescription().equals(this.getApplicationMaintenanceConfigurationDescription()) == false)
             return false;
+        if (other.getApplicationVersionUpdatedFrom() == null ^ this.getApplicationVersionUpdatedFrom() == null)
+            return false;
+        if (other.getApplicationVersionUpdatedFrom() != null
+                && other.getApplicationVersionUpdatedFrom().equals(this.getApplicationVersionUpdatedFrom()) == false)
+            return false;
+        if (other.getApplicationVersionRolledBackFrom() == null ^ this.getApplicationVersionRolledBackFrom() == null)
+            return false;
+        if (other.getApplicationVersionRolledBackFrom() != null
+                && other.getApplicationVersionRolledBackFrom().equals(this.getApplicationVersionRolledBackFrom()) == false)
+            return false;
+        if (other.getConditionalToken() == null ^ this.getConditionalToken() == null)
+            return false;
+        if (other.getConditionalToken() != null && other.getConditionalToken().equals(this.getConditionalToken()) == false)
+            return false;
         return true;
     }
 
@@ -791,6 +963,9 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getCloudWatchLoggingOptionDescriptions() == null) ? 0 : getCloudWatchLoggingOptionDescriptions().hashCode());
         hashCode = prime * hashCode
                 + ((getApplicationMaintenanceConfigurationDescription() == null) ? 0 : getApplicationMaintenanceConfigurationDescription().hashCode());
+        hashCode = prime * hashCode + ((getApplicationVersionUpdatedFrom() == null) ? 0 : getApplicationVersionUpdatedFrom().hashCode());
+        hashCode = prime * hashCode + ((getApplicationVersionRolledBackFrom() == null) ? 0 : getApplicationVersionRolledBackFrom().hashCode());
+        hashCode = prime * hashCode + ((getConditionalToken() == null) ? 0 : getConditionalToken().hashCode());
         return hashCode;
     }
 

@@ -34,7 +34,8 @@ public class AddApplicationInputProcessingConfigurationRequest extends com.amazo
     private String applicationName;
     /**
      * <p>
-     * The version of the application to which you want to add the input processing configuration. You can use the
+     * The version of the application to which you want to add the input processing configuration. You must provide the
+     * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You can use the
      * <a>DescribeApplication</a> operation to get the current application version. If the version specified is not the
      * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
@@ -96,15 +97,17 @@ public class AddApplicationInputProcessingConfigurationRequest extends com.amazo
 
     /**
      * <p>
-     * The version of the application to which you want to add the input processing configuration. You can use the
+     * The version of the application to which you want to add the input processing configuration. You must provide the
+     * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You can use the
      * <a>DescribeApplication</a> operation to get the current application version. If the version specified is not the
      * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        The version of the application to which you want to add the input processing configuration. You can use
-     *        the <a>DescribeApplication</a> operation to get the current application version. If the version specified
-     *        is not the current version, the <code>ConcurrentModificationException</code> is returned.
+     *        The version of the application to which you want to add the input processing configuration. You must
+     *        provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You can use the
+     *        <a>DescribeApplication</a> operation to get the current application version. If the version specified is
+     *        not the current version, the <code>ConcurrentModificationException</code> is returned.
      */
 
     public void setCurrentApplicationVersionId(Long currentApplicationVersionId) {
@@ -113,14 +116,16 @@ public class AddApplicationInputProcessingConfigurationRequest extends com.amazo
 
     /**
      * <p>
-     * The version of the application to which you want to add the input processing configuration. You can use the
+     * The version of the application to which you want to add the input processing configuration. You must provide the
+     * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You can use the
      * <a>DescribeApplication</a> operation to get the current application version. If the version specified is not the
      * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      * 
-     * @return The version of the application to which you want to add the input processing configuration. You can use
-     *         the <a>DescribeApplication</a> operation to get the current application version. If the version specified
-     *         is not the current version, the <code>ConcurrentModificationException</code> is returned.
+     * @return The version of the application to which you want to add the input processing configuration. You must
+     *         provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You can use the
+     *         <a>DescribeApplication</a> operation to get the current application version. If the version specified is
+     *         not the current version, the <code>ConcurrentModificationException</code> is returned.
      */
 
     public Long getCurrentApplicationVersionId() {
@@ -129,15 +134,17 @@ public class AddApplicationInputProcessingConfigurationRequest extends com.amazo
 
     /**
      * <p>
-     * The version of the application to which you want to add the input processing configuration. You can use the
+     * The version of the application to which you want to add the input processing configuration. You must provide the
+     * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You can use the
      * <a>DescribeApplication</a> operation to get the current application version. If the version specified is not the
      * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        The version of the application to which you want to add the input processing configuration. You can use
-     *        the <a>DescribeApplication</a> operation to get the current application version. If the version specified
-     *        is not the current version, the <code>ConcurrentModificationException</code> is returned.
+     *        The version of the application to which you want to add the input processing configuration. You must
+     *        provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You can use the
+     *        <a>DescribeApplication</a> operation to get the current application version. If the version specified is
+     *        not the current version, the <code>ConcurrentModificationException</code> is returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Location of artifacts for an AutoML candidate job.
+ * The location of artifacts for an AutoML candidate job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CandidateArtifactLocations"
@@ -30,18 +30,18 @@ public class CandidateArtifactLocations implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The S3 prefix to the explainability artifacts generated for the AutoML candidate.
+     * The Amazon S3 prefix to the explainability artifacts generated for the AutoML candidate.
      * </p>
      */
     private String explainability;
 
     /**
      * <p>
-     * The S3 prefix to the explainability artifacts generated for the AutoML candidate.
+     * The Amazon S3 prefix to the explainability artifacts generated for the AutoML candidate.
      * </p>
      * 
      * @param explainability
-     *        The S3 prefix to the explainability artifacts generated for the AutoML candidate.
+     *        The Amazon S3 prefix to the explainability artifacts generated for the AutoML candidate.
      */
 
     public void setExplainability(String explainability) {
@@ -50,10 +50,10 @@ public class CandidateArtifactLocations implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The S3 prefix to the explainability artifacts generated for the AutoML candidate.
+     * The Amazon S3 prefix to the explainability artifacts generated for the AutoML candidate.
      * </p>
      * 
-     * @return The S3 prefix to the explainability artifacts generated for the AutoML candidate.
+     * @return The Amazon S3 prefix to the explainability artifacts generated for the AutoML candidate.
      */
 
     public String getExplainability() {
@@ -62,11 +62,11 @@ public class CandidateArtifactLocations implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The S3 prefix to the explainability artifacts generated for the AutoML candidate.
+     * The Amazon S3 prefix to the explainability artifacts generated for the AutoML candidate.
      * </p>
      * 
      * @param explainability
-     *        The S3 prefix to the explainability artifacts generated for the AutoML candidate.
+     *        The Amazon S3 prefix to the explainability artifacts generated for the AutoML candidate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

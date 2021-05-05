@@ -820,6 +820,39 @@ public class AmazonKinesisAnalyticsV2AsyncClient extends AmazonKinesisAnalyticsV
     }
 
     @Override
+    public java.util.concurrent.Future<RollbackApplicationResult> rollbackApplicationAsync(RollbackApplicationRequest request) {
+
+        return rollbackApplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RollbackApplicationResult> rollbackApplicationAsync(final RollbackApplicationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RollbackApplicationRequest, RollbackApplicationResult> asyncHandler) {
+        final RollbackApplicationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RollbackApplicationResult>() {
+            @Override
+            public RollbackApplicationResult call() throws Exception {
+                RollbackApplicationResult result = null;
+
+                try {
+                    result = executeRollbackApplication(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartApplicationResult> startApplicationAsync(StartApplicationRequest request) {
 
         return startApplicationAsync(request, null);

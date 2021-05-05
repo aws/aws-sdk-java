@@ -33,6 +33,8 @@ public class AddApplicationCloudWatchLoggingOptionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CurrentApplicationVersionId").build();
     private static final MarshallingInfo<StructuredPojo> CLOUDWATCHLOGGINGOPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CloudWatchLoggingOption").build();
+    private static final MarshallingInfo<String> CONDITIONALTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConditionalToken").build();
 
     private static final AddApplicationCloudWatchLoggingOptionRequestMarshaller instance = new AddApplicationCloudWatchLoggingOptionRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class AddApplicationCloudWatchLoggingOptionRequestMarshaller {
             protocolMarshaller.marshall(addApplicationCloudWatchLoggingOptionRequest.getApplicationName(), APPLICATIONNAME_BINDING);
             protocolMarshaller.marshall(addApplicationCloudWatchLoggingOptionRequest.getCurrentApplicationVersionId(), CURRENTAPPLICATIONVERSIONID_BINDING);
             protocolMarshaller.marshall(addApplicationCloudWatchLoggingOptionRequest.getCloudWatchLoggingOption(), CLOUDWATCHLOGGINGOPTION_BINDING);
+            protocolMarshaller.marshall(addApplicationCloudWatchLoggingOptionRequest.getConditionalToken(), CONDITIONALTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

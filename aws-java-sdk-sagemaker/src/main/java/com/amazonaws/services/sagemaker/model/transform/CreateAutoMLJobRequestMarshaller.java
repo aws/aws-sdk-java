@@ -46,6 +46,8 @@ public class CreateAutoMLJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GenerateCandidateDefinitionsOnly").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<StructuredPojo> MODELDEPLOYCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelDeployConfig").build();
 
     private static final CreateAutoMLJobRequestMarshaller instance = new CreateAutoMLJobRequestMarshaller();
 
@@ -72,6 +74,7 @@ public class CreateAutoMLJobRequestMarshaller {
             protocolMarshaller.marshall(createAutoMLJobRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(createAutoMLJobRequest.getGenerateCandidateDefinitionsOnly(), GENERATECANDIDATEDEFINITIONSONLY_BINDING);
             protocolMarshaller.marshall(createAutoMLJobRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createAutoMLJobRequest.getModelDeployConfig(), MODELDEPLOYCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
