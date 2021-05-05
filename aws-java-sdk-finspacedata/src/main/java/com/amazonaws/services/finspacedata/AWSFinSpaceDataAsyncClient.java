@@ -26,7 +26,7 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * The FinSpace APIs let you take actions inside FinSpace.
+ * The FinSpace APIs let you take actions inside the FinSpace environment.
  * </p>
  */
 @ThreadSafe

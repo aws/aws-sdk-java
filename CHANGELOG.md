@@ -1,3 +1,20 @@
+# __1.11.1012__ __2021-05-05__
+## __AWS FinSpace__
+  - ### Bugfixes
+    - Send the correct `Content-Type` headers for requests.
+
+## __AWS FinSpace Data__
+  - ### Bugfixes
+    - Send the correct `Content-Type` for requests.
+
+## __FinSpace Public API__
+  - ### Features
+    - Documentation updates for FinSpaceData API.
+
+## __FinSpace User Environment Management service__
+  - ### Features
+    - Documentation updates for FinSpace API.
+
 # __1.11.1011__ __2021-05-04__
 ## __AWS Certificate Manager Private Certificate Authority__
   - ### Features

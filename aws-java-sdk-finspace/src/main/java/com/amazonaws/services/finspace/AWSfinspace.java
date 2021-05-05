@@ -27,7 +27,7 @@ import com.amazonaws.services.finspace.model.*;
  * </p>
  * <p>
  * <p>
- * The FinSpace management service provides the APIs for managing FinSpace environments.
+ * The FinSpace management service provides the APIs for managing the FinSpace environments.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

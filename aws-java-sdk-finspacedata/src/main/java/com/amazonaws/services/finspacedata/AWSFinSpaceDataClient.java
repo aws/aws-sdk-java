@@ -51,7 +51,7 @@ import com.amazonaws.services.finspacedata.model.transform.*;
  * the service call completes.
  * <p>
  * <p>
- * The FinSpace APIs let you take actions inside FinSpace.
+ * The FinSpace APIs let you take actions inside the FinSpace environment.
  * </p>
  */
 @ThreadSafe
@@ -76,7 +76,7 @@ public class AWSFinSpaceDataClient extends AmazonWebServiceClient implements AWS
                     .withProtocolVersion("1.1")
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
-                    .withContentTypeOverride("")
+                    .withContentTypeOverride("application/x-amz-json-1.1")
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.finspacedata.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))

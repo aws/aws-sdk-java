@@ -13,7 +13,7 @@
 
 /**
  * <p>
- * The FinSpace APIs let you take actions inside FinSpace.
+ * The FinSpace APIs let you take actions inside the FinSpace environment.
  * </p>
  */
 package com.amazonaws.services.finspacedata;

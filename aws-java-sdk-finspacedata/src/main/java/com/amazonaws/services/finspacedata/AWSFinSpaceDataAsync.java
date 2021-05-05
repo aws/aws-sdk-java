@@ -26,7 +26,7 @@ import com.amazonaws.services.finspacedata.model.*;
  * </p>
  * <p>
  * <p>
- * The FinSpace APIs let you take actions inside FinSpace.
+ * The FinSpace APIs let you take actions inside the FinSpace environment.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -51,7 +51,7 @@ import com.amazonaws.services.finspace.model.transform.*;
  * service call completes.
  * <p>
  * <p>
- * The FinSpace management service provides the APIs for managing FinSpace environments.
+ * The FinSpace management service provides the APIs for managing the FinSpace environments.
  * </p>
  */
 @ThreadSafe
@@ -76,7 +76,7 @@ public class AWSfinspaceClient extends AmazonWebServiceClient implements AWSfins
                     .withProtocolVersion("1.1")
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
-                    .withContentTypeOverride("")
+                    .withContentTypeOverride("application/x-amz-json-1.1")
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.finspace.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))

@@ -13,7 +13,7 @@
 
 /**
  * <p>
- * The FinSpace management service provides the APIs for managing FinSpace environments.
+ * The FinSpace management service provides the APIs for managing the FinSpace environments.
  * </p>
  */
 package com.amazonaws.services.finspace;

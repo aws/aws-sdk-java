@@ -26,7 +26,7 @@ import java.util.concurrent.ExecutorService;
  * an asynchronous operation completes.
  * <p>
  * <p>
- * The FinSpace management service provides the APIs for managing FinSpace environments.
+ * The FinSpace management service provides the APIs for managing the FinSpace environments.
  * </p>
  */
 @ThreadSafe
