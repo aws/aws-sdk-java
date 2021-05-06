@@ -29,6 +29,8 @@ public class SaslMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> SCRAM_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scram").build();
+    private static final MarshallingInfo<StructuredPojo> IAM_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("iam").build();
 
     private static final SaslMarshaller instance = new SaslMarshaller();
 
@@ -47,6 +49,7 @@ public class SaslMarshaller {
 
         try {
             protocolMarshaller.marshall(sasl.getScram(), SCRAM_BINDING);
+            protocolMarshaller.marshall(sasl.getIam(), IAM_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

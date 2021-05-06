@@ -87,11 +87,46 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Integer instanceCount;
-
+    /**
+     * <p>
+     * Information about the Route 53 DNS records that you want AWS Cloud Map to create when you register an instance.
+     * </p>
+     */
     private DnsConfig dnsConfig;
-
+    /**
+     * <p>
+     * <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a
+     * health check, AWS Cloud Map associates the health check with the records that you specify in
+     * <code>DnsConfig</code>.
+     * </p>
+     */
     private HealthCheckConfig healthCheckConfig;
-
+    /**
+     * <p>
+     * Information about an optional custom health check. A custom health check, which requires that you use a
+     * third-party health checker to evaluate the health of your resources, is useful in the following circumstances:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can't use a health check that is defined by <code>HealthCheckConfig</code> because the resource isn't
+     * available over the internet. For example, you can use a custom health check when the instance is in an Amazon
+     * VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You want to use a third-party health checker regardless of where your resources are.
+     * </p>
+     * </li>
+     * </ul>
+     * <important>
+     * <p>
+     * If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or
+     * <code>HealthCheckConfig</code> but not both.
+     * </p>
+     * </important>
+     */
     private HealthCheckCustomConfig healthCheckCustomConfig;
     /**
      * <p>
@@ -536,7 +571,13 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Information about the Route 53 DNS records that you want AWS Cloud Map to create when you register an instance.
+     * </p>
+     * 
      * @param dnsConfig
+     *        Information about the Route 53 DNS records that you want AWS Cloud Map to create when you register an
+     *        instance.
      */
 
     public void setDnsConfig(DnsConfig dnsConfig) {
@@ -544,7 +585,12 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Information about the Route 53 DNS records that you want AWS Cloud Map to create when you register an instance.
+     * </p>
+     * 
+     * @return Information about the Route 53 DNS records that you want AWS Cloud Map to create when you register an
+     *         instance.
      */
 
     public DnsConfig getDnsConfig() {
@@ -552,7 +598,13 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Information about the Route 53 DNS records that you want AWS Cloud Map to create when you register an instance.
+     * </p>
+     * 
      * @param dnsConfig
+     *        Information about the Route 53 DNS records that you want AWS Cloud Map to create when you register an
+     *        instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -562,7 +614,16 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a
+     * health check, AWS Cloud Map associates the health check with the records that you specify in
+     * <code>DnsConfig</code>.
+     * </p>
+     * 
      * @param healthCheckConfig
+     *        <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings
+     *        for a health check, AWS Cloud Map associates the health check with the records that you specify in
+     *        <code>DnsConfig</code>.
      */
 
     public void setHealthCheckConfig(HealthCheckConfig healthCheckConfig) {
@@ -570,7 +631,15 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a
+     * health check, AWS Cloud Map associates the health check with the records that you specify in
+     * <code>DnsConfig</code>.
+     * </p>
+     * 
+     * @return <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify
+     *         settings for a health check, AWS Cloud Map associates the health check with the records that you specify
+     *         in <code>DnsConfig</code>.
      */
 
     public HealthCheckConfig getHealthCheckConfig() {
@@ -578,7 +647,16 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a
+     * health check, AWS Cloud Map associates the health check with the records that you specify in
+     * <code>DnsConfig</code>.
+     * </p>
+     * 
      * @param healthCheckConfig
+     *        <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings
+     *        for a health check, AWS Cloud Map associates the health check with the records that you specify in
+     *        <code>DnsConfig</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -588,7 +666,54 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Information about an optional custom health check. A custom health check, which requires that you use a
+     * third-party health checker to evaluate the health of your resources, is useful in the following circumstances:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can't use a health check that is defined by <code>HealthCheckConfig</code> because the resource isn't
+     * available over the internet. For example, you can use a custom health check when the instance is in an Amazon
+     * VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You want to use a third-party health checker regardless of where your resources are.
+     * </p>
+     * </li>
+     * </ul>
+     * <important>
+     * <p>
+     * If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or
+     * <code>HealthCheckConfig</code> but not both.
+     * </p>
+     * </important>
+     * 
      * @param healthCheckCustomConfig
+     *        Information about an optional custom health check. A custom health check, which requires that you use a
+     *        third-party health checker to evaluate the health of your resources, is useful in the following
+     *        circumstances:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        You can't use a health check that is defined by <code>HealthCheckConfig</code> because the resource isn't
+     *        available over the internet. For example, you can use a custom health check when the instance is in an
+     *        Amazon VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You want to use a third-party health checker regardless of where your resources are.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <important>
+     *        <p>
+     *        If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code>
+     *        or <code>HealthCheckConfig</code> but not both.
+     *        </p>
      */
 
     public void setHealthCheckCustomConfig(HealthCheckCustomConfig healthCheckCustomConfig) {
@@ -596,7 +721,53 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Information about an optional custom health check. A custom health check, which requires that you use a
+     * third-party health checker to evaluate the health of your resources, is useful in the following circumstances:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can't use a health check that is defined by <code>HealthCheckConfig</code> because the resource isn't
+     * available over the internet. For example, you can use a custom health check when the instance is in an Amazon
+     * VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You want to use a third-party health checker regardless of where your resources are.
+     * </p>
+     * </li>
+     * </ul>
+     * <important>
+     * <p>
+     * If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or
+     * <code>HealthCheckConfig</code> but not both.
+     * </p>
+     * </important>
+     * 
+     * @return Information about an optional custom health check. A custom health check, which requires that you use a
+     *         third-party health checker to evaluate the health of your resources, is useful in the following
+     *         circumstances:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You can't use a health check that is defined by <code>HealthCheckConfig</code> because the resource isn't
+     *         available over the internet. For example, you can use a custom health check when the instance is in an
+     *         Amazon VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You want to use a third-party health checker regardless of where your resources are.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <important>
+     *         <p>
+     *         If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code>
+     *         or <code>HealthCheckConfig</code> but not both.
+     *         </p>
      */
 
     public HealthCheckCustomConfig getHealthCheckCustomConfig() {
@@ -604,7 +775,54 @@ public class ServiceSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Information about an optional custom health check. A custom health check, which requires that you use a
+     * third-party health checker to evaluate the health of your resources, is useful in the following circumstances:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can't use a health check that is defined by <code>HealthCheckConfig</code> because the resource isn't
+     * available over the internet. For example, you can use a custom health check when the instance is in an Amazon
+     * VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You want to use a third-party health checker regardless of where your resources are.
+     * </p>
+     * </li>
+     * </ul>
+     * <important>
+     * <p>
+     * If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or
+     * <code>HealthCheckConfig</code> but not both.
+     * </p>
+     * </important>
+     * 
      * @param healthCheckCustomConfig
+     *        Information about an optional custom health check. A custom health check, which requires that you use a
+     *        third-party health checker to evaluate the health of your resources, is useful in the following
+     *        circumstances:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        You can't use a health check that is defined by <code>HealthCheckConfig</code> because the resource isn't
+     *        available over the internet. For example, you can use a custom health check when the instance is in an
+     *        Amazon VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You want to use a third-party health checker regardless of where your resources are.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <important>
+     *        <p>
+     *        If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code>
+     *        or <code>HealthCheckConfig</code> but not both.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

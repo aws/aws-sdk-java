@@ -35,8 +35,8 @@ public class CreatePrivateDnsNamespaceRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code>
-     * requests to be retried without the risk of executing the operation twice. <code>CreatorRequestId</code> can be
-     * any unique string, for example, a date/time stamp.
+     * requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any
+     * unique string, for example, a date/timestamp.
      * </p>
      */
     private String creatorRequestId;
@@ -54,9 +54,8 @@ public class CreatePrivateDnsNamespaceRequest extends com.amazonaws.AmazonWebSer
     private String vpc;
     /**
      * <p>
-     * The tags to add to the namespace. Each tag consists of a key and an optional value, both of which you define. Tag
-     * keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256
-     * characters.
+     * The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can
+     * be up to 128 characters in length, and tag values can be up to 256 characters in length.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -110,14 +109,14 @@ public class CreatePrivateDnsNamespaceRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code>
-     * requests to be retried without the risk of executing the operation twice. <code>CreatorRequestId</code> can be
-     * any unique string, for example, a date/time stamp.
+     * requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any
+     * unique string, for example, a date/timestamp.
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code>
-     *        requests to be retried without the risk of executing the operation twice. <code>CreatorRequestId</code>
-     *        can be any unique string, for example, a date/time stamp.
+     *        requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can
+     *        be any unique string, for example, a date/timestamp.
      */
 
     public void setCreatorRequestId(String creatorRequestId) {
@@ -127,13 +126,13 @@ public class CreatePrivateDnsNamespaceRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code>
-     * requests to be retried without the risk of executing the operation twice. <code>CreatorRequestId</code> can be
-     * any unique string, for example, a date/time stamp.
+     * requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any
+     * unique string, for example, a date/timestamp.
      * </p>
      * 
      * @return A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code>
-     *         requests to be retried without the risk of executing the operation twice. <code>CreatorRequestId</code>
-     *         can be any unique string, for example, a date/time stamp.
+     *         requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can
+     *         be any unique string, for example, a date/timestamp.
      */
 
     public String getCreatorRequestId() {
@@ -143,14 +142,14 @@ public class CreatePrivateDnsNamespaceRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code>
-     * requests to be retried without the risk of executing the operation twice. <code>CreatorRequestId</code> can be
-     * any unique string, for example, a date/time stamp.
+     * requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any
+     * unique string, for example, a date/timestamp.
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code>
-     *        requests to be retried without the risk of executing the operation twice. <code>CreatorRequestId</code>
-     *        can be any unique string, for example, a date/time stamp.
+     *        requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can
+     *        be any unique string, for example, a date/timestamp.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -241,14 +240,12 @@ public class CreatePrivateDnsNamespaceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The tags to add to the namespace. Each tag consists of a key and an optional value, both of which you define. Tag
-     * keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256
-     * characters.
+     * The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can
+     * be up to 128 characters in length, and tag values can be up to 256 characters in length.
      * </p>
      * 
-     * @return The tags to add to the namespace. Each tag consists of a key and an optional value, both of which you
-     *         define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum
-     *         length of 256 characters.
+     * @return The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags
+     *         keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.
      */
 
     public java.util.List<Tag> getTags() {
@@ -257,15 +254,13 @@ public class CreatePrivateDnsNamespaceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The tags to add to the namespace. Each tag consists of a key and an optional value, both of which you define. Tag
-     * keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256
-     * characters.
+     * The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can
+     * be up to 128 characters in length, and tag values can be up to 256 characters in length.
      * </p>
      * 
      * @param tags
-     *        The tags to add to the namespace. Each tag consists of a key and an optional value, both of which you
-     *        define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum
-     *        length of 256 characters.
+     *        The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags
+     *        keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -279,9 +274,8 @@ public class CreatePrivateDnsNamespaceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The tags to add to the namespace. Each tag consists of a key and an optional value, both of which you define. Tag
-     * keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256
-     * characters.
+     * The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can
+     * be up to 128 characters in length, and tag values can be up to 256 characters in length.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -290,9 +284,8 @@ public class CreatePrivateDnsNamespaceRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param tags
-     *        The tags to add to the namespace. Each tag consists of a key and an optional value, both of which you
-     *        define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum
-     *        length of 256 characters.
+     *        The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags
+     *        keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -308,15 +301,13 @@ public class CreatePrivateDnsNamespaceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The tags to add to the namespace. Each tag consists of a key and an optional value, both of which you define. Tag
-     * keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256
-     * characters.
+     * The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can
+     * be up to 128 characters in length, and tag values can be up to 256 characters in length.
      * </p>
      * 
      * @param tags
-     *        The tags to add to the namespace. Each tag consists of a key and an optional value, both of which you
-     *        define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum
-     *        length of 256 characters.
+     *        The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags
+     *        keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

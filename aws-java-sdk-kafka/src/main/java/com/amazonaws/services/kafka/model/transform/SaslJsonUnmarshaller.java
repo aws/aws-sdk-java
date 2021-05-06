@@ -52,6 +52,10 @@ public class SaslJsonUnmarshaller implements Unmarshaller<Sasl, JsonUnmarshaller
                     context.nextToken();
                     sasl.setScram(ScramJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("iam", targetDepth)) {
+                    context.nextToken();
+                    sasl.setIam(IamJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

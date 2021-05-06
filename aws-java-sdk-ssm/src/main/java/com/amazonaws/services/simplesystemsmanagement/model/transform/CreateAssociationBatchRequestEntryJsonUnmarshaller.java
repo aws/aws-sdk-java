@@ -109,6 +109,12 @@ public class CreateAssociationBatchRequestEntryJsonUnmarshaller implements Unmar
                     context.nextToken();
                     createAssociationBatchRequestEntry.setApplyOnlyAtCronInterval(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("CalendarNames", targetDepth)) {
+                    context.nextToken();
+                    createAssociationBatchRequestEntry.setCalendarNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("TargetLocations", targetDepth)) {
                     context.nextToken();
                     createAssociationBatchRequestEntry.setTargetLocations(new ListUnmarshaller<TargetLocation>(TargetLocationJsonUnmarshaller.getInstance())

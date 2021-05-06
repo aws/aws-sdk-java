@@ -53,46 +53,59 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Supported attribute keys include the following:
      * </p>
-     * <ul>
-     * <li>
+     * <dl>
+     * <dt>AWS_ALIAS_DNS_NAME</dt>
+     * <dd>
      * <p>
-     * <code>AWS_ALIAS_DNS_NAME</code>: For an alias record that routes traffic to an Elastic Load Balancing load
-     * balancer, the DNS name that is associated with the load balancer.
+     * For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that is
+     * associated with the load balancer.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>AWS_EC2_INSTANCE_ID (HTTP namespaces only)</dt>
+     * <dd>
      * <p>
-     * <code>AWS_EC2_INSTANCE_ID</code>: (HTTP namespaces only) The Amazon EC2 instance ID for the instance. When the
-     * <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute
-     * contains the primary private IPv4 address.
+     * The Amazon EC2 instance ID for the instance. When the <code>AWS_EC2_INSTANCE_ID</code> attribute is specified,
+     * then the <code>AWS_INSTANCE_IPV4</code> attribute contains the primary private IPv4 address.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>AWS_INIT_HEALTH_STATUS</dt>
+     * <dd>
      * <p>
-     * <code>AWS_INSTANCE_CNAME</code>: For a <code>CNAME</code> record, the domain name that Route 53 returns in
-     * response to DNS queries, for example, <code>example.com</code>.
+     * If the service configuration includes <code>HealthCheckCustomConfig</code>, you can optionally use
+     * <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom health check,
+     * <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't specify a value for
+     * <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is <code>HEALTHY</code>.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>AWS_INSTANCE_CNAME</dt>
+     * <dd>
      * <p>
-     * <code>AWS_INSTANCE_IPV4</code>: For an <code>A</code> record, the IPv4 address that Route 53 returns in response
-     * to DNS queries, for example, <code>192.0.2.44</code>.
+     * For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries, for example,
+     * <code>example.com</code>.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>AWS_INSTANCE_IPV4</dt>
+     * <dd>
      * <p>
-     * <code>AWS_INSTANCE_IPV6</code>: For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in
-     * response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     * For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries, for example,
+     * <code>192.0.2.44</code>.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>AWS_INSTANCE_IPV6</dt>
+     * <dd>
      * <p>
-     * <code>AWS_INSTANCE_PORT</code>: For an <code>SRV</code> record, the value that Route 53 returns for the port. In
-     * addition, if the service includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
-     * requests to.
+     * For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries, for example,
+     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
      * </p>
-     * </li>
-     * </ul>
+     * </dd>
+     * <dt>AWS_INSTANCE_PORT</dt>
+     * <dd>
+     * <p>
+     * For an <code>SRV</code> record, the value that Route 53 returns for the port. In addition, if the service
+     * includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends requests to.
+     * </p>
+     * </dd>
+     * </dl>
      */
     private java.util.Map<String, String> attributes;
 
@@ -155,46 +168,59 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Supported attribute keys include the following:
      * </p>
-     * <ul>
-     * <li>
+     * <dl>
+     * <dt>AWS_ALIAS_DNS_NAME</dt>
+     * <dd>
      * <p>
-     * <code>AWS_ALIAS_DNS_NAME</code>: For an alias record that routes traffic to an Elastic Load Balancing load
-     * balancer, the DNS name that is associated with the load balancer.
+     * For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that is
+     * associated with the load balancer.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>AWS_EC2_INSTANCE_ID (HTTP namespaces only)</dt>
+     * <dd>
      * <p>
-     * <code>AWS_EC2_INSTANCE_ID</code>: (HTTP namespaces only) The Amazon EC2 instance ID for the instance. When the
-     * <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute
-     * contains the primary private IPv4 address.
+     * The Amazon EC2 instance ID for the instance. When the <code>AWS_EC2_INSTANCE_ID</code> attribute is specified,
+     * then the <code>AWS_INSTANCE_IPV4</code> attribute contains the primary private IPv4 address.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>AWS_INIT_HEALTH_STATUS</dt>
+     * <dd>
      * <p>
-     * <code>AWS_INSTANCE_CNAME</code>: For a <code>CNAME</code> record, the domain name that Route 53 returns in
-     * response to DNS queries, for example, <code>example.com</code>.
+     * If the service configuration includes <code>HealthCheckCustomConfig</code>, you can optionally use
+     * <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom health check,
+     * <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't specify a value for
+     * <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is <code>HEALTHY</code>.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>AWS_INSTANCE_CNAME</dt>
+     * <dd>
      * <p>
-     * <code>AWS_INSTANCE_IPV4</code>: For an <code>A</code> record, the IPv4 address that Route 53 returns in response
-     * to DNS queries, for example, <code>192.0.2.44</code>.
+     * For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries, for example,
+     * <code>example.com</code>.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>AWS_INSTANCE_IPV4</dt>
+     * <dd>
      * <p>
-     * <code>AWS_INSTANCE_IPV6</code>: For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in
-     * response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     * For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries, for example,
+     * <code>192.0.2.44</code>.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>AWS_INSTANCE_IPV6</dt>
+     * <dd>
      * <p>
-     * <code>AWS_INSTANCE_PORT</code>: For an <code>SRV</code> record, the value that Route 53 returns for the port. In
-     * addition, if the service includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
-     * requests to.
+     * For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries, for example,
+     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
      * </p>
-     * </li>
-     * </ul>
+     * </dd>
+     * <dt>AWS_INSTANCE_PORT</dt>
+     * <dd>
+     * <p>
+     * For an <code>SRV</code> record, the value that Route 53 returns for the port. In addition, if the service
+     * includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends requests to.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @return A string map that contains the following information:</p>
      *         <ul>
@@ -212,45 +238,58 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      *         <p>
      *         Supported attribute keys include the following:
      *         </p>
-     *         <ul>
-     *         <li>
+     *         <dl>
+     *         <dt>AWS_ALIAS_DNS_NAME</dt>
+     *         <dd>
      *         <p>
-     *         <code>AWS_ALIAS_DNS_NAME</code>: For an alias record that routes traffic to an Elastic Load Balancing
-     *         load balancer, the DNS name that is associated with the load balancer.
+     *         For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that is
+     *         associated with the load balancer.
      *         </p>
-     *         </li>
-     *         <li>
+     *         </dd>
+     *         <dt>AWS_EC2_INSTANCE_ID (HTTP namespaces only)</dt>
+     *         <dd>
      *         <p>
-     *         <code>AWS_EC2_INSTANCE_ID</code>: (HTTP namespaces only) The Amazon EC2 instance ID for the instance.
-     *         When the <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the <code>AWS_INSTANCE_IPV4</code>
-     *         attribute contains the primary private IPv4 address.
+     *         The Amazon EC2 instance ID for the instance. When the <code>AWS_EC2_INSTANCE_ID</code> attribute is
+     *         specified, then the <code>AWS_INSTANCE_IPV4</code> attribute contains the primary private IPv4 address.
      *         </p>
-     *         </li>
-     *         <li>
+     *         </dd>
+     *         <dt>AWS_INIT_HEALTH_STATUS</dt>
+     *         <dd>
      *         <p>
-     *         <code>AWS_INSTANCE_CNAME</code>: For a <code>CNAME</code> record, the domain name that Route 53 returns
-     *         in response to DNS queries, for example, <code>example.com</code>.
+     *         If the service configuration includes <code>HealthCheckCustomConfig</code>, you can optionally use
+     *         <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom health check,
+     *         <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't specify a value for
+     *         <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is <code>HEALTHY</code>.
      *         </p>
-     *         </li>
-     *         <li>
+     *         </dd>
+     *         <dt>AWS_INSTANCE_CNAME</dt>
+     *         <dd>
      *         <p>
-     *         <code>AWS_INSTANCE_IPV4</code>: For an <code>A</code> record, the IPv4 address that Route 53 returns in
-     *         response to DNS queries, for example, <code>192.0.2.44</code>.
+     *         For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries, for
+     *         example, <code>example.com</code>.
      *         </p>
-     *         </li>
-     *         <li>
+     *         </dd>
+     *         <dt>AWS_INSTANCE_IPV4</dt>
+     *         <dd>
      *         <p>
-     *         <code>AWS_INSTANCE_IPV6</code>: For an <code>AAAA</code> record, the IPv6 address that Route 53 returns
-     *         in response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     *         For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries, for
+     *         example, <code>192.0.2.44</code>.
      *         </p>
-     *         </li>
-     *         <li>
+     *         </dd>
+     *         <dt>AWS_INSTANCE_IPV6</dt>
+     *         <dd>
      *         <p>
-     *         <code>AWS_INSTANCE_PORT</code>: For an <code>SRV</code> record, the value that Route 53 returns for the
-     *         port. In addition, if the service includes <code>HealthCheckConfig</code>, the port on the endpoint that
-     *         Route 53 sends requests to.
+     *         For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries, for
+     *         example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
      *         </p>
-     *         </li>
+     *         </dd>
+     *         <dt>AWS_INSTANCE_PORT</dt>
+     *         <dd>
+     *         <p>
+     *         For an <code>SRV</code> record, the value that Route 53 returns for the port. In addition, if the service
+     *         includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends requests to.
+     *         </p>
+     *         </dd>
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -276,46 +315,59 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Supported attribute keys include the following:
      * </p>
-     * <ul>
-     * <li>
+     * <dl>
+     * <dt>AWS_ALIAS_DNS_NAME</dt>
+     * <dd>
      * <p>
-     * <code>AWS_ALIAS_DNS_NAME</code>: For an alias record that routes traffic to an Elastic Load Balancing load
-     * balancer, the DNS name that is associated with the load balancer.
+     * For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that is
+     * associated with the load balancer.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>AWS_EC2_INSTANCE_ID (HTTP namespaces only)</dt>
+     * <dd>
      * <p>
-     * <code>AWS_EC2_INSTANCE_ID</code>: (HTTP namespaces only) The Amazon EC2 instance ID for the instance. When the
-     * <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute
-     * contains the primary private IPv4 address.
+     * The Amazon EC2 instance ID for the instance. When the <code>AWS_EC2_INSTANCE_ID</code> attribute is specified,
+     * then the <code>AWS_INSTANCE_IPV4</code> attribute contains the primary private IPv4 address.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>AWS_INIT_HEALTH_STATUS</dt>
+     * <dd>
      * <p>
-     * <code>AWS_INSTANCE_CNAME</code>: For a <code>CNAME</code> record, the domain name that Route 53 returns in
-     * response to DNS queries, for example, <code>example.com</code>.
+     * If the service configuration includes <code>HealthCheckCustomConfig</code>, you can optionally use
+     * <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom health check,
+     * <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't specify a value for
+     * <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is <code>HEALTHY</code>.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>AWS_INSTANCE_CNAME</dt>
+     * <dd>
      * <p>
-     * <code>AWS_INSTANCE_IPV4</code>: For an <code>A</code> record, the IPv4 address that Route 53 returns in response
-     * to DNS queries, for example, <code>192.0.2.44</code>.
+     * For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries, for example,
+     * <code>example.com</code>.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>AWS_INSTANCE_IPV4</dt>
+     * <dd>
      * <p>
-     * <code>AWS_INSTANCE_IPV6</code>: For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in
-     * response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     * For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries, for example,
+     * <code>192.0.2.44</code>.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>AWS_INSTANCE_IPV6</dt>
+     * <dd>
      * <p>
-     * <code>AWS_INSTANCE_PORT</code>: For an <code>SRV</code> record, the value that Route 53 returns for the port. In
-     * addition, if the service includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
-     * requests to.
+     * For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries, for example,
+     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
      * </p>
-     * </li>
-     * </ul>
+     * </dd>
+     * <dt>AWS_INSTANCE_PORT</dt>
+     * <dd>
+     * <p>
+     * For an <code>SRV</code> record, the value that Route 53 returns for the port. In addition, if the service
+     * includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends requests to.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @param attributes
      *        A string map that contains the following information:</p>
@@ -334,45 +386,58 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        Supported attribute keys include the following:
      *        </p>
-     *        <ul>
-     *        <li>
+     *        <dl>
+     *        <dt>AWS_ALIAS_DNS_NAME</dt>
+     *        <dd>
      *        <p>
-     *        <code>AWS_ALIAS_DNS_NAME</code>: For an alias record that routes traffic to an Elastic Load Balancing load
-     *        balancer, the DNS name that is associated with the load balancer.
+     *        For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that is
+     *        associated with the load balancer.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>AWS_EC2_INSTANCE_ID (HTTP namespaces only)</dt>
+     *        <dd>
      *        <p>
-     *        <code>AWS_EC2_INSTANCE_ID</code>: (HTTP namespaces only) The Amazon EC2 instance ID for the instance. When
-     *        the <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the <code>AWS_INSTANCE_IPV4</code>
-     *        attribute contains the primary private IPv4 address.
+     *        The Amazon EC2 instance ID for the instance. When the <code>AWS_EC2_INSTANCE_ID</code> attribute is
+     *        specified, then the <code>AWS_INSTANCE_IPV4</code> attribute contains the primary private IPv4 address.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>AWS_INIT_HEALTH_STATUS</dt>
+     *        <dd>
      *        <p>
-     *        <code>AWS_INSTANCE_CNAME</code>: For a <code>CNAME</code> record, the domain name that Route 53 returns in
-     *        response to DNS queries, for example, <code>example.com</code>.
+     *        If the service configuration includes <code>HealthCheckCustomConfig</code>, you can optionally use
+     *        <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom health check,
+     *        <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't specify a value for
+     *        <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is <code>HEALTHY</code>.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>AWS_INSTANCE_CNAME</dt>
+     *        <dd>
      *        <p>
-     *        <code>AWS_INSTANCE_IPV4</code>: For an <code>A</code> record, the IPv4 address that Route 53 returns in
-     *        response to DNS queries, for example, <code>192.0.2.44</code>.
+     *        For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries, for
+     *        example, <code>example.com</code>.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>AWS_INSTANCE_IPV4</dt>
+     *        <dd>
      *        <p>
-     *        <code>AWS_INSTANCE_IPV6</code>: For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in
-     *        response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     *        For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries, for
+     *        example, <code>192.0.2.44</code>.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>AWS_INSTANCE_IPV6</dt>
+     *        <dd>
      *        <p>
-     *        <code>AWS_INSTANCE_PORT</code>: For an <code>SRV</code> record, the value that Route 53 returns for the
-     *        port. In addition, if the service includes <code>HealthCheckConfig</code>, the port on the endpoint that
-     *        Route 53 sends requests to.
+     *        For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries, for
+     *        example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
      *        </p>
-     *        </li>
+     *        </dd>
+     *        <dt>AWS_INSTANCE_PORT</dt>
+     *        <dd>
+     *        <p>
+     *        For an <code>SRV</code> record, the value that Route 53 returns for the port. In addition, if the service
+     *        includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends requests to.
+     *        </p>
+     *        </dd>
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -398,46 +463,59 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Supported attribute keys include the following:
      * </p>
-     * <ul>
-     * <li>
+     * <dl>
+     * <dt>AWS_ALIAS_DNS_NAME</dt>
+     * <dd>
      * <p>
-     * <code>AWS_ALIAS_DNS_NAME</code>: For an alias record that routes traffic to an Elastic Load Balancing load
-     * balancer, the DNS name that is associated with the load balancer.
+     * For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that is
+     * associated with the load balancer.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>AWS_EC2_INSTANCE_ID (HTTP namespaces only)</dt>
+     * <dd>
      * <p>
-     * <code>AWS_EC2_INSTANCE_ID</code>: (HTTP namespaces only) The Amazon EC2 instance ID for the instance. When the
-     * <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute
-     * contains the primary private IPv4 address.
+     * The Amazon EC2 instance ID for the instance. When the <code>AWS_EC2_INSTANCE_ID</code> attribute is specified,
+     * then the <code>AWS_INSTANCE_IPV4</code> attribute contains the primary private IPv4 address.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>AWS_INIT_HEALTH_STATUS</dt>
+     * <dd>
      * <p>
-     * <code>AWS_INSTANCE_CNAME</code>: For a <code>CNAME</code> record, the domain name that Route 53 returns in
-     * response to DNS queries, for example, <code>example.com</code>.
+     * If the service configuration includes <code>HealthCheckCustomConfig</code>, you can optionally use
+     * <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom health check,
+     * <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't specify a value for
+     * <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is <code>HEALTHY</code>.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>AWS_INSTANCE_CNAME</dt>
+     * <dd>
      * <p>
-     * <code>AWS_INSTANCE_IPV4</code>: For an <code>A</code> record, the IPv4 address that Route 53 returns in response
-     * to DNS queries, for example, <code>192.0.2.44</code>.
+     * For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries, for example,
+     * <code>example.com</code>.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>AWS_INSTANCE_IPV4</dt>
+     * <dd>
      * <p>
-     * <code>AWS_INSTANCE_IPV6</code>: For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in
-     * response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     * For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries, for example,
+     * <code>192.0.2.44</code>.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>AWS_INSTANCE_IPV6</dt>
+     * <dd>
      * <p>
-     * <code>AWS_INSTANCE_PORT</code>: For an <code>SRV</code> record, the value that Route 53 returns for the port. In
-     * addition, if the service includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
-     * requests to.
+     * For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries, for example,
+     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
      * </p>
-     * </li>
-     * </ul>
+     * </dd>
+     * <dt>AWS_INSTANCE_PORT</dt>
+     * <dd>
+     * <p>
+     * For an <code>SRV</code> record, the value that Route 53 returns for the port. In addition, if the service
+     * includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends requests to.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @param attributes
      *        A string map that contains the following information:</p>
@@ -456,45 +534,58 @@ public class InstanceSummary implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        Supported attribute keys include the following:
      *        </p>
-     *        <ul>
-     *        <li>
+     *        <dl>
+     *        <dt>AWS_ALIAS_DNS_NAME</dt>
+     *        <dd>
      *        <p>
-     *        <code>AWS_ALIAS_DNS_NAME</code>: For an alias record that routes traffic to an Elastic Load Balancing load
-     *        balancer, the DNS name that is associated with the load balancer.
+     *        For an alias record that routes traffic to an Elastic Load Balancing load balancer, the DNS name that is
+     *        associated with the load balancer.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>AWS_EC2_INSTANCE_ID (HTTP namespaces only)</dt>
+     *        <dd>
      *        <p>
-     *        <code>AWS_EC2_INSTANCE_ID</code>: (HTTP namespaces only) The Amazon EC2 instance ID for the instance. When
-     *        the <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the <code>AWS_INSTANCE_IPV4</code>
-     *        attribute contains the primary private IPv4 address.
+     *        The Amazon EC2 instance ID for the instance. When the <code>AWS_EC2_INSTANCE_ID</code> attribute is
+     *        specified, then the <code>AWS_INSTANCE_IPV4</code> attribute contains the primary private IPv4 address.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>AWS_INIT_HEALTH_STATUS</dt>
+     *        <dd>
      *        <p>
-     *        <code>AWS_INSTANCE_CNAME</code>: For a <code>CNAME</code> record, the domain name that Route 53 returns in
-     *        response to DNS queries, for example, <code>example.com</code>.
+     *        If the service configuration includes <code>HealthCheckCustomConfig</code>, you can optionally use
+     *        <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom health check,
+     *        <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't specify a value for
+     *        <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is <code>HEALTHY</code>.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>AWS_INSTANCE_CNAME</dt>
+     *        <dd>
      *        <p>
-     *        <code>AWS_INSTANCE_IPV4</code>: For an <code>A</code> record, the IPv4 address that Route 53 returns in
-     *        response to DNS queries, for example, <code>192.0.2.44</code>.
+     *        For a <code>CNAME</code> record, the domain name that Route 53 returns in response to DNS queries, for
+     *        example, <code>example.com</code>.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>AWS_INSTANCE_IPV4</dt>
+     *        <dd>
      *        <p>
-     *        <code>AWS_INSTANCE_IPV6</code>: For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in
-     *        response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     *        For an <code>A</code> record, the IPv4 address that Route 53 returns in response to DNS queries, for
+     *        example, <code>192.0.2.44</code>.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>AWS_INSTANCE_IPV6</dt>
+     *        <dd>
      *        <p>
-     *        <code>AWS_INSTANCE_PORT</code>: For an <code>SRV</code> record, the value that Route 53 returns for the
-     *        port. In addition, if the service includes <code>HealthCheckConfig</code>, the port on the endpoint that
-     *        Route 53 sends requests to.
+     *        For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to DNS queries, for
+     *        example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
      *        </p>
-     *        </li>
+     *        </dd>
+     *        <dt>AWS_INSTANCE_PORT</dt>
+     *        <dd>
+     *        <p>
+     *        For an <code>SRV</code> record, the value that Route 53 returns for the port. In addition, if the service
+     *        includes <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends requests to.
+     *        </p>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

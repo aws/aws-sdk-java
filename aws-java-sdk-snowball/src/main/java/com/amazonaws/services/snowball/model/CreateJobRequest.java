@@ -80,6 +80,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * If your job is being created in one of the US regions, you have the option of specifying what size Snow device
      * you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
      * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
      */
     private String snowballCapacityPreference;
     /**
@@ -146,6 +152,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
      * Options</a> in the Snowball Edge Developer Guide.
      * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
      */
     private String snowballType;
     /**
@@ -164,8 +176,20 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * Defines the device configuration for an AWS Snowcone job.
      * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
      */
     private DeviceConfiguration deviceConfiguration;
+    /**
+     * <p>
+     * The ID of the long term pricing type for the device.
+     * </p>
+     */
+    private String longTermPricingId;
 
     /**
      * <p>
@@ -530,10 +554,22 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * If your job is being created in one of the US regions, you have the option of specifying what size Snow device
      * you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
      * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
      * 
      * @param snowballCapacityPreference
      *        If your job is being created in one of the US regions, you have the option of specifying what size Snow
-     *        device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     *        device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @see SnowballCapacity
      */
 
@@ -546,9 +582,21 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * If your job is being created in one of the US regions, you have the option of specifying what size Snow device
      * you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
      * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
      * 
      * @return If your job is being created in one of the US regions, you have the option of specifying what size Snow
-     *         device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     *         device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
+     *         <p>
+     *         For more information, see
+     *         "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *         and Capacity) in the <i>Snowcone User Guide</i> or
+     *         "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *         and Capacity) in the <i>Snowcone User Guide</i>.
      * @see SnowballCapacity
      */
 
@@ -561,10 +609,22 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * If your job is being created in one of the US regions, you have the option of specifying what size Snow device
      * you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
      * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
      * 
      * @param snowballCapacityPreference
      *        If your job is being created in one of the US regions, you have the option of specifying what size Snow
-     *        device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     *        device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballCapacity
      */
@@ -579,10 +639,22 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * If your job is being created in one of the US regions, you have the option of specifying what size Snow device
      * you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
      * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
      * 
      * @param snowballCapacityPreference
      *        If your job is being created in one of the US regions, you have the option of specifying what size Snow
-     *        device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     *        device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @see SnowballCapacity
      */
 
@@ -595,10 +667,22 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * If your job is being created in one of the US regions, you have the option of specifying what size Snow device
      * you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
      * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
      * 
      * @param snowballCapacityPreference
      *        If your job is being created in one of the US regions, you have the option of specifying what size Snow
-     *        device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.
+     *        device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballCapacity
      */
@@ -1050,6 +1134,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
      * Options</a> in the Snowball Edge Developer Guide.
      * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
      * 
      * @param snowballType
      *        The type of AWS Snow Family device to use for this job. </p> <note>
@@ -1065,6 +1155,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge
      *        Device Options</a> in the Snowball Edge Developer Guide.
+     *        </p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @see SnowballType
      */
 
@@ -1090,6 +1187,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
      * Options</a> in the Snowball Edge Developer Guide.
      * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
      * 
      * @return The type of AWS Snow Family device to use for this job. </p> <note>
      *         <p>
@@ -1104,6 +1207,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge
      *         Device Options</a> in the Snowball Edge Developer Guide.
+     *         </p>
+     *         <p>
+     *         For more information, see
+     *         "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *         and Capacity) in the <i>Snowcone User Guide</i> or
+     *         "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *         and Capacity) in the <i>Snowcone User Guide</i>.
      * @see SnowballType
      */
 
@@ -1129,6 +1239,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
      * Options</a> in the Snowball Edge Developer Guide.
      * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
      * 
      * @param snowballType
      *        The type of AWS Snow Family device to use for this job. </p> <note>
@@ -1144,6 +1260,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge
      *        Device Options</a> in the Snowball Edge Developer Guide.
+     *        </p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
@@ -1171,6 +1294,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
      * Options</a> in the Snowball Edge Developer Guide.
      * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
      * 
      * @param snowballType
      *        The type of AWS Snow Family device to use for this job. </p> <note>
@@ -1186,6 +1315,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge
      *        Device Options</a> in the Snowball Edge Developer Guide.
+     *        </p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @see SnowballType
      */
 
@@ -1211,6 +1347,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
      * Options</a> in the Snowball Edge Developer Guide.
      * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
      * 
      * @param snowballType
      *        The type of AWS Snow Family device to use for this job. </p> <note>
@@ -1226,6 +1368,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge
      *        Device Options</a> in the Snowball Edge Developer Guide.
+     *        </p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
@@ -1319,9 +1468,21 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * Defines the device configuration for an AWS Snowcone job.
      * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
      * 
      * @param deviceConfiguration
-     *        Defines the device configuration for an AWS Snowcone job.
+     *        Defines the device configuration for an AWS Snowcone job.</p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      */
 
     public void setDeviceConfiguration(DeviceConfiguration deviceConfiguration) {
@@ -1332,8 +1493,20 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * Defines the device configuration for an AWS Snowcone job.
      * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
      * 
-     * @return Defines the device configuration for an AWS Snowcone job.
+     * @return Defines the device configuration for an AWS Snowcone job.</p>
+     *         <p>
+     *         For more information, see
+     *         "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *         and Capacity) in the <i>Snowcone User Guide</i> or
+     *         "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *         and Capacity) in the <i>Snowcone User Guide</i>.
      */
 
     public DeviceConfiguration getDeviceConfiguration() {
@@ -1344,14 +1517,66 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * Defines the device configuration for an AWS Snowcone job.
      * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
      * 
      * @param deviceConfiguration
-     *        Defines the device configuration for an AWS Snowcone job.
+     *        Defines the device configuration for an AWS Snowcone job.</p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateJobRequest withDeviceConfiguration(DeviceConfiguration deviceConfiguration) {
         setDeviceConfiguration(deviceConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the long term pricing type for the device.
+     * </p>
+     * 
+     * @param longTermPricingId
+     *        The ID of the long term pricing type for the device.
+     */
+
+    public void setLongTermPricingId(String longTermPricingId) {
+        this.longTermPricingId = longTermPricingId;
+    }
+
+    /**
+     * <p>
+     * The ID of the long term pricing type for the device.
+     * </p>
+     * 
+     * @return The ID of the long term pricing type for the device.
+     */
+
+    public String getLongTermPricingId() {
+        return this.longTermPricingId;
+    }
+
+    /**
+     * <p>
+     * The ID of the long term pricing type for the device.
+     * </p>
+     * 
+     * @param longTermPricingId
+     *        The ID of the long term pricing type for the device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobRequest withLongTermPricingId(String longTermPricingId) {
+        setLongTermPricingId(longTermPricingId);
         return this;
     }
 
@@ -1394,7 +1619,9 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getTaxDocuments() != null)
             sb.append("TaxDocuments: ").append(getTaxDocuments()).append(",");
         if (getDeviceConfiguration() != null)
-            sb.append("DeviceConfiguration: ").append(getDeviceConfiguration());
+            sb.append("DeviceConfiguration: ").append(getDeviceConfiguration()).append(",");
+        if (getLongTermPricingId() != null)
+            sb.append("LongTermPricingId: ").append(getLongTermPricingId());
         sb.append("}");
         return sb.toString();
     }
@@ -1465,6 +1692,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getDeviceConfiguration() != null && other.getDeviceConfiguration().equals(this.getDeviceConfiguration()) == false)
             return false;
+        if (other.getLongTermPricingId() == null ^ this.getLongTermPricingId() == null)
+            return false;
+        if (other.getLongTermPricingId() != null && other.getLongTermPricingId().equals(this.getLongTermPricingId()) == false)
+            return false;
         return true;
     }
 
@@ -1487,6 +1718,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getForwardingAddressId() == null) ? 0 : getForwardingAddressId().hashCode());
         hashCode = prime * hashCode + ((getTaxDocuments() == null) ? 0 : getTaxDocuments().hashCode());
         hashCode = prime * hashCode + ((getDeviceConfiguration() == null) ? 0 : getDeviceConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getLongTermPricingId() == null) ? 0 : getLongTermPricingId().hashCode());
         return hashCode;
     }
 

@@ -1,3 +1,20 @@
+# __1.11.1014__ __2021-05-06__
+## __AWS Cloud Map__
+  - ### Features
+    - Bugfix: Improved input validation for RegisterInstance action, InstanceId field
+
+## __Amazon Import/Export Snowball__
+  - ### Features
+    - AWS Snow Family adds APIs for ordering and managing Snow jobs with long term pricing
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - SSM feature release - ChangeCalendar integration with StateManager.
+
+## __Managed Streaming for Kafka__
+  - ### Features
+    - IAM Access Control for Amazon MSK enables you to create clusters that use IAM to authenticate clients and to allow or deny Apache Kafka actions for those clients.
+
 # __1.11.1013__ __2021-05-05__
 ## __AWS Audit Manager__
   - ### Features

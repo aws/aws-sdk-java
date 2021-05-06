@@ -65,6 +65,8 @@ public class JobMetadataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TaxDocuments").build();
     private static final MarshallingInfo<StructuredPojo> DEVICECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeviceConfiguration").build();
+    private static final MarshallingInfo<String> LONGTERMPRICINGID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LongTermPricingId").build();
 
     private static final JobMetadataMarshaller instance = new JobMetadataMarshaller();
 
@@ -101,6 +103,7 @@ public class JobMetadataMarshaller {
             protocolMarshaller.marshall(jobMetadata.getForwardingAddressId(), FORWARDINGADDRESSID_BINDING);
             protocolMarshaller.marshall(jobMetadata.getTaxDocuments(), TAXDOCUMENTS_BINDING);
             protocolMarshaller.marshall(jobMetadata.getDeviceConfiguration(), DEVICECONFIGURATION_BINDING);
+            protocolMarshaller.marshall(jobMetadata.getLongTermPricingId(), LONGTERMPRICINGID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -106,6 +106,12 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      * The Snow device capacity preference for this job, specified at job creation. In US regions, you can choose
      * between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.
      * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
      */
     private String snowballCapacityPreference;
     /**
@@ -153,6 +159,12 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
     private TaxDocuments taxDocuments;
 
     private DeviceConfiguration deviceConfiguration;
+    /**
+     * <p>
+     * The ID of the long term pricing type for the device.
+     * </p>
+     */
+    private String longTermPricingId;
 
     /**
      * <p>
@@ -737,10 +749,22 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      * The Snow device capacity preference for this job, specified at job creation. In US regions, you can choose
      * between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.
      * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
      * 
      * @param snowballCapacityPreference
      *        The Snow device capacity preference for this job, specified at job creation. In US regions, you can choose
-     *        between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.
+     *        between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.</p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @see SnowballCapacity
      */
 
@@ -753,9 +777,21 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      * The Snow device capacity preference for this job, specified at job creation. In US regions, you can choose
      * between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.
      * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
      * 
      * @return The Snow device capacity preference for this job, specified at job creation. In US regions, you can
-     *         choose between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.
+     *         choose between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.</p>
+     *         <p>
+     *         For more information, see
+     *         "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *         and Capacity) in the <i>Snowcone User Guide</i> or
+     *         "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *         and Capacity) in the <i>Snowcone User Guide</i>.
      * @see SnowballCapacity
      */
 
@@ -768,10 +804,22 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      * The Snow device capacity preference for this job, specified at job creation. In US regions, you can choose
      * between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.
      * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
      * 
      * @param snowballCapacityPreference
      *        The Snow device capacity preference for this job, specified at job creation. In US regions, you can choose
-     *        between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.
+     *        between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.</p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballCapacity
      */
@@ -786,10 +834,22 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      * The Snow device capacity preference for this job, specified at job creation. In US regions, you can choose
      * between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.
      * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
      * 
      * @param snowballCapacityPreference
      *        The Snow device capacity preference for this job, specified at job creation. In US regions, you can choose
-     *        between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.
+     *        between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.</p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @see SnowballCapacity
      */
 
@@ -802,10 +862,22 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      * The Snow device capacity preference for this job, specified at job creation. In US regions, you can choose
      * between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.
      * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
      * 
      * @param snowballCapacityPreference
      *        The Snow device capacity preference for this job, specified at job creation. In US regions, you can choose
-     *        between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.
+     *        between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.</p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballCapacity
      */
@@ -1124,6 +1196,46 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The ID of the long term pricing type for the device.
+     * </p>
+     * 
+     * @param longTermPricingId
+     *        The ID of the long term pricing type for the device.
+     */
+
+    public void setLongTermPricingId(String longTermPricingId) {
+        this.longTermPricingId = longTermPricingId;
+    }
+
+    /**
+     * <p>
+     * The ID of the long term pricing type for the device.
+     * </p>
+     * 
+     * @return The ID of the long term pricing type for the device.
+     */
+
+    public String getLongTermPricingId() {
+        return this.longTermPricingId;
+    }
+
+    /**
+     * <p>
+     * The ID of the long term pricing type for the device.
+     * </p>
+     * 
+     * @param longTermPricingId
+     *        The ID of the long term pricing type for the device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobMetadata withLongTermPricingId(String longTermPricingId) {
+        setLongTermPricingId(longTermPricingId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1172,7 +1284,9 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
         if (getTaxDocuments() != null)
             sb.append("TaxDocuments: ").append(getTaxDocuments()).append(",");
         if (getDeviceConfiguration() != null)
-            sb.append("DeviceConfiguration: ").append(getDeviceConfiguration());
+            sb.append("DeviceConfiguration: ").append(getDeviceConfiguration()).append(",");
+        if (getLongTermPricingId() != null)
+            sb.append("LongTermPricingId: ").append(getLongTermPricingId());
         sb.append("}");
         return sb.toString();
     }
@@ -1263,6 +1377,10 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDeviceConfiguration() != null && other.getDeviceConfiguration().equals(this.getDeviceConfiguration()) == false)
             return false;
+        if (other.getLongTermPricingId() == null ^ this.getLongTermPricingId() == null)
+            return false;
+        if (other.getLongTermPricingId() != null && other.getLongTermPricingId().equals(this.getLongTermPricingId()) == false)
+            return false;
         return true;
     }
 
@@ -1290,6 +1408,7 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getForwardingAddressId() == null) ? 0 : getForwardingAddressId().hashCode());
         hashCode = prime * hashCode + ((getTaxDocuments() == null) ? 0 : getTaxDocuments().hashCode());
         hashCode = prime * hashCode + ((getDeviceConfiguration() == null) ? 0 : getDeviceConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getLongTermPricingId() == null) ? 0 : getLongTermPricingId().hashCode());
         return hashCode;
     }
 

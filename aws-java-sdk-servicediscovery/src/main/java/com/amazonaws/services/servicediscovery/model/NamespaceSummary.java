@@ -65,7 +65,11 @@ public class NamespaceSummary implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private Integer serviceCount;
-
+    /**
+     * <p>
+     * The properties of the namespace.
+     * </p>
+     */
     private NamespaceProperties properties;
     /**
      * <p>
@@ -340,7 +344,12 @@ public class NamespaceSummary implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The properties of the namespace.
+     * </p>
+     * 
      * @param properties
+     *        The properties of the namespace.
      */
 
     public void setProperties(NamespaceProperties properties) {
@@ -348,7 +357,11 @@ public class NamespaceSummary implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * <p>
+     * The properties of the namespace.
+     * </p>
+     * 
+     * @return The properties of the namespace.
      */
 
     public NamespaceProperties getProperties() {
@@ -356,7 +369,12 @@ public class NamespaceSummary implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The properties of the namespace.
+     * </p>
+     * 
      * @param properties
+     *        The properties of the namespace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

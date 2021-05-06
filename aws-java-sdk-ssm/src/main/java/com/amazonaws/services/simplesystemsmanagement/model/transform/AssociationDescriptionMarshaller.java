@@ -73,6 +73,8 @@ public class AssociationDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SyncCompliance").build();
     private static final MarshallingInfo<Boolean> APPLYONLYATCRONINTERVAL_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplyOnlyAtCronInterval").build();
+    private static final MarshallingInfo<List> CALENDARNAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("CalendarNames").build();
     private static final MarshallingInfo<List> TARGETLOCATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetLocations").build();
 
@@ -114,6 +116,7 @@ public class AssociationDescriptionMarshaller {
             protocolMarshaller.marshall(associationDescription.getComplianceSeverity(), COMPLIANCESEVERITY_BINDING);
             protocolMarshaller.marshall(associationDescription.getSyncCompliance(), SYNCCOMPLIANCE_BINDING);
             protocolMarshaller.marshall(associationDescription.getApplyOnlyAtCronInterval(), APPLYONLYATCRONINTERVAL_BINDING);
+            protocolMarshaller.marshall(associationDescription.getCalendarNames(), CALENDARNAMES_BINDING);
             protocolMarshaller.marshall(associationDescription.getTargetLocations(), TARGETLOCATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

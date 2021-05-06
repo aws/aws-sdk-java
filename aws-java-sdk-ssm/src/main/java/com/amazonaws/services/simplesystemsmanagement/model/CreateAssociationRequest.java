@@ -171,12 +171,21 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
     private String syncCompliance;
     /**
      * <p>
-     * By default, when you create a new associations, the system runs it immediately after it is created and then
+     * By default, when you create a new association, the system runs it immediately after it is created and then
      * according to the schedule you specified. Specify this option if you don't want an association to run immediately
      * after you create it. This parameter is not supported for rate expressions.
      * </p>
      */
     private Boolean applyOnlyAtCronInterval;
+    /**
+     * <p>
+     * The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents you want to gate
+     * your associations under. The associations only run when that Change Calendar is open. For more information, see
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     * Systems Manager Change Calendar</a>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> calendarNames;
     /**
      * <p>
      * A location is a combination of AWS Regions and AWS accounts where you want to run the association. Use this
@@ -1225,14 +1234,14 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * By default, when you create a new associations, the system runs it immediately after it is created and then
+     * By default, when you create a new association, the system runs it immediately after it is created and then
      * according to the schedule you specified. Specify this option if you don't want an association to run immediately
      * after you create it. This parameter is not supported for rate expressions.
      * </p>
      * 
      * @param applyOnlyAtCronInterval
-     *        By default, when you create a new associations, the system runs it immediately after it is created and
-     *        then according to the schedule you specified. Specify this option if you don't want an association to run
+     *        By default, when you create a new association, the system runs it immediately after it is created and then
+     *        according to the schedule you specified. Specify this option if you don't want an association to run
      *        immediately after you create it. This parameter is not supported for rate expressions.
      */
 
@@ -1242,12 +1251,12 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * By default, when you create a new associations, the system runs it immediately after it is created and then
+     * By default, when you create a new association, the system runs it immediately after it is created and then
      * according to the schedule you specified. Specify this option if you don't want an association to run immediately
      * after you create it. This parameter is not supported for rate expressions.
      * </p>
      * 
-     * @return By default, when you create a new associations, the system runs it immediately after it is created and
+     * @return By default, when you create a new association, the system runs it immediately after it is created and
      *         then according to the schedule you specified. Specify this option if you don't want an association to run
      *         immediately after you create it. This parameter is not supported for rate expressions.
      */
@@ -1258,14 +1267,14 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * By default, when you create a new associations, the system runs it immediately after it is created and then
+     * By default, when you create a new association, the system runs it immediately after it is created and then
      * according to the schedule you specified. Specify this option if you don't want an association to run immediately
      * after you create it. This parameter is not supported for rate expressions.
      * </p>
      * 
      * @param applyOnlyAtCronInterval
-     *        By default, when you create a new associations, the system runs it immediately after it is created and
-     *        then according to the schedule you specified. Specify this option if you don't want an association to run
+     *        By default, when you create a new association, the system runs it immediately after it is created and then
+     *        according to the schedule you specified. Specify this option if you don't want an association to run
      *        immediately after you create it. This parameter is not supported for rate expressions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1277,18 +1286,119 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * By default, when you create a new associations, the system runs it immediately after it is created and then
+     * By default, when you create a new association, the system runs it immediately after it is created and then
      * according to the schedule you specified. Specify this option if you don't want an association to run immediately
      * after you create it. This parameter is not supported for rate expressions.
      * </p>
      * 
-     * @return By default, when you create a new associations, the system runs it immediately after it is created and
+     * @return By default, when you create a new association, the system runs it immediately after it is created and
      *         then according to the schedule you specified. Specify this option if you don't want an association to run
      *         immediately after you create it. This parameter is not supported for rate expressions.
      */
 
     public Boolean isApplyOnlyAtCronInterval() {
         return this.applyOnlyAtCronInterval;
+    }
+
+    /**
+     * <p>
+     * The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents you want to gate
+     * your associations under. The associations only run when that Change Calendar is open. For more information, see
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     * Systems Manager Change Calendar</a>.
+     * </p>
+     * 
+     * @return The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents you want
+     *         to gate your associations under. The associations only run when that Change Calendar is open. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     *         Systems Manager Change Calendar</a>.
+     */
+
+    public java.util.List<String> getCalendarNames() {
+        if (calendarNames == null) {
+            calendarNames = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return calendarNames;
+    }
+
+    /**
+     * <p>
+     * The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents you want to gate
+     * your associations under. The associations only run when that Change Calendar is open. For more information, see
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     * Systems Manager Change Calendar</a>.
+     * </p>
+     * 
+     * @param calendarNames
+     *        The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents you want
+     *        to gate your associations under. The associations only run when that Change Calendar is open. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     *        Systems Manager Change Calendar</a>.
+     */
+
+    public void setCalendarNames(java.util.Collection<String> calendarNames) {
+        if (calendarNames == null) {
+            this.calendarNames = null;
+            return;
+        }
+
+        this.calendarNames = new com.amazonaws.internal.SdkInternalList<String>(calendarNames);
+    }
+
+    /**
+     * <p>
+     * The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents you want to gate
+     * your associations under. The associations only run when that Change Calendar is open. For more information, see
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     * Systems Manager Change Calendar</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCalendarNames(java.util.Collection)} or {@link #withCalendarNames(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param calendarNames
+     *        The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents you want
+     *        to gate your associations under. The associations only run when that Change Calendar is open. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     *        Systems Manager Change Calendar</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAssociationRequest withCalendarNames(String... calendarNames) {
+        if (this.calendarNames == null) {
+            setCalendarNames(new com.amazonaws.internal.SdkInternalList<String>(calendarNames.length));
+        }
+        for (String ele : calendarNames) {
+            this.calendarNames.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents you want to gate
+     * your associations under. The associations only run when that Change Calendar is open. For more information, see
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     * Systems Manager Change Calendar</a>.
+     * </p>
+     * 
+     * @param calendarNames
+     *        The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents you want
+     *        to gate your associations under. The associations only run when that Change Calendar is open. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     *        Systems Manager Change Calendar</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAssociationRequest withCalendarNames(java.util.Collection<String> calendarNames) {
+        setCalendarNames(calendarNames);
+        return this;
     }
 
     /**
@@ -1412,6 +1522,8 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("SyncCompliance: ").append(getSyncCompliance()).append(",");
         if (getApplyOnlyAtCronInterval() != null)
             sb.append("ApplyOnlyAtCronInterval: ").append(getApplyOnlyAtCronInterval()).append(",");
+        if (getCalendarNames() != null)
+            sb.append("CalendarNames: ").append(getCalendarNames()).append(",");
         if (getTargetLocations() != null)
             sb.append("TargetLocations: ").append(getTargetLocations());
         sb.append("}");
@@ -1485,6 +1597,10 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getApplyOnlyAtCronInterval() != null && other.getApplyOnlyAtCronInterval().equals(this.getApplyOnlyAtCronInterval()) == false)
             return false;
+        if (other.getCalendarNames() == null ^ this.getCalendarNames() == null)
+            return false;
+        if (other.getCalendarNames() != null && other.getCalendarNames().equals(this.getCalendarNames()) == false)
+            return false;
         if (other.getTargetLocations() == null ^ this.getTargetLocations() == null)
             return false;
         if (other.getTargetLocations() != null && other.getTargetLocations().equals(this.getTargetLocations()) == false)
@@ -1511,6 +1627,7 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getComplianceSeverity() == null) ? 0 : getComplianceSeverity().hashCode());
         hashCode = prime * hashCode + ((getSyncCompliance() == null) ? 0 : getSyncCompliance().hashCode());
         hashCode = prime * hashCode + ((getApplyOnlyAtCronInterval() == null) ? 0 : getApplyOnlyAtCronInterval().hashCode());
+        hashCode = prime * hashCode + ((getCalendarNames() == null) ? 0 : getCalendarNames().hashCode());
         hashCode = prime * hashCode + ((getTargetLocations() == null) ? 0 : getTargetLocations().hashCode());
         return hashCode;
     }

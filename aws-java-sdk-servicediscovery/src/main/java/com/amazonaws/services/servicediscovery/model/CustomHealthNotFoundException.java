@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The health check for the instance that is specified by <code>ServiceId</code> and <code>InstanceId</code> is not a
+ * The health check for the instance that's specified by <code>ServiceId</code> and <code>InstanceId</code> isn't a
  * custom health check.
  * </p>
  */

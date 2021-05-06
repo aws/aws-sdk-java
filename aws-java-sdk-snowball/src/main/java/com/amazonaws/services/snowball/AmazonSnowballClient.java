@@ -577,8 +577,174 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Creates a job to the other job attributes are inherited from the cluster.
+     * Creates a job to import or export data between Amazon S3 and your on-premises data center. Your AWS account must
+     * have the right trust policies and permissions in place to create a job for a Snow device. If you're creating a
+     * job for a node in a cluster, you only need to provide the <code>clusterId</code> value; the other job attributes
+     * are inherited from the cluster.
      * </p>
+     * <note>
+     * <p>
+     * Only the Snowball; Edge device type is supported when ordering clustered jobs.
+     * </p>
+     * <p>
+     * The device capacity is optional.
+     * </p>
+     * <p>
+     * Availability of device types differ by AWS Region. For more information about region availability, see <a
+     * href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">AWS
+     * Regional Services</a>.
+     * </p>
+     * </note>
+     * <p/>
+     * <p class="title">
+     * <b>AWS Snow Family device types and their capacities.</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Snow Family device type: <b>SNC1_SSD</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T14
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Snowcone
+     * </p>
+     * </li>
+     * </ul>
+     * <p/></li>
+     * <li>
+     * <p>
+     * Snow Family device type: <b>SNC1_HDD</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Snowcone
+     * </p>
+     * </li>
+     * </ul>
+     * <p/></li>
+     * <li>
+     * <p>
+     * Device type: <b>EDGE_S</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T98
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Snowball Edge Storage Optimized for data transfer only
+     * </p>
+     * </li>
+     * </ul>
+     * <p/></li>
+     * <li>
+     * <p>
+     * Device type: <b>EDGE_CG</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T42
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Snowball Edge Compute Optimized with GPU
+     * </p>
+     * </li>
+     * </ul>
+     * <p/></li>
+     * <li>
+     * <p>
+     * Device type: <b>EDGE_C</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T42
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Snowball Edge Compute Optimized without GPU
+     * </p>
+     * </li>
+     * </ul>
+     * <p/></li>
+     * <li>
+     * <p>
+     * Device type: <b>EDGE</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T100
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Snowball Edge Storage Optimized with EC2 Compute
+     * </p>
+     * </li>
+     * </ul>
+     * <p/></li>
+     * <li>
+     * <p>
+     * Device type: <b>STANDARD</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T50
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Original Snowball device
+     * </p>
+     * <note>
+     * <p>
+     * This device is only available in the Ningxia, Beijing, and Singapore AWS Regions.
+     * </p>
+     * </note></li>
+     * </ul>
+     * <p/></li>
+     * <li>
+     * <p>
+     * Device type: <b>STANDARD</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T80
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Original Snowball device
+     * </p>
+     * <note>
+     * <p>
+     * This device is only available in the Ningxia, Beijing, and Singapore AWS Regions.
+     * </p>
+     * </note></li>
+     * </ul>
+     * <p/></li>
+     * </ul>
      * 
      * @param createJobRequest
      * @return Result of the CreateJob operation returned by the service.
@@ -636,6 +802,67 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateJobResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a job with long term usage option for a device. The long term usage is a one year or three year long term
+     * pricing type for the device. You are billed upfront and AWS give discounts for long term pricing. For detailed
+     * information see XXXXXXXX
+     * </p>
+     * 
+     * @param createLongTermPricingRequest
+     * @return Result of the CreateLongTermPricing operation returned by the service.
+     * @throws InvalidResourceException
+     *         The specified resource can't be found. Check the information you provided in your last request, and try
+     *         again.
+     * @sample AmazonSnowball.CreateLongTermPricing
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateLongTermPricing" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateLongTermPricingResult createLongTermPricing(CreateLongTermPricingRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateLongTermPricing(request);
+    }
+
+    @SdkInternalApi
+    final CreateLongTermPricingResult executeCreateLongTermPricing(CreateLongTermPricingRequest createLongTermPricingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createLongTermPricingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateLongTermPricingRequest> request = null;
+        Response<CreateLongTermPricingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateLongTermPricingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createLongTermPricingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Snowball");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLongTermPricing");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateLongTermPricingResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new CreateLongTermPricingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1040,7 +1267,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
      * gaining access to the Snow device associated with that job.
      * </p>
      * <p>
-     * The credentials of a given job, including its manifest file and unlock code, expire 90 days after the job is
+     * The credentials of a given job, including its manifest file and unlock code, expire 360 days after the job is
      * created.
      * </p>
      * 
@@ -1102,7 +1329,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
     /**
      * <p>
      * Returns the <code>UnlockCode</code> code value for the specified job. A particular <code>UnlockCode</code> value
-     * can be accessed for up to 90 days after the associated job has been created.
+     * can be accessed for up to 360 days after the associated job has been created.
      * </p>
      * <p>
      * The <code>UnlockCode</code> value is a 29-character code with 25 alphanumeric characters and 4 hyphens. This code
@@ -1538,6 +1765,67 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Lists all long term pricing types.
+     * </p>
+     * 
+     * @param listLongTermPricingRequest
+     * @return Result of the ListLongTermPricing operation returned by the service.
+     * @throws InvalidResourceException
+     *         The specified resource can't be found. Check the information you provided in your last request, and try
+     *         again.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the
+     *         operation without changing the <code>NextToken</code> string, and try again.
+     * @sample AmazonSnowball.ListLongTermPricing
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListLongTermPricing" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListLongTermPricingResult listLongTermPricing(ListLongTermPricingRequest request) {
+        request = beforeClientExecution(request);
+        return executeListLongTermPricing(request);
+    }
+
+    @SdkInternalApi
+    final ListLongTermPricingResult executeListLongTermPricing(ListLongTermPricingRequest listLongTermPricingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listLongTermPricingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListLongTermPricingRequest> request = null;
+        Response<ListLongTermPricingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListLongTermPricingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLongTermPricingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Snowball");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLongTermPricing");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListLongTermPricingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListLongTermPricingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * While a cluster's <code>ClusterState</code> value is in the <code>AwaitingQuorum</code> state, you can update
      * some of the information associated with a cluster. Once the cluster changes to a different job state, usually 60
      * minutes after the cluster being created, this action is no longer available.
@@ -1733,6 +2021,65 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
             HttpResponseHandler<AmazonWebServiceResponse<UpdateJobShipmentStateResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateJobShipmentStateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the long term pricing type.
+     * </p>
+     * 
+     * @param updateLongTermPricingRequest
+     * @return Result of the UpdateLongTermPricing operation returned by the service.
+     * @throws InvalidResourceException
+     *         The specified resource can't be found. Check the information you provided in your last request, and try
+     *         again.
+     * @sample AmazonSnowball.UpdateLongTermPricing
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateLongTermPricing" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateLongTermPricingResult updateLongTermPricing(UpdateLongTermPricingRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateLongTermPricing(request);
+    }
+
+    @SdkInternalApi
+    final UpdateLongTermPricingResult executeUpdateLongTermPricing(UpdateLongTermPricingRequest updateLongTermPricingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateLongTermPricingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateLongTermPricingRequest> request = null;
+        Response<UpdateLongTermPricingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateLongTermPricingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateLongTermPricingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Snowball");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateLongTermPricing");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateLongTermPricingResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new UpdateLongTermPricingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

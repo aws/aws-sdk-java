@@ -36,12 +36,17 @@ public class ServiceChange implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create
-     * when you register an instance.
+     * Information about the Route 53 DNS records that you want AWS Cloud Map to create when you register an instance.
      * </p>
      */
     private DnsConfigChange dnsConfig;
-
+    /**
+     * <p>
+     * <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a
+     * health check, AWS Cloud Map associates the health check with the records that you specify in
+     * <code>DnsConfig</code>.
+     * </p>
+     */
     private HealthCheckConfig healthCheckConfig;
 
     /**
@@ -86,13 +91,12 @@ public class ServiceChange implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create
-     * when you register an instance.
+     * Information about the Route 53 DNS records that you want AWS Cloud Map to create when you register an instance.
      * </p>
      * 
      * @param dnsConfig
-     *        A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to
-     *        create when you register an instance.
+     *        Information about the Route 53 DNS records that you want AWS Cloud Map to create when you register an
+     *        instance.
      */
 
     public void setDnsConfig(DnsConfigChange dnsConfig) {
@@ -101,12 +105,11 @@ public class ServiceChange implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create
-     * when you register an instance.
+     * Information about the Route 53 DNS records that you want AWS Cloud Map to create when you register an instance.
      * </p>
      * 
-     * @return A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to
-     *         create when you register an instance.
+     * @return Information about the Route 53 DNS records that you want AWS Cloud Map to create when you register an
+     *         instance.
      */
 
     public DnsConfigChange getDnsConfig() {
@@ -115,13 +118,12 @@ public class ServiceChange implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create
-     * when you register an instance.
+     * Information about the Route 53 DNS records that you want AWS Cloud Map to create when you register an instance.
      * </p>
      * 
      * @param dnsConfig
-     *        A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to
-     *        create when you register an instance.
+     *        Information about the Route 53 DNS records that you want AWS Cloud Map to create when you register an
+     *        instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,7 +133,16 @@ public class ServiceChange implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a
+     * health check, AWS Cloud Map associates the health check with the records that you specify in
+     * <code>DnsConfig</code>.
+     * </p>
+     * 
      * @param healthCheckConfig
+     *        <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings
+     *        for a health check, AWS Cloud Map associates the health check with the records that you specify in
+     *        <code>DnsConfig</code>.
      */
 
     public void setHealthCheckConfig(HealthCheckConfig healthCheckConfig) {
@@ -139,7 +150,15 @@ public class ServiceChange implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a
+     * health check, AWS Cloud Map associates the health check with the records that you specify in
+     * <code>DnsConfig</code>.
+     * </p>
+     * 
+     * @return <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify
+     *         settings for a health check, AWS Cloud Map associates the health check with the records that you specify
+     *         in <code>DnsConfig</code>.
      */
 
     public HealthCheckConfig getHealthCheckConfig() {
@@ -147,7 +166,16 @@ public class ServiceChange implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings for a
+     * health check, AWS Cloud Map associates the health check with the records that you specify in
+     * <code>DnsConfig</code>.
+     * </p>
+     * 
      * @param healthCheckConfig
+     *        <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check. If you specify settings
+     *        for a health check, AWS Cloud Map associates the health check with the records that you specify in
+     *        <code>DnsConfig</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -36,44 +36,44 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Note the following about configuring health checks.
  * </p>
- * <p>
- * <b> <code>A</code> and <code>AAAA</code> records</b>
- * </p>
+ * <dl>
+ * <dt>A and AAAA records</dt>
+ * <dd>
  * <p>
  * If <code>DnsConfig</code> includes configurations for both <code>A</code> and <code>AAAA</code> records, AWS Cloud
  * Map creates a health check that uses the IPv4 address to check the health of the resource. If the endpoint that is
  * specified by the IPv4 address is unhealthy, Route 53 considers both the <code>A</code> and <code>AAAA</code> records
  * to be unhealthy.
  * </p>
- * <p>
- * <b> <code>CNAME</code> records</b>
- * </p>
+ * </dd>
+ * <dt>CNAME records</dt>
+ * <dd>
  * <p>
  * You can't specify settings for <code>HealthCheckConfig</code> when the <code>DNSConfig</code> includes
  * <code>CNAME</code> for the value of <code>Type</code>. If you do, the <code>CreateService</code> request will fail
  * with an <code>InvalidInput</code> error.
  * </p>
- * <p>
- * <b>Request interval</b>
- * </p>
+ * </dd>
+ * <dt>Request interval</dt>
+ * <dd>
  * <p>
  * A Route 53 health checker in each health-checking region sends a health check request to an endpoint every 30
  * seconds. On average, your endpoint receives a health check request about every two seconds. However, health checkers
  * don't coordinate with one another, so you'll sometimes see several requests per second followed by a few seconds with
  * no health checks at all.
  * </p>
- * <p>
- * <b>Health checking regions</b>
- * </p>
+ * </dd>
+ * <dt>Health checking regions</dt>
+ * <dd>
  * <p>
  * Health checkers perform checks from all Route 53 health-checking regions. For a list of the current regions, see <a
  * href=
  * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions"
  * >Regions</a>.
  * </p>
- * <p>
- * <b>Alias records</b>
- * </p>
+ * </dd>
+ * <dt>Alias records</dt>
+ * <dd>
  * <p>
  * When you register an instance, if you include the <code>AWS_ALIAS_DNS_NAME</code> attribute, AWS Cloud Map creates a
  * Route 53 alias record. Note the following:
@@ -95,13 +95,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * </li>
  * </ul>
- * <p>
- * <b>Charges for health checks</b>
- * </p>
+ * </dd>
+ * <dt>Charges for health checks</dt>
+ * <dd>
  * <p>
  * Health checks are basic Route 53 health checks that monitor an AWS endpoint. For information about pricing for health
  * checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.
  * </p>
+ * </dd>
+ * </dl>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/HealthCheckConfig" target="_top">AWS
  *      API Documentation</a>
@@ -158,7 +160,7 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The path that you want Route 53 to request when performing health checks. The path can be any value for which
-     * your endpoint will return an HTTP status code of 2xx or 3xx when the endpoint is healthy, such as the file
+     * your endpoint returns an HTTP status code of a 2xx or 3xx format when the endpoint is healthy, such as the file
      * <code>/docs/route53-health-check.html</code>. Route 53 automatically adds the DNS name for the service. If you
      * don't specify a value for <code>ResourcePath</code>, the default value is <code>/</code>.
      * </p>
@@ -171,7 +173,7 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The number of consecutive health checks that an endpoint must pass or fail for Route 53 to change the current
-     * status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href=
+     * status of the endpoint from unhealthy to healthy or the other way around. For more information, see <a href=
      * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.
      * </p>
@@ -556,7 +558,7 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The path that you want Route 53 to request when performing health checks. The path can be any value for which
-     * your endpoint will return an HTTP status code of 2xx or 3xx when the endpoint is healthy, such as the file
+     * your endpoint returns an HTTP status code of a 2xx or 3xx format when the endpoint is healthy, such as the file
      * <code>/docs/route53-health-check.html</code>. Route 53 automatically adds the DNS name for the service. If you
      * don't specify a value for <code>ResourcePath</code>, the default value is <code>/</code>.
      * </p>
@@ -567,8 +569,8 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
      * 
      * @param resourcePath
      *        The path that you want Route 53 to request when performing health checks. The path can be any value for
-     *        which your endpoint will return an HTTP status code of 2xx or 3xx when the endpoint is healthy, such as
-     *        the file <code>/docs/route53-health-check.html</code>. Route 53 automatically adds the DNS name for the
+     *        which your endpoint returns an HTTP status code of a 2xx or 3xx format when the endpoint is healthy, such
+     *        as the file <code>/docs/route53-health-check.html</code>. Route 53 automatically adds the DNS name for the
      *        service. If you don't specify a value for <code>ResourcePath</code>, the default value is <code>/</code>
      *        .</p>
      *        <p>
@@ -583,7 +585,7 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The path that you want Route 53 to request when performing health checks. The path can be any value for which
-     * your endpoint will return an HTTP status code of 2xx or 3xx when the endpoint is healthy, such as the file
+     * your endpoint returns an HTTP status code of a 2xx or 3xx format when the endpoint is healthy, such as the file
      * <code>/docs/route53-health-check.html</code>. Route 53 automatically adds the DNS name for the service. If you
      * don't specify a value for <code>ResourcePath</code>, the default value is <code>/</code>.
      * </p>
@@ -593,10 +595,10 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @return The path that you want Route 53 to request when performing health checks. The path can be any value for
-     *         which your endpoint will return an HTTP status code of 2xx or 3xx when the endpoint is healthy, such as
-     *         the file <code>/docs/route53-health-check.html</code>. Route 53 automatically adds the DNS name for the
-     *         service. If you don't specify a value for <code>ResourcePath</code>, the default value is <code>/</code>
-     *         .</p>
+     *         which your endpoint returns an HTTP status code of a 2xx or 3xx format when the endpoint is healthy, such
+     *         as the file <code>/docs/route53-health-check.html</code>. Route 53 automatically adds the DNS name for
+     *         the service. If you don't specify a value for <code>ResourcePath</code>, the default value is
+     *         <code>/</code>.</p>
      *         <p>
      *         If you specify <code>TCP</code> for <code>Type</code>, you must <i>not</i> specify a value for
      *         <code>ResourcePath</code>.
@@ -609,7 +611,7 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The path that you want Route 53 to request when performing health checks. The path can be any value for which
-     * your endpoint will return an HTTP status code of 2xx or 3xx when the endpoint is healthy, such as the file
+     * your endpoint returns an HTTP status code of a 2xx or 3xx format when the endpoint is healthy, such as the file
      * <code>/docs/route53-health-check.html</code>. Route 53 automatically adds the DNS name for the service. If you
      * don't specify a value for <code>ResourcePath</code>, the default value is <code>/</code>.
      * </p>
@@ -620,8 +622,8 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
      * 
      * @param resourcePath
      *        The path that you want Route 53 to request when performing health checks. The path can be any value for
-     *        which your endpoint will return an HTTP status code of 2xx or 3xx when the endpoint is healthy, such as
-     *        the file <code>/docs/route53-health-check.html</code>. Route 53 automatically adds the DNS name for the
+     *        which your endpoint returns an HTTP status code of a 2xx or 3xx format when the endpoint is healthy, such
+     *        as the file <code>/docs/route53-health-check.html</code>. Route 53 automatically adds the DNS name for the
      *        service. If you don't specify a value for <code>ResourcePath</code>, the default value is <code>/</code>
      *        .</p>
      *        <p>
@@ -638,14 +640,15 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The number of consecutive health checks that an endpoint must pass or fail for Route 53 to change the current
-     * status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href=
+     * status of the endpoint from unhealthy to healthy or the other way around. For more information, see <a href=
      * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.
      * </p>
      * 
      * @param failureThreshold
      *        The number of consecutive health checks that an endpoint must pass or fail for Route 53 to change the
-     *        current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href=
+     *        current status of the endpoint from unhealthy to healthy or the other way around. For more information,
+     *        see <a href=
      *        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
      *        >How Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.
      */
@@ -657,14 +660,14 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The number of consecutive health checks that an endpoint must pass or fail for Route 53 to change the current
-     * status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href=
+     * status of the endpoint from unhealthy to healthy or the other way around. For more information, see <a href=
      * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.
      * </p>
      * 
      * @return The number of consecutive health checks that an endpoint must pass or fail for Route 53 to change the
-     *         current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a
-     *         href=
+     *         current status of the endpoint from unhealthy to healthy or the other way around. For more information,
+     *         see <a href=
      *         "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
      *         >How Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.
      */
@@ -676,14 +679,15 @@ public class HealthCheckConfig implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The number of consecutive health checks that an endpoint must pass or fail for Route 53 to change the current
-     * status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href=
+     * status of the endpoint from unhealthy to healthy or the other way around. For more information, see <a href=
      * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html">How
      * Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.
      * </p>
      * 
      * @param failureThreshold
      *        The number of consecutive health checks that an endpoint must pass or fail for Route 53 to change the
-     *        current status of the endpoint from unhealthy to healthy or vice versa. For more information, see <a href=
+     *        current status of the endpoint from unhealthy to healthy or the other way around. For more information,
+     *        see <a href=
      *        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html"
      *        >How Route 53 Determines Whether an Endpoint Is Healthy</a> in the <i>Route 53 Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

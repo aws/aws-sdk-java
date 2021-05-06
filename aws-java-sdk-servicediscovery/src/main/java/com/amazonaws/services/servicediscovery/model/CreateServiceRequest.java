@@ -30,19 +30,19 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The name that you want to assign to the service.
      * </p>
      * <p>
-     * If you want AWS Cloud Map to create an <code>SRV</code> record when you register an instance, and if you're using
-     * a system that requires a specific <code>SRV</code> format, such as <a href="http://www.haproxy.org/">HAProxy</a>,
+     * If you want AWS Cloud Map to create an <code>SRV</code> record when you register an instance and you're using a
+     * system that requires a specific <code>SRV</code> format, such as <a href="http://www.haproxy.org/">HAProxy</a>,
      * specify the following for <code>Name</code>:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Start the name with an underscore (_), such as <code>_exampleservice</code>
+     * Start the name with an underscore (_), such as <code>_exampleservice</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * End the name with <i>._protocol</i>, such as <code>._tcp</code>
+     * End the name with <i>._protocol</i>, such as <code>._tcp</code>.
      * </p>
      * </li>
      * </ul>
@@ -55,24 +55,26 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <note>
      * <p>
-     * For a single DNS namespace, you cannot create two services with names that differ only by case (such as EXAMPLE
-     * and example). Otherwise, these services will have the same DNS name. However, you can create multiple HTTP
-     * services with names that differ only by case because HTTP services are case sensitive.
+     * For services that are accessible by DNS queries, you can't create multiple services with names that differ only
+     * by case (such as EXAMPLE and example). Otherwise, these services have the same DNS name and can't be
+     * distinguished. However, if you use a namespace that's only accessible by API calls, then you can create services
+     * that with names that differ only by case.
      * </p>
      * </note>
      */
     private String name;
     /**
      * <p>
-     * The ID of the namespace that you want to use to create the service.
+     * The ID of the namespace that you want to use to create the service. The namespace ID must be specified, but it
+     * can be specified either here or in the <code>DnsConfig</code> object.
      * </p>
      */
     private String namespaceId;
     /**
      * <p>
      * A unique string that identifies the request and that allows failed <code>CreateService</code> requests to be
-     * retried without the risk of executing the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/time stamp.
+     * retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string,
+     * for example, a date/timestamp.
      * </p>
      */
     private String creatorRequestId;
@@ -124,9 +126,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private HealthCheckCustomConfig healthCheckCustomConfig;
     /**
      * <p>
-     * The tags to add to the service. Each tag consists of a key and an optional value, both of which you define. Tag
-     * keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256
-     * characters.
+     * The tags to add to the service. Each tag consists of a key and an optional value that you define. Tags keys can
+     * be up to 128 characters in length, and tag values can be up to 256 characters in length.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -144,19 +145,19 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The name that you want to assign to the service.
      * </p>
      * <p>
-     * If you want AWS Cloud Map to create an <code>SRV</code> record when you register an instance, and if you're using
-     * a system that requires a specific <code>SRV</code> format, such as <a href="http://www.haproxy.org/">HAProxy</a>,
+     * If you want AWS Cloud Map to create an <code>SRV</code> record when you register an instance and you're using a
+     * system that requires a specific <code>SRV</code> format, such as <a href="http://www.haproxy.org/">HAProxy</a>,
      * specify the following for <code>Name</code>:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Start the name with an underscore (_), such as <code>_exampleservice</code>
+     * Start the name with an underscore (_), such as <code>_exampleservice</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * End the name with <i>._protocol</i>, such as <code>._tcp</code>
+     * End the name with <i>._protocol</i>, such as <code>._tcp</code>.
      * </p>
      * </li>
      * </ul>
@@ -169,28 +170,29 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <note>
      * <p>
-     * For a single DNS namespace, you cannot create two services with names that differ only by case (such as EXAMPLE
-     * and example). Otherwise, these services will have the same DNS name. However, you can create multiple HTTP
-     * services with names that differ only by case because HTTP services are case sensitive.
+     * For services that are accessible by DNS queries, you can't create multiple services with names that differ only
+     * by case (such as EXAMPLE and example). Otherwise, these services have the same DNS name and can't be
+     * distinguished. However, if you use a namespace that's only accessible by API calls, then you can create services
+     * that with names that differ only by case.
      * </p>
      * </note>
      * 
      * @param name
      *        The name that you want to assign to the service.</p>
      *        <p>
-     *        If you want AWS Cloud Map to create an <code>SRV</code> record when you register an instance, and if
-     *        you're using a system that requires a specific <code>SRV</code> format, such as <a
+     *        If you want AWS Cloud Map to create an <code>SRV</code> record when you register an instance and you're
+     *        using a system that requires a specific <code>SRV</code> format, such as <a
      *        href="http://www.haproxy.org/">HAProxy</a>, specify the following for <code>Name</code>:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Start the name with an underscore (_), such as <code>_exampleservice</code>
+     *        Start the name with an underscore (_), such as <code>_exampleservice</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        End the name with <i>._protocol</i>, such as <code>._tcp</code>
+     *        End the name with <i>._protocol</i>, such as <code>._tcp</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -203,9 +205,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </p>
      *        <note>
      *        <p>
-     *        For a single DNS namespace, you cannot create two services with names that differ only by case (such as
-     *        EXAMPLE and example). Otherwise, these services will have the same DNS name. However, you can create
-     *        multiple HTTP services with names that differ only by case because HTTP services are case sensitive.
+     *        For services that are accessible by DNS queries, you can't create multiple services with names that differ
+     *        only by case (such as EXAMPLE and example). Otherwise, these services have the same DNS name and can't be
+     *        distinguished. However, if you use a namespace that's only accessible by API calls, then you can create
+     *        services that with names that differ only by case.
      *        </p>
      */
 
@@ -218,19 +221,19 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The name that you want to assign to the service.
      * </p>
      * <p>
-     * If you want AWS Cloud Map to create an <code>SRV</code> record when you register an instance, and if you're using
-     * a system that requires a specific <code>SRV</code> format, such as <a href="http://www.haproxy.org/">HAProxy</a>,
+     * If you want AWS Cloud Map to create an <code>SRV</code> record when you register an instance and you're using a
+     * system that requires a specific <code>SRV</code> format, such as <a href="http://www.haproxy.org/">HAProxy</a>,
      * specify the following for <code>Name</code>:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Start the name with an underscore (_), such as <code>_exampleservice</code>
+     * Start the name with an underscore (_), such as <code>_exampleservice</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * End the name with <i>._protocol</i>, such as <code>._tcp</code>
+     * End the name with <i>._protocol</i>, such as <code>._tcp</code>.
      * </p>
      * </li>
      * </ul>
@@ -243,27 +246,28 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <note>
      * <p>
-     * For a single DNS namespace, you cannot create two services with names that differ only by case (such as EXAMPLE
-     * and example). Otherwise, these services will have the same DNS name. However, you can create multiple HTTP
-     * services with names that differ only by case because HTTP services are case sensitive.
+     * For services that are accessible by DNS queries, you can't create multiple services with names that differ only
+     * by case (such as EXAMPLE and example). Otherwise, these services have the same DNS name and can't be
+     * distinguished. However, if you use a namespace that's only accessible by API calls, then you can create services
+     * that with names that differ only by case.
      * </p>
      * </note>
      * 
      * @return The name that you want to assign to the service.</p>
      *         <p>
-     *         If you want AWS Cloud Map to create an <code>SRV</code> record when you register an instance, and if
-     *         you're using a system that requires a specific <code>SRV</code> format, such as <a
+     *         If you want AWS Cloud Map to create an <code>SRV</code> record when you register an instance and you're
+     *         using a system that requires a specific <code>SRV</code> format, such as <a
      *         href="http://www.haproxy.org/">HAProxy</a>, specify the following for <code>Name</code>:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Start the name with an underscore (_), such as <code>_exampleservice</code>
+     *         Start the name with an underscore (_), such as <code>_exampleservice</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         End the name with <i>._protocol</i>, such as <code>._tcp</code>
+     *         End the name with <i>._protocol</i>, such as <code>._tcp</code>.
      *         </p>
      *         </li>
      *         </ul>
@@ -276,9 +280,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         </p>
      *         <note>
      *         <p>
-     *         For a single DNS namespace, you cannot create two services with names that differ only by case (such as
-     *         EXAMPLE and example). Otherwise, these services will have the same DNS name. However, you can create
-     *         multiple HTTP services with names that differ only by case because HTTP services are case sensitive.
+     *         For services that are accessible by DNS queries, you can't create multiple services with names that
+     *         differ only by case (such as EXAMPLE and example). Otherwise, these services have the same DNS name and
+     *         can't be distinguished. However, if you use a namespace that's only accessible by API calls, then you can
+     *         create services that with names that differ only by case.
      *         </p>
      */
 
@@ -291,19 +296,19 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The name that you want to assign to the service.
      * </p>
      * <p>
-     * If you want AWS Cloud Map to create an <code>SRV</code> record when you register an instance, and if you're using
-     * a system that requires a specific <code>SRV</code> format, such as <a href="http://www.haproxy.org/">HAProxy</a>,
+     * If you want AWS Cloud Map to create an <code>SRV</code> record when you register an instance and you're using a
+     * system that requires a specific <code>SRV</code> format, such as <a href="http://www.haproxy.org/">HAProxy</a>,
      * specify the following for <code>Name</code>:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Start the name with an underscore (_), such as <code>_exampleservice</code>
+     * Start the name with an underscore (_), such as <code>_exampleservice</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * End the name with <i>._protocol</i>, such as <code>._tcp</code>
+     * End the name with <i>._protocol</i>, such as <code>._tcp</code>.
      * </p>
      * </li>
      * </ul>
@@ -316,28 +321,29 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <note>
      * <p>
-     * For a single DNS namespace, you cannot create two services with names that differ only by case (such as EXAMPLE
-     * and example). Otherwise, these services will have the same DNS name. However, you can create multiple HTTP
-     * services with names that differ only by case because HTTP services are case sensitive.
+     * For services that are accessible by DNS queries, you can't create multiple services with names that differ only
+     * by case (such as EXAMPLE and example). Otherwise, these services have the same DNS name and can't be
+     * distinguished. However, if you use a namespace that's only accessible by API calls, then you can create services
+     * that with names that differ only by case.
      * </p>
      * </note>
      * 
      * @param name
      *        The name that you want to assign to the service.</p>
      *        <p>
-     *        If you want AWS Cloud Map to create an <code>SRV</code> record when you register an instance, and if
-     *        you're using a system that requires a specific <code>SRV</code> format, such as <a
+     *        If you want AWS Cloud Map to create an <code>SRV</code> record when you register an instance and you're
+     *        using a system that requires a specific <code>SRV</code> format, such as <a
      *        href="http://www.haproxy.org/">HAProxy</a>, specify the following for <code>Name</code>:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Start the name with an underscore (_), such as <code>_exampleservice</code>
+     *        Start the name with an underscore (_), such as <code>_exampleservice</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        End the name with <i>._protocol</i>, such as <code>._tcp</code>
+     *        End the name with <i>._protocol</i>, such as <code>._tcp</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -350,9 +356,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </p>
      *        <note>
      *        <p>
-     *        For a single DNS namespace, you cannot create two services with names that differ only by case (such as
-     *        EXAMPLE and example). Otherwise, these services will have the same DNS name. However, you can create
-     *        multiple HTTP services with names that differ only by case because HTTP services are case sensitive.
+     *        For services that are accessible by DNS queries, you can't create multiple services with names that differ
+     *        only by case (such as EXAMPLE and example). Otherwise, these services have the same DNS name and can't be
+     *        distinguished. However, if you use a namespace that's only accessible by API calls, then you can create
+     *        services that with names that differ only by case.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -364,11 +371,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the namespace that you want to use to create the service.
+     * The ID of the namespace that you want to use to create the service. The namespace ID must be specified, but it
+     * can be specified either here or in the <code>DnsConfig</code> object.
      * </p>
      * 
      * @param namespaceId
-     *        The ID of the namespace that you want to use to create the service.
+     *        The ID of the namespace that you want to use to create the service. The namespace ID must be specified,
+     *        but it can be specified either here or in the <code>DnsConfig</code> object.
      */
 
     public void setNamespaceId(String namespaceId) {
@@ -377,10 +386,12 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the namespace that you want to use to create the service.
+     * The ID of the namespace that you want to use to create the service. The namespace ID must be specified, but it
+     * can be specified either here or in the <code>DnsConfig</code> object.
      * </p>
      * 
-     * @return The ID of the namespace that you want to use to create the service.
+     * @return The ID of the namespace that you want to use to create the service. The namespace ID must be specified,
+     *         but it can be specified either here or in the <code>DnsConfig</code> object.
      */
 
     public String getNamespaceId() {
@@ -389,11 +400,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the namespace that you want to use to create the service.
+     * The ID of the namespace that you want to use to create the service. The namespace ID must be specified, but it
+     * can be specified either here or in the <code>DnsConfig</code> object.
      * </p>
      * 
      * @param namespaceId
-     *        The ID of the namespace that you want to use to create the service.
+     *        The ID of the namespace that you want to use to create the service. The namespace ID must be specified,
+     *        but it can be specified either here or in the <code>DnsConfig</code> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -405,14 +418,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * A unique string that identifies the request and that allows failed <code>CreateService</code> requests to be
-     * retried without the risk of executing the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/time stamp.
+     * retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string,
+     * for example, a date/timestamp.
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and that allows failed <code>CreateService</code> requests to
-     *        be retried without the risk of executing the operation twice. <code>CreatorRequestId</code> can be any
-     *        unique string, for example, a date/time stamp.
+     *        be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any
+     *        unique string, for example, a date/timestamp.
      */
 
     public void setCreatorRequestId(String creatorRequestId) {
@@ -422,13 +435,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * A unique string that identifies the request and that allows failed <code>CreateService</code> requests to be
-     * retried without the risk of executing the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/time stamp.
+     * retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string,
+     * for example, a date/timestamp.
      * </p>
      * 
      * @return A unique string that identifies the request and that allows failed <code>CreateService</code> requests to
-     *         be retried without the risk of executing the operation twice. <code>CreatorRequestId</code> can be any
-     *         unique string, for example, a date/time stamp.
+     *         be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any
+     *         unique string, for example, a date/timestamp.
      */
 
     public String getCreatorRequestId() {
@@ -438,14 +451,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * A unique string that identifies the request and that allows failed <code>CreateService</code> requests to be
-     * retried without the risk of executing the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/time stamp.
+     * retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string,
+     * for example, a date/timestamp.
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and that allows failed <code>CreateService</code> requests to
-     *        be retried without the risk of executing the operation twice. <code>CreatorRequestId</code> can be any
-     *        unique string, for example, a date/time stamp.
+     *        be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any
+     *        unique string, for example, a date/timestamp.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -739,14 +752,12 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tags to add to the service. Each tag consists of a key and an optional value, both of which you define. Tag
-     * keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256
-     * characters.
+     * The tags to add to the service. Each tag consists of a key and an optional value that you define. Tags keys can
+     * be up to 128 characters in length, and tag values can be up to 256 characters in length.
      * </p>
      * 
-     * @return The tags to add to the service. Each tag consists of a key and an optional value, both of which you
-     *         define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum
-     *         length of 256 characters.
+     * @return The tags to add to the service. Each tag consists of a key and an optional value that you define. Tags
+     *         keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.
      */
 
     public java.util.List<Tag> getTags() {
@@ -755,15 +766,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tags to add to the service. Each tag consists of a key and an optional value, both of which you define. Tag
-     * keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256
-     * characters.
+     * The tags to add to the service. Each tag consists of a key and an optional value that you define. Tags keys can
+     * be up to 128 characters in length, and tag values can be up to 256 characters in length.
      * </p>
      * 
      * @param tags
-     *        The tags to add to the service. Each tag consists of a key and an optional value, both of which you
-     *        define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum
-     *        length of 256 characters.
+     *        The tags to add to the service. Each tag consists of a key and an optional value that you define. Tags
+     *        keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -777,9 +786,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tags to add to the service. Each tag consists of a key and an optional value, both of which you define. Tag
-     * keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256
-     * characters.
+     * The tags to add to the service. Each tag consists of a key and an optional value that you define. Tags keys can
+     * be up to 128 characters in length, and tag values can be up to 256 characters in length.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -788,9 +796,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param tags
-     *        The tags to add to the service. Each tag consists of a key and an optional value, both of which you
-     *        define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum
-     *        length of 256 characters.
+     *        The tags to add to the service. Each tag consists of a key and an optional value that you define. Tags
+     *        keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -806,15 +813,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tags to add to the service. Each tag consists of a key and an optional value, both of which you define. Tag
-     * keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256
-     * characters.
+     * The tags to add to the service. Each tag consists of a key and an optional value that you define. Tags keys can
+     * be up to 128 characters in length, and tag values can be up to 256 characters in length.
      * </p>
      * 
      * @param tags
-     *        The tags to add to the service. Each tag consists of a key and an optional value, both of which you
-     *        define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum
-     *        length of 256 characters.
+     *        The tags to add to the service. Each tag consists of a key and an optional value that you define. Tags
+     *        keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

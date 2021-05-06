@@ -63,6 +63,11 @@ public class AbstractAmazonSnowball implements AmazonSnowball {
     }
 
     @Override
+    public CreateLongTermPricingResult createLongTermPricing(CreateLongTermPricingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateReturnShippingLabelResult createReturnShippingLabel(CreateReturnShippingLabelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -133,6 +138,11 @@ public class AbstractAmazonSnowball implements AmazonSnowball {
     }
 
     @Override
+    public ListLongTermPricingResult listLongTermPricing(ListLongTermPricingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateClusterResult updateCluster(UpdateClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -144,6 +154,11 @@ public class AbstractAmazonSnowball implements AmazonSnowball {
 
     @Override
     public UpdateJobShipmentStateResult updateJobShipmentState(UpdateJobShipmentStateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateLongTermPricingResult updateLongTermPricing(UpdateLongTermPricingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -93,6 +93,19 @@ public class AbstractAmazonSnowballAsync extends AbstractAmazonSnowball implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateLongTermPricingResult> createLongTermPricingAsync(CreateLongTermPricingRequest request) {
+
+        return createLongTermPricingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLongTermPricingResult> createLongTermPricingAsync(CreateLongTermPricingRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateLongTermPricingRequest, CreateLongTermPricingResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateReturnShippingLabelResult> createReturnShippingLabelAsync(CreateReturnShippingLabelRequest request) {
 
         return createReturnShippingLabelAsync(request, null);
@@ -275,6 +288,19 @@ public class AbstractAmazonSnowballAsync extends AbstractAmazonSnowball implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListLongTermPricingResult> listLongTermPricingAsync(ListLongTermPricingRequest request) {
+
+        return listLongTermPricingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLongTermPricingResult> listLongTermPricingAsync(ListLongTermPricingRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListLongTermPricingRequest, ListLongTermPricingResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateClusterResult> updateClusterAsync(UpdateClusterRequest request) {
 
         return updateClusterAsync(request, null);
@@ -309,6 +335,19 @@ public class AbstractAmazonSnowballAsync extends AbstractAmazonSnowball implemen
     @Override
     public java.util.concurrent.Future<UpdateJobShipmentStateResult> updateJobShipmentStateAsync(UpdateJobShipmentStateRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateJobShipmentStateRequest, UpdateJobShipmentStateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLongTermPricingResult> updateLongTermPricingAsync(UpdateLongTermPricingRequest request) {
+
+        return updateLongTermPricingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLongTermPricingResult> updateLongTermPricingAsync(UpdateLongTermPricingRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateLongTermPricingRequest, UpdateLongTermPricingResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

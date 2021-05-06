@@ -192,8 +192,174 @@ public interface AmazonSnowball {
 
     /**
      * <p>
-     * Creates a job to the other job attributes are inherited from the cluster.
+     * Creates a job to import or export data between Amazon S3 and your on-premises data center. Your AWS account must
+     * have the right trust policies and permissions in place to create a job for a Snow device. If you're creating a
+     * job for a node in a cluster, you only need to provide the <code>clusterId</code> value; the other job attributes
+     * are inherited from the cluster.
      * </p>
+     * <note>
+     * <p>
+     * Only the Snowball; Edge device type is supported when ordering clustered jobs.
+     * </p>
+     * <p>
+     * The device capacity is optional.
+     * </p>
+     * <p>
+     * Availability of device types differ by AWS Region. For more information about region availability, see <a
+     * href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">AWS
+     * Regional Services</a>.
+     * </p>
+     * </note>
+     * <p/>
+     * <p class="title">
+     * <b>AWS Snow Family device types and their capacities.</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Snow Family device type: <b>SNC1_SSD</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T14
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Snowcone
+     * </p>
+     * </li>
+     * </ul>
+     * <p/></li>
+     * <li>
+     * <p>
+     * Snow Family device type: <b>SNC1_HDD</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Snowcone
+     * </p>
+     * </li>
+     * </ul>
+     * <p/></li>
+     * <li>
+     * <p>
+     * Device type: <b>EDGE_S</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T98
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Snowball Edge Storage Optimized for data transfer only
+     * </p>
+     * </li>
+     * </ul>
+     * <p/></li>
+     * <li>
+     * <p>
+     * Device type: <b>EDGE_CG</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T42
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Snowball Edge Compute Optimized with GPU
+     * </p>
+     * </li>
+     * </ul>
+     * <p/></li>
+     * <li>
+     * <p>
+     * Device type: <b>EDGE_C</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T42
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Snowball Edge Compute Optimized without GPU
+     * </p>
+     * </li>
+     * </ul>
+     * <p/></li>
+     * <li>
+     * <p>
+     * Device type: <b>EDGE</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T100
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Snowball Edge Storage Optimized with EC2 Compute
+     * </p>
+     * </li>
+     * </ul>
+     * <p/></li>
+     * <li>
+     * <p>
+     * Device type: <b>STANDARD</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T50
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Original Snowball device
+     * </p>
+     * <note>
+     * <p>
+     * This device is only available in the Ningxia, Beijing, and Singapore AWS Regions.
+     * </p>
+     * </note></li>
+     * </ul>
+     * <p/></li>
+     * <li>
+     * <p>
+     * Device type: <b>STANDARD</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T80
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Original Snowball device
+     * </p>
+     * <note>
+     * <p>
+     * This device is only available in the Ningxia, Beijing, and Singapore AWS Regions.
+     * </p>
+     * </note></li>
+     * </ul>
+     * <p/></li>
+     * </ul>
      * 
      * @param createJobRequest
      * @return Result of the CreateJob operation returned by the service.
@@ -218,6 +384,24 @@ public interface AmazonSnowball {
      *      Documentation</a>
      */
     CreateJobResult createJob(CreateJobRequest createJobRequest);
+
+    /**
+     * <p>
+     * Creates a job with long term usage option for a device. The long term usage is a one year or three year long term
+     * pricing type for the device. You are billed upfront and AWS give discounts for long term pricing. For detailed
+     * information see XXXXXXXX
+     * </p>
+     * 
+     * @param createLongTermPricingRequest
+     * @return Result of the CreateLongTermPricing operation returned by the service.
+     * @throws InvalidResourceException
+     *         The specified resource can't be found. Check the information you provided in your last request, and try
+     *         again.
+     * @sample AmazonSnowball.CreateLongTermPricing
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateLongTermPricing" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateLongTermPricingResult createLongTermPricing(CreateLongTermPricingRequest createLongTermPricingRequest);
 
     /**
      * <p>
@@ -357,7 +541,7 @@ public interface AmazonSnowball {
      * gaining access to the Snow device associated with that job.
      * </p>
      * <p>
-     * The credentials of a given job, including its manifest file and unlock code, expire 90 days after the job is
+     * The credentials of a given job, including its manifest file and unlock code, expire 360 days after the job is
      * created.
      * </p>
      * 
@@ -377,7 +561,7 @@ public interface AmazonSnowball {
     /**
      * <p>
      * Returns the <code>UnlockCode</code> code value for the specified job. A particular <code>UnlockCode</code> value
-     * can be accessed for up to 90 days after the associated job has been created.
+     * can be accessed for up to 360 days after the associated job has been created.
      * </p>
      * <p>
      * The <code>UnlockCode</code> value is a 29-character code with 25 alphanumeric characters and 4 hyphens. This code
@@ -519,6 +703,25 @@ public interface AmazonSnowball {
 
     /**
      * <p>
+     * Lists all long term pricing types.
+     * </p>
+     * 
+     * @param listLongTermPricingRequest
+     * @return Result of the ListLongTermPricing operation returned by the service.
+     * @throws InvalidResourceException
+     *         The specified resource can't be found. Check the information you provided in your last request, and try
+     *         again.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the
+     *         operation without changing the <code>NextToken</code> string, and try again.
+     * @sample AmazonSnowball.ListLongTermPricing
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListLongTermPricing" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListLongTermPricingResult listLongTermPricing(ListLongTermPricingRequest listLongTermPricingRequest);
+
+    /**
+     * <p>
      * While a cluster's <code>ClusterState</code> value is in the <code>AwaitingQuorum</code> state, you can update
      * some of the information associated with a cluster. Once the cluster changes to a different job state, usually 60
      * minutes after the cluster being created, this action is no longer available.
@@ -596,6 +799,22 @@ public interface AmazonSnowball {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateJobShipmentStateResult updateJobShipmentState(UpdateJobShipmentStateRequest updateJobShipmentStateRequest);
+
+    /**
+     * <p>
+     * Updates the long term pricing type.
+     * </p>
+     * 
+     * @param updateLongTermPricingRequest
+     * @return Result of the UpdateLongTermPricing operation returned by the service.
+     * @throws InvalidResourceException
+     *         The specified resource can't be found. Check the information you provided in your last request, and try
+     *         again.
+     * @sample AmazonSnowball.UpdateLongTermPricing
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateLongTermPricing" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateLongTermPricingResult updateLongTermPricing(UpdateLongTermPricingRequest updateLongTermPricingRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

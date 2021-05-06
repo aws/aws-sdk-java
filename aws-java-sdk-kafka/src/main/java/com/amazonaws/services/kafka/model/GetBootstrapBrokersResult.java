@@ -41,6 +41,12 @@ public class GetBootstrapBrokersResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private String bootstrapBrokerStringSaslScram;
+    /**
+     * <p>
+     * A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.
+     * </p>
+     */
+    private String bootstrapBrokerStringSaslIam;
 
     /**
      * <p>
@@ -181,6 +187,52 @@ public class GetBootstrapBrokersResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.
+     * </p>
+     * 
+     * @param bootstrapBrokerStringSaslIam
+     *        <p>
+     *        A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.
+     *        </p>
+     */
+
+    public void setBootstrapBrokerStringSaslIam(String bootstrapBrokerStringSaslIam) {
+        this.bootstrapBrokerStringSaslIam = bootstrapBrokerStringSaslIam;
+    }
+
+    /**
+     * <p>
+     * A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.
+     * </p>
+     * 
+     * @return <p>
+     *         A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.
+     *         </p>
+     */
+
+    public String getBootstrapBrokerStringSaslIam() {
+        return this.bootstrapBrokerStringSaslIam;
+    }
+
+    /**
+     * <p>
+     * A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.
+     * </p>
+     * 
+     * @param bootstrapBrokerStringSaslIam
+     *        <p>
+     *        A string that contains one or more DNS names (or IP addresses) and SASL IAM port pairs.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetBootstrapBrokersResult withBootstrapBrokerStringSaslIam(String bootstrapBrokerStringSaslIam) {
+        setBootstrapBrokerStringSaslIam(bootstrapBrokerStringSaslIam);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -197,7 +249,9 @@ public class GetBootstrapBrokersResult extends com.amazonaws.AmazonWebServiceRes
         if (getBootstrapBrokerStringTls() != null)
             sb.append("BootstrapBrokerStringTls: ").append(getBootstrapBrokerStringTls()).append(",");
         if (getBootstrapBrokerStringSaslScram() != null)
-            sb.append("BootstrapBrokerStringSaslScram: ").append(getBootstrapBrokerStringSaslScram());
+            sb.append("BootstrapBrokerStringSaslScram: ").append(getBootstrapBrokerStringSaslScram()).append(",");
+        if (getBootstrapBrokerStringSaslIam() != null)
+            sb.append("BootstrapBrokerStringSaslIam: ").append(getBootstrapBrokerStringSaslIam());
         sb.append("}");
         return sb.toString();
     }
@@ -225,6 +279,10 @@ public class GetBootstrapBrokersResult extends com.amazonaws.AmazonWebServiceRes
         if (other.getBootstrapBrokerStringSaslScram() != null
                 && other.getBootstrapBrokerStringSaslScram().equals(this.getBootstrapBrokerStringSaslScram()) == false)
             return false;
+        if (other.getBootstrapBrokerStringSaslIam() == null ^ this.getBootstrapBrokerStringSaslIam() == null)
+            return false;
+        if (other.getBootstrapBrokerStringSaslIam() != null && other.getBootstrapBrokerStringSaslIam().equals(this.getBootstrapBrokerStringSaslIam()) == false)
+            return false;
         return true;
     }
 
@@ -236,6 +294,7 @@ public class GetBootstrapBrokersResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getBootstrapBrokerString() == null) ? 0 : getBootstrapBrokerString().hashCode());
         hashCode = prime * hashCode + ((getBootstrapBrokerStringTls() == null) ? 0 : getBootstrapBrokerStringTls().hashCode());
         hashCode = prime * hashCode + ((getBootstrapBrokerStringSaslScram() == null) ? 0 : getBootstrapBrokerStringSaslScram().hashCode());
+        hashCode = prime * hashCode + ((getBootstrapBrokerStringSaslIam() == null) ? 0 : getBootstrapBrokerStringSaslIam().hashCode());
         return hashCode;
     }
 

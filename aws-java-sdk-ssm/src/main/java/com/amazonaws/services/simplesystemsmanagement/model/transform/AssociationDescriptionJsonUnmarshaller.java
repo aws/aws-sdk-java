@@ -141,6 +141,12 @@ public class AssociationDescriptionJsonUnmarshaller implements Unmarshaller<Asso
                     context.nextToken();
                     associationDescription.setApplyOnlyAtCronInterval(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("CalendarNames", targetDepth)) {
+                    context.nextToken();
+                    associationDescription.setCalendarNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("TargetLocations", targetDepth)) {
                     context.nextToken();
                     associationDescription.setTargetLocations(new ListUnmarshaller<TargetLocation>(TargetLocationJsonUnmarshaller.getInstance())

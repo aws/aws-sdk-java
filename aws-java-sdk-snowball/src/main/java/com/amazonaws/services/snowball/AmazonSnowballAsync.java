@@ -176,8 +176,174 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
 
     /**
      * <p>
-     * Creates a job to the other job attributes are inherited from the cluster.
+     * Creates a job to import or export data between Amazon S3 and your on-premises data center. Your AWS account must
+     * have the right trust policies and permissions in place to create a job for a Snow device. If you're creating a
+     * job for a node in a cluster, you only need to provide the <code>clusterId</code> value; the other job attributes
+     * are inherited from the cluster.
      * </p>
+     * <note>
+     * <p>
+     * Only the Snowball; Edge device type is supported when ordering clustered jobs.
+     * </p>
+     * <p>
+     * The device capacity is optional.
+     * </p>
+     * <p>
+     * Availability of device types differ by AWS Region. For more information about region availability, see <a
+     * href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">AWS
+     * Regional Services</a>.
+     * </p>
+     * </note>
+     * <p/>
+     * <p class="title">
+     * <b>AWS Snow Family device types and their capacities.</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Snow Family device type: <b>SNC1_SSD</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T14
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Snowcone
+     * </p>
+     * </li>
+     * </ul>
+     * <p/></li>
+     * <li>
+     * <p>
+     * Snow Family device type: <b>SNC1_HDD</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Snowcone
+     * </p>
+     * </li>
+     * </ul>
+     * <p/></li>
+     * <li>
+     * <p>
+     * Device type: <b>EDGE_S</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T98
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Snowball Edge Storage Optimized for data transfer only
+     * </p>
+     * </li>
+     * </ul>
+     * <p/></li>
+     * <li>
+     * <p>
+     * Device type: <b>EDGE_CG</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T42
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Snowball Edge Compute Optimized with GPU
+     * </p>
+     * </li>
+     * </ul>
+     * <p/></li>
+     * <li>
+     * <p>
+     * Device type: <b>EDGE_C</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T42
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Snowball Edge Compute Optimized without GPU
+     * </p>
+     * </li>
+     * </ul>
+     * <p/></li>
+     * <li>
+     * <p>
+     * Device type: <b>EDGE</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T100
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Snowball Edge Storage Optimized with EC2 Compute
+     * </p>
+     * </li>
+     * </ul>
+     * <p/></li>
+     * <li>
+     * <p>
+     * Device type: <b>STANDARD</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T50
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Original Snowball device
+     * </p>
+     * <note>
+     * <p>
+     * This device is only available in the Ningxia, Beijing, and Singapore AWS Regions.
+     * </p>
+     * </note></li>
+     * </ul>
+     * <p/></li>
+     * <li>
+     * <p>
+     * Device type: <b>STANDARD</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T80
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Original Snowball device
+     * </p>
+     * <note>
+     * <p>
+     * This device is only available in the Ningxia, Beijing, and Singapore AWS Regions.
+     * </p>
+     * </note></li>
+     * </ul>
+     * <p/></li>
+     * </ul>
      * 
      * @param createJobRequest
      * @return A Java Future containing the result of the CreateJob operation returned by the service.
@@ -194,6 +360,169 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
      * job for a node in a cluster, you only need to provide the <code>clusterId</code> value; the other job attributes
      * are inherited from the cluster.
      * </p>
+     * <note>
+     * <p>
+     * Only the Snowball; Edge device type is supported when ordering clustered jobs.
+     * </p>
+     * <p>
+     * The device capacity is optional.
+     * </p>
+     * <p>
+     * Availability of device types differ by AWS Region. For more information about region availability, see <a
+     * href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">AWS
+     * Regional Services</a>.
+     * </p>
+     * </note>
+     * <p/>
+     * <p class="title">
+     * <b>AWS Snow Family device types and their capacities.</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Snow Family device type: <b>SNC1_SSD</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T14
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Snowcone
+     * </p>
+     * </li>
+     * </ul>
+     * <p/></li>
+     * <li>
+     * <p>
+     * Snow Family device type: <b>SNC1_HDD</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Snowcone
+     * </p>
+     * </li>
+     * </ul>
+     * <p/></li>
+     * <li>
+     * <p>
+     * Device type: <b>EDGE_S</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T98
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Snowball Edge Storage Optimized for data transfer only
+     * </p>
+     * </li>
+     * </ul>
+     * <p/></li>
+     * <li>
+     * <p>
+     * Device type: <b>EDGE_CG</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T42
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Snowball Edge Compute Optimized with GPU
+     * </p>
+     * </li>
+     * </ul>
+     * <p/></li>
+     * <li>
+     * <p>
+     * Device type: <b>EDGE_C</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T42
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Snowball Edge Compute Optimized without GPU
+     * </p>
+     * </li>
+     * </ul>
+     * <p/></li>
+     * <li>
+     * <p>
+     * Device type: <b>EDGE</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T100
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Snowball Edge Storage Optimized with EC2 Compute
+     * </p>
+     * </li>
+     * </ul>
+     * <p/></li>
+     * <li>
+     * <p>
+     * Device type: <b>STANDARD</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T50
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Original Snowball device
+     * </p>
+     * <note>
+     * <p>
+     * This device is only available in the Ningxia, Beijing, and Singapore AWS Regions.
+     * </p>
+     * </note></li>
+     * </ul>
+     * <p/></li>
+     * <li>
+     * <p>
+     * Device type: <b>STANDARD</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T80
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Original Snowball device
+     * </p>
+     * <note>
+     * <p>
+     * This device is only available in the Ningxia, Beijing, and Singapore AWS Regions.
+     * </p>
+     * </note></li>
+     * </ul>
+     * <p/></li>
+     * </ul>
      * 
      * @param createJobRequest
      * @param asyncHandler
@@ -207,6 +536,41 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
      */
     java.util.concurrent.Future<CreateJobResult> createJobAsync(CreateJobRequest createJobRequest,
             com.amazonaws.handlers.AsyncHandler<CreateJobRequest, CreateJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a job with long term usage option for a device. The long term usage is a one year or three year long term
+     * pricing type for the device. You are billed upfront and AWS give discounts for long term pricing. For detailed
+     * information see XXXXXXXX
+     * </p>
+     * 
+     * @param createLongTermPricingRequest
+     * @return A Java Future containing the result of the CreateLongTermPricing operation returned by the service.
+     * @sample AmazonSnowballAsync.CreateLongTermPricing
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateLongTermPricing" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLongTermPricingResult> createLongTermPricingAsync(CreateLongTermPricingRequest createLongTermPricingRequest);
+
+    /**
+     * <p>
+     * Creates a job with long term usage option for a device. The long term usage is a one year or three year long term
+     * pricing type for the device. You are billed upfront and AWS give discounts for long term pricing. For detailed
+     * information see XXXXXXXX
+     * </p>
+     * 
+     * @param createLongTermPricingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateLongTermPricing operation returned by the service.
+     * @sample AmazonSnowballAsyncHandler.CreateLongTermPricing
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateLongTermPricing" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLongTermPricingResult> createLongTermPricingAsync(CreateLongTermPricingRequest createLongTermPricingRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateLongTermPricingRequest, CreateLongTermPricingResult> asyncHandler);
 
     /**
      * <p>
@@ -424,7 +788,7 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
      * gaining access to the Snow device associated with that job.
      * </p>
      * <p>
-     * The credentials of a given job, including its manifest file and unlock code, expire 90 days after the job is
+     * The credentials of a given job, including its manifest file and unlock code, expire 360 days after the job is
      * created.
      * </p>
      * 
@@ -454,7 +818,7 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
      * gaining access to the Snow device associated with that job.
      * </p>
      * <p>
-     * The credentials of a given job, including its manifest file and unlock code, expire 90 days after the job is
+     * The credentials of a given job, including its manifest file and unlock code, expire 360 days after the job is
      * created.
      * </p>
      * 
@@ -474,7 +838,7 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
     /**
      * <p>
      * Returns the <code>UnlockCode</code> code value for the specified job. A particular <code>UnlockCode</code> value
-     * can be accessed for up to 90 days after the associated job has been created.
+     * can be accessed for up to 360 days after the associated job has been created.
      * </p>
      * <p>
      * The <code>UnlockCode</code> value is a 29-character code with 25 alphanumeric characters and 4 hyphens. This code
@@ -498,7 +862,7 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
     /**
      * <p>
      * Returns the <code>UnlockCode</code> code value for the specified job. A particular <code>UnlockCode</code> value
-     * can be accessed for up to 90 days after the associated job has been created.
+     * can be accessed for up to 360 days after the associated job has been created.
      * </p>
      * <p>
      * The <code>UnlockCode</code> value is a 29-character code with 25 alphanumeric characters and 4 hyphens. This code
@@ -740,6 +1104,37 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
 
     /**
      * <p>
+     * Lists all long term pricing types.
+     * </p>
+     * 
+     * @param listLongTermPricingRequest
+     * @return A Java Future containing the result of the ListLongTermPricing operation returned by the service.
+     * @sample AmazonSnowballAsync.ListLongTermPricing
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListLongTermPricing" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLongTermPricingResult> listLongTermPricingAsync(ListLongTermPricingRequest listLongTermPricingRequest);
+
+    /**
+     * <p>
+     * Lists all long term pricing types.
+     * </p>
+     * 
+     * @param listLongTermPricingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListLongTermPricing operation returned by the service.
+     * @sample AmazonSnowballAsyncHandler.ListLongTermPricing
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListLongTermPricing" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLongTermPricingResult> listLongTermPricingAsync(ListLongTermPricingRequest listLongTermPricingRequest,
+            com.amazonaws.handlers.AsyncHandler<ListLongTermPricingRequest, ListLongTermPricingResult> asyncHandler);
+
+    /**
+     * <p>
      * While a cluster's <code>ClusterState</code> value is in the <code>AwaitingQuorum</code> state, you can update
      * some of the information associated with a cluster. Once the cluster changes to a different job state, usually 60
      * minutes after the cluster being created, this action is no longer available.
@@ -838,5 +1233,36 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
      */
     java.util.concurrent.Future<UpdateJobShipmentStateResult> updateJobShipmentStateAsync(UpdateJobShipmentStateRequest updateJobShipmentStateRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateJobShipmentStateRequest, UpdateJobShipmentStateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the long term pricing type.
+     * </p>
+     * 
+     * @param updateLongTermPricingRequest
+     * @return A Java Future containing the result of the UpdateLongTermPricing operation returned by the service.
+     * @sample AmazonSnowballAsync.UpdateLongTermPricing
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateLongTermPricing" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateLongTermPricingResult> updateLongTermPricingAsync(UpdateLongTermPricingRequest updateLongTermPricingRequest);
+
+    /**
+     * <p>
+     * Updates the long term pricing type.
+     * </p>
+     * 
+     * @param updateLongTermPricingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateLongTermPricing operation returned by the service.
+     * @sample AmazonSnowballAsyncHandler.UpdateLongTermPricing
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateLongTermPricing" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateLongTermPricingResult> updateLongTermPricingAsync(UpdateLongTermPricingRequest updateLongTermPricingRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateLongTermPricingRequest, UpdateLongTermPricingResult> asyncHandler);
 
 }

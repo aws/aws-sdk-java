@@ -178,6 +178,15 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
     private Boolean applyOnlyAtCronInterval;
     /**
      * <p>
+     * The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents you want to gate
+     * your associations under. The associations only run when that Change Calendar is open. For more information, see
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     * Systems Manager Change Calendar</a>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> calendarNames;
+    /**
+     * <p>
      * A location is a combination of AWS Regions and AWS accounts where you want to run the association. Use this
      * action to update an association in multiple Regions and multiple accounts.
      * </p>
@@ -1290,6 +1299,107 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
+     * The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents you want to gate
+     * your associations under. The associations only run when that Change Calendar is open. For more information, see
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     * Systems Manager Change Calendar</a>.
+     * </p>
+     * 
+     * @return The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents you want
+     *         to gate your associations under. The associations only run when that Change Calendar is open. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     *         Systems Manager Change Calendar</a>.
+     */
+
+    public java.util.List<String> getCalendarNames() {
+        if (calendarNames == null) {
+            calendarNames = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return calendarNames;
+    }
+
+    /**
+     * <p>
+     * The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents you want to gate
+     * your associations under. The associations only run when that Change Calendar is open. For more information, see
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     * Systems Manager Change Calendar</a>.
+     * </p>
+     * 
+     * @param calendarNames
+     *        The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents you want
+     *        to gate your associations under. The associations only run when that Change Calendar is open. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     *        Systems Manager Change Calendar</a>.
+     */
+
+    public void setCalendarNames(java.util.Collection<String> calendarNames) {
+        if (calendarNames == null) {
+            this.calendarNames = null;
+            return;
+        }
+
+        this.calendarNames = new com.amazonaws.internal.SdkInternalList<String>(calendarNames);
+    }
+
+    /**
+     * <p>
+     * The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents you want to gate
+     * your associations under. The associations only run when that Change Calendar is open. For more information, see
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     * Systems Manager Change Calendar</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCalendarNames(java.util.Collection)} or {@link #withCalendarNames(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param calendarNames
+     *        The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents you want
+     *        to gate your associations under. The associations only run when that Change Calendar is open. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     *        Systems Manager Change Calendar</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAssociationRequest withCalendarNames(String... calendarNames) {
+        if (this.calendarNames == null) {
+            setCalendarNames(new com.amazonaws.internal.SdkInternalList<String>(calendarNames.length));
+        }
+        for (String ele : calendarNames) {
+            this.calendarNames.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents you want to gate
+     * your associations under. The associations only run when that Change Calendar is open. For more information, see
+     * <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     * Systems Manager Change Calendar</a>.
+     * </p>
+     * 
+     * @param calendarNames
+     *        The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type documents you want
+     *        to gate your associations under. The associations only run when that Change Calendar is open. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     *        Systems Manager Change Calendar</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAssociationRequest withCalendarNames(java.util.Collection<String> calendarNames) {
+        setCalendarNames(calendarNames);
+        return this;
+    }
+
+    /**
+     * <p>
      * A location is a combination of AWS Regions and AWS accounts where you want to run the association. Use this
      * action to update an association in multiple Regions and multiple accounts.
      * </p>
@@ -1411,6 +1521,8 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("SyncCompliance: ").append(getSyncCompliance()).append(",");
         if (getApplyOnlyAtCronInterval() != null)
             sb.append("ApplyOnlyAtCronInterval: ").append(getApplyOnlyAtCronInterval()).append(",");
+        if (getCalendarNames() != null)
+            sb.append("CalendarNames: ").append(getCalendarNames()).append(",");
         if (getTargetLocations() != null)
             sb.append("TargetLocations: ").append(getTargetLocations());
         sb.append("}");
@@ -1488,6 +1600,10 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getApplyOnlyAtCronInterval() != null && other.getApplyOnlyAtCronInterval().equals(this.getApplyOnlyAtCronInterval()) == false)
             return false;
+        if (other.getCalendarNames() == null ^ this.getCalendarNames() == null)
+            return false;
+        if (other.getCalendarNames() != null && other.getCalendarNames().equals(this.getCalendarNames()) == false)
+            return false;
         if (other.getTargetLocations() == null ^ this.getTargetLocations() == null)
             return false;
         if (other.getTargetLocations() != null && other.getTargetLocations().equals(this.getTargetLocations()) == false)
@@ -1515,6 +1631,7 @@ public class UpdateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getComplianceSeverity() == null) ? 0 : getComplianceSeverity().hashCode());
         hashCode = prime * hashCode + ((getSyncCompliance() == null) ? 0 : getSyncCompliance().hashCode());
         hashCode = prime * hashCode + ((getApplyOnlyAtCronInterval() == null) ? 0 : getApplyOnlyAtCronInterval().hashCode());
+        hashCode = prime * hashCode + ((getCalendarNames() == null) ? 0 : getCalendarNames().hashCode());
         hashCode = prime * hashCode + ((getTargetLocations() == null) ? 0 : getTargetLocations().hashCode());
         return hashCode;
     }

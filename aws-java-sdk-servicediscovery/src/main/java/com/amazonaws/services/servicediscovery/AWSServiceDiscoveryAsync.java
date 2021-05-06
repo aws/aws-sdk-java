@@ -26,11 +26,11 @@ import com.amazonaws.services.servicediscovery.model.*;
  * </p>
  * <p>
  * <p>
- * AWS Cloud Map lets you configure public DNS, private DNS, or HTTP namespaces that your microservice applications run
- * in. When an instance of the service becomes available, you can call the AWS Cloud Map API to register the instance
- * with AWS Cloud Map. For public or private DNS namespaces, AWS Cloud Map automatically creates DNS records and an
- * optional health check. Clients that submit public or private DNS queries, or HTTP requests, for the service receive
- * an answer that contains up to eight healthy records.
+ * With AWS Cloud Map, you can configure public DNS, private DNS, or HTTP namespaces that your microservice applications
+ * run in. When an instance becomes available, you can call the AWS Cloud Map API to register the instance with AWS
+ * Cloud Map. For public or private DNS namespaces, AWS Cloud Map automatically creates DNS records and an optional
+ * health check. Clients that submit public or private DNS queries, or HTTP requests, for the service receive an answer
+ * that contains up to eight healthy records.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -81,12 +81,12 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
 
     /**
      * <p>
-     * Creates a private namespace based on DNS, which will be visible only inside a specified Amazon VPC. The namespace
+     * Creates a private namespace based on DNS, which is visible only inside a specified Amazon VPC. The namespace
      * defines your service naming scheme. For example, if you name your namespace <code>example.com</code> and name
-     * your service <code>backend</code>, the resulting DNS name for the service will be
-     * <code>backend.example.com</code>. For the current quota on the number of namespaces that you can create using the
-     * same AWS account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud
-     * Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
+     * your service <code>backend</code>, the resulting DNS name for the service is <code>backend.example.com</code>.
+     * For the current quota on the number of namespaces that you can create using the same AWS account, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud Map Limits</a> in the
+     * <i>AWS Cloud Map Developer Guide</i>.
      * </p>
      * 
      * @param createPrivateDnsNamespaceRequest
@@ -100,12 +100,12 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
 
     /**
      * <p>
-     * Creates a private namespace based on DNS, which will be visible only inside a specified Amazon VPC. The namespace
+     * Creates a private namespace based on DNS, which is visible only inside a specified Amazon VPC. The namespace
      * defines your service naming scheme. For example, if you name your namespace <code>example.com</code> and name
-     * your service <code>backend</code>, the resulting DNS name for the service will be
-     * <code>backend.example.com</code>. For the current quota on the number of namespaces that you can create using the
-     * same AWS account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud
-     * Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
+     * your service <code>backend</code>, the resulting DNS name for the service is <code>backend.example.com</code>.
+     * For the current quota on the number of namespaces that you can create using the same AWS account, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud Map Limits</a> in the
+     * <i>AWS Cloud Map Developer Guide</i>.
      * </p>
      * 
      * @param createPrivateDnsNamespaceRequest
@@ -124,10 +124,10 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
 
     /**
      * <p>
-     * Creates a public namespace based on DNS, which will be visible on the internet. The namespace defines your
-     * service naming scheme. For example, if you name your namespace <code>example.com</code> and name your service
-     * <code>backend</code>, the resulting DNS name for the service will be <code>backend.example.com</code>. For the
-     * current quota on the number of namespaces that you can create using the same AWS account, see <a
+     * Creates a public namespace based on DNS, which is visible on the internet. The namespace defines your service
+     * naming scheme. For example, if you name your namespace <code>example.com</code> and name your service
+     * <code>backend</code>, the resulting DNS name for the service is <code>backend.example.com</code>. For the current
+     * quota on the number of namespaces that you can create using the same AWS account, see <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud Map Limits</a> in the
      * <i>AWS Cloud Map Developer Guide</i>.
      * </p>
@@ -142,10 +142,10 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
 
     /**
      * <p>
-     * Creates a public namespace based on DNS, which will be visible on the internet. The namespace defines your
-     * service naming scheme. For example, if you name your namespace <code>example.com</code> and name your service
-     * <code>backend</code>, the resulting DNS name for the service will be <code>backend.example.com</code>. For the
-     * current quota on the number of namespaces that you can create using the same AWS account, see <a
+     * Creates a public namespace based on DNS, which is visible on the internet. The namespace defines your service
+     * naming scheme. For example, if you name your namespace <code>example.com</code> and name your service
+     * <code>backend</code>, the resulting DNS name for the service is <code>backend.example.com</code>. For the current
+     * quota on the number of namespaces that you can create using the same AWS account, see <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud Map Limits</a> in the
      * <i>AWS Cloud Map Developer Guide</i>.
      * </p>
@@ -1055,7 +1055,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * <li>
      * <p>
      * If you omit an existing <code>HealthCheckCustomConfig</code> configuration from an <code>UpdateService</code>
-     * request, the configuration is not deleted from the service.
+     * request, the configuration isn't deleted from the service.
      * </p>
      * </li>
      * </ul>
@@ -1105,7 +1105,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * <li>
      * <p>
      * If you omit an existing <code>HealthCheckCustomConfig</code> configuration from an <code>UpdateService</code>
-     * request, the configuration is not deleted from the service.
+     * request, the configuration isn't deleted from the service.
      * </p>
      * </li>
      * </ul>

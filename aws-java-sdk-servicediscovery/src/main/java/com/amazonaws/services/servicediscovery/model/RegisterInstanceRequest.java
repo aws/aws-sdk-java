@@ -100,9 +100,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Supported attribute keys include the following:
      * </p>
-     * <p>
-     * <b>AWS_ALIAS_DNS_NAME</b>
-     * </p>
+     * <dl>
+     * <dt>AWS_ALIAS_DNS_NAME</dt>
+     * <dd>
      * <p>
      * If you want AWS Cloud Map to create an Amazon Route 53 alias record that routes traffic to an Elastic Load
      * Balancing load balancer, specify the DNS name that is associated with the load balancer. For information about
@@ -129,7 +129,7 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <li>
      * <p>
      * If the service that is specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, AWS
-     * Cloud Map will create the Route 53 health check, but it won't associate the health check with the alias record.
+     * Cloud Map will create the Route 53 health check, but it doesn't associate the health check with the alias record.
      * </p>
      * </li>
      * <li>
@@ -145,27 +145,27 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * <b>AWS_EC2_INSTANCE_ID</b>
-     * </p>
+     * </dd>
+     * <dt>AWS_EC2_INSTANCE_ID</dt>
+     * <dd>
      * <p>
      * <i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. If the <code>AWS_EC2_INSTANCE_ID</code>
      * attribute is specified, then the only other attribute that can be specified is
      * <code>AWS_INIT_HEALTH_STATUS</code>. When the <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the
      * <code>AWS_INSTANCE_IPV4</code> attribute will be filled out with the primary private IPv4 address.
      * </p>
-     * <p>
-     * <b>AWS_INIT_HEALTH_STATUS</b>
-     * </p>
+     * </dd>
+     * <dt>AWS_INIT_HEALTH_STATUS</dt>
+     * <dd>
      * <p>
      * If the service configuration includes <code>HealthCheckCustomConfig</code>, you can optionally use
      * <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom health check,
      * <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't specify a value for
      * <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is <code>HEALTHY</code>.
      * </p>
-     * <p>
-     * <b>AWS_INSTANCE_CNAME</b>
-     * </p>
+     * </dd>
+     * <dt>AWS_INSTANCE_CNAME</dt>
+     * <dd>
      * <p>
      * If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53 to
      * return in response to DNS queries, for example, <code>example.com</code>.
@@ -174,9 +174,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * This value is required if the service specified by <code>ServiceId</code> includes settings for an
      * <code>CNAME</code> record.
      * </p>
-     * <p>
-     * <b>AWS_INSTANCE_IPV4</b>
-     * </p>
+     * </dd>
+     * <dt>AWS_INSTANCE_IPV4</dt>
+     * <dd>
      * <p>
      * If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53 to return
      * in response to DNS queries, for example, <code>192.0.2.44</code>.
@@ -186,9 +186,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * record. If the service includes settings for an <code>SRV</code> record, you must specify a value for
      * <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      * </p>
-     * <p>
-     * <b>AWS_INSTANCE_IPV6</b>
-     * </p>
+     * </dd>
+     * <dt>AWS_INSTANCE_IPV6</dt>
+     * <dd>
      * <p>
      * If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
      * return in response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
@@ -198,9 +198,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>AAAA</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a
      * value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      * </p>
-     * <p>
-     * <b>AWS_INSTANCE_PORT</b>
-     * </p>
+     * </dd>
+     * <dt>AWS_INSTANCE_PORT</dt>
+     * <dd>
      * <p>
      * If the service includes an <code>SRV</code> record, the value that you want Route 53 to return for the port.
      * </p>
@@ -212,14 +212,16 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * This value is required if you specified settings for an <code>SRV</code> record or a Route 53 health check when
      * you created the service.
      * </p>
-     * <p>
-     * <b>Custom attributes</b>
-     * </p>
+     * </dd>
+     * <dt>Custom attributes</dt>
+     * <dd>
      * <p>
      * You can add up to 30 custom attributes. For each key-value pair, the maximum length of the attribute name is 255
      * characters, and the maximum length of the attribute value is 1,024 characters. The total size of all provided
      * attributes (sum of all keys and values) must not exceed 5,000 characters.
      * </p>
+     * </dd>
+     * </dl>
      */
     private java.util.Map<String, String> attributes;
 
@@ -587,9 +589,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Supported attribute keys include the following:
      * </p>
-     * <p>
-     * <b>AWS_ALIAS_DNS_NAME</b>
-     * </p>
+     * <dl>
+     * <dt>AWS_ALIAS_DNS_NAME</dt>
+     * <dd>
      * <p>
      * If you want AWS Cloud Map to create an Amazon Route 53 alias record that routes traffic to an Elastic Load
      * Balancing load balancer, specify the DNS name that is associated with the load balancer. For information about
@@ -616,7 +618,7 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <li>
      * <p>
      * If the service that is specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, AWS
-     * Cloud Map will create the Route 53 health check, but it won't associate the health check with the alias record.
+     * Cloud Map will create the Route 53 health check, but it doesn't associate the health check with the alias record.
      * </p>
      * </li>
      * <li>
@@ -632,27 +634,27 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * <b>AWS_EC2_INSTANCE_ID</b>
-     * </p>
+     * </dd>
+     * <dt>AWS_EC2_INSTANCE_ID</dt>
+     * <dd>
      * <p>
      * <i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. If the <code>AWS_EC2_INSTANCE_ID</code>
      * attribute is specified, then the only other attribute that can be specified is
      * <code>AWS_INIT_HEALTH_STATUS</code>. When the <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the
      * <code>AWS_INSTANCE_IPV4</code> attribute will be filled out with the primary private IPv4 address.
      * </p>
-     * <p>
-     * <b>AWS_INIT_HEALTH_STATUS</b>
-     * </p>
+     * </dd>
+     * <dt>AWS_INIT_HEALTH_STATUS</dt>
+     * <dd>
      * <p>
      * If the service configuration includes <code>HealthCheckCustomConfig</code>, you can optionally use
      * <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom health check,
      * <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't specify a value for
      * <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is <code>HEALTHY</code>.
      * </p>
-     * <p>
-     * <b>AWS_INSTANCE_CNAME</b>
-     * </p>
+     * </dd>
+     * <dt>AWS_INSTANCE_CNAME</dt>
+     * <dd>
      * <p>
      * If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53 to
      * return in response to DNS queries, for example, <code>example.com</code>.
@@ -661,9 +663,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * This value is required if the service specified by <code>ServiceId</code> includes settings for an
      * <code>CNAME</code> record.
      * </p>
-     * <p>
-     * <b>AWS_INSTANCE_IPV4</b>
-     * </p>
+     * </dd>
+     * <dt>AWS_INSTANCE_IPV4</dt>
+     * <dd>
      * <p>
      * If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53 to return
      * in response to DNS queries, for example, <code>192.0.2.44</code>.
@@ -673,9 +675,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * record. If the service includes settings for an <code>SRV</code> record, you must specify a value for
      * <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      * </p>
-     * <p>
-     * <b>AWS_INSTANCE_IPV6</b>
-     * </p>
+     * </dd>
+     * <dt>AWS_INSTANCE_IPV6</dt>
+     * <dd>
      * <p>
      * If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
      * return in response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
@@ -685,9 +687,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>AAAA</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a
      * value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      * </p>
-     * <p>
-     * <b>AWS_INSTANCE_PORT</b>
-     * </p>
+     * </dd>
+     * <dt>AWS_INSTANCE_PORT</dt>
+     * <dd>
      * <p>
      * If the service includes an <code>SRV</code> record, the value that you want Route 53 to return for the port.
      * </p>
@@ -699,14 +701,16 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * This value is required if you specified settings for an <code>SRV</code> record or a Route 53 health check when
      * you created the service.
      * </p>
-     * <p>
-     * <b>Custom attributes</b>
-     * </p>
+     * </dd>
+     * <dt>Custom attributes</dt>
+     * <dd>
      * <p>
      * You can add up to 30 custom attributes. For each key-value pair, the maximum length of the attribute name is 255
      * characters, and the maximum length of the attribute value is 1,024 characters. The total size of all provided
      * attributes (sum of all keys and values) must not exceed 5,000 characters.
      * </p>
+     * </dd>
+     * </dl>
      * 
      * @return A string map that contains the following information for the service that you specify in
      *         <code>ServiceId</code>:</p>
@@ -725,9 +729,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <p>
      *         Supported attribute keys include the following:
      *         </p>
-     *         <p>
-     *         <b>AWS_ALIAS_DNS_NAME</b>
-     *         </p>
+     *         <dl>
+     *         <dt>AWS_ALIAS_DNS_NAME</dt>
+     *         <dd>
      *         <p>
      *         If you want AWS Cloud Map to create an Amazon Route 53 alias record that routes traffic to an Elastic
      *         Load Balancing load balancer, specify the DNS name that is associated with the load balancer. For
@@ -754,7 +758,7 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <li>
      *         <p>
      *         If the service that is specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code>
-     *         settings, AWS Cloud Map will create the Route 53 health check, but it won't associate the health check
+     *         settings, AWS Cloud Map will create the Route 53 health check, but it doesn't associate the health check
      *         with the alias record.
      *         </p>
      *         </li>
@@ -771,9 +775,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </p>
      *         </li>
      *         </ul>
-     *         <p>
-     *         <b>AWS_EC2_INSTANCE_ID</b>
-     *         </p>
+     *         </dd>
+     *         <dt>AWS_EC2_INSTANCE_ID</dt>
+     *         <dd>
      *         <p>
      *         <i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. If the
      *         <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the only other attribute that can be
@@ -781,18 +785,18 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         specified, then the <code>AWS_INSTANCE_IPV4</code> attribute will be filled out with the primary private
      *         IPv4 address.
      *         </p>
-     *         <p>
-     *         <b>AWS_INIT_HEALTH_STATUS</b>
-     *         </p>
+     *         </dd>
+     *         <dt>AWS_INIT_HEALTH_STATUS</dt>
+     *         <dd>
      *         <p>
      *         If the service configuration includes <code>HealthCheckCustomConfig</code>, you can optionally use
      *         <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom health check,
      *         <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't specify a value for
      *         <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is <code>HEALTHY</code>.
      *         </p>
-     *         <p>
-     *         <b>AWS_INSTANCE_CNAME</b>
-     *         </p>
+     *         </dd>
+     *         <dt>AWS_INSTANCE_CNAME</dt>
+     *         <dd>
      *         <p>
      *         If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53
      *         to return in response to DNS queries, for example, <code>example.com</code>.
@@ -801,9 +805,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         This value is required if the service specified by <code>ServiceId</code> includes settings for an
      *         <code>CNAME</code> record.
      *         </p>
-     *         <p>
-     *         <b>AWS_INSTANCE_IPV4</b>
-     *         </p>
+     *         </dd>
+     *         <dt>AWS_INSTANCE_IPV4</dt>
+     *         <dd>
      *         <p>
      *         If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53
      *         to return in response to DNS queries, for example, <code>192.0.2.44</code>.
@@ -813,9 +817,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <code>A</code> record. If the service includes settings for an <code>SRV</code> record, you must specify
      *         a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      *         </p>
-     *         <p>
-     *         <b>AWS_INSTANCE_IPV6</b>
-     *         </p>
+     *         </dd>
+     *         <dt>AWS_INSTANCE_IPV6</dt>
+     *         <dd>
      *         <p>
      *         If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want
      *         Route 53 to return in response to DNS queries, for example,
@@ -826,9 +830,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <code>AAAA</code> record. If the service includes settings for an <code>SRV</code> record, you must
      *         specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      *         </p>
-     *         <p>
-     *         <b>AWS_INSTANCE_PORT</b>
-     *         </p>
+     *         </dd>
+     *         <dt>AWS_INSTANCE_PORT</dt>
+     *         <dd>
      *         <p>
      *         If the service includes an <code>SRV</code> record, the value that you want Route 53 to return for the
      *         port.
@@ -841,13 +845,15 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         This value is required if you specified settings for an <code>SRV</code> record or a Route 53 health
      *         check when you created the service.
      *         </p>
-     *         <p>
-     *         <b>Custom attributes</b>
-     *         </p>
+     *         </dd>
+     *         <dt>Custom attributes</dt>
+     *         <dd>
      *         <p>
      *         You can add up to 30 custom attributes. For each key-value pair, the maximum length of the attribute name
      *         is 255 characters, and the maximum length of the attribute value is 1,024 characters. The total size of
      *         all provided attributes (sum of all keys and values) must not exceed 5,000 characters.
+     *         </p>
+     *         </dd>
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -873,9 +879,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Supported attribute keys include the following:
      * </p>
-     * <p>
-     * <b>AWS_ALIAS_DNS_NAME</b>
-     * </p>
+     * <dl>
+     * <dt>AWS_ALIAS_DNS_NAME</dt>
+     * <dd>
      * <p>
      * If you want AWS Cloud Map to create an Amazon Route 53 alias record that routes traffic to an Elastic Load
      * Balancing load balancer, specify the DNS name that is associated with the load balancer. For information about
@@ -902,7 +908,7 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <li>
      * <p>
      * If the service that is specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, AWS
-     * Cloud Map will create the Route 53 health check, but it won't associate the health check with the alias record.
+     * Cloud Map will create the Route 53 health check, but it doesn't associate the health check with the alias record.
      * </p>
      * </li>
      * <li>
@@ -918,27 +924,27 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * <b>AWS_EC2_INSTANCE_ID</b>
-     * </p>
+     * </dd>
+     * <dt>AWS_EC2_INSTANCE_ID</dt>
+     * <dd>
      * <p>
      * <i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. If the <code>AWS_EC2_INSTANCE_ID</code>
      * attribute is specified, then the only other attribute that can be specified is
      * <code>AWS_INIT_HEALTH_STATUS</code>. When the <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the
      * <code>AWS_INSTANCE_IPV4</code> attribute will be filled out with the primary private IPv4 address.
      * </p>
-     * <p>
-     * <b>AWS_INIT_HEALTH_STATUS</b>
-     * </p>
+     * </dd>
+     * <dt>AWS_INIT_HEALTH_STATUS</dt>
+     * <dd>
      * <p>
      * If the service configuration includes <code>HealthCheckCustomConfig</code>, you can optionally use
      * <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom health check,
      * <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't specify a value for
      * <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is <code>HEALTHY</code>.
      * </p>
-     * <p>
-     * <b>AWS_INSTANCE_CNAME</b>
-     * </p>
+     * </dd>
+     * <dt>AWS_INSTANCE_CNAME</dt>
+     * <dd>
      * <p>
      * If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53 to
      * return in response to DNS queries, for example, <code>example.com</code>.
@@ -947,9 +953,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * This value is required if the service specified by <code>ServiceId</code> includes settings for an
      * <code>CNAME</code> record.
      * </p>
-     * <p>
-     * <b>AWS_INSTANCE_IPV4</b>
-     * </p>
+     * </dd>
+     * <dt>AWS_INSTANCE_IPV4</dt>
+     * <dd>
      * <p>
      * If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53 to return
      * in response to DNS queries, for example, <code>192.0.2.44</code>.
@@ -959,9 +965,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * record. If the service includes settings for an <code>SRV</code> record, you must specify a value for
      * <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      * </p>
-     * <p>
-     * <b>AWS_INSTANCE_IPV6</b>
-     * </p>
+     * </dd>
+     * <dt>AWS_INSTANCE_IPV6</dt>
+     * <dd>
      * <p>
      * If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
      * return in response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
@@ -971,9 +977,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>AAAA</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a
      * value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      * </p>
-     * <p>
-     * <b>AWS_INSTANCE_PORT</b>
-     * </p>
+     * </dd>
+     * <dt>AWS_INSTANCE_PORT</dt>
+     * <dd>
      * <p>
      * If the service includes an <code>SRV</code> record, the value that you want Route 53 to return for the port.
      * </p>
@@ -985,14 +991,16 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * This value is required if you specified settings for an <code>SRV</code> record or a Route 53 health check when
      * you created the service.
      * </p>
-     * <p>
-     * <b>Custom attributes</b>
-     * </p>
+     * </dd>
+     * <dt>Custom attributes</dt>
+     * <dd>
      * <p>
      * You can add up to 30 custom attributes. For each key-value pair, the maximum length of the attribute name is 255
      * characters, and the maximum length of the attribute value is 1,024 characters. The total size of all provided
      * attributes (sum of all keys and values) must not exceed 5,000 characters.
      * </p>
+     * </dd>
+     * </dl>
      * 
      * @param attributes
      *        A string map that contains the following information for the service that you specify in
@@ -1012,9 +1020,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <p>
      *        Supported attribute keys include the following:
      *        </p>
-     *        <p>
-     *        <b>AWS_ALIAS_DNS_NAME</b>
-     *        </p>
+     *        <dl>
+     *        <dt>AWS_ALIAS_DNS_NAME</dt>
+     *        <dd>
      *        <p>
      *        If you want AWS Cloud Map to create an Amazon Route 53 alias record that routes traffic to an Elastic Load
      *        Balancing load balancer, specify the DNS name that is associated with the load balancer. For information
@@ -1041,7 +1049,7 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <li>
      *        <p>
      *        If the service that is specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code>
-     *        settings, AWS Cloud Map will create the Route 53 health check, but it won't associate the health check
+     *        settings, AWS Cloud Map will create the Route 53 health check, but it doesn't associate the health check
      *        with the alias record.
      *        </p>
      *        </li>
@@ -1058,9 +1066,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        </li>
      *        </ul>
-     *        <p>
-     *        <b>AWS_EC2_INSTANCE_ID</b>
-     *        </p>
+     *        </dd>
+     *        <dt>AWS_EC2_INSTANCE_ID</dt>
+     *        <dd>
      *        <p>
      *        <i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. If the
      *        <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the only other attribute that can be
@@ -1068,18 +1076,18 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        specified, then the <code>AWS_INSTANCE_IPV4</code> attribute will be filled out with the primary private
      *        IPv4 address.
      *        </p>
-     *        <p>
-     *        <b>AWS_INIT_HEALTH_STATUS</b>
-     *        </p>
+     *        </dd>
+     *        <dt>AWS_INIT_HEALTH_STATUS</dt>
+     *        <dd>
      *        <p>
      *        If the service configuration includes <code>HealthCheckCustomConfig</code>, you can optionally use
      *        <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom health check,
      *        <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't specify a value for
      *        <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is <code>HEALTHY</code>.
      *        </p>
-     *        <p>
-     *        <b>AWS_INSTANCE_CNAME</b>
-     *        </p>
+     *        </dd>
+     *        <dt>AWS_INSTANCE_CNAME</dt>
+     *        <dd>
      *        <p>
      *        If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53
      *        to return in response to DNS queries, for example, <code>example.com</code>.
@@ -1088,9 +1096,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        This value is required if the service specified by <code>ServiceId</code> includes settings for an
      *        <code>CNAME</code> record.
      *        </p>
-     *        <p>
-     *        <b>AWS_INSTANCE_IPV4</b>
-     *        </p>
+     *        </dd>
+     *        <dt>AWS_INSTANCE_IPV4</dt>
+     *        <dd>
      *        <p>
      *        If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53 to
      *        return in response to DNS queries, for example, <code>192.0.2.44</code>.
@@ -1100,9 +1108,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <code>A</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a
      *        value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      *        </p>
-     *        <p>
-     *        <b>AWS_INSTANCE_IPV6</b>
-     *        </p>
+     *        </dd>
+     *        <dt>AWS_INSTANCE_IPV6</dt>
+     *        <dd>
      *        <p>
      *        If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route 53
      *        to return in response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
@@ -1112,9 +1120,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <code>AAAA</code> record. If the service includes settings for an <code>SRV</code> record, you must
      *        specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      *        </p>
-     *        <p>
-     *        <b>AWS_INSTANCE_PORT</b>
-     *        </p>
+     *        </dd>
+     *        <dt>AWS_INSTANCE_PORT</dt>
+     *        <dd>
      *        <p>
      *        If the service includes an <code>SRV</code> record, the value that you want Route 53 to return for the
      *        port.
@@ -1127,13 +1135,15 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        This value is required if you specified settings for an <code>SRV</code> record or a Route 53 health check
      *        when you created the service.
      *        </p>
-     *        <p>
-     *        <b>Custom attributes</b>
-     *        </p>
+     *        </dd>
+     *        <dt>Custom attributes</dt>
+     *        <dd>
      *        <p>
      *        You can add up to 30 custom attributes. For each key-value pair, the maximum length of the attribute name
      *        is 255 characters, and the maximum length of the attribute value is 1,024 characters. The total size of
      *        all provided attributes (sum of all keys and values) must not exceed 5,000 characters.
+     *        </p>
+     *        </dd>
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -1159,9 +1169,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Supported attribute keys include the following:
      * </p>
-     * <p>
-     * <b>AWS_ALIAS_DNS_NAME</b>
-     * </p>
+     * <dl>
+     * <dt>AWS_ALIAS_DNS_NAME</dt>
+     * <dd>
      * <p>
      * If you want AWS Cloud Map to create an Amazon Route 53 alias record that routes traffic to an Elastic Load
      * Balancing load balancer, specify the DNS name that is associated with the load balancer. For information about
@@ -1188,7 +1198,7 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <li>
      * <p>
      * If the service that is specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code> settings, AWS
-     * Cloud Map will create the Route 53 health check, but it won't associate the health check with the alias record.
+     * Cloud Map will create the Route 53 health check, but it doesn't associate the health check with the alias record.
      * </p>
      * </li>
      * <li>
@@ -1204,27 +1214,27 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * <b>AWS_EC2_INSTANCE_ID</b>
-     * </p>
+     * </dd>
+     * <dt>AWS_EC2_INSTANCE_ID</dt>
+     * <dd>
      * <p>
      * <i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. If the <code>AWS_EC2_INSTANCE_ID</code>
      * attribute is specified, then the only other attribute that can be specified is
      * <code>AWS_INIT_HEALTH_STATUS</code>. When the <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the
      * <code>AWS_INSTANCE_IPV4</code> attribute will be filled out with the primary private IPv4 address.
      * </p>
-     * <p>
-     * <b>AWS_INIT_HEALTH_STATUS</b>
-     * </p>
+     * </dd>
+     * <dt>AWS_INIT_HEALTH_STATUS</dt>
+     * <dd>
      * <p>
      * If the service configuration includes <code>HealthCheckCustomConfig</code>, you can optionally use
      * <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom health check,
      * <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't specify a value for
      * <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is <code>HEALTHY</code>.
      * </p>
-     * <p>
-     * <b>AWS_INSTANCE_CNAME</b>
-     * </p>
+     * </dd>
+     * <dt>AWS_INSTANCE_CNAME</dt>
+     * <dd>
      * <p>
      * If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53 to
      * return in response to DNS queries, for example, <code>example.com</code>.
@@ -1233,9 +1243,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * This value is required if the service specified by <code>ServiceId</code> includes settings for an
      * <code>CNAME</code> record.
      * </p>
-     * <p>
-     * <b>AWS_INSTANCE_IPV4</b>
-     * </p>
+     * </dd>
+     * <dt>AWS_INSTANCE_IPV4</dt>
+     * <dd>
      * <p>
      * If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53 to return
      * in response to DNS queries, for example, <code>192.0.2.44</code>.
@@ -1245,9 +1255,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * record. If the service includes settings for an <code>SRV</code> record, you must specify a value for
      * <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      * </p>
-     * <p>
-     * <b>AWS_INSTANCE_IPV6</b>
-     * </p>
+     * </dd>
+     * <dt>AWS_INSTANCE_IPV6</dt>
+     * <dd>
      * <p>
      * If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
      * return in response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
@@ -1257,9 +1267,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>AAAA</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a
      * value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      * </p>
-     * <p>
-     * <b>AWS_INSTANCE_PORT</b>
-     * </p>
+     * </dd>
+     * <dt>AWS_INSTANCE_PORT</dt>
+     * <dd>
      * <p>
      * If the service includes an <code>SRV</code> record, the value that you want Route 53 to return for the port.
      * </p>
@@ -1271,14 +1281,16 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * This value is required if you specified settings for an <code>SRV</code> record or a Route 53 health check when
      * you created the service.
      * </p>
-     * <p>
-     * <b>Custom attributes</b>
-     * </p>
+     * </dd>
+     * <dt>Custom attributes</dt>
+     * <dd>
      * <p>
      * You can add up to 30 custom attributes. For each key-value pair, the maximum length of the attribute name is 255
      * characters, and the maximum length of the attribute value is 1,024 characters. The total size of all provided
      * attributes (sum of all keys and values) must not exceed 5,000 characters.
      * </p>
+     * </dd>
+     * </dl>
      * 
      * @param attributes
      *        A string map that contains the following information for the service that you specify in
@@ -1298,9 +1310,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <p>
      *        Supported attribute keys include the following:
      *        </p>
-     *        <p>
-     *        <b>AWS_ALIAS_DNS_NAME</b>
-     *        </p>
+     *        <dl>
+     *        <dt>AWS_ALIAS_DNS_NAME</dt>
+     *        <dd>
      *        <p>
      *        If you want AWS Cloud Map to create an Amazon Route 53 alias record that routes traffic to an Elastic Load
      *        Balancing load balancer, specify the DNS name that is associated with the load balancer. For information
@@ -1327,7 +1339,7 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <li>
      *        <p>
      *        If the service that is specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code>
-     *        settings, AWS Cloud Map will create the Route 53 health check, but it won't associate the health check
+     *        settings, AWS Cloud Map will create the Route 53 health check, but it doesn't associate the health check
      *        with the alias record.
      *        </p>
      *        </li>
@@ -1344,9 +1356,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        </li>
      *        </ul>
-     *        <p>
-     *        <b>AWS_EC2_INSTANCE_ID</b>
-     *        </p>
+     *        </dd>
+     *        <dt>AWS_EC2_INSTANCE_ID</dt>
+     *        <dd>
      *        <p>
      *        <i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. If the
      *        <code>AWS_EC2_INSTANCE_ID</code> attribute is specified, then the only other attribute that can be
@@ -1354,18 +1366,18 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        specified, then the <code>AWS_INSTANCE_IPV4</code> attribute will be filled out with the primary private
      *        IPv4 address.
      *        </p>
-     *        <p>
-     *        <b>AWS_INIT_HEALTH_STATUS</b>
-     *        </p>
+     *        </dd>
+     *        <dt>AWS_INIT_HEALTH_STATUS</dt>
+     *        <dd>
      *        <p>
      *        If the service configuration includes <code>HealthCheckCustomConfig</code>, you can optionally use
      *        <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of the custom health check,
      *        <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't specify a value for
      *        <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is <code>HEALTHY</code>.
      *        </p>
-     *        <p>
-     *        <b>AWS_INSTANCE_CNAME</b>
-     *        </p>
+     *        </dd>
+     *        <dt>AWS_INSTANCE_CNAME</dt>
+     *        <dd>
      *        <p>
      *        If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53
      *        to return in response to DNS queries, for example, <code>example.com</code>.
@@ -1374,9 +1386,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        This value is required if the service specified by <code>ServiceId</code> includes settings for an
      *        <code>CNAME</code> record.
      *        </p>
-     *        <p>
-     *        <b>AWS_INSTANCE_IPV4</b>
-     *        </p>
+     *        </dd>
+     *        <dt>AWS_INSTANCE_IPV4</dt>
+     *        <dd>
      *        <p>
      *        If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53 to
      *        return in response to DNS queries, for example, <code>192.0.2.44</code>.
@@ -1386,9 +1398,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <code>A</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a
      *        value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      *        </p>
-     *        <p>
-     *        <b>AWS_INSTANCE_IPV6</b>
-     *        </p>
+     *        </dd>
+     *        <dt>AWS_INSTANCE_IPV6</dt>
+     *        <dd>
      *        <p>
      *        If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route 53
      *        to return in response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
@@ -1398,9 +1410,9 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <code>AAAA</code> record. If the service includes settings for an <code>SRV</code> record, you must
      *        specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      *        </p>
-     *        <p>
-     *        <b>AWS_INSTANCE_PORT</b>
-     *        </p>
+     *        </dd>
+     *        <dt>AWS_INSTANCE_PORT</dt>
+     *        <dd>
      *        <p>
      *        If the service includes an <code>SRV</code> record, the value that you want Route 53 to return for the
      *        port.
@@ -1413,13 +1425,15 @@ public class RegisterInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        This value is required if you specified settings for an <code>SRV</code> record or a Route 53 health check
      *        when you created the service.
      *        </p>
-     *        <p>
-     *        <b>Custom attributes</b>
-     *        </p>
+     *        </dd>
+     *        <dt>Custom attributes</dt>
+     *        <dd>
      *        <p>
      *        You can add up to 30 custom attributes. For each key-value pair, the maximum length of the attribute name
      *        is 255 characters, and the maximum length of the attribute value is 1,024 characters. The total size of
      *        all provided attributes (sum of all keys and values) must not exceed 5,000 characters.
+     *        </p>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

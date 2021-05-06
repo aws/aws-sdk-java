@@ -34,6 +34,12 @@ public class Sasl implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Scram scram;
+    /**
+     * <p>
+     * Indicates whether IAM access control is enabled.
+     * </p>
+     */
+    private Iam iam;
 
     /**
      * <p>
@@ -82,6 +88,52 @@ public class Sasl implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Indicates whether IAM access control is enabled.
+     * </p>
+     * 
+     * @param iam
+     *        <p>
+     *        Indicates whether IAM access control is enabled.
+     *        </p>
+     */
+
+    public void setIam(Iam iam) {
+        this.iam = iam;
+    }
+
+    /**
+     * <p>
+     * Indicates whether IAM access control is enabled.
+     * </p>
+     * 
+     * @return <p>
+     *         Indicates whether IAM access control is enabled.
+     *         </p>
+     */
+
+    public Iam getIam() {
+        return this.iam;
+    }
+
+    /**
+     * <p>
+     * Indicates whether IAM access control is enabled.
+     * </p>
+     * 
+     * @param iam
+     *        <p>
+     *        Indicates whether IAM access control is enabled.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Sasl withIam(Iam iam) {
+        setIam(iam);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -94,7 +146,9 @@ public class Sasl implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getScram() != null)
-            sb.append("Scram: ").append(getScram());
+            sb.append("Scram: ").append(getScram()).append(",");
+        if (getIam() != null)
+            sb.append("Iam: ").append(getIam());
         sb.append("}");
         return sb.toString();
     }
@@ -113,6 +167,10 @@ public class Sasl implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getScram() != null && other.getScram().equals(this.getScram()) == false)
             return false;
+        if (other.getIam() == null ^ this.getIam() == null)
+            return false;
+        if (other.getIam() != null && other.getIam().equals(this.getIam()) == false)
+            return false;
         return true;
     }
 
@@ -122,6 +180,7 @@ public class Sasl implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getScram() == null) ? 0 : getScram().hashCode());
+        hashCode = prime * hashCode + ((getIam() == null) ? 0 : getIam().hashCode());
         return hashCode;
     }
 

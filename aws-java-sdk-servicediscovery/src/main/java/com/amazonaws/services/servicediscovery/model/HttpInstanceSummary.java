@@ -39,7 +39,11 @@ public class HttpInstanceSummary implements Serializable, Cloneable, StructuredP
     private String instanceId;
     /**
      * <p>
-     * The name of the namespace that you specified when you registered the instance.
+     * <code/> <code/> <code/>
+     * </p>
+     * <p>
+     * The <code>HttpName</code> name of the namespace, found in the <code>HttpProperties</code> member of the
+     * <code>Properties</code> member of the namespace.
      * </p>
      */
     private String namespaceName;
@@ -104,11 +108,16 @@ public class HttpInstanceSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the namespace that you specified when you registered the instance.
+     * <code/> <code/> <code/>
+     * </p>
+     * <p>
+     * The <code>HttpName</code> name of the namespace, found in the <code>HttpProperties</code> member of the
+     * <code>Properties</code> member of the namespace.
      * </p>
      * 
      * @param namespaceName
-     *        The name of the namespace that you specified when you registered the instance.
+     *        <code/> <code/> <code/> </p> <p>The <code>HttpName</code> name of the namespace, found in the
+     *        <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.
      */
 
     public void setNamespaceName(String namespaceName) {
@@ -117,10 +126,15 @@ public class HttpInstanceSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the namespace that you specified when you registered the instance.
+     * <code/> <code/> <code/>
+     * </p>
+     * <p>
+     * The <code>HttpName</code> name of the namespace, found in the <code>HttpProperties</code> member of the
+     * <code>Properties</code> member of the namespace.
      * </p>
      * 
-     * @return The name of the namespace that you specified when you registered the instance.
+     * @return <code/> <code/> <code/> </p> <p>The <code>HttpName</code> name of the namespace, found in the
+     *         <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.
      */
 
     public String getNamespaceName() {
@@ -129,11 +143,16 @@ public class HttpInstanceSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the namespace that you specified when you registered the instance.
+     * <code/> <code/> <code/>
+     * </p>
+     * <p>
+     * The <code>HttpName</code> name of the namespace, found in the <code>HttpProperties</code> member of the
+     * <code>Properties</code> member of the namespace.
      * </p>
      * 
      * @param namespaceName
-     *        The name of the namespace that you specified when you registered the instance.
+     *        <code/> <code/> <code/> </p> <p>The <code>HttpName</code> name of the namespace, found in the
+     *        <code>HttpProperties</code> member of the <code>Properties</code> member of the namespace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

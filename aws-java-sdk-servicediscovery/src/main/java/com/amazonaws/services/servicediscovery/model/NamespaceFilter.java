@@ -51,25 +51,28 @@ public class NamespaceFilter implements Serializable, Cloneable, StructuredPojo 
      * The operator that you want to use to determine whether <code>ListNamespaces</code> returns a namespace. Valid
      * values for <code>condition</code> include:
      * </p>
-     * <ul>
-     * <li>
+     * <dl>
+     * <dt>EQ</dt>
+     * <dd>
      * <p>
-     * <code>EQ</code>: When you specify <code>EQ</code> for the condition, you can choose to list only public
-     * namespaces or private namespaces, but not both. <code>EQ</code> is the default condition and can be omitted.
+     * When you specify <code>EQ</code> for the condition, you can choose to list only public namespaces or private
+     * namespaces, but not both. <code>EQ</code> is the default condition and can be omitted.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>IN</dt>
+     * <dd>
      * <p>
-     * <code>IN</code>: When you specify <code>IN</code> for the condition, you can choose to list public namespaces,
-     * private namespaces, or both.
+     * When you specify <code>IN</code> for the condition, you can choose to list public namespaces, private namespaces,
+     * or both.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>BETWEEN</dt>
+     * <dd>
      * <p>
-     * <code>BETWEEN</code>: Not applicable
+     * Not applicable
      * </p>
-     * </li>
-     * </ul>
+     * </dd>
+     * </dl>
      */
     private String condition;
 
@@ -243,48 +246,53 @@ public class NamespaceFilter implements Serializable, Cloneable, StructuredPojo 
      * The operator that you want to use to determine whether <code>ListNamespaces</code> returns a namespace. Valid
      * values for <code>condition</code> include:
      * </p>
-     * <ul>
-     * <li>
+     * <dl>
+     * <dt>EQ</dt>
+     * <dd>
      * <p>
-     * <code>EQ</code>: When you specify <code>EQ</code> for the condition, you can choose to list only public
-     * namespaces or private namespaces, but not both. <code>EQ</code> is the default condition and can be omitted.
+     * When you specify <code>EQ</code> for the condition, you can choose to list only public namespaces or private
+     * namespaces, but not both. <code>EQ</code> is the default condition and can be omitted.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>IN</dt>
+     * <dd>
      * <p>
-     * <code>IN</code>: When you specify <code>IN</code> for the condition, you can choose to list public namespaces,
-     * private namespaces, or both.
+     * When you specify <code>IN</code> for the condition, you can choose to list public namespaces, private namespaces,
+     * or both.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>BETWEEN</dt>
+     * <dd>
      * <p>
-     * <code>BETWEEN</code>: Not applicable
+     * Not applicable
      * </p>
-     * </li>
-     * </ul>
+     * </dd>
+     * </dl>
      * 
      * @param condition
      *        The operator that you want to use to determine whether <code>ListNamespaces</code> returns a namespace.
      *        Valid values for <code>condition</code> include:</p>
-     *        <ul>
-     *        <li>
+     *        <dl>
+     *        <dt>EQ</dt>
+     *        <dd>
      *        <p>
-     *        <code>EQ</code>: When you specify <code>EQ</code> for the condition, you can choose to list only public
-     *        namespaces or private namespaces, but not both. <code>EQ</code> is the default condition and can be
-     *        omitted.
+     *        When you specify <code>EQ</code> for the condition, you can choose to list only public namespaces or
+     *        private namespaces, but not both. <code>EQ</code> is the default condition and can be omitted.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>IN</dt>
+     *        <dd>
      *        <p>
-     *        <code>IN</code>: When you specify <code>IN</code> for the condition, you can choose to list public
-     *        namespaces, private namespaces, or both.
+     *        When you specify <code>IN</code> for the condition, you can choose to list public namespaces, private
+     *        namespaces, or both.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>BETWEEN</dt>
+     *        <dd>
      *        <p>
-     *        <code>BETWEEN</code>: Not applicable
+     *        Not applicable
      *        </p>
-     *        </li>
+     *        </dd>
      * @see FilterCondition
      */
 
@@ -297,47 +305,52 @@ public class NamespaceFilter implements Serializable, Cloneable, StructuredPojo 
      * The operator that you want to use to determine whether <code>ListNamespaces</code> returns a namespace. Valid
      * values for <code>condition</code> include:
      * </p>
-     * <ul>
-     * <li>
+     * <dl>
+     * <dt>EQ</dt>
+     * <dd>
      * <p>
-     * <code>EQ</code>: When you specify <code>EQ</code> for the condition, you can choose to list only public
-     * namespaces or private namespaces, but not both. <code>EQ</code> is the default condition and can be omitted.
+     * When you specify <code>EQ</code> for the condition, you can choose to list only public namespaces or private
+     * namespaces, but not both. <code>EQ</code> is the default condition and can be omitted.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>IN</dt>
+     * <dd>
      * <p>
-     * <code>IN</code>: When you specify <code>IN</code> for the condition, you can choose to list public namespaces,
-     * private namespaces, or both.
+     * When you specify <code>IN</code> for the condition, you can choose to list public namespaces, private namespaces,
+     * or both.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>BETWEEN</dt>
+     * <dd>
      * <p>
-     * <code>BETWEEN</code>: Not applicable
+     * Not applicable
      * </p>
-     * </li>
-     * </ul>
+     * </dd>
+     * </dl>
      * 
      * @return The operator that you want to use to determine whether <code>ListNamespaces</code> returns a namespace.
      *         Valid values for <code>condition</code> include:</p>
-     *         <ul>
-     *         <li>
+     *         <dl>
+     *         <dt>EQ</dt>
+     *         <dd>
      *         <p>
-     *         <code>EQ</code>: When you specify <code>EQ</code> for the condition, you can choose to list only public
-     *         namespaces or private namespaces, but not both. <code>EQ</code> is the default condition and can be
-     *         omitted.
+     *         When you specify <code>EQ</code> for the condition, you can choose to list only public namespaces or
+     *         private namespaces, but not both. <code>EQ</code> is the default condition and can be omitted.
      *         </p>
-     *         </li>
-     *         <li>
+     *         </dd>
+     *         <dt>IN</dt>
+     *         <dd>
      *         <p>
-     *         <code>IN</code>: When you specify <code>IN</code> for the condition, you can choose to list public
-     *         namespaces, private namespaces, or both.
+     *         When you specify <code>IN</code> for the condition, you can choose to list public namespaces, private
+     *         namespaces, or both.
      *         </p>
-     *         </li>
-     *         <li>
+     *         </dd>
+     *         <dt>BETWEEN</dt>
+     *         <dd>
      *         <p>
-     *         <code>BETWEEN</code>: Not applicable
+     *         Not applicable
      *         </p>
-     *         </li>
+     *         </dd>
      * @see FilterCondition
      */
 
@@ -350,48 +363,53 @@ public class NamespaceFilter implements Serializable, Cloneable, StructuredPojo 
      * The operator that you want to use to determine whether <code>ListNamespaces</code> returns a namespace. Valid
      * values for <code>condition</code> include:
      * </p>
-     * <ul>
-     * <li>
+     * <dl>
+     * <dt>EQ</dt>
+     * <dd>
      * <p>
-     * <code>EQ</code>: When you specify <code>EQ</code> for the condition, you can choose to list only public
-     * namespaces or private namespaces, but not both. <code>EQ</code> is the default condition and can be omitted.
+     * When you specify <code>EQ</code> for the condition, you can choose to list only public namespaces or private
+     * namespaces, but not both. <code>EQ</code> is the default condition and can be omitted.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>IN</dt>
+     * <dd>
      * <p>
-     * <code>IN</code>: When you specify <code>IN</code> for the condition, you can choose to list public namespaces,
-     * private namespaces, or both.
+     * When you specify <code>IN</code> for the condition, you can choose to list public namespaces, private namespaces,
+     * or both.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>BETWEEN</dt>
+     * <dd>
      * <p>
-     * <code>BETWEEN</code>: Not applicable
+     * Not applicable
      * </p>
-     * </li>
-     * </ul>
+     * </dd>
+     * </dl>
      * 
      * @param condition
      *        The operator that you want to use to determine whether <code>ListNamespaces</code> returns a namespace.
      *        Valid values for <code>condition</code> include:</p>
-     *        <ul>
-     *        <li>
+     *        <dl>
+     *        <dt>EQ</dt>
+     *        <dd>
      *        <p>
-     *        <code>EQ</code>: When you specify <code>EQ</code> for the condition, you can choose to list only public
-     *        namespaces or private namespaces, but not both. <code>EQ</code> is the default condition and can be
-     *        omitted.
+     *        When you specify <code>EQ</code> for the condition, you can choose to list only public namespaces or
+     *        private namespaces, but not both. <code>EQ</code> is the default condition and can be omitted.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>IN</dt>
+     *        <dd>
      *        <p>
-     *        <code>IN</code>: When you specify <code>IN</code> for the condition, you can choose to list public
-     *        namespaces, private namespaces, or both.
+     *        When you specify <code>IN</code> for the condition, you can choose to list public namespaces, private
+     *        namespaces, or both.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>BETWEEN</dt>
+     *        <dd>
      *        <p>
-     *        <code>BETWEEN</code>: Not applicable
+     *        Not applicable
      *        </p>
-     *        </li>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FilterCondition
      */
@@ -406,48 +424,53 @@ public class NamespaceFilter implements Serializable, Cloneable, StructuredPojo 
      * The operator that you want to use to determine whether <code>ListNamespaces</code> returns a namespace. Valid
      * values for <code>condition</code> include:
      * </p>
-     * <ul>
-     * <li>
+     * <dl>
+     * <dt>EQ</dt>
+     * <dd>
      * <p>
-     * <code>EQ</code>: When you specify <code>EQ</code> for the condition, you can choose to list only public
-     * namespaces or private namespaces, but not both. <code>EQ</code> is the default condition and can be omitted.
+     * When you specify <code>EQ</code> for the condition, you can choose to list only public namespaces or private
+     * namespaces, but not both. <code>EQ</code> is the default condition and can be omitted.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>IN</dt>
+     * <dd>
      * <p>
-     * <code>IN</code>: When you specify <code>IN</code> for the condition, you can choose to list public namespaces,
-     * private namespaces, or both.
+     * When you specify <code>IN</code> for the condition, you can choose to list public namespaces, private namespaces,
+     * or both.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>BETWEEN</dt>
+     * <dd>
      * <p>
-     * <code>BETWEEN</code>: Not applicable
+     * Not applicable
      * </p>
-     * </li>
-     * </ul>
+     * </dd>
+     * </dl>
      * 
      * @param condition
      *        The operator that you want to use to determine whether <code>ListNamespaces</code> returns a namespace.
      *        Valid values for <code>condition</code> include:</p>
-     *        <ul>
-     *        <li>
+     *        <dl>
+     *        <dt>EQ</dt>
+     *        <dd>
      *        <p>
-     *        <code>EQ</code>: When you specify <code>EQ</code> for the condition, you can choose to list only public
-     *        namespaces or private namespaces, but not both. <code>EQ</code> is the default condition and can be
-     *        omitted.
+     *        When you specify <code>EQ</code> for the condition, you can choose to list only public namespaces or
+     *        private namespaces, but not both. <code>EQ</code> is the default condition and can be omitted.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>IN</dt>
+     *        <dd>
      *        <p>
-     *        <code>IN</code>: When you specify <code>IN</code> for the condition, you can choose to list public
-     *        namespaces, private namespaces, or both.
+     *        When you specify <code>IN</code> for the condition, you can choose to list public namespaces, private
+     *        namespaces, or both.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>BETWEEN</dt>
+     *        <dd>
      *        <p>
-     *        <code>BETWEEN</code>: Not applicable
+     *        Not applicable
      *        </p>
-     *        </li>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FilterCondition
      */
