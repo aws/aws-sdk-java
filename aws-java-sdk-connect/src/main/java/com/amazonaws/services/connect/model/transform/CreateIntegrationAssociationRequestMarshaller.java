@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.connect.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -39,6 +41,8 @@ public class CreateIntegrationAssociationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceApplicationName").build();
     private static final MarshallingInfo<String> SOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceType").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateIntegrationAssociationRequestMarshaller instance = new CreateIntegrationAssociationRequestMarshaller();
 
@@ -62,6 +66,7 @@ public class CreateIntegrationAssociationRequestMarshaller {
             protocolMarshaller.marshall(createIntegrationAssociationRequest.getSourceApplicationUrl(), SOURCEAPPLICATIONURL_BINDING);
             protocolMarshaller.marshall(createIntegrationAssociationRequest.getSourceApplicationName(), SOURCEAPPLICATIONNAME_BINDING);
             protocolMarshaller.marshall(createIntegrationAssociationRequest.getSourceType(), SOURCETYPE_BINDING);
+            protocolMarshaller.marshall(createIntegrationAssociationRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

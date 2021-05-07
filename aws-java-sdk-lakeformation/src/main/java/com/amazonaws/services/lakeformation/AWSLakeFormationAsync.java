@@ -35,6 +35,37 @@ public interface AWSLakeFormationAsync extends AWSLakeFormation {
 
     /**
      * <p>
+     * Attaches one or more tags to an existing resource.
+     * </p>
+     * 
+     * @param addLFTagsToResourceRequest
+     * @return A Java Future containing the result of the AddLFTagsToResource operation returned by the service.
+     * @sample AWSLakeFormationAsync.AddLFTagsToResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/AddLFTagsToResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AddLFTagsToResourceResult> addLFTagsToResourceAsync(AddLFTagsToResourceRequest addLFTagsToResourceRequest);
+
+    /**
+     * <p>
+     * Attaches one or more tags to an existing resource.
+     * </p>
+     * 
+     * @param addLFTagsToResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AddLFTagsToResource operation returned by the service.
+     * @sample AWSLakeFormationAsyncHandler.AddLFTagsToResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/AddLFTagsToResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AddLFTagsToResourceResult> addLFTagsToResourceAsync(AddLFTagsToResourceRequest addLFTagsToResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<AddLFTagsToResourceRequest, AddLFTagsToResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Batch operation to grant permissions to the principal.
      * </p>
      * 
@@ -94,6 +125,74 @@ public interface AWSLakeFormationAsync extends AWSLakeFormation {
      */
     java.util.concurrent.Future<BatchRevokePermissionsResult> batchRevokePermissionsAsync(BatchRevokePermissionsRequest batchRevokePermissionsRequest,
             com.amazonaws.handlers.AsyncHandler<BatchRevokePermissionsRequest, BatchRevokePermissionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a tag with the specified name and values.
+     * </p>
+     * 
+     * @param createLFTagRequest
+     * @return A Java Future containing the result of the CreateLFTag operation returned by the service.
+     * @sample AWSLakeFormationAsync.CreateLFTag
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLFTag" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLFTagResult> createLFTagAsync(CreateLFTagRequest createLFTagRequest);
+
+    /**
+     * <p>
+     * Creates a tag with the specified name and values.
+     * </p>
+     * 
+     * @param createLFTagRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateLFTag operation returned by the service.
+     * @sample AWSLakeFormationAsyncHandler.CreateLFTag
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLFTag" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLFTagResult> createLFTagAsync(CreateLFTagRequest createLFTagRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateLFTagRequest, CreateLFTagResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified tag key name. If the attribute key does not exist or the tag does not exist, then the
+     * operation will not do anything. If the attribute key exists, then the operation checks if any resources are
+     * tagged with this attribute key, if yes, the API throws a 400 Exception with the message "Delete not allowed" as
+     * the tag key is still attached with resources. You can consider untagging resources with this tag key.
+     * </p>
+     * 
+     * @param deleteLFTagRequest
+     * @return A Java Future containing the result of the DeleteLFTag operation returned by the service.
+     * @sample AWSLakeFormationAsync.DeleteLFTag
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLFTag" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLFTagResult> deleteLFTagAsync(DeleteLFTagRequest deleteLFTagRequest);
+
+    /**
+     * <p>
+     * Deletes the specified tag key name. If the attribute key does not exist or the tag does not exist, then the
+     * operation will not do anything. If the attribute key exists, then the operation checks if any resources are
+     * tagged with this attribute key, if yes, the API throws a 400 Exception with the message "Delete not allowed" as
+     * the tag key is still attached with resources. You can consider untagging resources with this tag key.
+     * </p>
+     * 
+     * @param deleteLFTagRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteLFTag operation returned by the service.
+     * @sample AWSLakeFormationAsyncHandler.DeleteLFTag
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLFTag" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLFTagResult> deleteLFTagAsync(DeleteLFTagRequest deleteLFTagRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteLFTagRequest, DeleteLFTagResult> asyncHandler);
 
     /**
      * <p>
@@ -235,6 +334,68 @@ public interface AWSLakeFormationAsync extends AWSLakeFormation {
 
     /**
      * <p>
+     * Returns a tag definition.
+     * </p>
+     * 
+     * @param getLFTagRequest
+     * @return A Java Future containing the result of the GetLFTag operation returned by the service.
+     * @sample AWSLakeFormationAsync.GetLFTag
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetLFTag" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetLFTagResult> getLFTagAsync(GetLFTagRequest getLFTagRequest);
+
+    /**
+     * <p>
+     * Returns a tag definition.
+     * </p>
+     * 
+     * @param getLFTagRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetLFTag operation returned by the service.
+     * @sample AWSLakeFormationAsyncHandler.GetLFTag
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetLFTag" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetLFTagResult> getLFTagAsync(GetLFTagRequest getLFTagRequest,
+            com.amazonaws.handlers.AsyncHandler<GetLFTagRequest, GetLFTagResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the tags applied to a resource.
+     * </p>
+     * 
+     * @param getResourceLFTagsRequest
+     * @return A Java Future containing the result of the GetResourceLFTags operation returned by the service.
+     * @sample AWSLakeFormationAsync.GetResourceLFTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetResourceLFTags"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourceLFTagsResult> getResourceLFTagsAsync(GetResourceLFTagsRequest getResourceLFTagsRequest);
+
+    /**
+     * <p>
+     * Returns the tags applied to a resource.
+     * </p>
+     * 
+     * @param getResourceLFTagsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetResourceLFTags operation returned by the service.
+     * @sample AWSLakeFormationAsyncHandler.GetResourceLFTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetResourceLFTags"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourceLFTagsResult> getResourceLFTagsAsync(GetResourceLFTagsRequest getResourceLFTagsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetResourceLFTagsRequest, GetResourceLFTagsResult> asyncHandler);
+
+    /**
+     * <p>
      * Grants permissions to the principal to access metadata in the Data Catalog and data organized in underlying data
      * storage such as Amazon S3.
      * </p>
@@ -275,6 +436,37 @@ public interface AWSLakeFormationAsync extends AWSLakeFormation {
      */
     java.util.concurrent.Future<GrantPermissionsResult> grantPermissionsAsync(GrantPermissionsRequest grantPermissionsRequest,
             com.amazonaws.handlers.AsyncHandler<GrantPermissionsRequest, GrantPermissionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists tags that the requester has permission to view.
+     * </p>
+     * 
+     * @param listLFTagsRequest
+     * @return A Java Future containing the result of the ListLFTags operation returned by the service.
+     * @sample AWSLakeFormationAsync.ListLFTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListLFTags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListLFTagsResult> listLFTagsAsync(ListLFTagsRequest listLFTagsRequest);
+
+    /**
+     * <p>
+     * Lists tags that the requester has permission to view.
+     * </p>
+     * 
+     * @param listLFTagsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListLFTags operation returned by the service.
+     * @sample AWSLakeFormationAsyncHandler.ListLFTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListLFTags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListLFTagsResult> listLFTagsAsync(ListLFTagsRequest listLFTagsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListLFTagsRequest, ListLFTagsResult> asyncHandler);
 
     /**
      * <p>
@@ -474,6 +666,39 @@ public interface AWSLakeFormationAsync extends AWSLakeFormation {
 
     /**
      * <p>
+     * Removes a tag from the resource. Only database, table, or tableWithColumns resource are allowed. To tag columns,
+     * use the column inclusion list in <code>tableWithColumns</code> to specify column input.
+     * </p>
+     * 
+     * @param removeLFTagsFromResourceRequest
+     * @return A Java Future containing the result of the RemoveLFTagsFromResource operation returned by the service.
+     * @sample AWSLakeFormationAsync.RemoveLFTagsFromResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/RemoveLFTagsFromResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveLFTagsFromResourceResult> removeLFTagsFromResourceAsync(RemoveLFTagsFromResourceRequest removeLFTagsFromResourceRequest);
+
+    /**
+     * <p>
+     * Removes a tag from the resource. Only database, table, or tableWithColumns resource are allowed. To tag columns,
+     * use the column inclusion list in <code>tableWithColumns</code> to specify column input.
+     * </p>
+     * 
+     * @param removeLFTagsFromResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemoveLFTagsFromResource operation returned by the service.
+     * @sample AWSLakeFormationAsyncHandler.RemoveLFTagsFromResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/RemoveLFTagsFromResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveLFTagsFromResourceResult> removeLFTagsFromResourceAsync(RemoveLFTagsFromResourceRequest removeLFTagsFromResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<RemoveLFTagsFromResourceRequest, RemoveLFTagsFromResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Revokes permissions to the principal to access metadata in the Data Catalog and data organized in underlying data
      * storage such as Amazon S3.
      * </p>
@@ -504,6 +729,117 @@ public interface AWSLakeFormationAsync extends AWSLakeFormation {
      */
     java.util.concurrent.Future<RevokePermissionsResult> revokePermissionsAsync(RevokePermissionsRequest revokePermissionsRequest,
             com.amazonaws.handlers.AsyncHandler<RevokePermissionsRequest, RevokePermissionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * This operation allows a search on <code>DATABASE</code> resources by <code>TagCondition</code>. This operation is
+     * used by admins who want to grant user permissions on certain <code>TagConditions</code>. Before making a grant,
+     * the admin can use <code>SearchDatabasesByTags</code> to find all resources where the given
+     * <code>TagConditions</code> are valid to verify whether the returned resources can be shared.
+     * </p>
+     * 
+     * @param searchDatabasesByLFTagsRequest
+     * @return A Java Future containing the result of the SearchDatabasesByLFTags operation returned by the service.
+     * @sample AWSLakeFormationAsync.SearchDatabasesByLFTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/SearchDatabasesByLFTags"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SearchDatabasesByLFTagsResult> searchDatabasesByLFTagsAsync(SearchDatabasesByLFTagsRequest searchDatabasesByLFTagsRequest);
+
+    /**
+     * <p>
+     * This operation allows a search on <code>DATABASE</code> resources by <code>TagCondition</code>. This operation is
+     * used by admins who want to grant user permissions on certain <code>TagConditions</code>. Before making a grant,
+     * the admin can use <code>SearchDatabasesByTags</code> to find all resources where the given
+     * <code>TagConditions</code> are valid to verify whether the returned resources can be shared.
+     * </p>
+     * 
+     * @param searchDatabasesByLFTagsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SearchDatabasesByLFTags operation returned by the service.
+     * @sample AWSLakeFormationAsyncHandler.SearchDatabasesByLFTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/SearchDatabasesByLFTags"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SearchDatabasesByLFTagsResult> searchDatabasesByLFTagsAsync(SearchDatabasesByLFTagsRequest searchDatabasesByLFTagsRequest,
+            com.amazonaws.handlers.AsyncHandler<SearchDatabasesByLFTagsRequest, SearchDatabasesByLFTagsResult> asyncHandler);
+
+    /**
+     * <p>
+     * This operation allows a search on <code>TABLE</code> resources by <code>LFTag</code>s. This will be used by
+     * admins who want to grant user permissions on certain LFTags. Before making a grant, the admin can use
+     * <code>SearchTablesByLFTags</code> to find all resources where the given <code>LFTag</code>s are valid to verify
+     * whether the returned resources can be shared.
+     * </p>
+     * 
+     * @param searchTablesByLFTagsRequest
+     * @return A Java Future containing the result of the SearchTablesByLFTags operation returned by the service.
+     * @sample AWSLakeFormationAsync.SearchTablesByLFTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/SearchTablesByLFTags"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SearchTablesByLFTagsResult> searchTablesByLFTagsAsync(SearchTablesByLFTagsRequest searchTablesByLFTagsRequest);
+
+    /**
+     * <p>
+     * This operation allows a search on <code>TABLE</code> resources by <code>LFTag</code>s. This will be used by
+     * admins who want to grant user permissions on certain LFTags. Before making a grant, the admin can use
+     * <code>SearchTablesByLFTags</code> to find all resources where the given <code>LFTag</code>s are valid to verify
+     * whether the returned resources can be shared.
+     * </p>
+     * 
+     * @param searchTablesByLFTagsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SearchTablesByLFTags operation returned by the service.
+     * @sample AWSLakeFormationAsyncHandler.SearchTablesByLFTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/SearchTablesByLFTags"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SearchTablesByLFTagsResult> searchTablesByLFTagsAsync(SearchTablesByLFTagsRequest searchTablesByLFTagsRequest,
+            com.amazonaws.handlers.AsyncHandler<SearchTablesByLFTagsRequest, SearchTablesByLFTagsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the list of possible values for the specified tag key. If the tag does not exist, the operation throws an
+     * EntityNotFoundException. The values in the delete key values will be deleted from list of possible values. If any
+     * value in the delete key values is attached to a resource, then API errors out with a 400 Exception -
+     * "Update not allowed". Untag the attribute before deleting the tag key's value.
+     * </p>
+     * 
+     * @param updateLFTagRequest
+     * @return A Java Future containing the result of the UpdateLFTag operation returned by the service.
+     * @sample AWSLakeFormationAsync.UpdateLFTag
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateLFTag" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateLFTagResult> updateLFTagAsync(UpdateLFTagRequest updateLFTagRequest);
+
+    /**
+     * <p>
+     * Updates the list of possible values for the specified tag key. If the tag does not exist, the operation throws an
+     * EntityNotFoundException. The values in the delete key values will be deleted from list of possible values. If any
+     * value in the delete key values is attached to a resource, then API errors out with a 400 Exception -
+     * "Update not allowed". Untag the attribute before deleting the tag key's value.
+     * </p>
+     * 
+     * @param updateLFTagRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateLFTag operation returned by the service.
+     * @sample AWSLakeFormationAsyncHandler.UpdateLFTag
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateLFTag" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateLFTagResult> updateLFTagAsync(UpdateLFTagRequest updateLFTagRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateLFTagRequest, UpdateLFTagResult> asyncHandler);
 
     /**
      * <p>

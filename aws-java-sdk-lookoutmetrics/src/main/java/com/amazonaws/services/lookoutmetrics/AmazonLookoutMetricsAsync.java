@@ -257,6 +257,10 @@ public interface AmazonLookoutMetricsAsync extends AmazonLookoutMetrics {
      * <p>
      * Describes an alert.
      * </p>
+     * <p>
+     * Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
+     * immediately after creating or modifying it, use retries to allow time for the write operation to complete.
+     * </p>
      * 
      * @param describeAlertRequest
      * @return A Java Future containing the result of the DescribeAlert operation returned by the service.
@@ -269,6 +273,10 @@ public interface AmazonLookoutMetricsAsync extends AmazonLookoutMetrics {
     /**
      * <p>
      * Describes an alert.
+     * </p>
+     * <p>
+     * Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
+     * immediately after creating or modifying it, use retries to allow time for the write operation to complete.
      * </p>
      * 
      * @param describeAlertRequest
@@ -325,6 +333,10 @@ public interface AmazonLookoutMetricsAsync extends AmazonLookoutMetrics {
      * <p>
      * Describes a detector.
      * </p>
+     * <p>
+     * Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
+     * immediately after creating or modifying it, use retries to allow time for the write operation to complete.
+     * </p>
      * 
      * @param describeAnomalyDetectorRequest
      * @return A Java Future containing the result of the DescribeAnomalyDetector operation returned by the service.
@@ -337,6 +349,10 @@ public interface AmazonLookoutMetricsAsync extends AmazonLookoutMetrics {
     /**
      * <p>
      * Describes a detector.
+     * </p>
+     * <p>
+     * Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
+     * immediately after creating or modifying it, use retries to allow time for the write operation to complete.
      * </p>
      * 
      * @param describeAnomalyDetectorRequest
@@ -356,6 +372,10 @@ public interface AmazonLookoutMetricsAsync extends AmazonLookoutMetrics {
      * <p>
      * Describes a dataset.
      * </p>
+     * <p>
+     * Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
+     * immediately after creating or modifying it, use retries to allow time for the write operation to complete.
+     * </p>
      * 
      * @param describeMetricSetRequest
      * @return A Java Future containing the result of the DescribeMetricSet operation returned by the service.
@@ -368,6 +388,10 @@ public interface AmazonLookoutMetricsAsync extends AmazonLookoutMetrics {
     /**
      * <p>
      * Describes a dataset.
+     * </p>
+     * <p>
+     * Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
+     * immediately after creating or modifying it, use retries to allow time for the write operation to complete.
      * </p>
      * 
      * @param describeMetricSetRequest
@@ -480,6 +504,10 @@ public interface AmazonLookoutMetricsAsync extends AmazonLookoutMetrics {
      * <p>
      * Lists the alerts attached to a detector.
      * </p>
+     * <p>
+     * Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
+     * immediately after creating or modifying it, use retries to allow time for the write operation to complete.
+     * </p>
      * 
      * @param listAlertsRequest
      * @return A Java Future containing the result of the ListAlerts operation returned by the service.
@@ -492,6 +520,10 @@ public interface AmazonLookoutMetricsAsync extends AmazonLookoutMetrics {
     /**
      * <p>
      * Lists the alerts attached to a detector.
+     * </p>
+     * <p>
+     * Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
+     * immediately after creating or modifying it, use retries to allow time for the write operation to complete.
      * </p>
      * 
      * @param listAlertsRequest
@@ -511,6 +543,10 @@ public interface AmazonLookoutMetricsAsync extends AmazonLookoutMetrics {
      * <p>
      * Lists the detectors in the current AWS Region.
      * </p>
+     * <p>
+     * Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
+     * immediately after creating or modifying it, use retries to allow time for the write operation to complete.
+     * </p>
      * 
      * @param listAnomalyDetectorsRequest
      * @return A Java Future containing the result of the ListAnomalyDetectors operation returned by the service.
@@ -523,6 +559,10 @@ public interface AmazonLookoutMetricsAsync extends AmazonLookoutMetrics {
     /**
      * <p>
      * Lists the detectors in the current AWS Region.
+     * </p>
+     * <p>
+     * Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
+     * immediately after creating or modifying it, use retries to allow time for the write operation to complete.
      * </p>
      * 
      * @param listAnomalyDetectorsRequest
@@ -608,6 +648,10 @@ public interface AmazonLookoutMetricsAsync extends AmazonLookoutMetrics {
      * <p>
      * Lists the datasets in the current AWS Region.
      * </p>
+     * <p>
+     * Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
+     * immediately after creating or modifying it, use retries to allow time for the write operation to complete.
+     * </p>
      * 
      * @param listMetricSetsRequest
      * @return A Java Future containing the result of the ListMetricSets operation returned by the service.
@@ -620,6 +664,10 @@ public interface AmazonLookoutMetricsAsync extends AmazonLookoutMetrics {
     /**
      * <p>
      * Lists the datasets in the current AWS Region.
+     * </p>
+     * <p>
+     * Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
+     * immediately after creating or modifying it, use retries to allow time for the write operation to complete.
      * </p>
      * 
      * @param listMetricSetsRequest

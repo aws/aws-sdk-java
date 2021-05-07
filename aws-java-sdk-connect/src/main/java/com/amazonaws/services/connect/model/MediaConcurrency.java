@@ -39,6 +39,15 @@ public class MediaConcurrency implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The number of contacts an agent can have on a channel simultaneously.
      * </p>
+     * <p>
+     * Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.
+     * </p>
+     * <p>
+     * Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 5.
+     * </p>
+     * <p>
+     * Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.
+     * </p>
      */
     private Integer concurrency;
 
@@ -105,9 +114,26 @@ public class MediaConcurrency implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The number of contacts an agent can have on a channel simultaneously.
      * </p>
+     * <p>
+     * Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.
+     * </p>
+     * <p>
+     * Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 5.
+     * </p>
+     * <p>
+     * Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.
+     * </p>
      * 
      * @param concurrency
-     *        The number of contacts an agent can have on a channel simultaneously.
+     *        The number of contacts an agent can have on a channel simultaneously.</p>
+     *        <p>
+     *        Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.
+     *        </p>
+     *        <p>
+     *        Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 5.
+     *        </p>
+     *        <p>
+     *        Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.
      */
 
     public void setConcurrency(Integer concurrency) {
@@ -118,8 +144,25 @@ public class MediaConcurrency implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The number of contacts an agent can have on a channel simultaneously.
      * </p>
+     * <p>
+     * Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.
+     * </p>
+     * <p>
+     * Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 5.
+     * </p>
+     * <p>
+     * Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.
+     * </p>
      * 
-     * @return The number of contacts an agent can have on a channel simultaneously.
+     * @return The number of contacts an agent can have on a channel simultaneously.</p>
+     *         <p>
+     *         Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.
+     *         </p>
+     *         <p>
+     *         Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 5.
+     *         </p>
+     *         <p>
+     *         Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.
      */
 
     public Integer getConcurrency() {
@@ -130,9 +173,26 @@ public class MediaConcurrency implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The number of contacts an agent can have on a channel simultaneously.
      * </p>
+     * <p>
+     * Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.
+     * </p>
+     * <p>
+     * Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 5.
+     * </p>
+     * <p>
+     * Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.
+     * </p>
      * 
      * @param concurrency
-     *        The number of contacts an agent can have on a channel simultaneously.
+     *        The number of contacts an agent can have on a channel simultaneously.</p>
+     *        <p>
+     *        Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.
+     *        </p>
+     *        <p>
+     *        Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 5.
+     *        </p>
+     *        <p>
+     *        Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

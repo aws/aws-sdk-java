@@ -55,7 +55,7 @@ public class PrincipalResourcePermissions implements Serializable, Cloneable, St
     /**
      * <p>
      * This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>.
-     * Currently returns only as a RAM share resource ARN.
+     * Currently returns only as a RAM resource share ARN.
      * </p>
      */
     private DetailsMap additionalDetails;
@@ -339,12 +339,12 @@ public class PrincipalResourcePermissions implements Serializable, Cloneable, St
     /**
      * <p>
      * This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>.
-     * Currently returns only as a RAM share resource ARN.
+     * Currently returns only as a RAM resource share ARN.
      * </p>
      * 
      * @param additionalDetails
      *        This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>.
-     *        Currently returns only as a RAM share resource ARN.
+     *        Currently returns only as a RAM resource share ARN.
      */
 
     public void setAdditionalDetails(DetailsMap additionalDetails) {
@@ -354,11 +354,11 @@ public class PrincipalResourcePermissions implements Serializable, Cloneable, St
     /**
      * <p>
      * This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>.
-     * Currently returns only as a RAM share resource ARN.
+     * Currently returns only as a RAM resource share ARN.
      * </p>
      * 
      * @return This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>.
-     *         Currently returns only as a RAM share resource ARN.
+     *         Currently returns only as a RAM resource share ARN.
      */
 
     public DetailsMap getAdditionalDetails() {
@@ -368,12 +368,12 @@ public class PrincipalResourcePermissions implements Serializable, Cloneable, St
     /**
      * <p>
      * This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>.
-     * Currently returns only as a RAM share resource ARN.
+     * Currently returns only as a RAM resource share ARN.
      * </p>
      * 
      * @param additionalDetails
      *        This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>.
-     *        Currently returns only as a RAM share resource ARN.
+     *        Currently returns only as a RAM resource share ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

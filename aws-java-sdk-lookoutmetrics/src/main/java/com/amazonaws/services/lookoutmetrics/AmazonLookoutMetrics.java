@@ -232,6 +232,10 @@ public interface AmazonLookoutMetrics {
      * <p>
      * Describes an alert.
      * </p>
+     * <p>
+     * Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
+     * immediately after creating or modifying it, use retries to allow time for the write operation to complete.
+     * </p>
      * 
      * @param describeAlertRequest
      * @return Result of the DescribeAlert operation returned by the service.
@@ -282,6 +286,10 @@ public interface AmazonLookoutMetrics {
      * <p>
      * Describes a detector.
      * </p>
+     * <p>
+     * Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
+     * immediately after creating or modifying it, use retries to allow time for the write operation to complete.
+     * </p>
      * 
      * @param describeAnomalyDetectorRequest
      * @return Result of the DescribeAnomalyDetector operation returned by the service.
@@ -305,6 +313,10 @@ public interface AmazonLookoutMetrics {
     /**
      * <p>
      * Describes a dataset.
+     * </p>
+     * <p>
+     * Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
+     * immediately after creating or modifying it, use retries to allow time for the write operation to complete.
      * </p>
      * 
      * @param describeMetricSetRequest
@@ -402,6 +414,10 @@ public interface AmazonLookoutMetrics {
      * <p>
      * Lists the alerts attached to a detector.
      * </p>
+     * <p>
+     * Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
+     * immediately after creating or modifying it, use retries to allow time for the write operation to complete.
+     * </p>
      * 
      * @param listAlertsRequest
      * @return Result of the ListAlerts operation returned by the service.
@@ -425,6 +441,10 @@ public interface AmazonLookoutMetrics {
     /**
      * <p>
      * Lists the detectors in the current AWS Region.
+     * </p>
+     * <p>
+     * Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
+     * immediately after creating or modifying it, use retries to allow time for the write operation to complete.
      * </p>
      * 
      * @param listAnomalyDetectorsRequest
@@ -497,6 +517,10 @@ public interface AmazonLookoutMetrics {
     /**
      * <p>
      * Lists the datasets in the current AWS Region.
+     * </p>
+     * <p>
+     * Amazon Lookout for Metrics API actions are eventually consistent. If you do a read operation on a resource
+     * immediately after creating or modifying it, use retries to allow time for the write operation to complete.
      * </p>
      * 
      * @param listMetricSetsRequest

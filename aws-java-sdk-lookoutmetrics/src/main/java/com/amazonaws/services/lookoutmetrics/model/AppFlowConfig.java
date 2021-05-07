@@ -36,7 +36,7 @@ public class AppFlowConfig implements Serializable, Cloneable, StructuredPojo {
     private String roleArn;
     /**
      * <p>
-     * The name of the flow.
+     * name of the flow.
      * </p>
      */
     private String flowName;
@@ -83,11 +83,11 @@ public class AppFlowConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the flow.
+     * name of the flow.
      * </p>
      * 
      * @param flowName
-     *        The name of the flow.
+     *        name of the flow.
      */
 
     public void setFlowName(String flowName) {
@@ -96,10 +96,10 @@ public class AppFlowConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the flow.
+     * name of the flow.
      * </p>
      * 
-     * @return The name of the flow.
+     * @return name of the flow.
      */
 
     public String getFlowName() {
@@ -108,11 +108,11 @@ public class AppFlowConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the flow.
+     * name of the flow.
      * </p>
      * 
      * @param flowName
-     *        The name of the flow.
+     *        name of the flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

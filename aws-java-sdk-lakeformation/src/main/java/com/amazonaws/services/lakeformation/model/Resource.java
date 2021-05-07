@@ -63,6 +63,18 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private DataLocationResource dataLocation;
+    /**
+     * <p>
+     * The tag key and values attached to a resource.
+     * </p>
+     */
+    private LFTagKeyResource lFTag;
+    /**
+     * <p>
+     * A list of tag conditions that define a resource's tag policy.
+     * </p>
+     */
+    private LFTagPolicyResource lFTagPolicy;
 
     /**
      * <p>
@@ -295,6 +307,86 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The tag key and values attached to a resource.
+     * </p>
+     * 
+     * @param lFTag
+     *        The tag key and values attached to a resource.
+     */
+
+    public void setLFTag(LFTagKeyResource lFTag) {
+        this.lFTag = lFTag;
+    }
+
+    /**
+     * <p>
+     * The tag key and values attached to a resource.
+     * </p>
+     * 
+     * @return The tag key and values attached to a resource.
+     */
+
+    public LFTagKeyResource getLFTag() {
+        return this.lFTag;
+    }
+
+    /**
+     * <p>
+     * The tag key and values attached to a resource.
+     * </p>
+     * 
+     * @param lFTag
+     *        The tag key and values attached to a resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Resource withLFTag(LFTagKeyResource lFTag) {
+        setLFTag(lFTag);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of tag conditions that define a resource's tag policy.
+     * </p>
+     * 
+     * @param lFTagPolicy
+     *        A list of tag conditions that define a resource's tag policy.
+     */
+
+    public void setLFTagPolicy(LFTagPolicyResource lFTagPolicy) {
+        this.lFTagPolicy = lFTagPolicy;
+    }
+
+    /**
+     * <p>
+     * A list of tag conditions that define a resource's tag policy.
+     * </p>
+     * 
+     * @return A list of tag conditions that define a resource's tag policy.
+     */
+
+    public LFTagPolicyResource getLFTagPolicy() {
+        return this.lFTagPolicy;
+    }
+
+    /**
+     * <p>
+     * A list of tag conditions that define a resource's tag policy.
+     * </p>
+     * 
+     * @param lFTagPolicy
+     *        A list of tag conditions that define a resource's tag policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Resource withLFTagPolicy(LFTagPolicyResource lFTagPolicy) {
+        setLFTagPolicy(lFTagPolicy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -315,7 +407,11 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
         if (getTableWithColumns() != null)
             sb.append("TableWithColumns: ").append(getTableWithColumns()).append(",");
         if (getDataLocation() != null)
-            sb.append("DataLocation: ").append(getDataLocation());
+            sb.append("DataLocation: ").append(getDataLocation()).append(",");
+        if (getLFTag() != null)
+            sb.append("LFTag: ").append(getLFTag()).append(",");
+        if (getLFTagPolicy() != null)
+            sb.append("LFTagPolicy: ").append(getLFTagPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -350,6 +446,14 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDataLocation() != null && other.getDataLocation().equals(this.getDataLocation()) == false)
             return false;
+        if (other.getLFTag() == null ^ this.getLFTag() == null)
+            return false;
+        if (other.getLFTag() != null && other.getLFTag().equals(this.getLFTag()) == false)
+            return false;
+        if (other.getLFTagPolicy() == null ^ this.getLFTagPolicy() == null)
+            return false;
+        if (other.getLFTagPolicy() != null && other.getLFTagPolicy().equals(this.getLFTagPolicy()) == false)
+            return false;
         return true;
     }
 
@@ -363,6 +467,8 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTable() == null) ? 0 : getTable().hashCode());
         hashCode = prime * hashCode + ((getTableWithColumns() == null) ? 0 : getTableWithColumns().hashCode());
         hashCode = prime * hashCode + ((getDataLocation() == null) ? 0 : getDataLocation().hashCode());
+        hashCode = prime * hashCode + ((getLFTag() == null) ? 0 : getLFTag().hashCode());
+        hashCode = prime * hashCode + ((getLFTagPolicy() == null) ? 0 : getLFTagPolicy().hashCode());
         return hashCode;
     }
 

@@ -37,6 +37,10 @@ public class ResourceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TableWithColumns").build();
     private static final MarshallingInfo<StructuredPojo> DATALOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataLocation").build();
+    private static final MarshallingInfo<StructuredPojo> LFTAG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LFTag").build();
+    private static final MarshallingInfo<StructuredPojo> LFTAGPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LFTagPolicy").build();
 
     private static final ResourceMarshaller instance = new ResourceMarshaller();
 
@@ -59,6 +63,8 @@ public class ResourceMarshaller {
             protocolMarshaller.marshall(resource.getTable(), TABLE_BINDING);
             protocolMarshaller.marshall(resource.getTableWithColumns(), TABLEWITHCOLUMNS_BINDING);
             protocolMarshaller.marshall(resource.getDataLocation(), DATALOCATION_BINDING);
+            protocolMarshaller.marshall(resource.getLFTag(), LFTAG_BINDING);
+            protocolMarshaller.marshall(resource.getLFTagPolicy(), LFTAGPOLICY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

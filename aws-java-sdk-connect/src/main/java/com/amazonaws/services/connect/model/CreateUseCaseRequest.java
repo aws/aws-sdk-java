@@ -44,6 +44,12 @@ public class CreateUseCaseRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String useCaseType;
+    /**
+     * <p>
+     * One or more tags.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -193,6 +199,74 @@ public class CreateUseCaseRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * One or more tags.
+     * </p>
+     * 
+     * @return One or more tags.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * One or more tags.
+     * </p>
+     * 
+     * @param tags
+     *        One or more tags.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * One or more tags.
+     * </p>
+     * 
+     * @param tags
+     *        One or more tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateUseCaseRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see CreateUseCaseRequest#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateUseCaseRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateUseCaseRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -209,7 +283,9 @@ public class CreateUseCaseRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getIntegrationAssociationId() != null)
             sb.append("IntegrationAssociationId: ").append(getIntegrationAssociationId()).append(",");
         if (getUseCaseType() != null)
-            sb.append("UseCaseType: ").append(getUseCaseType());
+            sb.append("UseCaseType: ").append(getUseCaseType()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -236,6 +312,10 @@ public class CreateUseCaseRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getUseCaseType() != null && other.getUseCaseType().equals(this.getUseCaseType()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -247,6 +327,7 @@ public class CreateUseCaseRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getIntegrationAssociationId() == null) ? 0 : getIntegrationAssociationId().hashCode());
         hashCode = prime * hashCode + ((getUseCaseType() == null) ? 0 : getUseCaseType().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -31,7 +31,7 @@ public class SNSConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * THe ARN of the IAM role that has access to the target SNS topic.
+     * The ARN of the IAM role that has access to the target SNS topic.
      * </p>
      */
     private String roleArn;
@@ -44,11 +44,11 @@ public class SNSConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * THe ARN of the IAM role that has access to the target SNS topic.
+     * The ARN of the IAM role that has access to the target SNS topic.
      * </p>
      * 
      * @param roleArn
-     *        THe ARN of the IAM role that has access to the target SNS topic.
+     *        The ARN of the IAM role that has access to the target SNS topic.
      */
 
     public void setRoleArn(String roleArn) {
@@ -57,10 +57,10 @@ public class SNSConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * THe ARN of the IAM role that has access to the target SNS topic.
+     * The ARN of the IAM role that has access to the target SNS topic.
      * </p>
      * 
-     * @return THe ARN of the IAM role that has access to the target SNS topic.
+     * @return The ARN of the IAM role that has access to the target SNS topic.
      */
 
     public String getRoleArn() {
@@ -69,11 +69,11 @@ public class SNSConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * THe ARN of the IAM role that has access to the target SNS topic.
+     * The ARN of the IAM role that has access to the target SNS topic.
      * </p>
      * 
      * @param roleArn
-     *        THe ARN of the IAM role that has access to the target SNS topic.
+     *        The ARN of the IAM role that has access to the target SNS topic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

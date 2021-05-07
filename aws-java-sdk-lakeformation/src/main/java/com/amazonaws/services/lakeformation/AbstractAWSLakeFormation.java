@@ -28,12 +28,27 @@ public class AbstractAWSLakeFormation implements AWSLakeFormation {
     }
 
     @Override
+    public AddLFTagsToResourceResult addLFTagsToResource(AddLFTagsToResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchGrantPermissionsResult batchGrantPermissions(BatchGrantPermissionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public BatchRevokePermissionsResult batchRevokePermissions(BatchRevokePermissionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateLFTagResult createLFTag(CreateLFTagRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteLFTagResult deleteLFTag(DeleteLFTagRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -58,7 +73,22 @@ public class AbstractAWSLakeFormation implements AWSLakeFormation {
     }
 
     @Override
+    public GetLFTagResult getLFTag(GetLFTagRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetResourceLFTagsResult getResourceLFTags(GetResourceLFTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GrantPermissionsResult grantPermissions(GrantPermissionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListLFTagsResult listLFTags(ListLFTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -83,7 +113,27 @@ public class AbstractAWSLakeFormation implements AWSLakeFormation {
     }
 
     @Override
+    public RemoveLFTagsFromResourceResult removeLFTagsFromResource(RemoveLFTagsFromResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RevokePermissionsResult revokePermissions(RevokePermissionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SearchDatabasesByLFTagsResult searchDatabasesByLFTags(SearchDatabasesByLFTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SearchTablesByLFTagsResult searchTablesByLFTags(SearchTablesByLFTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateLFTagResult updateLFTag(UpdateLFTagRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

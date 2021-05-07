@@ -44,6 +44,31 @@ public interface AWSLakeFormation {
 
     /**
      * <p>
+     * Attaches one or more tags to an existing resource.
+     * </p>
+     * 
+     * @param addLFTagsToResourceRequest
+     * @return Result of the AddLFTagsToResource operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @throws ConcurrentModificationException
+     *         Two processes are trying to modify a resource simultaneously.
+     * @sample AWSLakeFormation.AddLFTagsToResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/AddLFTagsToResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AddLFTagsToResourceResult addLFTagsToResource(AddLFTagsToResourceRequest addLFTagsToResourceRequest);
+
+    /**
+     * <p>
      * Batch operation to grant permissions to the principal.
      * </p>
      * 
@@ -75,6 +100,57 @@ public interface AWSLakeFormation {
      *      target="_top">AWS API Documentation</a>
      */
     BatchRevokePermissionsResult batchRevokePermissions(BatchRevokePermissionsRequest batchRevokePermissionsRequest);
+
+    /**
+     * <p>
+     * Creates a tag with the specified name and values.
+     * </p>
+     * 
+     * @param createLFTagRequest
+     * @return Result of the CreateLFTag operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws ResourceNumberLimitExceededException
+     *         A resource numerical limit was exceeded.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @sample AWSLakeFormation.CreateLFTag
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLFTag" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateLFTagResult createLFTag(CreateLFTagRequest createLFTagRequest);
+
+    /**
+     * <p>
+     * Deletes the specified tag key name. If the attribute key does not exist or the tag does not exist, then the
+     * operation will not do anything. If the attribute key exists, then the operation checks if any resources are
+     * tagged with this attribute key, if yes, the API throws a 400 Exception with the message "Delete not allowed" as
+     * the tag key is still attached with resources. You can consider untagging resources with this tag key.
+     * </p>
+     * 
+     * @param deleteLFTagRequest
+     * @return Result of the DeleteLFTag operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @sample AWSLakeFormation.DeleteLFTag
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLFTag" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteLFTagResult deleteLFTag(DeleteLFTagRequest deleteLFTagRequest);
 
     /**
      * <p>
@@ -165,6 +241,54 @@ public interface AWSLakeFormation {
 
     /**
      * <p>
+     * Returns a tag definition.
+     * </p>
+     * 
+     * @param getLFTagRequest
+     * @return Result of the GetLFTag operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @sample AWSLakeFormation.GetLFTag
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetLFTag" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetLFTagResult getLFTag(GetLFTagRequest getLFTagRequest);
+
+    /**
+     * <p>
+     * Returns the tags applied to a resource.
+     * </p>
+     * 
+     * @param getResourceLFTagsRequest
+     * @return Result of the GetResourceLFTags operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @sample AWSLakeFormation.GetResourceLFTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetResourceLFTags"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetResourceLFTagsResult getResourceLFTags(GetResourceLFTagsRequest getResourceLFTagsRequest);
+
+    /**
+     * <p>
      * Grants permissions to the principal to access metadata in the Data Catalog and data organized in underlying data
      * storage such as Amazon S3.
      * </p>
@@ -187,6 +311,27 @@ public interface AWSLakeFormation {
      *      API Documentation</a>
      */
     GrantPermissionsResult grantPermissions(GrantPermissionsRequest grantPermissionsRequest);
+
+    /**
+     * <p>
+     * Lists tags that the requester has permission to view.
+     * </p>
+     * 
+     * @param listLFTagsRequest
+     * @return Result of the ListLFTags operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @sample AWSLakeFormation.ListLFTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListLFTags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListLFTagsResult listLFTags(ListLFTagsRequest listLFTagsRequest);
 
     /**
      * <p>
@@ -302,6 +447,34 @@ public interface AWSLakeFormation {
 
     /**
      * <p>
+     * Removes a tag from the resource. Only database, table, or tableWithColumns resource are allowed. To tag columns,
+     * use the column inclusion list in <code>tableWithColumns</code> to specify column input.
+     * </p>
+     * 
+     * @param removeLFTagsFromResourceRequest
+     * @return Result of the RemoveLFTagsFromResource operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @throws ConcurrentModificationException
+     *         Two processes are trying to modify a resource simultaneously.
+     * @sample AWSLakeFormation.RemoveLFTagsFromResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/RemoveLFTagsFromResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RemoveLFTagsFromResourceResult removeLFTagsFromResource(RemoveLFTagsFromResourceRequest removeLFTagsFromResourceRequest);
+
+    /**
+     * <p>
      * Revokes permissions to the principal to access metadata in the Data Catalog and data organized in underlying data
      * storage such as Amazon S3.
      * </p>
@@ -319,6 +492,90 @@ public interface AWSLakeFormation {
      *      target="_top">AWS API Documentation</a>
      */
     RevokePermissionsResult revokePermissions(RevokePermissionsRequest revokePermissionsRequest);
+
+    /**
+     * <p>
+     * This operation allows a search on <code>DATABASE</code> resources by <code>TagCondition</code>. This operation is
+     * used by admins who want to grant user permissions on certain <code>TagConditions</code>. Before making a grant,
+     * the admin can use <code>SearchDatabasesByTags</code> to find all resources where the given
+     * <code>TagConditions</code> are valid to verify whether the returned resources can be shared.
+     * </p>
+     * 
+     * @param searchDatabasesByLFTagsRequest
+     * @return Result of the SearchDatabasesByLFTags operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @sample AWSLakeFormation.SearchDatabasesByLFTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/SearchDatabasesByLFTags"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SearchDatabasesByLFTagsResult searchDatabasesByLFTags(SearchDatabasesByLFTagsRequest searchDatabasesByLFTagsRequest);
+
+    /**
+     * <p>
+     * This operation allows a search on <code>TABLE</code> resources by <code>LFTag</code>s. This will be used by
+     * admins who want to grant user permissions on certain LFTags. Before making a grant, the admin can use
+     * <code>SearchTablesByLFTags</code> to find all resources where the given <code>LFTag</code>s are valid to verify
+     * whether the returned resources can be shared.
+     * </p>
+     * 
+     * @param searchTablesByLFTagsRequest
+     * @return Result of the SearchTablesByLFTags operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @sample AWSLakeFormation.SearchTablesByLFTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/SearchTablesByLFTags"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SearchTablesByLFTagsResult searchTablesByLFTags(SearchTablesByLFTagsRequest searchTablesByLFTagsRequest);
+
+    /**
+     * <p>
+     * Updates the list of possible values for the specified tag key. If the tag does not exist, the operation throws an
+     * EntityNotFoundException. The values in the delete key values will be deleted from list of possible values. If any
+     * value in the delete key values is attached to a resource, then API errors out with a 400 Exception -
+     * "Update not allowed". Untag the attribute before deleting the tag key's value.
+     * </p>
+     * 
+     * @param updateLFTagRequest
+     * @return Result of the UpdateLFTag operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws ConcurrentModificationException
+     *         Two processes are trying to modify a resource simultaneously.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @sample AWSLakeFormation.UpdateLFTag
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateLFTag" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateLFTagResult updateLFTag(UpdateLFTagRequest updateLFTagRequest);
 
     /**
      * <p>

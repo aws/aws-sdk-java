@@ -1,3 +1,16 @@
+# __1.11.1015__ __2021-05-07__
+## __AWS Lake Formation__
+  - ### Features
+    - This release adds Tag Based Access Control to AWS Lake Formation service
+
+## __Amazon Connect Service__
+  - ### Features
+    - Adds tagging support for Connect APIs CreateIntegrationAssociation and CreateUseCase.
+
+## __Amazon Lookout for Metrics__
+  - ### Features
+    - Enforcing UUID style for parameters that are already in UUID format today. Documentation specifying eventual consistency of lookoutmetrics resources.
+
 # __1.11.1014__ __2021-05-06__
 ## __AWS Cloud Map__
   - ### Features
