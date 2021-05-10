@@ -20,10 +20,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Information about an upstream repository. A list of <code>UpstreamRepository</code> objects is an input parameter to
- * <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_CreateRepository.html">
- * <code>CreateRepository</code> </a> and <a
- * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdateRepository.html">
- * <code>UpdateRepository</code> </a>.
+ * <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_CreateRepository.html">CreateRepository</a>
+ * and <a
+ * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdateRepository.html">UpdateRepository</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UpstreamRepository" target="_top">AWS

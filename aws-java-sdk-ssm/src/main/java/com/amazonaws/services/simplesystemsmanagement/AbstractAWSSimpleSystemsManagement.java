@@ -44,6 +44,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public AssociateOpsItemRelatedItemResult associateOpsItemRelatedItem(AssociateOpsItemRelatedItemRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CancelCommandResult cancelCommand(CancelCommandRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -330,6 +335,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
     }
 
     @Override
+    public DisassociateOpsItemRelatedItemResult disassociateOpsItemRelatedItem(DisassociateOpsItemRelatedItemRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetAutomationExecutionResult getAutomationExecution(GetAutomationExecutionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -512,6 +522,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
 
     @Override
     public ListOpsItemEventsResult listOpsItemEvents(ListOpsItemEventsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListOpsItemRelatedItemsResult listOpsItemRelatedItems(ListOpsItemRelatedItemsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

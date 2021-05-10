@@ -44,6 +44,10 @@ public class UpdateWirelessGatewayRequest extends com.amazonaws.AmazonWebService
      */
     private String description;
 
+    private java.util.List<java.util.List<String>> joinEuiFilters;
+
+    private java.util.List<String> netIdFilters;
+
     /**
      * <p>
      * The ID of the resource to update.
@@ -165,6 +169,110 @@ public class UpdateWirelessGatewayRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<java.util.List<String>> getJoinEuiFilters() {
+        return joinEuiFilters;
+    }
+
+    /**
+     * @param joinEuiFilters
+     */
+
+    public void setJoinEuiFilters(java.util.Collection<java.util.List<String>> joinEuiFilters) {
+        if (joinEuiFilters == null) {
+            this.joinEuiFilters = null;
+            return;
+        }
+
+        this.joinEuiFilters = new java.util.ArrayList<java.util.List<String>>(joinEuiFilters);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setJoinEuiFilters(java.util.Collection)} or {@link #withJoinEuiFilters(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param joinEuiFilters
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateWirelessGatewayRequest withJoinEuiFilters(java.util.List<String>... joinEuiFilters) {
+        if (this.joinEuiFilters == null) {
+            setJoinEuiFilters(new java.util.ArrayList<java.util.List<String>>(joinEuiFilters.length));
+        }
+        for (java.util.List<String> ele : joinEuiFilters) {
+            this.joinEuiFilters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param joinEuiFilters
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateWirelessGatewayRequest withJoinEuiFilters(java.util.Collection<java.util.List<String>> joinEuiFilters) {
+        setJoinEuiFilters(joinEuiFilters);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.List<String> getNetIdFilters() {
+        return netIdFilters;
+    }
+
+    /**
+     * @param netIdFilters
+     */
+
+    public void setNetIdFilters(java.util.Collection<String> netIdFilters) {
+        if (netIdFilters == null) {
+            this.netIdFilters = null;
+            return;
+        }
+
+        this.netIdFilters = new java.util.ArrayList<String>(netIdFilters);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNetIdFilters(java.util.Collection)} or {@link #withNetIdFilters(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param netIdFilters
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateWirelessGatewayRequest withNetIdFilters(String... netIdFilters) {
+        if (this.netIdFilters == null) {
+            setNetIdFilters(new java.util.ArrayList<String>(netIdFilters.length));
+        }
+        for (String ele : netIdFilters) {
+            this.netIdFilters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param netIdFilters
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateWirelessGatewayRequest withNetIdFilters(java.util.Collection<String> netIdFilters) {
+        setNetIdFilters(netIdFilters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -181,7 +289,11 @@ public class UpdateWirelessGatewayRequest extends com.amazonaws.AmazonWebService
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getJoinEuiFilters() != null)
+            sb.append("JoinEuiFilters: ").append(getJoinEuiFilters()).append(",");
+        if (getNetIdFilters() != null)
+            sb.append("NetIdFilters: ").append(getNetIdFilters());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +320,14 @@ public class UpdateWirelessGatewayRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getJoinEuiFilters() == null ^ this.getJoinEuiFilters() == null)
+            return false;
+        if (other.getJoinEuiFilters() != null && other.getJoinEuiFilters().equals(this.getJoinEuiFilters()) == false)
+            return false;
+        if (other.getNetIdFilters() == null ^ this.getNetIdFilters() == null)
+            return false;
+        if (other.getNetIdFilters() != null && other.getNetIdFilters().equals(this.getNetIdFilters()) == false)
+            return false;
         return true;
     }
 
@@ -219,6 +339,8 @@ public class UpdateWirelessGatewayRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getJoinEuiFilters() == null) ? 0 : getJoinEuiFilters().hashCode());
+        hashCode = prime * hashCode + ((getNetIdFilters() == null) ? 0 : getNetIdFilters().hashCode());
         return hashCode;
     }
 

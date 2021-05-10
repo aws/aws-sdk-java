@@ -23,6 +23,11 @@ import javax.annotation.Generated;
 public class TooManyTagsException extends com.amazonaws.services.iotwireless.model.AWSIoTWirelessException {
     private static final long serialVersionUID = 1L;
 
+    /**
+     * <p>
+     * Name of the resource that exceeds maximum number of tags allowed.
+     * </p>
+     */
     private String resourceName;
 
     /**
@@ -36,7 +41,12 @@ public class TooManyTagsException extends com.amazonaws.services.iotwireless.mod
     }
 
     /**
+     * <p>
+     * Name of the resource that exceeds maximum number of tags allowed.
+     * </p>
+     * 
      * @param resourceName
+     *        Name of the resource that exceeds maximum number of tags allowed.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("ResourceName")
@@ -45,7 +55,11 @@ public class TooManyTagsException extends com.amazonaws.services.iotwireless.mod
     }
 
     /**
-     * @return
+     * <p>
+     * Name of the resource that exceeds maximum number of tags allowed.
+     * </p>
+     * 
+     * @return Name of the resource that exceeds maximum number of tags allowed.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("ResourceName")
@@ -54,7 +68,12 @@ public class TooManyTagsException extends com.amazonaws.services.iotwireless.mod
     }
 
     /**
+     * <p>
+     * Name of the resource that exceeds maximum number of tags allowed.
+     * </p>
+     * 
      * @param resourceName
+     *        Name of the resource that exceeds maximum number of tags allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

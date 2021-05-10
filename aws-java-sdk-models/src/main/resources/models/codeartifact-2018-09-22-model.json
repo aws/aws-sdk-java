@@ -192,7 +192,7 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p> Returns a <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainDescription.html\"> <code>DomainDescription</code> </a> object that contains information about the requested domain. </p>"
+      "documentation":"<p> Returns a <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainDescription.html\">DomainDescription</a> object that contains information about the requested domain. </p>"
     },
     "DescribePackageVersion":{
       "name":"DescribePackageVersion",
@@ -210,7 +210,7 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p> Returns a <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html\"> <code>PackageVersionDescription</code> </a> object that contains information about the requested package version. </p>"
+      "documentation":"<p> Returns a <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html\">PackageVersionDescription</a> object that contains information about the requested package version. </p>"
     },
     "DescribeRepository":{
       "name":"DescribeRepository",
@@ -264,7 +264,7 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p> Deletes the assets in package versions and sets the package versions' status to <code>Disposed</code>. A disposed package version cannot be restored in your repository because its assets are deleted. </p> <p> To view all disposed package versions in a repository, use <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html\"> <code>ListPackageVersions</code> </a> and set the <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax\"> <code>status</code> </a> parameter to <code>Disposed</code>. </p> <p> To view information about a disposed package version, use <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageVersion.html\"> <code>DescribePackageVersion</code> </a>.. </p>"
+      "documentation":"<p> Deletes the assets in package versions and sets the package versions' status to <code>Disposed</code>. A disposed package version cannot be restored in your repository because its assets are deleted. </p> <p> To view all disposed package versions in a repository, use <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html\">ListPackageVersions</a> and set the <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax\">status</a> parameter to <code>Disposed</code>. </p> <p> To view information about a disposed package version, use <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageVersion.html\">DescribePackageVersion</a>. </p>"
     },
     "GetAuthorizationToken":{
       "name":"GetAuthorizationToken",
@@ -400,7 +400,7 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p> Returns a list of <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html\"> <code>AssetSummary</code> </a> objects for assets in a package version. </p>"
+      "documentation":"<p> Returns a list of <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html\">AssetSummary</a> objects for assets in a package version. </p>"
     },
     "ListPackageVersionDependencies":{
       "name":"ListPackageVersionDependencies",
@@ -417,7 +417,7 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p> Returns the direct dependencies for a package version. The dependencies are returned as <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html\"> <code>PackageDependency</code> </a> objects. CodeArtifact extracts the dependencies for a package version from the metadata file for the package format (for example, the <code>package.json</code> file for npm packages and the <code>pom.xml</code> file for Maven). Any package version dependencies that are not listed in the configuration file are not returned. </p>"
+      "documentation":"<p> Returns the direct dependencies for a package version. The dependencies are returned as <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html\">PackageDependency</a> objects. CodeArtifact extracts the dependencies for a package version from the metadata file for the package format (for example, the <code>package.json</code> file for npm packages and the <code>pom.xml</code> file for Maven). Any package version dependencies that are not listed in the configuration file are not returned. </p>"
     },
     "ListPackageVersions":{
       "name":"ListPackageVersions",
@@ -434,7 +434,7 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p> Returns a list of <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html\"> <code>PackageVersionSummary</code> </a> objects for package versions in a repository that match the request parameters. </p>"
+      "documentation":"<p> Returns a list of <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html\">PackageVersionSummary</a> objects for package versions in a repository that match the request parameters. </p>"
     },
     "ListPackages":{
       "name":"ListPackages",
@@ -451,7 +451,7 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p> Returns a list of <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html\"> <code>PackageSummary</code> </a> objects for packages in a repository that match the request parameters. </p>"
+      "documentation":"<p> Returns a list of <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html\">PackageSummary</a> objects for packages in a repository that match the request parameters. </p>"
     },
     "ListRepositories":{
       "name":"ListRepositories",
@@ -467,7 +467,7 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p> Returns a list of <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html\"> <code>RepositorySummary</code> </a> objects. Each <code>RepositorySummary</code> contains information about a repository in the specified AWS account and that matches the input parameters. </p>"
+      "documentation":"<p> Returns a list of <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html\">RepositorySummary</a> objects. Each <code>RepositorySummary</code> contains information about a repository in the specified AWS account and that matches the input parameters. </p>"
     },
     "ListRepositoriesInDomain":{
       "name":"ListRepositoriesInDomain",
@@ -484,7 +484,7 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p> Returns a list of <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html\"> <code>RepositorySummary</code> </a> objects. Each <code>RepositorySummary</code> contains information about a repository in the specified domain and that matches the input parameters. </p>"
+      "documentation":"<p> Returns a list of <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html\">RepositorySummary</a> objects. Each <code>RepositorySummary</code> contains information about a repository in the specified domain and that matches the input parameters. </p>"
     },
     "ListTagsForResource":{
       "name":"ListTagsForResource",
@@ -1434,7 +1434,7 @@
           "documentation":"<p> The key used to encrypt the domain. </p>"
         }
       },
-      "documentation":"<p> Information about a domain, including its name, Amazon Resource Name (ARN), and status. The <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListDomains.html\"> <code>ListDomains</code> </a> operation returns a list of <code>DomainSummary</code> objects. </p>"
+      "documentation":"<p> Information about a domain, including its name, Amazon Resource Name (ARN), and status. The <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListDomains.html\">ListDomains</a> operation returns a list of <code>DomainSummary</code> objects. </p>"
     },
     "DomainSummaryList":{
       "type":"list",
@@ -1946,7 +1946,7 @@
         },
         "assets":{
           "shape":"AssetSummaryList",
-          "documentation":"<p> The returned list of <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html\"> <code>AssetSummary</code> </a> objects. </p>"
+          "documentation":"<p> The returned list of <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html\">AssetSummary</a> objects. </p>"
         }
       }
     },
@@ -2039,7 +2039,7 @@
         },
         "dependencies":{
           "shape":"PackageDependencyList",
-          "documentation":"<p> The returned list of <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html\"> <code>PackageDependency</code> </a> objects. </p>"
+          "documentation":"<p> The returned list of <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html\">PackageDependency</a> objects. </p>"
         }
       }
     },
@@ -2140,7 +2140,7 @@
         },
         "versions":{
           "shape":"PackageVersionSummaryList",
-          "documentation":"<p> The returned list of <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html\"> <code>PackageVersionSummary</code> </a> objects. </p>"
+          "documentation":"<p> The returned list of <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html\">PackageVersionSummary</a> objects. </p>"
         },
         "nextToken":{
           "shape":"PaginationToken",
@@ -2215,7 +2215,7 @@
       "members":{
         "packages":{
           "shape":"PackageSummaryList",
-          "documentation":"<p> The list of returned <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html\"> <code>PackageSummary</code> </a> objects. </p>"
+          "documentation":"<p> The list of returned <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html\">PackageSummary</a> objects. </p>"
         },
         "nextToken":{
           "shape":"PaginationToken",
@@ -2316,7 +2316,7 @@
       "members":{
         "repositories":{
           "shape":"RepositorySummaryList",
-          "documentation":"<p> The returned list of <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html\"> <code>RepositorySummary</code> </a> objects. </p>"
+          "documentation":"<p> The returned list of <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html\">RepositorySummary</a> objects. </p>"
         },
         "nextToken":{
           "shape":"PaginationToken",
@@ -2410,7 +2410,7 @@
           "documentation":"<p> The name of the package. </p>"
         }
       },
-      "documentation":"<p> Details about a package, including its format, namespace, and name. The <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackages.html\"> <code>ListPackages</code> </a> operation returns a list of <code>PackageSummary</code> objects. </p>"
+      "documentation":"<p> Details about a package, including its format, namespace, and name. The <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackages.html\">ListPackages</a> operation returns a list of <code>PackageSummary</code> objects. </p>"
     },
     "PackageSummaryList":{
       "type":"list",
@@ -2557,7 +2557,7 @@
           "documentation":"<p> A string that contains the status of the package version. It can be one of the following: </p> <ul> <li> <p> <code>Published</code> </p> </li> <li> <p> <code>Unfinished</code> </p> </li> <li> <p> <code>Unlisted</code> </p> </li> <li> <p> <code>Archived</code> </p> </li> <li> <p> <code>Disposed</code> </p> </li> </ul>"
         }
       },
-      "documentation":"<p> Details about a package version, including its status, version, and revision. The <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html\"> <code>ListPackageVersions</code> </a> operation returns a list of <code>PackageVersionSummary</code> objects. </p>"
+      "documentation":"<p> Details about a package version, including its status, version, and revision. The <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html\">ListPackageVersions</a> operation returns a list of <code>PackageVersionSummary</code> objects. </p>"
     },
     "PackageVersionSummaryList":{
       "type":"list",
@@ -2753,7 +2753,7 @@
           "documentation":"<p> The description of the repository. </p>"
         }
       },
-      "documentation":"<p> Details about a repository, including its Amazon Resource Name (ARN), description, and domain information. The <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListRepositories.html\"> <code>ListRepositories</code> </a> operation returns a list of <code>RepositorySummary</code> objects. </p>"
+      "documentation":"<p> Details about a repository, including its Amazon Resource Name (ARN), description, and domain information. The <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListRepositories.html\">ListRepositories</a> operation returns a list of <code>RepositorySummary</code> objects. </p>"
     },
     "RepositorySummaryList":{
       "type":"list",
@@ -3085,7 +3085,7 @@
           "documentation":"<p> The name of an upstream repository. </p>"
         }
       },
-      "documentation":"<p> Information about an upstream repository. A list of <code>UpstreamRepository</code> objects is an input parameter to <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_CreateRepository.html\"> <code>CreateRepository</code> </a> and <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdateRepository.html\"> <code>UpdateRepository</code> </a>. </p>"
+      "documentation":"<p> Information about an upstream repository. A list of <code>UpstreamRepository</code> objects is an input parameter to <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_CreateRepository.html\">CreateRepository</a> and <a href=\"https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdateRepository.html\">UpdateRepository</a>. </p>"
     },
     "UpstreamRepositoryInfo":{
       "type":"structure",

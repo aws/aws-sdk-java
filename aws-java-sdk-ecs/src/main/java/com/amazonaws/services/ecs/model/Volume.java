@@ -35,8 +35,9 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. This name
-     * is referenced in the <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>.
+     * The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition
+     * <code>mountPoints</code>.
      * </p>
      */
     private String name;
@@ -85,13 +86,14 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. This name
-     * is referenced in the <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>.
+     * The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition
+     * <code>mountPoints</code>.
      * </p>
      * 
      * @param name
-     *        The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
-     *        This name is referenced in the <code>sourceVolume</code> parameter of container definition
+     *        The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     *        allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition
      *        <code>mountPoints</code>.
      */
 
@@ -101,12 +103,13 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. This name
-     * is referenced in the <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>.
+     * The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition
+     * <code>mountPoints</code>.
      * </p>
      * 
-     * @return The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
-     *         This name is referenced in the <code>sourceVolume</code> parameter of container definition
+     * @return The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens
+     *         are allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition
      *         <code>mountPoints</code>.
      */
 
@@ -116,13 +119,14 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. This name
-     * is referenced in the <code>sourceVolume</code> parameter of container definition <code>mountPoints</code>.
+     * The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition
+     * <code>mountPoints</code>.
      * </p>
      * 
      * @param name
-     *        The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
-     *        This name is referenced in the <code>sourceVolume</code> parameter of container definition
+     *        The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     *        allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition
      *        <code>mountPoints</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

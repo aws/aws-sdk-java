@@ -948,7 +948,7 @@ public interface AmazonEKS {
      * </p>
      * <important>
      * <p>
-     * At this time, you can not update the subnets or security group IDs for an existing cluster.
+     * You can't update the subnets or security group IDs for an existing cluster.
      * </p>
      * </important>
      * <p>

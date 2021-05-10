@@ -23,8 +23,17 @@ import javax.annotation.Generated;
 public class ResourceNotFoundException extends com.amazonaws.services.iotwireless.model.AWSIoTWirelessException {
     private static final long serialVersionUID = 1L;
 
+    /**
+     * <p>
+     * Id of the not found resource.
+     * </p>
+     */
     private String resourceId;
-
+    /**
+     * <p>
+     * Type of the font found resource.
+     * </p>
+     */
     private String resourceType;
 
     /**
@@ -38,7 +47,12 @@ public class ResourceNotFoundException extends com.amazonaws.services.iotwireles
     }
 
     /**
+     * <p>
+     * Id of the not found resource.
+     * </p>
+     * 
      * @param resourceId
+     *        Id of the not found resource.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("ResourceId")
@@ -47,7 +61,11 @@ public class ResourceNotFoundException extends com.amazonaws.services.iotwireles
     }
 
     /**
-     * @return
+     * <p>
+     * Id of the not found resource.
+     * </p>
+     * 
+     * @return Id of the not found resource.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("ResourceId")
@@ -56,7 +74,12 @@ public class ResourceNotFoundException extends com.amazonaws.services.iotwireles
     }
 
     /**
+     * <p>
+     * Id of the not found resource.
+     * </p>
+     * 
      * @param resourceId
+     *        Id of the not found resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,7 +89,12 @@ public class ResourceNotFoundException extends com.amazonaws.services.iotwireles
     }
 
     /**
+     * <p>
+     * Type of the font found resource.
+     * </p>
+     * 
      * @param resourceType
+     *        Type of the font found resource.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("ResourceType")
@@ -75,7 +103,11 @@ public class ResourceNotFoundException extends com.amazonaws.services.iotwireles
     }
 
     /**
-     * @return
+     * <p>
+     * Type of the font found resource.
+     * </p>
+     * 
+     * @return Type of the font found resource.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("ResourceType")
@@ -84,7 +116,12 @@ public class ResourceNotFoundException extends com.amazonaws.services.iotwireles
     }
 
     /**
+     * <p>
+     * Type of the font found resource.
+     * </p>
+     * 
      * @param resourceType
+     *        Type of the font found resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

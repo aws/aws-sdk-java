@@ -45,12 +45,37 @@ import com.amazonaws.services.simplesystemsmanagement.waiters.AWSSimpleSystemsMa
  * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting up AWS
  * Systems Manager</a> in the <i>AWS Systems Manager User Guide</i>.
  * </p>
+ * <p class="title">
+ * <b>Related resources</b>
+ * </p>
+ * <ul>
+ * <li>
  * <p>
- * For information about other API actions you can perform on EC2 instances, see the <a
- * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API Reference</a>. For information about
- * how to use a Query API, see <a
+ * For information about how to use a Query API, see <a
  * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/making-api-requests.html">Making API requests</a>.
  * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For information about other API actions you can perform on EC2 instances, see the <a
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API Reference</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For information about AWS AppConfig, a capability of Systems Manager, see the <a
+ * href="https://docs.aws.amazon.com/appconfig/latest/userguide/">AWS AppConfig User Guide</a> and the <a
+ * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/">AWS AppConfig API Reference</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For information about AWS Incident Manager, a capability of Systems Manager, see the <a
+ * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/">AWS Incident Manager User Guide</a> and the <a
+ * href="https://docs.aws.amazon.com/incident-manager/latest/APIReference/">AWS Incident Manager API Reference</a>.
+ * </p>
+ * </li>
+ * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSSimpleSystemsManagement {
@@ -158,6 +183,33 @@ public interface AWSSimpleSystemsManagement {
      *      Documentation</a>
      */
     AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest);
+
+    /**
+     * <p>
+     * Associates a related resource to a Systems Manager OpsCenter OpsItem. For example, you can associate an Incident
+     * Manager incident or analysis with an OpsItem. Incident Manager is a capability of AWS Systems Manager.
+     * </p>
+     * 
+     * @param associateOpsItemRelatedItemRequest
+     * @return Result of the AssociateOpsItemRelatedItem operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws OpsItemNotFoundException
+     *         The specified OpsItem ID doesn't exist. Verify the ID and try again.
+     * @throws OpsItemLimitExceededException
+     *         The request caused OpsItems to exceed one or more quotas. For information about OpsItem quotas, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits"
+     *         >What are the resource limits for OpsCenter?</a>.
+     * @throws OpsItemInvalidParameterException
+     *         A specified parameter argument isn't valid. Verify the available arguments and try again.
+     * @throws OpsItemRelatedItemAlreadyExistsException
+     *         The Amazon Resource Name (ARN) is already associated with the OpsItem.
+     * @sample AWSSimpleSystemsManagement.AssociateOpsItemRelatedItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AssociateOpsItemRelatedItem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateOpsItemRelatedItemResult associateOpsItemRelatedItem(AssociateOpsItemRelatedItemRequest associateOpsItemRelatedItemRequest);
 
     /**
      * <p>
@@ -1690,6 +1742,29 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Deletes the association between an OpsItem and a related resource. For example, this API action can delete an
+     * Incident Manager incident from an OpsItem. Incident Manager is a capability of AWS Systems Manager.
+     * </p>
+     * 
+     * @param disassociateOpsItemRelatedItemRequest
+     * @return Result of the DisassociateOpsItemRelatedItem operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws OpsItemRelatedItemAssociationNotFoundException
+     *         The association was not found using the parameters you specified in the call. Verify the information and
+     *         try again.
+     * @throws OpsItemNotFoundException
+     *         The specified OpsItem ID doesn't exist. Verify the ID and try again.
+     * @throws OpsItemInvalidParameterException
+     *         A specified parameter argument isn't valid. Verify the available arguments and try again.
+     * @sample AWSSimpleSystemsManagement.DisassociateOpsItemRelatedItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DisassociateOpsItemRelatedItem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateOpsItemRelatedItemResult disassociateOpsItemRelatedItem(DisassociateOpsItemRelatedItemRequest disassociateOpsItemRelatedItemRequest);
+
+    /**
+     * <p>
      * Get detailed information about a particular Automation execution.
      * </p>
      * 
@@ -2622,6 +2697,23 @@ public interface AWSSimpleSystemsManagement {
      *      Documentation</a>
      */
     ListOpsItemEventsResult listOpsItemEvents(ListOpsItemEventsRequest listOpsItemEventsRequest);
+
+    /**
+     * <p>
+     * Lists all related-item resources associated with an OpsItem.
+     * </p>
+     * 
+     * @param listOpsItemRelatedItemsRequest
+     * @return Result of the ListOpsItemRelatedItems operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws OpsItemInvalidParameterException
+     *         A specified parameter argument isn't valid. Verify the available arguments and try again.
+     * @sample AWSSimpleSystemsManagement.ListOpsItemRelatedItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsItemRelatedItems" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListOpsItemRelatedItemsResult listOpsItemRelatedItems(ListOpsItemRelatedItemsRequest listOpsItemRelatedItemsRequest);
 
     /**
      * <p>

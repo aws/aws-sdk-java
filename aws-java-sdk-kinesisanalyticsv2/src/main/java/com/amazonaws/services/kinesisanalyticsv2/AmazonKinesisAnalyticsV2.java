@@ -572,6 +572,32 @@ public interface AmazonKinesisAnalyticsV2 {
 
     /**
      * <p>
+     * Provides a detailed description of a specified version of the application. To see a list of all the versions of
+     * an application, invoke the <a>ListApplicationVersions</a> operation.
+     * </p>
+     * <note>
+     * <p>
+     * This operation is supported only for Amazon Kinesis Data Analytics for Apache Flink.
+     * </p>
+     * </note>
+     * 
+     * @param describeApplicationVersionRequest
+     * @return Result of the DescribeApplicationVersion operation returned by the service.
+     * @throws InvalidArgumentException
+     *         The specified input parameter value is not valid.
+     * @throws ResourceNotFoundException
+     *         Specified application can't be found.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not supported or a specified resource is not
+     *         valid for this operation.
+     * @sample AmazonKinesisAnalyticsV2.DescribeApplicationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplicationVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeApplicationVersionResult describeApplicationVersion(DescribeApplicationVersionRequest describeApplicationVersionRequest);
+
+    /**
+     * <p>
      * Infers a schema for a SQL-based Kinesis Data Analytics application by evaluating sample records on the specified
      * streaming source (Kinesis data stream or Kinesis Data Firehose delivery stream) or Amazon S3 object. In the
      * response, the operation returns the inferred schema and also the sample records that the operation used to infer
@@ -622,6 +648,36 @@ public interface AmazonKinesisAnalyticsV2 {
      *      target="_top">AWS API Documentation</a>
      */
     ListApplicationSnapshotsResult listApplicationSnapshots(ListApplicationSnapshotsRequest listApplicationSnapshotsRequest);
+
+    /**
+     * <p>
+     * Lists all the versions for the specified application, including versions that were rolled back. The response also
+     * includes a summary of the configuration associated with each version.
+     * </p>
+     * <p>
+     * To get the complete description of a specific application version, invoke the <a>DescribeApplicationVersion</a>
+     * operation.
+     * </p>
+     * <note>
+     * <p>
+     * This operation is supported only for Amazon Kinesis Data Analytics for Apache Flink.
+     * </p>
+     * </note>
+     * 
+     * @param listApplicationVersionsRequest
+     * @return Result of the ListApplicationVersions operation returned by the service.
+     * @throws InvalidArgumentException
+     *         The specified input parameter value is not valid.
+     * @throws ResourceNotFoundException
+     *         Specified application can't be found.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not supported or a specified resource is not
+     *         valid for this operation.
+     * @sample AmazonKinesisAnalyticsV2.ListApplicationVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplicationVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListApplicationVersionsResult listApplicationVersions(ListApplicationVersionsRequest listApplicationVersionsRequest);
 
     /**
      * <p>
@@ -857,11 +913,31 @@ public interface AmazonKinesisAnalyticsV2 {
 
     /**
      * <p>
-     * Updates the configuration for the automatic maintenance that Kinesis Data Analytics performs on the application.
-     * For information about automatic application maintenance, see <a
+     * Updates the maintenance configuration of the Kinesis Data Analytics application.
+     * </p>
+     * <p>
+     * You can invoke this operation on an application that is in one of the two following states: <code>READY</code> or
+     * <code>RUNNING</code>. If you invoke it when the application is in a state other than these two states, it throws
+     * a <code>ResourceInUseException</code>. The service makes use of the updated configuration the next time it
+     * schedules maintenance for the application. If you invoke this operation after the service schedules maintenance,
+     * the service will apply the configuration update the next time it schedules maintenance for the application. This
+     * means that you might not see the maintenance configuration update applied to the maintenance process that follows
+     * a successful invocation of this operation, but to the following maintenance process instead.
+     * </p>
+     * <p>
+     * To see the current maintenance configuration of your application, invoke the <a>DescribeApplication</a>
+     * operation.
+     * </p>
+     * <p>
+     * For information about application maintenance, see <a
      * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/maintenance.html">Kinesis Data Analytics for
      * Apache Flink Maintenance</a>.
      * </p>
+     * <note>
+     * <p>
+     * This operation is supported only for Amazon Kinesis Data Analytics for Apache Flink.
+     * </p>
+     * </note>
      * 
      * @param updateApplicationMaintenanceConfigurationRequest
      * @return Result of the UpdateApplicationMaintenanceConfiguration operation returned by the service.

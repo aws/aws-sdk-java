@@ -80,8 +80,8 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">
-     * <code>AssetSummary</code> </a> objects.
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a>
+     * objects.
      * </p>
      */
     private java.util.List<AssetSummary> assets;
@@ -453,13 +453,13 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">
-     * <code>AssetSummary</code> </a> objects.
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a>
+     * objects.
      * </p>
      * 
      * @return The returned list of <a
-     *         href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">
-     *         <code>AssetSummary</code> </a> objects.
+     *         href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html"
+     *         >AssetSummary</a> objects.
      */
 
     public java.util.List<AssetSummary> getAssets() {
@@ -469,14 +469,14 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">
-     * <code>AssetSummary</code> </a> objects.
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a>
+     * objects.
      * </p>
      * 
      * @param assets
      *        The returned list of <a
-     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">
-     *        <code>AssetSummary</code> </a> objects.
+     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a>
+     *        objects.
      */
 
     public void setAssets(java.util.Collection<AssetSummary> assets) {
@@ -491,8 +491,8 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">
-     * <code>AssetSummary</code> </a> objects.
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a>
+     * objects.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -502,8 +502,8 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
      * 
      * @param assets
      *        The returned list of <a
-     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">
-     *        <code>AssetSummary</code> </a> objects.
+     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a>
+     *        objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -520,14 +520,14 @@ public class ListPackageVersionAssetsResult extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">
-     * <code>AssetSummary</code> </a> objects.
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a>
+     * objects.
      * </p>
      * 
      * @param assets
      *        The returned list of <a
-     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">
-     *        <code>AssetSummary</code> </a> objects.
+     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a>
+     *        objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

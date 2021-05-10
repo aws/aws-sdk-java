@@ -61,6 +61,8 @@ public class NodegroupMarshaller {
             .marshallLocationName("nodeRole").build();
     private static final MarshallingInfo<Map> LABELS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("labels").build();
+    private static final MarshallingInfo<List> TAINTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("taints").build();
     private static final MarshallingInfo<StructuredPojo> RESOURCES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resources").build();
     private static final MarshallingInfo<Integer> DISKSIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -104,6 +106,7 @@ public class NodegroupMarshaller {
             protocolMarshaller.marshall(nodegroup.getAmiType(), AMITYPE_BINDING);
             protocolMarshaller.marshall(nodegroup.getNodeRole(), NODEROLE_BINDING);
             protocolMarshaller.marshall(nodegroup.getLabels(), LABELS_BINDING);
+            protocolMarshaller.marshall(nodegroup.getTaints(), TAINTS_BINDING);
             protocolMarshaller.marshall(nodegroup.getResources(), RESOURCES_BINDING);
             protocolMarshaller.marshall(nodegroup.getDiskSize(), DISKSIZE_BINDING);
             protocolMarshaller.marshall(nodegroup.getHealth(), HEALTH_BINDING);

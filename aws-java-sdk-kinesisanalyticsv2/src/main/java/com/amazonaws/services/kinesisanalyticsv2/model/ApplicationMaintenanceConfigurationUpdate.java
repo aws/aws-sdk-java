@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the updated time window for automatic application maintenance.
+ * Describes the updated maintenance configuration for the application.
  * </p>
  * 
  * @see <a
@@ -31,18 +31,18 @@ public class ApplicationMaintenanceConfigurationUpdate implements Serializable, 
 
     /**
      * <p>
-     * The updated start time for the automatic maintenance window.
+     * The updated start time for the maintenance window.
      * </p>
      */
     private String applicationMaintenanceWindowStartTimeUpdate;
 
     /**
      * <p>
-     * The updated start time for the automatic maintenance window.
+     * The updated start time for the maintenance window.
      * </p>
      * 
      * @param applicationMaintenanceWindowStartTimeUpdate
-     *        The updated start time for the automatic maintenance window.
+     *        The updated start time for the maintenance window.
      */
 
     public void setApplicationMaintenanceWindowStartTimeUpdate(String applicationMaintenanceWindowStartTimeUpdate) {
@@ -51,10 +51,10 @@ public class ApplicationMaintenanceConfigurationUpdate implements Serializable, 
 
     /**
      * <p>
-     * The updated start time for the automatic maintenance window.
+     * The updated start time for the maintenance window.
      * </p>
      * 
-     * @return The updated start time for the automatic maintenance window.
+     * @return The updated start time for the maintenance window.
      */
 
     public String getApplicationMaintenanceWindowStartTimeUpdate() {
@@ -63,11 +63,11 @@ public class ApplicationMaintenanceConfigurationUpdate implements Serializable, 
 
     /**
      * <p>
-     * The updated start time for the automatic maintenance window.
+     * The updated start time for the maintenance window.
      * </p>
      * 
      * @param applicationMaintenanceWindowStartTimeUpdate
-     *        The updated start time for the automatic maintenance window.
+     *        The updated start time for the maintenance window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

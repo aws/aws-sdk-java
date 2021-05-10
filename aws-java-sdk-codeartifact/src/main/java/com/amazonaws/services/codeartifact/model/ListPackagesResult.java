@@ -26,8 +26,8 @@ public class ListPackagesResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The list of returned <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">
-     * <code>PackageSummary</code> </a> objects.
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a>
+     * objects.
      * </p>
      */
     private java.util.List<PackageSummary> packages;
@@ -41,13 +41,13 @@ public class ListPackagesResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The list of returned <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">
-     * <code>PackageSummary</code> </a> objects.
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a>
+     * objects.
      * </p>
      * 
      * @return The list of returned <a
-     *         href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">
-     *         <code>PackageSummary</code> </a> objects.
+     *         href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html"
+     *         >PackageSummary</a> objects.
      */
 
     public java.util.List<PackageSummary> getPackages() {
@@ -57,14 +57,14 @@ public class ListPackagesResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The list of returned <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">
-     * <code>PackageSummary</code> </a> objects.
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a>
+     * objects.
      * </p>
      * 
      * @param packages
      *        The list of returned <a
-     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">
-     *        <code>PackageSummary</code> </a> objects.
+     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html"
+     *        >PackageSummary</a> objects.
      */
 
     public void setPackages(java.util.Collection<PackageSummary> packages) {
@@ -79,8 +79,8 @@ public class ListPackagesResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The list of returned <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">
-     * <code>PackageSummary</code> </a> objects.
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a>
+     * objects.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -90,8 +90,8 @@ public class ListPackagesResult extends com.amazonaws.AmazonWebServiceResult<com
      * 
      * @param packages
      *        The list of returned <a
-     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">
-     *        <code>PackageSummary</code> </a> objects.
+     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html"
+     *        >PackageSummary</a> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,14 +108,14 @@ public class ListPackagesResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The list of returned <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">
-     * <code>PackageSummary</code> </a> objects.
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a>
+     * objects.
      * </p>
      * 
      * @param packages
      *        The list of returned <a
-     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">
-     *        <code>PackageSummary</code> </a> objects.
+     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html"
+     *        >PackageSummary</a> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

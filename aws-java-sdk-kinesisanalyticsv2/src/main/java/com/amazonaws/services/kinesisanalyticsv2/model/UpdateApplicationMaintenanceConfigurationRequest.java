@@ -28,7 +28,7 @@ public class UpdateApplicationMaintenanceConfigurationRequest extends com.amazon
 
     /**
      * <p>
-     * The name of the application for which you want to update the maintenance time window.
+     * The name of the application for which you want to update the maintenance configuration.
      * </p>
      */
     private String applicationName;
@@ -41,11 +41,11 @@ public class UpdateApplicationMaintenanceConfigurationRequest extends com.amazon
 
     /**
      * <p>
-     * The name of the application for which you want to update the maintenance time window.
+     * The name of the application for which you want to update the maintenance configuration.
      * </p>
      * 
      * @param applicationName
-     *        The name of the application for which you want to update the maintenance time window.
+     *        The name of the application for which you want to update the maintenance configuration.
      */
 
     public void setApplicationName(String applicationName) {
@@ -54,10 +54,10 @@ public class UpdateApplicationMaintenanceConfigurationRequest extends com.amazon
 
     /**
      * <p>
-     * The name of the application for which you want to update the maintenance time window.
+     * The name of the application for which you want to update the maintenance configuration.
      * </p>
      * 
-     * @return The name of the application for which you want to update the maintenance time window.
+     * @return The name of the application for which you want to update the maintenance configuration.
      */
 
     public String getApplicationName() {
@@ -66,11 +66,11 @@ public class UpdateApplicationMaintenanceConfigurationRequest extends com.amazon
 
     /**
      * <p>
-     * The name of the application for which you want to update the maintenance time window.
+     * The name of the application for which you want to update the maintenance configuration.
      * </p>
      * 
      * @param applicationName
-     *        The name of the application for which you want to update the maintenance time window.
+     *        The name of the application for which you want to update the maintenance configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -808,6 +808,51 @@ public interface AmazonKinesisAnalyticsV2Async extends AmazonKinesisAnalyticsV2 
 
     /**
      * <p>
+     * Provides a detailed description of a specified version of the application. To see a list of all the versions of
+     * an application, invoke the <a>ListApplicationVersions</a> operation.
+     * </p>
+     * <note>
+     * <p>
+     * This operation is supported only for Amazon Kinesis Data Analytics for Apache Flink.
+     * </p>
+     * </note>
+     * 
+     * @param describeApplicationVersionRequest
+     * @return A Java Future containing the result of the DescribeApplicationVersion operation returned by the service.
+     * @sample AmazonKinesisAnalyticsV2Async.DescribeApplicationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplicationVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeApplicationVersionResult> describeApplicationVersionAsync(
+            DescribeApplicationVersionRequest describeApplicationVersionRequest);
+
+    /**
+     * <p>
+     * Provides a detailed description of a specified version of the application. To see a list of all the versions of
+     * an application, invoke the <a>ListApplicationVersions</a> operation.
+     * </p>
+     * <note>
+     * <p>
+     * This operation is supported only for Amazon Kinesis Data Analytics for Apache Flink.
+     * </p>
+     * </note>
+     * 
+     * @param describeApplicationVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeApplicationVersion operation returned by the service.
+     * @sample AmazonKinesisAnalyticsV2AsyncHandler.DescribeApplicationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplicationVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeApplicationVersionResult> describeApplicationVersionAsync(
+            DescribeApplicationVersionRequest describeApplicationVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeApplicationVersionRequest, DescribeApplicationVersionResult> asyncHandler);
+
+    /**
+     * <p>
      * Infers a schema for a SQL-based Kinesis Data Analytics application by evaluating sample records on the specified
      * streaming source (Kinesis data stream or Kinesis Data Firehose delivery stream) or Amazon S3 object. In the
      * response, the operation returns the inferred schema and also the sample records that the operation used to infer
@@ -883,6 +928,57 @@ public interface AmazonKinesisAnalyticsV2Async extends AmazonKinesisAnalyticsV2 
      */
     java.util.concurrent.Future<ListApplicationSnapshotsResult> listApplicationSnapshotsAsync(ListApplicationSnapshotsRequest listApplicationSnapshotsRequest,
             com.amazonaws.handlers.AsyncHandler<ListApplicationSnapshotsRequest, ListApplicationSnapshotsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all the versions for the specified application, including versions that were rolled back. The response also
+     * includes a summary of the configuration associated with each version.
+     * </p>
+     * <p>
+     * To get the complete description of a specific application version, invoke the <a>DescribeApplicationVersion</a>
+     * operation.
+     * </p>
+     * <note>
+     * <p>
+     * This operation is supported only for Amazon Kinesis Data Analytics for Apache Flink.
+     * </p>
+     * </note>
+     * 
+     * @param listApplicationVersionsRequest
+     * @return A Java Future containing the result of the ListApplicationVersions operation returned by the service.
+     * @sample AmazonKinesisAnalyticsV2Async.ListApplicationVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplicationVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListApplicationVersionsResult> listApplicationVersionsAsync(ListApplicationVersionsRequest listApplicationVersionsRequest);
+
+    /**
+     * <p>
+     * Lists all the versions for the specified application, including versions that were rolled back. The response also
+     * includes a summary of the configuration associated with each version.
+     * </p>
+     * <p>
+     * To get the complete description of a specific application version, invoke the <a>DescribeApplicationVersion</a>
+     * operation.
+     * </p>
+     * <note>
+     * <p>
+     * This operation is supported only for Amazon Kinesis Data Analytics for Apache Flink.
+     * </p>
+     * </note>
+     * 
+     * @param listApplicationVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListApplicationVersions operation returned by the service.
+     * @sample AmazonKinesisAnalyticsV2AsyncHandler.ListApplicationVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplicationVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListApplicationVersionsResult> listApplicationVersionsAsync(ListApplicationVersionsRequest listApplicationVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListApplicationVersionsRequest, ListApplicationVersionsResult> asyncHandler);
 
     /**
      * <p>
@@ -1212,11 +1308,31 @@ public interface AmazonKinesisAnalyticsV2Async extends AmazonKinesisAnalyticsV2 
 
     /**
      * <p>
-     * Updates the configuration for the automatic maintenance that Kinesis Data Analytics performs on the application.
-     * For information about automatic application maintenance, see <a
+     * Updates the maintenance configuration of the Kinesis Data Analytics application.
+     * </p>
+     * <p>
+     * You can invoke this operation on an application that is in one of the two following states: <code>READY</code> or
+     * <code>RUNNING</code>. If you invoke it when the application is in a state other than these two states, it throws
+     * a <code>ResourceInUseException</code>. The service makes use of the updated configuration the next time it
+     * schedules maintenance for the application. If you invoke this operation after the service schedules maintenance,
+     * the service will apply the configuration update the next time it schedules maintenance for the application. This
+     * means that you might not see the maintenance configuration update applied to the maintenance process that follows
+     * a successful invocation of this operation, but to the following maintenance process instead.
+     * </p>
+     * <p>
+     * To see the current maintenance configuration of your application, invoke the <a>DescribeApplication</a>
+     * operation.
+     * </p>
+     * <p>
+     * For information about application maintenance, see <a
      * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/maintenance.html">Kinesis Data Analytics for
      * Apache Flink Maintenance</a>.
      * </p>
+     * <note>
+     * <p>
+     * This operation is supported only for Amazon Kinesis Data Analytics for Apache Flink.
+     * </p>
+     * </note>
      * 
      * @param updateApplicationMaintenanceConfigurationRequest
      * @return A Java Future containing the result of the UpdateApplicationMaintenanceConfiguration operation returned
@@ -1231,11 +1347,31 @@ public interface AmazonKinesisAnalyticsV2Async extends AmazonKinesisAnalyticsV2 
 
     /**
      * <p>
-     * Updates the configuration for the automatic maintenance that Kinesis Data Analytics performs on the application.
-     * For information about automatic application maintenance, see <a
+     * Updates the maintenance configuration of the Kinesis Data Analytics application.
+     * </p>
+     * <p>
+     * You can invoke this operation on an application that is in one of the two following states: <code>READY</code> or
+     * <code>RUNNING</code>. If you invoke it when the application is in a state other than these two states, it throws
+     * a <code>ResourceInUseException</code>. The service makes use of the updated configuration the next time it
+     * schedules maintenance for the application. If you invoke this operation after the service schedules maintenance,
+     * the service will apply the configuration update the next time it schedules maintenance for the application. This
+     * means that you might not see the maintenance configuration update applied to the maintenance process that follows
+     * a successful invocation of this operation, but to the following maintenance process instead.
+     * </p>
+     * <p>
+     * To see the current maintenance configuration of your application, invoke the <a>DescribeApplication</a>
+     * operation.
+     * </p>
+     * <p>
+     * For information about application maintenance, see <a
      * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/maintenance.html">Kinesis Data Analytics for
      * Apache Flink Maintenance</a>.
      * </p>
+     * <note>
+     * <p>
+     * This operation is supported only for Amazon Kinesis Data Analytics for Apache Flink.
+     * </p>
+     * </note>
      * 
      * @param updateApplicationMaintenanceConfigurationRequest
      * @param asyncHandler

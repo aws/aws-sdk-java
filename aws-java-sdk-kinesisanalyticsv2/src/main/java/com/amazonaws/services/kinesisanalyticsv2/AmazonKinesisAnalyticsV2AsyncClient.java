@@ -688,6 +688,39 @@ public class AmazonKinesisAnalyticsV2AsyncClient extends AmazonKinesisAnalyticsV
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeApplicationVersionResult> describeApplicationVersionAsync(DescribeApplicationVersionRequest request) {
+
+        return describeApplicationVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeApplicationVersionResult> describeApplicationVersionAsync(final DescribeApplicationVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeApplicationVersionRequest, DescribeApplicationVersionResult> asyncHandler) {
+        final DescribeApplicationVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeApplicationVersionResult>() {
+            @Override
+            public DescribeApplicationVersionResult call() throws Exception {
+                DescribeApplicationVersionResult result = null;
+
+                try {
+                    result = executeDescribeApplicationVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DiscoverInputSchemaResult> discoverInputSchemaAsync(DiscoverInputSchemaRequest request) {
 
         return discoverInputSchemaAsync(request, null);
@@ -738,6 +771,39 @@ public class AmazonKinesisAnalyticsV2AsyncClient extends AmazonKinesisAnalyticsV
 
                 try {
                     result = executeListApplicationSnapshots(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApplicationVersionsResult> listApplicationVersionsAsync(ListApplicationVersionsRequest request) {
+
+        return listApplicationVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApplicationVersionsResult> listApplicationVersionsAsync(final ListApplicationVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListApplicationVersionsRequest, ListApplicationVersionsResult> asyncHandler) {
+        final ListApplicationVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListApplicationVersionsResult>() {
+            @Override
+            public ListApplicationVersionsResult call() throws Exception {
+                ListApplicationVersionsResult result = null;
+
+                try {
+                    result = executeListApplicationVersions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

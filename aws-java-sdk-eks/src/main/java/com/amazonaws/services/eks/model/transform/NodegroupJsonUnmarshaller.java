@@ -117,6 +117,12 @@ public class NodegroupJsonUnmarshaller implements Unmarshaller<Nodegroup, JsonUn
                     nodegroup.setLabels(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
+                if (context.testExpression("taints", targetDepth)) {
+                    context.nextToken();
+                    nodegroup.setTaints(new ListUnmarshaller<Taint>(TaintJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("resources", targetDepth)) {
                     context.nextToken();
                     nodegroup.setResources(NodegroupResourcesJsonUnmarshaller.getInstance().unmarshall(context));

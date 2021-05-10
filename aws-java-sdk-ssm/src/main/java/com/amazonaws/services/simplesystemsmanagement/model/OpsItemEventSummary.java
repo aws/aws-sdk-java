@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Summary information about an OpsItem event.
+ * Summary information about an OpsItem event or that associated an OpsItem with a related item.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/OpsItemEventSummary" target="_top">AWS API

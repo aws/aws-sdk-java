@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.iotwireless.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,10 @@ public class UpdateWirelessGatewayRequestMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<List> JOINEUIFILTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JoinEuiFilters").build();
+    private static final MarshallingInfo<List> NETIDFILTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NetIdFilters").build();
 
     private static final UpdateWirelessGatewayRequestMarshaller instance = new UpdateWirelessGatewayRequestMarshaller();
 
@@ -53,6 +58,8 @@ public class UpdateWirelessGatewayRequestMarshaller {
             protocolMarshaller.marshall(updateWirelessGatewayRequest.getId(), ID_BINDING);
             protocolMarshaller.marshall(updateWirelessGatewayRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(updateWirelessGatewayRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(updateWirelessGatewayRequest.getJoinEuiFilters(), JOINEUIFILTERS_BINDING);
+            protocolMarshaller.marshall(updateWirelessGatewayRequest.getNetIdFilters(), NETIDFILTERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

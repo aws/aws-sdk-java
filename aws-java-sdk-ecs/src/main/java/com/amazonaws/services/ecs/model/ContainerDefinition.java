@@ -33,11 +33,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <p>
      * The name of a container. If you are linking multiple containers together in a task definition, the
      * <code>name</code> of one container can be entered in the <code>links</code> of another container to connect the
-     * containers. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. This parameter maps to
-     * <code>name</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a
-     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
-     * <code>--name</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
+     * containers. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. This
+     * parameter maps to <code>name</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+     * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--name</code> option to
+     * <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
      * </p>
      */
     private String name;
@@ -217,9 +217,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * The <code>links</code> parameter allows containers to communicate with each other without the need for port
      * mappings. This parameter is only supported if the network mode of a task definition is <code>bridge</code>. The
      * <code>name:internalName</code> construct is analogous to <code>name:alias</code> in Docker links. Up to 255
-     * letters (uppercase and lowercase), numbers, and hyphens are allowed. For more information about linking Docker
-     * containers, go to <a href="https://docs.docker.com/network/links/">Legacy container links</a> in the Docker
-     * documentation. This parameter maps to <code>Links</code> in the <a
+     * letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. For more information about
+     * linking Docker containers, go to <a href="https://docs.docker.com/network/links/">Legacy container links</a> in
+     * the Docker documentation. This parameter maps to <code>Links</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--link</code> option to
      * <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
@@ -831,18 +831,18 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <p>
      * The name of a container. If you are linking multiple containers together in a task definition, the
      * <code>name</code> of one container can be entered in the <code>links</code> of another container to connect the
-     * containers. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. This parameter maps to
-     * <code>name</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a
-     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
-     * <code>--name</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
+     * containers. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. This
+     * parameter maps to <code>name</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+     * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--name</code> option to
+     * <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
      * </p>
      * 
      * @param name
      *        The name of a container. If you are linking multiple containers together in a task definition, the
      *        <code>name</code> of one container can be entered in the <code>links</code> of another container to
-     *        connect the containers. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
-     *        This parameter maps to <code>name</code> in the <a
+     *        connect the containers. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     *        allowed. This parameter maps to <code>name</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *        <code>--name</code> option to <a
@@ -857,17 +857,17 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <p>
      * The name of a container. If you are linking multiple containers together in a task definition, the
      * <code>name</code> of one container can be entered in the <code>links</code> of another container to connect the
-     * containers. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. This parameter maps to
-     * <code>name</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a
-     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
-     * <code>--name</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
+     * containers. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. This
+     * parameter maps to <code>name</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+     * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--name</code> option to
+     * <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
      * </p>
      * 
      * @return The name of a container. If you are linking multiple containers together in a task definition, the
      *         <code>name</code> of one container can be entered in the <code>links</code> of another container to
-     *         connect the containers. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
-     *         This parameter maps to <code>name</code> in the <a
+     *         connect the containers. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens
+     *         are allowed. This parameter maps to <code>name</code> in the <a
      *         href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *         of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *         <code>--name</code> option to <a
@@ -882,18 +882,18 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * <p>
      * The name of a container. If you are linking multiple containers together in a task definition, the
      * <code>name</code> of one container can be entered in the <code>links</code> of another container to connect the
-     * containers. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. This parameter maps to
-     * <code>name</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a
-     * container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
-     * <code>--name</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
+     * containers. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. This
+     * parameter maps to <code>name</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
+     * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--name</code> option to
+     * <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
      * </p>
      * 
      * @param name
      *        The name of a container. If you are linking multiple containers together in a task definition, the
      *        <code>name</code> of one container can be entered in the <code>links</code> of another container to
-     *        connect the containers. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
-     *        This parameter maps to <code>name</code> in the <a
+     *        connect the containers. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     *        allowed. This parameter maps to <code>name</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *        <code>--name</code> option to <a
@@ -1964,9 +1964,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * The <code>links</code> parameter allows containers to communicate with each other without the need for port
      * mappings. This parameter is only supported if the network mode of a task definition is <code>bridge</code>. The
      * <code>name:internalName</code> construct is analogous to <code>name:alias</code> in Docker links. Up to 255
-     * letters (uppercase and lowercase), numbers, and hyphens are allowed. For more information about linking Docker
-     * containers, go to <a href="https://docs.docker.com/network/links/">Legacy container links</a> in the Docker
-     * documentation. This parameter maps to <code>Links</code> in the <a
+     * letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. For more information about
+     * linking Docker containers, go to <a href="https://docs.docker.com/network/links/">Legacy container links</a> in
+     * the Docker documentation. This parameter maps to <code>Links</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--link</code> option to
      * <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
@@ -1986,8 +1986,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * @return The <code>links</code> parameter allows containers to communicate with each other without the need for
      *         port mappings. This parameter is only supported if the network mode of a task definition is
      *         <code>bridge</code>. The <code>name:internalName</code> construct is analogous to <code>name:alias</code>
-     *         in Docker links. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. For more
-     *         information about linking Docker containers, go to <a
+     *         in Docker links. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     *         allowed. For more information about linking Docker containers, go to <a
      *         href="https://docs.docker.com/network/links/">Legacy container links</a> in the Docker documentation.
      *         This parameter maps to <code>Links</code> in the <a
      *         href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
@@ -2017,9 +2017,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * The <code>links</code> parameter allows containers to communicate with each other without the need for port
      * mappings. This parameter is only supported if the network mode of a task definition is <code>bridge</code>. The
      * <code>name:internalName</code> construct is analogous to <code>name:alias</code> in Docker links. Up to 255
-     * letters (uppercase and lowercase), numbers, and hyphens are allowed. For more information about linking Docker
-     * containers, go to <a href="https://docs.docker.com/network/links/">Legacy container links</a> in the Docker
-     * documentation. This parameter maps to <code>Links</code> in the <a
+     * letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. For more information about
+     * linking Docker containers, go to <a href="https://docs.docker.com/network/links/">Legacy container links</a> in
+     * the Docker documentation. This parameter maps to <code>Links</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--link</code> option to
      * <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
@@ -2040,9 +2040,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        The <code>links</code> parameter allows containers to communicate with each other without the need for
      *        port mappings. This parameter is only supported if the network mode of a task definition is
      *        <code>bridge</code>. The <code>name:internalName</code> construct is analogous to <code>name:alias</code>
-     *        in Docker links. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. For more
-     *        information about linking Docker containers, go to <a href="https://docs.docker.com/network/links/">Legacy
-     *        container links</a> in the Docker documentation. This parameter maps to <code>Links</code> in the <a
+     *        in Docker links. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     *        allowed. For more information about linking Docker containers, go to <a
+     *        href="https://docs.docker.com/network/links/">Legacy container links</a> in the Docker documentation. This
+     *        parameter maps to <code>Links</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *        <code>--link</code> option to <a
@@ -2072,9 +2073,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * The <code>links</code> parameter allows containers to communicate with each other without the need for port
      * mappings. This parameter is only supported if the network mode of a task definition is <code>bridge</code>. The
      * <code>name:internalName</code> construct is analogous to <code>name:alias</code> in Docker links. Up to 255
-     * letters (uppercase and lowercase), numbers, and hyphens are allowed. For more information about linking Docker
-     * containers, go to <a href="https://docs.docker.com/network/links/">Legacy container links</a> in the Docker
-     * documentation. This parameter maps to <code>Links</code> in the <a
+     * letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. For more information about
+     * linking Docker containers, go to <a href="https://docs.docker.com/network/links/">Legacy container links</a> in
+     * the Docker documentation. This parameter maps to <code>Links</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--link</code> option to
      * <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
@@ -2100,9 +2101,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        The <code>links</code> parameter allows containers to communicate with each other without the need for
      *        port mappings. This parameter is only supported if the network mode of a task definition is
      *        <code>bridge</code>. The <code>name:internalName</code> construct is analogous to <code>name:alias</code>
-     *        in Docker links. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. For more
-     *        information about linking Docker containers, go to <a href="https://docs.docker.com/network/links/">Legacy
-     *        container links</a> in the Docker documentation. This parameter maps to <code>Links</code> in the <a
+     *        in Docker links. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     *        allowed. For more information about linking Docker containers, go to <a
+     *        href="https://docs.docker.com/network/links/">Legacy container links</a> in the Docker documentation. This
+     *        parameter maps to <code>Links</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *        <code>--link</code> option to <a
@@ -2134,9 +2136,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * The <code>links</code> parameter allows containers to communicate with each other without the need for port
      * mappings. This parameter is only supported if the network mode of a task definition is <code>bridge</code>. The
      * <code>name:internalName</code> construct is analogous to <code>name:alias</code> in Docker links. Up to 255
-     * letters (uppercase and lowercase), numbers, and hyphens are allowed. For more information about linking Docker
-     * containers, go to <a href="https://docs.docker.com/network/links/">Legacy container links</a> in the Docker
-     * documentation. This parameter maps to <code>Links</code> in the <a
+     * letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. For more information about
+     * linking Docker containers, go to <a href="https://docs.docker.com/network/links/">Legacy container links</a> in
+     * the Docker documentation. This parameter maps to <code>Links</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--link</code> option to
      * <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
@@ -2157,9 +2159,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        The <code>links</code> parameter allows containers to communicate with each other without the need for
      *        port mappings. This parameter is only supported if the network mode of a task definition is
      *        <code>bridge</code>. The <code>name:internalName</code> construct is analogous to <code>name:alias</code>
-     *        in Docker links. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. For more
-     *        information about linking Docker containers, go to <a href="https://docs.docker.com/network/links/">Legacy
-     *        container links</a> in the Docker documentation. This parameter maps to <code>Links</code> in the <a
+     *        in Docker links. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     *        allowed. For more information about linking Docker containers, go to <a
+     *        href="https://docs.docker.com/network/links/">Legacy container links</a> in the Docker documentation. This
+     *        parameter maps to <code>Links</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      *        <code>--link</code> option to <a

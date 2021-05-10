@@ -98,8 +98,8 @@ public class ListPackageVersionsResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">
-     * <code>PackageVersionSummary</code> </a> objects.
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html"
+     * >PackageVersionSummary</a> objects.
      * </p>
      */
     private java.util.List<PackageVersionSummary> versions;
@@ -604,13 +604,13 @@ public class ListPackageVersionsResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">
-     * <code>PackageVersionSummary</code> </a> objects.
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html"
+     * >PackageVersionSummary</a> objects.
      * </p>
      * 
      * @return The returned list of <a
-     *         href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">
-     *         <code>PackageVersionSummary</code> </a> objects.
+     *         href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html"
+     *         >PackageVersionSummary</a> objects.
      */
 
     public java.util.List<PackageVersionSummary> getVersions() {
@@ -620,14 +620,14 @@ public class ListPackageVersionsResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">
-     * <code>PackageVersionSummary</code> </a> objects.
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html"
+     * >PackageVersionSummary</a> objects.
      * </p>
      * 
      * @param versions
      *        The returned list of <a
-     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">
-     *        <code>PackageVersionSummary</code> </a> objects.
+     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html"
+     *        >PackageVersionSummary</a> objects.
      */
 
     public void setVersions(java.util.Collection<PackageVersionSummary> versions) {
@@ -642,8 +642,8 @@ public class ListPackageVersionsResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">
-     * <code>PackageVersionSummary</code> </a> objects.
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html"
+     * >PackageVersionSummary</a> objects.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -653,8 +653,8 @@ public class ListPackageVersionsResult extends com.amazonaws.AmazonWebServiceRes
      * 
      * @param versions
      *        The returned list of <a
-     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">
-     *        <code>PackageVersionSummary</code> </a> objects.
+     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html"
+     *        >PackageVersionSummary</a> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -671,14 +671,14 @@ public class ListPackageVersionsResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">
-     * <code>PackageVersionSummary</code> </a> objects.
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html"
+     * >PackageVersionSummary</a> objects.
      * </p>
      * 
      * @param versions
      *        The returned list of <a
-     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">
-     *        <code>PackageVersionSummary</code> </a> objects.
+     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html"
+     *        >PackageVersionSummary</a> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

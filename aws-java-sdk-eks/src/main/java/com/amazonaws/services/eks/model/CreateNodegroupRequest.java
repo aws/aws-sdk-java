@@ -55,10 +55,8 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
     private Integer diskSize;
     /**
      * <p>
-     * The subnets to use for the Auto Scaling group that is created for your node group. These subnets must have the
-     * tag key <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of <code>shared</code>, where
-     * <code>CLUSTER_NAME</code> is replaced with the name of your cluster. If you specify <code>launchTemplate</code>,
-     * then don't specify <a
+     * The subnets to use for the Auto Scaling group that is created for your node group. If you specify
+     * <code>launchTemplate</code>, then don't specify <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
      * <code>SubnetId</code> </a> in your launch template, or the node group deployment will fail. For more information
      * about using launch templates with Amazon EKS, see <a
@@ -128,6 +126,12 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private java.util.Map<String, String> labels;
+    /**
+     * <p>
+     * The Kubernetes taints to be applied to the nodes in the node group.
+     * </p>
+     */
+    private java.util.List<Taint> taints;
     /**
      * <p>
      * The metadata to apply to the node group to assist with categorization and organization. Each tag consists of a
@@ -367,10 +371,8 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The subnets to use for the Auto Scaling group that is created for your node group. These subnets must have the
-     * tag key <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of <code>shared</code>, where
-     * <code>CLUSTER_NAME</code> is replaced with the name of your cluster. If you specify <code>launchTemplate</code>,
-     * then don't specify <a
+     * The subnets to use for the Auto Scaling group that is created for your node group. If you specify
+     * <code>launchTemplate</code>, then don't specify <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
      * <code>SubnetId</code> </a> in your launch template, or the node group deployment will fail. For more information
      * about using launch templates with Amazon EKS, see <a
@@ -378,9 +380,7 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
      * Amazon EKS User Guide.
      * </p>
      * 
-     * @return The subnets to use for the Auto Scaling group that is created for your node group. These subnets must
-     *         have the tag key <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of <code>shared</code>,
-     *         where <code>CLUSTER_NAME</code> is replaced with the name of your cluster. If you specify
+     * @return The subnets to use for the Auto Scaling group that is created for your node group. If you specify
      *         <code>launchTemplate</code>, then don't specify <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
      *         <code>SubnetId</code> </a> in your launch template, or the node group deployment will fail. For more
@@ -395,10 +395,8 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The subnets to use for the Auto Scaling group that is created for your node group. These subnets must have the
-     * tag key <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of <code>shared</code>, where
-     * <code>CLUSTER_NAME</code> is replaced with the name of your cluster. If you specify <code>launchTemplate</code>,
-     * then don't specify <a
+     * The subnets to use for the Auto Scaling group that is created for your node group. If you specify
+     * <code>launchTemplate</code>, then don't specify <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
      * <code>SubnetId</code> </a> in your launch template, or the node group deployment will fail. For more information
      * about using launch templates with Amazon EKS, see <a
@@ -407,9 +405,7 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param subnets
-     *        The subnets to use for the Auto Scaling group that is created for your node group. These subnets must have
-     *        the tag key <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of <code>shared</code>, where
-     *        <code>CLUSTER_NAME</code> is replaced with the name of your cluster. If you specify
+     *        The subnets to use for the Auto Scaling group that is created for your node group. If you specify
      *        <code>launchTemplate</code>, then don't specify <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
      *        <code>SubnetId</code> </a> in your launch template, or the node group deployment will fail. For more
@@ -429,10 +425,8 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The subnets to use for the Auto Scaling group that is created for your node group. These subnets must have the
-     * tag key <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of <code>shared</code>, where
-     * <code>CLUSTER_NAME</code> is replaced with the name of your cluster. If you specify <code>launchTemplate</code>,
-     * then don't specify <a
+     * The subnets to use for the Auto Scaling group that is created for your node group. If you specify
+     * <code>launchTemplate</code>, then don't specify <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
      * <code>SubnetId</code> </a> in your launch template, or the node group deployment will fail. For more information
      * about using launch templates with Amazon EKS, see <a
@@ -446,9 +440,7 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param subnets
-     *        The subnets to use for the Auto Scaling group that is created for your node group. These subnets must have
-     *        the tag key <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of <code>shared</code>, where
-     *        <code>CLUSTER_NAME</code> is replaced with the name of your cluster. If you specify
+     *        The subnets to use for the Auto Scaling group that is created for your node group. If you specify
      *        <code>launchTemplate</code>, then don't specify <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
      *        <code>SubnetId</code> </a> in your launch template, or the node group deployment will fail. For more
@@ -470,10 +462,8 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The subnets to use for the Auto Scaling group that is created for your node group. These subnets must have the
-     * tag key <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of <code>shared</code>, where
-     * <code>CLUSTER_NAME</code> is replaced with the name of your cluster. If you specify <code>launchTemplate</code>,
-     * then don't specify <a
+     * The subnets to use for the Auto Scaling group that is created for your node group. If you specify
+     * <code>launchTemplate</code>, then don't specify <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
      * <code>SubnetId</code> </a> in your launch template, or the node group deployment will fail. For more information
      * about using launch templates with Amazon EKS, see <a
@@ -482,9 +472,7 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param subnets
-     *        The subnets to use for the Auto Scaling group that is created for your node group. These subnets must have
-     *        the tag key <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of <code>shared</code>, where
-     *        <code>CLUSTER_NAME</code> is replaced with the name of your cluster. If you specify
+     *        The subnets to use for the Auto Scaling group that is created for your node group. If you specify
      *        <code>launchTemplate</code>, then don't specify <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
      *        <code>SubnetId</code> </a> in your launch template, or the node group deployment will fail. For more
@@ -1012,6 +1000,76 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
+     * The Kubernetes taints to be applied to the nodes in the node group.
+     * </p>
+     * 
+     * @return The Kubernetes taints to be applied to the nodes in the node group.
+     */
+
+    public java.util.List<Taint> getTaints() {
+        return taints;
+    }
+
+    /**
+     * <p>
+     * The Kubernetes taints to be applied to the nodes in the node group.
+     * </p>
+     * 
+     * @param taints
+     *        The Kubernetes taints to be applied to the nodes in the node group.
+     */
+
+    public void setTaints(java.util.Collection<Taint> taints) {
+        if (taints == null) {
+            this.taints = null;
+            return;
+        }
+
+        this.taints = new java.util.ArrayList<Taint>(taints);
+    }
+
+    /**
+     * <p>
+     * The Kubernetes taints to be applied to the nodes in the node group.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTaints(java.util.Collection)} or {@link #withTaints(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param taints
+     *        The Kubernetes taints to be applied to the nodes in the node group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNodegroupRequest withTaints(Taint... taints) {
+        if (this.taints == null) {
+            setTaints(new java.util.ArrayList<Taint>(taints.length));
+        }
+        for (Taint ele : taints) {
+            this.taints.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Kubernetes taints to be applied to the nodes in the node group.
+     * </p>
+     * 
+     * @param taints
+     *        The Kubernetes taints to be applied to the nodes in the node group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNodegroupRequest withTaints(java.util.Collection<Taint> taints) {
+        setTaints(taints);
+        return this;
+    }
+
+    /**
+     * <p>
      * The metadata to apply to the node group to assist with categorization and organization. Each tag consists of a
      * key and an optional value, both of which you define. Node group tags do not propagate to any other resources
      * associated with the node group, such as the Amazon EC2 instances or subnets.
@@ -1428,6 +1486,8 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("NodeRole: ").append(getNodeRole()).append(",");
         if (getLabels() != null)
             sb.append("Labels: ").append(getLabels()).append(",");
+        if (getTaints() != null)
+            sb.append("Taints: ").append(getTaints()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getClientRequestToken() != null)
@@ -1494,6 +1554,10 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getLabels() != null && other.getLabels().equals(this.getLabels()) == false)
             return false;
+        if (other.getTaints() == null ^ this.getTaints() == null)
+            return false;
+        if (other.getTaints() != null && other.getTaints().equals(this.getTaints()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -1536,6 +1600,7 @@ public class CreateNodegroupRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getRemoteAccess() == null) ? 0 : getRemoteAccess().hashCode());
         hashCode = prime * hashCode + ((getNodeRole() == null) ? 0 : getNodeRole().hashCode());
         hashCode = prime * hashCode + ((getLabels() == null) ? 0 : getLabels().hashCode());
+        hashCode = prime * hashCode + ((getTaints() == null) ? 0 : getTaints().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         hashCode = prime * hashCode + ((getLaunchTemplate() == null) ? 0 : getLaunchTemplate().hashCode());

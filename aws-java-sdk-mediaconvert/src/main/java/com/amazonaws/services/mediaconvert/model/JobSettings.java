@@ -41,6 +41,13 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
      */
     private java.util.List<Input> inputs;
     /**
+     * Use these settings only when you use Kantar watermarking. Specify the values that MediaConvert uses to generate
+     * and place Kantar watermarks in your output audio. These settings apply to every output in your job. In addition
+     * to specifying these values, you also need to store your Kantar credentials in AWS Secrets Manager. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
+     */
+    private KantarWatermarkSettings kantarWatermark;
+    /**
      * Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all outputs in
      * all output groups. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
@@ -262,6 +269,61 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
 
     public JobSettings withInputs(java.util.Collection<Input> inputs) {
         setInputs(inputs);
+        return this;
+    }
+
+    /**
+     * Use these settings only when you use Kantar watermarking. Specify the values that MediaConvert uses to generate
+     * and place Kantar watermarks in your output audio. These settings apply to every output in your job. In addition
+     * to specifying these values, you also need to store your Kantar credentials in AWS Secrets Manager. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
+     * 
+     * @param kantarWatermark
+     *        Use these settings only when you use Kantar watermarking. Specify the values that MediaConvert uses to
+     *        generate and place Kantar watermarks in your output audio. These settings apply to every output in your
+     *        job. In addition to specifying these values, you also need to store your Kantar credentials in AWS Secrets
+     *        Manager. For more information, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
+     */
+
+    public void setKantarWatermark(KantarWatermarkSettings kantarWatermark) {
+        this.kantarWatermark = kantarWatermark;
+    }
+
+    /**
+     * Use these settings only when you use Kantar watermarking. Specify the values that MediaConvert uses to generate
+     * and place Kantar watermarks in your output audio. These settings apply to every output in your job. In addition
+     * to specifying these values, you also need to store your Kantar credentials in AWS Secrets Manager. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
+     * 
+     * @return Use these settings only when you use Kantar watermarking. Specify the values that MediaConvert uses to
+     *         generate and place Kantar watermarks in your output audio. These settings apply to every output in your
+     *         job. In addition to specifying these values, you also need to store your Kantar credentials in AWS
+     *         Secrets Manager. For more information, see
+     *         https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
+     */
+
+    public KantarWatermarkSettings getKantarWatermark() {
+        return this.kantarWatermark;
+    }
+
+    /**
+     * Use these settings only when you use Kantar watermarking. Specify the values that MediaConvert uses to generate
+     * and place Kantar watermarks in your output audio. These settings apply to every output in your job. In addition
+     * to specifying these values, you also need to store your Kantar credentials in AWS Secrets Manager. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
+     * 
+     * @param kantarWatermark
+     *        Use these settings only when you use Kantar watermarking. Specify the values that MediaConvert uses to
+     *        generate and place Kantar watermarks in your output audio. These settings apply to every output in your
+     *        job. In addition to specifying these values, you also need to store your Kantar credentials in AWS Secrets
+     *        Manager. For more information, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobSettings withKantarWatermark(KantarWatermarkSettings kantarWatermark) {
+        setKantarWatermark(kantarWatermark);
         return this;
     }
 
@@ -646,6 +708,8 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
             sb.append("Esam: ").append(getEsam()).append(",");
         if (getInputs() != null)
             sb.append("Inputs: ").append(getInputs()).append(",");
+        if (getKantarWatermark() != null)
+            sb.append("KantarWatermark: ").append(getKantarWatermark()).append(",");
         if (getMotionImageInserter() != null)
             sb.append("MotionImageInserter: ").append(getMotionImageInserter()).append(",");
         if (getNielsenConfiguration() != null)
@@ -688,6 +752,10 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getInputs() != null && other.getInputs().equals(this.getInputs()) == false)
             return false;
+        if (other.getKantarWatermark() == null ^ this.getKantarWatermark() == null)
+            return false;
+        if (other.getKantarWatermark() != null && other.getKantarWatermark().equals(this.getKantarWatermark()) == false)
+            return false;
         if (other.getMotionImageInserter() == null ^ this.getMotionImageInserter() == null)
             return false;
         if (other.getMotionImageInserter() != null && other.getMotionImageInserter().equals(this.getMotionImageInserter()) == false)
@@ -724,6 +792,7 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAvailBlanking() == null) ? 0 : getAvailBlanking().hashCode());
         hashCode = prime * hashCode + ((getEsam() == null) ? 0 : getEsam().hashCode());
         hashCode = prime * hashCode + ((getInputs() == null) ? 0 : getInputs().hashCode());
+        hashCode = prime * hashCode + ((getKantarWatermark() == null) ? 0 : getKantarWatermark().hashCode());
         hashCode = prime * hashCode + ((getMotionImageInserter() == null) ? 0 : getMotionImageInserter().hashCode());
         hashCode = prime * hashCode + ((getNielsenConfiguration() == null) ? 0 : getNielsenConfiguration().hashCode());
         hashCode = prime * hashCode + ((getNielsenNonLinearWatermark() == null) ? 0 : getNielsenNonLinearWatermark().hashCode());

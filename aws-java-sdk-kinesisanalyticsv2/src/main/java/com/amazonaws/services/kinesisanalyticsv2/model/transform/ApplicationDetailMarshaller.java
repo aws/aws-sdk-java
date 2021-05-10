@@ -59,6 +59,8 @@ public class ApplicationDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationVersionRolledBackFrom").build();
     private static final MarshallingInfo<String> CONDITIONALTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConditionalToken").build();
+    private static final MarshallingInfo<Long> APPLICATIONVERSIONROLLEDBACKTO_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationVersionRolledBackTo").build();
 
     private static final ApplicationDetailMarshaller instance = new ApplicationDetailMarshaller();
 
@@ -92,6 +94,7 @@ public class ApplicationDetailMarshaller {
             protocolMarshaller.marshall(applicationDetail.getApplicationVersionUpdatedFrom(), APPLICATIONVERSIONUPDATEDFROM_BINDING);
             protocolMarshaller.marshall(applicationDetail.getApplicationVersionRolledBackFrom(), APPLICATIONVERSIONROLLEDBACKFROM_BINDING);
             protocolMarshaller.marshall(applicationDetail.getConditionalToken(), CONDITIONALTOKEN_BINDING);
+            protocolMarshaller.marshall(applicationDetail.getApplicationVersionRolledBackTo(), APPLICATIONVERSIONROLLEDBACKTO_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

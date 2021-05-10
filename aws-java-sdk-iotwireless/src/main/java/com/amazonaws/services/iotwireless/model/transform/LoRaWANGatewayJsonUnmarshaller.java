@@ -56,6 +56,27 @@ public class LoRaWANGatewayJsonUnmarshaller implements Unmarshaller<LoRaWANGatew
                     context.nextToken();
                     loRaWANGateway.setRfRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("JoinEuiFilters", targetDepth)) {
+                    context.nextToken();
+                    loRaWANGateway.setJoinEuiFilters(new ListUnmarshaller<java.util.List<String>>(new ListUnmarshaller<String>(context
+                            .getUnmarshaller(String.class))
+
+                    )
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("NetIdFilters", targetDepth)) {
+                    context.nextToken();
+                    loRaWANGateway.setNetIdFilters(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("SubBands", targetDepth)) {
+                    context.nextToken();
+                    loRaWANGateway.setSubBands(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

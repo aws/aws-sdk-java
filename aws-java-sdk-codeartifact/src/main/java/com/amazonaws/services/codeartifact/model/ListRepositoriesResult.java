@@ -26,8 +26,8 @@ public class ListRepositoriesResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">
-     * <code>RepositorySummary</code> </a> objects.
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html"
+     * >RepositorySummary</a> objects.
      * </p>
      */
     private java.util.List<RepositorySummary> repositories;
@@ -41,13 +41,13 @@ public class ListRepositoriesResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">
-     * <code>RepositorySummary</code> </a> objects.
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html"
+     * >RepositorySummary</a> objects.
      * </p>
      * 
      * @return The returned list of <a
-     *         href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">
-     *         <code>RepositorySummary</code> </a> objects.
+     *         href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html"
+     *         >RepositorySummary</a> objects.
      */
 
     public java.util.List<RepositorySummary> getRepositories() {
@@ -57,14 +57,14 @@ public class ListRepositoriesResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">
-     * <code>RepositorySummary</code> </a> objects.
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html"
+     * >RepositorySummary</a> objects.
      * </p>
      * 
      * @param repositories
      *        The returned list of <a
-     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">
-     *        <code>RepositorySummary</code> </a> objects.
+     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html"
+     *        >RepositorySummary</a> objects.
      */
 
     public void setRepositories(java.util.Collection<RepositorySummary> repositories) {
@@ -79,8 +79,8 @@ public class ListRepositoriesResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">
-     * <code>RepositorySummary</code> </a> objects.
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html"
+     * >RepositorySummary</a> objects.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -90,8 +90,8 @@ public class ListRepositoriesResult extends com.amazonaws.AmazonWebServiceResult
      * 
      * @param repositories
      *        The returned list of <a
-     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">
-     *        <code>RepositorySummary</code> </a> objects.
+     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html"
+     *        >RepositorySummary</a> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,14 +108,14 @@ public class ListRepositoriesResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">
-     * <code>RepositorySummary</code> </a> objects.
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html"
+     * >RepositorySummary</a> objects.
      * </p>
      * 
      * @param repositories
      *        The returned list of <a
-     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">
-     *        <code>RepositorySummary</code> </a> objects.
+     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html"
+     *        >RepositorySummary</a> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -52,6 +52,10 @@ public class DocumentVersionInfoJsonUnmarshaller implements Unmarshaller<Documen
                     context.nextToken();
                     documentVersionInfo.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DisplayName", targetDepth)) {
+                    context.nextToken();
+                    documentVersionInfo.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("DocumentVersion", targetDepth)) {
                     context.nextToken();
                     documentVersionInfo.setDocumentVersion(context.getUnmarshaller(String.class).unmarshall(context));

@@ -20,8 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Details about a repository, including its Amazon Resource Name (ARN), description, and domain information. The <a
- * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListRepositories.html">
- * <code>ListRepositories</code> </a> operation returns a list of <code>RepositorySummary</code> objects.
+ * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListRepositories.html">ListRepositories</a>
+ * operation returns a list of <code>RepositorySummary</code> objects.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/RepositorySummary" target="_top">AWS API

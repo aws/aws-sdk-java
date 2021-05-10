@@ -64,6 +64,10 @@ public class DocumentDescriptionJsonUnmarshaller implements Unmarshaller<Documen
                     context.nextToken();
                     documentDescription.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DisplayName", targetDepth)) {
+                    context.nextToken();
+                    documentDescription.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("VersionName", targetDepth)) {
                     context.nextToken();
                     documentDescription.setVersionName(context.getUnmarshaller(String.class).unmarshall(context));

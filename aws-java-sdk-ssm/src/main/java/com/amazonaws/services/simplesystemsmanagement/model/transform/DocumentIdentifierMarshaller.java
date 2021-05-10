@@ -30,6 +30,10 @@ public class DocumentIdentifierMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<java.util.Date> CREATEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedDate").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisplayName").build();
     private static final MarshallingInfo<String> OWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Owner").build();
     private static final MarshallingInfo<String> VERSIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -72,6 +76,8 @@ public class DocumentIdentifierMarshaller {
 
         try {
             protocolMarshaller.marshall(documentIdentifier.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(documentIdentifier.getCreatedDate(), CREATEDDATE_BINDING);
+            protocolMarshaller.marshall(documentIdentifier.getDisplayName(), DISPLAYNAME_BINDING);
             protocolMarshaller.marshall(documentIdentifier.getOwner(), OWNER_BINDING);
             protocolMarshaller.marshall(documentIdentifier.getVersionName(), VERSIONNAME_BINDING);
             protocolMarshaller.marshall(documentIdentifier.getPlatformTypes(), PLATFORMTYPES_BINDING);

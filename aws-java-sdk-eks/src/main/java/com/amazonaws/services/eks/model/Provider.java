@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Identifies the AWS Key Management Service (AWS KMS) customer master key (CMK) used to encrypt the secrets.
+ * Identifies the AWS Key Management Service (AWS KMS) key used to encrypt the secrets.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/Provider" target="_top">AWS API Documentation</a>
@@ -29,30 +29,30 @@ public class Provider implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) or alias of the customer master key (CMK). The CMK must be symmetric, created in the
-     * same region as the cluster, and if the CMK was created in a different account, the user must have access to the
-     * CMK. For more information, see <a
+     * Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric, created in the same region as
+     * the cluster, and if the KMS key was created in a different account, the user must have access to the KMS key. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
-     * Users in Other Accounts to Use a CMK</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * Users in Other Accounts to Use a KMS key</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      */
     private String keyArn;
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) or alias of the customer master key (CMK). The CMK must be symmetric, created in the
-     * same region as the cluster, and if the CMK was created in a different account, the user must have access to the
-     * CMK. For more information, see <a
+     * Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric, created in the same region as
+     * the cluster, and if the KMS key was created in a different account, the user must have access to the KMS key. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
-     * Users in Other Accounts to Use a CMK</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * Users in Other Accounts to Use a KMS key</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param keyArn
-     *        Amazon Resource Name (ARN) or alias of the customer master key (CMK). The CMK must be symmetric, created
-     *        in the same region as the cluster, and if the CMK was created in a different account, the user must have
-     *        access to the CMK. For more information, see <a
+     *        Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric, created in the same
+     *        region as the cluster, and if the KMS key was created in a different account, the user must have access to
+     *        the KMS key. For more information, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html"
-     *        >Allowing Users in Other Accounts to Use a CMK</a> in the <i>AWS Key Management Service Developer
+     *        >Allowing Users in Other Accounts to Use a KMS key</a> in the <i>AWS Key Management Service Developer
      *        Guide</i>.
      */
 
@@ -62,18 +62,18 @@ public class Provider implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) or alias of the customer master key (CMK). The CMK must be symmetric, created in the
-     * same region as the cluster, and if the CMK was created in a different account, the user must have access to the
-     * CMK. For more information, see <a
+     * Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric, created in the same region as
+     * the cluster, and if the KMS key was created in a different account, the user must have access to the KMS key. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
-     * Users in Other Accounts to Use a CMK</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * Users in Other Accounts to Use a KMS key</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
-     * @return Amazon Resource Name (ARN) or alias of the customer master key (CMK). The CMK must be symmetric, created
-     *         in the same region as the cluster, and if the CMK was created in a different account, the user must have
-     *         access to the CMK. For more information, see <a href=
+     * @return Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric, created in the same
+     *         region as the cluster, and if the KMS key was created in a different account, the user must have access
+     *         to the KMS key. For more information, see <a href=
      *         "https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html"
-     *         >Allowing Users in Other Accounts to Use a CMK</a> in the <i>AWS Key Management Service Developer
+     *         >Allowing Users in Other Accounts to Use a KMS key</a> in the <i>AWS Key Management Service Developer
      *         Guide</i>.
      */
 
@@ -83,19 +83,19 @@ public class Provider implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) or alias of the customer master key (CMK). The CMK must be symmetric, created in the
-     * same region as the cluster, and if the CMK was created in a different account, the user must have access to the
-     * CMK. For more information, see <a
+     * Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric, created in the same region as
+     * the cluster, and if the KMS key was created in a different account, the user must have access to the KMS key. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
-     * Users in Other Accounts to Use a CMK</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * Users in Other Accounts to Use a KMS key</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param keyArn
-     *        Amazon Resource Name (ARN) or alias of the customer master key (CMK). The CMK must be symmetric, created
-     *        in the same region as the cluster, and if the CMK was created in a different account, the user must have
-     *        access to the CMK. For more information, see <a
+     *        Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric, created in the same
+     *        region as the cluster, and if the KMS key was created in a different account, the user must have access to
+     *        the KMS key. For more information, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html"
-     *        >Allowing Users in Other Accounts to Use a CMK</a> in the <i>AWS Key Management Service Developer
+     *        >Allowing Users in Other Accounts to Use a KMS key</a> in the <i>AWS Key Management Service Developer
      *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

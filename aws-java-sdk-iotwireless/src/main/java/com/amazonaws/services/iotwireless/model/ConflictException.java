@@ -23,8 +23,17 @@ import javax.annotation.Generated;
 public class ConflictException extends com.amazonaws.services.iotwireless.model.AWSIoTWirelessException {
     private static final long serialVersionUID = 1L;
 
+    /**
+     * <p>
+     * Id of the resource in the conflicting operation.
+     * </p>
+     */
     private String resourceId;
-
+    /**
+     * <p>
+     * Type of the resource in the conflicting operation.
+     * </p>
+     */
     private String resourceType;
 
     /**
@@ -38,7 +47,12 @@ public class ConflictException extends com.amazonaws.services.iotwireless.model.
     }
 
     /**
+     * <p>
+     * Id of the resource in the conflicting operation.
+     * </p>
+     * 
      * @param resourceId
+     *        Id of the resource in the conflicting operation.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("ResourceId")
@@ -47,7 +61,11 @@ public class ConflictException extends com.amazonaws.services.iotwireless.model.
     }
 
     /**
-     * @return
+     * <p>
+     * Id of the resource in the conflicting operation.
+     * </p>
+     * 
+     * @return Id of the resource in the conflicting operation.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("ResourceId")
@@ -56,7 +74,12 @@ public class ConflictException extends com.amazonaws.services.iotwireless.model.
     }
 
     /**
+     * <p>
+     * Id of the resource in the conflicting operation.
+     * </p>
+     * 
      * @param resourceId
+     *        Id of the resource in the conflicting operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,7 +89,12 @@ public class ConflictException extends com.amazonaws.services.iotwireless.model.
     }
 
     /**
+     * <p>
+     * Type of the resource in the conflicting operation.
+     * </p>
+     * 
      * @param resourceType
+     *        Type of the resource in the conflicting operation.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("ResourceType")
@@ -75,7 +103,11 @@ public class ConflictException extends com.amazonaws.services.iotwireless.model.
     }
 
     /**
-     * @return
+     * <p>
+     * Type of the resource in the conflicting operation.
+     * </p>
+     * 
+     * @return Type of the resource in the conflicting operation.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("ResourceType")
@@ -84,7 +116,12 @@ public class ConflictException extends com.amazonaws.services.iotwireless.model.
     }
 
     /**
+     * <p>
+     * Type of the resource in the conflicting operation.
+     * </p>
+     * 
      * @param resourceType
+     *        Type of the resource in the conflicting operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

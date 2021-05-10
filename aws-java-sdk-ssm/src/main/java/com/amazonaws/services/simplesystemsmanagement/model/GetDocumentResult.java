@@ -31,6 +31,19 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String name;
     /**
      * <p>
+     * The date the Systems Manager document was created.
+     * </p>
+     */
+    private java.util.Date createdDate;
+    /**
+     * <p>
+     * The friendly name of the Systems Manager document. This value can differ for each version of the document. If you
+     * want to update this value, see <a>UpdateDocument</a>.
+     * </p>
+     */
+    private String displayName;
+    /**
+     * <p>
      * The version of the artifact associated with the document. For example, "Release 12, Update 6". This value is
      * unique across all versions of a document, and cannot be changed.
      * </p>
@@ -140,6 +153,92 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     public GetDocumentResult withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date the Systems Manager document was created.
+     * </p>
+     * 
+     * @param createdDate
+     *        The date the Systems Manager document was created.
+     */
+
+    public void setCreatedDate(java.util.Date createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    /**
+     * <p>
+     * The date the Systems Manager document was created.
+     * </p>
+     * 
+     * @return The date the Systems Manager document was created.
+     */
+
+    public java.util.Date getCreatedDate() {
+        return this.createdDate;
+    }
+
+    /**
+     * <p>
+     * The date the Systems Manager document was created.
+     * </p>
+     * 
+     * @param createdDate
+     *        The date the Systems Manager document was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDocumentResult withCreatedDate(java.util.Date createdDate) {
+        setCreatedDate(createdDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The friendly name of the Systems Manager document. This value can differ for each version of the document. If you
+     * want to update this value, see <a>UpdateDocument</a>.
+     * </p>
+     * 
+     * @param displayName
+     *        The friendly name of the Systems Manager document. This value can differ for each version of the document.
+     *        If you want to update this value, see <a>UpdateDocument</a>.
+     */
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
+
+    /**
+     * <p>
+     * The friendly name of the Systems Manager document. This value can differ for each version of the document. If you
+     * want to update this value, see <a>UpdateDocument</a>.
+     * </p>
+     * 
+     * @return The friendly name of the Systems Manager document. This value can differ for each version of the
+     *         document. If you want to update this value, see <a>UpdateDocument</a>.
+     */
+
+    public String getDisplayName() {
+        return this.displayName;
+    }
+
+    /**
+     * <p>
+     * The friendly name of the Systems Manager document. This value can differ for each version of the document. If you
+     * want to update this value, see <a>UpdateDocument</a>.
+     * </p>
+     * 
+     * @param displayName
+     *        The friendly name of the Systems Manager document. This value can differ for each version of the document.
+     *        If you want to update this value, see <a>UpdateDocument</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDocumentResult withDisplayName(String displayName) {
+        setDisplayName(displayName);
         return this;
     }
 
@@ -866,6 +965,10 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
         sb.append("{");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getCreatedDate() != null)
+            sb.append("CreatedDate: ").append(getCreatedDate()).append(",");
+        if (getDisplayName() != null)
+            sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getVersionName() != null)
             sb.append("VersionName: ").append(getVersionName()).append(",");
         if (getDocumentVersion() != null)
@@ -903,6 +1006,14 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getCreatedDate() == null ^ this.getCreatedDate() == null)
+            return false;
+        if (other.getCreatedDate() != null && other.getCreatedDate().equals(this.getCreatedDate()) == false)
+            return false;
+        if (other.getDisplayName() == null ^ this.getDisplayName() == null)
+            return false;
+        if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
             return false;
         if (other.getVersionName() == null ^ this.getVersionName() == null)
             return false;
@@ -953,6 +1064,8 @@ public class GetDocumentResult extends com.amazonaws.AmazonWebServiceResult<com.
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
+        hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getVersionName() == null) ? 0 : getVersionName().hashCode());
         hashCode = prime * hashCode + ((getDocumentVersion() == null) ? 0 : getDocumentVersion().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());

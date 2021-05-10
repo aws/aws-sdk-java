@@ -52,6 +52,14 @@ public class GetDocumentResultJsonUnmarshaller implements Unmarshaller<GetDocume
                     context.nextToken();
                     getDocumentResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CreatedDate", targetDepth)) {
+                    context.nextToken();
+                    getDocumentResult.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("DisplayName", targetDepth)) {
+                    context.nextToken();
+                    getDocumentResult.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("VersionName", targetDepth)) {
                     context.nextToken();
                     getDocumentResult.setVersionName(context.getUnmarshaller(String.class).unmarshall(context));

@@ -41,6 +41,8 @@ public class VideoSelectorMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("programNumber").build();
     private static final MarshallingInfo<String> ROTATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("rotate").build();
+    private static final MarshallingInfo<String> SAMPLERANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sampleRange").build();
 
     private static final VideoSelectorMarshaller instance = new VideoSelectorMarshaller();
 
@@ -65,6 +67,7 @@ public class VideoSelectorMarshaller {
             protocolMarshaller.marshall(videoSelector.getPid(), PID_BINDING);
             protocolMarshaller.marshall(videoSelector.getProgramNumber(), PROGRAMNUMBER_BINDING);
             protocolMarshaller.marshall(videoSelector.getRotate(), ROTATE_BINDING);
+            protocolMarshaller.marshall(videoSelector.getSampleRange(), SAMPLERANGE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

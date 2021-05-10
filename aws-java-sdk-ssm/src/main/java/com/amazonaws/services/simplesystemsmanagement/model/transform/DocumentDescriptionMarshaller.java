@@ -36,6 +36,8 @@ public class DocumentDescriptionMarshaller {
             .marshallLocationName("HashType").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisplayName").build();
     private static final MarshallingInfo<String> VERSIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VersionName").build();
     private static final MarshallingInfo<String> OWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -103,6 +105,7 @@ public class DocumentDescriptionMarshaller {
             protocolMarshaller.marshall(documentDescription.getHash(), HASH_BINDING);
             protocolMarshaller.marshall(documentDescription.getHashType(), HASHTYPE_BINDING);
             protocolMarshaller.marshall(documentDescription.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(documentDescription.getDisplayName(), DISPLAYNAME_BINDING);
             protocolMarshaller.marshall(documentDescription.getVersionName(), VERSIONNAME_BINDING);
             protocolMarshaller.marshall(documentDescription.getOwner(), OWNER_BINDING);
             protocolMarshaller.marshall(documentDescription.getCreatedDate(), CREATEDDATE_BINDING);

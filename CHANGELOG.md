@@ -1,3 +1,36 @@
+# __1.11.1016__ __2021-05-10__
+## __AWS Config__
+  - ### Features
+    - Adds paginator to multiple APIs: By default, the paginator allows user to iterate over the results and allows the CLI to return up to 1000 results.
+
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - AWS Elemental MediaConvert SDK has added support for Kantar SNAP File Audio Watermarking with a Kantar Watermarking account, and Display Definition Segment(DDS) segment data controls for DVB-Sub caption outputs.
+
+## __AWS IoT Wireless__
+  - ### Features
+    - Add three new optional fields to support filtering and configurable sub-band in WirelessGateway APIs. The filtering is for all the RF region supported. The sub-band configuration is only applicable to LoRa gateways of US915 or AU915 RF region.
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - This release contains updates for Amazon ECS.
+
+## __Amazon Elastic Kubernetes Service__
+  - ### Features
+    - This release updates create-nodegroup and update-nodegroup-config APIs for adding/updating taints on managed nodegroups.
+
+## __Amazon Kinesis Analytics__
+  - ### Features
+    - Amazon Kinesis Analytics now supports ListApplicationVersions and DescribeApplicationVersion API for Apache Flink applications
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - This release adds new APIs to associate, disassociate and list related items in SSM OpsCenter; and this release adds DisplayName as a version-level attribute for SSM Documents and introduces two new document types: ProblemAnalysis, ProblemAnalysisTemplate.
+
+## __CodeArtifact__
+  - ### Features
+    - Documentation updates for CodeArtifact
+
 # __1.11.1015__ __2021-05-07__
 ## __AWS Lake Formation__
   - ### Features

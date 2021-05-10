@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the time window for automatic application maintenance.
+ * The details of the maintenance configuration for the application.
  * </p>
  * 
  * @see <a
@@ -31,24 +31,24 @@ public class ApplicationMaintenanceConfigurationDescription implements Serializa
 
     /**
      * <p>
-     * The start time for the automatic maintenance window.
+     * The start time for the maintenance window.
      * </p>
      */
     private String applicationMaintenanceWindowStartTime;
     /**
      * <p>
-     * The end time for the automatic maintenance window.
+     * The end time for the maintenance window.
      * </p>
      */
     private String applicationMaintenanceWindowEndTime;
 
     /**
      * <p>
-     * The start time for the automatic maintenance window.
+     * The start time for the maintenance window.
      * </p>
      * 
      * @param applicationMaintenanceWindowStartTime
-     *        The start time for the automatic maintenance window.
+     *        The start time for the maintenance window.
      */
 
     public void setApplicationMaintenanceWindowStartTime(String applicationMaintenanceWindowStartTime) {
@@ -57,10 +57,10 @@ public class ApplicationMaintenanceConfigurationDescription implements Serializa
 
     /**
      * <p>
-     * The start time for the automatic maintenance window.
+     * The start time for the maintenance window.
      * </p>
      * 
-     * @return The start time for the automatic maintenance window.
+     * @return The start time for the maintenance window.
      */
 
     public String getApplicationMaintenanceWindowStartTime() {
@@ -69,11 +69,11 @@ public class ApplicationMaintenanceConfigurationDescription implements Serializa
 
     /**
      * <p>
-     * The start time for the automatic maintenance window.
+     * The start time for the maintenance window.
      * </p>
      * 
      * @param applicationMaintenanceWindowStartTime
-     *        The start time for the automatic maintenance window.
+     *        The start time for the maintenance window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,11 +84,11 @@ public class ApplicationMaintenanceConfigurationDescription implements Serializa
 
     /**
      * <p>
-     * The end time for the automatic maintenance window.
+     * The end time for the maintenance window.
      * </p>
      * 
      * @param applicationMaintenanceWindowEndTime
-     *        The end time for the automatic maintenance window.
+     *        The end time for the maintenance window.
      */
 
     public void setApplicationMaintenanceWindowEndTime(String applicationMaintenanceWindowEndTime) {
@@ -97,10 +97,10 @@ public class ApplicationMaintenanceConfigurationDescription implements Serializa
 
     /**
      * <p>
-     * The end time for the automatic maintenance window.
+     * The end time for the maintenance window.
      * </p>
      * 
-     * @return The end time for the automatic maintenance window.
+     * @return The end time for the maintenance window.
      */
 
     public String getApplicationMaintenanceWindowEndTime() {
@@ -109,11 +109,11 @@ public class ApplicationMaintenanceConfigurationDescription implements Serializa
 
     /**
      * <p>
-     * The end time for the automatic maintenance window.
+     * The end time for the maintenance window.
      * </p>
      * 
      * @param applicationMaintenanceWindowEndTime
-     *        The end time for the automatic maintenance window.
+     *        The end time for the maintenance window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -36,6 +36,13 @@ public class DocumentVersionInfo implements Serializable, Cloneable, StructuredP
     private String name;
     /**
      * <p>
+     * The friendly name of the Systems Manager document. This value can differ for each version of the document. If you
+     * want to update this value, see <a>UpdateDocument</a>.
+     * </p>
+     */
+    private String displayName;
+    /**
+     * <p>
      * The document version.
      * </p>
      */
@@ -124,6 +131,52 @@ public class DocumentVersionInfo implements Serializable, Cloneable, StructuredP
 
     public DocumentVersionInfo withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The friendly name of the Systems Manager document. This value can differ for each version of the document. If you
+     * want to update this value, see <a>UpdateDocument</a>.
+     * </p>
+     * 
+     * @param displayName
+     *        The friendly name of the Systems Manager document. This value can differ for each version of the document.
+     *        If you want to update this value, see <a>UpdateDocument</a>.
+     */
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
+
+    /**
+     * <p>
+     * The friendly name of the Systems Manager document. This value can differ for each version of the document. If you
+     * want to update this value, see <a>UpdateDocument</a>.
+     * </p>
+     * 
+     * @return The friendly name of the Systems Manager document. This value can differ for each version of the
+     *         document. If you want to update this value, see <a>UpdateDocument</a>.
+     */
+
+    public String getDisplayName() {
+        return this.displayName;
+    }
+
+    /**
+     * <p>
+     * The friendly name of the Systems Manager document. This value can differ for each version of the document. If you
+     * want to update this value, see <a>UpdateDocument</a>.
+     * </p>
+     * 
+     * @param displayName
+     *        The friendly name of the Systems Manager document. This value can differ for each version of the document.
+     *        If you want to update this value, see <a>UpdateDocument</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentVersionInfo withDisplayName(String displayName) {
+        setDisplayName(displayName);
         return this;
     }
 
@@ -556,6 +609,8 @@ public class DocumentVersionInfo implements Serializable, Cloneable, StructuredP
         sb.append("{");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getDisplayName() != null)
+            sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getDocumentVersion() != null)
             sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
         if (getVersionName() != null)
@@ -589,6 +644,10 @@ public class DocumentVersionInfo implements Serializable, Cloneable, StructuredP
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getDisplayName() == null ^ this.getDisplayName() == null)
+            return false;
+        if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
             return false;
         if (other.getDocumentVersion() == null ^ this.getDocumentVersion() == null)
             return false;
@@ -631,6 +690,7 @@ public class DocumentVersionInfo implements Serializable, Cloneable, StructuredP
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getDocumentVersion() == null) ? 0 : getDocumentVersion().hashCode());
         hashCode = prime * hashCode + ((getVersionName() == null) ? 0 : getVersionName().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());

@@ -84,8 +84,8 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
     private String serviceAccountRoleArn;
     /**
      * <p>
-     * The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a
-     * key and an optional value, both of which you define. Cluster tags do not propagate to any other resources
+     * The metadata that you apply to the add-on to assist with categorization and organization. Each tag consists of a
+     * key and an optional value, both of which you define. Add-on tags do not propagate to any other resources
      * associated with the cluster.
      * </p>
      */
@@ -478,13 +478,13 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a
-     * key and an optional value, both of which you define. Cluster tags do not propagate to any other resources
+     * The metadata that you apply to the add-on to assist with categorization and organization. Each tag consists of a
+     * key and an optional value, both of which you define. Add-on tags do not propagate to any other resources
      * associated with the cluster.
      * </p>
      * 
-     * @return The metadata that you apply to the cluster to assist with categorization and organization. Each tag
-     *         consists of a key and an optional value, both of which you define. Cluster tags do not propagate to any
+     * @return The metadata that you apply to the add-on to assist with categorization and organization. Each tag
+     *         consists of a key and an optional value, both of which you define. Add-on tags do not propagate to any
      *         other resources associated with the cluster.
      */
 
@@ -494,14 +494,14 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a
-     * key and an optional value, both of which you define. Cluster tags do not propagate to any other resources
+     * The metadata that you apply to the add-on to assist with categorization and organization. Each tag consists of a
+     * key and an optional value, both of which you define. Add-on tags do not propagate to any other resources
      * associated with the cluster.
      * </p>
      * 
      * @param tags
-     *        The metadata that you apply to the cluster to assist with categorization and organization. Each tag
-     *        consists of a key and an optional value, both of which you define. Cluster tags do not propagate to any
+     *        The metadata that you apply to the add-on to assist with categorization and organization. Each tag
+     *        consists of a key and an optional value, both of which you define. Add-on tags do not propagate to any
      *        other resources associated with the cluster.
      */
 
@@ -511,14 +511,14 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a
-     * key and an optional value, both of which you define. Cluster tags do not propagate to any other resources
+     * The metadata that you apply to the add-on to assist with categorization and organization. Each tag consists of a
+     * key and an optional value, both of which you define. Add-on tags do not propagate to any other resources
      * associated with the cluster.
      * </p>
      * 
      * @param tags
-     *        The metadata that you apply to the cluster to assist with categorization and organization. Each tag
-     *        consists of a key and an optional value, both of which you define. Cluster tags do not propagate to any
+     *        The metadata that you apply to the add-on to assist with categorization and organization. Each tag
+     *        consists of a key and an optional value, both of which you define. Add-on tags do not propagate to any
      *        other resources associated with the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

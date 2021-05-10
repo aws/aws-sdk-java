@@ -51,6 +51,8 @@ public class CreateNodegroupRequestMarshaller {
             .marshallLocationName("nodeRole").build();
     private static final MarshallingInfo<Map> LABELS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("labels").build();
+    private static final MarshallingInfo<List> TAINTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("taints").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -91,6 +93,7 @@ public class CreateNodegroupRequestMarshaller {
             protocolMarshaller.marshall(createNodegroupRequest.getRemoteAccess(), REMOTEACCESS_BINDING);
             protocolMarshaller.marshall(createNodegroupRequest.getNodeRole(), NODEROLE_BINDING);
             protocolMarshaller.marshall(createNodegroupRequest.getLabels(), LABELS_BINDING);
+            protocolMarshaller.marshall(createNodegroupRequest.getTaints(), TAINTS_BINDING);
             protocolMarshaller.marshall(createNodegroupRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createNodegroupRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(createNodegroupRequest.getLaunchTemplate(), LAUNCHTEMPLATE_BINDING);

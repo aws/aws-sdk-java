@@ -66,6 +66,10 @@ public class JobTemplateSettingsJsonUnmarshaller implements Unmarshaller<JobTemp
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("kantarWatermark", targetDepth)) {
+                    context.nextToken();
+                    jobTemplateSettings.setKantarWatermark(KantarWatermarkSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("motionImageInserter", targetDepth)) {
                     context.nextToken();
                     jobTemplateSettings.setMotionImageInserter(MotionImageInserterJsonUnmarshaller.getInstance().unmarshall(context));

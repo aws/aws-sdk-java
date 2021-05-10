@@ -69,12 +69,37 @@ import com.amazonaws.services.simplesystemsmanagement.model.transform.*;
  * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting up AWS
  * Systems Manager</a> in the <i>AWS Systems Manager User Guide</i>.
  * </p>
+ * <p class="title">
+ * <b>Related resources</b>
+ * </p>
+ * <ul>
+ * <li>
  * <p>
- * For information about other API actions you can perform on EC2 instances, see the <a
- * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API Reference</a>. For information about
- * how to use a Query API, see <a
+ * For information about how to use a Query API, see <a
  * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/making-api-requests.html">Making API requests</a>.
  * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For information about other API actions you can perform on EC2 instances, see the <a
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API Reference</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For information about AWS AppConfig, a capability of Systems Manager, see the <a
+ * href="https://docs.aws.amazon.com/appconfig/latest/userguide/">AWS AppConfig User Guide</a> and the <a
+ * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/">AWS AppConfig API Reference</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For information about AWS Incident Manager, a capability of Systems Manager, see the <a
+ * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/">AWS Incident Manager User Guide</a> and the <a
+ * href="https://docs.aws.amazon.com/incident-manager/latest/APIReference/">AWS Incident Manager API Reference</a>.
+ * </p>
+ * </li>
+ * </ul>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -373,6 +398,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                             new JsonErrorShapeMetadata().withErrorCode("InvalidOutputFolder").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.InvalidOutputFolderExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OpsItemRelatedItemAssociationNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.simplesystemsmanagement.model.transform.OpsItemRelatedItemAssociationNotFoundExceptionUnmarshaller
+                                            .getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AutomationExecutionLimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.AutomationExecutionLimitExceededExceptionUnmarshaller
                                             .getInstance()))
@@ -414,6 +443,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidActivation").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.InvalidActivationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OpsItemRelatedItemAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.simplesystemsmanagement.model.transform.OpsItemRelatedItemAlreadyExistsExceptionUnmarshaller
+                                            .getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TooManyUpdates").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.TooManyUpdatesExceptionUnmarshaller.getInstance()))
@@ -776,6 +809,77 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<AddTagsToResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AddTagsToResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Associates a related resource to a Systems Manager OpsCenter OpsItem. For example, you can associate an Incident
+     * Manager incident or analysis with an OpsItem. Incident Manager is a capability of AWS Systems Manager.
+     * </p>
+     * 
+     * @param associateOpsItemRelatedItemRequest
+     * @return Result of the AssociateOpsItemRelatedItem operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws OpsItemNotFoundException
+     *         The specified OpsItem ID doesn't exist. Verify the ID and try again.
+     * @throws OpsItemLimitExceededException
+     *         The request caused OpsItems to exceed one or more quotas. For information about OpsItem quotas, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits"
+     *         >What are the resource limits for OpsCenter?</a>.
+     * @throws OpsItemInvalidParameterException
+     *         A specified parameter argument isn't valid. Verify the available arguments and try again.
+     * @throws OpsItemRelatedItemAlreadyExistsException
+     *         The Amazon Resource Name (ARN) is already associated with the OpsItem.
+     * @sample AWSSimpleSystemsManagement.AssociateOpsItemRelatedItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AssociateOpsItemRelatedItem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateOpsItemRelatedItemResult associateOpsItemRelatedItem(AssociateOpsItemRelatedItemRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateOpsItemRelatedItem(request);
+    }
+
+    @SdkInternalApi
+    final AssociateOpsItemRelatedItemResult executeAssociateOpsItemRelatedItem(AssociateOpsItemRelatedItemRequest associateOpsItemRelatedItemRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateOpsItemRelatedItemRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateOpsItemRelatedItemRequest> request = null;
+        Response<AssociateOpsItemRelatedItemResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateOpsItemRelatedItemRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(associateOpsItemRelatedItemRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateOpsItemRelatedItem");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateOpsItemRelatedItemResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AssociateOpsItemRelatedItemResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4782,6 +4886,73 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Deletes the association between an OpsItem and a related resource. For example, this API action can delete an
+     * Incident Manager incident from an OpsItem. Incident Manager is a capability of AWS Systems Manager.
+     * </p>
+     * 
+     * @param disassociateOpsItemRelatedItemRequest
+     * @return Result of the DisassociateOpsItemRelatedItem operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws OpsItemRelatedItemAssociationNotFoundException
+     *         The association was not found using the parameters you specified in the call. Verify the information and
+     *         try again.
+     * @throws OpsItemNotFoundException
+     *         The specified OpsItem ID doesn't exist. Verify the ID and try again.
+     * @throws OpsItemInvalidParameterException
+     *         A specified parameter argument isn't valid. Verify the available arguments and try again.
+     * @sample AWSSimpleSystemsManagement.DisassociateOpsItemRelatedItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DisassociateOpsItemRelatedItem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateOpsItemRelatedItemResult disassociateOpsItemRelatedItem(DisassociateOpsItemRelatedItemRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateOpsItemRelatedItem(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateOpsItemRelatedItemResult executeDisassociateOpsItemRelatedItem(DisassociateOpsItemRelatedItemRequest disassociateOpsItemRelatedItemRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateOpsItemRelatedItemRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateOpsItemRelatedItemRequest> request = null;
+        Response<DisassociateOpsItemRelatedItemResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateOpsItemRelatedItemRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateOpsItemRelatedItemRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateOpsItemRelatedItem");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateOpsItemRelatedItemResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateOpsItemRelatedItemResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Get detailed information about a particular Automation execution.
      * </p>
      * 
@@ -7240,6 +7411,67 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<ListOpsItemEventsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListOpsItemEventsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all related-item resources associated with an OpsItem.
+     * </p>
+     * 
+     * @param listOpsItemRelatedItemsRequest
+     * @return Result of the ListOpsItemRelatedItems operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws OpsItemInvalidParameterException
+     *         A specified parameter argument isn't valid. Verify the available arguments and try again.
+     * @sample AWSSimpleSystemsManagement.ListOpsItemRelatedItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsItemRelatedItems" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListOpsItemRelatedItemsResult listOpsItemRelatedItems(ListOpsItemRelatedItemsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListOpsItemRelatedItems(request);
+    }
+
+    @SdkInternalApi
+    final ListOpsItemRelatedItemsResult executeListOpsItemRelatedItems(ListOpsItemRelatedItemsRequest listOpsItemRelatedItemsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listOpsItemRelatedItemsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListOpsItemRelatedItemsRequest> request = null;
+        Response<ListOpsItemRelatedItemsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListOpsItemRelatedItemsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listOpsItemRelatedItemsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOpsItemRelatedItems");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListOpsItemRelatedItemsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListOpsItemRelatedItemsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

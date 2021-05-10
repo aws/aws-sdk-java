@@ -36,6 +36,19 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
     private String name;
     /**
      * <p>
+     * The date the Systems Manager document was created.
+     * </p>
+     */
+    private java.util.Date createdDate;
+    /**
+     * <p>
+     * An optional field where you can specify a friendly name for the Systems Manager document. This value can differ
+     * for each version of the document. If you want to update this value, see <a>UpdateDocument</a>.
+     * </p>
+     */
+    private String displayName;
+    /**
+     * <p>
      * The AWS user account that created the document.
      * </p>
      */
@@ -149,6 +162,92 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
 
     public DocumentIdentifier withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date the Systems Manager document was created.
+     * </p>
+     * 
+     * @param createdDate
+     *        The date the Systems Manager document was created.
+     */
+
+    public void setCreatedDate(java.util.Date createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    /**
+     * <p>
+     * The date the Systems Manager document was created.
+     * </p>
+     * 
+     * @return The date the Systems Manager document was created.
+     */
+
+    public java.util.Date getCreatedDate() {
+        return this.createdDate;
+    }
+
+    /**
+     * <p>
+     * The date the Systems Manager document was created.
+     * </p>
+     * 
+     * @param createdDate
+     *        The date the Systems Manager document was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentIdentifier withCreatedDate(java.util.Date createdDate) {
+        setCreatedDate(createdDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An optional field where you can specify a friendly name for the Systems Manager document. This value can differ
+     * for each version of the document. If you want to update this value, see <a>UpdateDocument</a>.
+     * </p>
+     * 
+     * @param displayName
+     *        An optional field where you can specify a friendly name for the Systems Manager document. This value can
+     *        differ for each version of the document. If you want to update this value, see <a>UpdateDocument</a>.
+     */
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
+
+    /**
+     * <p>
+     * An optional field where you can specify a friendly name for the Systems Manager document. This value can differ
+     * for each version of the document. If you want to update this value, see <a>UpdateDocument</a>.
+     * </p>
+     * 
+     * @return An optional field where you can specify a friendly name for the Systems Manager document. This value can
+     *         differ for each version of the document. If you want to update this value, see <a>UpdateDocument</a>.
+     */
+
+    public String getDisplayName() {
+        return this.displayName;
+    }
+
+    /**
+     * <p>
+     * An optional field where you can specify a friendly name for the Systems Manager document. This value can differ
+     * for each version of the document. If you want to update this value, see <a>UpdateDocument</a>.
+     * </p>
+     * 
+     * @param displayName
+     *        An optional field where you can specify a friendly name for the Systems Manager document. This value can
+     *        differ for each version of the document. If you want to update this value, see <a>UpdateDocument</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentIdentifier withDisplayName(String displayName) {
+        setDisplayName(displayName);
         return this;
     }
 
@@ -904,6 +1003,10 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
         sb.append("{");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getCreatedDate() != null)
+            sb.append("CreatedDate: ").append(getCreatedDate()).append(",");
+        if (getDisplayName() != null)
+            sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getOwner() != null)
             sb.append("Owner: ").append(getOwner()).append(",");
         if (getVersionName() != null)
@@ -945,6 +1048,14 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getCreatedDate() == null ^ this.getCreatedDate() == null)
+            return false;
+        if (other.getCreatedDate() != null && other.getCreatedDate().equals(this.getCreatedDate()) == false)
+            return false;
+        if (other.getDisplayName() == null ^ this.getDisplayName() == null)
+            return false;
+        if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
             return false;
         if (other.getOwner() == null ^ this.getOwner() == null)
             return false;
@@ -1003,6 +1114,8 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
+        hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
         hashCode = prime * hashCode + ((getVersionName() == null) ? 0 : getVersionName().hashCode());
         hashCode = prime * hashCode + ((getPlatformTypes() == null) ? 0 : getPlatformTypes().hashCode());

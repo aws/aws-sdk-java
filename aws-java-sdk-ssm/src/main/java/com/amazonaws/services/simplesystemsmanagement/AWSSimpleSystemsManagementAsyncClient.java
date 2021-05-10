@@ -48,12 +48,37 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting up AWS
  * Systems Manager</a> in the <i>AWS Systems Manager User Guide</i>.
  * </p>
+ * <p class="title">
+ * <b>Related resources</b>
+ * </p>
+ * <ul>
+ * <li>
  * <p>
- * For information about other API actions you can perform on EC2 instances, see the <a
- * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API Reference</a>. For information about
- * how to use a Query API, see <a
+ * For information about how to use a Query API, see <a
  * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/making-api-requests.html">Making API requests</a>.
  * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For information about other API actions you can perform on EC2 instances, see the <a
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API Reference</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For information about AWS AppConfig, a capability of Systems Manager, see the <a
+ * href="https://docs.aws.amazon.com/appconfig/latest/userguide/">AWS AppConfig User Guide</a> and the <a
+ * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/">AWS AppConfig API Reference</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For information about AWS Incident Manager, a capability of Systems Manager, see the <a
+ * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/">AWS Incident Manager User Guide</a> and the <a
+ * href="https://docs.aws.amazon.com/incident-manager/latest/APIReference/">AWS Incident Manager API Reference</a>.
+ * </p>
+ * </li>
+ * </ul>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -295,6 +320,39 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
 
                 try {
                     result = executeAddTagsToResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateOpsItemRelatedItemResult> associateOpsItemRelatedItemAsync(AssociateOpsItemRelatedItemRequest request) {
+
+        return associateOpsItemRelatedItemAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateOpsItemRelatedItemResult> associateOpsItemRelatedItemAsync(final AssociateOpsItemRelatedItemRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateOpsItemRelatedItemRequest, AssociateOpsItemRelatedItemResult> asyncHandler) {
+        final AssociateOpsItemRelatedItemRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateOpsItemRelatedItemResult>() {
+            @Override
+            public AssociateOpsItemRelatedItemResult call() throws Exception {
+                AssociateOpsItemRelatedItemResult result = null;
+
+                try {
+                    result = executeAssociateOpsItemRelatedItem(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2226,6 +2284,40 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateOpsItemRelatedItemResult> disassociateOpsItemRelatedItemAsync(DisassociateOpsItemRelatedItemRequest request) {
+
+        return disassociateOpsItemRelatedItemAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateOpsItemRelatedItemResult> disassociateOpsItemRelatedItemAsync(
+            final DisassociateOpsItemRelatedItemRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateOpsItemRelatedItemRequest, DisassociateOpsItemRelatedItemResult> asyncHandler) {
+        final DisassociateOpsItemRelatedItemRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateOpsItemRelatedItemResult>() {
+            @Override
+            public DisassociateOpsItemRelatedItemResult call() throws Exception {
+                DisassociateOpsItemRelatedItemResult result = null;
+
+                try {
+                    result = executeDisassociateOpsItemRelatedItem(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAutomationExecutionResult> getAutomationExecutionAsync(GetAutomationExecutionRequest request) {
 
         return getAutomationExecutionAsync(request, null);
@@ -3429,6 +3521,39 @@ public class AWSSimpleSystemsManagementAsyncClient extends AWSSimpleSystemsManag
 
                 try {
                     result = executeListOpsItemEvents(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOpsItemRelatedItemsResult> listOpsItemRelatedItemsAsync(ListOpsItemRelatedItemsRequest request) {
+
+        return listOpsItemRelatedItemsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOpsItemRelatedItemsResult> listOpsItemRelatedItemsAsync(final ListOpsItemRelatedItemsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListOpsItemRelatedItemsRequest, ListOpsItemRelatedItemsResult> asyncHandler) {
+        final ListOpsItemRelatedItemsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListOpsItemRelatedItemsResult>() {
+            @Override
+            public ListOpsItemRelatedItemsResult call() throws Exception {
+                ListOpsItemRelatedItemsResult result = null;
+
+                try {
+                    result = executeListOpsItemRelatedItems(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

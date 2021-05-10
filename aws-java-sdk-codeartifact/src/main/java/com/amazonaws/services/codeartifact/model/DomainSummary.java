@@ -20,8 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Information about a domain, including its name, Amazon Resource Name (ARN), and status. The <a
- * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListDomains.html"> <code>ListDomains</code>
- * </a> operation returns a list of <code>DomainSummary</code> objects.
+ * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListDomains.html">ListDomains</a> operation
+ * returns a list of <code>DomainSummary</code> objects.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DomainSummary" target="_top">AWS API

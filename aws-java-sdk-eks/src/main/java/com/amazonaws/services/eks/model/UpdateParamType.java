@@ -28,6 +28,8 @@ public enum UpdateParamType {
     DesiredSize("DesiredSize"),
     LabelsToAdd("LabelsToAdd"),
     LabelsToRemove("LabelsToRemove"),
+    TaintsToAdd("TaintsToAdd"),
+    TaintsToRemove("TaintsToRemove"),
     MaxSize("MaxSize"),
     MinSize("MinSize"),
     ReleaseVersion("ReleaseVersion"),

@@ -45,6 +45,12 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
     private UpdateLabelsPayload labels;
     /**
      * <p>
+     * The Kubernetes taints to be applied to the nodes in the node group after the update.
+     * </p>
+     */
+    private UpdateTaintsPayload taints;
+    /**
+     * <p>
      * The scaling configuration details for the Auto Scaling group after the update.
      * </p>
      */
@@ -178,6 +184,46 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
+     * The Kubernetes taints to be applied to the nodes in the node group after the update.
+     * </p>
+     * 
+     * @param taints
+     *        The Kubernetes taints to be applied to the nodes in the node group after the update.
+     */
+
+    public void setTaints(UpdateTaintsPayload taints) {
+        this.taints = taints;
+    }
+
+    /**
+     * <p>
+     * The Kubernetes taints to be applied to the nodes in the node group after the update.
+     * </p>
+     * 
+     * @return The Kubernetes taints to be applied to the nodes in the node group after the update.
+     */
+
+    public UpdateTaintsPayload getTaints() {
+        return this.taints;
+    }
+
+    /**
+     * <p>
+     * The Kubernetes taints to be applied to the nodes in the node group after the update.
+     * </p>
+     * 
+     * @param taints
+     *        The Kubernetes taints to be applied to the nodes in the node group after the update.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateNodegroupConfigRequest withTaints(UpdateTaintsPayload taints) {
+        setTaints(taints);
+        return this;
+    }
+
+    /**
+     * <p>
      * The scaling configuration details for the Auto Scaling group after the update.
      * </p>
      * 
@@ -274,6 +320,8 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
             sb.append("NodegroupName: ").append(getNodegroupName()).append(",");
         if (getLabels() != null)
             sb.append("Labels: ").append(getLabels()).append(",");
+        if (getTaints() != null)
+            sb.append("Taints: ").append(getTaints()).append(",");
         if (getScalingConfig() != null)
             sb.append("ScalingConfig: ").append(getScalingConfig()).append(",");
         if (getClientRequestToken() != null)
@@ -304,6 +352,10 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getLabels() != null && other.getLabels().equals(this.getLabels()) == false)
             return false;
+        if (other.getTaints() == null ^ this.getTaints() == null)
+            return false;
+        if (other.getTaints() != null && other.getTaints().equals(this.getTaints()) == false)
+            return false;
         if (other.getScalingConfig() == null ^ this.getScalingConfig() == null)
             return false;
         if (other.getScalingConfig() != null && other.getScalingConfig().equals(this.getScalingConfig()) == false)
@@ -323,6 +375,7 @@ public class UpdateNodegroupConfigRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getClusterName() == null) ? 0 : getClusterName().hashCode());
         hashCode = prime * hashCode + ((getNodegroupName() == null) ? 0 : getNodegroupName().hashCode());
         hashCode = prime * hashCode + ((getLabels() == null) ? 0 : getLabels().hashCode());
+        hashCode = prime * hashCode + ((getTaints() == null) ? 0 : getTaints().hashCode());
         hashCode = prime * hashCode + ((getScalingConfig() == null) ? 0 : getScalingConfig().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         return hashCode;

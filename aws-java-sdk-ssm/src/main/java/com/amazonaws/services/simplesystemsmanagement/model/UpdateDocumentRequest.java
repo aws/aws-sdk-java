@@ -39,10 +39,18 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
     private com.amazonaws.internal.SdkInternalList<AttachmentsSource> attachments;
     /**
      * <p>
-     * The name of the document that you want to update.
+     * The name of the Systems Manager document that you want to update.
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * The friendly name of the Systems Manager document that you want to update. This value can differ for each version
+     * of the document. If you do not specify a value for this parameter in your request, the existing value is applied
+     * to the new document version.
+     * </p>
+     */
+    private String displayName;
     /**
      * <p>
      * An optional field specifying the version of the artifact you are updating with the document. For example,
@@ -187,11 +195,11 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the document that you want to update.
+     * The name of the Systems Manager document that you want to update.
      * </p>
      * 
      * @param name
-     *        The name of the document that you want to update.
+     *        The name of the Systems Manager document that you want to update.
      */
 
     public void setName(String name) {
@@ -200,10 +208,10 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the document that you want to update.
+     * The name of the Systems Manager document that you want to update.
      * </p>
      * 
-     * @return The name of the document that you want to update.
+     * @return The name of the Systems Manager document that you want to update.
      */
 
     public String getName() {
@@ -212,16 +220,68 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the document that you want to update.
+     * The name of the Systems Manager document that you want to update.
      * </p>
      * 
      * @param name
-     *        The name of the document that you want to update.
+     *        The name of the Systems Manager document that you want to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateDocumentRequest withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The friendly name of the Systems Manager document that you want to update. This value can differ for each version
+     * of the document. If you do not specify a value for this parameter in your request, the existing value is applied
+     * to the new document version.
+     * </p>
+     * 
+     * @param displayName
+     *        The friendly name of the Systems Manager document that you want to update. This value can differ for each
+     *        version of the document. If you do not specify a value for this parameter in your request, the existing
+     *        value is applied to the new document version.
+     */
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
+
+    /**
+     * <p>
+     * The friendly name of the Systems Manager document that you want to update. This value can differ for each version
+     * of the document. If you do not specify a value for this parameter in your request, the existing value is applied
+     * to the new document version.
+     * </p>
+     * 
+     * @return The friendly name of the Systems Manager document that you want to update. This value can differ for each
+     *         version of the document. If you do not specify a value for this parameter in your request, the existing
+     *         value is applied to the new document version.
+     */
+
+    public String getDisplayName() {
+        return this.displayName;
+    }
+
+    /**
+     * <p>
+     * The friendly name of the Systems Manager document that you want to update. This value can differ for each version
+     * of the document. If you do not specify a value for this parameter in your request, the existing value is applied
+     * to the new document version.
+     * </p>
+     * 
+     * @param displayName
+     *        The friendly name of the Systems Manager document that you want to update. This value can differ for each
+     *        version of the document. If you do not specify a value for this parameter in your request, the existing
+     *        value is applied to the new document version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDocumentRequest withDisplayName(String displayName) {
+        setDisplayName(displayName);
         return this;
     }
 
@@ -448,6 +508,8 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("Attachments: ").append(getAttachments()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getDisplayName() != null)
+            sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getVersionName() != null)
             sb.append("VersionName: ").append(getVersionName()).append(",");
         if (getDocumentVersion() != null)
@@ -482,6 +544,10 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getDisplayName() == null ^ this.getDisplayName() == null)
+            return false;
+        if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
+            return false;
         if (other.getVersionName() == null ^ this.getVersionName() == null)
             return false;
         if (other.getVersionName() != null && other.getVersionName().equals(this.getVersionName()) == false)
@@ -509,6 +575,7 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getContent() == null) ? 0 : getContent().hashCode());
         hashCode = prime * hashCode + ((getAttachments() == null) ? 0 : getAttachments().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getVersionName() == null) ? 0 : getVersionName().hashCode());
         hashCode = prime * hashCode + ((getDocumentVersion() == null) ? 0 : getDocumentVersion().hashCode());
         hashCode = prime * hashCode + ((getDocumentFormat() == null) ? 0 : getDocumentFormat().hashCode());

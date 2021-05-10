@@ -41,6 +41,19 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateOpsItemRelatedItemResult> associateOpsItemRelatedItemAsync(AssociateOpsItemRelatedItemRequest request) {
+
+        return associateOpsItemRelatedItemAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateOpsItemRelatedItemResult> associateOpsItemRelatedItemAsync(AssociateOpsItemRelatedItemRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateOpsItemRelatedItemRequest, AssociateOpsItemRelatedItemResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelCommandResult> cancelCommandAsync(CancelCommandRequest request) {
 
         return cancelCommandAsync(request, null);
@@ -814,6 +827,19 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateOpsItemRelatedItemResult> disassociateOpsItemRelatedItemAsync(DisassociateOpsItemRelatedItemRequest request) {
+
+        return disassociateOpsItemRelatedItemAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateOpsItemRelatedItemResult> disassociateOpsItemRelatedItemAsync(DisassociateOpsItemRelatedItemRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateOpsItemRelatedItemRequest, DisassociateOpsItemRelatedItemResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAutomationExecutionResult> getAutomationExecutionAsync(GetAutomationExecutionRequest request) {
 
         return getAutomationExecutionAsync(request, null);
@@ -1306,6 +1332,19 @@ public class AbstractAWSSimpleSystemsManagementAsync extends AbstractAWSSimpleSy
     @Override
     public java.util.concurrent.Future<ListOpsItemEventsResult> listOpsItemEventsAsync(ListOpsItemEventsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListOpsItemEventsRequest, ListOpsItemEventsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOpsItemRelatedItemsResult> listOpsItemRelatedItemsAsync(ListOpsItemRelatedItemsRequest request) {
+
+        return listOpsItemRelatedItemsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOpsItemRelatedItemsResult> listOpsItemRelatedItemsAsync(ListOpsItemRelatedItemsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListOpsItemRelatedItemsRequest, ListOpsItemRelatedItemsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

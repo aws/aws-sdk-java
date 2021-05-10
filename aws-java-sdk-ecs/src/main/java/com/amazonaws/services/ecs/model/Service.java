@@ -37,9 +37,9 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     private String serviceArn;
     /**
      * <p>
-     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. Service
-     * names must be unique within a cluster, but you can have similarly named services in multiple clusters within a
-     * Region or across multiple Regions.
+     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple
+     * clusters within a Region or across multiple Regions.
      * </p>
      */
     private String serviceName;
@@ -360,15 +360,15 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. Service
-     * names must be unique within a cluster, but you can have similarly named services in multiple clusters within a
-     * Region or across multiple Regions.
+     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple
+     * clusters within a Region or across multiple Regions.
      * </p>
      * 
      * @param serviceName
-     *        The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
-     *        Service names must be unique within a cluster, but you can have similarly named services in multiple
-     *        clusters within a Region or across multiple Regions.
+     *        The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens
+     *        are allowed. Service names must be unique within a cluster, but you can have similarly named services in
+     *        multiple clusters within a Region or across multiple Regions.
      */
 
     public void setServiceName(String serviceName) {
@@ -377,14 +377,14 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. Service
-     * names must be unique within a cluster, but you can have similarly named services in multiple clusters within a
-     * Region or across multiple Regions.
+     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple
+     * clusters within a Region or across multiple Regions.
      * </p>
      * 
-     * @return The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
-     *         Service names must be unique within a cluster, but you can have similarly named services in multiple
-     *         clusters within a Region or across multiple Regions.
+     * @return The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens
+     *         are allowed. Service names must be unique within a cluster, but you can have similarly named services in
+     *         multiple clusters within a Region or across multiple Regions.
      */
 
     public String getServiceName() {
@@ -393,15 +393,15 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. Service
-     * names must be unique within a cluster, but you can have similarly named services in multiple clusters within a
-     * Region or across multiple Regions.
+     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple
+     * clusters within a Region or across multiple Regions.
      * </p>
      * 
      * @param serviceName
-     *        The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
-     *        Service names must be unique within a cluster, but you can have similarly named services in multiple
-     *        clusters within a Region or across multiple Regions.
+     *        The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens
+     *        are allowed. Service names must be unique within a cluster, but you can have similarly named services in
+     *        multiple clusters within a Region or across multiple Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

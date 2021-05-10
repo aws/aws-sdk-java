@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.iotwireless.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,12 @@ public class LoRaWANGatewayMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GatewayEui").build();
     private static final MarshallingInfo<String> RFREGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("RfRegion").build();
+    private static final MarshallingInfo<List> JOINEUIFILTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JoinEuiFilters").build();
+    private static final MarshallingInfo<List> NETIDFILTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NetIdFilters").build();
+    private static final MarshallingInfo<List> SUBBANDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SubBands").build();
 
     private static final LoRaWANGatewayMarshaller instance = new LoRaWANGatewayMarshaller();
 
@@ -50,6 +57,9 @@ public class LoRaWANGatewayMarshaller {
         try {
             protocolMarshaller.marshall(loRaWANGateway.getGatewayEui(), GATEWAYEUI_BINDING);
             protocolMarshaller.marshall(loRaWANGateway.getRfRegion(), RFREGION_BINDING);
+            protocolMarshaller.marshall(loRaWANGateway.getJoinEuiFilters(), JOINEUIFILTERS_BINDING);
+            protocolMarshaller.marshall(loRaWANGateway.getNetIdFilters(), NETIDFILTERS_BINDING);
+            protocolMarshaller.marshall(loRaWANGateway.getSubBands(), SUBBANDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

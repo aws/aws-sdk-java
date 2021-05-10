@@ -103,6 +103,14 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
     private String name;
     /**
      * <p>
+     * An optional field where you can specify a friendly name for the Systems Manager document. This value can differ
+     * for each version of the document. You can update this value at a later time using the <a>UpdateDocument</a>
+     * action.
+     * </p>
+     */
+    private String displayName;
+    /**
+     * <p>
      * An optional field specifying the version of the artifact you are creating with the document. For example,
      * "Release 12, Update 6". This value is unique across all versions of a document, and cannot be changed.
      * </p>
@@ -703,6 +711,58 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * An optional field where you can specify a friendly name for the Systems Manager document. This value can differ
+     * for each version of the document. You can update this value at a later time using the <a>UpdateDocument</a>
+     * action.
+     * </p>
+     * 
+     * @param displayName
+     *        An optional field where you can specify a friendly name for the Systems Manager document. This value can
+     *        differ for each version of the document. You can update this value at a later time using the
+     *        <a>UpdateDocument</a> action.
+     */
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
+
+    /**
+     * <p>
+     * An optional field where you can specify a friendly name for the Systems Manager document. This value can differ
+     * for each version of the document. You can update this value at a later time using the <a>UpdateDocument</a>
+     * action.
+     * </p>
+     * 
+     * @return An optional field where you can specify a friendly name for the Systems Manager document. This value can
+     *         differ for each version of the document. You can update this value at a later time using the
+     *         <a>UpdateDocument</a> action.
+     */
+
+    public String getDisplayName() {
+        return this.displayName;
+    }
+
+    /**
+     * <p>
+     * An optional field where you can specify a friendly name for the Systems Manager document. This value can differ
+     * for each version of the document. You can update this value at a later time using the <a>UpdateDocument</a>
+     * action.
+     * </p>
+     * 
+     * @param displayName
+     *        An optional field where you can specify a friendly name for the Systems Manager document. This value can
+     *        differ for each version of the document. You can update this value at a later time using the
+     *        <a>UpdateDocument</a> action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDocumentRequest withDisplayName(String displayName) {
+        setDisplayName(displayName);
+        return this;
+    }
+
+    /**
+     * <p>
      * An optional field specifying the version of the artifact you are creating with the document. For example,
      * "Release 12, Update 6". This value is unique across all versions of a document, and cannot be changed.
      * </p>
@@ -1218,6 +1278,8 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("Attachments: ").append(getAttachments()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getDisplayName() != null)
+            sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getVersionName() != null)
             sb.append("VersionName: ").append(getVersionName()).append(",");
         if (getDocumentType() != null)
@@ -1258,6 +1320,10 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getDisplayName() == null ^ this.getDisplayName() == null)
+            return false;
+        if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
+            return false;
         if (other.getVersionName() == null ^ this.getVersionName() == null)
             return false;
         if (other.getVersionName() != null && other.getVersionName().equals(this.getVersionName()) == false)
@@ -1290,6 +1356,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getRequires() == null) ? 0 : getRequires().hashCode());
         hashCode = prime * hashCode + ((getAttachments() == null) ? 0 : getAttachments().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getVersionName() == null) ? 0 : getVersionName().hashCode());
         hashCode = prime * hashCode + ((getDocumentType() == null) ? 0 : getDocumentType().hashCode());
         hashCode = prime * hashCode + ((getDocumentFormat() == null) ? 0 : getDocumentFormat().hashCode());

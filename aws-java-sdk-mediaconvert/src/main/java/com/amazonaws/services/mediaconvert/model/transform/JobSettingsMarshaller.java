@@ -36,6 +36,8 @@ public class JobSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("esam").build();
     private static final MarshallingInfo<List> INPUTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("inputs").build();
+    private static final MarshallingInfo<StructuredPojo> KANTARWATERMARK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("kantarWatermark").build();
     private static final MarshallingInfo<StructuredPojo> MOTIONIMAGEINSERTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("motionImageInserter").build();
     private static final MarshallingInfo<StructuredPojo> NIELSENCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -69,6 +71,7 @@ public class JobSettingsMarshaller {
             protocolMarshaller.marshall(jobSettings.getAvailBlanking(), AVAILBLANKING_BINDING);
             protocolMarshaller.marshall(jobSettings.getEsam(), ESAM_BINDING);
             protocolMarshaller.marshall(jobSettings.getInputs(), INPUTS_BINDING);
+            protocolMarshaller.marshall(jobSettings.getKantarWatermark(), KANTARWATERMARK_BINDING);
             protocolMarshaller.marshall(jobSettings.getMotionImageInserter(), MOTIONIMAGEINSERTER_BINDING);
             protocolMarshaller.marshall(jobSettings.getNielsenConfiguration(), NIELSENCONFIGURATION_BINDING);
             protocolMarshaller.marshall(jobSettings.getNielsenNonLinearWatermark(), NIELSENNONLINEARWATERMARK_BINDING);

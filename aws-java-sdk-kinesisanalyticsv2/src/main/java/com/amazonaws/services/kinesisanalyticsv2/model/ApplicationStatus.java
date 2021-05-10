@@ -29,7 +29,8 @@ public enum ApplicationStatus {
     AUTOSCALING("AUTOSCALING"),
     FORCE_STOPPING("FORCE_STOPPING"),
     MAINTENANCE("MAINTENANCE"),
-    ROLLING_BACK("ROLLING_BACK");
+    ROLLING_BACK("ROLLING_BACK"),
+    ROLLED_BACK("ROLLED_BACK");
 
     private String value;
 

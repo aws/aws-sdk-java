@@ -1150,8 +1150,14 @@
       "type":"structure",
       "members":{
         "Message":{"shape":"Message"},
-        "ResourceId":{"shape":"ResourceId"},
-        "ResourceType":{"shape":"ResourceType"}
+        "ResourceId":{
+          "shape":"ResourceId",
+          "documentation":"<p>Id of the resource in the conflicting operation.</p>"
+        },
+        "ResourceType":{
+          "shape":"ResourceType",
+          "documentation":"<p>Type of the resource in the conflicting operation.</p>"
+        }
       },
       "documentation":"<p>Adding, updating, or deleting the resource can cause an inconsistent state.</p>",
       "error":{"httpStatusCode":409},
@@ -2327,6 +2333,20 @@
       "type":"string",
       "pattern":"[a-fA-F0-9]{16}"
     },
+    "JoinEuiFilters":{
+      "type":"list",
+      "member":{"shape":"JoinEuiRange"},
+      "documentation":"<p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>",
+      "max":3,
+      "min":0
+    },
+    "JoinEuiRange":{
+      "type":"list",
+      "member":{"shape":"JoinEui"},
+      "documentation":"<p>A pair of join EUI describing a range [BegEui, EndEui], both ends are inclusive.</p>",
+      "max":2,
+      "min":2
+    },
     "ListDestinationsRequest":{
       "type":"structure",
       "members":{
@@ -2744,7 +2764,10 @@
         "RfRegion":{
           "shape":"RfRegion",
           "documentation":"<p>The frequency band (RFRegion) value.</p>"
-        }
+        },
+        "JoinEuiFilters":{"shape":"JoinEuiFilters"},
+        "NetIdFilters":{"shape":"NetIdFilters"},
+        "SubBands":{"shape":"SubBands"}
       },
       "documentation":"<p>LoRaWANGateway object.</p>"
     },
@@ -3004,6 +3027,18 @@
       "max":4096,
       "min":1
     },
+    "NetId":{
+      "type":"string",
+      "documentation":"<p>LoRaWAN network ID.</p>",
+      "pattern":"[a-fA-F0-9]{6}"
+    },
+    "NetIdFilters":{
+      "type":"list",
+      "member":{"shape":"NetId"},
+      "documentation":"<p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>",
+      "max":10,
+      "min":0
+    },
     "NextToken":{
       "type":"string",
       "max":4096
@@ -3105,8 +3140,14 @@
       "type":"structure",
       "members":{
         "Message":{"shape":"Message"},
-        "ResourceId":{"shape":"ResourceId"},
-        "ResourceType":{"shape":"ResourceType"}
+        "ResourceId":{
+          "shape":"ResourceId",
+          "documentation":"<p>Id of the not found resource.</p>"
+        },
+        "ResourceType":{
+          "shape":"ResourceType",
+          "documentation":"<p>Type of the font found resource.</p>"
+        }
       },
       "documentation":"<p>Resource does not exist.</p>",
       "error":{"httpStatusCode":404},
@@ -3400,6 +3441,19 @@
       "max":4096,
       "min":1
     },
+    "SubBand":{
+      "type":"integer",
+      "documentation":"<p>A subset of supported frequency channels in a certain RFRegion.</p>",
+      "max":8,
+      "min":1
+    },
+    "SubBands":{
+      "type":"list",
+      "member":{"shape":"SubBand"},
+      "documentation":"<p>A list of integer indicating which sub bands are supported by LoRa gateway.</p>",
+      "max":8,
+      "min":0
+    },
     "Supports32BitFCnt":{"type":"boolean"},
     "SupportsClassB":{"type":"boolean"},
     "SupportsClassC":{"type":"boolean"},
@@ -3509,7 +3563,10 @@
       "type":"structure",
       "members":{
         "Message":{"shape":"Message"},
-        "ResourceName":{"shape":"AmazonResourceName"}
+        "ResourceName":{
+          "shape":"AmazonResourceName",
+          "documentation":"<p>Name of the resource that exceeds maximum number of tags allowed.</p>"
+        }
       },
       "documentation":"<p>The request was denied because the resource can't have any more tags.</p>",
       "error":{"httpStatusCode":400},
@@ -3684,7 +3741,9 @@
         "Description":{
           "shape":"Description",
           "documentation":"<p>A new description of the resource.</p>"
-        }
+        },
+        "JoinEuiFilters":{"shape":"JoinEuiFilters"},
+        "NetIdFilters":{"shape":"NetIdFilters"}
       }
     },
     "UpdateWirelessGatewayResponse":{

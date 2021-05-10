@@ -52,6 +52,14 @@ public class DocumentIdentifierJsonUnmarshaller implements Unmarshaller<Document
                     context.nextToken();
                     documentIdentifier.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CreatedDate", targetDepth)) {
+                    context.nextToken();
+                    documentIdentifier.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("DisplayName", targetDepth)) {
+                    context.nextToken();
+                    documentIdentifier.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Owner", targetDepth)) {
                     context.nextToken();
                     documentIdentifier.setOwner(context.getUnmarshaller(String.class).unmarshall(context));

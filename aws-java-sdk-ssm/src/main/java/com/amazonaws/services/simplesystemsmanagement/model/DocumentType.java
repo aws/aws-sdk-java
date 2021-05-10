@@ -29,7 +29,9 @@ public enum DocumentType {
     ApplicationConfigurationSchema("ApplicationConfigurationSchema"),
     DeploymentStrategy("DeploymentStrategy"),
     ChangeCalendar("ChangeCalendar"),
-    AutomationChangeTemplate("Automation.ChangeTemplate");
+    AutomationChangeTemplate("Automation.ChangeTemplate"),
+    ProblemAnalysis("ProblemAnalysis"),
+    ProblemAnalysisTemplate("ProblemAnalysisTemplate");
 
     private String value;
 

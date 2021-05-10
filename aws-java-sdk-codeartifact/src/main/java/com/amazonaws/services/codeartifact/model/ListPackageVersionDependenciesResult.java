@@ -99,8 +99,8 @@ public class ListPackageVersionDependenciesResult extends com.amazonaws.AmazonWe
     /**
      * <p>
      * The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">
-     * <code>PackageDependency</code> </a> objects.
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html"
+     * >PackageDependency</a> objects.
      * </p>
      */
     private java.util.List<PackageDependency> dependencies;
@@ -614,13 +614,13 @@ public class ListPackageVersionDependenciesResult extends com.amazonaws.AmazonWe
     /**
      * <p>
      * The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">
-     * <code>PackageDependency</code> </a> objects.
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html"
+     * >PackageDependency</a> objects.
      * </p>
      * 
      * @return The returned list of <a
-     *         href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">
-     *         <code>PackageDependency</code> </a> objects.
+     *         href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html"
+     *         >PackageDependency</a> objects.
      */
 
     public java.util.List<PackageDependency> getDependencies() {
@@ -630,14 +630,14 @@ public class ListPackageVersionDependenciesResult extends com.amazonaws.AmazonWe
     /**
      * <p>
      * The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">
-     * <code>PackageDependency</code> </a> objects.
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html"
+     * >PackageDependency</a> objects.
      * </p>
      * 
      * @param dependencies
      *        The returned list of <a
-     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">
-     *        <code>PackageDependency</code> </a> objects.
+     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html"
+     *        >PackageDependency</a> objects.
      */
 
     public void setDependencies(java.util.Collection<PackageDependency> dependencies) {
@@ -652,8 +652,8 @@ public class ListPackageVersionDependenciesResult extends com.amazonaws.AmazonWe
     /**
      * <p>
      * The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">
-     * <code>PackageDependency</code> </a> objects.
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html"
+     * >PackageDependency</a> objects.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -663,8 +663,8 @@ public class ListPackageVersionDependenciesResult extends com.amazonaws.AmazonWe
      * 
      * @param dependencies
      *        The returned list of <a
-     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">
-     *        <code>PackageDependency</code> </a> objects.
+     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html"
+     *        >PackageDependency</a> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -681,14 +681,14 @@ public class ListPackageVersionDependenciesResult extends com.amazonaws.AmazonWe
     /**
      * <p>
      * The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">
-     * <code>PackageDependency</code> </a> objects.
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html"
+     * >PackageDependency</a> objects.
      * </p>
      * 
      * @param dependencies
      *        The returned list of <a
-     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">
-     *        <code>PackageDependency</code> </a> objects.
+     *        href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html"
+     *        >PackageDependency</a> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

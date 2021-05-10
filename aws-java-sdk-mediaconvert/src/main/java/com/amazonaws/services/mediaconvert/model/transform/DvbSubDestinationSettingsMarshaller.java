@@ -33,6 +33,12 @@ public class DvbSubDestinationSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("backgroundColor").build();
     private static final MarshallingInfo<Integer> BACKGROUNDOPACITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("backgroundOpacity").build();
+    private static final MarshallingInfo<String> DDSHANDLING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ddsHandling").build();
+    private static final MarshallingInfo<Integer> DDSXCOORDINATE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ddsXCoordinate").build();
+    private static final MarshallingInfo<Integer> DDSYCOORDINATE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ddsYCoordinate").build();
     private static final MarshallingInfo<String> FONTCOLOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("fontColor").build();
     private static final MarshallingInfo<Integer> FONTOPACITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -43,6 +49,8 @@ public class DvbSubDestinationSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fontScript").build();
     private static final MarshallingInfo<Integer> FONTSIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fontSize").build();
+    private static final MarshallingInfo<Integer> HEIGHT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("height").build();
     private static final MarshallingInfo<String> OUTLINECOLOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("outlineColor").build();
     private static final MarshallingInfo<Integer> OUTLINESIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -59,6 +67,8 @@ public class DvbSubDestinationSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("subtitlingType").build();
     private static final MarshallingInfo<String> TELETEXTSPACING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("teletextSpacing").build();
+    private static final MarshallingInfo<Integer> WIDTH_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("width").build();
     private static final MarshallingInfo<Integer> XPOSITION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("xPosition").build();
     private static final MarshallingInfo<Integer> YPOSITION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -83,11 +93,15 @@ public class DvbSubDestinationSettingsMarshaller {
             protocolMarshaller.marshall(dvbSubDestinationSettings.getAlignment(), ALIGNMENT_BINDING);
             protocolMarshaller.marshall(dvbSubDestinationSettings.getBackgroundColor(), BACKGROUNDCOLOR_BINDING);
             protocolMarshaller.marshall(dvbSubDestinationSettings.getBackgroundOpacity(), BACKGROUNDOPACITY_BINDING);
+            protocolMarshaller.marshall(dvbSubDestinationSettings.getDdsHandling(), DDSHANDLING_BINDING);
+            protocolMarshaller.marshall(dvbSubDestinationSettings.getDdsXCoordinate(), DDSXCOORDINATE_BINDING);
+            protocolMarshaller.marshall(dvbSubDestinationSettings.getDdsYCoordinate(), DDSYCOORDINATE_BINDING);
             protocolMarshaller.marshall(dvbSubDestinationSettings.getFontColor(), FONTCOLOR_BINDING);
             protocolMarshaller.marshall(dvbSubDestinationSettings.getFontOpacity(), FONTOPACITY_BINDING);
             protocolMarshaller.marshall(dvbSubDestinationSettings.getFontResolution(), FONTRESOLUTION_BINDING);
             protocolMarshaller.marshall(dvbSubDestinationSettings.getFontScript(), FONTSCRIPT_BINDING);
             protocolMarshaller.marshall(dvbSubDestinationSettings.getFontSize(), FONTSIZE_BINDING);
+            protocolMarshaller.marshall(dvbSubDestinationSettings.getHeight(), HEIGHT_BINDING);
             protocolMarshaller.marshall(dvbSubDestinationSettings.getOutlineColor(), OUTLINECOLOR_BINDING);
             protocolMarshaller.marshall(dvbSubDestinationSettings.getOutlineSize(), OUTLINESIZE_BINDING);
             protocolMarshaller.marshall(dvbSubDestinationSettings.getShadowColor(), SHADOWCOLOR_BINDING);
@@ -96,6 +110,7 @@ public class DvbSubDestinationSettingsMarshaller {
             protocolMarshaller.marshall(dvbSubDestinationSettings.getShadowYOffset(), SHADOWYOFFSET_BINDING);
             protocolMarshaller.marshall(dvbSubDestinationSettings.getSubtitlingType(), SUBTITLINGTYPE_BINDING);
             protocolMarshaller.marshall(dvbSubDestinationSettings.getTeletextSpacing(), TELETEXTSPACING_BINDING);
+            protocolMarshaller.marshall(dvbSubDestinationSettings.getWidth(), WIDTH_BINDING);
             protocolMarshaller.marshall(dvbSubDestinationSettings.getXPosition(), XPOSITION_BINDING);
             protocolMarshaller.marshall(dvbSubDestinationSettings.getYPosition(), YPOSITION_BINDING);
         } catch (Exception e) {

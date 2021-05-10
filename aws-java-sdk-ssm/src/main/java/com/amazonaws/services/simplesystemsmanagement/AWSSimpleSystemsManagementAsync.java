@@ -43,12 +43,37 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
  * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting up AWS
  * Systems Manager</a> in the <i>AWS Systems Manager User Guide</i>.
  * </p>
+ * <p class="title">
+ * <b>Related resources</b>
+ * </p>
+ * <ul>
+ * <li>
  * <p>
- * For information about other API actions you can perform on EC2 instances, see the <a
- * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API Reference</a>. For information about
- * how to use a Query API, see <a
+ * For information about how to use a Query API, see <a
  * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/making-api-requests.html">Making API requests</a>.
  * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For information about other API actions you can perform on EC2 instances, see the <a
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API Reference</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For information about AWS AppConfig, a capability of Systems Manager, see the <a
+ * href="https://docs.aws.amazon.com/appconfig/latest/userguide/">AWS AppConfig User Guide</a> and the <a
+ * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/">AWS AppConfig API Reference</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For information about AWS Incident Manager, a capability of Systems Manager, see the <a
+ * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/">AWS Incident Manager User Guide</a> and the <a
+ * href="https://docs.aws.amazon.com/incident-manager/latest/APIReference/">AWS Incident Manager API Reference</a>.
+ * </p>
+ * </li>
+ * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagement {
@@ -121,6 +146,41 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(AddTagsToResourceRequest addTagsToResourceRequest,
             com.amazonaws.handlers.AsyncHandler<AddTagsToResourceRequest, AddTagsToResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associates a related resource to a Systems Manager OpsCenter OpsItem. For example, you can associate an Incident
+     * Manager incident or analysis with an OpsItem. Incident Manager is a capability of AWS Systems Manager.
+     * </p>
+     * 
+     * @param associateOpsItemRelatedItemRequest
+     * @return A Java Future containing the result of the AssociateOpsItemRelatedItem operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.AssociateOpsItemRelatedItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AssociateOpsItemRelatedItem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateOpsItemRelatedItemResult> associateOpsItemRelatedItemAsync(
+            AssociateOpsItemRelatedItemRequest associateOpsItemRelatedItemRequest);
+
+    /**
+     * <p>
+     * Associates a related resource to a Systems Manager OpsCenter OpsItem. For example, you can associate an Incident
+     * Manager incident or analysis with an OpsItem. Incident Manager is a capability of AWS Systems Manager.
+     * </p>
+     * 
+     * @param associateOpsItemRelatedItemRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateOpsItemRelatedItem operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.AssociateOpsItemRelatedItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AssociateOpsItemRelatedItem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateOpsItemRelatedItemResult> associateOpsItemRelatedItemAsync(
+            AssociateOpsItemRelatedItemRequest associateOpsItemRelatedItemRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateOpsItemRelatedItemRequest, AssociateOpsItemRelatedItemResult> asyncHandler);
 
     /**
      * <p>
@@ -2419,6 +2479,43 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * Deletes the association between an OpsItem and a related resource. For example, this API action can delete an
+     * Incident Manager incident from an OpsItem. Incident Manager is a capability of AWS Systems Manager.
+     * </p>
+     * 
+     * @param disassociateOpsItemRelatedItemRequest
+     * @return A Java Future containing the result of the DisassociateOpsItemRelatedItem operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsync.DisassociateOpsItemRelatedItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DisassociateOpsItemRelatedItem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateOpsItemRelatedItemResult> disassociateOpsItemRelatedItemAsync(
+            DisassociateOpsItemRelatedItemRequest disassociateOpsItemRelatedItemRequest);
+
+    /**
+     * <p>
+     * Deletes the association between an OpsItem and a related resource. For example, this API action can delete an
+     * Incident Manager incident from an OpsItem. Incident Manager is a capability of AWS Systems Manager.
+     * </p>
+     * 
+     * @param disassociateOpsItemRelatedItemRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateOpsItemRelatedItem operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DisassociateOpsItemRelatedItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DisassociateOpsItemRelatedItem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateOpsItemRelatedItemResult> disassociateOpsItemRelatedItemAsync(
+            DisassociateOpsItemRelatedItemRequest disassociateOpsItemRelatedItemRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateOpsItemRelatedItemRequest, DisassociateOpsItemRelatedItemResult> asyncHandler);
+
+    /**
+     * <p>
      * Get detailed information about a particular Automation execution.
      * </p>
      * 
@@ -3829,6 +3926,37 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<ListOpsItemEventsResult> listOpsItemEventsAsync(ListOpsItemEventsRequest listOpsItemEventsRequest,
             com.amazonaws.handlers.AsyncHandler<ListOpsItemEventsRequest, ListOpsItemEventsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all related-item resources associated with an OpsItem.
+     * </p>
+     * 
+     * @param listOpsItemRelatedItemsRequest
+     * @return A Java Future containing the result of the ListOpsItemRelatedItems operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.ListOpsItemRelatedItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsItemRelatedItems" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListOpsItemRelatedItemsResult> listOpsItemRelatedItemsAsync(ListOpsItemRelatedItemsRequest listOpsItemRelatedItemsRequest);
+
+    /**
+     * <p>
+     * Lists all related-item resources associated with an OpsItem.
+     * </p>
+     * 
+     * @param listOpsItemRelatedItemsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListOpsItemRelatedItems operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.ListOpsItemRelatedItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsItemRelatedItems" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListOpsItemRelatedItemsResult> listOpsItemRelatedItemsAsync(ListOpsItemRelatedItemsRequest listOpsItemRelatedItemsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListOpsItemRelatedItemsRequest, ListOpsItemRelatedItemsResult> asyncHandler);
 
     /**
      * <p>

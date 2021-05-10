@@ -29,6 +29,8 @@ public class DocumentVersionInfoMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisplayName").build();
     private static final MarshallingInfo<String> DOCUMENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentVersion").build();
     private static final MarshallingInfo<String> VERSIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -63,6 +65,7 @@ public class DocumentVersionInfoMarshaller {
 
         try {
             protocolMarshaller.marshall(documentVersionInfo.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(documentVersionInfo.getDisplayName(), DISPLAYNAME_BINDING);
             protocolMarshaller.marshall(documentVersionInfo.getDocumentVersion(), DOCUMENTVERSION_BINDING);
             protocolMarshaller.marshall(documentVersionInfo.getVersionName(), VERSIONNAME_BINDING);
             protocolMarshaller.marshall(documentVersionInfo.getCreatedDate(), CREATEDDATE_BINDING);

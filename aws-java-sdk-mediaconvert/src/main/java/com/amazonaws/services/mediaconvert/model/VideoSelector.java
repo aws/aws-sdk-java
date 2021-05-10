@@ -85,6 +85,16 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
      * doesn't pass through rotation metadata.
      */
     private String rotate;
+    /**
+     * Use this setting when your input video codec is AVC-Intra. Ignore this setting for all other inputs. If the
+     * sample range metadata in your input video is accurate, or if you don't know about sample range, keep the default
+     * value, Follow (FOLLOW), for this setting. When you do, the service automatically detects your input sample range.
+     * If your input video has metadata indicating the wrong sample range, specify the accurate sample range here. When
+     * you do, MediaConvert ignores any sample range information in the input metadata. Regardless of whether
+     * MediaConvert uses the input sample range or the sample range that you specify, MediaConvert uses the sample range
+     * for transcoding and also writes it to the output metadata.
+     */
+    private String sampleRange;
 
     /**
      * Ignore this setting unless this input is a QuickTime animation with an alpha channel. Use this setting to create
@@ -620,6 +630,105 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Use this setting when your input video codec is AVC-Intra. Ignore this setting for all other inputs. If the
+     * sample range metadata in your input video is accurate, or if you don't know about sample range, keep the default
+     * value, Follow (FOLLOW), for this setting. When you do, the service automatically detects your input sample range.
+     * If your input video has metadata indicating the wrong sample range, specify the accurate sample range here. When
+     * you do, MediaConvert ignores any sample range information in the input metadata. Regardless of whether
+     * MediaConvert uses the input sample range or the sample range that you specify, MediaConvert uses the sample range
+     * for transcoding and also writes it to the output metadata.
+     * 
+     * @param sampleRange
+     *        Use this setting when your input video codec is AVC-Intra. Ignore this setting for all other inputs. If
+     *        the sample range metadata in your input video is accurate, or if you don't know about sample range, keep
+     *        the default value, Follow (FOLLOW), for this setting. When you do, the service automatically detects your
+     *        input sample range. If your input video has metadata indicating the wrong sample range, specify the
+     *        accurate sample range here. When you do, MediaConvert ignores any sample range information in the input
+     *        metadata. Regardless of whether MediaConvert uses the input sample range or the sample range that you
+     *        specify, MediaConvert uses the sample range for transcoding and also writes it to the output metadata.
+     * @see InputSampleRange
+     */
+
+    public void setSampleRange(String sampleRange) {
+        this.sampleRange = sampleRange;
+    }
+
+    /**
+     * Use this setting when your input video codec is AVC-Intra. Ignore this setting for all other inputs. If the
+     * sample range metadata in your input video is accurate, or if you don't know about sample range, keep the default
+     * value, Follow (FOLLOW), for this setting. When you do, the service automatically detects your input sample range.
+     * If your input video has metadata indicating the wrong sample range, specify the accurate sample range here. When
+     * you do, MediaConvert ignores any sample range information in the input metadata. Regardless of whether
+     * MediaConvert uses the input sample range or the sample range that you specify, MediaConvert uses the sample range
+     * for transcoding and also writes it to the output metadata.
+     * 
+     * @return Use this setting when your input video codec is AVC-Intra. Ignore this setting for all other inputs. If
+     *         the sample range metadata in your input video is accurate, or if you don't know about sample range, keep
+     *         the default value, Follow (FOLLOW), for this setting. When you do, the service automatically detects your
+     *         input sample range. If your input video has metadata indicating the wrong sample range, specify the
+     *         accurate sample range here. When you do, MediaConvert ignores any sample range information in the input
+     *         metadata. Regardless of whether MediaConvert uses the input sample range or the sample range that you
+     *         specify, MediaConvert uses the sample range for transcoding and also writes it to the output metadata.
+     * @see InputSampleRange
+     */
+
+    public String getSampleRange() {
+        return this.sampleRange;
+    }
+
+    /**
+     * Use this setting when your input video codec is AVC-Intra. Ignore this setting for all other inputs. If the
+     * sample range metadata in your input video is accurate, or if you don't know about sample range, keep the default
+     * value, Follow (FOLLOW), for this setting. When you do, the service automatically detects your input sample range.
+     * If your input video has metadata indicating the wrong sample range, specify the accurate sample range here. When
+     * you do, MediaConvert ignores any sample range information in the input metadata. Regardless of whether
+     * MediaConvert uses the input sample range or the sample range that you specify, MediaConvert uses the sample range
+     * for transcoding and also writes it to the output metadata.
+     * 
+     * @param sampleRange
+     *        Use this setting when your input video codec is AVC-Intra. Ignore this setting for all other inputs. If
+     *        the sample range metadata in your input video is accurate, or if you don't know about sample range, keep
+     *        the default value, Follow (FOLLOW), for this setting. When you do, the service automatically detects your
+     *        input sample range. If your input video has metadata indicating the wrong sample range, specify the
+     *        accurate sample range here. When you do, MediaConvert ignores any sample range information in the input
+     *        metadata. Regardless of whether MediaConvert uses the input sample range or the sample range that you
+     *        specify, MediaConvert uses the sample range for transcoding and also writes it to the output metadata.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InputSampleRange
+     */
+
+    public VideoSelector withSampleRange(String sampleRange) {
+        setSampleRange(sampleRange);
+        return this;
+    }
+
+    /**
+     * Use this setting when your input video codec is AVC-Intra. Ignore this setting for all other inputs. If the
+     * sample range metadata in your input video is accurate, or if you don't know about sample range, keep the default
+     * value, Follow (FOLLOW), for this setting. When you do, the service automatically detects your input sample range.
+     * If your input video has metadata indicating the wrong sample range, specify the accurate sample range here. When
+     * you do, MediaConvert ignores any sample range information in the input metadata. Regardless of whether
+     * MediaConvert uses the input sample range or the sample range that you specify, MediaConvert uses the sample range
+     * for transcoding and also writes it to the output metadata.
+     * 
+     * @param sampleRange
+     *        Use this setting when your input video codec is AVC-Intra. Ignore this setting for all other inputs. If
+     *        the sample range metadata in your input video is accurate, or if you don't know about sample range, keep
+     *        the default value, Follow (FOLLOW), for this setting. When you do, the service automatically detects your
+     *        input sample range. If your input video has metadata indicating the wrong sample range, specify the
+     *        accurate sample range here. When you do, MediaConvert ignores any sample range information in the input
+     *        metadata. Regardless of whether MediaConvert uses the input sample range or the sample range that you
+     *        specify, MediaConvert uses the sample range for transcoding and also writes it to the output metadata.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InputSampleRange
+     */
+
+    public VideoSelector withSampleRange(InputSampleRange sampleRange) {
+        this.sampleRange = sampleRange.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -644,7 +753,9 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
         if (getProgramNumber() != null)
             sb.append("ProgramNumber: ").append(getProgramNumber()).append(",");
         if (getRotate() != null)
-            sb.append("Rotate: ").append(getRotate());
+            sb.append("Rotate: ").append(getRotate()).append(",");
+        if (getSampleRange() != null)
+            sb.append("SampleRange: ").append(getSampleRange());
         sb.append("}");
         return sb.toString();
     }
@@ -687,6 +798,10 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRotate() != null && other.getRotate().equals(this.getRotate()) == false)
             return false;
+        if (other.getSampleRange() == null ^ this.getSampleRange() == null)
+            return false;
+        if (other.getSampleRange() != null && other.getSampleRange().equals(this.getSampleRange()) == false)
+            return false;
         return true;
     }
 
@@ -702,6 +817,7 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPid() == null) ? 0 : getPid().hashCode());
         hashCode = prime * hashCode + ((getProgramNumber() == null) ? 0 : getProgramNumber().hashCode());
         hashCode = prime * hashCode + ((getRotate() == null) ? 0 : getRotate().hashCode());
+        hashCode = prime * hashCode + ((getSampleRange() == null) ? 0 : getSampleRange().hashCode());
         return hashCode;
     }
 

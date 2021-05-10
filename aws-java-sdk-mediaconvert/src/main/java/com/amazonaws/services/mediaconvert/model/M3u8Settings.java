@@ -47,6 +47,11 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
      */
     private java.util.List<Integer> audioPids;
     /**
+     * Specify the maximum time, in milliseconds, between Program Clock References (PCRs) inserted into the transport
+     * stream.
+     */
+    private Integer maxPcrInterval;
+    /**
      * If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3
      * tag will be inserted in the output.
      */
@@ -314,6 +319,46 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
 
     public M3u8Settings withAudioPids(java.util.Collection<Integer> audioPids) {
         setAudioPids(audioPids);
+        return this;
+    }
+
+    /**
+     * Specify the maximum time, in milliseconds, between Program Clock References (PCRs) inserted into the transport
+     * stream.
+     * 
+     * @param maxPcrInterval
+     *        Specify the maximum time, in milliseconds, between Program Clock References (PCRs) inserted into the
+     *        transport stream.
+     */
+
+    public void setMaxPcrInterval(Integer maxPcrInterval) {
+        this.maxPcrInterval = maxPcrInterval;
+    }
+
+    /**
+     * Specify the maximum time, in milliseconds, between Program Clock References (PCRs) inserted into the transport
+     * stream.
+     * 
+     * @return Specify the maximum time, in milliseconds, between Program Clock References (PCRs) inserted into the
+     *         transport stream.
+     */
+
+    public Integer getMaxPcrInterval() {
+        return this.maxPcrInterval;
+    }
+
+    /**
+     * Specify the maximum time, in milliseconds, between Program Clock References (PCRs) inserted into the transport
+     * stream.
+     * 
+     * @param maxPcrInterval
+     *        Specify the maximum time, in milliseconds, between Program Clock References (PCRs) inserted into the
+     *        transport stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public M3u8Settings withMaxPcrInterval(Integer maxPcrInterval) {
+        setMaxPcrInterval(maxPcrInterval);
         return this;
     }
 
@@ -953,6 +998,8 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
             sb.append("AudioFramesPerPes: ").append(getAudioFramesPerPes()).append(",");
         if (getAudioPids() != null)
             sb.append("AudioPids: ").append(getAudioPids()).append(",");
+        if (getMaxPcrInterval() != null)
+            sb.append("MaxPcrInterval: ").append(getMaxPcrInterval()).append(",");
         if (getNielsenId3() != null)
             sb.append("NielsenId3: ").append(getNielsenId3()).append(",");
         if (getPatInterval() != null)
@@ -1006,6 +1053,10 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
         if (other.getAudioPids() == null ^ this.getAudioPids() == null)
             return false;
         if (other.getAudioPids() != null && other.getAudioPids().equals(this.getAudioPids()) == false)
+            return false;
+        if (other.getMaxPcrInterval() == null ^ this.getMaxPcrInterval() == null)
+            return false;
+        if (other.getMaxPcrInterval() != null && other.getMaxPcrInterval().equals(this.getMaxPcrInterval()) == false)
             return false;
         if (other.getNielsenId3() == null ^ this.getNielsenId3() == null)
             return false;
@@ -1074,6 +1125,7 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAudioDuration() == null) ? 0 : getAudioDuration().hashCode());
         hashCode = prime * hashCode + ((getAudioFramesPerPes() == null) ? 0 : getAudioFramesPerPes().hashCode());
         hashCode = prime * hashCode + ((getAudioPids() == null) ? 0 : getAudioPids().hashCode());
+        hashCode = prime * hashCode + ((getMaxPcrInterval() == null) ? 0 : getMaxPcrInterval().hashCode());
         hashCode = prime * hashCode + ((getNielsenId3() == null) ? 0 : getNielsenId3().hashCode());
         hashCode = prime * hashCode + ((getPatInterval() == null) ? 0 : getPatInterval().hashCode());
         hashCode = prime * hashCode + ((getPcrControl() == null) ? 0 : getPcrControl().hashCode());

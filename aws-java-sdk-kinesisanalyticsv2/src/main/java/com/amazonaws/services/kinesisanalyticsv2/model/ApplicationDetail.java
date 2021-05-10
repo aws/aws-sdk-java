@@ -99,7 +99,7 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     private java.util.List<CloudWatchLoggingOptionDescription> cloudWatchLoggingOptionDescriptions;
     /**
      * <p>
-     * Describes the time window for automatic application maintenance.
+     * The details of the maintenance configuration for the application.
      * </p>
      */
     private ApplicationMaintenanceConfigurationDescription applicationMaintenanceConfigurationDescription;
@@ -123,6 +123,12 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String conditionalToken;
+    /**
+     * <p>
+     * The version to which you want to roll back the application.
+     * </p>
+     */
+    private Long applicationVersionRolledBackTo;
 
     /**
      * <p>
@@ -650,11 +656,11 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Describes the time window for automatic application maintenance.
+     * The details of the maintenance configuration for the application.
      * </p>
      * 
      * @param applicationMaintenanceConfigurationDescription
-     *        Describes the time window for automatic application maintenance.
+     *        The details of the maintenance configuration for the application.
      */
 
     public void setApplicationMaintenanceConfigurationDescription(ApplicationMaintenanceConfigurationDescription applicationMaintenanceConfigurationDescription) {
@@ -663,10 +669,10 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Describes the time window for automatic application maintenance.
+     * The details of the maintenance configuration for the application.
      * </p>
      * 
-     * @return Describes the time window for automatic application maintenance.
+     * @return The details of the maintenance configuration for the application.
      */
 
     public ApplicationMaintenanceConfigurationDescription getApplicationMaintenanceConfigurationDescription() {
@@ -675,11 +681,11 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Describes the time window for automatic application maintenance.
+     * The details of the maintenance configuration for the application.
      * </p>
      * 
      * @param applicationMaintenanceConfigurationDescription
-     *        Describes the time window for automatic application maintenance.
+     *        The details of the maintenance configuration for the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -822,6 +828,46 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The version to which you want to roll back the application.
+     * </p>
+     * 
+     * @param applicationVersionRolledBackTo
+     *        The version to which you want to roll back the application.
+     */
+
+    public void setApplicationVersionRolledBackTo(Long applicationVersionRolledBackTo) {
+        this.applicationVersionRolledBackTo = applicationVersionRolledBackTo;
+    }
+
+    /**
+     * <p>
+     * The version to which you want to roll back the application.
+     * </p>
+     * 
+     * @return The version to which you want to roll back the application.
+     */
+
+    public Long getApplicationVersionRolledBackTo() {
+        return this.applicationVersionRolledBackTo;
+    }
+
+    /**
+     * <p>
+     * The version to which you want to roll back the application.
+     * </p>
+     * 
+     * @param applicationVersionRolledBackTo
+     *        The version to which you want to roll back the application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationDetail withApplicationVersionRolledBackTo(Long applicationVersionRolledBackTo) {
+        setApplicationVersionRolledBackTo(applicationVersionRolledBackTo);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -862,7 +908,9 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
         if (getApplicationVersionRolledBackFrom() != null)
             sb.append("ApplicationVersionRolledBackFrom: ").append(getApplicationVersionRolledBackFrom()).append(",");
         if (getConditionalToken() != null)
-            sb.append("ConditionalToken: ").append(getConditionalToken());
+            sb.append("ConditionalToken: ").append(getConditionalToken()).append(",");
+        if (getApplicationVersionRolledBackTo() != null)
+            sb.append("ApplicationVersionRolledBackTo: ").append(getApplicationVersionRolledBackTo());
         sb.append("}");
         return sb.toString();
     }
@@ -942,6 +990,11 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getConditionalToken() != null && other.getConditionalToken().equals(this.getConditionalToken()) == false)
             return false;
+        if (other.getApplicationVersionRolledBackTo() == null ^ this.getApplicationVersionRolledBackTo() == null)
+            return false;
+        if (other.getApplicationVersionRolledBackTo() != null
+                && other.getApplicationVersionRolledBackTo().equals(this.getApplicationVersionRolledBackTo()) == false)
+            return false;
         return true;
     }
 
@@ -966,6 +1019,7 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getApplicationVersionUpdatedFrom() == null) ? 0 : getApplicationVersionUpdatedFrom().hashCode());
         hashCode = prime * hashCode + ((getApplicationVersionRolledBackFrom() == null) ? 0 : getApplicationVersionRolledBackFrom().hashCode());
         hashCode = prime * hashCode + ((getConditionalToken() == null) ? 0 : getConditionalToken().hashCode());
+        hashCode = prime * hashCode + ((getApplicationVersionRolledBackTo() == null) ? 0 : getApplicationVersionRolledBackTo().hashCode());
         return hashCode;
     }
 

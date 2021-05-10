@@ -41,6 +41,12 @@ public class LoRaWANGateway implements Serializable, Cloneable, StructuredPojo {
      */
     private String rfRegion;
 
+    private java.util.List<java.util.List<String>> joinEuiFilters;
+
+    private java.util.List<String> netIdFilters;
+
+    private java.util.List<Integer> subBands;
+
     /**
      * <p>
      * The gateway's EUI value.
@@ -122,6 +128,162 @@ public class LoRaWANGateway implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<java.util.List<String>> getJoinEuiFilters() {
+        return joinEuiFilters;
+    }
+
+    /**
+     * @param joinEuiFilters
+     */
+
+    public void setJoinEuiFilters(java.util.Collection<java.util.List<String>> joinEuiFilters) {
+        if (joinEuiFilters == null) {
+            this.joinEuiFilters = null;
+            return;
+        }
+
+        this.joinEuiFilters = new java.util.ArrayList<java.util.List<String>>(joinEuiFilters);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setJoinEuiFilters(java.util.Collection)} or {@link #withJoinEuiFilters(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param joinEuiFilters
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoRaWANGateway withJoinEuiFilters(java.util.List<String>... joinEuiFilters) {
+        if (this.joinEuiFilters == null) {
+            setJoinEuiFilters(new java.util.ArrayList<java.util.List<String>>(joinEuiFilters.length));
+        }
+        for (java.util.List<String> ele : joinEuiFilters) {
+            this.joinEuiFilters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param joinEuiFilters
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoRaWANGateway withJoinEuiFilters(java.util.Collection<java.util.List<String>> joinEuiFilters) {
+        setJoinEuiFilters(joinEuiFilters);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.List<String> getNetIdFilters() {
+        return netIdFilters;
+    }
+
+    /**
+     * @param netIdFilters
+     */
+
+    public void setNetIdFilters(java.util.Collection<String> netIdFilters) {
+        if (netIdFilters == null) {
+            this.netIdFilters = null;
+            return;
+        }
+
+        this.netIdFilters = new java.util.ArrayList<String>(netIdFilters);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNetIdFilters(java.util.Collection)} or {@link #withNetIdFilters(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param netIdFilters
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoRaWANGateway withNetIdFilters(String... netIdFilters) {
+        if (this.netIdFilters == null) {
+            setNetIdFilters(new java.util.ArrayList<String>(netIdFilters.length));
+        }
+        for (String ele : netIdFilters) {
+            this.netIdFilters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param netIdFilters
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoRaWANGateway withNetIdFilters(java.util.Collection<String> netIdFilters) {
+        setNetIdFilters(netIdFilters);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.List<Integer> getSubBands() {
+        return subBands;
+    }
+
+    /**
+     * @param subBands
+     */
+
+    public void setSubBands(java.util.Collection<Integer> subBands) {
+        if (subBands == null) {
+            this.subBands = null;
+            return;
+        }
+
+        this.subBands = new java.util.ArrayList<Integer>(subBands);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSubBands(java.util.Collection)} or {@link #withSubBands(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param subBands
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoRaWANGateway withSubBands(Integer... subBands) {
+        if (this.subBands == null) {
+            setSubBands(new java.util.ArrayList<Integer>(subBands.length));
+        }
+        for (Integer ele : subBands) {
+            this.subBands.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param subBands
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoRaWANGateway withSubBands(java.util.Collection<Integer> subBands) {
+        setSubBands(subBands);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +298,13 @@ public class LoRaWANGateway implements Serializable, Cloneable, StructuredPojo {
         if (getGatewayEui() != null)
             sb.append("GatewayEui: ").append(getGatewayEui()).append(",");
         if (getRfRegion() != null)
-            sb.append("RfRegion: ").append(getRfRegion());
+            sb.append("RfRegion: ").append(getRfRegion()).append(",");
+        if (getJoinEuiFilters() != null)
+            sb.append("JoinEuiFilters: ").append(getJoinEuiFilters()).append(",");
+        if (getNetIdFilters() != null)
+            sb.append("NetIdFilters: ").append(getNetIdFilters()).append(",");
+        if (getSubBands() != null)
+            sb.append("SubBands: ").append(getSubBands());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +327,18 @@ public class LoRaWANGateway implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRfRegion() != null && other.getRfRegion().equals(this.getRfRegion()) == false)
             return false;
+        if (other.getJoinEuiFilters() == null ^ this.getJoinEuiFilters() == null)
+            return false;
+        if (other.getJoinEuiFilters() != null && other.getJoinEuiFilters().equals(this.getJoinEuiFilters()) == false)
+            return false;
+        if (other.getNetIdFilters() == null ^ this.getNetIdFilters() == null)
+            return false;
+        if (other.getNetIdFilters() != null && other.getNetIdFilters().equals(this.getNetIdFilters()) == false)
+            return false;
+        if (other.getSubBands() == null ^ this.getSubBands() == null)
+            return false;
+        if (other.getSubBands() != null && other.getSubBands().equals(this.getSubBands()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +349,9 @@ public class LoRaWANGateway implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getGatewayEui() == null) ? 0 : getGatewayEui().hashCode());
         hashCode = prime * hashCode + ((getRfRegion() == null) ? 0 : getRfRegion().hashCode());
+        hashCode = prime * hashCode + ((getJoinEuiFilters() == null) ? 0 : getJoinEuiFilters().hashCode());
+        hashCode = prime * hashCode + ((getNetIdFilters() == null) ? 0 : getNetIdFilters().hashCode());
+        hashCode = prime * hashCode + ((getSubBands() == null) ? 0 : getSubBands().hashCode());
         return hashCode;
     }
 

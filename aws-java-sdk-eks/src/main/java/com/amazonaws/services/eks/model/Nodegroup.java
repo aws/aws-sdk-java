@@ -141,6 +141,14 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, String> labels;
     /**
      * <p>
+     * The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of
+     * <code>NoSchedule</code>, <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can be used
+     * together with tolerations to control how workloads are scheduled to your nodes.
+     * </p>
+     */
+    private java.util.List<Taint> taints;
+    /**
+     * <p>
      * The resources associated with the node group, such as Auto Scaling groups and security groups for remote access.
      * </p>
      */
@@ -1054,6 +1062,92 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of
+     * <code>NoSchedule</code>, <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can be used
+     * together with tolerations to control how workloads are scheduled to your nodes.
+     * </p>
+     * 
+     * @return The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one
+     *         of <code>NoSchedule</code>, <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints
+     *         can be used together with tolerations to control how workloads are scheduled to your nodes.
+     */
+
+    public java.util.List<Taint> getTaints() {
+        return taints;
+    }
+
+    /**
+     * <p>
+     * The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of
+     * <code>NoSchedule</code>, <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can be used
+     * together with tolerations to control how workloads are scheduled to your nodes.
+     * </p>
+     * 
+     * @param taints
+     *        The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of
+     *        <code>NoSchedule</code>, <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can
+     *        be used together with tolerations to control how workloads are scheduled to your nodes.
+     */
+
+    public void setTaints(java.util.Collection<Taint> taints) {
+        if (taints == null) {
+            this.taints = null;
+            return;
+        }
+
+        this.taints = new java.util.ArrayList<Taint>(taints);
+    }
+
+    /**
+     * <p>
+     * The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of
+     * <code>NoSchedule</code>, <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can be used
+     * together with tolerations to control how workloads are scheduled to your nodes.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTaints(java.util.Collection)} or {@link #withTaints(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param taints
+     *        The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of
+     *        <code>NoSchedule</code>, <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can
+     *        be used together with tolerations to control how workloads are scheduled to your nodes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Nodegroup withTaints(Taint... taints) {
+        if (this.taints == null) {
+            setTaints(new java.util.ArrayList<Taint>(taints.length));
+        }
+        for (Taint ele : taints) {
+            this.taints.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of
+     * <code>NoSchedule</code>, <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can be used
+     * together with tolerations to control how workloads are scheduled to your nodes.
+     * </p>
+     * 
+     * @param taints
+     *        The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of
+     *        <code>NoSchedule</code>, <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can
+     *        be used together with tolerations to control how workloads are scheduled to your nodes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Nodegroup withTaints(java.util.Collection<Taint> taints) {
+        setTaints(taints);
+        return this;
+    }
+
+    /**
+     * <p>
      * The resources associated with the node group, such as Auto Scaling groups and security groups for remote access.
      * </p>
      * 
@@ -1348,6 +1442,8 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
             sb.append("NodeRole: ").append(getNodeRole()).append(",");
         if (getLabels() != null)
             sb.append("Labels: ").append(getLabels()).append(",");
+        if (getTaints() != null)
+            sb.append("Taints: ").append(getTaints()).append(",");
         if (getResources() != null)
             sb.append("Resources: ").append(getResources()).append(",");
         if (getDiskSize() != null)
@@ -1436,6 +1532,10 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLabels() != null && other.getLabels().equals(this.getLabels()) == false)
             return false;
+        if (other.getTaints() == null ^ this.getTaints() == null)
+            return false;
+        if (other.getTaints() != null && other.getTaints().equals(this.getTaints()) == false)
+            return false;
         if (other.getResources() == null ^ this.getResources() == null)
             return false;
         if (other.getResources() != null && other.getResources().equals(this.getResources()) == false)
@@ -1480,6 +1580,7 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAmiType() == null) ? 0 : getAmiType().hashCode());
         hashCode = prime * hashCode + ((getNodeRole() == null) ? 0 : getNodeRole().hashCode());
         hashCode = prime * hashCode + ((getLabels() == null) ? 0 : getLabels().hashCode());
+        hashCode = prime * hashCode + ((getTaints() == null) ? 0 : getTaints().hashCode());
         hashCode = prime * hashCode + ((getResources() == null) ? 0 : getResources().hashCode());
         hashCode = prime * hashCode + ((getDiskSize() == null) ? 0 : getDiskSize().hashCode());
         hashCode = prime * hashCode + ((getHealth() == null) ? 0 : getHealth().hashCode());
