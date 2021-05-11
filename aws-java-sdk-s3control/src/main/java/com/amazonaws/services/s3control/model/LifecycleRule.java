@@ -92,8 +92,7 @@ public class LifecycleRule implements Serializable, Cloneable {
      * Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 waits before permanently
      * removing all parts of the upload. For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
-     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the <i>Amazon Simple Storage Service
-     * Developer Guide</i>.
+     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      */
     private AbortIncompleteMultipartUpload abortIncompleteMultipartUpload;
@@ -581,16 +580,15 @@ public class LifecycleRule implements Serializable, Cloneable {
      * Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 waits before permanently
      * removing all parts of the upload. For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
-     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the <i>Amazon Simple Storage Service
-     * Developer Guide</i>.
+     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * 
      * @param abortIncompleteMultipartUpload
      *        Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 waits before
      *        permanently removing all parts of the upload. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config"
-     *        > Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the <i>Amazon Simple
-     *        Storage Service Developer Guide</i>.
+     *        > Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the <i>Amazon S3 User
+     *        Guide</i>.
      */
 
     public void setAbortIncompleteMultipartUpload(AbortIncompleteMultipartUpload abortIncompleteMultipartUpload) {
@@ -602,15 +600,14 @@ public class LifecycleRule implements Serializable, Cloneable {
      * Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 waits before permanently
      * removing all parts of the upload. For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
-     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the <i>Amazon Simple Storage Service
-     * Developer Guide</i>.
+     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * 
      * @return Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 waits before
      *         permanently removing all parts of the upload. For more information, see <a href=
      *         "https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config"
-     *         > Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the <i>Amazon Simple
-     *         Storage Service Developer Guide</i>.
+     *         > Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the <i>Amazon S3 User
+     *         Guide</i>.
      */
 
     public AbortIncompleteMultipartUpload getAbortIncompleteMultipartUpload() {
@@ -622,16 +619,15 @@ public class LifecycleRule implements Serializable, Cloneable {
      * Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 waits before permanently
      * removing all parts of the upload. For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
-     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the <i>Amazon Simple Storage Service
-     * Developer Guide</i>.
+     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * 
      * @param abortIncompleteMultipartUpload
      *        Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 waits before
      *        permanently removing all parts of the upload. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config"
-     *        > Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the <i>Amazon Simple
-     *        Storage Service Developer Guide</i>.
+     *        > Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the <i>Amazon S3 User
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

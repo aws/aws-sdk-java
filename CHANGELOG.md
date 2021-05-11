@@ -1,3 +1,20 @@
+# __1.11.1017__ __2021-05-11__
+## __AWS S3 Control__
+  - ### Features
+    - Documentation updates for Amazon S3-control
+
+## __AWS Systems Manager Incident Manager__
+  - ### Features
+    - AWS Systems Manager Incident Manager enables faster resolution of critical application availability and performance issues, management of contacts and post-incident analysis
+
+## __AWS Systems Manager Incident Manager Contacts__
+  - ### Features
+    - AWS Systems Manager Incident Manager enables faster resolution of critical application availability and performance issues, management of contacts and post incident analysis
+
+## __Amazon Transcribe Streaming Service__
+  - ### Features
+    - Amazon Transcribe supports partial results stabilization for streaming transcription.
+
 # __1.11.1016__ __2021-05-10__
 ## __AWS Config__
   - ### Features

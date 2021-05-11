@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.1017-SNAPSHOT</version>
+    <version>1.11.1017</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -15,6 +15,18 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-ssmcontacts</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-ssmincidents</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-finspacedata</artifactId>
         <groupId>com.amazonaws</groupId>
@@ -1718,6 +1730,14 @@
                               </taglet>
                           </taglets>
                           <groups>
+                              <group>
+                                  <title>AWS Systems Manager Incident Manager Contacts</title>
+                                  <packages>com.amazonaws.services.ssmcontacts*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Systems Manager Incident Manager</title>
+                                  <packages>com.amazonaws.services.ssmincidents*</packages>
+                              </group>
                               <group>
                                   <title>FinSpace Public API</title>
                                   <packages>com.amazonaws.services.finspacedata*</packages>

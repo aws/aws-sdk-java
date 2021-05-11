@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Contains the configuration parameters for the Object Lock retention action for an S3 Batch Operations job. Batch
  * Operations passes every object to the underlying <code>PutObjectRetention</code> API. For more information, see <a
  * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3 Object Lock retention
- * with S3 Batch Operations</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+ * with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3SetObjectRetentionOperation"
@@ -40,7 +40,7 @@ public class S3SetObjectRetentionOperation implements Serializable, Cloneable {
      * <p>
      * Contains the Object Lock retention mode to be applied to all objects in the Batch Operations job. For more
      * information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3
-     * Object Lock retention with S3 Batch Operations</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      */
     private S3Retention retention;
@@ -109,14 +109,14 @@ public class S3SetObjectRetentionOperation implements Serializable, Cloneable {
      * <p>
      * Contains the Object Lock retention mode to be applied to all objects in the Batch Operations job. For more
      * information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3
-     * Object Lock retention with S3 Batch Operations</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * 
      * @param retention
      *        Contains the Object Lock retention mode to be applied to all objects in the Batch Operations job. For more
      *        information, see <a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3 Object Lock
-     *        retention with S3 Batch Operations</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     *        retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
      */
 
     public void setRetention(S3Retention retention) {
@@ -127,13 +127,13 @@ public class S3SetObjectRetentionOperation implements Serializable, Cloneable {
      * <p>
      * Contains the Object Lock retention mode to be applied to all objects in the Batch Operations job. For more
      * information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3
-     * Object Lock retention with S3 Batch Operations</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * 
      * @return Contains the Object Lock retention mode to be applied to all objects in the Batch Operations job. For
      *         more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3 Object Lock
-     *         retention with S3 Batch Operations</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     *         retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
      */
 
     public S3Retention getRetention() {
@@ -144,14 +144,14 @@ public class S3SetObjectRetentionOperation implements Serializable, Cloneable {
      * <p>
      * Contains the Object Lock retention mode to be applied to all objects in the Batch Operations job. For more
      * information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3
-     * Object Lock retention with S3 Batch Operations</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * 
      * @param retention
      *        Contains the Object Lock retention mode to be applied to all objects in the Batch Operations job. For more
      *        information, see <a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3 Object Lock
-     *        retention with S3 Batch Operations</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     *        retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

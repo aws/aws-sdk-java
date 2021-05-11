@@ -46,6 +46,12 @@ public class AccessPoint implements Serializable, Cloneable {
      * <p>
      * The virtual private cloud (VPC) configuration for this access point, if one exists.
      * </p>
+     * <note>
+     * <p>
+     * This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other AWS
+     * services.
+     * </p>
+     * </note>
      */
     private VpcConfiguration vpcConfiguration;
     /**
@@ -196,9 +202,19 @@ public class AccessPoint implements Serializable, Cloneable {
      * <p>
      * The virtual private cloud (VPC) configuration for this access point, if one exists.
      * </p>
+     * <note>
+     * <p>
+     * This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other AWS
+     * services.
+     * </p>
+     * </note>
      * 
      * @param vpcConfiguration
-     *        The virtual private cloud (VPC) configuration for this access point, if one exists.
+     *        The virtual private cloud (VPC) configuration for this access point, if one exists.</p> <note>
+     *        <p>
+     *        This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other
+     *        AWS services.
+     *        </p>
      */
 
     public void setVpcConfiguration(VpcConfiguration vpcConfiguration) {
@@ -209,8 +225,18 @@ public class AccessPoint implements Serializable, Cloneable {
      * <p>
      * The virtual private cloud (VPC) configuration for this access point, if one exists.
      * </p>
+     * <note>
+     * <p>
+     * This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other AWS
+     * services.
+     * </p>
+     * </note>
      * 
-     * @return The virtual private cloud (VPC) configuration for this access point, if one exists.
+     * @return The virtual private cloud (VPC) configuration for this access point, if one exists.</p> <note>
+     *         <p>
+     *         This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other
+     *         AWS services.
+     *         </p>
      */
 
     public VpcConfiguration getVpcConfiguration() {
@@ -221,9 +247,19 @@ public class AccessPoint implements Serializable, Cloneable {
      * <p>
      * The virtual private cloud (VPC) configuration for this access point, if one exists.
      * </p>
+     * <note>
+     * <p>
+     * This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other AWS
+     * services.
+     * </p>
+     * </note>
      * 
      * @param vpcConfiguration
-     *        The virtual private cloud (VPC) configuration for this access point, if one exists.
+     *        The virtual private cloud (VPC) configuration for this access point, if one exists.</p> <note>
+     *        <p>
+     *        This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other
+     *        AWS services.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

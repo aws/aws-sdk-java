@@ -54,7 +54,7 @@ public class PutAccessPointPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The policy that you want to apply to the specified access point. For more information about access point
      * policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing data
-     * access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * access with Amazon S3 access points</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      */
     private String policy;
@@ -218,13 +218,13 @@ public class PutAccessPointPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The policy that you want to apply to the specified access point. For more information about access point
      * policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing data
-     * access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * access with Amazon S3 access points</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * 
      * @param policy
      *        The policy that you want to apply to the specified access point. For more information about access point
      *        policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing
-     *        data access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     *        data access with Amazon S3 access points</a> in the <i>Amazon S3 User Guide</i>.
      */
 
     public void setPolicy(String policy) {
@@ -235,12 +235,12 @@ public class PutAccessPointPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The policy that you want to apply to the specified access point. For more information about access point
      * policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing data
-     * access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * access with Amazon S3 access points</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * 
      * @return The policy that you want to apply to the specified access point. For more information about access point
      *         policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing
-     *         data access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     *         data access with Amazon S3 access points</a> in the <i>Amazon S3 User Guide</i>.
      */
 
     public String getPolicy() {
@@ -251,13 +251,13 @@ public class PutAccessPointPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The policy that you want to apply to the specified access point. For more information about access point
      * policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing data
-     * access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * access with Amazon S3 access points</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * 
      * @param policy
      *        The policy that you want to apply to the specified access point. For more information about access point
      *        policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing
-     *        data access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     *        data access with Amazon S3 access points</a> in the <i>Amazon S3 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

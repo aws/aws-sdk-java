@@ -31,8 +31,7 @@ public class NoncurrentVersionExpiration implements Serializable, Cloneable {
      * Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For
      * information about the noncurrent days calculations, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations"
-     * >How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.
+     * >How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      */
     private Integer noncurrentDays;
@@ -42,16 +41,14 @@ public class NoncurrentVersionExpiration implements Serializable, Cloneable {
      * Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For
      * information about the noncurrent days calculations, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations"
-     * >How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.
+     * >How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * 
      * @param noncurrentDays
      *        Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action.
      *        For information about the noncurrent days calculations, see <a href=
      *        "https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations"
-     *        >How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon Simple Storage Service
-     *        Developer Guide</i>.
+     *        >How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.
      */
 
     public void setNoncurrentDays(Integer noncurrentDays) {
@@ -63,15 +60,13 @@ public class NoncurrentVersionExpiration implements Serializable, Cloneable {
      * Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For
      * information about the noncurrent days calculations, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations"
-     * >How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.
+     * >How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * 
      * @return Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action.
      *         For information about the noncurrent days calculations, see <a href=
      *         "https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations"
-     *         >How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon Simple Storage Service
-     *         Developer Guide</i>.
+     *         >How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.
      */
 
     public Integer getNoncurrentDays() {
@@ -83,16 +78,14 @@ public class NoncurrentVersionExpiration implements Serializable, Cloneable {
      * Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For
      * information about the noncurrent days calculations, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations"
-     * >How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.
+     * >How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * 
      * @param noncurrentDays
      *        Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action.
      *        For information about the noncurrent days calculations, see <a href=
      *        "https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations"
-     *        >How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon Simple Storage Service
-     *        Developer Guide</i>.
+     *        >How Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Specifies when an object transitions to a specified storage class. For more information about Amazon S3 Lifecycle
  * configuration rules, see <a
  * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html">
- * Transitioning objects using Amazon S3 Lifecycle</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+ * Transitioning objects using Amazon S3 Lifecycle</a> in the <i>Amazon S3 User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/Transition" target="_top">AWS API

@@ -53,6 +53,12 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
      * <p>
      * Contains the virtual private cloud (VPC) configuration for the specified access point.
      * </p>
+     * <note>
+     * <p>
+     * This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other AWS
+     * services.
+     * </p>
+     * </note>
      */
     private VpcConfiguration vpcConfiguration;
 
@@ -259,9 +265,19 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
      * <p>
      * Contains the virtual private cloud (VPC) configuration for the specified access point.
      * </p>
+     * <note>
+     * <p>
+     * This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other AWS
+     * services.
+     * </p>
+     * </note>
      * 
      * @param vpcConfiguration
-     *        Contains the virtual private cloud (VPC) configuration for the specified access point.
+     *        Contains the virtual private cloud (VPC) configuration for the specified access point.</p> <note>
+     *        <p>
+     *        This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other
+     *        AWS services.
+     *        </p>
      */
 
     public void setVpcConfiguration(VpcConfiguration vpcConfiguration) {
@@ -272,8 +288,18 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
      * <p>
      * Contains the virtual private cloud (VPC) configuration for the specified access point.
      * </p>
+     * <note>
+     * <p>
+     * This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other AWS
+     * services.
+     * </p>
+     * </note>
      * 
-     * @return Contains the virtual private cloud (VPC) configuration for the specified access point.
+     * @return Contains the virtual private cloud (VPC) configuration for the specified access point.</p> <note>
+     *         <p>
+     *         This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other
+     *         AWS services.
+     *         </p>
      */
 
     public VpcConfiguration getVpcConfiguration() {
@@ -284,9 +310,19 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
      * <p>
      * Contains the virtual private cloud (VPC) configuration for the specified access point.
      * </p>
+     * <note>
+     * <p>
+     * This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other AWS
+     * services.
+     * </p>
+     * </note>
      * 
      * @param vpcConfiguration
-     *        Contains the virtual private cloud (VPC) configuration for the specified access point.
+     *        Contains the virtual private cloud (VPC) configuration for the specified access point.</p> <note>
+     *        <p>
+     *        This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other
+     *        AWS services.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

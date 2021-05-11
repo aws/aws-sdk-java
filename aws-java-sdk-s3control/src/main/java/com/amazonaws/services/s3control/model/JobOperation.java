@@ -19,8 +19,8 @@ import javax.annotation.Generated;
  * <p>
  * The operation that you want this job to perform on every object listed in the manifest. For more information about
  * the available operations, see <a
- * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Operations</a> in the <i>Amazon
- * Simple Storage Service User Guide</i>.
+ * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Operations</a> in the <i>Amazon S3
+ * User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/JobOperation" target="_top">AWS API

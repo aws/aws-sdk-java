@@ -42,8 +42,8 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The action that you want this job to perform on every object listed in the manifest. For more information about
      * the available actions, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the <i>Amazon
-     * Simple Storage Service User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the <i>Amazon S3
+     * User Guide</i>.
      * </p>
      */
     private JobOperation operation;
@@ -197,15 +197,15 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The action that you want this job to perform on every object listed in the manifest. For more information about
      * the available actions, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the <i>Amazon
-     * Simple Storage Service User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the <i>Amazon S3
+     * User Guide</i>.
      * </p>
      * 
      * @param operation
      *        The action that you want this job to perform on every object listed in the manifest. For more information
      *        about the available actions, see <a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the
-     *        <i>Amazon Simple Storage Service User Guide</i>.
+     *        <i>Amazon S3 User Guide</i>.
      */
 
     public void setOperation(JobOperation operation) {
@@ -216,14 +216,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The action that you want this job to perform on every object listed in the manifest. For more information about
      * the available actions, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the <i>Amazon
-     * Simple Storage Service User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the <i>Amazon S3
+     * User Guide</i>.
      * </p>
      * 
      * @return The action that you want this job to perform on every object listed in the manifest. For more information
      *         about the available actions, see <a
      *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the
-     *         <i>Amazon Simple Storage Service User Guide</i>.
+     *         <i>Amazon S3 User Guide</i>.
      */
 
     public JobOperation getOperation() {
@@ -234,15 +234,15 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The action that you want this job to perform on every object listed in the manifest. For more information about
      * the available actions, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the <i>Amazon
-     * Simple Storage Service User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the <i>Amazon S3
+     * User Guide</i>.
      * </p>
      * 
      * @param operation
      *        The action that you want this job to perform on every object listed in the manifest. For more information
      *        about the available actions, see <a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a> in the
-     *        <i>Amazon Simple Storage Service User Guide</i>.
+     *        <i>Amazon S3 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -36,17 +36,17 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Creates an access point and associates it with the specified bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing Data Access with Amazon
-     * S3 Access Points</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * S3 Access Points</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p/>
      * <note>
      * <p>
-     * S3 on Outposts only supports VPC-style Access Points.
+     * S3 on Outposts only supports VPC-style access points.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">
-     * Accessing Amazon S3 on Outposts using virtual private cloud (VPC) only Access Points</a> in the <i>Amazon Simple
-     * Storage Service User Guide</i>.
+     * Accessing Amazon S3 on Outposts using virtual private cloud (VPC) only access points</a> in the <i>Amazon S3 User
+     * Guide</i>.
      * </p>
      * </note>
      * <p>
@@ -93,17 +93,17 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Creates an access point and associates it with the specified bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing Data Access with Amazon
-     * S3 Access Points</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * S3 Access Points</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p/>
      * <note>
      * <p>
-     * S3 on Outposts only supports VPC-style Access Points.
+     * S3 on Outposts only supports VPC-style access points.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">
-     * Accessing Amazon S3 on Outposts using virtual private cloud (VPC) only Access Points</a> in the <i>Amazon Simple
-     * Storage Service User Guide</i>.
+     * Accessing Amazon S3 on Outposts using virtual private cloud (VPC) only access points</a> in the <i>Amazon S3 User
+     * Guide</i>.
      * </p>
      * </note>
      * <p>
@@ -155,7 +155,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Creates an Object Lambda Access Point. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html">Transforming objects with
-     * Object Lambda Access Points</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * Object Lambda Access Points</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * The following actions are related to <code>CreateAccessPointForObjectLambda</code>:
@@ -195,7 +195,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Creates an Object Lambda Access Point. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html">Transforming objects with
-     * Object Lambda Access Points</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * Object Lambda Access Points</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * The following actions are related to <code>CreateAccessPointForObjectLambda</code>:
@@ -241,14 +241,14 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * This action creates an Amazon S3 on Outposts bucket. To create an S3 bucket, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">Create Bucket</a> in the <i>Amazon
-     * Simple Storage Service API</i>.
+     * S3 API Reference</i>.
      * </p>
      * </note>
      * <p>
      * Creates a new Outposts bucket. By creating the bucket, you become the bucket owner. To create an Outposts bucket,
      * you must have S3 on Outposts. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * Not every string is an acceptable bucket name. For information on bucket naming restrictions, see <a
@@ -327,14 +327,14 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * This action creates an Amazon S3 on Outposts bucket. To create an S3 bucket, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">Create Bucket</a> in the <i>Amazon
-     * Simple Storage Service API</i>.
+     * S3 API Reference</i>.
      * </p>
      * </note>
      * <p>
      * Creates a new Outposts bucket. By creating the bucket, you become the bucket owner. To create an Outposts bucket,
      * you must have S3 on Outposts. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * Not every string is an acceptable bucket name. For information on bucket naming restrictions, see <a
@@ -418,7 +418,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * You can use S3 Batch Operations to perform large-scale batch actions on Amazon S3 objects. Batch Operations can
      * run a single action on lists of Amazon S3 objects that you specify. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * This action creates a S3 Batch Operations job.
@@ -469,7 +469,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * You can use S3 Batch Operations to perform large-scale batch actions on Amazon S3 objects. Batch Operations can
      * run a single action on lists of Amazon S3 objects that you specify. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * This action creates a S3 Batch Operations job.
@@ -850,15 +850,15 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <note>
      * <p>
      * This action deletes an Amazon S3 on Outposts bucket. To delete an S3 bucket, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a> in the <i>Amazon
-     * Simple Storage Service API</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a> in the <i>Amazon S3
+     * API Reference</i>.
      * </p>
      * </note>
      * <p>
      * Deletes the Amazon S3 on Outposts bucket. All objects (including all object versions and delete markers) in the
      * bucket must be deleted before the bucket itself can be deleted. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
@@ -902,15 +902,15 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <note>
      * <p>
      * This action deletes an Amazon S3 on Outposts bucket. To delete an S3 bucket, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a> in the <i>Amazon
-     * Simple Storage Service API</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a> in the <i>Amazon S3
+     * API Reference</i>.
      * </p>
      * </note>
      * <p>
      * Deletes the Amazon S3 on Outposts bucket. All objects (including all object versions and delete markers) in the
      * bucket must be deleted before the bucket itself can be deleted. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
@@ -961,7 +961,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * This action deletes an Amazon S3 on Outposts bucket's lifecycle configuration. To delete an S3 bucket's lifecycle
      * configuration, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a>
-     * in the <i>Amazon Simple Storage Service API</i>.
+     * in the <i>Amazon S3 API Reference</i>.
      * </p>
      * </note>
      * <p>
@@ -970,7 +970,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * and Amazon S3 on Outposts no longer automatically deletes any objects on the basis of rules contained in the
      * deleted lifecycle configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * To use this action, you must have permission to perform the <code>s3-outposts:DeleteLifecycleConfiguration</code>
@@ -1025,7 +1025,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * This action deletes an Amazon S3 on Outposts bucket's lifecycle configuration. To delete an S3 bucket's lifecycle
      * configuration, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a>
-     * in the <i>Amazon Simple Storage Service API</i>.
+     * in the <i>Amazon S3 API Reference</i>.
      * </p>
      * </note>
      * <p>
@@ -1034,7 +1034,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * and Amazon S3 on Outposts no longer automatically deletes any objects on the basis of rules contained in the
      * deleted lifecycle configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * To use this action, you must have permission to perform the <code>s3-outposts:DeleteLifecycleConfiguration</code>
@@ -1093,7 +1093,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * This action deletes an Amazon S3 on Outposts bucket policy. To delete an S3 bucket policy, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketPolicy.html">DeleteBucketPolicy</a> in the
-     * <i>Amazon Simple Storage Service API</i>.
+     * <i>Amazon S3 API Reference</i>.
      * </p>
      * </note>
      * <p>
@@ -1102,7 +1102,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * bucket, the calling identity must have the <code>s3-outposts:DeleteBucketPolicy</code> permissions on the
      * specified Outposts bucket and belong to the bucket owner's account to use this action. For more information, see
      * <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a>
-     * in <i>Amazon Simple Storage Service User Guide</i>.
+     * in <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * If you don't have <code>DeleteBucketPolicy</code> permissions, Amazon S3 returns a <code>403 Access Denied</code>
@@ -1158,7 +1158,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * This action deletes an Amazon S3 on Outposts bucket policy. To delete an S3 bucket policy, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketPolicy.html">DeleteBucketPolicy</a> in the
-     * <i>Amazon Simple Storage Service API</i>.
+     * <i>Amazon S3 API Reference</i>.
      * </p>
      * </note>
      * <p>
@@ -1167,7 +1167,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * bucket, the calling identity must have the <code>s3-outposts:DeleteBucketPolicy</code> permissions on the
      * specified Outposts bucket and belong to the bucket owner's account to use this action. For more information, see
      * <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a>
-     * in <i>Amazon Simple Storage Service User Guide</i>.
+     * in <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * If you don't have <code>DeleteBucketPolicy</code> permissions, Amazon S3 returns a <code>403 Access Denied</code>
@@ -1228,13 +1228,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * This action deletes an Amazon S3 on Outposts bucket's tags. To delete an S3 bucket tags, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a> in
-     * the <i>Amazon Simple Storage Service API</i>.
+     * the <i>Amazon S3 API Reference</i>.
      * </p>
      * </note>
      * <p>
      * Deletes the tags from the Outposts bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * To use this action, you must have permission to perform the <code>PutBucketTagging</code> action. By default, the
@@ -1278,13 +1278,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * This action deletes an Amazon S3 on Outposts bucket's tags. To delete an S3 bucket tags, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a> in
-     * the <i>Amazon Simple Storage Service API</i>.
+     * the <i>Amazon S3 API Reference</i>.
      * </p>
      * </note>
      * <p>
      * Deletes the tags from the Outposts bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * To use this action, you must have permission to perform the <code>PutBucketTagging</code> action. By default, the
@@ -1333,7 +1333,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * Removes the entire tag set from the specified S3 Batch Operations job. To use this operation, you must have
      * permission to perform the <code>s3:DeleteJobTagging</code> action. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags"
-     * >Controlling access and labeling jobs using tags</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * >Controlling access and labeling jobs using tags</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p/>
      * <p>
@@ -1370,7 +1370,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * Removes the entire tag set from the specified S3 Batch Operations job. To use this operation, you must have
      * permission to perform the <code>s3:DeleteJobTagging</code> action. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags"
-     * >Controlling access and labeling jobs using tags</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * >Controlling access and labeling jobs using tags</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p/>
      * <p>
@@ -1480,14 +1480,14 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Deletes the Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
-     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <note>
      * <p>
      * To use this action, you must have permission to perform the <code>s3:DeleteStorageLensConfiguration</code>
      * action. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting permissions to
-     * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * use Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * </note>
      * 
@@ -1505,14 +1505,14 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Deletes the Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
-     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <note>
      * <p>
      * To use this action, you must have permission to perform the <code>s3:DeleteStorageLensConfiguration</code>
      * action. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting permissions to
-     * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * use Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * </note>
      * 
@@ -1535,14 +1535,14 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Deletes the Amazon S3 Storage Lens configuration tags. For more information about S3 Storage Lens, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
-     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <note>
      * <p>
      * To use this action, you must have permission to perform the <code>s3:DeleteStorageLensConfigurationTagging</code>
      * action. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting permissions to
-     * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * use Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * </note>
      * 
@@ -1560,14 +1560,14 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Deletes the Amazon S3 Storage Lens configuration tags. For more information about S3 Storage Lens, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
-     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <note>
      * <p>
      * To use this action, you must have permission to perform the <code>s3:DeleteStorageLensConfigurationTagging</code>
      * action. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting permissions to
-     * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * use Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * </note>
      * 
@@ -1590,7 +1590,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Retrieves the configuration parameters and status for a Batch Operations job. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * <i>Amazon S3 User Guide</i>.
      * </p>
      * <p/>
      * <p>
@@ -1632,7 +1632,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Retrieves the configuration parameters and status for a Batch Operations job. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * <i>Amazon S3 User Guide</i>.
      * </p>
      * <p/>
      * <p>
@@ -2053,7 +2053,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * Indicates whether the specified access point currently has a policy that allows public access. For more
      * information about public access through access points, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing Data Access with Amazon
-     * S3 Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * S3 access points</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * 
      * @param getAccessPointPolicyStatusRequest
@@ -2070,7 +2070,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * Indicates whether the specified access point currently has a policy that allows public access. For more
      * information about public access through access points, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing Data Access with Amazon
-     * S3 Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * S3 access points</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * 
      * @param getAccessPointPolicyStatusRequest
@@ -2128,7 +2128,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Gets an Amazon S3 on Outposts bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html"> Using Amazon S3 on Outposts</a>
-     * in the <i>Amazon Simple Storage Service User Guide</i>.
+     * in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * If you are using an identity other than the root user of the AWS account that owns the Outposts bucket, the
@@ -2182,7 +2182,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Gets an Amazon S3 on Outposts bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html"> Using Amazon S3 on Outposts</a>
-     * in the <i>Amazon Simple Storage Service User Guide</i>.
+     * in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * If you are using an identity other than the root user of the AWS account that owns the Outposts bucket, the
@@ -2243,7 +2243,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * This action gets an Amazon S3 on Outposts bucket's lifecycle configuration. To get an S3 bucket's lifecycle
      * configuration, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html"
-     * >GetBucketLifecycleConfiguration</a> in the <i>Amazon Simple Storage Service API</i>.
+     * >GetBucketLifecycleConfiguration</a> in the <i>Amazon S3 API Reference</i>.
      * </p>
      * </note>
      * <p>
@@ -2251,7 +2251,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a>
      * and for information about lifecycle configuration, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html"> Object Lifecycle
-     * Management</a> in <i>Amazon Simple Storage Service User Guide</i>.
+     * Management</a> in <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * To use this action, you must have permission to perform the <code>s3-outposts:GetLifecycleConfiguration</code>
@@ -2332,7 +2332,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * This action gets an Amazon S3 on Outposts bucket's lifecycle configuration. To get an S3 bucket's lifecycle
      * configuration, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html"
-     * >GetBucketLifecycleConfiguration</a> in the <i>Amazon Simple Storage Service API</i>.
+     * >GetBucketLifecycleConfiguration</a> in the <i>Amazon S3 API Reference</i>.
      * </p>
      * </note>
      * <p>
@@ -2340,7 +2340,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a>
      * and for information about lifecycle configuration, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html"> Object Lifecycle
-     * Management</a> in <i>Amazon Simple Storage Service User Guide</i>.
+     * Management</a> in <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * To use this action, you must have permission to perform the <code>s3-outposts:GetLifecycleConfiguration</code>
@@ -2425,13 +2425,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * This action gets a bucket policy for an Amazon S3 on Outposts bucket. To get a policy for an S3 bucket, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicy.html">GetBucketPolicy</a> in the
-     * <i>Amazon Simple Storage Service API</i>.
+     * <i>Amazon S3 API Reference</i>.
      * </p>
      * </note>
      * <p>
      * Returns the policy of a specified Outposts bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
-     * the <i>Amazon Simple Storage Service User Guide</i>.
+     * the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * If you are using an identity other than the root user of the AWS account that owns the bucket, the calling
@@ -2498,13 +2498,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * This action gets a bucket policy for an Amazon S3 on Outposts bucket. To get a policy for an S3 bucket, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicy.html">GetBucketPolicy</a> in the
-     * <i>Amazon Simple Storage Service API</i>.
+     * <i>Amazon S3 API Reference</i>.
      * </p>
      * </note>
      * <p>
      * Returns the policy of a specified Outposts bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
-     * the <i>Amazon Simple Storage Service User Guide</i>.
+     * the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * If you are using an identity other than the root user of the AWS account that owns the bucket, the calling
@@ -2576,13 +2576,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * This action gets an Amazon S3 on Outposts bucket's tags. To get an S3 bucket tags, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html">GetBucketTagging</a> in the
-     * <i>Amazon Simple Storage Service API</i>.
+     * <i>Amazon S3 API Reference</i>.
      * </p>
      * </note>
      * <p>
      * Returns the tag set associated with the Outposts bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
-     * the <i>Amazon Simple Storage Service User Guide</i>.
+     * the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * To use this action, you must have permission to perform the <code>GetBucketTagging</code> action. By default, the
@@ -2645,13 +2645,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * This action gets an Amazon S3 on Outposts bucket's tags. To get an S3 bucket tags, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html">GetBucketTagging</a> in the
-     * <i>Amazon Simple Storage Service API</i>.
+     * <i>Amazon S3 API Reference</i>.
      * </p>
      * </note>
      * <p>
      * Returns the tag set associated with the Outposts bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
-     * the <i>Amazon Simple Storage Service User Guide</i>.
+     * the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * To use this action, you must have permission to perform the <code>GetBucketTagging</code> action. By default, the
@@ -2719,7 +2719,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * Returns the tags on an S3 Batch Operations job. To use this operation, you must have permission to perform the
      * <code>s3:GetJobTagging</code> action. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags"
-     * >Controlling access and labeling jobs using tags</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * >Controlling access and labeling jobs using tags</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p/>
      * <p>
@@ -2756,7 +2756,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * Returns the tags on an S3 Batch Operations job. To use this operation, you must have permission to perform the
      * <code>s3:GetJobTagging</code> action. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags"
-     * >Controlling access and labeling jobs using tags</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * >Controlling access and labeling jobs using tags</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p/>
      * <p>
@@ -2866,14 +2866,14 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Gets the Amazon S3 Storage Lens configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
-     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <note>
      * <p>
      * To use this action, you must have permission to perform the <code>s3:GetStorageLensConfiguration</code> action.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting permissions to
-     * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * use Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * </note>
      * 
@@ -2890,14 +2890,14 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Gets the Amazon S3 Storage Lens configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
-     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <note>
      * <p>
      * To use this action, you must have permission to perform the <code>s3:GetStorageLensConfiguration</code> action.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting permissions to
-     * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * use Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * </note>
      * 
@@ -2919,14 +2919,14 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Gets the tags of Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
-     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <note>
      * <p>
      * To use this action, you must have permission to perform the <code>s3:GetStorageLensConfigurationTagging</code>
      * action. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting permissions to
-     * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * use Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * </note>
      * 
@@ -2944,14 +2944,14 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Gets the tags of Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
-     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <note>
      * <p>
      * To use this action, you must have permission to perform the <code>s3:GetStorageLensConfigurationTagging</code>
      * action. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting permissions to
-     * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * use Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * </note>
      * 
@@ -3163,7 +3163,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * Lists current S3 Batch Operations jobs and jobs that have ended within the last 30 days for the AWS account
      * making the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * Related actions include:
@@ -3206,7 +3206,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * Lists current S3 Batch Operations jobs and jobs that have ended within the last 30 days for the AWS account
      * making the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * Related actions include:
@@ -3253,7 +3253,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Returns a list of all Outposts buckets in an Outpost that are owned by the authenticated sender of the request.
      * For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname
@@ -3274,7 +3274,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Returns a list of all Outposts buckets in an Outpost that are owned by the authenticated sender of the request.
      * For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname
@@ -3300,14 +3300,14 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Gets a list of Amazon S3 Storage Lens configurations. For more information about S3 Storage Lens, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
-     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <note>
      * <p>
      * To use this action, you must have permission to perform the <code>s3:ListStorageLensConfigurations</code> action.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting permissions to
-     * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * use Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * </note>
      * 
@@ -3325,14 +3325,14 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Gets a list of Amazon S3 Storage Lens configurations. For more information about S3 Storage Lens, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
-     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <note>
      * <p>
      * To use this action, you must have permission to perform the <code>s3:ListStorageLensConfigurations</code> action.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting permissions to
-     * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * use Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * </note>
      * 
@@ -3503,7 +3503,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Creates or replaces resource policy for an Object Lambda Access Point. For an example policy, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/olap-create.html#olap-create-cli">Creating Object
-     * Lambda Access Points</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * Lambda Access Points</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * The following actions are related to <code>PutAccessPointPolicyForObjectLambda</code>:
@@ -3538,7 +3538,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Creates or replaces resource policy for an Object Lambda Access Point. For an example policy, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/olap-create.html#olap-create-cli">Creating Object
-     * Lambda Access Points</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * Lambda Access Points</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * The following actions are related to <code>PutAccessPointPolicyForObjectLambda</code>:
@@ -3580,7 +3580,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * This action puts a lifecycle configuration to an Amazon S3 on Outposts bucket. To put a lifecycle configuration
      * to an S3 bucket, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html"
-     * >PutBucketLifecycleConfiguration</a> in the <i>Amazon Simple Storage Service API</i>.
+     * >PutBucketLifecycleConfiguration</a> in the <i>Amazon S3 API Reference</i>.
      * </p>
      * </note>
      * <p>
@@ -3632,7 +3632,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * This action puts a lifecycle configuration to an Amazon S3 on Outposts bucket. To put a lifecycle configuration
      * to an S3 bucket, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html"
-     * >PutBucketLifecycleConfiguration</a> in the <i>Amazon Simple Storage Service API</i>.
+     * >PutBucketLifecycleConfiguration</a> in the <i>Amazon S3 API Reference</i>.
      * </p>
      * </note>
      * <p>
@@ -3688,13 +3688,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * This action puts a bucket policy to an Amazon S3 on Outposts bucket. To put a policy on an S3 bucket, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketPolicy.html">PutBucketPolicy</a> in the
-     * <i>Amazon Simple Storage Service API</i>.
+     * <i>Amazon S3 API Reference</i>.
      * </p>
      * </note>
      * <p>
      * Applies an Amazon S3 bucket policy to an Outposts bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
-     * the <i>Amazon Simple Storage Service User Guide</i>.
+     * the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * If you are using an identity other than the root user of the AWS account that owns the Outposts bucket, the
@@ -3756,13 +3756,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * This action puts a bucket policy to an Amazon S3 on Outposts bucket. To put a policy on an S3 bucket, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketPolicy.html">PutBucketPolicy</a> in the
-     * <i>Amazon Simple Storage Service API</i>.
+     * <i>Amazon S3 API Reference</i>.
      * </p>
      * </note>
      * <p>
      * Applies an Amazon S3 bucket policy to an Outposts bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
-     * the <i>Amazon Simple Storage Service User Guide</i>.
+     * the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * If you are using an identity other than the root user of the AWS account that owns the Outposts bucket, the
@@ -3829,13 +3829,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * This action puts tags on an Amazon S3 on Outposts bucket. To put tags on an S3 bucket, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a> in the
-     * <i>Amazon Simple Storage Service API</i>.
+     * <i>Amazon S3 API Reference</i>.
      * </p>
      * </note>
      * <p>
      * Sets the tags for an S3 on Outposts bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
-     * the <i>Amazon Simple Storage Service User Guide</i>.
+     * the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * Use tags to organize your AWS bill to reflect your own cost structure. To do this, sign up to get your AWS
@@ -3961,13 +3961,13 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * This action puts tags on an Amazon S3 on Outposts bucket. To put tags on an S3 bucket, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a> in the
-     * <i>Amazon Simple Storage Service API</i>.
+     * <i>Amazon S3 API Reference</i>.
      * </p>
      * </note>
      * <p>
      * Sets the tags for an S3 on Outposts bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
-     * the <i>Amazon Simple Storage Service User Guide</i>.
+     * the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
      * Use tags to organize your AWS bill to reflect your own cost structure. To do this, sign up to get your AWS
@@ -4106,7 +4106,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * that tag set, and use this action to replace the tag set with the one you modified. For more information, see <a
      * href
      * ="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Controlling
-     * access and labeling jobs using tags</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * access and labeling jobs using tags</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p/>
      * <note>
@@ -4208,7 +4208,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * that tag set, and use this action to replace the tag set with the one you modified. For more information, see <a
      * href
      * ="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Controlling
-     * access and labeling jobs using tags</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * access and labeling jobs using tags</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p/>
      * <note>
@@ -4375,14 +4375,14 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Puts an Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a>
-     * in the <i>Amazon Simple Storage Service User Guide</i>.
+     * in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <note>
      * <p>
      * To use this action, you must have permission to perform the <code>s3:PutStorageLensConfiguration</code> action.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting permissions to
-     * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * use Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * </note>
      * 
@@ -4399,14 +4399,14 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Puts an Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a>
-     * in the <i>Amazon Simple Storage Service User Guide</i>.
+     * in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <note>
      * <p>
      * To use this action, you must have permission to perform the <code>s3:PutStorageLensConfiguration</code> action.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting permissions to
-     * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * use Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * </note>
      * 
@@ -4428,14 +4428,14 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Put or replace tags on an existing Amazon S3 Storage Lens configuration. For more information about S3 Storage
      * Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage
-     * activity and usage with Amazon S3 Storage Lens </a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * activity and usage with Amazon S3 Storage Lens </a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <note>
      * <p>
      * To use this action, you must have permission to perform the <code>s3:PutStorageLensConfigurationTagging</code>
      * action. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting permissions to
-     * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * use Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * </note>
      * 
@@ -4453,14 +4453,14 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Put or replace tags on an existing Amazon S3 Storage Lens configuration. For more information about S3 Storage
      * Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage
-     * activity and usage with Amazon S3 Storage Lens </a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * activity and usage with Amazon S3 Storage Lens </a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <note>
      * <p>
      * To use this action, you must have permission to perform the <code>s3:PutStorageLensConfigurationTagging</code>
      * action. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens_iam_permissions.html">Setting permissions to
-     * use Amazon S3 Storage Lens</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+     * use Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * </note>
      * 
@@ -4483,7 +4483,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Updates an existing S3 Batch Operations job's priority. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * <i>Amazon S3 User Guide</i>.
      * </p>
      * <p/>
      * <p>
@@ -4524,7 +4524,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * <p>
      * Updates an existing S3 Batch Operations job's priority. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * <i>Amazon S3 User Guide</i>.
      * </p>
      * <p/>
      * <p>
@@ -4571,7 +4571,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * Updates the status for the specified job. Use this action to confirm that you want to run a job or to cancel an
      * existing job. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * <i>Amazon S3 User Guide</i>.
      * </p>
      * <p/>
      * <p>
@@ -4613,7 +4613,7 @@ public interface AWSS3ControlAsync extends AWSS3Control {
      * Updates the status for the specified job. Use this action to confirm that you want to run a job or to cancel an
      * existing job. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the
-     * <i>Amazon Simple Storage Service User Guide</i>.
+     * <i>Amazon S3 User Guide</i>.
      * </p>
      * <p/>
      * <p>
