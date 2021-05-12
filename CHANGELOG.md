@@ -1,3 +1,8 @@
+# __1.11.1018__ __2021-05-12__
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - High Memory virtual instances are powered by Intel Sky Lake CPUs and offer up to 12TB of memory.
+
 # __1.11.1017__ __2021-05-11__
 ## __AWS S3 Control__
   - ### Features
