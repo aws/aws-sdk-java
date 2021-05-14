@@ -653,6 +653,19 @@ public class AbstractAmazonMacie2Async extends AbstractAmazonMacie2 implements A
     }
 
     @Override
+    public java.util.concurrent.Future<SearchResourcesResult> searchResourcesAsync(SearchResourcesRequest request) {
+
+        return searchResourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchResourcesResult> searchResourcesAsync(SearchResourcesRequest request,
+            com.amazonaws.handlers.AsyncHandler<SearchResourcesRequest, SearchResourcesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);

@@ -32,6 +32,8 @@ public class S3JobDefinitionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("bucketDefinitions").build();
     private static final MarshallingInfo<StructuredPojo> SCOPING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scoping").build();
+    private static final MarshallingInfo<StructuredPojo> BUCKETCRITERIA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("bucketCriteria").build();
 
     private static final S3JobDefinitionMarshaller instance = new S3JobDefinitionMarshaller();
 
@@ -51,6 +53,7 @@ public class S3JobDefinitionMarshaller {
         try {
             protocolMarshaller.marshall(s3JobDefinition.getBucketDefinitions(), BUCKETDEFINITIONS_BINDING);
             protocolMarshaller.marshall(s3JobDefinition.getScoping(), SCOPING_BINDING);
+            protocolMarshaller.marshall(s3JobDefinition.getBucketCriteria(), BUCKETCRITERIA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

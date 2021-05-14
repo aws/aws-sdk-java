@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The property to use in a condition that determines which objects are analyzed by a classification job. Valid values
- * are:
+ * The property to use in a condition that determines whether an S3 object is included or excluded from a classification
+ * job. Valid values are:
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

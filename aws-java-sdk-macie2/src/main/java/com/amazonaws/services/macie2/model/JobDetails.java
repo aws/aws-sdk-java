@@ -37,14 +37,16 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * TRUE - One or more jobs is configured to analyze data in the bucket, and at least one of those jobs has a status
-     * other than CANCELLED.
+     * TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more jobs
+     * and at least one of those jobs has a status other than CANCELLED. Or the bucket matched the bucket criteria
+     * (S3BucketCriteriaForJob) for at least one job that previously ran.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FALSE - No jobs are configured to analyze data in the bucket, or all the jobs that are configured to analyze data
-     * in the bucket have a status of CANCELLED.
+     * FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any jobs,
+     * all the jobs that explicitly include the bucket in their bucket definitions have a status of CANCELLED, or the
+     * bucket didn't match the bucket criteria (S3BucketCriteriaForJob) for any jobs that previously ran.
      * </p>
      * </li>
      * <li>
@@ -64,14 +66,16 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * TRUE - One or more recurring jobs is configured to analyze data in the bucket, and at least one of those jobs has
-     * a status other than CANCELLED.
+     * TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more
+     * recurring jobs or the bucket matches the bucket criteria (S3BucketCriteriaForJob) for one or more recurring jobs.
+     * At least one of those jobs has a status other than CANCELLED.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FALSE - No recurring jobs are configured to analyze data in the bucket, or all the recurring jobs that are
-     * configured to analyze data in the bucket have a status of CANCELLED.
+     * FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any
+     * recurring jobs, the bucket doesn't match the bucket criteria (S3BucketCriteriaForJob) for any recurring jobs, or
+     * all the recurring jobs that are configured to analyze data in the bucket have a status of CANCELLED.
      * </p>
      * </li>
      * <li>
@@ -84,11 +88,11 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
     private String isMonitoredByJob;
     /**
      * <p>
-     * The unique identifier for the job that ran most recently (either the latest run of a recurring job or the only
-     * run of a one-time job) and is configured to analyze data in the bucket.
+     * The unique identifier for the job that ran most recently and is configured to analyze data in the bucket, either
+     * the latest run of a recurring job or the only run of a one-time job.
      * </p>
      * <p>
-     * This value is null if the value for the isDefinedInJob property is FALSE or UNKNOWN.
+     * This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.
      * </p>
      */
     private String lastJobId;
@@ -98,7 +102,7 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      * recurring job, this value indicates when the most recent run started.
      * </p>
      * <p>
-     * This value is null if the value for the isDefinedInJob property is FALSE or UNKNOWN.
+     * This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.
      * </p>
      */
     private java.util.Date lastJobRunTime;
@@ -111,14 +115,16 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * TRUE - One or more jobs is configured to analyze data in the bucket, and at least one of those jobs has a status
-     * other than CANCELLED.
+     * TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more jobs
+     * and at least one of those jobs has a status other than CANCELLED. Or the bucket matched the bucket criteria
+     * (S3BucketCriteriaForJob) for at least one job that previously ran.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FALSE - No jobs are configured to analyze data in the bucket, or all the jobs that are configured to analyze data
-     * in the bucket have a status of CANCELLED.
+     * FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any jobs,
+     * all the jobs that explicitly include the bucket in their bucket definitions have a status of CANCELLED, or the
+     * bucket didn't match the bucket criteria (S3BucketCriteriaForJob) for any jobs that previously ran.
      * </p>
      * </li>
      * <li>
@@ -136,14 +142,17 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        TRUE - One or more jobs is configured to analyze data in the bucket, and at least one of those jobs has a
-     *        status other than CANCELLED.
+     *        TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or
+     *        more jobs and at least one of those jobs has a status other than CANCELLED. Or the bucket matched the
+     *        bucket criteria (S3BucketCriteriaForJob) for at least one job that previously ran.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        FALSE - No jobs are configured to analyze data in the bucket, or all the jobs that are configured to
-     *        analyze data in the bucket have a status of CANCELLED.
+     *        FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any
+     *        jobs, all the jobs that explicitly include the bucket in their bucket definitions have a status of
+     *        CANCELLED, or the bucket didn't match the bucket criteria (S3BucketCriteriaForJob) for any jobs that
+     *        previously ran.
      *        </p>
      *        </li>
      *        <li>
@@ -168,14 +177,16 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * TRUE - One or more jobs is configured to analyze data in the bucket, and at least one of those jobs has a status
-     * other than CANCELLED.
+     * TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more jobs
+     * and at least one of those jobs has a status other than CANCELLED. Or the bucket matched the bucket criteria
+     * (S3BucketCriteriaForJob) for at least one job that previously ran.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FALSE - No jobs are configured to analyze data in the bucket, or all the jobs that are configured to analyze data
-     * in the bucket have a status of CANCELLED.
+     * FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any jobs,
+     * all the jobs that explicitly include the bucket in their bucket definitions have a status of CANCELLED, or the
+     * bucket didn't match the bucket criteria (S3BucketCriteriaForJob) for any jobs that previously ran.
      * </p>
      * </li>
      * <li>
@@ -192,14 +203,17 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         TRUE - One or more jobs is configured to analyze data in the bucket, and at least one of those jobs has a
-     *         status other than CANCELLED.
+     *         TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or
+     *         more jobs and at least one of those jobs has a status other than CANCELLED. Or the bucket matched the
+     *         bucket criteria (S3BucketCriteriaForJob) for at least one job that previously ran.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         FALSE - No jobs are configured to analyze data in the bucket, or all the jobs that are configured to
-     *         analyze data in the bucket have a status of CANCELLED.
+     *         FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any
+     *         jobs, all the jobs that explicitly include the bucket in their bucket definitions have a status of
+     *         CANCELLED, or the bucket didn't match the bucket criteria (S3BucketCriteriaForJob) for any jobs that
+     *         previously ran.
      *         </p>
      *         </li>
      *         <li>
@@ -224,14 +238,16 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * TRUE - One or more jobs is configured to analyze data in the bucket, and at least one of those jobs has a status
-     * other than CANCELLED.
+     * TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more jobs
+     * and at least one of those jobs has a status other than CANCELLED. Or the bucket matched the bucket criteria
+     * (S3BucketCriteriaForJob) for at least one job that previously ran.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FALSE - No jobs are configured to analyze data in the bucket, or all the jobs that are configured to analyze data
-     * in the bucket have a status of CANCELLED.
+     * FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any jobs,
+     * all the jobs that explicitly include the bucket in their bucket definitions have a status of CANCELLED, or the
+     * bucket didn't match the bucket criteria (S3BucketCriteriaForJob) for any jobs that previously ran.
      * </p>
      * </li>
      * <li>
@@ -249,14 +265,17 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        TRUE - One or more jobs is configured to analyze data in the bucket, and at least one of those jobs has a
-     *        status other than CANCELLED.
+     *        TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or
+     *        more jobs and at least one of those jobs has a status other than CANCELLED. Or the bucket matched the
+     *        bucket criteria (S3BucketCriteriaForJob) for at least one job that previously ran.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        FALSE - No jobs are configured to analyze data in the bucket, or all the jobs that are configured to
-     *        analyze data in the bucket have a status of CANCELLED.
+     *        FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any
+     *        jobs, all the jobs that explicitly include the bucket in their bucket definitions have a status of
+     *        CANCELLED, or the bucket didn't match the bucket criteria (S3BucketCriteriaForJob) for any jobs that
+     *        previously ran.
      *        </p>
      *        </li>
      *        <li>
@@ -283,14 +302,16 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * TRUE - One or more jobs is configured to analyze data in the bucket, and at least one of those jobs has a status
-     * other than CANCELLED.
+     * TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more jobs
+     * and at least one of those jobs has a status other than CANCELLED. Or the bucket matched the bucket criteria
+     * (S3BucketCriteriaForJob) for at least one job that previously ran.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FALSE - No jobs are configured to analyze data in the bucket, or all the jobs that are configured to analyze data
-     * in the bucket have a status of CANCELLED.
+     * FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any jobs,
+     * all the jobs that explicitly include the bucket in their bucket definitions have a status of CANCELLED, or the
+     * bucket didn't match the bucket criteria (S3BucketCriteriaForJob) for any jobs that previously ran.
      * </p>
      * </li>
      * <li>
@@ -308,14 +329,17 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        TRUE - One or more jobs is configured to analyze data in the bucket, and at least one of those jobs has a
-     *        status other than CANCELLED.
+     *        TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or
+     *        more jobs and at least one of those jobs has a status other than CANCELLED. Or the bucket matched the
+     *        bucket criteria (S3BucketCriteriaForJob) for at least one job that previously ran.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        FALSE - No jobs are configured to analyze data in the bucket, or all the jobs that are configured to
-     *        analyze data in the bucket have a status of CANCELLED.
+     *        FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any
+     *        jobs, all the jobs that explicitly include the bucket in their bucket definitions have a status of
+     *        CANCELLED, or the bucket didn't match the bucket criteria (S3BucketCriteriaForJob) for any jobs that
+     *        previously ran.
      *        </p>
      *        </li>
      *        <li>
@@ -341,14 +365,16 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * TRUE - One or more recurring jobs is configured to analyze data in the bucket, and at least one of those jobs has
-     * a status other than CANCELLED.
+     * TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more
+     * recurring jobs or the bucket matches the bucket criteria (S3BucketCriteriaForJob) for one or more recurring jobs.
+     * At least one of those jobs has a status other than CANCELLED.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FALSE - No recurring jobs are configured to analyze data in the bucket, or all the recurring jobs that are
-     * configured to analyze data in the bucket have a status of CANCELLED.
+     * FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any
+     * recurring jobs, the bucket doesn't match the bucket criteria (S3BucketCriteriaForJob) for any recurring jobs, or
+     * all the recurring jobs that are configured to analyze data in the bucket have a status of CANCELLED.
      * </p>
      * </li>
      * <li>
@@ -364,14 +390,17 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        TRUE - One or more recurring jobs is configured to analyze data in the bucket, and at least one of those
-     *        jobs has a status other than CANCELLED.
+     *        TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or
+     *        more recurring jobs or the bucket matches the bucket criteria (S3BucketCriteriaForJob) for one or more
+     *        recurring jobs. At least one of those jobs has a status other than CANCELLED.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        FALSE - No recurring jobs are configured to analyze data in the bucket, or all the recurring jobs that are
-     *        configured to analyze data in the bucket have a status of CANCELLED.
+     *        FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any
+     *        recurring jobs, the bucket doesn't match the bucket criteria (S3BucketCriteriaForJob) for any recurring
+     *        jobs, or all the recurring jobs that are configured to analyze data in the bucket have a status of
+     *        CANCELLED.
      *        </p>
      *        </li>
      *        <li>
@@ -393,14 +422,16 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * TRUE - One or more recurring jobs is configured to analyze data in the bucket, and at least one of those jobs has
-     * a status other than CANCELLED.
+     * TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more
+     * recurring jobs or the bucket matches the bucket criteria (S3BucketCriteriaForJob) for one or more recurring jobs.
+     * At least one of those jobs has a status other than CANCELLED.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FALSE - No recurring jobs are configured to analyze data in the bucket, or all the recurring jobs that are
-     * configured to analyze data in the bucket have a status of CANCELLED.
+     * FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any
+     * recurring jobs, the bucket doesn't match the bucket criteria (S3BucketCriteriaForJob) for any recurring jobs, or
+     * all the recurring jobs that are configured to analyze data in the bucket have a status of CANCELLED.
      * </p>
      * </li>
      * <li>
@@ -415,14 +446,17 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         TRUE - One or more recurring jobs is configured to analyze data in the bucket, and at least one of those
-     *         jobs has a status other than CANCELLED.
+     *         TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or
+     *         more recurring jobs or the bucket matches the bucket criteria (S3BucketCriteriaForJob) for one or more
+     *         recurring jobs. At least one of those jobs has a status other than CANCELLED.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         FALSE - No recurring jobs are configured to analyze data in the bucket, or all the recurring jobs that
-     *         are configured to analyze data in the bucket have a status of CANCELLED.
+     *         FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any
+     *         recurring jobs, the bucket doesn't match the bucket criteria (S3BucketCriteriaForJob) for any recurring
+     *         jobs, or all the recurring jobs that are configured to analyze data in the bucket have a status of
+     *         CANCELLED.
      *         </p>
      *         </li>
      *         <li>
@@ -444,14 +478,16 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * TRUE - One or more recurring jobs is configured to analyze data in the bucket, and at least one of those jobs has
-     * a status other than CANCELLED.
+     * TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more
+     * recurring jobs or the bucket matches the bucket criteria (S3BucketCriteriaForJob) for one or more recurring jobs.
+     * At least one of those jobs has a status other than CANCELLED.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FALSE - No recurring jobs are configured to analyze data in the bucket, or all the recurring jobs that are
-     * configured to analyze data in the bucket have a status of CANCELLED.
+     * FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any
+     * recurring jobs, the bucket doesn't match the bucket criteria (S3BucketCriteriaForJob) for any recurring jobs, or
+     * all the recurring jobs that are configured to analyze data in the bucket have a status of CANCELLED.
      * </p>
      * </li>
      * <li>
@@ -467,14 +503,17 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        TRUE - One or more recurring jobs is configured to analyze data in the bucket, and at least one of those
-     *        jobs has a status other than CANCELLED.
+     *        TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or
+     *        more recurring jobs or the bucket matches the bucket criteria (S3BucketCriteriaForJob) for one or more
+     *        recurring jobs. At least one of those jobs has a status other than CANCELLED.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        FALSE - No recurring jobs are configured to analyze data in the bucket, or all the recurring jobs that are
-     *        configured to analyze data in the bucket have a status of CANCELLED.
+     *        FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any
+     *        recurring jobs, the bucket doesn't match the bucket criteria (S3BucketCriteriaForJob) for any recurring
+     *        jobs, or all the recurring jobs that are configured to analyze data in the bucket have a status of
+     *        CANCELLED.
      *        </p>
      *        </li>
      *        <li>
@@ -498,14 +537,16 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * TRUE - One or more recurring jobs is configured to analyze data in the bucket, and at least one of those jobs has
-     * a status other than CANCELLED.
+     * TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more
+     * recurring jobs or the bucket matches the bucket criteria (S3BucketCriteriaForJob) for one or more recurring jobs.
+     * At least one of those jobs has a status other than CANCELLED.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FALSE - No recurring jobs are configured to analyze data in the bucket, or all the recurring jobs that are
-     * configured to analyze data in the bucket have a status of CANCELLED.
+     * FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any
+     * recurring jobs, the bucket doesn't match the bucket criteria (S3BucketCriteriaForJob) for any recurring jobs, or
+     * all the recurring jobs that are configured to analyze data in the bucket have a status of CANCELLED.
      * </p>
      * </li>
      * <li>
@@ -521,14 +562,17 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        TRUE - One or more recurring jobs is configured to analyze data in the bucket, and at least one of those
-     *        jobs has a status other than CANCELLED.
+     *        TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or
+     *        more recurring jobs or the bucket matches the bucket criteria (S3BucketCriteriaForJob) for one or more
+     *        recurring jobs. At least one of those jobs has a status other than CANCELLED.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        FALSE - No recurring jobs are configured to analyze data in the bucket, or all the recurring jobs that are
-     *        configured to analyze data in the bucket have a status of CANCELLED.
+     *        FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any
+     *        recurring jobs, the bucket doesn't match the bucket criteria (S3BucketCriteriaForJob) for any recurring
+     *        jobs, or all the recurring jobs that are configured to analyze data in the bucket have a status of
+     *        CANCELLED.
      *        </p>
      *        </li>
      *        <li>
@@ -547,18 +591,18 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the job that ran most recently (either the latest run of a recurring job or the only
-     * run of a one-time job) and is configured to analyze data in the bucket.
+     * The unique identifier for the job that ran most recently and is configured to analyze data in the bucket, either
+     * the latest run of a recurring job or the only run of a one-time job.
      * </p>
      * <p>
-     * This value is null if the value for the isDefinedInJob property is FALSE or UNKNOWN.
+     * This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.
      * </p>
      * 
      * @param lastJobId
-     *        The unique identifier for the job that ran most recently (either the latest run of a recurring job or the
-     *        only run of a one-time job) and is configured to analyze data in the bucket.</p>
+     *        The unique identifier for the job that ran most recently and is configured to analyze data in the bucket,
+     *        either the latest run of a recurring job or the only run of a one-time job.</p>
      *        <p>
-     *        This value is null if the value for the isDefinedInJob property is FALSE or UNKNOWN.
+     *        This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.
      */
 
     public void setLastJobId(String lastJobId) {
@@ -567,17 +611,17 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the job that ran most recently (either the latest run of a recurring job or the only
-     * run of a one-time job) and is configured to analyze data in the bucket.
+     * The unique identifier for the job that ran most recently and is configured to analyze data in the bucket, either
+     * the latest run of a recurring job or the only run of a one-time job.
      * </p>
      * <p>
-     * This value is null if the value for the isDefinedInJob property is FALSE or UNKNOWN.
+     * This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.
      * </p>
      * 
-     * @return The unique identifier for the job that ran most recently (either the latest run of a recurring job or the
-     *         only run of a one-time job) and is configured to analyze data in the bucket.</p>
+     * @return The unique identifier for the job that ran most recently and is configured to analyze data in the bucket,
+     *         either the latest run of a recurring job or the only run of a one-time job.</p>
      *         <p>
-     *         This value is null if the value for the isDefinedInJob property is FALSE or UNKNOWN.
+     *         This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.
      */
 
     public String getLastJobId() {
@@ -586,18 +630,18 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the job that ran most recently (either the latest run of a recurring job or the only
-     * run of a one-time job) and is configured to analyze data in the bucket.
+     * The unique identifier for the job that ran most recently and is configured to analyze data in the bucket, either
+     * the latest run of a recurring job or the only run of a one-time job.
      * </p>
      * <p>
-     * This value is null if the value for the isDefinedInJob property is FALSE or UNKNOWN.
+     * This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.
      * </p>
      * 
      * @param lastJobId
-     *        The unique identifier for the job that ran most recently (either the latest run of a recurring job or the
-     *        only run of a one-time job) and is configured to analyze data in the bucket.</p>
+     *        The unique identifier for the job that ran most recently and is configured to analyze data in the bucket,
+     *        either the latest run of a recurring job or the only run of a one-time job.</p>
      *        <p>
-     *        This value is null if the value for the isDefinedInJob property is FALSE or UNKNOWN.
+     *        This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -612,14 +656,14 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      * recurring job, this value indicates when the most recent run started.
      * </p>
      * <p>
-     * This value is null if the value for the isDefinedInJob property is FALSE or UNKNOWN.
+     * This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.
      * </p>
      * 
      * @param lastJobRunTime
      *        The date and time, in UTC and extended ISO 8601 format, when the job (lastJobId) started. If the job is a
      *        recurring job, this value indicates when the most recent run started.</p>
      *        <p>
-     *        This value is null if the value for the isDefinedInJob property is FALSE or UNKNOWN.
+     *        This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.
      */
 
     public void setLastJobRunTime(java.util.Date lastJobRunTime) {
@@ -632,13 +676,13 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      * recurring job, this value indicates when the most recent run started.
      * </p>
      * <p>
-     * This value is null if the value for the isDefinedInJob property is FALSE or UNKNOWN.
+     * This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.
      * </p>
      * 
      * @return The date and time, in UTC and extended ISO 8601 format, when the job (lastJobId) started. If the job is a
      *         recurring job, this value indicates when the most recent run started.</p>
      *         <p>
-     *         This value is null if the value for the isDefinedInJob property is FALSE or UNKNOWN.
+     *         This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.
      */
 
     public java.util.Date getLastJobRunTime() {
@@ -651,14 +695,14 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
      * recurring job, this value indicates when the most recent run started.
      * </p>
      * <p>
-     * This value is null if the value for the isDefinedInJob property is FALSE or UNKNOWN.
+     * This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.
      * </p>
      * 
      * @param lastJobRunTime
      *        The date and time, in UTC and extended ISO 8601 format, when the job (lastJobId) started. If the job is a
      *        recurring job, this value indicates when the most recent run started.</p>
      *        <p>
-     *        This value is null if the value for the isDefinedInJob property is FALSE or UNKNOWN.
+     *        This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

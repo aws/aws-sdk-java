@@ -1558,6 +1558,39 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
+     * Retrieves (queries) statistical data and other information about AWS resources that Amazon Macie monitors and
+     * analyzes.
+     * </p>
+     * 
+     * @param searchResourcesRequest
+     * @return A Java Future containing the result of the SearchResources operation returned by the service.
+     * @sample AmazonMacie2Async.SearchResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SearchResources" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<SearchResourcesResult> searchResourcesAsync(SearchResourcesRequest searchResourcesRequest);
+
+    /**
+     * <p>
+     * Retrieves (queries) statistical data and other information about AWS resources that Amazon Macie monitors and
+     * analyzes.
+     * </p>
+     * 
+     * @param searchResourcesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SearchResources operation returned by the service.
+     * @sample AmazonMacie2AsyncHandler.SearchResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SearchResources" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<SearchResourcesResult> searchResourcesAsync(SearchResourcesRequest searchResourcesRequest,
+            com.amazonaws.handlers.AsyncHandler<SearchResourcesRequest, SearchResourcesResult> asyncHandler);
+
+    /**
+     * <p>
      * Adds or updates one or more tags (keys and values) that are associated with a classification job, custom data
      * identifier, findings filter, or member account.
      * </p>

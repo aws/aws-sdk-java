@@ -19,9 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies one or more property- and tag-based conditions that define criteria for including or excluding objects from
- * a classification job. If you specify more than one condition, Amazon Macie uses an AND operator to join the
- * conditions.
+ * Specifies one or more property- and tag-based conditions that define criteria for including or excluding S3 objects
+ * from a classification job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/JobScopingBlock" target="_top">AWS API
@@ -33,6 +32,7 @@ public class JobScopingBlock implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * An array of conditions, one for each condition that determines which objects to include or exclude from the job.
+     * If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.
      * </p>
      */
     private java.util.List<JobScopeTerm> and;
@@ -40,10 +40,11 @@ public class JobScopingBlock implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * An array of conditions, one for each condition that determines which objects to include or exclude from the job.
+     * If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.
      * </p>
      * 
      * @return An array of conditions, one for each condition that determines which objects to include or exclude from
-     *         the job.
+     *         the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.
      */
 
     public java.util.List<JobScopeTerm> getAnd() {
@@ -53,11 +54,12 @@ public class JobScopingBlock implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * An array of conditions, one for each condition that determines which objects to include or exclude from the job.
+     * If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.
      * </p>
      * 
      * @param and
      *        An array of conditions, one for each condition that determines which objects to include or exclude from
-     *        the job.
+     *        the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.
      */
 
     public void setAnd(java.util.Collection<JobScopeTerm> and) {
@@ -72,6 +74,7 @@ public class JobScopingBlock implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * An array of conditions, one for each condition that determines which objects to include or exclude from the job.
+     * If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +84,7 @@ public class JobScopingBlock implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param and
      *        An array of conditions, one for each condition that determines which objects to include or exclude from
-     *        the job.
+     *        the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +101,12 @@ public class JobScopingBlock implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * An array of conditions, one for each condition that determines which objects to include or exclude from the job.
+     * If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.
      * </p>
      * 
      * @param and
      *        An array of conditions, one for each condition that determines which objects to include or exclude from
-     *        the job.
+     *        the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

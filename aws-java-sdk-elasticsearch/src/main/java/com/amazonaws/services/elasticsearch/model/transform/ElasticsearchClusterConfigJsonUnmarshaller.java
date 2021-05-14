@@ -88,6 +88,10 @@ public class ElasticsearchClusterConfigJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     elasticsearchClusterConfig.setWarmCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("ColdStorageOptions", targetDepth)) {
+                    context.nextToken();
+                    elasticsearchClusterConfig.setColdStorageOptions(ColdStorageOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

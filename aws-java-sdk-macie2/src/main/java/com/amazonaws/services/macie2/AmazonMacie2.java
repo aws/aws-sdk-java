@@ -1359,6 +1359,35 @@ public interface AmazonMacie2 {
 
     /**
      * <p>
+     * Retrieves (queries) statistical data and other information about AWS resources that Amazon Macie monitors and
+     * analyzes.
+     * </p>
+     * 
+     * @param searchResourcesRequest
+     * @return Result of the SearchResources operation returned by the service.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws ServiceQuotaExceededException
+     *         The request failed because fulfilling the request would exceed one or more service quotas for your
+     *         account.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @throws ResourceNotFoundException
+     *         The request failed because the specified resource wasn't found.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @throws ConflictException
+     *         The request failed because it conflicts with the current state of the specified resource.
+     * @sample AmazonMacie2.SearchResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SearchResources" target="_top">AWS API
+     *      Documentation</a>
+     */
+    SearchResourcesResult searchResources(SearchResourcesRequest searchResourcesRequest);
+
+    /**
+     * <p>
      * Adds or updates one or more tags (keys and values) that are associated with a classification job, custom data
      * identifier, findings filter, or member account.
      * </p>

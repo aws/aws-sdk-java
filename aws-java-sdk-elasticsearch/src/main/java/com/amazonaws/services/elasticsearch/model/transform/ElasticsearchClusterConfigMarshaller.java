@@ -47,6 +47,8 @@ public class ElasticsearchClusterConfigMarshaller {
             .marshallLocationName("WarmType").build();
     private static final MarshallingInfo<Integer> WARMCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WarmCount").build();
+    private static final MarshallingInfo<StructuredPojo> COLDSTORAGEOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ColdStorageOptions").build();
 
     private static final ElasticsearchClusterConfigMarshaller instance = new ElasticsearchClusterConfigMarshaller();
 
@@ -74,6 +76,7 @@ public class ElasticsearchClusterConfigMarshaller {
             protocolMarshaller.marshall(elasticsearchClusterConfig.getWarmEnabled(), WARMENABLED_BINDING);
             protocolMarshaller.marshall(elasticsearchClusterConfig.getWarmType(), WARMTYPE_BINDING);
             protocolMarshaller.marshall(elasticsearchClusterConfig.getWarmCount(), WARMCOUNT_BINDING);
+            protocolMarshaller.marshall(elasticsearchClusterConfig.getColdStorageOptions(), COLDSTORAGEOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

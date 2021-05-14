@@ -37,6 +37,10 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The language code for the language used in the input media file.
      * </p>
+     * <p>
+     * To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a sample rate
+     * of 16000 Hz or higher.
+     * </p>
      */
     private String languageCode;
     /**
@@ -252,9 +256,16 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The language code for the language used in the input media file.
      * </p>
+     * <p>
+     * To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a sample rate
+     * of 16000 Hz or higher.
+     * </p>
      * 
      * @param languageCode
-     *        The language code for the language used in the input media file.
+     *        The language code for the language used in the input media file.</p>
+     *        <p>
+     *        To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a
+     *        sample rate of 16000 Hz or higher.
      * @see LanguageCode
      */
 
@@ -266,8 +277,15 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The language code for the language used in the input media file.
      * </p>
+     * <p>
+     * To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a sample rate
+     * of 16000 Hz or higher.
+     * </p>
      * 
-     * @return The language code for the language used in the input media file.
+     * @return The language code for the language used in the input media file.</p>
+     *         <p>
+     *         To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a
+     *         sample rate of 16000 Hz or higher.
      * @see LanguageCode
      */
 
@@ -279,9 +297,16 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The language code for the language used in the input media file.
      * </p>
+     * <p>
+     * To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a sample rate
+     * of 16000 Hz or higher.
+     * </p>
      * 
      * @param languageCode
-     *        The language code for the language used in the input media file.
+     *        The language code for the language used in the input media file.</p>
+     *        <p>
+     *        To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a
+     *        sample rate of 16000 Hz or higher.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -295,9 +320,16 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The language code for the language used in the input media file.
      * </p>
+     * <p>
+     * To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a sample rate
+     * of 16000 Hz or higher.
+     * </p>
      * 
      * @param languageCode
-     *        The language code for the language used in the input media file.
+     *        The language code for the language used in the input media file.</p>
+     *        <p>
+     *        To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a
+     *        sample rate of 16000 Hz or higher.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */

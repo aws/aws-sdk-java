@@ -45,6 +45,8 @@ public class MedicalTranscriptionJobSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputLocationType").build();
     private static final MarshallingInfo<String> SPECIALTY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Specialty").build();
+    private static final MarshallingInfo<String> CONTENTIDENTIFICATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContentIdentificationType").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Type").build();
 
@@ -73,6 +75,7 @@ public class MedicalTranscriptionJobSummaryMarshaller {
             protocolMarshaller.marshall(medicalTranscriptionJobSummary.getFailureReason(), FAILUREREASON_BINDING);
             protocolMarshaller.marshall(medicalTranscriptionJobSummary.getOutputLocationType(), OUTPUTLOCATIONTYPE_BINDING);
             protocolMarshaller.marshall(medicalTranscriptionJobSummary.getSpecialty(), SPECIALTY_BINDING);
+            protocolMarshaller.marshall(medicalTranscriptionJobSummary.getContentIdentificationType(), CONTENTIDENTIFICATIONTYPE_BINDING);
             protocolMarshaller.marshall(medicalTranscriptionJobSummary.getType(), TYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

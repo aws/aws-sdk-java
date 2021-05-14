@@ -19,9 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies one or more property- and tag-based conditions that refine the scope of a classification job. These
- * conditions define criteria that determine which objects a job analyzes. Exclude conditions take precedence over
- * include conditions.
+ * Specifies one or more property- and tag-based conditions that define criteria for including or excluding S3 objects
+ * from a classification job. Exclude conditions take precedence over include conditions.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Scoping" target="_top">AWS API

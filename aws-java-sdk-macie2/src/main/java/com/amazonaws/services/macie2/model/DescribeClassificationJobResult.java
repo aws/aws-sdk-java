@@ -150,7 +150,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
     private String name;
     /**
      * <p>
-     * The S3 buckets that the job is configured to analyze, and the scope of that analysis.
+     * The S3 buckets that contain the objects to analyze, and the scope of that analysis.
      * </p>
      */
     private S3JobDefinition s3JobDefinition;
@@ -1167,11 +1167,11 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The S3 buckets that the job is configured to analyze, and the scope of that analysis.
+     * The S3 buckets that contain the objects to analyze, and the scope of that analysis.
      * </p>
      * 
      * @param s3JobDefinition
-     *        The S3 buckets that the job is configured to analyze, and the scope of that analysis.
+     *        The S3 buckets that contain the objects to analyze, and the scope of that analysis.
      */
 
     public void setS3JobDefinition(S3JobDefinition s3JobDefinition) {
@@ -1180,10 +1180,10 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The S3 buckets that the job is configured to analyze, and the scope of that analysis.
+     * The S3 buckets that contain the objects to analyze, and the scope of that analysis.
      * </p>
      * 
-     * @return The S3 buckets that the job is configured to analyze, and the scope of that analysis.
+     * @return The S3 buckets that contain the objects to analyze, and the scope of that analysis.
      */
 
     public S3JobDefinition getS3JobDefinition() {
@@ -1192,11 +1192,11 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The S3 buckets that the job is configured to analyze, and the scope of that analysis.
+     * The S3 buckets that contain the objects to analyze, and the scope of that analysis.
      * </p>
      * 
      * @param s3JobDefinition
-     *        The S3 buckets that the job is configured to analyze, and the scope of that analysis.
+     *        The S3 buckets that contain the objects to analyze, and the scope of that analysis.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -33,7 +33,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String resourceArn;
     /**
      * <p>
-     * The tag keys of the tags to remove from the behavior graph.
+     * The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags at a time.
      * </p>
      */
     private java.util.List<String> tagKeys;
@@ -80,10 +80,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tag keys of the tags to remove from the behavior graph.
+     * The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags at a time.
      * </p>
      * 
-     * @return The tag keys of the tags to remove from the behavior graph.
+     * @return The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags at a time.
      */
 
     public java.util.List<String> getTagKeys() {
@@ -92,11 +92,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tag keys of the tags to remove from the behavior graph.
+     * The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags at a time.
      * </p>
      * 
      * @param tagKeys
-     *        The tag keys of the tags to remove from the behavior graph.
+     *        The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags at a time.
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -110,7 +110,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tag keys of the tags to remove from the behavior graph.
+     * The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags at a time.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +119,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param tagKeys
-     *        The tag keys of the tags to remove from the behavior graph.
+     *        The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags at a time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tag keys of the tags to remove from the behavior graph.
+     * The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags at a time.
      * </p>
      * 
      * @param tagKeys
-     *        The tag keys of the tags to remove from the behavior graph.
+     *        The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags at a time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

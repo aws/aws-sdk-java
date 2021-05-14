@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies which AWS account owns the S3 buckets that a classification job analyzes, and the buckets to analyze for
- * the account.
+ * Specifies an AWS account that owns S3 buckets for a classification job to analyze, and one or more specific buckets
+ * to analyze for that account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/S3BucketDefinitionForJob" target="_top">AWS

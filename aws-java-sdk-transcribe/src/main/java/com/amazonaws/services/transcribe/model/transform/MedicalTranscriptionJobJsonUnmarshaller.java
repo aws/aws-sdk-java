@@ -96,6 +96,10 @@ public class MedicalTranscriptionJobJsonUnmarshaller implements Unmarshaller<Med
                     context.nextToken();
                     medicalTranscriptionJob.setSettings(MedicalTranscriptionSettingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ContentIdentificationType", targetDepth)) {
+                    context.nextToken();
+                    medicalTranscriptionJob.setContentIdentificationType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Specialty", targetDepth)) {
                     context.nextToken();
                     medicalTranscriptionJob.setSpecialty(context.getUnmarshaller(String.class).unmarshall(context));

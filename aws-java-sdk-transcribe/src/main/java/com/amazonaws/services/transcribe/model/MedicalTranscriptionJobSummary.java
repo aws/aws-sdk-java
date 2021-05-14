@@ -87,6 +87,14 @@ public class MedicalTranscriptionJobSummary implements Serializable, Cloneable, 
     private String specialty;
     /**
      * <p>
+     * Shows the type of information you've configured Amazon Transcribe Medical to identify in a transcription job. If
+     * the value is <code>PHI</code>, you've configured the transcription job to identify personal health information
+     * (PHI).
+     * </p>
+     */
+    private String contentIdentificationType;
+    /**
+     * <p>
      * The speech of the clinician in the input audio.
      * </p>
      */
@@ -554,6 +562,81 @@ public class MedicalTranscriptionJobSummary implements Serializable, Cloneable, 
 
     /**
      * <p>
+     * Shows the type of information you've configured Amazon Transcribe Medical to identify in a transcription job. If
+     * the value is <code>PHI</code>, you've configured the transcription job to identify personal health information
+     * (PHI).
+     * </p>
+     * 
+     * @param contentIdentificationType
+     *        Shows the type of information you've configured Amazon Transcribe Medical to identify in a transcription
+     *        job. If the value is <code>PHI</code>, you've configured the transcription job to identify personal health
+     *        information (PHI).
+     * @see MedicalContentIdentificationType
+     */
+
+    public void setContentIdentificationType(String contentIdentificationType) {
+        this.contentIdentificationType = contentIdentificationType;
+    }
+
+    /**
+     * <p>
+     * Shows the type of information you've configured Amazon Transcribe Medical to identify in a transcription job. If
+     * the value is <code>PHI</code>, you've configured the transcription job to identify personal health information
+     * (PHI).
+     * </p>
+     * 
+     * @return Shows the type of information you've configured Amazon Transcribe Medical to identify in a transcription
+     *         job. If the value is <code>PHI</code>, you've configured the transcription job to identify personal
+     *         health information (PHI).
+     * @see MedicalContentIdentificationType
+     */
+
+    public String getContentIdentificationType() {
+        return this.contentIdentificationType;
+    }
+
+    /**
+     * <p>
+     * Shows the type of information you've configured Amazon Transcribe Medical to identify in a transcription job. If
+     * the value is <code>PHI</code>, you've configured the transcription job to identify personal health information
+     * (PHI).
+     * </p>
+     * 
+     * @param contentIdentificationType
+     *        Shows the type of information you've configured Amazon Transcribe Medical to identify in a transcription
+     *        job. If the value is <code>PHI</code>, you've configured the transcription job to identify personal health
+     *        information (PHI).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MedicalContentIdentificationType
+     */
+
+    public MedicalTranscriptionJobSummary withContentIdentificationType(String contentIdentificationType) {
+        setContentIdentificationType(contentIdentificationType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Shows the type of information you've configured Amazon Transcribe Medical to identify in a transcription job. If
+     * the value is <code>PHI</code>, you've configured the transcription job to identify personal health information
+     * (PHI).
+     * </p>
+     * 
+     * @param contentIdentificationType
+     *        Shows the type of information you've configured Amazon Transcribe Medical to identify in a transcription
+     *        job. If the value is <code>PHI</code>, you've configured the transcription job to identify personal health
+     *        information (PHI).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MedicalContentIdentificationType
+     */
+
+    public MedicalTranscriptionJobSummary withContentIdentificationType(MedicalContentIdentificationType contentIdentificationType) {
+        this.contentIdentificationType = contentIdentificationType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The speech of the clinician in the input audio.
      * </p>
      * 
@@ -641,6 +724,8 @@ public class MedicalTranscriptionJobSummary implements Serializable, Cloneable, 
             sb.append("OutputLocationType: ").append(getOutputLocationType()).append(",");
         if (getSpecialty() != null)
             sb.append("Specialty: ").append(getSpecialty()).append(",");
+        if (getContentIdentificationType() != null)
+            sb.append("ContentIdentificationType: ").append(getContentIdentificationType()).append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType());
         sb.append("}");
@@ -693,6 +778,10 @@ public class MedicalTranscriptionJobSummary implements Serializable, Cloneable, 
             return false;
         if (other.getSpecialty() != null && other.getSpecialty().equals(this.getSpecialty()) == false)
             return false;
+        if (other.getContentIdentificationType() == null ^ this.getContentIdentificationType() == null)
+            return false;
+        if (other.getContentIdentificationType() != null && other.getContentIdentificationType().equals(this.getContentIdentificationType()) == false)
+            return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
@@ -714,6 +803,7 @@ public class MedicalTranscriptionJobSummary implements Serializable, Cloneable, 
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getOutputLocationType() == null) ? 0 : getOutputLocationType().hashCode());
         hashCode = prime * hashCode + ((getSpecialty() == null) ? 0 : getSpecialty().hashCode());
+        hashCode = prime * hashCode + ((getContentIdentificationType() == null) ? 0 : getContentIdentificationType().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }

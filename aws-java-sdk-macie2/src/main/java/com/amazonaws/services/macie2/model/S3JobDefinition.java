@@ -20,6 +20,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Specifies which S3 buckets contain the objects that a classification job analyzes, and the scope of that analysis.
+ * The bucket specification can be static (bucketDefinitions) or dynamic (bucketCriteria). If it's static, the job
+ * analyzes objects in the same predefined set of buckets each time the job runs. If it's dynamic, the job analyzes
+ * objects in any buckets that match the specified criteria each time the job starts to run.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/S3JobDefinition" target="_top">AWS API
@@ -30,26 +33,38 @@ public class S3JobDefinition implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of objects, one for each AWS account that owns buckets to analyze. Each object specifies the account ID
-     * for an account and one or more buckets to analyze for the account.
+     * An array of objects, one for each AWS account that owns specific S3 buckets to analyze. Each object specifies the
+     * account ID for an account and one or more buckets to analyze for that account. A job's definition can contain a
+     * bucketDefinitions array or a bucketCriteria object, not both.
      * </p>
      */
     private java.util.List<S3BucketDefinitionForJob> bucketDefinitions;
     /**
      * <p>
-     * The property- and tag-based conditions that determine which objects to include or exclude from the analysis.
+     * The property- and tag-based conditions that determine which S3 objects to include or exclude from the analysis.
+     * Each time the job runs, the job uses these criteria to determine which objects to analyze.
      * </p>
      */
     private Scoping scoping;
+    /**
+     * <p>
+     * The property- and tag-based conditions that determine which S3 buckets to include or exclude from the analysis.
+     * Each time the job runs, the job uses these criteria to determine which buckets contain objects to analyze. A
+     * job's definition can contain a bucketCriteria object or a bucketDefinitions array, not both.
+     * </p>
+     */
+    private S3BucketCriteriaForJob bucketCriteria;
 
     /**
      * <p>
-     * An array of objects, one for each AWS account that owns buckets to analyze. Each object specifies the account ID
-     * for an account and one or more buckets to analyze for the account.
+     * An array of objects, one for each AWS account that owns specific S3 buckets to analyze. Each object specifies the
+     * account ID for an account and one or more buckets to analyze for that account. A job's definition can contain a
+     * bucketDefinitions array or a bucketCriteria object, not both.
      * </p>
      * 
-     * @return An array of objects, one for each AWS account that owns buckets to analyze. Each object specifies the
-     *         account ID for an account and one or more buckets to analyze for the account.
+     * @return An array of objects, one for each AWS account that owns specific S3 buckets to analyze. Each object
+     *         specifies the account ID for an account and one or more buckets to analyze for that account. A job's
+     *         definition can contain a bucketDefinitions array or a bucketCriteria object, not both.
      */
 
     public java.util.List<S3BucketDefinitionForJob> getBucketDefinitions() {
@@ -58,13 +73,15 @@ public class S3JobDefinition implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of objects, one for each AWS account that owns buckets to analyze. Each object specifies the account ID
-     * for an account and one or more buckets to analyze for the account.
+     * An array of objects, one for each AWS account that owns specific S3 buckets to analyze. Each object specifies the
+     * account ID for an account and one or more buckets to analyze for that account. A job's definition can contain a
+     * bucketDefinitions array or a bucketCriteria object, not both.
      * </p>
      * 
      * @param bucketDefinitions
-     *        An array of objects, one for each AWS account that owns buckets to analyze. Each object specifies the
-     *        account ID for an account and one or more buckets to analyze for the account.
+     *        An array of objects, one for each AWS account that owns specific S3 buckets to analyze. Each object
+     *        specifies the account ID for an account and one or more buckets to analyze for that account. A job's
+     *        definition can contain a bucketDefinitions array or a bucketCriteria object, not both.
      */
 
     public void setBucketDefinitions(java.util.Collection<S3BucketDefinitionForJob> bucketDefinitions) {
@@ -78,8 +95,9 @@ public class S3JobDefinition implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of objects, one for each AWS account that owns buckets to analyze. Each object specifies the account ID
-     * for an account and one or more buckets to analyze for the account.
+     * An array of objects, one for each AWS account that owns specific S3 buckets to analyze. Each object specifies the
+     * account ID for an account and one or more buckets to analyze for that account. A job's definition can contain a
+     * bucketDefinitions array or a bucketCriteria object, not both.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -88,8 +106,9 @@ public class S3JobDefinition implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param bucketDefinitions
-     *        An array of objects, one for each AWS account that owns buckets to analyze. Each object specifies the
-     *        account ID for an account and one or more buckets to analyze for the account.
+     *        An array of objects, one for each AWS account that owns specific S3 buckets to analyze. Each object
+     *        specifies the account ID for an account and one or more buckets to analyze for that account. A job's
+     *        definition can contain a bucketDefinitions array or a bucketCriteria object, not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,13 +124,15 @@ public class S3JobDefinition implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array of objects, one for each AWS account that owns buckets to analyze. Each object specifies the account ID
-     * for an account and one or more buckets to analyze for the account.
+     * An array of objects, one for each AWS account that owns specific S3 buckets to analyze. Each object specifies the
+     * account ID for an account and one or more buckets to analyze for that account. A job's definition can contain a
+     * bucketDefinitions array or a bucketCriteria object, not both.
      * </p>
      * 
      * @param bucketDefinitions
-     *        An array of objects, one for each AWS account that owns buckets to analyze. Each object specifies the
-     *        account ID for an account and one or more buckets to analyze for the account.
+     *        An array of objects, one for each AWS account that owns specific S3 buckets to analyze. Each object
+     *        specifies the account ID for an account and one or more buckets to analyze for that account. A job's
+     *        definition can contain a bucketDefinitions array or a bucketCriteria object, not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,12 +143,13 @@ public class S3JobDefinition implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The property- and tag-based conditions that determine which objects to include or exclude from the analysis.
+     * The property- and tag-based conditions that determine which S3 objects to include or exclude from the analysis.
+     * Each time the job runs, the job uses these criteria to determine which objects to analyze.
      * </p>
      * 
      * @param scoping
-     *        The property- and tag-based conditions that determine which objects to include or exclude from the
-     *        analysis.
+     *        The property- and tag-based conditions that determine which S3 objects to include or exclude from the
+     *        analysis. Each time the job runs, the job uses these criteria to determine which objects to analyze.
      */
 
     public void setScoping(Scoping scoping) {
@@ -136,11 +158,12 @@ public class S3JobDefinition implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The property- and tag-based conditions that determine which objects to include or exclude from the analysis.
+     * The property- and tag-based conditions that determine which S3 objects to include or exclude from the analysis.
+     * Each time the job runs, the job uses these criteria to determine which objects to analyze.
      * </p>
      * 
-     * @return The property- and tag-based conditions that determine which objects to include or exclude from the
-     *         analysis.
+     * @return The property- and tag-based conditions that determine which S3 objects to include or exclude from the
+     *         analysis. Each time the job runs, the job uses these criteria to determine which objects to analyze.
      */
 
     public Scoping getScoping() {
@@ -149,17 +172,71 @@ public class S3JobDefinition implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The property- and tag-based conditions that determine which objects to include or exclude from the analysis.
+     * The property- and tag-based conditions that determine which S3 objects to include or exclude from the analysis.
+     * Each time the job runs, the job uses these criteria to determine which objects to analyze.
      * </p>
      * 
      * @param scoping
-     *        The property- and tag-based conditions that determine which objects to include or exclude from the
-     *        analysis.
+     *        The property- and tag-based conditions that determine which S3 objects to include or exclude from the
+     *        analysis. Each time the job runs, the job uses these criteria to determine which objects to analyze.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public S3JobDefinition withScoping(Scoping scoping) {
         setScoping(scoping);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The property- and tag-based conditions that determine which S3 buckets to include or exclude from the analysis.
+     * Each time the job runs, the job uses these criteria to determine which buckets contain objects to analyze. A
+     * job's definition can contain a bucketCriteria object or a bucketDefinitions array, not both.
+     * </p>
+     * 
+     * @param bucketCriteria
+     *        The property- and tag-based conditions that determine which S3 buckets to include or exclude from the
+     *        analysis. Each time the job runs, the job uses these criteria to determine which buckets contain objects
+     *        to analyze. A job's definition can contain a bucketCriteria object or a bucketDefinitions array, not both.
+     */
+
+    public void setBucketCriteria(S3BucketCriteriaForJob bucketCriteria) {
+        this.bucketCriteria = bucketCriteria;
+    }
+
+    /**
+     * <p>
+     * The property- and tag-based conditions that determine which S3 buckets to include or exclude from the analysis.
+     * Each time the job runs, the job uses these criteria to determine which buckets contain objects to analyze. A
+     * job's definition can contain a bucketCriteria object or a bucketDefinitions array, not both.
+     * </p>
+     * 
+     * @return The property- and tag-based conditions that determine which S3 buckets to include or exclude from the
+     *         analysis. Each time the job runs, the job uses these criteria to determine which buckets contain objects
+     *         to analyze. A job's definition can contain a bucketCriteria object or a bucketDefinitions array, not
+     *         both.
+     */
+
+    public S3BucketCriteriaForJob getBucketCriteria() {
+        return this.bucketCriteria;
+    }
+
+    /**
+     * <p>
+     * The property- and tag-based conditions that determine which S3 buckets to include or exclude from the analysis.
+     * Each time the job runs, the job uses these criteria to determine which buckets contain objects to analyze. A
+     * job's definition can contain a bucketCriteria object or a bucketDefinitions array, not both.
+     * </p>
+     * 
+     * @param bucketCriteria
+     *        The property- and tag-based conditions that determine which S3 buckets to include or exclude from the
+     *        analysis. Each time the job runs, the job uses these criteria to determine which buckets contain objects
+     *        to analyze. A job's definition can contain a bucketCriteria object or a bucketDefinitions array, not both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3JobDefinition withBucketCriteria(S3BucketCriteriaForJob bucketCriteria) {
+        setBucketCriteria(bucketCriteria);
         return this;
     }
 
@@ -178,7 +255,9 @@ public class S3JobDefinition implements Serializable, Cloneable, StructuredPojo 
         if (getBucketDefinitions() != null)
             sb.append("BucketDefinitions: ").append(getBucketDefinitions()).append(",");
         if (getScoping() != null)
-            sb.append("Scoping: ").append(getScoping());
+            sb.append("Scoping: ").append(getScoping()).append(",");
+        if (getBucketCriteria() != null)
+            sb.append("BucketCriteria: ").append(getBucketCriteria());
         sb.append("}");
         return sb.toString();
     }
@@ -201,6 +280,10 @@ public class S3JobDefinition implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getScoping() != null && other.getScoping().equals(this.getScoping()) == false)
             return false;
+        if (other.getBucketCriteria() == null ^ this.getBucketCriteria() == null)
+            return false;
+        if (other.getBucketCriteria() != null && other.getBucketCriteria().equals(this.getBucketCriteria()) == false)
+            return false;
         return true;
     }
 
@@ -211,6 +294,7 @@ public class S3JobDefinition implements Serializable, Cloneable, StructuredPojo 
 
         hashCode = prime * hashCode + ((getBucketDefinitions() == null) ? 0 : getBucketDefinitions().hashCode());
         hashCode = prime * hashCode + ((getScoping() == null) ? 0 : getScoping().hashCode());
+        hashCode = prime * hashCode + ((getBucketCriteria() == null) ? 0 : getBucketCriteria().hashCode());
         return hashCode;
     }
 

@@ -46,8 +46,9 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
     private Boolean disableEmailNotification;
     /**
      * <p>
-     * The list of AWS accounts to invite to become member accounts in the behavior graph. For each invited account, the
-     * account list contains the account identifier and the AWS account root user email address.
+     * The list of AWS accounts to invite to become member accounts in the behavior graph. You can invite up to 50
+     * accounts at a time. For each invited account, the account list contains the account identifier and the AWS
+     * account root user email address.
      * </p>
      */
     private java.util.List<Account> accounts;
@@ -194,12 +195,14 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The list of AWS accounts to invite to become member accounts in the behavior graph. For each invited account, the
-     * account list contains the account identifier and the AWS account root user email address.
+     * The list of AWS accounts to invite to become member accounts in the behavior graph. You can invite up to 50
+     * accounts at a time. For each invited account, the account list contains the account identifier and the AWS
+     * account root user email address.
      * </p>
      * 
-     * @return The list of AWS accounts to invite to become member accounts in the behavior graph. For each invited
-     *         account, the account list contains the account identifier and the AWS account root user email address.
+     * @return The list of AWS accounts to invite to become member accounts in the behavior graph. You can invite up to
+     *         50 accounts at a time. For each invited account, the account list contains the account identifier and the
+     *         AWS account root user email address.
      */
 
     public java.util.List<Account> getAccounts() {
@@ -208,13 +211,15 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The list of AWS accounts to invite to become member accounts in the behavior graph. For each invited account, the
-     * account list contains the account identifier and the AWS account root user email address.
+     * The list of AWS accounts to invite to become member accounts in the behavior graph. You can invite up to 50
+     * accounts at a time. For each invited account, the account list contains the account identifier and the AWS
+     * account root user email address.
      * </p>
      * 
      * @param accounts
-     *        The list of AWS accounts to invite to become member accounts in the behavior graph. For each invited
-     *        account, the account list contains the account identifier and the AWS account root user email address.
+     *        The list of AWS accounts to invite to become member accounts in the behavior graph. You can invite up to
+     *        50 accounts at a time. For each invited account, the account list contains the account identifier and the
+     *        AWS account root user email address.
      */
 
     public void setAccounts(java.util.Collection<Account> accounts) {
@@ -228,8 +233,9 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The list of AWS accounts to invite to become member accounts in the behavior graph. For each invited account, the
-     * account list contains the account identifier and the AWS account root user email address.
+     * The list of AWS accounts to invite to become member accounts in the behavior graph. You can invite up to 50
+     * accounts at a time. For each invited account, the account list contains the account identifier and the AWS
+     * account root user email address.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -238,8 +244,9 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param accounts
-     *        The list of AWS accounts to invite to become member accounts in the behavior graph. For each invited
-     *        account, the account list contains the account identifier and the AWS account root user email address.
+     *        The list of AWS accounts to invite to become member accounts in the behavior graph. You can invite up to
+     *        50 accounts at a time. For each invited account, the account list contains the account identifier and the
+     *        AWS account root user email address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -255,13 +262,15 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The list of AWS accounts to invite to become member accounts in the behavior graph. For each invited account, the
-     * account list contains the account identifier and the AWS account root user email address.
+     * The list of AWS accounts to invite to become member accounts in the behavior graph. You can invite up to 50
+     * accounts at a time. For each invited account, the account list contains the account identifier and the AWS
+     * account root user email address.
      * </p>
      * 
      * @param accounts
-     *        The list of AWS accounts to invite to become member accounts in the behavior graph. For each invited
-     *        account, the account list contains the account identifier and the AWS account root user email address.
+     *        The list of AWS accounts to invite to become member accounts in the behavior graph. You can invite up to
+     *        50 accounts at a time. For each invited account, the account list contains the account identifier and the
+     *        AWS account root user email address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,17 +27,23 @@ public class CreateGraphRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags to assign to the new behavior graph. For each tag, you provide the tag key and the tag value.
+     * The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag, you provide the tag key
+     * and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256
+     * characters.
      * </p>
      */
     private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * The tags to assign to the new behavior graph. For each tag, you provide the tag key and the tag value.
+     * The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag, you provide the tag key
+     * and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256
+     * characters.
      * </p>
      * 
-     * @return The tags to assign to the new behavior graph. For each tag, you provide the tag key and the tag value.
+     * @return The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag, you provide the
+     *         tag key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up
+     *         to 256 characters.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -46,11 +52,15 @@ public class CreateGraphRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags to assign to the new behavior graph. For each tag, you provide the tag key and the tag value.
+     * The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag, you provide the tag key
+     * and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256
+     * characters.
      * </p>
      * 
      * @param tags
-     *        The tags to assign to the new behavior graph. For each tag, you provide the tag key and the tag value.
+     *        The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag, you provide the tag
+     *        key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256
+     *        characters.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -59,11 +69,15 @@ public class CreateGraphRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags to assign to the new behavior graph. For each tag, you provide the tag key and the tag value.
+     * The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag, you provide the tag key
+     * and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256
+     * characters.
      * </p>
      * 
      * @param tags
-     *        The tags to assign to the new behavior graph. For each tag, you provide the tag key and the tag value.
+     *        The tags to assign to the new behavior graph. You can add up to 50 tags. For each tag, you provide the tag
+     *        key and the tag value. Each tag key can contain up to 128 characters. Each tag value can contain up to 256
+     *        characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

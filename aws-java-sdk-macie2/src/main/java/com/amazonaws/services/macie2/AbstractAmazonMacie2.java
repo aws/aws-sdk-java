@@ -263,6 +263,11 @@ public class AbstractAmazonMacie2 implements AmazonMacie2 {
     }
 
     @Override
+    public SearchResourcesResult searchResources(SearchResourcesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

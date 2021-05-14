@@ -45,14 +45,14 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
     private BucketCountByEncryptionType bucketCountByEncryptionType;
     /**
      * <p>
-     * The total number of buckets whose bucket policies do and don't require server-side encryption of objects when
+     * The total number of buckets whose bucket policies do or don't require server-side encryption of objects when
      * objects are uploaded to the buckets.
      * </p>
      */
     private BucketCountPolicyAllowsUnencryptedObjectUploads bucketCountByObjectEncryptionRequirement;
     /**
      * <p>
-     * The total number of buckets that are and aren't shared with another AWS account.
+     * The total number of buckets that are or aren't shared with another AWS account.
      * </p>
      */
     private BucketCountBySharedAccessType bucketCountBySharedAccessType;
@@ -101,12 +101,12 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
     private Long sizeInBytes;
     /**
      * <p>
-     * The total compressed storage size, in bytes, of the buckets.
+     * The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.
      * </p>
      * <p>
      * If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest
-     * version of each object in those buckets. This value doesn't reflect the storage size of all versions of the
-     * objects in the buckets.
+     * version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions
+     * of the applicable objects in the buckets.
      * </p>
      */
     private Long sizeInBytesCompressed;
@@ -259,12 +259,12 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of buckets whose bucket policies do and don't require server-side encryption of objects when
+     * The total number of buckets whose bucket policies do or don't require server-side encryption of objects when
      * objects are uploaded to the buckets.
      * </p>
      * 
      * @param bucketCountByObjectEncryptionRequirement
-     *        The total number of buckets whose bucket policies do and don't require server-side encryption of objects
+     *        The total number of buckets whose bucket policies do or don't require server-side encryption of objects
      *        when objects are uploaded to the buckets.
      */
 
@@ -274,11 +274,11 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of buckets whose bucket policies do and don't require server-side encryption of objects when
+     * The total number of buckets whose bucket policies do or don't require server-side encryption of objects when
      * objects are uploaded to the buckets.
      * </p>
      * 
-     * @return The total number of buckets whose bucket policies do and don't require server-side encryption of objects
+     * @return The total number of buckets whose bucket policies do or don't require server-side encryption of objects
      *         when objects are uploaded to the buckets.
      */
 
@@ -288,12 +288,12 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of buckets whose bucket policies do and don't require server-side encryption of objects when
+     * The total number of buckets whose bucket policies do or don't require server-side encryption of objects when
      * objects are uploaded to the buckets.
      * </p>
      * 
      * @param bucketCountByObjectEncryptionRequirement
-     *        The total number of buckets whose bucket policies do and don't require server-side encryption of objects
+     *        The total number of buckets whose bucket policies do or don't require server-side encryption of objects
      *        when objects are uploaded to the buckets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -306,11 +306,11 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of buckets that are and aren't shared with another AWS account.
+     * The total number of buckets that are or aren't shared with another AWS account.
      * </p>
      * 
      * @param bucketCountBySharedAccessType
-     *        The total number of buckets that are and aren't shared with another AWS account.
+     *        The total number of buckets that are or aren't shared with another AWS account.
      */
 
     public void setBucketCountBySharedAccessType(BucketCountBySharedAccessType bucketCountBySharedAccessType) {
@@ -319,10 +319,10 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of buckets that are and aren't shared with another AWS account.
+     * The total number of buckets that are or aren't shared with another AWS account.
      * </p>
      * 
-     * @return The total number of buckets that are and aren't shared with another AWS account.
+     * @return The total number of buckets that are or aren't shared with another AWS account.
      */
 
     public BucketCountBySharedAccessType getBucketCountBySharedAccessType() {
@@ -331,11 +331,11 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of buckets that are and aren't shared with another AWS account.
+     * The total number of buckets that are or aren't shared with another AWS account.
      * </p>
      * 
      * @param bucketCountBySharedAccessType
-     *        The total number of buckets that are and aren't shared with another AWS account.
+     *        The total number of buckets that are or aren't shared with another AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -621,20 +621,21 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total compressed storage size, in bytes, of the buckets.
+     * The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.
      * </p>
      * <p>
      * If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest
-     * version of each object in those buckets. This value doesn't reflect the storage size of all versions of the
-     * objects in the buckets.
+     * version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions
+     * of the applicable objects in the buckets.
      * </p>
      * 
      * @param sizeInBytesCompressed
-     *        The total compressed storage size, in bytes, of the buckets.</p>
+     *        The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the
+     *        buckets.</p>
      *        <p>
      *        If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the
-     *        latest version of each object in those buckets. This value doesn't reflect the storage size of all
-     *        versions of the objects in the buckets.
+     *        latest version of each applicable object in those buckets. This value doesn't reflect the storage size of
+     *        all versions of the applicable objects in the buckets.
      */
 
     public void setSizeInBytesCompressed(Long sizeInBytesCompressed) {
@@ -643,19 +644,20 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total compressed storage size, in bytes, of the buckets.
+     * The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.
      * </p>
      * <p>
      * If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest
-     * version of each object in those buckets. This value doesn't reflect the storage size of all versions of the
-     * objects in the buckets.
+     * version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions
+     * of the applicable objects in the buckets.
      * </p>
      * 
-     * @return The total compressed storage size, in bytes, of the buckets.</p>
+     * @return The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the
+     *         buckets.</p>
      *         <p>
      *         If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the
-     *         latest version of each object in those buckets. This value doesn't reflect the storage size of all
-     *         versions of the objects in the buckets.
+     *         latest version of each applicable object in those buckets. This value doesn't reflect the storage size of
+     *         all versions of the applicable objects in the buckets.
      */
 
     public Long getSizeInBytesCompressed() {
@@ -664,20 +666,21 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total compressed storage size, in bytes, of the buckets.
+     * The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the buckets.
      * </p>
      * <p>
      * If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the latest
-     * version of each object in those buckets. This value doesn't reflect the storage size of all versions of the
-     * objects in the buckets.
+     * version of each applicable object in those buckets. This value doesn't reflect the storage size of all versions
+     * of the applicable objects in the buckets.
      * </p>
      * 
      * @param sizeInBytesCompressed
-     *        The total compressed storage size, in bytes, of the buckets.</p>
+     *        The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the
+     *        buckets.</p>
      *        <p>
      *        If versioning is enabled for any of the buckets, Macie calculates this value based on the size of the
-     *        latest version of each object in those buckets. This value doesn't reflect the storage size of all
-     *        versions of the objects in the buckets.
+     *        latest version of each applicable object in those buckets. This value doesn't reflect the storage size of
+     *        all versions of the applicable objects in the buckets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

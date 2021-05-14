@@ -33,7 +33,8 @@ public class GetMembersRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String graphArn;
     /**
      * <p>
-     * The list of AWS account identifiers for the member account for which to return member details.
+     * The list of AWS account identifiers for the member account for which to return member details. You can request
+     * details for up to 50 member accounts at a time.
      * </p>
      * <p>
      * You cannot use <code>GetMembers</code> to retrieve information about member accounts that were removed from the
@@ -84,14 +85,16 @@ public class GetMembersRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The list of AWS account identifiers for the member account for which to return member details.
+     * The list of AWS account identifiers for the member account for which to return member details. You can request
+     * details for up to 50 member accounts at a time.
      * </p>
      * <p>
      * You cannot use <code>GetMembers</code> to retrieve information about member accounts that were removed from the
      * behavior graph.
      * </p>
      * 
-     * @return The list of AWS account identifiers for the member account for which to return member details.</p>
+     * @return The list of AWS account identifiers for the member account for which to return member details. You can
+     *         request details for up to 50 member accounts at a time.</p>
      *         <p>
      *         You cannot use <code>GetMembers</code> to retrieve information about member accounts that were removed
      *         from the behavior graph.
@@ -103,7 +106,8 @@ public class GetMembersRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The list of AWS account identifiers for the member account for which to return member details.
+     * The list of AWS account identifiers for the member account for which to return member details. You can request
+     * details for up to 50 member accounts at a time.
      * </p>
      * <p>
      * You cannot use <code>GetMembers</code> to retrieve information about member accounts that were removed from the
@@ -111,7 +115,8 @@ public class GetMembersRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param accountIds
-     *        The list of AWS account identifiers for the member account for which to return member details.</p>
+     *        The list of AWS account identifiers for the member account for which to return member details. You can
+     *        request details for up to 50 member accounts at a time.</p>
      *        <p>
      *        You cannot use <code>GetMembers</code> to retrieve information about member accounts that were removed
      *        from the behavior graph.
@@ -128,7 +133,8 @@ public class GetMembersRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The list of AWS account identifiers for the member account for which to return member details.
+     * The list of AWS account identifiers for the member account for which to return member details. You can request
+     * details for up to 50 member accounts at a time.
      * </p>
      * <p>
      * You cannot use <code>GetMembers</code> to retrieve information about member accounts that were removed from the
@@ -141,7 +147,8 @@ public class GetMembersRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param accountIds
-     *        The list of AWS account identifiers for the member account for which to return member details.</p>
+     *        The list of AWS account identifiers for the member account for which to return member details. You can
+     *        request details for up to 50 member accounts at a time.</p>
      *        <p>
      *        You cannot use <code>GetMembers</code> to retrieve information about member accounts that were removed
      *        from the behavior graph.
@@ -160,7 +167,8 @@ public class GetMembersRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The list of AWS account identifiers for the member account for which to return member details.
+     * The list of AWS account identifiers for the member account for which to return member details. You can request
+     * details for up to 50 member accounts at a time.
      * </p>
      * <p>
      * You cannot use <code>GetMembers</code> to retrieve information about member accounts that were removed from the
@@ -168,7 +176,8 @@ public class GetMembersRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param accountIds
-     *        The list of AWS account identifiers for the member account for which to return member details.</p>
+     *        The list of AWS account identifiers for the member account for which to return member details. You can
+     *        request details for up to 50 member accounts at a time.</p>
      *        <p>
      *        You cannot use <code>GetMembers</code> to retrieve information about member accounts that were removed
      *        from the behavior graph.

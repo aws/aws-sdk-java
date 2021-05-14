@@ -193,12 +193,12 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     private Long sizeInBytes;
     /**
      * <p>
-     * The total compressed storage size, in bytes, of the bucket.
+     * The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the bucket.
      * </p>
      * <p>
      * If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of
-     * each object in the bucket. This value doesn't reflect the storage size of all versions of each object in the
-     * bucket.
+     * each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each
+     * applicable object in the bucket.
      * </p>
      */
     private Long sizeInBytesCompressed;
@@ -1411,20 +1411,21 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total compressed storage size, in bytes, of the bucket.
+     * The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the bucket.
      * </p>
      * <p>
      * If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of
-     * each object in the bucket. This value doesn't reflect the storage size of all versions of each object in the
-     * bucket.
+     * each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each
+     * applicable object in the bucket.
      * </p>
      * 
      * @param sizeInBytesCompressed
-     *        The total compressed storage size, in bytes, of the bucket.</p>
+     *        The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the
+     *        bucket.</p>
      *        <p>
      *        If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest
-     *        version of each object in the bucket. This value doesn't reflect the storage size of all versions of each
-     *        object in the bucket.
+     *        version of each applicable object in the bucket. This value doesn't reflect the storage size of all
+     *        versions of each applicable object in the bucket.
      */
 
     public void setSizeInBytesCompressed(Long sizeInBytesCompressed) {
@@ -1433,19 +1434,20 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total compressed storage size, in bytes, of the bucket.
+     * The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the bucket.
      * </p>
      * <p>
      * If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of
-     * each object in the bucket. This value doesn't reflect the storage size of all versions of each object in the
-     * bucket.
+     * each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each
+     * applicable object in the bucket.
      * </p>
      * 
-     * @return The total compressed storage size, in bytes, of the bucket.</p>
+     * @return The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the
+     *         bucket.</p>
      *         <p>
      *         If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest
-     *         version of each object in the bucket. This value doesn't reflect the storage size of all versions of each
-     *         object in the bucket.
+     *         version of each applicable object in the bucket. This value doesn't reflect the storage size of all
+     *         versions of each applicable object in the bucket.
      */
 
     public Long getSizeInBytesCompressed() {
@@ -1454,20 +1456,21 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total compressed storage size, in bytes, of the bucket.
+     * The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the bucket.
      * </p>
      * <p>
      * If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of
-     * each object in the bucket. This value doesn't reflect the storage size of all versions of each object in the
-     * bucket.
+     * each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each
+     * applicable object in the bucket.
      * </p>
      * 
      * @param sizeInBytesCompressed
-     *        The total compressed storage size, in bytes, of the bucket.</p>
+     *        The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the
+     *        bucket.</p>
      *        <p>
      *        If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest
-     *        version of each object in the bucket. This value doesn't reflect the storage size of all versions of each
-     *        object in the bucket.
+     *        version of each applicable object in the bucket. This value doesn't reflect the storage size of all
+     *        versions of each applicable object in the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

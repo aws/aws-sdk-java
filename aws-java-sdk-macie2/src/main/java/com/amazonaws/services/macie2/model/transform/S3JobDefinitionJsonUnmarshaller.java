@@ -58,6 +58,10 @@ public class S3JobDefinitionJsonUnmarshaller implements Unmarshaller<S3JobDefini
                     context.nextToken();
                     s3JobDefinition.setScoping(ScopingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("bucketCriteria", targetDepth)) {
+                    context.nextToken();
+                    s3JobDefinition.setBucketCriteria(S3BucketCriteriaForJobJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

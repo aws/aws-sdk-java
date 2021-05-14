@@ -51,6 +51,8 @@ public class MedicalTranscriptionJobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FailureReason").build();
     private static final MarshallingInfo<StructuredPojo> SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Settings").build();
+    private static final MarshallingInfo<String> CONTENTIDENTIFICATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContentIdentificationType").build();
     private static final MarshallingInfo<String> SPECIALTY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Specialty").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -84,6 +86,7 @@ public class MedicalTranscriptionJobMarshaller {
             protocolMarshaller.marshall(medicalTranscriptionJob.getCompletionTime(), COMPLETIONTIME_BINDING);
             protocolMarshaller.marshall(medicalTranscriptionJob.getFailureReason(), FAILUREREASON_BINDING);
             protocolMarshaller.marshall(medicalTranscriptionJob.getSettings(), SETTINGS_BINDING);
+            protocolMarshaller.marshall(medicalTranscriptionJob.getContentIdentificationType(), CONTENTIDENTIFICATIONTYPE_BINDING);
             protocolMarshaller.marshall(medicalTranscriptionJob.getSpecialty(), SPECIALTY_BINDING);
             protocolMarshaller.marshall(medicalTranscriptionJob.getType(), TYPE_BINDING);
         } catch (Exception e) {

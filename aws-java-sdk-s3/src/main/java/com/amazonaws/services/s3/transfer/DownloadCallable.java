@@ -142,33 +142,39 @@ final class DownloadCallable extends AbstractDownloadCallable {
             throw new FileLockException("Fail to lock " + dstfile);
         }
 
-        for (int i = lastFullyMergedPartNumber + 1; i <= partCount; i++) {
-            filePositionToWrite += previousPartLength;
+        try {
+            for (int i = lastFullyMergedPartNumber + 1; i <= partCount; i++) {
+                filePositionToWrite += previousPartLength;
 
-            GetObjectRequest getPartRequest = new GetObjectRequest(req.getBucketName(), req.getKey(),
-                                                                   req.getVersionId()).withUnmodifiedSinceConstraint(req.getUnmodifiedSinceConstraint())
-                                                                                      .withModifiedSinceConstraint(req.getModifiedSinceConstraint())
-                                                                                      .withResponseHeaders(req.getResponseHeaders()).withSSECustomerKey(req.getSSECustomerKey())
-                                                                                      .withGeneralProgressListener(req.getGeneralProgressListener());
+                GetObjectRequest getPartRequest = new GetObjectRequest(req.getBucketName(), req.getKey(),
+                                                                       req.getVersionId()).withUnmodifiedSinceConstraint(req.getUnmodifiedSinceConstraint())
+                                                                                          .withModifiedSinceConstraint(req.getModifiedSinceConstraint())
+                                                                                          .withResponseHeaders(req.getResponseHeaders()).withSSECustomerKey(req.getSSECustomerKey())
+                                                                                          .withGeneralProgressListener(req.getGeneralProgressListener());
 
-            getPartRequest.setMatchingETagConstraints(req.getMatchingETagConstraints());
-            getPartRequest.setNonmatchingETagConstraints(req.getNonmatchingETagConstraints());
-            getPartRequest.setRequesterPays(req.isRequesterPays());
-            getPartRequest.setRequestCredentialsProvider(req.getRequestCredentialsProvider());
+                getPartRequest.setMatchingETagConstraints(req.getMatchingETagConstraints());
+                getPartRequest.setNonmatchingETagConstraints(req.getNonmatchingETagConstraints());
+                getPartRequest.setRequesterPays(req.isRequesterPays());
+                getPartRequest.setRequestCredentialsProvider(req.getRequestCredentialsProvider());
 
-            // Update the part number
-            getPartRequest.setPartNumber(i);
+                // Update the part number
+                getPartRequest.setPartNumber(i);
 
-            futures.add(executor.submit(new DownloadS3ObjectCallable(serviceCall(getPartRequest),
-                                                                     dstfile,
-                                                                     filePositionToWrite)));
+                futures.add(executor.submit(new DownloadS3ObjectCallable(serviceCall(getPartRequest),
+                                                                         dstfile,
+                                                                         filePositionToWrite)));
 
-            previousPartLength = ServiceUtils.getPartSize(req, s3, i);
+                previousPartLength = ServiceUtils.getPartSize(req, s3, i);
+            }
+
+            Future<File> future = executor.submit(new CompleteMultipartDownload(futures, dstfile, download,
+                                                                                ++lastFullyMergedPartNumber));
+            ((DownloadMonitor) download.getMonitor()).setFuture(future);
+
+        } catch (Exception exception){
+            FileLocks.unlock(dstfile);
+            throw exception;
         }
-
-        Future<File> future = executor.submit(new CompleteMultipartDownload(futures, dstfile, download,
-                                                                            ++lastFullyMergedPartNumber));
-        ((DownloadMonitor) download.getMonitor()).setFuture(future);
     }
 
     /**

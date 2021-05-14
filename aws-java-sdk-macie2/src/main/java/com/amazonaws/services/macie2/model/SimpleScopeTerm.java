@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies a property-based condition that determines whether an object is included or excluded from a classification
- * job.
+ * Specifies a property-based condition that determines whether an S3 object is included or excluded from a
+ * classification job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SimpleScopeTerm" target="_top">AWS API
@@ -102,13 +102,13 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object, instead
-     * of a SimpleScopeTerm object, to define a tag-based condition for the job.
+     * TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object instead
+     * of a SimpleScopeTerm object to define a tag-based condition for the job.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * Macie doesn't support use of wildcard characters in values. Also, string values are case sensitive.
+     * Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.
      * </p>
      */
     private java.util.List<String> values;
@@ -477,13 +477,13 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object, instead
-     * of a SimpleScopeTerm object, to define a tag-based condition for the job.
+     * TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object instead
+     * of a SimpleScopeTerm object to define a tag-based condition for the job.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * Macie doesn't support use of wildcard characters in values. Also, string values are case sensitive.
+     * Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.
      * </p>
      * 
      * @return An array that lists the values to use in the condition. If the value for the key property is
@@ -519,13 +519,13 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      *         </li>
      *         <li>
      *         <p>
-     *         TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object,
-     *         instead of a SimpleScopeTerm object, to define a tag-based condition for the job.
+     *         TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object
+     *         instead of a SimpleScopeTerm object to define a tag-based condition for the job.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         Macie doesn't support use of wildcard characters in values. Also, string values are case sensitive.
+     *         Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.
      */
 
     public java.util.List<String> getValues() {
@@ -566,13 +566,13 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object, instead
-     * of a SimpleScopeTerm object, to define a tag-based condition for the job.
+     * TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object instead
+     * of a SimpleScopeTerm object to define a tag-based condition for the job.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * Macie doesn't support use of wildcard characters in values. Also, string values are case sensitive.
+     * Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.
      * </p>
      * 
      * @param values
@@ -608,13 +608,13 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object,
-     *        instead of a SimpleScopeTerm object, to define a tag-based condition for the job.
+     *        TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object
+     *        instead of a SimpleScopeTerm object to define a tag-based condition for the job.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        Macie doesn't support use of wildcard characters in values. Also, string values are case sensitive.
+     *        Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -660,13 +660,13 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object, instead
-     * of a SimpleScopeTerm object, to define a tag-based condition for the job.
+     * TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object instead
+     * of a SimpleScopeTerm object to define a tag-based condition for the job.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * Macie doesn't support use of wildcard characters in values. Also, string values are case sensitive.
+     * Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -707,13 +707,13 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object,
-     *        instead of a SimpleScopeTerm object, to define a tag-based condition for the job.
+     *        TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object
+     *        instead of a SimpleScopeTerm object to define a tag-based condition for the job.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        Macie doesn't support use of wildcard characters in values. Also, string values are case sensitive.
+     *        Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -761,13 +761,13 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object, instead
-     * of a SimpleScopeTerm object, to define a tag-based condition for the job.
+     * TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object instead
+     * of a SimpleScopeTerm object to define a tag-based condition for the job.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * Macie doesn't support use of wildcard characters in values. Also, string values are case sensitive.
+     * Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.
      * </p>
      * 
      * @param values
@@ -803,13 +803,13 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object,
-     *        instead of a SimpleScopeTerm object, to define a tag-based condition for the job.
+     *        TAG - A string that represents a tag key for an object. For advanced options, use a TagScopeTerm object
+     *        instead of a SimpleScopeTerm object to define a tag-based condition for the job.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        Macie doesn't support use of wildcard characters in values. Also, string values are case sensitive.
+     *        Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

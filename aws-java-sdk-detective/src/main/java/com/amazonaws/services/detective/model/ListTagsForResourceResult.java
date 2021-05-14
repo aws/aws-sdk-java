@@ -25,17 +25,17 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The tag values that are assigned to the behavior graph.
+     * The tag values that are assigned to the behavior graph. The request returns up to 50 tag values.
      * </p>
      */
     private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * The tag values that are assigned to the behavior graph.
+     * The tag values that are assigned to the behavior graph. The request returns up to 50 tag values.
      * </p>
      * 
-     * @return The tag values that are assigned to the behavior graph.
+     * @return The tag values that are assigned to the behavior graph. The request returns up to 50 tag values.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -44,11 +44,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The tag values that are assigned to the behavior graph.
+     * The tag values that are assigned to the behavior graph. The request returns up to 50 tag values.
      * </p>
      * 
      * @param tags
-     *        The tag values that are assigned to the behavior graph.
+     *        The tag values that are assigned to the behavior graph. The request returns up to 50 tag values.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -57,11 +57,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The tag values that are assigned to the behavior graph.
+     * The tag values that are assigned to the behavior graph. The request returns up to 50 tag values.
      * </p>
      * 
      * @param tags
-     *        The tag values that are assigned to the behavior graph.
+     *        The tag values that are assigned to the behavior graph. The request returns up to 50 tag values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

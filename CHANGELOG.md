@@ -1,3 +1,36 @@
+# __1.11.1019__ __2021-05-14__
+## __AWS SecurityHub__
+  - ### Features
+    - Updated descriptions to add notes on array lengths.
+
+## __Amazon CloudWatch Events__
+  - ### Features
+    - Update InputTransformer variable limit from 10 to 100 variables.
+
+## __Amazon Detective__
+  - ### Features
+    - Updated descriptions of array parameters to add the restrictions on the array and value lengths.
+
+## __Amazon Elasticsearch Service__
+  - ### Features
+    - Adds support for cold storage.
+
+## __Amazon EventBridge__
+  - ### Features
+    - Update InputTransformer variable limit from 10 to 100 variables.
+
+## __Amazon Macie 2__
+  - ### Features
+    - This release of the Amazon Macie API adds support for defining run-time, S3 bucket criteria for classification jobs. It also adds resources for querying data about AWS resources that Macie monitors.
+
+## __Amazon Transcribe Service__
+  - ### Features
+    - Transcribe Medical now supports identification of PHI entities within transcripts
+
+## __EC2 Image Builder__
+  - ### Features
+    - Text-only updates for bundled documentation feedback tickets - spring 2021.
+
 # __1.11.1018__ __2021-05-12__
 ## __Amazon Elastic Compute Cloud__
   - ### Features
