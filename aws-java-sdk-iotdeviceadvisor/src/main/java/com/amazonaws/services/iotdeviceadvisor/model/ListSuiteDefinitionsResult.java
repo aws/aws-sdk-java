@@ -25,23 +25,23 @@ public class ListSuiteDefinitionsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Lists test suite information using List suite definition.
+     * An array of objects that provide summaries of information about the suite definitions in the list.
      * </p>
      */
     private java.util.List<SuiteDefinitionInformation> suiteDefinitionInformationList;
     /**
      * <p>
-     * Creates a Device Advisor test suite.
+     * A token used to get the next set of results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Lists test suite information using List suite definition.
+     * An array of objects that provide summaries of information about the suite definitions in the list.
      * </p>
      * 
-     * @return Lists test suite information using List suite definition.
+     * @return An array of objects that provide summaries of information about the suite definitions in the list.
      */
 
     public java.util.List<SuiteDefinitionInformation> getSuiteDefinitionInformationList() {
@@ -50,11 +50,11 @@ public class ListSuiteDefinitionsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Lists test suite information using List suite definition.
+     * An array of objects that provide summaries of information about the suite definitions in the list.
      * </p>
      * 
      * @param suiteDefinitionInformationList
-     *        Lists test suite information using List suite definition.
+     *        An array of objects that provide summaries of information about the suite definitions in the list.
      */
 
     public void setSuiteDefinitionInformationList(java.util.Collection<SuiteDefinitionInformation> suiteDefinitionInformationList) {
@@ -68,7 +68,7 @@ public class ListSuiteDefinitionsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Lists test suite information using List suite definition.
+     * An array of objects that provide summaries of information about the suite definitions in the list.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListSuiteDefinitionsResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param suiteDefinitionInformationList
-     *        Lists test suite information using List suite definition.
+     *        An array of objects that provide summaries of information about the suite definitions in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListSuiteDefinitionsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Lists test suite information using List suite definition.
+     * An array of objects that provide summaries of information about the suite definitions in the list.
      * </p>
      * 
      * @param suiteDefinitionInformationList
-     *        Lists test suite information using List suite definition.
+     *        An array of objects that provide summaries of information about the suite definitions in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,11 +108,11 @@ public class ListSuiteDefinitionsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Creates a Device Advisor test suite.
+     * A token used to get the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        Creates a Device Advisor test suite.
+     *        A token used to get the next set of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,10 +121,10 @@ public class ListSuiteDefinitionsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Creates a Device Advisor test suite.
+     * A token used to get the next set of results.
      * </p>
      * 
-     * @return Creates a Device Advisor test suite.
+     * @return A token used to get the next set of results.
      */
 
     public String getNextToken() {
@@ -133,11 +133,11 @@ public class ListSuiteDefinitionsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Creates a Device Advisor test suite.
+     * A token used to get the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        Creates a Device Advisor test suite.
+     *        A token used to get the next set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

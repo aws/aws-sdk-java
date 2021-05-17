@@ -50,7 +50,7 @@ public class DBCluster implements Serializable, Cloneable {
     private Integer backupRetentionPeriod;
     /**
      * <p>
-     * <i>(Not supported by Neptune)</i>
+     * Not supported by Neptune.
      * </p>
      */
     private String characterSetName;
@@ -150,13 +150,13 @@ public class DBCluster implements Serializable, Cloneable {
     private Integer port;
     /**
      * <p>
-     * Contains the master username for the DB cluster.
+     * Not supported by Neptune.
      * </p>
      */
     private String masterUsername;
     /**
      * <p>
-     * <i>(Not supported by Neptune)</i>
+     * Not supported by Neptune.
      * </p>
      */
     private java.util.List<DBClusterOptionGroupStatus> dBClusterOptionGroupMemberships;
@@ -211,14 +211,14 @@ public class DBCluster implements Serializable, Cloneable {
     private Boolean storageEncrypted;
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster.
+     * If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for the encrypted DB cluster.
      * </p>
      */
     private String kmsKeyId;
     /**
      * <p>
-     * The AWS Region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS key for the DB cluster is accessed.
+     * The Amazon Region-unique, immutable identifier for the DB cluster. This identifier is found in Amazon CloudTrail
+     * log entries whenever the Amazon KMS key for the DB cluster is accessed.
      * </p>
      */
     private String dbClusterResourceId;
@@ -230,15 +230,15 @@ public class DBCluster implements Serializable, Cloneable {
     private String dBClusterArn;
     /**
      * <p>
-     * Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the DB cluster.
-     * IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other AWS services
-     * on your behalf.
+     * Provides a list of the Amazon Identity and Access Management (IAM) roles that are associated with the DB cluster.
+     * IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other Amazon
+     * services on your behalf.
      * </p>
      */
     private java.util.List<DBClusterRole> associatedRoles;
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts is enabled, and
      * otherwise false.
      * </p>
      */
@@ -257,6 +257,12 @@ public class DBCluster implements Serializable, Cloneable {
     private java.util.Date clusterCreateTime;
     /**
      * <p>
+     * <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i>
+     * </p>
+     */
+    private Boolean copyTagsToSnapshot;
+    /**
+     * <p>
      * A list of log types that this DB cluster is configured to export to CloudWatch Logs.
      * </p>
      */
@@ -268,6 +274,18 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      */
     private Boolean deletionProtection;
+    /**
+     * <p>
+     * If set to <code>true</code>, the DB cluster can be cloned across accounts.
+     * </p>
+     */
+    private Boolean crossAccountClone;
+    /**
+     * <p>
+     * Time at which the DB cluster will be automatically restarted.
+     * </p>
+     */
+    private java.util.Date automaticRestartTime;
 
     /**
      * <p>
@@ -427,11 +445,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>(Not supported by Neptune)</i>
+     * Not supported by Neptune.
      * </p>
      * 
      * @param characterSetName
-     *        <i>(Not supported by Neptune)</i>
+     *        Not supported by Neptune.
      */
 
     public void setCharacterSetName(String characterSetName) {
@@ -440,10 +458,10 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>(Not supported by Neptune)</i>
+     * Not supported by Neptune.
      * </p>
      * 
-     * @return <i>(Not supported by Neptune)</i>
+     * @return Not supported by Neptune.
      */
 
     public String getCharacterSetName() {
@@ -452,11 +470,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>(Not supported by Neptune)</i>
+     * Not supported by Neptune.
      * </p>
      * 
      * @param characterSetName
-     *        <i>(Not supported by Neptune)</i>
+     *        Not supported by Neptune.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1102,11 +1120,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the master username for the DB cluster.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param masterUsername
-     *        Contains the master username for the DB cluster.
+     *        Not supported by Neptune.
      */
 
     public void setMasterUsername(String masterUsername) {
@@ -1115,10 +1133,10 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the master username for the DB cluster.
+     * Not supported by Neptune.
      * </p>
      * 
-     * @return Contains the master username for the DB cluster.
+     * @return Not supported by Neptune.
      */
 
     public String getMasterUsername() {
@@ -1127,11 +1145,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the master username for the DB cluster.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param masterUsername
-     *        Contains the master username for the DB cluster.
+     *        Not supported by Neptune.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1142,10 +1160,10 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>(Not supported by Neptune)</i>
+     * Not supported by Neptune.
      * </p>
      * 
-     * @return <i>(Not supported by Neptune)</i>
+     * @return Not supported by Neptune.
      */
 
     public java.util.List<DBClusterOptionGroupStatus> getDBClusterOptionGroupMemberships() {
@@ -1154,11 +1172,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>(Not supported by Neptune)</i>
+     * Not supported by Neptune.
      * </p>
      * 
      * @param dBClusterOptionGroupMemberships
-     *        <i>(Not supported by Neptune)</i>
+     *        Not supported by Neptune.
      */
 
     public void setDBClusterOptionGroupMemberships(java.util.Collection<DBClusterOptionGroupStatus> dBClusterOptionGroupMemberships) {
@@ -1172,7 +1190,7 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>(Not supported by Neptune)</i>
+     * Not supported by Neptune.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1181,7 +1199,7 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      * 
      * @param dBClusterOptionGroupMemberships
-     *        <i>(Not supported by Neptune)</i>
+     *        Not supported by Neptune.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1197,11 +1215,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>(Not supported by Neptune)</i>
+     * Not supported by Neptune.
      * </p>
      * 
      * @param dBClusterOptionGroupMemberships
-     *        <i>(Not supported by Neptune)</i>
+     *        Not supported by Neptune.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1643,11 +1661,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster.
+     * If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for the encrypted DB cluster.
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster.
+     *        If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for the encrypted DB cluster.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -1656,10 +1674,10 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster.
+     * If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for the encrypted DB cluster.
      * </p>
      * 
-     * @return If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster.
+     * @return If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for the encrypted DB cluster.
      */
 
     public String getKmsKeyId() {
@@ -1668,11 +1686,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster.
+     * If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for the encrypted DB cluster.
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster.
+     *        If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for the encrypted DB cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1683,13 +1701,13 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS key for the DB cluster is accessed.
+     * The Amazon Region-unique, immutable identifier for the DB cluster. This identifier is found in Amazon CloudTrail
+     * log entries whenever the Amazon KMS key for the DB cluster is accessed.
      * </p>
      * 
      * @param dbClusterResourceId
-     *        The AWS Region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail
-     *        log entries whenever the AWS KMS key for the DB cluster is accessed.
+     *        The Amazon Region-unique, immutable identifier for the DB cluster. This identifier is found in Amazon
+     *        CloudTrail log entries whenever the Amazon KMS key for the DB cluster is accessed.
      */
 
     public void setDbClusterResourceId(String dbClusterResourceId) {
@@ -1698,12 +1716,12 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS key for the DB cluster is accessed.
+     * The Amazon Region-unique, immutable identifier for the DB cluster. This identifier is found in Amazon CloudTrail
+     * log entries whenever the Amazon KMS key for the DB cluster is accessed.
      * </p>
      * 
-     * @return The AWS Region-unique, immutable identifier for the DB cluster. This identifier is found in AWS
-     *         CloudTrail log entries whenever the AWS KMS key for the DB cluster is accessed.
+     * @return The Amazon Region-unique, immutable identifier for the DB cluster. This identifier is found in Amazon
+     *         CloudTrail log entries whenever the Amazon KMS key for the DB cluster is accessed.
      */
 
     public String getDbClusterResourceId() {
@@ -1712,13 +1730,13 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS key for the DB cluster is accessed.
+     * The Amazon Region-unique, immutable identifier for the DB cluster. This identifier is found in Amazon CloudTrail
+     * log entries whenever the Amazon KMS key for the DB cluster is accessed.
      * </p>
      * 
      * @param dbClusterResourceId
-     *        The AWS Region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail
-     *        log entries whenever the AWS KMS key for the DB cluster is accessed.
+     *        The Amazon Region-unique, immutable identifier for the DB cluster. This identifier is found in Amazon
+     *        CloudTrail log entries whenever the Amazon KMS key for the DB cluster is accessed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1769,14 +1787,14 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the DB cluster.
-     * IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other AWS services
-     * on your behalf.
+     * Provides a list of the Amazon Identity and Access Management (IAM) roles that are associated with the DB cluster.
+     * IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other Amazon
+     * services on your behalf.
      * </p>
      * 
-     * @return Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the DB
+     * @return Provides a list of the Amazon Identity and Access Management (IAM) roles that are associated with the DB
      *         cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster to access
-     *         other AWS services on your behalf.
+     *         other Amazon services on your behalf.
      */
 
     public java.util.List<DBClusterRole> getAssociatedRoles() {
@@ -1785,15 +1803,15 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the DB cluster.
-     * IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other AWS services
-     * on your behalf.
+     * Provides a list of the Amazon Identity and Access Management (IAM) roles that are associated with the DB cluster.
+     * IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other Amazon
+     * services on your behalf.
      * </p>
      * 
      * @param associatedRoles
-     *        Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the DB
+     *        Provides a list of the Amazon Identity and Access Management (IAM) roles that are associated with the DB
      *        cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster to access
-     *        other AWS services on your behalf.
+     *        other Amazon services on your behalf.
      */
 
     public void setAssociatedRoles(java.util.Collection<DBClusterRole> associatedRoles) {
@@ -1807,9 +1825,9 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the DB cluster.
-     * IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other AWS services
-     * on your behalf.
+     * Provides a list of the Amazon Identity and Access Management (IAM) roles that are associated with the DB cluster.
+     * IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other Amazon
+     * services on your behalf.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1818,9 +1836,9 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      * 
      * @param associatedRoles
-     *        Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the DB
+     *        Provides a list of the Amazon Identity and Access Management (IAM) roles that are associated with the DB
      *        cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster to access
-     *        other AWS services on your behalf.
+     *        other Amazon services on your behalf.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1836,15 +1854,15 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the DB cluster.
-     * IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other AWS services
-     * on your behalf.
+     * Provides a list of the Amazon Identity and Access Management (IAM) roles that are associated with the DB cluster.
+     * IAM roles that are associated with a DB cluster grant permission for the DB cluster to access other Amazon
+     * services on your behalf.
      * </p>
      * 
      * @param associatedRoles
-     *        Provides a list of the AWS Identity and Access Management (IAM) roles that are associated with the DB
+     *        Provides a list of the Amazon Identity and Access Management (IAM) roles that are associated with the DB
      *        cluster. IAM roles that are associated with a DB cluster grant permission for the DB cluster to access
-     *        other AWS services on your behalf.
+     *        other Amazon services on your behalf.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1855,13 +1873,13 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts is enabled, and
      * otherwise false.
      * </p>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     *        otherwise false.
+     *        True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts is enabled,
+     *        and otherwise false.
      */
 
     public void setIAMDatabaseAuthenticationEnabled(Boolean iAMDatabaseAuthenticationEnabled) {
@@ -1870,12 +1888,12 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts is enabled, and
      * otherwise false.
      * </p>
      * 
-     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     *         otherwise false.
+     * @return True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts is enabled,
+     *         and otherwise false.
      */
 
     public Boolean getIAMDatabaseAuthenticationEnabled() {
@@ -1884,13 +1902,13 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts is enabled, and
      * otherwise false.
      * </p>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     *        otherwise false.
+     *        True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts is enabled,
+     *        and otherwise false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1901,12 +1919,12 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts is enabled, and
      * otherwise false.
      * </p>
      * 
-     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     *         otherwise false.
+     * @return True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts is enabled,
+     *         and otherwise false.
      */
 
     public Boolean isIAMDatabaseAuthenticationEnabled() {
@@ -1991,6 +2009,58 @@ public class DBCluster implements Serializable, Cloneable {
     public DBCluster withClusterCreateTime(java.util.Date clusterCreateTime) {
         setClusterCreateTime(clusterCreateTime);
         return this;
+    }
+
+    /**
+     * <p>
+     * <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i>
+     * </p>
+     * 
+     * @param copyTagsToSnapshot
+     *        <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i>
+     */
+
+    public void setCopyTagsToSnapshot(Boolean copyTagsToSnapshot) {
+        this.copyTagsToSnapshot = copyTagsToSnapshot;
+    }
+
+    /**
+     * <p>
+     * <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i>
+     * </p>
+     * 
+     * @return <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i>
+     */
+
+    public Boolean getCopyTagsToSnapshot() {
+        return this.copyTagsToSnapshot;
+    }
+
+    /**
+     * <p>
+     * <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i>
+     * </p>
+     * 
+     * @param copyTagsToSnapshot
+     *        <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withCopyTagsToSnapshot(Boolean copyTagsToSnapshot) {
+        setCopyTagsToSnapshot(copyTagsToSnapshot);
+        return this;
+    }
+
+    /**
+     * <p>
+     * <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i>
+     * </p>
+     * 
+     * @return <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i>
+     */
+
+    public Boolean isCopyTagsToSnapshot() {
+        return this.copyTagsToSnapshot;
     }
 
     /**
@@ -2124,6 +2194,98 @@ public class DBCluster implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * If set to <code>true</code>, the DB cluster can be cloned across accounts.
+     * </p>
+     * 
+     * @param crossAccountClone
+     *        If set to <code>true</code>, the DB cluster can be cloned across accounts.
+     */
+
+    public void setCrossAccountClone(Boolean crossAccountClone) {
+        this.crossAccountClone = crossAccountClone;
+    }
+
+    /**
+     * <p>
+     * If set to <code>true</code>, the DB cluster can be cloned across accounts.
+     * </p>
+     * 
+     * @return If set to <code>true</code>, the DB cluster can be cloned across accounts.
+     */
+
+    public Boolean getCrossAccountClone() {
+        return this.crossAccountClone;
+    }
+
+    /**
+     * <p>
+     * If set to <code>true</code>, the DB cluster can be cloned across accounts.
+     * </p>
+     * 
+     * @param crossAccountClone
+     *        If set to <code>true</code>, the DB cluster can be cloned across accounts.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withCrossAccountClone(Boolean crossAccountClone) {
+        setCrossAccountClone(crossAccountClone);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If set to <code>true</code>, the DB cluster can be cloned across accounts.
+     * </p>
+     * 
+     * @return If set to <code>true</code>, the DB cluster can be cloned across accounts.
+     */
+
+    public Boolean isCrossAccountClone() {
+        return this.crossAccountClone;
+    }
+
+    /**
+     * <p>
+     * Time at which the DB cluster will be automatically restarted.
+     * </p>
+     * 
+     * @param automaticRestartTime
+     *        Time at which the DB cluster will be automatically restarted.
+     */
+
+    public void setAutomaticRestartTime(java.util.Date automaticRestartTime) {
+        this.automaticRestartTime = automaticRestartTime;
+    }
+
+    /**
+     * <p>
+     * Time at which the DB cluster will be automatically restarted.
+     * </p>
+     * 
+     * @return Time at which the DB cluster will be automatically restarted.
+     */
+
+    public java.util.Date getAutomaticRestartTime() {
+        return this.automaticRestartTime;
+    }
+
+    /**
+     * <p>
+     * Time at which the DB cluster will be automatically restarted.
+     * </p>
+     * 
+     * @param automaticRestartTime
+     *        Time at which the DB cluster will be automatically restarted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withAutomaticRestartTime(java.util.Date automaticRestartTime) {
+        setAutomaticRestartTime(automaticRestartTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2205,10 +2367,16 @@ public class DBCluster implements Serializable, Cloneable {
             sb.append("CloneGroupId: ").append(getCloneGroupId()).append(",");
         if (getClusterCreateTime() != null)
             sb.append("ClusterCreateTime: ").append(getClusterCreateTime()).append(",");
+        if (getCopyTagsToSnapshot() != null)
+            sb.append("CopyTagsToSnapshot: ").append(getCopyTagsToSnapshot()).append(",");
         if (getEnabledCloudwatchLogsExports() != null)
             sb.append("EnabledCloudwatchLogsExports: ").append(getEnabledCloudwatchLogsExports()).append(",");
         if (getDeletionProtection() != null)
-            sb.append("DeletionProtection: ").append(getDeletionProtection());
+            sb.append("DeletionProtection: ").append(getDeletionProtection()).append(",");
+        if (getCrossAccountClone() != null)
+            sb.append("CrossAccountClone: ").append(getCrossAccountClone()).append(",");
+        if (getAutomaticRestartTime() != null)
+            sb.append("AutomaticRestartTime: ").append(getAutomaticRestartTime());
         sb.append("}");
         return sb.toString();
     }
@@ -2365,6 +2533,10 @@ public class DBCluster implements Serializable, Cloneable {
             return false;
         if (other.getClusterCreateTime() != null && other.getClusterCreateTime().equals(this.getClusterCreateTime()) == false)
             return false;
+        if (other.getCopyTagsToSnapshot() == null ^ this.getCopyTagsToSnapshot() == null)
+            return false;
+        if (other.getCopyTagsToSnapshot() != null && other.getCopyTagsToSnapshot().equals(this.getCopyTagsToSnapshot()) == false)
+            return false;
         if (other.getEnabledCloudwatchLogsExports() == null ^ this.getEnabledCloudwatchLogsExports() == null)
             return false;
         if (other.getEnabledCloudwatchLogsExports() != null && other.getEnabledCloudwatchLogsExports().equals(this.getEnabledCloudwatchLogsExports()) == false)
@@ -2372,6 +2544,14 @@ public class DBCluster implements Serializable, Cloneable {
         if (other.getDeletionProtection() == null ^ this.getDeletionProtection() == null)
             return false;
         if (other.getDeletionProtection() != null && other.getDeletionProtection().equals(this.getDeletionProtection()) == false)
+            return false;
+        if (other.getCrossAccountClone() == null ^ this.getCrossAccountClone() == null)
+            return false;
+        if (other.getCrossAccountClone() != null && other.getCrossAccountClone().equals(this.getCrossAccountClone()) == false)
+            return false;
+        if (other.getAutomaticRestartTime() == null ^ this.getAutomaticRestartTime() == null)
+            return false;
+        if (other.getAutomaticRestartTime() != null && other.getAutomaticRestartTime().equals(this.getAutomaticRestartTime()) == false)
             return false;
         return true;
     }
@@ -2416,8 +2596,11 @@ public class DBCluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getIAMDatabaseAuthenticationEnabled() == null) ? 0 : getIAMDatabaseAuthenticationEnabled().hashCode());
         hashCode = prime * hashCode + ((getCloneGroupId() == null) ? 0 : getCloneGroupId().hashCode());
         hashCode = prime * hashCode + ((getClusterCreateTime() == null) ? 0 : getClusterCreateTime().hashCode());
+        hashCode = prime * hashCode + ((getCopyTagsToSnapshot() == null) ? 0 : getCopyTagsToSnapshot().hashCode());
         hashCode = prime * hashCode + ((getEnabledCloudwatchLogsExports() == null) ? 0 : getEnabledCloudwatchLogsExports().hashCode());
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
+        hashCode = prime * hashCode + ((getCrossAccountClone() == null) ? 0 : getCrossAccountClone().hashCode());
+        hashCode = prime * hashCode + ((getAutomaticRestartTime() == null) ? 0 : getAutomaticRestartTime().hashCode());
         return hashCode;
     }
 

@@ -30,6 +30,8 @@ public class VpcInterfaceRequestMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> NETWORKINTERFACETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkInterfaceType").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("roleArn").build();
     private static final MarshallingInfo<List> SECURITYGROUPIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -54,6 +56,7 @@ public class VpcInterfaceRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(vpcInterfaceRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(vpcInterfaceRequest.getNetworkInterfaceType(), NETWORKINTERFACETYPE_BINDING);
             protocolMarshaller.marshall(vpcInterfaceRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(vpcInterfaceRequest.getSecurityGroupIds(), SECURITYGROUPIDS_BINDING);
             protocolMarshaller.marshall(vpcInterfaceRequest.getSubnetId(), SUBNETID_BINDING);

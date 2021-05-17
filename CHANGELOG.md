@@ -1,3 +1,28 @@
+# __1.11.1020__ __2021-05-17__
+## __AWS Application Cost Profiler__
+  - ### Features
+    - APIs for AWS Application Cost Profiler.
+
+## __AWS IoT Core Device Advisor__
+  - ### Features
+    - AWS IoT Core Device Advisor is fully managed test capability for IoT devices. Device manufacturers can use Device Advisor to test their IoT devices for reliable and secure connectivity with AWS IoT.
+
+## __AWS MediaConnect__
+  - ### Features
+    - MediaConnect now supports JPEG XS for AWS Cloud Digital Interface (AWS CDI) uncompressed workflows, allowing you to establish a bridge between your on-premises live video network and the AWS Cloud.
+
+## __Amazon Augmented AI Runtime__
+  - ### Features
+    - Documentation updates for Amazon A2I Runtime model
+
+## __Amazon ElastiCache__
+  - ### Features
+    - Documentation updates for elasticache
+
+## __Amazon Neptune__
+  - ### Features
+    - Neptune support for CopyTagsToSnapshots
+
 # __1.11.1019__ __2021-05-14__
 ## __AWS SecurityHub__
   - ### Features

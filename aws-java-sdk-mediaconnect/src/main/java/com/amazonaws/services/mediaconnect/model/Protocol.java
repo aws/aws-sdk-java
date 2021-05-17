@@ -25,6 +25,8 @@ public enum Protocol {
     Rtp("rtp"),
     ZixiPull("zixi-pull"),
     Rist("rist"),
+    St2110Jpegxs("st2110-jpegxs"),
+    Cdi("cdi"),
     SrtListener("srt-listener");
 
     private String value;

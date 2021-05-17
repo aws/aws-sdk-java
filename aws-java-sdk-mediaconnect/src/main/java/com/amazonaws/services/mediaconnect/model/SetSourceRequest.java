@@ -44,6 +44,10 @@ public class SetSourceRequest implements Serializable, Cloneable, StructuredPojo
     private Integer maxBitrate;
     /** The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams. */
     private Integer maxLatency;
+    /** The size of the buffer (in milliseconds) to use to sync incoming source data. */
+    private Integer maxSyncBuffer;
+    /** The media streams that are associated with the source, and the parameters for those associations. */
+    private java.util.List<MediaStreamSourceConfigurationRequest> mediaStreamSourceConfigurations;
     /**
      * The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that
      * you set on your MediaConnect source or output represents the minimal potential latency of that connection. The
@@ -278,6 +282,102 @@ public class SetSourceRequest implements Serializable, Cloneable, StructuredPojo
 
     public SetSourceRequest withMaxLatency(Integer maxLatency) {
         setMaxLatency(maxLatency);
+        return this;
+    }
+
+    /**
+     * The size of the buffer (in milliseconds) to use to sync incoming source data.
+     * 
+     * @param maxSyncBuffer
+     *        The size of the buffer (in milliseconds) to use to sync incoming source data.
+     */
+
+    public void setMaxSyncBuffer(Integer maxSyncBuffer) {
+        this.maxSyncBuffer = maxSyncBuffer;
+    }
+
+    /**
+     * The size of the buffer (in milliseconds) to use to sync incoming source data.
+     * 
+     * @return The size of the buffer (in milliseconds) to use to sync incoming source data.
+     */
+
+    public Integer getMaxSyncBuffer() {
+        return this.maxSyncBuffer;
+    }
+
+    /**
+     * The size of the buffer (in milliseconds) to use to sync incoming source data.
+     * 
+     * @param maxSyncBuffer
+     *        The size of the buffer (in milliseconds) to use to sync incoming source data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SetSourceRequest withMaxSyncBuffer(Integer maxSyncBuffer) {
+        setMaxSyncBuffer(maxSyncBuffer);
+        return this;
+    }
+
+    /**
+     * The media streams that are associated with the source, and the parameters for those associations.
+     * 
+     * @return The media streams that are associated with the source, and the parameters for those associations.
+     */
+
+    public java.util.List<MediaStreamSourceConfigurationRequest> getMediaStreamSourceConfigurations() {
+        return mediaStreamSourceConfigurations;
+    }
+
+    /**
+     * The media streams that are associated with the source, and the parameters for those associations.
+     * 
+     * @param mediaStreamSourceConfigurations
+     *        The media streams that are associated with the source, and the parameters for those associations.
+     */
+
+    public void setMediaStreamSourceConfigurations(java.util.Collection<MediaStreamSourceConfigurationRequest> mediaStreamSourceConfigurations) {
+        if (mediaStreamSourceConfigurations == null) {
+            this.mediaStreamSourceConfigurations = null;
+            return;
+        }
+
+        this.mediaStreamSourceConfigurations = new java.util.ArrayList<MediaStreamSourceConfigurationRequest>(mediaStreamSourceConfigurations);
+    }
+
+    /**
+     * The media streams that are associated with the source, and the parameters for those associations.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMediaStreamSourceConfigurations(java.util.Collection)} or
+     * {@link #withMediaStreamSourceConfigurations(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param mediaStreamSourceConfigurations
+     *        The media streams that are associated with the source, and the parameters for those associations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SetSourceRequest withMediaStreamSourceConfigurations(MediaStreamSourceConfigurationRequest... mediaStreamSourceConfigurations) {
+        if (this.mediaStreamSourceConfigurations == null) {
+            setMediaStreamSourceConfigurations(new java.util.ArrayList<MediaStreamSourceConfigurationRequest>(mediaStreamSourceConfigurations.length));
+        }
+        for (MediaStreamSourceConfigurationRequest ele : mediaStreamSourceConfigurations) {
+            this.mediaStreamSourceConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * The media streams that are associated with the source, and the parameters for those associations.
+     * 
+     * @param mediaStreamSourceConfigurations
+     *        The media streams that are associated with the source, and the parameters for those associations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SetSourceRequest withMediaStreamSourceConfigurations(java.util.Collection<MediaStreamSourceConfigurationRequest> mediaStreamSourceConfigurations) {
+        setMediaStreamSourceConfigurations(mediaStreamSourceConfigurations);
         return this;
     }
 
@@ -550,6 +650,10 @@ public class SetSourceRequest implements Serializable, Cloneable, StructuredPojo
             sb.append("MaxBitrate: ").append(getMaxBitrate()).append(",");
         if (getMaxLatency() != null)
             sb.append("MaxLatency: ").append(getMaxLatency()).append(",");
+        if (getMaxSyncBuffer() != null)
+            sb.append("MaxSyncBuffer: ").append(getMaxSyncBuffer()).append(",");
+        if (getMediaStreamSourceConfigurations() != null)
+            sb.append("MediaStreamSourceConfigurations: ").append(getMediaStreamSourceConfigurations()).append(",");
         if (getMinLatency() != null)
             sb.append("MinLatency: ").append(getMinLatency()).append(",");
         if (getName() != null)
@@ -600,6 +704,15 @@ public class SetSourceRequest implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getMaxLatency() != null && other.getMaxLatency().equals(this.getMaxLatency()) == false)
             return false;
+        if (other.getMaxSyncBuffer() == null ^ this.getMaxSyncBuffer() == null)
+            return false;
+        if (other.getMaxSyncBuffer() != null && other.getMaxSyncBuffer().equals(this.getMaxSyncBuffer()) == false)
+            return false;
+        if (other.getMediaStreamSourceConfigurations() == null ^ this.getMediaStreamSourceConfigurations() == null)
+            return false;
+        if (other.getMediaStreamSourceConfigurations() != null
+                && other.getMediaStreamSourceConfigurations().equals(this.getMediaStreamSourceConfigurations()) == false)
+            return false;
         if (other.getMinLatency() == null ^ this.getMinLatency() == null)
             return false;
         if (other.getMinLatency() != null && other.getMinLatency().equals(this.getMinLatency()) == false)
@@ -638,6 +751,8 @@ public class SetSourceRequest implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getIngestPort() == null) ? 0 : getIngestPort().hashCode());
         hashCode = prime * hashCode + ((getMaxBitrate() == null) ? 0 : getMaxBitrate().hashCode());
         hashCode = prime * hashCode + ((getMaxLatency() == null) ? 0 : getMaxLatency().hashCode());
+        hashCode = prime * hashCode + ((getMaxSyncBuffer() == null) ? 0 : getMaxSyncBuffer().hashCode());
+        hashCode = prime * hashCode + ((getMediaStreamSourceConfigurations() == null) ? 0 : getMediaStreamSourceConfigurations().hashCode());
         hashCode = prime * hashCode + ((getMinLatency() == null) ? 0 : getMinLatency().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode());

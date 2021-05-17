@@ -55,7 +55,7 @@ public class DBInstance implements Serializable, Cloneable {
     private String dBInstanceStatus;
     /**
      * <p>
-     * Contains the master username for the DB instance.
+     * Not supported by Neptune.
      * </p>
      */
     private String masterUsername;
@@ -73,7 +73,7 @@ public class DBInstance implements Serializable, Cloneable {
     private Endpoint endpoint;
     /**
      * <p>
-     * Specifies the allocated storage size specified in gibibytes.
+     * Not supported by Neptune.
      * </p>
      */
     private Integer allocatedStorage;
@@ -266,8 +266,8 @@ public class DBInstance implements Serializable, Cloneable {
     private String kmsKeyId;
     /**
      * <p>
-     * The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS key for the DB instance is accessed.
+     * The Amazon Region-unique, immutable identifier for the DB instance. This identifier is found in Amazon CloudTrail
+     * log entries whenever the Amazon KMS key for the DB instance is accessed.
      * </p>
      */
     private String dbiResourceId;
@@ -329,7 +329,7 @@ public class DBInstance implements Serializable, Cloneable {
     private String timezone;
     /**
      * <p>
-     * True if AWS Identity and Access Management (IAM) authentication is enabled, and otherwise false.
+     * True if Amazon Identity and Access Management (IAM) authentication is enabled, and otherwise false.
      * </p>
      */
     private Boolean iAMDatabaseAuthenticationEnabled;
@@ -526,11 +526,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the master username for the DB instance.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param masterUsername
-     *        Contains the master username for the DB instance.
+     *        Not supported by Neptune.
      */
 
     public void setMasterUsername(String masterUsername) {
@@ -539,10 +539,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the master username for the DB instance.
+     * Not supported by Neptune.
      * </p>
      * 
-     * @return Contains the master username for the DB instance.
+     * @return Not supported by Neptune.
      */
 
     public String getMasterUsername() {
@@ -551,11 +551,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the master username for the DB instance.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param masterUsername
-     *        Contains the master username for the DB instance.
+     *        Not supported by Neptune.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -646,11 +646,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the allocated storage size specified in gibibytes.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param allocatedStorage
-     *        Specifies the allocated storage size specified in gibibytes.
+     *        Not supported by Neptune.
      */
 
     public void setAllocatedStorage(Integer allocatedStorage) {
@@ -659,10 +659,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the allocated storage size specified in gibibytes.
+     * Not supported by Neptune.
      * </p>
      * 
-     * @return Specifies the allocated storage size specified in gibibytes.
+     * @return Not supported by Neptune.
      */
 
     public Integer getAllocatedStorage() {
@@ -671,11 +671,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the allocated storage size specified in gibibytes.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param allocatedStorage
-     *        Specifies the allocated storage size specified in gibibytes.
+     *        Not supported by Neptune.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2186,13 +2186,13 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS key for the DB instance is accessed.
+     * The Amazon Region-unique, immutable identifier for the DB instance. This identifier is found in Amazon CloudTrail
+     * log entries whenever the Amazon KMS key for the DB instance is accessed.
      * </p>
      * 
      * @param dbiResourceId
-     *        The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS
-     *        CloudTrail log entries whenever the AWS KMS key for the DB instance is accessed.
+     *        The Amazon Region-unique, immutable identifier for the DB instance. This identifier is found in Amazon
+     *        CloudTrail log entries whenever the Amazon KMS key for the DB instance is accessed.
      */
 
     public void setDbiResourceId(String dbiResourceId) {
@@ -2201,12 +2201,12 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS key for the DB instance is accessed.
+     * The Amazon Region-unique, immutable identifier for the DB instance. This identifier is found in Amazon CloudTrail
+     * log entries whenever the Amazon KMS key for the DB instance is accessed.
      * </p>
      * 
-     * @return The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS
-     *         CloudTrail log entries whenever the AWS KMS key for the DB instance is accessed.
+     * @return The Amazon Region-unique, immutable identifier for the DB instance. This identifier is found in Amazon
+     *         CloudTrail log entries whenever the Amazon KMS key for the DB instance is accessed.
      */
 
     public String getDbiResourceId() {
@@ -2215,13 +2215,13 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS key for the DB instance is accessed.
+     * The Amazon Region-unique, immutable identifier for the DB instance. This identifier is found in Amazon CloudTrail
+     * log entries whenever the Amazon KMS key for the DB instance is accessed.
      * </p>
      * 
      * @param dbiResourceId
-     *        The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS
-     *        CloudTrail log entries whenever the AWS KMS key for the DB instance is accessed.
+     *        The Amazon Region-unique, immutable identifier for the DB instance. This identifier is found in Amazon
+     *        CloudTrail log entries whenever the Amazon KMS key for the DB instance is accessed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2652,11 +2652,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if AWS Identity and Access Management (IAM) authentication is enabled, and otherwise false.
+     * True if Amazon Identity and Access Management (IAM) authentication is enabled, and otherwise false.
      * </p>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        True if AWS Identity and Access Management (IAM) authentication is enabled, and otherwise false.
+     *        True if Amazon Identity and Access Management (IAM) authentication is enabled, and otherwise false.
      */
 
     public void setIAMDatabaseAuthenticationEnabled(Boolean iAMDatabaseAuthenticationEnabled) {
@@ -2665,10 +2665,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if AWS Identity and Access Management (IAM) authentication is enabled, and otherwise false.
+     * True if Amazon Identity and Access Management (IAM) authentication is enabled, and otherwise false.
      * </p>
      * 
-     * @return True if AWS Identity and Access Management (IAM) authentication is enabled, and otherwise false.
+     * @return True if Amazon Identity and Access Management (IAM) authentication is enabled, and otherwise false.
      */
 
     public Boolean getIAMDatabaseAuthenticationEnabled() {
@@ -2677,11 +2677,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if AWS Identity and Access Management (IAM) authentication is enabled, and otherwise false.
+     * True if Amazon Identity and Access Management (IAM) authentication is enabled, and otherwise false.
      * </p>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        True if AWS Identity and Access Management (IAM) authentication is enabled, and otherwise false.
+     *        True if Amazon Identity and Access Management (IAM) authentication is enabled, and otherwise false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2692,10 +2692,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if AWS Identity and Access Management (IAM) authentication is enabled, and otherwise false.
+     * True if Amazon Identity and Access Management (IAM) authentication is enabled, and otherwise false.
      * </p>
      * 
-     * @return True if AWS Identity and Access Management (IAM) authentication is enabled, and otherwise false.
+     * @return True if Amazon Identity and Access Management (IAM) authentication is enabled, and otherwise false.
      */
 
     public Boolean isIAMDatabaseAuthenticationEnabled() {

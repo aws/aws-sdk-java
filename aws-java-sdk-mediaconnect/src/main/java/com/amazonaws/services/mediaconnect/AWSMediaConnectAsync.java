@@ -31,6 +31,37 @@ import com.amazonaws.services.mediaconnect.model.*;
 public interface AWSMediaConnectAsync extends AWSMediaConnect {
 
     /**
+     * Adds media streams to an existing flow. After you add a media stream to a flow, you can associate it with a
+     * source and/or an output that uses the ST 2110 JPEG XS or CDI protocol.
+     * 
+     * @param addFlowMediaStreamsRequest
+     *        A request to add media streams to the flow.
+     * @return A Java Future containing the result of the AddFlowMediaStreams operation returned by the service.
+     * @sample AWSMediaConnectAsync.AddFlowMediaStreams
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowMediaStreams"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AddFlowMediaStreamsResult> addFlowMediaStreamsAsync(AddFlowMediaStreamsRequest addFlowMediaStreamsRequest);
+
+    /**
+     * Adds media streams to an existing flow. After you add a media stream to a flow, you can associate it with a
+     * source and/or an output that uses the ST 2110 JPEG XS or CDI protocol.
+     * 
+     * @param addFlowMediaStreamsRequest
+     *        A request to add media streams to the flow.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AddFlowMediaStreams operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.AddFlowMediaStreams
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowMediaStreams"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AddFlowMediaStreamsResult> addFlowMediaStreamsAsync(AddFlowMediaStreamsRequest addFlowMediaStreamsRequest,
+            com.amazonaws.handlers.AsyncHandler<AddFlowMediaStreamsRequest, AddFlowMediaStreamsResult> asyncHandler);
+
+    /**
      * Adds outputs to an existing flow. You can create up to 50 outputs per flow.
      * 
      * @param addFlowOutputsRequest
@@ -470,6 +501,35 @@ public interface AWSMediaConnectAsync extends AWSMediaConnect {
             com.amazonaws.handlers.AsyncHandler<PurchaseOfferingRequest, PurchaseOfferingResult> asyncHandler);
 
     /**
+     * Removes a media stream from a flow. This action is only available if the media stream is not associated with a
+     * source or output.
+     * 
+     * @param removeFlowMediaStreamRequest
+     * @return A Java Future containing the result of the RemoveFlowMediaStream operation returned by the service.
+     * @sample AWSMediaConnectAsync.RemoveFlowMediaStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowMediaStream"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveFlowMediaStreamResult> removeFlowMediaStreamAsync(RemoveFlowMediaStreamRequest removeFlowMediaStreamRequest);
+
+    /**
+     * Removes a media stream from a flow. This action is only available if the media stream is not associated with a
+     * source or output.
+     * 
+     * @param removeFlowMediaStreamRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemoveFlowMediaStream operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.RemoveFlowMediaStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowMediaStream"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveFlowMediaStreamResult> removeFlowMediaStreamAsync(RemoveFlowMediaStreamRequest removeFlowMediaStreamRequest,
+            com.amazonaws.handlers.AsyncHandler<RemoveFlowMediaStreamRequest, RemoveFlowMediaStreamResult> asyncHandler);
+
+    /**
      * Removes an output from an existing flow. This request can be made only on an output that does not have an
      * entitlement associated with it. If the output has an entitlement, you must revoke the entitlement instead. When
      * an entitlement is revoked from a flow, the service automatically removes the associated output.
@@ -764,6 +824,35 @@ public interface AWSMediaConnectAsync extends AWSMediaConnect {
      */
     java.util.concurrent.Future<UpdateFlowEntitlementResult> updateFlowEntitlementAsync(UpdateFlowEntitlementRequest updateFlowEntitlementRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateFlowEntitlementRequest, UpdateFlowEntitlementResult> asyncHandler);
+
+    /**
+     * Updates an existing media stream.
+     * 
+     * @param updateFlowMediaStreamRequest
+     *        The fields that you want to update in the media stream.
+     * @return A Java Future containing the result of the UpdateFlowMediaStream operation returned by the service.
+     * @sample AWSMediaConnectAsync.UpdateFlowMediaStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlowMediaStream"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFlowMediaStreamResult> updateFlowMediaStreamAsync(UpdateFlowMediaStreamRequest updateFlowMediaStreamRequest);
+
+    /**
+     * Updates an existing media stream.
+     * 
+     * @param updateFlowMediaStreamRequest
+     *        The fields that you want to update in the media stream.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateFlowMediaStream operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.UpdateFlowMediaStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlowMediaStream"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFlowMediaStreamResult> updateFlowMediaStreamAsync(UpdateFlowMediaStreamRequest updateFlowMediaStreamRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateFlowMediaStreamRequest, UpdateFlowMediaStreamResult> asyncHandler);
 
     /**
      * Updates an existing flow output.

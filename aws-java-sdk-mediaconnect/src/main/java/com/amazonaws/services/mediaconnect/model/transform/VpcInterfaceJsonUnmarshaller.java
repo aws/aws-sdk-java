@@ -58,6 +58,10 @@ public class VpcInterfaceJsonUnmarshaller implements Unmarshaller<VpcInterface, 
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("networkInterfaceType", targetDepth)) {
+                    context.nextToken();
+                    vpcInterface.setNetworkInterfaceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
                     vpcInterface.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));

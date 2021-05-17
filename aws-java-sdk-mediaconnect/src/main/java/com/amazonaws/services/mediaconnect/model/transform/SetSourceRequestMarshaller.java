@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.mediaconnect.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -39,6 +40,10 @@ public class SetSourceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxBitrate").build();
     private static final MarshallingInfo<Integer> MAXLATENCY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxLatency").build();
+    private static final MarshallingInfo<Integer> MAXSYNCBUFFER_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxSyncBuffer").build();
+    private static final MarshallingInfo<List> MEDIASTREAMSOURCECONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mediaStreamSourceConfigurations").build();
     private static final MarshallingInfo<Integer> MINLATENCY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("minLatency").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -74,6 +79,8 @@ public class SetSourceRequestMarshaller {
             protocolMarshaller.marshall(setSourceRequest.getIngestPort(), INGESTPORT_BINDING);
             protocolMarshaller.marshall(setSourceRequest.getMaxBitrate(), MAXBITRATE_BINDING);
             protocolMarshaller.marshall(setSourceRequest.getMaxLatency(), MAXLATENCY_BINDING);
+            protocolMarshaller.marshall(setSourceRequest.getMaxSyncBuffer(), MAXSYNCBUFFER_BINDING);
+            protocolMarshaller.marshall(setSourceRequest.getMediaStreamSourceConfigurations(), MEDIASTREAMSOURCECONFIGURATIONS_BINDING);
             protocolMarshaller.marshall(setSourceRequest.getMinLatency(), MINLATENCY_BINDING);
             protocolMarshaller.marshall(setSourceRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(setSourceRequest.getProtocol(), PROTOCOL_BINDING);

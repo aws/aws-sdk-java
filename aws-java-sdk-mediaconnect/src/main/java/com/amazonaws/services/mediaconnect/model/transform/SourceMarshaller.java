@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.mediaconnect.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -39,6 +40,8 @@ public class SourceMarshaller {
             .marshallLocationName("ingestIp").build();
     private static final MarshallingInfo<Integer> INGESTPORT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ingestPort").build();
+    private static final MarshallingInfo<List> MEDIASTREAMSOURCECONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mediaStreamSourceConfigurations").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> SOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -72,6 +75,7 @@ public class SourceMarshaller {
             protocolMarshaller.marshall(source.getEntitlementArn(), ENTITLEMENTARN_BINDING);
             protocolMarshaller.marshall(source.getIngestIp(), INGESTIP_BINDING);
             protocolMarshaller.marshall(source.getIngestPort(), INGESTPORT_BINDING);
+            protocolMarshaller.marshall(source.getMediaStreamSourceConfigurations(), MEDIASTREAMSOURCECONFIGURATIONS_BINDING);
             protocolMarshaller.marshall(source.getName(), NAME_BINDING);
             protocolMarshaller.marshall(source.getSourceArn(), SOURCEARN_BINDING);
             protocolMarshaller.marshall(source.getTransport(), TRANSPORT_BINDING);

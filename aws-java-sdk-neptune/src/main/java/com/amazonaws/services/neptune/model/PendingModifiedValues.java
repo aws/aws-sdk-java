@@ -42,7 +42,7 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     private Integer allocatedStorage;
     /**
      * <p>
-     * Contains the pending or currently-in-progress change of the master credentials for the DB instance.
+     * Not supported by Neptune.
      * </p>
      */
     private String masterUserPassword;
@@ -72,11 +72,7 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     private String engineVersion;
     /**
      * <p>
-     * The license model for the DB instance.
-     * </p>
-     * <p>
-     * Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code>
+     * Not supported by Neptune.
      * </p>
      */
     private String licenseModel;
@@ -213,11 +209,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the pending or currently-in-progress change of the master credentials for the DB instance.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param masterUserPassword
-     *        Contains the pending or currently-in-progress change of the master credentials for the DB instance.
+     *        Not supported by Neptune.
      */
 
     public void setMasterUserPassword(String masterUserPassword) {
@@ -226,10 +222,10 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the pending or currently-in-progress change of the master credentials for the DB instance.
+     * Not supported by Neptune.
      * </p>
      * 
-     * @return Contains the pending or currently-in-progress change of the master credentials for the DB instance.
+     * @return Not supported by Neptune.
      */
 
     public String getMasterUserPassword() {
@@ -238,11 +234,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Contains the pending or currently-in-progress change of the master credentials for the DB instance.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param masterUserPassword
-     *        Contains the pending or currently-in-progress change of the master credentials for the DB instance.
+     *        Not supported by Neptune.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -425,18 +421,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The license model for the DB instance.
-     * </p>
-     * <p>
-     * Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code>
+     * Not supported by Neptune.
      * </p>
      * 
      * @param licenseModel
-     *        The license model for the DB instance.</p>
-     *        <p>
-     *        Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
-     *        <code>general-public-license</code>
+     *        Not supported by Neptune.
      */
 
     public void setLicenseModel(String licenseModel) {
@@ -445,17 +434,10 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The license model for the DB instance.
-     * </p>
-     * <p>
-     * Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code>
+     * Not supported by Neptune.
      * </p>
      * 
-     * @return The license model for the DB instance.</p>
-     *         <p>
-     *         Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
-     *         <code>general-public-license</code>
+     * @return Not supported by Neptune.
      */
 
     public String getLicenseModel() {
@@ -464,18 +446,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The license model for the DB instance.
-     * </p>
-     * <p>
-     * Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
-     * <code>general-public-license</code>
+     * Not supported by Neptune.
      * </p>
      * 
      * @param licenseModel
-     *        The license model for the DB instance.</p>
-     *        <p>
-     *        Valid values: <code>license-included</code> | <code>bring-your-own-license</code> |
-     *        <code>general-public-license</code>
+     *        Not supported by Neptune.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

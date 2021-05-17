@@ -29,6 +29,11 @@ public class AbstractAWSMediaConnect implements AWSMediaConnect {
     }
 
     @Override
+    public AddFlowMediaStreamsResult addFlowMediaStreams(AddFlowMediaStreamsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AddFlowOutputsResult addFlowOutputs(AddFlowOutputsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -104,6 +109,11 @@ public class AbstractAWSMediaConnect implements AWSMediaConnect {
     }
 
     @Override
+    public RemoveFlowMediaStreamResult removeFlowMediaStream(RemoveFlowMediaStreamRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RemoveFlowOutputResult removeFlowOutput(RemoveFlowOutputRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -150,6 +160,11 @@ public class AbstractAWSMediaConnect implements AWSMediaConnect {
 
     @Override
     public UpdateFlowEntitlementResult updateFlowEntitlement(UpdateFlowEntitlementRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateFlowMediaStreamResult updateFlowMediaStream(UpdateFlowMediaStreamRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

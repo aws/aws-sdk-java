@@ -636,7 +636,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     private String kmsKeyId;
     /**
      * <p>
-     * The list of user groups to associate with the replication group.
+     * The user group to associate with the replication group.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> userGroupIds;
@@ -4801,10 +4801,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The list of user groups to associate with the replication group.
+     * The user group to associate with the replication group.
      * </p>
      * 
-     * @return The list of user groups to associate with the replication group.
+     * @return The user group to associate with the replication group.
      */
 
     public java.util.List<String> getUserGroupIds() {
@@ -4816,11 +4816,11 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The list of user groups to associate with the replication group.
+     * The user group to associate with the replication group.
      * </p>
      * 
      * @param userGroupIds
-     *        The list of user groups to associate with the replication group.
+     *        The user group to associate with the replication group.
      */
 
     public void setUserGroupIds(java.util.Collection<String> userGroupIds) {
@@ -4834,7 +4834,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The list of user groups to associate with the replication group.
+     * The user group to associate with the replication group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -4843,7 +4843,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param userGroupIds
-     *        The list of user groups to associate with the replication group.
+     *        The user group to associate with the replication group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -4859,11 +4859,11 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The list of user groups to associate with the replication group.
+     * The user group to associate with the replication group.
      * </p>
      * 
      * @param userGroupIds
-     *        The list of user groups to associate with the replication group.
+     *        The user group to associate with the replication group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

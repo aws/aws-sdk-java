@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Get suite definition information.
+ * Information about the suite definition.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/SuiteDefinitionInformation"
@@ -30,42 +30,42 @@ public class SuiteDefinitionInformation implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Get suite definition Id.
+     * Suite definition Id of the test suite.
      * </p>
      */
     private String suiteDefinitionId;
     /**
      * <p>
-     * Get test suite name.
+     * Suite name of the test suite.
      * </p>
      */
     private String suiteDefinitionName;
     /**
      * <p>
-     * Specifies the devices under test.
+     * Specifies the devices under test for the test suite.
      * </p>
      */
     private java.util.List<DeviceUnderTest> defaultDevices;
     /**
      * <p>
-     * Gets the test suites which will be used for qualification.
+     * Specifies if the test suite is intended for qualification.
      * </p>
      */
     private Boolean intendedForQualification;
     /**
      * <p>
-     * Gets the information of when the test suite was created.
+     * Date (in Unix epoch time) when the test suite was created.
      * </p>
      */
     private java.util.Date createdAt;
 
     /**
      * <p>
-     * Get suite definition Id.
+     * Suite definition Id of the test suite.
      * </p>
      * 
      * @param suiteDefinitionId
-     *        Get suite definition Id.
+     *        Suite definition Id of the test suite.
      */
 
     public void setSuiteDefinitionId(String suiteDefinitionId) {
@@ -74,10 +74,10 @@ public class SuiteDefinitionInformation implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Get suite definition Id.
+     * Suite definition Id of the test suite.
      * </p>
      * 
-     * @return Get suite definition Id.
+     * @return Suite definition Id of the test suite.
      */
 
     public String getSuiteDefinitionId() {
@@ -86,11 +86,11 @@ public class SuiteDefinitionInformation implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Get suite definition Id.
+     * Suite definition Id of the test suite.
      * </p>
      * 
      * @param suiteDefinitionId
-     *        Get suite definition Id.
+     *        Suite definition Id of the test suite.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +101,11 @@ public class SuiteDefinitionInformation implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Get test suite name.
+     * Suite name of the test suite.
      * </p>
      * 
      * @param suiteDefinitionName
-     *        Get test suite name.
+     *        Suite name of the test suite.
      */
 
     public void setSuiteDefinitionName(String suiteDefinitionName) {
@@ -114,10 +114,10 @@ public class SuiteDefinitionInformation implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Get test suite name.
+     * Suite name of the test suite.
      * </p>
      * 
-     * @return Get test suite name.
+     * @return Suite name of the test suite.
      */
 
     public String getSuiteDefinitionName() {
@@ -126,11 +126,11 @@ public class SuiteDefinitionInformation implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Get test suite name.
+     * Suite name of the test suite.
      * </p>
      * 
      * @param suiteDefinitionName
-     *        Get test suite name.
+     *        Suite name of the test suite.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,10 +141,10 @@ public class SuiteDefinitionInformation implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Specifies the devices under test.
+     * Specifies the devices under test for the test suite.
      * </p>
      * 
-     * @return Specifies the devices under test.
+     * @return Specifies the devices under test for the test suite.
      */
 
     public java.util.List<DeviceUnderTest> getDefaultDevices() {
@@ -153,11 +153,11 @@ public class SuiteDefinitionInformation implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Specifies the devices under test.
+     * Specifies the devices under test for the test suite.
      * </p>
      * 
      * @param defaultDevices
-     *        Specifies the devices under test.
+     *        Specifies the devices under test for the test suite.
      */
 
     public void setDefaultDevices(java.util.Collection<DeviceUnderTest> defaultDevices) {
@@ -171,7 +171,7 @@ public class SuiteDefinitionInformation implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Specifies the devices under test.
+     * Specifies the devices under test for the test suite.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -180,7 +180,7 @@ public class SuiteDefinitionInformation implements Serializable, Cloneable, Stru
      * </p>
      * 
      * @param defaultDevices
-     *        Specifies the devices under test.
+     *        Specifies the devices under test for the test suite.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -196,11 +196,11 @@ public class SuiteDefinitionInformation implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Specifies the devices under test.
+     * Specifies the devices under test for the test suite.
      * </p>
      * 
      * @param defaultDevices
-     *        Specifies the devices under test.
+     *        Specifies the devices under test for the test suite.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -211,11 +211,11 @@ public class SuiteDefinitionInformation implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Gets the test suites which will be used for qualification.
+     * Specifies if the test suite is intended for qualification.
      * </p>
      * 
      * @param intendedForQualification
-     *        Gets the test suites which will be used for qualification.
+     *        Specifies if the test suite is intended for qualification.
      */
 
     public void setIntendedForQualification(Boolean intendedForQualification) {
@@ -224,10 +224,10 @@ public class SuiteDefinitionInformation implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Gets the test suites which will be used for qualification.
+     * Specifies if the test suite is intended for qualification.
      * </p>
      * 
-     * @return Gets the test suites which will be used for qualification.
+     * @return Specifies if the test suite is intended for qualification.
      */
 
     public Boolean getIntendedForQualification() {
@@ -236,11 +236,11 @@ public class SuiteDefinitionInformation implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Gets the test suites which will be used for qualification.
+     * Specifies if the test suite is intended for qualification.
      * </p>
      * 
      * @param intendedForQualification
-     *        Gets the test suites which will be used for qualification.
+     *        Specifies if the test suite is intended for qualification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -251,10 +251,10 @@ public class SuiteDefinitionInformation implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Gets the test suites which will be used for qualification.
+     * Specifies if the test suite is intended for qualification.
      * </p>
      * 
-     * @return Gets the test suites which will be used for qualification.
+     * @return Specifies if the test suite is intended for qualification.
      */
 
     public Boolean isIntendedForQualification() {
@@ -263,11 +263,11 @@ public class SuiteDefinitionInformation implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Gets the information of when the test suite was created.
+     * Date (in Unix epoch time) when the test suite was created.
      * </p>
      * 
      * @param createdAt
-     *        Gets the information of when the test suite was created.
+     *        Date (in Unix epoch time) when the test suite was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -276,10 +276,10 @@ public class SuiteDefinitionInformation implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Gets the information of when the test suite was created.
+     * Date (in Unix epoch time) when the test suite was created.
      * </p>
      * 
-     * @return Gets the information of when the test suite was created.
+     * @return Date (in Unix epoch time) when the test suite was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -288,11 +288,11 @@ public class SuiteDefinitionInformation implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Gets the information of when the test suite was created.
+     * Date (in Unix epoch time) when the test suite was created.
      * </p>
      * 
      * @param createdAt
-     *        Gets the information of when the test suite was created.
+     *        Date (in Unix epoch time) when the test suite was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

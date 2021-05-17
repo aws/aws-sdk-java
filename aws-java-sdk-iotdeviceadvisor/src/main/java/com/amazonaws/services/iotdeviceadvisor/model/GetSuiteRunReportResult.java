@@ -25,18 +25,18 @@ public class GetSuiteRunReportResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Gets the download URL of the qualification report.
+     * Download URL of the qualification report.
      * </p>
      */
     private String qualificationReportDownloadUrl;
 
     /**
      * <p>
-     * Gets the download URL of the qualification report.
+     * Download URL of the qualification report.
      * </p>
      * 
      * @param qualificationReportDownloadUrl
-     *        Gets the download URL of the qualification report.
+     *        Download URL of the qualification report.
      */
 
     public void setQualificationReportDownloadUrl(String qualificationReportDownloadUrl) {
@@ -45,10 +45,10 @@ public class GetSuiteRunReportResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Gets the download URL of the qualification report.
+     * Download URL of the qualification report.
      * </p>
      * 
-     * @return Gets the download URL of the qualification report.
+     * @return Download URL of the qualification report.
      */
 
     public String getQualificationReportDownloadUrl() {
@@ -57,11 +57,11 @@ public class GetSuiteRunReportResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Gets the download URL of the qualification report.
+     * Download URL of the qualification report.
      * </p>
      * 
      * @param qualificationReportDownloadUrl
-     *        Gets the download URL of the qualification report.
+     *        Download URL of the qualification report.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

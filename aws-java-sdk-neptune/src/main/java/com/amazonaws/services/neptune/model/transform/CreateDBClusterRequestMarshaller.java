@@ -67,6 +67,10 @@ public class CreateDBClusterRequestMarshaller implements Marshaller<Request<Crea
             request.addParameter("CharacterSetName", StringUtils.fromString(createDBClusterRequest.getCharacterSetName()));
         }
 
+        if (createDBClusterRequest.getCopyTagsToSnapshot() != null) {
+            request.addParameter("CopyTagsToSnapshot", StringUtils.fromBoolean(createDBClusterRequest.getCopyTagsToSnapshot()));
+        }
+
         if (createDBClusterRequest.getDatabaseName() != null) {
             request.addParameter("DatabaseName", StringUtils.fromString(createDBClusterRequest.getDatabaseName()));
         }

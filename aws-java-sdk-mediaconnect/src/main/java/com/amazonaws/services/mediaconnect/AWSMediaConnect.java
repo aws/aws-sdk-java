@@ -41,6 +41,31 @@ public interface AWSMediaConnect {
     String ENDPOINT_PREFIX = "mediaconnect";
 
     /**
+     * Adds media streams to an existing flow. After you add a media stream to a flow, you can associate it with a
+     * source and/or an output that uses the ST 2110 JPEG XS or CDI protocol.
+     * 
+     * @param addFlowMediaStreamsRequest
+     *        A request to add media streams to the flow.
+     * @return Result of the AddFlowMediaStreams operation returned by the service.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ForbiddenException
+     *         You don't have the required permissions to perform this operation.
+     * @throws NotFoundException
+     *         AWS Elemental MediaConnect did not find the resource that you specified in the request.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @sample AWSMediaConnect.AddFlowMediaStreams
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowMediaStreams"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AddFlowMediaStreamsResult addFlowMediaStreams(AddFlowMediaStreamsRequest addFlowMediaStreamsRequest);
+
+    /**
      * Adds outputs to an existing flow. You can create up to 50 outputs per flow.
      * 
      * @param addFlowOutputsRequest
@@ -384,6 +409,30 @@ public interface AWSMediaConnect {
     PurchaseOfferingResult purchaseOffering(PurchaseOfferingRequest purchaseOfferingRequest);
 
     /**
+     * Removes a media stream from a flow. This action is only available if the media stream is not associated with a
+     * source or output.
+     * 
+     * @param removeFlowMediaStreamRequest
+     * @return Result of the RemoveFlowMediaStream operation returned by the service.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ForbiddenException
+     *         You don't have the required permissions to perform this operation.
+     * @throws NotFoundException
+     *         AWS Elemental MediaConnect did not find the resource that you specified in the request.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @sample AWSMediaConnect.RemoveFlowMediaStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowMediaStream"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RemoveFlowMediaStreamResult removeFlowMediaStream(RemoveFlowMediaStreamRequest removeFlowMediaStreamRequest);
+
+    /**
      * Removes an output from an existing flow. This request can be made only on an output that does not have an
      * entitlement associated with it. If the output has an entitlement, you must revoke the entitlement instead. When
      * an entitlement is revoked from a flow, the service automatically removes the associated output.
@@ -613,6 +662,30 @@ public interface AWSMediaConnect {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateFlowEntitlementResult updateFlowEntitlement(UpdateFlowEntitlementRequest updateFlowEntitlementRequest);
+
+    /**
+     * Updates an existing media stream.
+     * 
+     * @param updateFlowMediaStreamRequest
+     *        The fields that you want to update in the media stream.
+     * @return Result of the UpdateFlowMediaStream operation returned by the service.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ForbiddenException
+     *         You don't have the required permissions to perform this operation.
+     * @throws NotFoundException
+     *         AWS Elemental MediaConnect did not find the resource that you specified in the request.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @sample AWSMediaConnect.UpdateFlowMediaStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlowMediaStream"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateFlowMediaStreamResult updateFlowMediaStream(UpdateFlowMediaStreamRequest updateFlowMediaStreamRequest);
 
     /**
      * Updates an existing flow output.

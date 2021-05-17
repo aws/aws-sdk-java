@@ -27,24 +27,24 @@ public class ListSuiteDefinitionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Request the list of all the Device Advisor test suites.
+     * The maximum number of results to return at once.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * Requests the Device Advisor test suites next token.
+     * A token used to get the next set of results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Request the list of all the Device Advisor test suites.
+     * The maximum number of results to return at once.
      * </p>
      * 
      * @param maxResults
-     *        Request the list of all the Device Advisor test suites.
+     *        The maximum number of results to return at once.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -53,10 +53,10 @@ public class ListSuiteDefinitionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Request the list of all the Device Advisor test suites.
+     * The maximum number of results to return at once.
      * </p>
      * 
-     * @return Request the list of all the Device Advisor test suites.
+     * @return The maximum number of results to return at once.
      */
 
     public Integer getMaxResults() {
@@ -65,11 +65,11 @@ public class ListSuiteDefinitionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Request the list of all the Device Advisor test suites.
+     * The maximum number of results to return at once.
      * </p>
      * 
      * @param maxResults
-     *        Request the list of all the Device Advisor test suites.
+     *        The maximum number of results to return at once.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class ListSuiteDefinitionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Requests the Device Advisor test suites next token.
+     * A token used to get the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        Requests the Device Advisor test suites next token.
+     *        A token used to get the next set of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -93,10 +93,10 @@ public class ListSuiteDefinitionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Requests the Device Advisor test suites next token.
+     * A token used to get the next set of results.
      * </p>
      * 
-     * @return Requests the Device Advisor test suites next token.
+     * @return A token used to get the next set of results.
      */
 
     public String getNextToken() {
@@ -105,11 +105,11 @@ public class ListSuiteDefinitionsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Requests the Device Advisor test suites next token.
+     * A token used to get the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        Requests the Device Advisor test suites next token.
+     *        A token used to get the next set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

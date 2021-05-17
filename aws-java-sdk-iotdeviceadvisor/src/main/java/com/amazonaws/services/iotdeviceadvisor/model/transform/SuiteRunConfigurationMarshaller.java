@@ -30,8 +30,6 @@ public class SuiteRunConfigurationMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> PRIMARYDEVICE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("primaryDevice").build();
-    private static final MarshallingInfo<StructuredPojo> SECONDARYDEVICE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("secondaryDevice").build();
     private static final MarshallingInfo<List> SELECTEDTESTLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("selectedTestList").build();
 
@@ -52,7 +50,6 @@ public class SuiteRunConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(suiteRunConfiguration.getPrimaryDevice(), PRIMARYDEVICE_BINDING);
-            protocolMarshaller.marshall(suiteRunConfiguration.getSecondaryDevice(), SECONDARYDEVICE_BINDING);
             protocolMarshaller.marshall(suiteRunConfiguration.getSelectedTestList(), SELECTEDTESTLIST_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

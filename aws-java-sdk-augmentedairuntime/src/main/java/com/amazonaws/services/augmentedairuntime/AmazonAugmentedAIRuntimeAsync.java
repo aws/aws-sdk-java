@@ -25,12 +25,6 @@ import com.amazonaws.services.augmentedairuntime.model.*;
  * {@link com.amazonaws.services.augmentedairuntime.AbstractAmazonAugmentedAIRuntimeAsync} instead.
  * </p>
  * <p>
- * <important>
- * <p>
- * Amazon Augmented AI is in preview release and is subject to change. We do not recommend using this product in
- * production environments.
- * </p>
- * </important>
  * <p>
  * Amazon Augmented AI (Amazon A2I) adds the benefit of human judgment to any machine learning application. When an AI
  * application can't evaluate data with a high degree of confidence, human reviewers can take over. This human review is
@@ -80,6 +74,9 @@ public interface AmazonAugmentedAIRuntimeAsync extends AmazonAugmentedAIRuntime 
      * <p>
      * Deletes the specified human loop for a flow definition.
      * </p>
+     * <p>
+     * If the human loop was deleted, this operation will return a <code>ResourceNotFoundException</code>.
+     * </p>
      * 
      * @param deleteHumanLoopRequest
      * @return A Java Future containing the result of the DeleteHumanLoop operation returned by the service.
@@ -92,6 +89,9 @@ public interface AmazonAugmentedAIRuntimeAsync extends AmazonAugmentedAIRuntime 
     /**
      * <p>
      * Deletes the specified human loop for a flow definition.
+     * </p>
+     * <p>
+     * If the human loop was deleted, this operation will return a <code>ResourceNotFoundException</code>.
      * </p>
      * 
      * @param deleteHumanLoopRequest
@@ -109,7 +109,8 @@ public interface AmazonAugmentedAIRuntimeAsync extends AmazonAugmentedAIRuntime 
 
     /**
      * <p>
-     * Returns information about the specified human loop.
+     * Returns information about the specified human loop. If the human loop was deleted, this operation will return a
+     * <code>ResourceNotFoundException</code> error.
      * </p>
      * 
      * @param describeHumanLoopRequest
@@ -122,7 +123,8 @@ public interface AmazonAugmentedAIRuntimeAsync extends AmazonAugmentedAIRuntime 
 
     /**
      * <p>
-     * Returns information about the specified human loop.
+     * Returns information about the specified human loop. If the human loop was deleted, this operation will return a
+     * <code>ResourceNotFoundException</code> error.
      * </p>
      * 
      * @param describeHumanLoopRequest

@@ -25,23 +25,23 @@ public class ListSuiteRunsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Lists the runs of the specified Device Advisor test suite.
+     * An array of objects that provide summaries of information about the suite runs in the list.
      * </p>
      */
     private java.util.List<SuiteRunInformation> suiteRunsList;
     /**
      * <p>
-     * Next pagination token for list suite run response.
+     * A token to retrieve the next set of results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Lists the runs of the specified Device Advisor test suite.
+     * An array of objects that provide summaries of information about the suite runs in the list.
      * </p>
      * 
-     * @return Lists the runs of the specified Device Advisor test suite.
+     * @return An array of objects that provide summaries of information about the suite runs in the list.
      */
 
     public java.util.List<SuiteRunInformation> getSuiteRunsList() {
@@ -50,11 +50,11 @@ public class ListSuiteRunsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Lists the runs of the specified Device Advisor test suite.
+     * An array of objects that provide summaries of information about the suite runs in the list.
      * </p>
      * 
      * @param suiteRunsList
-     *        Lists the runs of the specified Device Advisor test suite.
+     *        An array of objects that provide summaries of information about the suite runs in the list.
      */
 
     public void setSuiteRunsList(java.util.Collection<SuiteRunInformation> suiteRunsList) {
@@ -68,7 +68,7 @@ public class ListSuiteRunsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Lists the runs of the specified Device Advisor test suite.
+     * An array of objects that provide summaries of information about the suite runs in the list.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListSuiteRunsResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param suiteRunsList
-     *        Lists the runs of the specified Device Advisor test suite.
+     *        An array of objects that provide summaries of information about the suite runs in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListSuiteRunsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Lists the runs of the specified Device Advisor test suite.
+     * An array of objects that provide summaries of information about the suite runs in the list.
      * </p>
      * 
      * @param suiteRunsList
-     *        Lists the runs of the specified Device Advisor test suite.
+     *        An array of objects that provide summaries of information about the suite runs in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,11 +108,11 @@ public class ListSuiteRunsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Next pagination token for list suite run response.
+     * A token to retrieve the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        Next pagination token for list suite run response.
+     *        A token to retrieve the next set of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,10 +121,10 @@ public class ListSuiteRunsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Next pagination token for list suite run response.
+     * A token to retrieve the next set of results.
      * </p>
      * 
-     * @return Next pagination token for list suite run response.
+     * @return A token to retrieve the next set of results.
      */
 
     public String getNextToken() {
@@ -133,11 +133,11 @@ public class ListSuiteRunsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Next pagination token for list suite run response.
+     * A token to retrieve the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        Next pagination token for list suite run response.
+     *        A token to retrieve the next set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

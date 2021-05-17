@@ -25,30 +25,30 @@ public class StartSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Starts a Device Advisor test suite run based on suite Run Id.
+     * Suite Run Id of the started suite run.
      * </p>
      */
     private String suiteRunId;
     /**
      * <p>
-     * Starts a Device Advisor test suite run based on suite run arn.
+     * Amazon resource name of the started suite run.
      * </p>
      */
     private String suiteRunArn;
     /**
      * <p>
-     * Starts a Device Advisor test suite run based on suite create time.
+     * Date (in Unix epoch time) when the suite run was created.
      * </p>
      */
     private java.util.Date createdAt;
 
     /**
      * <p>
-     * Starts a Device Advisor test suite run based on suite Run Id.
+     * Suite Run Id of the started suite run.
      * </p>
      * 
      * @param suiteRunId
-     *        Starts a Device Advisor test suite run based on suite Run Id.
+     *        Suite Run Id of the started suite run.
      */
 
     public void setSuiteRunId(String suiteRunId) {
@@ -57,10 +57,10 @@ public class StartSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Starts a Device Advisor test suite run based on suite Run Id.
+     * Suite Run Id of the started suite run.
      * </p>
      * 
-     * @return Starts a Device Advisor test suite run based on suite Run Id.
+     * @return Suite Run Id of the started suite run.
      */
 
     public String getSuiteRunId() {
@@ -69,11 +69,11 @@ public class StartSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Starts a Device Advisor test suite run based on suite Run Id.
+     * Suite Run Id of the started suite run.
      * </p>
      * 
      * @param suiteRunId
-     *        Starts a Device Advisor test suite run based on suite Run Id.
+     *        Suite Run Id of the started suite run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,11 +84,11 @@ public class StartSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Starts a Device Advisor test suite run based on suite run arn.
+     * Amazon resource name of the started suite run.
      * </p>
      * 
      * @param suiteRunArn
-     *        Starts a Device Advisor test suite run based on suite run arn.
+     *        Amazon resource name of the started suite run.
      */
 
     public void setSuiteRunArn(String suiteRunArn) {
@@ -97,10 +97,10 @@ public class StartSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Starts a Device Advisor test suite run based on suite run arn.
+     * Amazon resource name of the started suite run.
      * </p>
      * 
-     * @return Starts a Device Advisor test suite run based on suite run arn.
+     * @return Amazon resource name of the started suite run.
      */
 
     public String getSuiteRunArn() {
@@ -109,11 +109,11 @@ public class StartSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Starts a Device Advisor test suite run based on suite run arn.
+     * Amazon resource name of the started suite run.
      * </p>
      * 
      * @param suiteRunArn
-     *        Starts a Device Advisor test suite run based on suite run arn.
+     *        Amazon resource name of the started suite run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,11 +124,11 @@ public class StartSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Starts a Device Advisor test suite run based on suite create time.
+     * Date (in Unix epoch time) when the suite run was created.
      * </p>
      * 
      * @param createdAt
-     *        Starts a Device Advisor test suite run based on suite create time.
+     *        Date (in Unix epoch time) when the suite run was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -137,10 +137,10 @@ public class StartSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Starts a Device Advisor test suite run based on suite create time.
+     * Date (in Unix epoch time) when the suite run was created.
      * </p>
      * 
-     * @return Starts a Device Advisor test suite run based on suite create time.
+     * @return Date (in Unix epoch time) when the suite run was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -149,11 +149,11 @@ public class StartSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Starts a Device Advisor test suite run based on suite create time.
+     * Date (in Unix epoch time) when the suite run was created.
      * </p>
      * 
      * @param createdAt
-     *        Starts a Device Advisor test suite run based on suite create time.
+     *        Date (in Unix epoch time) when the suite run was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

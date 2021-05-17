@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Get suite run information.
+ * Information about the suite run.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/SuiteRunInformation"
@@ -30,72 +30,72 @@ public class SuiteRunInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Get suite run information based on suite definition Id.
+     * Suite definition Id of the suite run.
      * </p>
      */
     private String suiteDefinitionId;
     /**
      * <p>
-     * Get suite run information based on suite definition version.
+     * Suite definition version of the suite run.
      * </p>
      */
     private String suiteDefinitionVersion;
     /**
      * <p>
-     * Get suite run information based on suite definition name.
+     * Suite definition name of the suite run.
      * </p>
      */
     private String suiteDefinitionName;
     /**
      * <p>
-     * Get suite run information based on suite run Id.
+     * Suite run Id of the suite run.
      * </p>
      */
     private String suiteRunId;
     /**
      * <p>
-     * Get suite run information based on time suite was created.
+     * Date (in Unix epoch time) when the suite run was created.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * Get suite run information based on start time of the run.
+     * Date (in Unix epoch time) when the suite run was started.
      * </p>
      */
     private java.util.Date startedAt;
     /**
      * <p>
-     * Get suite run information based on end time of the run.
+     * Date (in Unix epoch time) when the suite run ended.
      * </p>
      */
     private java.util.Date endAt;
     /**
      * <p>
-     * Get suite run information based on test run status.
+     * Status of the suite run.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * Get suite run information based on result of the test suite run.
+     * Number of test cases that passed in the suite run.
      * </p>
      */
     private Integer passed;
     /**
      * <p>
-     * Get suite run information based on result of the test suite run.
+     * Number of test cases that failed in the suite run.
      * </p>
      */
     private Integer failed;
 
     /**
      * <p>
-     * Get suite run information based on suite definition Id.
+     * Suite definition Id of the suite run.
      * </p>
      * 
      * @param suiteDefinitionId
-     *        Get suite run information based on suite definition Id.
+     *        Suite definition Id of the suite run.
      */
 
     public void setSuiteDefinitionId(String suiteDefinitionId) {
@@ -104,10 +104,10 @@ public class SuiteRunInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Get suite run information based on suite definition Id.
+     * Suite definition Id of the suite run.
      * </p>
      * 
-     * @return Get suite run information based on suite definition Id.
+     * @return Suite definition Id of the suite run.
      */
 
     public String getSuiteDefinitionId() {
@@ -116,11 +116,11 @@ public class SuiteRunInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Get suite run information based on suite definition Id.
+     * Suite definition Id of the suite run.
      * </p>
      * 
      * @param suiteDefinitionId
-     *        Get suite run information based on suite definition Id.
+     *        Suite definition Id of the suite run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,11 +131,11 @@ public class SuiteRunInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Get suite run information based on suite definition version.
+     * Suite definition version of the suite run.
      * </p>
      * 
      * @param suiteDefinitionVersion
-     *        Get suite run information based on suite definition version.
+     *        Suite definition version of the suite run.
      */
 
     public void setSuiteDefinitionVersion(String suiteDefinitionVersion) {
@@ -144,10 +144,10 @@ public class SuiteRunInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Get suite run information based on suite definition version.
+     * Suite definition version of the suite run.
      * </p>
      * 
-     * @return Get suite run information based on suite definition version.
+     * @return Suite definition version of the suite run.
      */
 
     public String getSuiteDefinitionVersion() {
@@ -156,11 +156,11 @@ public class SuiteRunInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Get suite run information based on suite definition version.
+     * Suite definition version of the suite run.
      * </p>
      * 
      * @param suiteDefinitionVersion
-     *        Get suite run information based on suite definition version.
+     *        Suite definition version of the suite run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -171,11 +171,11 @@ public class SuiteRunInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Get suite run information based on suite definition name.
+     * Suite definition name of the suite run.
      * </p>
      * 
      * @param suiteDefinitionName
-     *        Get suite run information based on suite definition name.
+     *        Suite definition name of the suite run.
      */
 
     public void setSuiteDefinitionName(String suiteDefinitionName) {
@@ -184,10 +184,10 @@ public class SuiteRunInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Get suite run information based on suite definition name.
+     * Suite definition name of the suite run.
      * </p>
      * 
-     * @return Get suite run information based on suite definition name.
+     * @return Suite definition name of the suite run.
      */
 
     public String getSuiteDefinitionName() {
@@ -196,11 +196,11 @@ public class SuiteRunInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Get suite run information based on suite definition name.
+     * Suite definition name of the suite run.
      * </p>
      * 
      * @param suiteDefinitionName
-     *        Get suite run information based on suite definition name.
+     *        Suite definition name of the suite run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -211,11 +211,11 @@ public class SuiteRunInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Get suite run information based on suite run Id.
+     * Suite run Id of the suite run.
      * </p>
      * 
      * @param suiteRunId
-     *        Get suite run information based on suite run Id.
+     *        Suite run Id of the suite run.
      */
 
     public void setSuiteRunId(String suiteRunId) {
@@ -224,10 +224,10 @@ public class SuiteRunInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Get suite run information based on suite run Id.
+     * Suite run Id of the suite run.
      * </p>
      * 
-     * @return Get suite run information based on suite run Id.
+     * @return Suite run Id of the suite run.
      */
 
     public String getSuiteRunId() {
@@ -236,11 +236,11 @@ public class SuiteRunInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Get suite run information based on suite run Id.
+     * Suite run Id of the suite run.
      * </p>
      * 
      * @param suiteRunId
-     *        Get suite run information based on suite run Id.
+     *        Suite run Id of the suite run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -251,11 +251,11 @@ public class SuiteRunInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Get suite run information based on time suite was created.
+     * Date (in Unix epoch time) when the suite run was created.
      * </p>
      * 
      * @param createdAt
-     *        Get suite run information based on time suite was created.
+     *        Date (in Unix epoch time) when the suite run was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -264,10 +264,10 @@ public class SuiteRunInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Get suite run information based on time suite was created.
+     * Date (in Unix epoch time) when the suite run was created.
      * </p>
      * 
-     * @return Get suite run information based on time suite was created.
+     * @return Date (in Unix epoch time) when the suite run was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -276,11 +276,11 @@ public class SuiteRunInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Get suite run information based on time suite was created.
+     * Date (in Unix epoch time) when the suite run was created.
      * </p>
      * 
      * @param createdAt
-     *        Get suite run information based on time suite was created.
+     *        Date (in Unix epoch time) when the suite run was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -291,11 +291,11 @@ public class SuiteRunInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Get suite run information based on start time of the run.
+     * Date (in Unix epoch time) when the suite run was started.
      * </p>
      * 
      * @param startedAt
-     *        Get suite run information based on start time of the run.
+     *        Date (in Unix epoch time) when the suite run was started.
      */
 
     public void setStartedAt(java.util.Date startedAt) {
@@ -304,10 +304,10 @@ public class SuiteRunInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Get suite run information based on start time of the run.
+     * Date (in Unix epoch time) when the suite run was started.
      * </p>
      * 
-     * @return Get suite run information based on start time of the run.
+     * @return Date (in Unix epoch time) when the suite run was started.
      */
 
     public java.util.Date getStartedAt() {
@@ -316,11 +316,11 @@ public class SuiteRunInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Get suite run information based on start time of the run.
+     * Date (in Unix epoch time) when the suite run was started.
      * </p>
      * 
      * @param startedAt
-     *        Get suite run information based on start time of the run.
+     *        Date (in Unix epoch time) when the suite run was started.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -331,11 +331,11 @@ public class SuiteRunInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Get suite run information based on end time of the run.
+     * Date (in Unix epoch time) when the suite run ended.
      * </p>
      * 
      * @param endAt
-     *        Get suite run information based on end time of the run.
+     *        Date (in Unix epoch time) when the suite run ended.
      */
 
     public void setEndAt(java.util.Date endAt) {
@@ -344,10 +344,10 @@ public class SuiteRunInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Get suite run information based on end time of the run.
+     * Date (in Unix epoch time) when the suite run ended.
      * </p>
      * 
-     * @return Get suite run information based on end time of the run.
+     * @return Date (in Unix epoch time) when the suite run ended.
      */
 
     public java.util.Date getEndAt() {
@@ -356,11 +356,11 @@ public class SuiteRunInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Get suite run information based on end time of the run.
+     * Date (in Unix epoch time) when the suite run ended.
      * </p>
      * 
      * @param endAt
-     *        Get suite run information based on end time of the run.
+     *        Date (in Unix epoch time) when the suite run ended.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -371,11 +371,11 @@ public class SuiteRunInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Get suite run information based on test run status.
+     * Status of the suite run.
      * </p>
      * 
      * @param status
-     *        Get suite run information based on test run status.
+     *        Status of the suite run.
      * @see SuiteRunStatus
      */
 
@@ -385,10 +385,10 @@ public class SuiteRunInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Get suite run information based on test run status.
+     * Status of the suite run.
      * </p>
      * 
-     * @return Get suite run information based on test run status.
+     * @return Status of the suite run.
      * @see SuiteRunStatus
      */
 
@@ -398,11 +398,11 @@ public class SuiteRunInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Get suite run information based on test run status.
+     * Status of the suite run.
      * </p>
      * 
      * @param status
-     *        Get suite run information based on test run status.
+     *        Status of the suite run.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SuiteRunStatus
      */
@@ -414,11 +414,11 @@ public class SuiteRunInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Get suite run information based on test run status.
+     * Status of the suite run.
      * </p>
      * 
      * @param status
-     *        Get suite run information based on test run status.
+     *        Status of the suite run.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SuiteRunStatus
      */
@@ -430,11 +430,11 @@ public class SuiteRunInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Get suite run information based on result of the test suite run.
+     * Number of test cases that passed in the suite run.
      * </p>
      * 
      * @param passed
-     *        Get suite run information based on result of the test suite run.
+     *        Number of test cases that passed in the suite run.
      */
 
     public void setPassed(Integer passed) {
@@ -443,10 +443,10 @@ public class SuiteRunInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Get suite run information based on result of the test suite run.
+     * Number of test cases that passed in the suite run.
      * </p>
      * 
-     * @return Get suite run information based on result of the test suite run.
+     * @return Number of test cases that passed in the suite run.
      */
 
     public Integer getPassed() {
@@ -455,11 +455,11 @@ public class SuiteRunInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Get suite run information based on result of the test suite run.
+     * Number of test cases that passed in the suite run.
      * </p>
      * 
      * @param passed
-     *        Get suite run information based on result of the test suite run.
+     *        Number of test cases that passed in the suite run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -470,11 +470,11 @@ public class SuiteRunInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Get suite run information based on result of the test suite run.
+     * Number of test cases that failed in the suite run.
      * </p>
      * 
      * @param failed
-     *        Get suite run information based on result of the test suite run.
+     *        Number of test cases that failed in the suite run.
      */
 
     public void setFailed(Integer failed) {
@@ -483,10 +483,10 @@ public class SuiteRunInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Get suite run information based on result of the test suite run.
+     * Number of test cases that failed in the suite run.
      * </p>
      * 
-     * @return Get suite run information based on result of the test suite run.
+     * @return Number of test cases that failed in the suite run.
      */
 
     public Integer getFailed() {
@@ -495,11 +495,11 @@ public class SuiteRunInformation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Get suite run information based on result of the test suite run.
+     * Number of test cases that failed in the suite run.
      * </p>
      * 
      * @param failed
-     *        Get suite run information based on result of the test suite run.
+     *        Number of test cases that failed in the suite run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

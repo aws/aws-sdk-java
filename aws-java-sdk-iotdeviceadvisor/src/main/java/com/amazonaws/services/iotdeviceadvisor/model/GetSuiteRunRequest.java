@@ -27,24 +27,24 @@ public class GetSuiteRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Requests the information about Device Advisor test suite run based on suite definition Id.
+     * Suite definition Id for the test suite run.
      * </p>
      */
     private String suiteDefinitionId;
     /**
      * <p>
-     * Requests the information about Device Advisor test suite run based on suite run Id.
+     * Suite run Id for the test suite run.
      * </p>
      */
     private String suiteRunId;
 
     /**
      * <p>
-     * Requests the information about Device Advisor test suite run based on suite definition Id.
+     * Suite definition Id for the test suite run.
      * </p>
      * 
      * @param suiteDefinitionId
-     *        Requests the information about Device Advisor test suite run based on suite definition Id.
+     *        Suite definition Id for the test suite run.
      */
 
     public void setSuiteDefinitionId(String suiteDefinitionId) {
@@ -53,10 +53,10 @@ public class GetSuiteRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Requests the information about Device Advisor test suite run based on suite definition Id.
+     * Suite definition Id for the test suite run.
      * </p>
      * 
-     * @return Requests the information about Device Advisor test suite run based on suite definition Id.
+     * @return Suite definition Id for the test suite run.
      */
 
     public String getSuiteDefinitionId() {
@@ -65,11 +65,11 @@ public class GetSuiteRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Requests the information about Device Advisor test suite run based on suite definition Id.
+     * Suite definition Id for the test suite run.
      * </p>
      * 
      * @param suiteDefinitionId
-     *        Requests the information about Device Advisor test suite run based on suite definition Id.
+     *        Suite definition Id for the test suite run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class GetSuiteRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Requests the information about Device Advisor test suite run based on suite run Id.
+     * Suite run Id for the test suite run.
      * </p>
      * 
      * @param suiteRunId
-     *        Requests the information about Device Advisor test suite run based on suite run Id.
+     *        Suite run Id for the test suite run.
      */
 
     public void setSuiteRunId(String suiteRunId) {
@@ -93,10 +93,10 @@ public class GetSuiteRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Requests the information about Device Advisor test suite run based on suite run Id.
+     * Suite run Id for the test suite run.
      * </p>
      * 
-     * @return Requests the information about Device Advisor test suite run based on suite run Id.
+     * @return Suite run Id for the test suite run.
      */
 
     public String getSuiteRunId() {
@@ -105,11 +105,11 @@ public class GetSuiteRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Requests the information about Device Advisor test suite run based on suite run Id.
+     * Suite run Id for the test suite run.
      * </p>
      * 
      * @param suiteRunId
-     *        Requests the information about Device Advisor test suite run based on suite run Id.
+     *        Suite run Id for the test suite run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

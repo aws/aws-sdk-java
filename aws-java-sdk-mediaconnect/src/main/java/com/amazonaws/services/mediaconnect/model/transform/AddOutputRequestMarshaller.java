@@ -38,6 +38,8 @@ public class AddOutputRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryption").build();
     private static final MarshallingInfo<Integer> MAXLATENCY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxLatency").build();
+    private static final MarshallingInfo<List> MEDIASTREAMOUTPUTCONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mediaStreamOutputConfigurations").build();
     private static final MarshallingInfo<Integer> MINLATENCY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("minLatency").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -76,6 +78,7 @@ public class AddOutputRequestMarshaller {
             protocolMarshaller.marshall(addOutputRequest.getDestination(), DESTINATION_BINDING);
             protocolMarshaller.marshall(addOutputRequest.getEncryption(), ENCRYPTION_BINDING);
             protocolMarshaller.marshall(addOutputRequest.getMaxLatency(), MAXLATENCY_BINDING);
+            protocolMarshaller.marshall(addOutputRequest.getMediaStreamOutputConfigurations(), MEDIASTREAMOUTPUTCONFIGURATIONS_BINDING);
             protocolMarshaller.marshall(addOutputRequest.getMinLatency(), MINLATENCY_BINDING);
             protocolMarshaller.marshall(addOutputRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(addOutputRequest.getPort(), PORT_BINDING);

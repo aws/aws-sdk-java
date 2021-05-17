@@ -27,36 +27,37 @@ public class ListSuiteRunsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Lists the runs of the specified Device Advisor test suite based on suite definition Id.
+     * Lists the test suite runs of the specified test suite based on suite definition Id.
      * </p>
      */
     private String suiteDefinitionId;
     /**
      * <p>
-     * Lists the runs of the specified Device Advisor test suite based on suite definition version.
+     * Must be passed along with suiteDefinitionId. Lists the test suite runs of the specified test suite based on suite
+     * definition version.
      * </p>
      */
     private String suiteDefinitionVersion;
     /**
      * <p>
-     * MaxResults for list suite run API request.
+     * The maximum number of results to return at once.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * Next pagination token for list suite run request.
+     * A token to retrieve the next set of results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Lists the runs of the specified Device Advisor test suite based on suite definition Id.
+     * Lists the test suite runs of the specified test suite based on suite definition Id.
      * </p>
      * 
      * @param suiteDefinitionId
-     *        Lists the runs of the specified Device Advisor test suite based on suite definition Id.
+     *        Lists the test suite runs of the specified test suite based on suite definition Id.
      */
 
     public void setSuiteDefinitionId(String suiteDefinitionId) {
@@ -65,10 +66,10 @@ public class ListSuiteRunsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Lists the runs of the specified Device Advisor test suite based on suite definition Id.
+     * Lists the test suite runs of the specified test suite based on suite definition Id.
      * </p>
      * 
-     * @return Lists the runs of the specified Device Advisor test suite based on suite definition Id.
+     * @return Lists the test suite runs of the specified test suite based on suite definition Id.
      */
 
     public String getSuiteDefinitionId() {
@@ -77,11 +78,11 @@ public class ListSuiteRunsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Lists the runs of the specified Device Advisor test suite based on suite definition Id.
+     * Lists the test suite runs of the specified test suite based on suite definition Id.
      * </p>
      * 
      * @param suiteDefinitionId
-     *        Lists the runs of the specified Device Advisor test suite based on suite definition Id.
+     *        Lists the test suite runs of the specified test suite based on suite definition Id.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +93,13 @@ public class ListSuiteRunsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Lists the runs of the specified Device Advisor test suite based on suite definition version.
+     * Must be passed along with suiteDefinitionId. Lists the test suite runs of the specified test suite based on suite
+     * definition version.
      * </p>
      * 
      * @param suiteDefinitionVersion
-     *        Lists the runs of the specified Device Advisor test suite based on suite definition version.
+     *        Must be passed along with suiteDefinitionId. Lists the test suite runs of the specified test suite based
+     *        on suite definition version.
      */
 
     public void setSuiteDefinitionVersion(String suiteDefinitionVersion) {
@@ -105,10 +108,12 @@ public class ListSuiteRunsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Lists the runs of the specified Device Advisor test suite based on suite definition version.
+     * Must be passed along with suiteDefinitionId. Lists the test suite runs of the specified test suite based on suite
+     * definition version.
      * </p>
      * 
-     * @return Lists the runs of the specified Device Advisor test suite based on suite definition version.
+     * @return Must be passed along with suiteDefinitionId. Lists the test suite runs of the specified test suite based
+     *         on suite definition version.
      */
 
     public String getSuiteDefinitionVersion() {
@@ -117,11 +122,13 @@ public class ListSuiteRunsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Lists the runs of the specified Device Advisor test suite based on suite definition version.
+     * Must be passed along with suiteDefinitionId. Lists the test suite runs of the specified test suite based on suite
+     * definition version.
      * </p>
      * 
      * @param suiteDefinitionVersion
-     *        Lists the runs of the specified Device Advisor test suite based on suite definition version.
+     *        Must be passed along with suiteDefinitionId. Lists the test suite runs of the specified test suite based
+     *        on suite definition version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,11 +139,11 @@ public class ListSuiteRunsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * MaxResults for list suite run API request.
+     * The maximum number of results to return at once.
      * </p>
      * 
      * @param maxResults
-     *        MaxResults for list suite run API request.
+     *        The maximum number of results to return at once.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -145,10 +152,10 @@ public class ListSuiteRunsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * MaxResults for list suite run API request.
+     * The maximum number of results to return at once.
      * </p>
      * 
-     * @return MaxResults for list suite run API request.
+     * @return The maximum number of results to return at once.
      */
 
     public Integer getMaxResults() {
@@ -157,11 +164,11 @@ public class ListSuiteRunsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * MaxResults for list suite run API request.
+     * The maximum number of results to return at once.
      * </p>
      * 
      * @param maxResults
-     *        MaxResults for list suite run API request.
+     *        The maximum number of results to return at once.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,11 +179,11 @@ public class ListSuiteRunsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Next pagination token for list suite run request.
+     * A token to retrieve the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        Next pagination token for list suite run request.
+     *        A token to retrieve the next set of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -185,10 +192,10 @@ public class ListSuiteRunsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Next pagination token for list suite run request.
+     * A token to retrieve the next set of results.
      * </p>
      * 
-     * @return Next pagination token for list suite run request.
+     * @return A token to retrieve the next set of results.
      */
 
     public String getNextToken() {
@@ -197,11 +204,11 @@ public class ListSuiteRunsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Next pagination token for list suite run request.
+     * A token to retrieve the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        Next pagination token for list suite run request.
+     *        A token to retrieve the next set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

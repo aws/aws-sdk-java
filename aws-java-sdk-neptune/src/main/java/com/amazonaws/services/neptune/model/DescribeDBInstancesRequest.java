@@ -65,8 +65,8 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * </ul>
      * <p>
-     * For example, to invoke this API from the AWS CLI and filter so that only Neptune DB instances are returned, you
-     * could use the following command:
+     * For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB instances are returned,
+     * you could use the following command:
      * </p>
      */
     private java.util.List<Filter> filters;
@@ -219,8 +219,8 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * </ul>
      * <p>
-     * For example, to invoke this API from the AWS CLI and filter so that only Neptune DB instances are returned, you
-     * could use the following command:
+     * For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB instances are returned,
+     * you could use the following command:
      * </p>
      * 
      * @return A filter that specifies one or more DB instances to describe.</p>
@@ -243,7 +243,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      *         </li>
      *         </ul>
      *         <p>
-     *         For example, to invoke this API from the AWS CLI and filter so that only Neptune DB instances are
+     *         For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB instances are
      *         returned, you could use the following command:
      */
 
@@ -274,8 +274,8 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * </ul>
      * <p>
-     * For example, to invoke this API from the AWS CLI and filter so that only Neptune DB instances are returned, you
-     * could use the following command:
+     * For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB instances are returned,
+     * you could use the following command:
      * </p>
      * 
      * @param filters
@@ -299,7 +299,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        </ul>
      *        <p>
-     *        For example, to invoke this API from the AWS CLI and filter so that only Neptune DB instances are
+     *        For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB instances are
      *        returned, you could use the following command:
      */
 
@@ -335,8 +335,8 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * </ul>
      * <p>
-     * For example, to invoke this API from the AWS CLI and filter so that only Neptune DB instances are returned, you
-     * could use the following command:
+     * For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB instances are returned,
+     * you could use the following command:
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -365,7 +365,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        </ul>
      *        <p>
-     *        For example, to invoke this API from the AWS CLI and filter so that only Neptune DB instances are
+     *        For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB instances are
      *        returned, you could use the following command:
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -403,8 +403,8 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * </ul>
      * <p>
-     * For example, to invoke this API from the AWS CLI and filter so that only Neptune DB instances are returned, you
-     * could use the following command:
+     * For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB instances are returned,
+     * you could use the following command:
      * </p>
      * 
      * @param filters
@@ -428,7 +428,7 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        </ul>
      *        <p>
-     *        For example, to invoke this API from the AWS CLI and filter so that only Neptune DB instances are
+     *        For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB instances are
      *        returned, you could use the following command:
      * @return Returns a reference to this object so that method calls can be chained together.
      */

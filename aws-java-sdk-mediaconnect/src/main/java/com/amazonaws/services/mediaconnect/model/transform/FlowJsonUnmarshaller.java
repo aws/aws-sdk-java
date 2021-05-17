@@ -70,6 +70,12 @@ public class FlowJsonUnmarshaller implements Unmarshaller<Flow, JsonUnmarshaller
                     context.nextToken();
                     flow.setFlowArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("mediaStreams", targetDepth)) {
+                    context.nextToken();
+                    flow.setMediaStreams(new ListUnmarshaller<MediaStream>(MediaStreamJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     flow.setName(context.getUnmarshaller(String.class).unmarshall(context));

@@ -62,21 +62,14 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String dBInstanceIdentifier;
     /**
      * <p>
-     * The amount of storage (in gibibytes) to allocate for the DB instance.
-     * </p>
-     * <p>
-     * Type: Integer
-     * </p>
-     * <p>
-     * Not applicable. Neptune cluster volumes automatically grow as the amount of data in your database increases,
-     * though you are only charged for the space that you use in a Neptune cluster volume.
+     * Not supported by Neptune.
      * </p>
      */
     private Integer allocatedStorage;
     /**
      * <p>
      * The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance
-     * classes are available in all AWS Regions.
+     * classes are available in all Amazon Regions.
      * </p>
      */
     private String dBInstanceClass;
@@ -91,16 +84,13 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String engine;
     /**
      * <p>
-     * The name for the master user. Not used.
+     * Not supported by Neptune.
      * </p>
      */
     private String masterUsername;
     /**
      * <p>
-     * The password for the master user. The password can include any printable ASCII character except "/", """, or "@".
-     * </p>
-     * <p>
-     * Not used.
+     * Not supported by Neptune.
      * </p>
      */
     private String masterUserPassword;
@@ -131,14 +121,14 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The EC2 Availability Zone that the DB instance is created in
      * </p>
      * <p>
-     * Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     * Default: A random, system-chosen Availability Zone in the endpoint's Amazon Region.
      * </p>
      * <p>
      * Example: <code>us-east-1d</code>
      * </p>
      * <p>
      * Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to
-     * <code>true</code>. The specified Availability Zone must be in the same AWS Region as the current endpoint.
+     * <code>true</code>. The specified Availability Zone must be in the same Amazon Region as the current endpoint.
      * </p>
      */
     private String availabilityZone;
@@ -159,8 +149,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week.
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region,
+     * occurring on a random day of the week.
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
@@ -362,12 +352,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Boolean storageEncrypted;
     /**
      * <p>
-     * The AWS KMS key identifier for an encrypted DB instance.
+     * The Amazon KMS key identifier for an encrypted DB instance.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
-     * instance with the same AWS account that owns the KMS encryption key used to encrypt the new DB instance, then you
-     * can use the KMS key alias instead of the ARN for the KM encryption key.
+     * instance with the same Amazon account that owns the KMS encryption key used to encrypt the new DB instance, then
+     * you can use the KMS key alias instead of the ARN for the KM encryption key.
      * </p>
      * <p>
      * Not applicable. The KMS key identifier is managed by the DB cluster. For more information, see
@@ -375,9 +365,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
-     * <code>KmsKeyId</code> parameter, then Amazon Neptune will use your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS
-     * Region.
+     * <code>KmsKeyId</code> parameter, then Amazon Neptune will use your default encryption key. Amazon KMS creates the
+     * default encryption key for your Amazon account. Your Amazon account has a different default encryption key for
+     * each Amazon Region.
      * </p>
      */
     private String kmsKeyId;
@@ -446,10 +436,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String timezone;
     /**
      * <p>
-     * True to enable AWS Identity and Access Management (IAM) authentication for Neptune.
-     * </p>
-     * <p>
-     * Default: <code>false</code>
+     * Not supported by Neptune (ignored).
      * </p>
      */
     private Boolean enableIAMDatabaseAuthentication;
@@ -701,24 +688,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The amount of storage (in gibibytes) to allocate for the DB instance.
-     * </p>
-     * <p>
-     * Type: Integer
-     * </p>
-     * <p>
-     * Not applicable. Neptune cluster volumes automatically grow as the amount of data in your database increases,
-     * though you are only charged for the space that you use in a Neptune cluster volume.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param allocatedStorage
-     *        The amount of storage (in gibibytes) to allocate for the DB instance.</p>
-     *        <p>
-     *        Type: Integer
-     *        </p>
-     *        <p>
-     *        Not applicable. Neptune cluster volumes automatically grow as the amount of data in your database
-     *        increases, though you are only charged for the space that you use in a Neptune cluster volume.
+     *        Not supported by Neptune.
      */
 
     public void setAllocatedStorage(Integer allocatedStorage) {
@@ -727,23 +701,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The amount of storage (in gibibytes) to allocate for the DB instance.
-     * </p>
-     * <p>
-     * Type: Integer
-     * </p>
-     * <p>
-     * Not applicable. Neptune cluster volumes automatically grow as the amount of data in your database increases,
-     * though you are only charged for the space that you use in a Neptune cluster volume.
+     * Not supported by Neptune.
      * </p>
      * 
-     * @return The amount of storage (in gibibytes) to allocate for the DB instance.</p>
-     *         <p>
-     *         Type: Integer
-     *         </p>
-     *         <p>
-     *         Not applicable. Neptune cluster volumes automatically grow as the amount of data in your database
-     *         increases, though you are only charged for the space that you use in a Neptune cluster volume.
+     * @return Not supported by Neptune.
      */
 
     public Integer getAllocatedStorage() {
@@ -752,24 +713,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The amount of storage (in gibibytes) to allocate for the DB instance.
-     * </p>
-     * <p>
-     * Type: Integer
-     * </p>
-     * <p>
-     * Not applicable. Neptune cluster volumes automatically grow as the amount of data in your database increases,
-     * though you are only charged for the space that you use in a Neptune cluster volume.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param allocatedStorage
-     *        The amount of storage (in gibibytes) to allocate for the DB instance.</p>
-     *        <p>
-     *        Type: Integer
-     *        </p>
-     *        <p>
-     *        Not applicable. Neptune cluster volumes automatically grow as the amount of data in your database
-     *        increases, though you are only charged for the space that you use in a Neptune cluster volume.
+     *        Not supported by Neptune.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -781,12 +729,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance
-     * classes are available in all AWS Regions.
+     * classes are available in all Amazon Regions.
      * </p>
      * 
      * @param dBInstanceClass
      *        The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
-     *        instance classes are available in all AWS Regions.
+     *        instance classes are available in all Amazon Regions.
      */
 
     public void setDBInstanceClass(String dBInstanceClass) {
@@ -796,11 +744,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance
-     * classes are available in all AWS Regions.
+     * classes are available in all Amazon Regions.
      * </p>
      * 
      * @return The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
-     *         instance classes are available in all AWS Regions.
+     *         instance classes are available in all Amazon Regions.
      */
 
     public String getDBInstanceClass() {
@@ -810,12 +758,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB instance
-     * classes are available in all AWS Regions.
+     * classes are available in all Amazon Regions.
      * </p>
      * 
      * @param dBInstanceClass
      *        The compute and memory capacity of the DB instance, for example, <code>db.m4.large</code>. Not all DB
-     *        instance classes are available in all AWS Regions.
+     *        instance classes are available in all Amazon Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -881,11 +829,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name for the master user. Not used.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param masterUsername
-     *        The name for the master user. Not used.
+     *        Not supported by Neptune.
      */
 
     public void setMasterUsername(String masterUsername) {
@@ -894,10 +842,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name for the master user. Not used.
+     * Not supported by Neptune.
      * </p>
      * 
-     * @return The name for the master user. Not used.
+     * @return Not supported by Neptune.
      */
 
     public String getMasterUsername() {
@@ -906,11 +854,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name for the master user. Not used.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param masterUsername
-     *        The name for the master user. Not used.
+     *        Not supported by Neptune.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -921,17 +869,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The password for the master user. The password can include any printable ASCII character except "/", """, or "@".
-     * </p>
-     * <p>
-     * Not used.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param masterUserPassword
-     *        The password for the master user. The password can include any printable ASCII character except "/",
-     *        """, or "@".</p>
-     *        <p>
-     *        Not used.
+     *        Not supported by Neptune.
      */
 
     public void setMasterUserPassword(String masterUserPassword) {
@@ -940,16 +882,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The password for the master user. The password can include any printable ASCII character except "/", """, or "@".
-     * </p>
-     * <p>
-     * Not used.
+     * Not supported by Neptune.
      * </p>
      * 
-     * @return The password for the master user. The password can include any printable ASCII character except "/",
-     *         """, or "@".</p>
-     *         <p>
-     *         Not used.
+     * @return Not supported by Neptune.
      */
 
     public String getMasterUserPassword() {
@@ -958,17 +894,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The password for the master user. The password can include any printable ASCII character except "/", """, or "@".
-     * </p>
-     * <p>
-     * Not used.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param masterUserPassword
-     *        The password for the master user. The password can include any printable ASCII character except "/",
-     *        """, or "@".</p>
-     *        <p>
-     *        Not used.
+     *        Not supported by Neptune.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1194,27 +1124,28 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The EC2 Availability Zone that the DB instance is created in
      * </p>
      * <p>
-     * Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     * Default: A random, system-chosen Availability Zone in the endpoint's Amazon Region.
      * </p>
      * <p>
      * Example: <code>us-east-1d</code>
      * </p>
      * <p>
      * Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to
-     * <code>true</code>. The specified Availability Zone must be in the same AWS Region as the current endpoint.
+     * <code>true</code>. The specified Availability Zone must be in the same Amazon Region as the current endpoint.
      * </p>
      * 
      * @param availabilityZone
      *        The EC2 Availability Zone that the DB instance is created in</p>
      *        <p>
-     *        Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     *        Default: A random, system-chosen Availability Zone in the endpoint's Amazon Region.
      *        </p>
      *        <p>
      *        Example: <code>us-east-1d</code>
      *        </p>
      *        <p>
      *        Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to
-     *        <code>true</code>. The specified Availability Zone must be in the same AWS Region as the current endpoint.
+     *        <code>true</code>. The specified Availability Zone must be in the same Amazon Region as the current
+     *        endpoint.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -1226,26 +1157,26 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The EC2 Availability Zone that the DB instance is created in
      * </p>
      * <p>
-     * Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     * Default: A random, system-chosen Availability Zone in the endpoint's Amazon Region.
      * </p>
      * <p>
      * Example: <code>us-east-1d</code>
      * </p>
      * <p>
      * Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to
-     * <code>true</code>. The specified Availability Zone must be in the same AWS Region as the current endpoint.
+     * <code>true</code>. The specified Availability Zone must be in the same Amazon Region as the current endpoint.
      * </p>
      * 
      * @return The EC2 Availability Zone that the DB instance is created in</p>
      *         <p>
-     *         Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     *         Default: A random, system-chosen Availability Zone in the endpoint's Amazon Region.
      *         </p>
      *         <p>
      *         Example: <code>us-east-1d</code>
      *         </p>
      *         <p>
      *         Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to
-     *         <code>true</code>. The specified Availability Zone must be in the same AWS Region as the current
+     *         <code>true</code>. The specified Availability Zone must be in the same Amazon Region as the current
      *         endpoint.
      */
 
@@ -1258,27 +1189,28 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The EC2 Availability Zone that the DB instance is created in
      * </p>
      * <p>
-     * Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     * Default: A random, system-chosen Availability Zone in the endpoint's Amazon Region.
      * </p>
      * <p>
      * Example: <code>us-east-1d</code>
      * </p>
      * <p>
      * Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to
-     * <code>true</code>. The specified Availability Zone must be in the same AWS Region as the current endpoint.
+     * <code>true</code>. The specified Availability Zone must be in the same Amazon Region as the current endpoint.
      * </p>
      * 
      * @param availabilityZone
      *        The EC2 Availability Zone that the DB instance is created in</p>
      *        <p>
-     *        Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
+     *        Default: A random, system-chosen Availability Zone in the endpoint's Amazon Region.
      *        </p>
      *        <p>
      *        Example: <code>us-east-1d</code>
      *        </p>
      *        <p>
      *        Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to
-     *        <code>true</code>. The specified Availability Zone must be in the same AWS Region as the current endpoint.
+     *        <code>true</code>. The specified Availability Zone must be in the same Amazon Region as the current
+     *        endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1350,8 +1282,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week.
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region,
+     * occurring on a random day of the week.
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
@@ -1367,7 +1299,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region,
      *        occurring on a random day of the week.
      *        </p>
      *        <p>
@@ -1389,8 +1321,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week.
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region,
+     * occurring on a random day of the week.
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
@@ -1405,7 +1337,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *         </p>
      *         <p>
-     *         The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
+     *         The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region,
      *         occurring on a random day of the week.
      *         </p>
      *         <p>
@@ -1427,8 +1359,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week.
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region,
+     * occurring on a random day of the week.
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
@@ -1444,7 +1376,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region,
      *        occurring on a random day of the week.
      *        </p>
      *        <p>
@@ -2743,12 +2675,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS KMS key identifier for an encrypted DB instance.
+     * The Amazon KMS key identifier for an encrypted DB instance.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
-     * instance with the same AWS account that owns the KMS encryption key used to encrypt the new DB instance, then you
-     * can use the KMS key alias instead of the ARN for the KM encryption key.
+     * instance with the same Amazon account that owns the KMS encryption key used to encrypt the new DB instance, then
+     * you can use the KMS key alias instead of the ARN for the KM encryption key.
      * </p>
      * <p>
      * Not applicable. The KMS key identifier is managed by the DB cluster. For more information, see
@@ -2756,16 +2688,16 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
-     * <code>KmsKeyId</code> parameter, then Amazon Neptune will use your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS
-     * Region.
+     * <code>KmsKeyId</code> parameter, then Amazon Neptune will use your default encryption key. Amazon KMS creates the
+     * default encryption key for your Amazon account. Your Amazon account has a different default encryption key for
+     * each Amazon Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier for an encrypted DB instance.</p>
+     *        The Amazon KMS key identifier for an encrypted DB instance.</p>
      *        <p>
      *        The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a
-     *        DB instance with the same AWS account that owns the KMS encryption key used to encrypt the new DB
+     *        DB instance with the same Amazon account that owns the KMS encryption key used to encrypt the new DB
      *        instance, then you can use the KMS key alias instead of the ARN for the KM encryption key.
      *        </p>
      *        <p>
@@ -2774,9 +2706,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        <p>
      *        If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
-     *        <code>KmsKeyId</code> parameter, then Amazon Neptune will use your default encryption key. AWS KMS creates
-     *        the default encryption key for your AWS account. Your AWS account has a different default encryption key
-     *        for each AWS Region.
+     *        <code>KmsKeyId</code> parameter, then Amazon Neptune will use your default encryption key. Amazon KMS
+     *        creates the default encryption key for your Amazon account. Your Amazon account has a different default
+     *        encryption key for each Amazon Region.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -2785,12 +2717,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS KMS key identifier for an encrypted DB instance.
+     * The Amazon KMS key identifier for an encrypted DB instance.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
-     * instance with the same AWS account that owns the KMS encryption key used to encrypt the new DB instance, then you
-     * can use the KMS key alias instead of the ARN for the KM encryption key.
+     * instance with the same Amazon account that owns the KMS encryption key used to encrypt the new DB instance, then
+     * you can use the KMS key alias instead of the ARN for the KM encryption key.
      * </p>
      * <p>
      * Not applicable. The KMS key identifier is managed by the DB cluster. For more information, see
@@ -2798,15 +2730,15 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
-     * <code>KmsKeyId</code> parameter, then Amazon Neptune will use your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS
-     * Region.
+     * <code>KmsKeyId</code> parameter, then Amazon Neptune will use your default encryption key. Amazon KMS creates the
+     * default encryption key for your Amazon account. Your Amazon account has a different default encryption key for
+     * each Amazon Region.
      * </p>
      * 
-     * @return The AWS KMS key identifier for an encrypted DB instance.</p>
+     * @return The Amazon KMS key identifier for an encrypted DB instance.</p>
      *         <p>
      *         The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating
-     *         a DB instance with the same AWS account that owns the KMS encryption key used to encrypt the new DB
+     *         a DB instance with the same Amazon account that owns the KMS encryption key used to encrypt the new DB
      *         instance, then you can use the KMS key alias instead of the ARN for the KM encryption key.
      *         </p>
      *         <p>
@@ -2815,9 +2747,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </p>
      *         <p>
      *         If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
-     *         <code>KmsKeyId</code> parameter, then Amazon Neptune will use your default encryption key. AWS KMS
-     *         creates the default encryption key for your AWS account. Your AWS account has a different default
-     *         encryption key for each AWS Region.
+     *         <code>KmsKeyId</code> parameter, then Amazon Neptune will use your default encryption key. Amazon KMS
+     *         creates the default encryption key for your Amazon account. Your Amazon account has a different default
+     *         encryption key for each Amazon Region.
      */
 
     public String getKmsKeyId() {
@@ -2826,12 +2758,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS KMS key identifier for an encrypted DB instance.
+     * The Amazon KMS key identifier for an encrypted DB instance.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
-     * instance with the same AWS account that owns the KMS encryption key used to encrypt the new DB instance, then you
-     * can use the KMS key alias instead of the ARN for the KM encryption key.
+     * instance with the same Amazon account that owns the KMS encryption key used to encrypt the new DB instance, then
+     * you can use the KMS key alias instead of the ARN for the KM encryption key.
      * </p>
      * <p>
      * Not applicable. The KMS key identifier is managed by the DB cluster. For more information, see
@@ -2839,16 +2771,16 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
-     * <code>KmsKeyId</code> parameter, then Amazon Neptune will use your default encryption key. AWS KMS creates the
-     * default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS
-     * Region.
+     * <code>KmsKeyId</code> parameter, then Amazon Neptune will use your default encryption key. Amazon KMS creates the
+     * default encryption key for your Amazon account. Your Amazon account has a different default encryption key for
+     * each Amazon Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier for an encrypted DB instance.</p>
+     *        The Amazon KMS key identifier for an encrypted DB instance.</p>
      *        <p>
      *        The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a
-     *        DB instance with the same AWS account that owns the KMS encryption key used to encrypt the new DB
+     *        DB instance with the same Amazon account that owns the KMS encryption key used to encrypt the new DB
      *        instance, then you can use the KMS key alias instead of the ARN for the KM encryption key.
      *        </p>
      *        <p>
@@ -2857,9 +2789,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        <p>
      *        If the <code>StorageEncrypted</code> parameter is true, and you do not specify a value for the
-     *        <code>KmsKeyId</code> parameter, then Amazon Neptune will use your default encryption key. AWS KMS creates
-     *        the default encryption key for your AWS account. Your AWS account has a different default encryption key
-     *        for each AWS Region.
+     *        <code>KmsKeyId</code> parameter, then Amazon Neptune will use your default encryption key. Amazon KMS
+     *        creates the default encryption key for your Amazon account. Your Amazon account has a different default
+     *        encryption key for each Amazon Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3281,16 +3213,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to enable AWS Identity and Access Management (IAM) authentication for Neptune.
-     * </p>
-     * <p>
-     * Default: <code>false</code>
+     * Not supported by Neptune (ignored).
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        True to enable AWS Identity and Access Management (IAM) authentication for Neptune.</p>
-     *        <p>
-     *        Default: <code>false</code>
+     *        Not supported by Neptune (ignored).
      */
 
     public void setEnableIAMDatabaseAuthentication(Boolean enableIAMDatabaseAuthentication) {
@@ -3299,15 +3226,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to enable AWS Identity and Access Management (IAM) authentication for Neptune.
-     * </p>
-     * <p>
-     * Default: <code>false</code>
+     * Not supported by Neptune (ignored).
      * </p>
      * 
-     * @return True to enable AWS Identity and Access Management (IAM) authentication for Neptune.</p>
-     *         <p>
-     *         Default: <code>false</code>
+     * @return Not supported by Neptune (ignored).
      */
 
     public Boolean getEnableIAMDatabaseAuthentication() {
@@ -3316,16 +3238,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to enable AWS Identity and Access Management (IAM) authentication for Neptune.
-     * </p>
-     * <p>
-     * Default: <code>false</code>
+     * Not supported by Neptune (ignored).
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        True to enable AWS Identity and Access Management (IAM) authentication for Neptune.</p>
-     *        <p>
-     *        Default: <code>false</code>
+     *        Not supported by Neptune (ignored).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3336,15 +3253,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to enable AWS Identity and Access Management (IAM) authentication for Neptune.
-     * </p>
-     * <p>
-     * Default: <code>false</code>
+     * Not supported by Neptune (ignored).
      * </p>
      * 
-     * @return True to enable AWS Identity and Access Management (IAM) authentication for Neptune.</p>
-     *         <p>
-     *         Default: <code>false</code>
+     * @return Not supported by Neptune (ignored).
      */
 
     public Boolean isEnableIAMDatabaseAuthentication() {

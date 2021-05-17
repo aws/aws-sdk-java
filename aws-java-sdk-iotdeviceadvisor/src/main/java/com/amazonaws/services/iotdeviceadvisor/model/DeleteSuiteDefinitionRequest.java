@@ -27,18 +27,18 @@ public class DeleteSuiteDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Deletes a Device Advisor test suite with defined suite Id.
+     * Suite definition Id of the test suite to be deleted.
      * </p>
      */
     private String suiteDefinitionId;
 
     /**
      * <p>
-     * Deletes a Device Advisor test suite with defined suite Id.
+     * Suite definition Id of the test suite to be deleted.
      * </p>
      * 
      * @param suiteDefinitionId
-     *        Deletes a Device Advisor test suite with defined suite Id.
+     *        Suite definition Id of the test suite to be deleted.
      */
 
     public void setSuiteDefinitionId(String suiteDefinitionId) {
@@ -47,10 +47,10 @@ public class DeleteSuiteDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Deletes a Device Advisor test suite with defined suite Id.
+     * Suite definition Id of the test suite to be deleted.
      * </p>
      * 
-     * @return Deletes a Device Advisor test suite with defined suite Id.
+     * @return Suite definition Id of the test suite to be deleted.
      */
 
     public String getSuiteDefinitionId() {
@@ -59,11 +59,11 @@ public class DeleteSuiteDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Deletes a Device Advisor test suite with defined suite Id.
+     * Suite definition Id of the test suite to be deleted.
      * </p>
      * 
      * @param suiteDefinitionId
-     *        Deletes a Device Advisor test suite with defined suite Id.
+     *        Suite definition Id of the test suite to be deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

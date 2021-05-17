@@ -76,6 +76,13 @@ public class OutputJsonUnmarshaller implements Unmarshaller<Output, JsonUnmarsha
                     context.nextToken();
                     output.setMediaLiveInputArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("mediaStreamOutputConfigurations", targetDepth)) {
+                    context.nextToken();
+                    output.setMediaStreamOutputConfigurations(new ListUnmarshaller<MediaStreamOutputConfiguration>(
+                            MediaStreamOutputConfigurationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     output.setName(context.getUnmarshaller(String.class).unmarshall(context));

@@ -74,6 +74,39 @@ public class AWSMediaConnectAsyncClient extends AWSMediaConnectClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<AddFlowMediaStreamsResult> addFlowMediaStreamsAsync(AddFlowMediaStreamsRequest request) {
+
+        return addFlowMediaStreamsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddFlowMediaStreamsResult> addFlowMediaStreamsAsync(final AddFlowMediaStreamsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AddFlowMediaStreamsRequest, AddFlowMediaStreamsResult> asyncHandler) {
+        final AddFlowMediaStreamsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AddFlowMediaStreamsResult>() {
+            @Override
+            public AddFlowMediaStreamsResult call() throws Exception {
+                AddFlowMediaStreamsResult result = null;
+
+                try {
+                    result = executeAddFlowMediaStreams(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AddFlowOutputsResult> addFlowOutputsAsync(AddFlowOutputsRequest request) {
 
         return addFlowOutputsAsync(request, null);
@@ -569,6 +602,39 @@ public class AWSMediaConnectAsyncClient extends AWSMediaConnectClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<RemoveFlowMediaStreamResult> removeFlowMediaStreamAsync(RemoveFlowMediaStreamRequest request) {
+
+        return removeFlowMediaStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveFlowMediaStreamResult> removeFlowMediaStreamAsync(final RemoveFlowMediaStreamRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RemoveFlowMediaStreamRequest, RemoveFlowMediaStreamResult> asyncHandler) {
+        final RemoveFlowMediaStreamRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RemoveFlowMediaStreamResult>() {
+            @Override
+            public RemoveFlowMediaStreamResult call() throws Exception {
+                RemoveFlowMediaStreamResult result = null;
+
+                try {
+                    result = executeRemoveFlowMediaStream(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<RemoveFlowOutputResult> removeFlowOutputAsync(RemoveFlowOutputRequest request) {
 
         return removeFlowOutputAsync(request, null);
@@ -883,6 +949,39 @@ public class AWSMediaConnectAsyncClient extends AWSMediaConnectClient implements
 
                 try {
                     result = executeUpdateFlowEntitlement(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFlowMediaStreamResult> updateFlowMediaStreamAsync(UpdateFlowMediaStreamRequest request) {
+
+        return updateFlowMediaStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFlowMediaStreamResult> updateFlowMediaStreamAsync(final UpdateFlowMediaStreamRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateFlowMediaStreamRequest, UpdateFlowMediaStreamResult> asyncHandler) {
+        final UpdateFlowMediaStreamRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateFlowMediaStreamResult>() {
+            @Override
+            public UpdateFlowMediaStreamResult call() throws Exception {
+                UpdateFlowMediaStreamResult result = null;
+
+                try {
+                    result = executeUpdateFlowMediaStream(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

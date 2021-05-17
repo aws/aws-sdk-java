@@ -79,11 +79,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * maintenance window.
      * </p>
      * <p>
-     * The <code>ApplyImmediately</code> parameter only affects the <code>NewDBClusterIdentifier</code> and
-     * <code>MasterUserPassword</code> values. If you set the <code>ApplyImmediately</code> parameter value to false,
-     * then changes to the <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values are applied
-     * during the next maintenance window. All other changes are applied immediately, regardless of the value of the
-     * <code>ApplyImmediately</code> parameter.
+     * The <code>ApplyImmediately</code> parameter only affects <code>NewDBClusterIdentifier</code> values. If you set
+     * the <code>ApplyImmediately</code> parameter value to false, then changes to <code>NewDBClusterIdentifier</code>
+     * values are applied during the next maintenance window. All other changes are applied immediately, regardless of
+     * the value of the <code>ApplyImmediately</code> parameter.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -135,17 +134,13 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private Integer port;
     /**
      * <p>
-     * The new password for the master database user. This password can contain any printable ASCII character except
-     * "/", """, or "@".
-     * </p>
-     * <p>
-     * Constraints: Must contain from 8 to 41 characters.
+     * Not supported by Neptune.
      * </p>
      */
     private String masterUserPassword;
     /**
      * <p>
-     * <i>(Not supported by Neptune)</i>
+     * <i>Not supported by Neptune.</i>
      * </p>
      */
     private String optionGroupName;
@@ -155,7 +150,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region.
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region.
      * </p>
      * <p>
      * Constraints:
@@ -192,8 +187,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week.
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region,
+     * occurring on a random day of the week.
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
@@ -205,8 +200,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String preferredMaintenanceWindow;
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
+     * True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and
+     * otherwise false.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -242,6 +237,12 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private Boolean deletionProtection;
+    /**
+     * <p>
+     * <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i>
+     * </p>
+     */
+    private Boolean copyTagsToSnapshot;
 
     /**
      * <p>
@@ -529,11 +530,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * maintenance window.
      * </p>
      * <p>
-     * The <code>ApplyImmediately</code> parameter only affects the <code>NewDBClusterIdentifier</code> and
-     * <code>MasterUserPassword</code> values. If you set the <code>ApplyImmediately</code> parameter value to false,
-     * then changes to the <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values are applied
-     * during the next maintenance window. All other changes are applied immediately, regardless of the value of the
-     * <code>ApplyImmediately</code> parameter.
+     * The <code>ApplyImmediately</code> parameter only affects <code>NewDBClusterIdentifier</code> values. If you set
+     * the <code>ApplyImmediately</code> parameter value to false, then changes to <code>NewDBClusterIdentifier</code>
+     * values are applied during the next maintenance window. All other changes are applied immediately, regardless of
+     * the value of the <code>ApplyImmediately</code> parameter.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -545,11 +545,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        setting for the DB cluster. If this parameter is set to <code>false</code>, changes to the DB cluster are
      *        applied during the next maintenance window.</p>
      *        <p>
-     *        The <code>ApplyImmediately</code> parameter only affects the <code>NewDBClusterIdentifier</code> and
-     *        <code>MasterUserPassword</code> values. If you set the <code>ApplyImmediately</code> parameter value to
-     *        false, then changes to the <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values
-     *        are applied during the next maintenance window. All other changes are applied immediately, regardless of
-     *        the value of the <code>ApplyImmediately</code> parameter.
+     *        The <code>ApplyImmediately</code> parameter only affects <code>NewDBClusterIdentifier</code> values. If
+     *        you set the <code>ApplyImmediately</code> parameter value to false, then changes to
+     *        <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other
+     *        changes are applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.
      *        </p>
      *        <p>
      *        Default: <code>false</code>
@@ -567,11 +566,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * maintenance window.
      * </p>
      * <p>
-     * The <code>ApplyImmediately</code> parameter only affects the <code>NewDBClusterIdentifier</code> and
-     * <code>MasterUserPassword</code> values. If you set the <code>ApplyImmediately</code> parameter value to false,
-     * then changes to the <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values are applied
-     * during the next maintenance window. All other changes are applied immediately, regardless of the value of the
-     * <code>ApplyImmediately</code> parameter.
+     * The <code>ApplyImmediately</code> parameter only affects <code>NewDBClusterIdentifier</code> values. If you set
+     * the <code>ApplyImmediately</code> parameter value to false, then changes to <code>NewDBClusterIdentifier</code>
+     * values are applied during the next maintenance window. All other changes are applied immediately, regardless of
+     * the value of the <code>ApplyImmediately</code> parameter.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -582,11 +580,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         setting for the DB cluster. If this parameter is set to <code>false</code>, changes to the DB cluster are
      *         applied during the next maintenance window.</p>
      *         <p>
-     *         The <code>ApplyImmediately</code> parameter only affects the <code>NewDBClusterIdentifier</code> and
-     *         <code>MasterUserPassword</code> values. If you set the <code>ApplyImmediately</code> parameter value to
-     *         false, then changes to the <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values
-     *         are applied during the next maintenance window. All other changes are applied immediately, regardless of
-     *         the value of the <code>ApplyImmediately</code> parameter.
+     *         The <code>ApplyImmediately</code> parameter only affects <code>NewDBClusterIdentifier</code> values. If
+     *         you set the <code>ApplyImmediately</code> parameter value to false, then changes to
+     *         <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other
+     *         changes are applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.
      *         </p>
      *         <p>
      *         Default: <code>false</code>
@@ -604,11 +601,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * maintenance window.
      * </p>
      * <p>
-     * The <code>ApplyImmediately</code> parameter only affects the <code>NewDBClusterIdentifier</code> and
-     * <code>MasterUserPassword</code> values. If you set the <code>ApplyImmediately</code> parameter value to false,
-     * then changes to the <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values are applied
-     * during the next maintenance window. All other changes are applied immediately, regardless of the value of the
-     * <code>ApplyImmediately</code> parameter.
+     * The <code>ApplyImmediately</code> parameter only affects <code>NewDBClusterIdentifier</code> values. If you set
+     * the <code>ApplyImmediately</code> parameter value to false, then changes to <code>NewDBClusterIdentifier</code>
+     * values are applied during the next maintenance window. All other changes are applied immediately, regardless of
+     * the value of the <code>ApplyImmediately</code> parameter.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -620,11 +616,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        setting for the DB cluster. If this parameter is set to <code>false</code>, changes to the DB cluster are
      *        applied during the next maintenance window.</p>
      *        <p>
-     *        The <code>ApplyImmediately</code> parameter only affects the <code>NewDBClusterIdentifier</code> and
-     *        <code>MasterUserPassword</code> values. If you set the <code>ApplyImmediately</code> parameter value to
-     *        false, then changes to the <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values
-     *        are applied during the next maintenance window. All other changes are applied immediately, regardless of
-     *        the value of the <code>ApplyImmediately</code> parameter.
+     *        The <code>ApplyImmediately</code> parameter only affects <code>NewDBClusterIdentifier</code> values. If
+     *        you set the <code>ApplyImmediately</code> parameter value to false, then changes to
+     *        <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other
+     *        changes are applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.
      *        </p>
      *        <p>
      *        Default: <code>false</code>
@@ -644,11 +639,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * maintenance window.
      * </p>
      * <p>
-     * The <code>ApplyImmediately</code> parameter only affects the <code>NewDBClusterIdentifier</code> and
-     * <code>MasterUserPassword</code> values. If you set the <code>ApplyImmediately</code> parameter value to false,
-     * then changes to the <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values are applied
-     * during the next maintenance window. All other changes are applied immediately, regardless of the value of the
-     * <code>ApplyImmediately</code> parameter.
+     * The <code>ApplyImmediately</code> parameter only affects <code>NewDBClusterIdentifier</code> values. If you set
+     * the <code>ApplyImmediately</code> parameter value to false, then changes to <code>NewDBClusterIdentifier</code>
+     * values are applied during the next maintenance window. All other changes are applied immediately, regardless of
+     * the value of the <code>ApplyImmediately</code> parameter.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -659,11 +653,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         setting for the DB cluster. If this parameter is set to <code>false</code>, changes to the DB cluster are
      *         applied during the next maintenance window.</p>
      *         <p>
-     *         The <code>ApplyImmediately</code> parameter only affects the <code>NewDBClusterIdentifier</code> and
-     *         <code>MasterUserPassword</code> values. If you set the <code>ApplyImmediately</code> parameter value to
-     *         false, then changes to the <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code> values
-     *         are applied during the next maintenance window. All other changes are applied immediately, regardless of
-     *         the value of the <code>ApplyImmediately</code> parameter.
+     *         The <code>ApplyImmediately</code> parameter only affects <code>NewDBClusterIdentifier</code> values. If
+     *         you set the <code>ApplyImmediately</code> parameter value to false, then changes to
+     *         <code>NewDBClusterIdentifier</code> values are applied during the next maintenance window. All other
+     *         changes are applied immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.
      *         </p>
      *         <p>
      *         Default: <code>false</code>
@@ -973,18 +966,11 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The new password for the master database user. This password can contain any printable ASCII character except
-     * "/", """, or "@".
-     * </p>
-     * <p>
-     * Constraints: Must contain from 8 to 41 characters.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param masterUserPassword
-     *        The new password for the master database user. This password can contain any printable ASCII character
-     *        except "/", """, or "@".</p>
-     *        <p>
-     *        Constraints: Must contain from 8 to 41 characters.
+     *        Not supported by Neptune.
      */
 
     public void setMasterUserPassword(String masterUserPassword) {
@@ -993,17 +979,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The new password for the master database user. This password can contain any printable ASCII character except
-     * "/", """, or "@".
-     * </p>
-     * <p>
-     * Constraints: Must contain from 8 to 41 characters.
+     * Not supported by Neptune.
      * </p>
      * 
-     * @return The new password for the master database user. This password can contain any printable ASCII character
-     *         except "/", """, or "@".</p>
-     *         <p>
-     *         Constraints: Must contain from 8 to 41 characters.
+     * @return Not supported by Neptune.
      */
 
     public String getMasterUserPassword() {
@@ -1012,18 +991,11 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The new password for the master database user. This password can contain any printable ASCII character except
-     * "/", """, or "@".
-     * </p>
-     * <p>
-     * Constraints: Must contain from 8 to 41 characters.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param masterUserPassword
-     *        The new password for the master database user. This password can contain any printable ASCII character
-     *        except "/", """, or "@".</p>
-     *        <p>
-     *        Constraints: Must contain from 8 to 41 characters.
+     *        Not supported by Neptune.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1034,11 +1006,11 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * <i>(Not supported by Neptune)</i>
+     * <i>Not supported by Neptune.</i>
      * </p>
      * 
      * @param optionGroupName
-     *        <i>(Not supported by Neptune)</i>
+     *        <i>Not supported by Neptune.</i>
      */
 
     public void setOptionGroupName(String optionGroupName) {
@@ -1047,10 +1019,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * <i>(Not supported by Neptune)</i>
+     * <i>Not supported by Neptune.</i>
      * </p>
      * 
-     * @return <i>(Not supported by Neptune)</i>
+     * @return <i>Not supported by Neptune.</i>
      */
 
     public String getOptionGroupName() {
@@ -1059,11 +1031,11 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * <i>(Not supported by Neptune)</i>
+     * <i>Not supported by Neptune.</i>
      * </p>
      * 
      * @param optionGroupName
-     *        <i>(Not supported by Neptune)</i>
+     *        <i>Not supported by Neptune.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1078,7 +1050,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region.
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region.
      * </p>
      * <p>
      * Constraints:
@@ -1110,7 +1082,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        The daily time range during which automated backups are created if automated backups are enabled, using
      *        the <code>BackupRetentionPeriod</code> parameter.</p>
      *        <p>
-     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region.
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region.
      *        </p>
      *        <p>
      *        Constraints:
@@ -1148,7 +1120,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region.
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region.
      * </p>
      * <p>
      * Constraints:
@@ -1179,7 +1151,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * @return The daily time range during which automated backups are created if automated backups are enabled, using
      *         the <code>BackupRetentionPeriod</code> parameter.</p>
      *         <p>
-     *         The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region.
+     *         The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region.
      *         </p>
      *         <p>
      *         Constraints:
@@ -1217,7 +1189,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region.
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region.
      * </p>
      * <p>
      * Constraints:
@@ -1249,7 +1221,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        The daily time range during which automated backups are created if automated backups are enabled, using
      *        the <code>BackupRetentionPeriod</code> parameter.</p>
      *        <p>
-     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region.
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region.
      *        </p>
      *        <p>
      *        Constraints:
@@ -1291,8 +1263,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week.
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region,
+     * occurring on a random day of the week.
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
@@ -1307,7 +1279,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region,
      *        occurring on a random day of the week.
      *        </p>
      *        <p>
@@ -1329,8 +1301,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week.
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region,
+     * occurring on a random day of the week.
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
@@ -1344,7 +1316,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *         </p>
      *         <p>
-     *         The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
+     *         The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region,
      *         occurring on a random day of the week.
      *         </p>
      *         <p>
@@ -1366,8 +1338,8 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week.
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region,
+     * occurring on a random day of the week.
      * </p>
      * <p>
      * Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
@@ -1382,7 +1354,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region,
      *        occurring on a random day of the week.
      *        </p>
      *        <p>
@@ -1400,15 +1372,15 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
+     * True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and
+     * otherwise false.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *        True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and
      *        otherwise false.</p>
      *        <p>
      *        Default: <code>false</code>
@@ -1420,14 +1392,14 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
+     * True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and
+     * otherwise false.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
-     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     * @return True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and
      *         otherwise false.</p>
      *         <p>
      *         Default: <code>false</code>
@@ -1439,15 +1411,15 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
+     * True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and
+     * otherwise false.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *        True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and
      *        otherwise false.</p>
      *        <p>
      *        Default: <code>false</code>
@@ -1461,14 +1433,14 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
+     * True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and
+     * otherwise false.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
-     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     * @return True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and
      *         otherwise false.</p>
      *         <p>
      *         Default: <code>false</code>
@@ -1676,6 +1648,58 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i>
+     * </p>
+     * 
+     * @param copyTagsToSnapshot
+     *        <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i>
+     */
+
+    public void setCopyTagsToSnapshot(Boolean copyTagsToSnapshot) {
+        this.copyTagsToSnapshot = copyTagsToSnapshot;
+    }
+
+    /**
+     * <p>
+     * <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i>
+     * </p>
+     * 
+     * @return <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i>
+     */
+
+    public Boolean getCopyTagsToSnapshot() {
+        return this.copyTagsToSnapshot;
+    }
+
+    /**
+     * <p>
+     * <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i>
+     * </p>
+     * 
+     * @param copyTagsToSnapshot
+     *        <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyDBClusterRequest withCopyTagsToSnapshot(Boolean copyTagsToSnapshot) {
+        setCopyTagsToSnapshot(copyTagsToSnapshot);
+        return this;
+    }
+
+    /**
+     * <p>
+     * <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i>
+     * </p>
+     * 
+     * @return <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i>
+     */
+
+    public Boolean isCopyTagsToSnapshot() {
+        return this.copyTagsToSnapshot;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1716,7 +1740,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         if (getEngineVersion() != null)
             sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
         if (getDeletionProtection() != null)
-            sb.append("DeletionProtection: ").append(getDeletionProtection());
+            sb.append("DeletionProtection: ").append(getDeletionProtection()).append(",");
+        if (getCopyTagsToSnapshot() != null)
+            sb.append("CopyTagsToSnapshot: ").append(getCopyTagsToSnapshot());
         sb.append("}");
         return sb.toString();
     }
@@ -1793,6 +1819,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getDeletionProtection() != null && other.getDeletionProtection().equals(this.getDeletionProtection()) == false)
             return false;
+        if (other.getCopyTagsToSnapshot() == null ^ this.getCopyTagsToSnapshot() == null)
+            return false;
+        if (other.getCopyTagsToSnapshot() != null && other.getCopyTagsToSnapshot().equals(this.getCopyTagsToSnapshot()) == false)
+            return false;
         return true;
     }
 
@@ -1816,6 +1846,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getCloudwatchLogsExportConfiguration() == null) ? 0 : getCloudwatchLogsExportConfiguration().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
+        hashCode = prime * hashCode + ((getCopyTagsToSnapshot() == null) ? 0 : getCopyTagsToSnapshot().hashCode());
         return hashCode;
     }
 

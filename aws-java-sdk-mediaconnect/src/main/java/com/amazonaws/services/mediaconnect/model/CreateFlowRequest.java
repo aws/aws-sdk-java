@@ -34,6 +34,11 @@ public class CreateFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String availabilityZone;
     /** The entitlements that you want to grant on a flow. */
     private java.util.List<GrantEntitlementRequest> entitlements;
+    /**
+     * The media streams that you want to add to the flow. You can associate these media streams with sources and
+     * outputs on the flow.
+     */
+    private java.util.List<AddMediaStreamRequest> mediaStreams;
     /** The name of the flow. */
     private String name;
     /** The outputs that you want to add to this flow. */
@@ -146,6 +151,76 @@ public class CreateFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     public CreateFlowRequest withEntitlements(java.util.Collection<GrantEntitlementRequest> entitlements) {
         setEntitlements(entitlements);
+        return this;
+    }
+
+    /**
+     * The media streams that you want to add to the flow. You can associate these media streams with sources and
+     * outputs on the flow.
+     * 
+     * @return The media streams that you want to add to the flow. You can associate these media streams with sources
+     *         and outputs on the flow.
+     */
+
+    public java.util.List<AddMediaStreamRequest> getMediaStreams() {
+        return mediaStreams;
+    }
+
+    /**
+     * The media streams that you want to add to the flow. You can associate these media streams with sources and
+     * outputs on the flow.
+     * 
+     * @param mediaStreams
+     *        The media streams that you want to add to the flow. You can associate these media streams with sources and
+     *        outputs on the flow.
+     */
+
+    public void setMediaStreams(java.util.Collection<AddMediaStreamRequest> mediaStreams) {
+        if (mediaStreams == null) {
+            this.mediaStreams = null;
+            return;
+        }
+
+        this.mediaStreams = new java.util.ArrayList<AddMediaStreamRequest>(mediaStreams);
+    }
+
+    /**
+     * The media streams that you want to add to the flow. You can associate these media streams with sources and
+     * outputs on the flow.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMediaStreams(java.util.Collection)} or {@link #withMediaStreams(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param mediaStreams
+     *        The media streams that you want to add to the flow. You can associate these media streams with sources and
+     *        outputs on the flow.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFlowRequest withMediaStreams(AddMediaStreamRequest... mediaStreams) {
+        if (this.mediaStreams == null) {
+            setMediaStreams(new java.util.ArrayList<AddMediaStreamRequest>(mediaStreams.length));
+        }
+        for (AddMediaStreamRequest ele : mediaStreams) {
+            this.mediaStreams.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * The media streams that you want to add to the flow. You can associate these media streams with sources and
+     * outputs on the flow.
+     * 
+     * @param mediaStreams
+     *        The media streams that you want to add to the flow. You can associate these media streams with sources and
+     *        outputs on the flow.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFlowRequest withMediaStreams(java.util.Collection<AddMediaStreamRequest> mediaStreams) {
+        setMediaStreams(mediaStreams);
         return this;
     }
 
@@ -427,6 +502,8 @@ public class CreateFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
             sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getEntitlements() != null)
             sb.append("Entitlements: ").append(getEntitlements()).append(",");
+        if (getMediaStreams() != null)
+            sb.append("MediaStreams: ").append(getMediaStreams()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getOutputs() != null)
@@ -460,6 +537,10 @@ public class CreateFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (other.getEntitlements() == null ^ this.getEntitlements() == null)
             return false;
         if (other.getEntitlements() != null && other.getEntitlements().equals(this.getEntitlements()) == false)
+            return false;
+        if (other.getMediaStreams() == null ^ this.getMediaStreams() == null)
+            return false;
+        if (other.getMediaStreams() != null && other.getMediaStreams().equals(this.getMediaStreams()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
@@ -495,6 +576,7 @@ public class CreateFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getEntitlements() == null) ? 0 : getEntitlements().hashCode());
+        hashCode = prime * hashCode + ((getMediaStreams() == null) ? 0 : getMediaStreams().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getOutputs() == null) ? 0 : getOutputs().hashCode());
         hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode());

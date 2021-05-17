@@ -43,10 +43,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String dBInstanceIdentifier;
     /**
      * <p>
-     * The new amount of storage (in gibibytes) to allocate for the DB instance.
-     * </p>
-     * <p>
-     * Not applicable. Storage is managed by the DB Cluster.
+     * Not supported by Neptune.
      * </p>
      */
     private Integer allocatedStorage;
@@ -136,7 +133,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Boolean applyImmediately;
     /**
      * <p>
-     * Not applicable.
+     * Not supported by Neptune.
      * </p>
      */
     private String masterUserPassword;
@@ -257,7 +254,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Boolean autoMinorVersionUpgrade;
     /**
      * <p>
-     * Not supported.
+     * Not supported by Neptune.
      * </p>
      */
     private String licenseModel;
@@ -419,15 +416,15 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer promotionTier;
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
+     * True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and
+     * otherwise false.
      * </p>
      * <p>
      * You can enable IAM database authentication for the following database engines
      * </p>
      * <p>
-     * Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster. For more information,
-     * see <a>ModifyDBCluster</a>.
+     * Not applicable. Mapping Amazon IAM accounts to database accounts is managed by the DB cluster. For more
+     * information, see <a>ModifyDBCluster</a>.
      * </p>
      * <p>
      * Default: <code>false</code>
@@ -562,16 +559,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new amount of storage (in gibibytes) to allocate for the DB instance.
-     * </p>
-     * <p>
-     * Not applicable. Storage is managed by the DB Cluster.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param allocatedStorage
-     *        The new amount of storage (in gibibytes) to allocate for the DB instance.</p>
-     *        <p>
-     *        Not applicable. Storage is managed by the DB Cluster.
+     *        Not supported by Neptune.
      */
 
     public void setAllocatedStorage(Integer allocatedStorage) {
@@ -580,15 +572,10 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new amount of storage (in gibibytes) to allocate for the DB instance.
-     * </p>
-     * <p>
-     * Not applicable. Storage is managed by the DB Cluster.
+     * Not supported by Neptune.
      * </p>
      * 
-     * @return The new amount of storage (in gibibytes) to allocate for the DB instance.</p>
-     *         <p>
-     *         Not applicable. Storage is managed by the DB Cluster.
+     * @return Not supported by Neptune.
      */
 
     public Integer getAllocatedStorage() {
@@ -597,16 +584,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new amount of storage (in gibibytes) to allocate for the DB instance.
-     * </p>
-     * <p>
-     * Not applicable. Storage is managed by the DB Cluster.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param allocatedStorage
-     *        The new amount of storage (in gibibytes) to allocate for the DB instance.</p>
-     *        <p>
-     *        Not applicable. Storage is managed by the DB Cluster.
+     *        Not supported by Neptune.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1272,11 +1254,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Not applicable.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param masterUserPassword
-     *        Not applicable.
+     *        Not supported by Neptune.
      */
 
     public void setMasterUserPassword(String masterUserPassword) {
@@ -1285,10 +1267,10 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Not applicable.
+     * Not supported by Neptune.
      * </p>
      * 
-     * @return Not applicable.
+     * @return Not supported by Neptune.
      */
 
     public String getMasterUserPassword() {
@@ -1297,11 +1279,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Not applicable.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param masterUserPassword
-     *        Not applicable.
+     *        Not supported by Neptune.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2075,11 +2057,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Not supported.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param licenseModel
-     *        Not supported.
+     *        Not supported by Neptune.
      */
 
     public void setLicenseModel(String licenseModel) {
@@ -2088,10 +2070,10 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Not supported.
+     * Not supported by Neptune.
      * </p>
      * 
-     * @return Not supported.
+     * @return Not supported by Neptune.
      */
 
     public String getLicenseModel() {
@@ -2100,11 +2082,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Not supported.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param licenseModel
-     *        Not supported.
+     *        Not supported by Neptune.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3113,28 +3095,28 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
+     * True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and
+     * otherwise false.
      * </p>
      * <p>
      * You can enable IAM database authentication for the following database engines
      * </p>
      * <p>
-     * Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster. For more information,
-     * see <a>ModifyDBCluster</a>.
+     * Not applicable. Mapping Amazon IAM accounts to database accounts is managed by the DB cluster. For more
+     * information, see <a>ModifyDBCluster</a>.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *        True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and
      *        otherwise false.</p>
      *        <p>
      *        You can enable IAM database authentication for the following database engines
      *        </p>
      *        <p>
-     *        Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster. For more
+     *        Not applicable. Mapping Amazon IAM accounts to database accounts is managed by the DB cluster. For more
      *        information, see <a>ModifyDBCluster</a>.
      *        </p>
      *        <p>
@@ -3147,27 +3129,27 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
+     * True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and
+     * otherwise false.
      * </p>
      * <p>
      * You can enable IAM database authentication for the following database engines
      * </p>
      * <p>
-     * Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster. For more information,
-     * see <a>ModifyDBCluster</a>.
+     * Not applicable. Mapping Amazon IAM accounts to database accounts is managed by the DB cluster. For more
+     * information, see <a>ModifyDBCluster</a>.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
-     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     * @return True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and
      *         otherwise false.</p>
      *         <p>
      *         You can enable IAM database authentication for the following database engines
      *         </p>
      *         <p>
-     *         Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster. For more
+     *         Not applicable. Mapping Amazon IAM accounts to database accounts is managed by the DB cluster. For more
      *         information, see <a>ModifyDBCluster</a>.
      *         </p>
      *         <p>
@@ -3180,28 +3162,28 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
+     * True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and
+     * otherwise false.
      * </p>
      * <p>
      * You can enable IAM database authentication for the following database engines
      * </p>
      * <p>
-     * Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster. For more information,
-     * see <a>ModifyDBCluster</a>.
+     * Not applicable. Mapping Amazon IAM accounts to database accounts is managed by the DB cluster. For more
+     * information, see <a>ModifyDBCluster</a>.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     *        True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and
      *        otherwise false.</p>
      *        <p>
      *        You can enable IAM database authentication for the following database engines
      *        </p>
      *        <p>
-     *        Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster. For more
+     *        Not applicable. Mapping Amazon IAM accounts to database accounts is managed by the DB cluster. For more
      *        information, see <a>ModifyDBCluster</a>.
      *        </p>
      *        <p>
@@ -3216,27 +3198,27 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
+     * True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and
+     * otherwise false.
      * </p>
      * <p>
      * You can enable IAM database authentication for the following database engines
      * </p>
      * <p>
-     * Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster. For more information,
-     * see <a>ModifyDBCluster</a>.
+     * Not applicable. Mapping Amazon IAM accounts to database accounts is managed by the DB cluster. For more
+     * information, see <a>ModifyDBCluster</a>.
      * </p>
      * <p>
      * Default: <code>false</code>
      * </p>
      * 
-     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
+     * @return True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and
      *         otherwise false.</p>
      *         <p>
      *         You can enable IAM database authentication for the following database engines
      *         </p>
      *         <p>
-     *         Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster. For more
+     *         Not applicable. Mapping Amazon IAM accounts to database accounts is managed by the DB cluster. For more
      *         information, see <a>ModifyDBCluster</a>.
      *         </p>
      *         <p>

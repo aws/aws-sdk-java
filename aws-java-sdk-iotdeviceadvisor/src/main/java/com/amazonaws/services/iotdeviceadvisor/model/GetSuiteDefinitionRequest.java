@@ -27,24 +27,24 @@ public class GetSuiteDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Requests suite definition Id with GetSuiteDefinition API call.
+     * Suite definition Id of the test suite to get.
      * </p>
      */
     private String suiteDefinitionId;
     /**
      * <p>
-     * Requests the suite definition version of a test suite.
+     * Suite definition version of the test suite to get.
      * </p>
      */
     private String suiteDefinitionVersion;
 
     /**
      * <p>
-     * Requests suite definition Id with GetSuiteDefinition API call.
+     * Suite definition Id of the test suite to get.
      * </p>
      * 
      * @param suiteDefinitionId
-     *        Requests suite definition Id with GetSuiteDefinition API call.
+     *        Suite definition Id of the test suite to get.
      */
 
     public void setSuiteDefinitionId(String suiteDefinitionId) {
@@ -53,10 +53,10 @@ public class GetSuiteDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Requests suite definition Id with GetSuiteDefinition API call.
+     * Suite definition Id of the test suite to get.
      * </p>
      * 
-     * @return Requests suite definition Id with GetSuiteDefinition API call.
+     * @return Suite definition Id of the test suite to get.
      */
 
     public String getSuiteDefinitionId() {
@@ -65,11 +65,11 @@ public class GetSuiteDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Requests suite definition Id with GetSuiteDefinition API call.
+     * Suite definition Id of the test suite to get.
      * </p>
      * 
      * @param suiteDefinitionId
-     *        Requests suite definition Id with GetSuiteDefinition API call.
+     *        Suite definition Id of the test suite to get.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class GetSuiteDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Requests the suite definition version of a test suite.
+     * Suite definition version of the test suite to get.
      * </p>
      * 
      * @param suiteDefinitionVersion
-     *        Requests the suite definition version of a test suite.
+     *        Suite definition version of the test suite to get.
      */
 
     public void setSuiteDefinitionVersion(String suiteDefinitionVersion) {
@@ -93,10 +93,10 @@ public class GetSuiteDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Requests the suite definition version of a test suite.
+     * Suite definition version of the test suite to get.
      * </p>
      * 
-     * @return Requests the suite definition version of a test suite.
+     * @return Suite definition version of the test suite to get.
      */
 
     public String getSuiteDefinitionVersion() {
@@ -105,11 +105,11 @@ public class GetSuiteDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Requests the suite definition version of a test suite.
+     * Suite definition version of the test suite to get.
      * </p>
      * 
      * @param suiteDefinitionVersion
-     *        Requests the suite definition version of a test suite.
+     *        Suite definition version of the test suite to get.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

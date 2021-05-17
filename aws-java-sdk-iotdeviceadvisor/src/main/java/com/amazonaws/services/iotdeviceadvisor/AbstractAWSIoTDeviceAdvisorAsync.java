@@ -132,19 +132,6 @@ public class AbstractAWSIoTDeviceAdvisorAsync extends AbstractAWSIoTDeviceAdviso
     }
 
     @Override
-    public java.util.concurrent.Future<ListTestCasesResult> listTestCasesAsync(ListTestCasesRequest request) {
-
-        return listTestCasesAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListTestCasesResult> listTestCasesAsync(ListTestCasesRequest request,
-            com.amazonaws.handlers.AsyncHandler<ListTestCasesRequest, ListTestCasesResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
     public java.util.concurrent.Future<StartSuiteRunResult> startSuiteRunAsync(StartSuiteRunRequest request) {
 
         return startSuiteRunAsync(request, null);
@@ -153,6 +140,19 @@ public class AbstractAWSIoTDeviceAdvisorAsync extends AbstractAWSIoTDeviceAdviso
     @Override
     public java.util.concurrent.Future<StartSuiteRunResult> startSuiteRunAsync(StartSuiteRunRequest request,
             com.amazonaws.handlers.AsyncHandler<StartSuiteRunRequest, StartSuiteRunResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopSuiteRunResult> stopSuiteRunAsync(StopSuiteRunRequest request) {
+
+        return stopSuiteRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopSuiteRunResult> stopSuiteRunAsync(StopSuiteRunRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopSuiteRunRequest, StopSuiteRunResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

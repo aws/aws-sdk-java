@@ -1133,8 +1133,8 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Creates a new DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in the AWS
-     * Region.
+     * Creates a new DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in the
+     * Amazon Region.
      * </p>
      * 
      * @param createDBSubnetGroupRequest
@@ -1997,14 +1997,15 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
      * Returns a list of DB cluster snapshot attribute names and values for a manual DB cluster snapshot.
      * </p>
      * <p>
-     * When sharing snapshots with other AWS accounts, <code>DescribeDBClusterSnapshotAttributes</code> returns the
-     * <code>restore</code> attribute and a list of IDs for the AWS accounts that are authorized to copy or restore the
-     * manual DB cluster snapshot. If <code>all</code> is included in the list of values for the <code>restore</code>
-     * attribute, then the manual DB cluster snapshot is public and can be copied or restored by all AWS accounts.
+     * When sharing snapshots with other Amazon accounts, <code>DescribeDBClusterSnapshotAttributes</code> returns the
+     * <code>restore</code> attribute and a list of IDs for the Amazon accounts that are authorized to copy or restore
+     * the manual DB cluster snapshot. If <code>all</code> is included in the list of values for the
+     * <code>restore</code> attribute, then the manual DB cluster snapshot is public and can be copied or restored by
+     * all Amazon accounts.
      * </p>
      * <p>
-     * To add or remove access for an AWS account to copy or restore a manual DB cluster snapshot, or to make the manual
-     * DB cluster snapshot public or private, use the <a>ModifyDBClusterSnapshotAttribute</a> API action.
+     * To add or remove access for an Amazon account to copy or restore a manual DB cluster snapshot, or to make the
+     * manual DB cluster snapshot public or private, use the <a>ModifyDBClusterSnapshotAttribute</a> API action.
      * </p>
      * 
      * @param describeDBClusterSnapshotAttributesRequest
@@ -3312,17 +3313,17 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
      * Adds an attribute and values to, or removes an attribute and values from, a manual DB cluster snapshot.
      * </p>
      * <p>
-     * To share a manual DB cluster snapshot with other AWS accounts, specify <code>restore</code> as the
-     * <code>AttributeName</code> and use the <code>ValuesToAdd</code> parameter to add a list of IDs of the AWS
+     * To share a manual DB cluster snapshot with other Amazon accounts, specify <code>restore</code> as the
+     * <code>AttributeName</code> and use the <code>ValuesToAdd</code> parameter to add a list of IDs of the Amazon
      * accounts that are authorized to restore the manual DB cluster snapshot. Use the value <code>all</code> to make
-     * the manual DB cluster snapshot public, which means that it can be copied or restored by all AWS accounts. Do not
-     * add the <code>all</code> value for any manual DB cluster snapshots that contain private information that you
-     * don't want available to all AWS accounts. If a manual DB cluster snapshot is encrypted, it can be shared, but
-     * only by specifying a list of authorized AWS account IDs for the <code>ValuesToAdd</code> parameter. You can't use
-     * <code>all</code> as a value for that parameter in this case.
+     * the manual DB cluster snapshot public, which means that it can be copied or restored by all Amazon accounts. Do
+     * not add the <code>all</code> value for any manual DB cluster snapshots that contain private information that you
+     * don't want available to all Amazon accounts. If a manual DB cluster snapshot is encrypted, it can be shared, but
+     * only by specifying a list of authorized Amazon account IDs for the <code>ValuesToAdd</code> parameter. You can't
+     * use <code>all</code> as a value for that parameter in this case.
      * </p>
      * <p>
-     * To view which AWS accounts have access to copy or restore a manual DB cluster snapshot, or whether a manual DB
+     * To view which Amazon accounts have access to copy or restore a manual DB cluster snapshot, or whether a manual DB
      * cluster snapshot public or private, use the <a>DescribeDBClusterSnapshotAttributes</a> API action.
      * </p>
      * 
@@ -3557,7 +3558,7 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
     /**
      * <p>
      * Modifies an existing DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in
-     * the AWS Region.
+     * the Amazon Region.
      * </p>
      * 
      * @param modifyDBSubnetGroupRequest
@@ -4345,8 +4346,8 @@ public class AmazonNeptuneClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Starts an Amazon Neptune DB cluster that was stopped using the AWS console, the AWS CLI stop-db-cluster command,
-     * or the StopDBCluster API.
+     * Starts an Amazon Neptune DB cluster that was stopped using the AWS console, the Amazon CLI stop-db-cluster
+     * command, or the StopDBCluster API.
      * </p>
      * 
      * @param startDBClusterRequest

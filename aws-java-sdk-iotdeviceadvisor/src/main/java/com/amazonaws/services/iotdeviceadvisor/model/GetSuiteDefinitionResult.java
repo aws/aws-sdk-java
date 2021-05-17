@@ -25,7 +25,7 @@ public class GetSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Gets suite definition Id with GetSuiteDefinition API call.
+     * Suite definition Id of the suite definition.
      * </p>
      */
     private String suiteDefinitionId;
@@ -37,31 +37,31 @@ public class GetSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceResu
     private String suiteDefinitionArn;
     /**
      * <p>
-     * Gets suite definition version with GetSuiteDefinition API call.
+     * Suite definition version of the suite definition.
      * </p>
      */
     private String suiteDefinitionVersion;
     /**
      * <p>
-     * Gets latest suite definition version with GetSuiteDefinition API call.
+     * Latest suite definition version of the suite definition.
      * </p>
      */
     private String latestVersion;
     /**
      * <p>
-     * Gets the suite configuration with GetSuiteDefinition API call.
+     * Suite configuration of the suite definition.
      * </p>
      */
     private SuiteDefinitionConfiguration suiteDefinitionConfiguration;
     /**
      * <p>
-     * Gets the timestamp of the time suite was created with GetSuiteDefinition API call.
+     * Date (in Unix epoch time) when the suite definition was created.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * Gets the timestamp of the time suite was modified with GetSuiteDefinition API call.
+     * Date (in Unix epoch time) when the suite definition was last modified.
      * </p>
      */
     private java.util.Date lastModifiedAt;
@@ -74,11 +74,11 @@ public class GetSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Gets suite definition Id with GetSuiteDefinition API call.
+     * Suite definition Id of the suite definition.
      * </p>
      * 
      * @param suiteDefinitionId
-     *        Gets suite definition Id with GetSuiteDefinition API call.
+     *        Suite definition Id of the suite definition.
      */
 
     public void setSuiteDefinitionId(String suiteDefinitionId) {
@@ -87,10 +87,10 @@ public class GetSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Gets suite definition Id with GetSuiteDefinition API call.
+     * Suite definition Id of the suite definition.
      * </p>
      * 
-     * @return Gets suite definition Id with GetSuiteDefinition API call.
+     * @return Suite definition Id of the suite definition.
      */
 
     public String getSuiteDefinitionId() {
@@ -99,11 +99,11 @@ public class GetSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Gets suite definition Id with GetSuiteDefinition API call.
+     * Suite definition Id of the suite definition.
      * </p>
      * 
      * @param suiteDefinitionId
-     *        Gets suite definition Id with GetSuiteDefinition API call.
+     *        Suite definition Id of the suite definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,11 +154,11 @@ public class GetSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Gets suite definition version with GetSuiteDefinition API call.
+     * Suite definition version of the suite definition.
      * </p>
      * 
      * @param suiteDefinitionVersion
-     *        Gets suite definition version with GetSuiteDefinition API call.
+     *        Suite definition version of the suite definition.
      */
 
     public void setSuiteDefinitionVersion(String suiteDefinitionVersion) {
@@ -167,10 +167,10 @@ public class GetSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Gets suite definition version with GetSuiteDefinition API call.
+     * Suite definition version of the suite definition.
      * </p>
      * 
-     * @return Gets suite definition version with GetSuiteDefinition API call.
+     * @return Suite definition version of the suite definition.
      */
 
     public String getSuiteDefinitionVersion() {
@@ -179,11 +179,11 @@ public class GetSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Gets suite definition version with GetSuiteDefinition API call.
+     * Suite definition version of the suite definition.
      * </p>
      * 
      * @param suiteDefinitionVersion
-     *        Gets suite definition version with GetSuiteDefinition API call.
+     *        Suite definition version of the suite definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,11 +194,11 @@ public class GetSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Gets latest suite definition version with GetSuiteDefinition API call.
+     * Latest suite definition version of the suite definition.
      * </p>
      * 
      * @param latestVersion
-     *        Gets latest suite definition version with GetSuiteDefinition API call.
+     *        Latest suite definition version of the suite definition.
      */
 
     public void setLatestVersion(String latestVersion) {
@@ -207,10 +207,10 @@ public class GetSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Gets latest suite definition version with GetSuiteDefinition API call.
+     * Latest suite definition version of the suite definition.
      * </p>
      * 
-     * @return Gets latest suite definition version with GetSuiteDefinition API call.
+     * @return Latest suite definition version of the suite definition.
      */
 
     public String getLatestVersion() {
@@ -219,11 +219,11 @@ public class GetSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Gets latest suite definition version with GetSuiteDefinition API call.
+     * Latest suite definition version of the suite definition.
      * </p>
      * 
      * @param latestVersion
-     *        Gets latest suite definition version with GetSuiteDefinition API call.
+     *        Latest suite definition version of the suite definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -234,11 +234,11 @@ public class GetSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Gets the suite configuration with GetSuiteDefinition API call.
+     * Suite configuration of the suite definition.
      * </p>
      * 
      * @param suiteDefinitionConfiguration
-     *        Gets the suite configuration with GetSuiteDefinition API call.
+     *        Suite configuration of the suite definition.
      */
 
     public void setSuiteDefinitionConfiguration(SuiteDefinitionConfiguration suiteDefinitionConfiguration) {
@@ -247,10 +247,10 @@ public class GetSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Gets the suite configuration with GetSuiteDefinition API call.
+     * Suite configuration of the suite definition.
      * </p>
      * 
-     * @return Gets the suite configuration with GetSuiteDefinition API call.
+     * @return Suite configuration of the suite definition.
      */
 
     public SuiteDefinitionConfiguration getSuiteDefinitionConfiguration() {
@@ -259,11 +259,11 @@ public class GetSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Gets the suite configuration with GetSuiteDefinition API call.
+     * Suite configuration of the suite definition.
      * </p>
      * 
      * @param suiteDefinitionConfiguration
-     *        Gets the suite configuration with GetSuiteDefinition API call.
+     *        Suite configuration of the suite definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -274,11 +274,11 @@ public class GetSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Gets the timestamp of the time suite was created with GetSuiteDefinition API call.
+     * Date (in Unix epoch time) when the suite definition was created.
      * </p>
      * 
      * @param createdAt
-     *        Gets the timestamp of the time suite was created with GetSuiteDefinition API call.
+     *        Date (in Unix epoch time) when the suite definition was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -287,10 +287,10 @@ public class GetSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Gets the timestamp of the time suite was created with GetSuiteDefinition API call.
+     * Date (in Unix epoch time) when the suite definition was created.
      * </p>
      * 
-     * @return Gets the timestamp of the time suite was created with GetSuiteDefinition API call.
+     * @return Date (in Unix epoch time) when the suite definition was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -299,11 +299,11 @@ public class GetSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Gets the timestamp of the time suite was created with GetSuiteDefinition API call.
+     * Date (in Unix epoch time) when the suite definition was created.
      * </p>
      * 
      * @param createdAt
-     *        Gets the timestamp of the time suite was created with GetSuiteDefinition API call.
+     *        Date (in Unix epoch time) when the suite definition was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -314,11 +314,11 @@ public class GetSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Gets the timestamp of the time suite was modified with GetSuiteDefinition API call.
+     * Date (in Unix epoch time) when the suite definition was last modified.
      * </p>
      * 
      * @param lastModifiedAt
-     *        Gets the timestamp of the time suite was modified with GetSuiteDefinition API call.
+     *        Date (in Unix epoch time) when the suite definition was last modified.
      */
 
     public void setLastModifiedAt(java.util.Date lastModifiedAt) {
@@ -327,10 +327,10 @@ public class GetSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Gets the timestamp of the time suite was modified with GetSuiteDefinition API call.
+     * Date (in Unix epoch time) when the suite definition was last modified.
      * </p>
      * 
-     * @return Gets the timestamp of the time suite was modified with GetSuiteDefinition API call.
+     * @return Date (in Unix epoch time) when the suite definition was last modified.
      */
 
     public java.util.Date getLastModifiedAt() {
@@ -339,11 +339,11 @@ public class GetSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Gets the timestamp of the time suite was modified with GetSuiteDefinition API call.
+     * Date (in Unix epoch time) when the suite definition was last modified.
      * </p>
      * 
      * @param lastModifiedAt
-     *        Gets the timestamp of the time suite was modified with GetSuiteDefinition API call.
+     *        Date (in Unix epoch time) when the suite definition was last modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

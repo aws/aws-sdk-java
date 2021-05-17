@@ -72,6 +72,13 @@ public class SourceJsonUnmarshaller implements Unmarshaller<Source, JsonUnmarsha
                     context.nextToken();
                     source.setIngestPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("mediaStreamSourceConfigurations", targetDepth)) {
+                    context.nextToken();
+                    source.setMediaStreamSourceConfigurations(new ListUnmarshaller<MediaStreamSourceConfiguration>(
+                            MediaStreamSourceConfigurationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     source.setName(context.getUnmarshaller(String.class).unmarshall(context));

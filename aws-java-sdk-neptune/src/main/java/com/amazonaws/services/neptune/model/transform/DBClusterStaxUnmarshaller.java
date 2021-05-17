@@ -250,6 +250,11 @@ public class DBClusterStaxUnmarshaller implements Unmarshaller<DBCluster, StaxUn
                     continue;
                 }
 
+                if (context.testExpression("CopyTagsToSnapshot", targetDepth)) {
+                    dBCluster.setCopyTagsToSnapshot(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("EnabledCloudwatchLogsExports", targetDepth)) {
                     dBCluster.withEnabledCloudwatchLogsExports(new ArrayList<String>());
                     continue;
@@ -262,6 +267,16 @@ public class DBClusterStaxUnmarshaller implements Unmarshaller<DBCluster, StaxUn
 
                 if (context.testExpression("DeletionProtection", targetDepth)) {
                     dBCluster.setDeletionProtection(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("CrossAccountClone", targetDepth)) {
+                    dBCluster.setCrossAccountClone(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("AutomaticRestartTime", targetDepth)) {
+                    dBCluster.setAutomaticRestartTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

@@ -25,19 +25,19 @@ public class GetSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on suite definition Id.
+     * Suite definition Id for the test suite run.
      * </p>
      */
     private String suiteDefinitionId;
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on suite definition version.
+     * Suite definition version for the test suite run.
      * </p>
      */
     private String suiteDefinitionVersion;
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on suite run Id.
+     * Suite run Id for the test suite run.
      * </p>
      */
     private String suiteRunId;
@@ -49,37 +49,37 @@ public class GetSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String suiteRunArn;
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on suite configuration.
+     * Suite run configuration for the test suite run.
      * </p>
      */
     private SuiteRunConfiguration suiteRunConfiguration;
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on test case runs.
+     * Test results for the test suite run.
      * </p>
      */
     private TestResult testResult;
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on start time.
+     * Date (in Unix epoch time) when the test suite run was started.
      * </p>
      */
     private java.util.Date startTime;
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on end time.
+     * Date (in Unix epoch time) when the test suite run ended.
      * </p>
      */
     private java.util.Date endTime;
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on its status.
+     * Status for the test suite run.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on error.
+     * Error reason for any test suite run failure.
      * </p>
      */
     private String errorReason;
@@ -92,11 +92,11 @@ public class GetSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on suite definition Id.
+     * Suite definition Id for the test suite run.
      * </p>
      * 
      * @param suiteDefinitionId
-     *        Gets the information about Device Advisor test suite run based on suite definition Id.
+     *        Suite definition Id for the test suite run.
      */
 
     public void setSuiteDefinitionId(String suiteDefinitionId) {
@@ -105,10 +105,10 @@ public class GetSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on suite definition Id.
+     * Suite definition Id for the test suite run.
      * </p>
      * 
-     * @return Gets the information about Device Advisor test suite run based on suite definition Id.
+     * @return Suite definition Id for the test suite run.
      */
 
     public String getSuiteDefinitionId() {
@@ -117,11 +117,11 @@ public class GetSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on suite definition Id.
+     * Suite definition Id for the test suite run.
      * </p>
      * 
      * @param suiteDefinitionId
-     *        Gets the information about Device Advisor test suite run based on suite definition Id.
+     *        Suite definition Id for the test suite run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,11 +132,11 @@ public class GetSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on suite definition version.
+     * Suite definition version for the test suite run.
      * </p>
      * 
      * @param suiteDefinitionVersion
-     *        Gets the information about Device Advisor test suite run based on suite definition version.
+     *        Suite definition version for the test suite run.
      */
 
     public void setSuiteDefinitionVersion(String suiteDefinitionVersion) {
@@ -145,10 +145,10 @@ public class GetSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on suite definition version.
+     * Suite definition version for the test suite run.
      * </p>
      * 
-     * @return Gets the information about Device Advisor test suite run based on suite definition version.
+     * @return Suite definition version for the test suite run.
      */
 
     public String getSuiteDefinitionVersion() {
@@ -157,11 +157,11 @@ public class GetSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on suite definition version.
+     * Suite definition version for the test suite run.
      * </p>
      * 
      * @param suiteDefinitionVersion
-     *        Gets the information about Device Advisor test suite run based on suite definition version.
+     *        Suite definition version for the test suite run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,11 +172,11 @@ public class GetSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on suite run Id.
+     * Suite run Id for the test suite run.
      * </p>
      * 
      * @param suiteRunId
-     *        Gets the information about Device Advisor test suite run based on suite run Id.
+     *        Suite run Id for the test suite run.
      */
 
     public void setSuiteRunId(String suiteRunId) {
@@ -185,10 +185,10 @@ public class GetSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on suite run Id.
+     * Suite run Id for the test suite run.
      * </p>
      * 
-     * @return Gets the information about Device Advisor test suite run based on suite run Id.
+     * @return Suite run Id for the test suite run.
      */
 
     public String getSuiteRunId() {
@@ -197,11 +197,11 @@ public class GetSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on suite run Id.
+     * Suite run Id for the test suite run.
      * </p>
      * 
      * @param suiteRunId
-     *        Gets the information about Device Advisor test suite run based on suite run Id.
+     *        Suite run Id for the test suite run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -252,11 +252,11 @@ public class GetSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on suite configuration.
+     * Suite run configuration for the test suite run.
      * </p>
      * 
      * @param suiteRunConfiguration
-     *        Gets the information about Device Advisor test suite run based on suite configuration.
+     *        Suite run configuration for the test suite run.
      */
 
     public void setSuiteRunConfiguration(SuiteRunConfiguration suiteRunConfiguration) {
@@ -265,10 +265,10 @@ public class GetSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on suite configuration.
+     * Suite run configuration for the test suite run.
      * </p>
      * 
-     * @return Gets the information about Device Advisor test suite run based on suite configuration.
+     * @return Suite run configuration for the test suite run.
      */
 
     public SuiteRunConfiguration getSuiteRunConfiguration() {
@@ -277,11 +277,11 @@ public class GetSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on suite configuration.
+     * Suite run configuration for the test suite run.
      * </p>
      * 
      * @param suiteRunConfiguration
-     *        Gets the information about Device Advisor test suite run based on suite configuration.
+     *        Suite run configuration for the test suite run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -292,11 +292,11 @@ public class GetSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on test case runs.
+     * Test results for the test suite run.
      * </p>
      * 
      * @param testResult
-     *        Gets the information about Device Advisor test suite run based on test case runs.
+     *        Test results for the test suite run.
      */
 
     public void setTestResult(TestResult testResult) {
@@ -305,10 +305,10 @@ public class GetSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on test case runs.
+     * Test results for the test suite run.
      * </p>
      * 
-     * @return Gets the information about Device Advisor test suite run based on test case runs.
+     * @return Test results for the test suite run.
      */
 
     public TestResult getTestResult() {
@@ -317,11 +317,11 @@ public class GetSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on test case runs.
+     * Test results for the test suite run.
      * </p>
      * 
      * @param testResult
-     *        Gets the information about Device Advisor test suite run based on test case runs.
+     *        Test results for the test suite run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -332,11 +332,11 @@ public class GetSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on start time.
+     * Date (in Unix epoch time) when the test suite run was started.
      * </p>
      * 
      * @param startTime
-     *        Gets the information about Device Advisor test suite run based on start time.
+     *        Date (in Unix epoch time) when the test suite run was started.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -345,10 +345,10 @@ public class GetSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on start time.
+     * Date (in Unix epoch time) when the test suite run was started.
      * </p>
      * 
-     * @return Gets the information about Device Advisor test suite run based on start time.
+     * @return Date (in Unix epoch time) when the test suite run was started.
      */
 
     public java.util.Date getStartTime() {
@@ -357,11 +357,11 @@ public class GetSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on start time.
+     * Date (in Unix epoch time) when the test suite run was started.
      * </p>
      * 
      * @param startTime
-     *        Gets the information about Device Advisor test suite run based on start time.
+     *        Date (in Unix epoch time) when the test suite run was started.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -372,11 +372,11 @@ public class GetSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on end time.
+     * Date (in Unix epoch time) when the test suite run ended.
      * </p>
      * 
      * @param endTime
-     *        Gets the information about Device Advisor test suite run based on end time.
+     *        Date (in Unix epoch time) when the test suite run ended.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -385,10 +385,10 @@ public class GetSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on end time.
+     * Date (in Unix epoch time) when the test suite run ended.
      * </p>
      * 
-     * @return Gets the information about Device Advisor test suite run based on end time.
+     * @return Date (in Unix epoch time) when the test suite run ended.
      */
 
     public java.util.Date getEndTime() {
@@ -397,11 +397,11 @@ public class GetSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on end time.
+     * Date (in Unix epoch time) when the test suite run ended.
      * </p>
      * 
      * @param endTime
-     *        Gets the information about Device Advisor test suite run based on end time.
+     *        Date (in Unix epoch time) when the test suite run ended.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -412,11 +412,11 @@ public class GetSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on its status.
+     * Status for the test suite run.
      * </p>
      * 
      * @param status
-     *        Gets the information about Device Advisor test suite run based on its status.
+     *        Status for the test suite run.
      * @see SuiteRunStatus
      */
 
@@ -426,10 +426,10 @@ public class GetSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on its status.
+     * Status for the test suite run.
      * </p>
      * 
-     * @return Gets the information about Device Advisor test suite run based on its status.
+     * @return Status for the test suite run.
      * @see SuiteRunStatus
      */
 
@@ -439,11 +439,11 @@ public class GetSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on its status.
+     * Status for the test suite run.
      * </p>
      * 
      * @param status
-     *        Gets the information about Device Advisor test suite run based on its status.
+     *        Status for the test suite run.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SuiteRunStatus
      */
@@ -455,11 +455,11 @@ public class GetSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on its status.
+     * Status for the test suite run.
      * </p>
      * 
      * @param status
-     *        Gets the information about Device Advisor test suite run based on its status.
+     *        Status for the test suite run.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SuiteRunStatus
      */
@@ -471,11 +471,11 @@ public class GetSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on error.
+     * Error reason for any test suite run failure.
      * </p>
      * 
      * @param errorReason
-     *        Gets the information about Device Advisor test suite run based on error.
+     *        Error reason for any test suite run failure.
      */
 
     public void setErrorReason(String errorReason) {
@@ -484,10 +484,10 @@ public class GetSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on error.
+     * Error reason for any test suite run failure.
      * </p>
      * 
-     * @return Gets the information about Device Advisor test suite run based on error.
+     * @return Error reason for any test suite run failure.
      */
 
     public String getErrorReason() {
@@ -496,11 +496,11 @@ public class GetSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Gets the information about Device Advisor test suite run based on error.
+     * Error reason for any test suite run failure.
      * </p>
      * 
      * @param errorReason
-     *        Gets the information about Device Advisor test suite run based on error.
+     *        Error reason for any test suite run failure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

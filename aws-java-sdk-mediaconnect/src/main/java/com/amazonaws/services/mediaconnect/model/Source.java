@@ -44,13 +44,15 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
     private String ingestIp;
     /** The port that the flow will be listening on for incoming content. */
     private Integer ingestPort;
+    /** The media streams that are associated with the source, and the parameters for those associations. */
+    private java.util.List<MediaStreamSourceConfiguration> mediaStreamSourceConfigurations;
     /** The name of the source. */
     private String name;
     /** The ARN of the source. */
     private String sourceArn;
     /** Attributes related to the transport stream that are used in the source. */
     private Transport transport;
-    /** The name of the VPC Interface this Source is configured with. */
+    /** The name of the VPC interface that is used for this source. */
     private String vpcInterfaceName;
     /**
      * The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should
@@ -278,6 +280,68 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * The media streams that are associated with the source, and the parameters for those associations.
+     * 
+     * @return The media streams that are associated with the source, and the parameters for those associations.
+     */
+
+    public java.util.List<MediaStreamSourceConfiguration> getMediaStreamSourceConfigurations() {
+        return mediaStreamSourceConfigurations;
+    }
+
+    /**
+     * The media streams that are associated with the source, and the parameters for those associations.
+     * 
+     * @param mediaStreamSourceConfigurations
+     *        The media streams that are associated with the source, and the parameters for those associations.
+     */
+
+    public void setMediaStreamSourceConfigurations(java.util.Collection<MediaStreamSourceConfiguration> mediaStreamSourceConfigurations) {
+        if (mediaStreamSourceConfigurations == null) {
+            this.mediaStreamSourceConfigurations = null;
+            return;
+        }
+
+        this.mediaStreamSourceConfigurations = new java.util.ArrayList<MediaStreamSourceConfiguration>(mediaStreamSourceConfigurations);
+    }
+
+    /**
+     * The media streams that are associated with the source, and the parameters for those associations.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMediaStreamSourceConfigurations(java.util.Collection)} or
+     * {@link #withMediaStreamSourceConfigurations(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param mediaStreamSourceConfigurations
+     *        The media streams that are associated with the source, and the parameters for those associations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Source withMediaStreamSourceConfigurations(MediaStreamSourceConfiguration... mediaStreamSourceConfigurations) {
+        if (this.mediaStreamSourceConfigurations == null) {
+            setMediaStreamSourceConfigurations(new java.util.ArrayList<MediaStreamSourceConfiguration>(mediaStreamSourceConfigurations.length));
+        }
+        for (MediaStreamSourceConfiguration ele : mediaStreamSourceConfigurations) {
+            this.mediaStreamSourceConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * The media streams that are associated with the source, and the parameters for those associations.
+     * 
+     * @param mediaStreamSourceConfigurations
+     *        The media streams that are associated with the source, and the parameters for those associations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Source withMediaStreamSourceConfigurations(java.util.Collection<MediaStreamSourceConfiguration> mediaStreamSourceConfigurations) {
+        setMediaStreamSourceConfigurations(mediaStreamSourceConfigurations);
+        return this;
+    }
+
+    /**
      * The name of the source.
      * 
      * @param name
@@ -380,10 +444,10 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The name of the VPC Interface this Source is configured with.
+     * The name of the VPC interface that is used for this source.
      * 
      * @param vpcInterfaceName
-     *        The name of the VPC Interface this Source is configured with.
+     *        The name of the VPC interface that is used for this source.
      */
 
     public void setVpcInterfaceName(String vpcInterfaceName) {
@@ -391,9 +455,9 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The name of the VPC Interface this Source is configured with.
+     * The name of the VPC interface that is used for this source.
      * 
-     * @return The name of the VPC Interface this Source is configured with.
+     * @return The name of the VPC interface that is used for this source.
      */
 
     public String getVpcInterfaceName() {
@@ -401,10 +465,10 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The name of the VPC Interface this Source is configured with.
+     * The name of the VPC interface that is used for this source.
      * 
      * @param vpcInterfaceName
-     *        The name of the VPC Interface this Source is configured with.
+     *        The name of the VPC interface that is used for this source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -477,6 +541,8 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
             sb.append("IngestIp: ").append(getIngestIp()).append(",");
         if (getIngestPort() != null)
             sb.append("IngestPort: ").append(getIngestPort()).append(",");
+        if (getMediaStreamSourceConfigurations() != null)
+            sb.append("MediaStreamSourceConfigurations: ").append(getMediaStreamSourceConfigurations()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getSourceArn() != null)
@@ -526,6 +592,11 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getIngestPort() != null && other.getIngestPort().equals(this.getIngestPort()) == false)
             return false;
+        if (other.getMediaStreamSourceConfigurations() == null ^ this.getMediaStreamSourceConfigurations() == null)
+            return false;
+        if (other.getMediaStreamSourceConfigurations() != null
+                && other.getMediaStreamSourceConfigurations().equals(this.getMediaStreamSourceConfigurations()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -560,6 +631,7 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEntitlementArn() == null) ? 0 : getEntitlementArn().hashCode());
         hashCode = prime * hashCode + ((getIngestIp() == null) ? 0 : getIngestIp().hashCode());
         hashCode = prime * hashCode + ((getIngestPort() == null) ? 0 : getIngestPort().hashCode());
+        hashCode = prime * hashCode + ((getMediaStreamSourceConfigurations() == null) ? 0 : getMediaStreamSourceConfigurations().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getSourceArn() == null) ? 0 : getSourceArn().hashCode());
         hashCode = prime * hashCode + ((getTransport() == null) ? 0 : getTransport().hashCode());

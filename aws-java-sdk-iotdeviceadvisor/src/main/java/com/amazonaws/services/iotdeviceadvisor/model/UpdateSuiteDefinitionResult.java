@@ -25,48 +25,48 @@ public class UpdateSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Updates a Device Advisor test suite with suite UUID.
+     * Suite definition Id of the updated test suite.
      * </p>
      */
     private String suiteDefinitionId;
     /**
      * <p>
-     * Updates a Device Advisor test suite with Amazon Resource name.
+     * Amazon Resource name of the updated test suite.
      * </p>
      */
     private String suiteDefinitionArn;
     /**
      * <p>
-     * Updates a Device Advisor test suite with suite definition name.
+     * Suite definition name of the updated test suite.
      * </p>
      */
     private String suiteDefinitionName;
     /**
      * <p>
-     * Updates a Device Advisor test suite with suite definition version.
+     * Suite definition version of the updated test suite.
      * </p>
      */
     private String suiteDefinitionVersion;
     /**
      * <p>
-     * Updates a Device Advisor test suite with TimeStamp of when it was created.
+     * Timestamp of when the test suite was created.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * Updates a Device Advisor test suite with TimeStamp of when it was updated.
+     * Timestamp of when the test suite was updated.
      * </p>
      */
     private java.util.Date lastUpdatedAt;
 
     /**
      * <p>
-     * Updates a Device Advisor test suite with suite UUID.
+     * Suite definition Id of the updated test suite.
      * </p>
      * 
      * @param suiteDefinitionId
-     *        Updates a Device Advisor test suite with suite UUID.
+     *        Suite definition Id of the updated test suite.
      */
 
     public void setSuiteDefinitionId(String suiteDefinitionId) {
@@ -75,10 +75,10 @@ public class UpdateSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Updates a Device Advisor test suite with suite UUID.
+     * Suite definition Id of the updated test suite.
      * </p>
      * 
-     * @return Updates a Device Advisor test suite with suite UUID.
+     * @return Suite definition Id of the updated test suite.
      */
 
     public String getSuiteDefinitionId() {
@@ -87,11 +87,11 @@ public class UpdateSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Updates a Device Advisor test suite with suite UUID.
+     * Suite definition Id of the updated test suite.
      * </p>
      * 
      * @param suiteDefinitionId
-     *        Updates a Device Advisor test suite with suite UUID.
+     *        Suite definition Id of the updated test suite.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,11 +102,11 @@ public class UpdateSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Updates a Device Advisor test suite with Amazon Resource name.
+     * Amazon Resource name of the updated test suite.
      * </p>
      * 
      * @param suiteDefinitionArn
-     *        Updates a Device Advisor test suite with Amazon Resource name.
+     *        Amazon Resource name of the updated test suite.
      */
 
     public void setSuiteDefinitionArn(String suiteDefinitionArn) {
@@ -115,10 +115,10 @@ public class UpdateSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Updates a Device Advisor test suite with Amazon Resource name.
+     * Amazon Resource name of the updated test suite.
      * </p>
      * 
-     * @return Updates a Device Advisor test suite with Amazon Resource name.
+     * @return Amazon Resource name of the updated test suite.
      */
 
     public String getSuiteDefinitionArn() {
@@ -127,11 +127,11 @@ public class UpdateSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Updates a Device Advisor test suite with Amazon Resource name.
+     * Amazon Resource name of the updated test suite.
      * </p>
      * 
      * @param suiteDefinitionArn
-     *        Updates a Device Advisor test suite with Amazon Resource name.
+     *        Amazon Resource name of the updated test suite.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,11 +142,11 @@ public class UpdateSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Updates a Device Advisor test suite with suite definition name.
+     * Suite definition name of the updated test suite.
      * </p>
      * 
      * @param suiteDefinitionName
-     *        Updates a Device Advisor test suite with suite definition name.
+     *        Suite definition name of the updated test suite.
      */
 
     public void setSuiteDefinitionName(String suiteDefinitionName) {
@@ -155,10 +155,10 @@ public class UpdateSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Updates a Device Advisor test suite with suite definition name.
+     * Suite definition name of the updated test suite.
      * </p>
      * 
-     * @return Updates a Device Advisor test suite with suite definition name.
+     * @return Suite definition name of the updated test suite.
      */
 
     public String getSuiteDefinitionName() {
@@ -167,11 +167,11 @@ public class UpdateSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Updates a Device Advisor test suite with suite definition name.
+     * Suite definition name of the updated test suite.
      * </p>
      * 
      * @param suiteDefinitionName
-     *        Updates a Device Advisor test suite with suite definition name.
+     *        Suite definition name of the updated test suite.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,11 +182,11 @@ public class UpdateSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Updates a Device Advisor test suite with suite definition version.
+     * Suite definition version of the updated test suite.
      * </p>
      * 
      * @param suiteDefinitionVersion
-     *        Updates a Device Advisor test suite with suite definition version.
+     *        Suite definition version of the updated test suite.
      */
 
     public void setSuiteDefinitionVersion(String suiteDefinitionVersion) {
@@ -195,10 +195,10 @@ public class UpdateSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Updates a Device Advisor test suite with suite definition version.
+     * Suite definition version of the updated test suite.
      * </p>
      * 
-     * @return Updates a Device Advisor test suite with suite definition version.
+     * @return Suite definition version of the updated test suite.
      */
 
     public String getSuiteDefinitionVersion() {
@@ -207,11 +207,11 @@ public class UpdateSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Updates a Device Advisor test suite with suite definition version.
+     * Suite definition version of the updated test suite.
      * </p>
      * 
      * @param suiteDefinitionVersion
-     *        Updates a Device Advisor test suite with suite definition version.
+     *        Suite definition version of the updated test suite.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -222,11 +222,11 @@ public class UpdateSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Updates a Device Advisor test suite with TimeStamp of when it was created.
+     * Timestamp of when the test suite was created.
      * </p>
      * 
      * @param createdAt
-     *        Updates a Device Advisor test suite with TimeStamp of when it was created.
+     *        Timestamp of when the test suite was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -235,10 +235,10 @@ public class UpdateSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Updates a Device Advisor test suite with TimeStamp of when it was created.
+     * Timestamp of when the test suite was created.
      * </p>
      * 
-     * @return Updates a Device Advisor test suite with TimeStamp of when it was created.
+     * @return Timestamp of when the test suite was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -247,11 +247,11 @@ public class UpdateSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Updates a Device Advisor test suite with TimeStamp of when it was created.
+     * Timestamp of when the test suite was created.
      * </p>
      * 
      * @param createdAt
-     *        Updates a Device Advisor test suite with TimeStamp of when it was created.
+     *        Timestamp of when the test suite was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -262,11 +262,11 @@ public class UpdateSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Updates a Device Advisor test suite with TimeStamp of when it was updated.
+     * Timestamp of when the test suite was updated.
      * </p>
      * 
      * @param lastUpdatedAt
-     *        Updates a Device Advisor test suite with TimeStamp of when it was updated.
+     *        Timestamp of when the test suite was updated.
      */
 
     public void setLastUpdatedAt(java.util.Date lastUpdatedAt) {
@@ -275,10 +275,10 @@ public class UpdateSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Updates a Device Advisor test suite with TimeStamp of when it was updated.
+     * Timestamp of when the test suite was updated.
      * </p>
      * 
-     * @return Updates a Device Advisor test suite with TimeStamp of when it was updated.
+     * @return Timestamp of when the test suite was updated.
      */
 
     public java.util.Date getLastUpdatedAt() {
@@ -287,11 +287,11 @@ public class UpdateSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Updates a Device Advisor test suite with TimeStamp of when it was updated.
+     * Timestamp of when the test suite was updated.
      * </p>
      * 
      * @param lastUpdatedAt
-     *        Updates a Device Advisor test suite with TimeStamp of when it was updated.
+     *        Timestamp of when the test suite was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

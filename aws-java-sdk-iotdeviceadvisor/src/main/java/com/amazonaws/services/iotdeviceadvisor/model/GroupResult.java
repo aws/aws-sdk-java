@@ -30,30 +30,30 @@ public class GroupResult implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Show Group Result Id.
+     * Group result Id.
      * </p>
      */
     private String groupId;
     /**
      * <p>
-     * Show Group Result Name.
+     * Group Result Name.
      * </p>
      */
     private String groupName;
     /**
      * <p>
-     * Show Group Result.
+     * Tests under Group Result.
      * </p>
      */
     private java.util.List<TestCaseRun> tests;
 
     /**
      * <p>
-     * Show Group Result Id.
+     * Group result Id.
      * </p>
      * 
      * @param groupId
-     *        Show Group Result Id.
+     *        Group result Id.
      */
 
     public void setGroupId(String groupId) {
@@ -62,10 +62,10 @@ public class GroupResult implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Show Group Result Id.
+     * Group result Id.
      * </p>
      * 
-     * @return Show Group Result Id.
+     * @return Group result Id.
      */
 
     public String getGroupId() {
@@ -74,11 +74,11 @@ public class GroupResult implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Show Group Result Id.
+     * Group result Id.
      * </p>
      * 
      * @param groupId
-     *        Show Group Result Id.
+     *        Group result Id.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class GroupResult implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Show Group Result Name.
+     * Group Result Name.
      * </p>
      * 
      * @param groupName
-     *        Show Group Result Name.
+     *        Group Result Name.
      */
 
     public void setGroupName(String groupName) {
@@ -102,10 +102,10 @@ public class GroupResult implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Show Group Result Name.
+     * Group Result Name.
      * </p>
      * 
-     * @return Show Group Result Name.
+     * @return Group Result Name.
      */
 
     public String getGroupName() {
@@ -114,11 +114,11 @@ public class GroupResult implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Show Group Result Name.
+     * Group Result Name.
      * </p>
      * 
      * @param groupName
-     *        Show Group Result Name.
+     *        Group Result Name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,10 +129,10 @@ public class GroupResult implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Show Group Result.
+     * Tests under Group Result.
      * </p>
      * 
-     * @return Show Group Result.
+     * @return Tests under Group Result.
      */
 
     public java.util.List<TestCaseRun> getTests() {
@@ -141,11 +141,11 @@ public class GroupResult implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Show Group Result.
+     * Tests under Group Result.
      * </p>
      * 
      * @param tests
-     *        Show Group Result.
+     *        Tests under Group Result.
      */
 
     public void setTests(java.util.Collection<TestCaseRun> tests) {
@@ -159,7 +159,7 @@ public class GroupResult implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Show Group Result.
+     * Tests under Group Result.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -168,7 +168,7 @@ public class GroupResult implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param tests
-     *        Show Group Result.
+     *        Tests under Group Result.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,11 +184,11 @@ public class GroupResult implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Show Group Result.
+     * Tests under Group Result.
      * </p>
      * 
      * @param tests
-     *        Show Group Result.
+     *        Tests under Group Result.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

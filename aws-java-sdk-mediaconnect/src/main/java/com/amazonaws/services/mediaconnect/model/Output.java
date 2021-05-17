@@ -51,6 +51,8 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
      * by creating a MediaLive input.
      */
     private String mediaLiveInputArn;
+    /** The configuration for each media stream that is associated with the output. */
+    private java.util.List<MediaStreamOutputConfiguration> mediaStreamOutputConfigurations;
     /** The name of the output. This value must be unique within the current flow. */
     private String name;
     /** The ARN of the output. */
@@ -331,6 +333,68 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * The configuration for each media stream that is associated with the output.
+     * 
+     * @return The configuration for each media stream that is associated with the output.
+     */
+
+    public java.util.List<MediaStreamOutputConfiguration> getMediaStreamOutputConfigurations() {
+        return mediaStreamOutputConfigurations;
+    }
+
+    /**
+     * The configuration for each media stream that is associated with the output.
+     * 
+     * @param mediaStreamOutputConfigurations
+     *        The configuration for each media stream that is associated with the output.
+     */
+
+    public void setMediaStreamOutputConfigurations(java.util.Collection<MediaStreamOutputConfiguration> mediaStreamOutputConfigurations) {
+        if (mediaStreamOutputConfigurations == null) {
+            this.mediaStreamOutputConfigurations = null;
+            return;
+        }
+
+        this.mediaStreamOutputConfigurations = new java.util.ArrayList<MediaStreamOutputConfiguration>(mediaStreamOutputConfigurations);
+    }
+
+    /**
+     * The configuration for each media stream that is associated with the output.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMediaStreamOutputConfigurations(java.util.Collection)} or
+     * {@link #withMediaStreamOutputConfigurations(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param mediaStreamOutputConfigurations
+     *        The configuration for each media stream that is associated with the output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Output withMediaStreamOutputConfigurations(MediaStreamOutputConfiguration... mediaStreamOutputConfigurations) {
+        if (this.mediaStreamOutputConfigurations == null) {
+            setMediaStreamOutputConfigurations(new java.util.ArrayList<MediaStreamOutputConfiguration>(mediaStreamOutputConfigurations.length));
+        }
+        for (MediaStreamOutputConfiguration ele : mediaStreamOutputConfigurations) {
+            this.mediaStreamOutputConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * The configuration for each media stream that is associated with the output.
+     * 
+     * @param mediaStreamOutputConfigurations
+     *        The configuration for each media stream that is associated with the output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Output withMediaStreamOutputConfigurations(java.util.Collection<MediaStreamOutputConfiguration> mediaStreamOutputConfigurations) {
+        setMediaStreamOutputConfigurations(mediaStreamOutputConfigurations);
+        return this;
+    }
+
+    /**
      * The name of the output. This value must be unique within the current flow.
      * 
      * @param name
@@ -526,6 +590,8 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
             sb.append("ListenerAddress: ").append(getListenerAddress()).append(",");
         if (getMediaLiveInputArn() != null)
             sb.append("MediaLiveInputArn: ").append(getMediaLiveInputArn()).append(",");
+        if (getMediaStreamOutputConfigurations() != null)
+            sb.append("MediaStreamOutputConfigurations: ").append(getMediaStreamOutputConfigurations()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getOutputArn() != null)
@@ -579,6 +645,11 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMediaLiveInputArn() != null && other.getMediaLiveInputArn().equals(this.getMediaLiveInputArn()) == false)
             return false;
+        if (other.getMediaStreamOutputConfigurations() == null ^ this.getMediaStreamOutputConfigurations() == null)
+            return false;
+        if (other.getMediaStreamOutputConfigurations() != null
+                && other.getMediaStreamOutputConfigurations().equals(this.getMediaStreamOutputConfigurations()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -614,6 +685,7 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEntitlementArn() == null) ? 0 : getEntitlementArn().hashCode());
         hashCode = prime * hashCode + ((getListenerAddress() == null) ? 0 : getListenerAddress().hashCode());
         hashCode = prime * hashCode + ((getMediaLiveInputArn() == null) ? 0 : getMediaLiveInputArn().hashCode());
+        hashCode = prime * hashCode + ((getMediaStreamOutputConfigurations() == null) ? 0 : getMediaStreamOutputConfigurations().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getOutputArn() == null) ? 0 : getOutputArn().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());

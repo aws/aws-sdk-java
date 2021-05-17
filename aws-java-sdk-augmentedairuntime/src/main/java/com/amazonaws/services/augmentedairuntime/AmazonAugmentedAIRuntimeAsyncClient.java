@@ -25,12 +25,6 @@ import java.util.concurrent.ExecutorService;
  * object representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
- * <important>
- * <p>
- * Amazon Augmented AI is in preview release and is subject to change. We do not recommend using this product in
- * production environments.
- * </p>
- * </important>
  * <p>
  * Amazon Augmented AI (Amazon A2I) adds the benefit of human judgment to any machine learning application. When an AI
  * application can't evaluate data with a high degree of confidence, human reviewers can take over. This human review is

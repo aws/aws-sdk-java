@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * We couldn't find the requested resource.
+ * We couldn't find the requested resource. Check that your resources exists and were created in the same AWS Region as
+ * your request, and try your request again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

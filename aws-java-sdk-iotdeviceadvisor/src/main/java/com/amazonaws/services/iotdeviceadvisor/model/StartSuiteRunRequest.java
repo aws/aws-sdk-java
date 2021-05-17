@@ -27,19 +27,19 @@ public class StartSuiteRunRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Request to start suite run based on suite definition Id.
+     * Suite definition Id of the test suite.
      * </p>
      */
     private String suiteDefinitionId;
     /**
      * <p>
-     * Request to start suite run based on suite definition version.
+     * Suite definition version of the test suite.
      * </p>
      */
     private String suiteDefinitionVersion;
     /**
      * <p>
-     * Request to start suite run based on suite configuration.
+     * Suite run configuration.
      * </p>
      */
     private SuiteRunConfiguration suiteRunConfiguration;
@@ -52,11 +52,11 @@ public class StartSuiteRunRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Request to start suite run based on suite definition Id.
+     * Suite definition Id of the test suite.
      * </p>
      * 
      * @param suiteDefinitionId
-     *        Request to start suite run based on suite definition Id.
+     *        Suite definition Id of the test suite.
      */
 
     public void setSuiteDefinitionId(String suiteDefinitionId) {
@@ -65,10 +65,10 @@ public class StartSuiteRunRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Request to start suite run based on suite definition Id.
+     * Suite definition Id of the test suite.
      * </p>
      * 
-     * @return Request to start suite run based on suite definition Id.
+     * @return Suite definition Id of the test suite.
      */
 
     public String getSuiteDefinitionId() {
@@ -77,11 +77,11 @@ public class StartSuiteRunRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Request to start suite run based on suite definition Id.
+     * Suite definition Id of the test suite.
      * </p>
      * 
      * @param suiteDefinitionId
-     *        Request to start suite run based on suite definition Id.
+     *        Suite definition Id of the test suite.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class StartSuiteRunRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Request to start suite run based on suite definition version.
+     * Suite definition version of the test suite.
      * </p>
      * 
      * @param suiteDefinitionVersion
-     *        Request to start suite run based on suite definition version.
+     *        Suite definition version of the test suite.
      */
 
     public void setSuiteDefinitionVersion(String suiteDefinitionVersion) {
@@ -105,10 +105,10 @@ public class StartSuiteRunRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Request to start suite run based on suite definition version.
+     * Suite definition version of the test suite.
      * </p>
      * 
-     * @return Request to start suite run based on suite definition version.
+     * @return Suite definition version of the test suite.
      */
 
     public String getSuiteDefinitionVersion() {
@@ -117,11 +117,11 @@ public class StartSuiteRunRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Request to start suite run based on suite definition version.
+     * Suite definition version of the test suite.
      * </p>
      * 
      * @param suiteDefinitionVersion
-     *        Request to start suite run based on suite definition version.
+     *        Suite definition version of the test suite.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,11 +132,11 @@ public class StartSuiteRunRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Request to start suite run based on suite configuration.
+     * Suite run configuration.
      * </p>
      * 
      * @param suiteRunConfiguration
-     *        Request to start suite run based on suite configuration.
+     *        Suite run configuration.
      */
 
     public void setSuiteRunConfiguration(SuiteRunConfiguration suiteRunConfiguration) {
@@ -145,10 +145,10 @@ public class StartSuiteRunRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Request to start suite run based on suite configuration.
+     * Suite run configuration.
      * </p>
      * 
-     * @return Request to start suite run based on suite configuration.
+     * @return Suite run configuration.
      */
 
     public SuiteRunConfiguration getSuiteRunConfiguration() {
@@ -157,11 +157,11 @@ public class StartSuiteRunRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Request to start suite run based on suite configuration.
+     * Suite run configuration.
      * </p>
      * 
      * @param suiteRunConfiguration
-     *        Request to start suite run based on suite configuration.
+     *        Suite run configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

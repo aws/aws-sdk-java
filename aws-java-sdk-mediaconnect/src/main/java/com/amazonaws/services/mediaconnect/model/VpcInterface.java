@@ -30,6 +30,8 @@ public class VpcInterface implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /** IDs of the network interfaces created in customer's account by MediaConnect. */
     private java.util.List<String> networkInterfaceIds;
+    /** The type of network interface. */
+    private String networkInterfaceType;
     /** Role Arn MediaConnect can assumes to create ENIs in customer's account */
     private String roleArn;
     /** Security Group IDs to be used on ENI. */
@@ -130,6 +132,57 @@ public class VpcInterface implements Serializable, Cloneable, StructuredPojo {
 
     public VpcInterface withNetworkInterfaceIds(java.util.Collection<String> networkInterfaceIds) {
         setNetworkInterfaceIds(networkInterfaceIds);
+        return this;
+    }
+
+    /**
+     * The type of network interface.
+     * 
+     * @param networkInterfaceType
+     *        The type of network interface.
+     * @see NetworkInterfaceType
+     */
+
+    public void setNetworkInterfaceType(String networkInterfaceType) {
+        this.networkInterfaceType = networkInterfaceType;
+    }
+
+    /**
+     * The type of network interface.
+     * 
+     * @return The type of network interface.
+     * @see NetworkInterfaceType
+     */
+
+    public String getNetworkInterfaceType() {
+        return this.networkInterfaceType;
+    }
+
+    /**
+     * The type of network interface.
+     * 
+     * @param networkInterfaceType
+     *        The type of network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see NetworkInterfaceType
+     */
+
+    public VpcInterface withNetworkInterfaceType(String networkInterfaceType) {
+        setNetworkInterfaceType(networkInterfaceType);
+        return this;
+    }
+
+    /**
+     * The type of network interface.
+     * 
+     * @param networkInterfaceType
+     *        The type of network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see NetworkInterfaceType
+     */
+
+    public VpcInterface withNetworkInterfaceType(NetworkInterfaceType networkInterfaceType) {
+        this.networkInterfaceType = networkInterfaceType.toString();
         return this;
     }
 
@@ -279,6 +332,8 @@ public class VpcInterface implements Serializable, Cloneable, StructuredPojo {
             sb.append("Name: ").append(getName()).append(",");
         if (getNetworkInterfaceIds() != null)
             sb.append("NetworkInterfaceIds: ").append(getNetworkInterfaceIds()).append(",");
+        if (getNetworkInterfaceType() != null)
+            sb.append("NetworkInterfaceType: ").append(getNetworkInterfaceType()).append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getSecurityGroupIds() != null)
@@ -307,6 +362,10 @@ public class VpcInterface implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNetworkInterfaceIds() != null && other.getNetworkInterfaceIds().equals(this.getNetworkInterfaceIds()) == false)
             return false;
+        if (other.getNetworkInterfaceType() == null ^ this.getNetworkInterfaceType() == null)
+            return false;
+        if (other.getNetworkInterfaceType() != null && other.getNetworkInterfaceType().equals(this.getNetworkInterfaceType()) == false)
+            return false;
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
@@ -329,6 +388,7 @@ public class VpcInterface implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaceIds() == null) ? 0 : getNetworkInterfaceIds().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterfaceType() == null) ? 0 : getNetworkInterfaceType().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());

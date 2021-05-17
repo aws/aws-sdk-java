@@ -70,6 +70,13 @@ public class AddOutputRequestJsonUnmarshaller implements Unmarshaller<AddOutputR
                     context.nextToken();
                     addOutputRequest.setMaxLatency(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("mediaStreamOutputConfigurations", targetDepth)) {
+                    context.nextToken();
+                    addOutputRequest.setMediaStreamOutputConfigurations(new ListUnmarshaller<MediaStreamOutputConfigurationRequest>(
+                            MediaStreamOutputConfigurationRequestJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("minLatency", targetDepth)) {
                     context.nextToken();
                     addOutputRequest.setMinLatency(context.getUnmarshaller(Integer.class).unmarshall(context));

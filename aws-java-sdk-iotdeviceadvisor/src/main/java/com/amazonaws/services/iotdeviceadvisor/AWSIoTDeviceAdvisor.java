@@ -194,21 +194,6 @@ public interface AWSIoTDeviceAdvisor {
 
     /**
      * <p>
-     * Lists all the test cases in the test suite.
-     * </p>
-     * 
-     * @param listTestCasesRequest
-     * @return Result of the ListTestCases operation returned by the service.
-     * @throws InternalServerException
-     *         Sends Internal Failure Exception.
-     * @sample AWSIoTDeviceAdvisor.ListTestCases
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/ListTestCases" target="_top">AWS
-     *      API Documentation</a>
-     */
-    ListTestCasesResult listTestCases(ListTestCasesRequest listTestCasesRequest);
-
-    /**
-     * <p>
      * Starts a Device Advisor test suite run.
      * </p>
      * 
@@ -225,6 +210,25 @@ public interface AWSIoTDeviceAdvisor {
      *      API Documentation</a>
      */
     StartSuiteRunResult startSuiteRun(StartSuiteRunRequest startSuiteRunRequest);
+
+    /**
+     * <p>
+     * Stops a Device Advisor test suite run that is currently running.
+     * </p>
+     * 
+     * @param stopSuiteRunRequest
+     * @return Result of the StopSuiteRun operation returned by the service.
+     * @throws ValidationException
+     *         Sends invalid request exception.
+     * @throws ResourceNotFoundException
+     *         Sends Resource Not Found Exception.
+     * @throws InternalServerException
+     *         Sends Internal Failure Exception.
+     * @sample AWSIoTDeviceAdvisor.StopSuiteRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/StopSuiteRun" target="_top">AWS
+     *      API Documentation</a>
+     */
+    StopSuiteRunResult stopSuiteRun(StopSuiteRunRequest stopSuiteRunRequest);
 
     /**
      * <p>

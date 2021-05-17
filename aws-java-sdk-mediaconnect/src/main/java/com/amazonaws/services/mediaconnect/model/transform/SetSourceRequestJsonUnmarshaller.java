@@ -72,6 +72,17 @@ public class SetSourceRequestJsonUnmarshaller implements Unmarshaller<SetSourceR
                     context.nextToken();
                     setSourceRequest.setMaxLatency(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("maxSyncBuffer", targetDepth)) {
+                    context.nextToken();
+                    setSourceRequest.setMaxSyncBuffer(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("mediaStreamSourceConfigurations", targetDepth)) {
+                    context.nextToken();
+                    setSourceRequest.setMediaStreamSourceConfigurations(new ListUnmarshaller<MediaStreamSourceConfigurationRequest>(
+                            MediaStreamSourceConfigurationRequestJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("minLatency", targetDepth)) {
                     context.nextToken();
                     setSourceRequest.setMinLatency(context.getUnmarshaller(Integer.class).unmarshall(context));

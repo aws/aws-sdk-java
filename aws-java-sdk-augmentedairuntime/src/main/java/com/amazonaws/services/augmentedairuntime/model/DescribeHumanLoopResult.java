@@ -40,6 +40,9 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * A failure code that identifies the type of failure.
      * </p>
+     * <p>
+     * Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code>
+     * </p>
      */
     private String failureCode;
     /**
@@ -164,9 +167,14 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * A failure code that identifies the type of failure.
      * </p>
+     * <p>
+     * Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code>
+     * </p>
      * 
      * @param failureCode
-     *        A failure code that identifies the type of failure.
+     *        A failure code that identifies the type of failure.</p>
+     *        <p>
+     *        Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code>
      */
 
     public void setFailureCode(String failureCode) {
@@ -177,8 +185,13 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * A failure code that identifies the type of failure.
      * </p>
+     * <p>
+     * Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code>
+     * </p>
      * 
-     * @return A failure code that identifies the type of failure.
+     * @return A failure code that identifies the type of failure.</p>
+     *         <p>
+     *         Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code>
      */
 
     public String getFailureCode() {
@@ -189,9 +202,14 @@ public class DescribeHumanLoopResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * A failure code that identifies the type of failure.
      * </p>
+     * <p>
+     * Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code>
+     * </p>
      * 
      * @param failureCode
-     *        A failure code that identifies the type of failure.
+     *        A failure code that identifies the type of failure.</p>
+     *        <p>
+     *        Possible values: <code>ValidationError</code>, <code>Expired</code>, <code>InternalError</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

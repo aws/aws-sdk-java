@@ -35,6 +35,8 @@ public class Transport implements Serializable, Cloneable, StructuredPojo {
     private Integer maxBitrate;
     /** The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams. */
     private Integer maxLatency;
+    /** The size of the buffer (in milliseconds) to use to sync incoming source data. */
+    private Integer maxSyncBuffer;
     /**
      * The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that
      * you set on your MediaConnect source or output represents the minimal potential latency of that connection. The
@@ -190,6 +192,40 @@ public class Transport implements Serializable, Cloneable, StructuredPojo {
 
     public Transport withMaxLatency(Integer maxLatency) {
         setMaxLatency(maxLatency);
+        return this;
+    }
+
+    /**
+     * The size of the buffer (in milliseconds) to use to sync incoming source data.
+     * 
+     * @param maxSyncBuffer
+     *        The size of the buffer (in milliseconds) to use to sync incoming source data.
+     */
+
+    public void setMaxSyncBuffer(Integer maxSyncBuffer) {
+        this.maxSyncBuffer = maxSyncBuffer;
+    }
+
+    /**
+     * The size of the buffer (in milliseconds) to use to sync incoming source data.
+     * 
+     * @return The size of the buffer (in milliseconds) to use to sync incoming source data.
+     */
+
+    public Integer getMaxSyncBuffer() {
+        return this.maxSyncBuffer;
+    }
+
+    /**
+     * The size of the buffer (in milliseconds) to use to sync incoming source data.
+     * 
+     * @param maxSyncBuffer
+     *        The size of the buffer (in milliseconds) to use to sync incoming source data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Transport withMaxSyncBuffer(Integer maxSyncBuffer) {
+        setMaxSyncBuffer(maxSyncBuffer);
         return this;
     }
 
@@ -416,6 +452,8 @@ public class Transport implements Serializable, Cloneable, StructuredPojo {
             sb.append("MaxBitrate: ").append(getMaxBitrate()).append(",");
         if (getMaxLatency() != null)
             sb.append("MaxLatency: ").append(getMaxLatency()).append(",");
+        if (getMaxSyncBuffer() != null)
+            sb.append("MaxSyncBuffer: ").append(getMaxSyncBuffer()).append(",");
         if (getMinLatency() != null)
             sb.append("MinLatency: ").append(getMinLatency()).append(",");
         if (getProtocol() != null)
@@ -452,6 +490,10 @@ public class Transport implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMaxLatency() != null && other.getMaxLatency().equals(this.getMaxLatency()) == false)
             return false;
+        if (other.getMaxSyncBuffer() == null ^ this.getMaxSyncBuffer() == null)
+            return false;
+        if (other.getMaxSyncBuffer() != null && other.getMaxSyncBuffer().equals(this.getMaxSyncBuffer()) == false)
+            return false;
         if (other.getMinLatency() == null ^ this.getMinLatency() == null)
             return false;
         if (other.getMinLatency() != null && other.getMinLatency().equals(this.getMinLatency()) == false)
@@ -483,6 +525,7 @@ public class Transport implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCidrAllowList() == null) ? 0 : getCidrAllowList().hashCode());
         hashCode = prime * hashCode + ((getMaxBitrate() == null) ? 0 : getMaxBitrate().hashCode());
         hashCode = prime * hashCode + ((getMaxLatency() == null) ? 0 : getMaxLatency().hashCode());
+        hashCode = prime * hashCode + ((getMaxSyncBuffer() == null) ? 0 : getMaxSyncBuffer().hashCode());
         hashCode = prime * hashCode + ((getMinLatency() == null) ? 0 : getMinLatency().hashCode());
         hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode());
         hashCode = prime * hashCode + ((getRemoteId() == null) ? 0 : getRemoteId().hashCode());

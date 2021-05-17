@@ -290,37 +290,6 @@ public interface AWSIoTDeviceAdvisorAsync extends AWSIoTDeviceAdvisor {
 
     /**
      * <p>
-     * Lists all the test cases in the test suite.
-     * </p>
-     * 
-     * @param listTestCasesRequest
-     * @return A Java Future containing the result of the ListTestCases operation returned by the service.
-     * @sample AWSIoTDeviceAdvisorAsync.ListTestCases
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/ListTestCases" target="_top">AWS
-     *      API Documentation</a>
-     */
-    java.util.concurrent.Future<ListTestCasesResult> listTestCasesAsync(ListTestCasesRequest listTestCasesRequest);
-
-    /**
-     * <p>
-     * Lists all the test cases in the test suite.
-     * </p>
-     * 
-     * @param listTestCasesRequest
-     * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
-     *        implementation of the callback methods in this interface to receive notification of successful or
-     *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the ListTestCases operation returned by the service.
-     * @sample AWSIoTDeviceAdvisorAsyncHandler.ListTestCases
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/ListTestCases" target="_top">AWS
-     *      API Documentation</a>
-     */
-    java.util.concurrent.Future<ListTestCasesResult> listTestCasesAsync(ListTestCasesRequest listTestCasesRequest,
-            com.amazonaws.handlers.AsyncHandler<ListTestCasesRequest, ListTestCasesResult> asyncHandler);
-
-    /**
-     * <p>
      * Starts a Device Advisor test suite run.
      * </p>
      * 
@@ -349,6 +318,37 @@ public interface AWSIoTDeviceAdvisorAsync extends AWSIoTDeviceAdvisor {
      */
     java.util.concurrent.Future<StartSuiteRunResult> startSuiteRunAsync(StartSuiteRunRequest startSuiteRunRequest,
             com.amazonaws.handlers.AsyncHandler<StartSuiteRunRequest, StartSuiteRunResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops a Device Advisor test suite run that is currently running.
+     * </p>
+     * 
+     * @param stopSuiteRunRequest
+     * @return A Java Future containing the result of the StopSuiteRun operation returned by the service.
+     * @sample AWSIoTDeviceAdvisorAsync.StopSuiteRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/StopSuiteRun" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StopSuiteRunResult> stopSuiteRunAsync(StopSuiteRunRequest stopSuiteRunRequest);
+
+    /**
+     * <p>
+     * Stops a Device Advisor test suite run that is currently running.
+     * </p>
+     * 
+     * @param stopSuiteRunRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopSuiteRun operation returned by the service.
+     * @sample AWSIoTDeviceAdvisorAsyncHandler.StopSuiteRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/StopSuiteRun" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StopSuiteRunResult> stopSuiteRunAsync(StopSuiteRunRequest stopSuiteRunRequest,
+            com.amazonaws.handlers.AsyncHandler<StopSuiteRunRequest, StopSuiteRunResult> asyncHandler);
 
     /**
      * <p>

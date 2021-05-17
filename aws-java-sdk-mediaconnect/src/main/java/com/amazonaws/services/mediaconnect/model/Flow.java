@@ -42,6 +42,11 @@ public class Flow implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<Entitlement> entitlements;
     /** The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the flow. */
     private String flowArn;
+    /**
+     * The media streams that are associated with the flow. After you associate a media stream with a source, you can
+     * also associate it with outputs on the flow.
+     */
+    private java.util.List<MediaStream> mediaStreams;
     /** The name of the flow. */
     private String name;
     /** The outputs in this flow. */
@@ -264,6 +269,76 @@ public class Flow implements Serializable, Cloneable, StructuredPojo {
 
     public Flow withFlowArn(String flowArn) {
         setFlowArn(flowArn);
+        return this;
+    }
+
+    /**
+     * The media streams that are associated with the flow. After you associate a media stream with a source, you can
+     * also associate it with outputs on the flow.
+     * 
+     * @return The media streams that are associated with the flow. After you associate a media stream with a source,
+     *         you can also associate it with outputs on the flow.
+     */
+
+    public java.util.List<MediaStream> getMediaStreams() {
+        return mediaStreams;
+    }
+
+    /**
+     * The media streams that are associated with the flow. After you associate a media stream with a source, you can
+     * also associate it with outputs on the flow.
+     * 
+     * @param mediaStreams
+     *        The media streams that are associated with the flow. After you associate a media stream with a source, you
+     *        can also associate it with outputs on the flow.
+     */
+
+    public void setMediaStreams(java.util.Collection<MediaStream> mediaStreams) {
+        if (mediaStreams == null) {
+            this.mediaStreams = null;
+            return;
+        }
+
+        this.mediaStreams = new java.util.ArrayList<MediaStream>(mediaStreams);
+    }
+
+    /**
+     * The media streams that are associated with the flow. After you associate a media stream with a source, you can
+     * also associate it with outputs on the flow.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMediaStreams(java.util.Collection)} or {@link #withMediaStreams(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param mediaStreams
+     *        The media streams that are associated with the flow. After you associate a media stream with a source, you
+     *        can also associate it with outputs on the flow.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Flow withMediaStreams(MediaStream... mediaStreams) {
+        if (this.mediaStreams == null) {
+            setMediaStreams(new java.util.ArrayList<MediaStream>(mediaStreams.length));
+        }
+        for (MediaStream ele : mediaStreams) {
+            this.mediaStreams.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * The media streams that are associated with the flow. After you associate a media stream with a source, you can
+     * also associate it with outputs on the flow.
+     * 
+     * @param mediaStreams
+     *        The media streams that are associated with the flow. After you associate a media stream with a source, you
+     *        can also associate it with outputs on the flow.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Flow withMediaStreams(java.util.Collection<MediaStream> mediaStreams) {
+        setMediaStreams(mediaStreams);
         return this;
     }
 
@@ -602,6 +677,8 @@ public class Flow implements Serializable, Cloneable, StructuredPojo {
             sb.append("Entitlements: ").append(getEntitlements()).append(",");
         if (getFlowArn() != null)
             sb.append("FlowArn: ").append(getFlowArn()).append(",");
+        if (getMediaStreams() != null)
+            sb.append("MediaStreams: ").append(getMediaStreams()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getOutputs() != null)
@@ -650,6 +727,10 @@ public class Flow implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFlowArn() != null && other.getFlowArn().equals(this.getFlowArn()) == false)
             return false;
+        if (other.getMediaStreams() == null ^ this.getMediaStreams() == null)
+            return false;
+        if (other.getMediaStreams() != null && other.getMediaStreams().equals(this.getMediaStreams()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -691,6 +772,7 @@ public class Flow implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEgressIp() == null) ? 0 : getEgressIp().hashCode());
         hashCode = prime * hashCode + ((getEntitlements() == null) ? 0 : getEntitlements().hashCode());
         hashCode = prime * hashCode + ((getFlowArn() == null) ? 0 : getFlowArn().hashCode());
+        hashCode = prime * hashCode + ((getMediaStreams() == null) ? 0 : getMediaStreams().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getOutputs() == null) ? 0 : getOutputs().hashCode());
         hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode());

@@ -133,7 +133,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * and 40.
      * </p>
      * <p>
-     * If you need more than 20 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request
+     * If you need more than 40 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request
      * form at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us
      * /elasticache-node-limit-request/</a>.
@@ -559,7 +559,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        between 1 and 40.
      *        </p>
      *        <p>
-     *        If you need more than 20 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase
+     *        If you need more than 40 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase
      *        Request form at <a
      *        href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon
      *        .com/contact-us/elasticache-node-limit-request/</a>.
@@ -1473,7 +1473,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * and 40.
      * </p>
      * <p>
-     * If you need more than 20 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request
+     * If you need more than 40 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request
      * form at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us
      * /elasticache-node-limit-request/</a>.
@@ -1486,7 +1486,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        between 1 and 40.
      *        </p>
      *        <p>
-     *        If you need more than 20 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase
+     *        If you need more than 40 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase
      *        Request form at <a
      *        href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon
      *        .com/contact-us/elasticache-node-limit-request/</a>.
@@ -1505,7 +1505,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * and 40.
      * </p>
      * <p>
-     * If you need more than 20 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request
+     * If you need more than 40 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request
      * form at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us
      * /elasticache-node-limit-request/</a>.
@@ -1517,7 +1517,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *         between 1 and 40.
      *         </p>
      *         <p>
-     *         If you need more than 20 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase
+     *         If you need more than 40 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase
      *         Request form at <a
      *         href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon
      *         .com/contact-us/elasticache-node-limit-request/</a>.
@@ -1536,7 +1536,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * and 40.
      * </p>
      * <p>
-     * If you need more than 20 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request
+     * If you need more than 40 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase Request
      * form at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us
      * /elasticache-node-limit-request/</a>.
@@ -1549,7 +1549,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        between 1 and 40.
      *        </p>
      *        <p>
-     *        If you need more than 20 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase
+     *        If you need more than 40 nodes for your Memcached cluster, please fill out the ElastiCache Limit Increase
      *        Request form at <a
      *        href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon
      *        .com/contact-us/elasticache-node-limit-request/</a>.

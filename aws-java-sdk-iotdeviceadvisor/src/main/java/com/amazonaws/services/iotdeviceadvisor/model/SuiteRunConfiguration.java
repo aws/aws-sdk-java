@@ -36,12 +36,6 @@ public class SuiteRunConfiguration implements Serializable, Cloneable, Structure
     private DeviceUnderTest primaryDevice;
     /**
      * <p>
-     * Gets the secondary device for suite run.
-     * </p>
-     */
-    private DeviceUnderTest secondaryDevice;
-    /**
-     * <p>
      * Gets test case list.
      * </p>
      */
@@ -84,46 +78,6 @@ public class SuiteRunConfiguration implements Serializable, Cloneable, Structure
 
     public SuiteRunConfiguration withPrimaryDevice(DeviceUnderTest primaryDevice) {
         setPrimaryDevice(primaryDevice);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Gets the secondary device for suite run.
-     * </p>
-     * 
-     * @param secondaryDevice
-     *        Gets the secondary device for suite run.
-     */
-
-    public void setSecondaryDevice(DeviceUnderTest secondaryDevice) {
-        this.secondaryDevice = secondaryDevice;
-    }
-
-    /**
-     * <p>
-     * Gets the secondary device for suite run.
-     * </p>
-     * 
-     * @return Gets the secondary device for suite run.
-     */
-
-    public DeviceUnderTest getSecondaryDevice() {
-        return this.secondaryDevice;
-    }
-
-    /**
-     * <p>
-     * Gets the secondary device for suite run.
-     * </p>
-     * 
-     * @param secondaryDevice
-     *        Gets the secondary device for suite run.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SuiteRunConfiguration withSecondaryDevice(DeviceUnderTest secondaryDevice) {
-        setSecondaryDevice(secondaryDevice);
         return this;
     }
 
@@ -211,8 +165,6 @@ public class SuiteRunConfiguration implements Serializable, Cloneable, Structure
         sb.append("{");
         if (getPrimaryDevice() != null)
             sb.append("PrimaryDevice: ").append(getPrimaryDevice()).append(",");
-        if (getSecondaryDevice() != null)
-            sb.append("SecondaryDevice: ").append(getSecondaryDevice()).append(",");
         if (getSelectedTestList() != null)
             sb.append("SelectedTestList: ").append(getSelectedTestList());
         sb.append("}");
@@ -233,10 +185,6 @@ public class SuiteRunConfiguration implements Serializable, Cloneable, Structure
             return false;
         if (other.getPrimaryDevice() != null && other.getPrimaryDevice().equals(this.getPrimaryDevice()) == false)
             return false;
-        if (other.getSecondaryDevice() == null ^ this.getSecondaryDevice() == null)
-            return false;
-        if (other.getSecondaryDevice() != null && other.getSecondaryDevice().equals(this.getSecondaryDevice()) == false)
-            return false;
         if (other.getSelectedTestList() == null ^ this.getSelectedTestList() == null)
             return false;
         if (other.getSelectedTestList() != null && other.getSelectedTestList().equals(this.getSelectedTestList()) == false)
@@ -250,7 +198,6 @@ public class SuiteRunConfiguration implements Serializable, Cloneable, Structure
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getPrimaryDevice() == null) ? 0 : getPrimaryDevice().hashCode());
-        hashCode = prime * hashCode + ((getSecondaryDevice() == null) ? 0 : getSecondaryDevice().hashCode());
         hashCode = prime * hashCode + ((getSelectedTestList() == null) ? 0 : getSelectedTestList().hashCode());
         return hashCode;
     }

@@ -52,10 +52,6 @@ public class SuiteRunConfigurationJsonUnmarshaller implements Unmarshaller<Suite
                     context.nextToken();
                     suiteRunConfiguration.setPrimaryDevice(DeviceUnderTestJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("secondaryDevice", targetDepth)) {
-                    context.nextToken();
-                    suiteRunConfiguration.setSecondaryDevice(DeviceUnderTestJsonUnmarshaller.getInstance().unmarshall(context));
-                }
                 if (context.testExpression("selectedTestList", targetDepth)) {
                     context.nextToken();
                     suiteRunConfiguration.setSelectedTestList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))

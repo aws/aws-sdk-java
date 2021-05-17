@@ -68,12 +68,12 @@ public class AbstractAWSIoTDeviceAdvisor implements AWSIoTDeviceAdvisor {
     }
 
     @Override
-    public ListTestCasesResult listTestCases(ListTestCasesRequest request) {
+    public StartSuiteRunResult startSuiteRun(StartSuiteRunRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public StartSuiteRunResult startSuiteRun(StartSuiteRunRequest request) {
+    public StopSuiteRunResult stopSuiteRun(StopSuiteRunRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

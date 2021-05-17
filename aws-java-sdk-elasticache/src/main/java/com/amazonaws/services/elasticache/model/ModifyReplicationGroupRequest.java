@@ -302,13 +302,13 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     private String authTokenUpdateStrategy;
     /**
      * <p>
-     * A list of user group IDs.
+     * The user group you are associating with the replication group.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> userGroupIdsToAdd;
     /**
      * <p>
-     * A list of users groups to remove, meaning the users in the group no longer can access thereplication group.
+     * The user group to remove, meaning the users in the group no longer can access the replication group.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> userGroupIdsToRemove;
@@ -2223,10 +2223,10 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of user group IDs.
+     * The user group you are associating with the replication group.
      * </p>
      * 
-     * @return A list of user group IDs.
+     * @return The user group you are associating with the replication group.
      */
 
     public java.util.List<String> getUserGroupIdsToAdd() {
@@ -2238,11 +2238,11 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of user group IDs.
+     * The user group you are associating with the replication group.
      * </p>
      * 
      * @param userGroupIdsToAdd
-     *        A list of user group IDs.
+     *        The user group you are associating with the replication group.
      */
 
     public void setUserGroupIdsToAdd(java.util.Collection<String> userGroupIdsToAdd) {
@@ -2256,7 +2256,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of user group IDs.
+     * The user group you are associating with the replication group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2265,7 +2265,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param userGroupIdsToAdd
-     *        A list of user group IDs.
+     *        The user group you are associating with the replication group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2281,11 +2281,11 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of user group IDs.
+     * The user group you are associating with the replication group.
      * </p>
      * 
      * @param userGroupIdsToAdd
-     *        A list of user group IDs.
+     *        The user group you are associating with the replication group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2296,11 +2296,10 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of users groups to remove, meaning the users in the group no longer can access thereplication group.
+     * The user group to remove, meaning the users in the group no longer can access the replication group.
      * </p>
      * 
-     * @return A list of users groups to remove, meaning the users in the group no longer can access thereplication
-     *         group.
+     * @return The user group to remove, meaning the users in the group no longer can access the replication group.
      */
 
     public java.util.List<String> getUserGroupIdsToRemove() {
@@ -2312,12 +2311,11 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of users groups to remove, meaning the users in the group no longer can access thereplication group.
+     * The user group to remove, meaning the users in the group no longer can access the replication group.
      * </p>
      * 
      * @param userGroupIdsToRemove
-     *        A list of users groups to remove, meaning the users in the group no longer can access thereplication
-     *        group.
+     *        The user group to remove, meaning the users in the group no longer can access the replication group.
      */
 
     public void setUserGroupIdsToRemove(java.util.Collection<String> userGroupIdsToRemove) {
@@ -2331,7 +2329,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of users groups to remove, meaning the users in the group no longer can access thereplication group.
+     * The user group to remove, meaning the users in the group no longer can access the replication group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2340,8 +2338,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param userGroupIdsToRemove
-     *        A list of users groups to remove, meaning the users in the group no longer can access thereplication
-     *        group.
+     *        The user group to remove, meaning the users in the group no longer can access the replication group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2357,12 +2354,11 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of users groups to remove, meaning the users in the group no longer can access thereplication group.
+     * The user group to remove, meaning the users in the group no longer can access the replication group.
      * </p>
      * 
      * @param userGroupIdsToRemove
-     *        A list of users groups to remove, meaning the users in the group no longer can access thereplication
-     *        group.
+     *        The user group to remove, meaning the users in the group no longer can access the replication group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

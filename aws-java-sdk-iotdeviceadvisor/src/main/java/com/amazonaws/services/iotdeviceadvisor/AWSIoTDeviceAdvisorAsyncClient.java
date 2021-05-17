@@ -346,39 +346,6 @@ public class AWSIoTDeviceAdvisorAsyncClient extends AWSIoTDeviceAdvisorClient im
     }
 
     @Override
-    public java.util.concurrent.Future<ListTestCasesResult> listTestCasesAsync(ListTestCasesRequest request) {
-
-        return listTestCasesAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListTestCasesResult> listTestCasesAsync(final ListTestCasesRequest request,
-            final com.amazonaws.handlers.AsyncHandler<ListTestCasesRequest, ListTestCasesResult> asyncHandler) {
-        final ListTestCasesRequest finalRequest = beforeClientExecution(request);
-
-        return executorService.submit(new java.util.concurrent.Callable<ListTestCasesResult>() {
-            @Override
-            public ListTestCasesResult call() throws Exception {
-                ListTestCasesResult result = null;
-
-                try {
-                    result = executeListTestCases(finalRequest);
-                } catch (Exception ex) {
-                    if (asyncHandler != null) {
-                        asyncHandler.onError(ex);
-                    }
-                    throw ex;
-                }
-
-                if (asyncHandler != null) {
-                    asyncHandler.onSuccess(finalRequest, result);
-                }
-                return result;
-            }
-        });
-    }
-
-    @Override
     public java.util.concurrent.Future<StartSuiteRunResult> startSuiteRunAsync(StartSuiteRunRequest request) {
 
         return startSuiteRunAsync(request, null);
@@ -396,6 +363,39 @@ public class AWSIoTDeviceAdvisorAsyncClient extends AWSIoTDeviceAdvisorClient im
 
                 try {
                     result = executeStartSuiteRun(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopSuiteRunResult> stopSuiteRunAsync(StopSuiteRunRequest request) {
+
+        return stopSuiteRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopSuiteRunResult> stopSuiteRunAsync(final StopSuiteRunRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopSuiteRunRequest, StopSuiteRunResult> asyncHandler) {
+        final StopSuiteRunRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopSuiteRunResult>() {
+            @Override
+            public StopSuiteRunResult call() throws Exception {
+                StopSuiteRunResult result = null;
+
+                try {
+                    result = executeStopSuiteRun(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

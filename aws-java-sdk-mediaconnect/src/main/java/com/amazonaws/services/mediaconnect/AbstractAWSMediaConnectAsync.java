@@ -28,6 +28,19 @@ public class AbstractAWSMediaConnectAsync extends AbstractAWSMediaConnect implem
     }
 
     @Override
+    public java.util.concurrent.Future<AddFlowMediaStreamsResult> addFlowMediaStreamsAsync(AddFlowMediaStreamsRequest request) {
+
+        return addFlowMediaStreamsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddFlowMediaStreamsResult> addFlowMediaStreamsAsync(AddFlowMediaStreamsRequest request,
+            com.amazonaws.handlers.AsyncHandler<AddFlowMediaStreamsRequest, AddFlowMediaStreamsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<AddFlowOutputsResult> addFlowOutputsAsync(AddFlowOutputsRequest request) {
 
         return addFlowOutputsAsync(request, null);
@@ -223,6 +236,19 @@ public class AbstractAWSMediaConnectAsync extends AbstractAWSMediaConnect implem
     }
 
     @Override
+    public java.util.concurrent.Future<RemoveFlowMediaStreamResult> removeFlowMediaStreamAsync(RemoveFlowMediaStreamRequest request) {
+
+        return removeFlowMediaStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveFlowMediaStreamResult> removeFlowMediaStreamAsync(RemoveFlowMediaStreamRequest request,
+            com.amazonaws.handlers.AsyncHandler<RemoveFlowMediaStreamRequest, RemoveFlowMediaStreamResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<RemoveFlowOutputResult> removeFlowOutputAsync(RemoveFlowOutputRequest request) {
 
         return removeFlowOutputAsync(request, null);
@@ -348,6 +374,19 @@ public class AbstractAWSMediaConnectAsync extends AbstractAWSMediaConnect implem
     @Override
     public java.util.concurrent.Future<UpdateFlowEntitlementResult> updateFlowEntitlementAsync(UpdateFlowEntitlementRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateFlowEntitlementRequest, UpdateFlowEntitlementResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFlowMediaStreamResult> updateFlowMediaStreamAsync(UpdateFlowMediaStreamRequest request) {
+
+        return updateFlowMediaStreamAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFlowMediaStreamResult> updateFlowMediaStreamAsync(UpdateFlowMediaStreamRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateFlowMediaStreamRequest, UpdateFlowMediaStreamResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

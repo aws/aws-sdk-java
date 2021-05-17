@@ -27,7 +27,7 @@ public class UpdateSuiteDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Updates a Device Advisor test suite with suite definition id.
+     * Suite definition Id of the test suite to be updated.
      * </p>
      */
     private String suiteDefinitionId;
@@ -40,11 +40,11 @@ public class UpdateSuiteDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Updates a Device Advisor test suite with suite definition id.
+     * Suite definition Id of the test suite to be updated.
      * </p>
      * 
      * @param suiteDefinitionId
-     *        Updates a Device Advisor test suite with suite definition id.
+     *        Suite definition Id of the test suite to be updated.
      */
 
     public void setSuiteDefinitionId(String suiteDefinitionId) {
@@ -53,10 +53,10 @@ public class UpdateSuiteDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Updates a Device Advisor test suite with suite definition id.
+     * Suite definition Id of the test suite to be updated.
      * </p>
      * 
-     * @return Updates a Device Advisor test suite with suite definition id.
+     * @return Suite definition Id of the test suite to be updated.
      */
 
     public String getSuiteDefinitionId() {
@@ -65,11 +65,11 @@ public class UpdateSuiteDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Updates a Device Advisor test suite with suite definition id.
+     * Suite definition Id of the test suite to be updated.
      * </p>
      * 
      * @param suiteDefinitionId
-     *        Updates a Device Advisor test suite with suite definition id.
+     *        Suite definition Id of the test suite to be updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

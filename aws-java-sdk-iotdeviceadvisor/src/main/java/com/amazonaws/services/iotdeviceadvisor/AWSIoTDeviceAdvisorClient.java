@@ -628,63 +628,6 @@ public class AWSIoTDeviceAdvisorClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Lists all the test cases in the test suite.
-     * </p>
-     * 
-     * @param listTestCasesRequest
-     * @return Result of the ListTestCases operation returned by the service.
-     * @throws InternalServerException
-     *         Sends Internal Failure Exception.
-     * @sample AWSIoTDeviceAdvisor.ListTestCases
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/ListTestCases" target="_top">AWS
-     *      API Documentation</a>
-     */
-    @Override
-    public ListTestCasesResult listTestCases(ListTestCasesRequest request) {
-        request = beforeClientExecution(request);
-        return executeListTestCases(request);
-    }
-
-    @SdkInternalApi
-    final ListTestCasesResult executeListTestCases(ListTestCasesRequest listTestCasesRequest) {
-
-        ExecutionContext executionContext = createExecutionContext(listTestCasesRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ListTestCasesRequest> request = null;
-        Response<ListTestCasesResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ListTestCasesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTestCasesRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
-                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
-                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
-                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IotDeviceAdvisor");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTestCases");
-                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
-
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            HttpResponseHandler<AmazonWebServiceResponse<ListTestCasesResult>> responseHandler = protocolFactory.createResponseHandler(
-                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTestCasesResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * <p>
      * Starts a Device Advisor test suite run.
      * </p>
      * 
@@ -734,6 +677,67 @@ public class AWSIoTDeviceAdvisorClient extends AmazonWebServiceClient implements
 
             HttpResponseHandler<AmazonWebServiceResponse<StartSuiteRunResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartSuiteRunResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops a Device Advisor test suite run that is currently running.
+     * </p>
+     * 
+     * @param stopSuiteRunRequest
+     * @return Result of the StopSuiteRun operation returned by the service.
+     * @throws ValidationException
+     *         Sends invalid request exception.
+     * @throws ResourceNotFoundException
+     *         Sends Resource Not Found Exception.
+     * @throws InternalServerException
+     *         Sends Internal Failure Exception.
+     * @sample AWSIoTDeviceAdvisor.StopSuiteRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/StopSuiteRun" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public StopSuiteRunResult stopSuiteRun(StopSuiteRunRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopSuiteRun(request);
+    }
+
+    @SdkInternalApi
+    final StopSuiteRunResult executeStopSuiteRun(StopSuiteRunRequest stopSuiteRunRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopSuiteRunRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopSuiteRunRequest> request = null;
+        Response<StopSuiteRunResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopSuiteRunRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopSuiteRunRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IotDeviceAdvisor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopSuiteRun");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopSuiteRunResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopSuiteRunResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

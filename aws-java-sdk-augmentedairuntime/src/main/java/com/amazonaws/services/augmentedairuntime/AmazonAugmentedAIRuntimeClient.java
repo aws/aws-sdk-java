@@ -50,12 +50,6 @@ import com.amazonaws.services.augmentedairuntime.model.transform.*;
  * Client for accessing Amazon Augmented AI Runtime. All service calls made using this client are blocking, and will not
  * return until the service call completes.
  * <p>
- * <important>
- * <p>
- * Amazon Augmented AI is in preview release and is subject to change. We do not recommend using this product in
- * production environments.
- * </p>
- * </important>
  * <p>
  * Amazon Augmented AI (Amazon A2I) adds the benefit of human judgment to any machine learning application. When an AI
  * application can't evaluate data with a high degree of confidence, human reviewers can take over. This human review is
@@ -191,13 +185,17 @@ public class AmazonAugmentedAIRuntimeClient extends AmazonWebServiceClient imple
      * <p>
      * Deletes the specified human loop for a flow definition.
      * </p>
+     * <p>
+     * If the human loop was deleted, this operation will return a <code>ResourceNotFoundException</code>.
+     * </p>
      * 
      * @param deleteHumanLoopRequest
      * @return Result of the DeleteHumanLoop operation returned by the service.
      * @throws ValidationException
      *         The request isn't valid. Check the syntax and try again.
      * @throws ResourceNotFoundException
-     *         We couldn't find the requested resource.
+     *         We couldn't find the requested resource. Check that your resources exists and were created in the same
+     *         AWS Region as your request, and try your request again.
      * @throws ThrottlingException
      *         You exceeded the maximum number of requests.
      * @throws InternalServerException
@@ -252,7 +250,8 @@ public class AmazonAugmentedAIRuntimeClient extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Returns information about the specified human loop.
+     * Returns information about the specified human loop. If the human loop was deleted, this operation will return a
+     * <code>ResourceNotFoundException</code> error.
      * </p>
      * 
      * @param describeHumanLoopRequest
@@ -260,7 +259,8 @@ public class AmazonAugmentedAIRuntimeClient extends AmazonWebServiceClient imple
      * @throws ValidationException
      *         The request isn't valid. Check the syntax and try again.
      * @throws ResourceNotFoundException
-     *         We couldn't find the requested resource.
+     *         We couldn't find the requested resource. Check that your resources exists and were created in the same
+     *         AWS Region as your request, and try your request again.
      * @throws ThrottlingException
      *         You exceeded the maximum number of requests.
      * @throws InternalServerException
@@ -324,7 +324,8 @@ public class AmazonAugmentedAIRuntimeClient extends AmazonWebServiceClient imple
      * @throws ValidationException
      *         The request isn't valid. Check the syntax and try again.
      * @throws ResourceNotFoundException
-     *         We couldn't find the requested resource.
+     *         We couldn't find the requested resource. Check that your resources exists and were created in the same
+     *         AWS Region as your request, and try your request again.
      * @throws ThrottlingException
      *         You exceeded the maximum number of requests.
      * @throws InternalServerException
@@ -389,7 +390,13 @@ public class AmazonAugmentedAIRuntimeClient extends AmazonWebServiceClient imple
      * @throws ThrottlingException
      *         You exceeded the maximum number of requests.
      * @throws ServiceQuotaExceededException
-     *         You exceeded your service quota. Delete some resources or request an increase in your service quota.
+     *         You exceeded your service quota. Service quotas, also referred to as limits, are the maximum number of
+     *         service resources or operations for your AWS account. For a list of Amazon A2I service quotes, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/a2i.html">Amazon Augmented AI Service Quotes</a>.
+     *         Delete some resources or request an increase in your service quota. You can request a quota increase
+     *         using Service Quotas or the AWS Support Center. To request an increase, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS Service Quotas</a> in
+     *         the <i>AWS General Reference</i>.
      * @throws InternalServerException
      *         We couldn't process your request because of an issue with the server. Try again later.
      * @throws ConflictException
@@ -453,7 +460,8 @@ public class AmazonAugmentedAIRuntimeClient extends AmazonWebServiceClient imple
      * @throws ValidationException
      *         The request isn't valid. Check the syntax and try again.
      * @throws ResourceNotFoundException
-     *         We couldn't find the requested resource.
+     *         We couldn't find the requested resource. Check that your resources exists and were created in the same
+     *         AWS Region as your request, and try your request again.
      * @throws ThrottlingException
      *         You exceeded the maximum number of requests.
      * @throws InternalServerException

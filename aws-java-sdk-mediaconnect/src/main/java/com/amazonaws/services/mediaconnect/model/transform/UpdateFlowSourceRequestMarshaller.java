@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.mediaconnect.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -41,6 +42,10 @@ public class UpdateFlowSourceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxBitrate").build();
     private static final MarshallingInfo<Integer> MAXLATENCY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxLatency").build();
+    private static final MarshallingInfo<Integer> MAXSYNCBUFFER_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxSyncBuffer").build();
+    private static final MarshallingInfo<List> MEDIASTREAMSOURCECONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mediaStreamSourceConfigurations").build();
     private static final MarshallingInfo<Integer> MINLATENCY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("minLatency").build();
     private static final MarshallingInfo<String> PROTOCOL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -77,6 +82,8 @@ public class UpdateFlowSourceRequestMarshaller {
             protocolMarshaller.marshall(updateFlowSourceRequest.getIngestPort(), INGESTPORT_BINDING);
             protocolMarshaller.marshall(updateFlowSourceRequest.getMaxBitrate(), MAXBITRATE_BINDING);
             protocolMarshaller.marshall(updateFlowSourceRequest.getMaxLatency(), MAXLATENCY_BINDING);
+            protocolMarshaller.marshall(updateFlowSourceRequest.getMaxSyncBuffer(), MAXSYNCBUFFER_BINDING);
+            protocolMarshaller.marshall(updateFlowSourceRequest.getMediaStreamSourceConfigurations(), MEDIASTREAMSOURCECONFIGURATIONS_BINDING);
             protocolMarshaller.marshall(updateFlowSourceRequest.getMinLatency(), MINLATENCY_BINDING);
             protocolMarshaller.marshall(updateFlowSourceRequest.getProtocol(), PROTOCOL_BINDING);
             protocolMarshaller.marshall(updateFlowSourceRequest.getSourceArn(), SOURCEARN_BINDING);
