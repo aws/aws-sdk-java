@@ -154,6 +154,40 @@ public class AWSComputeOptimizerAsyncClient extends AWSComputeOptimizerClient im
     }
 
     @Override
+    public java.util.concurrent.Future<ExportEBSVolumeRecommendationsResult> exportEBSVolumeRecommendationsAsync(ExportEBSVolumeRecommendationsRequest request) {
+
+        return exportEBSVolumeRecommendationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportEBSVolumeRecommendationsResult> exportEBSVolumeRecommendationsAsync(
+            final ExportEBSVolumeRecommendationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ExportEBSVolumeRecommendationsRequest, ExportEBSVolumeRecommendationsResult> asyncHandler) {
+        final ExportEBSVolumeRecommendationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ExportEBSVolumeRecommendationsResult>() {
+            @Override
+            public ExportEBSVolumeRecommendationsResult call() throws Exception {
+                ExportEBSVolumeRecommendationsResult result = null;
+
+                try {
+                    result = executeExportEBSVolumeRecommendations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ExportEC2InstanceRecommendationsResult> exportEC2InstanceRecommendationsAsync(
             ExportEC2InstanceRecommendationsRequest request) {
 
@@ -173,6 +207,41 @@ public class AWSComputeOptimizerAsyncClient extends AWSComputeOptimizerClient im
 
                 try {
                     result = executeExportEC2InstanceRecommendations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportLambdaFunctionRecommendationsResult> exportLambdaFunctionRecommendationsAsync(
+            ExportLambdaFunctionRecommendationsRequest request) {
+
+        return exportLambdaFunctionRecommendationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportLambdaFunctionRecommendationsResult> exportLambdaFunctionRecommendationsAsync(
+            final ExportLambdaFunctionRecommendationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ExportLambdaFunctionRecommendationsRequest, ExportLambdaFunctionRecommendationsResult> asyncHandler) {
+        final ExportLambdaFunctionRecommendationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ExportLambdaFunctionRecommendationsResult>() {
+            @Override
+            public ExportLambdaFunctionRecommendationsResult call() throws Exception {
+                ExportLambdaFunctionRecommendationsResult result = null;
+
+                try {
+                    result = executeExportLambdaFunctionRecommendations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

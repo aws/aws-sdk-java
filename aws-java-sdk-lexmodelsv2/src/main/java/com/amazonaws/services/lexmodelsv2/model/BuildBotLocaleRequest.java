@@ -41,9 +41,8 @@ public class BuildBotLocaleRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The identifier of the language and locale that the bot will be used in. The string must match one of the
      * supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html">https://docs.aws.amazon
-     * .com/lex/latest/dg/supported-locales.html</a>.
+     * information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+     * languages</a>.
      * </p>
      */
     private String localeId;
@@ -132,17 +131,15 @@ public class BuildBotLocaleRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The identifier of the language and locale that the bot will be used in. The string must match one of the
      * supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html">https://docs.aws.amazon
-     * .com/lex/latest/dg/supported-locales.html</a>.
+     * information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+     * languages</a>.
      * </p>
      * 
      * @param localeId
      *        The identifier of the language and locale that the bot will be used in. The string must match one of the
      *        supported locales. All of the intents, slot types, and slots used in the bot must have the same locale.
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html">https:
-     *        //docs.aws.amazon.com/lex/latest/dg/supported-locales.html</a>.
+     *        href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.
      */
 
     public void setLocaleId(String localeId) {
@@ -153,16 +150,14 @@ public class BuildBotLocaleRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The identifier of the language and locale that the bot will be used in. The string must match one of the
      * supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html">https://docs.aws.amazon
-     * .com/lex/latest/dg/supported-locales.html</a>.
+     * information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+     * languages</a>.
      * </p>
      * 
      * @return The identifier of the language and locale that the bot will be used in. The string must match one of the
      *         supported locales. All of the intents, slot types, and slots used in the bot must have the same locale.
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html">https
-     *         ://docs.aws.amazon.com/lex/latest/dg/supported-locales.html</a>.
+     *         href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.
      */
 
     public String getLocaleId() {
@@ -173,17 +168,15 @@ public class BuildBotLocaleRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The identifier of the language and locale that the bot will be used in. The string must match one of the
      * supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html">https://docs.aws.amazon
-     * .com/lex/latest/dg/supported-locales.html</a>.
+     * information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+     * languages</a>.
      * </p>
      * 
      * @param localeId
      *        The identifier of the language and locale that the bot will be used in. The string must match one of the
      *        supported locales. All of the intents, slot types, and slots used in the bot must have the same locale.
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html">https:
-     *        //docs.aws.amazon.com/lex/latest/dg/supported-locales.html</a>.
+     *        href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

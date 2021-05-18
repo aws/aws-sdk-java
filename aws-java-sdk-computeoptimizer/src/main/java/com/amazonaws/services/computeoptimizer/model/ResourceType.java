@@ -21,7 +21,9 @@ import javax.annotation.Generated;
 public enum ResourceType {
 
     Ec2Instance("Ec2Instance"),
-    AutoScalingGroup("AutoScalingGroup");
+    AutoScalingGroup("AutoScalingGroup"),
+    EbsVolume("EbsVolume"),
+    LambdaFunction("LambdaFunction");
 
     private String value;
 

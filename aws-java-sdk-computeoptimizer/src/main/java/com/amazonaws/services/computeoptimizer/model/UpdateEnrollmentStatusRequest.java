@@ -37,8 +37,8 @@ public class UpdateEnrollmentStatusRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * <code>Active</code> - Opts in your account to the Compute Optimizer service. Compute Optimizer begins analyzing
      * the configuration and utilization metrics of your AWS resources after you opt in. For more information, see <a
-     * href="https://docs.aws.amazon.com/compute-optimizer/ug/metrics.html">Metrics analyzed by AWS Compute
-     * Optimizer</a> in the <i>Compute Optimizer User Guide</i>.
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html">Metrics analyzed by AWS Compute
+     * Optimizer</a> in the <i>AWS Compute Optimizer User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -76,8 +76,8 @@ public class UpdateEnrollmentStatusRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * <code>Active</code> - Opts in your account to the Compute Optimizer service. Compute Optimizer begins analyzing
      * the configuration and utilization metrics of your AWS resources after you opt in. For more information, see <a
-     * href="https://docs.aws.amazon.com/compute-optimizer/ug/metrics.html">Metrics analyzed by AWS Compute
-     * Optimizer</a> in the <i>Compute Optimizer User Guide</i>.
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html">Metrics analyzed by AWS Compute
+     * Optimizer</a> in the <i>AWS Compute Optimizer User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -104,8 +104,8 @@ public class UpdateEnrollmentStatusRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        <code>Active</code> - Opts in your account to the Compute Optimizer service. Compute Optimizer begins
      *        analyzing the configuration and utilization metrics of your AWS resources after you opt in. For more
-     *        information, see <a href="https://docs.aws.amazon.com/compute-optimizer/ug/metrics.html">Metrics analyzed
-     *        by AWS Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.
+     *        information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html">Metrics
+     *        analyzed by AWS Compute Optimizer</a> in the <i>AWS Compute Optimizer User Guide</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -139,8 +139,8 @@ public class UpdateEnrollmentStatusRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * <code>Active</code> - Opts in your account to the Compute Optimizer service. Compute Optimizer begins analyzing
      * the configuration and utilization metrics of your AWS resources after you opt in. For more information, see <a
-     * href="https://docs.aws.amazon.com/compute-optimizer/ug/metrics.html">Metrics analyzed by AWS Compute
-     * Optimizer</a> in the <i>Compute Optimizer User Guide</i>.
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html">Metrics analyzed by AWS Compute
+     * Optimizer</a> in the <i>AWS Compute Optimizer User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -166,8 +166,8 @@ public class UpdateEnrollmentStatusRequest extends com.amazonaws.AmazonWebServic
      *         <p>
      *         <code>Active</code> - Opts in your account to the Compute Optimizer service. Compute Optimizer begins
      *         analyzing the configuration and utilization metrics of your AWS resources after you opt in. For more
-     *         information, see <a href="https://docs.aws.amazon.com/compute-optimizer/ug/metrics.html">Metrics analyzed
-     *         by AWS Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.
+     *         information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html">Metrics
+     *         analyzed by AWS Compute Optimizer</a> in the <i>AWS Compute Optimizer User Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -202,8 +202,8 @@ public class UpdateEnrollmentStatusRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * <code>Active</code> - Opts in your account to the Compute Optimizer service. Compute Optimizer begins analyzing
      * the configuration and utilization metrics of your AWS resources after you opt in. For more information, see <a
-     * href="https://docs.aws.amazon.com/compute-optimizer/ug/metrics.html">Metrics analyzed by AWS Compute
-     * Optimizer</a> in the <i>Compute Optimizer User Guide</i>.
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html">Metrics analyzed by AWS Compute
+     * Optimizer</a> in the <i>AWS Compute Optimizer User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -230,8 +230,8 @@ public class UpdateEnrollmentStatusRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        <code>Active</code> - Opts in your account to the Compute Optimizer service. Compute Optimizer begins
      *        analyzing the configuration and utilization metrics of your AWS resources after you opt in. For more
-     *        information, see <a href="https://docs.aws.amazon.com/compute-optimizer/ug/metrics.html">Metrics analyzed
-     *        by AWS Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.
+     *        information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html">Metrics
+     *        analyzed by AWS Compute Optimizer</a> in the <i>AWS Compute Optimizer User Guide</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -267,8 +267,8 @@ public class UpdateEnrollmentStatusRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * <code>Active</code> - Opts in your account to the Compute Optimizer service. Compute Optimizer begins analyzing
      * the configuration and utilization metrics of your AWS resources after you opt in. For more information, see <a
-     * href="https://docs.aws.amazon.com/compute-optimizer/ug/metrics.html">Metrics analyzed by AWS Compute
-     * Optimizer</a> in the <i>Compute Optimizer User Guide</i>.
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html">Metrics analyzed by AWS Compute
+     * Optimizer</a> in the <i>AWS Compute Optimizer User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -295,8 +295,8 @@ public class UpdateEnrollmentStatusRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        <code>Active</code> - Opts in your account to the Compute Optimizer service. Compute Optimizer begins
      *        analyzing the configuration and utilization metrics of your AWS resources after you opt in. For more
-     *        information, see <a href="https://docs.aws.amazon.com/compute-optimizer/ug/metrics.html">Metrics analyzed
-     *        by AWS Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.
+     *        information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html">Metrics
+     *        analyzed by AWS Compute Optimizer</a> in the <i>AWS Compute Optimizer User Guide</i>.
      *        </p>
      *        </li>
      *        <li>

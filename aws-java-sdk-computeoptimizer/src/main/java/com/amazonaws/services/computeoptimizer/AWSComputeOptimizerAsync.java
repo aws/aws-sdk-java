@@ -146,6 +146,61 @@ public interface AWSComputeOptimizerAsync extends AWSComputeOptimizer {
 
     /**
      * <p>
+     * Exports optimization recommendations for Amazon EBS volumes.
+     * </p>
+     * <p>
+     * Recommendations are exported in a comma-separated values (.csv) file, and its metadata in a JavaScript Object
+     * Notation (.json) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+     * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * <p>
+     * You can have only one Amazon EBS volume export job in progress per AWS Region.
+     * </p>
+     * 
+     * @param exportEBSVolumeRecommendationsRequest
+     * @return A Java Future containing the result of the ExportEBSVolumeRecommendations operation returned by the
+     *         service.
+     * @sample AWSComputeOptimizerAsync.ExportEBSVolumeRecommendations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportEBSVolumeRecommendations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ExportEBSVolumeRecommendationsResult> exportEBSVolumeRecommendationsAsync(
+            ExportEBSVolumeRecommendationsRequest exportEBSVolumeRecommendationsRequest);
+
+    /**
+     * <p>
+     * Exports optimization recommendations for Amazon EBS volumes.
+     * </p>
+     * <p>
+     * Recommendations are exported in a comma-separated values (.csv) file, and its metadata in a JavaScript Object
+     * Notation (.json) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+     * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * <p>
+     * You can have only one Amazon EBS volume export job in progress per AWS Region.
+     * </p>
+     * 
+     * @param exportEBSVolumeRecommendationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ExportEBSVolumeRecommendations operation returned by the
+     *         service.
+     * @sample AWSComputeOptimizerAsyncHandler.ExportEBSVolumeRecommendations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportEBSVolumeRecommendations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ExportEBSVolumeRecommendationsResult> exportEBSVolumeRecommendationsAsync(
+            ExportEBSVolumeRecommendationsRequest exportEBSVolumeRecommendationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ExportEBSVolumeRecommendationsRequest, ExportEBSVolumeRecommendationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Exports optimization recommendations for Amazon EC2 instances.
      * </p>
      * <p>
@@ -200,6 +255,63 @@ public interface AWSComputeOptimizerAsync extends AWSComputeOptimizer {
     java.util.concurrent.Future<ExportEC2InstanceRecommendationsResult> exportEC2InstanceRecommendationsAsync(
             ExportEC2InstanceRecommendationsRequest exportEC2InstanceRecommendationsRequest,
             com.amazonaws.handlers.AsyncHandler<ExportEC2InstanceRecommendationsRequest, ExportEC2InstanceRecommendationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Exports optimization recommendations for AWS Lambda functions.
+     * </p>
+     * <p>
+     * Recommendations are exported in a comma-separated values (.csv) file, and its metadata in a JavaScript Object
+     * Notation (.json) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+     * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * <p>
+     * You can have only one Lambda function export job in progress per AWS Region.
+     * </p>
+     * 
+     * @param exportLambdaFunctionRecommendationsRequest
+     * @return A Java Future containing the result of the ExportLambdaFunctionRecommendations operation returned by the
+     *         service.
+     * @sample AWSComputeOptimizerAsync.ExportLambdaFunctionRecommendations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportLambdaFunctionRecommendations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ExportLambdaFunctionRecommendationsResult> exportLambdaFunctionRecommendationsAsync(
+            ExportLambdaFunctionRecommendationsRequest exportLambdaFunctionRecommendationsRequest);
+
+    /**
+     * <p>
+     * Exports optimization recommendations for AWS Lambda functions.
+     * </p>
+     * <p>
+     * Recommendations are exported in a comma-separated values (.csv) file, and its metadata in a JavaScript Object
+     * Notation (.json) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+     * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * <p>
+     * You can have only one Lambda function export job in progress per AWS Region.
+     * </p>
+     * 
+     * @param exportLambdaFunctionRecommendationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ExportLambdaFunctionRecommendations operation returned by the
+     *         service.
+     * @sample AWSComputeOptimizerAsyncHandler.ExportLambdaFunctionRecommendations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportLambdaFunctionRecommendations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ExportLambdaFunctionRecommendationsResult> exportLambdaFunctionRecommendationsAsync(
+            ExportLambdaFunctionRecommendationsRequest exportLambdaFunctionRecommendationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ExportLambdaFunctionRecommendationsRequest, ExportLambdaFunctionRecommendationsResult> asyncHandler);
 
     /**
      * <p>
@@ -581,14 +693,14 @@ public interface AWSComputeOptimizerAsync extends AWSComputeOptimizer {
      * <p>
      * You must have the appropriate permissions to opt in to Compute Optimizer, to view its recommendations, and to opt
      * out. For more information, see <a
-     * href="https://docs.aws.amazon.com/compute-optimizer/ug/security-iam.html">Controlling access with AWS Identity
-     * and Access Management</a> in the <i>Compute Optimizer User Guide</i>.
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html">Controlling access with AWS
+     * Identity and Access Management</a> in the <i>AWS Compute Optimizer User Guide</i>.
      * </p>
      * <p>
      * When you opt in, Compute Optimizer automatically creates a Service-Linked Role in your account to access its
      * data. For more information, see <a
-     * href="https://docs.aws.amazon.com/compute-optimizer/ug/using-service-linked-roles.html">Using Service-Linked
-     * Roles for AWS Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/using-service-linked-roles.html">Using
+     * Service-Linked Roles for AWS Compute Optimizer</a> in the <i>AWS Compute Optimizer User Guide</i>.
      * </p>
      * 
      * @param updateEnrollmentStatusRequest
@@ -610,14 +722,14 @@ public interface AWSComputeOptimizerAsync extends AWSComputeOptimizer {
      * <p>
      * You must have the appropriate permissions to opt in to Compute Optimizer, to view its recommendations, and to opt
      * out. For more information, see <a
-     * href="https://docs.aws.amazon.com/compute-optimizer/ug/security-iam.html">Controlling access with AWS Identity
-     * and Access Management</a> in the <i>Compute Optimizer User Guide</i>.
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html">Controlling access with AWS
+     * Identity and Access Management</a> in the <i>AWS Compute Optimizer User Guide</i>.
      * </p>
      * <p>
      * When you opt in, Compute Optimizer automatically creates a Service-Linked Role in your account to access its
      * data. For more information, see <a
-     * href="https://docs.aws.amazon.com/compute-optimizer/ug/using-service-linked-roles.html">Using Service-Linked
-     * Roles for AWS Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/using-service-linked-roles.html">Using
+     * Service-Linked Roles for AWS Compute Optimizer</a> in the <i>AWS Compute Optimizer User Guide</i>.
      * </p>
      * 
      * @param updateEnrollmentStatusRequest

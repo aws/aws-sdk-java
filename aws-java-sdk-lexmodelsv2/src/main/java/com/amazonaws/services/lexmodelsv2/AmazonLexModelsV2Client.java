@@ -76,17 +76,11 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                     .withSupportsIon(false)
                     .withContentTypeOverride("application/x-amz-json-1.1")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.lexmodelsv2.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lexmodelsv2.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lexmodelsv2.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.lexmodelsv2.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lexmodelsv2.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
@@ -96,6 +90,12 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("PreconditionFailedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lexmodelsv2.model.transform.PreconditionFailedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lexmodelsv2.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lexmodelsv2.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.lexmodelsv2.model.AmazonLexModelsV2Exception.class));
 
     public static AmazonLexModelsV2ClientBuilder builder() {
@@ -463,6 +463,76 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Creates a zip archive containing the contents of a bot or a bot locale. The archive contains a directory
+     * structure that contains JSON files that define the bot.
+     * </p>
+     * <p>
+     * You can create an archive that contains the complete definition of a bot, or you can specify that the archive
+     * contain only the definition of a single bot locale.
+     * </p>
+     * <p>
+     * For more information about exporting bots, and about the structure of the export archive, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/importing-exporting.html"> Importing and exporting bots </a>
+     * </p>
+     * 
+     * @param createExportRequest
+     * @return Result of the CreateExport operation returned by the service.
+     * @throws ThrottlingException
+     * @throws ServiceQuotaExceededException
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ConflictException
+     * @throws InternalServerException
+     * @sample AmazonLexModelsV2.CreateExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateExport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateExportResult createExport(CreateExportRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateExport(request);
+    }
+
+    @SdkInternalApi
+    final CreateExportResult executeCreateExport(CreateExportRequest createExportRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createExportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateExportRequest> request = null;
+        Response<CreateExportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateExportRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createExportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateExport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateExportResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateExportResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates an intent.
      * </p>
      * <p>
@@ -684,6 +754,66 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateSlotTypeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateSlotTypeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a pre-signed S3 write URL that you use to upload the zip archive when importing a bot or a bot locale.
+     * </p>
+     * 
+     * @param createUploadUrlRequest
+     * @return Result of the CreateUploadUrl operation returned by the service.
+     * @throws ThrottlingException
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ConflictException
+     * @throws InternalServerException
+     * @sample AmazonLexModelsV2.CreateUploadUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateUploadUrl" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateUploadUrlResult createUploadUrl(CreateUploadUrlRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateUploadUrl(request);
+    }
+
+    @SdkInternalApi
+    final CreateUploadUrlResult executeCreateUploadUrl(CreateUploadUrlRequest createUploadUrlRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createUploadUrlRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateUploadUrlRequest> request = null;
+        Response<CreateUploadUrlResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateUploadUrlRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUploadUrlRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUploadUrl");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateUploadUrlResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateUploadUrlResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -941,6 +1071,126 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteBotVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteBotVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes a previous export and the associated files stored in an S3 bucket.
+     * </p>
+     * 
+     * @param deleteExportRequest
+     * @return Result of the DeleteExport operation returned by the service.
+     * @throws ThrottlingException
+     * @throws ServiceQuotaExceededException
+     * @throws ValidationException
+     * @throws PreconditionFailedException
+     * @throws InternalServerException
+     * @sample AmazonLexModelsV2.DeleteExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteExport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteExportResult deleteExport(DeleteExportRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteExport(request);
+    }
+
+    @SdkInternalApi
+    final DeleteExportResult executeDeleteExport(DeleteExportRequest deleteExportRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteExportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteExportRequest> request = null;
+        Response<DeleteExportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteExportRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteExportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteExport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteExportResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteExportResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes a previous import and the associated file stored in an S3 bucket.
+     * </p>
+     * 
+     * @param deleteImportRequest
+     * @return Result of the DeleteImport operation returned by the service.
+     * @throws ThrottlingException
+     * @throws ServiceQuotaExceededException
+     * @throws ValidationException
+     * @throws PreconditionFailedException
+     * @throws InternalServerException
+     * @sample AmazonLexModelsV2.DeleteImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteImport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteImportResult deleteImport(DeleteImportRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteImport(request);
+    }
+
+    @SdkInternalApi
+    final DeleteImportResult executeDeleteImport(DeleteImportRequest deleteImportRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteImportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteImportRequest> request = null;
+        Response<DeleteImportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteImportRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteImportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteImport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteImportResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteImportResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1371,6 +1621,124 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeBotVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeBotVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets information about a specific export.
+     * </p>
+     * 
+     * @param describeExportRequest
+     * @return Result of the DescribeExport operation returned by the service.
+     * @throws ThrottlingException
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws InternalServerException
+     * @sample AmazonLexModelsV2.DescribeExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeExport" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeExportResult describeExport(DescribeExportRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeExport(request);
+    }
+
+    @SdkInternalApi
+    final DescribeExportResult executeDescribeExport(DescribeExportRequest describeExportRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeExportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeExportRequest> request = null;
+        Response<DescribeExportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeExportRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeExportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeExport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeExportResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeExportResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets information about a specific import.
+     * </p>
+     * 
+     * @param describeImportRequest
+     * @return Result of the DescribeImport operation returned by the service.
+     * @throws ThrottlingException
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws InternalServerException
+     * @sample AmazonLexModelsV2.DescribeImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeImport" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeImportResult describeImport(DescribeImportRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeImport(request);
+    }
+
+    @SdkInternalApi
+    final DescribeImportResult executeDescribeImport(DescribeImportRequest describeImportRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeImportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeImportRequest> request = null;
+        Response<DescribeImportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeImportRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeImportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeImport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeImportResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeImportResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1930,6 +2298,122 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Lists the exports for a bot or bot locale. Exports are kept in the list for 7 days.
+     * </p>
+     * 
+     * @param listExportsRequest
+     * @return Result of the ListExports operation returned by the service.
+     * @throws ThrottlingException
+     * @throws ValidationException
+     * @throws InternalServerException
+     * @sample AmazonLexModelsV2.ListExports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListExports" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListExportsResult listExports(ListExportsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListExports(request);
+    }
+
+    @SdkInternalApi
+    final ListExportsResult executeListExports(ListExportsRequest listExportsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listExportsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListExportsRequest> request = null;
+        Response<ListExportsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListExportsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listExportsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListExports");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListExportsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListExportsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the imports for a bot or bot locale. Imports are kept in the list for 7 days.
+     * </p>
+     * 
+     * @param listImportsRequest
+     * @return Result of the ListImports operation returned by the service.
+     * @throws ThrottlingException
+     * @throws ValidationException
+     * @throws InternalServerException
+     * @sample AmazonLexModelsV2.ListImports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListImports" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListImportsResult listImports(ListImportsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListImports(request);
+    }
+
+    @SdkInternalApi
+    final ListImportsResult executeListImports(ListImportsRequest listImportsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listImportsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListImportsRequest> request = null;
+        Response<ListImportsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListImportsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listImportsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListImports");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListImportsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListImportsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Get a list of intents that meet the specified criteria.
      * </p>
      * 
@@ -2155,6 +2639,67 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts importing a bot or bot locale from a zip archive that you uploaded to an S3 bucket.
+     * </p>
+     * 
+     * @param startImportRequest
+     * @return Result of the StartImport operation returned by the service.
+     * @throws ThrottlingException
+     * @throws ServiceQuotaExceededException
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ConflictException
+     * @throws InternalServerException
+     * @sample AmazonLexModelsV2.StartImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartImport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StartImportResult startImport(StartImportRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartImport(request);
+    }
+
+    @SdkInternalApi
+    final StartImportResult executeStartImport(StartImportRequest startImportRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startImportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartImportRequest> request = null;
+        Response<StartImportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartImportRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startImportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartImport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartImportResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartImportResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2457,6 +3002,67 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateBotLocaleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateBotLocaleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the password used to encrypt an export zip archive.
+     * </p>
+     * 
+     * @param updateExportRequest
+     * @return Result of the UpdateExport operation returned by the service.
+     * @throws ThrottlingException
+     * @throws ServiceQuotaExceededException
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ConflictException
+     * @throws InternalServerException
+     * @sample AmazonLexModelsV2.UpdateExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateExport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateExportResult updateExport(UpdateExportRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateExport(request);
+    }
+
+    @SdkInternalApi
+    final UpdateExportResult executeUpdateExport(UpdateExportRequest updateExportRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateExportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateExportRequest> request = null;
+        Response<UpdateExportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateExportRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateExportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateExport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateExportResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateExportResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

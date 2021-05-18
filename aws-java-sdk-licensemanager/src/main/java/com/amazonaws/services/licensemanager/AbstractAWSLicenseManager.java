@@ -68,6 +68,11 @@ public class AbstractAWSLicenseManager implements AWSLicenseManager {
     }
 
     @Override
+    public CreateLicenseManagerReportGeneratorResult createLicenseManagerReportGenerator(CreateLicenseManagerReportGeneratorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateLicenseVersionResult createLicenseVersion(CreateLicenseVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -89,6 +94,11 @@ public class AbstractAWSLicenseManager implements AWSLicenseManager {
 
     @Override
     public DeleteLicenseConfigurationResult deleteLicenseConfiguration(DeleteLicenseConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteLicenseManagerReportGeneratorResult deleteLicenseManagerReportGenerator(DeleteLicenseManagerReportGeneratorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -123,6 +133,11 @@ public class AbstractAWSLicenseManager implements AWSLicenseManager {
     }
 
     @Override
+    public GetLicenseManagerReportGeneratorResult getLicenseManagerReportGenerator(GetLicenseManagerReportGeneratorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetLicenseUsageResult getLicenseUsage(GetLicenseUsageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -150,6 +165,11 @@ public class AbstractAWSLicenseManager implements AWSLicenseManager {
 
     @Override
     public ListLicenseConfigurationsResult listLicenseConfigurations(ListLicenseConfigurationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListLicenseManagerReportGeneratorsResult listLicenseManagerReportGenerators(ListLicenseManagerReportGeneratorsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -215,6 +235,11 @@ public class AbstractAWSLicenseManager implements AWSLicenseManager {
 
     @Override
     public UpdateLicenseConfigurationResult updateLicenseConfiguration(UpdateLicenseConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateLicenseManagerReportGeneratorResult updateLicenseManagerReportGenerator(UpdateLicenseManagerReportGeneratorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -1,3 +1,32 @@
+# __1.11.1021__ __2021-05-18__
+## __AWS App Runner__
+  - ### Features
+    - AWS App Runner is a service that provides a fast, simple, and cost-effective way to deploy from source code or a container image directly to a scalable and secure web application in the AWS Cloud.
+
+## __AWS Compute Optimizer__
+  - ### Features
+    - This release enables compute optimizer to support exporting  recommendations to Amazon S3 for EBS volumes and Lambda Functions.
+
+## __AWS IoT SiteWise__
+  - ### Features
+    - Documentation updates for AWS IoT SiteWise.
+
+## __AWS License Manager__
+  - ### Features
+    - AWS License Manager now supports periodic report generation.
+
+## __AWS Support__
+  - ### Features
+    - Documentation updates for support
+
+## __Amazon Lex Model Building V2__
+  - ### Features
+    - This release adds support for exporting and importing Lex V2 bots and bot locales. It also adds validations to enforce minimum number of tags on Lex V2 resources. For details, see https://docs.aws.amazon.com/lexv2/latest/dg/importing-exporting.html
+
+## __Amazon Personalize__
+  - ### Features
+    - Amazon Personalize now supports the ability to optimize a solution for a custom objective in addition to maximizing relevance.
+
 # __1.11.1020__ __2021-05-17__
 ## __AWS Application Cost Profiler__
   - ### Features

@@ -28,21 +28,34 @@ public class RefreshTrustedAdvisorCheckRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b> Specifying the check ID of a check
-     * that is automatically refreshed causes an <code>InvalidParameterValue</code> error.
+     * The unique identifier for the Trusted Advisor check to refresh.
      * </p>
+     * <note>
+     * <p>
+     * Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code>
+     * error.
+     * </p>
+     * </note>
      */
     private String checkId;
 
     /**
      * <p>
-     * The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b> Specifying the check ID of a check
-     * that is automatically refreshed causes an <code>InvalidParameterValue</code> error.
+     * The unique identifier for the Trusted Advisor check to refresh.
      * </p>
+     * <note>
+     * <p>
+     * Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code>
+     * error.
+     * </p>
+     * </note>
      * 
      * @param checkId
-     *        The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b> Specifying the check ID of a
-     *        check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.
+     *        The unique identifier for the Trusted Advisor check to refresh.</p> <note>
+     *        <p>
+     *        Specifying the check ID of a check that is automatically refreshed causes an
+     *        <code>InvalidParameterValue</code> error.
+     *        </p>
      */
 
     public void setCheckId(String checkId) {
@@ -51,12 +64,20 @@ public class RefreshTrustedAdvisorCheckRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b> Specifying the check ID of a check
-     * that is automatically refreshed causes an <code>InvalidParameterValue</code> error.
+     * The unique identifier for the Trusted Advisor check to refresh.
      * </p>
+     * <note>
+     * <p>
+     * Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code>
+     * error.
+     * </p>
+     * </note>
      * 
-     * @return The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b> Specifying the check ID of a
-     *         check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.
+     * @return The unique identifier for the Trusted Advisor check to refresh.</p> <note>
+     *         <p>
+     *         Specifying the check ID of a check that is automatically refreshed causes an
+     *         <code>InvalidParameterValue</code> error.
+     *         </p>
      */
 
     public String getCheckId() {
@@ -65,13 +86,21 @@ public class RefreshTrustedAdvisorCheckRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b> Specifying the check ID of a check
-     * that is automatically refreshed causes an <code>InvalidParameterValue</code> error.
+     * The unique identifier for the Trusted Advisor check to refresh.
      * </p>
+     * <note>
+     * <p>
+     * Specifying the check ID of a check that is automatically refreshed causes an <code>InvalidParameterValue</code>
+     * error.
+     * </p>
+     * </note>
      * 
      * @param checkId
-     *        The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b> Specifying the check ID of a
-     *        check that is automatically refreshed causes an <code>InvalidParameterValue</code> error.
+     *        The unique identifier for the Trusted Advisor check to refresh.</p> <note>
+     *        <p>
+     *        Specifying the check ID of a check that is automatically refreshed causes an
+     *        <code>InvalidParameterValue</code> error.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

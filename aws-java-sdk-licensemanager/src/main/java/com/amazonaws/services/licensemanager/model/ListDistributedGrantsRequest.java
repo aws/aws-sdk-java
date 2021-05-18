@@ -38,22 +38,27 @@ public class ListDistributedGrantsRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * <code>LicenseARN</code>
+     * <code>LicenseArn</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Status</code>
+     * <code>GrantStatus</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PrincipalARN</code>
+     * <code>GranteePrincipalARN</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ParentARN</code>
+     * <code>ProductSKU</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LicenseIssuerName</code>
      * </p>
      * </li>
      * </ul>
@@ -149,22 +154,27 @@ public class ListDistributedGrantsRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * <code>LicenseARN</code>
+     * <code>LicenseArn</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Status</code>
+     * <code>GrantStatus</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PrincipalARN</code>
+     * <code>GranteePrincipalARN</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ParentARN</code>
+     * <code>ProductSKU</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LicenseIssuerName</code>
      * </p>
      * </li>
      * </ul>
@@ -173,22 +183,27 @@ public class ListDistributedGrantsRequest extends com.amazonaws.AmazonWebService
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>LicenseARN</code>
+     *         <code>LicenseArn</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Status</code>
+     *         <code>GrantStatus</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>PrincipalARN</code>
+     *         <code>GranteePrincipalARN</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ParentARN</code>
+     *         <code>ProductSKU</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>LicenseIssuerName</code>
      *         </p>
      *         </li>
      */
@@ -204,22 +219,27 @@ public class ListDistributedGrantsRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * <code>LicenseARN</code>
+     * <code>LicenseArn</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Status</code>
+     * <code>GrantStatus</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PrincipalARN</code>
+     * <code>GranteePrincipalARN</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ParentARN</code>
+     * <code>ProductSKU</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LicenseIssuerName</code>
      * </p>
      * </li>
      * </ul>
@@ -229,22 +249,27 @@ public class ListDistributedGrantsRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>LicenseARN</code>
+     *        <code>LicenseArn</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Status</code>
+     *        <code>GrantStatus</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PrincipalARN</code>
+     *        <code>GranteePrincipalARN</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ParentARN</code>
+     *        <code>ProductSKU</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LicenseIssuerName</code>
      *        </p>
      *        </li>
      */
@@ -265,22 +290,27 @@ public class ListDistributedGrantsRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * <code>LicenseARN</code>
+     * <code>LicenseArn</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Status</code>
+     * <code>GrantStatus</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PrincipalARN</code>
+     * <code>GranteePrincipalARN</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ParentARN</code>
+     * <code>ProductSKU</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LicenseIssuerName</code>
      * </p>
      * </li>
      * </ul>
@@ -295,22 +325,27 @@ public class ListDistributedGrantsRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>LicenseARN</code>
+     *        <code>LicenseArn</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Status</code>
+     *        <code>GrantStatus</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PrincipalARN</code>
+     *        <code>GranteePrincipalARN</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ParentARN</code>
+     *        <code>ProductSKU</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LicenseIssuerName</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -333,22 +368,27 @@ public class ListDistributedGrantsRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * <code>LicenseARN</code>
+     * <code>LicenseArn</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Status</code>
+     * <code>GrantStatus</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>PrincipalARN</code>
+     * <code>GranteePrincipalARN</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ParentARN</code>
+     * <code>ProductSKU</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LicenseIssuerName</code>
      * </p>
      * </li>
      * </ul>
@@ -358,22 +398,27 @@ public class ListDistributedGrantsRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>LicenseARN</code>
+     *        <code>LicenseArn</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Status</code>
+     *        <code>GrantStatus</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PrincipalARN</code>
+     *        <code>GranteePrincipalARN</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ParentARN</code>
+     *        <code>ProductSKU</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LicenseIssuerName</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

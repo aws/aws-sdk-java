@@ -58,6 +58,15 @@ public class SolutionConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private AutoMLConfig autoMLConfig;
+    /**
+     * <p>
+     * Describes the additional objective for the solution, such as maximizing streaming minutes or increasing revenue.
+     * For more information see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing a
+     * solution</a>.
+     * </p>
+     */
+    private OptimizationObjective optimizationObjective;
 
     /**
      * <p>
@@ -316,6 +325,64 @@ public class SolutionConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Describes the additional objective for the solution, such as maximizing streaming minutes or increasing revenue.
+     * For more information see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing a
+     * solution</a>.
+     * </p>
+     * 
+     * @param optimizationObjective
+     *        Describes the additional objective for the solution, such as maximizing streaming minutes or increasing
+     *        revenue. For more information see <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing
+     *        a solution</a>.
+     */
+
+    public void setOptimizationObjective(OptimizationObjective optimizationObjective) {
+        this.optimizationObjective = optimizationObjective;
+    }
+
+    /**
+     * <p>
+     * Describes the additional objective for the solution, such as maximizing streaming minutes or increasing revenue.
+     * For more information see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing a
+     * solution</a>.
+     * </p>
+     * 
+     * @return Describes the additional objective for the solution, such as maximizing streaming minutes or increasing
+     *         revenue. For more information see <a
+     *         href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html"
+     *         >Optimizing a solution</a>.
+     */
+
+    public OptimizationObjective getOptimizationObjective() {
+        return this.optimizationObjective;
+    }
+
+    /**
+     * <p>
+     * Describes the additional objective for the solution, such as maximizing streaming minutes or increasing revenue.
+     * For more information see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing a
+     * solution</a>.
+     * </p>
+     * 
+     * @param optimizationObjective
+     *        Describes the additional objective for the solution, such as maximizing streaming minutes or increasing
+     *        revenue. For more information see <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing
+     *        a solution</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SolutionConfig withOptimizationObjective(OptimizationObjective optimizationObjective) {
+        setOptimizationObjective(optimizationObjective);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -336,7 +403,9 @@ public class SolutionConfig implements Serializable, Cloneable, StructuredPojo {
         if (getFeatureTransformationParameters() != null)
             sb.append("FeatureTransformationParameters: ").append(getFeatureTransformationParameters()).append(",");
         if (getAutoMLConfig() != null)
-            sb.append("AutoMLConfig: ").append(getAutoMLConfig());
+            sb.append("AutoMLConfig: ").append(getAutoMLConfig()).append(",");
+        if (getOptimizationObjective() != null)
+            sb.append("OptimizationObjective: ").append(getOptimizationObjective());
         sb.append("}");
         return sb.toString();
     }
@@ -372,6 +441,10 @@ public class SolutionConfig implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAutoMLConfig() != null && other.getAutoMLConfig().equals(this.getAutoMLConfig()) == false)
             return false;
+        if (other.getOptimizationObjective() == null ^ this.getOptimizationObjective() == null)
+            return false;
+        if (other.getOptimizationObjective() != null && other.getOptimizationObjective().equals(this.getOptimizationObjective()) == false)
+            return false;
         return true;
     }
 
@@ -385,6 +458,7 @@ public class SolutionConfig implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAlgorithmHyperParameters() == null) ? 0 : getAlgorithmHyperParameters().hashCode());
         hashCode = prime * hashCode + ((getFeatureTransformationParameters() == null) ? 0 : getFeatureTransformationParameters().hashCode());
         hashCode = prime * hashCode + ((getAutoMLConfig() == null) ? 0 : getAutoMLConfig().hashCode());
+        hashCode = prime * hashCode + ((getOptimizationObjective() == null) ? 0 : getOptimizationObjective().hashCode());
         return hashCode;
     }
 

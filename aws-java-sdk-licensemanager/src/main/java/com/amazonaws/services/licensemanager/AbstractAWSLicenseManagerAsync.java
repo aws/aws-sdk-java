@@ -132,6 +132,21 @@ public class AbstractAWSLicenseManagerAsync extends AbstractAWSLicenseManager im
     }
 
     @Override
+    public java.util.concurrent.Future<CreateLicenseManagerReportGeneratorResult> createLicenseManagerReportGeneratorAsync(
+            CreateLicenseManagerReportGeneratorRequest request) {
+
+        return createLicenseManagerReportGeneratorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLicenseManagerReportGeneratorResult> createLicenseManagerReportGeneratorAsync(
+            CreateLicenseManagerReportGeneratorRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateLicenseManagerReportGeneratorRequest, CreateLicenseManagerReportGeneratorResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateLicenseVersionResult> createLicenseVersionAsync(CreateLicenseVersionRequest request) {
 
         return createLicenseVersionAsync(request, null);
@@ -192,6 +207,21 @@ public class AbstractAWSLicenseManagerAsync extends AbstractAWSLicenseManager im
     @Override
     public java.util.concurrent.Future<DeleteLicenseConfigurationResult> deleteLicenseConfigurationAsync(DeleteLicenseConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteLicenseConfigurationRequest, DeleteLicenseConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLicenseManagerReportGeneratorResult> deleteLicenseManagerReportGeneratorAsync(
+            DeleteLicenseManagerReportGeneratorRequest request) {
+
+        return deleteLicenseManagerReportGeneratorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLicenseManagerReportGeneratorResult> deleteLicenseManagerReportGeneratorAsync(
+            DeleteLicenseManagerReportGeneratorRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteLicenseManagerReportGeneratorRequest, DeleteLicenseManagerReportGeneratorResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -275,6 +305,21 @@ public class AbstractAWSLicenseManagerAsync extends AbstractAWSLicenseManager im
     }
 
     @Override
+    public java.util.concurrent.Future<GetLicenseManagerReportGeneratorResult> getLicenseManagerReportGeneratorAsync(
+            GetLicenseManagerReportGeneratorRequest request) {
+
+        return getLicenseManagerReportGeneratorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLicenseManagerReportGeneratorResult> getLicenseManagerReportGeneratorAsync(
+            GetLicenseManagerReportGeneratorRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetLicenseManagerReportGeneratorRequest, GetLicenseManagerReportGeneratorResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetLicenseUsageResult> getLicenseUsageAsync(GetLicenseUsageRequest request) {
 
         return getLicenseUsageAsync(request, null);
@@ -352,6 +397,21 @@ public class AbstractAWSLicenseManagerAsync extends AbstractAWSLicenseManager im
     @Override
     public java.util.concurrent.Future<ListLicenseConfigurationsResult> listLicenseConfigurationsAsync(ListLicenseConfigurationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListLicenseConfigurationsRequest, ListLicenseConfigurationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLicenseManagerReportGeneratorsResult> listLicenseManagerReportGeneratorsAsync(
+            ListLicenseManagerReportGeneratorsRequest request) {
+
+        return listLicenseManagerReportGeneratorsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLicenseManagerReportGeneratorsResult> listLicenseManagerReportGeneratorsAsync(
+            ListLicenseManagerReportGeneratorsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListLicenseManagerReportGeneratorsRequest, ListLicenseManagerReportGeneratorsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -525,6 +585,21 @@ public class AbstractAWSLicenseManagerAsync extends AbstractAWSLicenseManager im
     @Override
     public java.util.concurrent.Future<UpdateLicenseConfigurationResult> updateLicenseConfigurationAsync(UpdateLicenseConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateLicenseConfigurationRequest, UpdateLicenseConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLicenseManagerReportGeneratorResult> updateLicenseManagerReportGeneratorAsync(
+            UpdateLicenseManagerReportGeneratorRequest request) {
+
+        return updateLicenseManagerReportGeneratorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLicenseManagerReportGeneratorResult> updateLicenseManagerReportGeneratorAsync(
+            UpdateLicenseManagerReportGeneratorRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateLicenseManagerReportGeneratorRequest, UpdateLicenseManagerReportGeneratorResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

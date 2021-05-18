@@ -300,6 +300,43 @@ public interface AWSLicenseManagerAsync extends AWSLicenseManager {
 
     /**
      * <p>
+     * Creates a new report generator.
+     * </p>
+     * 
+     * @param createLicenseManagerReportGeneratorRequest
+     * @return A Java Future containing the result of the CreateLicenseManagerReportGenerator operation returned by the
+     *         service.
+     * @sample AWSLicenseManagerAsync.CreateLicenseManagerReportGenerator
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseManagerReportGenerator"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLicenseManagerReportGeneratorResult> createLicenseManagerReportGeneratorAsync(
+            CreateLicenseManagerReportGeneratorRequest createLicenseManagerReportGeneratorRequest);
+
+    /**
+     * <p>
+     * Creates a new report generator.
+     * </p>
+     * 
+     * @param createLicenseManagerReportGeneratorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateLicenseManagerReportGenerator operation returned by the
+     *         service.
+     * @sample AWSLicenseManagerAsyncHandler.CreateLicenseManagerReportGenerator
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseManagerReportGenerator"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLicenseManagerReportGeneratorResult> createLicenseManagerReportGeneratorAsync(
+            CreateLicenseManagerReportGeneratorRequest createLicenseManagerReportGeneratorRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateLicenseManagerReportGeneratorRequest, CreateLicenseManagerReportGeneratorResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new version of the specified license.
      * </p>
      * 
@@ -470,6 +507,51 @@ public interface AWSLicenseManagerAsync extends AWSLicenseManager {
     java.util.concurrent.Future<DeleteLicenseConfigurationResult> deleteLicenseConfigurationAsync(
             DeleteLicenseConfigurationRequest deleteLicenseConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteLicenseConfigurationRequest, DeleteLicenseConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete an existing report generator.
+     * </p>
+     * <p>
+     * This action deletes the report generator, which stops it from generating future reports and cannot be reversed.
+     * However, the previous reports from this generator will remain in your S3 bucket.
+     * </p>
+     * 
+     * @param deleteLicenseManagerReportGeneratorRequest
+     * @return A Java Future containing the result of the DeleteLicenseManagerReportGenerator operation returned by the
+     *         service.
+     * @sample AWSLicenseManagerAsync.DeleteLicenseManagerReportGenerator
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteLicenseManagerReportGenerator"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLicenseManagerReportGeneratorResult> deleteLicenseManagerReportGeneratorAsync(
+            DeleteLicenseManagerReportGeneratorRequest deleteLicenseManagerReportGeneratorRequest);
+
+    /**
+     * <p>
+     * Delete an existing report generator.
+     * </p>
+     * <p>
+     * This action deletes the report generator, which stops it from generating future reports and cannot be reversed.
+     * However, the previous reports from this generator will remain in your S3 bucket.
+     * </p>
+     * 
+     * @param deleteLicenseManagerReportGeneratorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteLicenseManagerReportGenerator operation returned by the
+     *         service.
+     * @sample AWSLicenseManagerAsyncHandler.DeleteLicenseManagerReportGenerator
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteLicenseManagerReportGenerator"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLicenseManagerReportGeneratorResult> deleteLicenseManagerReportGeneratorAsync(
+            DeleteLicenseManagerReportGeneratorRequest deleteLicenseManagerReportGeneratorRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteLicenseManagerReportGeneratorRequest, DeleteLicenseManagerReportGeneratorResult> asyncHandler);
 
     /**
      * <p>
@@ -656,6 +738,41 @@ public interface AWSLicenseManagerAsync extends AWSLicenseManager {
      */
     java.util.concurrent.Future<GetLicenseConfigurationResult> getLicenseConfigurationAsync(GetLicenseConfigurationRequest getLicenseConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<GetLicenseConfigurationRequest, GetLicenseConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information on the specified report generator.
+     * </p>
+     * 
+     * @param getLicenseManagerReportGeneratorRequest
+     * @return A Java Future containing the result of the GetLicenseManagerReportGenerator operation returned by the
+     *         service.
+     * @sample AWSLicenseManagerAsync.GetLicenseManagerReportGenerator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicenseManagerReportGenerator"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetLicenseManagerReportGeneratorResult> getLicenseManagerReportGeneratorAsync(
+            GetLicenseManagerReportGeneratorRequest getLicenseManagerReportGeneratorRequest);
+
+    /**
+     * <p>
+     * Gets information on the specified report generator.
+     * </p>
+     * 
+     * @param getLicenseManagerReportGeneratorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetLicenseManagerReportGenerator operation returned by the
+     *         service.
+     * @sample AWSLicenseManagerAsyncHandler.GetLicenseManagerReportGenerator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicenseManagerReportGenerator"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetLicenseManagerReportGeneratorResult> getLicenseManagerReportGeneratorAsync(
+            GetLicenseManagerReportGeneratorRequest getLicenseManagerReportGeneratorRequest,
+            com.amazonaws.handlers.AsyncHandler<GetLicenseManagerReportGeneratorRequest, GetLicenseManagerReportGeneratorResult> asyncHandler);
 
     /**
      * <p>
@@ -864,6 +981,43 @@ public interface AWSLicenseManagerAsync extends AWSLicenseManager {
     java.util.concurrent.Future<ListLicenseConfigurationsResult> listLicenseConfigurationsAsync(
             ListLicenseConfigurationsRequest listLicenseConfigurationsRequest,
             com.amazonaws.handlers.AsyncHandler<ListLicenseConfigurationsRequest, ListLicenseConfigurationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the report generators for your account.
+     * </p>
+     * 
+     * @param listLicenseManagerReportGeneratorsRequest
+     * @return A Java Future containing the result of the ListLicenseManagerReportGenerators operation returned by the
+     *         service.
+     * @sample AWSLicenseManagerAsync.ListLicenseManagerReportGenerators
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseManagerReportGenerators"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLicenseManagerReportGeneratorsResult> listLicenseManagerReportGeneratorsAsync(
+            ListLicenseManagerReportGeneratorsRequest listLicenseManagerReportGeneratorsRequest);
+
+    /**
+     * <p>
+     * Lists the report generators for your account.
+     * </p>
+     * 
+     * @param listLicenseManagerReportGeneratorsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListLicenseManagerReportGenerators operation returned by the
+     *         service.
+     * @sample AWSLicenseManagerAsyncHandler.ListLicenseManagerReportGenerators
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseManagerReportGenerators"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLicenseManagerReportGeneratorsResult> listLicenseManagerReportGeneratorsAsync(
+            ListLicenseManagerReportGeneratorsRequest listLicenseManagerReportGeneratorsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListLicenseManagerReportGeneratorsRequest, ListLicenseManagerReportGeneratorsResult> asyncHandler);
 
     /**
      * <p>
@@ -1283,6 +1437,51 @@ public interface AWSLicenseManagerAsync extends AWSLicenseManager {
     java.util.concurrent.Future<UpdateLicenseConfigurationResult> updateLicenseConfigurationAsync(
             UpdateLicenseConfigurationRequest updateLicenseConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateLicenseConfigurationRequest, UpdateLicenseConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a report generator.
+     * </p>
+     * <p>
+     * After you make changes to a report generator, it will start generating new reports within 60 minutes of being
+     * updated.
+     * </p>
+     * 
+     * @param updateLicenseManagerReportGeneratorRequest
+     * @return A Java Future containing the result of the UpdateLicenseManagerReportGenerator operation returned by the
+     *         service.
+     * @sample AWSLicenseManagerAsync.UpdateLicenseManagerReportGenerator
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateLicenseManagerReportGenerator"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateLicenseManagerReportGeneratorResult> updateLicenseManagerReportGeneratorAsync(
+            UpdateLicenseManagerReportGeneratorRequest updateLicenseManagerReportGeneratorRequest);
+
+    /**
+     * <p>
+     * Updates a report generator.
+     * </p>
+     * <p>
+     * After you make changes to a report generator, it will start generating new reports within 60 minutes of being
+     * updated.
+     * </p>
+     * 
+     * @param updateLicenseManagerReportGeneratorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateLicenseManagerReportGenerator operation returned by the
+     *         service.
+     * @sample AWSLicenseManagerAsyncHandler.UpdateLicenseManagerReportGenerator
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateLicenseManagerReportGenerator"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateLicenseManagerReportGeneratorResult> updateLicenseManagerReportGeneratorAsync(
+            UpdateLicenseManagerReportGeneratorRequest updateLicenseManagerReportGeneratorRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateLicenseManagerReportGeneratorRequest, UpdateLicenseManagerReportGeneratorResult> asyncHandler);
 
     /**
      * <p>

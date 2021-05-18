@@ -58,6 +58,19 @@ public class AbstractAWSComputeOptimizerAsync extends AbstractAWSComputeOptimize
     }
 
     @Override
+    public java.util.concurrent.Future<ExportEBSVolumeRecommendationsResult> exportEBSVolumeRecommendationsAsync(ExportEBSVolumeRecommendationsRequest request) {
+
+        return exportEBSVolumeRecommendationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportEBSVolumeRecommendationsResult> exportEBSVolumeRecommendationsAsync(ExportEBSVolumeRecommendationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ExportEBSVolumeRecommendationsRequest, ExportEBSVolumeRecommendationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ExportEC2InstanceRecommendationsResult> exportEC2InstanceRecommendationsAsync(
             ExportEC2InstanceRecommendationsRequest request) {
 
@@ -68,6 +81,21 @@ public class AbstractAWSComputeOptimizerAsync extends AbstractAWSComputeOptimize
     public java.util.concurrent.Future<ExportEC2InstanceRecommendationsResult> exportEC2InstanceRecommendationsAsync(
             ExportEC2InstanceRecommendationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ExportEC2InstanceRecommendationsRequest, ExportEC2InstanceRecommendationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportLambdaFunctionRecommendationsResult> exportLambdaFunctionRecommendationsAsync(
+            ExportLambdaFunctionRecommendationsRequest request) {
+
+        return exportLambdaFunctionRecommendationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportLambdaFunctionRecommendationsResult> exportLambdaFunctionRecommendationsAsync(
+            ExportLambdaFunctionRecommendationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ExportLambdaFunctionRecommendationsRequest, ExportLambdaFunctionRecommendationsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

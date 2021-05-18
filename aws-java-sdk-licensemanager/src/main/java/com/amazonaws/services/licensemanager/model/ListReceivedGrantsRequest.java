@@ -38,12 +38,27 @@ public class ListReceivedGrantsRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * <code>LicenseARN</code>
+     * <code>ProductSKU</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Status</code>
+     * <code>LicenseIssuerName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LicenseArn</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GrantStatus</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GranterAccountId</code>
      * </p>
      * </li>
      * </ul>
@@ -139,12 +154,27 @@ public class ListReceivedGrantsRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * <code>LicenseARN</code>
+     * <code>ProductSKU</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Status</code>
+     * <code>LicenseIssuerName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LicenseArn</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GrantStatus</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GranterAccountId</code>
      * </p>
      * </li>
      * </ul>
@@ -153,12 +183,27 @@ public class ListReceivedGrantsRequest extends com.amazonaws.AmazonWebServiceReq
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>LicenseARN</code>
+     *         <code>ProductSKU</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Status</code>
+     *         <code>LicenseIssuerName</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>LicenseArn</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>GrantStatus</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>GranterAccountId</code>
      *         </p>
      *         </li>
      */
@@ -174,12 +219,27 @@ public class ListReceivedGrantsRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * <code>LicenseARN</code>
+     * <code>ProductSKU</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Status</code>
+     * <code>LicenseIssuerName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LicenseArn</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GrantStatus</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GranterAccountId</code>
      * </p>
      * </li>
      * </ul>
@@ -189,12 +249,27 @@ public class ListReceivedGrantsRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>LicenseARN</code>
+     *        <code>ProductSKU</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Status</code>
+     *        <code>LicenseIssuerName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LicenseArn</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GrantStatus</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GranterAccountId</code>
      *        </p>
      *        </li>
      */
@@ -215,12 +290,27 @@ public class ListReceivedGrantsRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * <code>LicenseARN</code>
+     * <code>ProductSKU</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Status</code>
+     * <code>LicenseIssuerName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LicenseArn</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GrantStatus</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GranterAccountId</code>
      * </p>
      * </li>
      * </ul>
@@ -235,12 +325,27 @@ public class ListReceivedGrantsRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>LicenseARN</code>
+     *        <code>ProductSKU</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Status</code>
+     *        <code>LicenseIssuerName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LicenseArn</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GrantStatus</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GranterAccountId</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -263,12 +368,27 @@ public class ListReceivedGrantsRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * <code>LicenseARN</code>
+     * <code>ProductSKU</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Status</code>
+     * <code>LicenseIssuerName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LicenseArn</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GrantStatus</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GranterAccountId</code>
      * </p>
      * </li>
      * </ul>
@@ -278,12 +398,27 @@ public class ListReceivedGrantsRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>LicenseARN</code>
+     *        <code>ProductSKU</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Status</code>
+     *        <code>LicenseIssuerName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LicenseArn</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GrantStatus</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GranterAccountId</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

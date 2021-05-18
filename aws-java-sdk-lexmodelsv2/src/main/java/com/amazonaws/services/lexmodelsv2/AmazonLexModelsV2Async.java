@@ -211,6 +211,55 @@ public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
 
     /**
      * <p>
+     * Creates a zip archive containing the contents of a bot or a bot locale. The archive contains a directory
+     * structure that contains JSON files that define the bot.
+     * </p>
+     * <p>
+     * You can create an archive that contains the complete definition of a bot, or you can specify that the archive
+     * contain only the definition of a single bot locale.
+     * </p>
+     * <p>
+     * For more information about exporting bots, and about the structure of the export archive, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/importing-exporting.html"> Importing and exporting bots </a>
+     * </p>
+     * 
+     * @param createExportRequest
+     * @return A Java Future containing the result of the CreateExport operation returned by the service.
+     * @sample AmazonLexModelsV2Async.CreateExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateExport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateExportResult> createExportAsync(CreateExportRequest createExportRequest);
+
+    /**
+     * <p>
+     * Creates a zip archive containing the contents of a bot or a bot locale. The archive contains a directory
+     * structure that contains JSON files that define the bot.
+     * </p>
+     * <p>
+     * You can create an archive that contains the complete definition of a bot, or you can specify that the archive
+     * contain only the definition of a single bot locale.
+     * </p>
+     * <p>
+     * For more information about exporting bots, and about the structure of the export archive, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/importing-exporting.html"> Importing and exporting bots </a>
+     * </p>
+     * 
+     * @param createExportRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateExport operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.CreateExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateExport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateExportResult> createExportAsync(CreateExportRequest createExportRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateExportRequest, CreateExportResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an intent.
      * </p>
      * <p>
@@ -404,6 +453,37 @@ public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
 
     /**
      * <p>
+     * Gets a pre-signed S3 write URL that you use to upload the zip archive when importing a bot or a bot locale.
+     * </p>
+     * 
+     * @param createUploadUrlRequest
+     * @return A Java Future containing the result of the CreateUploadUrl operation returned by the service.
+     * @sample AmazonLexModelsV2Async.CreateUploadUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateUploadUrl" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateUploadUrlResult> createUploadUrlAsync(CreateUploadUrlRequest createUploadUrlRequest);
+
+    /**
+     * <p>
+     * Gets a pre-signed S3 write URL that you use to upload the zip archive when importing a bot or a bot locale.
+     * </p>
+     * 
+     * @param createUploadUrlRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateUploadUrl operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.CreateUploadUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateUploadUrl" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateUploadUrlResult> createUploadUrlAsync(CreateUploadUrlRequest createUploadUrlRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateUploadUrlRequest, CreateUploadUrlResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes all versions of a bot, including the <code>Draft</code> version. To delete a specific version, use the
      * <code>DeleteBotVersion</code> operation.
      * </p>
@@ -551,6 +631,68 @@ public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
      */
     java.util.concurrent.Future<DeleteBotVersionResult> deleteBotVersionAsync(DeleteBotVersionRequest deleteBotVersionRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteBotVersionRequest, DeleteBotVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes a previous export and the associated files stored in an S3 bucket.
+     * </p>
+     * 
+     * @param deleteExportRequest
+     * @return A Java Future containing the result of the DeleteExport operation returned by the service.
+     * @sample AmazonLexModelsV2Async.DeleteExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteExport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteExportResult> deleteExportAsync(DeleteExportRequest deleteExportRequest);
+
+    /**
+     * <p>
+     * Removes a previous export and the associated files stored in an S3 bucket.
+     * </p>
+     * 
+     * @param deleteExportRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteExport operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.DeleteExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteExport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteExportResult> deleteExportAsync(DeleteExportRequest deleteExportRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteExportRequest, DeleteExportResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes a previous import and the associated file stored in an S3 bucket.
+     * </p>
+     * 
+     * @param deleteImportRequest
+     * @return A Java Future containing the result of the DeleteImport operation returned by the service.
+     * @sample AmazonLexModelsV2Async.DeleteImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteImport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteImportResult> deleteImportAsync(DeleteImportRequest deleteImportRequest);
+
+    /**
+     * <p>
+     * Removes a previous import and the associated file stored in an S3 bucket.
+     * </p>
+     * 
+     * @param deleteImportRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteImport operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.DeleteImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteImport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteImportResult> deleteImportAsync(DeleteImportRequest deleteImportRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteImportRequest, DeleteImportResult> asyncHandler);
 
     /**
      * <p>
@@ -782,6 +924,68 @@ public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
      */
     java.util.concurrent.Future<DescribeBotVersionResult> describeBotVersionAsync(DescribeBotVersionRequest describeBotVersionRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeBotVersionRequest, DescribeBotVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information about a specific export.
+     * </p>
+     * 
+     * @param describeExportRequest
+     * @return A Java Future containing the result of the DescribeExport operation returned by the service.
+     * @sample AmazonLexModelsV2Async.DescribeExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeExport" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeExportResult> describeExportAsync(DescribeExportRequest describeExportRequest);
+
+    /**
+     * <p>
+     * Gets information about a specific export.
+     * </p>
+     * 
+     * @param describeExportRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeExport operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.DescribeExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeExport" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeExportResult> describeExportAsync(DescribeExportRequest describeExportRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeExportRequest, DescribeExportResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information about a specific import.
+     * </p>
+     * 
+     * @param describeImportRequest
+     * @return A Java Future containing the result of the DescribeImport operation returned by the service.
+     * @sample AmazonLexModelsV2Async.DescribeImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeImport" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeImportResult> describeImportAsync(DescribeImportRequest describeImportRequest);
+
+    /**
+     * <p>
+     * Gets information about a specific import.
+     * </p>
+     * 
+     * @param describeImportRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeImport operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.DescribeImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeImport" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeImportResult> describeImportAsync(DescribeImportRequest describeImportRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeImportRequest, DescribeImportResult> asyncHandler);
 
     /**
      * <p>
@@ -1090,6 +1294,68 @@ public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
 
     /**
      * <p>
+     * Lists the exports for a bot or bot locale. Exports are kept in the list for 7 days.
+     * </p>
+     * 
+     * @param listExportsRequest
+     * @return A Java Future containing the result of the ListExports operation returned by the service.
+     * @sample AmazonLexModelsV2Async.ListExports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListExports" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListExportsResult> listExportsAsync(ListExportsRequest listExportsRequest);
+
+    /**
+     * <p>
+     * Lists the exports for a bot or bot locale. Exports are kept in the list for 7 days.
+     * </p>
+     * 
+     * @param listExportsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListExports operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.ListExports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListExports" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListExportsResult> listExportsAsync(ListExportsRequest listExportsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListExportsRequest, ListExportsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the imports for a bot or bot locale. Imports are kept in the list for 7 days.
+     * </p>
+     * 
+     * @param listImportsRequest
+     * @return A Java Future containing the result of the ListImports operation returned by the service.
+     * @sample AmazonLexModelsV2Async.ListImports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListImports" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListImportsResult> listImportsAsync(ListImportsRequest listImportsRequest);
+
+    /**
+     * <p>
+     * Lists the imports for a bot or bot locale. Imports are kept in the list for 7 days.
+     * </p>
+     * 
+     * @param listImportsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListImports operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.ListImports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListImports" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListImportsResult> listImportsAsync(ListImportsRequest listImportsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListImportsRequest, ListImportsResult> asyncHandler);
+
+    /**
+     * <p>
      * Get a list of intents that meet the specified criteria.
      * </p>
      * 
@@ -1213,6 +1479,37 @@ public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts importing a bot or bot locale from a zip archive that you uploaded to an S3 bucket.
+     * </p>
+     * 
+     * @param startImportRequest
+     * @return A Java Future containing the result of the StartImport operation returned by the service.
+     * @sample AmazonLexModelsV2Async.StartImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartImport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartImportResult> startImportAsync(StartImportRequest startImportRequest);
+
+    /**
+     * <p>
+     * Starts importing a bot or bot locale from a zip archive that you uploaded to an S3 bucket.
+     * </p>
+     * 
+     * @param startImportRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartImport operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.StartImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartImport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartImportResult> startImportAsync(StartImportRequest startImportRequest,
+            com.amazonaws.handlers.AsyncHandler<StartImportRequest, StartImportResult> asyncHandler);
 
     /**
      * <p>
@@ -1370,6 +1667,37 @@ public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
      */
     java.util.concurrent.Future<UpdateBotLocaleResult> updateBotLocaleAsync(UpdateBotLocaleRequest updateBotLocaleRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateBotLocaleRequest, UpdateBotLocaleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the password used to encrypt an export zip archive.
+     * </p>
+     * 
+     * @param updateExportRequest
+     * @return A Java Future containing the result of the UpdateExport operation returned by the service.
+     * @sample AmazonLexModelsV2Async.UpdateExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateExport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateExportResult> updateExportAsync(UpdateExportRequest updateExportRequest);
+
+    /**
+     * <p>
+     * Updates the password used to encrypt an export zip archive.
+     * </p>
+     * 
+     * @param updateExportRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateExport operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.UpdateExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateExport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateExportResult> updateExportAsync(UpdateExportRequest updateExportRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateExportRequest, UpdateExportResult> asyncHandler);
 
     /**
      * <p>

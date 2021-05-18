@@ -27,7 +27,7 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends com.amazo
 
     /**
      * <p>
-     * The IDs of the Trusted Advisor checks to get the status of.
+     * The IDs of the Trusted Advisor checks to get the status.
      * </p>
      * <note>
      * <p>
@@ -40,7 +40,7 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends com.amazo
 
     /**
      * <p>
-     * The IDs of the Trusted Advisor checks to get the status of.
+     * The IDs of the Trusted Advisor checks to get the status.
      * </p>
      * <note>
      * <p>
@@ -49,7 +49,7 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends com.amazo
      * </p>
      * </note>
      * 
-     * @return The IDs of the Trusted Advisor checks to get the status of. </p> <note>
+     * @return The IDs of the Trusted Advisor checks to get the status.</p> <note>
      *         <p>
      *         If you specify the check ID of a check that is automatically refreshed, you might see an
      *         <code>InvalidParameterValue</code> error.
@@ -65,7 +65,7 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends com.amazo
 
     /**
      * <p>
-     * The IDs of the Trusted Advisor checks to get the status of.
+     * The IDs of the Trusted Advisor checks to get the status.
      * </p>
      * <note>
      * <p>
@@ -75,7 +75,7 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends com.amazo
      * </note>
      * 
      * @param checkIds
-     *        The IDs of the Trusted Advisor checks to get the status of. </p> <note>
+     *        The IDs of the Trusted Advisor checks to get the status.</p> <note>
      *        <p>
      *        If you specify the check ID of a check that is automatically refreshed, you might see an
      *        <code>InvalidParameterValue</code> error.
@@ -93,7 +93,7 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends com.amazo
 
     /**
      * <p>
-     * The IDs of the Trusted Advisor checks to get the status of.
+     * The IDs of the Trusted Advisor checks to get the status.
      * </p>
      * <note>
      * <p>
@@ -108,7 +108,7 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends com.amazo
      * </p>
      * 
      * @param checkIds
-     *        The IDs of the Trusted Advisor checks to get the status of. </p> <note>
+     *        The IDs of the Trusted Advisor checks to get the status.</p> <note>
      *        <p>
      *        If you specify the check ID of a check that is automatically refreshed, you might see an
      *        <code>InvalidParameterValue</code> error.
@@ -128,7 +128,7 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends com.amazo
 
     /**
      * <p>
-     * The IDs of the Trusted Advisor checks to get the status of.
+     * The IDs of the Trusted Advisor checks to get the status.
      * </p>
      * <note>
      * <p>
@@ -138,7 +138,7 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends com.amazo
      * </note>
      * 
      * @param checkIds
-     *        The IDs of the Trusted Advisor checks to get the status of. </p> <note>
+     *        The IDs of the Trusted Advisor checks to get the status.</p> <note>
      *        <p>
      *        If you specify the check ID of a check that is automatically refreshed, you might see an
      *        <code>InvalidParameterValue</code> error.

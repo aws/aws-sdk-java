@@ -25,7 +25,8 @@ public enum BotStatus {
     Inactive("Inactive"),
     Deleting("Deleting"),
     Failed("Failed"),
-    Versioning("Versioning");
+    Versioning("Versioning"),
+    Importing("Importing");
 
     private String value;
 

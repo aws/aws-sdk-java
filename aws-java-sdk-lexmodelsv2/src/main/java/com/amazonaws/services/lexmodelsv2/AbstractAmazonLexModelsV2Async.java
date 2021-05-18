@@ -93,6 +93,19 @@ public class AbstractAmazonLexModelsV2Async extends AbstractAmazonLexModelsV2 im
     }
 
     @Override
+    public java.util.concurrent.Future<CreateExportResult> createExportAsync(CreateExportRequest request) {
+
+        return createExportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateExportResult> createExportAsync(CreateExportRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateExportRequest, CreateExportResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateIntentResult> createIntentAsync(CreateIntentRequest request) {
 
         return createIntentAsync(request, null);
@@ -127,6 +140,19 @@ public class AbstractAmazonLexModelsV2Async extends AbstractAmazonLexModelsV2 im
     @Override
     public java.util.concurrent.Future<CreateSlotTypeResult> createSlotTypeAsync(CreateSlotTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateSlotTypeRequest, CreateSlotTypeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUploadUrlResult> createUploadUrlAsync(CreateUploadUrlRequest request) {
+
+        return createUploadUrlAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUploadUrlResult> createUploadUrlAsync(CreateUploadUrlRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateUploadUrlRequest, CreateUploadUrlResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -179,6 +205,32 @@ public class AbstractAmazonLexModelsV2Async extends AbstractAmazonLexModelsV2 im
     @Override
     public java.util.concurrent.Future<DeleteBotVersionResult> deleteBotVersionAsync(DeleteBotVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteBotVersionRequest, DeleteBotVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteExportResult> deleteExportAsync(DeleteExportRequest request) {
+
+        return deleteExportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteExportResult> deleteExportAsync(DeleteExportRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteExportRequest, DeleteExportResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteImportResult> deleteImportAsync(DeleteImportRequest request) {
+
+        return deleteImportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteImportResult> deleteImportAsync(DeleteImportRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteImportRequest, DeleteImportResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -270,6 +322,32 @@ public class AbstractAmazonLexModelsV2Async extends AbstractAmazonLexModelsV2 im
     @Override
     public java.util.concurrent.Future<DescribeBotVersionResult> describeBotVersionAsync(DescribeBotVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeBotVersionRequest, DescribeBotVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeExportResult> describeExportAsync(DescribeExportRequest request) {
+
+        return describeExportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeExportResult> describeExportAsync(DescribeExportRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeExportRequest, DescribeExportResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeImportResult> describeImportAsync(DescribeImportRequest request) {
+
+        return describeImportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeImportResult> describeImportAsync(DescribeImportRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeImportRequest, DescribeImportResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -392,6 +470,32 @@ public class AbstractAmazonLexModelsV2Async extends AbstractAmazonLexModelsV2 im
     }
 
     @Override
+    public java.util.concurrent.Future<ListExportsResult> listExportsAsync(ListExportsRequest request) {
+
+        return listExportsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExportsResult> listExportsAsync(ListExportsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListExportsRequest, ListExportsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImportsResult> listImportsAsync(ListImportsRequest request) {
+
+        return listImportsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImportsResult> listImportsAsync(ListImportsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListImportsRequest, ListImportsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListIntentsResult> listIntentsAsync(ListIntentsRequest request) {
 
         return listIntentsAsync(request, null);
@@ -439,6 +543,19 @@ public class AbstractAmazonLexModelsV2Async extends AbstractAmazonLexModelsV2 im
     @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartImportResult> startImportAsync(StartImportRequest request) {
+
+        return startImportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartImportResult> startImportAsync(StartImportRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartImportRequest, StartImportResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -504,6 +621,19 @@ public class AbstractAmazonLexModelsV2Async extends AbstractAmazonLexModelsV2 im
     @Override
     public java.util.concurrent.Future<UpdateBotLocaleResult> updateBotLocaleAsync(UpdateBotLocaleRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateBotLocaleRequest, UpdateBotLocaleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateExportResult> updateExportAsync(UpdateExportRequest request) {
+
+        return updateExportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateExportResult> updateExportAsync(UpdateExportRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateExportRequest, UpdateExportResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

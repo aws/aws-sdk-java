@@ -38,7 +38,7 @@ public class ListTokensRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <code>licenseArns</code>
+     * <code>LicenseArns</code>
      * </p>
      * </li>
      * </ul>
@@ -134,7 +134,7 @@ public class ListTokensRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <code>licenseArns</code>
+     * <code>LicenseArns</code>
      * </p>
      * </li>
      * </ul>
@@ -143,7 +143,7 @@ public class ListTokensRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>licenseArns</code>
+     *         <code>LicenseArns</code>
      *         </p>
      *         </li>
      */
@@ -159,7 +159,7 @@ public class ListTokensRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <code>licenseArns</code>
+     * <code>LicenseArns</code>
      * </p>
      * </li>
      * </ul>
@@ -169,7 +169,7 @@ public class ListTokensRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>licenseArns</code>
+     *        <code>LicenseArns</code>
      *        </p>
      *        </li>
      */
@@ -190,7 +190,7 @@ public class ListTokensRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <code>licenseArns</code>
+     * <code>LicenseArns</code>
      * </p>
      * </li>
      * </ul>
@@ -205,7 +205,7 @@ public class ListTokensRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>licenseArns</code>
+     *        <code>LicenseArns</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -228,7 +228,7 @@ public class ListTokensRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * <code>licenseArns</code>
+     * <code>LicenseArns</code>
      * </p>
      * </li>
      * </ul>
@@ -238,7 +238,7 @@ public class ListTokensRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>licenseArns</code>
+     *        <code>LicenseArns</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -53,6 +53,11 @@ public class AbstractAmazonLexModelsV2 implements AmazonLexModelsV2 {
     }
 
     @Override
+    public CreateExportResult createExport(CreateExportRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateIntentResult createIntent(CreateIntentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -64,6 +69,11 @@ public class AbstractAmazonLexModelsV2 implements AmazonLexModelsV2 {
 
     @Override
     public CreateSlotTypeResult createSlotType(CreateSlotTypeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateUploadUrlResult createUploadUrl(CreateUploadUrlRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -84,6 +94,16 @@ public class AbstractAmazonLexModelsV2 implements AmazonLexModelsV2 {
 
     @Override
     public DeleteBotVersionResult deleteBotVersion(DeleteBotVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteExportResult deleteExport(DeleteExportRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteImportResult deleteImport(DeleteImportRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -119,6 +139,16 @@ public class AbstractAmazonLexModelsV2 implements AmazonLexModelsV2 {
 
     @Override
     public DescribeBotVersionResult describeBotVersion(DescribeBotVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeExportResult describeExport(DescribeExportRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeImportResult describeImport(DescribeImportRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -168,6 +198,16 @@ public class AbstractAmazonLexModelsV2 implements AmazonLexModelsV2 {
     }
 
     @Override
+    public ListExportsResult listExports(ListExportsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListImportsResult listImports(ListImportsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListIntentsResult listIntents(ListIntentsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -184,6 +224,11 @@ public class AbstractAmazonLexModelsV2 implements AmazonLexModelsV2 {
 
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartImportResult startImport(StartImportRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -209,6 +254,11 @@ public class AbstractAmazonLexModelsV2 implements AmazonLexModelsV2 {
 
     @Override
     public UpdateBotLocaleResult updateBotLocale(UpdateBotLocaleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateExportResult updateExport(UpdateExportRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -148,6 +148,34 @@ public interface AmazonLexModelsV2 {
 
     /**
      * <p>
+     * Creates a zip archive containing the contents of a bot or a bot locale. The archive contains a directory
+     * structure that contains JSON files that define the bot.
+     * </p>
+     * <p>
+     * You can create an archive that contains the complete definition of a bot, or you can specify that the archive
+     * contain only the definition of a single bot locale.
+     * </p>
+     * <p>
+     * For more information about exporting bots, and about the structure of the export archive, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/importing-exporting.html"> Importing and exporting bots </a>
+     * </p>
+     * 
+     * @param createExportRequest
+     * @return Result of the CreateExport operation returned by the service.
+     * @throws ThrottlingException
+     * @throws ServiceQuotaExceededException
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ConflictException
+     * @throws InternalServerException
+     * @sample AmazonLexModelsV2.CreateExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateExport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateExportResult createExport(CreateExportRequest createExportRequest);
+
+    /**
+     * <p>
      * Creates an intent.
      * </p>
      * <p>
@@ -255,6 +283,24 @@ public interface AmazonLexModelsV2 {
 
     /**
      * <p>
+     * Gets a pre-signed S3 write URL that you use to upload the zip archive when importing a bot or a bot locale.
+     * </p>
+     * 
+     * @param createUploadUrlRequest
+     * @return Result of the CreateUploadUrl operation returned by the service.
+     * @throws ThrottlingException
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ConflictException
+     * @throws InternalServerException
+     * @sample AmazonLexModelsV2.CreateUploadUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateUploadUrl" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateUploadUrlResult createUploadUrl(CreateUploadUrlRequest createUploadUrlRequest);
+
+    /**
+     * <p>
      * Deletes all versions of a bot, including the <code>Draft</code> version. To delete a specific version, use the
      * <code>DeleteBotVersion</code> operation.
      * </p>
@@ -341,6 +387,42 @@ public interface AmazonLexModelsV2 {
      *      API Documentation</a>
      */
     DeleteBotVersionResult deleteBotVersion(DeleteBotVersionRequest deleteBotVersionRequest);
+
+    /**
+     * <p>
+     * Removes a previous export and the associated files stored in an S3 bucket.
+     * </p>
+     * 
+     * @param deleteExportRequest
+     * @return Result of the DeleteExport operation returned by the service.
+     * @throws ThrottlingException
+     * @throws ServiceQuotaExceededException
+     * @throws ValidationException
+     * @throws PreconditionFailedException
+     * @throws InternalServerException
+     * @sample AmazonLexModelsV2.DeleteExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteExport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteExportResult deleteExport(DeleteExportRequest deleteExportRequest);
+
+    /**
+     * <p>
+     * Removes a previous import and the associated file stored in an S3 bucket.
+     * </p>
+     * 
+     * @param deleteImportRequest
+     * @return Result of the DeleteImport operation returned by the service.
+     * @throws ThrottlingException
+     * @throws ServiceQuotaExceededException
+     * @throws ValidationException
+     * @throws PreconditionFailedException
+     * @throws InternalServerException
+     * @sample AmazonLexModelsV2.DeleteImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteImport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteImportResult deleteImport(DeleteImportRequest deleteImportRequest);
 
     /**
      * <p>
@@ -477,6 +559,40 @@ public interface AmazonLexModelsV2 {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeBotVersionResult describeBotVersion(DescribeBotVersionRequest describeBotVersionRequest);
+
+    /**
+     * <p>
+     * Gets information about a specific export.
+     * </p>
+     * 
+     * @param describeExportRequest
+     * @return Result of the DescribeExport operation returned by the service.
+     * @throws ThrottlingException
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws InternalServerException
+     * @sample AmazonLexModelsV2.DescribeExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeExport" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeExportResult describeExport(DescribeExportRequest describeExportRequest);
+
+    /**
+     * <p>
+     * Gets information about a specific import.
+     * </p>
+     * 
+     * @param describeImportRequest
+     * @return Result of the DescribeImport operation returned by the service.
+     * @throws ThrottlingException
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws InternalServerException
+     * @sample AmazonLexModelsV2.DescribeImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeImport" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeImportResult describeImport(DescribeImportRequest describeImportRequest);
 
     /**
      * <p>
@@ -649,6 +765,38 @@ public interface AmazonLexModelsV2 {
 
     /**
      * <p>
+     * Lists the exports for a bot or bot locale. Exports are kept in the list for 7 days.
+     * </p>
+     * 
+     * @param listExportsRequest
+     * @return Result of the ListExports operation returned by the service.
+     * @throws ThrottlingException
+     * @throws ValidationException
+     * @throws InternalServerException
+     * @sample AmazonLexModelsV2.ListExports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListExports" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListExportsResult listExports(ListExportsRequest listExportsRequest);
+
+    /**
+     * <p>
+     * Lists the imports for a bot or bot locale. Imports are kept in the list for 7 days.
+     * </p>
+     * 
+     * @param listImportsRequest
+     * @return Result of the ListImports operation returned by the service.
+     * @throws ThrottlingException
+     * @throws ValidationException
+     * @throws InternalServerException
+     * @sample AmazonLexModelsV2.ListImports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListImports" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListImportsResult listImports(ListImportsRequest listImportsRequest);
+
+    /**
+     * <p>
      * Get a list of intents that meet the specified criteria.
      * </p>
      * 
@@ -715,6 +863,25 @@ public interface AmazonLexModelsV2 {
      *      target="_top">AWS API Documentation</a>
      */
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Starts importing a bot or bot locale from a zip archive that you uploaded to an S3 bucket.
+     * </p>
+     * 
+     * @param startImportRequest
+     * @return Result of the StartImport operation returned by the service.
+     * @throws ThrottlingException
+     * @throws ServiceQuotaExceededException
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ConflictException
+     * @throws InternalServerException
+     * @sample AmazonLexModelsV2.StartImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartImport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartImportResult startImport(StartImportRequest startImportRequest);
 
     /**
      * <p>
@@ -807,6 +974,25 @@ public interface AmazonLexModelsV2 {
      *      API Documentation</a>
      */
     UpdateBotLocaleResult updateBotLocale(UpdateBotLocaleRequest updateBotLocaleRequest);
+
+    /**
+     * <p>
+     * Updates the password used to encrypt an export zip archive.
+     * </p>
+     * 
+     * @param updateExportRequest
+     * @return Result of the UpdateExport operation returned by the service.
+     * @throws ThrottlingException
+     * @throws ServiceQuotaExceededException
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ConflictException
+     * @throws InternalServerException
+     * @sample AmazonLexModelsV2.UpdateExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateExport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateExportResult updateExport(UpdateExportRequest updateExportRequest);
 
     /**
      * <p>

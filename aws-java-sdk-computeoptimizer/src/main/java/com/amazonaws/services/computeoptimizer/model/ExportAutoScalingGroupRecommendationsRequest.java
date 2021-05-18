@@ -93,7 +93,10 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
      * account is the management account of an organization.
      * </p>
      * <p>
-     * The member accounts must also be opted in to Compute Optimizer.
+     * The member accounts must also be opted in to Compute Optimizer, and trusted access for Compute Optimizer must be
+     * enabled in the organization account. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute
+     * Optimizer and AWS Organizations trusted access</a> in the <i>AWS Compute Optimizer User Guide</i>.
      * </p>
      * <p>
      * Recommendations for member accounts of the organization are not included in the export file if this parameter is
@@ -680,7 +683,10 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
      * account is the management account of an organization.
      * </p>
      * <p>
-     * The member accounts must also be opted in to Compute Optimizer.
+     * The member accounts must also be opted in to Compute Optimizer, and trusted access for Compute Optimizer must be
+     * enabled in the organization account. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute
+     * Optimizer and AWS Organizations trusted access</a> in the <i>AWS Compute Optimizer User Guide</i>.
      * </p>
      * <p>
      * Recommendations for member accounts of the organization are not included in the export file if this parameter is
@@ -699,7 +705,11 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
      *        Indicates whether to include recommendations for resources in all member accounts of the organization if
      *        your account is the management account of an organization.</p>
      *        <p>
-     *        The member accounts must also be opted in to Compute Optimizer.
+     *        The member accounts must also be opted in to Compute Optimizer, and trusted access for Compute Optimizer
+     *        must be enabled in the organization account. For more information, see <a
+     *        href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access"
+     *        >Compute Optimizer and AWS Organizations trusted access</a> in the <i>AWS Compute Optimizer User
+     *        Guide</i>.
      *        </p>
      *        <p>
      *        Recommendations for member accounts of the organization are not included in the export file if this
@@ -724,7 +734,10 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
      * account is the management account of an organization.
      * </p>
      * <p>
-     * The member accounts must also be opted in to Compute Optimizer.
+     * The member accounts must also be opted in to Compute Optimizer, and trusted access for Compute Optimizer must be
+     * enabled in the organization account. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute
+     * Optimizer and AWS Organizations trusted access</a> in the <i>AWS Compute Optimizer User Guide</i>.
      * </p>
      * <p>
      * Recommendations for member accounts of the organization are not included in the export file if this parameter is
@@ -742,7 +755,11 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
      * @return Indicates whether to include recommendations for resources in all member accounts of the organization if
      *         your account is the management account of an organization.</p>
      *         <p>
-     *         The member accounts must also be opted in to Compute Optimizer.
+     *         The member accounts must also be opted in to Compute Optimizer, and trusted access for Compute Optimizer
+     *         must be enabled in the organization account. For more information, see <a
+     *         href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access"
+     *         >Compute Optimizer and AWS Organizations trusted access</a> in the <i>AWS Compute Optimizer User
+     *         Guide</i>.
      *         </p>
      *         <p>
      *         Recommendations for member accounts of the organization are not included in the export file if this
@@ -767,7 +784,10 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
      * account is the management account of an organization.
      * </p>
      * <p>
-     * The member accounts must also be opted in to Compute Optimizer.
+     * The member accounts must also be opted in to Compute Optimizer, and trusted access for Compute Optimizer must be
+     * enabled in the organization account. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute
+     * Optimizer and AWS Organizations trusted access</a> in the <i>AWS Compute Optimizer User Guide</i>.
      * </p>
      * <p>
      * Recommendations for member accounts of the organization are not included in the export file if this parameter is
@@ -786,7 +806,11 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
      *        Indicates whether to include recommendations for resources in all member accounts of the organization if
      *        your account is the management account of an organization.</p>
      *        <p>
-     *        The member accounts must also be opted in to Compute Optimizer.
+     *        The member accounts must also be opted in to Compute Optimizer, and trusted access for Compute Optimizer
+     *        must be enabled in the organization account. For more information, see <a
+     *        href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access"
+     *        >Compute Optimizer and AWS Organizations trusted access</a> in the <i>AWS Compute Optimizer User
+     *        Guide</i>.
      *        </p>
      *        <p>
      *        Recommendations for member accounts of the organization are not included in the export file if this
@@ -813,7 +837,10 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
      * account is the management account of an organization.
      * </p>
      * <p>
-     * The member accounts must also be opted in to Compute Optimizer.
+     * The member accounts must also be opted in to Compute Optimizer, and trusted access for Compute Optimizer must be
+     * enabled in the organization account. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute
+     * Optimizer and AWS Organizations trusted access</a> in the <i>AWS Compute Optimizer User Guide</i>.
      * </p>
      * <p>
      * Recommendations for member accounts of the organization are not included in the export file if this parameter is
@@ -831,7 +858,11 @@ public class ExportAutoScalingGroupRecommendationsRequest extends com.amazonaws.
      * @return Indicates whether to include recommendations for resources in all member accounts of the organization if
      *         your account is the management account of an organization.</p>
      *         <p>
-     *         The member accounts must also be opted in to Compute Optimizer.
+     *         The member accounts must also be opted in to Compute Optimizer, and trusted access for Compute Optimizer
+     *         must be enabled in the organization account. For more information, see <a
+     *         href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access"
+     *         >Compute Optimizer and AWS Organizations trusted access</a> in the <i>AWS Compute Optimizer User
+     *         Guide</i>.
      *         </p>
      *         <p>
      *         Recommendations for member accounts of the organization are not included in the export file if this

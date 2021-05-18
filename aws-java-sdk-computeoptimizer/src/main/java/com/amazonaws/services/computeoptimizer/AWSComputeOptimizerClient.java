@@ -326,6 +326,89 @@ public class AWSComputeOptimizerClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Exports optimization recommendations for Amazon EBS volumes.
+     * </p>
+     * <p>
+     * Recommendations are exported in a comma-separated values (.csv) file, and its metadata in a JavaScript Object
+     * Notation (.json) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+     * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * <p>
+     * You can have only one Amazon EBS volume export job in progress per AWS Region.
+     * </p>
+     * 
+     * @param exportEBSVolumeRecommendationsRequest
+     * @return Result of the ExportEBSVolumeRecommendations operation returned by the service.
+     * @throws OptInRequiredException
+     *         The account is not opted in to AWS Compute Optimizer.
+     * @throws InternalServerException
+     *         An internal error has occurred. Try your call again.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InvalidParameterValueException
+     *         An invalid or out-of-range value was supplied for the input parameter.
+     * @throws MissingAuthenticationTokenException
+     *         The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws LimitExceededException
+     *         The request exceeds a limit of the service.
+     * @sample AWSComputeOptimizer.ExportEBSVolumeRecommendations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportEBSVolumeRecommendations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ExportEBSVolumeRecommendationsResult exportEBSVolumeRecommendations(ExportEBSVolumeRecommendationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeExportEBSVolumeRecommendations(request);
+    }
+
+    @SdkInternalApi
+    final ExportEBSVolumeRecommendationsResult executeExportEBSVolumeRecommendations(ExportEBSVolumeRecommendationsRequest exportEBSVolumeRecommendationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(exportEBSVolumeRecommendationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ExportEBSVolumeRecommendationsRequest> request = null;
+        Response<ExportEBSVolumeRecommendationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ExportEBSVolumeRecommendationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(exportEBSVolumeRecommendationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Compute Optimizer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExportEBSVolumeRecommendations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ExportEBSVolumeRecommendationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ExportEBSVolumeRecommendationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Exports optimization recommendations for Amazon EC2 instances.
      * </p>
      * <p>
@@ -399,6 +482,91 @@ public class AWSComputeOptimizerClient extends AmazonWebServiceClient implements
             HttpResponseHandler<AmazonWebServiceResponse<ExportEC2InstanceRecommendationsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ExportEC2InstanceRecommendationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Exports optimization recommendations for AWS Lambda functions.
+     * </p>
+     * <p>
+     * Recommendations are exported in a comma-separated values (.csv) file, and its metadata in a JavaScript Object
+     * Notation (.json) file, to an existing Amazon Simple Storage Service (Amazon S3) bucket that you specify. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+     * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * <p>
+     * You can have only one Lambda function export job in progress per AWS Region.
+     * </p>
+     * 
+     * @param exportLambdaFunctionRecommendationsRequest
+     * @return Result of the ExportLambdaFunctionRecommendations operation returned by the service.
+     * @throws OptInRequiredException
+     *         The account is not opted in to AWS Compute Optimizer.
+     * @throws InternalServerException
+     *         An internal error has occurred. Try your call again.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InvalidParameterValueException
+     *         An invalid or out-of-range value was supplied for the input parameter.
+     * @throws MissingAuthenticationTokenException
+     *         The request must contain either a valid (registered) AWS access key ID or X.509 certificate.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws LimitExceededException
+     *         The request exceeds a limit of the service.
+     * @sample AWSComputeOptimizer.ExportLambdaFunctionRecommendations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportLambdaFunctionRecommendations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ExportLambdaFunctionRecommendationsResult exportLambdaFunctionRecommendations(ExportLambdaFunctionRecommendationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeExportLambdaFunctionRecommendations(request);
+    }
+
+    @SdkInternalApi
+    final ExportLambdaFunctionRecommendationsResult executeExportLambdaFunctionRecommendations(
+            ExportLambdaFunctionRecommendationsRequest exportLambdaFunctionRecommendationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(exportLambdaFunctionRecommendationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ExportLambdaFunctionRecommendationsRequest> request = null;
+        Response<ExportLambdaFunctionRecommendationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ExportLambdaFunctionRecommendationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(exportLambdaFunctionRecommendationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Compute Optimizer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExportLambdaFunctionRecommendations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ExportLambdaFunctionRecommendationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ExportLambdaFunctionRecommendationsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -992,14 +1160,14 @@ public class AWSComputeOptimizerClient extends AmazonWebServiceClient implements
      * <p>
      * You must have the appropriate permissions to opt in to Compute Optimizer, to view its recommendations, and to opt
      * out. For more information, see <a
-     * href="https://docs.aws.amazon.com/compute-optimizer/ug/security-iam.html">Controlling access with AWS Identity
-     * and Access Management</a> in the <i>Compute Optimizer User Guide</i>.
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html">Controlling access with AWS
+     * Identity and Access Management</a> in the <i>AWS Compute Optimizer User Guide</i>.
      * </p>
      * <p>
      * When you opt in, Compute Optimizer automatically creates a Service-Linked Role in your account to access its
      * data. For more information, see <a
-     * href="https://docs.aws.amazon.com/compute-optimizer/ug/using-service-linked-roles.html">Using Service-Linked
-     * Roles for AWS Compute Optimizer</a> in the <i>Compute Optimizer User Guide</i>.
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/using-service-linked-roles.html">Using
+     * Service-Linked Roles for AWS Compute Optimizer</a> in the <i>AWS Compute Optimizer User Guide</i>.
      * </p>
      * 
      * @param updateEnrollmentStatusRequest

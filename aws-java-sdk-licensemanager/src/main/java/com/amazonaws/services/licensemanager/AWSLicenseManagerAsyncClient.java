@@ -342,6 +342,41 @@ public class AWSLicenseManagerAsyncClient extends AWSLicenseManagerClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<CreateLicenseManagerReportGeneratorResult> createLicenseManagerReportGeneratorAsync(
+            CreateLicenseManagerReportGeneratorRequest request) {
+
+        return createLicenseManagerReportGeneratorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLicenseManagerReportGeneratorResult> createLicenseManagerReportGeneratorAsync(
+            final CreateLicenseManagerReportGeneratorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateLicenseManagerReportGeneratorRequest, CreateLicenseManagerReportGeneratorResult> asyncHandler) {
+        final CreateLicenseManagerReportGeneratorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateLicenseManagerReportGeneratorResult>() {
+            @Override
+            public CreateLicenseManagerReportGeneratorResult call() throws Exception {
+                CreateLicenseManagerReportGeneratorResult result = null;
+
+                try {
+                    result = executeCreateLicenseManagerReportGenerator(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateLicenseVersionResult> createLicenseVersionAsync(CreateLicenseVersionRequest request) {
 
         return createLicenseVersionAsync(request, null);
@@ -491,6 +526,41 @@ public class AWSLicenseManagerAsyncClient extends AWSLicenseManagerClient implem
 
                 try {
                     result = executeDeleteLicenseConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLicenseManagerReportGeneratorResult> deleteLicenseManagerReportGeneratorAsync(
+            DeleteLicenseManagerReportGeneratorRequest request) {
+
+        return deleteLicenseManagerReportGeneratorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLicenseManagerReportGeneratorResult> deleteLicenseManagerReportGeneratorAsync(
+            final DeleteLicenseManagerReportGeneratorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteLicenseManagerReportGeneratorRequest, DeleteLicenseManagerReportGeneratorResult> asyncHandler) {
+        final DeleteLicenseManagerReportGeneratorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteLicenseManagerReportGeneratorResult>() {
+            @Override
+            public DeleteLicenseManagerReportGeneratorResult call() throws Exception {
+                DeleteLicenseManagerReportGeneratorResult result = null;
+
+                try {
+                    result = executeDeleteLicenseManagerReportGenerator(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -705,6 +775,41 @@ public class AWSLicenseManagerAsyncClient extends AWSLicenseManagerClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<GetLicenseManagerReportGeneratorResult> getLicenseManagerReportGeneratorAsync(
+            GetLicenseManagerReportGeneratorRequest request) {
+
+        return getLicenseManagerReportGeneratorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLicenseManagerReportGeneratorResult> getLicenseManagerReportGeneratorAsync(
+            final GetLicenseManagerReportGeneratorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLicenseManagerReportGeneratorRequest, GetLicenseManagerReportGeneratorResult> asyncHandler) {
+        final GetLicenseManagerReportGeneratorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetLicenseManagerReportGeneratorResult>() {
+            @Override
+            public GetLicenseManagerReportGeneratorResult call() throws Exception {
+                GetLicenseManagerReportGeneratorResult result = null;
+
+                try {
+                    result = executeGetLicenseManagerReportGenerator(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetLicenseUsageResult> getLicenseUsageAsync(GetLicenseUsageRequest request) {
 
         return getLicenseUsageAsync(request, null);
@@ -891,6 +996,41 @@ public class AWSLicenseManagerAsyncClient extends AWSLicenseManagerClient implem
 
                 try {
                     result = executeListLicenseConfigurations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLicenseManagerReportGeneratorsResult> listLicenseManagerReportGeneratorsAsync(
+            ListLicenseManagerReportGeneratorsRequest request) {
+
+        return listLicenseManagerReportGeneratorsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLicenseManagerReportGeneratorsResult> listLicenseManagerReportGeneratorsAsync(
+            final ListLicenseManagerReportGeneratorsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListLicenseManagerReportGeneratorsRequest, ListLicenseManagerReportGeneratorsResult> asyncHandler) {
+        final ListLicenseManagerReportGeneratorsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListLicenseManagerReportGeneratorsResult>() {
+            @Override
+            public ListLicenseManagerReportGeneratorsResult call() throws Exception {
+                ListLicenseManagerReportGeneratorsResult result = null;
+
+                try {
+                    result = executeListLicenseManagerReportGenerators(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1324,6 +1464,41 @@ public class AWSLicenseManagerAsyncClient extends AWSLicenseManagerClient implem
 
                 try {
                     result = executeUpdateLicenseConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLicenseManagerReportGeneratorResult> updateLicenseManagerReportGeneratorAsync(
+            UpdateLicenseManagerReportGeneratorRequest request) {
+
+        return updateLicenseManagerReportGeneratorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLicenseManagerReportGeneratorResult> updateLicenseManagerReportGeneratorAsync(
+            final UpdateLicenseManagerReportGeneratorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateLicenseManagerReportGeneratorRequest, UpdateLicenseManagerReportGeneratorResult> asyncHandler) {
+        final UpdateLicenseManagerReportGeneratorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateLicenseManagerReportGeneratorResult>() {
+            @Override
+            public UpdateLicenseManagerReportGeneratorResult call() throws Exception {
+                UpdateLicenseManagerReportGeneratorResult result = null;
+
+                try {
+                    result = executeUpdateLicenseManagerReportGenerator(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

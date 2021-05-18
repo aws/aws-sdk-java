@@ -47,8 +47,7 @@ public class DeleteSlotRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The identifier of the language and locale that the slot will be deleted from. The string must match one of the
      * supported locales. For more information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html"
-     * >https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html</a>.
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.
      * </p>
      */
     private String localeId;
@@ -183,15 +182,13 @@ public class DeleteSlotRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The identifier of the language and locale that the slot will be deleted from. The string must match one of the
      * supported locales. For more information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html"
-     * >https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html</a>.
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.
      * </p>
      * 
      * @param localeId
      *        The identifier of the language and locale that the slot will be deleted from. The string must match one of
      *        the supported locales. For more information, see <a
-     *        href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html"
-     *        >https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html</a>.
+     *        href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.
      */
 
     public void setLocaleId(String localeId) {
@@ -202,14 +199,12 @@ public class DeleteSlotRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The identifier of the language and locale that the slot will be deleted from. The string must match one of the
      * supported locales. For more information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html"
-     * >https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html</a>.
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.
      * </p>
      * 
      * @return The identifier of the language and locale that the slot will be deleted from. The string must match one
      *         of the supported locales. For more information, see <a
-     *         href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html"
-     *         >https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html</a>.
+     *         href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.
      */
 
     public String getLocaleId() {
@@ -220,15 +215,13 @@ public class DeleteSlotRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The identifier of the language and locale that the slot will be deleted from. The string must match one of the
      * supported locales. For more information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html"
-     * >https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html</a>.
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.
      * </p>
      * 
      * @param localeId
      *        The identifier of the language and locale that the slot will be deleted from. The string must match one of
      *        the supported locales. For more information, see <a
-     *        href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html"
-     *        >https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html</a>.
+     *        href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

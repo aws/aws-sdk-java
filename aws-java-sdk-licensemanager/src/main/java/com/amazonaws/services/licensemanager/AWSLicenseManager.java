@@ -284,6 +284,38 @@ public interface AWSLicenseManager {
 
     /**
      * <p>
+     * Creates a new report generator.
+     * </p>
+     * 
+     * @param createLicenseManagerReportGeneratorRequest
+     * @return Result of the CreateLicenseManagerReportGenerator operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws InvalidParameterValueException
+     *         One or more parameter values are not valid.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @sample AWSLicenseManager.CreateLicenseManagerReportGenerator
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseManagerReportGenerator"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateLicenseManagerReportGeneratorResult createLicenseManagerReportGenerator(
+            CreateLicenseManagerReportGeneratorRequest createLicenseManagerReportGeneratorRequest);
+
+    /**
+     * <p>
      * Creates a new version of the specified license.
      * </p>
      * 
@@ -431,6 +463,42 @@ public interface AWSLicenseManager {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteLicenseConfigurationResult deleteLicenseConfiguration(DeleteLicenseConfigurationRequest deleteLicenseConfigurationRequest);
+
+    /**
+     * <p>
+     * Delete an existing report generator.
+     * </p>
+     * <p>
+     * This action deletes the report generator, which stops it from generating future reports and cannot be reversed.
+     * However, the previous reports from this generator will remain in your S3 bucket.
+     * </p>
+     * 
+     * @param deleteLicenseManagerReportGeneratorRequest
+     * @return Result of the DeleteLicenseManagerReportGenerator operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws InvalidParameterValueException
+     *         One or more parameter values are not valid.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @sample AWSLicenseManager.DeleteLicenseManagerReportGenerator
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteLicenseManagerReportGenerator"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteLicenseManagerReportGeneratorResult deleteLicenseManagerReportGenerator(
+            DeleteLicenseManagerReportGeneratorRequest deleteLicenseManagerReportGeneratorRequest);
 
     /**
      * <p>
@@ -592,6 +660,36 @@ public interface AWSLicenseManager {
 
     /**
      * <p>
+     * Gets information on the specified report generator.
+     * </p>
+     * 
+     * @param getLicenseManagerReportGeneratorRequest
+     * @return Result of the GetLicenseManagerReportGenerator operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws InvalidParameterValueException
+     *         One or more parameter values are not valid.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @sample AWSLicenseManager.GetLicenseManagerReportGenerator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicenseManagerReportGenerator"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetLicenseManagerReportGeneratorResult getLicenseManagerReportGenerator(GetLicenseManagerReportGeneratorRequest getLicenseManagerReportGeneratorRequest);
+
+    /**
+     * <p>
      * Gets detailed information about the usage of the specified license.
      * </p>
      * 
@@ -749,6 +847,38 @@ public interface AWSLicenseManager {
      *      target="_top">AWS API Documentation</a>
      */
     ListLicenseConfigurationsResult listLicenseConfigurations(ListLicenseConfigurationsRequest listLicenseConfigurationsRequest);
+
+    /**
+     * <p>
+     * Lists the report generators for your account.
+     * </p>
+     * 
+     * @param listLicenseManagerReportGeneratorsRequest
+     * @return Result of the ListLicenseManagerReportGenerators operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws InvalidParameterValueException
+     *         One or more parameter values are not valid.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @sample AWSLicenseManager.ListLicenseManagerReportGenerators
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseManagerReportGenerators"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListLicenseManagerReportGeneratorsResult listLicenseManagerReportGenerators(
+            ListLicenseManagerReportGeneratorsRequest listLicenseManagerReportGeneratorsRequest);
 
     /**
      * <p>
@@ -1087,6 +1217,42 @@ public interface AWSLicenseManager {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateLicenseConfigurationResult updateLicenseConfiguration(UpdateLicenseConfigurationRequest updateLicenseConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates a report generator.
+     * </p>
+     * <p>
+     * After you make changes to a report generator, it will start generating new reports within 60 minutes of being
+     * updated.
+     * </p>
+     * 
+     * @param updateLicenseManagerReportGeneratorRequest
+     * @return Result of the UpdateLicenseManagerReportGenerator operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws InvalidParameterValueException
+     *         One or more parameter values are not valid.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @sample AWSLicenseManager.UpdateLicenseManagerReportGenerator
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateLicenseManagerReportGenerator"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateLicenseManagerReportGeneratorResult updateLicenseManagerReportGenerator(
+            UpdateLicenseManagerReportGeneratorRequest updateLicenseManagerReportGeneratorRequest);
 
     /**
      * <p>

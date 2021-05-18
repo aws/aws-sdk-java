@@ -237,6 +237,39 @@ public class AmazonLexModelsV2AsyncClient extends AmazonLexModelsV2Client implem
     }
 
     @Override
+    public java.util.concurrent.Future<CreateExportResult> createExportAsync(CreateExportRequest request) {
+
+        return createExportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateExportResult> createExportAsync(final CreateExportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateExportRequest, CreateExportResult> asyncHandler) {
+        final CreateExportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateExportResult>() {
+            @Override
+            public CreateExportResult call() throws Exception {
+                CreateExportResult result = null;
+
+                try {
+                    result = executeCreateExport(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateIntentResult> createIntentAsync(CreateIntentRequest request) {
 
         return createIntentAsync(request, null);
@@ -320,6 +353,39 @@ public class AmazonLexModelsV2AsyncClient extends AmazonLexModelsV2Client implem
 
                 try {
                     result = executeCreateSlotType(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUploadUrlResult> createUploadUrlAsync(CreateUploadUrlRequest request) {
+
+        return createUploadUrlAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUploadUrlResult> createUploadUrlAsync(final CreateUploadUrlRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateUploadUrlRequest, CreateUploadUrlResult> asyncHandler) {
+        final CreateUploadUrlRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateUploadUrlResult>() {
+            @Override
+            public CreateUploadUrlResult call() throws Exception {
+                CreateUploadUrlResult result = null;
+
+                try {
+                    result = executeCreateUploadUrl(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -452,6 +518,72 @@ public class AmazonLexModelsV2AsyncClient extends AmazonLexModelsV2Client implem
 
                 try {
                     result = executeDeleteBotVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteExportResult> deleteExportAsync(DeleteExportRequest request) {
+
+        return deleteExportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteExportResult> deleteExportAsync(final DeleteExportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteExportRequest, DeleteExportResult> asyncHandler) {
+        final DeleteExportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteExportResult>() {
+            @Override
+            public DeleteExportResult call() throws Exception {
+                DeleteExportResult result = null;
+
+                try {
+                    result = executeDeleteExport(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteImportResult> deleteImportAsync(DeleteImportRequest request) {
+
+        return deleteImportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteImportResult> deleteImportAsync(final DeleteImportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteImportRequest, DeleteImportResult> asyncHandler) {
+        final DeleteImportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteImportResult>() {
+            @Override
+            public DeleteImportResult call() throws Exception {
+                DeleteImportResult result = null;
+
+                try {
+                    result = executeDeleteImport(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -683,6 +815,72 @@ public class AmazonLexModelsV2AsyncClient extends AmazonLexModelsV2Client implem
 
                 try {
                     result = executeDescribeBotVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeExportResult> describeExportAsync(DescribeExportRequest request) {
+
+        return describeExportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeExportResult> describeExportAsync(final DescribeExportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeExportRequest, DescribeExportResult> asyncHandler) {
+        final DescribeExportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeExportResult>() {
+            @Override
+            public DescribeExportResult call() throws Exception {
+                DescribeExportResult result = null;
+
+                try {
+                    result = executeDescribeExport(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeImportResult> describeImportAsync(DescribeImportRequest request) {
+
+        return describeImportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeImportResult> describeImportAsync(final DescribeImportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeImportRequest, DescribeImportResult> asyncHandler) {
+        final DescribeImportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeImportResult>() {
+            @Override
+            public DescribeImportResult call() throws Exception {
+                DescribeImportResult result = null;
+
+                try {
+                    result = executeDescribeImport(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -996,6 +1194,72 @@ public class AmazonLexModelsV2AsyncClient extends AmazonLexModelsV2Client implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListExportsResult> listExportsAsync(ListExportsRequest request) {
+
+        return listExportsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExportsResult> listExportsAsync(final ListExportsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListExportsRequest, ListExportsResult> asyncHandler) {
+        final ListExportsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListExportsResult>() {
+            @Override
+            public ListExportsResult call() throws Exception {
+                ListExportsResult result = null;
+
+                try {
+                    result = executeListExports(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImportsResult> listImportsAsync(ListImportsRequest request) {
+
+        return listImportsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImportsResult> listImportsAsync(final ListImportsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListImportsRequest, ListImportsResult> asyncHandler) {
+        final ListImportsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListImportsResult>() {
+            @Override
+            public ListImportsResult call() throws Exception {
+                ListImportsResult result = null;
+
+                try {
+                    result = executeListImports(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListIntentsResult> listIntentsAsync(ListIntentsRequest request) {
 
         return listIntentsAsync(request, null);
@@ -1112,6 +1376,39 @@ public class AmazonLexModelsV2AsyncClient extends AmazonLexModelsV2Client implem
 
                 try {
                     result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartImportResult> startImportAsync(StartImportRequest request) {
+
+        return startImportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartImportResult> startImportAsync(final StartImportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartImportRequest, StartImportResult> asyncHandler) {
+        final StartImportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartImportResult>() {
+            @Override
+            public StartImportResult call() throws Exception {
+                StartImportResult result = null;
+
+                try {
+                    result = executeStartImport(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1277,6 +1574,39 @@ public class AmazonLexModelsV2AsyncClient extends AmazonLexModelsV2Client implem
 
                 try {
                     result = executeUpdateBotLocale(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateExportResult> updateExportAsync(UpdateExportRequest request) {
+
+        return updateExportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateExportResult> updateExportAsync(final UpdateExportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateExportRequest, UpdateExportResult> asyncHandler) {
+        final UpdateExportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateExportResult>() {
+            @Override
+            public UpdateExportResult call() throws Exception {
+                UpdateExportResult result = null;
+
+                try {
+                    result = executeUpdateExport(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -757,6 +757,82 @@ public class AWSLicenseManagerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Creates a new report generator.
+     * </p>
+     * 
+     * @param createLicenseManagerReportGeneratorRequest
+     * @return Result of the CreateLicenseManagerReportGenerator operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws InvalidParameterValueException
+     *         One or more parameter values are not valid.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @sample AWSLicenseManager.CreateLicenseManagerReportGenerator
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseManagerReportGenerator"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateLicenseManagerReportGeneratorResult createLicenseManagerReportGenerator(CreateLicenseManagerReportGeneratorRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateLicenseManagerReportGenerator(request);
+    }
+
+    @SdkInternalApi
+    final CreateLicenseManagerReportGeneratorResult executeCreateLicenseManagerReportGenerator(
+            CreateLicenseManagerReportGeneratorRequest createLicenseManagerReportGeneratorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createLicenseManagerReportGeneratorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateLicenseManagerReportGeneratorRequest> request = null;
+        Response<CreateLicenseManagerReportGeneratorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateLicenseManagerReportGeneratorRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createLicenseManagerReportGeneratorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "License Manager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLicenseManagerReportGenerator");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateLicenseManagerReportGeneratorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateLicenseManagerReportGeneratorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new version of the specified license.
      * </p>
      * 
@@ -1107,6 +1183,86 @@ public class AWSLicenseManagerClient extends AmazonWebServiceClient implements A
             HttpResponseHandler<AmazonWebServiceResponse<DeleteLicenseConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteLicenseConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Delete an existing report generator.
+     * </p>
+     * <p>
+     * This action deletes the report generator, which stops it from generating future reports and cannot be reversed.
+     * However, the previous reports from this generator will remain in your S3 bucket.
+     * </p>
+     * 
+     * @param deleteLicenseManagerReportGeneratorRequest
+     * @return Result of the DeleteLicenseManagerReportGenerator operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws InvalidParameterValueException
+     *         One or more parameter values are not valid.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @sample AWSLicenseManager.DeleteLicenseManagerReportGenerator
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteLicenseManagerReportGenerator"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteLicenseManagerReportGeneratorResult deleteLicenseManagerReportGenerator(DeleteLicenseManagerReportGeneratorRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteLicenseManagerReportGenerator(request);
+    }
+
+    @SdkInternalApi
+    final DeleteLicenseManagerReportGeneratorResult executeDeleteLicenseManagerReportGenerator(
+            DeleteLicenseManagerReportGeneratorRequest deleteLicenseManagerReportGeneratorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteLicenseManagerReportGeneratorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteLicenseManagerReportGeneratorRequest> request = null;
+        Response<DeleteLicenseManagerReportGeneratorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteLicenseManagerReportGeneratorRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteLicenseManagerReportGeneratorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "License Manager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLicenseManagerReportGenerator");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteLicenseManagerReportGeneratorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteLicenseManagerReportGeneratorResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1533,6 +1689,81 @@ public class AWSLicenseManagerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Gets information on the specified report generator.
+     * </p>
+     * 
+     * @param getLicenseManagerReportGeneratorRequest
+     * @return Result of the GetLicenseManagerReportGenerator operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws InvalidParameterValueException
+     *         One or more parameter values are not valid.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @sample AWSLicenseManager.GetLicenseManagerReportGenerator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicenseManagerReportGenerator"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetLicenseManagerReportGeneratorResult getLicenseManagerReportGenerator(GetLicenseManagerReportGeneratorRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetLicenseManagerReportGenerator(request);
+    }
+
+    @SdkInternalApi
+    final GetLicenseManagerReportGeneratorResult executeGetLicenseManagerReportGenerator(
+            GetLicenseManagerReportGeneratorRequest getLicenseManagerReportGeneratorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getLicenseManagerReportGeneratorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetLicenseManagerReportGeneratorRequest> request = null;
+        Response<GetLicenseManagerReportGeneratorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetLicenseManagerReportGeneratorRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getLicenseManagerReportGeneratorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "License Manager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLicenseManagerReportGenerator");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetLicenseManagerReportGeneratorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetLicenseManagerReportGeneratorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets detailed information about the usage of the specified license.
      * </p>
      * 
@@ -1941,6 +2172,82 @@ public class AWSLicenseManagerClient extends AmazonWebServiceClient implements A
             HttpResponseHandler<AmazonWebServiceResponse<ListLicenseConfigurationsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListLicenseConfigurationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the report generators for your account.
+     * </p>
+     * 
+     * @param listLicenseManagerReportGeneratorsRequest
+     * @return Result of the ListLicenseManagerReportGenerators operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws InvalidParameterValueException
+     *         One or more parameter values are not valid.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @sample AWSLicenseManager.ListLicenseManagerReportGenerators
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseManagerReportGenerators"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListLicenseManagerReportGeneratorsResult listLicenseManagerReportGenerators(ListLicenseManagerReportGeneratorsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListLicenseManagerReportGenerators(request);
+    }
+
+    @SdkInternalApi
+    final ListLicenseManagerReportGeneratorsResult executeListLicenseManagerReportGenerators(
+            ListLicenseManagerReportGeneratorsRequest listLicenseManagerReportGeneratorsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listLicenseManagerReportGeneratorsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListLicenseManagerReportGeneratorsRequest> request = null;
+        Response<ListLicenseManagerReportGeneratorsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListLicenseManagerReportGeneratorsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listLicenseManagerReportGeneratorsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "License Manager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLicenseManagerReportGenerators");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListLicenseManagerReportGeneratorsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListLicenseManagerReportGeneratorsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2833,6 +3140,86 @@ public class AWSLicenseManagerClient extends AmazonWebServiceClient implements A
             HttpResponseHandler<AmazonWebServiceResponse<UpdateLicenseConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateLicenseConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a report generator.
+     * </p>
+     * <p>
+     * After you make changes to a report generator, it will start generating new reports within 60 minutes of being
+     * updated.
+     * </p>
+     * 
+     * @param updateLicenseManagerReportGeneratorRequest
+     * @return Result of the UpdateLicenseManagerReportGenerator operation returned by the service.
+     * @throws ValidationException
+     *         The provided input is not valid. Try your request again.
+     * @throws InvalidParameterValueException
+     *         One or more parameter values are not valid.
+     * @throws RateLimitExceededException
+     *         Too many requests have been submitted. Try again after a brief wait.
+     * @throws ServerInternalException
+     *         The server experienced an internal error. Try again.
+     * @throws AuthorizationException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws AccessDeniedException
+     *         Access to resource denied.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @throws ResourceLimitExceededException
+     *         Your resource limits have been exceeded.
+     * @sample AWSLicenseManager.UpdateLicenseManagerReportGenerator
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateLicenseManagerReportGenerator"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateLicenseManagerReportGeneratorResult updateLicenseManagerReportGenerator(UpdateLicenseManagerReportGeneratorRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateLicenseManagerReportGenerator(request);
+    }
+
+    @SdkInternalApi
+    final UpdateLicenseManagerReportGeneratorResult executeUpdateLicenseManagerReportGenerator(
+            UpdateLicenseManagerReportGeneratorRequest updateLicenseManagerReportGeneratorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateLicenseManagerReportGeneratorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateLicenseManagerReportGeneratorRequest> request = null;
+        Response<UpdateLicenseManagerReportGeneratorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateLicenseManagerReportGeneratorRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateLicenseManagerReportGeneratorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "License Manager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateLicenseManagerReportGenerator");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateLicenseManagerReportGeneratorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateLicenseManagerReportGeneratorResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

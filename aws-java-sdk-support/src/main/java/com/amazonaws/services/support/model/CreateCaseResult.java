@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The AWS Support case ID returned by a successful completion of the <a>CreateCase</a> operation.
+ * The support case ID returned by a successful completion of the <a>CreateCase</a> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/CreateCase" target="_top">AWS API
@@ -28,7 +28,7 @@ public class CreateCaseResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string in the following
+     * The support case ID requested or returned in the call. The case ID is an alphanumeric string in the following
      * format: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      * </p>
      */
@@ -36,12 +36,12 @@ public class CreateCaseResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string in the following
+     * The support case ID requested or returned in the call. The case ID is an alphanumeric string in the following
      * format: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      * </p>
      * 
      * @param caseId
-     *        The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string in the
+     *        The support case ID requested or returned in the call. The case ID is an alphanumeric string in the
      *        following format: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      */
 
@@ -51,11 +51,11 @@ public class CreateCaseResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string in the following
+     * The support case ID requested or returned in the call. The case ID is an alphanumeric string in the following
      * format: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      * </p>
      * 
-     * @return The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string in the
+     * @return The support case ID requested or returned in the call. The case ID is an alphanumeric string in the
      *         following format: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      */
 
@@ -65,12 +65,12 @@ public class CreateCaseResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string in the following
+     * The support case ID requested or returned in the call. The case ID is an alphanumeric string in the following
      * format: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      * </p>
      * 
      * @param caseId
-     *        The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string in the
+     *        The support case ID requested or returned in the call. The case ID is an alphanumeric string in the
      *        following format: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

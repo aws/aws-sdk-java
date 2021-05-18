@@ -27,20 +27,20 @@ import com.amazonaws.services.support.model.*;
  * <p>
  * <fullname>AWS Support</fullname>
  * <p>
- * The AWS Support API reference is intended for programmers who need detailed information about the AWS Support
- * operations and data types. This service enables you to manage your AWS Support cases programmatically. It uses HTTP
- * methods that return results in JSON format.
+ * The <i>AWS Support API Reference</i> is intended for programmers who need detailed information about the AWS Support
+ * operations and data types. You can use the API to manage your support cases programmatically. The AWS Support API
+ * uses HTTP methods that return results in JSON format.
  * </p>
  * <note>
  * <ul>
  * <li>
  * <p>
- * You must have a Business or Enterprise support plan to use the AWS Support API.
+ * You must have a Business or Enterprise Support plan to use the AWS Support API.
  * </p>
  * </li>
  * <li>
  * <p>
- * If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the
+ * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
  * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan,
  * see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
  * </p>
@@ -58,22 +58,22 @@ import com.amazonaws.services.support.model.*;
  * <ul>
  * <li>
  * <p>
- * <b>Service names, issue categories, and available severity levels. </b>The <a>DescribeServices</a> and
+ * Service names, issue categories, and available severity levels - The <a>DescribeServices</a> and
  * <a>DescribeSeverityLevels</a> operations return AWS service names, service codes, service categories, and problem
  * severity levels. You use these values when you call the <a>CreateCase</a> operation.
  * </p>
  * </li>
  * <li>
  * <p>
- * <b>Case creation, case details, and case resolution.</b> The <a>CreateCase</a>, <a>DescribeCases</a>,
+ * Case creation, case details, and case resolution - The <a>CreateCase</a>, <a>DescribeCases</a>,
  * <a>DescribeAttachment</a>, and <a>ResolveCase</a> operations create AWS Support cases, retrieve information about
  * cases, and resolve cases.
  * </p>
  * </li>
  * <li>
  * <p>
- * <b>Case communication.</b> The <a>DescribeCommunications</a>, <a>AddCommunicationToCase</a>, and
- * <a>AddAttachmentsToSet</a> operations retrieve and add communications and attachments to AWS Support cases.
+ * Case communication - The <a>DescribeCommunications</a>, <a>AddCommunicationToCase</a>, and <a>AddAttachmentsToSet</a>
+ * operations retrieve and add communications and attachments to AWS Support cases.
  * </p>
  * </li>
  * </ul>
@@ -135,12 +135,12 @@ public interface AWSSupportAsync extends AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * You must have a Business or Enterprise support plan to use the AWS Support API.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
      * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
      * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
      * </p>
@@ -169,12 +169,12 @@ public interface AWSSupportAsync extends AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * You must have a Business or Enterprise support plan to use the AWS Support API.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
      * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
      * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
      * </p>
@@ -206,12 +206,12 @@ public interface AWSSupportAsync extends AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * You must have a Business or Enterprise support plan to use the AWS Support API.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
      * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
      * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
      * </p>
@@ -238,12 +238,12 @@ public interface AWSSupportAsync extends AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * You must have a Business or Enterprise support plan to use the AWS Support API.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
      * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
      * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
      * </p>
@@ -303,12 +303,12 @@ public interface AWSSupportAsync extends AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * You must have a Business or Enterprise support plan to use the AWS Support API.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
      * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
      * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
      * </p>
@@ -363,12 +363,12 @@ public interface AWSSupportAsync extends AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * You must have a Business or Enterprise support plan to use the AWS Support API.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
      * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
      * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
      * </p>
@@ -400,12 +400,12 @@ public interface AWSSupportAsync extends AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * You must have a Business or Enterprise support plan to use the AWS Support API.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
      * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
      * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
      * </p>
@@ -432,12 +432,12 @@ public interface AWSSupportAsync extends AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * You must have a Business or Enterprise support plan to use the AWS Support API.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
      * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
      * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
      * </p>
@@ -491,12 +491,12 @@ public interface AWSSupportAsync extends AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * You must have a Business or Enterprise support plan to use the AWS Support API.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
      * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
      * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
      * </p>
@@ -545,12 +545,12 @@ public interface AWSSupportAsync extends AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * You must have a Business or Enterprise support plan to use the AWS Support API.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
      * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
      * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
      * </p>
@@ -605,12 +605,12 @@ public interface AWSSupportAsync extends AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * You must have a Business or Enterprise support plan to use the AWS Support API.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
      * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
      * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
      * </p>
@@ -645,12 +645,12 @@ public interface AWSSupportAsync extends AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * You must have a Business or Enterprise support plan to use the AWS Support API.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
      * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
      * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
      * </p>
@@ -688,12 +688,12 @@ public interface AWSSupportAsync extends AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * You must have a Business or Enterprise support plan to use the AWS Support API.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
      * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
      * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
      * </p>
@@ -726,12 +726,12 @@ public interface AWSSupportAsync extends AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * You must have a Business or Enterprise support plan to use the AWS Support API.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
      * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
      * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
      * </p>
@@ -769,19 +769,19 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
-     * Returns the list of severity levels that you can assign to an AWS Support case. The severity level for a case is
-     * also a field in the <a>CaseDetails</a> data type that you include for a <a>CreateCase</a> request.
+     * Returns the list of severity levels that you can assign to a support case. The severity level for a case is also
+     * a field in the <a>CaseDetails</a> data type that you include for a <a>CreateCase</a> request.
      * </p>
      * <note>
      * <ul>
      * <li>
      * <p>
-     * You must have a Business or Enterprise support plan to use the AWS Support API.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
      * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
      * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
      * </p>
@@ -799,19 +799,19 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
-     * Returns the list of severity levels that you can assign to an AWS Support case. The severity level for a case is
-     * also a field in the <a>CaseDetails</a> data type that you include for a <a>CreateCase</a> request.
+     * Returns the list of severity levels that you can assign to a support case. The severity level for a case is also
+     * a field in the <a>CaseDetails</a> data type that you include for a <a>CreateCase</a> request.
      * </p>
      * <note>
      * <ul>
      * <li>
      * <p>
-     * You must have a Business or Enterprise support plan to use the AWS Support API.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
      * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
      * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
      * </p>
@@ -861,12 +861,12 @@ public interface AWSSupportAsync extends AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * You must have a Business or Enterprise support plan to use the AWS Support API.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
      * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
      * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
      * </p>
@@ -899,12 +899,12 @@ public interface AWSSupportAsync extends AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * You must have a Business or Enterprise support plan to use the AWS Support API.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
      * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
      * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
      * </p>
@@ -959,8 +959,8 @@ public interface AWSSupportAsync extends AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * <b>status</b> - The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or
-     * "not_available".
+     * <b>status</b> - The alert status of the check can be <code>ok</code> (green), <code>warning</code> (yellow),
+     * <code>error</code> (red), or <code>not_available</code>.
      * </p>
      * </li>
      * <li>
@@ -978,12 +978,12 @@ public interface AWSSupportAsync extends AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * You must have a Business or Enterprise support plan to use the AWS Support API.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
      * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
      * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
      * </p>
@@ -1032,8 +1032,8 @@ public interface AWSSupportAsync extends AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * <b>status</b> - The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or
-     * "not_available".
+     * <b>status</b> - The alert status of the check can be <code>ok</code> (green), <code>warning</code> (yellow),
+     * <code>error</code> (red), or <code>not_available</code>.
      * </p>
      * </li>
      * <li>
@@ -1051,12 +1051,12 @@ public interface AWSSupportAsync extends AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * You must have a Business or Enterprise support plan to use the AWS Support API.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
      * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
      * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
      * </p>
@@ -1091,12 +1091,12 @@ public interface AWSSupportAsync extends AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * You must have a Business or Enterprise support plan to use the AWS Support API.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
      * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
      * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
      * </p>
@@ -1126,12 +1126,12 @@ public interface AWSSupportAsync extends AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * You must have a Business or Enterprise support plan to use the AWS Support API.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
      * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
      * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
      * </p>
@@ -1165,14 +1165,20 @@ public interface AWSSupportAsync extends AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * You must have a Business or Enterprise support plan to use the AWS Support API.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
      * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
      * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The names and descriptions for Trusted Advisor checks are subject to change. We recommend that you specify the
+     * check ID in your code to uniquely identify a check.
      * </p>
      * </li>
      * </ul>
@@ -1199,14 +1205,20 @@ public interface AWSSupportAsync extends AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * You must have a Business or Enterprise support plan to use the AWS Support API.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
      * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
      * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The names and descriptions for Trusted Advisor checks are subject to change. We recommend that you specify the
+     * check ID in your code to uniquely identify a check.
      * </p>
      * </li>
      * </ul>
@@ -1245,12 +1257,12 @@ public interface AWSSupportAsync extends AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * You must have a Business or Enterprise support plan to use the AWS Support API.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
      * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
      * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
      * </p>
@@ -1285,12 +1297,12 @@ public interface AWSSupportAsync extends AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * You must have a Business or Enterprise support plan to use the AWS Support API.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
      * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
      * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
      * </p>
@@ -1321,12 +1333,12 @@ public interface AWSSupportAsync extends AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * You must have a Business or Enterprise support plan to use the AWS Support API.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
      * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
      * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
      * </p>
@@ -1351,12 +1363,12 @@ public interface AWSSupportAsync extends AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * You must have a Business or Enterprise support plan to use the AWS Support API.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
      * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
      * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
      * </p>

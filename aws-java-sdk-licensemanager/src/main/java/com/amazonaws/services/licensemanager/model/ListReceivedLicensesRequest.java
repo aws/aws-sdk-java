@@ -48,12 +48,17 @@ public class ListReceivedLicensesRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * <code>KeyFingerprint</code>
+     * <code>Fingerprint</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Issuer</code>
+     * <code>IssuerName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Beneficiary</code>
      * </p>
      * </li>
      * </ul>
@@ -159,12 +164,17 @@ public class ListReceivedLicensesRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * <code>KeyFingerprint</code>
+     * <code>Fingerprint</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Issuer</code>
+     * <code>IssuerName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Beneficiary</code>
      * </p>
      * </li>
      * </ul>
@@ -183,12 +193,17 @@ public class ListReceivedLicensesRequest extends com.amazonaws.AmazonWebServiceR
      *         </li>
      *         <li>
      *         <p>
-     *         <code>KeyFingerprint</code>
+     *         <code>Fingerprint</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Issuer</code>
+     *         <code>IssuerName</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Beneficiary</code>
      *         </p>
      *         </li>
      */
@@ -214,12 +229,17 @@ public class ListReceivedLicensesRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * <code>KeyFingerprint</code>
+     * <code>Fingerprint</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Issuer</code>
+     * <code>IssuerName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Beneficiary</code>
      * </p>
      * </li>
      * </ul>
@@ -239,12 +259,17 @@ public class ListReceivedLicensesRequest extends com.amazonaws.AmazonWebServiceR
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KeyFingerprint</code>
+     *        <code>Fingerprint</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Issuer</code>
+     *        <code>IssuerName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Beneficiary</code>
      *        </p>
      *        </li>
      */
@@ -275,12 +300,17 @@ public class ListReceivedLicensesRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * <code>KeyFingerprint</code>
+     * <code>Fingerprint</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Issuer</code>
+     * <code>IssuerName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Beneficiary</code>
      * </p>
      * </li>
      * </ul>
@@ -305,12 +335,17 @@ public class ListReceivedLicensesRequest extends com.amazonaws.AmazonWebServiceR
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KeyFingerprint</code>
+     *        <code>Fingerprint</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Issuer</code>
+     *        <code>IssuerName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Beneficiary</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -343,12 +378,17 @@ public class ListReceivedLicensesRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * <code>KeyFingerprint</code>
+     * <code>Fingerprint</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Issuer</code>
+     * <code>IssuerName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Beneficiary</code>
      * </p>
      * </li>
      * </ul>
@@ -368,12 +408,17 @@ public class ListReceivedLicensesRequest extends com.amazonaws.AmazonWebServiceR
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KeyFingerprint</code>
+     *        <code>Fingerprint</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Issuer</code>
+     *        <code>IssuerName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Beneficiary</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

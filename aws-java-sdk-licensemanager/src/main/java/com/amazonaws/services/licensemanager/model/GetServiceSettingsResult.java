@@ -49,7 +49,7 @@ public class GetServiceSettingsResult extends com.amazonaws.AmazonWebServiceResu
     private Boolean enableCrossAccountsDiscovery;
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the AWS resource share. The License Manager master account will provide member
+     * Amazon Resource Name (ARN) of the AWS resource share. The License Manager management account provides member
      * accounts with access to this share.
      * </p>
      */
@@ -229,12 +229,12 @@ public class GetServiceSettingsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the AWS resource share. The License Manager master account will provide member
+     * Amazon Resource Name (ARN) of the AWS resource share. The License Manager management account provides member
      * accounts with access to this share.
      * </p>
      * 
      * @param licenseManagerResourceShareArn
-     *        Amazon Resource Name (ARN) of the AWS resource share. The License Manager master account will provide
+     *        Amazon Resource Name (ARN) of the AWS resource share. The License Manager management account provides
      *        member accounts with access to this share.
      */
 
@@ -244,11 +244,11 @@ public class GetServiceSettingsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the AWS resource share. The License Manager master account will provide member
+     * Amazon Resource Name (ARN) of the AWS resource share. The License Manager management account provides member
      * accounts with access to this share.
      * </p>
      * 
-     * @return Amazon Resource Name (ARN) of the AWS resource share. The License Manager master account will provide
+     * @return Amazon Resource Name (ARN) of the AWS resource share. The License Manager management account provides
      *         member accounts with access to this share.
      */
 
@@ -258,12 +258,12 @@ public class GetServiceSettingsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of the AWS resource share. The License Manager master account will provide member
+     * Amazon Resource Name (ARN) of the AWS resource share. The License Manager management account provides member
      * accounts with access to this share.
      * </p>
      * 
      * @param licenseManagerResourceShareArn
-     *        Amazon Resource Name (ARN) of the AWS resource share. The License Manager master account will provide
+     *        Amazon Resource Name (ARN) of the AWS resource share. The License Manager management account provides
      *        member accounts with access to this share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

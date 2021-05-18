@@ -40,9 +40,8 @@ public class DescribeBotLocaleRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The unique identifier of the locale to describe. The string must match one of the supported locales. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html">https://docs.aws.amazon
-     * .com/lex/latest/dg/supported-locales.html</a>.
+     * information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+     * languages</a>.
      * </p>
      */
     private String localeId;
@@ -130,16 +129,14 @@ public class DescribeBotLocaleRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The unique identifier of the locale to describe. The string must match one of the supported locales. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html">https://docs.aws.amazon
-     * .com/lex/latest/dg/supported-locales.html</a>.
+     * information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+     * languages</a>.
      * </p>
      * 
      * @param localeId
      *        The unique identifier of the locale to describe. The string must match one of the supported locales. For
-     *        more information, see <a
-     *        href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html">https://docs
-     *        .aws.amazon.com/lex/latest/dg/supported-locales.html</a>.
+     *        more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+     *        languages</a>.
      */
 
     public void setLocaleId(String localeId) {
@@ -149,15 +146,13 @@ public class DescribeBotLocaleRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The unique identifier of the locale to describe. The string must match one of the supported locales. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html">https://docs.aws.amazon
-     * .com/lex/latest/dg/supported-locales.html</a>.
+     * information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+     * languages</a>.
      * </p>
      * 
      * @return The unique identifier of the locale to describe. The string must match one of the supported locales. For
-     *         more information, see <a
-     *         href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html">https://docs
-     *         .aws.amazon.com/lex/latest/dg/supported-locales.html</a>.
+     *         more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+     *         languages</a>.
      */
 
     public String getLocaleId() {
@@ -167,16 +162,14 @@ public class DescribeBotLocaleRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The unique identifier of the locale to describe. The string must match one of the supported locales. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html">https://docs.aws.amazon
-     * .com/lex/latest/dg/supported-locales.html</a>.
+     * information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+     * languages</a>.
      * </p>
      * 
      * @param localeId
      *        The unique identifier of the locale to describe. The string must match one of the supported locales. For
-     *        more information, see <a
-     *        href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html">https://docs
-     *        .aws.amazon.com/lex/latest/dg/supported-locales.html</a>.
+     *        more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+     *        languages</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

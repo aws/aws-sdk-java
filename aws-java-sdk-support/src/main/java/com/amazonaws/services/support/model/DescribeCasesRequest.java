@@ -80,7 +80,7 @@ public class DescribeCasesRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Specifies whether to include communications in the <code>DescribeCases</code> response. By default,
-     * communications are incuded.
+     * communications are included.
      * </p>
      */
     private Boolean includeCommunications;
@@ -479,12 +479,12 @@ public class DescribeCasesRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Specifies whether to include communications in the <code>DescribeCases</code> response. By default,
-     * communications are incuded.
+     * communications are included.
      * </p>
      * 
      * @param includeCommunications
      *        Specifies whether to include communications in the <code>DescribeCases</code> response. By default,
-     *        communications are incuded.
+     *        communications are included.
      */
 
     public void setIncludeCommunications(Boolean includeCommunications) {
@@ -494,11 +494,11 @@ public class DescribeCasesRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Specifies whether to include communications in the <code>DescribeCases</code> response. By default,
-     * communications are incuded.
+     * communications are included.
      * </p>
      * 
      * @return Specifies whether to include communications in the <code>DescribeCases</code> response. By default,
-     *         communications are incuded.
+     *         communications are included.
      */
 
     public Boolean getIncludeCommunications() {
@@ -508,12 +508,12 @@ public class DescribeCasesRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Specifies whether to include communications in the <code>DescribeCases</code> response. By default,
-     * communications are incuded.
+     * communications are included.
      * </p>
      * 
      * @param includeCommunications
      *        Specifies whether to include communications in the <code>DescribeCases</code> response. By default,
-     *        communications are incuded.
+     *        communications are included.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -525,11 +525,11 @@ public class DescribeCasesRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Specifies whether to include communications in the <code>DescribeCases</code> response. By default,
-     * communications are incuded.
+     * communications are included.
      * </p>
      * 
      * @return Specifies whether to include communications in the <code>DescribeCases</code> response. By default,
-     *         communications are incuded.
+     *         communications are included.
      */
 
     public Boolean isIncludeCommunications() {

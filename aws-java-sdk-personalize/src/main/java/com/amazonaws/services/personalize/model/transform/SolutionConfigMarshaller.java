@@ -39,6 +39,8 @@ public class SolutionConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("featureTransformationParameters").build();
     private static final MarshallingInfo<StructuredPojo> AUTOMLCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoMLConfig").build();
+    private static final MarshallingInfo<StructuredPojo> OPTIMIZATIONOBJECTIVE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("optimizationObjective").build();
 
     private static final SolutionConfigMarshaller instance = new SolutionConfigMarshaller();
 
@@ -61,6 +63,7 @@ public class SolutionConfigMarshaller {
             protocolMarshaller.marshall(solutionConfig.getAlgorithmHyperParameters(), ALGORITHMHYPERPARAMETERS_BINDING);
             protocolMarshaller.marshall(solutionConfig.getFeatureTransformationParameters(), FEATURETRANSFORMATIONPARAMETERS_BINDING);
             protocolMarshaller.marshall(solutionConfig.getAutoMLConfig(), AUTOMLCONFIG_BINDING);
+            protocolMarshaller.marshall(solutionConfig.getOptimizationObjective(), OPTIMIZATIONOBJECTIVE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

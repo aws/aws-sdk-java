@@ -48,7 +48,7 @@ public class ListLicensesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>KeyFingerprint</code>
+     * <code>Fingerprint</code>
      * </p>
      * </li>
      * <li>
@@ -159,7 +159,7 @@ public class ListLicensesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>KeyFingerprint</code>
+     * <code>Fingerprint</code>
      * </p>
      * </li>
      * <li>
@@ -183,7 +183,7 @@ public class ListLicensesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         <code>KeyFingerprint</code>
+     *         <code>Fingerprint</code>
      *         </p>
      *         </li>
      *         <li>
@@ -214,7 +214,7 @@ public class ListLicensesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>KeyFingerprint</code>
+     * <code>Fingerprint</code>
      * </p>
      * </li>
      * <li>
@@ -239,7 +239,7 @@ public class ListLicensesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KeyFingerprint</code>
+     *        <code>Fingerprint</code>
      *        </p>
      *        </li>
      *        <li>
@@ -275,7 +275,7 @@ public class ListLicensesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>KeyFingerprint</code>
+     * <code>Fingerprint</code>
      * </p>
      * </li>
      * <li>
@@ -305,7 +305,7 @@ public class ListLicensesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KeyFingerprint</code>
+     *        <code>Fingerprint</code>
      *        </p>
      *        </li>
      *        <li>
@@ -343,7 +343,7 @@ public class ListLicensesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>KeyFingerprint</code>
+     * <code>Fingerprint</code>
      * </p>
      * </li>
      * <li>
@@ -368,7 +368,7 @@ public class ListLicensesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>KeyFingerprint</code>
+     *        <code>Fingerprint</code>
      *        </p>
      *        </li>
      *        <li>

@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The requested <code>caseId</code> could not be located.
+ * The requested <code>caseId</code> couldn't be located.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

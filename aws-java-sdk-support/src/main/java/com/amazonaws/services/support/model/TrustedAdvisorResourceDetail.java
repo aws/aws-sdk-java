@@ -36,7 +36,7 @@ public class TrustedAdvisorResourceDetail implements Serializable, Cloneable, St
     private String status;
     /**
      * <p>
-     * The AWS region in which the identified resource is located.
+     * The AWS Region in which the identified resource is located.
      * </p>
      */
     private String region;
@@ -105,11 +105,11 @@ public class TrustedAdvisorResourceDetail implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The AWS region in which the identified resource is located.
+     * The AWS Region in which the identified resource is located.
      * </p>
      * 
      * @param region
-     *        The AWS region in which the identified resource is located.
+     *        The AWS Region in which the identified resource is located.
      */
 
     public void setRegion(String region) {
@@ -118,10 +118,10 @@ public class TrustedAdvisorResourceDetail implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The AWS region in which the identified resource is located.
+     * The AWS Region in which the identified resource is located.
      * </p>
      * 
-     * @return The AWS region in which the identified resource is located.
+     * @return The AWS Region in which the identified resource is located.
      */
 
     public String getRegion() {
@@ -130,11 +130,11 @@ public class TrustedAdvisorResourceDetail implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The AWS region in which the identified resource is located.
+     * The AWS Region in which the identified resource is located.
      * </p>
      * 
      * @param region
-     *        The AWS region in which the identified resource is located.
+     *        The AWS Region in which the identified resource is located.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

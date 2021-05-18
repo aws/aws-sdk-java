@@ -38,7 +38,17 @@ public class AbstractAWSComputeOptimizer implements AWSComputeOptimizer {
     }
 
     @Override
+    public ExportEBSVolumeRecommendationsResult exportEBSVolumeRecommendations(ExportEBSVolumeRecommendationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ExportEC2InstanceRecommendationsResult exportEC2InstanceRecommendations(ExportEC2InstanceRecommendationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ExportLambdaFunctionRecommendationsResult exportLambdaFunctionRecommendations(ExportLambdaFunctionRecommendationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

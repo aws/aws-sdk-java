@@ -14,20 +14,20 @@
 /**
  * <fullname>AWS Support</fullname>
  * <p>
- * The AWS Support API reference is intended for programmers who need detailed information about the AWS Support
- * operations and data types. This service enables you to manage your AWS Support cases programmatically. It uses HTTP
- * methods that return results in JSON format.
+ * The <i>AWS Support API Reference</i> is intended for programmers who need detailed information about the AWS Support
+ * operations and data types. You can use the API to manage your support cases programmatically. The AWS Support API
+ * uses HTTP methods that return results in JSON format.
  * </p>
  * <note>
  * <ul>
  * <li>
  * <p>
- * You must have a Business or Enterprise support plan to use the AWS Support API.
+ * You must have a Business or Enterprise Support plan to use the AWS Support API.
  * </p>
  * </li>
  * <li>
  * <p>
- * If you call the AWS Support API from an account that does not have a Business or Enterprise support plan, the
+ * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
  * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan,
  * see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
  * </p>
@@ -45,22 +45,22 @@
  * <ul>
  * <li>
  * <p>
- * <b>Service names, issue categories, and available severity levels. </b>The <a>DescribeServices</a> and
+ * Service names, issue categories, and available severity levels - The <a>DescribeServices</a> and
  * <a>DescribeSeverityLevels</a> operations return AWS service names, service codes, service categories, and problem
  * severity levels. You use these values when you call the <a>CreateCase</a> operation.
  * </p>
  * </li>
  * <li>
  * <p>
- * <b>Case creation, case details, and case resolution.</b> The <a>CreateCase</a>, <a>DescribeCases</a>,
+ * Case creation, case details, and case resolution - The <a>CreateCase</a>, <a>DescribeCases</a>,
  * <a>DescribeAttachment</a>, and <a>ResolveCase</a> operations create AWS Support cases, retrieve information about
  * cases, and resolve cases.
  * </p>
  * </li>
  * <li>
  * <p>
- * <b>Case communication.</b> The <a>DescribeCommunications</a>, <a>AddCommunicationToCase</a>, and
- * <a>AddAttachmentsToSet</a> operations retrieve and add communications and attachments to AWS Support cases.
+ * Case communication - The <a>DescribeCommunications</a>, <a>AddCommunicationToCase</a>, and <a>AddAttachmentsToSet</a>
+ * operations retrieve and add communications and attachments to AWS Support cases.
  * </p>
  * </li>
  * </ul>
