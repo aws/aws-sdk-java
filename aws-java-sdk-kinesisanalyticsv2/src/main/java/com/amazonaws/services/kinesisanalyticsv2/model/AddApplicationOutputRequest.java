@@ -33,8 +33,7 @@ public class AddApplicationOutputRequest extends com.amazonaws.AmazonWebServiceR
     private String applicationName;
     /**
      * <p>
-     * The version of the application to which you want to add the output configuration. You must provide the
-     * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You can use the
+     * The version of the application to which you want to add the output configuration. You can use the
      * <a>DescribeApplication</a> operation to get the current application version. If the version specified is not the
      * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
@@ -91,15 +90,13 @@ public class AddApplicationOutputRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The version of the application to which you want to add the output configuration. You must provide the
-     * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You can use the
+     * The version of the application to which you want to add the output configuration. You can use the
      * <a>DescribeApplication</a> operation to get the current application version. If the version specified is not the
      * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        The version of the application to which you want to add the output configuration. You must provide the
-     *        <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You can use the
+     *        The version of the application to which you want to add the output configuration. You can use the
      *        <a>DescribeApplication</a> operation to get the current application version. If the version specified is
      *        not the current version, the <code>ConcurrentModificationException</code> is returned.
      */
@@ -110,14 +107,12 @@ public class AddApplicationOutputRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The version of the application to which you want to add the output configuration. You must provide the
-     * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You can use the
+     * The version of the application to which you want to add the output configuration. You can use the
      * <a>DescribeApplication</a> operation to get the current application version. If the version specified is not the
      * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      * 
-     * @return The version of the application to which you want to add the output configuration. You must provide the
-     *         <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You can use the
+     * @return The version of the application to which you want to add the output configuration. You can use the
      *         <a>DescribeApplication</a> operation to get the current application version. If the version specified is
      *         not the current version, the <code>ConcurrentModificationException</code> is returned.
      */
@@ -128,15 +123,13 @@ public class AddApplicationOutputRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The version of the application to which you want to add the output configuration. You must provide the
-     * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You can use the
+     * The version of the application to which you want to add the output configuration. You can use the
      * <a>DescribeApplication</a> operation to get the current application version. If the version specified is not the
      * current version, the <code>ConcurrentModificationException</code> is returned.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        The version of the application to which you want to add the output configuration. You must provide the
-     *        <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You can use the
+     *        The version of the application to which you want to add the output configuration. You can use the
      *        <a>DescribeApplication</a> operation to get the current application version. If the version specified is
      *        not the current version, the <code>ConcurrentModificationException</code> is returned.
      * @return Returns a reference to this object so that method calls can be chained together.

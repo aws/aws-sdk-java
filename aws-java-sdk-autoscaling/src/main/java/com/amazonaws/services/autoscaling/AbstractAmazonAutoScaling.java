@@ -354,6 +354,11 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
+    public GetPredictiveScalingForecastResult getPredictiveScalingForecast(GetPredictiveScalingForecastRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutLifecycleHookResult putLifecycleHook(PutLifecycleHookRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

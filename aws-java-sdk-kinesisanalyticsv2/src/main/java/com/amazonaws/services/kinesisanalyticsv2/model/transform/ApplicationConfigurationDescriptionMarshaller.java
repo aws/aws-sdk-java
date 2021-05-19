@@ -43,6 +43,9 @@ public class ApplicationConfigurationDescriptionMarshaller {
             .build();
     private static final MarshallingInfo<List> VPCCONFIGURATIONDESCRIPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConfigurationDescriptions").build();
+    private static final MarshallingInfo<StructuredPojo> ZEPPELINAPPLICATIONCONFIGURATIONDESCRIPTION_BINDING = MarshallingInfo
+            .builder(MarshallingType.STRUCTURED).marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ZeppelinApplicationConfigurationDescription")
+            .build();
 
     private static final ApplicationConfigurationDescriptionMarshaller instance = new ApplicationConfigurationDescriptionMarshaller();
 
@@ -71,6 +74,8 @@ public class ApplicationConfigurationDescriptionMarshaller {
             protocolMarshaller.marshall(applicationConfigurationDescription.getApplicationSnapshotConfigurationDescription(),
                     APPLICATIONSNAPSHOTCONFIGURATIONDESCRIPTION_BINDING);
             protocolMarshaller.marshall(applicationConfigurationDescription.getVpcConfigurationDescriptions(), VPCCONFIGURATIONDESCRIPTIONS_BINDING);
+            protocolMarshaller.marshall(applicationConfigurationDescription.getZeppelinApplicationConfigurationDescription(),
+                    ZEPPELINAPPLICATIONCONFIGURATIONDESCRIPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

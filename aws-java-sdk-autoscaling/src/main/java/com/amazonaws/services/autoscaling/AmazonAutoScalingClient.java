@@ -54,14 +54,16 @@ import com.amazonaws.services.autoscaling.model.transform.*;
  * <fullname>Amazon EC2 Auto Scaling</fullname>
  * <p>
  * Amazon EC2 Auto Scaling is designed to automatically launch or terminate EC2 instances based on user-defined scaling
- * policies, scheduled actions, and health checks. Use this service with AWS Auto Scaling, Amazon CloudWatch, and
- * Elastic Load Balancing.
+ * policies, scheduled actions, and health checks.
  * </p>
  * <p>
- * For more information, including information about granting IAM users required permissions for Amazon EC2 Auto Scaling
- * actions, see the <a
+ * For more information about Amazon EC2 Auto Scaling, see the <a
  * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html">Amazon EC2 Auto
- * Scaling User Guide</a>.
+ * Scaling User Guide</a>. For information about granting IAM users required permissions for calls to Amazon EC2 Auto
+ * Scaling, see <a
+ * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/ec2-auto-scaling-api-permissions.html">Granting IAM
+ * users required permissions for Amazon EC2 Auto Scaling resources</a> in the <i>Amazon EC2 Auto Scaling API
+ * Reference</i>.
  * </p>
  */
 @ThreadSafe
@@ -277,7 +279,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     }
 
     private void init() {
-        exceptionUnmarshallers.add(new ResourceInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InstanceRefreshInProgressExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ScalingActivityInProgressExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidNextTokenExceptionUnmarshaller());
@@ -286,6 +287,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
         exceptionUnmarshallers.add(new ActiveInstanceRefreshNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ResourceContentionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ServiceLinkedRoleFailureExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ResourceInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller(com.amazonaws.services.autoscaling.model.AmazonAutoScalingException.class));
 
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
@@ -1769,6 +1771,10 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Describes one or more Auto Scaling groups.
+     * </p>
+     * <p>
+     * This operation returns information about instances in Auto Scaling groups. To retrieve information about the
+     * instances in a warm pool, you must call the <a>DescribeWarmPool</a> API.
      * </p>
      * 
      * @param describeAutoScalingGroupsRequest
@@ -3545,6 +3551,79 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Retrieves the forecast data for a predictive scaling policy.
+     * </p>
+     * <p>
+     * Load forecasts are predictions of the hourly load values using historical load data from CloudWatch and an
+     * analysis of historical trends. Capacity forecasts are represented as predicted values for the minimum capacity
+     * that is needed on an hourly basis, based on the hourly load forecast.
+     * </p>
+     * <p>
+     * A minimum of 24 hours of data is required to create the initial forecasts. However, having a full 14 days of
+     * historical data results in more accurate forecasts.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-predictive-scaling.html">Predictive
+     * scaling for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * 
+     * @param getPredictiveScalingForecastRequest
+     * @return Result of the GetPredictiveScalingForecast operation returned by the service.
+     * @throws ResourceContentionException
+     *         You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling
+     *         group, instance, or load balancer).
+     * @sample AmazonAutoScaling.GetPredictiveScalingForecast
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/GetPredictiveScalingForecast"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetPredictiveScalingForecastResult getPredictiveScalingForecast(GetPredictiveScalingForecastRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetPredictiveScalingForecast(request);
+    }
+
+    @SdkInternalApi
+    final GetPredictiveScalingForecastResult executeGetPredictiveScalingForecast(GetPredictiveScalingForecastRequest getPredictiveScalingForecastRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getPredictiveScalingForecastRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetPredictiveScalingForecastRequest> request = null;
+        Response<GetPredictiveScalingForecastResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetPredictiveScalingForecastRequestMarshaller().marshall(super.beforeMarshalling(getPredictiveScalingForecastRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Auto Scaling");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPredictiveScalingForecast");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetPredictiveScalingForecastResult> responseHandler = new StaxResponseHandler<GetPredictiveScalingForecastResult>(
+                    new GetPredictiveScalingForecastResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates or updates a lifecycle hook for the specified Auto Scaling group.
      * </p>
      * <p>
@@ -3738,14 +3817,25 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Creates or updates a scaling policy for an Auto Scaling group.
+     * Creates or updates a scaling policy for an Auto Scaling group. Scaling policies are used to scale an Auto Scaling
+     * group based on configurable metrics. If no policies are defined, the dynamic scaling and predictive scaling
+     * features are not used.
      * </p>
      * <p>
-     * For more information about using scaling policies to scale your Auto Scaling group, see <a
+     * For more information about using dynamic scaling, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target tracking
      * scaling policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step and simple scaling
      * policies</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about using predictive scaling, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-predictive-scaling.html">Predictive
+     * scaling for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
+     * You can view the scaling policies for an Auto Scaling group using the <a>DescribePolicies</a> API call. If you
+     * are no longer using a scaling policy, you can delete it by calling the <a>DeletePolicy</a> API.
      * </p>
      * 
      * @param putScalingPolicyRequest
@@ -3818,6 +3908,10 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html">Scheduled scaling</a> in the
      * <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
+     * <p>
+     * You can view the scheduled actions for an Auto Scaling group using the <a>DescribeScheduledActions</a> API call.
+     * If you are no longer using a scheduled action, you can delete it by calling the <a>DeleteScheduledAction</a> API.
+     * </p>
      * 
      * @param putScheduledUpdateGroupActionRequest
      * @return Result of the PutScheduledUpdateGroupAction operation returned by the service.
@@ -3882,9 +3976,10 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Adds a warm pool to the specified Auto Scaling group. A warm pool is a pool of pre-initialized EC2 instances that
-     * sits alongside the Auto Scaling group. Whenever your application needs to scale out, the Auto Scaling group can
-     * draw on the warm pool to meet its new desired capacity. For more information, see <a
+     * Creates or updates a warm pool for the specified Auto Scaling group. A warm pool is a pool of pre-initialized EC2
+     * instances that sits alongside the Auto Scaling group. Whenever your application needs to scale out, the Auto
+     * Scaling group can draw on the warm pool to meet its new desired capacity. For more information and example
+     * configurations, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html">Warm pools for
      * Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>

@@ -33,9 +33,9 @@ public class DeleteWarmPoolRequest extends com.amazonaws.AmazonWebServiceRequest
     private String autoScalingGroupName;
     /**
      * <p>
-     * Specifies that the warm pool is to be deleted along with all instances associated with the warm pool, without
-     * waiting for all instances to be terminated. This parameter also deletes any outstanding lifecycle actions
-     * associated with the warm pool instances.
+     * Specifies that the warm pool is to be deleted along with all of its associated instances, without waiting for all
+     * instances to be terminated. This parameter also deletes any outstanding lifecycle actions associated with the
+     * warm pool instances.
      * </p>
      */
     private Boolean forceDelete;
@@ -82,15 +82,15 @@ public class DeleteWarmPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies that the warm pool is to be deleted along with all instances associated with the warm pool, without
-     * waiting for all instances to be terminated. This parameter also deletes any outstanding lifecycle actions
-     * associated with the warm pool instances.
+     * Specifies that the warm pool is to be deleted along with all of its associated instances, without waiting for all
+     * instances to be terminated. This parameter also deletes any outstanding lifecycle actions associated with the
+     * warm pool instances.
      * </p>
      * 
      * @param forceDelete
-     *        Specifies that the warm pool is to be deleted along with all instances associated with the warm pool,
-     *        without waiting for all instances to be terminated. This parameter also deletes any outstanding lifecycle
-     *        actions associated with the warm pool instances.
+     *        Specifies that the warm pool is to be deleted along with all of its associated instances, without waiting
+     *        for all instances to be terminated. This parameter also deletes any outstanding lifecycle actions
+     *        associated with the warm pool instances.
      */
 
     public void setForceDelete(Boolean forceDelete) {
@@ -99,14 +99,14 @@ public class DeleteWarmPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies that the warm pool is to be deleted along with all instances associated with the warm pool, without
-     * waiting for all instances to be terminated. This parameter also deletes any outstanding lifecycle actions
-     * associated with the warm pool instances.
+     * Specifies that the warm pool is to be deleted along with all of its associated instances, without waiting for all
+     * instances to be terminated. This parameter also deletes any outstanding lifecycle actions associated with the
+     * warm pool instances.
      * </p>
      * 
-     * @return Specifies that the warm pool is to be deleted along with all instances associated with the warm pool,
-     *         without waiting for all instances to be terminated. This parameter also deletes any outstanding lifecycle
-     *         actions associated with the warm pool instances.
+     * @return Specifies that the warm pool is to be deleted along with all of its associated instances, without waiting
+     *         for all instances to be terminated. This parameter also deletes any outstanding lifecycle actions
+     *         associated with the warm pool instances.
      */
 
     public Boolean getForceDelete() {
@@ -115,15 +115,15 @@ public class DeleteWarmPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies that the warm pool is to be deleted along with all instances associated with the warm pool, without
-     * waiting for all instances to be terminated. This parameter also deletes any outstanding lifecycle actions
-     * associated with the warm pool instances.
+     * Specifies that the warm pool is to be deleted along with all of its associated instances, without waiting for all
+     * instances to be terminated. This parameter also deletes any outstanding lifecycle actions associated with the
+     * warm pool instances.
      * </p>
      * 
      * @param forceDelete
-     *        Specifies that the warm pool is to be deleted along with all instances associated with the warm pool,
-     *        without waiting for all instances to be terminated. This parameter also deletes any outstanding lifecycle
-     *        actions associated with the warm pool instances.
+     *        Specifies that the warm pool is to be deleted along with all of its associated instances, without waiting
+     *        for all instances to be terminated. This parameter also deletes any outstanding lifecycle actions
+     *        associated with the warm pool instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,14 +134,14 @@ public class DeleteWarmPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specifies that the warm pool is to be deleted along with all instances associated with the warm pool, without
-     * waiting for all instances to be terminated. This parameter also deletes any outstanding lifecycle actions
-     * associated with the warm pool instances.
+     * Specifies that the warm pool is to be deleted along with all of its associated instances, without waiting for all
+     * instances to be terminated. This parameter also deletes any outstanding lifecycle actions associated with the
+     * warm pool instances.
      * </p>
      * 
-     * @return Specifies that the warm pool is to be deleted along with all instances associated with the warm pool,
-     *         without waiting for all instances to be terminated. This parameter also deletes any outstanding lifecycle
-     *         actions associated with the warm pool instances.
+     * @return Specifies that the warm pool is to be deleted along with all of its associated instances, without waiting
+     *         for all instances to be terminated. This parameter also deletes any outstanding lifecycle actions
+     *         associated with the warm pool instances.
      */
 
     public Boolean isForceDelete() {

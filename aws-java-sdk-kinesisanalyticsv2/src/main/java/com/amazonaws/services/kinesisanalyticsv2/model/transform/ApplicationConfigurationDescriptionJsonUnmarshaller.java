@@ -86,6 +86,12 @@ public class ApplicationConfigurationDescriptionJsonUnmarshaller implements Unma
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("ZeppelinApplicationConfigurationDescription", targetDepth)) {
+                    context.nextToken();
+                    applicationConfigurationDescription
+                            .setZeppelinApplicationConfigurationDescription(ZeppelinApplicationConfigurationDescriptionJsonUnmarshaller.getInstance()
+                                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

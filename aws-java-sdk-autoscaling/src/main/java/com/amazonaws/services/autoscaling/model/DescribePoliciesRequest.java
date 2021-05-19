@@ -41,8 +41,8 @@ public class DescribePoliciesRequest extends com.amazonaws.AmazonWebServiceReque
     private com.amazonaws.internal.SdkInternalList<String> policyNames;
     /**
      * <p>
-     * One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and
-     * <code>TargetTrackingScaling</code>.
+     * One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>,
+     * <code>TargetTrackingScaling</code>, and <code>PredictiveScaling</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> policyTypes;
@@ -191,12 +191,12 @@ public class DescribePoliciesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and
-     * <code>TargetTrackingScaling</code>.
+     * One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>,
+     * <code>TargetTrackingScaling</code>, and <code>PredictiveScaling</code>.
      * </p>
      * 
-     * @return One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and
-     *         <code>TargetTrackingScaling</code>.
+     * @return One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>,
+     *         <code>TargetTrackingScaling</code>, and <code>PredictiveScaling</code>.
      */
 
     public java.util.List<String> getPolicyTypes() {
@@ -208,13 +208,13 @@ public class DescribePoliciesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and
-     * <code>TargetTrackingScaling</code>.
+     * One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>,
+     * <code>TargetTrackingScaling</code>, and <code>PredictiveScaling</code>.
      * </p>
      * 
      * @param policyTypes
-     *        One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and
-     *        <code>TargetTrackingScaling</code>.
+     *        One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>,
+     *        <code>TargetTrackingScaling</code>, and <code>PredictiveScaling</code>.
      */
 
     public void setPolicyTypes(java.util.Collection<String> policyTypes) {
@@ -228,8 +228,8 @@ public class DescribePoliciesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and
-     * <code>TargetTrackingScaling</code>.
+     * One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>,
+     * <code>TargetTrackingScaling</code>, and <code>PredictiveScaling</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -238,8 +238,8 @@ public class DescribePoliciesRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param policyTypes
-     *        One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and
-     *        <code>TargetTrackingScaling</code>.
+     *        One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>,
+     *        <code>TargetTrackingScaling</code>, and <code>PredictiveScaling</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -255,13 +255,13 @@ public class DescribePoliciesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and
-     * <code>TargetTrackingScaling</code>.
+     * One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>,
+     * <code>TargetTrackingScaling</code>, and <code>PredictiveScaling</code>.
      * </p>
      * 
      * @param policyTypes
-     *        One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and
-     *        <code>TargetTrackingScaling</code>.
+     *        One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>,
+     *        <code>TargetTrackingScaling</code>, and <code>PredictiveScaling</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

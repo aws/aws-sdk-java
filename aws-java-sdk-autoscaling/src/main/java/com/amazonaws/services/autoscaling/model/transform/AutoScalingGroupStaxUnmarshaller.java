@@ -85,6 +85,11 @@ public class AutoScalingGroupStaxUnmarshaller implements Unmarshaller<AutoScalin
                     continue;
                 }
 
+                if (context.testExpression("PredictedCapacity", targetDepth)) {
+                    autoScalingGroup.setPredictedCapacity(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("DefaultCooldown", targetDepth)) {
                     autoScalingGroup.setDefaultCooldown(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

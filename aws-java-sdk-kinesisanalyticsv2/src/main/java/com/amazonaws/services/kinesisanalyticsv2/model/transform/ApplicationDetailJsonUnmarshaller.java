@@ -117,6 +117,10 @@ public class ApplicationDetailJsonUnmarshaller implements Unmarshaller<Applicati
                     context.nextToken();
                     applicationDetail.setApplicationVersionRolledBackTo(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("ApplicationMode", targetDepth)) {
+                    context.nextToken();
+                    applicationDetail.setApplicationMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

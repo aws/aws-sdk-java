@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes updates to configuration parameters for Amazon CloudWatch logging for a Flink-based Kinesis Data Analytics
- * application.
+ * Describes updates to configuration parameters for Amazon CloudWatch logging for an application.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/MonitoringConfigurationUpdate"

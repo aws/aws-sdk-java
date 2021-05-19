@@ -104,7 +104,7 @@ public class AmazonEKSWaiters {
     public Waiter<DescribeAddonRequest> addonActive() {
 
         return new WaiterBuilder<DescribeAddonRequest, DescribeAddonResult>().withSdkFunction(new DescribeAddonFunction(client))
-                .withAcceptors(new AddonActive.IsCREATE_FAILEDMatcher(), new AddonActive.IsACTIVEMatcher())
+                .withAcceptors(new AddonActive.IsCREATE_FAILEDMatcher(), new AddonActive.IsDEGRADEDMatcher(), new AddonActive.IsACTIVEMatcher())
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(10)))
                 .withExecutorService(executorService).build();
     }

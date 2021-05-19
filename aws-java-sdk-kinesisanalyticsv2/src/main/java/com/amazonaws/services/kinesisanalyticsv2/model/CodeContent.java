@@ -43,7 +43,7 @@ public class CodeContent implements Serializable, Cloneable, StructuredPojo {
     private java.nio.ByteBuffer zipFileContent;
     /**
      * <p>
-     * Information about the Amazon S3 bucket containing the application code.
+     * Information about the Amazon S3 bucket that contains the application code.
      * </p>
      */
     private S3ContentLocation s3ContentLocation;
@@ -157,11 +157,11 @@ public class CodeContent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the Amazon S3 bucket containing the application code.
+     * Information about the Amazon S3 bucket that contains the application code.
      * </p>
      * 
      * @param s3ContentLocation
-     *        Information about the Amazon S3 bucket containing the application code.
+     *        Information about the Amazon S3 bucket that contains the application code.
      */
 
     public void setS3ContentLocation(S3ContentLocation s3ContentLocation) {
@@ -170,10 +170,10 @@ public class CodeContent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the Amazon S3 bucket containing the application code.
+     * Information about the Amazon S3 bucket that contains the application code.
      * </p>
      * 
-     * @return Information about the Amazon S3 bucket containing the application code.
+     * @return Information about the Amazon S3 bucket that contains the application code.
      */
 
     public S3ContentLocation getS3ContentLocation() {
@@ -182,11 +182,11 @@ public class CodeContent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the Amazon S3 bucket containing the application code.
+     * Information about the Amazon S3 bucket that contains the application code.
      * </p>
      * 
      * @param s3ContentLocation
-     *        Information about the Amazon S3 bucket containing the application code.
+     *        Information about the Amazon S3 bucket that contains the application code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

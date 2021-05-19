@@ -85,9 +85,6 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                             new JsonErrorShapeMetadata().withErrorCode("UnableToDetectSchemaException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesisanalyticsv2.model.transform.UnableToDetectSchemaExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.kinesisanalyticsv2.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesisanalyticsv2.model.transform.InvalidRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -97,6 +94,15 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesisanalyticsv2.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisanalyticsv2.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedOperationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisanalyticsv2.model.transform.UnsupportedOperationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisanalyticsv2.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidApplicationConfigurationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesisanalyticsv2.model.transform.InvalidApplicationConfigurationExceptionUnmarshaller
@@ -110,12 +116,6 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidArgumentException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesisanalyticsv2.model.transform.InvalidArgumentExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.kinesisanalyticsv2.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedOperationException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.kinesisanalyticsv2.model.transform.UnsupportedOperationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesisanalyticsv2.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))

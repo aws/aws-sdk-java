@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Reports the progress of an instance fresh on instances that are in the Auto Scaling group.
+ * Reports the progress of an instance refresh on instances that are in the Auto Scaling group.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/InstanceRefreshLivePoolProgress"
@@ -30,7 +30,7 @@ public class InstanceRefreshLivePoolProgress implements Serializable, Cloneable 
      * <p>
      * The percentage of instances in the Auto Scaling group that have been replaced. For each instance replacement,
      * Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time. When the instance's health status
-     * changes to healthy and the specified warm-up time passes, the instance is considered updated and added to the
+     * changes to healthy and the specified warm-up time passes, the instance is considered updated and is added to the
      * percentage complete.
      * </p>
      */
@@ -46,7 +46,7 @@ public class InstanceRefreshLivePoolProgress implements Serializable, Cloneable 
      * <p>
      * The percentage of instances in the Auto Scaling group that have been replaced. For each instance replacement,
      * Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time. When the instance's health status
-     * changes to healthy and the specified warm-up time passes, the instance is considered updated and added to the
+     * changes to healthy and the specified warm-up time passes, the instance is considered updated and is added to the
      * percentage complete.
      * </p>
      * 
@@ -54,7 +54,7 @@ public class InstanceRefreshLivePoolProgress implements Serializable, Cloneable 
      *        The percentage of instances in the Auto Scaling group that have been replaced. For each instance
      *        replacement, Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time. When the
      *        instance's health status changes to healthy and the specified warm-up time passes, the instance is
-     *        considered updated and added to the percentage complete.
+     *        considered updated and is added to the percentage complete.
      */
 
     public void setPercentageComplete(Integer percentageComplete) {
@@ -65,14 +65,14 @@ public class InstanceRefreshLivePoolProgress implements Serializable, Cloneable 
      * <p>
      * The percentage of instances in the Auto Scaling group that have been replaced. For each instance replacement,
      * Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time. When the instance's health status
-     * changes to healthy and the specified warm-up time passes, the instance is considered updated and added to the
+     * changes to healthy and the specified warm-up time passes, the instance is considered updated and is added to the
      * percentage complete.
      * </p>
      * 
      * @return The percentage of instances in the Auto Scaling group that have been replaced. For each instance
      *         replacement, Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time. When the
      *         instance's health status changes to healthy and the specified warm-up time passes, the instance is
-     *         considered updated and added to the percentage complete.
+     *         considered updated and is added to the percentage complete.
      */
 
     public Integer getPercentageComplete() {
@@ -83,7 +83,7 @@ public class InstanceRefreshLivePoolProgress implements Serializable, Cloneable 
      * <p>
      * The percentage of instances in the Auto Scaling group that have been replaced. For each instance replacement,
      * Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time. When the instance's health status
-     * changes to healthy and the specified warm-up time passes, the instance is considered updated and added to the
+     * changes to healthy and the specified warm-up time passes, the instance is considered updated and is added to the
      * percentage complete.
      * </p>
      * 
@@ -91,7 +91,7 @@ public class InstanceRefreshLivePoolProgress implements Serializable, Cloneable 
      *        The percentage of instances in the Auto Scaling group that have been replaced. For each instance
      *        replacement, Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time. When the
      *        instance's health status changes to healthy and the specified warm-up time passes, the instance is
-     *        considered updated and added to the percentage complete.
+     *        considered updated and is added to the percentage complete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

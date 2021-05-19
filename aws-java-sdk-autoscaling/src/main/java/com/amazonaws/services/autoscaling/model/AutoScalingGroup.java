@@ -76,6 +76,12 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     private Integer desiredCapacity;
     /**
      * <p>
+     * The predicted capacity of the group when it has a predictive scaling policy.
+     * </p>
+     */
+    private Integer predictedCapacity;
+    /**
+     * <p>
      * The duration of the default cooldown period, in seconds.
      * </p>
      */
@@ -526,6 +532,46 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     public AutoScalingGroup withDesiredCapacity(Integer desiredCapacity) {
         setDesiredCapacity(desiredCapacity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The predicted capacity of the group when it has a predictive scaling policy.
+     * </p>
+     * 
+     * @param predictedCapacity
+     *        The predicted capacity of the group when it has a predictive scaling policy.
+     */
+
+    public void setPredictedCapacity(Integer predictedCapacity) {
+        this.predictedCapacity = predictedCapacity;
+    }
+
+    /**
+     * <p>
+     * The predicted capacity of the group when it has a predictive scaling policy.
+     * </p>
+     * 
+     * @return The predicted capacity of the group when it has a predictive scaling policy.
+     */
+
+    public Integer getPredictedCapacity() {
+        return this.predictedCapacity;
+    }
+
+    /**
+     * <p>
+     * The predicted capacity of the group when it has a predictive scaling policy.
+     * </p>
+     * 
+     * @param predictedCapacity
+     *        The predicted capacity of the group when it has a predictive scaling policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoScalingGroup withPredictedCapacity(Integer predictedCapacity) {
+        setPredictedCapacity(predictedCapacity);
         return this;
     }
 
@@ -1732,6 +1778,8 @@ public class AutoScalingGroup implements Serializable, Cloneable {
             sb.append("MaxSize: ").append(getMaxSize()).append(",");
         if (getDesiredCapacity() != null)
             sb.append("DesiredCapacity: ").append(getDesiredCapacity()).append(",");
+        if (getPredictedCapacity() != null)
+            sb.append("PredictedCapacity: ").append(getPredictedCapacity()).append(",");
         if (getDefaultCooldown() != null)
             sb.append("DefaultCooldown: ").append(getDefaultCooldown()).append(",");
         if (getAvailabilityZones() != null)
@@ -1819,6 +1867,10 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         if (other.getDesiredCapacity() == null ^ this.getDesiredCapacity() == null)
             return false;
         if (other.getDesiredCapacity() != null && other.getDesiredCapacity().equals(this.getDesiredCapacity()) == false)
+            return false;
+        if (other.getPredictedCapacity() == null ^ this.getPredictedCapacity() == null)
+            return false;
+        if (other.getPredictedCapacity() != null && other.getPredictedCapacity().equals(this.getPredictedCapacity()) == false)
             return false;
         if (other.getDefaultCooldown() == null ^ this.getDefaultCooldown() == null)
             return false;
@@ -1921,6 +1973,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMinSize() == null) ? 0 : getMinSize().hashCode());
         hashCode = prime * hashCode + ((getMaxSize() == null) ? 0 : getMaxSize().hashCode());
         hashCode = prime * hashCode + ((getDesiredCapacity() == null) ? 0 : getDesiredCapacity().hashCode());
+        hashCode = prime * hashCode + ((getPredictedCapacity() == null) ? 0 : getPredictedCapacity().hashCode());
         hashCode = prime * hashCode + ((getDefaultCooldown() == null) ? 0 : getDefaultCooldown().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZones() == null) ? 0 : getAvailabilityZones().hashCode());
         hashCode = prime * hashCode + ((getLoadBalancerNames() == null) ? 0 : getLoadBalancerNames().hashCode());

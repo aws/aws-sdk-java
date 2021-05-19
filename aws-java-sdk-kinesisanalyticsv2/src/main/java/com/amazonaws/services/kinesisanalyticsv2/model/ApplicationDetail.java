@@ -87,7 +87,7 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     private java.util.Date lastUpdateTimestamp;
     /**
      * <p>
-     * Provides details about the application's Java, SQL, or Scala code and starting parameters.
+     * Describes details about the application code and starting parameters for a Kinesis Data Analytics application.
      * </p>
      */
     private ApplicationConfigurationDescription applicationConfigurationDescription;
@@ -129,6 +129,13 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private Long applicationVersionRolledBackTo;
+    /**
+     * <p>
+     * To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However,
+     * for a Kinesis Data Analytics for Apache Flink application, the mode is optional.
+     * </p>
+     */
+    private String applicationMode;
 
     /**
      * <p>
@@ -544,11 +551,12 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Provides details about the application's Java, SQL, or Scala code and starting parameters.
+     * Describes details about the application code and starting parameters for a Kinesis Data Analytics application.
      * </p>
      * 
      * @param applicationConfigurationDescription
-     *        Provides details about the application's Java, SQL, or Scala code and starting parameters.
+     *        Describes details about the application code and starting parameters for a Kinesis Data Analytics
+     *        application.
      */
 
     public void setApplicationConfigurationDescription(ApplicationConfigurationDescription applicationConfigurationDescription) {
@@ -557,10 +565,11 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Provides details about the application's Java, SQL, or Scala code and starting parameters.
+     * Describes details about the application code and starting parameters for a Kinesis Data Analytics application.
      * </p>
      * 
-     * @return Provides details about the application's Java, SQL, or Scala code and starting parameters.
+     * @return Describes details about the application code and starting parameters for a Kinesis Data Analytics
+     *         application.
      */
 
     public ApplicationConfigurationDescription getApplicationConfigurationDescription() {
@@ -569,11 +578,12 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Provides details about the application's Java, SQL, or Scala code and starting parameters.
+     * Describes details about the application code and starting parameters for a Kinesis Data Analytics application.
      * </p>
      * 
      * @param applicationConfigurationDescription
-     *        Provides details about the application's Java, SQL, or Scala code and starting parameters.
+     *        Describes details about the application code and starting parameters for a Kinesis Data Analytics
+     *        application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -868,6 +878,73 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However,
+     * for a Kinesis Data Analytics for Apache Flink application, the mode is optional.
+     * </p>
+     * 
+     * @param applicationMode
+     *        To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>.
+     *        However, for a Kinesis Data Analytics for Apache Flink application, the mode is optional.
+     * @see ApplicationMode
+     */
+
+    public void setApplicationMode(String applicationMode) {
+        this.applicationMode = applicationMode;
+    }
+
+    /**
+     * <p>
+     * To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However,
+     * for a Kinesis Data Analytics for Apache Flink application, the mode is optional.
+     * </p>
+     * 
+     * @return To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>.
+     *         However, for a Kinesis Data Analytics for Apache Flink application, the mode is optional.
+     * @see ApplicationMode
+     */
+
+    public String getApplicationMode() {
+        return this.applicationMode;
+    }
+
+    /**
+     * <p>
+     * To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However,
+     * for a Kinesis Data Analytics for Apache Flink application, the mode is optional.
+     * </p>
+     * 
+     * @param applicationMode
+     *        To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>.
+     *        However, for a Kinesis Data Analytics for Apache Flink application, the mode is optional.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ApplicationMode
+     */
+
+    public ApplicationDetail withApplicationMode(String applicationMode) {
+        setApplicationMode(applicationMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However,
+     * for a Kinesis Data Analytics for Apache Flink application, the mode is optional.
+     * </p>
+     * 
+     * @param applicationMode
+     *        To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>.
+     *        However, for a Kinesis Data Analytics for Apache Flink application, the mode is optional.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ApplicationMode
+     */
+
+    public ApplicationDetail withApplicationMode(ApplicationMode applicationMode) {
+        this.applicationMode = applicationMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -910,7 +987,9 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
         if (getConditionalToken() != null)
             sb.append("ConditionalToken: ").append(getConditionalToken()).append(",");
         if (getApplicationVersionRolledBackTo() != null)
-            sb.append("ApplicationVersionRolledBackTo: ").append(getApplicationVersionRolledBackTo());
+            sb.append("ApplicationVersionRolledBackTo: ").append(getApplicationVersionRolledBackTo()).append(",");
+        if (getApplicationMode() != null)
+            sb.append("ApplicationMode: ").append(getApplicationMode());
         sb.append("}");
         return sb.toString();
     }
@@ -995,6 +1074,10 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
         if (other.getApplicationVersionRolledBackTo() != null
                 && other.getApplicationVersionRolledBackTo().equals(this.getApplicationVersionRolledBackTo()) == false)
             return false;
+        if (other.getApplicationMode() == null ^ this.getApplicationMode() == null)
+            return false;
+        if (other.getApplicationMode() != null && other.getApplicationMode().equals(this.getApplicationMode()) == false)
+            return false;
         return true;
     }
 
@@ -1020,6 +1103,7 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getApplicationVersionRolledBackFrom() == null) ? 0 : getApplicationVersionRolledBackFrom().hashCode());
         hashCode = prime * hashCode + ((getConditionalToken() == null) ? 0 : getConditionalToken().hashCode());
         hashCode = prime * hashCode + ((getApplicationVersionRolledBackTo() == null) ? 0 : getApplicationVersionRolledBackTo().hashCode());
+        hashCode = prime * hashCode + ((getApplicationMode() == null) ? 0 : getApplicationMode().hashCode());
         return hashCode;
     }
 

@@ -71,6 +71,12 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
      * </p>
      */
     private java.util.List<VpcConfigurationDescription> vpcConfigurationDescriptions;
+    /**
+     * <p>
+     * The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     * </p>
+     */
+    private ZeppelinApplicationConfigurationDescription zeppelinApplicationConfigurationDescription;
 
     /**
      * <p>
@@ -390,6 +396,47 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
     }
 
     /**
+     * <p>
+     * The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     * </p>
+     * 
+     * @param zeppelinApplicationConfigurationDescription
+     *        The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     */
+
+    public void setZeppelinApplicationConfigurationDescription(ZeppelinApplicationConfigurationDescription zeppelinApplicationConfigurationDescription) {
+        this.zeppelinApplicationConfigurationDescription = zeppelinApplicationConfigurationDescription;
+    }
+
+    /**
+     * <p>
+     * The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     * </p>
+     * 
+     * @return The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     */
+
+    public ZeppelinApplicationConfigurationDescription getZeppelinApplicationConfigurationDescription() {
+        return this.zeppelinApplicationConfigurationDescription;
+    }
+
+    /**
+     * <p>
+     * The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     * </p>
+     * 
+     * @param zeppelinApplicationConfigurationDescription
+     *        The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationConfigurationDescription withZeppelinApplicationConfigurationDescription(
+            ZeppelinApplicationConfigurationDescription zeppelinApplicationConfigurationDescription) {
+        setZeppelinApplicationConfigurationDescription(zeppelinApplicationConfigurationDescription);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -414,7 +461,9 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
         if (getApplicationSnapshotConfigurationDescription() != null)
             sb.append("ApplicationSnapshotConfigurationDescription: ").append(getApplicationSnapshotConfigurationDescription()).append(",");
         if (getVpcConfigurationDescriptions() != null)
-            sb.append("VpcConfigurationDescriptions: ").append(getVpcConfigurationDescriptions());
+            sb.append("VpcConfigurationDescriptions: ").append(getVpcConfigurationDescriptions()).append(",");
+        if (getZeppelinApplicationConfigurationDescription() != null)
+            sb.append("ZeppelinApplicationConfigurationDescription: ").append(getZeppelinApplicationConfigurationDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -462,6 +511,11 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
             return false;
         if (other.getVpcConfigurationDescriptions() != null && other.getVpcConfigurationDescriptions().equals(this.getVpcConfigurationDescriptions()) == false)
             return false;
+        if (other.getZeppelinApplicationConfigurationDescription() == null ^ this.getZeppelinApplicationConfigurationDescription() == null)
+            return false;
+        if (other.getZeppelinApplicationConfigurationDescription() != null
+                && other.getZeppelinApplicationConfigurationDescription().equals(this.getZeppelinApplicationConfigurationDescription()) == false)
+            return false;
         return true;
     }
 
@@ -478,6 +532,8 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
         hashCode = prime * hashCode
                 + ((getApplicationSnapshotConfigurationDescription() == null) ? 0 : getApplicationSnapshotConfigurationDescription().hashCode());
         hashCode = prime * hashCode + ((getVpcConfigurationDescriptions() == null) ? 0 : getVpcConfigurationDescriptions().hashCode());
+        hashCode = prime * hashCode
+                + ((getZeppelinApplicationConfigurationDescription() == null) ? 0 : getZeppelinApplicationConfigurationDescription().hashCode());
         return hashCode;
     }
 

@@ -4378,7 +4378,7 @@ public interface AmazonLightsail {
 
     /**
      * <p>
-     * Returns information about a specific static IP.
+     * Returns information about an Amazon Lightsail static IP.
      * </p>
      * 
      * @param getStaticIpRequest

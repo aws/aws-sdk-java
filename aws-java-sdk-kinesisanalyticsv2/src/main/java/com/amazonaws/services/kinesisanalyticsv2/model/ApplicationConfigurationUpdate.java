@@ -36,7 +36,7 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
     private SqlApplicationConfigurationUpdate sqlApplicationConfigurationUpdate;
     /**
      * <p>
-     * Describes updates to a Flink-based Kinesis Data Analytics application's code configuration.
+     * Describes updates to an application's code configuration.
      * </p>
      */
     private ApplicationCodeConfigurationUpdate applicationCodeConfigurationUpdate;
@@ -64,6 +64,12 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
      * </p>
      */
     private java.util.List<VpcConfigurationUpdate> vpcConfigurationUpdates;
+    /**
+     * <p>
+     * Updates to the configuration of a Kinesis Data Analytics Studio notebook.
+     * </p>
+     */
+    private ZeppelinApplicationConfigurationUpdate zeppelinApplicationConfigurationUpdate;
 
     /**
      * <p>
@@ -107,11 +113,11 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes updates to a Flink-based Kinesis Data Analytics application's code configuration.
+     * Describes updates to an application's code configuration.
      * </p>
      * 
      * @param applicationCodeConfigurationUpdate
-     *        Describes updates to a Flink-based Kinesis Data Analytics application's code configuration.
+     *        Describes updates to an application's code configuration.
      */
 
     public void setApplicationCodeConfigurationUpdate(ApplicationCodeConfigurationUpdate applicationCodeConfigurationUpdate) {
@@ -120,10 +126,10 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes updates to a Flink-based Kinesis Data Analytics application's code configuration.
+     * Describes updates to an application's code configuration.
      * </p>
      * 
-     * @return Describes updates to a Flink-based Kinesis Data Analytics application's code configuration.
+     * @return Describes updates to an application's code configuration.
      */
 
     public ApplicationCodeConfigurationUpdate getApplicationCodeConfigurationUpdate() {
@@ -132,11 +138,11 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes updates to a Flink-based Kinesis Data Analytics application's code configuration.
+     * Describes updates to an application's code configuration.
      * </p>
      * 
      * @param applicationCodeConfigurationUpdate
-     *        Describes updates to a Flink-based Kinesis Data Analytics application's code configuration.
+     *        Describes updates to an application's code configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -337,6 +343,47 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * Updates to the configuration of a Kinesis Data Analytics Studio notebook.
+     * </p>
+     * 
+     * @param zeppelinApplicationConfigurationUpdate
+     *        Updates to the configuration of a Kinesis Data Analytics Studio notebook.
+     */
+
+    public void setZeppelinApplicationConfigurationUpdate(ZeppelinApplicationConfigurationUpdate zeppelinApplicationConfigurationUpdate) {
+        this.zeppelinApplicationConfigurationUpdate = zeppelinApplicationConfigurationUpdate;
+    }
+
+    /**
+     * <p>
+     * Updates to the configuration of a Kinesis Data Analytics Studio notebook.
+     * </p>
+     * 
+     * @return Updates to the configuration of a Kinesis Data Analytics Studio notebook.
+     */
+
+    public ZeppelinApplicationConfigurationUpdate getZeppelinApplicationConfigurationUpdate() {
+        return this.zeppelinApplicationConfigurationUpdate;
+    }
+
+    /**
+     * <p>
+     * Updates to the configuration of a Kinesis Data Analytics Studio notebook.
+     * </p>
+     * 
+     * @param zeppelinApplicationConfigurationUpdate
+     *        Updates to the configuration of a Kinesis Data Analytics Studio notebook.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationConfigurationUpdate withZeppelinApplicationConfigurationUpdate(
+            ZeppelinApplicationConfigurationUpdate zeppelinApplicationConfigurationUpdate) {
+        setZeppelinApplicationConfigurationUpdate(zeppelinApplicationConfigurationUpdate);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -359,7 +406,9 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
         if (getApplicationSnapshotConfigurationUpdate() != null)
             sb.append("ApplicationSnapshotConfigurationUpdate: ").append(getApplicationSnapshotConfigurationUpdate()).append(",");
         if (getVpcConfigurationUpdates() != null)
-            sb.append("VpcConfigurationUpdates: ").append(getVpcConfigurationUpdates());
+            sb.append("VpcConfigurationUpdates: ").append(getVpcConfigurationUpdates()).append(",");
+        if (getZeppelinApplicationConfigurationUpdate() != null)
+            sb.append("ZeppelinApplicationConfigurationUpdate: ").append(getZeppelinApplicationConfigurationUpdate());
         sb.append("}");
         return sb.toString();
     }
@@ -402,6 +451,11 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
             return false;
         if (other.getVpcConfigurationUpdates() != null && other.getVpcConfigurationUpdates().equals(this.getVpcConfigurationUpdates()) == false)
             return false;
+        if (other.getZeppelinApplicationConfigurationUpdate() == null ^ this.getZeppelinApplicationConfigurationUpdate() == null)
+            return false;
+        if (other.getZeppelinApplicationConfigurationUpdate() != null
+                && other.getZeppelinApplicationConfigurationUpdate().equals(this.getZeppelinApplicationConfigurationUpdate()) == false)
+            return false;
         return true;
     }
 
@@ -416,6 +470,7 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
         hashCode = prime * hashCode + ((getEnvironmentPropertyUpdates() == null) ? 0 : getEnvironmentPropertyUpdates().hashCode());
         hashCode = prime * hashCode + ((getApplicationSnapshotConfigurationUpdate() == null) ? 0 : getApplicationSnapshotConfigurationUpdate().hashCode());
         hashCode = prime * hashCode + ((getVpcConfigurationUpdates() == null) ? 0 : getVpcConfigurationUpdates().hashCode());
+        hashCode = prime * hashCode + ((getZeppelinApplicationConfigurationUpdate() == null) ? 0 : getZeppelinApplicationConfigurationUpdate().hashCode());
         return hashCode;
     }
 

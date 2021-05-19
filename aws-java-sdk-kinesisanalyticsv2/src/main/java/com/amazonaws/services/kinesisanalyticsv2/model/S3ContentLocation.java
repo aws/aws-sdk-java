@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * For a Flink-based Kinesis Data Analytics application, provides a description of an Amazon S3 object, including the
- * Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version
- * number of the Amazon S3 object that contains the data.
+ * For a Kinesis Data Analytics application provides a description of an Amazon S3 object, including the Amazon Resource
+ * Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the
+ * Amazon S3 object that contains the data.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/S3ContentLocation"

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes an update to the code of a Flink-based Kinesis Data Analytics application.
+ * Describes an update to the code of an application. Not supported for Apache Zeppelin.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CodeContentUpdate"

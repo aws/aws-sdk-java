@@ -41,6 +41,8 @@ public class CreateProjectVersionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TestingData").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KmsKeyId").build();
 
     private static final CreateProjectVersionRequestMarshaller instance = new CreateProjectVersionRequestMarshaller();
 
@@ -64,6 +66,7 @@ public class CreateProjectVersionRequestMarshaller {
             protocolMarshaller.marshall(createProjectVersionRequest.getTrainingData(), TRAININGDATA_BINDING);
             protocolMarshaller.marshall(createProjectVersionRequest.getTestingData(), TESTINGDATA_BINDING);
             protocolMarshaller.marshall(createProjectVersionRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createProjectVersionRequest.getKmsKeyId(), KMSKEYID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -4756,7 +4756,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Returns information about a specific static IP.
+     * Returns information about an Amazon Lightsail static IP.
      * </p>
      * 
      * @param getStaticIpRequest
@@ -4769,7 +4769,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Returns information about a specific static IP.
+     * Returns information about an Amazon Lightsail static IP.
      * </p>
      * 
      * @param getStaticIpRequest

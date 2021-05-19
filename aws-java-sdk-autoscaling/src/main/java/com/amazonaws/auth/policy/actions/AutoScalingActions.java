@@ -117,6 +117,8 @@ public enum AutoScalingActions implements Action {
     ExecutePolicy("autoscaling:ExecutePolicy"),
     /** Action for the ExitStandby operation. */
     ExitStandby("autoscaling:ExitStandby"),
+    /** Action for the GetPredictiveScalingForecast operation. */
+    GetPredictiveScalingForecast("autoscaling:GetPredictiveScalingForecast"),
     /** Action for the PutLifecycleHook operation. */
     PutLifecycleHook("autoscaling:PutLifecycleHook"),
     /** Action for the PutNotificationConfiguration operation. */

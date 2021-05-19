@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes code configuration updates to a Flink-based Kinesis Data Analytics application.
+ * Describes code configuration updates for an application. This is supported for a Flink-based Kinesis Data Analytics
+ * application or a SQL-based Kinesis Data Analytics application.
  * </p>
  * 
  * @see <a

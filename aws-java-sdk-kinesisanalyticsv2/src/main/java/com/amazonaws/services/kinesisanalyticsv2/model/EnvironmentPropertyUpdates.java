@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes updates to the execution property groups for a Flink-based Kinesis Data Analytics application.
+ * Describes updates to the execution property groups for a Flink-based Kinesis Data Analytics application or a Studio
+ * notebook.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/EnvironmentPropertyUpdates"

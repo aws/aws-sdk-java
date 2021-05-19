@@ -28,7 +28,7 @@ public class WarmPoolConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The total maximum number of instances that are allowed to be in the warm pool or in any state except
+     * The maximum number of instances that are allowed to be in the warm pool or in any state except
      * <code>Terminated</code> for the Auto Scaling group.
      * </p>
      */
@@ -41,8 +41,7 @@ public class WarmPoolConfiguration implements Serializable, Cloneable {
     private Integer minSize;
     /**
      * <p>
-     * The instance state to transition to after the lifecycle actions are complete: <code>Stopped</code> or
-     * <code>Running</code>.
+     * The instance state to transition to after the lifecycle actions are complete.
      * </p>
      */
     private String poolState;
@@ -55,12 +54,12 @@ public class WarmPoolConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The total maximum number of instances that are allowed to be in the warm pool or in any state except
+     * The maximum number of instances that are allowed to be in the warm pool or in any state except
      * <code>Terminated</code> for the Auto Scaling group.
      * </p>
      * 
      * @param maxGroupPreparedCapacity
-     *        The total maximum number of instances that are allowed to be in the warm pool or in any state except
+     *        The maximum number of instances that are allowed to be in the warm pool or in any state except
      *        <code>Terminated</code> for the Auto Scaling group.
      */
 
@@ -70,11 +69,11 @@ public class WarmPoolConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The total maximum number of instances that are allowed to be in the warm pool or in any state except
+     * The maximum number of instances that are allowed to be in the warm pool or in any state except
      * <code>Terminated</code> for the Auto Scaling group.
      * </p>
      * 
-     * @return The total maximum number of instances that are allowed to be in the warm pool or in any state except
+     * @return The maximum number of instances that are allowed to be in the warm pool or in any state except
      *         <code>Terminated</code> for the Auto Scaling group.
      */
 
@@ -84,12 +83,12 @@ public class WarmPoolConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The total maximum number of instances that are allowed to be in the warm pool or in any state except
+     * The maximum number of instances that are allowed to be in the warm pool or in any state except
      * <code>Terminated</code> for the Auto Scaling group.
      * </p>
      * 
      * @param maxGroupPreparedCapacity
-     *        The total maximum number of instances that are allowed to be in the warm pool or in any state except
+     *        The maximum number of instances that are allowed to be in the warm pool or in any state except
      *        <code>Terminated</code> for the Auto Scaling group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -141,13 +140,11 @@ public class WarmPoolConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance state to transition to after the lifecycle actions are complete: <code>Stopped</code> or
-     * <code>Running</code>.
+     * The instance state to transition to after the lifecycle actions are complete.
      * </p>
      * 
      * @param poolState
-     *        The instance state to transition to after the lifecycle actions are complete: <code>Stopped</code> or
-     *        <code>Running</code>.
+     *        The instance state to transition to after the lifecycle actions are complete.
      * @see WarmPoolState
      */
 
@@ -157,12 +154,10 @@ public class WarmPoolConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance state to transition to after the lifecycle actions are complete: <code>Stopped</code> or
-     * <code>Running</code>.
+     * The instance state to transition to after the lifecycle actions are complete.
      * </p>
      * 
-     * @return The instance state to transition to after the lifecycle actions are complete: <code>Stopped</code> or
-     *         <code>Running</code>.
+     * @return The instance state to transition to after the lifecycle actions are complete.
      * @see WarmPoolState
      */
 
@@ -172,13 +167,11 @@ public class WarmPoolConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance state to transition to after the lifecycle actions are complete: <code>Stopped</code> or
-     * <code>Running</code>.
+     * The instance state to transition to after the lifecycle actions are complete.
      * </p>
      * 
      * @param poolState
-     *        The instance state to transition to after the lifecycle actions are complete: <code>Stopped</code> or
-     *        <code>Running</code>.
+     *        The instance state to transition to after the lifecycle actions are complete.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WarmPoolState
      */
@@ -190,13 +183,11 @@ public class WarmPoolConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instance state to transition to after the lifecycle actions are complete: <code>Stopped</code> or
-     * <code>Running</code>.
+     * The instance state to transition to after the lifecycle actions are complete.
      * </p>
      * 
      * @param poolState
-     *        The instance state to transition to after the lifecycle actions are complete: <code>Stopped</code> or
-     *        <code>Running</code>.
+     *        The instance state to transition to after the lifecycle actions are complete.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WarmPoolState
      */

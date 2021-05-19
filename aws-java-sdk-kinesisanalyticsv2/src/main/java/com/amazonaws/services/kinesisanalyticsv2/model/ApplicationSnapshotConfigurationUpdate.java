@@ -31,18 +31,18 @@ public class ApplicationSnapshotConfigurationUpdate implements Serializable, Clo
 
     /**
      * <p>
-     * Describes updates to whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+     * Describes updates to whether snapshots are enabled for an application.
      * </p>
      */
     private Boolean snapshotsEnabledUpdate;
 
     /**
      * <p>
-     * Describes updates to whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+     * Describes updates to whether snapshots are enabled for an application.
      * </p>
      * 
      * @param snapshotsEnabledUpdate
-     *        Describes updates to whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+     *        Describes updates to whether snapshots are enabled for an application.
      */
 
     public void setSnapshotsEnabledUpdate(Boolean snapshotsEnabledUpdate) {
@@ -51,10 +51,10 @@ public class ApplicationSnapshotConfigurationUpdate implements Serializable, Clo
 
     /**
      * <p>
-     * Describes updates to whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+     * Describes updates to whether snapshots are enabled for an application.
      * </p>
      * 
-     * @return Describes updates to whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+     * @return Describes updates to whether snapshots are enabled for an application.
      */
 
     public Boolean getSnapshotsEnabledUpdate() {
@@ -63,11 +63,11 @@ public class ApplicationSnapshotConfigurationUpdate implements Serializable, Clo
 
     /**
      * <p>
-     * Describes updates to whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+     * Describes updates to whether snapshots are enabled for an application.
      * </p>
      * 
      * @param snapshotsEnabledUpdate
-     *        Describes updates to whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+     *        Describes updates to whether snapshots are enabled for an application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,10 +78,10 @@ public class ApplicationSnapshotConfigurationUpdate implements Serializable, Clo
 
     /**
      * <p>
-     * Describes updates to whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+     * Describes updates to whether snapshots are enabled for an application.
      * </p>
      * 
-     * @return Describes updates to whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+     * @return Describes updates to whether snapshots are enabled for an application.
      */
 
     public Boolean isSnapshotsEnabledUpdate() {

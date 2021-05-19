@@ -4856,7 +4856,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         if(Constants.S3_HOSTNAME.equals(authority)) {
             return "us-east-1";
         }
+        return getRegionNameFromAuthorityOrSigner();
+    }
 
+    private String getRegionNameFromAuthorityOrSigner() {
+        String authority = super.endpoint.getAuthority();
         Matcher m = Region.S3_REGIONAL_ENDPOINT_PATTERN.matcher(authority);
         if (m.matches()) {
             try {
@@ -4938,16 +4942,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             Arn resourceArn = Arn.fromString(bucketName);
             S3Resource s3Resource = S3ArnConverter.getInstance().convertArn(resourceArn);
             validateConfiguration(s3Resource);
+            com.amazonaws.regions.Region region = RegionUtils.getRegion(getRegionNameFromAuthorityOrSigner());
 
-            S3AccessPointResource s3EndpointResource = (S3AccessPointResource) s3Resource;
-            com.amazonaws.regions.Region region = RegionUtils.getRegion(getRegionName());
-            String trimmedArnRegion = removeFipsIfNeeded(s3EndpointResource.getRegion());
-            validateS3ResourceArn(resourceArn, region, trimmedArnRegion);
+            validateS3ResourceArn(resourceArn, region);
             validateParentResourceIfNeeded((S3AccessPointResource) s3Resource, getRegionName());
 
-            endpoint = getEndpointForAccessPoint((S3AccessPointResource) s3Resource,
-                                                 region.getDomain(),
-                                                 trimmedArnRegion);
+            endpoint = getEndpointForAccessPoint((S3AccessPointResource) s3Resource, region.getDomain());
             signingRegion = s3Resource.getRegion();
 
             request.addHandlerContext(HandlerContextKey.SIGNING_REGION, signingRegion);
@@ -5025,8 +5025,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     private URI getEndpointForAccessPoint(S3AccessPointResource s3Resource,
-                                          String domain,
-                                          String trimmedRegion) {
+                                          String domain) {
         URI endpointOverride = isEndpointOverridden() ? getEndpoint() : null;
 
         S3Resource parentS3Resource = s3Resource.getParentS3Resource();
@@ -5046,14 +5045,14 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         }
 
         com.amazonaws.regions.Region clientRegion = RegionUtils.getRegion(getRegionName());
-        boolean fipsRegionProvided = isFipsRegionProvided(clientRegion.getName(), s3Resource.getRegion(), useArnRegion());
+        boolean fipsRegionProvided = isRegionFipsEnabled(clientRegion.getName());
 
         if (parentS3Resource != null && S3ResourceType.OBJECT_LAMBDAS.toString().equals(parentS3Resource.getType())) {
             return S3ObjectLambdaEndpointBuilder.create()
                     .withEndpointOverride(endpointOverride)
                     .withAccessPointName(s3Resource.getAccessPointName())
                     .withAccountId(s3Resource.getAccountId())
-                    .withRegion(trimmedRegion)
+                    .withRegion(s3Resource.getRegion())
                     .withProtocol(protocol)
                     .withDomain(domain)
                     .withFipsEnabled(fipsRegionProvided)
@@ -5065,7 +5064,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                                    .withEndpointOverride(endpointOverride)
                                    .withAccessPointName(s3Resource.getAccessPointName())
                                    .withAccountId(s3Resource.getAccountId())
-                                   .withRegion(trimmedRegion)
+                                   .withRegion(s3Resource.getRegion())
                                    .withProtocol(protocol)
                                    .withDomain(domain)
                                    .withDualstackEnabled(clientOptions.isDualstackEnabled())
@@ -5121,7 +5120,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         }
     }
 
-    private void validateS3ResourceArn(Arn resourceArn, com.amazonaws.regions.Region clientRegion, String trimmedArnRegion) {
+    private void validateS3ResourceArn(Arn resourceArn, com.amazonaws.regions.Region clientRegion) {
         String clientPartition = (clientRegion == null) ? null : clientRegion.getPartition();
 
         if (clientPartition == null || !clientPartition.equals(resourceArn.getPartition())) {
@@ -5131,13 +5130,17 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                                                + "'" + clientPartition + "'.");
         }
 
-        if (!clientOptions.isForceGlobalBucketAccessEnabled() && !useArnRegion()) {
-            if (!removeFipsIfNeeded(clientRegion.getName()).equals(trimmedArnRegion)) {
-                throw new IllegalArgumentException("The region field of the ARN being passed as a bucket parameter to an "
-                        + "S3 operation does not match the region the client was configured "
-                        + "with. Provided region: '" + resourceArn.getRegion() + "'; client "
-                        + "region: '" + clientRegion.getName() + "'.");
-            }
+        validateIsTrue(!isRegionFipsEnabled(resourceArn.getRegion()),
+                "Invalid ARN, FIPS region is not allowed in ARN."
+                + " Provided arn region: '" + resourceArn.getRegion() + "'." );
+
+        if ((!clientOptions.isForceGlobalBucketAccessEnabled() && !useArnRegion())
+                || isRegionFipsEnabled(clientRegion.getName())) {
+            validateIsTrue( removeFipsIfNeeded(clientRegion.getName()).equals(resourceArn.getRegion()),
+                    "The region field of the ARN being passed as a bucket parameter to an "
+                            + "S3 operation does not match the region the client was configured "
+                            + "with. Provided region: '" + resourceArn.getRegion() + "'; client "
+                            + "region: '" + clientRegion.getName() + "'." );
         }
     }
 
@@ -5150,17 +5153,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             return region.replace("-fips", "");
         }
         return region;
-    }
-
-    /**
-     * Returns whether a FIPS pseudo region is provided.
-     */
-    private static boolean isFipsRegionProvided(String clientRegion, String arnRegion, boolean useArnRegion) {
-        if (useArnRegion) {
-            return isRegionFipsEnabled(arnRegion);
-        }
-
-        return isRegionFipsEnabled(clientRegion);
     }
 
     private boolean useArnRegion() {
@@ -6565,6 +6557,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         result.setMetadata(metadata);
         result.setContentMd5(contentMd5);
         return result;
+    }
+
+    private void validateIsTrue(boolean condition, String error, Object... params) {
+        if (!condition) {
+            throw new IllegalArgumentException(String.format(error, params));
+        }
     }
 
 }

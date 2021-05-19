@@ -488,7 +488,9 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * </p>
      * </note>
      * <p>
-     * This operation requires permissions to perform the <code>rekognition:CreateCollection</code> action.
+     * This operation requires permissions to perform the <code>rekognition:CreateCollection</code> action. If you want
+     * to tag your collection, you also require permission to perform the <code>rekognition:TagResource</code>
+     * operation.
      * </p>
      * 
      * @param createCollectionRequest
@@ -505,11 +507,11 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws ResourceAlreadyExistsException
-     *         A collection with the specified ID already exists.
+     *         A resource with the specified ID already exists.
      * @throws ServiceQuotaExceededException
      *         <p>
-     *         The size of the collection or tag list exceeds the allowed limit. For more information, see Limits in
-     *         Amazon Rekognition in the Amazon Rekognition Developer Guide.
+     *         The size of the collection exceeds the allowed limit. For more information, see Limits in Amazon
+     *         Rekognition in the Amazon Rekognition Developer Guide.
      * @sample AmazonRekognition.CreateCollection
      */
     @Override
@@ -656,7 +658,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @throws ResourceInUseException
      *         The specified resource is already being used.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws LimitExceededException
      *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
      *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
@@ -675,8 +677,8 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      *         Rekognition.
      * @throws ServiceQuotaExceededException
      *         <p>
-     *         The size of the collection or tag list exceeds the allowed limit. For more information, see Limits in
-     *         Amazon Rekognition in the Amazon Rekognition Developer Guide.
+     *         The size of the collection exceeds the allowed limit. For more information, see Limits in Amazon
+     *         Rekognition in the Amazon Rekognition Developer Guide.
      * @sample AmazonRekognition.CreateProjectVersion
      */
     @Override
@@ -743,6 +745,11 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * After you have finished analyzing a streaming video, use <a>StopStreamProcessor</a> to stop processing. You can
      * delete the stream processor by calling <a>DeleteStreamProcessor</a>.
      * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:CreateStreamProcessor</code> action. If you
+     * want to tag your stream processor, you also require permission to perform the
+     * <code>rekognition:TagResource</code> operation.
+     * </p>
      * 
      * @param createStreamProcessorRequest
      * @return Result of the CreateStreamProcessor operation returned by the service.
@@ -766,8 +773,8 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      *         Rekognition.
      * @throws ServiceQuotaExceededException
      *         <p>
-     *         The size of the collection or tag list exceeds the allowed limit. For more information, see Limits in
-     *         Amazon Rekognition in the Amazon Rekognition Developer Guide.
+     *         The size of the collection exceeds the allowed limit. For more information, see Limits in Amazon
+     *         Rekognition in the Amazon Rekognition Developer Guide.
      * @sample AmazonRekognition.CreateStreamProcessor
      */
     @Override
@@ -838,7 +845,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @sample AmazonRekognition.DeleteCollection
      */
     @Override
@@ -908,7 +915,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @sample AmazonRekognition.DeleteFaces
      */
     @Override
@@ -969,7 +976,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @throws ResourceInUseException
      *         The specified resource is already being used.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws InvalidParameterException
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws AccessDeniedException
@@ -1043,7 +1050,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @param deleteProjectVersionRequest
      * @return Result of the DeleteProjectVersion operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ResourceInUseException
      *         The specified resource is already being used.
      * @throws InvalidParameterException
@@ -1121,7 +1128,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @throws InvalidParameterException
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ResourceInUseException
      *         The specified resource is already being used.
      * @throws ProvisionedThroughputExceededException
@@ -1197,7 +1204,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @sample AmazonRekognition.DescribeCollection
      */
     @Override
@@ -1257,7 +1264,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @param describeProjectVersionsRequest
      * @return Result of the DescribeProjectVersions operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws InvalidPaginationTokenException
      *         Pagination token in the request is not valid.
      * @throws InvalidParameterException
@@ -1406,7 +1413,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @throws InvalidParameterException
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ProvisionedThroughputExceededException
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
@@ -1497,7 +1504,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @param detectCustomLabelsRequest
      * @return Result of the DetectCustomLabels operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ResourceNotReadyException
      *         The requested resource isn't ready. For example, this exception occurs when you call
      *         <code>DetectCustomLabels</code> with a model version that isn't deployed.
@@ -2170,7 +2177,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @sample AmazonRekognition.GetCelebrityInfo
      */
     @Override
@@ -2283,7 +2290,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ThrottlingException
      *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
      * @sample AmazonRekognition.GetCelebrityRecognition
@@ -2386,7 +2393,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ThrottlingException
      *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
      * @sample AmazonRekognition.GetContentModeration
@@ -2474,7 +2481,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ThrottlingException
      *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
      * @sample AmazonRekognition.GetFaceDetection
@@ -2574,7 +2581,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ThrottlingException
      *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
      * @sample AmazonRekognition.GetFaceSearch
@@ -2670,7 +2677,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ThrottlingException
      *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
      * @sample AmazonRekognition.GetLabelDetection
@@ -2774,7 +2781,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ThrottlingException
      *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
      * @sample AmazonRekognition.GetPersonTracking
@@ -2873,7 +2880,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ThrottlingException
      *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
      * @sample AmazonRekognition.GetSegmentDetection
@@ -2966,7 +2973,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ThrottlingException
      *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
      * @sample AmazonRekognition.GetTextDetection
@@ -3170,13 +3177,13 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws InvalidImageFormatException
      *         The provided image format is not supported.
      * @throws ServiceQuotaExceededException
      *         <p>
-     *         The size of the collection or tag list exceeds the allowed limit. For more information, see Limits in
-     *         Amazon Rekognition in the Amazon Rekognition Developer Guide.
+     *         The size of the collection exceeds the allowed limit. For more information, see Limits in Amazon
+     *         Rekognition in the Amazon Rekognition Developer Guide.
      * @sample AmazonRekognition.IndexFaces
      */
     @Override
@@ -3251,7 +3258,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @throws InvalidPaginationTokenException
      *         Pagination token in the request is not valid.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @sample AmazonRekognition.ListCollections
      */
     @Override
@@ -3324,7 +3331,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @throws InvalidPaginationTokenException
      *         Pagination token in the request is not valid.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @sample AmazonRekognition.ListFaces
      */
     @Override
@@ -3441,11 +3448,14 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * <p>
      * Returns a list of tags in an Amazon Rekognition collection, stream processor, or Custom Labels model.
      * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:ListTagsForResource</code> action.
+     * </p>
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws InvalidParameterException
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws AccessDeniedException
@@ -3645,7 +3655,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @sample AmazonRekognition.SearchFaces
      */
     @Override
@@ -3720,6 +3730,10 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * face that Amazon Rekognition used for the input image.
      * </p>
      * <p>
+     * If no faces are detected in the input image, <code>SearchFacesByImage</code> returns an
+     * <code>InvalidParameterException</code> error.
+     * </p>
+     * <p>
      * For an example, Searching for a Face Using an Image in the Amazon Rekognition Developer Guide.
      * </p>
      * <p>
@@ -3758,7 +3772,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws InvalidImageFormatException
      *         The provided image format is not supported.
      * @sample AmazonRekognition.SearchFacesByImage
@@ -4122,7 +4136,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
      *         concurrently running jobs is below the Amazon Rekognition service limit.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ThrottlingException
      *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
      * @sample AmazonRekognition.StartFaceSearch
@@ -4375,7 +4389,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @param startProjectVersionRequest
      * @return Result of the StartProjectVersion operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ResourceInUseException
      *         The specified resource is already being used.
      * @throws LimitExceededException
@@ -4557,7 +4571,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @throws InvalidParameterException
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ResourceInUseException
      *         The specified resource is already being used.
      * @throws ProvisionedThroughputExceededException
@@ -4707,7 +4721,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @param stopProjectVersionRequest
      * @return Result of the StopProjectVersion operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ResourceInUseException
      *         The specified resource is already being used.
      * @throws InvalidParameterException
@@ -4783,7 +4797,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * @throws InvalidParameterException
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ResourceInUseException
      *         The specified resource is already being used.
      * @throws ProvisionedThroughputExceededException
@@ -4841,17 +4855,20 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
      * Resources</a>.
      * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:TagResource</code> action.
+     * </p>
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws InvalidParameterException
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws ServiceQuotaExceededException
      *         <p>
-     *         The size of the collection or tag list exceeds the allowed limit. For more information, see Limits in
-     *         Amazon Rekognition in the Amazon Rekognition Developer Guide.
+     *         The size of the collection exceeds the allowed limit. For more information, see Limits in Amazon
+     *         Rekognition in the Amazon Rekognition Developer Guide.
      * @throws AccessDeniedException
      *         You are not authorized to perform the action.
      * @throws InternalServerErrorException
@@ -4911,11 +4928,14 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * <p>
      * Removes one or more tags from an Amazon Rekognition collection, stream processor, or Custom Labels model.
      * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:UntagResource</code> action.
+     * </p>
      * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws InvalidParameterException
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws AccessDeniedException

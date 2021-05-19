@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum UrlType {
 
-    FLINK_DASHBOARD_URL("FLINK_DASHBOARD_URL");
+    FLINK_DASHBOARD_URL("FLINK_DASHBOARD_URL"),
+    ZEPPELIN_UI_URL("ZEPPELIN_UI_URL");
 
     private String value;
 

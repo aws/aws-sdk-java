@@ -75,6 +75,11 @@ public class ApplicationConfigurationJsonUnmarshaller implements Unmarshaller<Ap
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("ZeppelinApplicationConfiguration", targetDepth)) {
+                    context.nextToken();
+                    applicationConfiguration.setZeppelinApplicationConfiguration(ZeppelinApplicationConfigurationJsonUnmarshaller.getInstance().unmarshall(
+                            context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -34,9 +34,10 @@ public class AddApplicationVpcConfigurationRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * The version of the application to which you want to add the VPC configuration. You must provide the
-     * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You can use the
+     * <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can use the
      * <a>DescribeApplication</a> operation to get the current application version. If the version specified is not the
-     * current version, the <code>ConcurrentModificationException</code> is returned.
+     * current version, the <code>ConcurrentModificationException</code> is returned. For better concurrency support,
+     * use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.
      * </p>
      */
     private Long currentApplicationVersionId;
@@ -50,7 +51,8 @@ public class AddApplicationVpcConfigurationRequest extends com.amazonaws.AmazonW
      * <p>
      * A value you use to implement strong concurrency for application updates. You must provide the
      * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current
-     * <code>ConditionalToken</code> using <a>DescribeApplication</a>.
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
+     * <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.
      * </p>
      */
     private String conditionalToken;
@@ -98,16 +100,19 @@ public class AddApplicationVpcConfigurationRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * The version of the application to which you want to add the VPC configuration. You must provide the
-     * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You can use the
+     * <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can use the
      * <a>DescribeApplication</a> operation to get the current application version. If the version specified is not the
-     * current version, the <code>ConcurrentModificationException</code> is returned.
+     * current version, the <code>ConcurrentModificationException</code> is returned. For better concurrency support,
+     * use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.
      * </p>
      * 
      * @param currentApplicationVersionId
      *        The version of the application to which you want to add the VPC configuration. You must provide the
-     *        <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You can use the
+     *        <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can use the
      *        <a>DescribeApplication</a> operation to get the current application version. If the version specified is
-     *        not the current version, the <code>ConcurrentModificationException</code> is returned.
+     *        not the current version, the <code>ConcurrentModificationException</code> is returned. For better
+     *        concurrency support, use the <code>ConditionalToken</code> parameter instead of
+     *        <code>CurrentApplicationVersionId</code>.
      */
 
     public void setCurrentApplicationVersionId(Long currentApplicationVersionId) {
@@ -117,15 +122,18 @@ public class AddApplicationVpcConfigurationRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * The version of the application to which you want to add the VPC configuration. You must provide the
-     * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You can use the
+     * <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can use the
      * <a>DescribeApplication</a> operation to get the current application version. If the version specified is not the
-     * current version, the <code>ConcurrentModificationException</code> is returned.
+     * current version, the <code>ConcurrentModificationException</code> is returned. For better concurrency support,
+     * use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.
      * </p>
      * 
      * @return The version of the application to which you want to add the VPC configuration. You must provide the
-     *         <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You can use the
+     *         <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can use the
      *         <a>DescribeApplication</a> operation to get the current application version. If the version specified is
-     *         not the current version, the <code>ConcurrentModificationException</code> is returned.
+     *         not the current version, the <code>ConcurrentModificationException</code> is returned. For better
+     *         concurrency support, use the <code>ConditionalToken</code> parameter instead of
+     *         <code>CurrentApplicationVersionId</code>.
      */
 
     public Long getCurrentApplicationVersionId() {
@@ -135,16 +143,19 @@ public class AddApplicationVpcConfigurationRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * The version of the application to which you want to add the VPC configuration. You must provide the
-     * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You can use the
+     * <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can use the
      * <a>DescribeApplication</a> operation to get the current application version. If the version specified is not the
-     * current version, the <code>ConcurrentModificationException</code> is returned.
+     * current version, the <code>ConcurrentModificationException</code> is returned. For better concurrency support,
+     * use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.
      * </p>
      * 
      * @param currentApplicationVersionId
      *        The version of the application to which you want to add the VPC configuration. You must provide the
-     *        <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You can use the
+     *        <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You can use the
      *        <a>DescribeApplication</a> operation to get the current application version. If the version specified is
-     *        not the current version, the <code>ConcurrentModificationException</code> is returned.
+     *        not the current version, the <code>ConcurrentModificationException</code> is returned. For better
+     *        concurrency support, use the <code>ConditionalToken</code> parameter instead of
+     *        <code>CurrentApplicationVersionId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -197,13 +208,15 @@ public class AddApplicationVpcConfigurationRequest extends com.amazonaws.AmazonW
      * <p>
      * A value you use to implement strong concurrency for application updates. You must provide the
      * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current
-     * <code>ConditionalToken</code> using <a>DescribeApplication</a>.
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
+     * <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.
      * </p>
      * 
      * @param conditionalToken
      *        A value you use to implement strong concurrency for application updates. You must provide the
      *        <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current
-     *        <code>ConditionalToken</code> using <a>DescribeApplication</a>.
+     *        <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
+     *        <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.
      */
 
     public void setConditionalToken(String conditionalToken) {
@@ -214,12 +227,14 @@ public class AddApplicationVpcConfigurationRequest extends com.amazonaws.AmazonW
      * <p>
      * A value you use to implement strong concurrency for application updates. You must provide the
      * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current
-     * <code>ConditionalToken</code> using <a>DescribeApplication</a>.
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
+     * <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.
      * </p>
      * 
      * @return A value you use to implement strong concurrency for application updates. You must provide the
      *         <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current
-     *         <code>ConditionalToken</code> using <a>DescribeApplication</a>.
+     *         <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
+     *         <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.
      */
 
     public String getConditionalToken() {
@@ -230,13 +245,15 @@ public class AddApplicationVpcConfigurationRequest extends com.amazonaws.AmazonW
      * <p>
      * A value you use to implement strong concurrency for application updates. You must provide the
      * <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current
-     * <code>ConditionalToken</code> using <a>DescribeApplication</a>.
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
+     * <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.
      * </p>
      * 
      * @param conditionalToken
      *        A value you use to implement strong concurrency for application updates. You must provide the
      *        <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>. You get the application's current
-     *        <code>ConditionalToken</code> using <a>DescribeApplication</a>.
+     *        <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
+     *        <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -57,6 +57,11 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>SimpleScaling</code> (default)
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>PredictiveScaling</code>
+     * </p>
+     * </li>
      * </ul>
      */
     private String policyType;
@@ -155,7 +160,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer estimatedInstanceWarmup;
     /**
      * <p>
-     * A target tracking scaling policy. Includes support for predefined or customized metrics.
+     * A target tracking scaling policy. Provides support for predefined or customized metrics.
      * </p>
      * <p>
      * The following predefined metrics are available:
@@ -204,6 +209,23 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private Boolean enabled;
+    /**
+     * <p>
+     * A predictive scaling policy. Provides support for only predefined metrics.
+     * </p>
+     * <p>
+     * Predictive scaling works with CPU utilization, network in/out, and the Application Load Balancer request count.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html"
+     * >PredictiveScalingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+     * </p>
+     * <p>
+     * Required if the policy type is <code>PredictiveScaling</code>.
+     * </p>
+     */
+    private PredictiveScalingConfiguration predictiveScalingConfiguration;
 
     /**
      * <p>
@@ -305,6 +327,11 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>SimpleScaling</code> (default)
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>PredictiveScaling</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param policyType
@@ -323,6 +350,11 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        <li>
      *        <p>
      *        <code>SimpleScaling</code> (default)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PredictiveScaling</code>
      *        </p>
      *        </li>
      */
@@ -351,6 +383,11 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>SimpleScaling</code> (default)
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>PredictiveScaling</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return One of the following policy types: </p>
@@ -368,6 +405,11 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *         <li>
      *         <p>
      *         <code>SimpleScaling</code> (default)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PredictiveScaling</code>
      *         </p>
      *         </li>
      */
@@ -396,6 +438,11 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>SimpleScaling</code> (default)
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>PredictiveScaling</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param policyType
@@ -414,6 +461,11 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        <li>
      *        <p>
      *        <code>SimpleScaling</code> (default)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PredictiveScaling</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1043,7 +1095,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A target tracking scaling policy. Includes support for predefined or customized metrics.
+     * A target tracking scaling policy. Provides support for predefined or customized metrics.
      * </p>
      * <p>
      * The following predefined metrics are available:
@@ -1084,7 +1136,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param targetTrackingConfiguration
-     *        A target tracking scaling policy. Includes support for predefined or customized metrics.</p>
+     *        A target tracking scaling policy. Provides support for predefined or customized metrics.</p>
      *        <p>
      *        The following predefined metrics are available:
      *        </p>
@@ -1129,7 +1181,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A target tracking scaling policy. Includes support for predefined or customized metrics.
+     * A target tracking scaling policy. Provides support for predefined or customized metrics.
      * </p>
      * <p>
      * The following predefined metrics are available:
@@ -1169,7 +1221,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * Required if the policy type is <code>TargetTrackingScaling</code>.
      * </p>
      * 
-     * @return A target tracking scaling policy. Includes support for predefined or customized metrics.</p>
+     * @return A target tracking scaling policy. Provides support for predefined or customized metrics.</p>
      *         <p>
      *         The following predefined metrics are available:
      *         </p>
@@ -1214,7 +1266,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A target tracking scaling policy. Includes support for predefined or customized metrics.
+     * A target tracking scaling policy. Provides support for predefined or customized metrics.
      * </p>
      * <p>
      * The following predefined metrics are available:
@@ -1255,7 +1307,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param targetTrackingConfiguration
-     *        A target tracking scaling policy. Includes support for predefined or customized metrics.</p>
+     *        A target tracking scaling policy. Provides support for predefined or customized metrics.</p>
      *        <p>
      *        The following predefined metrics are available:
      *        </p>
@@ -1373,6 +1425,112 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * A predictive scaling policy. Provides support for only predefined metrics.
+     * </p>
+     * <p>
+     * Predictive scaling works with CPU utilization, network in/out, and the Application Load Balancer request count.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html"
+     * >PredictiveScalingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+     * </p>
+     * <p>
+     * Required if the policy type is <code>PredictiveScaling</code>.
+     * </p>
+     * 
+     * @param predictiveScalingConfiguration
+     *        A predictive scaling policy. Provides support for only predefined metrics.</p>
+     *        <p>
+     *        Predictive scaling works with CPU utilization, network in/out, and the Application Load Balancer request
+     *        count.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html"
+     *        >PredictiveScalingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+     *        </p>
+     *        <p>
+     *        Required if the policy type is <code>PredictiveScaling</code>.
+     */
+
+    public void setPredictiveScalingConfiguration(PredictiveScalingConfiguration predictiveScalingConfiguration) {
+        this.predictiveScalingConfiguration = predictiveScalingConfiguration;
+    }
+
+    /**
+     * <p>
+     * A predictive scaling policy. Provides support for only predefined metrics.
+     * </p>
+     * <p>
+     * Predictive scaling works with CPU utilization, network in/out, and the Application Load Balancer request count.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html"
+     * >PredictiveScalingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+     * </p>
+     * <p>
+     * Required if the policy type is <code>PredictiveScaling</code>.
+     * </p>
+     * 
+     * @return A predictive scaling policy. Provides support for only predefined metrics.</p>
+     *         <p>
+     *         Predictive scaling works with CPU utilization, network in/out, and the Application Load Balancer request
+     *         count.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html"
+     *         >PredictiveScalingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+     *         </p>
+     *         <p>
+     *         Required if the policy type is <code>PredictiveScaling</code>.
+     */
+
+    public PredictiveScalingConfiguration getPredictiveScalingConfiguration() {
+        return this.predictiveScalingConfiguration;
+    }
+
+    /**
+     * <p>
+     * A predictive scaling policy. Provides support for only predefined metrics.
+     * </p>
+     * <p>
+     * Predictive scaling works with CPU utilization, network in/out, and the Application Load Balancer request count.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html"
+     * >PredictiveScalingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+     * </p>
+     * <p>
+     * Required if the policy type is <code>PredictiveScaling</code>.
+     * </p>
+     * 
+     * @param predictiveScalingConfiguration
+     *        A predictive scaling policy. Provides support for only predefined metrics.</p>
+     *        <p>
+     *        Predictive scaling works with CPU utilization, network in/out, and the Application Load Balancer request
+     *        count.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html"
+     *        >PredictiveScalingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+     *        </p>
+     *        <p>
+     *        Required if the policy type is <code>PredictiveScaling</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutScalingPolicyRequest withPredictiveScalingConfiguration(PredictiveScalingConfiguration predictiveScalingConfiguration) {
+        setPredictiveScalingConfiguration(predictiveScalingConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1409,7 +1567,9 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
         if (getTargetTrackingConfiguration() != null)
             sb.append("TargetTrackingConfiguration: ").append(getTargetTrackingConfiguration()).append(",");
         if (getEnabled() != null)
-            sb.append("Enabled: ").append(getEnabled());
+            sb.append("Enabled: ").append(getEnabled()).append(",");
+        if (getPredictiveScalingConfiguration() != null)
+            sb.append("PredictiveScalingConfiguration: ").append(getPredictiveScalingConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1476,6 +1636,11 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getEnabled() != null && other.getEnabled().equals(this.getEnabled()) == false)
             return false;
+        if (other.getPredictiveScalingConfiguration() == null ^ this.getPredictiveScalingConfiguration() == null)
+            return false;
+        if (other.getPredictiveScalingConfiguration() != null
+                && other.getPredictiveScalingConfiguration().equals(this.getPredictiveScalingConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1497,6 +1662,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getEstimatedInstanceWarmup() == null) ? 0 : getEstimatedInstanceWarmup().hashCode());
         hashCode = prime * hashCode + ((getTargetTrackingConfiguration() == null) ? 0 : getTargetTrackingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
+        hashCode = prime * hashCode + ((getPredictiveScalingConfiguration() == null) ? 0 : getPredictiveScalingConfiguration().hashCode());
         return hashCode;
     }
 

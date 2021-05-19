@@ -1,3 +1,28 @@
+# __1.11.1022__ __2021-05-19__
+## __AWS Identity and Access Management__
+  - ### Features
+    - Add pagination to ListUserTags operation
+
+## __Amazon Elastic Kubernetes Service__
+  - ### Features
+    - Update the EKS AddonActive waiter.
+
+## __Amazon Kinesis Analytics__
+  - ### Features
+    - Kinesis Data Analytics now allows rapid iteration on Apache Flink stream processing through the Kinesis Data Analytics Studio feature.
+
+## __Amazon Lightsail__
+  - ### Features
+    - Documentation updates for Amazon Lightsail.
+
+## __Amazon Rekognition__
+  - ### Features
+    - Amazon Rekognition Custom Labels adds support for customer managed encryption, using AWS Key Management Service, of image files copied into the service and files written back to the customer.
+
+## __Auto Scaling__
+  - ### Features
+    - With this release, customers can easily use Predictive Scaling as a policy directly through Amazon EC2 Auto Scaling configurations to proactively scale their applications ahead of predicted demand.
+
 # __1.11.1021__ __2021-05-18__
 ## __AWS App Runner__
   - ### Features

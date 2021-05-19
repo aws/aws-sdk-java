@@ -64,6 +64,11 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * <code>SimpleScaling</code> (default)
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>PredictiveScaling</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information, see <a
@@ -143,6 +148,12 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * </p>
      */
     private Boolean enabled;
+    /**
+     * <p>
+     * A predictive scaling policy.
+     * </p>
+     */
+    private PredictiveScalingConfiguration predictiveScalingConfiguration;
 
     /**
      * <p>
@@ -284,6 +295,11 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * <code>SimpleScaling</code> (default)
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>PredictiveScaling</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information, see <a
@@ -309,6 +325,11 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>SimpleScaling</code> (default)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PredictiveScaling</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -344,6 +365,11 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * <code>SimpleScaling</code> (default)
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>PredictiveScaling</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information, see <a
@@ -368,6 +394,11 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         <code>SimpleScaling</code> (default)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PredictiveScaling</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -403,6 +434,11 @@ public class ScalingPolicy implements Serializable, Cloneable {
      * <code>SimpleScaling</code> (default)
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>PredictiveScaling</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For more information, see <a
@@ -428,6 +464,11 @@ public class ScalingPolicy implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>SimpleScaling</code> (default)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PredictiveScaling</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -985,6 +1026,46 @@ public class ScalingPolicy implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A predictive scaling policy.
+     * </p>
+     * 
+     * @param predictiveScalingConfiguration
+     *        A predictive scaling policy.
+     */
+
+    public void setPredictiveScalingConfiguration(PredictiveScalingConfiguration predictiveScalingConfiguration) {
+        this.predictiveScalingConfiguration = predictiveScalingConfiguration;
+    }
+
+    /**
+     * <p>
+     * A predictive scaling policy.
+     * </p>
+     * 
+     * @return A predictive scaling policy.
+     */
+
+    public PredictiveScalingConfiguration getPredictiveScalingConfiguration() {
+        return this.predictiveScalingConfiguration;
+    }
+
+    /**
+     * <p>
+     * A predictive scaling policy.
+     * </p>
+     * 
+     * @param predictiveScalingConfiguration
+     *        A predictive scaling policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScalingPolicy withPredictiveScalingConfiguration(PredictiveScalingConfiguration predictiveScalingConfiguration) {
+        setPredictiveScalingConfiguration(predictiveScalingConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1025,7 +1106,9 @@ public class ScalingPolicy implements Serializable, Cloneable {
         if (getTargetTrackingConfiguration() != null)
             sb.append("TargetTrackingConfiguration: ").append(getTargetTrackingConfiguration()).append(",");
         if (getEnabled() != null)
-            sb.append("Enabled: ").append(getEnabled());
+            sb.append("Enabled: ").append(getEnabled()).append(",");
+        if (getPredictiveScalingConfiguration() != null)
+            sb.append("PredictiveScalingConfiguration: ").append(getPredictiveScalingConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1100,6 +1183,11 @@ public class ScalingPolicy implements Serializable, Cloneable {
             return false;
         if (other.getEnabled() != null && other.getEnabled().equals(this.getEnabled()) == false)
             return false;
+        if (other.getPredictiveScalingConfiguration() == null ^ this.getPredictiveScalingConfiguration() == null)
+            return false;
+        if (other.getPredictiveScalingConfiguration() != null
+                && other.getPredictiveScalingConfiguration().equals(this.getPredictiveScalingConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1123,6 +1211,7 @@ public class ScalingPolicy implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAlarms() == null) ? 0 : getAlarms().hashCode());
         hashCode = prime * hashCode + ((getTargetTrackingConfiguration() == null) ? 0 : getTargetTrackingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
+        hashCode = prime * hashCode + ((getPredictiveScalingConfiguration() == null) ? 0 : getPredictiveScalingConfiguration().hashCode());
         return hashCode;
     }
 

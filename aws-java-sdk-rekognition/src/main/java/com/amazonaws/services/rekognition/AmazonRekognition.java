@@ -205,7 +205,9 @@ public interface AmazonRekognition {
      * </p>
      * </note>
      * <p>
-     * This operation requires permissions to perform the <code>rekognition:CreateCollection</code> action.
+     * This operation requires permissions to perform the <code>rekognition:CreateCollection</code> action. If you want
+     * to tag your collection, you also require permission to perform the <code>rekognition:TagResource</code>
+     * operation.
      * </p>
      * 
      * @param createCollectionRequest
@@ -222,11 +224,11 @@ public interface AmazonRekognition {
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws ResourceAlreadyExistsException
-     *         A collection with the specified ID already exists.
+     *         A resource with the specified ID already exists.
      * @throws ServiceQuotaExceededException
      *         <p>
-     *         The size of the collection or tag list exceeds the allowed limit. For more information, see Limits in
-     *         Amazon Rekognition in the Amazon Rekognition Developer Guide.
+     *         The size of the collection exceeds the allowed limit. For more information, see Limits in Amazon
+     *         Rekognition in the Amazon Rekognition Developer Guide.
      * @sample AmazonRekognition.CreateCollection
      */
     CreateCollectionResult createCollection(CreateCollectionRequest createCollectionRequest);
@@ -289,7 +291,7 @@ public interface AmazonRekognition {
      * @throws ResourceInUseException
      *         The specified resource is already being used.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws LimitExceededException
      *         An Amazon Rekognition service limit was exceeded. For example, if you start too many Amazon Rekognition
      *         Video jobs concurrently, calls to start operations (<code>StartLabelDetection</code>, for example) will
@@ -308,8 +310,8 @@ public interface AmazonRekognition {
      *         Rekognition.
      * @throws ServiceQuotaExceededException
      *         <p>
-     *         The size of the collection or tag list exceeds the allowed limit. For more information, see Limits in
-     *         Amazon Rekognition in the Amazon Rekognition Developer Guide.
+     *         The size of the collection exceeds the allowed limit. For more information, see Limits in Amazon
+     *         Rekognition in the Amazon Rekognition Developer Guide.
      * @sample AmazonRekognition.CreateProjectVersion
      */
     CreateProjectVersionResult createProjectVersion(CreateProjectVersionRequest createProjectVersionRequest);
@@ -334,6 +336,11 @@ public interface AmazonRekognition {
      * After you have finished analyzing a streaming video, use <a>StopStreamProcessor</a> to stop processing. You can
      * delete the stream processor by calling <a>DeleteStreamProcessor</a>.
      * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:CreateStreamProcessor</code> action. If you
+     * want to tag your stream processor, you also require permission to perform the
+     * <code>rekognition:TagResource</code> operation.
+     * </p>
      * 
      * @param createStreamProcessorRequest
      * @return Result of the CreateStreamProcessor operation returned by the service.
@@ -357,8 +364,8 @@ public interface AmazonRekognition {
      *         Rekognition.
      * @throws ServiceQuotaExceededException
      *         <p>
-     *         The size of the collection or tag list exceeds the allowed limit. For more information, see Limits in
-     *         Amazon Rekognition in the Amazon Rekognition Developer Guide.
+     *         The size of the collection exceeds the allowed limit. For more information, see Limits in Amazon
+     *         Rekognition in the Amazon Rekognition Developer Guide.
      * @sample AmazonRekognition.CreateStreamProcessor
      */
     CreateStreamProcessorResult createStreamProcessor(CreateStreamProcessorRequest createStreamProcessorRequest);
@@ -386,7 +393,7 @@ public interface AmazonRekognition {
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @sample AmazonRekognition.DeleteCollection
      */
     DeleteCollectionResult deleteCollection(DeleteCollectionRequest deleteCollectionRequest);
@@ -414,7 +421,7 @@ public interface AmazonRekognition {
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @sample AmazonRekognition.DeleteFaces
      */
     DeleteFacesResult deleteFaces(DeleteFacesRequest deleteFacesRequest);
@@ -433,7 +440,7 @@ public interface AmazonRekognition {
      * @throws ResourceInUseException
      *         The specified resource is already being used.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws InvalidParameterException
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws AccessDeniedException
@@ -465,7 +472,7 @@ public interface AmazonRekognition {
      * @param deleteProjectVersionRequest
      * @return Result of the DeleteProjectVersion operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ResourceInUseException
      *         The specified resource is already being used.
      * @throws InvalidParameterException
@@ -501,7 +508,7 @@ public interface AmazonRekognition {
      * @throws InvalidParameterException
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ResourceInUseException
      *         The specified resource is already being used.
      * @throws ProvisionedThroughputExceededException
@@ -534,7 +541,7 @@ public interface AmazonRekognition {
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @sample AmazonRekognition.DescribeCollection
      */
     DescribeCollectionResult describeCollection(DescribeCollectionRequest describeCollectionRequest);
@@ -552,7 +559,7 @@ public interface AmazonRekognition {
      * @param describeProjectVersionsRequest
      * @return Result of the DescribeProjectVersions operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws InvalidPaginationTokenException
      *         Pagination token in the request is not valid.
      * @throws InvalidParameterException
@@ -615,7 +622,7 @@ public interface AmazonRekognition {
      * @throws InvalidParameterException
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ProvisionedThroughputExceededException
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
@@ -662,7 +669,7 @@ public interface AmazonRekognition {
      * @param detectCustomLabelsRequest
      * @return Result of the DetectCustomLabels operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ResourceNotReadyException
      *         The requested resource isn't ready. For example, this exception occurs when you call
      *         <code>DetectCustomLabels</code> with a model version that isn't deployed.
@@ -1080,7 +1087,7 @@ public interface AmazonRekognition {
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @sample AmazonRekognition.GetCelebrityInfo
      */
     GetCelebrityInfoResult getCelebrityInfo(GetCelebrityInfoRequest getCelebrityInfoRequest);
@@ -1151,7 +1158,7 @@ public interface AmazonRekognition {
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ThrottlingException
      *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
      * @sample AmazonRekognition.GetCelebrityRecognition
@@ -1210,7 +1217,7 @@ public interface AmazonRekognition {
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ThrottlingException
      *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
      * @sample AmazonRekognition.GetContentModeration
@@ -1256,7 +1263,7 @@ public interface AmazonRekognition {
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ThrottlingException
      *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
      * @sample AmazonRekognition.GetFaceDetection
@@ -1314,7 +1321,7 @@ public interface AmazonRekognition {
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ThrottlingException
      *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
      * @sample AmazonRekognition.GetFaceSearch
@@ -1368,7 +1375,7 @@ public interface AmazonRekognition {
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ThrottlingException
      *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
      * @sample AmazonRekognition.GetLabelDetection
@@ -1430,7 +1437,7 @@ public interface AmazonRekognition {
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ThrottlingException
      *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
      * @sample AmazonRekognition.GetPersonTracking
@@ -1487,7 +1494,7 @@ public interface AmazonRekognition {
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ThrottlingException
      *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
      * @sample AmazonRekognition.GetSegmentDetection
@@ -1538,7 +1545,7 @@ public interface AmazonRekognition {
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ThrottlingException
      *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
      * @sample AmazonRekognition.GetTextDetection
@@ -1700,13 +1707,13 @@ public interface AmazonRekognition {
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws InvalidImageFormatException
      *         The provided image format is not supported.
      * @throws ServiceQuotaExceededException
      *         <p>
-     *         The size of the collection or tag list exceeds the allowed limit. For more information, see Limits in
-     *         Amazon Rekognition in the Amazon Rekognition Developer Guide.
+     *         The size of the collection exceeds the allowed limit. For more information, see Limits in Amazon
+     *         Rekognition in the Amazon Rekognition Developer Guide.
      * @sample AmazonRekognition.IndexFaces
      */
     IndexFacesResult indexFaces(IndexFacesRequest indexFacesRequest);
@@ -1739,7 +1746,7 @@ public interface AmazonRekognition {
      * @throws InvalidPaginationTokenException
      *         Pagination token in the request is not valid.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @sample AmazonRekognition.ListCollections
      */
     ListCollectionsResult listCollections(ListCollectionsRequest listCollectionsRequest);
@@ -1770,7 +1777,7 @@ public interface AmazonRekognition {
      * @throws InvalidPaginationTokenException
      *         Pagination token in the request is not valid.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @sample AmazonRekognition.ListFaces
      */
     ListFacesResult listFaces(ListFacesRequest listFacesRequest);
@@ -1803,11 +1810,14 @@ public interface AmazonRekognition {
      * <p>
      * Returns a list of tags in an Amazon Rekognition collection, stream processor, or Custom Labels model.
      * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:ListTagsForResource</code> action.
+     * </p>
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws InvalidParameterException
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws AccessDeniedException
@@ -1923,7 +1933,7 @@ public interface AmazonRekognition {
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @sample AmazonRekognition.SearchFaces
      */
     SearchFacesResult searchFaces(SearchFacesRequest searchFacesRequest);
@@ -1954,6 +1964,10 @@ public interface AmazonRekognition {
      * also includes a <code>similarity</code> indicating how similar the face is to the input face. In the response,
      * the operation also returns the bounding box (and a confidence level that the bounding box contains a face) of the
      * face that Amazon Rekognition used for the input image.
+     * </p>
+     * <p>
+     * If no faces are detected in the input image, <code>SearchFacesByImage</code> returns an
+     * <code>InvalidParameterException</code> error.
      * </p>
      * <p>
      * For an example, Searching for a Face Using an Image in the Amazon Rekognition Developer Guide.
@@ -1994,7 +2008,7 @@ public interface AmazonRekognition {
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Rekognition.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws InvalidImageFormatException
      *         The provided image format is not supported.
      * @sample AmazonRekognition.SearchFacesByImage
@@ -2187,7 +2201,7 @@ public interface AmazonRekognition {
      *         raise a <code>LimitExceededException</code> exception (HTTP status code: 400) until the number of
      *         concurrently running jobs is below the Amazon Rekognition service limit.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ThrottlingException
      *         Amazon Rekognition is temporarily unable to process the request. Try your call again.
      * @sample AmazonRekognition.StartFaceSearch
@@ -2314,7 +2328,7 @@ public interface AmazonRekognition {
      * @param startProjectVersionRequest
      * @return Result of the StartProjectVersion operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ResourceInUseException
      *         The specified resource is already being used.
      * @throws LimitExceededException
@@ -2411,7 +2425,7 @@ public interface AmazonRekognition {
      * @throws InvalidParameterException
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ResourceInUseException
      *         The specified resource is already being used.
      * @throws ProvisionedThroughputExceededException
@@ -2477,7 +2491,7 @@ public interface AmazonRekognition {
      * @param stopProjectVersionRequest
      * @return Result of the StopProjectVersion operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ResourceInUseException
      *         The specified resource is already being used.
      * @throws InvalidParameterException
@@ -2511,7 +2525,7 @@ public interface AmazonRekognition {
      * @throws InvalidParameterException
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws ResourceInUseException
      *         The specified resource is already being used.
      * @throws ProvisionedThroughputExceededException
@@ -2527,17 +2541,20 @@ public interface AmazonRekognition {
      * For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
      * Resources</a>.
      * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:TagResource</code> action.
+     * </p>
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws InvalidParameterException
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws ServiceQuotaExceededException
      *         <p>
-     *         The size of the collection or tag list exceeds the allowed limit. For more information, see Limits in
-     *         Amazon Rekognition in the Amazon Rekognition Developer Guide.
+     *         The size of the collection exceeds the allowed limit. For more information, see Limits in Amazon
+     *         Rekognition in the Amazon Rekognition Developer Guide.
      * @throws AccessDeniedException
      *         You are not authorized to perform the action.
      * @throws InternalServerErrorException
@@ -2555,11 +2572,14 @@ public interface AmazonRekognition {
      * <p>
      * Removes one or more tags from an Amazon Rekognition collection, stream processor, or Custom Labels model.
      * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:UntagResource</code> action.
+     * </p>
      * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The collection specified in the request cannot be found.
+     *         The resource specified in the request cannot be found.
      * @throws InvalidParameterException
      *         Input parameter violated a constraint. Validate your parameter before calling the API operation again.
      * @throws AccessDeniedException

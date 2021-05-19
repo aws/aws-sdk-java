@@ -37,6 +37,8 @@ public class ApplicationSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationVersionId").build();
     private static final MarshallingInfo<String> RUNTIMEENVIRONMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RuntimeEnvironment").build();
+    private static final MarshallingInfo<String> APPLICATIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationMode").build();
 
     private static final ApplicationSummaryMarshaller instance = new ApplicationSummaryMarshaller();
 
@@ -59,6 +61,7 @@ public class ApplicationSummaryMarshaller {
             protocolMarshaller.marshall(applicationSummary.getApplicationStatus(), APPLICATIONSTATUS_BINDING);
             protocolMarshaller.marshall(applicationSummary.getApplicationVersionId(), APPLICATIONVERSIONID_BINDING);
             protocolMarshaller.marshall(applicationSummary.getRuntimeEnvironment(), RUNTIMEENVIRONMENT_BINDING);
+            protocolMarshaller.marshall(applicationSummary.getApplicationMode(), APPLICATIONMODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

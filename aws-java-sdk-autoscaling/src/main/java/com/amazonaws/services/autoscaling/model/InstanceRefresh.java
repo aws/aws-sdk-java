@@ -100,7 +100,7 @@ public class InstanceRefresh implements Serializable, Cloneable {
      * <p>
      * The percentage of the instance refresh that is complete. For each instance replacement, Amazon EC2 Auto Scaling
      * tracks the instance's health status and warm-up time. When the instance's health status changes to healthy and
-     * the specified warm-up time passes, the instance is considered updated and added to the percentage complete.
+     * the specified warm-up time passes, the instance is considered updated and is added to the percentage complete.
      * </p>
      */
     private Integer percentageComplete;
@@ -648,13 +648,13 @@ public class InstanceRefresh implements Serializable, Cloneable {
      * <p>
      * The percentage of the instance refresh that is complete. For each instance replacement, Amazon EC2 Auto Scaling
      * tracks the instance's health status and warm-up time. When the instance's health status changes to healthy and
-     * the specified warm-up time passes, the instance is considered updated and added to the percentage complete.
+     * the specified warm-up time passes, the instance is considered updated and is added to the percentage complete.
      * </p>
      * 
      * @param percentageComplete
      *        The percentage of the instance refresh that is complete. For each instance replacement, Amazon EC2 Auto
      *        Scaling tracks the instance's health status and warm-up time. When the instance's health status changes to
-     *        healthy and the specified warm-up time passes, the instance is considered updated and added to the
+     *        healthy and the specified warm-up time passes, the instance is considered updated and is added to the
      *        percentage complete.
      */
 
@@ -666,12 +666,12 @@ public class InstanceRefresh implements Serializable, Cloneable {
      * <p>
      * The percentage of the instance refresh that is complete. For each instance replacement, Amazon EC2 Auto Scaling
      * tracks the instance's health status and warm-up time. When the instance's health status changes to healthy and
-     * the specified warm-up time passes, the instance is considered updated and added to the percentage complete.
+     * the specified warm-up time passes, the instance is considered updated and is added to the percentage complete.
      * </p>
      * 
      * @return The percentage of the instance refresh that is complete. For each instance replacement, Amazon EC2 Auto
      *         Scaling tracks the instance's health status and warm-up time. When the instance's health status changes
-     *         to healthy and the specified warm-up time passes, the instance is considered updated and added to the
+     *         to healthy and the specified warm-up time passes, the instance is considered updated and is added to the
      *         percentage complete.
      */
 
@@ -683,13 +683,13 @@ public class InstanceRefresh implements Serializable, Cloneable {
      * <p>
      * The percentage of the instance refresh that is complete. For each instance replacement, Amazon EC2 Auto Scaling
      * tracks the instance's health status and warm-up time. When the instance's health status changes to healthy and
-     * the specified warm-up time passes, the instance is considered updated and added to the percentage complete.
+     * the specified warm-up time passes, the instance is considered updated and is added to the percentage complete.
      * </p>
      * 
      * @param percentageComplete
      *        The percentage of the instance refresh that is complete. For each instance replacement, Amazon EC2 Auto
      *        Scaling tracks the instance's health status and warm-up time. When the instance's health status changes to
-     *        healthy and the specified warm-up time passes, the instance is considered updated and added to the
+     *        healthy and the specified warm-up time passes, the instance is considered updated and is added to the
      *        percentage complete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

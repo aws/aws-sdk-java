@@ -64,6 +64,12 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
      * </p>
      */
     private java.util.List<VpcConfiguration> vpcConfigurations;
+    /**
+     * <p>
+     * The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     * </p>
+     */
+    private ZeppelinApplicationConfiguration zeppelinApplicationConfiguration;
 
     /**
      * <p>
@@ -336,6 +342,46 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     * </p>
+     * 
+     * @param zeppelinApplicationConfiguration
+     *        The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     */
+
+    public void setZeppelinApplicationConfiguration(ZeppelinApplicationConfiguration zeppelinApplicationConfiguration) {
+        this.zeppelinApplicationConfiguration = zeppelinApplicationConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     * </p>
+     * 
+     * @return The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     */
+
+    public ZeppelinApplicationConfiguration getZeppelinApplicationConfiguration() {
+        return this.zeppelinApplicationConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     * </p>
+     * 
+     * @param zeppelinApplicationConfiguration
+     *        The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationConfiguration withZeppelinApplicationConfiguration(ZeppelinApplicationConfiguration zeppelinApplicationConfiguration) {
+        setZeppelinApplicationConfiguration(zeppelinApplicationConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -358,7 +404,9 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
         if (getApplicationSnapshotConfiguration() != null)
             sb.append("ApplicationSnapshotConfiguration: ").append(getApplicationSnapshotConfiguration()).append(",");
         if (getVpcConfigurations() != null)
-            sb.append("VpcConfigurations: ").append(getVpcConfigurations());
+            sb.append("VpcConfigurations: ").append(getVpcConfigurations()).append(",");
+        if (getZeppelinApplicationConfiguration() != null)
+            sb.append("ZeppelinApplicationConfiguration: ").append(getZeppelinApplicationConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -399,6 +447,11 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
             return false;
         if (other.getVpcConfigurations() != null && other.getVpcConfigurations().equals(this.getVpcConfigurations()) == false)
             return false;
+        if (other.getZeppelinApplicationConfiguration() == null ^ this.getZeppelinApplicationConfiguration() == null)
+            return false;
+        if (other.getZeppelinApplicationConfiguration() != null
+                && other.getZeppelinApplicationConfiguration().equals(this.getZeppelinApplicationConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -413,6 +466,7 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getApplicationCodeConfiguration() == null) ? 0 : getApplicationCodeConfiguration().hashCode());
         hashCode = prime * hashCode + ((getApplicationSnapshotConfiguration() == null) ? 0 : getApplicationSnapshotConfiguration().hashCode());
         hashCode = prime * hashCode + ((getVpcConfigurations() == null) ? 0 : getVpcConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getZeppelinApplicationConfiguration() == null) ? 0 : getZeppelinApplicationConfiguration().hashCode());
         return hashCode;
     }
 

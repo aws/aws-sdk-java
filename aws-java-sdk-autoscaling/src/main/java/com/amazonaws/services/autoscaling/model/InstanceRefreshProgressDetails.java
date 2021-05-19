@@ -29,24 +29,24 @@ public class InstanceRefreshProgressDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the progress of an instance fresh on instances that are in the Auto Scaling group.
+     * Indicates the progress of an instance refresh on instances that are in the Auto Scaling group.
      * </p>
      */
     private InstanceRefreshLivePoolProgress livePoolProgress;
     /**
      * <p>
-     * Indicates the progress of an instance fresh on instances that are in the warm pool.
+     * Indicates the progress of an instance refresh on instances that are in the warm pool.
      * </p>
      */
     private InstanceRefreshWarmPoolProgress warmPoolProgress;
 
     /**
      * <p>
-     * Indicates the progress of an instance fresh on instances that are in the Auto Scaling group.
+     * Indicates the progress of an instance refresh on instances that are in the Auto Scaling group.
      * </p>
      * 
      * @param livePoolProgress
-     *        Indicates the progress of an instance fresh on instances that are in the Auto Scaling group.
+     *        Indicates the progress of an instance refresh on instances that are in the Auto Scaling group.
      */
 
     public void setLivePoolProgress(InstanceRefreshLivePoolProgress livePoolProgress) {
@@ -55,10 +55,10 @@ public class InstanceRefreshProgressDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the progress of an instance fresh on instances that are in the Auto Scaling group.
+     * Indicates the progress of an instance refresh on instances that are in the Auto Scaling group.
      * </p>
      * 
-     * @return Indicates the progress of an instance fresh on instances that are in the Auto Scaling group.
+     * @return Indicates the progress of an instance refresh on instances that are in the Auto Scaling group.
      */
 
     public InstanceRefreshLivePoolProgress getLivePoolProgress() {
@@ -67,11 +67,11 @@ public class InstanceRefreshProgressDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the progress of an instance fresh on instances that are in the Auto Scaling group.
+     * Indicates the progress of an instance refresh on instances that are in the Auto Scaling group.
      * </p>
      * 
      * @param livePoolProgress
-     *        Indicates the progress of an instance fresh on instances that are in the Auto Scaling group.
+     *        Indicates the progress of an instance refresh on instances that are in the Auto Scaling group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,11 +82,11 @@ public class InstanceRefreshProgressDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the progress of an instance fresh on instances that are in the warm pool.
+     * Indicates the progress of an instance refresh on instances that are in the warm pool.
      * </p>
      * 
      * @param warmPoolProgress
-     *        Indicates the progress of an instance fresh on instances that are in the warm pool.
+     *        Indicates the progress of an instance refresh on instances that are in the warm pool.
      */
 
     public void setWarmPoolProgress(InstanceRefreshWarmPoolProgress warmPoolProgress) {
@@ -95,10 +95,10 @@ public class InstanceRefreshProgressDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the progress of an instance fresh on instances that are in the warm pool.
+     * Indicates the progress of an instance refresh on instances that are in the warm pool.
      * </p>
      * 
-     * @return Indicates the progress of an instance fresh on instances that are in the warm pool.
+     * @return Indicates the progress of an instance refresh on instances that are in the warm pool.
      */
 
     public InstanceRefreshWarmPoolProgress getWarmPoolProgress() {
@@ -107,11 +107,11 @@ public class InstanceRefreshProgressDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the progress of an instance fresh on instances that are in the warm pool.
+     * Indicates the progress of an instance refresh on instances that are in the warm pool.
      * </p>
      * 
      * @param warmPoolProgress
-     *        Indicates the progress of an instance fresh on instances that are in the warm pool.
+     *        Indicates the progress of an instance refresh on instances that are in the warm pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

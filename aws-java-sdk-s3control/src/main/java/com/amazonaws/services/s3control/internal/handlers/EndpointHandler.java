@@ -71,7 +71,7 @@ public final class EndpointHandler extends RequestHandler2 {
         String arnPartition = arn.getPartition();
         S3Resource parentS3Resource = s3Resource.getParentS3Resource();
 
-        validateIsTrue(!willCallFipsRegion(signingRegion, arnRegion, request),
+        validateIsTrue(!isFipsInvolved(signingRegion, arnRegion, request),
                         "FIPS is not supported for outpost requests.");
 
         // Even though we validated that we're not *calling* a FIPS region, the client region may still be a FIPS region if we're
@@ -202,16 +202,11 @@ public final class EndpointHandler extends RequestHandler2 {
         return USE_ARN_REGION_RESOLVER.useArnRegion();
     }
 
-    private boolean willCallFipsRegion(String signingRegion, String arnRegion, Request<?> request) {
-        if (useArnRegion(request)) {
-            return isFipsRegion(arnRegion);
-        }
-
+    private boolean isFipsInvolved(String signingRegion, String arnRegion, Request<?> request) {
         if (isFipsEnabledInClientConfig(request)) {
             return true;
         }
-
-        return isFipsRegion(signingRegion);
+        return isFipsRegion(signingRegion) || isFipsRegion(arnRegion);
     }
 
     private String removeFipsIfNeeded(String region) {

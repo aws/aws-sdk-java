@@ -33,14 +33,16 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <fullname>Amazon EC2 Auto Scaling</fullname>
  * <p>
  * Amazon EC2 Auto Scaling is designed to automatically launch or terminate EC2 instances based on user-defined scaling
- * policies, scheduled actions, and health checks. Use this service with AWS Auto Scaling, Amazon CloudWatch, and
- * Elastic Load Balancing.
+ * policies, scheduled actions, and health checks.
  * </p>
  * <p>
- * For more information, including information about granting IAM users required permissions for Amazon EC2 Auto Scaling
- * actions, see the <a
+ * For more information about Amazon EC2 Auto Scaling, see the <a
  * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html">Amazon EC2 Auto
- * Scaling User Guide</a>.
+ * Scaling User Guide</a>. For information about granting IAM users required permissions for calls to Amazon EC2 Auto
+ * Scaling, see <a
+ * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/ec2-auto-scaling-api-permissions.html">Granting IAM
+ * users required permissions for Amazon EC2 Auto Scaling resources</a> in the <i>Amazon EC2 Auto Scaling API
+ * Reference</i>.
  * </p>
  */
 @ThreadSafe
@@ -2176,6 +2178,39 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient implem
 
                 try {
                     result = executeExitStandby(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPredictiveScalingForecastResult> getPredictiveScalingForecastAsync(GetPredictiveScalingForecastRequest request) {
+
+        return getPredictiveScalingForecastAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPredictiveScalingForecastResult> getPredictiveScalingForecastAsync(final GetPredictiveScalingForecastRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetPredictiveScalingForecastRequest, GetPredictiveScalingForecastResult> asyncHandler) {
+        final GetPredictiveScalingForecastRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetPredictiveScalingForecastResult>() {
+            @Override
+            public GetPredictiveScalingForecastResult call() throws Exception {
+                GetPredictiveScalingForecastResult result = null;
+
+                try {
+                    result = executeGetPredictiveScalingForecast(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

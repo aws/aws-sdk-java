@@ -99,6 +99,13 @@ public class ProjectVersionDescription implements Serializable, Cloneable, Struc
      * </p>
      */
     private GroundTruthManifest manifestSummary;
+    /**
+     * <p>
+     * The identifer for the AWS Key Management Service (AWS KMS) customer master key that was used to encrypt the model
+     * during training.
+     * </p>
+     */
+    private String kmsKeyId;
 
     /**
      * <p>
@@ -615,6 +622,52 @@ public class ProjectVersionDescription implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The identifer for the AWS Key Management Service (AWS KMS) customer master key that was used to encrypt the model
+     * during training.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The identifer for the AWS Key Management Service (AWS KMS) customer master key that was used to encrypt
+     *        the model during training.
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The identifer for the AWS Key Management Service (AWS KMS) customer master key that was used to encrypt the model
+     * during training.
+     * </p>
+     * 
+     * @return The identifer for the AWS Key Management Service (AWS KMS) customer master key that was used to encrypt
+     *         the model during training.
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The identifer for the AWS Key Management Service (AWS KMS) customer master key that was used to encrypt the model
+     * during training.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The identifer for the AWS Key Management Service (AWS KMS) customer master key that was used to encrypt
+     *        the model during training.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProjectVersionDescription withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -649,7 +702,9 @@ public class ProjectVersionDescription implements Serializable, Cloneable, Struc
         if (getEvaluationResult() != null)
             sb.append("EvaluationResult: ").append(getEvaluationResult()).append(",");
         if (getManifestSummary() != null)
-            sb.append("ManifestSummary: ").append(getManifestSummary());
+            sb.append("ManifestSummary: ").append(getManifestSummary()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -713,6 +768,10 @@ public class ProjectVersionDescription implements Serializable, Cloneable, Struc
             return false;
         if (other.getManifestSummary() != null && other.getManifestSummary().equals(this.getManifestSummary()) == false)
             return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
         return true;
     }
 
@@ -733,6 +792,7 @@ public class ProjectVersionDescription implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getTestingDataResult() == null) ? 0 : getTestingDataResult().hashCode());
         hashCode = prime * hashCode + ((getEvaluationResult() == null) ? 0 : getEvaluationResult().hashCode());
         hashCode = prime * hashCode + ((getManifestSummary() == null) ? 0 : getManifestSummary().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         return hashCode;
     }
 

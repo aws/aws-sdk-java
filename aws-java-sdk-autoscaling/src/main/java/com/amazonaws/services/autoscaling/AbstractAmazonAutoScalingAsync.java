@@ -1031,6 +1031,19 @@ public class AbstractAmazonAutoScalingAsync extends AbstractAmazonAutoScaling im
     }
 
     @Override
+    public java.util.concurrent.Future<GetPredictiveScalingForecastResult> getPredictiveScalingForecastAsync(GetPredictiveScalingForecastRequest request) {
+
+        return getPredictiveScalingForecastAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPredictiveScalingForecastResult> getPredictiveScalingForecastAsync(GetPredictiveScalingForecastRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetPredictiveScalingForecastRequest, GetPredictiveScalingForecastResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<PutLifecycleHookResult> putLifecycleHookAsync(PutLifecycleHookRequest request) {
 
         return putLifecycleHookAsync(request, null);
