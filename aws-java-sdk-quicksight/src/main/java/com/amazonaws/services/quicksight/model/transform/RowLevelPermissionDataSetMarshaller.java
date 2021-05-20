@@ -33,6 +33,8 @@ public class RowLevelPermissionDataSetMarshaller {
             .marshallLocationName("Arn").build();
     private static final MarshallingInfo<String> PERMISSIONPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PermissionPolicy").build();
+    private static final MarshallingInfo<String> FORMATVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FormatVersion").build();
 
     private static final RowLevelPermissionDataSetMarshaller instance = new RowLevelPermissionDataSetMarshaller();
 
@@ -53,6 +55,7 @@ public class RowLevelPermissionDataSetMarshaller {
             protocolMarshaller.marshall(rowLevelPermissionDataSet.getNamespace(), NAMESPACE_BINDING);
             protocolMarshaller.marshall(rowLevelPermissionDataSet.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(rowLevelPermissionDataSet.getPermissionPolicy(), PERMISSIONPOLICY_BINDING);
+            protocolMarshaller.marshall(rowLevelPermissionDataSet.getFormatVersion(), FORMATVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

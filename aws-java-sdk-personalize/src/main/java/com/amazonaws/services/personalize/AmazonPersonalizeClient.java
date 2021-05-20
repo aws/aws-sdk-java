@@ -1273,7 +1273,32 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
      * <ul>
      * <li>
      * <p>
-     * CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+     * CREATE PENDING
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE IN_PROGRESS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ACTIVE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE FAILED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE STOPPING
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE STOPPED
      * </p>
      * </li>
      * </ul>
@@ -3500,6 +3525,91 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<ListSolutionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListSolutionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops creating a solution version that is in a state of CREATE_PENDING or CREATE IN_PROGRESS.
+     * </p>
+     * <p>
+     * Depending on the current state of the solution version, the solution version state changes as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * CREATE_PENDING &gt; CREATE_STOPPED
+     * </p>
+     * <p>
+     * or
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE_IN_PROGRESS &gt; CREATE_STOPPING &gt; CREATE_STOPPED
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You are billed for all of the training completed up until you stop the solution version creation. You cannot
+     * resume creating a solution version once it has been stopped.
+     * </p>
+     * 
+     * @param stopSolutionVersionCreationRequest
+     * @return Result of the StopSolutionVersionCreation operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws ResourceNotFoundException
+     *         Could not find the specified resource.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @sample AmazonPersonalize.StopSolutionVersionCreation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StopSolutionVersionCreation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StopSolutionVersionCreationResult stopSolutionVersionCreation(StopSolutionVersionCreationRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopSolutionVersionCreation(request);
+    }
+
+    @SdkInternalApi
+    final StopSolutionVersionCreationResult executeStopSolutionVersionCreation(StopSolutionVersionCreationRequest stopSolutionVersionCreationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopSolutionVersionCreationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopSolutionVersionCreationRequest> request = null;
+        Response<StopSolutionVersionCreationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopSolutionVersionCreationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(stopSolutionVersionCreationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopSolutionVersionCreation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopSolutionVersionCreationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StopSolutionVersionCreationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

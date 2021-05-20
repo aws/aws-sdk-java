@@ -748,7 +748,32 @@ public interface AmazonPersonalize {
      * <ul>
      * <li>
      * <p>
-     * CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+     * CREATE PENDING
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE IN_PROGRESS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ACTIVE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE FAILED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE STOPPING
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE STOPPED
      * </p>
      * </li>
      * </ul>
@@ -1500,6 +1525,47 @@ public interface AmazonPersonalize {
      *      Documentation</a>
      */
     ListSolutionsResult listSolutions(ListSolutionsRequest listSolutionsRequest);
+
+    /**
+     * <p>
+     * Stops creating a solution version that is in a state of CREATE_PENDING or CREATE IN_PROGRESS.
+     * </p>
+     * <p>
+     * Depending on the current state of the solution version, the solution version state changes as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * CREATE_PENDING &gt; CREATE_STOPPED
+     * </p>
+     * <p>
+     * or
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE_IN_PROGRESS &gt; CREATE_STOPPING &gt; CREATE_STOPPED
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You are billed for all of the training completed up until you stop the solution version creation. You cannot
+     * resume creating a solution version once it has been stopped.
+     * </p>
+     * 
+     * @param stopSolutionVersionCreationRequest
+     * @return Result of the StopSolutionVersionCreation operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws ResourceNotFoundException
+     *         Could not find the specified resource.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @sample AmazonPersonalize.StopSolutionVersionCreation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StopSolutionVersionCreation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StopSolutionVersionCreationResult stopSolutionVersionCreation(StopSolutionVersionCreationRequest stopSolutionVersionCreationRequest);
 
     /**
      * <p>

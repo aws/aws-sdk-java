@@ -253,6 +253,11 @@ public class AbstractAmazonPersonalize implements AmazonPersonalize {
     }
 
     @Override
+    public StopSolutionVersionCreationResult stopSolutionVersionCreation(StopSolutionVersionCreationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateCampaignResult updateCampaign(UpdateCampaignRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -239,6 +239,49 @@ public interface AmazonLexModelsV2 {
 
     /**
      * <p>
+     * Creates a new resource policy with the specified policy statements.
+     * </p>
+     * 
+     * @param createResourcePolicyRequest
+     * @return Result of the CreateResourcePolicy operation returned by the service.
+     * @throws ResourceNotFoundException
+     * @throws ServiceQuotaExceededException
+     * @throws PreconditionFailedException
+     * @throws ValidationException
+     * @throws InternalServerException
+     * @throws ThrottlingException
+     * @sample AmazonLexModelsV2.CreateResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateResourcePolicyResult createResourcePolicy(CreateResourcePolicyRequest createResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Adds a new resource policy statement to a bot or bot alias. If a resource policy exists, the statement is added
+     * to the current resource policy. If a policy doesn't exist, a new policy is created.
+     * </p>
+     * <p>
+     * You can create a resource policy statement that allows cross-account access.
+     * </p>
+     * 
+     * @param createResourcePolicyStatementRequest
+     * @return Result of the CreateResourcePolicyStatement operation returned by the service.
+     * @throws ResourceNotFoundException
+     * @throws ConflictException
+     * @throws ServiceQuotaExceededException
+     * @throws PreconditionFailedException
+     * @throws ValidationException
+     * @throws InternalServerException
+     * @throws ThrottlingException
+     * @sample AmazonLexModelsV2.CreateResourcePolicyStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateResourcePolicyStatement"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateResourcePolicyStatementResult createResourcePolicyStatement(CreateResourcePolicyStatementRequest createResourcePolicyStatementRequest);
+
+    /**
+     * <p>
      * Creates a slot in an intent. A slot is a variable needed to fulfill an intent. For example, an
      * <code>OrderPizza</code> intent might need slots for size, crust, and number of pizzas. For each slot, you define
      * one or more utterances that Amazon Lex uses to elicit a response from the user.
@@ -448,6 +491,43 @@ public interface AmazonLexModelsV2 {
 
     /**
      * <p>
+     * Removes an existing policy from a bot or bot alias. If the resource doesn't have a policy attached, Amazon Lex
+     * returns an exception.
+     * </p>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @return Result of the DeleteResourcePolicy operation returned by the service.
+     * @throws ResourceNotFoundException
+     * @throws PreconditionFailedException
+     * @throws InternalServerException
+     * @throws ThrottlingException
+     * @sample AmazonLexModelsV2.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteResourcePolicyResult deleteResourcePolicy(DeleteResourcePolicyRequest deleteResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Deletes a policy statement from a resource policy. If you delete the last statement from a policy, the policy is
+     * deleted. If you specify a statement ID that doesn't exist in the policy, or if the bot or bot alias doesn't have
+     * a policy attached, Amazon Lex returns an exception.
+     * </p>
+     * 
+     * @param deleteResourcePolicyStatementRequest
+     * @return Result of the DeleteResourcePolicyStatement operation returned by the service.
+     * @throws ResourceNotFoundException
+     * @throws PreconditionFailedException
+     * @throws InternalServerException
+     * @throws ThrottlingException
+     * @sample AmazonLexModelsV2.DeleteResourcePolicyStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteResourcePolicyStatement"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteResourcePolicyStatementResult deleteResourcePolicyStatement(DeleteResourcePolicyStatementRequest deleteResourcePolicyStatementRequest);
+
+    /**
+     * <p>
      * Deletes the specified slot from an intent.
      * </p>
      * 
@@ -611,6 +691,22 @@ public interface AmazonLexModelsV2 {
      *      API Documentation</a>
      */
     DescribeIntentResult describeIntent(DescribeIntentRequest describeIntentRequest);
+
+    /**
+     * <p>
+     * Gets the resource policy and policy revision for a bot or bot alias.
+     * </p>
+     * 
+     * @param describeResourcePolicyRequest
+     * @return Result of the DescribeResourcePolicy operation returned by the service.
+     * @throws ResourceNotFoundException
+     * @throws InternalServerException
+     * @throws ThrottlingException
+     * @sample AmazonLexModelsV2.DescribeResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeResourcePolicyResult describeResourcePolicy(DescribeResourcePolicyRequest describeResourcePolicyRequest);
 
     /**
      * <p>
@@ -1012,6 +1108,26 @@ public interface AmazonLexModelsV2 {
      *      Documentation</a>
      */
     UpdateIntentResult updateIntent(UpdateIntentRequest updateIntentRequest);
+
+    /**
+     * <p>
+     * Replaces the existing resource policy for a bot or bot alias with a new one. If the policy doesn't exist, Amazon
+     * Lex returns an exception.
+     * </p>
+     * 
+     * @param updateResourcePolicyRequest
+     * @return Result of the UpdateResourcePolicy operation returned by the service.
+     * @throws ResourceNotFoundException
+     * @throws ServiceQuotaExceededException
+     * @throws PreconditionFailedException
+     * @throws ValidationException
+     * @throws InternalServerException
+     * @throws ThrottlingException
+     * @sample AmazonLexModelsV2.UpdateResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateResourcePolicyResult updateResourcePolicy(UpdateResourcePolicyRequest updateResourcePolicyRequest);
 
     /**
      * <p>

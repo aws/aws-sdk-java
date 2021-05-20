@@ -613,6 +613,19 @@ public class AbstractAmazonPersonalizeAsync extends AbstractAmazonPersonalize im
     }
 
     @Override
+    public java.util.concurrent.Future<StopSolutionVersionCreationResult> stopSolutionVersionCreationAsync(StopSolutionVersionCreationRequest request) {
+
+        return stopSolutionVersionCreationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopSolutionVersionCreationResult> stopSolutionVersionCreationAsync(StopSolutionVersionCreationRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopSolutionVersionCreationRequest, StopSolutionVersionCreationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateCampaignResult> updateCampaignAsync(UpdateCampaignRequest request) {
 
         return updateCampaignAsync(request, null);

@@ -1563,6 +1563,39 @@ public class AmazonPersonalizeAsyncClient extends AmazonPersonalizeClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<StopSolutionVersionCreationResult> stopSolutionVersionCreationAsync(StopSolutionVersionCreationRequest request) {
+
+        return stopSolutionVersionCreationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopSolutionVersionCreationResult> stopSolutionVersionCreationAsync(final StopSolutionVersionCreationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopSolutionVersionCreationRequest, StopSolutionVersionCreationResult> asyncHandler) {
+        final StopSolutionVersionCreationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopSolutionVersionCreationResult>() {
+            @Override
+            public StopSolutionVersionCreationResult call() throws Exception {
+                StopSolutionVersionCreationResult result = null;
+
+                try {
+                    result = executeStopSolutionVersionCreation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateCampaignResult> updateCampaignAsync(UpdateCampaignRequest request) {
 
         return updateCampaignAsync(request, null);

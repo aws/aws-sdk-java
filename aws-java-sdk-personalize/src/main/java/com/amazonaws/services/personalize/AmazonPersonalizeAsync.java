@@ -1300,7 +1300,32 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
      * <ul>
      * <li>
      * <p>
-     * CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+     * CREATE PENDING
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE IN_PROGRESS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ACTIVE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE FAILED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE STOPPING
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE STOPPED
      * </p>
      * </li>
      * </ul>
@@ -1373,7 +1398,32 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
      * <ul>
      * <li>
      * <p>
-     * CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+     * CREATE PENDING
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE IN_PROGRESS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ACTIVE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE FAILED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE STOPPING
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE STOPPED
      * </p>
      * </li>
      * </ul>
@@ -2689,6 +2739,83 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
      */
     java.util.concurrent.Future<ListSolutionsResult> listSolutionsAsync(ListSolutionsRequest listSolutionsRequest,
             com.amazonaws.handlers.AsyncHandler<ListSolutionsRequest, ListSolutionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops creating a solution version that is in a state of CREATE_PENDING or CREATE IN_PROGRESS.
+     * </p>
+     * <p>
+     * Depending on the current state of the solution version, the solution version state changes as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * CREATE_PENDING &gt; CREATE_STOPPED
+     * </p>
+     * <p>
+     * or
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE_IN_PROGRESS &gt; CREATE_STOPPING &gt; CREATE_STOPPED
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You are billed for all of the training completed up until you stop the solution version creation. You cannot
+     * resume creating a solution version once it has been stopped.
+     * </p>
+     * 
+     * @param stopSolutionVersionCreationRequest
+     * @return A Java Future containing the result of the StopSolutionVersionCreation operation returned by the service.
+     * @sample AmazonPersonalizeAsync.StopSolutionVersionCreation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StopSolutionVersionCreation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopSolutionVersionCreationResult> stopSolutionVersionCreationAsync(
+            StopSolutionVersionCreationRequest stopSolutionVersionCreationRequest);
+
+    /**
+     * <p>
+     * Stops creating a solution version that is in a state of CREATE_PENDING or CREATE IN_PROGRESS.
+     * </p>
+     * <p>
+     * Depending on the current state of the solution version, the solution version state changes as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * CREATE_PENDING &gt; CREATE_STOPPED
+     * </p>
+     * <p>
+     * or
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE_IN_PROGRESS &gt; CREATE_STOPPING &gt; CREATE_STOPPED
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You are billed for all of the training completed up until you stop the solution version creation. You cannot
+     * resume creating a solution version once it has been stopped.
+     * </p>
+     * 
+     * @param stopSolutionVersionCreationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopSolutionVersionCreation operation returned by the service.
+     * @sample AmazonPersonalizeAsyncHandler.StopSolutionVersionCreation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StopSolutionVersionCreation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopSolutionVersionCreationResult> stopSolutionVersionCreationAsync(
+            StopSolutionVersionCreationRequest stopSolutionVersionCreationRequest,
+            com.amazonaws.handlers.AsyncHandler<StopSolutionVersionCreationRequest, StopSolutionVersionCreationResult> asyncHandler);
 
     /**
      * <p>

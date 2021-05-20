@@ -63,6 +63,16 @@ public class AbstractAmazonLexModelsV2 implements AmazonLexModelsV2 {
     }
 
     @Override
+    public CreateResourcePolicyResult createResourcePolicy(CreateResourcePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateResourcePolicyStatementResult createResourcePolicyStatement(CreateResourcePolicyStatementRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateSlotResult createSlot(CreateSlotRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -113,6 +123,16 @@ public class AbstractAmazonLexModelsV2 implements AmazonLexModelsV2 {
     }
 
     @Override
+    public DeleteResourcePolicyResult deleteResourcePolicy(DeleteResourcePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteResourcePolicyStatementResult deleteResourcePolicyStatement(DeleteResourcePolicyStatementRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteSlotResult deleteSlot(DeleteSlotRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -154,6 +174,11 @@ public class AbstractAmazonLexModelsV2 implements AmazonLexModelsV2 {
 
     @Override
     public DescribeIntentResult describeIntent(DescribeIntentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeResourcePolicyResult describeResourcePolicy(DescribeResourcePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -264,6 +289,11 @@ public class AbstractAmazonLexModelsV2 implements AmazonLexModelsV2 {
 
     @Override
     public UpdateIntentResult updateIntent(UpdateIntentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateResourcePolicyResult updateResourcePolicy(UpdateResourcePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

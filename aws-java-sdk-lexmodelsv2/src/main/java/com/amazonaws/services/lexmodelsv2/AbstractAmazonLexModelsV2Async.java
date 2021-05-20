@@ -119,6 +119,32 @@ public class AbstractAmazonLexModelsV2Async extends AbstractAmazonLexModelsV2 im
     }
 
     @Override
+    public java.util.concurrent.Future<CreateResourcePolicyResult> createResourcePolicyAsync(CreateResourcePolicyRequest request) {
+
+        return createResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateResourcePolicyResult> createResourcePolicyAsync(CreateResourcePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateResourcePolicyRequest, CreateResourcePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateResourcePolicyStatementResult> createResourcePolicyStatementAsync(CreateResourcePolicyStatementRequest request) {
+
+        return createResourcePolicyStatementAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateResourcePolicyStatementResult> createResourcePolicyStatementAsync(CreateResourcePolicyStatementRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateResourcePolicyStatementRequest, CreateResourcePolicyStatementResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateSlotResult> createSlotAsync(CreateSlotRequest request) {
 
         return createSlotAsync(request, null);
@@ -249,6 +275,32 @@ public class AbstractAmazonLexModelsV2Async extends AbstractAmazonLexModelsV2 im
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest request) {
+
+        return deleteResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteResourcePolicyRequest, DeleteResourcePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyStatementResult> deleteResourcePolicyStatementAsync(DeleteResourcePolicyStatementRequest request) {
+
+        return deleteResourcePolicyStatementAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyStatementResult> deleteResourcePolicyStatementAsync(DeleteResourcePolicyStatementRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteResourcePolicyStatementRequest, DeleteResourcePolicyStatementResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteSlotResult> deleteSlotAsync(DeleteSlotRequest request) {
 
         return deleteSlotAsync(request, null);
@@ -361,6 +413,19 @@ public class AbstractAmazonLexModelsV2Async extends AbstractAmazonLexModelsV2 im
     @Override
     public java.util.concurrent.Future<DescribeIntentResult> describeIntentAsync(DescribeIntentRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeIntentRequest, DescribeIntentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeResourcePolicyResult> describeResourcePolicyAsync(DescribeResourcePolicyRequest request) {
+
+        return describeResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeResourcePolicyResult> describeResourcePolicyAsync(DescribeResourcePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeResourcePolicyRequest, DescribeResourcePolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -647,6 +712,19 @@ public class AbstractAmazonLexModelsV2Async extends AbstractAmazonLexModelsV2 im
     @Override
     public java.util.concurrent.Future<UpdateIntentResult> updateIntentAsync(UpdateIntentRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateIntentRequest, UpdateIntentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateResourcePolicyResult> updateResourcePolicyAsync(UpdateResourcePolicyRequest request) {
+
+        return updateResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateResourcePolicyResult> updateResourcePolicyAsync(UpdateResourcePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateResourcePolicyRequest, UpdateResourcePolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

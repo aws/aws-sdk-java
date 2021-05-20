@@ -137,6 +137,16 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
      * CREATE FAILED
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * CREATE STOPPING
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE STOPPED
+     * </p>
+     * </li>
      * </ul>
      */
     private String status;
@@ -792,6 +802,16 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
      * CREATE FAILED
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * CREATE STOPPING
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE STOPPED
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
@@ -818,6 +838,16 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        CREATE FAILED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CREATE STOPPING
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CREATE STOPPED
      *        </p>
      *        </li>
      */
@@ -854,6 +884,16 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
      * CREATE FAILED
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * CREATE STOPPING
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE STOPPED
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The status of the solution version.</p>
@@ -879,6 +919,16 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
      *         <li>
      *         <p>
      *         CREATE FAILED
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CREATE STOPPING
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CREATE STOPPED
      *         </p>
      *         </li>
      */
@@ -915,6 +965,16 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
      * CREATE FAILED
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * CREATE STOPPING
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE STOPPED
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
@@ -941,6 +1001,16 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        CREATE FAILED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CREATE STOPPING
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CREATE STOPPED
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -303,6 +303,73 @@ public class AmazonLexModelsV2AsyncClient extends AmazonLexModelsV2Client implem
     }
 
     @Override
+    public java.util.concurrent.Future<CreateResourcePolicyResult> createResourcePolicyAsync(CreateResourcePolicyRequest request) {
+
+        return createResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateResourcePolicyResult> createResourcePolicyAsync(final CreateResourcePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateResourcePolicyRequest, CreateResourcePolicyResult> asyncHandler) {
+        final CreateResourcePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateResourcePolicyResult>() {
+            @Override
+            public CreateResourcePolicyResult call() throws Exception {
+                CreateResourcePolicyResult result = null;
+
+                try {
+                    result = executeCreateResourcePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateResourcePolicyStatementResult> createResourcePolicyStatementAsync(CreateResourcePolicyStatementRequest request) {
+
+        return createResourcePolicyStatementAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateResourcePolicyStatementResult> createResourcePolicyStatementAsync(
+            final CreateResourcePolicyStatementRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateResourcePolicyStatementRequest, CreateResourcePolicyStatementResult> asyncHandler) {
+        final CreateResourcePolicyStatementRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateResourcePolicyStatementResult>() {
+            @Override
+            public CreateResourcePolicyStatementResult call() throws Exception {
+                CreateResourcePolicyStatementResult result = null;
+
+                try {
+                    result = executeCreateResourcePolicyStatement(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateSlotResult> createSlotAsync(CreateSlotRequest request) {
 
         return createSlotAsync(request, null);
@@ -633,6 +700,73 @@ public class AmazonLexModelsV2AsyncClient extends AmazonLexModelsV2Client implem
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest request) {
+
+        return deleteResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(final DeleteResourcePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteResourcePolicyRequest, DeleteResourcePolicyResult> asyncHandler) {
+        final DeleteResourcePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteResourcePolicyResult>() {
+            @Override
+            public DeleteResourcePolicyResult call() throws Exception {
+                DeleteResourcePolicyResult result = null;
+
+                try {
+                    result = executeDeleteResourcePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyStatementResult> deleteResourcePolicyStatementAsync(DeleteResourcePolicyStatementRequest request) {
+
+        return deleteResourcePolicyStatementAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyStatementResult> deleteResourcePolicyStatementAsync(
+            final DeleteResourcePolicyStatementRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteResourcePolicyStatementRequest, DeleteResourcePolicyStatementResult> asyncHandler) {
+        final DeleteResourcePolicyStatementRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteResourcePolicyStatementResult>() {
+            @Override
+            public DeleteResourcePolicyStatementResult call() throws Exception {
+                DeleteResourcePolicyStatementResult result = null;
+
+                try {
+                    result = executeDeleteResourcePolicyStatement(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteSlotResult> deleteSlotAsync(DeleteSlotRequest request) {
 
         return deleteSlotAsync(request, null);
@@ -914,6 +1048,39 @@ public class AmazonLexModelsV2AsyncClient extends AmazonLexModelsV2Client implem
 
                 try {
                     result = executeDescribeIntent(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeResourcePolicyResult> describeResourcePolicyAsync(DescribeResourcePolicyRequest request) {
+
+        return describeResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeResourcePolicyResult> describeResourcePolicyAsync(final DescribeResourcePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeResourcePolicyRequest, DescribeResourcePolicyResult> asyncHandler) {
+        final DescribeResourcePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeResourcePolicyResult>() {
+            @Override
+            public DescribeResourcePolicyResult call() throws Exception {
+                DescribeResourcePolicyResult result = null;
+
+                try {
+                    result = executeDescribeResourcePolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1640,6 +1807,39 @@ public class AmazonLexModelsV2AsyncClient extends AmazonLexModelsV2Client implem
 
                 try {
                     result = executeUpdateIntent(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateResourcePolicyResult> updateResourcePolicyAsync(UpdateResourcePolicyRequest request) {
+
+        return updateResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateResourcePolicyResult> updateResourcePolicyAsync(final UpdateResourcePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateResourcePolicyRequest, UpdateResourcePolicyResult> asyncHandler) {
+        final UpdateResourcePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateResourcePolicyResult>() {
+            @Override
+            public UpdateResourcePolicyResult call() throws Exception {
+                UpdateResourcePolicyResult result = null;
+
+                try {
+                    result = executeUpdateResourcePolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

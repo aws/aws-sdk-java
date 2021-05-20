@@ -54,6 +54,18 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
      * </p>
      */
     private String permissionPolicy;
+    /**
+     * <p>
+     * The user or group rules associated with the dataset that contains permissions for RLS.
+     * </p>
+     * <p>
+     * By default, <code>FormatVersion</code> is <code>VERSION_1</code>. When <code>FormatVersion</code> is
+     * <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are required. When
+     * <code>FormatVersion</code> is <code>VERSION_2</code>, <code>UserARN</code> and <code>GroupARN</code> are
+     * required, and <code>Namespace</code> must not exist.
+     * </p>
+     */
+    private String formatVersion;
 
     /**
      * <p>
@@ -203,6 +215,109 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The user or group rules associated with the dataset that contains permissions for RLS.
+     * </p>
+     * <p>
+     * By default, <code>FormatVersion</code> is <code>VERSION_1</code>. When <code>FormatVersion</code> is
+     * <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are required. When
+     * <code>FormatVersion</code> is <code>VERSION_2</code>, <code>UserARN</code> and <code>GroupARN</code> are
+     * required, and <code>Namespace</code> must not exist.
+     * </p>
+     * 
+     * @param formatVersion
+     *        The user or group rules associated with the dataset that contains permissions for RLS.</p>
+     *        <p>
+     *        By default, <code>FormatVersion</code> is <code>VERSION_1</code>. When <code>FormatVersion</code> is
+     *        <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are required. When
+     *        <code>FormatVersion</code> is <code>VERSION_2</code>, <code>UserARN</code> and <code>GroupARN</code> are
+     *        required, and <code>Namespace</code> must not exist.
+     * @see RowLevelPermissionFormatVersion
+     */
+
+    public void setFormatVersion(String formatVersion) {
+        this.formatVersion = formatVersion;
+    }
+
+    /**
+     * <p>
+     * The user or group rules associated with the dataset that contains permissions for RLS.
+     * </p>
+     * <p>
+     * By default, <code>FormatVersion</code> is <code>VERSION_1</code>. When <code>FormatVersion</code> is
+     * <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are required. When
+     * <code>FormatVersion</code> is <code>VERSION_2</code>, <code>UserARN</code> and <code>GroupARN</code> are
+     * required, and <code>Namespace</code> must not exist.
+     * </p>
+     * 
+     * @return The user or group rules associated with the dataset that contains permissions for RLS.</p>
+     *         <p>
+     *         By default, <code>FormatVersion</code> is <code>VERSION_1</code>. When <code>FormatVersion</code> is
+     *         <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are required. When
+     *         <code>FormatVersion</code> is <code>VERSION_2</code>, <code>UserARN</code> and <code>GroupARN</code> are
+     *         required, and <code>Namespace</code> must not exist.
+     * @see RowLevelPermissionFormatVersion
+     */
+
+    public String getFormatVersion() {
+        return this.formatVersion;
+    }
+
+    /**
+     * <p>
+     * The user or group rules associated with the dataset that contains permissions for RLS.
+     * </p>
+     * <p>
+     * By default, <code>FormatVersion</code> is <code>VERSION_1</code>. When <code>FormatVersion</code> is
+     * <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are required. When
+     * <code>FormatVersion</code> is <code>VERSION_2</code>, <code>UserARN</code> and <code>GroupARN</code> are
+     * required, and <code>Namespace</code> must not exist.
+     * </p>
+     * 
+     * @param formatVersion
+     *        The user or group rules associated with the dataset that contains permissions for RLS.</p>
+     *        <p>
+     *        By default, <code>FormatVersion</code> is <code>VERSION_1</code>. When <code>FormatVersion</code> is
+     *        <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are required. When
+     *        <code>FormatVersion</code> is <code>VERSION_2</code>, <code>UserARN</code> and <code>GroupARN</code> are
+     *        required, and <code>Namespace</code> must not exist.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RowLevelPermissionFormatVersion
+     */
+
+    public RowLevelPermissionDataSet withFormatVersion(String formatVersion) {
+        setFormatVersion(formatVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user or group rules associated with the dataset that contains permissions for RLS.
+     * </p>
+     * <p>
+     * By default, <code>FormatVersion</code> is <code>VERSION_1</code>. When <code>FormatVersion</code> is
+     * <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are required. When
+     * <code>FormatVersion</code> is <code>VERSION_2</code>, <code>UserARN</code> and <code>GroupARN</code> are
+     * required, and <code>Namespace</code> must not exist.
+     * </p>
+     * 
+     * @param formatVersion
+     *        The user or group rules associated with the dataset that contains permissions for RLS.</p>
+     *        <p>
+     *        By default, <code>FormatVersion</code> is <code>VERSION_1</code>. When <code>FormatVersion</code> is
+     *        <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are required. When
+     *        <code>FormatVersion</code> is <code>VERSION_2</code>, <code>UserARN</code> and <code>GroupARN</code> are
+     *        required, and <code>Namespace</code> must not exist.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RowLevelPermissionFormatVersion
+     */
+
+    public RowLevelPermissionDataSet withFormatVersion(RowLevelPermissionFormatVersion formatVersion) {
+        this.formatVersion = formatVersion.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -219,7 +334,9 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getPermissionPolicy() != null)
-            sb.append("PermissionPolicy: ").append(getPermissionPolicy());
+            sb.append("PermissionPolicy: ").append(getPermissionPolicy()).append(",");
+        if (getFormatVersion() != null)
+            sb.append("FormatVersion: ").append(getFormatVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -246,6 +363,10 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
             return false;
         if (other.getPermissionPolicy() != null && other.getPermissionPolicy().equals(this.getPermissionPolicy()) == false)
             return false;
+        if (other.getFormatVersion() == null ^ this.getFormatVersion() == null)
+            return false;
+        if (other.getFormatVersion() != null && other.getFormatVersion().equals(this.getFormatVersion()) == false)
+            return false;
         return true;
     }
 
@@ -257,6 +378,7 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getPermissionPolicy() == null) ? 0 : getPermissionPolicy().hashCode());
+        hashCode = prime * hashCode + ((getFormatVersion() == null) ? 0 : getFormatVersion().hashCode());
         return hashCode;
     }
 
