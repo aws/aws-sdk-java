@@ -974,12 +974,12 @@ public interface AmazonForecastAsync extends AmazonForecast {
      * <ul>
      * <li>
      * <p>
-     * <b>Dataset Group</b>: predictors, predictor backtest export jobs, forecasts, forecast export jobs
+     * <b>Dataset</b>: dataset import jobs
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Dataset</b>: dataset import jobs
+     * <b>Dataset Group</b>: predictors, predictor backtest export jobs, forecasts, forecast export jobs
      * </p>
      * </li>
      * <li>
@@ -1022,12 +1022,12 @@ public interface AmazonForecastAsync extends AmazonForecast {
      * <ul>
      * <li>
      * <p>
-     * <b>Dataset Group</b>: predictors, predictor backtest export jobs, forecasts, forecast export jobs
+     * <b>Dataset</b>: dataset import jobs
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Dataset</b>: dataset import jobs
+     * <b>Dataset Group</b>: predictors, predictor backtest export jobs, forecasts, forecast export jobs
      * </p>
      * </li>
      * <li>

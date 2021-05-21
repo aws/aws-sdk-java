@@ -31,25 +31,26 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of values in the field.
+     * The number of values in the field. If the response value is -1, refer to <code>CountLong</code>.
      * </p>
      */
     private Integer count;
     /**
      * <p>
-     * The number of distinct values in the field.
+     * The number of distinct values in the field. If the response value is -1, refer to <code>CountDistinctLong</code>.
      * </p>
      */
     private Integer countDistinct;
     /**
      * <p>
-     * The number of null values in the field.
+     * The number of null values in the field. If the response value is -1, refer to <code>CountNullLong</code>.
      * </p>
      */
     private Integer countNull;
     /**
      * <p>
-     * The number of NAN (not a number) values in the field.
+     * The number of NAN (not a number) values in the field. If the response value is -1, refer to
+     * <code>CountNanLong</code>.
      * </p>
      */
     private Integer countNan;
@@ -77,14 +78,42 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Double stddev;
+    /**
+     * <p>
+     * The number of values in the field. <code>CountLong</code> is used instead of <code>Count</code> if the value is
+     * greater than 2,147,483,647.
+     * </p>
+     */
+    private Long countLong;
+    /**
+     * <p>
+     * The number of distinct values in the field. <code>CountDistinctLong</code> is used instead of
+     * <code>CountDistinct</code> if the value is greater than 2,147,483,647.
+     * </p>
+     */
+    private Long countDistinctLong;
+    /**
+     * <p>
+     * The number of null values in the field. <code>CountNullLong</code> is used instead of <code>CountNull</code> if
+     * the value is greater than 2,147,483,647.
+     * </p>
+     */
+    private Long countNullLong;
+    /**
+     * <p>
+     * The number of NAN (not a number) values in the field. <code>CountNanLong</code> is used instead of
+     * <code>CountNan</code> if the value is greater than 2,147,483,647.
+     * </p>
+     */
+    private Long countNanLong;
 
     /**
      * <p>
-     * The number of values in the field.
+     * The number of values in the field. If the response value is -1, refer to <code>CountLong</code>.
      * </p>
      * 
      * @param count
-     *        The number of values in the field.
+     *        The number of values in the field. If the response value is -1, refer to <code>CountLong</code>.
      */
 
     public void setCount(Integer count) {
@@ -93,10 +122,10 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of values in the field.
+     * The number of values in the field. If the response value is -1, refer to <code>CountLong</code>.
      * </p>
      * 
-     * @return The number of values in the field.
+     * @return The number of values in the field. If the response value is -1, refer to <code>CountLong</code>.
      */
 
     public Integer getCount() {
@@ -105,11 +134,11 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of values in the field.
+     * The number of values in the field. If the response value is -1, refer to <code>CountLong</code>.
      * </p>
      * 
      * @param count
-     *        The number of values in the field.
+     *        The number of values in the field. If the response value is -1, refer to <code>CountLong</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,11 +149,12 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of distinct values in the field.
+     * The number of distinct values in the field. If the response value is -1, refer to <code>CountDistinctLong</code>.
      * </p>
      * 
      * @param countDistinct
-     *        The number of distinct values in the field.
+     *        The number of distinct values in the field. If the response value is -1, refer to
+     *        <code>CountDistinctLong</code>.
      */
 
     public void setCountDistinct(Integer countDistinct) {
@@ -133,10 +163,11 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of distinct values in the field.
+     * The number of distinct values in the field. If the response value is -1, refer to <code>CountDistinctLong</code>.
      * </p>
      * 
-     * @return The number of distinct values in the field.
+     * @return The number of distinct values in the field. If the response value is -1, refer to
+     *         <code>CountDistinctLong</code>.
      */
 
     public Integer getCountDistinct() {
@@ -145,11 +176,12 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of distinct values in the field.
+     * The number of distinct values in the field. If the response value is -1, refer to <code>CountDistinctLong</code>.
      * </p>
      * 
      * @param countDistinct
-     *        The number of distinct values in the field.
+     *        The number of distinct values in the field. If the response value is -1, refer to
+     *        <code>CountDistinctLong</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,11 +192,11 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of null values in the field.
+     * The number of null values in the field. If the response value is -1, refer to <code>CountNullLong</code>.
      * </p>
      * 
      * @param countNull
-     *        The number of null values in the field.
+     *        The number of null values in the field. If the response value is -1, refer to <code>CountNullLong</code>.
      */
 
     public void setCountNull(Integer countNull) {
@@ -173,10 +205,10 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of null values in the field.
+     * The number of null values in the field. If the response value is -1, refer to <code>CountNullLong</code>.
      * </p>
      * 
-     * @return The number of null values in the field.
+     * @return The number of null values in the field. If the response value is -1, refer to <code>CountNullLong</code>.
      */
 
     public Integer getCountNull() {
@@ -185,11 +217,11 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of null values in the field.
+     * The number of null values in the field. If the response value is -1, refer to <code>CountNullLong</code>.
      * </p>
      * 
      * @param countNull
-     *        The number of null values in the field.
+     *        The number of null values in the field. If the response value is -1, refer to <code>CountNullLong</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,11 +232,13 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of NAN (not a number) values in the field.
+     * The number of NAN (not a number) values in the field. If the response value is -1, refer to
+     * <code>CountNanLong</code>.
      * </p>
      * 
      * @param countNan
-     *        The number of NAN (not a number) values in the field.
+     *        The number of NAN (not a number) values in the field. If the response value is -1, refer to
+     *        <code>CountNanLong</code>.
      */
 
     public void setCountNan(Integer countNan) {
@@ -213,10 +247,12 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of NAN (not a number) values in the field.
+     * The number of NAN (not a number) values in the field. If the response value is -1, refer to
+     * <code>CountNanLong</code>.
      * </p>
      * 
-     * @return The number of NAN (not a number) values in the field.
+     * @return The number of NAN (not a number) values in the field. If the response value is -1, refer to
+     *         <code>CountNanLong</code>.
      */
 
     public Integer getCountNan() {
@@ -225,11 +261,13 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of NAN (not a number) values in the field.
+     * The number of NAN (not a number) values in the field. If the response value is -1, refer to
+     * <code>CountNanLong</code>.
      * </p>
      * 
      * @param countNan
-     *        The number of NAN (not a number) values in the field.
+     *        The number of NAN (not a number) values in the field. If the response value is -1, refer to
+     *        <code>CountNanLong</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -399,6 +437,190 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The number of values in the field. <code>CountLong</code> is used instead of <code>Count</code> if the value is
+     * greater than 2,147,483,647.
+     * </p>
+     * 
+     * @param countLong
+     *        The number of values in the field. <code>CountLong</code> is used instead of <code>Count</code> if the
+     *        value is greater than 2,147,483,647.
+     */
+
+    public void setCountLong(Long countLong) {
+        this.countLong = countLong;
+    }
+
+    /**
+     * <p>
+     * The number of values in the field. <code>CountLong</code> is used instead of <code>Count</code> if the value is
+     * greater than 2,147,483,647.
+     * </p>
+     * 
+     * @return The number of values in the field. <code>CountLong</code> is used instead of <code>Count</code> if the
+     *         value is greater than 2,147,483,647.
+     */
+
+    public Long getCountLong() {
+        return this.countLong;
+    }
+
+    /**
+     * <p>
+     * The number of values in the field. <code>CountLong</code> is used instead of <code>Count</code> if the value is
+     * greater than 2,147,483,647.
+     * </p>
+     * 
+     * @param countLong
+     *        The number of values in the field. <code>CountLong</code> is used instead of <code>Count</code> if the
+     *        value is greater than 2,147,483,647.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Statistics withCountLong(Long countLong) {
+        setCountLong(countLong);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of distinct values in the field. <code>CountDistinctLong</code> is used instead of
+     * <code>CountDistinct</code> if the value is greater than 2,147,483,647.
+     * </p>
+     * 
+     * @param countDistinctLong
+     *        The number of distinct values in the field. <code>CountDistinctLong</code> is used instead of
+     *        <code>CountDistinct</code> if the value is greater than 2,147,483,647.
+     */
+
+    public void setCountDistinctLong(Long countDistinctLong) {
+        this.countDistinctLong = countDistinctLong;
+    }
+
+    /**
+     * <p>
+     * The number of distinct values in the field. <code>CountDistinctLong</code> is used instead of
+     * <code>CountDistinct</code> if the value is greater than 2,147,483,647.
+     * </p>
+     * 
+     * @return The number of distinct values in the field. <code>CountDistinctLong</code> is used instead of
+     *         <code>CountDistinct</code> if the value is greater than 2,147,483,647.
+     */
+
+    public Long getCountDistinctLong() {
+        return this.countDistinctLong;
+    }
+
+    /**
+     * <p>
+     * The number of distinct values in the field. <code>CountDistinctLong</code> is used instead of
+     * <code>CountDistinct</code> if the value is greater than 2,147,483,647.
+     * </p>
+     * 
+     * @param countDistinctLong
+     *        The number of distinct values in the field. <code>CountDistinctLong</code> is used instead of
+     *        <code>CountDistinct</code> if the value is greater than 2,147,483,647.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Statistics withCountDistinctLong(Long countDistinctLong) {
+        setCountDistinctLong(countDistinctLong);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of null values in the field. <code>CountNullLong</code> is used instead of <code>CountNull</code> if
+     * the value is greater than 2,147,483,647.
+     * </p>
+     * 
+     * @param countNullLong
+     *        The number of null values in the field. <code>CountNullLong</code> is used instead of
+     *        <code>CountNull</code> if the value is greater than 2,147,483,647.
+     */
+
+    public void setCountNullLong(Long countNullLong) {
+        this.countNullLong = countNullLong;
+    }
+
+    /**
+     * <p>
+     * The number of null values in the field. <code>CountNullLong</code> is used instead of <code>CountNull</code> if
+     * the value is greater than 2,147,483,647.
+     * </p>
+     * 
+     * @return The number of null values in the field. <code>CountNullLong</code> is used instead of
+     *         <code>CountNull</code> if the value is greater than 2,147,483,647.
+     */
+
+    public Long getCountNullLong() {
+        return this.countNullLong;
+    }
+
+    /**
+     * <p>
+     * The number of null values in the field. <code>CountNullLong</code> is used instead of <code>CountNull</code> if
+     * the value is greater than 2,147,483,647.
+     * </p>
+     * 
+     * @param countNullLong
+     *        The number of null values in the field. <code>CountNullLong</code> is used instead of
+     *        <code>CountNull</code> if the value is greater than 2,147,483,647.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Statistics withCountNullLong(Long countNullLong) {
+        setCountNullLong(countNullLong);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of NAN (not a number) values in the field. <code>CountNanLong</code> is used instead of
+     * <code>CountNan</code> if the value is greater than 2,147,483,647.
+     * </p>
+     * 
+     * @param countNanLong
+     *        The number of NAN (not a number) values in the field. <code>CountNanLong</code> is used instead of
+     *        <code>CountNan</code> if the value is greater than 2,147,483,647.
+     */
+
+    public void setCountNanLong(Long countNanLong) {
+        this.countNanLong = countNanLong;
+    }
+
+    /**
+     * <p>
+     * The number of NAN (not a number) values in the field. <code>CountNanLong</code> is used instead of
+     * <code>CountNan</code> if the value is greater than 2,147,483,647.
+     * </p>
+     * 
+     * @return The number of NAN (not a number) values in the field. <code>CountNanLong</code> is used instead of
+     *         <code>CountNan</code> if the value is greater than 2,147,483,647.
+     */
+
+    public Long getCountNanLong() {
+        return this.countNanLong;
+    }
+
+    /**
+     * <p>
+     * The number of NAN (not a number) values in the field. <code>CountNanLong</code> is used instead of
+     * <code>CountNan</code> if the value is greater than 2,147,483,647.
+     * </p>
+     * 
+     * @param countNanLong
+     *        The number of NAN (not a number) values in the field. <code>CountNanLong</code> is used instead of
+     *        <code>CountNan</code> if the value is greater than 2,147,483,647.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Statistics withCountNanLong(Long countNanLong) {
+        setCountNanLong(countNanLong);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -425,7 +647,15 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
         if (getAvg() != null)
             sb.append("Avg: ").append(getAvg()).append(",");
         if (getStddev() != null)
-            sb.append("Stddev: ").append(getStddev());
+            sb.append("Stddev: ").append(getStddev()).append(",");
+        if (getCountLong() != null)
+            sb.append("CountLong: ").append(getCountLong()).append(",");
+        if (getCountDistinctLong() != null)
+            sb.append("CountDistinctLong: ").append(getCountDistinctLong()).append(",");
+        if (getCountNullLong() != null)
+            sb.append("CountNullLong: ").append(getCountNullLong()).append(",");
+        if (getCountNanLong() != null)
+            sb.append("CountNanLong: ").append(getCountNanLong());
         sb.append("}");
         return sb.toString();
     }
@@ -472,6 +702,22 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStddev() != null && other.getStddev().equals(this.getStddev()) == false)
             return false;
+        if (other.getCountLong() == null ^ this.getCountLong() == null)
+            return false;
+        if (other.getCountLong() != null && other.getCountLong().equals(this.getCountLong()) == false)
+            return false;
+        if (other.getCountDistinctLong() == null ^ this.getCountDistinctLong() == null)
+            return false;
+        if (other.getCountDistinctLong() != null && other.getCountDistinctLong().equals(this.getCountDistinctLong()) == false)
+            return false;
+        if (other.getCountNullLong() == null ^ this.getCountNullLong() == null)
+            return false;
+        if (other.getCountNullLong() != null && other.getCountNullLong().equals(this.getCountNullLong()) == false)
+            return false;
+        if (other.getCountNanLong() == null ^ this.getCountNanLong() == null)
+            return false;
+        if (other.getCountNanLong() != null && other.getCountNanLong().equals(this.getCountNanLong()) == false)
+            return false;
         return true;
     }
 
@@ -488,6 +734,10 @@ public class Statistics implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getMax() == null) ? 0 : getMax().hashCode());
         hashCode = prime * hashCode + ((getAvg() == null) ? 0 : getAvg().hashCode());
         hashCode = prime * hashCode + ((getStddev() == null) ? 0 : getStddev().hashCode());
+        hashCode = prime * hashCode + ((getCountLong() == null) ? 0 : getCountLong().hashCode());
+        hashCode = prime * hashCode + ((getCountDistinctLong() == null) ? 0 : getCountDistinctLong().hashCode());
+        hashCode = prime * hashCode + ((getCountNullLong() == null) ? 0 : getCountNullLong().hashCode());
+        hashCode = prime * hashCode + ((getCountNanLong() == null) ? 0 : getCountNanLong().hashCode());
         return hashCode;
     }
 

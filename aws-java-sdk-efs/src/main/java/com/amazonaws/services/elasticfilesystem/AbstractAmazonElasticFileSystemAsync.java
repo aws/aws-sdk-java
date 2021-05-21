@@ -162,6 +162,19 @@ public class AbstractAmazonElasticFileSystemAsync extends AbstractAmazonElasticF
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAccountPreferencesResult> describeAccountPreferencesAsync(DescribeAccountPreferencesRequest request) {
+
+        return describeAccountPreferencesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccountPreferencesResult> describeAccountPreferencesAsync(DescribeAccountPreferencesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAccountPreferencesRequest, DescribeAccountPreferencesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeBackupPolicyResult> describeBackupPolicyAsync(DescribeBackupPolicyRequest request) {
 
         return describeBackupPolicyAsync(request, null);
@@ -303,6 +316,19 @@ public class AbstractAmazonElasticFileSystemAsync extends AbstractAmazonElasticF
     public java.util.concurrent.Future<ModifyMountTargetSecurityGroupsResult> modifyMountTargetSecurityGroupsAsync(
             ModifyMountTargetSecurityGroupsRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyMountTargetSecurityGroupsRequest, ModifyMountTargetSecurityGroupsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAccountPreferencesResult> putAccountPreferencesAsync(PutAccountPreferencesRequest request) {
+
+        return putAccountPreferencesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAccountPreferencesResult> putAccountPreferencesAsync(PutAccountPreferencesRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutAccountPreferencesRequest, PutAccountPreferencesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

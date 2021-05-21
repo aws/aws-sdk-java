@@ -31,7 +31,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String resourceId;
-    /** <p/> */
+    /**
+     * <p>
+     * An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
@@ -75,9 +79,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * <p/>
+     * <p>
+     * An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.
+     * </p>
      * 
-     * @return
+     * @return An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.
      */
 
     public java.util.List<Tag> getTags() {
@@ -88,9 +94,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * <p/>
+     * <p>
+     * An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.
+     * </p>
      * 
      * @param tags
+     *        An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -103,7 +112,9 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * <p/>
+     * <p>
+     * An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
@@ -111,6 +122,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param tags
+     *        An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -125,9 +137,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * <p/>
+     * <p>
+     * An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.
+     * </p>
      * 
      * @param tags
+     *        An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

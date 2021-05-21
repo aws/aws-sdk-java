@@ -34,10 +34,25 @@ public class DescribeServersResult extends com.amazonaws.AmazonWebServiceResult<
      * 2019.
      * </p>
      * <p>
-     * <i>For Puppet Server:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
-     * PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the Puppet API over TCP port number
-     * 8140. The CA certificate is also used to sign node certificates.
+     * <i>For Puppet servers:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains the following
+     * two responses:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PUPPET_API_CA_CERT</code>, the PEM-encoded CA certificate that is used by the Puppet API over TCP port
+     * number 8140. The CA certificate is also used to sign node certificates.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for internal
+     * maintenance purposes only. For more information about the Puppet certificate revocation list, see <a
+     * href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet
+     * certificate_revocation_list</a> in the Puppet documentation.
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.List<Server> servers;
     /**
@@ -58,10 +73,25 @@ public class DescribeServersResult extends com.amazonaws.AmazonWebServiceResult<
      * 2019.
      * </p>
      * <p>
-     * <i>For Puppet Server:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
-     * PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the Puppet API over TCP port number
-     * 8140. The CA certificate is also used to sign node certificates.
+     * <i>For Puppet servers:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains the following
+     * two responses:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PUPPET_API_CA_CERT</code>, the PEM-encoded CA certificate that is used by the Puppet API over TCP port
+     * number 8140. The CA certificate is also used to sign node certificates.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for internal
+     * maintenance purposes only. For more information about the Puppet certificate revocation list, see <a
+     * href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet
+     * certificate_revocation_list</a> in the Puppet documentation.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return Contains the response to a <code>DescribeServers</code> request.</p>
      *         <p>
@@ -71,9 +101,24 @@ public class DescribeServersResult extends com.amazonaws.AmazonWebServiceResult<
      *         run after November 1, 2019.
      *         </p>
      *         <p>
-     *         <i>For Puppet Server:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
-     *         PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the Puppet API over TCP port
-     *         number 8140. The CA certificate is also used to sign node certificates.
+     *         <i>For Puppet servers:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains the
+     *         following two responses:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>PUPPET_API_CA_CERT</code>, the PEM-encoded CA certificate that is used by the Puppet API over TCP
+     *         port number 8140. The CA certificate is also used to sign node certificates.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for
+     *         internal maintenance purposes only. For more information about the Puppet certificate revocation list,
+     *         see <a href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet
+     *         certificate_revocation_list</a> in the Puppet documentation.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<Server> getServers() {
@@ -91,10 +136,25 @@ public class DescribeServersResult extends com.amazonaws.AmazonWebServiceResult<
      * 2019.
      * </p>
      * <p>
-     * <i>For Puppet Server:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
-     * PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the Puppet API over TCP port number
-     * 8140. The CA certificate is also used to sign node certificates.
+     * <i>For Puppet servers:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains the following
+     * two responses:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PUPPET_API_CA_CERT</code>, the PEM-encoded CA certificate that is used by the Puppet API over TCP port
+     * number 8140. The CA certificate is also used to sign node certificates.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for internal
+     * maintenance purposes only. For more information about the Puppet certificate revocation list, see <a
+     * href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet
+     * certificate_revocation_list</a> in the Puppet documentation.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param servers
      *        Contains the response to a <code>DescribeServers</code> request.</p>
@@ -105,9 +165,24 @@ public class DescribeServersResult extends com.amazonaws.AmazonWebServiceResult<
      *        run after November 1, 2019.
      *        </p>
      *        <p>
-     *        <i>For Puppet Server:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
-     *        PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the Puppet API over TCP port
-     *        number 8140. The CA certificate is also used to sign node certificates.
+     *        <i>For Puppet servers:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains the
+     *        following two responses:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PUPPET_API_CA_CERT</code>, the PEM-encoded CA certificate that is used by the Puppet API over TCP
+     *        port number 8140. The CA certificate is also used to sign node certificates.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for
+     *        internal maintenance purposes only. For more information about the Puppet certificate revocation list, see
+     *        <a href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet
+     *        certificate_revocation_list</a> in the Puppet documentation.
+     *        </p>
+     *        </li>
      */
 
     public void setServers(java.util.Collection<Server> servers) {
@@ -130,10 +205,25 @@ public class DescribeServersResult extends com.amazonaws.AmazonWebServiceResult<
      * 2019.
      * </p>
      * <p>
-     * <i>For Puppet Server:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
-     * PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the Puppet API over TCP port number
-     * 8140. The CA certificate is also used to sign node certificates.
+     * <i>For Puppet servers:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains the following
+     * two responses:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PUPPET_API_CA_CERT</code>, the PEM-encoded CA certificate that is used by the Puppet API over TCP port
+     * number 8140. The CA certificate is also used to sign node certificates.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for internal
+     * maintenance purposes only. For more information about the Puppet certificate revocation list, see <a
+     * href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet
+     * certificate_revocation_list</a> in the Puppet documentation.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setServers(java.util.Collection)} or {@link #withServers(java.util.Collection)} if you want to override
@@ -149,9 +239,24 @@ public class DescribeServersResult extends com.amazonaws.AmazonWebServiceResult<
      *        run after November 1, 2019.
      *        </p>
      *        <p>
-     *        <i>For Puppet Server:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
-     *        PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the Puppet API over TCP port
-     *        number 8140. The CA certificate is also used to sign node certificates.
+     *        <i>For Puppet servers:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains the
+     *        following two responses:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PUPPET_API_CA_CERT</code>, the PEM-encoded CA certificate that is used by the Puppet API over TCP
+     *        port number 8140. The CA certificate is also used to sign node certificates.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for
+     *        internal maintenance purposes only. For more information about the Puppet certificate revocation list, see
+     *        <a href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet
+     *        certificate_revocation_list</a> in the Puppet documentation.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -176,10 +281,25 @@ public class DescribeServersResult extends com.amazonaws.AmazonWebServiceResult<
      * 2019.
      * </p>
      * <p>
-     * <i>For Puppet Server:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
-     * PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the Puppet API over TCP port number
-     * 8140. The CA certificate is also used to sign node certificates.
+     * <i>For Puppet servers:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains the following
+     * two responses:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PUPPET_API_CA_CERT</code>, the PEM-encoded CA certificate that is used by the Puppet API over TCP port
+     * number 8140. The CA certificate is also used to sign node certificates.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for internal
+     * maintenance purposes only. For more information about the Puppet certificate revocation list, see <a
+     * href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet
+     * certificate_revocation_list</a> in the Puppet documentation.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param servers
      *        Contains the response to a <code>DescribeServers</code> request.</p>
@@ -190,9 +310,24 @@ public class DescribeServersResult extends com.amazonaws.AmazonWebServiceResult<
      *        run after November 1, 2019.
      *        </p>
      *        <p>
-     *        <i>For Puppet Server:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
-     *        PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the Puppet API over TCP port
-     *        number 8140. The CA certificate is also used to sign node certificates.
+     *        <i>For Puppet servers:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code> contains the
+     *        following two responses:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PUPPET_API_CA_CERT</code>, the PEM-encoded CA certificate that is used by the Puppet API over TCP
+     *        port number 8140. The CA certificate is also used to sign node certificates.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation list is for
+     *        internal maintenance purposes only. For more information about the Puppet certificate revocation list, see
+     *        <a href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man Page: puppet
+     *        certificate_revocation_list</a> in the Puppet documentation.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

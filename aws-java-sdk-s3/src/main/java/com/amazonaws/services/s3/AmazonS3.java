@@ -1303,62 +1303,157 @@ public interface AmazonS3 extends S3DirectSpi {
 
     /**
      * <p>
-     * Creates a new Amazon S3 bucket in the region that the client was created
-     * in. If no region or AWS S3 endpoint was specified when creating the client,
-     * the bucket will be created within the default (US) region, {@link Region#US_Standard}
-     * or the region that was specified within the {@link CreateBucketRequest#region} field.
+     * Creates a new S3 bucket. To create a bucket, you must register with Amazon S3 and have a valid AWS Access Key ID
+     * to authenticate requests. Anonymous requests are never allowed to create buckets. By creating the bucket, you
+     * become the bucket owner.
      * </p>
      * <p>
-     * Requests that specify a region using the {@link CreateBucketRequest#setRegion(String)}
-     * method or through either constructor that allows passing in the region will return an
-     * error if the client is not configured to use the default (US) region, {@link Region#US_Standard}
-     * or the same region that is specified in the request.
+     * Not every string is an acceptable bucket name. For information about bucket naming restrictions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Bucket naming rules</a>.
      * </p>
      * <p>
-     * Every object stored in Amazon S3 is contained within a bucket. Buckets
-     * partition the namespace of objects stored in Amazon S3 at the top level.
-     * Within a bucket, any name can be used for objects. However, bucket names
-     * must be unique across all of Amazon S3.
+     * If you want to create an Amazon S3 on Outposts bucket, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">Create Bucket</a>.
      * </p>
      * <p>
-     * Bucket ownership is similar to the ownership of Internet domain names.
-     * Within Amazon S3, only a single user owns each bucket.
-     * Once a uniquely named bucket is created in Amazon S3,
-     * organize and name the objects within the bucket in any way.
-     * Ownership of the bucket is retained as long as the owner has an Amazon S3 account.
+     * By default, the bucket is created in the US East (N. Virginia) Region. You can optionally specify a Region in the
+     * request body. You might choose a Region to optimize latency, minimize costs, or address regulatory requirements.
+     * For example, if you reside in Europe, you will probably find it advantageous to create buckets in the Europe
+     * (Ireland) Region. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">Accessing a
+     * bucket</a>.
+     * </p>
+     * <note>
+     * <p>
+     * If you send your create bucket request to the <code>s3.amazonaws.com</code> endpoint, the request goes to the
+     * us-east-1 Region. Accordingly, the signature calculations in Signature Version 4 must use us-east-1 as the
+     * Region, even if the location constraint in the request specifies another Region where the bucket is to be
+     * created. If you create a bucket in a Region other than US East (N. Virginia), your application must be able to
+     * handle 307 redirect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html">Virtual hosting of buckets</a>.
+     * </p>
+     * </note>
+     * <p>
+     * When creating a bucket using this operation, you can optionally specify the accounts or groups that should be
+     * granted specific permissions on the bucket. There are two ways to grant the appropriate permissions using the
+     * request headers.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify a canned ACL using the <code>x-amz-acl</code> request header. Amazon S3 supports a set of predefined
+     * ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined set of grantees and permissions. For more
+     * information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+     * ACL</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify access permissions explicitly using the <code>x-amz-grant-read</code>, <code>x-amz-grant-write</code>,
+     * <code>x-amz-grant-read-acp</code>, <code>x-amz-grant-write-acp</code>, and <code>x-amz-grant-full-control</code>
+     * headers. These headers map to the set of permissions Amazon S3 supports in an ACL. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access control list (ACL) overview</a>.
      * </p>
      * <p>
-     * To conform with DNS requirements, the following constraints apply:
-     *  <ul>
-     *      <li>Bucket names should not contain underscores</li>
-     *      <li>Bucket names should be between 3 and 63 characters long</li>
-     *      <li>Bucket names should not end with a dash</li>
-     *      <li>Bucket names cannot contain adjacent periods</li>
-     *      <li>Bucket names cannot contain dashes next to periods (e.g.,
-     *      "my-.bucket.com" and "my.-bucket" are invalid)</li>
-     *      <li>Bucket names cannot contain uppercase characters</li>
-     *  </ul>
+     * You specify each grantee as a type=value pair, where the type is one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>id</code> – if the value specified is the canonical user ID of an AWS account
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>uri</code> – if you are granting permissions to a predefined group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>emailAddress</code> – if the value specified is the email address of an AWS account
+     * </p>
+     * <note>
+     * <p>
+     * Using email addresses to specify a grantee is only supported in the following AWS Regions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * US East (N. Virginia)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * US West (N. California)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * US West (Oregon)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Asia Pacific (Singapore)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Asia Pacific (Sydney)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Asia Pacific (Tokyo)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Europe (Ireland)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * South America (São Paulo)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For a list of all the Amazon S3 supported Regions and endpoints, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the AWS
+     * General Reference.
+     * </p>
+     * </note></li>
+     * </ul>
+     * <p>
+     * For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts identified by account IDs
+     * permissions to read object data and its metadata:
      * </p>
      * <p>
-     * There are no limits to the number of objects that can be stored in a bucket.
-     * Performance does not vary based on the number of buckets used. Store
-     * all objects within a single bucket or organize them across several buckets.
+     * <code>x-amz-grant-read: id="11112222333", id="444455556666" </code>
      * </p>
+     * </li>
+     * </ul>
+     * <note>
      * <p>
-     * Buckets cannot be nested; buckets cannot be created within
-     * other buckets.
+     * You can use either a canned ACL or specify access permissions explicitly. You cannot do both.
      * </p>
+     * </note>
      * <p>
-     * Do not make bucket
-     * create or delete calls in the high availability code path of an
-     * application. Create or delete buckets in a separate
-     * initialization or setup routine that runs less often.
+     * The following operations are related to <code>CreateBucket</code>:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * To create a bucket, authenticate with an account that has a
-     * valid AWS Access Key ID and is registered with Amazon S3. Anonymous
-     * requests are never allowed to create buckets.
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
+     * </p>
+     * </li>
+     * </ul>
      *
      * @param createBucketRequest
      *            The request object containing all options for creating an Amazon S3
@@ -1379,56 +1474,157 @@ public interface AmazonS3 extends S3DirectSpi {
 
     /**
      * <p>
-     * Creates a new Amazon S3 bucket with the specified name in the region
-     * that the client was created in. If no region or AWS S3 endpoint was specified
-     * when creating the client, the bucket will be created within the default
-     * (US) region, {@link Region#US_Standard}.
+     * Creates a new S3 bucket. To create a bucket, you must register with Amazon S3 and have a valid AWS Access Key ID
+     * to authenticate requests. Anonymous requests are never allowed to create buckets. By creating the bucket, you
+     * become the bucket owner.
      * </p>
      * <p>
-     * Every object stored in Amazon S3 is contained within a bucket. Buckets
-     * partition the namespace of objects stored in Amazon S3 at the top level.
-     * Within a bucket, any name can be used for objects. However, bucket names
-     * must be unique across all of Amazon S3.
+     * Not every string is an acceptable bucket name. For information about bucket naming restrictions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Bucket naming rules</a>.
      * </p>
      * <p>
-     * Bucket ownership is similar to the ownership of Internet domain names.
-     * Within Amazon S3, only a single user owns each bucket.
-     * Once a uniquely named bucket is created in Amazon S3,
-     * organize and name the objects within the bucket in any way.
-     * Ownership of the bucket is retained as long as the owner has an Amazon S3 account.
+     * If you want to create an Amazon S3 on Outposts bucket, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">Create Bucket</a>.
      * </p>
      * <p>
-     * To conform with DNS requirements, the following constraints apply:
-     *  <ul>
-     *      <li>Bucket names should not contain underscores</li>
-     *      <li>Bucket names should be between 3 and 63 characters long</li>
-     *      <li>Bucket names should not end with a dash</li>
-     *      <li>Bucket names cannot contain adjacent periods</li>
-     *      <li>Bucket names cannot contain dashes next to periods (e.g.,
-     *      "my-.bucket.com" and "my.-bucket" are invalid)</li>
-     *      <li>Bucket names cannot contain uppercase characters</li>
-     *  </ul>
+     * By default, the bucket is created in the US East (N. Virginia) Region. You can optionally specify a Region in the
+     * request body. You might choose a Region to optimize latency, minimize costs, or address regulatory requirements.
+     * For example, if you reside in Europe, you will probably find it advantageous to create buckets in the Europe
+     * (Ireland) Region. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">Accessing a
+     * bucket</a>.
+     * </p>
+     * <note>
+     * <p>
+     * If you send your create bucket request to the <code>s3.amazonaws.com</code> endpoint, the request goes to the
+     * us-east-1 Region. Accordingly, the signature calculations in Signature Version 4 must use us-east-1 as the
+     * Region, even if the location constraint in the request specifies another Region where the bucket is to be
+     * created. If you create a bucket in a Region other than US East (N. Virginia), your application must be able to
+     * handle 307 redirect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html">Virtual hosting of buckets</a>.
+     * </p>
+     * </note>
+     * <p>
+     * When creating a bucket using this operation, you can optionally specify the accounts or groups that should be
+     * granted specific permissions on the bucket. There are two ways to grant the appropriate permissions using the
+     * request headers.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify a canned ACL using the <code>x-amz-acl</code> request header. Amazon S3 supports a set of predefined
+     * ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined set of grantees and permissions. For more
+     * information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+     * ACL</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify access permissions explicitly using the <code>x-amz-grant-read</code>, <code>x-amz-grant-write</code>,
+     * <code>x-amz-grant-read-acp</code>, <code>x-amz-grant-write-acp</code>, and <code>x-amz-grant-full-control</code>
+     * headers. These headers map to the set of permissions Amazon S3 supports in an ACL. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access control list (ACL) overview</a>.
      * </p>
      * <p>
-     * There are no limits to the number of objects that can be stored in a bucket.
-     * Performance does not vary based on the number of buckets used. Store
-     * all objects within a single bucket or organize them across several buckets.
+     * You specify each grantee as a type=value pair, where the type is one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>id</code> – if the value specified is the canonical user ID of an AWS account
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>uri</code> – if you are granting permissions to a predefined group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>emailAddress</code> – if the value specified is the email address of an AWS account
+     * </p>
+     * <note>
+     * <p>
+     * Using email addresses to specify a grantee is only supported in the following AWS Regions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * US East (N. Virginia)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * US West (N. California)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * US West (Oregon)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Asia Pacific (Singapore)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Asia Pacific (Sydney)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Asia Pacific (Tokyo)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Europe (Ireland)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * South America (São Paulo)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For a list of all the Amazon S3 supported Regions and endpoints, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the AWS
+     * General Reference.
+     * </p>
+     * </note></li>
+     * </ul>
+     * <p>
+     * For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts identified by account IDs
+     * permissions to read object data and its metadata:
      * </p>
      * <p>
-     * Buckets cannot be nested; buckets cannot be created within
-     * other buckets.
+     * <code>x-amz-grant-read: id="11112222333", id="444455556666" </code>
      * </p>
+     * </li>
+     * </ul>
+     * <note>
      * <p>
-     * Do not make bucket
-     * create or delete calls in the high availability code path of an
-     * application. Create or delete buckets in a separate
-     * initialization or setup routine that runs less often.
+     * You can use either a canned ACL or specify access permissions explicitly. You cannot do both.
      * </p>
+     * </note>
      * <p>
-     * To create a bucket, authenticate with an account that has a
-     * valid AWS Access Key ID and is registered with Amazon S3. Anonymous
-     * requests are never allowed to create buckets.
+     * The following operations are related to <code>CreateBucket</code>:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
+     * </p>
+     * </li>
+     * </ul>
      *
      * @param bucketName
      *            The name of the bucket to create.
@@ -3997,7 +4193,7 @@ public interface AmazonS3 extends S3DirectSpi {
      * </p>
      * <p>
      * See the <a href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/">
-     * Amazon S3 developer guide</a> for more information on forming bucket
+     * Amazon S3 User Guide</a> for more information on forming bucket
      * polices.
      * </p>
      *
@@ -4034,7 +4230,7 @@ public interface AmazonS3 extends S3DirectSpi {
      * </p>
      * <p>
      * See the <a href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/">
-     * Amazon S3 developer guide</a> for more information on forming bucket
+     * Amazon S3 User Guide</a> for more information on forming bucket
      * polices.
      * </p>
      *
@@ -4070,7 +4266,7 @@ public interface AmazonS3 extends S3DirectSpi {
      * </p>
      * <p>
      * See the <a href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/">
-     * Amazon S3 developer guide</a> for more information on forming bucket
+     * Amazon S3 User Guide</a> for more information on forming bucket
      * polices.
      * </p>
      *
@@ -4103,7 +4299,7 @@ public interface AmazonS3 extends S3DirectSpi {
      * </p>
      * <p>
      * See the <a href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/">
-     * Amazon S3 developer guide</a> for more information on forming bucket
+     * Amazon S3 User Guide</a> for more information on forming bucket
      * polices.
      * </p>
      *
@@ -4134,7 +4330,7 @@ public interface AmazonS3 extends S3DirectSpi {
      * </p>
      * <p>
      * See the <a href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/">
-     * Amazon S3 developer guide</a> for more information on forming bucket
+     * Amazon S3 User Guide</a> for more information on forming bucket
      * polices.
      * </p>
      *
@@ -4165,7 +4361,7 @@ public interface AmazonS3 extends S3DirectSpi {
      * </p>
      * <p>
      * See the <a href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/">
-     * Amazon S3 developer guide</a> for more information on forming bucket
+     * Amazon S3 User Guide</a> for more information on forming bucket
      * polices.
      * </p>
      *

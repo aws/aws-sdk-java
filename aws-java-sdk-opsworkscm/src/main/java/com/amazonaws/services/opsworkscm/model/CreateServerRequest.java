@@ -113,7 +113,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The major release version of the engine that you want to use. For a Chef server, the valid value for
-     * EngineVersion is currently <code>2</code>. For a Puppet server, the valid value is <code>2017</code>.
+     * EngineVersion is currently <code>2</code>. For a Puppet server, valid values are <code>2019</code> or
+     * <code>2017</code>.
      * </p>
      */
     private String engineVersion;
@@ -897,12 +898,14 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The major release version of the engine that you want to use. For a Chef server, the valid value for
-     * EngineVersion is currently <code>2</code>. For a Puppet server, the valid value is <code>2017</code>.
+     * EngineVersion is currently <code>2</code>. For a Puppet server, valid values are <code>2019</code> or
+     * <code>2017</code>.
      * </p>
      * 
      * @param engineVersion
      *        The major release version of the engine that you want to use. For a Chef server, the valid value for
-     *        EngineVersion is currently <code>2</code>. For a Puppet server, the valid value is <code>2017</code>.
+     *        EngineVersion is currently <code>2</code>. For a Puppet server, valid values are <code>2019</code> or
+     *        <code>2017</code>.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -912,11 +915,13 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The major release version of the engine that you want to use. For a Chef server, the valid value for
-     * EngineVersion is currently <code>2</code>. For a Puppet server, the valid value is <code>2017</code>.
+     * EngineVersion is currently <code>2</code>. For a Puppet server, valid values are <code>2019</code> or
+     * <code>2017</code>.
      * </p>
      * 
      * @return The major release version of the engine that you want to use. For a Chef server, the valid value for
-     *         EngineVersion is currently <code>2</code>. For a Puppet server, the valid value is <code>2017</code>.
+     *         EngineVersion is currently <code>2</code>. For a Puppet server, valid values are <code>2019</code> or
+     *         <code>2017</code>.
      */
 
     public String getEngineVersion() {
@@ -926,12 +931,14 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The major release version of the engine that you want to use. For a Chef server, the valid value for
-     * EngineVersion is currently <code>2</code>. For a Puppet server, the valid value is <code>2017</code>.
+     * EngineVersion is currently <code>2</code>. For a Puppet server, valid values are <code>2019</code> or
+     * <code>2017</code>.
      * </p>
      * 
      * @param engineVersion
      *        The major release version of the engine that you want to use. For a Chef server, the valid value for
-     *        EngineVersion is currently <code>2</code>. For a Puppet server, the valid value is <code>2017</code>.
+     *        EngineVersion is currently <code>2</code>. For a Puppet server, valid values are <code>2019</code> or
+     *        <code>2017</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -41,7 +41,7 @@ public abstract class AbstractPutObjectRequest extends AmazonWebServiceRequest i
      * When using this operation using an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about access point
      * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
-     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Using access points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      */
     private String bucketName;
@@ -195,13 +195,45 @@ public abstract class AbstractPutObjectRequest extends AmazonWebServiceRequest i
     }
 
     /**
-     * Gets the name of the existing bucket where this request will
-     * upload a new object to.
-     * In order to upload the object,
-     * users must have {@link Permission#Write} permission granted.
+     * <p>
+     * The bucket name to which the PUT action was initiated.
+     * </p>
+     * <p>
+     * When using this action with an access point, you must direct requests to the access point hostname. The access
+     * point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of
+     * the bucket name. For more information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in
+     * the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * <p>
+     * When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The
+     * S3 on Outposts hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this
+     * action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket
+     * name. For more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the
+     * <i>Amazon S3 User Guide</i>.
+     * </p>
      *
-     * @return The name of an existing bucket where this request will
-     * upload a new object to.
+     * @return The bucket name to which the PUT action was initiated. </p>
+     *         <p>
+     *         When using this action with an access point, you must direct requests to the access point hostname. The
+     *         access point hostname takes the form
+     *         <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this
+     *         action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket
+     *         name. For more information about access point ARNs, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access
+     *         points</a> in the <i>Amazon S3 User Guide</i>.
+     *         </p>
+     *         <p>
+     *         When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts
+     *         hostname. The S3 on Outposts hostname takes the form
+     *         <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When
+     *         using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place
+     *         of the bucket name. For more information about S3 on Outposts ARNs, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a>
+     *         in the <i>Amazon S3 User Guide</i>.
      *
      * @see AbstractPutObjectRequest#setBucketName(String)
      * @see AbstractPutObjectRequest#withBucketName(String)
@@ -211,15 +243,47 @@ public abstract class AbstractPutObjectRequest extends AmazonWebServiceRequest i
     }
 
     /**
-     * Sets the name of an existing bucket where this request will
-     * upload a new object to. In order to upload the object,
-     * users must have {@link Permission#Write} permission granted.
+     * <p>
+     * The bucket name to which the PUT action was initiated.
+     * </p>
+     * <p>
+     * When using this action with an access point, you must direct requests to the access point hostname. The
+     * access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action
+     * with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For
+     * more information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a>
+     * in the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * <p>
+     * When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname.
+     * The S3 on Outposts hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using
+     * this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the
+     * bucket name. For more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in
+     * the <i>Amazon S3 User Guide</i>.
+     * </p>
      *
      * @param bucketName
-     *            The name of an existing bucket where this request will
-     *            upload a new object to.
-     *            In order to upload the object,
-     *            users must have {@link Permission#Write} permission granted.
+     *        The bucket name to which the PUT action was initiated. </p>
+     *        <p>
+     *        When using this action with an access point, you must direct requests to the access point hostname.
+     *        The access point hostname takes the form
+     *        <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this
+     *        action with an access point through the AWS SDKs, you provide the access point ARN in place of the
+     *        bucket name. For more information about access point ARNs, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access
+     *        points</a> in the <i>Amazon S3 User Guide</i>.
+     *        </p>
+     *        <p>
+     *        When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts
+     *        hostname. The S3 on Outposts hostname takes the form
+     *        <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When
+     *        using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in
+     *        place of the bucket name. For more information about S3 on Outposts ARNs, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on
+     *        Outposts</a> in the <i>Amazon S3 User Guide</i>.
      *
      * @see AbstractPutObjectRequest#getBucketName()
      * @see AbstractPutObjectRequest#withBucketName(String)
@@ -229,18 +293,47 @@ public abstract class AbstractPutObjectRequest extends AmazonWebServiceRequest i
     }
 
     /**
-     * Sets the name of the bucket where this request will upload a new
-     * object to. Returns this object, enabling additional method calls to be
-     * chained together.
      * <p>
-     * In order to upload the object,
-     * users must have {@link Permission#Write} permission granted.
+     * The bucket name to which the PUT action was initiated.
+     * </p>
+     * <p>
+     * When using this action with an access point, you must direct requests to the access point hostname. The
+     * access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action
+     * with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For
+     * more information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a>
+     * in the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * <p>
+     * When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname.
+     * The S3 on Outposts hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using
+     * this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the
+     * bucket name. For more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in
+     * the <i>Amazon S3 User Guide</i>.
+     * </p>
      *
      * @param bucketName
-     *            The name of an existing bucket where this request will
-     *            upload a new object to.
-     *            In order to upload the object,
-     *            users must have {@link Permission#Write} permission granted.
+     *        The bucket name to which the PUT action was initiated. </p>
+     *        <p>
+     *        When using this action with an access point, you must direct requests to the access point hostname.
+     *        The access point hostname takes the form
+     *        <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this
+     *        action with an access point through the AWS SDKs, you provide the access point ARN in place of the
+     *        bucket name. For more information about access point ARNs, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access
+     *        points</a> in the <i>Amazon S3 User Guide</i>.
+     *        </p>
+     *        <p>
+     *        When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts
+     *        hostname. The S3 on Outposts hostname takes the form
+     *        <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When
+     *        using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in
+     *        place of the bucket name. For more information about S3 on Outposts ARNs, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on
+     *        Outposts</a> in the <i>Amazon S3 User Guide</i>.
      *
      * @return This {@link AbstractPutObjectRequest}, enabling additional method calls to be
      *         chained together.

@@ -37,7 +37,7 @@ public class BackupPolicy implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.&gt;
+     * <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.
      * </p>
      * </li>
      * <li>
@@ -66,7 +66,7 @@ public class BackupPolicy implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.&gt;
+     * <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.
      * </p>
      * </li>
      * <li>
@@ -91,7 +91,7 @@ public class BackupPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.&gt;
+     *        <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.
      *        </p>
      *        </li>
      *        <li>
@@ -123,7 +123,7 @@ public class BackupPolicy implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.&gt;
+     * <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.
      * </p>
      * </li>
      * <li>
@@ -147,7 +147,7 @@ public class BackupPolicy implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.&gt;
+     *         <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.
      *         </p>
      *         </li>
      *         <li>
@@ -179,7 +179,7 @@ public class BackupPolicy implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.&gt;
+     * <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.
      * </p>
      * </li>
      * <li>
@@ -204,7 +204,7 @@ public class BackupPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.&gt;
+     *        <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.
      *        </p>
      *        </li>
      *        <li>
@@ -238,7 +238,7 @@ public class BackupPolicy implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.&gt;
+     * <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.
      * </p>
      * </li>
      * <li>
@@ -263,7 +263,7 @@ public class BackupPolicy implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.&gt;
+     *        <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file system.
      *        </p>
      *        </li>
      *        <li>

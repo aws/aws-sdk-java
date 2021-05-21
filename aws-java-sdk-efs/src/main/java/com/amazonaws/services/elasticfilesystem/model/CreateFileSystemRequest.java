@@ -56,9 +56,9 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
     private Boolean encrypted;
     /**
      * <p>
-     * The ID of the AWS KMS CMK to be used to protect the encrypted file system. This parameter is only required if you
-     * want to use a non-default CMK. If this parameter is not specified, the default CMK for Amazon EFS is used. This
-     * ID can be in one of the following formats:
+     * The ID of the AWS KMS CMK that you want to use to protect the encrypted file system. This parameter is only
+     * required if you want to use a non-default KMS key. If this parameter is not specified, the default CMK for Amazon
+     * EFS is used. This ID can be in one of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -90,7 +90,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <important>
      * <p>
-     * EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs with EFS file systems.
+     * EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with EFS file systems.
      * </p>
      * </important>
      */
@@ -425,9 +425,9 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID of the AWS KMS CMK to be used to protect the encrypted file system. This parameter is only required if you
-     * want to use a non-default CMK. If this parameter is not specified, the default CMK for Amazon EFS is used. This
-     * ID can be in one of the following formats:
+     * The ID of the AWS KMS CMK that you want to use to protect the encrypted file system. This parameter is only
+     * required if you want to use a non-default KMS key. If this parameter is not specified, the default CMK for Amazon
+     * EFS is used. This ID can be in one of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -459,14 +459,14 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <important>
      * <p>
-     * EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs with EFS file systems.
+     * EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with EFS file systems.
      * </p>
      * </important>
      * 
      * @param kmsKeyId
-     *        The ID of the AWS KMS CMK to be used to protect the encrypted file system. This parameter is only required
-     *        if you want to use a non-default CMK. If this parameter is not specified, the default CMK for Amazon EFS
-     *        is used. This ID can be in one of the following formats:</p>
+     *        The ID of the AWS KMS CMK that you want to use to protect the encrypted file system. This parameter is
+     *        only required if you want to use a non-default KMS key. If this parameter is not specified, the default
+     *        CMK for Amazon EFS is used. This ID can be in one of the following formats:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -497,7 +497,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        <important>
      *        <p>
-     *        EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs with EFS file systems.
+     *        EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with EFS file systems.
      *        </p>
      */
 
@@ -507,9 +507,9 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID of the AWS KMS CMK to be used to protect the encrypted file system. This parameter is only required if you
-     * want to use a non-default CMK. If this parameter is not specified, the default CMK for Amazon EFS is used. This
-     * ID can be in one of the following formats:
+     * The ID of the AWS KMS CMK that you want to use to protect the encrypted file system. This parameter is only
+     * required if you want to use a non-default KMS key. If this parameter is not specified, the default CMK for Amazon
+     * EFS is used. This ID can be in one of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -541,13 +541,13 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <important>
      * <p>
-     * EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs with EFS file systems.
+     * EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with EFS file systems.
      * </p>
      * </important>
      * 
-     * @return The ID of the AWS KMS CMK to be used to protect the encrypted file system. This parameter is only
-     *         required if you want to use a non-default CMK. If this parameter is not specified, the default CMK for
-     *         Amazon EFS is used. This ID can be in one of the following formats:</p>
+     * @return The ID of the AWS KMS CMK that you want to use to protect the encrypted file system. This parameter is
+     *         only required if you want to use a non-default KMS key. If this parameter is not specified, the default
+     *         CMK for Amazon EFS is used. This ID can be in one of the following formats:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -578,7 +578,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      *         </p>
      *         <important>
      *         <p>
-     *         EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs with EFS file systems.
+     *         EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with EFS file systems.
      *         </p>
      */
 
@@ -588,9 +588,9 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID of the AWS KMS CMK to be used to protect the encrypted file system. This parameter is only required if you
-     * want to use a non-default CMK. If this parameter is not specified, the default CMK for Amazon EFS is used. This
-     * ID can be in one of the following formats:
+     * The ID of the AWS KMS CMK that you want to use to protect the encrypted file system. This parameter is only
+     * required if you want to use a non-default KMS key. If this parameter is not specified, the default CMK for Amazon
+     * EFS is used. This ID can be in one of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -622,14 +622,14 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <important>
      * <p>
-     * EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs with EFS file systems.
+     * EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with EFS file systems.
      * </p>
      * </important>
      * 
      * @param kmsKeyId
-     *        The ID of the AWS KMS CMK to be used to protect the encrypted file system. This parameter is only required
-     *        if you want to use a non-default CMK. If this parameter is not specified, the default CMK for Amazon EFS
-     *        is used. This ID can be in one of the following formats:</p>
+     *        The ID of the AWS KMS CMK that you want to use to protect the encrypted file system. This parameter is
+     *        only required if you want to use a non-default KMS key. If this parameter is not specified, the default
+     *        CMK for Amazon EFS is used. This ID can be in one of the following formats:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -660,7 +660,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        <important>
      *        <p>
-     *        EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs with EFS file systems.
+     *        EFS accepts only symmetric KMS keys. You cannot use asymmetric KMS keys with EFS file systems.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

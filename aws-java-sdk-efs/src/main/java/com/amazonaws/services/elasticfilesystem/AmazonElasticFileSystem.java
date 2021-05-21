@@ -31,7 +31,8 @@ import com.amazonaws.services.elasticfilesystem.model.*;
  * Amazon Elastic File System (Amazon EFS) provides simple, scalable file storage for use with Amazon EC2 instances in
  * the AWS Cloud. With Amazon EFS, storage capacity is elastic, growing and shrinking automatically as you add and
  * remove files, so your applications have the storage they need, when they need it. For more information, see the <a
- * href="https://docs.aws.amazon.com/efs/latest/ug/api-reference.html">User Guide</a>.
+ * href="https://docs.aws.amazon.com/efs/latest/ug/api-reference.html">Amazon Elastic File System API Reference</a> and
+ * the <a href="https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html">Amazon Elastic File System User Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -456,6 +457,12 @@ public interface AmazonElasticFileSystem {
     CreateMountTargetResult createMountTarget(CreateMountTargetRequest createMountTargetRequest);
 
     /**
+     * <note>
+     * <p>
+     * DEPRECATED - CreateTags is deprecated and not maintained. Please use the API action to create tags for EFS
+     * resources.
+     * </p>
+     * </note>
      * <p>
      * Creates or overwrites tags associated with a file system. Each tag is a key-value pair. If a tag key specified in
      * the request already exists on the file system, this operation overwrites its value with the value provided in the
@@ -630,6 +637,12 @@ public interface AmazonElasticFileSystem {
     DeleteMountTargetResult deleteMountTarget(DeleteMountTargetRequest deleteMountTargetRequest);
 
     /**
+     * <note>
+     * <p>
+     * DEPRECATED - DeleteTags is deprecated and not maintained. Please use the API action to remove tags from EFS
+     * resources.
+     * </p>
+     * </note>
      * <p>
      * Deletes the specified tags from a file system. If the <code>DeleteTags</code> request includes a tag key that
      * doesn't exist, Amazon EFS ignores it and doesn't cause an error. For more information about tags and related
@@ -682,6 +695,17 @@ public interface AmazonElasticFileSystem {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeAccessPointsResult describeAccessPoints(DescribeAccessPointsRequest describeAccessPointsRequest);
+
+    /**
+     * @param describeAccountPreferencesRequest
+     * @return Result of the DescribeAccountPreferences operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Returned if an error occurred on the server side.
+     * @sample AmazonElasticFileSystem.DescribeAccountPreferences
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeAccountPreferences"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeAccountPreferencesResult describeAccountPreferences(DescribeAccountPreferencesRequest describeAccountPreferencesRequest);
 
     /**
      * <p>
@@ -876,6 +900,12 @@ public interface AmazonElasticFileSystem {
     DescribeMountTargetsResult describeMountTargets(DescribeMountTargetsRequest describeMountTargetsRequest);
 
     /**
+     * <note>
+     * <p>
+     * DEPRECATED - The DeleteTags action is deprecated and not maintained. Please use the API action to remove tags
+     * from EFS resources.
+     * </p>
+     * </note>
      * <p>
      * Returns the tags associated with a file system. The order of tags returned in the response of one
      * <code>DescribeTags</code> call and the order of tags returned across the responses of a multiple-call iteration
@@ -975,6 +1005,17 @@ public interface AmazonElasticFileSystem {
      *      target="_top">AWS API Documentation</a>
      */
     ModifyMountTargetSecurityGroupsResult modifyMountTargetSecurityGroups(ModifyMountTargetSecurityGroupsRequest modifyMountTargetSecurityGroupsRequest);
+
+    /**
+     * @param putAccountPreferencesRequest
+     * @return Result of the PutAccountPreferences operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Returned if an error occurred on the server side.
+     * @sample AmazonElasticFileSystem.PutAccountPreferences
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutAccountPreferences"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutAccountPreferencesResult putAccountPreferences(PutAccountPreferencesRequest putAccountPreferencesRequest);
 
     /**
      * <p>

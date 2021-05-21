@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * A tag is a key-value pair. Allowed characters are letters, white space, and numbers that can be represented in UTF-8,
- * and the following characters:<code> + - = . _ : /</code>
+ * and the following characters:<code> + - = . _ : /</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/Tag" target="_top">AWS API

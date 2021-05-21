@@ -62,7 +62,7 @@ public class SetObjectLockConfigurationRequest extends AmazonWebServiceRequest i
      * When using this operation using an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about access point
      * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
-     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Using access points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      */
     public SetObjectLockConfigurationRequest withBucketName(String bucket) {
@@ -82,7 +82,7 @@ public class SetObjectLockConfigurationRequest extends AmazonWebServiceRequest i
      * When using this operation using an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about access point
      * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
-     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Using access points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      */
     public void setBucketName(String bucket) {

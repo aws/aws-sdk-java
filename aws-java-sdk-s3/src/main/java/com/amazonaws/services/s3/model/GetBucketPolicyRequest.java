@@ -31,7 +31,7 @@ import com.amazonaws.services.s3.AmazonS3;
  * </p>
  * <p>
  * See the <a href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/">
- * Amazon S3 developer guide</a> for more information on forming bucket polices.
+ * Amazon S3 User Guide</a> for more information on forming bucket polices.
  * </p>
  *
  * @see AmazonS3#getBucketPolicy(GetBucketPolicyRequest)

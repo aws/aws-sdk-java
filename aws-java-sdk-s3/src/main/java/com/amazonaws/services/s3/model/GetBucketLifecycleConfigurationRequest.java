@@ -39,7 +39,7 @@ public class GetBucketLifecycleConfigurationRequest extends GenericBucketRequest
      * When using this operation using an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about access point
      * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
-     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Using access points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * @param bucketName
      *            The name of the bucket, or access point ARN, whose lifecycle configuration is being

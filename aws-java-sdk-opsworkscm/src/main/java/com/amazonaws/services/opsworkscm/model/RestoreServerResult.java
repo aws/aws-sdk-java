@@ -23,6 +23,34 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RestoreServerResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    private Server server;
+
+    /**
+     * @param server
+     */
+
+    public void setServer(Server server) {
+        this.server = server;
+    }
+
+    /**
+     * @return
+     */
+
+    public Server getServer() {
+        return this.server;
+    }
+
+    /**
+     * @param server
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreServerResult withServer(Server server) {
+        setServer(server);
+        return this;
+    }
+
     /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
@@ -35,6 +63,8 @@ public class RestoreServerResult extends com.amazonaws.AmazonWebServiceResult<co
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getServer() != null)
+            sb.append("Server: ").append(getServer());
         sb.append("}");
         return sb.toString();
     }
@@ -49,6 +79,10 @@ public class RestoreServerResult extends com.amazonaws.AmazonWebServiceResult<co
         if (obj instanceof RestoreServerResult == false)
             return false;
         RestoreServerResult other = (RestoreServerResult) obj;
+        if (other.getServer() == null ^ this.getServer() == null)
+            return false;
+        if (other.getServer() != null && other.getServer().equals(this.getServer()) == false)
+            return false;
         return true;
     }
 
@@ -57,6 +91,7 @@ public class RestoreServerResult extends com.amazonaws.AmazonWebServiceResult<co
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getServer() == null) ? 0 : getServer().hashCode());
         return hashCode;
     }
 

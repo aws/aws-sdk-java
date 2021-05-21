@@ -1,3 +1,20 @@
+# __1.11.1024__ __2021-05-21__
+## __AWS OpsWorks CM__
+  - ### Features
+    - New PUPPET_API_CRL attribute returned by DescribeServers API; new EngineVersion of 2019 available for Puppet Enterprise servers.
+
+## __Amazon Elastic File System__
+  - ### Features
+    - EFS now supports account preferences. Utilizing the new capability, users can customize some aspects of their experience using EFS APIs and the EFS Console. The first preference clients are able to set is whether to start using longer File System and Mount Target IDs before EFS migrates to such IDs.
+
+## __Amazon Forecast Service__
+  - ### Features
+    - Updated attribute statistics in DescribeDatasetImportJob response to support Long values
+
+## __Amazon Simple Storage Service__
+  - ### Features
+    - Documentation updates for Amazon S3
+
 # __1.11.1023__ __2021-05-20__
 ## __AWS Identity and Access Management__
   - ### Features

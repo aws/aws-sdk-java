@@ -76,26 +76,58 @@ public class Encryption implements Serializable, Cloneable {
     }
 
     /**
-     * @return The AWS KMS key ID to use for object encryption. All GET and PUT requests for an object protected by AWS KMS will fail if not made via SSL or using SigV4.
-     * @see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">AWS Documentation</a>
+     * <p>
+     * If the encryption type is <code>aws:kms</code>, this optional value specifies the ID of the symmetric customer
+     * managed AWS KMS CMK to use for encryption of job results. Amazon S3 only supports symmetric CMKs. For more
+     * information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+     * symmetric and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * </p>
+     *
+     * @return If the encryption type is <code>aws:kms</code>, this optional value specifies the ID of the symmetric
+     *         customer managed AWS KMS CMK to use for encryption of job results. Amazon S3 only supports symmetric
+     *         CMKs. For more information, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric
+     *         and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
      */
     public String getKmsKeyId() {
         return kmsKeyId;
     }
 
     /**
-     * Sets the AWS KMS key ID used for object encryption.
+     * <p>
+     * If the encryption type is <code>aws:kms</code>, this optional value specifies the ID of the symmetric
+     * customer managed AWS KMS CMK to use for encryption of job results. Amazon S3 only supports symmetric CMKs.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
+     * asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * </p>
      *
-     * @param kmsKeyId The new kmsKeyId value.
+     * @param kmsKeyId
+     *        If the encryption type is <code>aws:kms</code>, this optional value specifies the ID of the symmetric
+     *        customer managed AWS KMS CMK to use for encryption of job results. Amazon S3 only supports symmetric
+     *        CMKs. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric
+     *        and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
      */
     public void setKmsKeyId(String kmsKeyId) {
         this.kmsKeyId = kmsKeyId;
     }
 
     /**
-     * Sets the AWS KMS key ID used for object encryption.
+     * <p>
+     * If the encryption type is <code>aws:kms</code>, this optional value specifies the ID of the symmetric
+     * customer managed AWS KMS CMK to use for encryption of job results. Amazon S3 only supports symmetric CMKs.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
+     * asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * </p>
      *
-     * @param kmsKeyId The new kmsKeyId value.
+     * @param kmsKeyId
+     *        If the encryption type is <code>aws:kms</code>, this optional value specifies the ID of the symmetric
+     *        customer managed AWS KMS CMK to use for encryption of job results. Amazon S3 only supports symmetric
+     *        CMKs. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric
+     *        and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @return This object for method chaining.
      */
     public Encryption withKmsKeyId(String kmsKeyId) {

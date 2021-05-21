@@ -44,7 +44,7 @@ public class DeleteObjectsRequest extends AmazonWebServiceRequest implements Ser
      * When using this operation using an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about access point
      * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
-     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Using access points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      */
     private String bucketName;
@@ -106,10 +106,45 @@ public class DeleteObjectsRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
-     * Gets the name of the Amazon S3 bucket containing the object(s) to delete.
+     * <p>
+     * The bucket name containing the objects to delete.
+     * </p>
+     * <p>
+     * When using this action with an access point, you must direct requests to the access point hostname. The access
+     * point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of
+     * the bucket name. For more information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in
+     * the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * <p>
+     * When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The
+     * S3 on Outposts hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this
+     * action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket
+     * name. For more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the
+     * <i>Amazon S3 User Guide</i>.
+     * </p>
      *
-     * @return The name of the Amazon S3 bucket containing the object(s) to
-     *         delete.
+     * @return The bucket name containing the objects to delete. </p>
+     *         <p>
+     *         When using this action with an access point, you must direct requests to the access point hostname. The
+     *         access point hostname takes the form
+     *         <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this
+     *         action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket
+     *         name. For more information about access point ARNs, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access
+     *         points</a> in the <i>Amazon S3 User Guide</i>.
+     *         </p>
+     *         <p>
+     *         When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts
+     *         hostname. The S3 on Outposts hostname takes the form
+     *         <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When
+     *         using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place
+     *         of the bucket name. For more information about S3 on Outposts ARNs, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a>
+     *         in the <i>Amazon S3 User Guide</i>.
      * @see DeleteObjectsRequest#setBucketName(String)
      */
     public String getBucketName() {
@@ -117,11 +152,47 @@ public class DeleteObjectsRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
-     * Sets the name of the Amazon S3 bucket containing the object(s) to delete.
+     * <p>
+     * The bucket name containing the objects to delete.
+     * </p>
+     * <p>
+     * When using this action with an access point, you must direct requests to the access point hostname. The
+     * access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action
+     * with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For
+     * more information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a>
+     * in the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * <p>
+     * When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname.
+     * The S3 on Outposts hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using
+     * this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the
+     * bucket name. For more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in
+     * the <i>Amazon S3 User Guide</i>.
+     * </p>
      *
      * @param bucketName
-     *            The name of the Amazon S3 bucket containing the object(s) to
-     *            delete.
+     *        The bucket name containing the objects to delete. </p>
+     *        <p>
+     *        When using this action with an access point, you must direct requests to the access point hostname.
+     *        The access point hostname takes the form
+     *        <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this
+     *        action with an access point through the AWS SDKs, you provide the access point ARN in place of the
+     *        bucket name. For more information about access point ARNs, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access
+     *        points</a> in the <i>Amazon S3 User Guide</i>.
+     *        </p>
+     *        <p>
+     *        When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts
+     *        hostname. The S3 on Outposts hostname takes the form
+     *        <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When
+     *        using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in
+     *        place of the bucket name. For more information about S3 on Outposts ARNs, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on
+     *        Outposts</a> in the <i>Amazon S3 User Guide</i>.
      * @see DeleteObjectsRequest#getBucketName()
      */
     public void setBucketName(String bucketName) {
@@ -129,13 +200,47 @@ public class DeleteObjectsRequest extends AmazonWebServiceRequest implements Ser
     }
 
     /**
-     * Sets the name of the Amazon S3 bucket containing the object(s) to delete
-     * and returns this object, enabling additional method calls to be chained
-     * together.
+     * <p>
+     * The bucket name containing the objects to delete.
+     * </p>
+     * <p>
+     * When using this action with an access point, you must direct requests to the access point hostname. The
+     * access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action
+     * with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For
+     * more information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a>
+     * in the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * <p>
+     * When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname.
+     * The S3 on Outposts hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using
+     * this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the
+     * bucket name. For more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in
+     * the <i>Amazon S3 User Guide</i>.
+     * </p>
      *
      * @param bucketName
-     *            The name of the Amazon S3 bucket containing the object(s) to
-     *            delete.
+     *        The bucket name containing the objects to delete. </p>
+     *        <p>
+     *        When using this action with an access point, you must direct requests to the access point hostname.
+     *        The access point hostname takes the form
+     *        <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this
+     *        action with an access point through the AWS SDKs, you provide the access point ARN in place of the
+     *        bucket name. For more information about access point ARNs, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access
+     *        points</a> in the <i>Amazon S3 User Guide</i>.
+     *        </p>
+     *        <p>
+     *        When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts
+     *        hostname. The S3 on Outposts hostname takes the form
+     *        <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When
+     *        using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in
+     *        place of the bucket name. For more information about S3 on Outposts ARNs, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on
+     *        Outposts</a> in the <i>Amazon S3 User Guide</i>.
      * @return The updated {@link DeleteObjectsRequest} object, enabling
      *         additional method calls to be chained together.
      */

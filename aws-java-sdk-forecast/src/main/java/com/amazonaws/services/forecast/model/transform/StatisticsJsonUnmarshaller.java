@@ -80,6 +80,22 @@ public class StatisticsJsonUnmarshaller implements Unmarshaller<Statistics, Json
                     context.nextToken();
                     statistics.setStddev(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
+                if (context.testExpression("CountLong", targetDepth)) {
+                    context.nextToken();
+                    statistics.setCountLong(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("CountDistinctLong", targetDepth)) {
+                    context.nextToken();
+                    statistics.setCountDistinctLong(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("CountNullLong", targetDepth)) {
+                    context.nextToken();
+                    statistics.setCountNullLong(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("CountNanLong", targetDepth)) {
+                    context.nextToken();
+                    statistics.setCountNanLong(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

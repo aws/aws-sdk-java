@@ -40,8 +40,8 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     private Integer maxResults;
     /**
      * <p>
-     * You can use <code>NextToken</code> in a subsequent request to fetch the next page of access point descriptions if
-     * the response payload was paginated.
+     * (Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of access point
+     * descriptions if the response payload was paginated.
      * </p>
      */
     private String nextToken;
@@ -137,13 +137,13 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * You can use <code>NextToken</code> in a subsequent request to fetch the next page of access point descriptions if
-     * the response payload was paginated.
+     * (Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of access point
+     * descriptions if the response payload was paginated.
      * </p>
      * 
      * @param nextToken
-     *        You can use <code>NextToken</code> in a subsequent request to fetch the next page of access point
-     *        descriptions if the response payload was paginated.
+     *        (Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of access
+     *        point descriptions if the response payload was paginated.
      */
 
     public void setNextToken(String nextToken) {
@@ -152,12 +152,12 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * You can use <code>NextToken</code> in a subsequent request to fetch the next page of access point descriptions if
-     * the response payload was paginated.
+     * (Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of access point
+     * descriptions if the response payload was paginated.
      * </p>
      * 
-     * @return You can use <code>NextToken</code> in a subsequent request to fetch the next page of access point
-     *         descriptions if the response payload was paginated.
+     * @return (Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of access
+     *         point descriptions if the response payload was paginated.
      */
 
     public String getNextToken() {
@@ -166,13 +166,13 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * You can use <code>NextToken</code> in a subsequent request to fetch the next page of access point descriptions if
-     * the response payload was paginated.
+     * (Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of access point
+     * descriptions if the response payload was paginated.
      * </p>
      * 
      * @param nextToken
-     *        You can use <code>NextToken</code> in a subsequent request to fetch the next page of access point
-     *        descriptions if the response payload was paginated.
+     *        (Optional) You can use <code>NextToken</code> in a subsequent request to fetch the next page of access
+     *        point descriptions if the response payload was paginated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
