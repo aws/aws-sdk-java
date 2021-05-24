@@ -20,10 +20,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Describes a filter that returns a more specific list of Amazon Elastic Block Store (Amazon EBS) volume
- * recommendations.
+ * recommendations. Use this filter with the <code>GetEBSVolumeRecommendations</code> action.
  * </p>
  * <p>
- * This filter is used with the <code>GetEBSVolumeRecommendations</code> action.
+ * You can use <code>LambdaFunctionRecommendationFilter</code> with the <code>GetLambdaFunctionRecommendations</code>
+ * action, <code>JobFilter</code> with the <code>DescribeRecommendationExportJobs</code> action, and <code>Filter</code>
+ * with the <code>GetAutoScalingGroupRecommendations</code> and <code>GetEC2InstanceRecommendations</code> actions.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/EBSFilter" target="_top">AWS API
@@ -38,7 +40,7 @@ public class EBSFilter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Specify <code>Finding</code> to return recommendations with a specific finding classification (e.g.,
-     * <code>Optimized</code>).
+     * <code>NotOptimized</code>).
      * </p>
      */
     private String name;
@@ -58,14 +60,14 @@ public class EBSFilter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Specify <code>Finding</code> to return recommendations with a specific finding classification (e.g.,
-     * <code>Optimized</code>).
+     * <code>NotOptimized</code>).
      * </p>
      * 
      * @param name
      *        The name of the filter.</p>
      *        <p>
      *        Specify <code>Finding</code> to return recommendations with a specific finding classification (e.g.,
-     *        <code>Optimized</code>).
+     *        <code>NotOptimized</code>).
      * @see EBSFilterName
      */
 
@@ -79,13 +81,13 @@ public class EBSFilter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Specify <code>Finding</code> to return recommendations with a specific finding classification (e.g.,
-     * <code>Optimized</code>).
+     * <code>NotOptimized</code>).
      * </p>
      * 
      * @return The name of the filter.</p>
      *         <p>
      *         Specify <code>Finding</code> to return recommendations with a specific finding classification (e.g.,
-     *         <code>Optimized</code>).
+     *         <code>NotOptimized</code>).
      * @see EBSFilterName
      */
 
@@ -99,14 +101,14 @@ public class EBSFilter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Specify <code>Finding</code> to return recommendations with a specific finding classification (e.g.,
-     * <code>Optimized</code>).
+     * <code>NotOptimized</code>).
      * </p>
      * 
      * @param name
      *        The name of the filter.</p>
      *        <p>
      *        Specify <code>Finding</code> to return recommendations with a specific finding classification (e.g.,
-     *        <code>Optimized</code>).
+     *        <code>NotOptimized</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EBSFilterName
      */
@@ -122,14 +124,14 @@ public class EBSFilter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Specify <code>Finding</code> to return recommendations with a specific finding classification (e.g.,
-     * <code>Optimized</code>).
+     * <code>NotOptimized</code>).
      * </p>
      * 
      * @param name
      *        The name of the filter.</p>
      *        <p>
      *        Specify <code>Finding</code> to return recommendations with a specific finding classification (e.g.,
-     *        <code>Optimized</code>).
+     *        <code>NotOptimized</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EBSFilterName
      */

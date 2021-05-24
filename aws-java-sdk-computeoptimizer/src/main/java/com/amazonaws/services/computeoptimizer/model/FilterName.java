@@ -21,6 +21,7 @@ import javax.annotation.Generated;
 public enum FilterName {
 
     Finding("Finding"),
+    FindingReasonCodes("FindingReasonCodes"),
     RecommendationSourceType("RecommendationSourceType");
 
     private String value;

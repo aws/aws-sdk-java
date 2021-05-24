@@ -19,11 +19,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes a filter that returns a more specific list of recommendations.
+ * Describes a filter that returns a more specific list of recommendations. Use this filter with the
+ * <code>GetAutoScalingGroupRecommendations</code> and <code>GetEC2InstanceRecommendations</code> actions.
  * </p>
  * <p>
- * This filter is used with the <code>GetAutoScalingGroupRecommendations</code> and
- * <code>GetEC2InstanceRecommendations</code> actions.
+ * You can use <code>EBSFilter</code> with the <code>GetEBSVolumeRecommendations</code> action,
+ * <code>LambdaFunctionRecommendationFilter</code> with the <code>GetLambdaFunctionRecommendations</code> action, and
+ * <code>JobFilter</code> with the <code>DescribeRecommendationExportJobs</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/Filter" target="_top">AWS API
@@ -38,11 +40,15 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Specify <code>Finding</code> to return recommendations with a specific finding classification (e.g.,
-     * <code>Overprovisioned</code>).
+     * <code>Underprovisioned</code>).
      * </p>
      * <p>
      * Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type (e.g.,
-     * <code>AutoScalingGroup</code>).
+     * <code>Ec2Instance</code>).
+     * </p>
+     * <p>
+     * Specify <code>FindingReasonCodes</code> to return recommendations with a specific finding reason code (e.g.,
+     * <code>CPUUnderprovisioned</code>).
      * </p>
      */
     private String name;
@@ -57,21 +63,132 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * Specify <code>Optimized</code> or <code>NotOptimized</code> if you specified the <code>name</code> parameter as
+     * Specify <code>Optimized</code> or <code>NotOptimized</code> if you specify the <code>name</code> parameter as
      * <code>Finding</code> and you want to filter results for Auto Scaling groups.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Specify <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code> if you specified
-     * the <code>name</code> parameter as <code>Finding</code> and you want to filter results for EC2 instances.
+     * Specify <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code> if you specify the
+     * <code>name</code> parameter as <code>Finding</code> and you want to filter results for EC2 instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
-     * parameter as <code>RecommendationSourceType</code>.
+     * Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specify the <code>name</code> parameter
+     * as <code>RecommendationSourceType</code>.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify one of the following options if you specify the <code>name</code> parameter as
+     * <code>FindingReasonCodes</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>CPUOverprovisioned</code> </b> — The instance’s CPU configuration can be sized down while still meeting
+     * the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>CPUUnderprovisioned</code> </b> — The instance’s CPU configuration doesn't meet the performance
+     * requirements of your workload and there is an alternative instance type that provides better CPU performance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>MemoryOverprovisioned</code> </b> — The instance’s memory configuration can be sized down while still
+     * meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>MemoryUnderprovisioned</code> </b> — The instance’s memory configuration doesn't meet the performance
+     * requirements of your workload and there is an alternative instance type that provides better memory performance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>EBSThroughputOverprovisioned</code> </b> — The instance’s EBS throughput configuration can be sized
+     * down while still meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput configuration doesn't meet
+     * the performance requirements of your workload and there is an alternative instance type that provides better EBS
+     * throughput performance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS configuration can be sized down while
+     * still meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS configuration doesn't meet the
+     * performance requirements of your workload and there is an alternative instance type that provides better EBS IOPS
+     * performance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>NetworkBandwidthOverprovisioned</code> </b> — The instance’s network bandwidth configuration can be
+     * sized down while still meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>NetworkBandwidthUnderprovisioned</code> </b> — The instance’s network bandwidth configuration doesn't
+     * meet the performance requirements of your workload and there is an alternative instance type that provides better
+     * network bandwidth performance. This finding reason happens when the <code>NetworkIn</code> or
+     * <code>NetworkOut</code> performance of an instance is impacted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>NetworkPPSOverprovisioned</code> </b> — The instance’s network PPS (packets per second) configuration
+     * can be sized down while still meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>NetworkPPSUnderprovisioned</code> </b> — The instance’s network PPS (packets per second) configuration
+     * doesn't meet the performance requirements of your workload and there is an alternative instance type that
+     * provides better network PPS performance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>DiskIOPSOverprovisioned</code> </b> — The instance’s disk IOPS configuration can be sized down while
+     * still meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>DiskIOPSUnderprovisioned</code> </b> — The instance’s disk IOPS configuration doesn't meet the
+     * performance requirements of your workload and there is an alternative instance type that provides better disk
+     * IOPS performance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>DiskThroughputOverprovisioned</code> </b> — The instance’s disk throughput configuration can be sized
+     * down while still meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>DiskThroughputUnderprovisioned</code> </b> — The instance’s disk throughput configuration doesn't meet
+     * the performance requirements of your workload and there is an alternative instance type that provides better disk
+     * throughput performance.
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * </ul>
      */
@@ -83,22 +200,30 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Specify <code>Finding</code> to return recommendations with a specific finding classification (e.g.,
-     * <code>Overprovisioned</code>).
+     * <code>Underprovisioned</code>).
      * </p>
      * <p>
      * Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type (e.g.,
-     * <code>AutoScalingGroup</code>).
+     * <code>Ec2Instance</code>).
+     * </p>
+     * <p>
+     * Specify <code>FindingReasonCodes</code> to return recommendations with a specific finding reason code (e.g.,
+     * <code>CPUUnderprovisioned</code>).
      * </p>
      * 
      * @param name
      *        The name of the filter.</p>
      *        <p>
      *        Specify <code>Finding</code> to return recommendations with a specific finding classification (e.g.,
-     *        <code>Overprovisioned</code>).
+     *        <code>Underprovisioned</code>).
      *        </p>
      *        <p>
      *        Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type (e.g.,
-     *        <code>AutoScalingGroup</code>).
+     *        <code>Ec2Instance</code>).
+     *        </p>
+     *        <p>
+     *        Specify <code>FindingReasonCodes</code> to return recommendations with a specific finding reason code
+     *        (e.g., <code>CPUUnderprovisioned</code>).
      * @see FilterName
      */
 
@@ -112,21 +237,29 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Specify <code>Finding</code> to return recommendations with a specific finding classification (e.g.,
-     * <code>Overprovisioned</code>).
+     * <code>Underprovisioned</code>).
      * </p>
      * <p>
      * Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type (e.g.,
-     * <code>AutoScalingGroup</code>).
+     * <code>Ec2Instance</code>).
+     * </p>
+     * <p>
+     * Specify <code>FindingReasonCodes</code> to return recommendations with a specific finding reason code (e.g.,
+     * <code>CPUUnderprovisioned</code>).
      * </p>
      * 
      * @return The name of the filter.</p>
      *         <p>
      *         Specify <code>Finding</code> to return recommendations with a specific finding classification (e.g.,
-     *         <code>Overprovisioned</code>).
+     *         <code>Underprovisioned</code>).
      *         </p>
      *         <p>
      *         Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type
-     *         (e.g., <code>AutoScalingGroup</code>).
+     *         (e.g., <code>Ec2Instance</code>).
+     *         </p>
+     *         <p>
+     *         Specify <code>FindingReasonCodes</code> to return recommendations with a specific finding reason code
+     *         (e.g., <code>CPUUnderprovisioned</code>).
      * @see FilterName
      */
 
@@ -140,22 +273,30 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Specify <code>Finding</code> to return recommendations with a specific finding classification (e.g.,
-     * <code>Overprovisioned</code>).
+     * <code>Underprovisioned</code>).
      * </p>
      * <p>
      * Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type (e.g.,
-     * <code>AutoScalingGroup</code>).
+     * <code>Ec2Instance</code>).
+     * </p>
+     * <p>
+     * Specify <code>FindingReasonCodes</code> to return recommendations with a specific finding reason code (e.g.,
+     * <code>CPUUnderprovisioned</code>).
      * </p>
      * 
      * @param name
      *        The name of the filter.</p>
      *        <p>
      *        Specify <code>Finding</code> to return recommendations with a specific finding classification (e.g.,
-     *        <code>Overprovisioned</code>).
+     *        <code>Underprovisioned</code>).
      *        </p>
      *        <p>
      *        Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type (e.g.,
-     *        <code>AutoScalingGroup</code>).
+     *        <code>Ec2Instance</code>).
+     *        </p>
+     *        <p>
+     *        Specify <code>FindingReasonCodes</code> to return recommendations with a specific finding reason code
+     *        (e.g., <code>CPUUnderprovisioned</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FilterName
      */
@@ -171,22 +312,30 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Specify <code>Finding</code> to return recommendations with a specific finding classification (e.g.,
-     * <code>Overprovisioned</code>).
+     * <code>Underprovisioned</code>).
      * </p>
      * <p>
      * Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type (e.g.,
-     * <code>AutoScalingGroup</code>).
+     * <code>Ec2Instance</code>).
+     * </p>
+     * <p>
+     * Specify <code>FindingReasonCodes</code> to return recommendations with a specific finding reason code (e.g.,
+     * <code>CPUUnderprovisioned</code>).
      * </p>
      * 
      * @param name
      *        The name of the filter.</p>
      *        <p>
      *        Specify <code>Finding</code> to return recommendations with a specific finding classification (e.g.,
-     *        <code>Overprovisioned</code>).
+     *        <code>Underprovisioned</code>).
      *        </p>
      *        <p>
      *        Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type (e.g.,
-     *        <code>AutoScalingGroup</code>).
+     *        <code>Ec2Instance</code>).
+     *        </p>
+     *        <p>
+     *        Specify <code>FindingReasonCodes</code> to return recommendations with a specific finding reason code
+     *        (e.g., <code>CPUUnderprovisioned</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FilterName
      */
@@ -207,21 +356,132 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * Specify <code>Optimized</code> or <code>NotOptimized</code> if you specified the <code>name</code> parameter as
+     * Specify <code>Optimized</code> or <code>NotOptimized</code> if you specify the <code>name</code> parameter as
      * <code>Finding</code> and you want to filter results for Auto Scaling groups.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Specify <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code> if you specified
-     * the <code>name</code> parameter as <code>Finding</code> and you want to filter results for EC2 instances.
+     * Specify <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code> if you specify the
+     * <code>name</code> parameter as <code>Finding</code> and you want to filter results for EC2 instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
-     * parameter as <code>RecommendationSourceType</code>.
+     * Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specify the <code>name</code> parameter
+     * as <code>RecommendationSourceType</code>.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify one of the following options if you specify the <code>name</code> parameter as
+     * <code>FindingReasonCodes</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>CPUOverprovisioned</code> </b> — The instance’s CPU configuration can be sized down while still meeting
+     * the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>CPUUnderprovisioned</code> </b> — The instance’s CPU configuration doesn't meet the performance
+     * requirements of your workload and there is an alternative instance type that provides better CPU performance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>MemoryOverprovisioned</code> </b> — The instance’s memory configuration can be sized down while still
+     * meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>MemoryUnderprovisioned</code> </b> — The instance’s memory configuration doesn't meet the performance
+     * requirements of your workload and there is an alternative instance type that provides better memory performance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>EBSThroughputOverprovisioned</code> </b> — The instance’s EBS throughput configuration can be sized
+     * down while still meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput configuration doesn't meet
+     * the performance requirements of your workload and there is an alternative instance type that provides better EBS
+     * throughput performance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS configuration can be sized down while
+     * still meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS configuration doesn't meet the
+     * performance requirements of your workload and there is an alternative instance type that provides better EBS IOPS
+     * performance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>NetworkBandwidthOverprovisioned</code> </b> — The instance’s network bandwidth configuration can be
+     * sized down while still meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>NetworkBandwidthUnderprovisioned</code> </b> — The instance’s network bandwidth configuration doesn't
+     * meet the performance requirements of your workload and there is an alternative instance type that provides better
+     * network bandwidth performance. This finding reason happens when the <code>NetworkIn</code> or
+     * <code>NetworkOut</code> performance of an instance is impacted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>NetworkPPSOverprovisioned</code> </b> — The instance’s network PPS (packets per second) configuration
+     * can be sized down while still meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>NetworkPPSUnderprovisioned</code> </b> — The instance’s network PPS (packets per second) configuration
+     * doesn't meet the performance requirements of your workload and there is an alternative instance type that
+     * provides better network PPS performance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>DiskIOPSOverprovisioned</code> </b> — The instance’s disk IOPS configuration can be sized down while
+     * still meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>DiskIOPSUnderprovisioned</code> </b> — The instance’s disk IOPS configuration doesn't meet the
+     * performance requirements of your workload and there is an alternative instance type that provides better disk
+     * IOPS performance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>DiskThroughputOverprovisioned</code> </b> — The instance’s disk throughput configuration can be sized
+     * down while still meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>DiskThroughputUnderprovisioned</code> </b> — The instance’s disk throughput configuration doesn't meet
+     * the performance requirements of your workload and there is an alternative instance type that provides better disk
+     * throughput performance.
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * </ul>
      * 
@@ -233,22 +493,135 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         Specify <code>Optimized</code> or <code>NotOptimized</code> if you specified the <code>name</code>
+     *         Specify <code>Optimized</code> or <code>NotOptimized</code> if you specify the <code>name</code>
      *         parameter as <code>Finding</code> and you want to filter results for Auto Scaling groups.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         Specify <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code> if you
-     *         specified the <code>name</code> parameter as <code>Finding</code> and you want to filter results for EC2
+     *         specify the <code>name</code> parameter as <code>Finding</code> and you want to filter results for EC2
      *         instances.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
+     *         Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specify the <code>name</code>
      *         parameter as <code>RecommendationSourceType</code>.
      *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Specify one of the following options if you specify the <code>name</code> parameter as
+     *         <code>FindingReasonCodes</code>:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b> <code>CPUOverprovisioned</code> </b> — The instance’s CPU configuration can be sized down while still
+     *         meeting the performance requirements of your workload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>CPUUnderprovisioned</code> </b> — The instance’s CPU configuration doesn't meet the performance
+     *         requirements of your workload and there is an alternative instance type that provides better CPU
+     *         performance.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>MemoryOverprovisioned</code> </b> — The instance’s memory configuration can be sized down while
+     *         still meeting the performance requirements of your workload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>MemoryUnderprovisioned</code> </b> — The instance’s memory configuration doesn't meet the
+     *         performance requirements of your workload and there is an alternative instance type that provides better
+     *         memory performance.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>EBSThroughputOverprovisioned</code> </b> — The instance’s EBS throughput configuration can be
+     *         sized down while still meeting the performance requirements of your workload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput configuration doesn't
+     *         meet the performance requirements of your workload and there is an alternative instance type that
+     *         provides better EBS throughput performance.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS configuration can be sized down
+     *         while still meeting the performance requirements of your workload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS configuration doesn't meet the
+     *         performance requirements of your workload and there is an alternative instance type that provides better
+     *         EBS IOPS performance.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>NetworkBandwidthOverprovisioned</code> </b> — The instance’s network bandwidth configuration
+     *         can be sized down while still meeting the performance requirements of your workload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>NetworkBandwidthUnderprovisioned</code> </b> — The instance’s network bandwidth configuration
+     *         doesn't meet the performance requirements of your workload and there is an alternative instance type that
+     *         provides better network bandwidth performance. This finding reason happens when the
+     *         <code>NetworkIn</code> or <code>NetworkOut</code> performance of an instance is impacted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>NetworkPPSOverprovisioned</code> </b> — The instance’s network PPS (packets per second)
+     *         configuration can be sized down while still meeting the performance requirements of your workload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>NetworkPPSUnderprovisioned</code> </b> — The instance’s network PPS (packets per second)
+     *         configuration doesn't meet the performance requirements of your workload and there is an alternative
+     *         instance type that provides better network PPS performance.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>DiskIOPSOverprovisioned</code> </b> — The instance’s disk IOPS configuration can be sized down
+     *         while still meeting the performance requirements of your workload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>DiskIOPSUnderprovisioned</code> </b> — The instance’s disk IOPS configuration doesn't meet the
+     *         performance requirements of your workload and there is an alternative instance type that provides better
+     *         disk IOPS performance.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>DiskThroughputOverprovisioned</code> </b> — The instance’s disk throughput configuration can be
+     *         sized down while still meeting the performance requirements of your workload.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>DiskThroughputUnderprovisioned</code> </b> — The instance’s disk throughput configuration
+     *         doesn't meet the performance requirements of your workload and there is an alternative instance type that
+     *         provides better disk throughput performance.
+     *         </p>
+     *         </li>
+     *         </ul>
      *         </li>
      */
 
@@ -267,21 +640,132 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * Specify <code>Optimized</code> or <code>NotOptimized</code> if you specified the <code>name</code> parameter as
+     * Specify <code>Optimized</code> or <code>NotOptimized</code> if you specify the <code>name</code> parameter as
      * <code>Finding</code> and you want to filter results for Auto Scaling groups.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Specify <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code> if you specified
-     * the <code>name</code> parameter as <code>Finding</code> and you want to filter results for EC2 instances.
+     * Specify <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code> if you specify the
+     * <code>name</code> parameter as <code>Finding</code> and you want to filter results for EC2 instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
-     * parameter as <code>RecommendationSourceType</code>.
+     * Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specify the <code>name</code> parameter
+     * as <code>RecommendationSourceType</code>.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify one of the following options if you specify the <code>name</code> parameter as
+     * <code>FindingReasonCodes</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>CPUOverprovisioned</code> </b> — The instance’s CPU configuration can be sized down while still meeting
+     * the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>CPUUnderprovisioned</code> </b> — The instance’s CPU configuration doesn't meet the performance
+     * requirements of your workload and there is an alternative instance type that provides better CPU performance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>MemoryOverprovisioned</code> </b> — The instance’s memory configuration can be sized down while still
+     * meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>MemoryUnderprovisioned</code> </b> — The instance’s memory configuration doesn't meet the performance
+     * requirements of your workload and there is an alternative instance type that provides better memory performance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>EBSThroughputOverprovisioned</code> </b> — The instance’s EBS throughput configuration can be sized
+     * down while still meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput configuration doesn't meet
+     * the performance requirements of your workload and there is an alternative instance type that provides better EBS
+     * throughput performance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS configuration can be sized down while
+     * still meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS configuration doesn't meet the
+     * performance requirements of your workload and there is an alternative instance type that provides better EBS IOPS
+     * performance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>NetworkBandwidthOverprovisioned</code> </b> — The instance’s network bandwidth configuration can be
+     * sized down while still meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>NetworkBandwidthUnderprovisioned</code> </b> — The instance’s network bandwidth configuration doesn't
+     * meet the performance requirements of your workload and there is an alternative instance type that provides better
+     * network bandwidth performance. This finding reason happens when the <code>NetworkIn</code> or
+     * <code>NetworkOut</code> performance of an instance is impacted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>NetworkPPSOverprovisioned</code> </b> — The instance’s network PPS (packets per second) configuration
+     * can be sized down while still meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>NetworkPPSUnderprovisioned</code> </b> — The instance’s network PPS (packets per second) configuration
+     * doesn't meet the performance requirements of your workload and there is an alternative instance type that
+     * provides better network PPS performance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>DiskIOPSOverprovisioned</code> </b> — The instance’s disk IOPS configuration can be sized down while
+     * still meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>DiskIOPSUnderprovisioned</code> </b> — The instance’s disk IOPS configuration doesn't meet the
+     * performance requirements of your workload and there is an alternative instance type that provides better disk
+     * IOPS performance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>DiskThroughputOverprovisioned</code> </b> — The instance’s disk throughput configuration can be sized
+     * down while still meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>DiskThroughputUnderprovisioned</code> </b> — The instance’s disk throughput configuration doesn't meet
+     * the performance requirements of your workload and there is an alternative instance type that provides better disk
+     * throughput performance.
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * </ul>
      * 
@@ -294,22 +778,135 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        Specify <code>Optimized</code> or <code>NotOptimized</code> if you specified the <code>name</code>
-     *        parameter as <code>Finding</code> and you want to filter results for Auto Scaling groups.
+     *        Specify <code>Optimized</code> or <code>NotOptimized</code> if you specify the <code>name</code> parameter
+     *        as <code>Finding</code> and you want to filter results for Auto Scaling groups.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        Specify <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code> if you
-     *        specified the <code>name</code> parameter as <code>Finding</code> and you want to filter results for EC2
+     *        specify the <code>name</code> parameter as <code>Finding</code> and you want to filter results for EC2
      *        instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
+     *        Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specify the <code>name</code>
      *        parameter as <code>RecommendationSourceType</code>.
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify one of the following options if you specify the <code>name</code> parameter as
+     *        <code>FindingReasonCodes</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b> <code>CPUOverprovisioned</code> </b> — The instance’s CPU configuration can be sized down while still
+     *        meeting the performance requirements of your workload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>CPUUnderprovisioned</code> </b> — The instance’s CPU configuration doesn't meet the performance
+     *        requirements of your workload and there is an alternative instance type that provides better CPU
+     *        performance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>MemoryOverprovisioned</code> </b> — The instance’s memory configuration can be sized down while
+     *        still meeting the performance requirements of your workload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>MemoryUnderprovisioned</code> </b> — The instance’s memory configuration doesn't meet the
+     *        performance requirements of your workload and there is an alternative instance type that provides better
+     *        memory performance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>EBSThroughputOverprovisioned</code> </b> — The instance’s EBS throughput configuration can be
+     *        sized down while still meeting the performance requirements of your workload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput configuration doesn't
+     *        meet the performance requirements of your workload and there is an alternative instance type that provides
+     *        better EBS throughput performance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS configuration can be sized down
+     *        while still meeting the performance requirements of your workload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS configuration doesn't meet the
+     *        performance requirements of your workload and there is an alternative instance type that provides better
+     *        EBS IOPS performance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>NetworkBandwidthOverprovisioned</code> </b> — The instance’s network bandwidth configuration can
+     *        be sized down while still meeting the performance requirements of your workload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>NetworkBandwidthUnderprovisioned</code> </b> — The instance’s network bandwidth configuration
+     *        doesn't meet the performance requirements of your workload and there is an alternative instance type that
+     *        provides better network bandwidth performance. This finding reason happens when the <code>NetworkIn</code>
+     *        or <code>NetworkOut</code> performance of an instance is impacted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>NetworkPPSOverprovisioned</code> </b> — The instance’s network PPS (packets per second)
+     *        configuration can be sized down while still meeting the performance requirements of your workload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>NetworkPPSUnderprovisioned</code> </b> — The instance’s network PPS (packets per second)
+     *        configuration doesn't meet the performance requirements of your workload and there is an alternative
+     *        instance type that provides better network PPS performance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>DiskIOPSOverprovisioned</code> </b> — The instance’s disk IOPS configuration can be sized down
+     *        while still meeting the performance requirements of your workload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>DiskIOPSUnderprovisioned</code> </b> — The instance’s disk IOPS configuration doesn't meet the
+     *        performance requirements of your workload and there is an alternative instance type that provides better
+     *        disk IOPS performance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>DiskThroughputOverprovisioned</code> </b> — The instance’s disk throughput configuration can be
+     *        sized down while still meeting the performance requirements of your workload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>DiskThroughputUnderprovisioned</code> </b> — The instance’s disk throughput configuration
+     *        doesn't meet the performance requirements of your workload and there is an alternative instance type that
+     *        provides better disk throughput performance.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      */
 
@@ -333,21 +930,132 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * Specify <code>Optimized</code> or <code>NotOptimized</code> if you specified the <code>name</code> parameter as
+     * Specify <code>Optimized</code> or <code>NotOptimized</code> if you specify the <code>name</code> parameter as
      * <code>Finding</code> and you want to filter results for Auto Scaling groups.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Specify <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code> if you specified
-     * the <code>name</code> parameter as <code>Finding</code> and you want to filter results for EC2 instances.
+     * Specify <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code> if you specify the
+     * <code>name</code> parameter as <code>Finding</code> and you want to filter results for EC2 instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
-     * parameter as <code>RecommendationSourceType</code>.
+     * Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specify the <code>name</code> parameter
+     * as <code>RecommendationSourceType</code>.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify one of the following options if you specify the <code>name</code> parameter as
+     * <code>FindingReasonCodes</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>CPUOverprovisioned</code> </b> — The instance’s CPU configuration can be sized down while still meeting
+     * the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>CPUUnderprovisioned</code> </b> — The instance’s CPU configuration doesn't meet the performance
+     * requirements of your workload and there is an alternative instance type that provides better CPU performance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>MemoryOverprovisioned</code> </b> — The instance’s memory configuration can be sized down while still
+     * meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>MemoryUnderprovisioned</code> </b> — The instance’s memory configuration doesn't meet the performance
+     * requirements of your workload and there is an alternative instance type that provides better memory performance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>EBSThroughputOverprovisioned</code> </b> — The instance’s EBS throughput configuration can be sized
+     * down while still meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput configuration doesn't meet
+     * the performance requirements of your workload and there is an alternative instance type that provides better EBS
+     * throughput performance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS configuration can be sized down while
+     * still meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS configuration doesn't meet the
+     * performance requirements of your workload and there is an alternative instance type that provides better EBS IOPS
+     * performance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>NetworkBandwidthOverprovisioned</code> </b> — The instance’s network bandwidth configuration can be
+     * sized down while still meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>NetworkBandwidthUnderprovisioned</code> </b> — The instance’s network bandwidth configuration doesn't
+     * meet the performance requirements of your workload and there is an alternative instance type that provides better
+     * network bandwidth performance. This finding reason happens when the <code>NetworkIn</code> or
+     * <code>NetworkOut</code> performance of an instance is impacted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>NetworkPPSOverprovisioned</code> </b> — The instance’s network PPS (packets per second) configuration
+     * can be sized down while still meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>NetworkPPSUnderprovisioned</code> </b> — The instance’s network PPS (packets per second) configuration
+     * doesn't meet the performance requirements of your workload and there is an alternative instance type that
+     * provides better network PPS performance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>DiskIOPSOverprovisioned</code> </b> — The instance’s disk IOPS configuration can be sized down while
+     * still meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>DiskIOPSUnderprovisioned</code> </b> — The instance’s disk IOPS configuration doesn't meet the
+     * performance requirements of your workload and there is an alternative instance type that provides better disk
+     * IOPS performance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>DiskThroughputOverprovisioned</code> </b> — The instance’s disk throughput configuration can be sized
+     * down while still meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>DiskThroughputUnderprovisioned</code> </b> — The instance’s disk throughput configuration doesn't meet
+     * the performance requirements of your workload and there is an alternative instance type that provides better disk
+     * throughput performance.
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * </ul>
      * <p>
@@ -365,22 +1073,135 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        Specify <code>Optimized</code> or <code>NotOptimized</code> if you specified the <code>name</code>
-     *        parameter as <code>Finding</code> and you want to filter results for Auto Scaling groups.
+     *        Specify <code>Optimized</code> or <code>NotOptimized</code> if you specify the <code>name</code> parameter
+     *        as <code>Finding</code> and you want to filter results for Auto Scaling groups.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        Specify <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code> if you
-     *        specified the <code>name</code> parameter as <code>Finding</code> and you want to filter results for EC2
+     *        specify the <code>name</code> parameter as <code>Finding</code> and you want to filter results for EC2
      *        instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
+     *        Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specify the <code>name</code>
      *        parameter as <code>RecommendationSourceType</code>.
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify one of the following options if you specify the <code>name</code> parameter as
+     *        <code>FindingReasonCodes</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b> <code>CPUOverprovisioned</code> </b> — The instance’s CPU configuration can be sized down while still
+     *        meeting the performance requirements of your workload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>CPUUnderprovisioned</code> </b> — The instance’s CPU configuration doesn't meet the performance
+     *        requirements of your workload and there is an alternative instance type that provides better CPU
+     *        performance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>MemoryOverprovisioned</code> </b> — The instance’s memory configuration can be sized down while
+     *        still meeting the performance requirements of your workload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>MemoryUnderprovisioned</code> </b> — The instance’s memory configuration doesn't meet the
+     *        performance requirements of your workload and there is an alternative instance type that provides better
+     *        memory performance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>EBSThroughputOverprovisioned</code> </b> — The instance’s EBS throughput configuration can be
+     *        sized down while still meeting the performance requirements of your workload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput configuration doesn't
+     *        meet the performance requirements of your workload and there is an alternative instance type that provides
+     *        better EBS throughput performance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS configuration can be sized down
+     *        while still meeting the performance requirements of your workload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS configuration doesn't meet the
+     *        performance requirements of your workload and there is an alternative instance type that provides better
+     *        EBS IOPS performance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>NetworkBandwidthOverprovisioned</code> </b> — The instance’s network bandwidth configuration can
+     *        be sized down while still meeting the performance requirements of your workload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>NetworkBandwidthUnderprovisioned</code> </b> — The instance’s network bandwidth configuration
+     *        doesn't meet the performance requirements of your workload and there is an alternative instance type that
+     *        provides better network bandwidth performance. This finding reason happens when the <code>NetworkIn</code>
+     *        or <code>NetworkOut</code> performance of an instance is impacted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>NetworkPPSOverprovisioned</code> </b> — The instance’s network PPS (packets per second)
+     *        configuration can be sized down while still meeting the performance requirements of your workload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>NetworkPPSUnderprovisioned</code> </b> — The instance’s network PPS (packets per second)
+     *        configuration doesn't meet the performance requirements of your workload and there is an alternative
+     *        instance type that provides better network PPS performance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>DiskIOPSOverprovisioned</code> </b> — The instance’s disk IOPS configuration can be sized down
+     *        while still meeting the performance requirements of your workload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>DiskIOPSUnderprovisioned</code> </b> — The instance’s disk IOPS configuration doesn't meet the
+     *        performance requirements of your workload and there is an alternative instance type that provides better
+     *        disk IOPS performance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>DiskThroughputOverprovisioned</code> </b> — The instance’s disk throughput configuration can be
+     *        sized down while still meeting the performance requirements of your workload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>DiskThroughputUnderprovisioned</code> </b> — The instance’s disk throughput configuration
+     *        doesn't meet the performance requirements of your workload and there is an alternative instance type that
+     *        provides better disk throughput performance.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -406,21 +1227,132 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * Specify <code>Optimized</code> or <code>NotOptimized</code> if you specified the <code>name</code> parameter as
+     * Specify <code>Optimized</code> or <code>NotOptimized</code> if you specify the <code>name</code> parameter as
      * <code>Finding</code> and you want to filter results for Auto Scaling groups.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Specify <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code> if you specified
-     * the <code>name</code> parameter as <code>Finding</code> and you want to filter results for EC2 instances.
+     * Specify <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code> if you specify the
+     * <code>name</code> parameter as <code>Finding</code> and you want to filter results for EC2 instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
-     * parameter as <code>RecommendationSourceType</code>.
+     * Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specify the <code>name</code> parameter
+     * as <code>RecommendationSourceType</code>.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify one of the following options if you specify the <code>name</code> parameter as
+     * <code>FindingReasonCodes</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>CPUOverprovisioned</code> </b> — The instance’s CPU configuration can be sized down while still meeting
+     * the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>CPUUnderprovisioned</code> </b> — The instance’s CPU configuration doesn't meet the performance
+     * requirements of your workload and there is an alternative instance type that provides better CPU performance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>MemoryOverprovisioned</code> </b> — The instance’s memory configuration can be sized down while still
+     * meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>MemoryUnderprovisioned</code> </b> — The instance’s memory configuration doesn't meet the performance
+     * requirements of your workload and there is an alternative instance type that provides better memory performance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>EBSThroughputOverprovisioned</code> </b> — The instance’s EBS throughput configuration can be sized
+     * down while still meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput configuration doesn't meet
+     * the performance requirements of your workload and there is an alternative instance type that provides better EBS
+     * throughput performance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS configuration can be sized down while
+     * still meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS configuration doesn't meet the
+     * performance requirements of your workload and there is an alternative instance type that provides better EBS IOPS
+     * performance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>NetworkBandwidthOverprovisioned</code> </b> — The instance’s network bandwidth configuration can be
+     * sized down while still meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>NetworkBandwidthUnderprovisioned</code> </b> — The instance’s network bandwidth configuration doesn't
+     * meet the performance requirements of your workload and there is an alternative instance type that provides better
+     * network bandwidth performance. This finding reason happens when the <code>NetworkIn</code> or
+     * <code>NetworkOut</code> performance of an instance is impacted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>NetworkPPSOverprovisioned</code> </b> — The instance’s network PPS (packets per second) configuration
+     * can be sized down while still meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>NetworkPPSUnderprovisioned</code> </b> — The instance’s network PPS (packets per second) configuration
+     * doesn't meet the performance requirements of your workload and there is an alternative instance type that
+     * provides better network PPS performance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>DiskIOPSOverprovisioned</code> </b> — The instance’s disk IOPS configuration can be sized down while
+     * still meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>DiskIOPSUnderprovisioned</code> </b> — The instance’s disk IOPS configuration doesn't meet the
+     * performance requirements of your workload and there is an alternative instance type that provides better disk
+     * IOPS performance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>DiskThroughputOverprovisioned</code> </b> — The instance’s disk throughput configuration can be sized
+     * down while still meeting the performance requirements of your workload.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>DiskThroughputUnderprovisioned</code> </b> — The instance’s disk throughput configuration doesn't meet
+     * the performance requirements of your workload and there is an alternative instance type that provides better disk
+     * throughput performance.
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * </ul>
      * 
@@ -433,22 +1365,135 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        Specify <code>Optimized</code> or <code>NotOptimized</code> if you specified the <code>name</code>
-     *        parameter as <code>Finding</code> and you want to filter results for Auto Scaling groups.
+     *        Specify <code>Optimized</code> or <code>NotOptimized</code> if you specify the <code>name</code> parameter
+     *        as <code>Finding</code> and you want to filter results for Auto Scaling groups.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        Specify <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code> if you
-     *        specified the <code>name</code> parameter as <code>Finding</code> and you want to filter results for EC2
+     *        specify the <code>name</code> parameter as <code>Finding</code> and you want to filter results for EC2
      *        instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
+     *        Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specify the <code>name</code>
      *        parameter as <code>RecommendationSourceType</code>.
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify one of the following options if you specify the <code>name</code> parameter as
+     *        <code>FindingReasonCodes</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b> <code>CPUOverprovisioned</code> </b> — The instance’s CPU configuration can be sized down while still
+     *        meeting the performance requirements of your workload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>CPUUnderprovisioned</code> </b> — The instance’s CPU configuration doesn't meet the performance
+     *        requirements of your workload and there is an alternative instance type that provides better CPU
+     *        performance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>MemoryOverprovisioned</code> </b> — The instance’s memory configuration can be sized down while
+     *        still meeting the performance requirements of your workload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>MemoryUnderprovisioned</code> </b> — The instance’s memory configuration doesn't meet the
+     *        performance requirements of your workload and there is an alternative instance type that provides better
+     *        memory performance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>EBSThroughputOverprovisioned</code> </b> — The instance’s EBS throughput configuration can be
+     *        sized down while still meeting the performance requirements of your workload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput configuration doesn't
+     *        meet the performance requirements of your workload and there is an alternative instance type that provides
+     *        better EBS throughput performance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS configuration can be sized down
+     *        while still meeting the performance requirements of your workload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS configuration doesn't meet the
+     *        performance requirements of your workload and there is an alternative instance type that provides better
+     *        EBS IOPS performance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>NetworkBandwidthOverprovisioned</code> </b> — The instance’s network bandwidth configuration can
+     *        be sized down while still meeting the performance requirements of your workload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>NetworkBandwidthUnderprovisioned</code> </b> — The instance’s network bandwidth configuration
+     *        doesn't meet the performance requirements of your workload and there is an alternative instance type that
+     *        provides better network bandwidth performance. This finding reason happens when the <code>NetworkIn</code>
+     *        or <code>NetworkOut</code> performance of an instance is impacted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>NetworkPPSOverprovisioned</code> </b> — The instance’s network PPS (packets per second)
+     *        configuration can be sized down while still meeting the performance requirements of your workload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>NetworkPPSUnderprovisioned</code> </b> — The instance’s network PPS (packets per second)
+     *        configuration doesn't meet the performance requirements of your workload and there is an alternative
+     *        instance type that provides better network PPS performance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>DiskIOPSOverprovisioned</code> </b> — The instance’s disk IOPS configuration can be sized down
+     *        while still meeting the performance requirements of your workload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>DiskIOPSUnderprovisioned</code> </b> — The instance’s disk IOPS configuration doesn't meet the
+     *        performance requirements of your workload and there is an alternative instance type that provides better
+     *        disk IOPS performance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>DiskThroughputOverprovisioned</code> </b> — The instance’s disk throughput configuration can be
+     *        sized down while still meeting the performance requirements of your workload.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>DiskThroughputUnderprovisioned</code> </b> — The instance’s disk throughput configuration
+     *        doesn't meet the performance requirements of your workload and there is an alternative instance type that
+     *        provides better disk throughput performance.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

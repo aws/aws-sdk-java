@@ -64,6 +64,13 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ResourceUtilization expectedResourceUtilization;
+    /**
+     * <p>
+     * Explains the actions you might need to take in order to successfully migrate your workloads from the current
+     * instance type to the recommended instance type.
+     * </p>
+     */
+    private java.util.List<String> platformDifferences;
 
     /**
      * <p>
@@ -318,6 +325,114 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Explains the actions you might need to take in order to successfully migrate your workloads from the current
+     * instance type to the recommended instance type.
+     * </p>
+     * 
+     * @return Explains the actions you might need to take in order to successfully migrate your workloads from the
+     *         current instance type to the recommended instance type.
+     * @see PlatformDifference
+     */
+
+    public java.util.List<String> getPlatformDifferences() {
+        return platformDifferences;
+    }
+
+    /**
+     * <p>
+     * Explains the actions you might need to take in order to successfully migrate your workloads from the current
+     * instance type to the recommended instance type.
+     * </p>
+     * 
+     * @param platformDifferences
+     *        Explains the actions you might need to take in order to successfully migrate your workloads from the
+     *        current instance type to the recommended instance type.
+     * @see PlatformDifference
+     */
+
+    public void setPlatformDifferences(java.util.Collection<String> platformDifferences) {
+        if (platformDifferences == null) {
+            this.platformDifferences = null;
+            return;
+        }
+
+        this.platformDifferences = new java.util.ArrayList<String>(platformDifferences);
+    }
+
+    /**
+     * <p>
+     * Explains the actions you might need to take in order to successfully migrate your workloads from the current
+     * instance type to the recommended instance type.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPlatformDifferences(java.util.Collection)} or {@link #withPlatformDifferences(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param platformDifferences
+     *        Explains the actions you might need to take in order to successfully migrate your workloads from the
+     *        current instance type to the recommended instance type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PlatformDifference
+     */
+
+    public TargetInstance withPlatformDifferences(String... platformDifferences) {
+        if (this.platformDifferences == null) {
+            setPlatformDifferences(new java.util.ArrayList<String>(platformDifferences.length));
+        }
+        for (String ele : platformDifferences) {
+            this.platformDifferences.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Explains the actions you might need to take in order to successfully migrate your workloads from the current
+     * instance type to the recommended instance type.
+     * </p>
+     * 
+     * @param platformDifferences
+     *        Explains the actions you might need to take in order to successfully migrate your workloads from the
+     *        current instance type to the recommended instance type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PlatformDifference
+     */
+
+    public TargetInstance withPlatformDifferences(java.util.Collection<String> platformDifferences) {
+        setPlatformDifferences(platformDifferences);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Explains the actions you might need to take in order to successfully migrate your workloads from the current
+     * instance type to the recommended instance type.
+     * </p>
+     * 
+     * @param platformDifferences
+     *        Explains the actions you might need to take in order to successfully migrate your workloads from the
+     *        current instance type to the recommended instance type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PlatformDifference
+     */
+
+    public TargetInstance withPlatformDifferences(PlatformDifference... platformDifferences) {
+        java.util.ArrayList<String> platformDifferencesCopy = new java.util.ArrayList<String>(platformDifferences.length);
+        for (PlatformDifference value : platformDifferences) {
+            platformDifferencesCopy.add(value.toString());
+        }
+        if (getPlatformDifferences() == null) {
+            setPlatformDifferences(platformDifferencesCopy);
+        } else {
+            getPlatformDifferences().addAll(platformDifferencesCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -340,7 +455,9 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
         if (getResourceDetails() != null)
             sb.append("ResourceDetails: ").append(getResourceDetails()).append(",");
         if (getExpectedResourceUtilization() != null)
-            sb.append("ExpectedResourceUtilization: ").append(getExpectedResourceUtilization());
+            sb.append("ExpectedResourceUtilization: ").append(getExpectedResourceUtilization()).append(",");
+        if (getPlatformDifferences() != null)
+            sb.append("PlatformDifferences: ").append(getPlatformDifferences());
         sb.append("}");
         return sb.toString();
     }
@@ -379,6 +496,10 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getExpectedResourceUtilization() != null && other.getExpectedResourceUtilization().equals(this.getExpectedResourceUtilization()) == false)
             return false;
+        if (other.getPlatformDifferences() == null ^ this.getPlatformDifferences() == null)
+            return false;
+        if (other.getPlatformDifferences() != null && other.getPlatformDifferences().equals(this.getPlatformDifferences()) == false)
+            return false;
         return true;
     }
 
@@ -393,6 +514,7 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDefaultTargetInstance() == null) ? 0 : getDefaultTargetInstance().hashCode());
         hashCode = prime * hashCode + ((getResourceDetails() == null) ? 0 : getResourceDetails().hashCode());
         hashCode = prime * hashCode + ((getExpectedResourceUtilization() == null) ? 0 : getExpectedResourceUtilization().hashCode());
+        hashCode = prime * hashCode + ((getPlatformDifferences() == null) ? 0 : getPlatformDifferences().hashCode());
         return hashCode;
     }
 

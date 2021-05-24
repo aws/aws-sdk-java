@@ -38,6 +38,8 @@ public class InstanceRecommendationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("currentInstanceType").build();
     private static final MarshallingInfo<String> FINDING_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("finding").build();
+    private static final MarshallingInfo<List> FINDINGREASONCODES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("findingReasonCodes").build();
     private static final MarshallingInfo<List> UTILIZATIONMETRICS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("utilizationMetrics").build();
     private static final MarshallingInfo<Double> LOOKBACKPERIODINDAYS_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
@@ -70,6 +72,7 @@ public class InstanceRecommendationMarshaller {
             protocolMarshaller.marshall(instanceRecommendation.getInstanceName(), INSTANCENAME_BINDING);
             protocolMarshaller.marshall(instanceRecommendation.getCurrentInstanceType(), CURRENTINSTANCETYPE_BINDING);
             protocolMarshaller.marshall(instanceRecommendation.getFinding(), FINDING_BINDING);
+            protocolMarshaller.marshall(instanceRecommendation.getFindingReasonCodes(), FINDINGREASONCODES_BINDING);
             protocolMarshaller.marshall(instanceRecommendation.getUtilizationMetrics(), UTILIZATIONMETRICS_BINDING);
             protocolMarshaller.marshall(instanceRecommendation.getLookBackPeriodInDays(), LOOKBACKPERIODINDAYS_BINDING);
             protocolMarshaller.marshall(instanceRecommendation.getRecommendationOptions(), RECOMMENDATIONOPTIONS_BINDING);

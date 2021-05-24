@@ -48,7 +48,7 @@ public class VolumeRecommendation implements Serializable, Cloneable, Structured
     private VolumeConfiguration currentConfiguration;
     /**
      * <p>
-     * The finding classification for the volume.
+     * The finding classification of the volume.
      * </p>
      * <p>
      * Findings for volumes include:
@@ -217,7 +217,7 @@ public class VolumeRecommendation implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The finding classification for the volume.
+     * The finding classification of the volume.
      * </p>
      * <p>
      * Findings for volumes include:
@@ -239,7 +239,7 @@ public class VolumeRecommendation implements Serializable, Cloneable, Structured
      * </ul>
      * 
      * @param finding
-     *        The finding classification for the volume.</p>
+     *        The finding classification of the volume.</p>
      *        <p>
      *        Findings for volumes include:
      *        </p>
@@ -266,7 +266,7 @@ public class VolumeRecommendation implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The finding classification for the volume.
+     * The finding classification of the volume.
      * </p>
      * <p>
      * Findings for volumes include:
@@ -287,7 +287,7 @@ public class VolumeRecommendation implements Serializable, Cloneable, Structured
      * </li>
      * </ul>
      * 
-     * @return The finding classification for the volume.</p>
+     * @return The finding classification of the volume.</p>
      *         <p>
      *         Findings for volumes include:
      *         </p>
@@ -314,7 +314,7 @@ public class VolumeRecommendation implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The finding classification for the volume.
+     * The finding classification of the volume.
      * </p>
      * <p>
      * Findings for volumes include:
@@ -336,7 +336,7 @@ public class VolumeRecommendation implements Serializable, Cloneable, Structured
      * </ul>
      * 
      * @param finding
-     *        The finding classification for the volume.</p>
+     *        The finding classification of the volume.</p>
      *        <p>
      *        Findings for volumes include:
      *        </p>
@@ -365,7 +365,7 @@ public class VolumeRecommendation implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The finding classification for the volume.
+     * The finding classification of the volume.
      * </p>
      * <p>
      * Findings for volumes include:
@@ -387,7 +387,7 @@ public class VolumeRecommendation implements Serializable, Cloneable, Structured
      * </ul>
      * 
      * @param finding
-     *        The finding classification for the volume.</p>
+     *        The finding classification of the volume.</p>
      *        <p>
      *        Findings for volumes include:
      *        </p>

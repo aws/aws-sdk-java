@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.costexplorer.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +38,8 @@ public class RightsizingRecommendationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModifyRecommendationDetail").build();
     private static final MarshallingInfo<StructuredPojo> TERMINATERECOMMENDATIONDETAIL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TerminateRecommendationDetail").build();
+    private static final MarshallingInfo<List> FINDINGREASONCODES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FindingReasonCodes").build();
 
     private static final RightsizingRecommendationMarshaller instance = new RightsizingRecommendationMarshaller();
 
@@ -59,6 +62,7 @@ public class RightsizingRecommendationMarshaller {
             protocolMarshaller.marshall(rightsizingRecommendation.getRightsizingType(), RIGHTSIZINGTYPE_BINDING);
             protocolMarshaller.marshall(rightsizingRecommendation.getModifyRecommendationDetail(), MODIFYRECOMMENDATIONDETAIL_BINDING);
             protocolMarshaller.marshall(rightsizingRecommendation.getTerminateRecommendationDetail(), TERMINATERECOMMENDATIONDETAIL_BINDING);
+            protocolMarshaller.marshall(rightsizingRecommendation.getFindingReasonCodes(), FINDINGREASONCODES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

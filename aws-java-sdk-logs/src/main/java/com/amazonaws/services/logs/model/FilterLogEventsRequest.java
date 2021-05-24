@@ -57,10 +57,6 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      * The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with
      * a timestamp before this time are not returned.
      * </p>
-     * <p>
-     * If you omit <code>startTime</code> and <code>endTime</code> the most recent log events are retrieved, to up 1 MB
-     * or 10,000 log events.
-     * </p>
      */
     private Long startTime;
     /**
@@ -322,17 +318,10 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      * The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with
      * a timestamp before this time are not returned.
      * </p>
-     * <p>
-     * If you omit <code>startTime</code> and <code>endTime</code> the most recent log events are retrieved, to up 1 MB
-     * or 10,000 log events.
-     * </p>
      * 
      * @param startTime
      *        The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
-     *        Events with a timestamp before this time are not returned.</p>
-     *        <p>
-     *        If you omit <code>startTime</code> and <code>endTime</code> the most recent log events are retrieved, to
-     *        up 1 MB or 10,000 log events.
+     *        Events with a timestamp before this time are not returned.
      */
 
     public void setStartTime(Long startTime) {
@@ -344,16 +333,9 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      * The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with
      * a timestamp before this time are not returned.
      * </p>
-     * <p>
-     * If you omit <code>startTime</code> and <code>endTime</code> the most recent log events are retrieved, to up 1 MB
-     * or 10,000 log events.
-     * </p>
      * 
      * @return The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
-     *         Events with a timestamp before this time are not returned.</p>
-     *         <p>
-     *         If you omit <code>startTime</code> and <code>endTime</code> the most recent log events are retrieved, to
-     *         up 1 MB or 10,000 log events.
+     *         Events with a timestamp before this time are not returned.
      */
 
     public Long getStartTime() {
@@ -365,17 +347,10 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      * The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with
      * a timestamp before this time are not returned.
      * </p>
-     * <p>
-     * If you omit <code>startTime</code> and <code>endTime</code> the most recent log events are retrieved, to up 1 MB
-     * or 10,000 log events.
-     * </p>
      * 
      * @param startTime
      *        The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
-     *        Events with a timestamp before this time are not returned.</p>
-     *        <p>
-     *        If you omit <code>startTime</code> and <code>endTime</code> the most recent log events are retrieved, to
-     *        up 1 MB or 10,000 log events.
+     *        Events with a timestamp before this time are not returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

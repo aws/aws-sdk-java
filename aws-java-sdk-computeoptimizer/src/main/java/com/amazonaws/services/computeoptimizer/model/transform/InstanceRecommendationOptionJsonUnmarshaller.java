@@ -59,6 +59,12 @@ public class InstanceRecommendationOptionJsonUnmarshaller implements Unmarshalle
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("platformDifferences", targetDepth)) {
+                    context.nextToken();
+                    instanceRecommendationOption.setPlatformDifferences(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("performanceRisk", targetDepth)) {
                     context.nextToken();
                     instanceRecommendationOption.setPerformanceRisk(context.getUnmarshaller(Double.class).unmarshall(context));

@@ -98,6 +98,12 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost on which the Capacity Reservation was
+     * created.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>state</code> - The current state of the Capacity Reservation. A Capacity Reservation can be in one of the
      * following states:
      * </p>
@@ -406,6 +412,12 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost on which the Capacity Reservation was
+     * created.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>state</code> - The current state of the Capacity Reservation. A Capacity Reservation can be in one of the
      * following states:
      * </p>
@@ -542,6 +554,12 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      *         </p>
      *         </li>
      *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost on which the Capacity
+     *         Reservation was created.
+     *         </p>
      *         </li>
      *         <li>
      *         <p>
@@ -694,6 +712,12 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost on which the Capacity Reservation was
+     * created.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>state</code> - The current state of the Capacity Reservation. A Capacity Reservation can be in one of the
      * following states:
      * </p>
@@ -831,6 +855,12 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost on which the Capacity Reservation
+     *        was created.
+     *        </p>
      *        </li>
      *        <li>
      *        <p>
@@ -985,6 +1015,12 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost on which the Capacity Reservation was
+     * created.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>state</code> - The current state of the Capacity Reservation. A Capacity Reservation can be in one of the
      * following states:
      * </p>
@@ -1127,6 +1163,12 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost on which the Capacity Reservation
+     *        was created.
+     *        </p>
      *        </li>
      *        <li>
      *        <p>
@@ -1283,6 +1325,12 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost on which the Capacity Reservation was
+     * created.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>state</code> - The current state of the Capacity Reservation. A Capacity Reservation can be in one of the
      * following states:
      * </p>
@@ -1420,6 +1468,12 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost on which the Capacity Reservation
+     *        was created.
+     *        </p>
      *        </li>
      *        <li>
      *        <p>

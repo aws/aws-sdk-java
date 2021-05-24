@@ -43,6 +43,12 @@ public class UserMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrincipalId").build();
     private static final MarshallingInfo<String> CUSTOMPERMISSIONSNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomPermissionsName").build();
+    private static final MarshallingInfo<String> EXTERNALLOGINFEDERATIONPROVIDERTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExternalLoginFederationProviderType").build();
+    private static final MarshallingInfo<String> EXTERNALLOGINFEDERATIONPROVIDERURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExternalLoginFederationProviderUrl").build();
+    private static final MarshallingInfo<String> EXTERNALLOGINID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExternalLoginId").build();
 
     private static final UserMarshaller instance = new UserMarshaller();
 
@@ -68,6 +74,9 @@ public class UserMarshaller {
             protocolMarshaller.marshall(user.getActive(), ACTIVE_BINDING);
             protocolMarshaller.marshall(user.getPrincipalId(), PRINCIPALID_BINDING);
             protocolMarshaller.marshall(user.getCustomPermissionsName(), CUSTOMPERMISSIONSNAME_BINDING);
+            protocolMarshaller.marshall(user.getExternalLoginFederationProviderType(), EXTERNALLOGINFEDERATIONPROVIDERTYPE_BINDING);
+            protocolMarshaller.marshall(user.getExternalLoginFederationProviderUrl(), EXTERNALLOGINFEDERATIONPROVIDERURL_BINDING);
+            protocolMarshaller.marshall(user.getExternalLoginId(), EXTERNALLOGINID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -64,6 +64,14 @@ public class EC2ResourceUtilizationJsonUnmarshaller implements Unmarshaller<EC2R
                     context.nextToken();
                     eC2ResourceUtilization.setEBSResourceUtilization(EBSResourceUtilizationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("DiskResourceUtilization", targetDepth)) {
+                    context.nextToken();
+                    eC2ResourceUtilization.setDiskResourceUtilization(DiskResourceUtilizationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("NetworkResourceUtilization", targetDepth)) {
+                    context.nextToken();
+                    eC2ResourceUtilization.setNetworkResourceUtilization(NetworkResourceUtilizationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

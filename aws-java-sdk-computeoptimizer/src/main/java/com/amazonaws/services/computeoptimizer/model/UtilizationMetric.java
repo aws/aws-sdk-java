@@ -105,6 +105,70 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      * Unit: Bytes
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>DISK_READ_OPS_PER_SECOND</code> - The completed read operations from all instance store volumes available
+     * to the instance in a specified period of time.
+     * </p>
+     * <p>
+     * If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISK_WRITE_OPS_PER_SECOND</code> - The completed write operations from all instance store volumes available
+     * to the instance in a specified period of time.
+     * </p>
+     * <p>
+     * If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISK_READ_BYTES_PER_SECOND</code> - The bytes read from all instance store volumes available to the
+     * instance. This metric is used to determine the volume of the data the application reads from the disk of the
+     * instance. This can be used to determine the speed of the application.
+     * </p>
+     * <p>
+     * If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISK_WRITE_BYTES_PER_SECOND</code> - The bytes written to all instance store volumes available to the
+     * instance. This metric is used to determine the volume of the data the application writes onto the disk of the
+     * instance. This can be used to determine the speed of the application.
+     * </p>
+     * <p>
+     * If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK_IN_BYTES_PER_SECOND</code> - The number of bytes received by the instance on all network
+     * interfaces. This metric identifies the volume of incoming network traffic to a single instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK_OUT_BYTES_PER_SECOND</code> - The number of bytes sent out by the instance on all network
+     * interfaces. This metric identifies the volume of outgoing network traffic from a single instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK_PACKETS_IN_PER_SECOND</code> - The number of packets received by the instance on all network
+     * interfaces. This metric identifies the volume of incoming traffic in terms of the number of packets on a single
+     * instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK_PACKETS_OUT_PER_SECOND</code> - The number of packets sent out by the instance on all network
+     * interfaces. This metric identifies the volume of outgoing traffic in terms of the number of packets on a single
+     * instance.
+     * </p>
+     * </li>
      * </ul>
      */
     private String name;
@@ -208,6 +272,70 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      * Unit: Bytes
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>DISK_READ_OPS_PER_SECOND</code> - The completed read operations from all instance store volumes available
+     * to the instance in a specified period of time.
+     * </p>
+     * <p>
+     * If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISK_WRITE_OPS_PER_SECOND</code> - The completed write operations from all instance store volumes available
+     * to the instance in a specified period of time.
+     * </p>
+     * <p>
+     * If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISK_READ_BYTES_PER_SECOND</code> - The bytes read from all instance store volumes available to the
+     * instance. This metric is used to determine the volume of the data the application reads from the disk of the
+     * instance. This can be used to determine the speed of the application.
+     * </p>
+     * <p>
+     * If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISK_WRITE_BYTES_PER_SECOND</code> - The bytes written to all instance store volumes available to the
+     * instance. This metric is used to determine the volume of the data the application writes onto the disk of the
+     * instance. This can be used to determine the speed of the application.
+     * </p>
+     * <p>
+     * If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK_IN_BYTES_PER_SECOND</code> - The number of bytes received by the instance on all network
+     * interfaces. This metric identifies the volume of incoming network traffic to a single instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK_OUT_BYTES_PER_SECOND</code> - The number of bytes sent out by the instance on all network
+     * interfaces. This metric identifies the volume of outgoing network traffic from a single instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK_PACKETS_IN_PER_SECOND</code> - The number of packets received by the instance on all network
+     * interfaces. This metric identifies the volume of incoming traffic in terms of the number of packets on a single
+     * instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK_PACKETS_OUT_PER_SECOND</code> - The number of packets sent out by the instance on all network
+     * interfaces. This metric identifies the volume of outgoing traffic in terms of the number of packets on a single
+     * instance.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param name
@@ -279,6 +407,70 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      *        </p>
      *        <p>
      *        Unit: Bytes
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISK_READ_OPS_PER_SECOND</code> - The completed read operations from all instance store volumes
+     *        available to the instance in a specified period of time.
+     *        </p>
+     *        <p>
+     *        If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISK_WRITE_OPS_PER_SECOND</code> - The completed write operations from all instance store volumes
+     *        available to the instance in a specified period of time.
+     *        </p>
+     *        <p>
+     *        If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISK_READ_BYTES_PER_SECOND</code> - The bytes read from all instance store volumes available to the
+     *        instance. This metric is used to determine the volume of the data the application reads from the disk of
+     *        the instance. This can be used to determine the speed of the application.
+     *        </p>
+     *        <p>
+     *        If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISK_WRITE_BYTES_PER_SECOND</code> - The bytes written to all instance store volumes available to
+     *        the instance. This metric is used to determine the volume of the data the application writes onto the disk
+     *        of the instance. This can be used to determine the speed of the application.
+     *        </p>
+     *        <p>
+     *        If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NETWORK_IN_BYTES_PER_SECOND</code> - The number of bytes received by the instance on all network
+     *        interfaces. This metric identifies the volume of incoming network traffic to a single instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NETWORK_OUT_BYTES_PER_SECOND</code> - The number of bytes sent out by the instance on all network
+     *        interfaces. This metric identifies the volume of outgoing network traffic from a single instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NETWORK_PACKETS_IN_PER_SECOND</code> - The number of packets received by the instance on all network
+     *        interfaces. This metric identifies the volume of incoming traffic in terms of the number of packets on a
+     *        single instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NETWORK_PACKETS_OUT_PER_SECOND</code> - The number of packets sent out by the instance on all
+     *        network interfaces. This metric identifies the volume of outgoing traffic in terms of the number of
+     *        packets on a single instance.
      *        </p>
      *        </li>
      * @see MetricName
@@ -361,6 +553,70 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      * Unit: Bytes
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>DISK_READ_OPS_PER_SECOND</code> - The completed read operations from all instance store volumes available
+     * to the instance in a specified period of time.
+     * </p>
+     * <p>
+     * If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISK_WRITE_OPS_PER_SECOND</code> - The completed write operations from all instance store volumes available
+     * to the instance in a specified period of time.
+     * </p>
+     * <p>
+     * If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISK_READ_BYTES_PER_SECOND</code> - The bytes read from all instance store volumes available to the
+     * instance. This metric is used to determine the volume of the data the application reads from the disk of the
+     * instance. This can be used to determine the speed of the application.
+     * </p>
+     * <p>
+     * If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISK_WRITE_BYTES_PER_SECOND</code> - The bytes written to all instance store volumes available to the
+     * instance. This metric is used to determine the volume of the data the application writes onto the disk of the
+     * instance. This can be used to determine the speed of the application.
+     * </p>
+     * <p>
+     * If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK_IN_BYTES_PER_SECOND</code> - The number of bytes received by the instance on all network
+     * interfaces. This metric identifies the volume of incoming network traffic to a single instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK_OUT_BYTES_PER_SECOND</code> - The number of bytes sent out by the instance on all network
+     * interfaces. This metric identifies the volume of outgoing network traffic from a single instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK_PACKETS_IN_PER_SECOND</code> - The number of packets received by the instance on all network
+     * interfaces. This metric identifies the volume of incoming traffic in terms of the number of packets on a single
+     * instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK_PACKETS_OUT_PER_SECOND</code> - The number of packets sent out by the instance on all network
+     * interfaces. This metric identifies the volume of outgoing traffic in terms of the number of packets on a single
+     * instance.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The name of the utilization metric.</p>
@@ -431,6 +687,70 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      *         </p>
      *         <p>
      *         Unit: Bytes
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DISK_READ_OPS_PER_SECOND</code> - The completed read operations from all instance store volumes
+     *         available to the instance in a specified period of time.
+     *         </p>
+     *         <p>
+     *         If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DISK_WRITE_OPS_PER_SECOND</code> - The completed write operations from all instance store volumes
+     *         available to the instance in a specified period of time.
+     *         </p>
+     *         <p>
+     *         If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DISK_READ_BYTES_PER_SECOND</code> - The bytes read from all instance store volumes available to the
+     *         instance. This metric is used to determine the volume of the data the application reads from the disk of
+     *         the instance. This can be used to determine the speed of the application.
+     *         </p>
+     *         <p>
+     *         If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DISK_WRITE_BYTES_PER_SECOND</code> - The bytes written to all instance store volumes available to
+     *         the instance. This metric is used to determine the volume of the data the application writes onto the
+     *         disk of the instance. This can be used to determine the speed of the application.
+     *         </p>
+     *         <p>
+     *         If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NETWORK_IN_BYTES_PER_SECOND</code> - The number of bytes received by the instance on all network
+     *         interfaces. This metric identifies the volume of incoming network traffic to a single instance.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NETWORK_OUT_BYTES_PER_SECOND</code> - The number of bytes sent out by the instance on all network
+     *         interfaces. This metric identifies the volume of outgoing network traffic from a single instance.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NETWORK_PACKETS_IN_PER_SECOND</code> - The number of packets received by the instance on all
+     *         network interfaces. This metric identifies the volume of incoming traffic in terms of the number of
+     *         packets on a single instance.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NETWORK_PACKETS_OUT_PER_SECOND</code> - The number of packets sent out by the instance on all
+     *         network interfaces. This metric identifies the volume of outgoing traffic in terms of the number of
+     *         packets on a single instance.
      *         </p>
      *         </li>
      * @see MetricName
@@ -513,6 +833,70 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      * Unit: Bytes
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>DISK_READ_OPS_PER_SECOND</code> - The completed read operations from all instance store volumes available
+     * to the instance in a specified period of time.
+     * </p>
+     * <p>
+     * If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISK_WRITE_OPS_PER_SECOND</code> - The completed write operations from all instance store volumes available
+     * to the instance in a specified period of time.
+     * </p>
+     * <p>
+     * If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISK_READ_BYTES_PER_SECOND</code> - The bytes read from all instance store volumes available to the
+     * instance. This metric is used to determine the volume of the data the application reads from the disk of the
+     * instance. This can be used to determine the speed of the application.
+     * </p>
+     * <p>
+     * If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISK_WRITE_BYTES_PER_SECOND</code> - The bytes written to all instance store volumes available to the
+     * instance. This metric is used to determine the volume of the data the application writes onto the disk of the
+     * instance. This can be used to determine the speed of the application.
+     * </p>
+     * <p>
+     * If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK_IN_BYTES_PER_SECOND</code> - The number of bytes received by the instance on all network
+     * interfaces. This metric identifies the volume of incoming network traffic to a single instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK_OUT_BYTES_PER_SECOND</code> - The number of bytes sent out by the instance on all network
+     * interfaces. This metric identifies the volume of outgoing network traffic from a single instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK_PACKETS_IN_PER_SECOND</code> - The number of packets received by the instance on all network
+     * interfaces. This metric identifies the volume of incoming traffic in terms of the number of packets on a single
+     * instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK_PACKETS_OUT_PER_SECOND</code> - The number of packets sent out by the instance on all network
+     * interfaces. This metric identifies the volume of outgoing traffic in terms of the number of packets on a single
+     * instance.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param name
@@ -584,6 +968,70 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      *        </p>
      *        <p>
      *        Unit: Bytes
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISK_READ_OPS_PER_SECOND</code> - The completed read operations from all instance store volumes
+     *        available to the instance in a specified period of time.
+     *        </p>
+     *        <p>
+     *        If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISK_WRITE_OPS_PER_SECOND</code> - The completed write operations from all instance store volumes
+     *        available to the instance in a specified period of time.
+     *        </p>
+     *        <p>
+     *        If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISK_READ_BYTES_PER_SECOND</code> - The bytes read from all instance store volumes available to the
+     *        instance. This metric is used to determine the volume of the data the application reads from the disk of
+     *        the instance. This can be used to determine the speed of the application.
+     *        </p>
+     *        <p>
+     *        If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISK_WRITE_BYTES_PER_SECOND</code> - The bytes written to all instance store volumes available to
+     *        the instance. This metric is used to determine the volume of the data the application writes onto the disk
+     *        of the instance. This can be used to determine the speed of the application.
+     *        </p>
+     *        <p>
+     *        If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NETWORK_IN_BYTES_PER_SECOND</code> - The number of bytes received by the instance on all network
+     *        interfaces. This metric identifies the volume of incoming network traffic to a single instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NETWORK_OUT_BYTES_PER_SECOND</code> - The number of bytes sent out by the instance on all network
+     *        interfaces. This metric identifies the volume of outgoing network traffic from a single instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NETWORK_PACKETS_IN_PER_SECOND</code> - The number of packets received by the instance on all network
+     *        interfaces. This metric identifies the volume of incoming traffic in terms of the number of packets on a
+     *        single instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NETWORK_PACKETS_OUT_PER_SECOND</code> - The number of packets sent out by the instance on all
+     *        network interfaces. This metric identifies the volume of outgoing traffic in terms of the number of
+     *        packets on a single instance.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -668,6 +1116,70 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      * Unit: Bytes
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>DISK_READ_OPS_PER_SECOND</code> - The completed read operations from all instance store volumes available
+     * to the instance in a specified period of time.
+     * </p>
+     * <p>
+     * If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISK_WRITE_OPS_PER_SECOND</code> - The completed write operations from all instance store volumes available
+     * to the instance in a specified period of time.
+     * </p>
+     * <p>
+     * If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISK_READ_BYTES_PER_SECOND</code> - The bytes read from all instance store volumes available to the
+     * instance. This metric is used to determine the volume of the data the application reads from the disk of the
+     * instance. This can be used to determine the speed of the application.
+     * </p>
+     * <p>
+     * If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISK_WRITE_BYTES_PER_SECOND</code> - The bytes written to all instance store volumes available to the
+     * instance. This metric is used to determine the volume of the data the application writes onto the disk of the
+     * instance. This can be used to determine the speed of the application.
+     * </p>
+     * <p>
+     * If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK_IN_BYTES_PER_SECOND</code> - The number of bytes received by the instance on all network
+     * interfaces. This metric identifies the volume of incoming network traffic to a single instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK_OUT_BYTES_PER_SECOND</code> - The number of bytes sent out by the instance on all network
+     * interfaces. This metric identifies the volume of outgoing network traffic from a single instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK_PACKETS_IN_PER_SECOND</code> - The number of packets received by the instance on all network
+     * interfaces. This metric identifies the volume of incoming traffic in terms of the number of packets on a single
+     * instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK_PACKETS_OUT_PER_SECOND</code> - The number of packets sent out by the instance on all network
+     * interfaces. This metric identifies the volume of outgoing traffic in terms of the number of packets on a single
+     * instance.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param name
@@ -739,6 +1251,70 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      *        </p>
      *        <p>
      *        Unit: Bytes
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISK_READ_OPS_PER_SECOND</code> - The completed read operations from all instance store volumes
+     *        available to the instance in a specified period of time.
+     *        </p>
+     *        <p>
+     *        If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISK_WRITE_OPS_PER_SECOND</code> - The completed write operations from all instance store volumes
+     *        available to the instance in a specified period of time.
+     *        </p>
+     *        <p>
+     *        If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISK_READ_BYTES_PER_SECOND</code> - The bytes read from all instance store volumes available to the
+     *        instance. This metric is used to determine the volume of the data the application reads from the disk of
+     *        the instance. This can be used to determine the speed of the application.
+     *        </p>
+     *        <p>
+     *        If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISK_WRITE_BYTES_PER_SECOND</code> - The bytes written to all instance store volumes available to
+     *        the instance. This metric is used to determine the volume of the data the application writes onto the disk
+     *        of the instance. This can be used to determine the speed of the application.
+     *        </p>
+     *        <p>
+     *        If there are no instance store volumes, either the value is <code>0</code> or the metric is not reported.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NETWORK_IN_BYTES_PER_SECOND</code> - The number of bytes received by the instance on all network
+     *        interfaces. This metric identifies the volume of incoming network traffic to a single instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NETWORK_OUT_BYTES_PER_SECOND</code> - The number of bytes sent out by the instance on all network
+     *        interfaces. This metric identifies the volume of outgoing network traffic from a single instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NETWORK_PACKETS_IN_PER_SECOND</code> - The number of packets received by the instance on all network
+     *        interfaces. This metric identifies the volume of incoming traffic in terms of the number of packets on a
+     *        single instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NETWORK_PACKETS_OUT_PER_SECOND</code> - The number of packets sent out by the instance on all
+     *        network interfaces. This metric identifies the volume of outgoing traffic in terms of the number of
+     *        packets on a single instance.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

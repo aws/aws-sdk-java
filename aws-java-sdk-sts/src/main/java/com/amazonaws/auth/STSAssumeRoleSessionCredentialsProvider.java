@@ -29,13 +29,16 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
 
 /**
  * AWSCredentialsProvider implementation that uses the AWS Security Token Service to assume a Role
  * and create temporary, short-lived sessions to use for authentication.
  *
  * This credentials provider uses a background thread to refresh credentials. This background thread can be shut down via the
- * {@link #close()} method when the credentials provider is no longer used.
+ * {@link #close()} method when the credentials provider is no longer used. You can also specify a custom {@link ExecutorService}
+ * to refresh the credentials. See {@link Builder#withAsyncRefreshExecutor}. Note that the custom executor service must be shut
+ * down when it is ready to be disposed. The SDK will not close it when the credential provider is closed.
  */
 @ThreadSafe
 public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCredentialsProvider, Closeable {
@@ -195,9 +198,10 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
                 .withClientConfiguration(clientConfiguration));
     }
 
-    private RefreshableTask<SessionCredentialsHolder> createRefreshableTask() {
+    private RefreshableTask<SessionCredentialsHolder> createRefreshableTask(ExecutorService asyncRefeshExecutor) {
         return new RefreshableTask.Builder<SessionCredentialsHolder>()
                 .withRefreshCallable(refreshCallable)
+                .withExecutorService(asyncRefeshExecutor)
                 .withBlockingRefreshPredicate(new ShouldDoBlockingSessionRefresh())
                 .withAsyncRefreshPredicate(new ShouldDoAsyncSessionRefresh()).build();
     }
@@ -242,7 +246,8 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
             this.roleSessionDurationSeconds = DEFAULT_DURATION_SECONDS;
         }
 
-        this.refreshableTask = createRefreshableTask();
+        this.refreshableTask = createRefreshableTask(builder.asyncRefreshExecutor);
+
         this.scopeDownPolicy = builder.scopeDownPolicy;
         this.sessionTags = builder.sessionTags;
         this.transitiveTagKeys = builder.transitiveTagKeys;
@@ -306,7 +311,7 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
     @Deprecated
     public synchronized void setSTSClientEndpoint(String endpoint) {
         securityTokenService.setEndpoint(endpoint);
-        this.refreshableTask = createRefreshableTask();
+        this.refreshableTask = createRefreshableTask(null);
     }
 
 
@@ -373,6 +378,8 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
         private AWSSecurityTokenService sts;
         private Collection<Tag> sessionTags;
         private Collection<String> transitiveTagKeys;
+
+        private ExecutorService asyncRefreshExecutor;
 
         /**
          * @param roleArn         Required roleArn parameter used when starting a session
@@ -445,6 +452,18 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
          */
         public Builder withExternalId(String roleExternalId) {
             this.roleExternalId = roleExternalId;
+            return this;
+        }
+
+        /**
+         * Set the {@link ExecutorService} used for background credential refreshing.
+         *  <b>This executor service must be shut down by the user when it is ready to be disposed.
+         *  The SDK will not close the executor service when the credential provider is closed.</b>
+         * @param asyncRefreshExecetor the {@link ExecutorService} used for background credential refreshing.
+         * @return the builder itself for chained calls
+         */
+        public Builder withAsyncRefreshExecutor(ExecutorService asyncRefreshExecetor) {
+            this.asyncRefreshExecutor = asyncRefreshExecetor;
             return this;
         }
 

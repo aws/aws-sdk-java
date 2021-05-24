@@ -33,8 +33,8 @@ public class GetLogGroupFieldsRequest extends com.amazonaws.AmazonWebServiceRequ
     private String logGroupName;
     /**
      * <p>
-     * The time to set as the center of the query. If you specify <code>time</code>, the 8 minutes before and 8 minutes
-     * after this time are searched. If you omit <code>time</code>, the past 15 minutes are queried.
+     * The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes before this time are
+     * queries. If you omit <code>time</code> the 8 minutes before and 8 minutes after this time are searched.
      * </p>
      * <p>
      * The <code>time</code> value is specified as epoch time, the number of seconds since January 1, 1970, 00:00:00
@@ -85,8 +85,8 @@ public class GetLogGroupFieldsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The time to set as the center of the query. If you specify <code>time</code>, the 8 minutes before and 8 minutes
-     * after this time are searched. If you omit <code>time</code>, the past 15 minutes are queried.
+     * The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes before this time are
+     * queries. If you omit <code>time</code> the 8 minutes before and 8 minutes after this time are searched.
      * </p>
      * <p>
      * The <code>time</code> value is specified as epoch time, the number of seconds since January 1, 1970, 00:00:00
@@ -94,8 +94,9 @@ public class GetLogGroupFieldsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param time
-     *        The time to set as the center of the query. If you specify <code>time</code>, the 8 minutes before and 8
-     *        minutes after this time are searched. If you omit <code>time</code>, the past 15 minutes are queried.</p>
+     *        The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes before this
+     *        time are queries. If you omit <code>time</code> the 8 minutes before and 8 minutes after this time are
+     *        searched.</p>
      *        <p>
      *        The <code>time</code> value is specified as epoch time, the number of seconds since January 1, 1970,
      *        00:00:00 UTC.
@@ -107,16 +108,17 @@ public class GetLogGroupFieldsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The time to set as the center of the query. If you specify <code>time</code>, the 8 minutes before and 8 minutes
-     * after this time are searched. If you omit <code>time</code>, the past 15 minutes are queried.
+     * The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes before this time are
+     * queries. If you omit <code>time</code> the 8 minutes before and 8 minutes after this time are searched.
      * </p>
      * <p>
      * The <code>time</code> value is specified as epoch time, the number of seconds since January 1, 1970, 00:00:00
      * UTC.
      * </p>
      * 
-     * @return The time to set as the center of the query. If you specify <code>time</code>, the 8 minutes before and 8
-     *         minutes after this time are searched. If you omit <code>time</code>, the past 15 minutes are queried.</p>
+     * @return The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes before this
+     *         time are queries. If you omit <code>time</code> the 8 minutes before and 8 minutes after this time are
+     *         searched.</p>
      *         <p>
      *         The <code>time</code> value is specified as epoch time, the number of seconds since January 1, 1970,
      *         00:00:00 UTC.
@@ -128,8 +130,8 @@ public class GetLogGroupFieldsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The time to set as the center of the query. If you specify <code>time</code>, the 8 minutes before and 8 minutes
-     * after this time are searched. If you omit <code>time</code>, the past 15 minutes are queried.
+     * The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes before this time are
+     * queries. If you omit <code>time</code> the 8 minutes before and 8 minutes after this time are searched.
      * </p>
      * <p>
      * The <code>time</code> value is specified as epoch time, the number of seconds since January 1, 1970, 00:00:00
@@ -137,8 +139,9 @@ public class GetLogGroupFieldsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param time
-     *        The time to set as the center of the query. If you specify <code>time</code>, the 8 minutes before and 8
-     *        minutes after this time are searched. If you omit <code>time</code>, the past 15 minutes are queried.</p>
+     *        The time to set as the center of the query. If you specify <code>time</code>, the 15 minutes before this
+     *        time are queries. If you omit <code>time</code> the 8 minutes before and 8 minutes after this time are
+     *        searched.</p>
      *        <p>
      *        The <code>time</code> value is specified as epoch time, the number of seconds since January 1, 1970,
      *        00:00:00 UTC.

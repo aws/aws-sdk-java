@@ -32,6 +32,8 @@ public class InstanceRecommendationOptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceType").build();
     private static final MarshallingInfo<List> PROJECTEDUTILIZATIONMETRICS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("projectedUtilizationMetrics").build();
+    private static final MarshallingInfo<List> PLATFORMDIFFERENCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("platformDifferences").build();
     private static final MarshallingInfo<Double> PERFORMANCERISK_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("performanceRisk").build();
     private static final MarshallingInfo<Integer> RANK_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
@@ -55,6 +57,7 @@ public class InstanceRecommendationOptionMarshaller {
         try {
             protocolMarshaller.marshall(instanceRecommendationOption.getInstanceType(), INSTANCETYPE_BINDING);
             protocolMarshaller.marshall(instanceRecommendationOption.getProjectedUtilizationMetrics(), PROJECTEDUTILIZATIONMETRICS_BINDING);
+            protocolMarshaller.marshall(instanceRecommendationOption.getPlatformDifferences(), PLATFORMDIFFERENCES_BINDING);
             protocolMarshaller.marshall(instanceRecommendationOption.getPerformanceRisk(), PERFORMANCERISK_BINDING);
             protocolMarshaller.marshall(instanceRecommendationOption.getRank(), RANK_BINDING);
         } catch (Exception e) {

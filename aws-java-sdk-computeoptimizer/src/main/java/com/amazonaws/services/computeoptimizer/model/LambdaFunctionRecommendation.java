@@ -78,7 +78,7 @@ public class LambdaFunctionRecommendation implements Serializable, Cloneable, St
     private java.util.Date lastRefreshTimestamp;
     /**
      * <p>
-     * The finding classification for the function.
+     * The finding classification of the function.
      * </p>
      * <p>
      * Findings for functions include:
@@ -125,7 +125,7 @@ public class LambdaFunctionRecommendation implements Serializable, Cloneable, St
      * </p>
      * </note>
      * <p>
-     * Reason codes include:
+     * Finding reason codes for functions include:
      * </p>
      * <ul>
      * <li>
@@ -522,7 +522,7 @@ public class LambdaFunctionRecommendation implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The finding classification for the function.
+     * The finding classification of the function.
      * </p>
      * <p>
      * Findings for functions include:
@@ -559,7 +559,7 @@ public class LambdaFunctionRecommendation implements Serializable, Cloneable, St
      * </ul>
      * 
      * @param finding
-     *        The finding classification for the function.</p>
+     *        The finding classification of the function.</p>
      *        <p>
      *        Findings for functions include:
      *        </p>
@@ -603,7 +603,7 @@ public class LambdaFunctionRecommendation implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The finding classification for the function.
+     * The finding classification of the function.
      * </p>
      * <p>
      * Findings for functions include:
@@ -639,7 +639,7 @@ public class LambdaFunctionRecommendation implements Serializable, Cloneable, St
      * </note></li>
      * </ul>
      * 
-     * @return The finding classification for the function.</p>
+     * @return The finding classification of the function.</p>
      *         <p>
      *         Findings for functions include:
      *         </p>
@@ -684,7 +684,7 @@ public class LambdaFunctionRecommendation implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The finding classification for the function.
+     * The finding classification of the function.
      * </p>
      * <p>
      * Findings for functions include:
@@ -721,7 +721,7 @@ public class LambdaFunctionRecommendation implements Serializable, Cloneable, St
      * </ul>
      * 
      * @param finding
-     *        The finding classification for the function.</p>
+     *        The finding classification of the function.</p>
      *        <p>
      *        Findings for functions include:
      *        </p>
@@ -767,7 +767,7 @@ public class LambdaFunctionRecommendation implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The finding classification for the function.
+     * The finding classification of the function.
      * </p>
      * <p>
      * Findings for functions include:
@@ -804,7 +804,7 @@ public class LambdaFunctionRecommendation implements Serializable, Cloneable, St
      * </ul>
      * 
      * @param finding
-     *        The finding classification for the function.</p>
+     *        The finding classification of the function.</p>
      *        <p>
      *        Findings for functions include:
      *        </p>
@@ -858,7 +858,7 @@ public class LambdaFunctionRecommendation implements Serializable, Cloneable, St
      * </p>
      * </note>
      * <p>
-     * Reason codes include:
+     * Finding reason codes for functions include:
      * </p>
      * <ul>
      * <li>
@@ -901,7 +901,7 @@ public class LambdaFunctionRecommendation implements Serializable, Cloneable, St
      *         </p>
      *         </note>
      *         <p>
-     *         Reason codes include:
+     *         Finding reason codes for functions include:
      *         </p>
      *         <ul>
      *         <li>
@@ -953,7 +953,7 @@ public class LambdaFunctionRecommendation implements Serializable, Cloneable, St
      * </p>
      * </note>
      * <p>
-     * Reason codes include:
+     * Finding reason codes for functions include:
      * </p>
      * <ul>
      * <li>
@@ -997,7 +997,7 @@ public class LambdaFunctionRecommendation implements Serializable, Cloneable, St
      *        </p>
      *        </note>
      *        <p>
-     *        Reason codes include:
+     *        Finding reason codes for functions include:
      *        </p>
      *        <ul>
      *        <li>
@@ -1054,7 +1054,7 @@ public class LambdaFunctionRecommendation implements Serializable, Cloneable, St
      * </p>
      * </note>
      * <p>
-     * Reason codes include:
+     * Finding reason codes for functions include:
      * </p>
      * <ul>
      * <li>
@@ -1103,7 +1103,7 @@ public class LambdaFunctionRecommendation implements Serializable, Cloneable, St
      *        </p>
      *        </note>
      *        <p>
-     *        Reason codes include:
+     *        Finding reason codes for functions include:
      *        </p>
      *        <ul>
      *        <li>
@@ -1162,7 +1162,7 @@ public class LambdaFunctionRecommendation implements Serializable, Cloneable, St
      * </p>
      * </note>
      * <p>
-     * Reason codes include:
+     * Finding reason codes for functions include:
      * </p>
      * <ul>
      * <li>
@@ -1206,7 +1206,7 @@ public class LambdaFunctionRecommendation implements Serializable, Cloneable, St
      *        </p>
      *        </note>
      *        <p>
-     *        Reason codes include:
+     *        Finding reason codes for functions include:
      *        </p>
      *        <ul>
      *        <li>
@@ -1260,7 +1260,7 @@ public class LambdaFunctionRecommendation implements Serializable, Cloneable, St
      * </p>
      * </note>
      * <p>
-     * Reason codes include:
+     * Finding reason codes for functions include:
      * </p>
      * <ul>
      * <li>
@@ -1304,7 +1304,7 @@ public class LambdaFunctionRecommendation implements Serializable, Cloneable, St
      *        </p>
      *        </note>
      *        <p>
-     *        Reason codes include:
+     *        Finding reason codes for functions include:
      *        </p>
      *        <ul>
      *        <li>

@@ -19,10 +19,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes a filter that returns a more specific list of recommendation export jobs.
+ * Describes a filter that returns a more specific list of recommendation export jobs. Use this filter with the
+ * <code>DescribeRecommendationExportJobs</code> action.
  * </p>
  * <p>
- * This filter is used with the <code>DescribeRecommendationExportJobs</code> action.
+ * You can use <code>EBSFilter</code> with the <code>GetEBSVolumeRecommendations</code> action,
+ * <code>LambdaFunctionRecommendationFilter</code> with the <code>GetLambdaFunctionRecommendations</code> action, and
+ * <code>Filter</code> with the <code>GetAutoScalingGroupRecommendations</code> and
+ * <code>GetEC2InstanceRecommendations</code> actions.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/JobFilter" target="_top">AWS API
@@ -55,15 +59,15 @@ public class JobFilter implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
-     * parameter as <code>ResourceType</code>. There is no filter for EBS volumes because volume recommendations cannot
-     * be exported at this time.
+     * Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specify the <code>name</code> parameter
+     * as <code>ResourceType</code>. There is no filter for EBS volumes because volume recommendations cannot be
+     * exported at this time.
      * </p>
      * </li>
      * <li>
      * <p>
      * Specify <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code> if you
-     * specified the <code>name</code> parameter as <code>JobStatus</code>.
+     * specify the <code>name</code> parameter as <code>JobStatus</code>.
      * </p>
      * </li>
      * </ul>
@@ -192,15 +196,15 @@ public class JobFilter implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
-     * parameter as <code>ResourceType</code>. There is no filter for EBS volumes because volume recommendations cannot
-     * be exported at this time.
+     * Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specify the <code>name</code> parameter
+     * as <code>ResourceType</code>. There is no filter for EBS volumes because volume recommendations cannot be
+     * exported at this time.
      * </p>
      * </li>
      * <li>
      * <p>
      * Specify <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code> if you
-     * specified the <code>name</code> parameter as <code>JobStatus</code>.
+     * specify the <code>name</code> parameter as <code>JobStatus</code>.
      * </p>
      * </li>
      * </ul>
@@ -213,7 +217,7 @@ public class JobFilter implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
+     *         Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specify the <code>name</code>
      *         parameter as <code>ResourceType</code>. There is no filter for EBS volumes because volume recommendations
      *         cannot be exported at this time.
      *         </p>
@@ -221,7 +225,7 @@ public class JobFilter implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         Specify <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code> if
-     *         you specified the <code>name</code> parameter as <code>JobStatus</code>.
+     *         you specify the <code>name</code> parameter as <code>JobStatus</code>.
      *         </p>
      *         </li>
      */
@@ -241,15 +245,15 @@ public class JobFilter implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
-     * parameter as <code>ResourceType</code>. There is no filter for EBS volumes because volume recommendations cannot
-     * be exported at this time.
+     * Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specify the <code>name</code> parameter
+     * as <code>ResourceType</code>. There is no filter for EBS volumes because volume recommendations cannot be
+     * exported at this time.
      * </p>
      * </li>
      * <li>
      * <p>
      * Specify <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code> if you
-     * specified the <code>name</code> parameter as <code>JobStatus</code>.
+     * specify the <code>name</code> parameter as <code>JobStatus</code>.
      * </p>
      * </li>
      * </ul>
@@ -263,7 +267,7 @@ public class JobFilter implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
+     *        Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specify the <code>name</code>
      *        parameter as <code>ResourceType</code>. There is no filter for EBS volumes because volume recommendations
      *        cannot be exported at this time.
      *        </p>
@@ -271,7 +275,7 @@ public class JobFilter implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        Specify <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code> if you
-     *        specified the <code>name</code> parameter as <code>JobStatus</code>.
+     *        specify the <code>name</code> parameter as <code>JobStatus</code>.
      *        </p>
      *        </li>
      */
@@ -296,15 +300,15 @@ public class JobFilter implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
-     * parameter as <code>ResourceType</code>. There is no filter for EBS volumes because volume recommendations cannot
-     * be exported at this time.
+     * Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specify the <code>name</code> parameter
+     * as <code>ResourceType</code>. There is no filter for EBS volumes because volume recommendations cannot be
+     * exported at this time.
      * </p>
      * </li>
      * <li>
      * <p>
      * Specify <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code> if you
-     * specified the <code>name</code> parameter as <code>JobStatus</code>.
+     * specify the <code>name</code> parameter as <code>JobStatus</code>.
      * </p>
      * </li>
      * </ul>
@@ -323,7 +327,7 @@ public class JobFilter implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
+     *        Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specify the <code>name</code>
      *        parameter as <code>ResourceType</code>. There is no filter for EBS volumes because volume recommendations
      *        cannot be exported at this time.
      *        </p>
@@ -331,7 +335,7 @@ public class JobFilter implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        Specify <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code> if you
-     *        specified the <code>name</code> parameter as <code>JobStatus</code>.
+     *        specify the <code>name</code> parameter as <code>JobStatus</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -358,15 +362,15 @@ public class JobFilter implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
-     * parameter as <code>ResourceType</code>. There is no filter for EBS volumes because volume recommendations cannot
-     * be exported at this time.
+     * Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specify the <code>name</code> parameter
+     * as <code>ResourceType</code>. There is no filter for EBS volumes because volume recommendations cannot be
+     * exported at this time.
      * </p>
      * </li>
      * <li>
      * <p>
      * Specify <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code> if you
-     * specified the <code>name</code> parameter as <code>JobStatus</code>.
+     * specify the <code>name</code> parameter as <code>JobStatus</code>.
      * </p>
      * </li>
      * </ul>
@@ -380,7 +384,7 @@ public class JobFilter implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specified the <code>name</code>
+     *        Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specify the <code>name</code>
      *        parameter as <code>ResourceType</code>. There is no filter for EBS volumes because volume recommendations
      *        cannot be exported at this time.
      *        </p>
@@ -388,7 +392,7 @@ public class JobFilter implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        Specify <code>Queued</code>, <code>InProgress</code>, <code>Complete</code>, or <code>Failed</code> if you
-     *        specified the <code>name</code> parameter as <code>JobStatus</code>.
+     *        specify the <code>name</code> parameter as <code>JobStatus</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

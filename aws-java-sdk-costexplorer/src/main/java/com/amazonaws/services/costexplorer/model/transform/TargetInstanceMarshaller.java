@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.costexplorer.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -39,6 +40,8 @@ public class TargetInstanceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceDetails").build();
     private static final MarshallingInfo<StructuredPojo> EXPECTEDRESOURCEUTILIZATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExpectedResourceUtilization").build();
+    private static final MarshallingInfo<List> PLATFORMDIFFERENCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PlatformDifferences").build();
 
     private static final TargetInstanceMarshaller instance = new TargetInstanceMarshaller();
 
@@ -62,6 +65,7 @@ public class TargetInstanceMarshaller {
             protocolMarshaller.marshall(targetInstance.getDefaultTargetInstance(), DEFAULTTARGETINSTANCE_BINDING);
             protocolMarshaller.marshall(targetInstance.getResourceDetails(), RESOURCEDETAILS_BINDING);
             protocolMarshaller.marshall(targetInstance.getExpectedResourceUtilization(), EXPECTEDRESOURCEUTILIZATION_BINDING);
+            protocolMarshaller.marshall(targetInstance.getPlatformDifferences(), PLATFORMDIFFERENCES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

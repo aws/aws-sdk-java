@@ -41,6 +41,12 @@ public class UpdateUserRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomPermissionsName").build();
     private static final MarshallingInfo<Boolean> UNAPPLYCUSTOMPERMISSIONS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UnapplyCustomPermissions").build();
+    private static final MarshallingInfo<String> EXTERNALLOGINFEDERATIONPROVIDERTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExternalLoginFederationProviderType").build();
+    private static final MarshallingInfo<String> CUSTOMFEDERATIONPROVIDERURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomFederationProviderUrl").build();
+    private static final MarshallingInfo<String> EXTERNALLOGINID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExternalLoginId").build();
 
     private static final UpdateUserRequestMarshaller instance = new UpdateUserRequestMarshaller();
 
@@ -65,6 +71,9 @@ public class UpdateUserRequestMarshaller {
             protocolMarshaller.marshall(updateUserRequest.getRole(), ROLE_BINDING);
             protocolMarshaller.marshall(updateUserRequest.getCustomPermissionsName(), CUSTOMPERMISSIONSNAME_BINDING);
             protocolMarshaller.marshall(updateUserRequest.getUnapplyCustomPermissions(), UNAPPLYCUSTOMPERMISSIONS_BINDING);
+            protocolMarshaller.marshall(updateUserRequest.getExternalLoginFederationProviderType(), EXTERNALLOGINFEDERATIONPROVIDERTYPE_BINDING);
+            protocolMarshaller.marshall(updateUserRequest.getCustomFederationProviderUrl(), CUSTOMFEDERATIONPROVIDERURL_BINDING);
+            protocolMarshaller.marshall(updateUserRequest.getExternalLoginId(), EXTERNALLOGINID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

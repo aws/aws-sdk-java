@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.logs.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,6 +37,10 @@ public class MetricTransformationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("metricValue").build();
     private static final MarshallingInfo<Double> DEFAULTVALUE_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultValue").build();
+    private static final MarshallingInfo<Map> DIMENSIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("dimensions").build();
+    private static final MarshallingInfo<String> UNIT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("unit").build();
 
     private static final MetricTransformationMarshaller instance = new MetricTransformationMarshaller();
 
@@ -56,6 +62,8 @@ public class MetricTransformationMarshaller {
             protocolMarshaller.marshall(metricTransformation.getMetricNamespace(), METRICNAMESPACE_BINDING);
             protocolMarshaller.marshall(metricTransformation.getMetricValue(), METRICVALUE_BINDING);
             protocolMarshaller.marshall(metricTransformation.getDefaultValue(), DEFAULTVALUE_BINDING);
+            protocolMarshaller.marshall(metricTransformation.getDimensions(), DIMENSIONS_BINDING);
+            protocolMarshaller.marshall(metricTransformation.getUnit(), UNIT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

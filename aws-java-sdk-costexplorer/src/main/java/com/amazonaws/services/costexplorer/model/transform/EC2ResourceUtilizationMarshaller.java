@@ -35,6 +35,10 @@ public class EC2ResourceUtilizationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxStorageUtilizationPercentage").build();
     private static final MarshallingInfo<StructuredPojo> EBSRESOURCEUTILIZATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EBSResourceUtilization").build();
+    private static final MarshallingInfo<StructuredPojo> DISKRESOURCEUTILIZATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DiskResourceUtilization").build();
+    private static final MarshallingInfo<StructuredPojo> NETWORKRESOURCEUTILIZATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NetworkResourceUtilization").build();
 
     private static final EC2ResourceUtilizationMarshaller instance = new EC2ResourceUtilizationMarshaller();
 
@@ -56,6 +60,8 @@ public class EC2ResourceUtilizationMarshaller {
             protocolMarshaller.marshall(eC2ResourceUtilization.getMaxMemoryUtilizationPercentage(), MAXMEMORYUTILIZATIONPERCENTAGE_BINDING);
             protocolMarshaller.marshall(eC2ResourceUtilization.getMaxStorageUtilizationPercentage(), MAXSTORAGEUTILIZATIONPERCENTAGE_BINDING);
             protocolMarshaller.marshall(eC2ResourceUtilization.getEBSResourceUtilization(), EBSRESOURCEUTILIZATION_BINDING);
+            protocolMarshaller.marshall(eC2ResourceUtilization.getDiskResourceUtilization(), DISKRESOURCEUTILIZATION_BINDING);
+            protocolMarshaller.marshall(eC2ResourceUtilization.getNetworkResourceUtilization(), NETWORKRESOURCEUTILIZATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

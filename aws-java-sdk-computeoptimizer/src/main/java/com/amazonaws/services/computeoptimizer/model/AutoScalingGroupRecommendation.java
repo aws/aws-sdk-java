@@ -48,7 +48,7 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
     private String autoScalingGroupName;
     /**
      * <p>
-     * The finding classification for the Auto Scaling group.
+     * The finding classification of the Auto Scaling group.
      * </p>
      * <p>
      * Findings for Auto Scaling groups include:
@@ -223,7 +223,7 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The finding classification for the Auto Scaling group.
+     * The finding classification of the Auto Scaling group.
      * </p>
      * <p>
      * Findings for Auto Scaling groups include:
@@ -245,7 +245,7 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
      * </ul>
      * 
      * @param finding
-     *        The finding classification for the Auto Scaling group.</p>
+     *        The finding classification of the Auto Scaling group.</p>
      *        <p>
      *        Findings for Auto Scaling groups include:
      *        </p>
@@ -272,7 +272,7 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The finding classification for the Auto Scaling group.
+     * The finding classification of the Auto Scaling group.
      * </p>
      * <p>
      * Findings for Auto Scaling groups include:
@@ -293,7 +293,7 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
      * </li>
      * </ul>
      * 
-     * @return The finding classification for the Auto Scaling group.</p>
+     * @return The finding classification of the Auto Scaling group.</p>
      *         <p>
      *         Findings for Auto Scaling groups include:
      *         </p>
@@ -320,7 +320,7 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The finding classification for the Auto Scaling group.
+     * The finding classification of the Auto Scaling group.
      * </p>
      * <p>
      * Findings for Auto Scaling groups include:
@@ -342,7 +342,7 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
      * </ul>
      * 
      * @param finding
-     *        The finding classification for the Auto Scaling group.</p>
+     *        The finding classification of the Auto Scaling group.</p>
      *        <p>
      *        Findings for Auto Scaling groups include:
      *        </p>
@@ -371,7 +371,7 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The finding classification for the Auto Scaling group.
+     * The finding classification of the Auto Scaling group.
      * </p>
      * <p>
      * Findings for Auto Scaling groups include:
@@ -393,7 +393,7 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
      * </ul>
      * 
      * @param finding
-     *        The finding classification for the Auto Scaling group.</p>
+     *        The finding classification of the Auto Scaling group.</p>
      *        <p>
      *        Findings for Auto Scaling groups include:
      *        </p>

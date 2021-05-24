@@ -123,6 +123,10 @@ public class CreateCapacityReservationRequestMarshaller implements Marshaller<Re
             }
         }
 
+        if (createCapacityReservationRequest.getOutpostArn() != null) {
+            request.addParameter("OutpostArn", StringUtils.fromString(createCapacityReservationRequest.getOutpostArn()));
+        }
+
         return request;
     }
 

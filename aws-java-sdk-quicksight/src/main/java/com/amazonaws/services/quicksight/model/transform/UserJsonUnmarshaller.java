@@ -80,6 +80,18 @@ public class UserJsonUnmarshaller implements Unmarshaller<User, JsonUnmarshaller
                     context.nextToken();
                     user.setCustomPermissionsName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ExternalLoginFederationProviderType", targetDepth)) {
+                    context.nextToken();
+                    user.setExternalLoginFederationProviderType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ExternalLoginFederationProviderUrl", targetDepth)) {
+                    context.nextToken();
+                    user.setExternalLoginFederationProviderUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ExternalLoginId", targetDepth)) {
+                    context.nextToken();
+                    user.setExternalLoginId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

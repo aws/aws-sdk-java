@@ -127,6 +127,49 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private Boolean unapplyCustomPermissions;
+    /**
+     * <p>
+     * The type of supported external login provider that provides identity to let a user federate into QuickSight with
+     * an associated AWS Identity and Access Management (IAM) role. The type of supported external login provider can be
+     * one of the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the
+     * <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed
+     * when the external provider is custom.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use
+     * the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NONE</code>: This clears all the previously saved external login information for a user. Use
+     * <code> <a>DescribeUser</a> </code> API to check the external login information.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String externalLoginFederationProviderType;
+    /**
+     * <p>
+     * The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into
+     * QuickSight with an associated AWS Identity and Access Management (IAM) role. This parameter should only be used
+     * when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.
+     * </p>
+     */
+    private String customFederationProviderUrl;
+    /**
+     * <p>
+     * The identity ID for a user in the external login provider.
+     * </p>
+     */
+    private String externalLoginId;
 
     /**
      * <p>
@@ -845,6 +888,274 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The type of supported external login provider that provides identity to let a user federate into QuickSight with
+     * an associated AWS Identity and Access Management (IAM) role. The type of supported external login provider can be
+     * one of the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the
+     * <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed
+     * when the external provider is custom.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use
+     * the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NONE</code>: This clears all the previously saved external login information for a user. Use
+     * <code> <a>DescribeUser</a> </code> API to check the external login information.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param externalLoginFederationProviderType
+     *        The type of supported external login provider that provides identity to let a user federate into
+     *        QuickSight with an associated AWS Identity and Access Management (IAM) role. The type of supported
+     *        external login provider can be one of the following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing
+     *        the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is
+     *        only needed when the external provider is custom.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code>
+     *        type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code>: This clears all the previously saved external login information for a user. Use
+     *        <code> <a>DescribeUser</a> </code> API to check the external login information.
+     *        </p>
+     *        </li>
+     */
+
+    public void setExternalLoginFederationProviderType(String externalLoginFederationProviderType) {
+        this.externalLoginFederationProviderType = externalLoginFederationProviderType;
+    }
+
+    /**
+     * <p>
+     * The type of supported external login provider that provides identity to let a user federate into QuickSight with
+     * an associated AWS Identity and Access Management (IAM) role. The type of supported external login provider can be
+     * one of the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the
+     * <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed
+     * when the external provider is custom.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use
+     * the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NONE</code>: This clears all the previously saved external login information for a user. Use
+     * <code> <a>DescribeUser</a> </code> API to check the external login information.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The type of supported external login provider that provides identity to let a user federate into
+     *         QuickSight with an associated AWS Identity and Access Management (IAM) role. The type of supported
+     *         external login provider can be one of the following.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing
+     *         the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is
+     *         only needed when the external provider is custom.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code>
+     *         type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NONE</code>: This clears all the previously saved external login information for a user. Use
+     *         <code> <a>DescribeUser</a> </code> API to check the external login information.
+     *         </p>
+     *         </li>
+     */
+
+    public String getExternalLoginFederationProviderType() {
+        return this.externalLoginFederationProviderType;
+    }
+
+    /**
+     * <p>
+     * The type of supported external login provider that provides identity to let a user federate into QuickSight with
+     * an associated AWS Identity and Access Management (IAM) role. The type of supported external login provider can be
+     * one of the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing the
+     * <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is only needed
+     * when the external provider is custom.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code> type, use
+     * the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NONE</code>: This clears all the previously saved external login information for a user. Use
+     * <code> <a>DescribeUser</a> </code> API to check the external login information.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param externalLoginFederationProviderType
+     *        The type of supported external login provider that provides identity to let a user federate into
+     *        QuickSight with an associated AWS Identity and Access Management (IAM) role. The type of supported
+     *        external login provider can be one of the following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com. When choosing
+     *        the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl" parameter which is
+     *        only needed when the external provider is custom.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code>
+     *        type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom OIDC provider URL.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code>: This clears all the previously saved external login information for a user. Use
+     *        <code> <a>DescribeUser</a> </code> API to check the external login information.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateUserRequest withExternalLoginFederationProviderType(String externalLoginFederationProviderType) {
+        setExternalLoginFederationProviderType(externalLoginFederationProviderType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into
+     * QuickSight with an associated AWS Identity and Access Management (IAM) role. This parameter should only be used
+     * when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.
+     * </p>
+     * 
+     * @param customFederationProviderUrl
+     *        The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into
+     *        QuickSight with an associated AWS Identity and Access Management (IAM) role. This parameter should only be
+     *        used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.
+     */
+
+    public void setCustomFederationProviderUrl(String customFederationProviderUrl) {
+        this.customFederationProviderUrl = customFederationProviderUrl;
+    }
+
+    /**
+     * <p>
+     * The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into
+     * QuickSight with an associated AWS Identity and Access Management (IAM) role. This parameter should only be used
+     * when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.
+     * </p>
+     * 
+     * @return The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into
+     *         QuickSight with an associated AWS Identity and Access Management (IAM) role. This parameter should only
+     *         be used when <code>ExternalLoginFederationProviderType</code> parameter is set to
+     *         <code>CUSTOM_OIDC</code>.
+     */
+
+    public String getCustomFederationProviderUrl() {
+        return this.customFederationProviderUrl;
+    }
+
+    /**
+     * <p>
+     * The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into
+     * QuickSight with an associated AWS Identity and Access Management (IAM) role. This parameter should only be used
+     * when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.
+     * </p>
+     * 
+     * @param customFederationProviderUrl
+     *        The URL of the custom OpenID Connect (OIDC) provider that provides identity to let a user federate into
+     *        QuickSight with an associated AWS Identity and Access Management (IAM) role. This parameter should only be
+     *        used when <code>ExternalLoginFederationProviderType</code> parameter is set to <code>CUSTOM_OIDC</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateUserRequest withCustomFederationProviderUrl(String customFederationProviderUrl) {
+        setCustomFederationProviderUrl(customFederationProviderUrl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identity ID for a user in the external login provider.
+     * </p>
+     * 
+     * @param externalLoginId
+     *        The identity ID for a user in the external login provider.
+     */
+
+    public void setExternalLoginId(String externalLoginId) {
+        this.externalLoginId = externalLoginId;
+    }
+
+    /**
+     * <p>
+     * The identity ID for a user in the external login provider.
+     * </p>
+     * 
+     * @return The identity ID for a user in the external login provider.
+     */
+
+    public String getExternalLoginId() {
+        return this.externalLoginId;
+    }
+
+    /**
+     * <p>
+     * The identity ID for a user in the external login provider.
+     * </p>
+     * 
+     * @param externalLoginId
+     *        The identity ID for a user in the external login provider.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateUserRequest withExternalLoginId(String externalLoginId) {
+        setExternalLoginId(externalLoginId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -869,7 +1180,13 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getCustomPermissionsName() != null)
             sb.append("CustomPermissionsName: ").append(getCustomPermissionsName()).append(",");
         if (getUnapplyCustomPermissions() != null)
-            sb.append("UnapplyCustomPermissions: ").append(getUnapplyCustomPermissions());
+            sb.append("UnapplyCustomPermissions: ").append(getUnapplyCustomPermissions()).append(",");
+        if (getExternalLoginFederationProviderType() != null)
+            sb.append("ExternalLoginFederationProviderType: ").append(getExternalLoginFederationProviderType()).append(",");
+        if (getCustomFederationProviderUrl() != null)
+            sb.append("CustomFederationProviderUrl: ").append(getCustomFederationProviderUrl()).append(",");
+        if (getExternalLoginId() != null)
+            sb.append("ExternalLoginId: ").append(getExternalLoginId());
         sb.append("}");
         return sb.toString();
     }
@@ -912,6 +1229,19 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getUnapplyCustomPermissions() != null && other.getUnapplyCustomPermissions().equals(this.getUnapplyCustomPermissions()) == false)
             return false;
+        if (other.getExternalLoginFederationProviderType() == null ^ this.getExternalLoginFederationProviderType() == null)
+            return false;
+        if (other.getExternalLoginFederationProviderType() != null
+                && other.getExternalLoginFederationProviderType().equals(this.getExternalLoginFederationProviderType()) == false)
+            return false;
+        if (other.getCustomFederationProviderUrl() == null ^ this.getCustomFederationProviderUrl() == null)
+            return false;
+        if (other.getCustomFederationProviderUrl() != null && other.getCustomFederationProviderUrl().equals(this.getCustomFederationProviderUrl()) == false)
+            return false;
+        if (other.getExternalLoginId() == null ^ this.getExternalLoginId() == null)
+            return false;
+        if (other.getExternalLoginId() != null && other.getExternalLoginId().equals(this.getExternalLoginId()) == false)
+            return false;
         return true;
     }
 
@@ -927,6 +1257,9 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode());
         hashCode = prime * hashCode + ((getCustomPermissionsName() == null) ? 0 : getCustomPermissionsName().hashCode());
         hashCode = prime * hashCode + ((getUnapplyCustomPermissions() == null) ? 0 : getUnapplyCustomPermissions().hashCode());
+        hashCode = prime * hashCode + ((getExternalLoginFederationProviderType() == null) ? 0 : getExternalLoginFederationProviderType().hashCode());
+        hashCode = prime * hashCode + ((getCustomFederationProviderUrl() == null) ? 0 : getCustomFederationProviderUrl().hashCode());
+        hashCode = prime * hashCode + ((getExternalLoginId() == null) ? 0 : getExternalLoginId().hashCode());
         return hashCode;
     }
 

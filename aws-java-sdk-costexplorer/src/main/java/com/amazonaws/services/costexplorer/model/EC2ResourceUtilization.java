@@ -52,6 +52,18 @@ public class EC2ResourceUtilization implements Serializable, Cloneable, Structur
      * </p>
      */
     private EBSResourceUtilization eBSResourceUtilization;
+    /**
+     * <p>
+     * The field that contains a list of disk (local storage) metrics associated with the current instance.
+     * </p>
+     */
+    private DiskResourceUtilization diskResourceUtilization;
+    /**
+     * <p>
+     * The network field that contains a list of network metrics associated with the current instance.
+     * </p>
+     */
+    private NetworkResourceUtilization networkResourceUtilization;
 
     /**
      * <p>
@@ -214,6 +226,86 @@ public class EC2ResourceUtilization implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The field that contains a list of disk (local storage) metrics associated with the current instance.
+     * </p>
+     * 
+     * @param diskResourceUtilization
+     *        The field that contains a list of disk (local storage) metrics associated with the current instance.
+     */
+
+    public void setDiskResourceUtilization(DiskResourceUtilization diskResourceUtilization) {
+        this.diskResourceUtilization = diskResourceUtilization;
+    }
+
+    /**
+     * <p>
+     * The field that contains a list of disk (local storage) metrics associated with the current instance.
+     * </p>
+     * 
+     * @return The field that contains a list of disk (local storage) metrics associated with the current instance.
+     */
+
+    public DiskResourceUtilization getDiskResourceUtilization() {
+        return this.diskResourceUtilization;
+    }
+
+    /**
+     * <p>
+     * The field that contains a list of disk (local storage) metrics associated with the current instance.
+     * </p>
+     * 
+     * @param diskResourceUtilization
+     *        The field that contains a list of disk (local storage) metrics associated with the current instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EC2ResourceUtilization withDiskResourceUtilization(DiskResourceUtilization diskResourceUtilization) {
+        setDiskResourceUtilization(diskResourceUtilization);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The network field that contains a list of network metrics associated with the current instance.
+     * </p>
+     * 
+     * @param networkResourceUtilization
+     *        The network field that contains a list of network metrics associated with the current instance.
+     */
+
+    public void setNetworkResourceUtilization(NetworkResourceUtilization networkResourceUtilization) {
+        this.networkResourceUtilization = networkResourceUtilization;
+    }
+
+    /**
+     * <p>
+     * The network field that contains a list of network metrics associated with the current instance.
+     * </p>
+     * 
+     * @return The network field that contains a list of network metrics associated with the current instance.
+     */
+
+    public NetworkResourceUtilization getNetworkResourceUtilization() {
+        return this.networkResourceUtilization;
+    }
+
+    /**
+     * <p>
+     * The network field that contains a list of network metrics associated with the current instance.
+     * </p>
+     * 
+     * @param networkResourceUtilization
+     *        The network field that contains a list of network metrics associated with the current instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EC2ResourceUtilization withNetworkResourceUtilization(NetworkResourceUtilization networkResourceUtilization) {
+        setNetworkResourceUtilization(networkResourceUtilization);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -232,7 +324,11 @@ public class EC2ResourceUtilization implements Serializable, Cloneable, Structur
         if (getMaxStorageUtilizationPercentage() != null)
             sb.append("MaxStorageUtilizationPercentage: ").append(getMaxStorageUtilizationPercentage()).append(",");
         if (getEBSResourceUtilization() != null)
-            sb.append("EBSResourceUtilization: ").append(getEBSResourceUtilization());
+            sb.append("EBSResourceUtilization: ").append(getEBSResourceUtilization()).append(",");
+        if (getDiskResourceUtilization() != null)
+            sb.append("DiskResourceUtilization: ").append(getDiskResourceUtilization()).append(",");
+        if (getNetworkResourceUtilization() != null)
+            sb.append("NetworkResourceUtilization: ").append(getNetworkResourceUtilization());
         sb.append("}");
         return sb.toString();
     }
@@ -265,6 +361,14 @@ public class EC2ResourceUtilization implements Serializable, Cloneable, Structur
             return false;
         if (other.getEBSResourceUtilization() != null && other.getEBSResourceUtilization().equals(this.getEBSResourceUtilization()) == false)
             return false;
+        if (other.getDiskResourceUtilization() == null ^ this.getDiskResourceUtilization() == null)
+            return false;
+        if (other.getDiskResourceUtilization() != null && other.getDiskResourceUtilization().equals(this.getDiskResourceUtilization()) == false)
+            return false;
+        if (other.getNetworkResourceUtilization() == null ^ this.getNetworkResourceUtilization() == null)
+            return false;
+        if (other.getNetworkResourceUtilization() != null && other.getNetworkResourceUtilization().equals(this.getNetworkResourceUtilization()) == false)
+            return false;
         return true;
     }
 
@@ -277,6 +381,8 @@ public class EC2ResourceUtilization implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getMaxMemoryUtilizationPercentage() == null) ? 0 : getMaxMemoryUtilizationPercentage().hashCode());
         hashCode = prime * hashCode + ((getMaxStorageUtilizationPercentage() == null) ? 0 : getMaxStorageUtilizationPercentage().hashCode());
         hashCode = prime * hashCode + ((getEBSResourceUtilization() == null) ? 0 : getEBSResourceUtilization().hashCode());
+        hashCode = prime * hashCode + ((getDiskResourceUtilization() == null) ? 0 : getDiskResourceUtilization().hashCode());
+        hashCode = prime * hashCode + ((getNetworkResourceUtilization() == null) ? 0 : getNetworkResourceUtilization().hashCode());
         return hashCode;
     }
 

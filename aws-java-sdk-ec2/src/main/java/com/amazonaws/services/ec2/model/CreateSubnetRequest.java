@@ -59,6 +59,14 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
     private String availabilityZoneId;
     /**
      * <p>
+     * The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>. We modify the
+     * specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it
+     * to <code>100.68.0.0/18</code>.
+     * </p>
+     */
+    private String cidrBlock;
+    /**
+     * <p>
      * The IPv6 network range for the subnet, in CIDR notation. The subnet size must use a /64 prefix length.
      * </p>
      */
@@ -76,14 +84,6 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      */
     private String vpcId;
-    /**
-     * <p>
-     * The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>. We modify the
-     * specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it
-     * to <code>100.68.0.0/18</code>.
-     * </p>
-     */
-    private String cidrBlock;
 
     /**
      * Default constructor for CreateSubnetRequest object. Callers should use the setter or fluent setter (with...)
@@ -344,6 +344,58 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
+     * The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>. We modify the
+     * specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it
+     * to <code>100.68.0.0/18</code>.
+     * </p>
+     * 
+     * @param cidrBlock
+     *        The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>. We modify
+     *        the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>,
+     *        we modify it to <code>100.68.0.0/18</code>.
+     */
+
+    public void setCidrBlock(String cidrBlock) {
+        this.cidrBlock = cidrBlock;
+    }
+
+    /**
+     * <p>
+     * The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>. We modify the
+     * specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it
+     * to <code>100.68.0.0/18</code>.
+     * </p>
+     * 
+     * @return The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>. We modify
+     *         the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>,
+     *         we modify it to <code>100.68.0.0/18</code>.
+     */
+
+    public String getCidrBlock() {
+        return this.cidrBlock;
+    }
+
+    /**
+     * <p>
+     * The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>. We modify the
+     * specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it
+     * to <code>100.68.0.0/18</code>.
+     * </p>
+     * 
+     * @param cidrBlock
+     *        The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>. We modify
+     *        the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>,
+     *        we modify it to <code>100.68.0.0/18</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSubnetRequest withCidrBlock(String cidrBlock) {
+        setCidrBlock(cidrBlock);
+        return this;
+    }
+
+    /**
+     * <p>
      * The IPv6 network range for the subnet, in CIDR notation. The subnet size must use a /64 prefix length.
      * </p>
      * 
@@ -469,58 +521,6 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
-     * <p>
-     * The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>. We modify the
-     * specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it
-     * to <code>100.68.0.0/18</code>.
-     * </p>
-     * 
-     * @param cidrBlock
-     *        The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>. We modify
-     *        the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>,
-     *        we modify it to <code>100.68.0.0/18</code>.
-     */
-
-    public void setCidrBlock(String cidrBlock) {
-        this.cidrBlock = cidrBlock;
-    }
-
-    /**
-     * <p>
-     * The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>. We modify the
-     * specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it
-     * to <code>100.68.0.0/18</code>.
-     * </p>
-     * 
-     * @return The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>. We modify
-     *         the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>,
-     *         we modify it to <code>100.68.0.0/18</code>.
-     */
-
-    public String getCidrBlock() {
-        return this.cidrBlock;
-    }
-
-    /**
-     * <p>
-     * The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>. We modify the
-     * specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it
-     * to <code>100.68.0.0/18</code>.
-     * </p>
-     * 
-     * @param cidrBlock
-     *        The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>. We modify
-     *        the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>,
-     *        we modify it to <code>100.68.0.0/18</code>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateSubnetRequest withCidrBlock(String cidrBlock) {
-        setCidrBlock(cidrBlock);
-        return this;
-    }
-
-    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -549,14 +549,14 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
             sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getAvailabilityZoneId() != null)
             sb.append("AvailabilityZoneId: ").append(getAvailabilityZoneId()).append(",");
+        if (getCidrBlock() != null)
+            sb.append("CidrBlock: ").append(getCidrBlock()).append(",");
         if (getIpv6CidrBlock() != null)
             sb.append("Ipv6CidrBlock: ").append(getIpv6CidrBlock()).append(",");
         if (getOutpostArn() != null)
             sb.append("OutpostArn: ").append(getOutpostArn()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: ").append(getVpcId()).append(",");
-        if (getCidrBlock() != null)
-            sb.append("CidrBlock: ").append(getCidrBlock());
+            sb.append("VpcId: ").append(getVpcId());
         sb.append("}");
         return sb.toString();
     }
@@ -583,6 +583,10 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
             return false;
         if (other.getAvailabilityZoneId() != null && other.getAvailabilityZoneId().equals(this.getAvailabilityZoneId()) == false)
             return false;
+        if (other.getCidrBlock() == null ^ this.getCidrBlock() == null)
+            return false;
+        if (other.getCidrBlock() != null && other.getCidrBlock().equals(this.getCidrBlock()) == false)
+            return false;
         if (other.getIpv6CidrBlock() == null ^ this.getIpv6CidrBlock() == null)
             return false;
         if (other.getIpv6CidrBlock() != null && other.getIpv6CidrBlock().equals(this.getIpv6CidrBlock()) == false)
@@ -595,10 +599,6 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
             return false;
         if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
-        if (other.getCidrBlock() == null ^ this.getCidrBlock() == null)
-            return false;
-        if (other.getCidrBlock() != null && other.getCidrBlock().equals(this.getCidrBlock()) == false)
-            return false;
         return true;
     }
 
@@ -610,10 +610,10 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
         hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZoneId() == null) ? 0 : getAvailabilityZoneId().hashCode());
+        hashCode = prime * hashCode + ((getCidrBlock() == null) ? 0 : getCidrBlock().hashCode());
         hashCode = prime * hashCode + ((getIpv6CidrBlock() == null) ? 0 : getIpv6CidrBlock().hashCode());
         hashCode = prime * hashCode + ((getOutpostArn() == null) ? 0 : getOutpostArn().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
-        hashCode = prime * hashCode + ((getCidrBlock() == null) ? 0 : getCidrBlock().hashCode());
         return hashCode;
     }
 

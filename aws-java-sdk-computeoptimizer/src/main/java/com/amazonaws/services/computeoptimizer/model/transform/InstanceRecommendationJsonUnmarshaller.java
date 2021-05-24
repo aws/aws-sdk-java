@@ -68,6 +68,12 @@ public class InstanceRecommendationJsonUnmarshaller implements Unmarshaller<Inst
                     context.nextToken();
                     instanceRecommendation.setFinding(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("findingReasonCodes", targetDepth)) {
+                    context.nextToken();
+                    instanceRecommendation.setFindingReasonCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("utilizationMetrics", targetDepth)) {
                     context.nextToken();
                     instanceRecommendation.setUtilizationMetrics(new ListUnmarshaller<UtilizationMetric>(UtilizationMetricJsonUnmarshaller.getInstance())

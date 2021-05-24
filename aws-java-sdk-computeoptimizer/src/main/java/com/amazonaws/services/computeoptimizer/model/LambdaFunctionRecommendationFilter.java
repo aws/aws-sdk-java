@@ -19,7 +19,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes a filter that returns a more specific list of AWS Lambda function recommendations.
+ * Describes a filter that returns a more specific list of AWS Lambda function recommendations. Use this filter with the
+ * <code>GetLambdaFunctionRecommendations</code> action.
+ * </p>
+ * <p>
+ * You can use <code>EBSFilter</code> with the <code>GetEBSVolumeRecommendations</code> action, <code>JobFilter</code>
+ * with the <code>DescribeRecommendationExportJobs</code> action, and <code>Filter</code> with the
+ * <code>GetAutoScalingGroupRecommendations</code> and <code>GetEC2InstanceRecommendations</code> actions.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/LambdaFunctionRecommendationFilter"
@@ -53,14 +59,14 @@ public class LambdaFunctionRecommendationFilter implements Serializable, Cloneab
      * <ul>
      * <li>
      * <p>
-     * Specify <code>Optimized</code>, <code>NotOptimized</code>, or <code>Unavailable</code> if you specified the
+     * Specify <code>Optimized</code>, <code>NotOptimized</code>, or <code>Unavailable</code> if you specify the
      * <code>name</code> parameter as <code>Finding</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * Specify <code>MemoryOverprovisioned</code>, <code>MemoryUnderprovisioned</code>, <code>InsufficientData</code>,
-     * or <code>Inconclusive</code> if you specified the <code>name</code> parameter as <code>FindingReasonCode</code>.
+     * or <code>Inconclusive</code> if you specify the <code>name</code> parameter as <code>FindingReasonCode</code>.
      * </p>
      * </li>
      * </ul>
@@ -197,14 +203,14 @@ public class LambdaFunctionRecommendationFilter implements Serializable, Cloneab
      * <ul>
      * <li>
      * <p>
-     * Specify <code>Optimized</code>, <code>NotOptimized</code>, or <code>Unavailable</code> if you specified the
+     * Specify <code>Optimized</code>, <code>NotOptimized</code>, or <code>Unavailable</code> if you specify the
      * <code>name</code> parameter as <code>Finding</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * Specify <code>MemoryOverprovisioned</code>, <code>MemoryUnderprovisioned</code>, <code>InsufficientData</code>,
-     * or <code>Inconclusive</code> if you specified the <code>name</code> parameter as <code>FindingReasonCode</code>.
+     * or <code>Inconclusive</code> if you specify the <code>name</code> parameter as <code>FindingReasonCode</code>.
      * </p>
      * </li>
      * </ul>
@@ -217,14 +223,14 @@ public class LambdaFunctionRecommendationFilter implements Serializable, Cloneab
      *         <ul>
      *         <li>
      *         <p>
-     *         Specify <code>Optimized</code>, <code>NotOptimized</code>, or <code>Unavailable</code> if you specified
-     *         the <code>name</code> parameter as <code>Finding</code>.
+     *         Specify <code>Optimized</code>, <code>NotOptimized</code>, or <code>Unavailable</code> if you specify the
+     *         <code>name</code> parameter as <code>Finding</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         Specify <code>MemoryOverprovisioned</code>, <code>MemoryUnderprovisioned</code>,
-     *         <code>InsufficientData</code>, or <code>Inconclusive</code> if you specified the <code>name</code>
+     *         <code>InsufficientData</code>, or <code>Inconclusive</code> if you specify the <code>name</code>
      *         parameter as <code>FindingReasonCode</code>.
      *         </p>
      *         </li>
@@ -245,14 +251,14 @@ public class LambdaFunctionRecommendationFilter implements Serializable, Cloneab
      * <ul>
      * <li>
      * <p>
-     * Specify <code>Optimized</code>, <code>NotOptimized</code>, or <code>Unavailable</code> if you specified the
+     * Specify <code>Optimized</code>, <code>NotOptimized</code>, or <code>Unavailable</code> if you specify the
      * <code>name</code> parameter as <code>Finding</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * Specify <code>MemoryOverprovisioned</code>, <code>MemoryUnderprovisioned</code>, <code>InsufficientData</code>,
-     * or <code>Inconclusive</code> if you specified the <code>name</code> parameter as <code>FindingReasonCode</code>.
+     * or <code>Inconclusive</code> if you specify the <code>name</code> parameter as <code>FindingReasonCode</code>.
      * </p>
      * </li>
      * </ul>
@@ -266,15 +272,15 @@ public class LambdaFunctionRecommendationFilter implements Serializable, Cloneab
      *        <ul>
      *        <li>
      *        <p>
-     *        Specify <code>Optimized</code>, <code>NotOptimized</code>, or <code>Unavailable</code> if you specified
-     *        the <code>name</code> parameter as <code>Finding</code>.
+     *        Specify <code>Optimized</code>, <code>NotOptimized</code>, or <code>Unavailable</code> if you specify the
+     *        <code>name</code> parameter as <code>Finding</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        Specify <code>MemoryOverprovisioned</code>, <code>MemoryUnderprovisioned</code>,
-     *        <code>InsufficientData</code>, or <code>Inconclusive</code> if you specified the <code>name</code>
-     *        parameter as <code>FindingReasonCode</code>.
+     *        <code>InsufficientData</code>, or <code>Inconclusive</code> if you specify the <code>name</code> parameter
+     *        as <code>FindingReasonCode</code>.
      *        </p>
      *        </li>
      */
@@ -299,14 +305,14 @@ public class LambdaFunctionRecommendationFilter implements Serializable, Cloneab
      * <ul>
      * <li>
      * <p>
-     * Specify <code>Optimized</code>, <code>NotOptimized</code>, or <code>Unavailable</code> if you specified the
+     * Specify <code>Optimized</code>, <code>NotOptimized</code>, or <code>Unavailable</code> if you specify the
      * <code>name</code> parameter as <code>Finding</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * Specify <code>MemoryOverprovisioned</code>, <code>MemoryUnderprovisioned</code>, <code>InsufficientData</code>,
-     * or <code>Inconclusive</code> if you specified the <code>name</code> parameter as <code>FindingReasonCode</code>.
+     * or <code>Inconclusive</code> if you specify the <code>name</code> parameter as <code>FindingReasonCode</code>.
      * </p>
      * </li>
      * </ul>
@@ -325,15 +331,15 @@ public class LambdaFunctionRecommendationFilter implements Serializable, Cloneab
      *        <ul>
      *        <li>
      *        <p>
-     *        Specify <code>Optimized</code>, <code>NotOptimized</code>, or <code>Unavailable</code> if you specified
-     *        the <code>name</code> parameter as <code>Finding</code>.
+     *        Specify <code>Optimized</code>, <code>NotOptimized</code>, or <code>Unavailable</code> if you specify the
+     *        <code>name</code> parameter as <code>Finding</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        Specify <code>MemoryOverprovisioned</code>, <code>MemoryUnderprovisioned</code>,
-     *        <code>InsufficientData</code>, or <code>Inconclusive</code> if you specified the <code>name</code>
-     *        parameter as <code>FindingReasonCode</code>.
+     *        <code>InsufficientData</code>, or <code>Inconclusive</code> if you specify the <code>name</code> parameter
+     *        as <code>FindingReasonCode</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -360,14 +366,14 @@ public class LambdaFunctionRecommendationFilter implements Serializable, Cloneab
      * <ul>
      * <li>
      * <p>
-     * Specify <code>Optimized</code>, <code>NotOptimized</code>, or <code>Unavailable</code> if you specified the
+     * Specify <code>Optimized</code>, <code>NotOptimized</code>, or <code>Unavailable</code> if you specify the
      * <code>name</code> parameter as <code>Finding</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * Specify <code>MemoryOverprovisioned</code>, <code>MemoryUnderprovisioned</code>, <code>InsufficientData</code>,
-     * or <code>Inconclusive</code> if you specified the <code>name</code> parameter as <code>FindingReasonCode</code>.
+     * or <code>Inconclusive</code> if you specify the <code>name</code> parameter as <code>FindingReasonCode</code>.
      * </p>
      * </li>
      * </ul>
@@ -381,15 +387,15 @@ public class LambdaFunctionRecommendationFilter implements Serializable, Cloneab
      *        <ul>
      *        <li>
      *        <p>
-     *        Specify <code>Optimized</code>, <code>NotOptimized</code>, or <code>Unavailable</code> if you specified
-     *        the <code>name</code> parameter as <code>Finding</code>.
+     *        Specify <code>Optimized</code>, <code>NotOptimized</code>, or <code>Unavailable</code> if you specify the
+     *        <code>name</code> parameter as <code>Finding</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        Specify <code>MemoryOverprovisioned</code>, <code>MemoryUnderprovisioned</code>,
-     *        <code>InsufficientData</code>, or <code>Inconclusive</code> if you specified the <code>name</code>
-     *        parameter as <code>FindingReasonCode</code>.
+     *        <code>InsufficientData</code>, or <code>Inconclusive</code> if you specify the <code>name</code> parameter
+     *        as <code>FindingReasonCode</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

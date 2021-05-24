@@ -24,7 +24,9 @@ public enum QueryStatus {
     Running("Running"),
     Complete("Complete"),
     Failed("Failed"),
-    Cancelled("Cancelled");
+    Cancelled("Cancelled"),
+    Timeout("Timeout"),
+    Unknown("Unknown");
 
     private String value;
 
