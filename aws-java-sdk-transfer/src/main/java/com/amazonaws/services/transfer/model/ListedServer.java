@@ -34,13 +34,17 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String arn;
-
+    /**
+     * <p>
+     * Specifies the domain of the storage system that is used for file transfers.
+     * </p>
+     */
     private String domain;
     /**
      * <p>
      * Specifies the authentication method used to validate a user for a server that was specified. This can include
-     * Secure Shell (SSH), user name and password combinations, or your own custom authentication method. Valid values
-     * include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
+     * Secure Shell (SSH), Active Directory groups, user name and password combinations, or your own custom
+     * authentication method.
      * </p>
      */
     private String identityProviderType;
@@ -125,7 +129,12 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies the domain of the storage system that is used for file transfers.
+     * </p>
+     * 
      * @param domain
+     *        Specifies the domain of the storage system that is used for file transfers.
      * @see Domain
      */
 
@@ -134,7 +143,11 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies the domain of the storage system that is used for file transfers.
+     * </p>
+     * 
+     * @return Specifies the domain of the storage system that is used for file transfers.
      * @see Domain
      */
 
@@ -143,7 +156,12 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies the domain of the storage system that is used for file transfers.
+     * </p>
+     * 
      * @param domain
+     *        Specifies the domain of the storage system that is used for file transfers.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Domain
      */
@@ -154,7 +172,12 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies the domain of the storage system that is used for file transfers.
+     * </p>
+     * 
      * @param domain
+     *        Specifies the domain of the storage system that is used for file transfers.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Domain
      */
@@ -167,14 +190,14 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the authentication method used to validate a user for a server that was specified. This can include
-     * Secure Shell (SSH), user name and password combinations, or your own custom authentication method. Valid values
-     * include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
+     * Secure Shell (SSH), Active Directory groups, user name and password combinations, or your own custom
+     * authentication method.
      * </p>
      * 
      * @param identityProviderType
      *        Specifies the authentication method used to validate a user for a server that was specified. This can
-     *        include Secure Shell (SSH), user name and password combinations, or your own custom authentication method.
-     *        Valid values include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
+     *        include Secure Shell (SSH), Active Directory groups, user name and password combinations, or your own
+     *        custom authentication method.
      * @see IdentityProviderType
      */
 
@@ -185,13 +208,13 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the authentication method used to validate a user for a server that was specified. This can include
-     * Secure Shell (SSH), user name and password combinations, or your own custom authentication method. Valid values
-     * include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
+     * Secure Shell (SSH), Active Directory groups, user name and password combinations, or your own custom
+     * authentication method.
      * </p>
      * 
      * @return Specifies the authentication method used to validate a user for a server that was specified. This can
-     *         include Secure Shell (SSH), user name and password combinations, or your own custom authentication
-     *         method. Valid values include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
+     *         include Secure Shell (SSH), Active Directory groups, user name and password combinations, or your own
+     *         custom authentication method.
      * @see IdentityProviderType
      */
 
@@ -202,14 +225,14 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the authentication method used to validate a user for a server that was specified. This can include
-     * Secure Shell (SSH), user name and password combinations, or your own custom authentication method. Valid values
-     * include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
+     * Secure Shell (SSH), Active Directory groups, user name and password combinations, or your own custom
+     * authentication method.
      * </p>
      * 
      * @param identityProviderType
      *        Specifies the authentication method used to validate a user for a server that was specified. This can
-     *        include Secure Shell (SSH), user name and password combinations, or your own custom authentication method.
-     *        Valid values include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
+     *        include Secure Shell (SSH), Active Directory groups, user name and password combinations, or your own
+     *        custom authentication method.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderType
      */
@@ -222,14 +245,14 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the authentication method used to validate a user for a server that was specified. This can include
-     * Secure Shell (SSH), user name and password combinations, or your own custom authentication method. Valid values
-     * include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
+     * Secure Shell (SSH), Active Directory groups, user name and password combinations, or your own custom
+     * authentication method.
      * </p>
      * 
      * @param identityProviderType
      *        Specifies the authentication method used to validate a user for a server that was specified. This can
-     *        include Secure Shell (SSH), user name and password combinations, or your own custom authentication method.
-     *        Valid values include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
+     *        include Secure Shell (SSH), Active Directory groups, user name and password combinations, or your own
+     *        custom authentication method.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderType
      */

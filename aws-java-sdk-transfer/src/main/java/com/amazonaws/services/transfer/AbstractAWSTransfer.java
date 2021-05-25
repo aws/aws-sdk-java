@@ -28,12 +28,22 @@ public class AbstractAWSTransfer implements AWSTransfer {
     }
 
     @Override
+    public CreateAccessResult createAccess(CreateAccessRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateServerResult createServer(CreateServerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public CreateUserResult createUser(CreateUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAccessResult deleteAccess(DeleteAccessRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -49,6 +59,11 @@ public class AbstractAWSTransfer implements AWSTransfer {
 
     @Override
     public DeleteUserResult deleteUser(DeleteUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAccessResult describeAccess(DescribeAccessRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -69,6 +84,11 @@ public class AbstractAWSTransfer implements AWSTransfer {
 
     @Override
     public ImportSshPublicKeyResult importSshPublicKey(ImportSshPublicKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAccessesResult listAccesses(ListAccessesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -114,6 +134,11 @@ public class AbstractAWSTransfer implements AWSTransfer {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAccessResult updateAccess(UpdateAccessRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

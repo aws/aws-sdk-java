@@ -41,7 +41,11 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String certificate;
-
+    /**
+     * <p>
+     * Specifies the domain of the storage system that is used for file transfers.
+     * </p>
+     */
     private String domain;
     /**
      * <p>
@@ -66,23 +70,26 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Specifies information to call a customer-supplied authentication API. This field is not populated when the
-     * <code>IdentityProviderType</code> of a server is <code>SERVICE_MANAGED</code>.
+     * <code>IdentityProviderType</code> of a server is <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>SERVICE_MANAGED</code>.
      * </p>
      */
     private IdentityProviderDetails identityProviderDetails;
     /**
      * <p>
-     * Specifies the mode of authentication method enabled for this service. A value of <code>SERVICE_MANAGED</code>
-     * means that you are using this server to store and access user credentials within the service. A value of
-     * <code>API_GATEWAY</code> indicates that you have integrated an API Gateway endpoint that will be invoked for
-     * authenticating your user into the service.
+     * Specifies the mode of authentication method enabled for this service. A value of
+     * <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to Active Directory groups in AWS Managed
+     * Active Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors. A
+     * value of <code>SERVICE_MANAGED</code> means that you are using this server to store and access user credentials
+     * within the service. A value of <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
+     * endpoint that will be invoked for authenticating your user into the service.
      * </p>
      */
     private String identityProviderType;
     /**
      * <p>
      * Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch
-     * logging for Amazon S3 events. When set, user activity can be viewed in your CloudWatch logs.
+     * logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.
      * </p>
      */
     private String loggingRole;
@@ -236,7 +243,12 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Specifies the domain of the storage system that is used for file transfers.
+     * </p>
+     * 
      * @param domain
+     *        Specifies the domain of the storage system that is used for file transfers.
      * @see Domain
      */
 
@@ -245,7 +257,11 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies the domain of the storage system that is used for file transfers.
+     * </p>
+     * 
+     * @return Specifies the domain of the storage system that is used for file transfers.
      * @see Domain
      */
 
@@ -254,7 +270,12 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Specifies the domain of the storage system that is used for file transfers.
+     * </p>
+     * 
      * @param domain
+     *        Specifies the domain of the storage system that is used for file transfers.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Domain
      */
@@ -265,7 +286,12 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Specifies the domain of the storage system that is used for file transfers.
+     * </p>
+     * 
      * @param domain
+     *        Specifies the domain of the storage system that is used for file transfers.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Domain
      */
@@ -431,12 +457,14 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Specifies information to call a customer-supplied authentication API. This field is not populated when the
-     * <code>IdentityProviderType</code> of a server is <code>SERVICE_MANAGED</code>.
+     * <code>IdentityProviderType</code> of a server is <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>SERVICE_MANAGED</code>.
      * </p>
      * 
      * @param identityProviderDetails
      *        Specifies information to call a customer-supplied authentication API. This field is not populated when the
-     *        <code>IdentityProviderType</code> of a server is <code>SERVICE_MANAGED</code>.
+     *        <code>IdentityProviderType</code> of a server is <code>AWS_DIRECTORY_SERVICE</code> or
+     *        <code>SERVICE_MANAGED</code>.
      */
 
     public void setIdentityProviderDetails(IdentityProviderDetails identityProviderDetails) {
@@ -446,11 +474,13 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Specifies information to call a customer-supplied authentication API. This field is not populated when the
-     * <code>IdentityProviderType</code> of a server is <code>SERVICE_MANAGED</code>.
+     * <code>IdentityProviderType</code> of a server is <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>SERVICE_MANAGED</code>.
      * </p>
      * 
      * @return Specifies information to call a customer-supplied authentication API. This field is not populated when
-     *         the <code>IdentityProviderType</code> of a server is <code>SERVICE_MANAGED</code>.
+     *         the <code>IdentityProviderType</code> of a server is <code>AWS_DIRECTORY_SERVICE</code> or
+     *         <code>SERVICE_MANAGED</code>.
      */
 
     public IdentityProviderDetails getIdentityProviderDetails() {
@@ -460,12 +490,14 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Specifies information to call a customer-supplied authentication API. This field is not populated when the
-     * <code>IdentityProviderType</code> of a server is <code>SERVICE_MANAGED</code>.
+     * <code>IdentityProviderType</code> of a server is <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>SERVICE_MANAGED</code>.
      * </p>
      * 
      * @param identityProviderDetails
      *        Specifies information to call a customer-supplied authentication API. This field is not populated when the
-     *        <code>IdentityProviderType</code> of a server is <code>SERVICE_MANAGED</code>.
+     *        <code>IdentityProviderType</code> of a server is <code>AWS_DIRECTORY_SERVICE</code> or
+     *        <code>SERVICE_MANAGED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -476,17 +508,21 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the mode of authentication method enabled for this service. A value of <code>SERVICE_MANAGED</code>
-     * means that you are using this server to store and access user credentials within the service. A value of
-     * <code>API_GATEWAY</code> indicates that you have integrated an API Gateway endpoint that will be invoked for
-     * authenticating your user into the service.
+     * Specifies the mode of authentication method enabled for this service. A value of
+     * <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to Active Directory groups in AWS Managed
+     * Active Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors. A
+     * value of <code>SERVICE_MANAGED</code> means that you are using this server to store and access user credentials
+     * within the service. A value of <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
+     * endpoint that will be invoked for authenticating your user into the service.
      * </p>
      * 
      * @param identityProviderType
      *        Specifies the mode of authentication method enabled for this service. A value of
-     *        <code>SERVICE_MANAGED</code> means that you are using this server to store and access user credentials
-     *        within the service. A value of <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
-     *        endpoint that will be invoked for authenticating your user into the service.
+     *        <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to Active Directory groups in AWS
+     *        Managed Active Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD
+     *        Connectors. A value of <code>SERVICE_MANAGED</code> means that you are using this server to store and
+     *        access user credentials within the service. A value of <code>API_GATEWAY</code> indicates that you have
+     *        integrated an API Gateway endpoint that will be invoked for authenticating your user into the service.
      * @see IdentityProviderType
      */
 
@@ -496,16 +532,20 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the mode of authentication method enabled for this service. A value of <code>SERVICE_MANAGED</code>
-     * means that you are using this server to store and access user credentials within the service. A value of
-     * <code>API_GATEWAY</code> indicates that you have integrated an API Gateway endpoint that will be invoked for
-     * authenticating your user into the service.
+     * Specifies the mode of authentication method enabled for this service. A value of
+     * <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to Active Directory groups in AWS Managed
+     * Active Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors. A
+     * value of <code>SERVICE_MANAGED</code> means that you are using this server to store and access user credentials
+     * within the service. A value of <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
+     * endpoint that will be invoked for authenticating your user into the service.
      * </p>
      * 
      * @return Specifies the mode of authentication method enabled for this service. A value of
-     *         <code>SERVICE_MANAGED</code> means that you are using this server to store and access user credentials
-     *         within the service. A value of <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
-     *         endpoint that will be invoked for authenticating your user into the service.
+     *         <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to Active Directory groups in AWS
+     *         Managed Active Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD
+     *         Connectors. A value of <code>SERVICE_MANAGED</code> means that you are using this server to store and
+     *         access user credentials within the service. A value of <code>API_GATEWAY</code> indicates that you have
+     *         integrated an API Gateway endpoint that will be invoked for authenticating your user into the service.
      * @see IdentityProviderType
      */
 
@@ -515,17 +555,21 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the mode of authentication method enabled for this service. A value of <code>SERVICE_MANAGED</code>
-     * means that you are using this server to store and access user credentials within the service. A value of
-     * <code>API_GATEWAY</code> indicates that you have integrated an API Gateway endpoint that will be invoked for
-     * authenticating your user into the service.
+     * Specifies the mode of authentication method enabled for this service. A value of
+     * <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to Active Directory groups in AWS Managed
+     * Active Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors. A
+     * value of <code>SERVICE_MANAGED</code> means that you are using this server to store and access user credentials
+     * within the service. A value of <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
+     * endpoint that will be invoked for authenticating your user into the service.
      * </p>
      * 
      * @param identityProviderType
      *        Specifies the mode of authentication method enabled for this service. A value of
-     *        <code>SERVICE_MANAGED</code> means that you are using this server to store and access user credentials
-     *        within the service. A value of <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
-     *        endpoint that will be invoked for authenticating your user into the service.
+     *        <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to Active Directory groups in AWS
+     *        Managed Active Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD
+     *        Connectors. A value of <code>SERVICE_MANAGED</code> means that you are using this server to store and
+     *        access user credentials within the service. A value of <code>API_GATEWAY</code> indicates that you have
+     *        integrated an API Gateway endpoint that will be invoked for authenticating your user into the service.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderType
      */
@@ -537,17 +581,21 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the mode of authentication method enabled for this service. A value of <code>SERVICE_MANAGED</code>
-     * means that you are using this server to store and access user credentials within the service. A value of
-     * <code>API_GATEWAY</code> indicates that you have integrated an API Gateway endpoint that will be invoked for
-     * authenticating your user into the service.
+     * Specifies the mode of authentication method enabled for this service. A value of
+     * <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to Active Directory groups in AWS Managed
+     * Active Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors. A
+     * value of <code>SERVICE_MANAGED</code> means that you are using this server to store and access user credentials
+     * within the service. A value of <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
+     * endpoint that will be invoked for authenticating your user into the service.
      * </p>
      * 
      * @param identityProviderType
      *        Specifies the mode of authentication method enabled for this service. A value of
-     *        <code>SERVICE_MANAGED</code> means that you are using this server to store and access user credentials
-     *        within the service. A value of <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
-     *        endpoint that will be invoked for authenticating your user into the service.
+     *        <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to Active Directory groups in AWS
+     *        Managed Active Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD
+     *        Connectors. A value of <code>SERVICE_MANAGED</code> means that you are using this server to store and
+     *        access user credentials within the service. A value of <code>API_GATEWAY</code> indicates that you have
+     *        integrated an API Gateway endpoint that will be invoked for authenticating your user into the service.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderType
      */
@@ -560,12 +608,13 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch
-     * logging for Amazon S3 events. When set, user activity can be viewed in your CloudWatch logs.
+     * logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.
      * </p>
      * 
      * @param loggingRole
      *        Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon
-     *        CloudWatch logging for Amazon S3 events. When set, user activity can be viewed in your CloudWatch logs.
+     *        CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your
+     *        CloudWatch logs.
      */
 
     public void setLoggingRole(String loggingRole) {
@@ -575,11 +624,12 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch
-     * logging for Amazon S3 events. When set, user activity can be viewed in your CloudWatch logs.
+     * logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.
      * </p>
      * 
      * @return Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon
-     *         CloudWatch logging for Amazon S3 events. When set, user activity can be viewed in your CloudWatch logs.
+     *         CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your
+     *         CloudWatch logs.
      */
 
     public String getLoggingRole() {
@@ -589,12 +639,13 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch
-     * logging for Amazon S3 events. When set, user activity can be viewed in your CloudWatch logs.
+     * logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.
      * </p>
      * 
      * @param loggingRole
      *        Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon
-     *        CloudWatch logging for Amazon S3 events. When set, user activity can be viewed in your CloudWatch logs.
+     *        CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your
+     *        CloudWatch logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

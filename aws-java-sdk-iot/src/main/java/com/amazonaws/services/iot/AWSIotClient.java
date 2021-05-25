@@ -116,6 +116,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                             new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iot.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iot.model.transform.ConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("MalformedPolicyException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iot.model.transform.MalformedPolicyExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -1911,11 +1914,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * <p>
      * Creates a domain configuration.
      * </p>
-     * <note>
-     * <p>
-     * The domain configuration feature is in public preview and is subject to change.
-     * </p>
-     * </note>
      * 
      * @param createDomainConfigurationRequest
      * @return Result of the CreateDomainConfiguration operation returned by the service.
@@ -2107,6 +2105,71 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateJobResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a job template.
+     * </p>
+     * 
+     * @param createJobTemplateRequest
+     * @return Result of the CreateJobTemplate operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ConflictException
+     *         A resource with the same name already exists.
+     * @throws LimitExceededException
+     *         A limit has been exceeded.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.CreateJobTemplate
+     */
+    @Override
+    public CreateJobTemplateResult createJobTemplate(CreateJobTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateJobTemplate(request);
+    }
+
+    @SdkInternalApi
+    final CreateJobTemplateResult executeCreateJobTemplate(CreateJobTemplateRequest createJobTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createJobTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateJobTemplateRequest> request = null;
+        Response<CreateJobTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateJobTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createJobTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateJobTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateJobTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateJobTemplateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3814,11 +3877,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * <p>
      * Deletes the specified domain configuration.
      * </p>
-     * <note>
-     * <p>
-     * The domain configuration feature is in public preview and is subject to change.
-     * </p>
-     * </note>
      * 
      * @param deleteDomainConfigurationRequest
      * @return Result of the DeleteDomainConfiguration operation returned by the service.
@@ -4074,6 +4132,67 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteJobExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteJobExecutionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified job template.
+     * </p>
+     * 
+     * @param deleteJobTemplateRequest
+     * @return Result of the DeleteJobTemplate operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DeleteJobTemplate
+     */
+    @Override
+    public DeleteJobTemplateResult deleteJobTemplate(DeleteJobTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteJobTemplate(request);
+    }
+
+    @SdkInternalApi
+    final DeleteJobTemplateResult executeDeleteJobTemplate(DeleteJobTemplateRequest deleteJobTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteJobTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteJobTemplateRequest> request = null;
+        Response<DeleteJobTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteJobTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteJobTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteJobTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteJobTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteJobTemplateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6111,11 +6230,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * <p>
      * Gets summary information about a domain configuration.
      * </p>
-     * <note>
-     * <p>
-     * The domain configuration feature is in public preview and is subject to change.
-     * </p>
-     * </note>
      * 
      * @param describeDomainConfigurationRequest
      * @return Result of the DescribeDomainConfiguration operation returned by the service.
@@ -6477,6 +6591,67 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeJobExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeJobExecutionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about a job template.
+     * </p>
+     * 
+     * @param describeJobTemplateRequest
+     * @return Result of the DescribeJobTemplate operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DescribeJobTemplate
+     */
+    @Override
+    public DescribeJobTemplateResult describeJobTemplate(DescribeJobTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeJobTemplate(request);
+    }
+
+    @SdkInternalApi
+    final DescribeJobTemplateResult executeDescribeJobTemplate(DescribeJobTemplateRequest describeJobTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeJobTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeJobTemplateRequest> request = null;
+        Response<DescribeJobTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeJobTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeJobTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeJobTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeJobTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeJobTemplateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9583,11 +9758,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * Gets a list of domain configurations for the user. This list is sorted alphabetically by domain configuration
      * name.
      * </p>
-     * <note>
-     * <p>
-     * The domain configuration feature is in public preview and is subject to change.
-     * </p>
-     * </note>
      * 
      * @param listDomainConfigurationsRequest
      * @return Result of the ListDomainConfigurations operation returned by the service.
@@ -9828,6 +9998,65 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
             HttpResponseHandler<AmazonWebServiceResponse<ListJobExecutionsForThingResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListJobExecutionsForThingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of job templates.
+     * </p>
+     * 
+     * @param listJobTemplatesRequest
+     * @return Result of the ListJobTemplates operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListJobTemplates
+     */
+    @Override
+    public ListJobTemplatesResult listJobTemplates(ListJobTemplatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListJobTemplates(request);
+    }
+
+    @SdkInternalApi
+    final ListJobTemplatesResult executeListJobTemplates(ListJobTemplatesRequest listJobTemplatesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listJobTemplatesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListJobTemplatesRequest> request = null;
+        Response<ListJobTemplatesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListJobTemplatesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listJobTemplatesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListJobTemplates");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListJobTemplatesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListJobTemplatesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14047,11 +14276,6 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * <p>
      * Updates values stored in the domain configuration. Domain configurations for default endpoints can't be updated.
      * </p>
-     * <note>
-     * <p>
-     * The domain configuration feature is in public preview and is subject to change.
-     * </p>
-     * </note>
      * 
      * @param updateDomainConfigurationRequest
      * @return Result of the UpdateDomainConfiguration operation returned by the service.

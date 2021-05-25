@@ -31,6 +31,8 @@ public class IdentityProviderDetailsMarshaller {
             .marshallLocationName("Url").build();
     private static final MarshallingInfo<String> INVOCATIONROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InvocationRole").build();
+    private static final MarshallingInfo<String> DIRECTORYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DirectoryId").build();
 
     private static final IdentityProviderDetailsMarshaller instance = new IdentityProviderDetailsMarshaller();
 
@@ -50,6 +52,7 @@ public class IdentityProviderDetailsMarshaller {
         try {
             protocolMarshaller.marshall(identityProviderDetails.getUrl(), URL_BINDING);
             protocolMarshaller.marshall(identityProviderDetails.getInvocationRole(), INVOCATIONROLE_BINDING);
+            protocolMarshaller.marshall(identityProviderDetails.getDirectoryId(), DIRECTORYID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

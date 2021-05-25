@@ -57,6 +57,16 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
      * the server to inherit the trust relationship that enables that user to perform file operations to their Amazon S3
      * bucket.
      * </p>
+     * <note>
+     * <p>
+     * The IAM role that controls your users' access to your Amazon S3 bucket for servers with <code>Domain=S3</code>,
+     * or your EFS file system for servers with <code>Domain=EFS</code>.
+     * </p>
+     * <p>
+     * The policies attached to this role determine the level of access you want to provide your users when transferring
+     * files into and out of your S3 buckets or EFS file systems.
+     * </p>
+     * </note>
      */
     private String role;
     /**
@@ -248,12 +258,30 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
      * the server to inherit the trust relationship that enables that user to perform file operations to their Amazon S3
      * bucket.
      * </p>
+     * <note>
+     * <p>
+     * The IAM role that controls your users' access to your Amazon S3 bucket for servers with <code>Domain=S3</code>,
+     * or your EFS file system for servers with <code>Domain=EFS</code>.
+     * </p>
+     * <p>
+     * The policies attached to this role determine the level of access you want to provide your users when transferring
+     * files into and out of your S3 buckets or EFS file systems.
+     * </p>
+     * </note>
      * 
      * @param role
      *        Specifies the role that is in use by this user. A <i>role</i> is an AWS Identity and Access Management
      *        (IAM) entity that, in this case, allows a file transfer protocol-enabled server to act on a user's behalf.
      *        It allows the server to inherit the trust relationship that enables that user to perform file operations
-     *        to their Amazon S3 bucket.
+     *        to their Amazon S3 bucket.</p> <note>
+     *        <p>
+     *        The IAM role that controls your users' access to your Amazon S3 bucket for servers with
+     *        <code>Domain=S3</code>, or your EFS file system for servers with <code>Domain=EFS</code>.
+     *        </p>
+     *        <p>
+     *        The policies attached to this role determine the level of access you want to provide your users when
+     *        transferring files into and out of your S3 buckets or EFS file systems.
+     *        </p>
      */
 
     public void setRole(String role) {
@@ -267,11 +295,29 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
      * the server to inherit the trust relationship that enables that user to perform file operations to their Amazon S3
      * bucket.
      * </p>
+     * <note>
+     * <p>
+     * The IAM role that controls your users' access to your Amazon S3 bucket for servers with <code>Domain=S3</code>,
+     * or your EFS file system for servers with <code>Domain=EFS</code>.
+     * </p>
+     * <p>
+     * The policies attached to this role determine the level of access you want to provide your users when transferring
+     * files into and out of your S3 buckets or EFS file systems.
+     * </p>
+     * </note>
      * 
      * @return Specifies the role that is in use by this user. A <i>role</i> is an AWS Identity and Access Management
      *         (IAM) entity that, in this case, allows a file transfer protocol-enabled server to act on a user's
      *         behalf. It allows the server to inherit the trust relationship that enables that user to perform file
-     *         operations to their Amazon S3 bucket.
+     *         operations to their Amazon S3 bucket.</p> <note>
+     *         <p>
+     *         The IAM role that controls your users' access to your Amazon S3 bucket for servers with
+     *         <code>Domain=S3</code>, or your EFS file system for servers with <code>Domain=EFS</code>.
+     *         </p>
+     *         <p>
+     *         The policies attached to this role determine the level of access you want to provide your users when
+     *         transferring files into and out of your S3 buckets or EFS file systems.
+     *         </p>
      */
 
     public String getRole() {
@@ -285,12 +331,30 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
      * the server to inherit the trust relationship that enables that user to perform file operations to their Amazon S3
      * bucket.
      * </p>
+     * <note>
+     * <p>
+     * The IAM role that controls your users' access to your Amazon S3 bucket for servers with <code>Domain=S3</code>,
+     * or your EFS file system for servers with <code>Domain=EFS</code>.
+     * </p>
+     * <p>
+     * The policies attached to this role determine the level of access you want to provide your users when transferring
+     * files into and out of your S3 buckets or EFS file systems.
+     * </p>
+     * </note>
      * 
      * @param role
      *        Specifies the role that is in use by this user. A <i>role</i> is an AWS Identity and Access Management
      *        (IAM) entity that, in this case, allows a file transfer protocol-enabled server to act on a user's behalf.
      *        It allows the server to inherit the trust relationship that enables that user to perform file operations
-     *        to their Amazon S3 bucket.
+     *        to their Amazon S3 bucket.</p> <note>
+     *        <p>
+     *        The IAM role that controls your users' access to your Amazon S3 bucket for servers with
+     *        <code>Domain=S3</code>, or your EFS file system for servers with <code>Domain=EFS</code>.
+     *        </p>
+     *        <p>
+     *        The policies attached to this role determine the level of access you want to provide your users when
+     *        transferring files into and out of your S3 buckets or EFS file systems.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

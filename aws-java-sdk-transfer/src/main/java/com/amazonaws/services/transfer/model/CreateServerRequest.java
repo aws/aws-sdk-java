@@ -83,24 +83,45 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </note>
      */
     private String certificate;
-
+    /**
+     * <p>
+     * The domain of the storage system that is used for file transfers. There are two domains available: Amazon Simple
+     * Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.
+     * </p>
+     * <note>
+     * <p>
+     * After the server is created, the domain cannot be changed.
+     * </p>
+     * </note>
+     */
     private String domain;
     /**
      * <p>
      * The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
      * endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic
-     * IPs and make it accessible to clients over the internet. Your VPC's default security groups are automatically
-     * assigned to your endpoint.
+     * IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are
+     * automatically assigned to your endpoint.
      * </p>
      */
     private EndpointDetails endpointDetails;
     /**
      * <p>
-     * The type of VPC endpoint that you want your server to connect to. You can choose to connect to the public
-     * internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources only within
-     * your VPC.
+     * The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly
+     * accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access
+     * to your server and resources only within your VPC or choose to make it internet facing by attaching Elastic IP
+     * addresses directly to it.
      * </p>
      * <note>
+     * <p>
+     * After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your
+     * AWS account if your account hasn't already done so before March 31, 2021. If you have already created servers
+     * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31, 2021, you will not be
+     * affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     * </p>
+     * <p>
+     * For more information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.
+     * </p>
      * <p>
      * It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you
      * have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your server's
@@ -129,16 +150,20 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String hostKey;
     /**
      * <p>
-     * Required when <code>IdentityProviderType</code> is set to <code>API_GATEWAY</code>. Accepts an array containing
-     * all of the information required to call a customer-supplied authentication API, including the API Gateway URL.
-     * Not required when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.
+     * Required when <code>IdentityProviderType</code> is set to <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>. Accepts an array containing all of the information required to use a directory in
+     * <code>AWS_DIRECTORY_SERVICE</code> or invoke a customer-supplied authentication API, including the API Gateway
+     * URL. Not required when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.
      * </p>
      */
     private IdentityProviderDetails identityProviderDetails;
     /**
      * <p>
      * Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which
-     * allows you to store and access user credentials within the AWS Transfer Family service. Use the
+     * allows you to store and access user credentials within the AWS Transfer Family service. Use
+     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in AWS Managed Active Directory
+     * or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors. This option also
+     * requires you to provide a Directory ID using the <code>IdentityProviderDetails</code> parameter. Use the
      * <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
      * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
      * using the <code>IdentityProviderDetails</code> parameter.
@@ -182,7 +207,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
      * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>API_GATEWAY</code>.
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
      * </p>
      * <p>
      * If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.
@@ -557,7 +582,23 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The domain of the storage system that is used for file transfers. There are two domains available: Amazon Simple
+     * Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.
+     * </p>
+     * <note>
+     * <p>
+     * After the server is created, the domain cannot be changed.
+     * </p>
+     * </note>
+     * 
      * @param domain
+     *        The domain of the storage system that is used for file transfers. There are two domains available: Amazon
+     *        Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is
+     *        S3.</p> <note>
+     *        <p>
+     *        After the server is created, the domain cannot be changed.
+     *        </p>
      * @see Domain
      */
 
@@ -566,7 +607,22 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * @return
+     * <p>
+     * The domain of the storage system that is used for file transfers. There are two domains available: Amazon Simple
+     * Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.
+     * </p>
+     * <note>
+     * <p>
+     * After the server is created, the domain cannot be changed.
+     * </p>
+     * </note>
+     * 
+     * @return The domain of the storage system that is used for file transfers. There are two domains available: Amazon
+     *         Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is
+     *         S3.</p> <note>
+     *         <p>
+     *         After the server is created, the domain cannot be changed.
+     *         </p>
      * @see Domain
      */
 
@@ -575,7 +631,23 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The domain of the storage system that is used for file transfers. There are two domains available: Amazon Simple
+     * Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.
+     * </p>
+     * <note>
+     * <p>
+     * After the server is created, the domain cannot be changed.
+     * </p>
+     * </note>
+     * 
      * @param domain
+     *        The domain of the storage system that is used for file transfers. There are two domains available: Amazon
+     *        Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is
+     *        S3.</p> <note>
+     *        <p>
+     *        After the server is created, the domain cannot be changed.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Domain
      */
@@ -586,7 +658,23 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The domain of the storage system that is used for file transfers. There are two domains available: Amazon Simple
+     * Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is S3.
+     * </p>
+     * <note>
+     * <p>
+     * After the server is created, the domain cannot be changed.
+     * </p>
+     * </note>
+     * 
      * @param domain
+     *        The domain of the storage system that is used for file transfers. There are two domains available: Amazon
+     *        Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The default value is
+     *        S3.</p> <note>
+     *        <p>
+     *        After the server is created, the domain cannot be changed.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Domain
      */
@@ -600,15 +688,15 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
      * endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic
-     * IPs and make it accessible to clients over the internet. Your VPC's default security groups are automatically
-     * assigned to your endpoint.
+     * IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are
+     * automatically assigned to your endpoint.
      * </p>
      * 
      * @param endpointDetails
      *        The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
      *        endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach
-     *        Elastic IPs and make it accessible to clients over the internet. Your VPC's default security groups are
-     *        automatically assigned to your endpoint.
+     *        Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security
+     *        groups are automatically assigned to your endpoint.
      */
 
     public void setEndpointDetails(EndpointDetails endpointDetails) {
@@ -619,14 +707,14 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
      * endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic
-     * IPs and make it accessible to clients over the internet. Your VPC's default security groups are automatically
-     * assigned to your endpoint.
+     * IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are
+     * automatically assigned to your endpoint.
      * </p>
      * 
      * @return The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
      *         endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach
-     *         Elastic IPs and make it accessible to clients over the internet. Your VPC's default security groups are
-     *         automatically assigned to your endpoint.
+     *         Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security
+     *         groups are automatically assigned to your endpoint.
      */
 
     public EndpointDetails getEndpointDetails() {
@@ -637,15 +725,15 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
      * endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic
-     * IPs and make it accessible to clients over the internet. Your VPC's default security groups are automatically
-     * assigned to your endpoint.
+     * IP addresses and make it accessible to clients over the internet. Your VPC's default security groups are
+     * automatically assigned to your endpoint.
      * </p>
      * 
      * @param endpointDetails
      *        The virtual private cloud (VPC) endpoint settings that are configured for your server. When you host your
      *        endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach
-     *        Elastic IPs and make it accessible to clients over the internet. Your VPC's default security groups are
-     *        automatically assigned to your endpoint.
+     *        Elastic IP addresses and make it accessible to clients over the internet. Your VPC's default security
+     *        groups are automatically assigned to your endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -656,11 +744,22 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of VPC endpoint that you want your server to connect to. You can choose to connect to the public
-     * internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources only within
-     * your VPC.
+     * The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly
+     * accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access
+     * to your server and resources only within your VPC or choose to make it internet facing by attaching Elastic IP
+     * addresses directly to it.
      * </p>
      * <note>
+     * <p>
+     * After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your
+     * AWS account if your account hasn't already done so before March 31, 2021. If you have already created servers
+     * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31, 2021, you will not be
+     * affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     * </p>
+     * <p>
+     * For more information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.
+     * </p>
      * <p>
      * It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you
      * have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your server's
@@ -670,9 +769,20 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </note>
      * 
      * @param endpointType
-     *        The type of VPC endpoint that you want your server to connect to. You can choose to connect to the public
-     *        internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources only
-     *        within your VPC.</p> <note>
+     *        The type of endpoint that you want your server to use. You can choose to make your server's endpoint
+     *        publicly accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can
+     *        restrict access to your server and resources only within your VPC or choose to make it internet facing by
+     *        attaching Elastic IP addresses directly to it.</p> <note>
+     *        <p>
+     *        After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in
+     *        your AWS account if your account hasn't already done so before March 31, 2021. If you have already created
+     *        servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31, 2021, you
+     *        will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     *        </p>
+     *        <p>
+     *        For more information, see
+     *        https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.
+     *        </p>
      *        <p>
      *        It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type,
      *        you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your
@@ -688,11 +798,22 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of VPC endpoint that you want your server to connect to. You can choose to connect to the public
-     * internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources only within
-     * your VPC.
+     * The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly
+     * accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access
+     * to your server and resources only within your VPC or choose to make it internet facing by attaching Elastic IP
+     * addresses directly to it.
      * </p>
      * <note>
+     * <p>
+     * After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your
+     * AWS account if your account hasn't already done so before March 31, 2021. If you have already created servers
+     * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31, 2021, you will not be
+     * affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     * </p>
+     * <p>
+     * For more information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.
+     * </p>
      * <p>
      * It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you
      * have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your server's
@@ -701,9 +822,20 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </note>
      * 
-     * @return The type of VPC endpoint that you want your server to connect to. You can choose to connect to the public
-     *         internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources
-     *         only within your VPC.</p> <note>
+     * @return The type of endpoint that you want your server to use. You can choose to make your server's endpoint
+     *         publicly accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you
+     *         can restrict access to your server and resources only within your VPC or choose to make it internet
+     *         facing by attaching Elastic IP addresses directly to it.</p> <note>
+     *         <p>
+     *         After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code>
+     *         in your AWS account if your account hasn't already done so before March 31, 2021. If you have already
+     *         created servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31,
+     *         2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     *         </p>
+     *         <p>
+     *         For more information, see
+     *         https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.
+     *         </p>
      *         <p>
      *         It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint
      *         type, you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with
@@ -719,11 +851,22 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of VPC endpoint that you want your server to connect to. You can choose to connect to the public
-     * internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources only within
-     * your VPC.
+     * The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly
+     * accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access
+     * to your server and resources only within your VPC or choose to make it internet facing by attaching Elastic IP
+     * addresses directly to it.
      * </p>
      * <note>
+     * <p>
+     * After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your
+     * AWS account if your account hasn't already done so before March 31, 2021. If you have already created servers
+     * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31, 2021, you will not be
+     * affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     * </p>
+     * <p>
+     * For more information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.
+     * </p>
      * <p>
      * It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you
      * have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your server's
@@ -733,9 +876,20 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </note>
      * 
      * @param endpointType
-     *        The type of VPC endpoint that you want your server to connect to. You can choose to connect to the public
-     *        internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources only
-     *        within your VPC.</p> <note>
+     *        The type of endpoint that you want your server to use. You can choose to make your server's endpoint
+     *        publicly accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can
+     *        restrict access to your server and resources only within your VPC or choose to make it internet facing by
+     *        attaching Elastic IP addresses directly to it.</p> <note>
+     *        <p>
+     *        After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in
+     *        your AWS account if your account hasn't already done so before March 31, 2021. If you have already created
+     *        servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31, 2021, you
+     *        will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     *        </p>
+     *        <p>
+     *        For more information, see
+     *        https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.
+     *        </p>
      *        <p>
      *        It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type,
      *        you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your
@@ -753,11 +907,22 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of VPC endpoint that you want your server to connect to. You can choose to connect to the public
-     * internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources only within
-     * your VPC.
+     * The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly
+     * accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access
+     * to your server and resources only within your VPC or choose to make it internet facing by attaching Elastic IP
+     * addresses directly to it.
      * </p>
      * <note>
+     * <p>
+     * After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your
+     * AWS account if your account hasn't already done so before March 31, 2021. If you have already created servers
+     * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31, 2021, you will not be
+     * affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     * </p>
+     * <p>
+     * For more information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.
+     * </p>
      * <p>
      * It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you
      * have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your server's
@@ -767,9 +932,20 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </note>
      * 
      * @param endpointType
-     *        The type of VPC endpoint that you want your server to connect to. You can choose to connect to the public
-     *        internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources only
-     *        within your VPC.</p> <note>
+     *        The type of endpoint that you want your server to use. You can choose to make your server's endpoint
+     *        publicly accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can
+     *        restrict access to your server and resources only within your VPC or choose to make it internet facing by
+     *        attaching Elastic IP addresses directly to it.</p> <note>
+     *        <p>
+     *        After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in
+     *        your AWS account if your account hasn't already done so before March 31, 2021. If you have already created
+     *        servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31, 2021, you
+     *        will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     *        </p>
+     *        <p>
+     *        For more information, see
+     *        https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.
+     *        </p>
      *        <p>
      *        It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type,
      *        you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your
@@ -890,16 +1066,17 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Required when <code>IdentityProviderType</code> is set to <code>API_GATEWAY</code>. Accepts an array containing
-     * all of the information required to call a customer-supplied authentication API, including the API Gateway URL.
-     * Not required when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.
+     * Required when <code>IdentityProviderType</code> is set to <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>. Accepts an array containing all of the information required to use a directory in
+     * <code>AWS_DIRECTORY_SERVICE</code> or invoke a customer-supplied authentication API, including the API Gateway
+     * URL. Not required when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.
      * </p>
      * 
      * @param identityProviderDetails
-     *        Required when <code>IdentityProviderType</code> is set to <code>API_GATEWAY</code>. Accepts an array
-     *        containing all of the information required to call a customer-supplied authentication API, including the
-     *        API Gateway URL. Not required when <code>IdentityProviderType</code> is set to
-     *        <code>SERVICE_MANAGED</code>.
+     *        Required when <code>IdentityProviderType</code> is set to <code>AWS_DIRECTORY_SERVICE</code> or
+     *        <code>API_GATEWAY</code>. Accepts an array containing all of the information required to use a directory
+     *        in <code>AWS_DIRECTORY_SERVICE</code> or invoke a customer-supplied authentication API, including the API
+     *        Gateway URL. Not required when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.
      */
 
     public void setIdentityProviderDetails(IdentityProviderDetails identityProviderDetails) {
@@ -908,15 +1085,16 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Required when <code>IdentityProviderType</code> is set to <code>API_GATEWAY</code>. Accepts an array containing
-     * all of the information required to call a customer-supplied authentication API, including the API Gateway URL.
-     * Not required when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.
+     * Required when <code>IdentityProviderType</code> is set to <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>. Accepts an array containing all of the information required to use a directory in
+     * <code>AWS_DIRECTORY_SERVICE</code> or invoke a customer-supplied authentication API, including the API Gateway
+     * URL. Not required when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.
      * </p>
      * 
-     * @return Required when <code>IdentityProviderType</code> is set to <code>API_GATEWAY</code>. Accepts an array
-     *         containing all of the information required to call a customer-supplied authentication API, including the
-     *         API Gateway URL. Not required when <code>IdentityProviderType</code> is set to
-     *         <code>SERVICE_MANAGED</code>.
+     * @return Required when <code>IdentityProviderType</code> is set to <code>AWS_DIRECTORY_SERVICE</code> or
+     *         <code>API_GATEWAY</code>. Accepts an array containing all of the information required to use a directory
+     *         in <code>AWS_DIRECTORY_SERVICE</code> or invoke a customer-supplied authentication API, including the API
+     *         Gateway URL. Not required when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.
      */
 
     public IdentityProviderDetails getIdentityProviderDetails() {
@@ -925,16 +1103,17 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Required when <code>IdentityProviderType</code> is set to <code>API_GATEWAY</code>. Accepts an array containing
-     * all of the information required to call a customer-supplied authentication API, including the API Gateway URL.
-     * Not required when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.
+     * Required when <code>IdentityProviderType</code> is set to <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>. Accepts an array containing all of the information required to use a directory in
+     * <code>AWS_DIRECTORY_SERVICE</code> or invoke a customer-supplied authentication API, including the API Gateway
+     * URL. Not required when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.
      * </p>
      * 
      * @param identityProviderDetails
-     *        Required when <code>IdentityProviderType</code> is set to <code>API_GATEWAY</code>. Accepts an array
-     *        containing all of the information required to call a customer-supplied authentication API, including the
-     *        API Gateway URL. Not required when <code>IdentityProviderType</code> is set to
-     *        <code>SERVICE_MANAGED</code>.
+     *        Required when <code>IdentityProviderType</code> is set to <code>AWS_DIRECTORY_SERVICE</code> or
+     *        <code>API_GATEWAY</code>. Accepts an array containing all of the information required to use a directory
+     *        in <code>AWS_DIRECTORY_SERVICE</code> or invoke a customer-supplied authentication API, including the API
+     *        Gateway URL. Not required when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -946,7 +1125,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which
-     * allows you to store and access user credentials within the AWS Transfer Family service. Use the
+     * allows you to store and access user credentials within the AWS Transfer Family service. Use
+     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in AWS Managed Active Directory
+     * or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors. This option also
+     * requires you to provide a Directory ID using the <code>IdentityProviderDetails</code> parameter. Use the
      * <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
      * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
      * using the <code>IdentityProviderDetails</code> parameter.
@@ -954,9 +1136,12 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param identityProviderType
      *        Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>,
-     *        which allows you to store and access user credentials within the AWS Transfer Family service. Use the
-     *        <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
-     *        <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
+     *        which allows you to store and access user credentials within the AWS Transfer Family service. Use
+     *        <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in AWS Managed Active
+     *        Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors.
+     *        This option also requires you to provide a Directory ID using the <code>IdentityProviderDetails</code>
+     *        parameter. Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing.
+     *        The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
      *        authentication using the <code>IdentityProviderDetails</code> parameter.
      * @see IdentityProviderType
      */
@@ -968,17 +1153,23 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which
-     * allows you to store and access user credentials within the AWS Transfer Family service. Use the
+     * allows you to store and access user credentials within the AWS Transfer Family service. Use
+     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in AWS Managed Active Directory
+     * or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors. This option also
+     * requires you to provide a Directory ID using the <code>IdentityProviderDetails</code> parameter. Use the
      * <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
      * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
      * using the <code>IdentityProviderDetails</code> parameter.
      * </p>
      * 
      * @return Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>,
-     *         which allows you to store and access user credentials within the AWS Transfer Family service. Use the
-     *         <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
-     *         <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
-     *         authentication using the <code>IdentityProviderDetails</code> parameter.
+     *         which allows you to store and access user credentials within the AWS Transfer Family service. Use
+     *         <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in AWS Managed Active
+     *         Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors.
+     *         This option also requires you to provide a Directory ID using the <code>IdentityProviderDetails</code>
+     *         parameter. Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your
+     *         choosing. The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to
+     *         call for authentication using the <code>IdentityProviderDetails</code> parameter.
      * @see IdentityProviderType
      */
 
@@ -989,7 +1180,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which
-     * allows you to store and access user credentials within the AWS Transfer Family service. Use the
+     * allows you to store and access user credentials within the AWS Transfer Family service. Use
+     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in AWS Managed Active Directory
+     * or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors. This option also
+     * requires you to provide a Directory ID using the <code>IdentityProviderDetails</code> parameter. Use the
      * <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
      * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
      * using the <code>IdentityProviderDetails</code> parameter.
@@ -997,9 +1191,12 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param identityProviderType
      *        Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>,
-     *        which allows you to store and access user credentials within the AWS Transfer Family service. Use the
-     *        <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
-     *        <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
+     *        which allows you to store and access user credentials within the AWS Transfer Family service. Use
+     *        <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in AWS Managed Active
+     *        Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors.
+     *        This option also requires you to provide a Directory ID using the <code>IdentityProviderDetails</code>
+     *        parameter. Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing.
+     *        The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
      *        authentication using the <code>IdentityProviderDetails</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderType
@@ -1013,7 +1210,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>, which
-     * allows you to store and access user credentials within the AWS Transfer Family service. Use the
+     * allows you to store and access user credentials within the AWS Transfer Family service. Use
+     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in AWS Managed Active Directory
+     * or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors. This option also
+     * requires you to provide a Directory ID using the <code>IdentityProviderDetails</code> parameter. Use the
      * <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
      * <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for authentication
      * using the <code>IdentityProviderDetails</code> parameter.
@@ -1021,9 +1221,12 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param identityProviderType
      *        Specifies the mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>,
-     *        which allows you to store and access user credentials within the AWS Transfer Family service. Use the
-     *        <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
-     *        <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
+     *        which allows you to store and access user credentials within the AWS Transfer Family service. Use
+     *        <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups in AWS Managed Active
+     *        Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors.
+     *        This option also requires you to provide a Directory ID using the <code>IdentityProviderDetails</code>
+     *        parameter. Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing.
+     *        The <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call for
      *        authentication using the <code>IdentityProviderDetails</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderType
@@ -1110,7 +1313,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
      * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>API_GATEWAY</code>.
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
      * </p>
      * <p>
      * If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.
@@ -1148,7 +1351,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <p>
      *         If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
      *         <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     *         <code>API_GATEWAY</code>.
+     *         <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
      *         </p>
      *         <p>
      *         If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
@@ -1195,7 +1398,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
      * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>API_GATEWAY</code>.
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
      * </p>
      * <p>
      * If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.
@@ -1234,7 +1437,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
      *        <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     *        <code>API_GATEWAY</code>.
+     *        <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
      *        </p>
      *        <p>
      *        If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
@@ -1286,7 +1489,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
      * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>API_GATEWAY</code>.
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
      * </p>
      * <p>
      * If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.
@@ -1330,7 +1533,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
      *        <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     *        <code>API_GATEWAY</code>.
+     *        <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
      *        </p>
      *        <p>
      *        If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
@@ -1384,7 +1587,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
      * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>API_GATEWAY</code>.
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
      * </p>
      * <p>
      * If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.
@@ -1423,7 +1626,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
      *        <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     *        <code>API_GATEWAY</code>.
+     *        <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
      *        </p>
      *        <p>
      *        If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
@@ -1472,7 +1675,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
      * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>API_GATEWAY</code>.
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
      * </p>
      * <p>
      * If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.
@@ -1511,7 +1714,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
      *        <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     *        <code>API_GATEWAY</code>.
+     *        <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
      *        </p>
      *        <p>
      *        If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be

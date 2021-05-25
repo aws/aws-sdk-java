@@ -35,13 +35,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private java.util.List<String> targets;
     /**
      * <p>
-     * An S3 link to the job document.
-     * </p>
-     */
-    private String documentSource;
-    /**
-     * <p>
-     * The job document.
+     * An S3 link to the job document. Required if you don't specify a value for <code>document</code>.
      * </p>
      * <note>
      * <p>
@@ -57,6 +51,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.
      * </p>
      * </note>
+     */
+    private String documentSource;
+    /**
+     * <p>
+     * The job document. Required if you don't specify a value for <code>documentSource</code>.
+     * </p>
      */
     private String document;
     /**
@@ -124,6 +124,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </note>
      */
     private String namespaceId;
+    /**
+     * <p>
+     * The ARN of the job template used to create the job.
+     * </p>
+     */
+    private String jobTemplateArn;
 
     /**
      * <p>
@@ -243,47 +249,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * An S3 link to the job document.
-     * </p>
-     * 
-     * @param documentSource
-     *        An S3 link to the job document.
-     */
-
-    public void setDocumentSource(String documentSource) {
-        this.documentSource = documentSource;
-    }
-
-    /**
-     * <p>
-     * An S3 link to the job document.
-     * </p>
-     * 
-     * @return An S3 link to the job document.
-     */
-
-    public String getDocumentSource() {
-        return this.documentSource;
-    }
-
-    /**
-     * <p>
-     * An S3 link to the job document.
-     * </p>
-     * 
-     * @param documentSource
-     *        An S3 link to the job document.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateJobRequest withDocumentSource(String documentSource) {
-        setDocumentSource(documentSource);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The job document.
+     * An S3 link to the job document. Required if you don't specify a value for <code>document</code>.
      * </p>
      * <note>
      * <p>
@@ -300,8 +266,9 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * </note>
      * 
-     * @param document
-     *        The job document.</p> <note>
+     * @param documentSource
+     *        An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p>
+     *        <note>
      *        <p>
      *        If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.
      *        </p>
@@ -317,13 +284,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </p>
      */
 
-    public void setDocument(String document) {
-        this.document = document;
+    public void setDocumentSource(String documentSource) {
+        this.documentSource = documentSource;
     }
 
     /**
      * <p>
-     * The job document.
+     * An S3 link to the job document. Required if you don't specify a value for <code>document</code>.
      * </p>
      * <note>
      * <p>
@@ -340,7 +307,8 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * </note>
      * 
-     * @return The job document.</p> <note>
+     * @return An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p>
+     *         <note>
      *         <p>
      *         If the job document resides in an S3 bucket, you must use a placeholder link when specifying the
      *         document.
@@ -357,13 +325,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         </p>
      */
 
-    public String getDocument() {
-        return this.document;
+    public String getDocumentSource() {
+        return this.documentSource;
     }
 
     /**
      * <p>
-     * The job document.
+     * An S3 link to the job document. Required if you don't specify a value for <code>document</code>.
      * </p>
      * <note>
      * <p>
@@ -380,8 +348,9 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * </note>
      * 
-     * @param document
-     *        The job document.</p> <note>
+     * @param documentSource
+     *        An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p>
+     *        <note>
      *        <p>
      *        If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.
      *        </p>
@@ -395,6 +364,46 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are
      *        linking.
      *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobRequest withDocumentSource(String documentSource) {
+        setDocumentSource(documentSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The job document. Required if you don't specify a value for <code>documentSource</code>.
+     * </p>
+     * 
+     * @param document
+     *        The job document. Required if you don't specify a value for <code>documentSource</code>.
+     */
+
+    public void setDocument(String document) {
+        this.document = document;
+    }
+
+    /**
+     * <p>
+     * The job document. Required if you don't specify a value for <code>documentSource</code>.
+     * </p>
+     * 
+     * @return The job document. Required if you don't specify a value for <code>documentSource</code>.
+     */
+
+    public String getDocument() {
+        return this.document;
+    }
+
+    /**
+     * <p>
+     * The job document. Required if you don't specify a value for <code>documentSource</code>.
+     * </p>
+     * 
+     * @param document
+     *        The job document. Required if you don't specify a value for <code>documentSource</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -879,6 +888,46 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * The ARN of the job template used to create the job.
+     * </p>
+     * 
+     * @param jobTemplateArn
+     *        The ARN of the job template used to create the job.
+     */
+
+    public void setJobTemplateArn(String jobTemplateArn) {
+        this.jobTemplateArn = jobTemplateArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the job template used to create the job.
+     * </p>
+     * 
+     * @return The ARN of the job template used to create the job.
+     */
+
+    public String getJobTemplateArn() {
+        return this.jobTemplateArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the job template used to create the job.
+     * </p>
+     * 
+     * @param jobTemplateArn
+     *        The ARN of the job template used to create the job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobRequest withJobTemplateArn(String jobTemplateArn) {
+        setJobTemplateArn(jobTemplateArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -913,7 +962,9 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getNamespaceId() != null)
-            sb.append("NamespaceId: ").append(getNamespaceId());
+            sb.append("NamespaceId: ").append(getNamespaceId()).append(",");
+        if (getJobTemplateArn() != null)
+            sb.append("JobTemplateArn: ").append(getJobTemplateArn());
         sb.append("}");
         return sb.toString();
     }
@@ -976,6 +1027,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getNamespaceId() != null && other.getNamespaceId().equals(this.getNamespaceId()) == false)
             return false;
+        if (other.getJobTemplateArn() == null ^ this.getJobTemplateArn() == null)
+            return false;
+        if (other.getJobTemplateArn() != null && other.getJobTemplateArn().equals(this.getJobTemplateArn()) == false)
+            return false;
         return true;
     }
 
@@ -996,6 +1051,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getTimeoutConfig() == null) ? 0 : getTimeoutConfig().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getNamespaceId() == null) ? 0 : getNamespaceId().hashCode());
+        hashCode = prime * hashCode + ((getJobTemplateArn() == null) ? 0 : getJobTemplateArn().hashCode());
         return hashCode;
     }
 

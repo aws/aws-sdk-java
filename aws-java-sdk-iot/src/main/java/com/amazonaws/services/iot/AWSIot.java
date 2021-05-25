@@ -695,11 +695,6 @@ public interface AWSIot {
      * <p>
      * Creates a domain configuration.
      * </p>
-     * <note>
-     * <p>
-     * The domain configuration feature is in public preview and is subject to change.
-     * </p>
-     * </note>
      * 
      * @param createDomainConfigurationRequest
      * @return Result of the CreateDomainConfiguration operation returned by the service.
@@ -770,6 +765,29 @@ public interface AWSIot {
      * @sample AWSIot.CreateJob
      */
     CreateJobResult createJob(CreateJobRequest createJobRequest);
+
+    /**
+     * <p>
+     * Creates a job template.
+     * </p>
+     * 
+     * @param createJobTemplateRequest
+     * @return Result of the CreateJobTemplate operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ConflictException
+     *         A resource with the same name already exists.
+     * @throws LimitExceededException
+     *         A limit has been exceeded.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.CreateJobTemplate
+     */
+    CreateJobTemplateResult createJobTemplate(CreateJobTemplateRequest createJobTemplateRequest);
 
     /**
      * <p>
@@ -1401,11 +1419,6 @@ public interface AWSIot {
      * <p>
      * Deletes the specified domain configuration.
      * </p>
-     * <note>
-     * <p>
-     * The domain configuration feature is in public preview and is subject to change.
-     * </p>
-     * </note>
      * 
      * @param deleteDomainConfigurationRequest
      * @return Result of the DeleteDomainConfiguration operation returned by the service.
@@ -1498,6 +1511,25 @@ public interface AWSIot {
      * @sample AWSIot.DeleteJobExecution
      */
     DeleteJobExecutionResult deleteJobExecution(DeleteJobExecutionRequest deleteJobExecutionRequest);
+
+    /**
+     * <p>
+     * Deletes the specified job template.
+     * </p>
+     * 
+     * @param deleteJobTemplateRequest
+     * @return Result of the DeleteJobTemplate operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DeleteJobTemplate
+     */
+    DeleteJobTemplateResult deleteJobTemplate(DeleteJobTemplateRequest deleteJobTemplateRequest);
 
     /**
      * <p>
@@ -2202,11 +2234,6 @@ public interface AWSIot {
      * <p>
      * Gets summary information about a domain configuration.
      * </p>
-     * <note>
-     * <p>
-     * The domain configuration feature is in public preview and is subject to change.
-     * </p>
-     * </note>
      * 
      * @param describeDomainConfigurationRequest
      * @return Result of the DescribeDomainConfiguration operation returned by the service.
@@ -2321,6 +2348,25 @@ public interface AWSIot {
      * @sample AWSIot.DescribeJobExecution
      */
     DescribeJobExecutionResult describeJobExecution(DescribeJobExecutionRequest describeJobExecutionRequest);
+
+    /**
+     * <p>
+     * Returns information about a job template.
+     * </p>
+     * 
+     * @param describeJobTemplateRequest
+     * @return Result of the DescribeJobTemplate operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DescribeJobTemplate
+     */
+    DescribeJobTemplateResult describeJobTemplate(DescribeJobTemplateRequest describeJobTemplateRequest);
 
     /**
      * <p>
@@ -3371,11 +3417,6 @@ public interface AWSIot {
      * Gets a list of domain configurations for the user. This list is sorted alphabetically by domain configuration
      * name.
      * </p>
-     * <note>
-     * <p>
-     * The domain configuration feature is in public preview and is subject to change.
-     * </p>
-     * </note>
      * 
      * @param listDomainConfigurationsRequest
      * @return Result of the ListDomainConfigurations operation returned by the service.
@@ -3451,6 +3492,23 @@ public interface AWSIot {
      * @sample AWSIot.ListJobExecutionsForThing
      */
     ListJobExecutionsForThingResult listJobExecutionsForThing(ListJobExecutionsForThingRequest listJobExecutionsForThingRequest);
+
+    /**
+     * <p>
+     * Returns a list of job templates.
+     * </p>
+     * 
+     * @param listJobTemplatesRequest
+     * @return Result of the ListJobTemplates operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListJobTemplates
+     */
+    ListJobTemplatesResult listJobTemplates(ListJobTemplatesRequest listJobTemplatesRequest);
 
     /**
      * <p>
@@ -4922,11 +4980,6 @@ public interface AWSIot {
      * <p>
      * Updates values stored in the domain configuration. Domain configurations for default endpoints can't be updated.
      * </p>
-     * <note>
-     * <p>
-     * The domain configuration feature is in public preview and is subject to change.
-     * </p>
-     * </note>
      * 
      * @param updateDomainConfigurationRequest
      * @return Result of the UpdateDomainConfiguration operation returned by the service.

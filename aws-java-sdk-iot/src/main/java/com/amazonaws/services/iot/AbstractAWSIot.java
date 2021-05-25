@@ -164,6 +164,11 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public CreateJobTemplateResult createJobTemplate(CreateJobTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateKeysAndCertificateResult createKeysAndCertificate(CreateKeysAndCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -305,6 +310,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public DeleteJobExecutionResult deleteJobExecution(DeleteJobExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteJobTemplateResult deleteJobTemplate(DeleteJobTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -490,6 +500,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public DescribeJobExecutionResult describeJobExecution(DescribeJobExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeJobTemplateResult describeJobTemplate(DescribeJobTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -751,6 +766,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public ListJobExecutionsForThingResult listJobExecutionsForThing(ListJobExecutionsForThingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListJobTemplatesResult listJobTemplates(ListJobTemplatesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

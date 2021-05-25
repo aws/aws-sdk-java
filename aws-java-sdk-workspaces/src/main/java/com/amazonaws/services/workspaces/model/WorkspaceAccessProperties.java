@@ -80,6 +80,12 @@ public class WorkspaceAccessProperties implements Serializable, Cloneable, Struc
      * </p>
      */
     private String deviceTypeZeroClient;
+    /**
+     * <p>
+     * Indicates whether users can use Linux clients to access their WorkSpaces.
+     * </p>
+     */
+    private String deviceTypeLinux;
 
     /**
      * <p>
@@ -559,6 +565,65 @@ public class WorkspaceAccessProperties implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * Indicates whether users can use Linux clients to access their WorkSpaces.
+     * </p>
+     * 
+     * @param deviceTypeLinux
+     *        Indicates whether users can use Linux clients to access their WorkSpaces.
+     * @see AccessPropertyValue
+     */
+
+    public void setDeviceTypeLinux(String deviceTypeLinux) {
+        this.deviceTypeLinux = deviceTypeLinux;
+    }
+
+    /**
+     * <p>
+     * Indicates whether users can use Linux clients to access their WorkSpaces.
+     * </p>
+     * 
+     * @return Indicates whether users can use Linux clients to access their WorkSpaces.
+     * @see AccessPropertyValue
+     */
+
+    public String getDeviceTypeLinux() {
+        return this.deviceTypeLinux;
+    }
+
+    /**
+     * <p>
+     * Indicates whether users can use Linux clients to access their WorkSpaces.
+     * </p>
+     * 
+     * @param deviceTypeLinux
+     *        Indicates whether users can use Linux clients to access their WorkSpaces.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AccessPropertyValue
+     */
+
+    public WorkspaceAccessProperties withDeviceTypeLinux(String deviceTypeLinux) {
+        setDeviceTypeLinux(deviceTypeLinux);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether users can use Linux clients to access their WorkSpaces.
+     * </p>
+     * 
+     * @param deviceTypeLinux
+     *        Indicates whether users can use Linux clients to access their WorkSpaces.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AccessPropertyValue
+     */
+
+    public WorkspaceAccessProperties withDeviceTypeLinux(AccessPropertyValue deviceTypeLinux) {
+        this.deviceTypeLinux = deviceTypeLinux.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -583,7 +648,9 @@ public class WorkspaceAccessProperties implements Serializable, Cloneable, Struc
         if (getDeviceTypeChromeOs() != null)
             sb.append("DeviceTypeChromeOs: ").append(getDeviceTypeChromeOs()).append(",");
         if (getDeviceTypeZeroClient() != null)
-            sb.append("DeviceTypeZeroClient: ").append(getDeviceTypeZeroClient());
+            sb.append("DeviceTypeZeroClient: ").append(getDeviceTypeZeroClient()).append(",");
+        if (getDeviceTypeLinux() != null)
+            sb.append("DeviceTypeLinux: ").append(getDeviceTypeLinux());
         sb.append("}");
         return sb.toString();
     }
@@ -626,6 +693,10 @@ public class WorkspaceAccessProperties implements Serializable, Cloneable, Struc
             return false;
         if (other.getDeviceTypeZeroClient() != null && other.getDeviceTypeZeroClient().equals(this.getDeviceTypeZeroClient()) == false)
             return false;
+        if (other.getDeviceTypeLinux() == null ^ this.getDeviceTypeLinux() == null)
+            return false;
+        if (other.getDeviceTypeLinux() != null && other.getDeviceTypeLinux().equals(this.getDeviceTypeLinux()) == false)
+            return false;
         return true;
     }
 
@@ -641,6 +712,7 @@ public class WorkspaceAccessProperties implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getDeviceTypeAndroid() == null) ? 0 : getDeviceTypeAndroid().hashCode());
         hashCode = prime * hashCode + ((getDeviceTypeChromeOs() == null) ? 0 : getDeviceTypeChromeOs().hashCode());
         hashCode = prime * hashCode + ((getDeviceTypeZeroClient() == null) ? 0 : getDeviceTypeZeroClient().hashCode());
+        hashCode = prime * hashCode + ((getDeviceTypeLinux() == null) ? 0 : getDeviceTypeLinux().hashCode());
         return hashCode;
     }
 

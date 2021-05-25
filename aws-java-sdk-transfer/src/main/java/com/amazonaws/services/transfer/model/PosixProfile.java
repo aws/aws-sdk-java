@@ -18,6 +18,12 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * The full POSIX identity, including user ID (<code>Uid</code>), group ID (<code>Gid</code>), and any secondary groups
+ * IDs (<code>SecondaryGids</code>), that controls your users' access to your Amazon EFS file systems. The POSIX
+ * permissions that are set on files and directories in your file system determine the level of access your users get
+ * when transferring files into and out of your Amazon EFS file systems.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/PosixProfile" target="_top">AWS API
  *      Documentation</a>
@@ -25,14 +31,32 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PosixProfile implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The POSIX user ID used for all EFS operations by this user.
+     * </p>
+     */
     private Long uid;
-
+    /**
+     * <p>
+     * The POSIX group ID used for all EFS operations by this user.
+     * </p>
+     */
     private Long gid;
-
+    /**
+     * <p>
+     * The secondary POSIX group IDs used for all EFS operations by this user.
+     * </p>
+     */
     private java.util.List<Long> secondaryGids;
 
     /**
+     * <p>
+     * The POSIX user ID used for all EFS operations by this user.
+     * </p>
+     * 
      * @param uid
+     *        The POSIX user ID used for all EFS operations by this user.
      */
 
     public void setUid(Long uid) {
@@ -40,7 +64,11 @@ public class PosixProfile implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The POSIX user ID used for all EFS operations by this user.
+     * </p>
+     * 
+     * @return The POSIX user ID used for all EFS operations by this user.
      */
 
     public Long getUid() {
@@ -48,7 +76,12 @@ public class PosixProfile implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The POSIX user ID used for all EFS operations by this user.
+     * </p>
+     * 
      * @param uid
+     *        The POSIX user ID used for all EFS operations by this user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -58,7 +91,12 @@ public class PosixProfile implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The POSIX group ID used for all EFS operations by this user.
+     * </p>
+     * 
      * @param gid
+     *        The POSIX group ID used for all EFS operations by this user.
      */
 
     public void setGid(Long gid) {
@@ -66,7 +104,11 @@ public class PosixProfile implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The POSIX group ID used for all EFS operations by this user.
+     * </p>
+     * 
+     * @return The POSIX group ID used for all EFS operations by this user.
      */
 
     public Long getGid() {
@@ -74,7 +116,12 @@ public class PosixProfile implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The POSIX group ID used for all EFS operations by this user.
+     * </p>
+     * 
      * @param gid
+     *        The POSIX group ID used for all EFS operations by this user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,7 +131,11 @@ public class PosixProfile implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The secondary POSIX group IDs used for all EFS operations by this user.
+     * </p>
+     * 
+     * @return The secondary POSIX group IDs used for all EFS operations by this user.
      */
 
     public java.util.List<Long> getSecondaryGids() {
@@ -92,7 +143,12 @@ public class PosixProfile implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The secondary POSIX group IDs used for all EFS operations by this user.
+     * </p>
+     * 
      * @param secondaryGids
+     *        The secondary POSIX group IDs used for all EFS operations by this user.
      */
 
     public void setSecondaryGids(java.util.Collection<Long> secondaryGids) {
@@ -106,12 +162,16 @@ public class PosixProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The secondary POSIX group IDs used for all EFS operations by this user.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSecondaryGids(java.util.Collection)} or {@link #withSecondaryGids(java.util.Collection)} if you want
      * to override the existing values.
      * </p>
      * 
      * @param secondaryGids
+     *        The secondary POSIX group IDs used for all EFS operations by this user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,7 +186,12 @@ public class PosixProfile implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The secondary POSIX group IDs used for all EFS operations by this user.
+     * </p>
+     * 
      * @param secondaryGids
+     *        The secondary POSIX group IDs used for all EFS operations by this user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

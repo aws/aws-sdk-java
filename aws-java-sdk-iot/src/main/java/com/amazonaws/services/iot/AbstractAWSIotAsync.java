@@ -358,6 +358,19 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateJobTemplateResult> createJobTemplateAsync(CreateJobTemplateRequest request) {
+
+        return createJobTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateJobTemplateResult> createJobTemplateAsync(CreateJobTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateJobTemplateRequest, CreateJobTemplateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateKeysAndCertificateResult> createKeysAndCertificateAsync(CreateKeysAndCertificateRequest request) {
 
         return createKeysAndCertificateAsync(request, null);
@@ -734,6 +747,19 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     @Override
     public java.util.concurrent.Future<DeleteJobExecutionResult> deleteJobExecutionAsync(DeleteJobExecutionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteJobExecutionRequest, DeleteJobExecutionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteJobTemplateResult> deleteJobTemplateAsync(DeleteJobTemplateRequest request) {
+
+        return deleteJobTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteJobTemplateResult> deleteJobTemplateAsync(DeleteJobTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteJobTemplateRequest, DeleteJobTemplateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1223,6 +1249,19 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     @Override
     public java.util.concurrent.Future<DescribeJobExecutionResult> describeJobExecutionAsync(DescribeJobExecutionRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeJobExecutionRequest, DescribeJobExecutionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeJobTemplateResult> describeJobTemplateAsync(DescribeJobTemplateRequest request) {
+
+        return describeJobTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeJobTemplateResult> describeJobTemplateAsync(DescribeJobTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeJobTemplateRequest, DescribeJobTemplateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1913,6 +1952,19 @@ public class AbstractAWSIotAsync extends AbstractAWSIot implements AWSIotAsync {
     @Override
     public java.util.concurrent.Future<ListJobExecutionsForThingResult> listJobExecutionsForThingAsync(ListJobExecutionsForThingRequest request,
             com.amazonaws.handlers.AsyncHandler<ListJobExecutionsForThingRequest, ListJobExecutionsForThingResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListJobTemplatesResult> listJobTemplatesAsync(ListJobTemplatesRequest request) {
+
+        return listJobTemplatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListJobTemplatesResult> listJobTemplatesAsync(ListJobTemplatesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListJobTemplatesRequest, ListJobTemplatesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

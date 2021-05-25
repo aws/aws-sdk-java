@@ -52,6 +52,8 @@ public class CreateJobRequestMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> NAMESPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("namespaceId").build();
+    private static final MarshallingInfo<String> JOBTEMPLATEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("jobTemplateArn").build();
 
     private static final CreateJobRequestMarshaller instance = new CreateJobRequestMarshaller();
 
@@ -81,6 +83,7 @@ public class CreateJobRequestMarshaller {
             protocolMarshaller.marshall(createJobRequest.getTimeoutConfig(), TIMEOUTCONFIG_BINDING);
             protocolMarshaller.marshall(createJobRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createJobRequest.getNamespaceId(), NAMESPACEID_BINDING);
+            protocolMarshaller.marshall(createJobRequest.getJobTemplateArn(), JOBTEMPLATEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

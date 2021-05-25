@@ -93,10 +93,22 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     private EndpointDetails endpointDetails;
     /**
      * <p>
-     * The type of endpoint that you want your server to connect to. You can choose to connect to the public internet or
-     * a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources only within your VPC.
+     * The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly
+     * accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access
+     * to your server and resources only within your VPC or choose to make it internet facing by attaching Elastic IP
+     * addresses directly to it.
      * </p>
      * <note>
+     * <p>
+     * After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your
+     * AWS account if your account hasn't already done so before March 31, 2021. If you have already created servers
+     * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31, 2021, you will not be
+     * affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     * </p>
+     * <p>
+     * For more information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.
+     * </p>
      * <p>
      * It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you
      * have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your server's
@@ -131,8 +143,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     private IdentityProviderDetails identityProviderDetails;
     /**
      * <p>
-     * Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 events to be logged in Amazon
-     * CloudWatch, turning logging on or off.
+     * Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 or Amazon EFS events to be logged
+     * in Amazon CloudWatch, turning logging on or off.
      * </p>
      */
     private String loggingRole;
@@ -166,7 +178,7 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
      * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>API_GATEWAY</code>.
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
      * </p>
      * <p>
      * If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.
@@ -595,10 +607,22 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of endpoint that you want your server to connect to. You can choose to connect to the public internet or
-     * a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources only within your VPC.
+     * The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly
+     * accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access
+     * to your server and resources only within your VPC or choose to make it internet facing by attaching Elastic IP
+     * addresses directly to it.
      * </p>
      * <note>
+     * <p>
+     * After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your
+     * AWS account if your account hasn't already done so before March 31, 2021. If you have already created servers
+     * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31, 2021, you will not be
+     * affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     * </p>
+     * <p>
+     * For more information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.
+     * </p>
      * <p>
      * It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you
      * have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your server's
@@ -608,9 +632,20 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </note>
      * 
      * @param endpointType
-     *        The type of endpoint that you want your server to connect to. You can choose to connect to the public
-     *        internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources only
-     *        within your VPC.</p> <note>
+     *        The type of endpoint that you want your server to use. You can choose to make your server's endpoint
+     *        publicly accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can
+     *        restrict access to your server and resources only within your VPC or choose to make it internet facing by
+     *        attaching Elastic IP addresses directly to it.</p> <note>
+     *        <p>
+     *        After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in
+     *        your AWS account if your account hasn't already done so before March 31, 2021. If you have already created
+     *        servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31, 2021, you
+     *        will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     *        </p>
+     *        <p>
+     *        For more information, see
+     *        https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.
+     *        </p>
      *        <p>
      *        It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type,
      *        you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your
@@ -626,10 +661,22 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of endpoint that you want your server to connect to. You can choose to connect to the public internet or
-     * a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources only within your VPC.
+     * The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly
+     * accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access
+     * to your server and resources only within your VPC or choose to make it internet facing by attaching Elastic IP
+     * addresses directly to it.
      * </p>
      * <note>
+     * <p>
+     * After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your
+     * AWS account if your account hasn't already done so before March 31, 2021. If you have already created servers
+     * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31, 2021, you will not be
+     * affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     * </p>
+     * <p>
+     * For more information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.
+     * </p>
      * <p>
      * It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you
      * have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your server's
@@ -638,9 +685,20 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </note>
      * 
-     * @return The type of endpoint that you want your server to connect to. You can choose to connect to the public
-     *         internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources
-     *         only within your VPC.</p> <note>
+     * @return The type of endpoint that you want your server to use. You can choose to make your server's endpoint
+     *         publicly accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you
+     *         can restrict access to your server and resources only within your VPC or choose to make it internet
+     *         facing by attaching Elastic IP addresses directly to it.</p> <note>
+     *         <p>
+     *         After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code>
+     *         in your AWS account if your account hasn't already done so before March 31, 2021. If you have already
+     *         created servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31,
+     *         2021, you will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     *         </p>
+     *         <p>
+     *         For more information, see
+     *         https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.
+     *         </p>
      *         <p>
      *         It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint
      *         type, you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with
@@ -656,10 +714,22 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of endpoint that you want your server to connect to. You can choose to connect to the public internet or
-     * a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources only within your VPC.
+     * The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly
+     * accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access
+     * to your server and resources only within your VPC or choose to make it internet facing by attaching Elastic IP
+     * addresses directly to it.
      * </p>
      * <note>
+     * <p>
+     * After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your
+     * AWS account if your account hasn't already done so before March 31, 2021. If you have already created servers
+     * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31, 2021, you will not be
+     * affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     * </p>
+     * <p>
+     * For more information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.
+     * </p>
      * <p>
      * It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you
      * have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your server's
@@ -669,9 +739,20 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </note>
      * 
      * @param endpointType
-     *        The type of endpoint that you want your server to connect to. You can choose to connect to the public
-     *        internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources only
-     *        within your VPC.</p> <note>
+     *        The type of endpoint that you want your server to use. You can choose to make your server's endpoint
+     *        publicly accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can
+     *        restrict access to your server and resources only within your VPC or choose to make it internet facing by
+     *        attaching Elastic IP addresses directly to it.</p> <note>
+     *        <p>
+     *        After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in
+     *        your AWS account if your account hasn't already done so before March 31, 2021. If you have already created
+     *        servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31, 2021, you
+     *        will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     *        </p>
+     *        <p>
+     *        For more information, see
+     *        https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.
+     *        </p>
      *        <p>
      *        It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type,
      *        you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your
@@ -689,10 +770,22 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of endpoint that you want your server to connect to. You can choose to connect to the public internet or
-     * a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources only within your VPC.
+     * The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly
+     * accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access
+     * to your server and resources only within your VPC or choose to make it internet facing by attaching Elastic IP
+     * addresses directly to it.
      * </p>
      * <note>
+     * <p>
+     * After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in your
+     * AWS account if your account hasn't already done so before March 31, 2021. If you have already created servers
+     * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31, 2021, you will not be
+     * affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     * </p>
+     * <p>
+     * For more information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.
+     * </p>
      * <p>
      * It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type, you
      * have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your server's
@@ -702,9 +795,20 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </note>
      * 
      * @param endpointType
-     *        The type of endpoint that you want your server to connect to. You can choose to connect to the public
-     *        internet or a VPC endpoint. With a VPC endpoint, you can restrict access to your server and resources only
-     *        within your VPC.</p> <note>
+     *        The type of endpoint that you want your server to use. You can choose to make your server's endpoint
+     *        publicly accessible (PUBLIC) or host it inside your VPC. With an endpoint that is hosted in a VPC, you can
+     *        restrict access to your server and resources only within your VPC or choose to make it internet facing by
+     *        attaching Elastic IP addresses directly to it.</p> <note>
+     *        <p>
+     *        After March 31, 2021, you won't be able to create a server using <code>EndpointType=VPC_ENDPOINT</code> in
+     *        your AWS account if your account hasn't already done so before March 31, 2021. If you have already created
+     *        servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before March 31, 2021, you
+     *        will not be affected. After this date, use <code>EndpointType</code>=<code>VPC</code>.
+     *        </p>
+     *        <p>
+     *        For more information, see
+     *        https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.
+     *        </p>
      *        <p>
      *        It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With this endpoint type,
      *        you have the option to directly associate up to three Elastic IPv4 addresses (BYO IP included) with your
@@ -865,13 +969,13 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 events to be logged in Amazon
-     * CloudWatch, turning logging on or off.
+     * Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 or Amazon EFS events to be logged
+     * in Amazon CloudWatch, turning logging on or off.
      * </p>
      * 
      * @param loggingRole
-     *        Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 events to be logged in
-     *        Amazon CloudWatch, turning logging on or off.
+     *        Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 or Amazon EFS events to be
+     *        logged in Amazon CloudWatch, turning logging on or off.
      */
 
     public void setLoggingRole(String loggingRole) {
@@ -880,12 +984,12 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 events to be logged in Amazon
-     * CloudWatch, turning logging on or off.
+     * Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 or Amazon EFS events to be logged
+     * in Amazon CloudWatch, turning logging on or off.
      * </p>
      * 
-     * @return Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 events to be logged in
-     *         Amazon CloudWatch, turning logging on or off.
+     * @return Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 or Amazon EFS events to
+     *         be logged in Amazon CloudWatch, turning logging on or off.
      */
 
     public String getLoggingRole() {
@@ -894,13 +998,13 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 events to be logged in Amazon
-     * CloudWatch, turning logging on or off.
+     * Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 or Amazon EFS events to be logged
+     * in Amazon CloudWatch, turning logging on or off.
      * </p>
      * 
      * @param loggingRole
-     *        Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 events to be logged in
-     *        Amazon CloudWatch, turning logging on or off.
+     *        Changes the AWS Identity and Access Management (IAM) role that allows Amazon S3 or Amazon EFS events to be
+     *        logged in Amazon CloudWatch, turning logging on or off.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -939,7 +1043,7 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
      * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>API_GATEWAY</code>.
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
      * </p>
      * <p>
      * If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.
@@ -977,7 +1081,7 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <p>
      *         If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
      *         <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     *         <code>API_GATEWAY</code>.
+     *         <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
      *         </p>
      *         <p>
      *         If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
@@ -1024,7 +1128,7 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
      * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>API_GATEWAY</code>.
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
      * </p>
      * <p>
      * If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.
@@ -1063,7 +1167,7 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
      *        <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     *        <code>API_GATEWAY</code>.
+     *        <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
      *        </p>
      *        <p>
      *        If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
@@ -1115,7 +1219,7 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
      * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>API_GATEWAY</code>.
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
      * </p>
      * <p>
      * If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.
@@ -1159,7 +1263,7 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
      *        <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     *        <code>API_GATEWAY</code>.
+     *        <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
      *        </p>
      *        <p>
      *        If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
@@ -1213,7 +1317,7 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
      * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>API_GATEWAY</code>.
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
      * </p>
      * <p>
      * If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.
@@ -1252,7 +1356,7 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
      *        <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     *        <code>API_GATEWAY</code>.
+     *        <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
      *        </p>
      *        <p>
      *        If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
@@ -1301,7 +1405,7 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
      * <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>API_GATEWAY</code>.
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
      * </p>
      * <p>
      * If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be associated.
@@ -1340,7 +1444,7 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
      *        <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     *        <code>API_GATEWAY</code>.
+     *        <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
      *        </p>
      *        <p>
      *        If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be

@@ -29,7 +29,7 @@ public class AttachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a> to which the
-     * policy is attached.
+     * policy is attached. For example, a thing group or a certificate.
      * </p>
      */
     private String target;
@@ -77,12 +77,12 @@ public class AttachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a> to which the
-     * policy is attached.
+     * policy is attached. For example, a thing group or a certificate.
      * </p>
      * 
      * @param target
      *        The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a> to
-     *        which the policy is attached.
+     *        which the policy is attached. For example, a thing group or a certificate.
      */
 
     public void setTarget(String target) {
@@ -92,11 +92,11 @@ public class AttachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a> to which the
-     * policy is attached.
+     * policy is attached. For example, a thing group or a certificate.
      * </p>
      * 
      * @return The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a> to
-     *         which the policy is attached.
+     *         which the policy is attached. For example, a thing group or a certificate.
      */
 
     public String getTarget() {
@@ -106,12 +106,12 @@ public class AttachPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a> to which the
-     * policy is attached.
+     * policy is attached. For example, a thing group or a certificate.
      * </p>
      * 
      * @param target
      *        The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/security-iam.html">identity</a> to
-     *        which the policy is attached.
+     *        which the policy is attached. For example, a thing group or a certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

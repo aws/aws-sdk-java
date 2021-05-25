@@ -1110,6 +1110,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateJobTemplateResult> createJobTemplateAsync(CreateJobTemplateRequest request) {
+
+        return createJobTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateJobTemplateResult> createJobTemplateAsync(final CreateJobTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateJobTemplateRequest, CreateJobTemplateResult> asyncHandler) {
+        final CreateJobTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateJobTemplateResult>() {
+            @Override
+            public CreateJobTemplateResult call() throws Exception {
+                CreateJobTemplateResult result = null;
+
+                try {
+                    result = executeCreateJobTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateKeysAndCertificateResult> createKeysAndCertificateAsync(CreateKeysAndCertificateRequest request) {
 
         return createKeysAndCertificateAsync(request, null);
@@ -2055,6 +2088,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
 
                 try {
                     result = executeDeleteJobExecution(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteJobTemplateResult> deleteJobTemplateAsync(DeleteJobTemplateRequest request) {
+
+        return deleteJobTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteJobTemplateResult> deleteJobTemplateAsync(final DeleteJobTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteJobTemplateRequest, DeleteJobTemplateResult> asyncHandler) {
+        final DeleteJobTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteJobTemplateResult>() {
+            @Override
+            public DeleteJobTemplateResult call() throws Exception {
+                DeleteJobTemplateResult result = null;
+
+                try {
+                    result = executeDeleteJobTemplate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3284,6 +3350,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
 
                 try {
                     result = executeDescribeJobExecution(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeJobTemplateResult> describeJobTemplateAsync(DescribeJobTemplateRequest request) {
+
+        return describeJobTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeJobTemplateResult> describeJobTemplateAsync(final DescribeJobTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeJobTemplateRequest, DescribeJobTemplateResult> asyncHandler) {
+        final DescribeJobTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeJobTemplateResult>() {
+            @Override
+            public DescribeJobTemplateResult call() throws Exception {
+                DescribeJobTemplateResult result = null;
+
+                try {
+                    result = executeDescribeJobTemplate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -5015,6 +5114,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
 
                 try {
                     result = executeListJobExecutionsForThing(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListJobTemplatesResult> listJobTemplatesAsync(ListJobTemplatesRequest request) {
+
+        return listJobTemplatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListJobTemplatesResult> listJobTemplatesAsync(final ListJobTemplatesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListJobTemplatesRequest, ListJobTemplatesResult> asyncHandler) {
+        final ListJobTemplatesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListJobTemplatesResult>() {
+            @Override
+            public ListJobTemplatesResult call() throws Exception {
+                ListJobTemplatesResult result = null;
+
+                try {
+                    result = executeListJobTemplates(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -55,7 +55,7 @@ public class CreateWorkspaceBundleRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <note>
      * <p>
-     * To add tags at the same time that you're creating the bundle, you must create an IAM policy that grants your IAM
+     * To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM
      * user permissions to use <code>workspaces:CreateTags</code>.
      * </p>
      * </note>
@@ -266,14 +266,14 @@ public class CreateWorkspaceBundleRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <note>
      * <p>
-     * To add tags at the same time that you're creating the bundle, you must create an IAM policy that grants your IAM
+     * To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM
      * user permissions to use <code>workspaces:CreateTags</code>.
      * </p>
      * </note>
      * 
      * @return The tags associated with the bundle.</p> <note>
      *         <p>
-     *         To add tags at the same time that you're creating the bundle, you must create an IAM policy that grants
+     *         To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants
      *         your IAM user permissions to use <code>workspaces:CreateTags</code>.
      *         </p>
      */
@@ -291,7 +291,7 @@ public class CreateWorkspaceBundleRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <note>
      * <p>
-     * To add tags at the same time that you're creating the bundle, you must create an IAM policy that grants your IAM
+     * To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM
      * user permissions to use <code>workspaces:CreateTags</code>.
      * </p>
      * </note>
@@ -299,7 +299,7 @@ public class CreateWorkspaceBundleRequest extends com.amazonaws.AmazonWebService
      * @param tags
      *        The tags associated with the bundle.</p> <note>
      *        <p>
-     *        To add tags at the same time that you're creating the bundle, you must create an IAM policy that grants
+     *        To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants
      *        your IAM user permissions to use <code>workspaces:CreateTags</code>.
      *        </p>
      */
@@ -319,7 +319,7 @@ public class CreateWorkspaceBundleRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <note>
      * <p>
-     * To add tags at the same time that you're creating the bundle, you must create an IAM policy that grants your IAM
+     * To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM
      * user permissions to use <code>workspaces:CreateTags</code>.
      * </p>
      * </note>
@@ -332,7 +332,7 @@ public class CreateWorkspaceBundleRequest extends com.amazonaws.AmazonWebService
      * @param tags
      *        The tags associated with the bundle.</p> <note>
      *        <p>
-     *        To add tags at the same time that you're creating the bundle, you must create an IAM policy that grants
+     *        To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants
      *        your IAM user permissions to use <code>workspaces:CreateTags</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -354,7 +354,7 @@ public class CreateWorkspaceBundleRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <note>
      * <p>
-     * To add tags at the same time that you're creating the bundle, you must create an IAM policy that grants your IAM
+     * To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM
      * user permissions to use <code>workspaces:CreateTags</code>.
      * </p>
      * </note>
@@ -362,7 +362,7 @@ public class CreateWorkspaceBundleRequest extends com.amazonaws.AmazonWebService
      * @param tags
      *        The tags associated with the bundle.</p> <note>
      *        <p>
-     *        To add tags at the same time that you're creating the bundle, you must create an IAM policy that grants
+     *        To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants
      *        your IAM user permissions to use <code>workspaces:CreateTags</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.

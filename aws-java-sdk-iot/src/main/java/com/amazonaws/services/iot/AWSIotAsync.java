@@ -857,11 +857,6 @@ public interface AWSIotAsync extends AWSIot {
      * <p>
      * Creates a domain configuration.
      * </p>
-     * <note>
-     * <p>
-     * The domain configuration feature is in public preview and is subject to change.
-     * </p>
-     * </note>
      * 
      * @param createDomainConfigurationRequest
      * @return A Java Future containing the result of the CreateDomainConfiguration operation returned by the service.
@@ -874,11 +869,6 @@ public interface AWSIotAsync extends AWSIot {
      * <p>
      * Creates a domain configuration.
      * </p>
-     * <note>
-     * <p>
-     * The domain configuration feature is in public preview and is subject to change.
-     * </p>
-     * </note>
      * 
      * @param createDomainConfigurationRequest
      * @param asyncHandler
@@ -945,6 +935,33 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<CreateJobResult> createJobAsync(CreateJobRequest createJobRequest,
             com.amazonaws.handlers.AsyncHandler<CreateJobRequest, CreateJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a job template.
+     * </p>
+     * 
+     * @param createJobTemplateRequest
+     * @return A Java Future containing the result of the CreateJobTemplate operation returned by the service.
+     * @sample AWSIotAsync.CreateJobTemplate
+     */
+    java.util.concurrent.Future<CreateJobTemplateResult> createJobTemplateAsync(CreateJobTemplateRequest createJobTemplateRequest);
+
+    /**
+     * <p>
+     * Creates a job template.
+     * </p>
+     * 
+     * @param createJobTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateJobTemplate operation returned by the service.
+     * @sample AWSIotAsyncHandler.CreateJobTemplate
+     */
+    java.util.concurrent.Future<CreateJobTemplateResult> createJobTemplateAsync(CreateJobTemplateRequest createJobTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateJobTemplateRequest, CreateJobTemplateResult> asyncHandler);
 
     /**
      * <p>
@@ -1759,11 +1776,6 @@ public interface AWSIotAsync extends AWSIot {
      * <p>
      * Deletes the specified domain configuration.
      * </p>
-     * <note>
-     * <p>
-     * The domain configuration feature is in public preview and is subject to change.
-     * </p>
-     * </note>
      * 
      * @param deleteDomainConfigurationRequest
      * @return A Java Future containing the result of the DeleteDomainConfiguration operation returned by the service.
@@ -1776,11 +1788,6 @@ public interface AWSIotAsync extends AWSIot {
      * <p>
      * Deletes the specified domain configuration.
      * </p>
-     * <note>
-     * <p>
-     * The domain configuration feature is in public preview and is subject to change.
-     * </p>
-     * </note>
      * 
      * @param deleteDomainConfigurationRequest
      * @param asyncHandler
@@ -1890,6 +1897,33 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<DeleteJobExecutionResult> deleteJobExecutionAsync(DeleteJobExecutionRequest deleteJobExecutionRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteJobExecutionRequest, DeleteJobExecutionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified job template.
+     * </p>
+     * 
+     * @param deleteJobTemplateRequest
+     * @return A Java Future containing the result of the DeleteJobTemplate operation returned by the service.
+     * @sample AWSIotAsync.DeleteJobTemplate
+     */
+    java.util.concurrent.Future<DeleteJobTemplateResult> deleteJobTemplateAsync(DeleteJobTemplateRequest deleteJobTemplateRequest);
+
+    /**
+     * <p>
+     * Deletes the specified job template.
+     * </p>
+     * 
+     * @param deleteJobTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteJobTemplate operation returned by the service.
+     * @sample AWSIotAsyncHandler.DeleteJobTemplate
+     */
+    java.util.concurrent.Future<DeleteJobTemplateResult> deleteJobTemplateAsync(DeleteJobTemplateRequest deleteJobTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteJobTemplateRequest, DeleteJobTemplateResult> asyncHandler);
 
     /**
      * <p>
@@ -2814,11 +2848,6 @@ public interface AWSIotAsync extends AWSIot {
      * <p>
      * Gets summary information about a domain configuration.
      * </p>
-     * <note>
-     * <p>
-     * The domain configuration feature is in public preview and is subject to change.
-     * </p>
-     * </note>
      * 
      * @param describeDomainConfigurationRequest
      * @return A Java Future containing the result of the DescribeDomainConfiguration operation returned by the service.
@@ -2831,11 +2860,6 @@ public interface AWSIotAsync extends AWSIot {
      * <p>
      * Gets summary information about a domain configuration.
      * </p>
-     * <note>
-     * <p>
-     * The domain configuration feature is in public preview and is subject to change.
-     * </p>
-     * </note>
      * 
      * @param describeDomainConfigurationRequest
      * @param asyncHandler
@@ -2987,6 +3011,33 @@ public interface AWSIotAsync extends AWSIot {
      */
     java.util.concurrent.Future<DescribeJobExecutionResult> describeJobExecutionAsync(DescribeJobExecutionRequest describeJobExecutionRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeJobExecutionRequest, DescribeJobExecutionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about a job template.
+     * </p>
+     * 
+     * @param describeJobTemplateRequest
+     * @return A Java Future containing the result of the DescribeJobTemplate operation returned by the service.
+     * @sample AWSIotAsync.DescribeJobTemplate
+     */
+    java.util.concurrent.Future<DescribeJobTemplateResult> describeJobTemplateAsync(DescribeJobTemplateRequest describeJobTemplateRequest);
+
+    /**
+     * <p>
+     * Returns information about a job template.
+     * </p>
+     * 
+     * @param describeJobTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeJobTemplate operation returned by the service.
+     * @sample AWSIotAsyncHandler.DescribeJobTemplate
+     */
+    java.util.concurrent.Future<DescribeJobTemplateResult> describeJobTemplateAsync(DescribeJobTemplateRequest describeJobTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeJobTemplateRequest, DescribeJobTemplateResult> asyncHandler);
 
     /**
      * <p>
@@ -4411,11 +4462,6 @@ public interface AWSIotAsync extends AWSIot {
      * Gets a list of domain configurations for the user. This list is sorted alphabetically by domain configuration
      * name.
      * </p>
-     * <note>
-     * <p>
-     * The domain configuration feature is in public preview and is subject to change.
-     * </p>
-     * </note>
      * 
      * @param listDomainConfigurationsRequest
      * @return A Java Future containing the result of the ListDomainConfigurations operation returned by the service.
@@ -4428,11 +4474,6 @@ public interface AWSIotAsync extends AWSIot {
      * Gets a list of domain configurations for the user. This list is sorted alphabetically by domain configuration
      * name.
      * </p>
-     * <note>
-     * <p>
-     * The domain configuration feature is in public preview and is subject to change.
-     * </p>
-     * </note>
      * 
      * @param listDomainConfigurationsRequest
      * @param asyncHandler
@@ -4527,6 +4568,33 @@ public interface AWSIotAsync extends AWSIot {
     java.util.concurrent.Future<ListJobExecutionsForThingResult> listJobExecutionsForThingAsync(
             ListJobExecutionsForThingRequest listJobExecutionsForThingRequest,
             com.amazonaws.handlers.AsyncHandler<ListJobExecutionsForThingRequest, ListJobExecutionsForThingResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of job templates.
+     * </p>
+     * 
+     * @param listJobTemplatesRequest
+     * @return A Java Future containing the result of the ListJobTemplates operation returned by the service.
+     * @sample AWSIotAsync.ListJobTemplates
+     */
+    java.util.concurrent.Future<ListJobTemplatesResult> listJobTemplatesAsync(ListJobTemplatesRequest listJobTemplatesRequest);
+
+    /**
+     * <p>
+     * Returns a list of job templates.
+     * </p>
+     * 
+     * @param listJobTemplatesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListJobTemplates operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListJobTemplates
+     */
+    java.util.concurrent.Future<ListJobTemplatesResult> listJobTemplatesAsync(ListJobTemplatesRequest listJobTemplatesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListJobTemplatesRequest, ListJobTemplatesResult> asyncHandler);
 
     /**
      * <p>
@@ -6518,11 +6586,6 @@ public interface AWSIotAsync extends AWSIot {
      * <p>
      * Updates values stored in the domain configuration. Domain configurations for default endpoints can't be updated.
      * </p>
-     * <note>
-     * <p>
-     * The domain configuration feature is in public preview and is subject to change.
-     * </p>
-     * </note>
      * 
      * @param updateDomainConfigurationRequest
      * @return A Java Future containing the result of the UpdateDomainConfiguration operation returned by the service.
@@ -6535,11 +6598,6 @@ public interface AWSIotAsync extends AWSIot {
      * <p>
      * Updates values stored in the domain configuration. Domain configurations for default endpoints can't be updated.
      * </p>
-     * <note>
-     * <p>
-     * The domain configuration feature is in public preview and is subject to change.
-     * </p>
-     * </note>
      * 
      * @param updateDomainConfigurationRequest
      * @param asyncHandler

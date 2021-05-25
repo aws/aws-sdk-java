@@ -40,11 +40,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * </li>
  * </ul>
- * <note>
- * <p>
- * The domain configuration feature is in public preview and is subject to change.
- * </p>
- * </note>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DomainConfigurationSummary implements Serializable, Cloneable, StructuredPojo {

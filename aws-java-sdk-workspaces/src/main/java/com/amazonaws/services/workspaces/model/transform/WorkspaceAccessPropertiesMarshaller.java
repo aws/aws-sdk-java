@@ -41,6 +41,8 @@ public class WorkspaceAccessPropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeviceTypeChromeOs").build();
     private static final MarshallingInfo<String> DEVICETYPEZEROCLIENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeviceTypeZeroClient").build();
+    private static final MarshallingInfo<String> DEVICETYPELINUX_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeviceTypeLinux").build();
 
     private static final WorkspaceAccessPropertiesMarshaller instance = new WorkspaceAccessPropertiesMarshaller();
 
@@ -65,6 +67,7 @@ public class WorkspaceAccessPropertiesMarshaller {
             protocolMarshaller.marshall(workspaceAccessProperties.getDeviceTypeAndroid(), DEVICETYPEANDROID_BINDING);
             protocolMarshaller.marshall(workspaceAccessProperties.getDeviceTypeChromeOs(), DEVICETYPECHROMEOS_BINDING);
             protocolMarshaller.marshall(workspaceAccessProperties.getDeviceTypeZeroClient(), DEVICETYPEZEROCLIENT_BINDING);
+            protocolMarshaller.marshall(workspaceAccessProperties.getDeviceTypeLinux(), DEVICETYPELINUX_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

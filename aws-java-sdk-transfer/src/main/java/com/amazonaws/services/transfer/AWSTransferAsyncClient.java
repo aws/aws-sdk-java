@@ -80,6 +80,39 @@ public class AWSTransferAsyncClient extends AWSTransferClient implements AWSTran
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAccessResult> createAccessAsync(CreateAccessRequest request) {
+
+        return createAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAccessResult> createAccessAsync(final CreateAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAccessRequest, CreateAccessResult> asyncHandler) {
+        final CreateAccessRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateAccessResult>() {
+            @Override
+            public CreateAccessResult call() throws Exception {
+                CreateAccessResult result = null;
+
+                try {
+                    result = executeCreateAccess(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateServerResult> createServerAsync(CreateServerRequest request) {
 
         return createServerAsync(request, null);
@@ -130,6 +163,39 @@ public class AWSTransferAsyncClient extends AWSTransferClient implements AWSTran
 
                 try {
                     result = executeCreateUser(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccessResult> deleteAccessAsync(DeleteAccessRequest request) {
+
+        return deleteAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccessResult> deleteAccessAsync(final DeleteAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAccessRequest, DeleteAccessResult> asyncHandler) {
+        final DeleteAccessRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAccessResult>() {
+            @Override
+            public DeleteAccessResult call() throws Exception {
+                DeleteAccessResult result = null;
+
+                try {
+                    result = executeDeleteAccess(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -229,6 +295,39 @@ public class AWSTransferAsyncClient extends AWSTransferClient implements AWSTran
 
                 try {
                     result = executeDeleteUser(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccessResult> describeAccessAsync(DescribeAccessRequest request) {
+
+        return describeAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccessResult> describeAccessAsync(final DescribeAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAccessRequest, DescribeAccessResult> asyncHandler) {
+        final DescribeAccessRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAccessResult>() {
+            @Override
+            public DescribeAccessResult call() throws Exception {
+                DescribeAccessResult result = null;
+
+                try {
+                    result = executeDescribeAccess(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -361,6 +460,39 @@ public class AWSTransferAsyncClient extends AWSTransferClient implements AWSTran
 
                 try {
                     result = executeImportSshPublicKey(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessesResult> listAccessesAsync(ListAccessesRequest request) {
+
+        return listAccessesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessesResult> listAccessesAsync(final ListAccessesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAccessesRequest, ListAccessesResult> asyncHandler) {
+        final ListAccessesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAccessesResult>() {
+            @Override
+            public ListAccessesResult call() throws Exception {
+                ListAccessesResult result = null;
+
+                try {
+                    result = executeListAccesses(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -658,6 +790,39 @@ public class AWSTransferAsyncClient extends AWSTransferClient implements AWSTran
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAccessResult> updateAccessAsync(UpdateAccessRequest request) {
+
+        return updateAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAccessResult> updateAccessAsync(final UpdateAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAccessRequest, UpdateAccessResult> asyncHandler) {
+        final UpdateAccessRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateAccessResult>() {
+            @Override
+            public UpdateAccessResult call() throws Exception {
+                UpdateAccessResult result = null;
+
+                try {
+                    result = executeUpdateAccess(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -159,7 +159,75 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
 
     /**
      * <p>
-     * Instantiates an autoscaling virtual server based on the selected file transfer protocol in AWS. When you make
+     * Used by administrators to choose which groups in the directory should have access to upload and download files
+     * over the enabled protocols using AWS Transfer Family. For example, a Microsoft Active Directory might contain
+     * 50,000 users, but only a small fraction might need the ability to transfer files to the server. An administrator
+     * can use <code>CreateAccess</code> to limit the access to the correct set of users who need this ability.
+     * </p>
+     * 
+     * @param createAccessRequest
+     * @return Result of the CreateAccess operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the AWS Transfer Family service is not available.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws ResourceExistsException
+     *         The requested resource does not exist.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when a resource is not found by the AWS Transfer Family service.
+     * @sample AWSTransfer.CreateAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateAccess" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateAccessResult createAccess(CreateAccessRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAccess(request);
+    }
+
+    @SdkInternalApi
+    final CreateAccessResult executeCreateAccess(CreateAccessRequest createAccessRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createAccessRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateAccessRequest> request = null;
+        Response<CreateAccessResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAccessRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAccessRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transfer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAccess");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAccessResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateAccessResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Instantiates an auto-scaling virtual server based on the selected file transfer protocol in AWS. When you make
      * updates to your file transfer protocol-enabled server or when you work with users, use the service-generated
      * <code>ServerId</code> property that is assigned to the newly created server.
      * </p>
@@ -288,6 +356,69 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateUserResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateUserResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Allows you to delete the access specified in the <code>ServerID</code> and <code>ExternalID</code> parameters.
+     * </p>
+     * 
+     * @param deleteAccessRequest
+     * @return Result of the DeleteAccess operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the AWS Transfer Family service is not available.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when a resource is not found by the AWS Transfer Family service.
+     * @sample AWSTransfer.DeleteAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteAccess" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteAccessResult deleteAccess(DeleteAccessRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAccess(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAccessResult executeDeleteAccess(DeleteAccessRequest deleteAccessRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAccessRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAccessRequest> request = null;
+        Response<DeleteAccessResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAccessRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAccessRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transfer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAccess");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAccessResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteAccessResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -497,6 +628,74 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteUserResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteUserResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the access that is assigned to the specific file transfer protocol-enabled server, as identified by its
+     * <code>ServerId</code> property and its <code>ExternalID</code>.
+     * </p>
+     * <p>
+     * The response from this call returns the properties of the access that is associated with the
+     * <code>ServerId</code> value that was specified.
+     * </p>
+     * 
+     * @param describeAccessRequest
+     * @return Result of the DescribeAccess operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the AWS Transfer Family service is not available.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when a resource is not found by the AWS Transfer Family service.
+     * @sample AWSTransfer.DescribeAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeAccess" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeAccessResult describeAccess(DescribeAccessRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAccess(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAccessResult executeDescribeAccess(DescribeAccessRequest describeAccessRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAccessRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAccessRequest> request = null;
+        Response<DescribeAccessResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAccessRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAccessRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transfer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccess");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAccessResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeAccessResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -786,6 +985,71 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
 
     /**
      * <p>
+     * Lists the details for all the accesses you have on your server.
+     * </p>
+     * 
+     * @param listAccessesRequest
+     * @return Result of the ListAccesses operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the AWS Transfer Family service is not available.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> parameter that was passed is invalid.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when a resource is not found by the AWS Transfer Family service.
+     * @sample AWSTransfer.ListAccesses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListAccesses" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListAccessesResult listAccesses(ListAccessesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAccesses(request);
+    }
+
+    @SdkInternalApi
+    final ListAccessesResult executeListAccesses(ListAccessesRequest listAccessesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAccessesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAccessesRequest> request = null;
+        Response<ListAccessesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAccessesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAccessesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transfer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccesses");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAccessesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAccessesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the security policies that are attached to your file transfer protocol-enabled servers.
      * </p>
      * 
@@ -912,8 +1176,8 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
 
     /**
      * <p>
-     * Lists all of the tags associated with the Amazon Resource Number (ARN) you specify. The resource can be a user,
-     * server, or role.
+     * Lists all of the tags associated with the Amazon Resource Name (ARN) that you specify. The resource can be a
+     * user, server, or role.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -1267,10 +1531,11 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
 
     /**
      * <p>
-     * If the <code>IdentityProviderType</code> of a file transfer protocol-enabled server is <code>API_Gateway</code>,
-     * tests whether your API Gateway is set up successfully. We highly recommend that you call this operation to test
-     * your authentication method as soon as you create your server. By doing so, you can troubleshoot issues with the
-     * API Gateway integration to ensure that your users can successfully use the service.
+     * If the <code>IdentityProviderType</code> of a file transfer protocol-enabled server is
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_Gateway</code>, tests whether your identity provider is set up
+     * successfully. We highly recommend that you call this operation to test your authentication method as soon as you
+     * create your server. By doing so, you can troubleshoot issues with the identity provider integration to ensure
+     * that your users can successfully use the service.
      * </p>
      * 
      * @param testIdentityProviderRequest
@@ -1388,6 +1653,72 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Allows you to update parameters for the access specified in the <code>ServerID</code> and <code>ExternalID</code>
+     * parameters.
+     * </p>
+     * 
+     * @param updateAccessRequest
+     * @return Result of the UpdateAccess operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the AWS Transfer Family service is not available.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws ResourceExistsException
+     *         The requested resource does not exist.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when a resource is not found by the AWS Transfer Family service.
+     * @sample AWSTransfer.UpdateAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateAccess" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateAccessResult updateAccess(UpdateAccessRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAccess(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAccessResult executeUpdateAccess(UpdateAccessRequest updateAccessRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAccessRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAccessRequest> request = null;
+        Response<UpdateAccessResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAccessRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAccessRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transfer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAccess");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAccessResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateAccessResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

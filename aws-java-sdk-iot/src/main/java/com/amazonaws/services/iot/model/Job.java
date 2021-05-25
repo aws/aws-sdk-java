@@ -152,6 +152,12 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </note>
      */
     private String namespaceId;
+    /**
+     * <p>
+     * The ARN of the job template used to create the job.
+     * </p>
+     */
+    private String jobTemplateArn;
 
     /**
      * <p>
@@ -1079,6 +1085,46 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The ARN of the job template used to create the job.
+     * </p>
+     * 
+     * @param jobTemplateArn
+     *        The ARN of the job template used to create the job.
+     */
+
+    public void setJobTemplateArn(String jobTemplateArn) {
+        this.jobTemplateArn = jobTemplateArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the job template used to create the job.
+     * </p>
+     * 
+     * @return The ARN of the job template used to create the job.
+     */
+
+    public String getJobTemplateArn() {
+        return this.jobTemplateArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the job template used to create the job.
+     * </p>
+     * 
+     * @param jobTemplateArn
+     *        The ARN of the job template used to create the job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withJobTemplateArn(String jobTemplateArn) {
+        setJobTemplateArn(jobTemplateArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1125,7 +1171,9 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         if (getTimeoutConfig() != null)
             sb.append("TimeoutConfig: ").append(getTimeoutConfig()).append(",");
         if (getNamespaceId() != null)
-            sb.append("NamespaceId: ").append(getNamespaceId());
+            sb.append("NamespaceId: ").append(getNamespaceId()).append(",");
+        if (getJobTemplateArn() != null)
+            sb.append("JobTemplateArn: ").append(getJobTemplateArn());
         sb.append("}");
         return sb.toString();
     }
@@ -1212,6 +1260,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNamespaceId() != null && other.getNamespaceId().equals(this.getNamespaceId()) == false)
             return false;
+        if (other.getJobTemplateArn() == null ^ this.getJobTemplateArn() == null)
+            return false;
+        if (other.getJobTemplateArn() != null && other.getJobTemplateArn().equals(this.getJobTemplateArn()) == false)
+            return false;
         return true;
     }
 
@@ -1238,6 +1290,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getJobProcessDetails() == null) ? 0 : getJobProcessDetails().hashCode());
         hashCode = prime * hashCode + ((getTimeoutConfig() == null) ? 0 : getTimeoutConfig().hashCode());
         hashCode = prime * hashCode + ((getNamespaceId() == null) ? 0 : getNamespaceId().hashCode());
+        hashCode = prime * hashCode + ((getJobTemplateArn() == null) ? 0 : getJobTemplateArn().hashCode());
         return hashCode;
     }
 
