@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum PermissionsMode {
 
-    ALLOW_ALL("ALLOW_ALL");
+    ALLOW_ALL("ALLOW_ALL"),
+    STANDARD("STANDARD");
 
     private String value;
 

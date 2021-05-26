@@ -67,10 +67,10 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
      * Default: FIPS_140_2_LEVEL_3_OR_HIGHER
      * </p>
      * <p>
-     * Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this
-     * parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an
-     * <code>InvalidArgsException</code> with the message
-     * "A certificate authority cannot be created in this region with the specified security standard."
+     * Note: <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region ap-northeast-3. When creating a CA in
+     * the ap-northeast-3, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
+     * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an <code>InvalidArgsException</code> with
+     * the message, "A certificate authority cannot be created in this region with the specified security standard."
      * </p>
      */
     private String keyStorageSecurityStandard;
@@ -334,10 +334,10 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
      * Default: FIPS_140_2_LEVEL_3_OR_HIGHER
      * </p>
      * <p>
-     * Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this
-     * parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an
-     * <code>InvalidArgsException</code> with the message
-     * "A certificate authority cannot be created in this region with the specified security standard."
+     * Note: <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region ap-northeast-3. When creating a CA in
+     * the ap-northeast-3, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
+     * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an <code>InvalidArgsException</code> with
+     * the message, "A certificate authority cannot be created in this region with the specified security standard."
      * </p>
      * 
      * @param keyStorageSecurityStandard
@@ -346,9 +346,10 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
      *        Default: FIPS_140_2_LEVEL_3_OR_HIGHER
      *        </p>
      *        <p>
-     *        Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify
-     *        this parameter and value when creating a CA in that Region. Specifying a different value (or no value)
-     *        results in an <code>InvalidArgsException</code> with the message
+     *        Note: <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region ap-northeast-3. When creating a
+     *        CA in the ap-northeast-3, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
+     *        <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
+     *        <code>InvalidArgsException</code> with the message,
      *        "A certificate authority cannot be created in this region with the specified security standard."
      * @see KeyStorageSecurityStandard
      */
@@ -365,10 +366,10 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
      * Default: FIPS_140_2_LEVEL_3_OR_HIGHER
      * </p>
      * <p>
-     * Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this
-     * parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an
-     * <code>InvalidArgsException</code> with the message
-     * "A certificate authority cannot be created in this region with the specified security standard."
+     * Note: <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region ap-northeast-3. When creating a CA in
+     * the ap-northeast-3, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
+     * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an <code>InvalidArgsException</code> with
+     * the message, "A certificate authority cannot be created in this region with the specified security standard."
      * </p>
      * 
      * @return Specifies a cryptographic key management compliance standard used for handling CA keys.</p>
@@ -376,9 +377,10 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
      *         Default: FIPS_140_2_LEVEL_3_OR_HIGHER
      *         </p>
      *         <p>
-     *         Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify
-     *         this parameter and value when creating a CA in that Region. Specifying a different value (or no value)
-     *         results in an <code>InvalidArgsException</code> with the message
+     *         Note: <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region ap-northeast-3. When creating
+     *         a CA in the ap-northeast-3, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument
+     *         for <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
+     *         <code>InvalidArgsException</code> with the message,
      *         "A certificate authority cannot be created in this region with the specified security standard."
      * @see KeyStorageSecurityStandard
      */
@@ -395,10 +397,10 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
      * Default: FIPS_140_2_LEVEL_3_OR_HIGHER
      * </p>
      * <p>
-     * Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this
-     * parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an
-     * <code>InvalidArgsException</code> with the message
-     * "A certificate authority cannot be created in this region with the specified security standard."
+     * Note: <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region ap-northeast-3. When creating a CA in
+     * the ap-northeast-3, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
+     * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an <code>InvalidArgsException</code> with
+     * the message, "A certificate authority cannot be created in this region with the specified security standard."
      * </p>
      * 
      * @param keyStorageSecurityStandard
@@ -407,9 +409,10 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
      *        Default: FIPS_140_2_LEVEL_3_OR_HIGHER
      *        </p>
      *        <p>
-     *        Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify
-     *        this parameter and value when creating a CA in that Region. Specifying a different value (or no value)
-     *        results in an <code>InvalidArgsException</code> with the message
+     *        Note: <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region ap-northeast-3. When creating a
+     *        CA in the ap-northeast-3, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
+     *        <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
+     *        <code>InvalidArgsException</code> with the message,
      *        "A certificate authority cannot be created in this region with the specified security standard."
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeyStorageSecurityStandard
@@ -428,10 +431,10 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
      * Default: FIPS_140_2_LEVEL_3_OR_HIGHER
      * </p>
      * <p>
-     * Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this
-     * parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an
-     * <code>InvalidArgsException</code> with the message
-     * "A certificate authority cannot be created in this region with the specified security standard."
+     * Note: <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region ap-northeast-3. When creating a CA in
+     * the ap-northeast-3, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
+     * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an <code>InvalidArgsException</code> with
+     * the message, "A certificate authority cannot be created in this region with the specified security standard."
      * </p>
      * 
      * @param keyStorageSecurityStandard
@@ -440,9 +443,10 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
      *        Default: FIPS_140_2_LEVEL_3_OR_HIGHER
      *        </p>
      *        <p>
-     *        Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify
-     *        this parameter and value when creating a CA in that Region. Specifying a different value (or no value)
-     *        results in an <code>InvalidArgsException</code> with the message
+     *        Note: <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region ap-northeast-3. When creating a
+     *        CA in the ap-northeast-3, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
+     *        <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
+     *        <code>InvalidArgsException</code> with the message,
      *        "A certificate authority cannot be created in this region with the specified security standard."
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeyStorageSecurityStandard

@@ -27,24 +27,29 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tag resource ARN of the MWAA environments.
+     * The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example,
+     * <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * The tag resource tag of the MWAA environments.
+     * The key-value tag pairs you want to associate to your environment. For example,
+     * <code>"Environment": "Staging"</code>. To learn more, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>.
      * </p>
      */
     private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * The tag resource ARN of the MWAA environments.
+     * The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example,
+     * <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
      * </p>
      * 
      * @param resourceArn
-     *        The tag resource ARN of the MWAA environments.
+     *        The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example,
+     *        <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -53,10 +58,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tag resource ARN of the MWAA environments.
+     * The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example,
+     * <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
      * </p>
      * 
-     * @return The tag resource ARN of the MWAA environments.
+     * @return The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example,
+     *         <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
      */
 
     public String getResourceArn() {
@@ -65,11 +72,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tag resource ARN of the MWAA environments.
+     * The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example,
+     * <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
      * </p>
      * 
      * @param resourceArn
-     *        The tag resource ARN of the MWAA environments.
+     *        The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example,
+     *        <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +89,14 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tag resource tag of the MWAA environments.
+     * The key-value tag pairs you want to associate to your environment. For example,
+     * <code>"Environment": "Staging"</code>. To learn more, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>.
      * </p>
      * 
-     * @return The tag resource tag of the MWAA environments.
+     * @return The key-value tag pairs you want to associate to your environment. For example,
+     *         <code>"Environment": "Staging"</code>. To learn more, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -92,11 +105,15 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tag resource tag of the MWAA environments.
+     * The key-value tag pairs you want to associate to your environment. For example,
+     * <code>"Environment": "Staging"</code>. To learn more, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tag resource tag of the MWAA environments.
+     *        The key-value tag pairs you want to associate to your environment. For example,
+     *        <code>"Environment": "Staging"</code>. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -105,11 +122,15 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tag resource tag of the MWAA environments.
+     * The key-value tag pairs you want to associate to your environment. For example,
+     * <code>"Environment": "Staging"</code>. To learn more, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tag resource tag of the MWAA environments.
+     *        The key-value tag pairs you want to associate to your environment. For example,
+     *        <code>"Environment": "Staging"</code>. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

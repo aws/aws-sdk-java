@@ -27,24 +27,24 @@ public class ListEnvironmentsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The maximum results when listing MWAA environments.
+     * The maximum number of results to retrieve per page. For example, <code>5</code> environments per page.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The Next Token when listing MWAA environments.
+     * Retrieves the next page of the results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The maximum results when listing MWAA environments.
+     * The maximum number of results to retrieve per page. For example, <code>5</code> environments per page.
      * </p>
      * 
      * @param maxResults
-     *        The maximum results when listing MWAA environments.
+     *        The maximum number of results to retrieve per page. For example, <code>5</code> environments per page.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -53,10 +53,10 @@ public class ListEnvironmentsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The maximum results when listing MWAA environments.
+     * The maximum number of results to retrieve per page. For example, <code>5</code> environments per page.
      * </p>
      * 
-     * @return The maximum results when listing MWAA environments.
+     * @return The maximum number of results to retrieve per page. For example, <code>5</code> environments per page.
      */
 
     public Integer getMaxResults() {
@@ -65,11 +65,11 @@ public class ListEnvironmentsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The maximum results when listing MWAA environments.
+     * The maximum number of results to retrieve per page. For example, <code>5</code> environments per page.
      * </p>
      * 
      * @param maxResults
-     *        The maximum results when listing MWAA environments.
+     *        The maximum number of results to retrieve per page. For example, <code>5</code> environments per page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class ListEnvironmentsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Next Token when listing MWAA environments.
+     * Retrieves the next page of the results.
      * </p>
      * 
      * @param nextToken
-     *        The Next Token when listing MWAA environments.
+     *        Retrieves the next page of the results.
      */
 
     public void setNextToken(String nextToken) {
@@ -93,10 +93,10 @@ public class ListEnvironmentsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Next Token when listing MWAA environments.
+     * Retrieves the next page of the results.
      * </p>
      * 
-     * @return The Next Token when listing MWAA environments.
+     * @return Retrieves the next page of the results.
      */
 
     public String getNextToken() {
@@ -105,11 +105,11 @@ public class ListEnvironmentsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Next Token when listing MWAA environments.
+     * Retrieves the next page of the results.
      * </p>
      * 
      * @param nextToken
-     *        The Next Token when listing MWAA environments.
+     *        Retrieves the next page of the results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

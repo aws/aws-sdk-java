@@ -49,6 +49,7 @@ public enum ResourceType {
     ReservedInstances("reserved-instances"),
     RouteTable("route-table"),
     SecurityGroup("security-group"),
+    SecurityGroupRule("security-group-rule"),
     Snapshot("snapshot"),
     SpotFleetRequest("spot-fleet-request"),
     SpotInstancesRequest("spot-instances-request"),

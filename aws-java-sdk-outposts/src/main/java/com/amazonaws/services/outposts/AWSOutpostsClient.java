@@ -87,6 +87,9 @@ public class AWSOutpostsClient extends AmazonWebServiceClient implements AWSOutp
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.outposts.model.transform.ValidationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.outposts.model.transform.ConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.outposts.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -152,6 +155,8 @@ public class AWSOutpostsClient extends AmazonWebServiceClient implements AWSOutp
      * @return Result of the CreateOutpost operation returned by the service.
      * @throws ValidationException
      *         A parameter is not valid.
+     * @throws ConflictException
+     *         Updating or deleting this resource can cause an inconsistent state.
      * @throws NotFoundException
      *         The specified request is not valid.
      * @throws AccessDeniedException
@@ -217,6 +222,8 @@ public class AWSOutpostsClient extends AmazonWebServiceClient implements AWSOutp
      * @return Result of the DeleteOutpost operation returned by the service.
      * @throws ValidationException
      *         A parameter is not valid.
+     * @throws ConflictException
+     *         Updating or deleting this resource can cause an inconsistent state.
      * @throws NotFoundException
      *         The specified request is not valid.
      * @throws AccessDeniedException
@@ -280,6 +287,8 @@ public class AWSOutpostsClient extends AmazonWebServiceClient implements AWSOutp
      * @return Result of the DeleteSite operation returned by the service.
      * @throws ValidationException
      *         A parameter is not valid.
+     * @throws ConflictException
+     *         Updating or deleting this resource can cause an inconsistent state.
      * @throws NotFoundException
      *         The specified request is not valid.
      * @throws AccessDeniedException

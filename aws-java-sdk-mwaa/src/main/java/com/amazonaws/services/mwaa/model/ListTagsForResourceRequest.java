@@ -27,18 +27,21 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the MWAA environment.
+     * The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example,
+     * <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
      * </p>
      */
     private String resourceArn;
 
     /**
      * <p>
-     * The ARN of the MWAA environment.
+     * The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example,
+     * <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN of the MWAA environment.
+     *        The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example,
+     *        <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -47,10 +50,12 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the MWAA environment.
+     * The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example,
+     * <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
      * </p>
      * 
-     * @return The ARN of the MWAA environment.
+     * @return The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example,
+     *         <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
      */
 
     public String getResourceArn() {
@@ -59,11 +64,13 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the MWAA environment.
+     * The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example,
+     * <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN of the MWAA environment.
+     *        The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example,
+     *        <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

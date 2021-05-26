@@ -25,18 +25,18 @@ public class GetEnvironmentResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A JSON blob with environment details.
+     * An object containing all available details about the environment.
      * </p>
      */
     private Environment environment;
 
     /**
      * <p>
-     * A JSON blob with environment details.
+     * An object containing all available details about the environment.
      * </p>
      * 
      * @param environment
-     *        A JSON blob with environment details.
+     *        An object containing all available details about the environment.
      */
 
     public void setEnvironment(Environment environment) {
@@ -45,10 +45,10 @@ public class GetEnvironmentResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A JSON blob with environment details.
+     * An object containing all available details about the environment.
      * </p>
      * 
-     * @return A JSON blob with environment details.
+     * @return An object containing all available details about the environment.
      */
 
     public Environment getEnvironment() {
@@ -57,11 +57,11 @@ public class GetEnvironmentResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A JSON blob with environment details.
+     * An object containing all available details about the environment.
      * </p>
      * 
      * @param environment
-     *        A JSON blob with environment details.
+     *        An object containing all available details about the environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

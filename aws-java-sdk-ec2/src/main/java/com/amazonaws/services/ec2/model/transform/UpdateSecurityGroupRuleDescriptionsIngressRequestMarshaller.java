@@ -85,6 +85,11 @@ public class UpdateSecurityGroupRuleDescriptionsIngressRequestMarshaller impleme
                             request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Ipv6Ranges." + ipv6RangesListIndex + ".Description",
                                     StringUtils.fromString(ipPermissionIpv6RangesListValue.getDescription()));
                         }
+
+                        if (ipPermissionIpv6RangesListValue.getSecurityGroupRuleId() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Ipv6Ranges." + ipv6RangesListIndex + ".SecurityGroupRuleId",
+                                    StringUtils.fromString(ipPermissionIpv6RangesListValue.getSecurityGroupRuleId()));
+                        }
                         ipv6RangesListIndex++;
                     }
                 }
@@ -104,6 +109,11 @@ public class UpdateSecurityGroupRuleDescriptionsIngressRequestMarshaller impleme
                         if (ipPermissionPrefixListIdsListValue.getPrefixListId() != null) {
                             request.addParameter("IpPermissions." + ipPermissionsListIndex + ".PrefixListIds." + prefixListIdsListIndex + ".PrefixListId",
                                     StringUtils.fromString(ipPermissionPrefixListIdsListValue.getPrefixListId()));
+                        }
+
+                        if (ipPermissionPrefixListIdsListValue.getSecurityGroupRuleId() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".PrefixListIds." + prefixListIdsListIndex
+                                    + ".SecurityGroupRuleId", StringUtils.fromString(ipPermissionPrefixListIdsListValue.getSecurityGroupRuleId()));
                         }
                         prefixListIdsListIndex++;
                     }
@@ -156,6 +166,11 @@ public class UpdateSecurityGroupRuleDescriptionsIngressRequestMarshaller impleme
                                     "IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".VpcPeeringConnectionId",
                                     StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getVpcPeeringConnectionId()));
                         }
+
+                        if (ipPermissionUserIdGroupPairsListValue.getSecurityGroupRuleId() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".SecurityGroupRuleId",
+                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getSecurityGroupRuleId()));
+                        }
                         userIdGroupPairsListIndex++;
                     }
                 }
@@ -176,10 +191,36 @@ public class UpdateSecurityGroupRuleDescriptionsIngressRequestMarshaller impleme
                             request.addParameter("IpPermissions." + ipPermissionsListIndex + ".IpRanges." + ipv4RangesListIndex + ".Description",
                                     StringUtils.fromString(ipPermissionIpv4RangesListValue.getDescription()));
                         }
+
+                        if (ipPermissionIpv4RangesListValue.getSecurityGroupRuleId() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".IpRanges." + ipv4RangesListIndex + ".SecurityGroupRuleId",
+                                    StringUtils.fromString(ipPermissionIpv4RangesListValue.getSecurityGroupRuleId()));
+                        }
                         ipv4RangesListIndex++;
                     }
                 }
                 ipPermissionsListIndex++;
+            }
+        }
+
+        com.amazonaws.internal.SdkInternalList<SecurityGroupRuleDescription> updateSecurityGroupRuleDescriptionsIngressRequestSecurityGroupRuleDescriptionsList = (com.amazonaws.internal.SdkInternalList<SecurityGroupRuleDescription>) updateSecurityGroupRuleDescriptionsIngressRequest
+                .getSecurityGroupRuleDescriptions();
+        if (!updateSecurityGroupRuleDescriptionsIngressRequestSecurityGroupRuleDescriptionsList.isEmpty()
+                || !updateSecurityGroupRuleDescriptionsIngressRequestSecurityGroupRuleDescriptionsList.isAutoConstruct()) {
+            int securityGroupRuleDescriptionsListIndex = 1;
+
+            for (SecurityGroupRuleDescription updateSecurityGroupRuleDescriptionsIngressRequestSecurityGroupRuleDescriptionsListValue : updateSecurityGroupRuleDescriptionsIngressRequestSecurityGroupRuleDescriptionsList) {
+
+                if (updateSecurityGroupRuleDescriptionsIngressRequestSecurityGroupRuleDescriptionsListValue.getSecurityGroupRuleId() != null) {
+                    request.addParameter("SecurityGroupRuleDescription." + securityGroupRuleDescriptionsListIndex + ".SecurityGroupRuleId", StringUtils
+                            .fromString(updateSecurityGroupRuleDescriptionsIngressRequestSecurityGroupRuleDescriptionsListValue.getSecurityGroupRuleId()));
+                }
+
+                if (updateSecurityGroupRuleDescriptionsIngressRequestSecurityGroupRuleDescriptionsListValue.getDescription() != null) {
+                    request.addParameter("SecurityGroupRuleDescription." + securityGroupRuleDescriptionsListIndex + ".Description",
+                            StringUtils.fromString(updateSecurityGroupRuleDescriptionsIngressRequestSecurityGroupRuleDescriptionsListValue.getDescription()));
+                }
+                securityGroupRuleDescriptionsListIndex++;
             }
         }
 

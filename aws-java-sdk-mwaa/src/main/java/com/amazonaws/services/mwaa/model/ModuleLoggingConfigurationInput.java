@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services:
- * DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.
+ * Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values:
+ * <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/ModuleLoggingConfigurationInput"
@@ -31,24 +31,26 @@ public class ModuleLoggingConfigurationInput implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Defines that the logging module is enabled.
+     * Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) in CloudWatch Logs.
      * </p>
      */
     private Boolean enabled;
     /**
      * <p>
-     * Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.
+     * Defines the Apache Airflow logs to send for the log type (e.g. <code>DagProcessingLogs</code>) to CloudWatch
+     * Logs. Valid values: <code>CRITICAL</code>, <code>ERROR</code>, <code>WARNING</code>, <code>INFO</code>.
      * </p>
      */
     private String logLevel;
 
     /**
      * <p>
-     * Defines that the logging module is enabled.
+     * Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) in CloudWatch Logs.
      * </p>
      * 
      * @param enabled
-     *        Defines that the logging module is enabled.
+     *        Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) in
+     *        CloudWatch Logs.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -57,10 +59,11 @@ public class ModuleLoggingConfigurationInput implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Defines that the logging module is enabled.
+     * Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) in CloudWatch Logs.
      * </p>
      * 
-     * @return Defines that the logging module is enabled.
+     * @return Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) in
+     *         CloudWatch Logs.
      */
 
     public Boolean getEnabled() {
@@ -69,11 +72,12 @@ public class ModuleLoggingConfigurationInput implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Defines that the logging module is enabled.
+     * Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) in CloudWatch Logs.
      * </p>
      * 
      * @param enabled
-     *        Defines that the logging module is enabled.
+     *        Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) in
+     *        CloudWatch Logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,10 +88,11 @@ public class ModuleLoggingConfigurationInput implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Defines that the logging module is enabled.
+     * Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) in CloudWatch Logs.
      * </p>
      * 
-     * @return Defines that the logging module is enabled.
+     * @return Indicates whether to enable the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) in
+     *         CloudWatch Logs.
      */
 
     public Boolean isEnabled() {
@@ -96,11 +101,14 @@ public class ModuleLoggingConfigurationInput implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.
+     * Defines the Apache Airflow logs to send for the log type (e.g. <code>DagProcessingLogs</code>) to CloudWatch
+     * Logs. Valid values: <code>CRITICAL</code>, <code>ERROR</code>, <code>WARNING</code>, <code>INFO</code>.
      * </p>
      * 
      * @param logLevel
-     *        Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.
+     *        Defines the Apache Airflow logs to send for the log type (e.g. <code>DagProcessingLogs</code>) to
+     *        CloudWatch Logs. Valid values: <code>CRITICAL</code>, <code>ERROR</code>, <code>WARNING</code>,
+     *        <code>INFO</code>.
      * @see LoggingLevel
      */
 
@@ -110,10 +118,13 @@ public class ModuleLoggingConfigurationInput implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.
+     * Defines the Apache Airflow logs to send for the log type (e.g. <code>DagProcessingLogs</code>) to CloudWatch
+     * Logs. Valid values: <code>CRITICAL</code>, <code>ERROR</code>, <code>WARNING</code>, <code>INFO</code>.
      * </p>
      * 
-     * @return Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.
+     * @return Defines the Apache Airflow logs to send for the log type (e.g. <code>DagProcessingLogs</code>) to
+     *         CloudWatch Logs. Valid values: <code>CRITICAL</code>, <code>ERROR</code>, <code>WARNING</code>,
+     *         <code>INFO</code>.
      * @see LoggingLevel
      */
 
@@ -123,11 +134,14 @@ public class ModuleLoggingConfigurationInput implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.
+     * Defines the Apache Airflow logs to send for the log type (e.g. <code>DagProcessingLogs</code>) to CloudWatch
+     * Logs. Valid values: <code>CRITICAL</code>, <code>ERROR</code>, <code>WARNING</code>, <code>INFO</code>.
      * </p>
      * 
      * @param logLevel
-     *        Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.
+     *        Defines the Apache Airflow logs to send for the log type (e.g. <code>DagProcessingLogs</code>) to
+     *        CloudWatch Logs. Valid values: <code>CRITICAL</code>, <code>ERROR</code>, <code>WARNING</code>,
+     *        <code>INFO</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoggingLevel
      */
@@ -139,11 +153,14 @@ public class ModuleLoggingConfigurationInput implements Serializable, Cloneable,
 
     /**
      * <p>
-     * Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.
+     * Defines the Apache Airflow logs to send for the log type (e.g. <code>DagProcessingLogs</code>) to CloudWatch
+     * Logs. Valid values: <code>CRITICAL</code>, <code>ERROR</code>, <code>WARNING</code>, <code>INFO</code>.
      * </p>
      * 
      * @param logLevel
-     *        Defines the log level, which can be CRITICAL, ERROR, WARNING, or INFO.
+     *        Defines the Apache Airflow logs to send for the log type (e.g. <code>DagProcessingLogs</code>) to
+     *        CloudWatch Logs. Valid values: <code>CRITICAL</code>, <code>ERROR</code>, <code>WARNING</code>,
+     *        <code>INFO</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoggingLevel
      */

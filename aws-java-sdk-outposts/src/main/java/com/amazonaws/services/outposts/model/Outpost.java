@@ -52,6 +52,8 @@ public class Outpost implements Serializable, Cloneable, StructuredPojo {
      */
     private java.util.Map<String, String> tags;
 
+    private String siteArn;
+
     /**
      * @param outpostId
      */
@@ -355,6 +357,32 @@ public class Outpost implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param siteArn
+     */
+
+    public void setSiteArn(String siteArn) {
+        this.siteArn = siteArn;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getSiteArn() {
+        return this.siteArn;
+    }
+
+    /**
+     * @param siteArn
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Outpost withSiteArn(String siteArn) {
+        setSiteArn(siteArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -385,7 +413,9 @@ public class Outpost implements Serializable, Cloneable, StructuredPojo {
         if (getAvailabilityZoneId() != null)
             sb.append("AvailabilityZoneId: ").append(getAvailabilityZoneId()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getSiteArn() != null)
+            sb.append("SiteArn: ").append(getSiteArn());
         sb.append("}");
         return sb.toString();
     }
@@ -440,6 +470,10 @@ public class Outpost implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getSiteArn() == null ^ this.getSiteArn() == null)
+            return false;
+        if (other.getSiteArn() != null && other.getSiteArn().equals(this.getSiteArn()) == false)
+            return false;
         return true;
     }
 
@@ -458,6 +492,7 @@ public class Outpost implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZoneId() == null) ? 0 : getAvailabilityZoneId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getSiteArn() == null) ? 0 : getSiteArn().hashCode());
         return hashCode;
     }
 

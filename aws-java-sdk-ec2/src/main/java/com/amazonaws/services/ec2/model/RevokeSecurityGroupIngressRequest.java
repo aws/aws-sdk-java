@@ -93,6 +93,12 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
      * </p>
      */
     private Integer toPort;
+    /**
+     * <p>
+     * The IDs of the security group rules.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> securityGroupRuleIds;
 
     /**
      * Default constructor for RevokeSecurityGroupIngressRequest object. Callers should use the setter or fluent setter
@@ -591,6 +597,79 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The IDs of the security group rules.
+     * </p>
+     * 
+     * @return The IDs of the security group rules.
+     */
+
+    public java.util.List<String> getSecurityGroupRuleIds() {
+        if (securityGroupRuleIds == null) {
+            securityGroupRuleIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return securityGroupRuleIds;
+    }
+
+    /**
+     * <p>
+     * The IDs of the security group rules.
+     * </p>
+     * 
+     * @param securityGroupRuleIds
+     *        The IDs of the security group rules.
+     */
+
+    public void setSecurityGroupRuleIds(java.util.Collection<String> securityGroupRuleIds) {
+        if (securityGroupRuleIds == null) {
+            this.securityGroupRuleIds = null;
+            return;
+        }
+
+        this.securityGroupRuleIds = new com.amazonaws.internal.SdkInternalList<String>(securityGroupRuleIds);
+    }
+
+    /**
+     * <p>
+     * The IDs of the security group rules.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecurityGroupRuleIds(java.util.Collection)} or {@link #withSecurityGroupRuleIds(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param securityGroupRuleIds
+     *        The IDs of the security group rules.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RevokeSecurityGroupIngressRequest withSecurityGroupRuleIds(String... securityGroupRuleIds) {
+        if (this.securityGroupRuleIds == null) {
+            setSecurityGroupRuleIds(new com.amazonaws.internal.SdkInternalList<String>(securityGroupRuleIds.length));
+        }
+        for (String ele : securityGroupRuleIds) {
+            this.securityGroupRuleIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IDs of the security group rules.
+     * </p>
+     * 
+     * @param securityGroupRuleIds
+     *        The IDs of the security group rules.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RevokeSecurityGroupIngressRequest withSecurityGroupRuleIds(java.util.Collection<String> securityGroupRuleIds) {
+        setSecurityGroupRuleIds(securityGroupRuleIds);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -630,7 +709,9 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
         if (getSourceSecurityGroupOwnerId() != null)
             sb.append("SourceSecurityGroupOwnerId: ").append(getSourceSecurityGroupOwnerId()).append(",");
         if (getToPort() != null)
-            sb.append("ToPort: ").append(getToPort());
+            sb.append("ToPort: ").append(getToPort()).append(",");
+        if (getSecurityGroupRuleIds() != null)
+            sb.append("SecurityGroupRuleIds: ").append(getSecurityGroupRuleIds());
         sb.append("}");
         return sb.toString();
     }
@@ -681,6 +762,10 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
             return false;
         if (other.getToPort() != null && other.getToPort().equals(this.getToPort()) == false)
             return false;
+        if (other.getSecurityGroupRuleIds() == null ^ this.getSecurityGroupRuleIds() == null)
+            return false;
+        if (other.getSecurityGroupRuleIds() != null && other.getSecurityGroupRuleIds().equals(this.getSecurityGroupRuleIds()) == false)
+            return false;
         return true;
     }
 
@@ -698,6 +783,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getSourceSecurityGroupName() == null) ? 0 : getSourceSecurityGroupName().hashCode());
         hashCode = prime * hashCode + ((getSourceSecurityGroupOwnerId() == null) ? 0 : getSourceSecurityGroupOwnerId().hashCode());
         hashCode = prime * hashCode + ((getToPort() == null) ? 0 : getToPort().hashCode());
+        hashCode = prime * hashCode + ((getSecurityGroupRuleIds() == null) ? 0 : getSecurityGroupRuleIds().hashCode());
         return hashCode;
     }
 

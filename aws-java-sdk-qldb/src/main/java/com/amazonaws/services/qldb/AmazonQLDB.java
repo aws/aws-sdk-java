@@ -464,6 +464,23 @@ public interface AmazonQLDB {
     UpdateLedgerResult updateLedger(UpdateLedgerRequest updateLedgerRequest);
 
     /**
+     * <p>
+     * Updates the permissions mode of a ledger.
+     * </p>
+     * 
+     * @param updateLedgerPermissionsModeRequest
+     * @return Result of the UpdateLedgerPermissionsMode operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters in the request aren't valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @sample AmazonQLDB.UpdateLedgerPermissionsMode
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/UpdateLedgerPermissionsMode"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateLedgerPermissionsModeResult updateLedgerPermissionsMode(UpdateLedgerPermissionsModeRequest updateLedgerPermissionsModeRequest);
+
+    /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and
      * callers are not expected to call it, but can if they want to explicitly release any open resources. Once a client
      * has been shutdown, it should not be used to make any more requests.

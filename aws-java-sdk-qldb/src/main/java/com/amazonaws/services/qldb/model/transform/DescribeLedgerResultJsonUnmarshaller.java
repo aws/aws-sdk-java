@@ -64,6 +64,10 @@ public class DescribeLedgerResultJsonUnmarshaller implements Unmarshaller<Descri
                     context.nextToken();
                     describeLedgerResult.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("PermissionsMode", targetDepth)) {
+                    context.nextToken();
+                    describeLedgerResult.setPermissionsMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("DeletionProtection", targetDepth)) {
                     context.nextToken();
                     describeLedgerResult.setDeletionProtection(context.getUnmarshaller(Boolean.class).unmarshall(context));

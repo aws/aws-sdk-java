@@ -9326,6 +9326,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeSecurityGroupRulesResult> describeSecurityGroupRulesAsync(DescribeSecurityGroupRulesRequest request) {
+
+        return describeSecurityGroupRulesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSecurityGroupRulesResult> describeSecurityGroupRulesAsync(final DescribeSecurityGroupRulesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeSecurityGroupRulesRequest, DescribeSecurityGroupRulesResult> asyncHandler) {
+        final DescribeSecurityGroupRulesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeSecurityGroupRulesResult>() {
+            @Override
+            public DescribeSecurityGroupRulesResult call() throws Exception {
+                DescribeSecurityGroupRulesResult result = null;
+
+                try {
+                    result = executeDescribeSecurityGroupRules(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeSecurityGroupsResult> describeSecurityGroupsAsync(DescribeSecurityGroupsRequest request) {
 
         return describeSecurityGroupsAsync(request, null);
@@ -13956,6 +13989,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeModifyReservedInstances(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifySecurityGroupRulesResult> modifySecurityGroupRulesAsync(ModifySecurityGroupRulesRequest request) {
+
+        return modifySecurityGroupRulesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifySecurityGroupRulesResult> modifySecurityGroupRulesAsync(final ModifySecurityGroupRulesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifySecurityGroupRulesRequest, ModifySecurityGroupRulesResult> asyncHandler) {
+        final ModifySecurityGroupRulesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifySecurityGroupRulesResult>() {
+            @Override
+            public ModifySecurityGroupRulesResult call() throws Exception {
+                ModifySecurityGroupRulesResult result = null;
+
+                try {
+                    result = executeModifySecurityGroupRules(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

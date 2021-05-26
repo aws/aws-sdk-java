@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum Compatibility {
 
     EC2("EC2"),
-    FARGATE("FARGATE");
+    FARGATE("FARGATE"),
+    EXTERNAL("EXTERNAL");
 
     private String value;
 

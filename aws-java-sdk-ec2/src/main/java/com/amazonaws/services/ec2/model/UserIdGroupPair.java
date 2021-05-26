@@ -84,6 +84,12 @@ public class UserIdGroupPair implements Serializable, Cloneable {
      * </p>
      */
     private String vpcPeeringConnectionId;
+    /**
+     * <p>
+     * The ID of the security group rule.
+     * </p>
+     */
+    private String securityGroupRuleId;
 
     /**
      * <p>
@@ -456,6 +462,46 @@ public class UserIdGroupPair implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the security group rule.
+     * </p>
+     * 
+     * @param securityGroupRuleId
+     *        The ID of the security group rule.
+     */
+
+    public void setSecurityGroupRuleId(String securityGroupRuleId) {
+        this.securityGroupRuleId = securityGroupRuleId;
+    }
+
+    /**
+     * <p>
+     * The ID of the security group rule.
+     * </p>
+     * 
+     * @return The ID of the security group rule.
+     */
+
+    public String getSecurityGroupRuleId() {
+        return this.securityGroupRuleId;
+    }
+
+    /**
+     * <p>
+     * The ID of the security group rule.
+     * </p>
+     * 
+     * @param securityGroupRuleId
+     *        The ID of the security group rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserIdGroupPair withSecurityGroupRuleId(String securityGroupRuleId) {
+        setSecurityGroupRuleId(securityGroupRuleId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -480,7 +526,9 @@ public class UserIdGroupPair implements Serializable, Cloneable {
         if (getVpcId() != null)
             sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getVpcPeeringConnectionId() != null)
-            sb.append("VpcPeeringConnectionId: ").append(getVpcPeeringConnectionId());
+            sb.append("VpcPeeringConnectionId: ").append(getVpcPeeringConnectionId()).append(",");
+        if (getSecurityGroupRuleId() != null)
+            sb.append("SecurityGroupRuleId: ").append(getSecurityGroupRuleId());
         sb.append("}");
         return sb.toString();
     }
@@ -523,6 +571,10 @@ public class UserIdGroupPair implements Serializable, Cloneable {
             return false;
         if (other.getVpcPeeringConnectionId() != null && other.getVpcPeeringConnectionId().equals(this.getVpcPeeringConnectionId()) == false)
             return false;
+        if (other.getSecurityGroupRuleId() == null ^ this.getSecurityGroupRuleId() == null)
+            return false;
+        if (other.getSecurityGroupRuleId() != null && other.getSecurityGroupRuleId().equals(this.getSecurityGroupRuleId()) == false)
+            return false;
         return true;
     }
 
@@ -538,6 +590,7 @@ public class UserIdGroupPair implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getUserId() == null) ? 0 : getUserId().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         hashCode = prime * hashCode + ((getVpcPeeringConnectionId() == null) ? 0 : getVpcPeeringConnectionId().hashCode());
+        hashCode = prime * hashCode + ((getSecurityGroupRuleId() == null) ? 0 : getSecurityGroupRuleId().hashCode());
         return hashCode;
     }
 

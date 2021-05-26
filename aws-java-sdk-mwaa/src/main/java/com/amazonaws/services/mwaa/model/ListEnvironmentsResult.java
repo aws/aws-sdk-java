@@ -25,23 +25,23 @@ public class ListEnvironmentsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The list of Amazon MWAA Environments.
+     * Returns the list of Amazon MWAA environments.
      * </p>
      */
     private java.util.List<String> environments;
     /**
      * <p>
-     * The Next Token when listing MWAA environments.
+     * Retrieves the next page of the results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The list of Amazon MWAA Environments.
+     * Returns the list of Amazon MWAA environments.
      * </p>
      * 
-     * @return The list of Amazon MWAA Environments.
+     * @return Returns the list of Amazon MWAA environments.
      */
 
     public java.util.List<String> getEnvironments() {
@@ -50,11 +50,11 @@ public class ListEnvironmentsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The list of Amazon MWAA Environments.
+     * Returns the list of Amazon MWAA environments.
      * </p>
      * 
      * @param environments
-     *        The list of Amazon MWAA Environments.
+     *        Returns the list of Amazon MWAA environments.
      */
 
     public void setEnvironments(java.util.Collection<String> environments) {
@@ -68,7 +68,7 @@ public class ListEnvironmentsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The list of Amazon MWAA Environments.
+     * Returns the list of Amazon MWAA environments.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListEnvironmentsResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param environments
-     *        The list of Amazon MWAA Environments.
+     *        Returns the list of Amazon MWAA environments.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListEnvironmentsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The list of Amazon MWAA Environments.
+     * Returns the list of Amazon MWAA environments.
      * </p>
      * 
      * @param environments
-     *        The list of Amazon MWAA Environments.
+     *        Returns the list of Amazon MWAA environments.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,11 +108,11 @@ public class ListEnvironmentsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The Next Token when listing MWAA environments.
+     * Retrieves the next page of the results.
      * </p>
      * 
      * @param nextToken
-     *        The Next Token when listing MWAA environments.
+     *        Retrieves the next page of the results.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,10 +121,10 @@ public class ListEnvironmentsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The Next Token when listing MWAA environments.
+     * Retrieves the next page of the results.
      * </p>
      * 
-     * @return The Next Token when listing MWAA environments.
+     * @return Retrieves the next page of the results.
      */
 
     public String getNextToken() {
@@ -133,11 +133,11 @@ public class ListEnvironmentsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The Next Token when listing MWAA environments.
+     * Retrieves the next page of the results.
      * </p>
      * 
      * @param nextToken
-     *        The Next Token when listing MWAA environments.
+     *        Retrieves the next page of the results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

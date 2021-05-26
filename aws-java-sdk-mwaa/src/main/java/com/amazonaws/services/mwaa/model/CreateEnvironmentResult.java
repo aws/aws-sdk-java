@@ -25,18 +25,18 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The resulting Amazon MWAA envirnonment ARN.
+     * The Amazon Resource Name (ARN) returned in the response for the environment.
      * </p>
      */
     private String arn;
 
     /**
      * <p>
-     * The resulting Amazon MWAA envirnonment ARN.
+     * The Amazon Resource Name (ARN) returned in the response for the environment.
      * </p>
      * 
      * @param arn
-     *        The resulting Amazon MWAA envirnonment ARN.
+     *        The Amazon Resource Name (ARN) returned in the response for the environment.
      */
 
     public void setArn(String arn) {
@@ -45,10 +45,10 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The resulting Amazon MWAA envirnonment ARN.
+     * The Amazon Resource Name (ARN) returned in the response for the environment.
      * </p>
      * 
-     * @return The resulting Amazon MWAA envirnonment ARN.
+     * @return The Amazon Resource Name (ARN) returned in the response for the environment.
      */
 
     public String getArn() {
@@ -57,11 +57,11 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The resulting Amazon MWAA envirnonment ARN.
+     * The Amazon Resource Name (ARN) returned in the response for the environment.
      * </p>
      * 
      * @param arn
-     *        The resulting Amazon MWAA envirnonment ARN.
+     *        The Amazon Resource Name (ARN) returned in the response for the environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

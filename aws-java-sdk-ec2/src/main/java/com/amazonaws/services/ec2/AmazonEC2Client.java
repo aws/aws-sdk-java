@@ -2160,11 +2160,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * [VPC only] Adds the specified egress rules to a security group for use with a VPC.
+     * [VPC only] Adds the specified outbound (egress) rules to a security group for use with a VPC.
      * </p>
      * <p>
      * An outbound rule permits instances to send traffic to the specified IPv4 or IPv6 CIDR address ranges, or to the
-     * instances associated with the specified destination security groups.
+     * instances that are associated with the specified destination security groups.
      * </p>
      * <p>
      * You specify a protocol for each rule (for example, TCP). For the TCP and UDP protocols, you must also specify the
@@ -2172,10 +2172,13 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * -1 for the type or code to mean all types or all codes.
      * </p>
      * <p>
+     * You can optionally add a tag to the security group rule.
+     * </p>
+     * <p>
      * Rule changes are propagated to affected instances as quickly as possible. However, a small delay might occur.
      * </p>
      * <p>
-     * For more information about VPC security group limits, see <a
+     * For information about VPC security group quotas, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC Limits</a>.
      * </p>
      * 
@@ -2232,11 +2235,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Adds the specified ingress rules to a security group.
+     * Adds the specified inbound (ingress) rules to a security group.
      * </p>
      * <p>
      * An inbound rule permits instances to receive traffic from the specified IPv4 or IPv6 CIDR address ranges, or from
-     * the instances associated with the specified destination security groups.
+     * the instances that are associated with the specified destination security groups.
      * </p>
      * <p>
      * You specify a protocol for each rule (for example, TCP). For TCP and UDP, you must also specify the destination
@@ -2244,11 +2247,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * all types or all codes.
      * </p>
      * <p>
+     * [VPC Only] You can optionally add a tag to the security group rule.
+     * </p>
+     * <p>
      * Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay
      * might occur.
      * </p>
      * <p>
-     * For more information about VPC security group limits, see <a
+     * For information about VPC security group quotas, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC Limits</a>.
      * </p>
      * 
@@ -15994,6 +16000,62 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Describes one or more of your security group rules.
+     * </p>
+     * 
+     * @param describeSecurityGroupRulesRequest
+     * @return Result of the DescribeSecurityGroupRules operation returned by the service.
+     * @sample AmazonEC2.DescribeSecurityGroupRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupRules" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeSecurityGroupRulesResult describeSecurityGroupRules(DescribeSecurityGroupRulesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeSecurityGroupRules(request);
+    }
+
+    @SdkInternalApi
+    final DescribeSecurityGroupRulesResult executeDescribeSecurityGroupRules(DescribeSecurityGroupRulesRequest describeSecurityGroupRulesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeSecurityGroupRulesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeSecurityGroupRulesRequest> request = null;
+        Response<DescribeSecurityGroupRulesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeSecurityGroupRulesRequestMarshaller().marshall(super.beforeMarshalling(describeSecurityGroupRulesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSecurityGroupRules");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeSecurityGroupRulesResult> responseHandler = new StaxResponseHandler<DescribeSecurityGroupRulesResult>(
+                    new DescribeSecurityGroupRulesResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes the specified security groups or all of your security groups.
      * </p>
      * <p>
@@ -23902,6 +23964,62 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Modifies the rules of a security group.
+     * </p>
+     * 
+     * @param modifySecurityGroupRulesRequest
+     * @return Result of the ModifySecurityGroupRules operation returned by the service.
+     * @sample AmazonEC2.ModifySecurityGroupRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySecurityGroupRules" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ModifySecurityGroupRulesResult modifySecurityGroupRules(ModifySecurityGroupRulesRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifySecurityGroupRules(request);
+    }
+
+    @SdkInternalApi
+    final ModifySecurityGroupRulesResult executeModifySecurityGroupRules(ModifySecurityGroupRulesRequest modifySecurityGroupRulesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifySecurityGroupRulesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifySecurityGroupRulesRequest> request = null;
+        Response<ModifySecurityGroupRulesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifySecurityGroupRulesRequestMarshaller().marshall(super.beforeMarshalling(modifySecurityGroupRulesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifySecurityGroupRules");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifySecurityGroupRulesResult> responseHandler = new StaxResponseHandler<ModifySecurityGroupRulesResult>(
+                    new ModifySecurityGroupRulesResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Adds or removes permission settings for the specified snapshot. You may add or remove specified AWS account IDs
      * from a snapshot's list of create volume permissions, but you cannot do both in a single operation. If you need to
      * both add and remove account IDs for a snapshot, you must use multiple operations. You can make up to 500
@@ -27752,9 +27870,25 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * [VPC only] Removes the specified egress rules from a security group for EC2-VPC. This action does not apply to
-     * security groups for use in EC2-Classic. To remove a rule, the values that you specify (for example, ports) must
-     * match the existing rule's values exactly.
+     * Removes the specified egress (outbound) rules from a security group for EC2-VPC. This action does not apply to
+     * security groups for use in EC2-Classic.
+     * </p>
+     * <p>
+     * You can specify the rules that you want to remove by using one of the following methods:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The security group rule IDs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The security group rule properties. Each rule consists of the protocol, from port, to port, and the IPv4 or IPv6
+     * CIDR range or referenced security group or prefix list id. For the TCP and UDP protocols, you must also specify
+     * the destination port or range of ports. For the ICMP protocol, you must also specify the ICMP type and code. If
+     * the security group rule has a description, you do not have to specify the description to revoke the rule. To
+     * remove a rule, the values that you specify (for example, ports) must match the existing rule's values exactly.
      * </p>
      * <note>
      * <p>
@@ -27764,13 +27898,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * AWS recommends that you use <a>DescribeSecurityGroups</a> to verify that the rule has been removed.
      * </p>
-     * </note>
-     * <p>
-     * Each rule consists of the protocol and the IPv4 or IPv6 CIDR range or source security group. For the TCP and UDP
-     * protocols, you must also specify the destination port or range of ports. For the ICMP protocol, you must also
-     * specify the ICMP type and code. If the security group rule has a description, you do not have to specify the
-     * description to revoke the rule.
-     * </p>
+     * </note></li>
+     * </ul>
      * <p>
      * Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay
      * might occur.
@@ -27834,7 +27963,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <note>
      * <p>
-     * [EC2-Classic , default VPC] If the values you specify do not match the existing rule's values, no error is
+     * [EC2-Classic, default VPC] If the values you specify do not match the existing rule's values, no error is
      * returned, and the output describes the security group rules that were not revoked.
      * </p>
      * <p>
@@ -27842,11 +27971,32 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * </note>
      * <p>
-     * Each rule consists of the protocol and the CIDR range or source security group. For the TCP and UDP protocols,
-     * you must also specify the destination port or range of ports. For the ICMP protocol, you must also specify the
-     * ICMP type and code. If the security group rule has a description, you do not have to specify the description to
-     * revoke the rule.
+     * You can specify the rules that you want to remove by using one of the following methods:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * [VPC only] The security group rule IDs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The security group rule properties. Each rule consists of the protocol, from port, to port, and the IPv4 or IPv6
+     * CIDR range or referenced security group or prefix list id. For the TCP and UDP protocols, you must also specify
+     * the destination port or range of ports. For the ICMP protocol, you must also specify the ICMP type and code. If
+     * the security group rule has a description, you do not have to specify the description to revoke the rule. To
+     * remove a rule, the values that you specify (for example, ports) must match the existing rule's values exactly.
+     * </p>
+     * <note>
+     * <p>
+     * [Default VPC] If the values you specify do not match the existing rule's values, no error is returned, and the
+     * output describes the security group rules that were not revoked.
+     * </p>
+     * <p>
+     * AWS recommends that you use <a>DescribeSecurityGroups</a> to verify that the rule has been removed.
+     * </p>
+     * </note></li>
+     * </ul>
      * <p>
      * Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay
      * might occur.
@@ -28971,8 +29121,22 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * description, or add a description to a rule that did not have one previously.
      * </p>
      * <p>
-     * You specify the description as part of the IP permissions structure. You can remove a description for a security
-     * group rule by omitting the description parameter in the request.
+     * You can specify the rule that you want to update by using one of the following methods:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The security group rule descriptions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The IP permissions structure.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can remove a description for a security group rule by omitting the description parameter in the request.
      * </p>
      * 
      * @param updateSecurityGroupRuleDescriptionsEgressRequest
@@ -29034,8 +29198,22 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * add a description to a rule that did not have one previously.
      * </p>
      * <p>
-     * You specify the description as part of the IP permissions structure. You can remove a description for a security
-     * group rule by omitting the description parameter in the request.
+     * You can specify the rule that you want to update by using one of the following methods:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * [VPC only] The security group rule descriptions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The IP permissions structure.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can remove a description for a security group rule by omitting the description parameter in the request.
      * </p>
      * 
      * @param updateSecurityGroupRuleDescriptionsIngressRequest

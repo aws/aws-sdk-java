@@ -121,6 +121,10 @@ public class EnvironmentJsonUnmarshaller implements Unmarshaller<Environment, Js
                     context.nextToken();
                     environment.setRequirementsS3Path(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Schedulers", targetDepth)) {
+                    context.nextToken();
+                    environment.setSchedulers(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("ServiceRoleArn", targetDepth)) {
                     context.nextToken();
                     environment.setServiceRoleArn(context.getUnmarshaller(String.class).unmarshall(context));

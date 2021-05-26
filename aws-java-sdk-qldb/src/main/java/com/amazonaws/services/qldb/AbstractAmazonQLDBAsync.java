@@ -276,4 +276,17 @@ public class AbstractAmazonQLDBAsync extends AbstractAmazonQLDB implements Amazo
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Override
+    public java.util.concurrent.Future<UpdateLedgerPermissionsModeResult> updateLedgerPermissionsModeAsync(UpdateLedgerPermissionsModeRequest request) {
+
+        return updateLedgerPermissionsModeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLedgerPermissionsModeResult> updateLedgerPermissionsModeAsync(UpdateLedgerPermissionsModeRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateLedgerPermissionsModeRequest, UpdateLedgerPermissionsModeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
 }

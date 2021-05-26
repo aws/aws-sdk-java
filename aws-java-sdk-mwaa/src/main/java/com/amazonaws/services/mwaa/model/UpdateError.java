@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Error information of update, if applicable.
+ * An object containing the error encountered with the last update: <code>ErrorCode</code>, <code>ErrorMessage</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/UpdateError" target="_top">AWS API
@@ -30,24 +30,24 @@ public class UpdateError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Error code of update.
+     * The error code that corresponds to the error with the last update.
      * </p>
      */
     private String errorCode;
     /**
      * <p>
-     * Error message of update.
+     * The error message that corresponds to the error code.
      * </p>
      */
     private String errorMessage;
 
     /**
      * <p>
-     * Error code of update.
+     * The error code that corresponds to the error with the last update.
      * </p>
      * 
      * @param errorCode
-     *        Error code of update.
+     *        The error code that corresponds to the error with the last update.
      */
 
     public void setErrorCode(String errorCode) {
@@ -56,10 +56,10 @@ public class UpdateError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Error code of update.
+     * The error code that corresponds to the error with the last update.
      * </p>
      * 
-     * @return Error code of update.
+     * @return The error code that corresponds to the error with the last update.
      */
 
     public String getErrorCode() {
@@ -68,11 +68,11 @@ public class UpdateError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Error code of update.
+     * The error code that corresponds to the error with the last update.
      * </p>
      * 
      * @param errorCode
-     *        Error code of update.
+     *        The error code that corresponds to the error with the last update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class UpdateError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Error message of update.
+     * The error message that corresponds to the error code.
      * </p>
      * 
      * @param errorMessage
-     *        Error message of update.
+     *        The error message that corresponds to the error code.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -96,10 +96,10 @@ public class UpdateError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Error message of update.
+     * The error message that corresponds to the error code.
      * </p>
      * 
-     * @return Error message of update.
+     * @return The error message that corresponds to the error code.
      */
 
     public String getErrorMessage() {
@@ -108,11 +108,11 @@ public class UpdateError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Error message of update.
+     * The error message that corresponds to the error code.
      * </p>
      * 
      * @param errorMessage
-     *        Error message of update.
+     *        The error message that corresponds to the error code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

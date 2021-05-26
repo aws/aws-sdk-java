@@ -27,24 +27,27 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tag resource ARN of the MWAA environments.
+     * The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example,
+     * <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * The tag resource key of the MWAA environments.
+     * The key-value tag pair you want to remove. For example, <code>"Environment": "Staging"</code>.
      * </p>
      */
     private java.util.List<String> tagKeys;
 
     /**
      * <p>
-     * The tag resource ARN of the MWAA environments.
+     * The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example,
+     * <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
      * </p>
      * 
      * @param resourceArn
-     *        The tag resource ARN of the MWAA environments.
+     *        The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example,
+     *        <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -53,10 +56,12 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tag resource ARN of the MWAA environments.
+     * The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example,
+     * <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
      * </p>
      * 
-     * @return The tag resource ARN of the MWAA environments.
+     * @return The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example,
+     *         <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
      */
 
     public String getResourceArn() {
@@ -65,11 +70,13 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tag resource ARN of the MWAA environments.
+     * The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example,
+     * <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
      * </p>
      * 
      * @param resourceArn
-     *        The tag resource ARN of the MWAA environments.
+     *        The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example,
+     *        <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,10 +87,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tag resource key of the MWAA environments.
+     * The key-value tag pair you want to remove. For example, <code>"Environment": "Staging"</code>.
      * </p>
      * 
-     * @return The tag resource key of the MWAA environments.
+     * @return The key-value tag pair you want to remove. For example, <code>"Environment": "Staging"</code>.
      */
 
     public java.util.List<String> getTagKeys() {
@@ -92,11 +99,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tag resource key of the MWAA environments.
+     * The key-value tag pair you want to remove. For example, <code>"Environment": "Staging"</code>.
      * </p>
      * 
      * @param tagKeys
-     *        The tag resource key of the MWAA environments.
+     *        The key-value tag pair you want to remove. For example, <code>"Environment": "Staging"</code>.
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -110,7 +117,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tag resource key of the MWAA environments.
+     * The key-value tag pair you want to remove. For example, <code>"Environment": "Staging"</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +126,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param tagKeys
-     *        The tag resource key of the MWAA environments.
+     *        The key-value tag pair you want to remove. For example, <code>"Environment": "Staging"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +142,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The tag resource key of the MWAA environments.
+     * The key-value tag pair you want to remove. For example, <code>"Environment": "Staging"</code>.
      * </p>
      * 
      * @param tagKeys
-     *        The tag resource key of the MWAA environments.
+     *        The key-value tag pair you want to remove. For example, <code>"Environment": "Staging"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -53,6 +53,8 @@ public interface AWSOutposts {
      * @return Result of the CreateOutpost operation returned by the service.
      * @throws ValidationException
      *         A parameter is not valid.
+     * @throws ConflictException
+     *         Updating or deleting this resource can cause an inconsistent state.
      * @throws NotFoundException
      *         The specified request is not valid.
      * @throws AccessDeniedException
@@ -76,6 +78,8 @@ public interface AWSOutposts {
      * @return Result of the DeleteOutpost operation returned by the service.
      * @throws ValidationException
      *         A parameter is not valid.
+     * @throws ConflictException
+     *         Updating or deleting this resource can cause an inconsistent state.
      * @throws NotFoundException
      *         The specified request is not valid.
      * @throws AccessDeniedException
@@ -97,6 +101,8 @@ public interface AWSOutposts {
      * @return Result of the DeleteSite operation returned by the service.
      * @throws ValidationException
      *         A parameter is not valid.
+     * @throws ConflictException
+     *         Updating or deleting this resource can cause an inconsistent state.
      * @throws NotFoundException
      *         The specified request is not valid.
      * @throws AccessDeniedException

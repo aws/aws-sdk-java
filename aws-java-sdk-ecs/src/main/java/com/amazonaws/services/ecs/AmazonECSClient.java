@@ -2323,7 +2323,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
 
     /**
      * <p>
-     * Lists the services that are running in a specified cluster.
+     * Returns a list of services. You can filter the results by cluster, launch type, and scheduling strategy.
      * </p>
      * 
      * @param listServicesRequest
@@ -2605,9 +2605,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
 
     /**
      * <p>
-     * Returns a list of tasks for a specified cluster. You can filter the results by family name, by a particular
-     * container instance, or by the desired status of the task with the <code>family</code>,
-     * <code>containerInstance</code>, and <code>desiredStatus</code> parameters.
+     * Returns a list of tasks. You can filter the results by cluster, task definition family, container instance,
+     * launch type, what IAM principal started the task, or by the desired status of the task.
      * </p>
      * <p>
      * Recently stopped tasks might appear in the returned results. Currently, stopped tasks appear in the returned

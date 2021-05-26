@@ -27,8 +27,8 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the services to list. If you do not
-     * specify a cluster, the default cluster is assumed.
+     * The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering the
+     * <code>ListServices</code> results. If you do not specify a cluster, the default cluster is assumed.
      * </p>
      */
     private String cluster;
@@ -59,26 +59,26 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
     private Integer maxResults;
     /**
      * <p>
-     * The launch type for the services to list.
+     * The launch type to use when filtering the <code>ListServices</code> results.
      * </p>
      */
     private String launchType;
     /**
      * <p>
-     * The scheduling strategy for services to list.
+     * The scheduling strategy to use when filtering the <code>ListServices</code> results.
      * </p>
      */
     private String schedulingStrategy;
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the services to list. If you do not
-     * specify a cluster, the default cluster is assumed.
+     * The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering the
+     * <code>ListServices</code> results. If you do not specify a cluster, the default cluster is assumed.
      * </p>
      * 
      * @param cluster
-     *        The short name or full Amazon Resource Name (ARN) of the cluster that hosts the services to list. If you
-     *        do not specify a cluster, the default cluster is assumed.
+     *        The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering the
+     *        <code>ListServices</code> results. If you do not specify a cluster, the default cluster is assumed.
      */
 
     public void setCluster(String cluster) {
@@ -87,12 +87,12 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the services to list. If you do not
-     * specify a cluster, the default cluster is assumed.
+     * The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering the
+     * <code>ListServices</code> results. If you do not specify a cluster, the default cluster is assumed.
      * </p>
      * 
-     * @return The short name or full Amazon Resource Name (ARN) of the cluster that hosts the services to list. If you
-     *         do not specify a cluster, the default cluster is assumed.
+     * @return The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering the
+     *         <code>ListServices</code> results. If you do not specify a cluster, the default cluster is assumed.
      */
 
     public String getCluster() {
@@ -101,13 +101,13 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The short name or full Amazon Resource Name (ARN) of the cluster that hosts the services to list. If you do not
-     * specify a cluster, the default cluster is assumed.
+     * The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering the
+     * <code>ListServices</code> results. If you do not specify a cluster, the default cluster is assumed.
      * </p>
      * 
      * @param cluster
-     *        The short name or full Amazon Resource Name (ARN) of the cluster that hosts the services to list. If you
-     *        do not specify a cluster, the default cluster is assumed.
+     *        The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering the
+     *        <code>ListServices</code> results. If you do not specify a cluster, the default cluster is assumed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -270,11 +270,11 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The launch type for the services to list.
+     * The launch type to use when filtering the <code>ListServices</code> results.
      * </p>
      * 
      * @param launchType
-     *        The launch type for the services to list.
+     *        The launch type to use when filtering the <code>ListServices</code> results.
      * @see LaunchType
      */
 
@@ -284,10 +284,10 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The launch type for the services to list.
+     * The launch type to use when filtering the <code>ListServices</code> results.
      * </p>
      * 
-     * @return The launch type for the services to list.
+     * @return The launch type to use when filtering the <code>ListServices</code> results.
      * @see LaunchType
      */
 
@@ -297,11 +297,11 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The launch type for the services to list.
+     * The launch type to use when filtering the <code>ListServices</code> results.
      * </p>
      * 
      * @param launchType
-     *        The launch type for the services to list.
+     *        The launch type to use when filtering the <code>ListServices</code> results.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchType
      */
@@ -313,11 +313,11 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The launch type for the services to list.
+     * The launch type to use when filtering the <code>ListServices</code> results.
      * </p>
      * 
      * @param launchType
-     *        The launch type for the services to list.
+     *        The launch type to use when filtering the <code>ListServices</code> results.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchType
      */
@@ -329,11 +329,11 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The scheduling strategy for services to list.
+     * The scheduling strategy to use when filtering the <code>ListServices</code> results.
      * </p>
      * 
      * @param schedulingStrategy
-     *        The scheduling strategy for services to list.
+     *        The scheduling strategy to use when filtering the <code>ListServices</code> results.
      * @see SchedulingStrategy
      */
 
@@ -343,10 +343,10 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The scheduling strategy for services to list.
+     * The scheduling strategy to use when filtering the <code>ListServices</code> results.
      * </p>
      * 
-     * @return The scheduling strategy for services to list.
+     * @return The scheduling strategy to use when filtering the <code>ListServices</code> results.
      * @see SchedulingStrategy
      */
 
@@ -356,11 +356,11 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The scheduling strategy for services to list.
+     * The scheduling strategy to use when filtering the <code>ListServices</code> results.
      * </p>
      * 
      * @param schedulingStrategy
-     *        The scheduling strategy for services to list.
+     *        The scheduling strategy to use when filtering the <code>ListServices</code> results.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SchedulingStrategy
      */
@@ -372,11 +372,11 @@ public class ListServicesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The scheduling strategy for services to list.
+     * The scheduling strategy to use when filtering the <code>ListServices</code> results.
      * </p>
      * 
      * @param schedulingStrategy
-     *        The scheduling strategy for services to list.
+     *        The scheduling strategy to use when filtering the <code>ListServices</code> results.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SchedulingStrategy
      */

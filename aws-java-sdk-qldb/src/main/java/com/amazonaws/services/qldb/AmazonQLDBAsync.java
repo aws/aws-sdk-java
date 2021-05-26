@@ -815,4 +815,37 @@ public interface AmazonQLDBAsync extends AmazonQLDB {
     java.util.concurrent.Future<UpdateLedgerResult> updateLedgerAsync(UpdateLedgerRequest updateLedgerRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateLedgerRequest, UpdateLedgerResult> asyncHandler);
 
+    /**
+     * <p>
+     * Updates the permissions mode of a ledger.
+     * </p>
+     * 
+     * @param updateLedgerPermissionsModeRequest
+     * @return A Java Future containing the result of the UpdateLedgerPermissionsMode operation returned by the service.
+     * @sample AmazonQLDBAsync.UpdateLedgerPermissionsMode
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/UpdateLedgerPermissionsMode"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateLedgerPermissionsModeResult> updateLedgerPermissionsModeAsync(
+            UpdateLedgerPermissionsModeRequest updateLedgerPermissionsModeRequest);
+
+    /**
+     * <p>
+     * Updates the permissions mode of a ledger.
+     * </p>
+     * 
+     * @param updateLedgerPermissionsModeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateLedgerPermissionsMode operation returned by the service.
+     * @sample AmazonQLDBAsyncHandler.UpdateLedgerPermissionsMode
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/UpdateLedgerPermissionsMode"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateLedgerPermissionsModeResult> updateLedgerPermissionsModeAsync(
+            UpdateLedgerPermissionsModeRequest updateLedgerPermissionsModeRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateLedgerPermissionsModeRequest, UpdateLedgerPermissionsModeResult> asyncHandler);
+
 }

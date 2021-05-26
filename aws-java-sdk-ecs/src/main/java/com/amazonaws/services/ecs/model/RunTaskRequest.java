@@ -73,22 +73,31 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     private String group;
     /**
      * <p>
-     * The launch type on which to run your task. The accepted values are <code>FARGATE</code> and <code>EC2</code>. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * The infrastructure on which to run your standalone task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * When a value of <code>FARGATE</code> is specified, your tasks are launched on AWS Fargate On-Demand
-     * infrastructure. To use Fargate Spot, you must use a capacity provider strategy with the <code>FARGATE_SPOT</code>
-     * capacity provider.
+     * The <code>FARGATE</code> launch type runs your tasks on AWS Fargate On-Demand infrastructure.
+     * </p>
+     * <note>
+     * <p>
+     * Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS Fargate
+     * capacity providers</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.
+     * </p>
+     * </note>
+     * <p>
+     * The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.
      * </p>
      * <p>
-     * When a value of <code>EC2</code> is specified, your tasks are launched on Amazon EC2 instances registered to your
-     * cluster.
+     * The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * registered to your cluster.
      * </p>
      * <p>
-     * If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.
+     * A task can use either a launch type or a capacity provider strategy. If a <code>launchType</code> is specified,
+     * the <code>capacityProviderStrategy</code> parameter must be omitted.
      * </p>
      */
     private String launchType;
@@ -609,41 +618,58 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The launch type on which to run your task. The accepted values are <code>FARGATE</code> and <code>EC2</code>. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * The infrastructure on which to run your standalone task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * When a value of <code>FARGATE</code> is specified, your tasks are launched on AWS Fargate On-Demand
-     * infrastructure. To use Fargate Spot, you must use a capacity provider strategy with the <code>FARGATE_SPOT</code>
-     * capacity provider.
+     * The <code>FARGATE</code> launch type runs your tasks on AWS Fargate On-Demand infrastructure.
+     * </p>
+     * <note>
+     * <p>
+     * Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS Fargate
+     * capacity providers</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.
+     * </p>
+     * </note>
+     * <p>
+     * The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.
      * </p>
      * <p>
-     * When a value of <code>EC2</code> is specified, your tasks are launched on Amazon EC2 instances registered to your
-     * cluster.
+     * The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * registered to your cluster.
      * </p>
      * <p>
-     * If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.
+     * A task can use either a launch type or a capacity provider strategy. If a <code>launchType</code> is specified,
+     * the <code>capacityProviderStrategy</code> parameter must be omitted.
      * </p>
      * 
      * @param launchType
-     *        The launch type on which to run your task. The accepted values are <code>FARGATE</code> and
-     *        <code>EC2</code>. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
-     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     *        The infrastructure on which to run your standalone task. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *        types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *        <p>
-     *        When a value of <code>FARGATE</code> is specified, your tasks are launched on AWS Fargate On-Demand
-     *        infrastructure. To use Fargate Spot, you must use a capacity provider strategy with the
-     *        <code>FARGATE_SPOT</code> capacity provider.
+     *        The <code>FARGATE</code> launch type runs your tasks on AWS Fargate On-Demand infrastructure.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS Fargate
+     *        capacity providers</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.
      *        </p>
      *        <p>
-     *        When a value of <code>EC2</code> is specified, your tasks are launched on Amazon EC2 instances registered
-     *        to your cluster.
+     *        The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or virtual machine (VM)
+     *        capacity registered to your cluster.
      *        </p>
      *        <p>
-     *        If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be
-     *        omitted.
+     *        A task can use either a launch type or a capacity provider strategy. If a <code>launchType</code> is
+     *        specified, the <code>capacityProviderStrategy</code> parameter must be omitted.
      * @see LaunchType
      */
 
@@ -653,40 +679,57 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The launch type on which to run your task. The accepted values are <code>FARGATE</code> and <code>EC2</code>. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * The infrastructure on which to run your standalone task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * When a value of <code>FARGATE</code> is specified, your tasks are launched on AWS Fargate On-Demand
-     * infrastructure. To use Fargate Spot, you must use a capacity provider strategy with the <code>FARGATE_SPOT</code>
-     * capacity provider.
+     * The <code>FARGATE</code> launch type runs your tasks on AWS Fargate On-Demand infrastructure.
+     * </p>
+     * <note>
+     * <p>
+     * Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS Fargate
+     * capacity providers</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.
+     * </p>
+     * </note>
+     * <p>
+     * The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.
      * </p>
      * <p>
-     * When a value of <code>EC2</code> is specified, your tasks are launched on Amazon EC2 instances registered to your
-     * cluster.
+     * The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * registered to your cluster.
      * </p>
      * <p>
-     * If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.
+     * A task can use either a launch type or a capacity provider strategy. If a <code>launchType</code> is specified,
+     * the <code>capacityProviderStrategy</code> parameter must be omitted.
      * </p>
      * 
-     * @return The launch type on which to run your task. The accepted values are <code>FARGATE</code> and
-     *         <code>EC2</code>. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
-     *         Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     * @return The infrastructure on which to run your standalone task. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *         types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *         <p>
-     *         When a value of <code>FARGATE</code> is specified, your tasks are launched on AWS Fargate On-Demand
-     *         infrastructure. To use Fargate Spot, you must use a capacity provider strategy with the
-     *         <code>FARGATE_SPOT</code> capacity provider.
+     *         The <code>FARGATE</code> launch type runs your tasks on AWS Fargate On-Demand infrastructure.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS Fargate
+     *         capacity providers</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.
      *         </p>
      *         <p>
-     *         When a value of <code>EC2</code> is specified, your tasks are launched on Amazon EC2 instances registered
-     *         to your cluster.
+     *         The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or virtual machine (VM)
+     *         capacity registered to your cluster.
      *         </p>
      *         <p>
-     *         If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be
-     *         omitted.
+     *         A task can use either a launch type or a capacity provider strategy. If a <code>launchType</code> is
+     *         specified, the <code>capacityProviderStrategy</code> parameter must be omitted.
      * @see LaunchType
      */
 
@@ -696,41 +739,58 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The launch type on which to run your task. The accepted values are <code>FARGATE</code> and <code>EC2</code>. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * The infrastructure on which to run your standalone task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * When a value of <code>FARGATE</code> is specified, your tasks are launched on AWS Fargate On-Demand
-     * infrastructure. To use Fargate Spot, you must use a capacity provider strategy with the <code>FARGATE_SPOT</code>
-     * capacity provider.
+     * The <code>FARGATE</code> launch type runs your tasks on AWS Fargate On-Demand infrastructure.
+     * </p>
+     * <note>
+     * <p>
+     * Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS Fargate
+     * capacity providers</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.
+     * </p>
+     * </note>
+     * <p>
+     * The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.
      * </p>
      * <p>
-     * When a value of <code>EC2</code> is specified, your tasks are launched on Amazon EC2 instances registered to your
-     * cluster.
+     * The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * registered to your cluster.
      * </p>
      * <p>
-     * If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.
+     * A task can use either a launch type or a capacity provider strategy. If a <code>launchType</code> is specified,
+     * the <code>capacityProviderStrategy</code> parameter must be omitted.
      * </p>
      * 
      * @param launchType
-     *        The launch type on which to run your task. The accepted values are <code>FARGATE</code> and
-     *        <code>EC2</code>. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
-     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     *        The infrastructure on which to run your standalone task. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *        types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *        <p>
-     *        When a value of <code>FARGATE</code> is specified, your tasks are launched on AWS Fargate On-Demand
-     *        infrastructure. To use Fargate Spot, you must use a capacity provider strategy with the
-     *        <code>FARGATE_SPOT</code> capacity provider.
+     *        The <code>FARGATE</code> launch type runs your tasks on AWS Fargate On-Demand infrastructure.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS Fargate
+     *        capacity providers</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.
      *        </p>
      *        <p>
-     *        When a value of <code>EC2</code> is specified, your tasks are launched on Amazon EC2 instances registered
-     *        to your cluster.
+     *        The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or virtual machine (VM)
+     *        capacity registered to your cluster.
      *        </p>
      *        <p>
-     *        If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be
-     *        omitted.
+     *        A task can use either a launch type or a capacity provider strategy. If a <code>launchType</code> is
+     *        specified, the <code>capacityProviderStrategy</code> parameter must be omitted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchType
      */
@@ -742,41 +802,58 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The launch type on which to run your task. The accepted values are <code>FARGATE</code> and <code>EC2</code>. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * The infrastructure on which to run your standalone task. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * When a value of <code>FARGATE</code> is specified, your tasks are launched on AWS Fargate On-Demand
-     * infrastructure. To use Fargate Spot, you must use a capacity provider strategy with the <code>FARGATE_SPOT</code>
-     * capacity provider.
+     * The <code>FARGATE</code> launch type runs your tasks on AWS Fargate On-Demand infrastructure.
+     * </p>
+     * <note>
+     * <p>
+     * Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS Fargate
+     * capacity providers</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.
+     * </p>
+     * </note>
+     * <p>
+     * The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.
      * </p>
      * <p>
-     * When a value of <code>EC2</code> is specified, your tasks are launched on Amazon EC2 instances registered to your
-     * cluster.
+     * The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or virtual machine (VM) capacity
+     * registered to your cluster.
      * </p>
      * <p>
-     * If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.
+     * A task can use either a launch type or a capacity provider strategy. If a <code>launchType</code> is specified,
+     * the <code>capacityProviderStrategy</code> parameter must be omitted.
      * </p>
      * 
      * @param launchType
-     *        The launch type on which to run your task. The accepted values are <code>FARGATE</code> and
-     *        <code>EC2</code>. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
-     *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     *        The infrastructure on which to run your standalone task. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *        types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *        <p>
-     *        When a value of <code>FARGATE</code> is specified, your tasks are launched on AWS Fargate On-Demand
-     *        infrastructure. To use Fargate Spot, you must use a capacity provider strategy with the
-     *        <code>FARGATE_SPOT</code> capacity provider.
+     *        The <code>FARGATE</code> launch type runs your tasks on AWS Fargate On-Demand infrastructure.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS Fargate
+     *        capacity providers</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered to your cluster.
      *        </p>
      *        <p>
-     *        When a value of <code>EC2</code> is specified, your tasks are launched on Amazon EC2 instances registered
-     *        to your cluster.
+     *        The <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or virtual machine (VM)
+     *        capacity registered to your cluster.
      *        </p>
      *        <p>
-     *        If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code> parameter must be
-     *        omitted.
+     *        A task can use either a launch type or a capacity provider strategy. If a <code>launchType</code> is
+     *        specified, the <code>capacityProviderStrategy</code> parameter must be omitted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchType
      */

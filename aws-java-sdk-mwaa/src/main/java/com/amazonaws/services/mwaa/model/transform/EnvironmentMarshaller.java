@@ -65,6 +65,8 @@ public class EnvironmentMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequirementsS3ObjectVersion").build();
     private static final MarshallingInfo<String> REQUIREMENTSS3PATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequirementsS3Path").build();
+    private static final MarshallingInfo<Integer> SCHEDULERS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Schedulers").build();
     private static final MarshallingInfo<String> SERVICEROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceRoleArn").build();
     private static final MarshallingInfo<String> SOURCEBUCKETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -114,6 +116,7 @@ public class EnvironmentMarshaller {
             protocolMarshaller.marshall(environment.getPluginsS3Path(), PLUGINSS3PATH_BINDING);
             protocolMarshaller.marshall(environment.getRequirementsS3ObjectVersion(), REQUIREMENTSS3OBJECTVERSION_BINDING);
             protocolMarshaller.marshall(environment.getRequirementsS3Path(), REQUIREMENTSS3PATH_BINDING);
+            protocolMarshaller.marshall(environment.getSchedulers(), SCHEDULERS_BINDING);
             protocolMarshaller.marshall(environment.getServiceRoleArn(), SERVICEROLEARN_BINDING);
             protocolMarshaller.marshall(environment.getSourceBucketArn(), SOURCEBUCKETARN_BINDING);
             protocolMarshaller.marshall(environment.getStatus(), STATUS_BINDING);

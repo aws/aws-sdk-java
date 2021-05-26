@@ -123,6 +123,11 @@ public class AbstractAmazonQLDB implements AmazonQLDB {
     }
 
     @Override
+    public UpdateLedgerPermissionsModeResult updateLedgerPermissionsMode(UpdateLedgerPermissionsModeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public void shutdown() {
         throw new java.lang.UnsupportedOperationException();
     }

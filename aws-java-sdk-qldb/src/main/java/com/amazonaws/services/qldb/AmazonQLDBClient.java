@@ -1375,6 +1375,67 @@ public class AmazonQLDBClient extends AmazonWebServiceClient implements AmazonQL
     }
 
     /**
+     * <p>
+     * Updates the permissions mode of a ledger.
+     * </p>
+     * 
+     * @param updateLedgerPermissionsModeRequest
+     * @return Result of the UpdateLedgerPermissionsMode operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters in the request aren't valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @sample AmazonQLDB.UpdateLedgerPermissionsMode
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/UpdateLedgerPermissionsMode"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateLedgerPermissionsModeResult updateLedgerPermissionsMode(UpdateLedgerPermissionsModeRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateLedgerPermissionsMode(request);
+    }
+
+    @SdkInternalApi
+    final UpdateLedgerPermissionsModeResult executeUpdateLedgerPermissionsMode(UpdateLedgerPermissionsModeRequest updateLedgerPermissionsModeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateLedgerPermissionsModeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateLedgerPermissionsModeRequest> request = null;
+        Response<UpdateLedgerPermissionsModeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateLedgerPermissionsModeRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateLedgerPermissionsModeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QLDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateLedgerPermissionsMode");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateLedgerPermissionsModeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateLedgerPermissionsModeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Returns additional metadata for a previously executed successful, request, typically used for debugging issues
      * where a service isn't acting as expected. This data isn't considered part of the result data returned by an
      * operation, so it's available through this separate, diagnostic interface.

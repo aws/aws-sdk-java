@@ -27,18 +27,18 @@ public class GetEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the environment to retrieve.
+     * The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * The name of the environment to retrieve.
+     * The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
      * </p>
      * 
      * @param name
-     *        The name of the environment to retrieve.
+     *        The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
      */
 
     public void setName(String name) {
@@ -47,10 +47,10 @@ public class GetEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the environment to retrieve.
+     * The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
      * </p>
      * 
-     * @return The name of the environment to retrieve.
+     * @return The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
      */
 
     public String getName() {
@@ -59,11 +59,11 @@ public class GetEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the environment to retrieve.
+     * The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
      * </p>
      * 
      * @param name
-     *        The name of the environment to retrieve.
+     *        The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

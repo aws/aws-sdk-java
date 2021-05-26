@@ -50,6 +50,12 @@ public class DescribeLedgerResult extends com.amazonaws.AmazonWebServiceResult<c
     private java.util.Date creationDateTime;
     /**
      * <p>
+     * The permissions mode of the ledger.
+     * </p>
+     */
+    private String permissionsMode;
+    /**
+     * <p>
      * The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature
      * is enabled (<code>true</code>) by default.
      * </p>
@@ -249,6 +255,65 @@ public class DescribeLedgerResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
+     * The permissions mode of the ledger.
+     * </p>
+     * 
+     * @param permissionsMode
+     *        The permissions mode of the ledger.
+     * @see PermissionsMode
+     */
+
+    public void setPermissionsMode(String permissionsMode) {
+        this.permissionsMode = permissionsMode;
+    }
+
+    /**
+     * <p>
+     * The permissions mode of the ledger.
+     * </p>
+     * 
+     * @return The permissions mode of the ledger.
+     * @see PermissionsMode
+     */
+
+    public String getPermissionsMode() {
+        return this.permissionsMode;
+    }
+
+    /**
+     * <p>
+     * The permissions mode of the ledger.
+     * </p>
+     * 
+     * @param permissionsMode
+     *        The permissions mode of the ledger.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PermissionsMode
+     */
+
+    public DescribeLedgerResult withPermissionsMode(String permissionsMode) {
+        setPermissionsMode(permissionsMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The permissions mode of the ledger.
+     * </p>
+     * 
+     * @param permissionsMode
+     *        The permissions mode of the ledger.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PermissionsMode
+     */
+
+    public DescribeLedgerResult withPermissionsMode(PermissionsMode permissionsMode) {
+        this.permissionsMode = permissionsMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature
      * is enabled (<code>true</code>) by default.
      * </p>
@@ -371,6 +436,8 @@ public class DescribeLedgerResult extends com.amazonaws.AmazonWebServiceResult<c
             sb.append("State: ").append(getState()).append(",");
         if (getCreationDateTime() != null)
             sb.append("CreationDateTime: ").append(getCreationDateTime()).append(",");
+        if (getPermissionsMode() != null)
+            sb.append("PermissionsMode: ").append(getPermissionsMode()).append(",");
         if (getDeletionProtection() != null)
             sb.append("DeletionProtection: ").append(getDeletionProtection());
         sb.append("}");
@@ -403,6 +470,10 @@ public class DescribeLedgerResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getCreationDateTime() != null && other.getCreationDateTime().equals(this.getCreationDateTime()) == false)
             return false;
+        if (other.getPermissionsMode() == null ^ this.getPermissionsMode() == null)
+            return false;
+        if (other.getPermissionsMode() != null && other.getPermissionsMode().equals(this.getPermissionsMode()) == false)
+            return false;
         if (other.getDeletionProtection() == null ^ this.getDeletionProtection() == null)
             return false;
         if (other.getDeletionProtection() != null && other.getDeletionProtection().equals(this.getDeletionProtection()) == false)
@@ -419,6 +490,7 @@ public class DescribeLedgerResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());
+        hashCode = prime * hashCode + ((getPermissionsMode() == null) ? 0 : getPermissionsMode().hashCode());
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         return hashCode;
     }

@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The Logging Configuration of your Amazon MWAA environment.
+ * Defines the Apache Airflow logs to send to CloudWatch Logs: <code>DagProcessingLogs</code>,
+ * <code>SchedulerLogs</code>, <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/LoggingConfigurationInput" target="_top">AWS API

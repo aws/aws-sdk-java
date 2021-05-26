@@ -25,17 +25,20 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The tags of the MWAA environments.
+     * The key-value tag pairs associated to your environment. To learn more, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>.
      * </p>
      */
     private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * The tags of the MWAA environments.
+     * The key-value tag pairs associated to your environment. To learn more, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>.
      * </p>
      * 
-     * @return The tags of the MWAA environments.
+     * @return The key-value tag pairs associated to your environment. To learn more, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -44,11 +47,13 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The tags of the MWAA environments.
+     * The key-value tag pairs associated to your environment. To learn more, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tags of the MWAA environments.
+     *        The key-value tag pairs associated to your environment. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -57,11 +62,13 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The tags of the MWAA environments.
+     * The key-value tag pairs associated to your environment. To learn more, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>.
      * </p>
      * 
      * @param tags
-     *        The tags of the MWAA environments.
+     *        The key-value tag pairs associated to your environment. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

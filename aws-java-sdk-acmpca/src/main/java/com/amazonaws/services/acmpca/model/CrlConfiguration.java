@@ -168,11 +168,34 @@ public class CrlConfiguration implements Serializable, Cloneable, StructuredPojo
      * the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the issued certificate.
      * You can change the name of your bucket by calling the <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html"
-     * >UpdateCertificateAuthority</a> action. You must specify a bucket policy that allows ACM Private CA to write the
-     * CRL to your bucket.
+     * >UpdateCertificateAuthority</a> action. You must specify a <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket policy</a> that
+     * allows ACM Private CA to write the CRL to your bucket.
      * </p>
      */
     private String s3BucketName;
+    /**
+     * <p>
+     * Determines whether the CRL will be publicly readable or privately held in the CRL Amazon S3 bucket. If you choose
+     * PUBLIC_READ, the CRL will be accessible over the public internet. If you choose BUCKET_OWNER_FULL_CONTROL, only
+     * the owner of the CRL S3 bucket can access the CRL, and your PKI clients may need an alternative method of access.
+     * </p>
+     * <p>
+     * If no value is specified, the default is <code>PUBLIC_READ</code>.
+     * </p>
+     * <p>
+     * <i>Note:</i> This default can cause CA creation to fail in some circumstances. If you have have enabled the Block
+     * Public Access (BPA) feature in your S3 account, then you must specify the value of this parameter as
+     * <code>BUCKET_OWNER_FULL_CONTROL</code>, and not doing so results in an error. If you have disabled BPA in S3,
+     * then you can specify either <code>BUCKET_OWNER_FULL_CONTROL</code> or <code>PUBLIC_READ</code> as the value.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking public access to the
+     * S3 bucket</a>.
+     * </p>
+     */
+    private String s3ObjectAcl;
 
     /**
      * <p>
@@ -361,8 +384,9 @@ public class CrlConfiguration implements Serializable, Cloneable, StructuredPojo
      * the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the issued certificate.
      * You can change the name of your bucket by calling the <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html"
-     * >UpdateCertificateAuthority</a> action. You must specify a bucket policy that allows ACM Private CA to write the
-     * CRL to your bucket.
+     * >UpdateCertificateAuthority</a> action. You must specify a <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket policy</a> that
+     * allows ACM Private CA to write the CRL to your bucket.
      * </p>
      * 
      * @param s3BucketName
@@ -370,8 +394,9 @@ public class CrlConfiguration implements Serializable, Cloneable, StructuredPojo
      *        argument, the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the
      *        issued certificate. You can change the name of your bucket by calling the <a
      *        href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html"
-     *        >UpdateCertificateAuthority</a> action. You must specify a bucket policy that allows ACM Private CA to
-     *        write the CRL to your bucket.
+     *        >UpdateCertificateAuthority</a> action. You must specify a <a
+     *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket policy</a>
+     *        that allows ACM Private CA to write the CRL to your bucket.
      */
 
     public void setS3BucketName(String s3BucketName) {
@@ -384,16 +409,18 @@ public class CrlConfiguration implements Serializable, Cloneable, StructuredPojo
      * the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the issued certificate.
      * You can change the name of your bucket by calling the <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html"
-     * >UpdateCertificateAuthority</a> action. You must specify a bucket policy that allows ACM Private CA to write the
-     * CRL to your bucket.
+     * >UpdateCertificateAuthority</a> action. You must specify a <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket policy</a> that
+     * allows ACM Private CA to write the CRL to your bucket.
      * </p>
      * 
      * @return Name of the S3 bucket that contains the CRL. If you do not provide a value for the <b>CustomCname</b>
      *         argument, the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the
      *         issued certificate. You can change the name of your bucket by calling the <a
      *         href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html"
-     *         >UpdateCertificateAuthority</a> action. You must specify a bucket policy that allows ACM Private CA to
-     *         write the CRL to your bucket.
+     *         >UpdateCertificateAuthority</a> action. You must specify a <a
+     *         href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
+     *         policy</a> that allows ACM Private CA to write the CRL to your bucket.
      */
 
     public String getS3BucketName() {
@@ -406,8 +433,9 @@ public class CrlConfiguration implements Serializable, Cloneable, StructuredPojo
      * the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the issued certificate.
      * You can change the name of your bucket by calling the <a
      * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html"
-     * >UpdateCertificateAuthority</a> action. You must specify a bucket policy that allows ACM Private CA to write the
-     * CRL to your bucket.
+     * >UpdateCertificateAuthority</a> action. You must specify a <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket policy</a> that
+     * allows ACM Private CA to write the CRL to your bucket.
      * </p>
      * 
      * @param s3BucketName
@@ -415,13 +443,205 @@ public class CrlConfiguration implements Serializable, Cloneable, StructuredPojo
      *        argument, the name of your S3 bucket is placed into the <b>CRL Distribution Points</b> extension of the
      *        issued certificate. You can change the name of your bucket by calling the <a
      *        href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html"
-     *        >UpdateCertificateAuthority</a> action. You must specify a bucket policy that allows ACM Private CA to
-     *        write the CRL to your bucket.
+     *        >UpdateCertificateAuthority</a> action. You must specify a <a
+     *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-policies">bucket policy</a>
+     *        that allows ACM Private CA to write the CRL to your bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CrlConfiguration withS3BucketName(String s3BucketName) {
         setS3BucketName(s3BucketName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Determines whether the CRL will be publicly readable or privately held in the CRL Amazon S3 bucket. If you choose
+     * PUBLIC_READ, the CRL will be accessible over the public internet. If you choose BUCKET_OWNER_FULL_CONTROL, only
+     * the owner of the CRL S3 bucket can access the CRL, and your PKI clients may need an alternative method of access.
+     * </p>
+     * <p>
+     * If no value is specified, the default is <code>PUBLIC_READ</code>.
+     * </p>
+     * <p>
+     * <i>Note:</i> This default can cause CA creation to fail in some circumstances. If you have have enabled the Block
+     * Public Access (BPA) feature in your S3 account, then you must specify the value of this parameter as
+     * <code>BUCKET_OWNER_FULL_CONTROL</code>, and not doing so results in an error. If you have disabled BPA in S3,
+     * then you can specify either <code>BUCKET_OWNER_FULL_CONTROL</code> or <code>PUBLIC_READ</code> as the value.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking public access to the
+     * S3 bucket</a>.
+     * </p>
+     * 
+     * @param s3ObjectAcl
+     *        Determines whether the CRL will be publicly readable or privately held in the CRL Amazon S3 bucket. If you
+     *        choose PUBLIC_READ, the CRL will be accessible over the public internet. If you choose
+     *        BUCKET_OWNER_FULL_CONTROL, only the owner of the CRL S3 bucket can access the CRL, and your PKI clients
+     *        may need an alternative method of access. </p>
+     *        <p>
+     *        If no value is specified, the default is <code>PUBLIC_READ</code>.
+     *        </p>
+     *        <p>
+     *        <i>Note:</i> This default can cause CA creation to fail in some circumstances. If you have have enabled
+     *        the Block Public Access (BPA) feature in your S3 account, then you must specify the value of this
+     *        parameter as <code>BUCKET_OWNER_FULL_CONTROL</code>, and not doing so results in an error. If you have
+     *        disabled BPA in S3, then you can specify either <code>BUCKET_OWNER_FULL_CONTROL</code> or
+     *        <code>PUBLIC_READ</code> as the value.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking public access
+     *        to the S3 bucket</a>.
+     * @see S3ObjectAcl
+     */
+
+    public void setS3ObjectAcl(String s3ObjectAcl) {
+        this.s3ObjectAcl = s3ObjectAcl;
+    }
+
+    /**
+     * <p>
+     * Determines whether the CRL will be publicly readable or privately held in the CRL Amazon S3 bucket. If you choose
+     * PUBLIC_READ, the CRL will be accessible over the public internet. If you choose BUCKET_OWNER_FULL_CONTROL, only
+     * the owner of the CRL S3 bucket can access the CRL, and your PKI clients may need an alternative method of access.
+     * </p>
+     * <p>
+     * If no value is specified, the default is <code>PUBLIC_READ</code>.
+     * </p>
+     * <p>
+     * <i>Note:</i> This default can cause CA creation to fail in some circumstances. If you have have enabled the Block
+     * Public Access (BPA) feature in your S3 account, then you must specify the value of this parameter as
+     * <code>BUCKET_OWNER_FULL_CONTROL</code>, and not doing so results in an error. If you have disabled BPA in S3,
+     * then you can specify either <code>BUCKET_OWNER_FULL_CONTROL</code> or <code>PUBLIC_READ</code> as the value.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking public access to the
+     * S3 bucket</a>.
+     * </p>
+     * 
+     * @return Determines whether the CRL will be publicly readable or privately held in the CRL Amazon S3 bucket. If
+     *         you choose PUBLIC_READ, the CRL will be accessible over the public internet. If you choose
+     *         BUCKET_OWNER_FULL_CONTROL, only the owner of the CRL S3 bucket can access the CRL, and your PKI clients
+     *         may need an alternative method of access. </p>
+     *         <p>
+     *         If no value is specified, the default is <code>PUBLIC_READ</code>.
+     *         </p>
+     *         <p>
+     *         <i>Note:</i> This default can cause CA creation to fail in some circumstances. If you have have enabled
+     *         the Block Public Access (BPA) feature in your S3 account, then you must specify the value of this
+     *         parameter as <code>BUCKET_OWNER_FULL_CONTROL</code>, and not doing so results in an error. If you have
+     *         disabled BPA in S3, then you can specify either <code>BUCKET_OWNER_FULL_CONTROL</code> or
+     *         <code>PUBLIC_READ</code> as the value.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking public
+     *         access to the S3 bucket</a>.
+     * @see S3ObjectAcl
+     */
+
+    public String getS3ObjectAcl() {
+        return this.s3ObjectAcl;
+    }
+
+    /**
+     * <p>
+     * Determines whether the CRL will be publicly readable or privately held in the CRL Amazon S3 bucket. If you choose
+     * PUBLIC_READ, the CRL will be accessible over the public internet. If you choose BUCKET_OWNER_FULL_CONTROL, only
+     * the owner of the CRL S3 bucket can access the CRL, and your PKI clients may need an alternative method of access.
+     * </p>
+     * <p>
+     * If no value is specified, the default is <code>PUBLIC_READ</code>.
+     * </p>
+     * <p>
+     * <i>Note:</i> This default can cause CA creation to fail in some circumstances. If you have have enabled the Block
+     * Public Access (BPA) feature in your S3 account, then you must specify the value of this parameter as
+     * <code>BUCKET_OWNER_FULL_CONTROL</code>, and not doing so results in an error. If you have disabled BPA in S3,
+     * then you can specify either <code>BUCKET_OWNER_FULL_CONTROL</code> or <code>PUBLIC_READ</code> as the value.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking public access to the
+     * S3 bucket</a>.
+     * </p>
+     * 
+     * @param s3ObjectAcl
+     *        Determines whether the CRL will be publicly readable or privately held in the CRL Amazon S3 bucket. If you
+     *        choose PUBLIC_READ, the CRL will be accessible over the public internet. If you choose
+     *        BUCKET_OWNER_FULL_CONTROL, only the owner of the CRL S3 bucket can access the CRL, and your PKI clients
+     *        may need an alternative method of access. </p>
+     *        <p>
+     *        If no value is specified, the default is <code>PUBLIC_READ</code>.
+     *        </p>
+     *        <p>
+     *        <i>Note:</i> This default can cause CA creation to fail in some circumstances. If you have have enabled
+     *        the Block Public Access (BPA) feature in your S3 account, then you must specify the value of this
+     *        parameter as <code>BUCKET_OWNER_FULL_CONTROL</code>, and not doing so results in an error. If you have
+     *        disabled BPA in S3, then you can specify either <code>BUCKET_OWNER_FULL_CONTROL</code> or
+     *        <code>PUBLIC_READ</code> as the value.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking public access
+     *        to the S3 bucket</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see S3ObjectAcl
+     */
+
+    public CrlConfiguration withS3ObjectAcl(String s3ObjectAcl) {
+        setS3ObjectAcl(s3ObjectAcl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Determines whether the CRL will be publicly readable or privately held in the CRL Amazon S3 bucket. If you choose
+     * PUBLIC_READ, the CRL will be accessible over the public internet. If you choose BUCKET_OWNER_FULL_CONTROL, only
+     * the owner of the CRL S3 bucket can access the CRL, and your PKI clients may need an alternative method of access.
+     * </p>
+     * <p>
+     * If no value is specified, the default is <code>PUBLIC_READ</code>.
+     * </p>
+     * <p>
+     * <i>Note:</i> This default can cause CA creation to fail in some circumstances. If you have have enabled the Block
+     * Public Access (BPA) feature in your S3 account, then you must specify the value of this parameter as
+     * <code>BUCKET_OWNER_FULL_CONTROL</code>, and not doing so results in an error. If you have disabled BPA in S3,
+     * then you can specify either <code>BUCKET_OWNER_FULL_CONTROL</code> or <code>PUBLIC_READ</code> as the value.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking public access to the
+     * S3 bucket</a>.
+     * </p>
+     * 
+     * @param s3ObjectAcl
+     *        Determines whether the CRL will be publicly readable or privately held in the CRL Amazon S3 bucket. If you
+     *        choose PUBLIC_READ, the CRL will be accessible over the public internet. If you choose
+     *        BUCKET_OWNER_FULL_CONTROL, only the owner of the CRL S3 bucket can access the CRL, and your PKI clients
+     *        may need an alternative method of access. </p>
+     *        <p>
+     *        If no value is specified, the default is <code>PUBLIC_READ</code>.
+     *        </p>
+     *        <p>
+     *        <i>Note:</i> This default can cause CA creation to fail in some circumstances. If you have have enabled
+     *        the Block Public Access (BPA) feature in your S3 account, then you must specify the value of this
+     *        parameter as <code>BUCKET_OWNER_FULL_CONTROL</code>, and not doing so results in an error. If you have
+     *        disabled BPA in S3, then you can specify either <code>BUCKET_OWNER_FULL_CONTROL</code> or
+     *        <code>PUBLIC_READ</code> as the value.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking public access
+     *        to the S3 bucket</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see S3ObjectAcl
+     */
+
+    public CrlConfiguration withS3ObjectAcl(S3ObjectAcl s3ObjectAcl) {
+        this.s3ObjectAcl = s3ObjectAcl.toString();
         return this;
     }
 
@@ -444,7 +664,9 @@ public class CrlConfiguration implements Serializable, Cloneable, StructuredPojo
         if (getCustomCname() != null)
             sb.append("CustomCname: ").append(getCustomCname()).append(",");
         if (getS3BucketName() != null)
-            sb.append("S3BucketName: ").append(getS3BucketName());
+            sb.append("S3BucketName: ").append(getS3BucketName()).append(",");
+        if (getS3ObjectAcl() != null)
+            sb.append("S3ObjectAcl: ").append(getS3ObjectAcl());
         sb.append("}");
         return sb.toString();
     }
@@ -475,6 +697,10 @@ public class CrlConfiguration implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getS3BucketName() != null && other.getS3BucketName().equals(this.getS3BucketName()) == false)
             return false;
+        if (other.getS3ObjectAcl() == null ^ this.getS3ObjectAcl() == null)
+            return false;
+        if (other.getS3ObjectAcl() != null && other.getS3ObjectAcl().equals(this.getS3ObjectAcl()) == false)
+            return false;
         return true;
     }
 
@@ -487,6 +713,7 @@ public class CrlConfiguration implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getExpirationInDays() == null) ? 0 : getExpirationInDays().hashCode());
         hashCode = prime * hashCode + ((getCustomCname() == null) ? 0 : getCustomCname().hashCode());
         hashCode = prime * hashCode + ((getS3BucketName() == null) ? 0 : getS3BucketName().hashCode());
+        hashCode = prime * hashCode + ((getS3ObjectAcl() == null) ? 0 : getS3ObjectAcl().hashCode());
         return hashCode;
     }
 

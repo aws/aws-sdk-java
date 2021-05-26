@@ -63,7 +63,7 @@ public interface AmazonMWAA {
 
     /**
      * <p>
-     * JSON blob that describes the environment to create.
+     * Creates an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
      * </p>
      * 
      * @param createEnvironmentRequest
@@ -106,7 +106,7 @@ public interface AmazonMWAA {
 
     /**
      * <p>
-     * Delete an existing environment.
+     * Deletes an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
      * </p>
      * 
      * @param deleteEnvironmentRequest
@@ -125,7 +125,7 @@ public interface AmazonMWAA {
 
     /**
      * <p>
-     * Get details of an existing environment.
+     * Retrieves the details of an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
      * </p>
      * 
      * @param getEnvironmentRequest
@@ -144,7 +144,7 @@ public interface AmazonMWAA {
 
     /**
      * <p>
-     * List Amazon MWAA Environments.
+     * Lists the Amazon Managed Workflows for Apache Airflow (MWAA) environments.
      * </p>
      * 
      * @param listEnvironmentsRequest
@@ -161,7 +161,8 @@ public interface AmazonMWAA {
 
     /**
      * <p>
-     * List the tags for MWAA environments.
+     * Lists the key-value tag pairs associated to the Amazon Managed Workflows for Apache Airflow (MWAA) environment.
+     * For example, <code>"Environment": "Staging"</code>.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -197,7 +198,7 @@ public interface AmazonMWAA {
 
     /**
      * <p>
-     * Add tag to the MWAA environments.
+     * Associates key-value tag pairs to your Amazon Managed Workflows for Apache Airflow (MWAA) environment.
      * </p>
      * 
      * @param tagResourceRequest
@@ -216,7 +217,8 @@ public interface AmazonMWAA {
 
     /**
      * <p>
-     * Remove a tag from the MWAA environments.
+     * Removes key-value tag pairs associated to your Amazon Managed Workflows for Apache Airflow (MWAA) environment.
+     * For example, <code>"Environment": "Staging"</code>.
      * </p>
      * 
      * @param untagResourceRequest
@@ -235,7 +237,7 @@ public interface AmazonMWAA {
 
     /**
      * <p>
-     * Update an MWAA environment.
+     * Updates an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
      * </p>
      * 
      * @param updateEnvironmentRequest

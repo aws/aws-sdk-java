@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An Amazon MWAA environment.
+ * The Amazon Managed Workflows for Apache Airflow (MWAA) environment.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/Environment" target="_top">AWS API
@@ -30,49 +30,57 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Airflow Configuration Options of the Amazon MWAA Environment.
+     * A list of key-value pairs containing the Apache Airflow configuration options attached to your environment. To
+     * learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache
+     * Airflow configuration options</a>.
      * </p>
      */
     private java.util.Map<String, String> airflowConfigurationOptions;
     /**
      * <p>
-     * The AirflowV ersion of the Amazon MWAA Environment.
+     * The Apache Airflow version on your environment. For example, <code>v1.10.12</code>.
      * </p>
      */
     private String airflowVersion;
     /**
      * <p>
-     * The ARN of the Amazon MWAA Environment.
+     * The Amazon Resource Name (ARN) of the Amazon MWAA environment.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The Created At date of the Amazon MWAA Environment.
+     * The day and time the environment was created.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * The Dags S3 Path of the Amazon MWAA Environment.
+     * The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. To learn more, see
+     * <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating
+     * DAGs</a>.
      * </p>
      */
     private String dagS3Path;
     /**
      * <p>
-     * The Environment Class (size) of the Amazon MWAA Environment.
+     * The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>
+     * . To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon
+     * MWAA environment class</a>.
      * </p>
      */
     private String environmentClass;
     /**
      * <p>
-     * The Execution Role ARN of the Amazon MWAA Environment.
+     * The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access AWS resources in your
+     * environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.
      * </p>
      */
     private String executionRoleArn;
     /**
      * <p>
-     * The Kms Key of the Amazon MWAA Environment.
+     * The Key Management Service (KMS) encryption key used to encrypt the data in your environment.
      * </p>
      */
     private String kmsKey;
@@ -80,25 +88,25 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     private LastUpdate lastUpdate;
     /**
      * <p>
-     * The Logging Configuration of the Amazon MWAA Environment.
+     * The Apache Airflow logs being sent to CloudWatch Logs: <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>, <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.
      * </p>
      */
     private LoggingConfiguration loggingConfiguration;
     /**
      * <p>
-     * The maximum number of workers to run in your Amazon MWAA Environment.
+     * The maximum number of workers that run in your environment. For example, <code>20</code>.
      * </p>
      */
     private Integer maxWorkers;
     /**
      * <p>
-     * The minimum number of workers to run in your Amazon MWAA Environment.
+     * The minimum number of workers that run in your environment. For example, <code>2</code>.
      * </p>
      */
     private Integer minWorkers;
     /**
      * <p>
-     * The name of the Amazon MWAA Environment.
+     * The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
      * </p>
      */
     private String name;
@@ -106,77 +114,159 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     private NetworkConfiguration networkConfiguration;
     /**
      * <p>
-     * The Plugins.zip S3 Object Version of the Amazon MWAA Environment.
+     * The version of the plugins.zip file on your Amazon S3 bucket. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom
+     * plugins</a>.
      * </p>
      */
     private String pluginsS3ObjectVersion;
     /**
      * <p>
-     * The Plugins.zip S3 Path of the Amazon MWAA Environment.
+     * The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example,
+     * <code>plugins.zip</code>. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom
+     * plugins</a>.
      * </p>
      */
     private String pluginsS3Path;
     /**
      * <p>
-     * The Requirements.txt file S3 Object Version of the Amazon MWAA Environment.
+     * The version of the requirements.txt file on your Amazon S3 bucket. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
+     * dependencies</a>.
      * </p>
      */
     private String requirementsS3ObjectVersion;
     /**
      * <p>
-     * The Requirement.txt S3 Path of the Amazon MWAA Environment.
+     * The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example,
+     * <code>requirements.txt</code>. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
+     * dependencies</a>.
      * </p>
      */
     private String requirementsS3Path;
     /**
      * <p>
-     * The Service Role ARN of the Amazon MWAA Environment.
+     * The number of Apache Airflow schedulers that run in your Amazon MWAA environment.
+     * </p>
+     */
+    private Integer schedulers;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the service-linked role of the environment. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-slr.html">Amazon MWAA Service-linked role</a>.
      * </p>
      */
     private String serviceRoleArn;
     /**
      * <p>
-     * The Source S3 Bucket ARN of the Amazon MWAA Environment.
+     * The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For
+     * example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for
+     * Amazon MWAA</a>.
      * </p>
      */
     private String sourceBucketArn;
     /**
      * <p>
-     * The status of the Amazon MWAA Environment.
+     * The status of the Amazon MWAA environment. Valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATING</code> - Indicates the request to create the environment is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could
+     * not be created.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code> - Indicates the request to update the environment is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code> - Indicates the request to delete the environment is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been
+     * deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in
+     * a stable state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment has
+     * rolled back successfully and is ready to use.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. To learn more,
+     * see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA
+     * troubleshooting</a>.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * The Tags of the Amazon MWAA Environment.
+     * The key-value tag pairs associated to your environment. For example, <code>"Environment": "Staging"</code>. To
+     * learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+     * resources</a>.
      * </p>
      */
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The Webserver Access Mode of the Amazon MWAA Environment (public or private only).
+     * The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access
+     * modes</a>.
      * </p>
      */
     private String webserverAccessMode;
     /**
      * <p>
-     * The Webserver URL of the Amazon MWAA Environment.
+     * The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache Airflow
+     * UI</a>.
      * </p>
      */
     private String webserverUrl;
     /**
      * <p>
-     * The Weekly Maintenance Window Start of the Amazon MWAA Environment.
+     * The day and time of the week that weekly maintenance updates are scheduled. For example: <code>TUE:03:30</code>.
      * </p>
      */
     private String weeklyMaintenanceWindowStart;
 
     /**
      * <p>
-     * The Airflow Configuration Options of the Amazon MWAA Environment.
+     * A list of key-value pairs containing the Apache Airflow configuration options attached to your environment. To
+     * learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache
+     * Airflow configuration options</a>.
      * </p>
      * 
-     * @return The Airflow Configuration Options of the Amazon MWAA Environment.
+     * @return A list of key-value pairs containing the Apache Airflow configuration options attached to your
+     *         environment. To learn more, see <a
+     *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache Airflow
+     *         configuration options</a>.
      */
 
     public java.util.Map<String, String> getAirflowConfigurationOptions() {
@@ -185,11 +275,16 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Airflow Configuration Options of the Amazon MWAA Environment.
+     * A list of key-value pairs containing the Apache Airflow configuration options attached to your environment. To
+     * learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache
+     * Airflow configuration options</a>.
      * </p>
      * 
      * @param airflowConfigurationOptions
-     *        The Airflow Configuration Options of the Amazon MWAA Environment.
+     *        A list of key-value pairs containing the Apache Airflow configuration options attached to your
+     *        environment. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache Airflow
+     *        configuration options</a>.
      */
 
     public void setAirflowConfigurationOptions(java.util.Map<String, String> airflowConfigurationOptions) {
@@ -198,11 +293,16 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Airflow Configuration Options of the Amazon MWAA Environment.
+     * A list of key-value pairs containing the Apache Airflow configuration options attached to your environment. To
+     * learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache
+     * Airflow configuration options</a>.
      * </p>
      * 
      * @param airflowConfigurationOptions
-     *        The Airflow Configuration Options of the Amazon MWAA Environment.
+     *        A list of key-value pairs containing the Apache Airflow configuration options attached to your
+     *        environment. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache Airflow
+     *        configuration options</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -241,11 +341,11 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AirflowV ersion of the Amazon MWAA Environment.
+     * The Apache Airflow version on your environment. For example, <code>v1.10.12</code>.
      * </p>
      * 
      * @param airflowVersion
-     *        The AirflowV ersion of the Amazon MWAA Environment.
+     *        The Apache Airflow version on your environment. For example, <code>v1.10.12</code>.
      */
 
     public void setAirflowVersion(String airflowVersion) {
@@ -254,10 +354,10 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AirflowV ersion of the Amazon MWAA Environment.
+     * The Apache Airflow version on your environment. For example, <code>v1.10.12</code>.
      * </p>
      * 
-     * @return The AirflowV ersion of the Amazon MWAA Environment.
+     * @return The Apache Airflow version on your environment. For example, <code>v1.10.12</code>.
      */
 
     public String getAirflowVersion() {
@@ -266,11 +366,11 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AirflowV ersion of the Amazon MWAA Environment.
+     * The Apache Airflow version on your environment. For example, <code>v1.10.12</code>.
      * </p>
      * 
      * @param airflowVersion
-     *        The AirflowV ersion of the Amazon MWAA Environment.
+     *        The Apache Airflow version on your environment. For example, <code>v1.10.12</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -281,11 +381,11 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the Amazon MWAA Environment.
+     * The Amazon Resource Name (ARN) of the Amazon MWAA environment.
      * </p>
      * 
      * @param arn
-     *        The ARN of the Amazon MWAA Environment.
+     *        The Amazon Resource Name (ARN) of the Amazon MWAA environment.
      */
 
     public void setArn(String arn) {
@@ -294,10 +394,10 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the Amazon MWAA Environment.
+     * The Amazon Resource Name (ARN) of the Amazon MWAA environment.
      * </p>
      * 
-     * @return The ARN of the Amazon MWAA Environment.
+     * @return The Amazon Resource Name (ARN) of the Amazon MWAA environment.
      */
 
     public String getArn() {
@@ -306,11 +406,11 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the Amazon MWAA Environment.
+     * The Amazon Resource Name (ARN) of the Amazon MWAA environment.
      * </p>
      * 
      * @param arn
-     *        The ARN of the Amazon MWAA Environment.
+     *        The Amazon Resource Name (ARN) of the Amazon MWAA environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -321,11 +421,11 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Created At date of the Amazon MWAA Environment.
+     * The day and time the environment was created.
      * </p>
      * 
      * @param createdAt
-     *        The Created At date of the Amazon MWAA Environment.
+     *        The day and time the environment was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -334,10 +434,10 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Created At date of the Amazon MWAA Environment.
+     * The day and time the environment was created.
      * </p>
      * 
-     * @return The Created At date of the Amazon MWAA Environment.
+     * @return The day and time the environment was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -346,11 +446,11 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Created At date of the Amazon MWAA Environment.
+     * The day and time the environment was created.
      * </p>
      * 
      * @param createdAt
-     *        The Created At date of the Amazon MWAA Environment.
+     *        The day and time the environment was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -361,11 +461,15 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Dags S3 Path of the Amazon MWAA Environment.
+     * The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. To learn more, see
+     * <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating
+     * DAGs</a>.
      * </p>
      * 
      * @param dagS3Path
-     *        The Dags S3 Path of the Amazon MWAA Environment.
+     *        The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. To learn
+     *        more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding
+     *        or updating DAGs</a>.
      */
 
     public void setDagS3Path(String dagS3Path) {
@@ -374,10 +478,14 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Dags S3 Path of the Amazon MWAA Environment.
+     * The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. To learn more, see
+     * <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating
+     * DAGs</a>.
      * </p>
      * 
-     * @return The Dags S3 Path of the Amazon MWAA Environment.
+     * @return The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. To learn
+     *         more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding
+     *         or updating DAGs</a>.
      */
 
     public String getDagS3Path() {
@@ -386,11 +494,15 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Dags S3 Path of the Amazon MWAA Environment.
+     * The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. To learn more, see
+     * <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating
+     * DAGs</a>.
      * </p>
      * 
      * @param dagS3Path
-     *        The Dags S3 Path of the Amazon MWAA Environment.
+     *        The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. To learn
+     *        more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding
+     *        or updating DAGs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -401,11 +513,16 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Environment Class (size) of the Amazon MWAA Environment.
+     * The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>
+     * . To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon
+     * MWAA environment class</a>.
      * </p>
      * 
      * @param environmentClass
-     *        The Environment Class (size) of the Amazon MWAA Environment.
+     *        The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>,
+     *        <code>mw1.large</code>. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment
+     *        class</a>.
      */
 
     public void setEnvironmentClass(String environmentClass) {
@@ -414,10 +531,15 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Environment Class (size) of the Amazon MWAA Environment.
+     * The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>
+     * . To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon
+     * MWAA environment class</a>.
      * </p>
      * 
-     * @return The Environment Class (size) of the Amazon MWAA Environment.
+     * @return The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>,
+     *         <code>mw1.large</code>. To learn more, see <a
+     *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment
+     *         class</a>.
      */
 
     public String getEnvironmentClass() {
@@ -426,11 +548,16 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Environment Class (size) of the Amazon MWAA Environment.
+     * The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>
+     * . To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon
+     * MWAA environment class</a>.
      * </p>
      * 
      * @param environmentClass
-     *        The Environment Class (size) of the Amazon MWAA Environment.
+     *        The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>,
+     *        <code>mw1.large</code>. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment
+     *        class</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -441,11 +568,16 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Execution Role ARN of the Amazon MWAA Environment.
+     * The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access AWS resources in your
+     * environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.
      * </p>
      * 
      * @param executionRoleArn
-     *        The Execution Role ARN of the Amazon MWAA Environment.
+     *        The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access AWS resources in
+     *        your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more,
+     *        see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA
+     *        Execution role</a>.
      */
 
     public void setExecutionRoleArn(String executionRoleArn) {
@@ -454,10 +586,15 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Execution Role ARN of the Amazon MWAA Environment.
+     * The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access AWS resources in your
+     * environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.
      * </p>
      * 
-     * @return The Execution Role ARN of the Amazon MWAA Environment.
+     * @return The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access AWS resources in
+     *         your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more,
+     *         see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA
+     *         Execution role</a>.
      */
 
     public String getExecutionRoleArn() {
@@ -466,11 +603,16 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Execution Role ARN of the Amazon MWAA Environment.
+     * The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access AWS resources in your
+     * environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.
      * </p>
      * 
      * @param executionRoleArn
-     *        The Execution Role ARN of the Amazon MWAA Environment.
+     *        The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access AWS resources in
+     *        your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more,
+     *        see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA
+     *        Execution role</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -481,11 +623,11 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Kms Key of the Amazon MWAA Environment.
+     * The Key Management Service (KMS) encryption key used to encrypt the data in your environment.
      * </p>
      * 
      * @param kmsKey
-     *        The Kms Key of the Amazon MWAA Environment.
+     *        The Key Management Service (KMS) encryption key used to encrypt the data in your environment.
      */
 
     public void setKmsKey(String kmsKey) {
@@ -494,10 +636,10 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Kms Key of the Amazon MWAA Environment.
+     * The Key Management Service (KMS) encryption key used to encrypt the data in your environment.
      * </p>
      * 
-     * @return The Kms Key of the Amazon MWAA Environment.
+     * @return The Key Management Service (KMS) encryption key used to encrypt the data in your environment.
      */
 
     public String getKmsKey() {
@@ -506,11 +648,11 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Kms Key of the Amazon MWAA Environment.
+     * The Key Management Service (KMS) encryption key used to encrypt the data in your environment.
      * </p>
      * 
      * @param kmsKey
-     *        The Kms Key of the Amazon MWAA Environment.
+     *        The Key Management Service (KMS) encryption key used to encrypt the data in your environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -547,11 +689,12 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Logging Configuration of the Amazon MWAA Environment.
+     * The Apache Airflow logs being sent to CloudWatch Logs: <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>, <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.
      * </p>
      * 
      * @param loggingConfiguration
-     *        The Logging Configuration of the Amazon MWAA Environment.
+     *        The Apache Airflow logs being sent to CloudWatch Logs: <code>DagProcessingLogs</code>,
+     *        <code>SchedulerLogs</code>, <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.
      */
 
     public void setLoggingConfiguration(LoggingConfiguration loggingConfiguration) {
@@ -560,10 +703,11 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Logging Configuration of the Amazon MWAA Environment.
+     * The Apache Airflow logs being sent to CloudWatch Logs: <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>, <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.
      * </p>
      * 
-     * @return The Logging Configuration of the Amazon MWAA Environment.
+     * @return The Apache Airflow logs being sent to CloudWatch Logs: <code>DagProcessingLogs</code>,
+     *         <code>SchedulerLogs</code>, <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.
      */
 
     public LoggingConfiguration getLoggingConfiguration() {
@@ -572,11 +716,12 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Logging Configuration of the Amazon MWAA Environment.
+     * The Apache Airflow logs being sent to CloudWatch Logs: <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>, <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.
      * </p>
      * 
      * @param loggingConfiguration
-     *        The Logging Configuration of the Amazon MWAA Environment.
+     *        The Apache Airflow logs being sent to CloudWatch Logs: <code>DagProcessingLogs</code>,
+     *        <code>SchedulerLogs</code>, <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -587,11 +732,11 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of workers to run in your Amazon MWAA Environment.
+     * The maximum number of workers that run in your environment. For example, <code>20</code>.
      * </p>
      * 
      * @param maxWorkers
-     *        The maximum number of workers to run in your Amazon MWAA Environment.
+     *        The maximum number of workers that run in your environment. For example, <code>20</code>.
      */
 
     public void setMaxWorkers(Integer maxWorkers) {
@@ -600,10 +745,10 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of workers to run in your Amazon MWAA Environment.
+     * The maximum number of workers that run in your environment. For example, <code>20</code>.
      * </p>
      * 
-     * @return The maximum number of workers to run in your Amazon MWAA Environment.
+     * @return The maximum number of workers that run in your environment. For example, <code>20</code>.
      */
 
     public Integer getMaxWorkers() {
@@ -612,11 +757,11 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of workers to run in your Amazon MWAA Environment.
+     * The maximum number of workers that run in your environment. For example, <code>20</code>.
      * </p>
      * 
      * @param maxWorkers
-     *        The maximum number of workers to run in your Amazon MWAA Environment.
+     *        The maximum number of workers that run in your environment. For example, <code>20</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -627,11 +772,11 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The minimum number of workers to run in your Amazon MWAA Environment.
+     * The minimum number of workers that run in your environment. For example, <code>2</code>.
      * </p>
      * 
      * @param minWorkers
-     *        The minimum number of workers to run in your Amazon MWAA Environment.
+     *        The minimum number of workers that run in your environment. For example, <code>2</code>.
      */
 
     public void setMinWorkers(Integer minWorkers) {
@@ -640,10 +785,10 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The minimum number of workers to run in your Amazon MWAA Environment.
+     * The minimum number of workers that run in your environment. For example, <code>2</code>.
      * </p>
      * 
-     * @return The minimum number of workers to run in your Amazon MWAA Environment.
+     * @return The minimum number of workers that run in your environment. For example, <code>2</code>.
      */
 
     public Integer getMinWorkers() {
@@ -652,11 +797,11 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The minimum number of workers to run in your Amazon MWAA Environment.
+     * The minimum number of workers that run in your environment. For example, <code>2</code>.
      * </p>
      * 
      * @param minWorkers
-     *        The minimum number of workers to run in your Amazon MWAA Environment.
+     *        The minimum number of workers that run in your environment. For example, <code>2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -667,11 +812,11 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the Amazon MWAA Environment.
+     * The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
      * </p>
      * 
      * @param name
-     *        The name of the Amazon MWAA Environment.
+     *        The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
      */
 
     public void setName(String name) {
@@ -680,10 +825,10 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the Amazon MWAA Environment.
+     * The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
      * </p>
      * 
-     * @return The name of the Amazon MWAA Environment.
+     * @return The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
      */
 
     public String getName() {
@@ -692,11 +837,11 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the Amazon MWAA Environment.
+     * The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
      * </p>
      * 
      * @param name
-     *        The name of the Amazon MWAA Environment.
+     *        The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -733,11 +878,15 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Plugins.zip S3 Object Version of the Amazon MWAA Environment.
+     * The version of the plugins.zip file on your Amazon S3 bucket. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom
+     * plugins</a>.
      * </p>
      * 
      * @param pluginsS3ObjectVersion
-     *        The Plugins.zip S3 Object Version of the Amazon MWAA Environment.
+     *        The version of the plugins.zip file on your Amazon S3 bucket. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing
+     *        custom plugins</a>.
      */
 
     public void setPluginsS3ObjectVersion(String pluginsS3ObjectVersion) {
@@ -746,10 +895,14 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Plugins.zip S3 Object Version of the Amazon MWAA Environment.
+     * The version of the plugins.zip file on your Amazon S3 bucket. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom
+     * plugins</a>.
      * </p>
      * 
-     * @return The Plugins.zip S3 Object Version of the Amazon MWAA Environment.
+     * @return The version of the plugins.zip file on your Amazon S3 bucket. To learn more, see <a
+     *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing
+     *         custom plugins</a>.
      */
 
     public String getPluginsS3ObjectVersion() {
@@ -758,11 +911,15 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Plugins.zip S3 Object Version of the Amazon MWAA Environment.
+     * The version of the plugins.zip file on your Amazon S3 bucket. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom
+     * plugins</a>.
      * </p>
      * 
      * @param pluginsS3ObjectVersion
-     *        The Plugins.zip S3 Object Version of the Amazon MWAA Environment.
+     *        The version of the plugins.zip file on your Amazon S3 bucket. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing
+     *        custom plugins</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -773,11 +930,17 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Plugins.zip S3 Path of the Amazon MWAA Environment.
+     * The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example,
+     * <code>plugins.zip</code>. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom
+     * plugins</a>.
      * </p>
      * 
      * @param pluginsS3Path
-     *        The Plugins.zip S3 Path of the Amazon MWAA Environment.
+     *        The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example,
+     *        <code>plugins.zip</code>. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing
+     *        custom plugins</a>.
      */
 
     public void setPluginsS3Path(String pluginsS3Path) {
@@ -786,10 +949,16 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Plugins.zip S3 Path of the Amazon MWAA Environment.
+     * The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example,
+     * <code>plugins.zip</code>. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom
+     * plugins</a>.
      * </p>
      * 
-     * @return The Plugins.zip S3 Path of the Amazon MWAA Environment.
+     * @return The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example,
+     *         <code>plugins.zip</code>. To learn more, see <a
+     *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing
+     *         custom plugins</a>.
      */
 
     public String getPluginsS3Path() {
@@ -798,11 +967,17 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Plugins.zip S3 Path of the Amazon MWAA Environment.
+     * The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example,
+     * <code>plugins.zip</code>. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom
+     * plugins</a>.
      * </p>
      * 
      * @param pluginsS3Path
-     *        The Plugins.zip S3 Path of the Amazon MWAA Environment.
+     *        The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example,
+     *        <code>plugins.zip</code>. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing
+     *        custom plugins</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -813,11 +988,15 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Requirements.txt file S3 Object Version of the Amazon MWAA Environment.
+     * The version of the requirements.txt file on your Amazon S3 bucket. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
+     * dependencies</a>.
      * </p>
      * 
      * @param requirementsS3ObjectVersion
-     *        The Requirements.txt file S3 Object Version of the Amazon MWAA Environment.
+     *        The version of the requirements.txt file on your Amazon S3 bucket. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
+     *        dependencies</a>.
      */
 
     public void setRequirementsS3ObjectVersion(String requirementsS3ObjectVersion) {
@@ -826,10 +1005,14 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Requirements.txt file S3 Object Version of the Amazon MWAA Environment.
+     * The version of the requirements.txt file on your Amazon S3 bucket. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
+     * dependencies</a>.
      * </p>
      * 
-     * @return The Requirements.txt file S3 Object Version of the Amazon MWAA Environment.
+     * @return The version of the requirements.txt file on your Amazon S3 bucket. To learn more, see <a
+     *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
+     *         dependencies</a>.
      */
 
     public String getRequirementsS3ObjectVersion() {
@@ -838,11 +1021,15 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Requirements.txt file S3 Object Version of the Amazon MWAA Environment.
+     * The version of the requirements.txt file on your Amazon S3 bucket. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
+     * dependencies</a>.
      * </p>
      * 
      * @param requirementsS3ObjectVersion
-     *        The Requirements.txt file S3 Object Version of the Amazon MWAA Environment.
+     *        The version of the requirements.txt file on your Amazon S3 bucket. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
+     *        dependencies</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -853,11 +1040,17 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Requirement.txt S3 Path of the Amazon MWAA Environment.
+     * The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example,
+     * <code>requirements.txt</code>. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
+     * dependencies</a>.
      * </p>
      * 
      * @param requirementsS3Path
-     *        The Requirement.txt S3 Path of the Amazon MWAA Environment.
+     *        The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example,
+     *        <code>requirements.txt</code>. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
+     *        dependencies</a>.
      */
 
     public void setRequirementsS3Path(String requirementsS3Path) {
@@ -866,10 +1059,16 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Requirement.txt S3 Path of the Amazon MWAA Environment.
+     * The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example,
+     * <code>requirements.txt</code>. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
+     * dependencies</a>.
      * </p>
      * 
-     * @return The Requirement.txt S3 Path of the Amazon MWAA Environment.
+     * @return The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example,
+     *         <code>requirements.txt</code>. To learn more, see <a
+     *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
+     *         dependencies</a>.
      */
 
     public String getRequirementsS3Path() {
@@ -878,11 +1077,17 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Requirement.txt S3 Path of the Amazon MWAA Environment.
+     * The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example,
+     * <code>requirements.txt</code>. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
+     * dependencies</a>.
      * </p>
      * 
      * @param requirementsS3Path
-     *        The Requirement.txt S3 Path of the Amazon MWAA Environment.
+     *        The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example,
+     *        <code>requirements.txt</code>. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
+     *        dependencies</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -893,11 +1098,54 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Service Role ARN of the Amazon MWAA Environment.
+     * The number of Apache Airflow schedulers that run in your Amazon MWAA environment.
+     * </p>
+     * 
+     * @param schedulers
+     *        The number of Apache Airflow schedulers that run in your Amazon MWAA environment.
+     */
+
+    public void setSchedulers(Integer schedulers) {
+        this.schedulers = schedulers;
+    }
+
+    /**
+     * <p>
+     * The number of Apache Airflow schedulers that run in your Amazon MWAA environment.
+     * </p>
+     * 
+     * @return The number of Apache Airflow schedulers that run in your Amazon MWAA environment.
+     */
+
+    public Integer getSchedulers() {
+        return this.schedulers;
+    }
+
+    /**
+     * <p>
+     * The number of Apache Airflow schedulers that run in your Amazon MWAA environment.
+     * </p>
+     * 
+     * @param schedulers
+     *        The number of Apache Airflow schedulers that run in your Amazon MWAA environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Environment withSchedulers(Integer schedulers) {
+        setSchedulers(schedulers);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the service-linked role of the environment. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-slr.html">Amazon MWAA Service-linked role</a>.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The Service Role ARN of the Amazon MWAA Environment.
+     *        The Amazon Resource Name (ARN) for the service-linked role of the environment. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-slr.html">Amazon MWAA Service-linked
+     *        role</a>.
      */
 
     public void setServiceRoleArn(String serviceRoleArn) {
@@ -906,10 +1154,13 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Service Role ARN of the Amazon MWAA Environment.
+     * The Amazon Resource Name (ARN) for the service-linked role of the environment. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-slr.html">Amazon MWAA Service-linked role</a>.
      * </p>
      * 
-     * @return The Service Role ARN of the Amazon MWAA Environment.
+     * @return The Amazon Resource Name (ARN) for the service-linked role of the environment. To learn more, see <a
+     *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-slr.html">Amazon MWAA Service-linked
+     *         role</a>.
      */
 
     public String getServiceRoleArn() {
@@ -918,11 +1169,14 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Service Role ARN of the Amazon MWAA Environment.
+     * The Amazon Resource Name (ARN) for the service-linked role of the environment. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-slr.html">Amazon MWAA Service-linked role</a>.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The Service Role ARN of the Amazon MWAA Environment.
+     *        The Amazon Resource Name (ARN) for the service-linked role of the environment. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-slr.html">Amazon MWAA Service-linked
+     *        role</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -933,11 +1187,17 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Source S3 Bucket ARN of the Amazon MWAA Environment.
+     * The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For
+     * example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for
+     * Amazon MWAA</a>.
      * </p>
      * 
      * @param sourceBucketArn
-     *        The Source S3 Bucket ARN of the Amazon MWAA Environment.
+     *        The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are
+     *        stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket
+     *        for Amazon MWAA</a>.
      */
 
     public void setSourceBucketArn(String sourceBucketArn) {
@@ -946,10 +1206,16 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Source S3 Bucket ARN of the Amazon MWAA Environment.
+     * The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For
+     * example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for
+     * Amazon MWAA</a>.
      * </p>
      * 
-     * @return The Source S3 Bucket ARN of the Amazon MWAA Environment.
+     * @return The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are
+     *         stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a
+     *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket
+     *         for Amazon MWAA</a>.
      */
 
     public String getSourceBucketArn() {
@@ -958,11 +1224,17 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Source S3 Bucket ARN of the Amazon MWAA Environment.
+     * The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For
+     * example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for
+     * Amazon MWAA</a>.
      * </p>
      * 
      * @param sourceBucketArn
-     *        The Source S3 Bucket ARN of the Amazon MWAA Environment.
+     *        The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are
+     *        stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket
+     *        for Amazon MWAA</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -973,11 +1245,112 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the Amazon MWAA Environment.
+     * The status of the Amazon MWAA environment. Valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATING</code> - Indicates the request to create the environment is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could
+     * not be created.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code> - Indicates the request to update the environment is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code> - Indicates the request to delete the environment is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been
+     * deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in
+     * a stable state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment has
+     * rolled back successfully and is ready to use.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. To learn more,
+     * see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA
+     * troubleshooting</a>.
      * </p>
      * 
      * @param status
-     *        The status of the Amazon MWAA Environment.
+     *        The status of the Amazon MWAA environment. Valid values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CREATING</code> - Indicates the request to create the environment is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment
+     *        could not be created.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATING</code> - Indicates the request to update the environment is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETING</code> - Indicates the request to delete the environment is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment
+     *        has been deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is
+     *        not in a stable state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment
+     *        has rolled back successfully and is ready to use.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. To learn
+     *        more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA
+     *        troubleshooting</a>.
      * @see EnvironmentStatus
      */
 
@@ -987,10 +1360,111 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the Amazon MWAA Environment.
+     * The status of the Amazon MWAA environment. Valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATING</code> - Indicates the request to create the environment is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could
+     * not be created.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code> - Indicates the request to update the environment is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code> - Indicates the request to delete the environment is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been
+     * deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in
+     * a stable state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment has
+     * rolled back successfully and is ready to use.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. To learn more,
+     * see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA
+     * troubleshooting</a>.
      * </p>
      * 
-     * @return The status of the Amazon MWAA Environment.
+     * @return The status of the Amazon MWAA environment. Valid values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>CREATING</code> - Indicates the request to create the environment is in progress.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment
+     *         could not be created.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UPDATING</code> - Indicates the request to update the environment is in progress.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DELETING</code> - Indicates the request to delete the environment is in progress.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment
+     *         has been deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and
+     *         is not in a stable state.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment
+     *         has rolled back successfully and is ready to use.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. To
+     *         learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon
+     *         MWAA troubleshooting</a>.
      * @see EnvironmentStatus
      */
 
@@ -1000,11 +1474,112 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the Amazon MWAA Environment.
+     * The status of the Amazon MWAA environment. Valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATING</code> - Indicates the request to create the environment is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could
+     * not be created.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code> - Indicates the request to update the environment is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code> - Indicates the request to delete the environment is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been
+     * deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in
+     * a stable state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment has
+     * rolled back successfully and is ready to use.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. To learn more,
+     * see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA
+     * troubleshooting</a>.
      * </p>
      * 
      * @param status
-     *        The status of the Amazon MWAA Environment.
+     *        The status of the Amazon MWAA environment. Valid values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CREATING</code> - Indicates the request to create the environment is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment
+     *        could not be created.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATING</code> - Indicates the request to update the environment is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETING</code> - Indicates the request to delete the environment is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment
+     *        has been deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is
+     *        not in a stable state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment
+     *        has rolled back successfully and is ready to use.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. To learn
+     *        more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA
+     *        troubleshooting</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EnvironmentStatus
      */
@@ -1016,11 +1591,112 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the Amazon MWAA Environment.
+     * The status of the Amazon MWAA environment. Valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATING</code> - Indicates the request to create the environment is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment could
+     * not be created.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code> - Indicates the request to update the environment is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETING</code> - Indicates the request to delete the environment is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment has been
+     * deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is not in
+     * a stable state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment has
+     * rolled back successfully and is ready to use.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. To learn more,
+     * see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA
+     * troubleshooting</a>.
      * </p>
      * 
      * @param status
-     *        The status of the Amazon MWAA Environment.
+     *        The status of the Amazon MWAA environment. Valid values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CREATING</code> - Indicates the request to create the environment is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_FAILED</code> - Indicates the request to create the environment failed, and the environment
+     *        could not be created.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AVAILABLE</code> - Indicates the request was successful and the environment is ready to use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATING</code> - Indicates the request to update the environment is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETING</code> - Indicates the request to delete the environment is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETED</code> - Indicates the request to delete the environment is complete, and the environment
+     *        has been deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UNAVAILABLE</code> - Indicates the request failed, but the environment was unable to rollback and is
+     *        not in a stable state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATE_FAILED</code> - Indicates the request to update the environment failed, and the environment
+     *        has rolled back successfully and is ready to use.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. To learn
+     *        more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA
+     *        troubleshooting</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EnvironmentStatus
      */
@@ -1032,10 +1708,14 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Tags of the Amazon MWAA Environment.
+     * The key-value tag pairs associated to your environment. For example, <code>"Environment": "Staging"</code>. To
+     * learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+     * resources</a>.
      * </p>
      * 
-     * @return The Tags of the Amazon MWAA Environment.
+     * @return The key-value tag pairs associated to your environment. For example,
+     *         <code>"Environment": "Staging"</code>. To learn more, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -1044,11 +1724,15 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Tags of the Amazon MWAA Environment.
+     * The key-value tag pairs associated to your environment. For example, <code>"Environment": "Staging"</code>. To
+     * learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+     * resources</a>.
      * </p>
      * 
      * @param tags
-     *        The Tags of the Amazon MWAA Environment.
+     *        The key-value tag pairs associated to your environment. For example, <code>"Environment": "Staging"</code>
+     *        . To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+     *        resources</a>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -1057,11 +1741,15 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Tags of the Amazon MWAA Environment.
+     * The key-value tag pairs associated to your environment. For example, <code>"Environment": "Staging"</code>. To
+     * learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+     * resources</a>.
      * </p>
      * 
      * @param tags
-     *        The Tags of the Amazon MWAA Environment.
+     *        The key-value tag pairs associated to your environment. For example, <code>"Environment": "Staging"</code>
+     *        . To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+     *        resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1100,11 +1788,15 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Webserver Access Mode of the Amazon MWAA Environment (public or private only).
+     * The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access
+     * modes</a>.
      * </p>
      * 
      * @param webserverAccessMode
-     *        The Webserver Access Mode of the Amazon MWAA Environment (public or private only).
+     *        The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access
+     *        modes</a>.
      * @see WebserverAccessMode
      */
 
@@ -1114,10 +1806,14 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Webserver Access Mode of the Amazon MWAA Environment (public or private only).
+     * The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access
+     * modes</a>.
      * </p>
      * 
-     * @return The Webserver Access Mode of the Amazon MWAA Environment (public or private only).
+     * @return The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow
+     *         access modes</a>.
      * @see WebserverAccessMode
      */
 
@@ -1127,11 +1823,15 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Webserver Access Mode of the Amazon MWAA Environment (public or private only).
+     * The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access
+     * modes</a>.
      * </p>
      * 
      * @param webserverAccessMode
-     *        The Webserver Access Mode of the Amazon MWAA Environment (public or private only).
+     *        The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access
+     *        modes</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WebserverAccessMode
      */
@@ -1143,11 +1843,15 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Webserver Access Mode of the Amazon MWAA Environment (public or private only).
+     * The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access
+     * modes</a>.
      * </p>
      * 
      * @param webserverAccessMode
-     *        The Webserver Access Mode of the Amazon MWAA Environment (public or private only).
+     *        The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access
+     *        modes</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WebserverAccessMode
      */
@@ -1159,11 +1863,15 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Webserver URL of the Amazon MWAA Environment.
+     * The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache Airflow
+     * UI</a>.
      * </p>
      * 
      * @param webserverUrl
-     *        The Webserver URL of the Amazon MWAA Environment.
+     *        The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache
+     *        Airflow UI</a>.
      */
 
     public void setWebserverUrl(String webserverUrl) {
@@ -1172,10 +1880,14 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Webserver URL of the Amazon MWAA Environment.
+     * The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache Airflow
+     * UI</a>.
      * </p>
      * 
-     * @return The Webserver URL of the Amazon MWAA Environment.
+     * @return The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. To learn more, see <a
+     *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache
+     *         Airflow UI</a>.
      */
 
     public String getWebserverUrl() {
@@ -1184,11 +1896,15 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Webserver URL of the Amazon MWAA Environment.
+     * The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache Airflow
+     * UI</a>.
      * </p>
      * 
      * @param webserverUrl
-     *        The Webserver URL of the Amazon MWAA Environment.
+     *        The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache
+     *        Airflow UI</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1199,11 +1915,12 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Weekly Maintenance Window Start of the Amazon MWAA Environment.
+     * The day and time of the week that weekly maintenance updates are scheduled. For example: <code>TUE:03:30</code>.
      * </p>
      * 
      * @param weeklyMaintenanceWindowStart
-     *        The Weekly Maintenance Window Start of the Amazon MWAA Environment.
+     *        The day and time of the week that weekly maintenance updates are scheduled. For example:
+     *        <code>TUE:03:30</code>.
      */
 
     public void setWeeklyMaintenanceWindowStart(String weeklyMaintenanceWindowStart) {
@@ -1212,10 +1929,11 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Weekly Maintenance Window Start of the Amazon MWAA Environment.
+     * The day and time of the week that weekly maintenance updates are scheduled. For example: <code>TUE:03:30</code>.
      * </p>
      * 
-     * @return The Weekly Maintenance Window Start of the Amazon MWAA Environment.
+     * @return The day and time of the week that weekly maintenance updates are scheduled. For example:
+     *         <code>TUE:03:30</code>.
      */
 
     public String getWeeklyMaintenanceWindowStart() {
@@ -1224,11 +1942,12 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Weekly Maintenance Window Start of the Amazon MWAA Environment.
+     * The day and time of the week that weekly maintenance updates are scheduled. For example: <code>TUE:03:30</code>.
      * </p>
      * 
      * @param weeklyMaintenanceWindowStart
-     *        The Weekly Maintenance Window Start of the Amazon MWAA Environment.
+     *        The day and time of the week that weekly maintenance updates are scheduled. For example:
+     *        <code>TUE:03:30</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1285,6 +2004,8 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
             sb.append("RequirementsS3ObjectVersion: ").append(getRequirementsS3ObjectVersion()).append(",");
         if (getRequirementsS3Path() != null)
             sb.append("RequirementsS3Path: ").append(getRequirementsS3Path()).append(",");
+        if (getSchedulers() != null)
+            sb.append("Schedulers: ").append(getSchedulers()).append(",");
         if (getServiceRoleArn() != null)
             sb.append("ServiceRoleArn: ").append(getServiceRoleArn()).append(",");
         if (getSourceBucketArn() != null)
@@ -1385,6 +2106,10 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRequirementsS3Path() != null && other.getRequirementsS3Path().equals(this.getRequirementsS3Path()) == false)
             return false;
+        if (other.getSchedulers() == null ^ this.getSchedulers() == null)
+            return false;
+        if (other.getSchedulers() != null && other.getSchedulers().equals(this.getSchedulers()) == false)
+            return false;
         if (other.getServiceRoleArn() == null ^ this.getServiceRoleArn() == null)
             return false;
         if (other.getServiceRoleArn() != null && other.getServiceRoleArn().equals(this.getServiceRoleArn()) == false)
@@ -1439,6 +2164,7 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPluginsS3Path() == null) ? 0 : getPluginsS3Path().hashCode());
         hashCode = prime * hashCode + ((getRequirementsS3ObjectVersion() == null) ? 0 : getRequirementsS3ObjectVersion().hashCode());
         hashCode = prime * hashCode + ((getRequirementsS3Path() == null) ? 0 : getRequirementsS3Path().hashCode());
+        hashCode = prime * hashCode + ((getSchedulers() == null) ? 0 : getSchedulers().hashCode());
         hashCode = prime * hashCode + ((getServiceRoleArn() == null) ? 0 : getServiceRoleArn().hashCode());
         hashCode = prime * hashCode + ((getSourceBucketArn() == null) ? 0 : getSourceBucketArn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());

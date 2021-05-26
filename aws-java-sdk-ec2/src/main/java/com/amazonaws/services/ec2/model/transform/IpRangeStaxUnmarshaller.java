@@ -52,6 +52,11 @@ public class IpRangeStaxUnmarshaller implements Unmarshaller<IpRange, StaxUnmars
                     ipRange.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("securityGroupRuleId", targetDepth)) {
+                    ipRange.setSecurityGroupRuleId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return ipRange;

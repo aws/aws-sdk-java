@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provide the security group and subnet IDs for the workers and scheduler.
+ * The VPC networking components used to secure and enable network traffic between the AWS resources for your
+ * environment. To learn more, see <a
+ * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/NetworkConfiguration" target="_top">AWS API
@@ -30,24 +32,33 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A JSON list of 1 or more security groups IDs by name, in the same VPC as the subnets.
+     * A list of 1 or more security group IDs. Accepts up to 5 security group IDs. A security group must be attached to
+     * the same VPC as the subnets. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon
+     * MWAA</a>.
      * </p>
      */
     private java.util.List<String> securityGroupIds;
     /**
      * <p>
-     * Provide a JSON list of 2 subnet IDs by name. These must be private subnets, in the same VPC, in two different
-     * availability zones.
+     * A list of 2 subnet IDs. <b>Required</b> to create an environment. Must be private subnets in two different
+     * availability zones. A subnet must be attached to the same VPC as the security group.
      * </p>
      */
     private java.util.List<String> subnetIds;
 
     /**
      * <p>
-     * A JSON list of 1 or more security groups IDs by name, in the same VPC as the subnets.
+     * A list of 1 or more security group IDs. Accepts up to 5 security group IDs. A security group must be attached to
+     * the same VPC as the subnets. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon
+     * MWAA</a>.
      * </p>
      * 
-     * @return A JSON list of 1 or more security groups IDs by name, in the same VPC as the subnets.
+     * @return A list of 1 or more security group IDs. Accepts up to 5 security group IDs. A security group must be
+     *         attached to the same VPC as the subnets. To learn more, see <a
+     *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon
+     *         MWAA</a>.
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -56,11 +67,17 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A JSON list of 1 or more security groups IDs by name, in the same VPC as the subnets.
+     * A list of 1 or more security group IDs. Accepts up to 5 security group IDs. A security group must be attached to
+     * the same VPC as the subnets. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon
+     * MWAA</a>.
      * </p>
      * 
      * @param securityGroupIds
-     *        A JSON list of 1 or more security groups IDs by name, in the same VPC as the subnets.
+     *        A list of 1 or more security group IDs. Accepts up to 5 security group IDs. A security group must be
+     *        attached to the same VPC as the subnets. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon
+     *        MWAA</a>.
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -74,7 +91,10 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A JSON list of 1 or more security groups IDs by name, in the same VPC as the subnets.
+     * A list of 1 or more security group IDs. Accepts up to 5 security group IDs. A security group must be attached to
+     * the same VPC as the subnets. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon
+     * MWAA</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -83,7 +103,10 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param securityGroupIds
-     *        A JSON list of 1 or more security groups IDs by name, in the same VPC as the subnets.
+     *        A list of 1 or more security group IDs. Accepts up to 5 security group IDs. A security group must be
+     *        attached to the same VPC as the subnets. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon
+     *        MWAA</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +122,17 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A JSON list of 1 or more security groups IDs by name, in the same VPC as the subnets.
+     * A list of 1 or more security group IDs. Accepts up to 5 security group IDs. A security group must be attached to
+     * the same VPC as the subnets. To learn more, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon
+     * MWAA</a>.
      * </p>
      * 
      * @param securityGroupIds
-     *        A JSON list of 1 or more security groups IDs by name, in the same VPC as the subnets.
+     *        A list of 1 or more security group IDs. Accepts up to 5 security group IDs. A security group must be
+     *        attached to the same VPC as the subnets. To learn more, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon
+     *        MWAA</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,12 +143,12 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Provide a JSON list of 2 subnet IDs by name. These must be private subnets, in the same VPC, in two different
-     * availability zones.
+     * A list of 2 subnet IDs. <b>Required</b> to create an environment. Must be private subnets in two different
+     * availability zones. A subnet must be attached to the same VPC as the security group.
      * </p>
      * 
-     * @return Provide a JSON list of 2 subnet IDs by name. These must be private subnets, in the same VPC, in two
-     *         different availability zones.
+     * @return A list of 2 subnet IDs. <b>Required</b> to create an environment. Must be private subnets in two
+     *         different availability zones. A subnet must be attached to the same VPC as the security group.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -128,13 +157,13 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Provide a JSON list of 2 subnet IDs by name. These must be private subnets, in the same VPC, in two different
-     * availability zones.
+     * A list of 2 subnet IDs. <b>Required</b> to create an environment. Must be private subnets in two different
+     * availability zones. A subnet must be attached to the same VPC as the security group.
      * </p>
      * 
      * @param subnetIds
-     *        Provide a JSON list of 2 subnet IDs by name. These must be private subnets, in the same VPC, in two
-     *        different availability zones.
+     *        A list of 2 subnet IDs. <b>Required</b> to create an environment. Must be private subnets in two different
+     *        availability zones. A subnet must be attached to the same VPC as the security group.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -148,8 +177,8 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Provide a JSON list of 2 subnet IDs by name. These must be private subnets, in the same VPC, in two different
-     * availability zones.
+     * A list of 2 subnet IDs. <b>Required</b> to create an environment. Must be private subnets in two different
+     * availability zones. A subnet must be attached to the same VPC as the security group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -158,8 +187,8 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param subnetIds
-     *        Provide a JSON list of 2 subnet IDs by name. These must be private subnets, in the same VPC, in two
-     *        different availability zones.
+     *        A list of 2 subnet IDs. <b>Required</b> to create an environment. Must be private subnets in two different
+     *        availability zones. A subnet must be attached to the same VPC as the security group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,13 +204,13 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Provide a JSON list of 2 subnet IDs by name. These must be private subnets, in the same VPC, in two different
-     * availability zones.
+     * A list of 2 subnet IDs. <b>Required</b> to create an environment. Must be private subnets in two different
+     * availability zones. A subnet must be attached to the same VPC as the security group.
      * </p>
      * 
      * @param subnetIds
-     *        Provide a JSON list of 2 subnet IDs by name. These must be private subnets, in the same VPC, in two
-     *        different availability zones.
+     *        A list of 2 subnet IDs. <b>Required</b> to create an environment. Must be private subnets in two different
+     *        availability zones. A subnet must be attached to the same VPC as the security group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

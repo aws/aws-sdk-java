@@ -59,6 +59,8 @@ public class CreateEnvironmentRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequirementsS3ObjectVersion").build();
     private static final MarshallingInfo<String> REQUIREMENTSS3PATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequirementsS3Path").build();
+    private static final MarshallingInfo<Integer> SCHEDULERS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Schedulers").build();
     private static final MarshallingInfo<String> SOURCEBUCKETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceBucketArn").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -99,6 +101,7 @@ public class CreateEnvironmentRequestMarshaller {
             protocolMarshaller.marshall(createEnvironmentRequest.getPluginsS3Path(), PLUGINSS3PATH_BINDING);
             protocolMarshaller.marshall(createEnvironmentRequest.getRequirementsS3ObjectVersion(), REQUIREMENTSS3OBJECTVERSION_BINDING);
             protocolMarshaller.marshall(createEnvironmentRequest.getRequirementsS3Path(), REQUIREMENTSS3PATH_BINDING);
+            protocolMarshaller.marshall(createEnvironmentRequest.getSchedulers(), SCHEDULERS_BINDING);
             protocolMarshaller.marshall(createEnvironmentRequest.getSourceBucketArn(), SOURCEBUCKETARN_BINDING);
             protocolMarshaller.marshall(createEnvironmentRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createEnvironmentRequest.getWebserverAccessMode(), WEBSERVERACCESSMODE_BINDING);

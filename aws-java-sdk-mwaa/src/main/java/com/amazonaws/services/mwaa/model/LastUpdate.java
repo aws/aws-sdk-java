@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Last update information for the environment.
+ * The status of the last update on the environment, and any errors that were encountered.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/LastUpdate" target="_top">AWS API
@@ -30,30 +30,31 @@ public class LastUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time that last update occurred.
+     * The day and time of the last update on the environment.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * Error string of last update, if applicable.
+     * The error that was encountered during the last update of the environment.
      * </p>
      */
     private UpdateError error;
     /**
      * <p>
-     * Status of last update of SUCCESS, FAILED, CREATING, DELETING.
+     * The status of the last update on the environment. Valid values: <code>SUCCESS</code>, <code>PENDING</code>,
+     * <code>FAILED</code>.
      * </p>
      */
     private String status;
 
     /**
      * <p>
-     * Time that last update occurred.
+     * The day and time of the last update on the environment.
      * </p>
      * 
      * @param createdAt
-     *        Time that last update occurred.
+     *        The day and time of the last update on the environment.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -62,10 +63,10 @@ public class LastUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time that last update occurred.
+     * The day and time of the last update on the environment.
      * </p>
      * 
-     * @return Time that last update occurred.
+     * @return The day and time of the last update on the environment.
      */
 
     public java.util.Date getCreatedAt() {
@@ -74,11 +75,11 @@ public class LastUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time that last update occurred.
+     * The day and time of the last update on the environment.
      * </p>
      * 
      * @param createdAt
-     *        Time that last update occurred.
+     *        The day and time of the last update on the environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +90,11 @@ public class LastUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Error string of last update, if applicable.
+     * The error that was encountered during the last update of the environment.
      * </p>
      * 
      * @param error
-     *        Error string of last update, if applicable.
+     *        The error that was encountered during the last update of the environment.
      */
 
     public void setError(UpdateError error) {
@@ -102,10 +103,10 @@ public class LastUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Error string of last update, if applicable.
+     * The error that was encountered during the last update of the environment.
      * </p>
      * 
-     * @return Error string of last update, if applicable.
+     * @return The error that was encountered during the last update of the environment.
      */
 
     public UpdateError getError() {
@@ -114,11 +115,11 @@ public class LastUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Error string of last update, if applicable.
+     * The error that was encountered during the last update of the environment.
      * </p>
      * 
      * @param error
-     *        Error string of last update, if applicable.
+     *        The error that was encountered during the last update of the environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +130,13 @@ public class LastUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Status of last update of SUCCESS, FAILED, CREATING, DELETING.
+     * The status of the last update on the environment. Valid values: <code>SUCCESS</code>, <code>PENDING</code>,
+     * <code>FAILED</code>.
      * </p>
      * 
      * @param status
-     *        Status of last update of SUCCESS, FAILED, CREATING, DELETING.
+     *        The status of the last update on the environment. Valid values: <code>SUCCESS</code>, <code>PENDING</code>
+     *        , <code>FAILED</code>.
      * @see UpdateStatus
      */
 
@@ -143,10 +146,12 @@ public class LastUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Status of last update of SUCCESS, FAILED, CREATING, DELETING.
+     * The status of the last update on the environment. Valid values: <code>SUCCESS</code>, <code>PENDING</code>,
+     * <code>FAILED</code>.
      * </p>
      * 
-     * @return Status of last update of SUCCESS, FAILED, CREATING, DELETING.
+     * @return The status of the last update on the environment. Valid values: <code>SUCCESS</code>,
+     *         <code>PENDING</code>, <code>FAILED</code>.
      * @see UpdateStatus
      */
 
@@ -156,11 +161,13 @@ public class LastUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Status of last update of SUCCESS, FAILED, CREATING, DELETING.
+     * The status of the last update on the environment. Valid values: <code>SUCCESS</code>, <code>PENDING</code>,
+     * <code>FAILED</code>.
      * </p>
      * 
      * @param status
-     *        Status of last update of SUCCESS, FAILED, CREATING, DELETING.
+     *        The status of the last update on the environment. Valid values: <code>SUCCESS</code>, <code>PENDING</code>
+     *        , <code>FAILED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UpdateStatus
      */
@@ -172,11 +179,13 @@ public class LastUpdate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Status of last update of SUCCESS, FAILED, CREATING, DELETING.
+     * The status of the last update on the environment. Valid values: <code>SUCCESS</code>, <code>PENDING</code>,
+     * <code>FAILED</code>.
      * </p>
      * 
      * @param status
-     *        Status of last update of SUCCESS, FAILED, CREATING, DELETING.
+     *        The status of the last update on the environment. Valid values: <code>SUCCESS</code>, <code>PENDING</code>
+     *        , <code>FAILED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UpdateStatus
      */
