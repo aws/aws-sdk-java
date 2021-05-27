@@ -1515,11 +1515,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * [VPC only] Adds the specified outbound (egress) rules to a security group for use with a VPC.
+     * [VPC only] Adds the specified egress rules to a security group for use with a VPC.
      * </p>
      * <p>
      * An outbound rule permits instances to send traffic to the specified IPv4 or IPv6 CIDR address ranges, or to the
-     * instances that are associated with the specified destination security groups.
+     * instances associated with the specified destination security groups.
      * </p>
      * <p>
      * You specify a protocol for each rule (for example, TCP). For the TCP and UDP protocols, you must also specify the
@@ -1527,13 +1527,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * -1 for the type or code to mean all types or all codes.
      * </p>
      * <p>
-     * You can optionally add a tag to the security group rule.
-     * </p>
-     * <p>
      * Rule changes are propagated to affected instances as quickly as possible. However, a small delay might occur.
      * </p>
      * <p>
-     * For information about VPC security group quotas, see <a
+     * For more information about VPC security group limits, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC Limits</a>.
      * </p>
      * 
@@ -1549,11 +1546,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * [VPC only] Adds the specified outbound (egress) rules to a security group for use with a VPC.
+     * [VPC only] Adds the specified egress rules to a security group for use with a VPC.
      * </p>
      * <p>
      * An outbound rule permits instances to send traffic to the specified IPv4 or IPv6 CIDR address ranges, or to the
-     * instances that are associated with the specified destination security groups.
+     * instances associated with the specified destination security groups.
      * </p>
      * <p>
      * You specify a protocol for each rule (for example, TCP). For the TCP and UDP protocols, you must also specify the
@@ -1561,13 +1558,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * -1 for the type or code to mean all types or all codes.
      * </p>
      * <p>
-     * You can optionally add a tag to the security group rule.
-     * </p>
-     * <p>
      * Rule changes are propagated to affected instances as quickly as possible. However, a small delay might occur.
      * </p>
      * <p>
-     * For information about VPC security group quotas, see <a
+     * For more information about VPC security group limits, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC Limits</a>.
      * </p>
      * 
@@ -1588,11 +1582,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Adds the specified inbound (ingress) rules to a security group.
+     * Adds the specified ingress rules to a security group.
      * </p>
      * <p>
      * An inbound rule permits instances to receive traffic from the specified IPv4 or IPv6 CIDR address ranges, or from
-     * the instances that are associated with the specified destination security groups.
+     * the instances associated with the specified destination security groups.
      * </p>
      * <p>
      * You specify a protocol for each rule (for example, TCP). For TCP and UDP, you must also specify the destination
@@ -1600,14 +1594,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * all types or all codes.
      * </p>
      * <p>
-     * [VPC Only] You can optionally add a tag to the security group rule.
-     * </p>
-     * <p>
      * Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay
      * might occur.
      * </p>
      * <p>
-     * For information about VPC security group quotas, see <a
+     * For more information about VPC security group limits, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC Limits</a>.
      * </p>
      * 
@@ -1623,11 +1614,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Adds the specified inbound (ingress) rules to a security group.
+     * Adds the specified ingress rules to a security group.
      * </p>
      * <p>
      * An inbound rule permits instances to receive traffic from the specified IPv4 or IPv6 CIDR address ranges, or from
-     * the instances that are associated with the specified destination security groups.
+     * the instances associated with the specified destination security groups.
      * </p>
      * <p>
      * You specify a protocol for each rule (for example, TCP). For TCP and UDP, you must also specify the destination
@@ -1635,14 +1626,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * all types or all codes.
      * </p>
      * <p>
-     * [VPC Only] You can optionally add a tag to the security group rule.
-     * </p>
-     * <p>
      * Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay
      * might occur.
      * </p>
      * <p>
-     * For information about VPC security group quotas, see <a
+     * For more information about VPC security group limits, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC Limits</a>.
      * </p>
      * 
@@ -11994,39 +11982,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more of your security group rules.
-     * </p>
-     * 
-     * @param describeSecurityGroupRulesRequest
-     * @return A Java Future containing the result of the DescribeSecurityGroupRules operation returned by the service.
-     * @sample AmazonEC2Async.DescribeSecurityGroupRules
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupRules" target="_top">AWS
-     *      API Documentation</a>
-     */
-    java.util.concurrent.Future<DescribeSecurityGroupRulesResult> describeSecurityGroupRulesAsync(
-            DescribeSecurityGroupRulesRequest describeSecurityGroupRulesRequest);
-
-    /**
-     * <p>
-     * Describes one or more of your security group rules.
-     * </p>
-     * 
-     * @param describeSecurityGroupRulesRequest
-     * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
-     *        implementation of the callback methods in this interface to receive notification of successful or
-     *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the DescribeSecurityGroupRules operation returned by the service.
-     * @sample AmazonEC2AsyncHandler.DescribeSecurityGroupRules
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupRules" target="_top">AWS
-     *      API Documentation</a>
-     */
-    java.util.concurrent.Future<DescribeSecurityGroupRulesResult> describeSecurityGroupRulesAsync(
-            DescribeSecurityGroupRulesRequest describeSecurityGroupRulesRequest,
-            com.amazonaws.handlers.AsyncHandler<DescribeSecurityGroupRulesRequest, DescribeSecurityGroupRulesResult> asyncHandler);
-
-    /**
-     * <p>
      * Describes the specified security groups or all of your security groups.
      * </p>
      * <p>
@@ -17954,37 +17909,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Modifies the rules of a security group.
-     * </p>
-     * 
-     * @param modifySecurityGroupRulesRequest
-     * @return A Java Future containing the result of the ModifySecurityGroupRules operation returned by the service.
-     * @sample AmazonEC2Async.ModifySecurityGroupRules
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySecurityGroupRules" target="_top">AWS
-     *      API Documentation</a>
-     */
-    java.util.concurrent.Future<ModifySecurityGroupRulesResult> modifySecurityGroupRulesAsync(ModifySecurityGroupRulesRequest modifySecurityGroupRulesRequest);
-
-    /**
-     * <p>
-     * Modifies the rules of a security group.
-     * </p>
-     * 
-     * @param modifySecurityGroupRulesRequest
-     * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
-     *        implementation of the callback methods in this interface to receive notification of successful or
-     *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the ModifySecurityGroupRules operation returned by the service.
-     * @sample AmazonEC2AsyncHandler.ModifySecurityGroupRules
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySecurityGroupRules" target="_top">AWS
-     *      API Documentation</a>
-     */
-    java.util.concurrent.Future<ModifySecurityGroupRulesResult> modifySecurityGroupRulesAsync(ModifySecurityGroupRulesRequest modifySecurityGroupRulesRequest,
-            com.amazonaws.handlers.AsyncHandler<ModifySecurityGroupRulesRequest, ModifySecurityGroupRulesResult> asyncHandler);
-
-    /**
-     * <p>
      * Adds or removes permission settings for the specified snapshot. You may add or remove specified AWS account IDs
      * from a snapshot's list of create volume permissions, but you cannot do both in a single operation. If you need to
      * both add and remove account IDs for a snapshot, you must use multiple operations. You can make up to 500
@@ -20948,25 +20872,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Removes the specified egress (outbound) rules from a security group for EC2-VPC. This action does not apply to
-     * security groups for use in EC2-Classic.
-     * </p>
-     * <p>
-     * You can specify the rules that you want to remove by using one of the following methods:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * The security group rule IDs.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The security group rule properties. Each rule consists of the protocol, from port, to port, and the IPv4 or IPv6
-     * CIDR range or referenced security group or prefix list id. For the TCP and UDP protocols, you must also specify
-     * the destination port or range of ports. For the ICMP protocol, you must also specify the ICMP type and code. If
-     * the security group rule has a description, you do not have to specify the description to revoke the rule. To
-     * remove a rule, the values that you specify (for example, ports) must match the existing rule's values exactly.
+     * [VPC only] Removes the specified egress rules from a security group for EC2-VPC. This action does not apply to
+     * security groups for use in EC2-Classic. To remove a rule, the values that you specify (for example, ports) must
+     * match the existing rule's values exactly.
      * </p>
      * <note>
      * <p>
@@ -20976,8 +20884,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * AWS recommends that you use <a>DescribeSecurityGroups</a> to verify that the rule has been removed.
      * </p>
-     * </note></li>
-     * </ul>
+     * </note>
+     * <p>
+     * Each rule consists of the protocol and the IPv4 or IPv6 CIDR range or source security group. For the TCP and UDP
+     * protocols, you must also specify the destination port or range of ports. For the ICMP protocol, you must also
+     * specify the ICMP type and code. If the security group rule has a description, you do not have to specify the
+     * description to revoke the rule.
+     * </p>
      * <p>
      * Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay
      * might occur.
@@ -20994,25 +20907,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Removes the specified egress (outbound) rules from a security group for EC2-VPC. This action does not apply to
-     * security groups for use in EC2-Classic.
-     * </p>
-     * <p>
-     * You can specify the rules that you want to remove by using one of the following methods:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * The security group rule IDs.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The security group rule properties. Each rule consists of the protocol, from port, to port, and the IPv4 or IPv6
-     * CIDR range or referenced security group or prefix list id. For the TCP and UDP protocols, you must also specify
-     * the destination port or range of ports. For the ICMP protocol, you must also specify the ICMP type and code. If
-     * the security group rule has a description, you do not have to specify the description to revoke the rule. To
-     * remove a rule, the values that you specify (for example, ports) must match the existing rule's values exactly.
+     * [VPC only] Removes the specified egress rules from a security group for EC2-VPC. This action does not apply to
+     * security groups for use in EC2-Classic. To remove a rule, the values that you specify (for example, ports) must
+     * match the existing rule's values exactly.
      * </p>
      * <note>
      * <p>
@@ -21022,8 +20919,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * AWS recommends that you use <a>DescribeSecurityGroups</a> to verify that the rule has been removed.
      * </p>
-     * </note></li>
-     * </ul>
+     * </note>
+     * <p>
+     * Each rule consists of the protocol and the IPv4 or IPv6 CIDR range or source security group. For the TCP and UDP
+     * protocols, you must also specify the destination port or range of ports. For the ICMP protocol, you must also
+     * specify the ICMP type and code. If the security group rule has a description, you do not have to specify the
+     * description to revoke the rule.
+     * </p>
      * <p>
      * Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay
      * might occur.
@@ -21050,7 +20952,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <note>
      * <p>
-     * [EC2-Classic, default VPC] If the values you specify do not match the existing rule's values, no error is
+     * [EC2-Classic , default VPC] If the values you specify do not match the existing rule's values, no error is
      * returned, and the output describes the security group rules that were not revoked.
      * </p>
      * <p>
@@ -21058,32 +20960,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * </note>
      * <p>
-     * You can specify the rules that you want to remove by using one of the following methods:
+     * Each rule consists of the protocol and the CIDR range or source security group. For the TCP and UDP protocols,
+     * you must also specify the destination port or range of ports. For the ICMP protocol, you must also specify the
+     * ICMP type and code. If the security group rule has a description, you do not have to specify the description to
+     * revoke the rule.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * [VPC only] The security group rule IDs.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The security group rule properties. Each rule consists of the protocol, from port, to port, and the IPv4 or IPv6
-     * CIDR range or referenced security group or prefix list id. For the TCP and UDP protocols, you must also specify
-     * the destination port or range of ports. For the ICMP protocol, you must also specify the ICMP type and code. If
-     * the security group rule has a description, you do not have to specify the description to revoke the rule. To
-     * remove a rule, the values that you specify (for example, ports) must match the existing rule's values exactly.
-     * </p>
-     * <note>
-     * <p>
-     * [Default VPC] If the values you specify do not match the existing rule's values, no error is returned, and the
-     * output describes the security group rules that were not revoked.
-     * </p>
-     * <p>
-     * AWS recommends that you use <a>DescribeSecurityGroups</a> to verify that the rule has been removed.
-     * </p>
-     * </note></li>
-     * </ul>
      * <p>
      * Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay
      * might occur.
@@ -21105,7 +20986,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <note>
      * <p>
-     * [EC2-Classic, default VPC] If the values you specify do not match the existing rule's values, no error is
+     * [EC2-Classic , default VPC] If the values you specify do not match the existing rule's values, no error is
      * returned, and the output describes the security group rules that were not revoked.
      * </p>
      * <p>
@@ -21113,32 +20994,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * </note>
      * <p>
-     * You can specify the rules that you want to remove by using one of the following methods:
+     * Each rule consists of the protocol and the CIDR range or source security group. For the TCP and UDP protocols,
+     * you must also specify the destination port or range of ports. For the ICMP protocol, you must also specify the
+     * ICMP type and code. If the security group rule has a description, you do not have to specify the description to
+     * revoke the rule.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * [VPC only] The security group rule IDs.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The security group rule properties. Each rule consists of the protocol, from port, to port, and the IPv4 or IPv6
-     * CIDR range or referenced security group or prefix list id. For the TCP and UDP protocols, you must also specify
-     * the destination port or range of ports. For the ICMP protocol, you must also specify the ICMP type and code. If
-     * the security group rule has a description, you do not have to specify the description to revoke the rule. To
-     * remove a rule, the values that you specify (for example, ports) must match the existing rule's values exactly.
-     * </p>
-     * <note>
-     * <p>
-     * [Default VPC] If the values you specify do not match the existing rule's values, no error is returned, and the
-     * output describes the security group rules that were not revoked.
-     * </p>
-     * <p>
-     * AWS recommends that you use <a>DescribeSecurityGroups</a> to verify that the rule has been removed.
-     * </p>
-     * </note></li>
-     * </ul>
      * <p>
      * Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay
      * might occur.
@@ -22092,22 +21952,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * description, or add a description to a rule that did not have one previously.
      * </p>
      * <p>
-     * You can specify the rule that you want to update by using one of the following methods:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * The security group rule descriptions.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The IP permissions structure.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * You can remove a description for a security group rule by omitting the description parameter in the request.
+     * You specify the description as part of the IP permissions structure. You can remove a description for a security
+     * group rule by omitting the description parameter in the request.
      * </p>
      * 
      * @param updateSecurityGroupRuleDescriptionsEgressRequest
@@ -22126,22 +21972,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * description, or add a description to a rule that did not have one previously.
      * </p>
      * <p>
-     * You can specify the rule that you want to update by using one of the following methods:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * The security group rule descriptions.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The IP permissions structure.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * You can remove a description for a security group rule by omitting the description parameter in the request.
+     * You specify the description as part of the IP permissions structure. You can remove a description for a security
+     * group rule by omitting the description parameter in the request.
      * </p>
      * 
      * @param updateSecurityGroupRuleDescriptionsEgressRequest
@@ -22165,22 +21997,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * add a description to a rule that did not have one previously.
      * </p>
      * <p>
-     * You can specify the rule that you want to update by using one of the following methods:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * [VPC only] The security group rule descriptions.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The IP permissions structure.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * You can remove a description for a security group rule by omitting the description parameter in the request.
+     * You specify the description as part of the IP permissions structure. You can remove a description for a security
+     * group rule by omitting the description parameter in the request.
      * </p>
      * 
      * @param updateSecurityGroupRuleDescriptionsIngressRequest
@@ -22199,22 +22017,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * add a description to a rule that did not have one previously.
      * </p>
      * <p>
-     * You can specify the rule that you want to update by using one of the following methods:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * [VPC only] The security group rule descriptions.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * The IP permissions structure.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * You can remove a description for a security group rule by omitting the description parameter in the request.
+     * You specify the description as part of the IP permissions structure. You can remove a description for a security
+     * group rule by omitting the description parameter in the request.
      * </p>
      * 
      * @param updateSecurityGroupRuleDescriptionsIngressRequest

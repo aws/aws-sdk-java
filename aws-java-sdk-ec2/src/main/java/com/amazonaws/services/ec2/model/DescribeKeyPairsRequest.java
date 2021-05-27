@@ -67,7 +67,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
      * The key pair names.
      * </p>
      * <p>
-     * Default: Describes all of your key pairs.
+     * Default: Describes all your key pairs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> keyNames;
@@ -400,12 +400,12 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
      * The key pair names.
      * </p>
      * <p>
-     * Default: Describes all of your key pairs.
+     * Default: Describes all your key pairs.
      * </p>
      * 
      * @return The key pair names.</p>
      *         <p>
-     *         Default: Describes all of your key pairs.
+     *         Default: Describes all your key pairs.
      */
 
     public java.util.List<String> getKeyNames() {
@@ -420,13 +420,13 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
      * The key pair names.
      * </p>
      * <p>
-     * Default: Describes all of your key pairs.
+     * Default: Describes all your key pairs.
      * </p>
      * 
      * @param keyNames
      *        The key pair names.</p>
      *        <p>
-     *        Default: Describes all of your key pairs.
+     *        Default: Describes all your key pairs.
      */
 
     public void setKeyNames(java.util.Collection<String> keyNames) {
@@ -443,7 +443,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
      * The key pair names.
      * </p>
      * <p>
-     * Default: Describes all of your key pairs.
+     * Default: Describes all your key pairs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -454,7 +454,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
      * @param keyNames
      *        The key pair names.</p>
      *        <p>
-     *        Default: Describes all of your key pairs.
+     *        Default: Describes all your key pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -473,13 +473,13 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest implements 
      * The key pair names.
      * </p>
      * <p>
-     * Default: Describes all of your key pairs.
+     * Default: Describes all your key pairs.
      * </p>
      * 
      * @param keyNames
      *        The key pair names.</p>
      *        <p>
-     *        Default: Describes all of your key pairs.
+     *        Default: Describes all your key pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

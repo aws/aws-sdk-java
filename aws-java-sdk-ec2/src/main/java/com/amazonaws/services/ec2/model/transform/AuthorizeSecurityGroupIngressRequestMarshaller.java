@@ -91,11 +91,6 @@ public class AuthorizeSecurityGroupIngressRequestMarshaller implements
                             request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Ipv6Ranges." + ipv6RangesListIndex + ".Description",
                                     StringUtils.fromString(ipPermissionIpv6RangesListValue.getDescription()));
                         }
-
-                        if (ipPermissionIpv6RangesListValue.getSecurityGroupRuleId() != null) {
-                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Ipv6Ranges." + ipv6RangesListIndex + ".SecurityGroupRuleId",
-                                    StringUtils.fromString(ipPermissionIpv6RangesListValue.getSecurityGroupRuleId()));
-                        }
                         ipv6RangesListIndex++;
                     }
                 }
@@ -115,11 +110,6 @@ public class AuthorizeSecurityGroupIngressRequestMarshaller implements
                         if (ipPermissionPrefixListIdsListValue.getPrefixListId() != null) {
                             request.addParameter("IpPermissions." + ipPermissionsListIndex + ".PrefixListIds." + prefixListIdsListIndex + ".PrefixListId",
                                     StringUtils.fromString(ipPermissionPrefixListIdsListValue.getPrefixListId()));
-                        }
-
-                        if (ipPermissionPrefixListIdsListValue.getSecurityGroupRuleId() != null) {
-                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".PrefixListIds." + prefixListIdsListIndex
-                                    + ".SecurityGroupRuleId", StringUtils.fromString(ipPermissionPrefixListIdsListValue.getSecurityGroupRuleId()));
                         }
                         prefixListIdsListIndex++;
                     }
@@ -172,11 +162,6 @@ public class AuthorizeSecurityGroupIngressRequestMarshaller implements
                                     "IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".VpcPeeringConnectionId",
                                     StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getVpcPeeringConnectionId()));
                         }
-
-                        if (ipPermissionUserIdGroupPairsListValue.getSecurityGroupRuleId() != null) {
-                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".SecurityGroupRuleId",
-                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getSecurityGroupRuleId()));
-                        }
                         userIdGroupPairsListIndex++;
                     }
                 }
@@ -196,11 +181,6 @@ public class AuthorizeSecurityGroupIngressRequestMarshaller implements
                         if (ipPermissionIpv4RangesListValue.getDescription() != null) {
                             request.addParameter("IpPermissions." + ipPermissionsListIndex + ".IpRanges." + ipv4RangesListIndex + ".Description",
                                     StringUtils.fromString(ipPermissionIpv4RangesListValue.getDescription()));
-                        }
-
-                        if (ipPermissionIpv4RangesListValue.getSecurityGroupRuleId() != null) {
-                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".IpRanges." + ipv4RangesListIndex + ".SecurityGroupRuleId",
-                                    StringUtils.fromString(ipPermissionIpv4RangesListValue.getSecurityGroupRuleId()));
                         }
                         ipv4RangesListIndex++;
                     }
@@ -223,42 +203,6 @@ public class AuthorizeSecurityGroupIngressRequestMarshaller implements
 
         if (authorizeSecurityGroupIngressRequest.getToPort() != null) {
             request.addParameter("ToPort", StringUtils.fromInteger(authorizeSecurityGroupIngressRequest.getToPort()));
-        }
-
-        com.amazonaws.internal.SdkInternalList<TagSpecification> authorizeSecurityGroupIngressRequestTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) authorizeSecurityGroupIngressRequest
-                .getTagSpecifications();
-        if (!authorizeSecurityGroupIngressRequestTagSpecificationsList.isEmpty()
-                || !authorizeSecurityGroupIngressRequestTagSpecificationsList.isAutoConstruct()) {
-            int tagSpecificationsListIndex = 1;
-
-            for (TagSpecification authorizeSecurityGroupIngressRequestTagSpecificationsListValue : authorizeSecurityGroupIngressRequestTagSpecificationsList) {
-
-                if (authorizeSecurityGroupIngressRequestTagSpecificationsListValue.getResourceType() != null) {
-                    request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".ResourceType",
-                            StringUtils.fromString(authorizeSecurityGroupIngressRequestTagSpecificationsListValue.getResourceType()));
-                }
-
-                com.amazonaws.internal.SdkInternalList<Tag> tagSpecificationTagsList = (com.amazonaws.internal.SdkInternalList<Tag>) authorizeSecurityGroupIngressRequestTagSpecificationsListValue
-                        .getTags();
-                if (!tagSpecificationTagsList.isEmpty() || !tagSpecificationTagsList.isAutoConstruct()) {
-                    int tagsListIndex = 1;
-
-                    for (Tag tagSpecificationTagsListValue : tagSpecificationTagsList) {
-
-                        if (tagSpecificationTagsListValue.getKey() != null) {
-                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Key",
-                                    StringUtils.fromString(tagSpecificationTagsListValue.getKey()));
-                        }
-
-                        if (tagSpecificationTagsListValue.getValue() != null) {
-                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Value",
-                                    StringUtils.fromString(tagSpecificationTagsListValue.getValue()));
-                        }
-                        tagsListIndex++;
-                    }
-                }
-                tagSpecificationsListIndex++;
-            }
         }
 
         return request;

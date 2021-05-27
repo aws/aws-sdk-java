@@ -43,12 +43,6 @@ public class Ipv6Range implements Serializable, Cloneable {
      * </p>
      */
     private String description;
-    /**
-     * <p>
-     * The ID of the security group rule.
-     * </p>
-     */
-    private String securityGroupRuleId;
 
     /**
      * <p>
@@ -158,46 +152,6 @@ public class Ipv6Range implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * The ID of the security group rule.
-     * </p>
-     * 
-     * @param securityGroupRuleId
-     *        The ID of the security group rule.
-     */
-
-    public void setSecurityGroupRuleId(String securityGroupRuleId) {
-        this.securityGroupRuleId = securityGroupRuleId;
-    }
-
-    /**
-     * <p>
-     * The ID of the security group rule.
-     * </p>
-     * 
-     * @return The ID of the security group rule.
-     */
-
-    public String getSecurityGroupRuleId() {
-        return this.securityGroupRuleId;
-    }
-
-    /**
-     * <p>
-     * The ID of the security group rule.
-     * </p>
-     * 
-     * @param securityGroupRuleId
-     *        The ID of the security group rule.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Ipv6Range withSecurityGroupRuleId(String securityGroupRuleId) {
-        setSecurityGroupRuleId(securityGroupRuleId);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -212,9 +166,7 @@ public class Ipv6Range implements Serializable, Cloneable {
         if (getCidrIpv6() != null)
             sb.append("CidrIpv6: ").append(getCidrIpv6()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
-        if (getSecurityGroupRuleId() != null)
-            sb.append("SecurityGroupRuleId: ").append(getSecurityGroupRuleId());
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -237,10 +189,6 @@ public class Ipv6Range implements Serializable, Cloneable {
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getSecurityGroupRuleId() == null ^ this.getSecurityGroupRuleId() == null)
-            return false;
-        if (other.getSecurityGroupRuleId() != null && other.getSecurityGroupRuleId().equals(this.getSecurityGroupRuleId()) == false)
-            return false;
         return true;
     }
 
@@ -251,7 +199,6 @@ public class Ipv6Range implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getCidrIpv6() == null) ? 0 : getCidrIpv6().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode + ((getSecurityGroupRuleId() == null) ? 0 : getSecurityGroupRuleId().hashCode());
         return hashCode;
     }
 

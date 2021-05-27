@@ -77,11 +77,6 @@ public class UserIdGroupPairStaxUnmarshaller implements Unmarshaller<UserIdGroup
                     userIdGroupPair.setVpcPeeringConnectionId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-
-                if (context.testExpression("securityGroupRuleId", targetDepth)) {
-                    userIdGroupPair.setSecurityGroupRuleId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return userIdGroupPair;

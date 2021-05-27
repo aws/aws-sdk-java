@@ -12,8 +12,6 @@
  */
 package com.amazonaws.services.ec2.model.transform;
 
-import java.util.ArrayList;
-
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -44,21 +42,6 @@ public class AuthorizeSecurityGroupEgressResultStaxUnmarshaller implements Unmar
                 return authorizeSecurityGroupEgressResult;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
-
-                if (context.testExpression("return", targetDepth)) {
-                    authorizeSecurityGroupEgressResult.setReturn(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("securityGroupRuleSet", targetDepth)) {
-                    authorizeSecurityGroupEgressResult.withSecurityGroupRules(new ArrayList<SecurityGroupRule>());
-                    continue;
-                }
-
-                if (context.testExpression("securityGroupRuleSet/item", targetDepth)) {
-                    authorizeSecurityGroupEgressResult.withSecurityGroupRules(SecurityGroupRuleStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
 
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {

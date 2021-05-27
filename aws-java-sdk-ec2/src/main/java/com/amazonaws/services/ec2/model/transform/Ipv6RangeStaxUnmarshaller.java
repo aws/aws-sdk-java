@@ -52,11 +52,6 @@ public class Ipv6RangeStaxUnmarshaller implements Unmarshaller<Ipv6Range, StaxUn
                     ipv6Range.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-
-                if (context.testExpression("securityGroupRuleId", targetDepth)) {
-                    ipv6Range.setSecurityGroupRuleId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return ipv6Range;

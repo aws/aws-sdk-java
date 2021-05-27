@@ -4148,19 +4148,6 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
-    public java.util.concurrent.Future<DescribeSecurityGroupRulesResult> describeSecurityGroupRulesAsync(DescribeSecurityGroupRulesRequest request) {
-
-        return describeSecurityGroupRulesAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DescribeSecurityGroupRulesResult> describeSecurityGroupRulesAsync(DescribeSecurityGroupRulesRequest request,
-            com.amazonaws.handlers.AsyncHandler<DescribeSecurityGroupRulesRequest, DescribeSecurityGroupRulesResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
     public java.util.concurrent.Future<DescribeSecurityGroupsResult> describeSecurityGroupsAsync(DescribeSecurityGroupsRequest request) {
 
         return describeSecurityGroupsAsync(request, null);
@@ -6292,19 +6279,6 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     @Override
     public java.util.concurrent.Future<ModifyReservedInstancesResult> modifyReservedInstancesAsync(ModifyReservedInstancesRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyReservedInstancesRequest, ModifyReservedInstancesResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public java.util.concurrent.Future<ModifySecurityGroupRulesResult> modifySecurityGroupRulesAsync(ModifySecurityGroupRulesRequest request) {
-
-        return modifySecurityGroupRulesAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ModifySecurityGroupRulesResult> modifySecurityGroupRulesAsync(ModifySecurityGroupRulesRequest request,
-            com.amazonaws.handlers.AsyncHandler<ModifySecurityGroupRulesRequest, ModifySecurityGroupRulesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

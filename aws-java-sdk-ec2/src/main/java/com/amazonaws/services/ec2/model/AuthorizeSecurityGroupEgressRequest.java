@@ -41,12 +41,6 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
     private com.amazonaws.internal.SdkInternalList<IpPermission> ipPermissions;
     /**
      * <p>
-     * The tags applied to the security group rule.
-     * </p>
-     */
-    private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
-    /**
-     * <p>
      * Not supported. Use a set of IP permissions to specify the CIDR.
      * </p>
      */
@@ -200,79 +194,6 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
 
     public AuthorizeSecurityGroupEgressRequest withIpPermissions(java.util.Collection<IpPermission> ipPermissions) {
         setIpPermissions(ipPermissions);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The tags applied to the security group rule.
-     * </p>
-     * 
-     * @return The tags applied to the security group rule.
-     */
-
-    public java.util.List<TagSpecification> getTagSpecifications() {
-        if (tagSpecifications == null) {
-            tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>();
-        }
-        return tagSpecifications;
-    }
-
-    /**
-     * <p>
-     * The tags applied to the security group rule.
-     * </p>
-     * 
-     * @param tagSpecifications
-     *        The tags applied to the security group rule.
-     */
-
-    public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
-        if (tagSpecifications == null) {
-            this.tagSpecifications = null;
-            return;
-        }
-
-        this.tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications);
-    }
-
-    /**
-     * <p>
-     * The tags applied to the security group rule.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setTagSpecifications(java.util.Collection)} or {@link #withTagSpecifications(java.util.Collection)} if
-     * you want to override the existing values.
-     * </p>
-     * 
-     * @param tagSpecifications
-     *        The tags applied to the security group rule.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AuthorizeSecurityGroupEgressRequest withTagSpecifications(TagSpecification... tagSpecifications) {
-        if (this.tagSpecifications == null) {
-            setTagSpecifications(new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications.length));
-        }
-        for (TagSpecification ele : tagSpecifications) {
-            this.tagSpecifications.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * The tags applied to the security group rule.
-     * </p>
-     * 
-     * @param tagSpecifications
-     *        The tags applied to the security group rule.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AuthorizeSecurityGroupEgressRequest withTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
-        setTagSpecifications(tagSpecifications);
         return this;
     }
 
@@ -543,8 +464,6 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
             sb.append("GroupId: ").append(getGroupId()).append(",");
         if (getIpPermissions() != null)
             sb.append("IpPermissions: ").append(getIpPermissions()).append(",");
-        if (getTagSpecifications() != null)
-            sb.append("TagSpecifications: ").append(getTagSpecifications()).append(",");
         if (getCidrIp() != null)
             sb.append("CidrIp: ").append(getCidrIp()).append(",");
         if (getFromPort() != null)
@@ -578,10 +497,6 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
         if (other.getIpPermissions() == null ^ this.getIpPermissions() == null)
             return false;
         if (other.getIpPermissions() != null && other.getIpPermissions().equals(this.getIpPermissions()) == false)
-            return false;
-        if (other.getTagSpecifications() == null ^ this.getTagSpecifications() == null)
-            return false;
-        if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
             return false;
         if (other.getCidrIp() == null ^ this.getCidrIp() == null)
             return false;
@@ -617,7 +532,6 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
 
         hashCode = prime * hashCode + ((getGroupId() == null) ? 0 : getGroupId().hashCode());
         hashCode = prime * hashCode + ((getIpPermissions() == null) ? 0 : getIpPermissions().hashCode());
-        hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         hashCode = prime * hashCode + ((getCidrIp() == null) ? 0 : getCidrIp().hashCode());
         hashCode = prime * hashCode + ((getFromPort() == null) ? 0 : getFromPort().hashCode());
         hashCode = prime * hashCode + ((getIpProtocol() == null) ? 0 : getIpProtocol().hashCode());

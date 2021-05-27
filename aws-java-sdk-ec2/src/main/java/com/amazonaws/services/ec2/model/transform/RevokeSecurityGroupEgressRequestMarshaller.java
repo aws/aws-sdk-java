@@ -77,11 +77,6 @@ public class RevokeSecurityGroupEgressRequestMarshaller implements Marshaller<Re
                             request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Ipv6Ranges." + ipv6RangesListIndex + ".Description",
                                     StringUtils.fromString(ipPermissionIpv6RangesListValue.getDescription()));
                         }
-
-                        if (ipPermissionIpv6RangesListValue.getSecurityGroupRuleId() != null) {
-                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Ipv6Ranges." + ipv6RangesListIndex + ".SecurityGroupRuleId",
-                                    StringUtils.fromString(ipPermissionIpv6RangesListValue.getSecurityGroupRuleId()));
-                        }
                         ipv6RangesListIndex++;
                     }
                 }
@@ -101,11 +96,6 @@ public class RevokeSecurityGroupEgressRequestMarshaller implements Marshaller<Re
                         if (ipPermissionPrefixListIdsListValue.getPrefixListId() != null) {
                             request.addParameter("IpPermissions." + ipPermissionsListIndex + ".PrefixListIds." + prefixListIdsListIndex + ".PrefixListId",
                                     StringUtils.fromString(ipPermissionPrefixListIdsListValue.getPrefixListId()));
-                        }
-
-                        if (ipPermissionPrefixListIdsListValue.getSecurityGroupRuleId() != null) {
-                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".PrefixListIds." + prefixListIdsListIndex
-                                    + ".SecurityGroupRuleId", StringUtils.fromString(ipPermissionPrefixListIdsListValue.getSecurityGroupRuleId()));
                         }
                         prefixListIdsListIndex++;
                     }
@@ -158,11 +148,6 @@ public class RevokeSecurityGroupEgressRequestMarshaller implements Marshaller<Re
                                     "IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".VpcPeeringConnectionId",
                                     StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getVpcPeeringConnectionId()));
                         }
-
-                        if (ipPermissionUserIdGroupPairsListValue.getSecurityGroupRuleId() != null) {
-                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".SecurityGroupRuleId",
-                                    StringUtils.fromString(ipPermissionUserIdGroupPairsListValue.getSecurityGroupRuleId()));
-                        }
                         userIdGroupPairsListIndex++;
                     }
                 }
@@ -183,29 +168,10 @@ public class RevokeSecurityGroupEgressRequestMarshaller implements Marshaller<Re
                             request.addParameter("IpPermissions." + ipPermissionsListIndex + ".IpRanges." + ipv4RangesListIndex + ".Description",
                                     StringUtils.fromString(ipPermissionIpv4RangesListValue.getDescription()));
                         }
-
-                        if (ipPermissionIpv4RangesListValue.getSecurityGroupRuleId() != null) {
-                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".IpRanges." + ipv4RangesListIndex + ".SecurityGroupRuleId",
-                                    StringUtils.fromString(ipPermissionIpv4RangesListValue.getSecurityGroupRuleId()));
-                        }
                         ipv4RangesListIndex++;
                     }
                 }
                 ipPermissionsListIndex++;
-            }
-        }
-
-        com.amazonaws.internal.SdkInternalList<String> revokeSecurityGroupEgressRequestSecurityGroupRuleIdsList = (com.amazonaws.internal.SdkInternalList<String>) revokeSecurityGroupEgressRequest
-                .getSecurityGroupRuleIds();
-        if (!revokeSecurityGroupEgressRequestSecurityGroupRuleIdsList.isEmpty() || !revokeSecurityGroupEgressRequestSecurityGroupRuleIdsList.isAutoConstruct()) {
-            int securityGroupRuleIdsListIndex = 1;
-
-            for (String revokeSecurityGroupEgressRequestSecurityGroupRuleIdsListValue : revokeSecurityGroupEgressRequestSecurityGroupRuleIdsList) {
-                if (revokeSecurityGroupEgressRequestSecurityGroupRuleIdsListValue != null) {
-                    request.addParameter("SecurityGroupRuleId." + securityGroupRuleIdsListIndex,
-                            StringUtils.fromString(revokeSecurityGroupEgressRequestSecurityGroupRuleIdsListValue));
-                }
-                securityGroupRuleIdsListIndex++;
             }
         }
 

@@ -1,3 +1,8 @@
+# __1.11.1028__ __2021-05-27__
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release removes resource ids and tagging support for VPC security group rules.
+
 # __1.11.1027__ __2021-05-26__
 ## __AWS Certificate Manager Private Certificate Authority__
   - ### Features
