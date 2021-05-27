@@ -112,6 +112,18 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private String portalAuthMode;
+    /**
+     * <p>
+     * The email address that sends alarm notifications.
+     * </p>
+     */
+    private String notificationSenderEmail;
+    /**
+     * <p>
+     * Contains the configuration information of an alarm created in a AWS IoT SiteWise Monitor portal.
+     * </p>
+     */
+    private Alarms alarms;
 
     /**
      * <p>
@@ -716,6 +728,86 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * The email address that sends alarm notifications.
+     * </p>
+     * 
+     * @param notificationSenderEmail
+     *        The email address that sends alarm notifications.
+     */
+
+    public void setNotificationSenderEmail(String notificationSenderEmail) {
+        this.notificationSenderEmail = notificationSenderEmail;
+    }
+
+    /**
+     * <p>
+     * The email address that sends alarm notifications.
+     * </p>
+     * 
+     * @return The email address that sends alarm notifications.
+     */
+
+    public String getNotificationSenderEmail() {
+        return this.notificationSenderEmail;
+    }
+
+    /**
+     * <p>
+     * The email address that sends alarm notifications.
+     * </p>
+     * 
+     * @param notificationSenderEmail
+     *        The email address that sends alarm notifications.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePortalResult withNotificationSenderEmail(String notificationSenderEmail) {
+        setNotificationSenderEmail(notificationSenderEmail);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains the configuration information of an alarm created in a AWS IoT SiteWise Monitor portal.
+     * </p>
+     * 
+     * @param alarms
+     *        Contains the configuration information of an alarm created in a AWS IoT SiteWise Monitor portal.
+     */
+
+    public void setAlarms(Alarms alarms) {
+        this.alarms = alarms;
+    }
+
+    /**
+     * <p>
+     * Contains the configuration information of an alarm created in a AWS IoT SiteWise Monitor portal.
+     * </p>
+     * 
+     * @return Contains the configuration information of an alarm created in a AWS IoT SiteWise Monitor portal.
+     */
+
+    public Alarms getAlarms() {
+        return this.alarms;
+    }
+
+    /**
+     * <p>
+     * Contains the configuration information of an alarm created in a AWS IoT SiteWise Monitor portal.
+     * </p>
+     * 
+     * @param alarms
+     *        Contains the configuration information of an alarm created in a AWS IoT SiteWise Monitor portal.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePortalResult withAlarms(Alarms alarms) {
+        setAlarms(alarms);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -752,7 +844,11 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getPortalAuthMode() != null)
-            sb.append("PortalAuthMode: ").append(getPortalAuthMode());
+            sb.append("PortalAuthMode: ").append(getPortalAuthMode()).append(",");
+        if (getNotificationSenderEmail() != null)
+            sb.append("NotificationSenderEmail: ").append(getNotificationSenderEmail()).append(",");
+        if (getAlarms() != null)
+            sb.append("Alarms: ").append(getAlarms());
         sb.append("}");
         return sb.toString();
     }
@@ -819,6 +915,14 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getPortalAuthMode() != null && other.getPortalAuthMode().equals(this.getPortalAuthMode()) == false)
             return false;
+        if (other.getNotificationSenderEmail() == null ^ this.getNotificationSenderEmail() == null)
+            return false;
+        if (other.getNotificationSenderEmail() != null && other.getNotificationSenderEmail().equals(this.getNotificationSenderEmail()) == false)
+            return false;
+        if (other.getAlarms() == null ^ this.getAlarms() == null)
+            return false;
+        if (other.getAlarms() != null && other.getAlarms().equals(this.getAlarms()) == false)
+            return false;
         return true;
     }
 
@@ -840,6 +944,8 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getPortalLogoImageLocation() == null) ? 0 : getPortalLogoImageLocation().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getPortalAuthMode() == null) ? 0 : getPortalAuthMode().hashCode());
+        hashCode = prime * hashCode + ((getNotificationSenderEmail() == null) ? 0 : getNotificationSenderEmail().hashCode());
+        hashCode = prime * hashCode + ((getAlarms() == null) ? 0 : getAlarms().hashCode());
         return hashCode;
     }
 

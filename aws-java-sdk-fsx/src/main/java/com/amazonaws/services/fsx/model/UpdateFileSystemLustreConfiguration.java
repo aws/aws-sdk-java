@@ -74,6 +74,33 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
      * </p>
      */
     private String autoImportPolicy;
+    /**
+     * <p>
+     * Sets the data compression configuration for the file system. <code>DataCompressionType</code> can have the
+     * following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code> - Data compression is turned off for the file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't use <code>DataCompressionType</code>, the file system retains its current data compression
+     * configuration.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a>.
+     * </p>
+     */
+    private String dataCompressionType;
 
     /**
      * <p>
@@ -465,6 +492,233 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
     }
 
     /**
+     * <p>
+     * Sets the data compression configuration for the file system. <code>DataCompressionType</code> can have the
+     * following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code> - Data compression is turned off for the file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't use <code>DataCompressionType</code>, the file system retains its current data compression
+     * configuration.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a>.
+     * </p>
+     * 
+     * @param dataCompressionType
+     *        Sets the data compression configuration for the file system. <code>DataCompressionType</code> can have the
+     *        following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code> - Data compression is turned off for the file system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you don't use <code>DataCompressionType</code>, the file system retains its current data compression
+     *        configuration.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data
+     *        compression</a>.
+     * @see DataCompressionType
+     */
+
+    public void setDataCompressionType(String dataCompressionType) {
+        this.dataCompressionType = dataCompressionType;
+    }
+
+    /**
+     * <p>
+     * Sets the data compression configuration for the file system. <code>DataCompressionType</code> can have the
+     * following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code> - Data compression is turned off for the file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't use <code>DataCompressionType</code>, the file system retains its current data compression
+     * configuration.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a>.
+     * </p>
+     * 
+     * @return Sets the data compression configuration for the file system. <code>DataCompressionType</code> can have
+     *         the following values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>NONE</code> - Data compression is turned off for the file system.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If you don't use <code>DataCompressionType</code>, the file system retains its current data compression
+     *         configuration.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data
+     *         compression</a>.
+     * @see DataCompressionType
+     */
+
+    public String getDataCompressionType() {
+        return this.dataCompressionType;
+    }
+
+    /**
+     * <p>
+     * Sets the data compression configuration for the file system. <code>DataCompressionType</code> can have the
+     * following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code> - Data compression is turned off for the file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't use <code>DataCompressionType</code>, the file system retains its current data compression
+     * configuration.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a>.
+     * </p>
+     * 
+     * @param dataCompressionType
+     *        Sets the data compression configuration for the file system. <code>DataCompressionType</code> can have the
+     *        following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code> - Data compression is turned off for the file system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you don't use <code>DataCompressionType</code>, the file system retains its current data compression
+     *        configuration.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data
+     *        compression</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DataCompressionType
+     */
+
+    public UpdateFileSystemLustreConfiguration withDataCompressionType(String dataCompressionType) {
+        setDataCompressionType(dataCompressionType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets the data compression configuration for the file system. <code>DataCompressionType</code> can have the
+     * following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code> - Data compression is turned off for the file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't use <code>DataCompressionType</code>, the file system retains its current data compression
+     * configuration.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a>.
+     * </p>
+     * 
+     * @param dataCompressionType
+     *        Sets the data compression configuration for the file system. <code>DataCompressionType</code> can have the
+     *        following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code> - Data compression is turned off for the file system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you don't use <code>DataCompressionType</code>, the file system retains its current data compression
+     *        configuration.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data
+     *        compression</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DataCompressionType
+     */
+
+    public UpdateFileSystemLustreConfiguration withDataCompressionType(DataCompressionType dataCompressionType) {
+        this.dataCompressionType = dataCompressionType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -483,7 +737,9 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
         if (getAutomaticBackupRetentionDays() != null)
             sb.append("AutomaticBackupRetentionDays: ").append(getAutomaticBackupRetentionDays()).append(",");
         if (getAutoImportPolicy() != null)
-            sb.append("AutoImportPolicy: ").append(getAutoImportPolicy());
+            sb.append("AutoImportPolicy: ").append(getAutoImportPolicy()).append(",");
+        if (getDataCompressionType() != null)
+            sb.append("DataCompressionType: ").append(getDataCompressionType());
         sb.append("}");
         return sb.toString();
     }
@@ -515,6 +771,10 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
             return false;
         if (other.getAutoImportPolicy() != null && other.getAutoImportPolicy().equals(this.getAutoImportPolicy()) == false)
             return false;
+        if (other.getDataCompressionType() == null ^ this.getDataCompressionType() == null)
+            return false;
+        if (other.getDataCompressionType() != null && other.getDataCompressionType().equals(this.getDataCompressionType()) == false)
+            return false;
         return true;
     }
 
@@ -527,6 +787,7 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
         hashCode = prime * hashCode + ((getDailyAutomaticBackupStartTime() == null) ? 0 : getDailyAutomaticBackupStartTime().hashCode());
         hashCode = prime * hashCode + ((getAutomaticBackupRetentionDays() == null) ? 0 : getAutomaticBackupRetentionDays().hashCode());
         hashCode = prime * hashCode + ((getAutoImportPolicy() == null) ? 0 : getAutoImportPolicy().hashCode());
+        hashCode = prime * hashCode + ((getDataCompressionType() == null) ? 0 : getDataCompressionType().hashCode());
         return hashCode;
     }
 

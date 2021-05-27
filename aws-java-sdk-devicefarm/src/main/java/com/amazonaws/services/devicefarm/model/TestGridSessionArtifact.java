@@ -208,7 +208,7 @@ public class TestGridSessionArtifact implements Serializable, Cloneable, Structu
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getUrl() != null)
-            sb.append("Url: ").append(getUrl());
+            sb.append("Url: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

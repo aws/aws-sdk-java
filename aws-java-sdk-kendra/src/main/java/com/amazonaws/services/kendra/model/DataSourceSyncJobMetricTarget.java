@@ -38,6 +38,14 @@ public class DataSourceSyncJobMetricTarget implements Serializable, Cloneable, S
      * <p>
      * The ID of the sync job that is running on the data source.
      * </p>
+     * <p>
+     * If the ID of a sync job is not provided and there is a sync job running, then the ID of this sync job is used and
+     * metrics are generated for this sync job.
+     * </p>
+     * <p>
+     * If the ID of a sync job is not provided and there is no sync job running, then no metrics are generated and
+     * documents are indexed/deleted at the index level without sync job metrics included.
+     * </p>
      */
     private String dataSourceSyncJobId;
 
@@ -85,9 +93,24 @@ public class DataSourceSyncJobMetricTarget implements Serializable, Cloneable, S
      * <p>
      * The ID of the sync job that is running on the data source.
      * </p>
+     * <p>
+     * If the ID of a sync job is not provided and there is a sync job running, then the ID of this sync job is used and
+     * metrics are generated for this sync job.
+     * </p>
+     * <p>
+     * If the ID of a sync job is not provided and there is no sync job running, then no metrics are generated and
+     * documents are indexed/deleted at the index level without sync job metrics included.
+     * </p>
      * 
      * @param dataSourceSyncJobId
-     *        The ID of the sync job that is running on the data source.
+     *        The ID of the sync job that is running on the data source.</p>
+     *        <p>
+     *        If the ID of a sync job is not provided and there is a sync job running, then the ID of this sync job is
+     *        used and metrics are generated for this sync job.
+     *        </p>
+     *        <p>
+     *        If the ID of a sync job is not provided and there is no sync job running, then no metrics are generated
+     *        and documents are indexed/deleted at the index level without sync job metrics included.
      */
 
     public void setDataSourceSyncJobId(String dataSourceSyncJobId) {
@@ -98,8 +121,23 @@ public class DataSourceSyncJobMetricTarget implements Serializable, Cloneable, S
      * <p>
      * The ID of the sync job that is running on the data source.
      * </p>
+     * <p>
+     * If the ID of a sync job is not provided and there is a sync job running, then the ID of this sync job is used and
+     * metrics are generated for this sync job.
+     * </p>
+     * <p>
+     * If the ID of a sync job is not provided and there is no sync job running, then no metrics are generated and
+     * documents are indexed/deleted at the index level without sync job metrics included.
+     * </p>
      * 
-     * @return The ID of the sync job that is running on the data source.
+     * @return The ID of the sync job that is running on the data source.</p>
+     *         <p>
+     *         If the ID of a sync job is not provided and there is a sync job running, then the ID of this sync job is
+     *         used and metrics are generated for this sync job.
+     *         </p>
+     *         <p>
+     *         If the ID of a sync job is not provided and there is no sync job running, then no metrics are generated
+     *         and documents are indexed/deleted at the index level without sync job metrics included.
      */
 
     public String getDataSourceSyncJobId() {
@@ -110,9 +148,24 @@ public class DataSourceSyncJobMetricTarget implements Serializable, Cloneable, S
      * <p>
      * The ID of the sync job that is running on the data source.
      * </p>
+     * <p>
+     * If the ID of a sync job is not provided and there is a sync job running, then the ID of this sync job is used and
+     * metrics are generated for this sync job.
+     * </p>
+     * <p>
+     * If the ID of a sync job is not provided and there is no sync job running, then no metrics are generated and
+     * documents are indexed/deleted at the index level without sync job metrics included.
+     * </p>
      * 
      * @param dataSourceSyncJobId
-     *        The ID of the sync job that is running on the data source.
+     *        The ID of the sync job that is running on the data source.</p>
+     *        <p>
+     *        If the ID of a sync job is not provided and there is a sync job running, then the ID of this sync job is
+     *        used and metrics are generated for this sync job.
+     *        </p>
+     *        <p>
+     *        If the ID of a sync job is not provided and there is no sync job running, then no metrics are generated
+     *        and documents are indexed/deleted at the index level without sync job metrics included.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -33,7 +33,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * You cannot register a new domain name using Lightsail. You must register a domain name using Amazon Route 53 or
      * another domain name registrar. If you have already registered your domain, you can enter its name in this
-     * parameter to manage the DNS records for that domain.
+     * parameter to manage the DNS records for that domain using Lightsail.
      * </p>
      * </note>
      */
@@ -56,7 +56,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * You cannot register a new domain name using Lightsail. You must register a domain name using Amazon Route 53 or
      * another domain name registrar. If you have already registered your domain, you can enter its name in this
-     * parameter to manage the DNS records for that domain.
+     * parameter to manage the DNS records for that domain using Lightsail.
      * </p>
      * </note>
      * 
@@ -65,7 +65,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        You cannot register a new domain name using Lightsail. You must register a domain name using Amazon Route
      *        53 or another domain name registrar. If you have already registered your domain, you can enter its name in
-     *        this parameter to manage the DNS records for that domain.
+     *        this parameter to manage the DNS records for that domain using Lightsail.
      *        </p>
      */
 
@@ -81,7 +81,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * You cannot register a new domain name using Lightsail. You must register a domain name using Amazon Route 53 or
      * another domain name registrar. If you have already registered your domain, you can enter its name in this
-     * parameter to manage the DNS records for that domain.
+     * parameter to manage the DNS records for that domain using Lightsail.
      * </p>
      * </note>
      * 
@@ -89,7 +89,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <p>
      *         You cannot register a new domain name using Lightsail. You must register a domain name using Amazon Route
      *         53 or another domain name registrar. If you have already registered your domain, you can enter its name
-     *         in this parameter to manage the DNS records for that domain.
+     *         in this parameter to manage the DNS records for that domain using Lightsail.
      *         </p>
      */
 
@@ -105,7 +105,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * You cannot register a new domain name using Lightsail. You must register a domain name using Amazon Route 53 or
      * another domain name registrar. If you have already registered your domain, you can enter its name in this
-     * parameter to manage the DNS records for that domain.
+     * parameter to manage the DNS records for that domain using Lightsail.
      * </p>
      * </note>
      * 
@@ -114,7 +114,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        You cannot register a new domain name using Lightsail. You must register a domain name using Amazon Route
      *        53 or another domain name registrar. If you have already registered your domain, you can enter its name in
-     *        this parameter to manage the DNS records for that domain.
+     *        this parameter to manage the DNS records for that domain using Lightsail.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

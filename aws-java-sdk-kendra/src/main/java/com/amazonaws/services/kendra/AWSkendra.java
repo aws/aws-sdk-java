@@ -96,6 +96,31 @@ public interface AWSkendra {
 
     /**
      * <p>
+     * Clears existing query suggestions from an index.
+     * </p>
+     * <p>
+     * This deletes existing suggestions only, not the queries in the query log. After you clear suggestions, Amazon
+     * Kendra learns new suggestions based on new queries added to the query log from the time you cleared suggestions.
+     * If you do not see any new suggestions, then please allow Amazon Kendra to collect enough queries to learn new
+     * suggestions.
+     * </p>
+     * 
+     * @param clearQuerySuggestionsRequest
+     * @return Result of the ClearQuerySuggestions operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws ConflictException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @sample AWSkendra.ClearQuerySuggestions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ClearQuerySuggestions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ClearQuerySuggestionsResult clearQuerySuggestions(ClearQuerySuggestionsRequest clearQuerySuggestionsRequest);
+
+    /**
+     * <p>
      * Creates a data source that you use to with an Amazon Kendra index.
      * </p>
      * <p>
@@ -168,6 +193,38 @@ public interface AWSkendra {
      *      Documentation</a>
      */
     CreateIndexResult createIndex(CreateIndexRequest createIndexRequest);
+
+    /**
+     * <p>
+     * Creates a block list to exlcude certain queries from suggestions.
+     * </p>
+     * <p>
+     * Any query that contains words or phrases specified in the block list is blocked or filtered out from being shown
+     * as a suggestion.
+     * </p>
+     * <p>
+     * You need to provide the file location of your block list text file in your S3 bucket. In your text file, enter
+     * each block word or phrase on a separate line.
+     * </p>
+     * <p>
+     * For information on the current quota limits for block lists, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.
+     * </p>
+     * 
+     * @param createQuerySuggestionsBlockListRequest
+     * @return Result of the CreateQuerySuggestionsBlockList operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws ServiceQuotaExceededException
+     * @throws ConflictException
+     * @throws InternalServerException
+     * @sample AWSkendra.CreateQuerySuggestionsBlockList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateQuerySuggestionsBlockList"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateQuerySuggestionsBlockListResult createQuerySuggestionsBlockList(CreateQuerySuggestionsBlockListRequest createQuerySuggestionsBlockListRequest);
 
     /**
      * <p>
@@ -253,6 +310,29 @@ public interface AWSkendra {
 
     /**
      * <p>
+     * Deletes a block list used for query suggestions for an index.
+     * </p>
+     * <p>
+     * A deleted block list might not take effect right away. Amazon Kendra needs to refresh the entire suggestions list
+     * to add back the queries that were previously blocked.
+     * </p>
+     * 
+     * @param deleteQuerySuggestionsBlockListRequest
+     * @return Result of the DeleteQuerySuggestionsBlockList operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws ConflictException
+     * @throws InternalServerException
+     * @sample AWSkendra.DeleteQuerySuggestionsBlockList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteQuerySuggestionsBlockList"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteQuerySuggestionsBlockListResult deleteQuerySuggestionsBlockList(DeleteQuerySuggestionsBlockListRequest deleteQuerySuggestionsBlockListRequest);
+
+    /**
+     * <p>
      * Deletes an existing Amazon Kendra thesaurus.
      * </p>
      * 
@@ -326,6 +406,48 @@ public interface AWSkendra {
 
     /**
      * <p>
+     * Describes a block list used for query suggestions for an index.
+     * </p>
+     * <p>
+     * This is used to check the current settings that are applied to a block list.
+     * </p>
+     * 
+     * @param describeQuerySuggestionsBlockListRequest
+     * @return Result of the DescribeQuerySuggestionsBlockList operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @sample AWSkendra.DescribeQuerySuggestionsBlockList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsBlockList"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeQuerySuggestionsBlockListResult describeQuerySuggestionsBlockList(DescribeQuerySuggestionsBlockListRequest describeQuerySuggestionsBlockListRequest);
+
+    /**
+     * <p>
+     * Describes the settings of query suggestions for an index.
+     * </p>
+     * <p>
+     * This is used to check the current settings applied to query suggestions.
+     * </p>
+     * 
+     * @param describeQuerySuggestionsConfigRequest
+     * @return Result of the DescribeQuerySuggestionsConfig operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @sample AWSkendra.DescribeQuerySuggestionsConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeQuerySuggestionsConfigResult describeQuerySuggestionsConfig(DescribeQuerySuggestionsConfigRequest describeQuerySuggestionsConfigRequest);
+
+    /**
+     * <p>
      * Describes an existing Amazon Kendra thesaurus.
      * </p>
      * 
@@ -341,6 +463,26 @@ public interface AWSkendra {
      *      Documentation</a>
      */
     DescribeThesaurusResult describeThesaurus(DescribeThesaurusRequest describeThesaurusRequest);
+
+    /**
+     * <p>
+     * Fetches the queries that are suggested to your users.
+     * </p>
+     * 
+     * @param getQuerySuggestionsRequest
+     * @return Result of the GetQuerySuggestions operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws ServiceQuotaExceededException
+     * @throws ConflictException
+     * @throws InternalServerException
+     * @sample AWSkendra.GetQuerySuggestions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GetQuerySuggestions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetQuerySuggestionsResult getQuerySuggestions(GetQuerySuggestionsRequest getQuerySuggestionsRequest);
 
     /**
      * <p>
@@ -413,6 +555,28 @@ public interface AWSkendra {
      *      Documentation</a>
      */
     ListIndicesResult listIndices(ListIndicesRequest listIndicesRequest);
+
+    /**
+     * <p>
+     * Lists the block lists used for query suggestions for an index.
+     * </p>
+     * <p>
+     * For information on the current quota limits for block lists, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.
+     * </p>
+     * 
+     * @param listQuerySuggestionsBlockListsRequest
+     * @return Result of the ListQuerySuggestionsBlockLists operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @sample AWSkendra.ListQuerySuggestionsBlockLists
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListQuerySuggestionsBlockLists"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListQuerySuggestionsBlockListsResult listQuerySuggestionsBlockLists(ListQuerySuggestionsBlockListsRequest listQuerySuggestionsBlockListsRequest);
 
     /**
      * <p>
@@ -637,6 +801,69 @@ public interface AWSkendra {
      *      Documentation</a>
      */
     UpdateIndexResult updateIndex(UpdateIndexRequest updateIndexRequest);
+
+    /**
+     * <p>
+     * Updates a block list used for query suggestions for an index.
+     * </p>
+     * <p>
+     * Updates to a block list might not take effect right away. Amazon Kendra needs to refresh the entire suggestions
+     * list to apply any updates to the block list. Other changes not related to the block list apply immediately.
+     * </p>
+     * <p>
+     * If a block list is updating, then you need to wait for the first update to finish before submitting another
+     * update.
+     * </p>
+     * <p>
+     * Amazon Kendra supports partial updates, so you only need to provide the fields you want to update.
+     * </p>
+     * 
+     * @param updateQuerySuggestionsBlockListRequest
+     * @return Result of the UpdateQuerySuggestionsBlockList operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws ConflictException
+     * @throws InternalServerException
+     * @sample AWSkendra.UpdateQuerySuggestionsBlockList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsBlockList"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateQuerySuggestionsBlockListResult updateQuerySuggestionsBlockList(UpdateQuerySuggestionsBlockListRequest updateQuerySuggestionsBlockListRequest);
+
+    /**
+     * <p>
+     * Updates the settings of query suggestions for an index.
+     * </p>
+     * <p>
+     * Amazon Kendra supports partial updates, so you only need to provide the fields you want to update.
+     * </p>
+     * <p>
+     * If an update is currently processing (i.e. 'happening'), you need to wait for the update to finish before making
+     * another update.
+     * </p>
+     * <p>
+     * Updates to query suggestions settings might not take effect right away. The time for your updated settings to
+     * take effect depends on the updates made and the number of search queries in your index.
+     * </p>
+     * <p>
+     * You can still enable/disable query suggestions at any time.
+     * </p>
+     * 
+     * @param updateQuerySuggestionsConfigRequest
+     * @return Result of the UpdateQuerySuggestionsConfig operation returned by the service.
+     * @throws ValidationException
+     * @throws ConflictException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @sample AWSkendra.UpdateQuerySuggestionsConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateQuerySuggestionsConfigResult updateQuerySuggestionsConfig(UpdateQuerySuggestionsConfigRequest updateQuerySuggestionsConfigRequest);
 
     /**
      * <p>

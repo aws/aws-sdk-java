@@ -60,6 +60,10 @@ public class MessageJsonUnmarshaller implements Unmarshaller<Message, JsonUnmars
                     context.nextToken();
                     message.setPayload(context.getUnmarshaller(java.nio.ByteBuffer.class).unmarshall(context));
                 }
+                if (context.testExpression("timestamp", targetDepth)) {
+                    context.nextToken();
+                    message.setTimestamp(TimestampValueJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

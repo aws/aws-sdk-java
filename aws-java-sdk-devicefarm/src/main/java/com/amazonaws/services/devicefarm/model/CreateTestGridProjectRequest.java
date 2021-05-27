@@ -37,6 +37,12 @@ public class CreateTestGridProjectRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * The VPC security groups and subnets that are attached to a project.
+     * </p>
+     */
+    private TestGridVpcConfig vpcConfig;
 
     /**
      * <p>
@@ -119,6 +125,46 @@ public class CreateTestGridProjectRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The VPC security groups and subnets that are attached to a project.
+     * </p>
+     * 
+     * @param vpcConfig
+     *        The VPC security groups and subnets that are attached to a project.
+     */
+
+    public void setVpcConfig(TestGridVpcConfig vpcConfig) {
+        this.vpcConfig = vpcConfig;
+    }
+
+    /**
+     * <p>
+     * The VPC security groups and subnets that are attached to a project.
+     * </p>
+     * 
+     * @return The VPC security groups and subnets that are attached to a project.
+     */
+
+    public TestGridVpcConfig getVpcConfig() {
+        return this.vpcConfig;
+    }
+
+    /**
+     * <p>
+     * The VPC security groups and subnets that are attached to a project.
+     * </p>
+     * 
+     * @param vpcConfig
+     *        The VPC security groups and subnets that are attached to a project.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTestGridProjectRequest withVpcConfig(TestGridVpcConfig vpcConfig) {
+        setVpcConfig(vpcConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,7 +179,9 @@ public class CreateTestGridProjectRequest extends com.amazonaws.AmazonWebService
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getVpcConfig() != null)
+            sb.append("VpcConfig: ").append(getVpcConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +204,10 @@ public class CreateTestGridProjectRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getVpcConfig() == null ^ this.getVpcConfig() == null)
+            return false;
+        if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +218,7 @@ public class CreateTestGridProjectRequest extends com.amazonaws.AmazonWebService
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         return hashCode;
     }
 

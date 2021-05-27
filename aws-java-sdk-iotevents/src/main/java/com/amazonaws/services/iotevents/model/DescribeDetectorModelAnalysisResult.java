@@ -37,7 +37,7 @@ public class DescribeDetectorModelAnalysisResult extends com.amazonaws.AmazonWeb
      * </li>
      * <li>
      * <p>
-     * <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model .
+     * <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.
      * </p>
      * </li>
      * <li>
@@ -62,7 +62,7 @@ public class DescribeDetectorModelAnalysisResult extends com.amazonaws.AmazonWeb
      * </li>
      * <li>
      * <p>
-     * <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model .
+     * <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.
      * </p>
      * </li>
      * <li>
@@ -83,7 +83,7 @@ public class DescribeDetectorModelAnalysisResult extends com.amazonaws.AmazonWeb
      *        </li>
      *        <li>
      *        <p>
-     *        <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model .
+     *        <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.
      *        </p>
      *        </li>
      *        <li>
@@ -111,7 +111,7 @@ public class DescribeDetectorModelAnalysisResult extends com.amazonaws.AmazonWeb
      * </li>
      * <li>
      * <p>
-     * <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model .
+     * <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.
      * </p>
      * </li>
      * <li>
@@ -131,7 +131,7 @@ public class DescribeDetectorModelAnalysisResult extends com.amazonaws.AmazonWeb
      *         </li>
      *         <li>
      *         <p>
-     *         <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model .
+     *         <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.
      *         </p>
      *         </li>
      *         <li>
@@ -159,7 +159,7 @@ public class DescribeDetectorModelAnalysisResult extends com.amazonaws.AmazonWeb
      * </li>
      * <li>
      * <p>
-     * <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model .
+     * <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.
      * </p>
      * </li>
      * <li>
@@ -180,7 +180,7 @@ public class DescribeDetectorModelAnalysisResult extends com.amazonaws.AmazonWeb
      *        </li>
      *        <li>
      *        <p>
-     *        <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model .
+     *        <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.
      *        </p>
      *        </li>
      *        <li>
@@ -210,7 +210,7 @@ public class DescribeDetectorModelAnalysisResult extends com.amazonaws.AmazonWeb
      * </li>
      * <li>
      * <p>
-     * <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model .
+     * <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.
      * </p>
      * </li>
      * <li>
@@ -231,7 +231,7 @@ public class DescribeDetectorModelAnalysisResult extends com.amazonaws.AmazonWeb
      *        </li>
      *        <li>
      *        <p>
-     *        <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model .
+     *        <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.
      *        </p>
      *        </li>
      *        <li>

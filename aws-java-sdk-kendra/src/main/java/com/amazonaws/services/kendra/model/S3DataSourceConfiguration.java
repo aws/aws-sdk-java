@@ -46,9 +46,27 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
      * also matches an exclusion pattern, the document is not indexed.
      * </p>
      * <p>
-     * For more information about glob patterns, see <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob
-     * (programming)</a> in <i>Wikipedia</i>.
+     * Some <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <i>*.txt</i> will include all text files in a directory (files with the extension .txt).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>**&#47;*.txt</i> will include all text files in a directory and its subdirectories.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax', 'taxes',
+     * 'income_tax'.
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.List<String> inclusionPatterns;
     /**
@@ -57,9 +75,28 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
      * or inclusion pattern also matches an exclusion pattern, the document is not indexed.
      * </p>
      * <p>
-     * For more information about glob patterns, see <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob
-     * (programming)</a> in <i>Wikipedia</i>.
+     * Some <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <i>*.png , *.jpg</i> will exclude all PNG and JPEG image files in a directory (files with the extensions .png and
+     * .jpg).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>*internal*</i> will exclude all files in a directory that contain 'internal' in the file name, such as
+     * 'internal', 'internal_only', 'company_internal'.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>**&#47;*internal*</i> will exclude all internal-related files in a directory and its subdirectories.
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.List<String> exclusionPatterns;
 
@@ -189,15 +226,52 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
      * also matches an exclusion pattern, the document is not indexed.
      * </p>
      * <p>
-     * For more information about glob patterns, see <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob
-     * (programming)</a> in <i>Wikipedia</i>.
+     * Some <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <i>*.txt</i> will include all text files in a directory (files with the extension .txt).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>**&#47;*.txt</i> will include all text files in a directory and its subdirectories.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax', 'taxes',
+     * 'income_tax'.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return A list of glob patterns for documents that should be indexed. If a document that matches an inclusion
      *         pattern also matches an exclusion pattern, the document is not indexed.</p>
      *         <p>
-     *         For more information about glob patterns, see <a
-     *         href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a> in <i>Wikipedia</i>.
+     *         Some <a
+     *         href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples
+     *         </a> are:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <i>*.txt</i> will include all text files in a directory (files with the extension .txt).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <i>**&#47;*.txt</i> will include all text files in a directory and its subdirectories.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax',
+     *         'taxes', 'income_tax'.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<String> getInclusionPatterns() {
@@ -210,16 +284,53 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
      * also matches an exclusion pattern, the document is not indexed.
      * </p>
      * <p>
-     * For more information about glob patterns, see <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob
-     * (programming)</a> in <i>Wikipedia</i>.
+     * Some <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <i>*.txt</i> will include all text files in a directory (files with the extension .txt).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>**&#47;*.txt</i> will include all text files in a directory and its subdirectories.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax', 'taxes',
+     * 'income_tax'.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param inclusionPatterns
      *        A list of glob patterns for documents that should be indexed. If a document that matches an inclusion
      *        pattern also matches an exclusion pattern, the document is not indexed.</p>
      *        <p>
-     *        For more information about glob patterns, see <a
-     *        href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a> in <i>Wikipedia</i>.
+     *        Some <a
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples
+     *        </a> are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <i>*.txt</i> will include all text files in a directory (files with the extension .txt).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>**&#47;*.txt</i> will include all text files in a directory and its subdirectories.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax',
+     *        'taxes', 'income_tax'.
+     *        </p>
+     *        </li>
      */
 
     public void setInclusionPatterns(java.util.Collection<String> inclusionPatterns) {
@@ -237,9 +348,27 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
      * also matches an exclusion pattern, the document is not indexed.
      * </p>
      * <p>
-     * For more information about glob patterns, see <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob
-     * (programming)</a> in <i>Wikipedia</i>.
+     * Some <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <i>*.txt</i> will include all text files in a directory (files with the extension .txt).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>**&#47;*.txt</i> will include all text files in a directory and its subdirectories.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax', 'taxes',
+     * 'income_tax'.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setInclusionPatterns(java.util.Collection)} or {@link #withInclusionPatterns(java.util.Collection)} if
@@ -250,8 +379,27 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
      *        A list of glob patterns for documents that should be indexed. If a document that matches an inclusion
      *        pattern also matches an exclusion pattern, the document is not indexed.</p>
      *        <p>
-     *        For more information about glob patterns, see <a
-     *        href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a> in <i>Wikipedia</i>.
+     *        Some <a
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples
+     *        </a> are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <i>*.txt</i> will include all text files in a directory (files with the extension .txt).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>**&#47;*.txt</i> will include all text files in a directory and its subdirectories.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax',
+     *        'taxes', 'income_tax'.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -271,16 +419,53 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
      * also matches an exclusion pattern, the document is not indexed.
      * </p>
      * <p>
-     * For more information about glob patterns, see <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob
-     * (programming)</a> in <i>Wikipedia</i>.
+     * Some <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <i>*.txt</i> will include all text files in a directory (files with the extension .txt).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>**&#47;*.txt</i> will include all text files in a directory and its subdirectories.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax', 'taxes',
+     * 'income_tax'.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param inclusionPatterns
      *        A list of glob patterns for documents that should be indexed. If a document that matches an inclusion
      *        pattern also matches an exclusion pattern, the document is not indexed.</p>
      *        <p>
-     *        For more information about glob patterns, see <a
-     *        href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a> in <i>Wikipedia</i>.
+     *        Some <a
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples
+     *        </a> are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <i>*.txt</i> will include all text files in a directory (files with the extension .txt).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>**&#47;*.txt</i> will include all text files in a directory and its subdirectories.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>*tax*</i> will include all files in a directory that contain 'tax' in the file name, such as 'tax',
+     *        'taxes', 'income_tax'.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -295,15 +480,54 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
      * or inclusion pattern also matches an exclusion pattern, the document is not indexed.
      * </p>
      * <p>
-     * For more information about glob patterns, see <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob
-     * (programming)</a> in <i>Wikipedia</i>.
+     * Some <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <i>*.png , *.jpg</i> will exclude all PNG and JPEG image files in a directory (files with the extensions .png and
+     * .jpg).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>*internal*</i> will exclude all files in a directory that contain 'internal' in the file name, such as
+     * 'internal', 'internal_only', 'company_internal'.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>**&#47;*internal*</i> will exclude all internal-related files in a directory and its subdirectories.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion
      *         prefix or inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
      *         <p>
-     *         For more information about glob patterns, see <a
-     *         href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a> in <i>Wikipedia</i>.
+     *         Some <a
+     *         href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples
+     *         </a> are:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <i>*.png , *.jpg</i> will exclude all PNG and JPEG image files in a directory (files with the extensions
+     *         .png and .jpg).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <i>*internal*</i> will exclude all files in a directory that contain 'internal' in the file name, such as
+     *         'internal', 'internal_only', 'company_internal'.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <i>**&#47;*internal*</i> will exclude all internal-related files in a directory and its subdirectories.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<String> getExclusionPatterns() {
@@ -316,16 +540,55 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
      * or inclusion pattern also matches an exclusion pattern, the document is not indexed.
      * </p>
      * <p>
-     * For more information about glob patterns, see <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob
-     * (programming)</a> in <i>Wikipedia</i>.
+     * Some <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <i>*.png , *.jpg</i> will exclude all PNG and JPEG image files in a directory (files with the extensions .png and
+     * .jpg).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>*internal*</i> will exclude all files in a directory that contain 'internal' in the file name, such as
+     * 'internal', 'internal_only', 'company_internal'.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>**&#47;*internal*</i> will exclude all internal-related files in a directory and its subdirectories.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param exclusionPatterns
      *        A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion
      *        prefix or inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
      *        <p>
-     *        For more information about glob patterns, see <a
-     *        href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a> in <i>Wikipedia</i>.
+     *        Some <a
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples
+     *        </a> are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <i>*.png , *.jpg</i> will exclude all PNG and JPEG image files in a directory (files with the extensions
+     *        .png and .jpg).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>*internal*</i> will exclude all files in a directory that contain 'internal' in the file name, such as
+     *        'internal', 'internal_only', 'company_internal'.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>**&#47;*internal*</i> will exclude all internal-related files in a directory and its subdirectories.
+     *        </p>
+     *        </li>
      */
 
     public void setExclusionPatterns(java.util.Collection<String> exclusionPatterns) {
@@ -343,9 +606,28 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
      * or inclusion pattern also matches an exclusion pattern, the document is not indexed.
      * </p>
      * <p>
-     * For more information about glob patterns, see <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob
-     * (programming)</a> in <i>Wikipedia</i>.
+     * Some <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <i>*.png , *.jpg</i> will exclude all PNG and JPEG image files in a directory (files with the extensions .png and
+     * .jpg).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>*internal*</i> will exclude all files in a directory that contain 'internal' in the file name, such as
+     * 'internal', 'internal_only', 'company_internal'.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>**&#47;*internal*</i> will exclude all internal-related files in a directory and its subdirectories.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setExclusionPatterns(java.util.Collection)} or {@link #withExclusionPatterns(java.util.Collection)} if
@@ -356,8 +638,28 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
      *        A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion
      *        prefix or inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
      *        <p>
-     *        For more information about glob patterns, see <a
-     *        href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a> in <i>Wikipedia</i>.
+     *        Some <a
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples
+     *        </a> are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <i>*.png , *.jpg</i> will exclude all PNG and JPEG image files in a directory (files with the extensions
+     *        .png and .jpg).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>*internal*</i> will exclude all files in a directory that contain 'internal' in the file name, such as
+     *        'internal', 'internal_only', 'company_internal'.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>**&#47;*internal*</i> will exclude all internal-related files in a directory and its subdirectories.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -377,16 +679,55 @@ public class S3DataSourceConfiguration implements Serializable, Cloneable, Struc
      * or inclusion pattern also matches an exclusion pattern, the document is not indexed.
      * </p>
      * <p>
-     * For more information about glob patterns, see <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob
-     * (programming)</a> in <i>Wikipedia</i>.
+     * Some <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a> are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <i>*.png , *.jpg</i> will exclude all PNG and JPEG image files in a directory (files with the extensions .png and
+     * .jpg).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>*internal*</i> will exclude all files in a directory that contain 'internal' in the file name, such as
+     * 'internal', 'internal_only', 'company_internal'.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>**&#47;*internal*</i> will exclude all internal-related files in a directory and its subdirectories.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param exclusionPatterns
      *        A list of glob patterns for documents that should not be indexed. If a document that matches an inclusion
      *        prefix or inclusion pattern also matches an exclusion pattern, the document is not indexed.</p>
      *        <p>
-     *        For more information about glob patterns, see <a
-     *        href="https://en.wikipedia.org/wiki/Glob_(programming)">glob (programming)</a> in <i>Wikipedia</i>.
+     *        Some <a
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples
+     *        </a> are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <i>*.png , *.jpg</i> will exclude all PNG and JPEG image files in a directory (files with the extensions
+     *        .png and .jpg).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>*internal*</i> will exclude all files in a directory that contain 'internal' in the file name, such as
+     *        'internal', 'internal_only', 'company_internal'.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>**&#47;*internal*</i> will exclude all internal-related files in a directory and its subdirectories.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

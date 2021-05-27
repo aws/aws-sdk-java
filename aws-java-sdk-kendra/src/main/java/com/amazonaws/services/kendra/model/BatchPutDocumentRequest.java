@@ -45,6 +45,12 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      * One or more documents to add to the index.
      * </p>
      * <p>
+     * Documents can include custom attributes. For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom
+     * attributes that provide information on the synchronization of documents running on a data source. Note,
+     * 'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running sync
+     * job.
+     * </p>
+     * <p>
      * Documents have the following file size limits.
      * </p>
      * <ul>
@@ -174,6 +180,12 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      * One or more documents to add to the index.
      * </p>
      * <p>
+     * Documents can include custom attributes. For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom
+     * attributes that provide information on the synchronization of documents running on a data source. Note,
+     * 'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running sync
+     * job.
+     * </p>
+     * <p>
      * Documents have the following file size limits.
      * </p>
      * <ul>
@@ -198,7 +210,13 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
      * </p>
      * 
-     * @return One or more documents to add to the index. </p>
+     * @return One or more documents to add to the index.</p>
+     *         <p>
+     *         Documents can include custom attributes. For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom
+     *         attributes that provide information on the synchronization of documents running on a data source. Note,
+     *         'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running
+     *         sync job.
+     *         </p>
      *         <p>
      *         Documents have the following file size limits.
      *         </p>
@@ -233,6 +251,12 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      * One or more documents to add to the index.
      * </p>
      * <p>
+     * Documents can include custom attributes. For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom
+     * attributes that provide information on the synchronization of documents running on a data source. Note,
+     * 'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running sync
+     * job.
+     * </p>
+     * <p>
      * Documents have the following file size limits.
      * </p>
      * <ul>
@@ -258,7 +282,13 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param documents
-     *        One or more documents to add to the index. </p>
+     *        One or more documents to add to the index.</p>
+     *        <p>
+     *        Documents can include custom attributes. For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom
+     *        attributes that provide information on the synchronization of documents running on a data source. Note,
+     *        'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running
+     *        sync job.
+     *        </p>
      *        <p>
      *        Documents have the following file size limits.
      *        </p>
@@ -298,6 +328,12 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      * One or more documents to add to the index.
      * </p>
      * <p>
+     * Documents can include custom attributes. For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom
+     * attributes that provide information on the synchronization of documents running on a data source. Note,
+     * 'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running sync
+     * job.
+     * </p>
+     * <p>
      * Documents have the following file size limits.
      * </p>
      * <ul>
@@ -328,7 +364,13 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param documents
-     *        One or more documents to add to the index. </p>
+     *        One or more documents to add to the index.</p>
+     *        <p>
+     *        Documents can include custom attributes. For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom
+     *        attributes that provide information on the synchronization of documents running on a data source. Note,
+     *        'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running
+     *        sync job.
+     *        </p>
      *        <p>
      *        Documents have the following file size limits.
      *        </p>
@@ -370,6 +412,12 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      * One or more documents to add to the index.
      * </p>
      * <p>
+     * Documents can include custom attributes. For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom
+     * attributes that provide information on the synchronization of documents running on a data source. Note,
+     * 'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running sync
+     * job.
+     * </p>
+     * <p>
      * Documents have the following file size limits.
      * </p>
      * <ul>
@@ -395,7 +443,13 @@ public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param documents
-     *        One or more documents to add to the index. </p>
+     *        One or more documents to add to the index.</p>
+     *        <p>
+     *        Documents can include custom attributes. For example, 'DataSourceId' and 'DataSourceSyncJobId' are custom
+     *        attributes that provide information on the synchronization of documents running on a data source. Note,
+     *        'DataSourceSyncJobId' could be an optional custom attribute as Amazon Kendra will use the ID of a running
+     *        sync job.
+     *        </p>
      *        <p>
      *        Documents have the following file size limits.
      *        </p>

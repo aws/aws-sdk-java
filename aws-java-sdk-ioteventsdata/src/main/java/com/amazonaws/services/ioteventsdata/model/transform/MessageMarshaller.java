@@ -33,6 +33,8 @@ public class MessageMarshaller {
             .marshallLocationName("inputName").build();
     private static final MarshallingInfo<java.nio.ByteBuffer> PAYLOAD_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("payload").build();
+    private static final MarshallingInfo<StructuredPojo> TIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timestamp").build();
 
     private static final MessageMarshaller instance = new MessageMarshaller();
 
@@ -53,6 +55,7 @@ public class MessageMarshaller {
             protocolMarshaller.marshall(message.getMessageId(), MESSAGEID_BINDING);
             protocolMarshaller.marshall(message.getInputName(), INPUTNAME_BINDING);
             protocolMarshaller.marshall(message.getPayload(), PAYLOAD_BINDING);
+            protocolMarshaller.marshall(message.getTimestamp(), TIMESTAMP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -47,6 +47,12 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.nio.ByteBuffer payload;
+    /**
+     * <p>
+     * The timestamp associated with the message.
+     * </p>
+     */
+    private TimestampValue timestamp;
 
     /**
      * <p>
@@ -202,6 +208,46 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The timestamp associated with the message.
+     * </p>
+     * 
+     * @param timestamp
+     *        The timestamp associated with the message.
+     */
+
+    public void setTimestamp(TimestampValue timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    /**
+     * <p>
+     * The timestamp associated with the message.
+     * </p>
+     * 
+     * @return The timestamp associated with the message.
+     */
+
+    public TimestampValue getTimestamp() {
+        return this.timestamp;
+    }
+
+    /**
+     * <p>
+     * The timestamp associated with the message.
+     * </p>
+     * 
+     * @param timestamp
+     *        The timestamp associated with the message.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Message withTimestamp(TimestampValue timestamp) {
+        setTimestamp(timestamp);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -218,7 +264,9 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
         if (getInputName() != null)
             sb.append("InputName: ").append(getInputName()).append(",");
         if (getPayload() != null)
-            sb.append("Payload: ").append(getPayload());
+            sb.append("Payload: ").append(getPayload()).append(",");
+        if (getTimestamp() != null)
+            sb.append("Timestamp: ").append(getTimestamp());
         sb.append("}");
         return sb.toString();
     }
@@ -245,6 +293,10 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPayload() != null && other.getPayload().equals(this.getPayload()) == false)
             return false;
+        if (other.getTimestamp() == null ^ this.getTimestamp() == null)
+            return false;
+        if (other.getTimestamp() != null && other.getTimestamp().equals(this.getTimestamp()) == false)
+            return false;
         return true;
     }
 
@@ -256,6 +308,7 @@ public class Message implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getMessageId() == null) ? 0 : getMessageId().hashCode());
         hashCode = prime * hashCode + ((getInputName() == null) ? 0 : getInputName().hashCode());
         hashCode = prime * hashCode + ((getPayload() == null) ? 0 : getPayload().hashCode());
+        hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
         return hashCode;
     }
 

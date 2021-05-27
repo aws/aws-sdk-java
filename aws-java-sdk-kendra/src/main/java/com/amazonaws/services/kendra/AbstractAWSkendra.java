@@ -38,6 +38,11 @@ public class AbstractAWSkendra implements AWSkendra {
     }
 
     @Override
+    public ClearQuerySuggestionsResult clearQuerySuggestions(ClearQuerySuggestionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateDataSourceResult createDataSource(CreateDataSourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -49,6 +54,11 @@ public class AbstractAWSkendra implements AWSkendra {
 
     @Override
     public CreateIndexResult createIndex(CreateIndexRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateQuerySuggestionsBlockListResult createQuerySuggestionsBlockList(CreateQuerySuggestionsBlockListRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -73,6 +83,11 @@ public class AbstractAWSkendra implements AWSkendra {
     }
 
     @Override
+    public DeleteQuerySuggestionsBlockListResult deleteQuerySuggestionsBlockList(DeleteQuerySuggestionsBlockListRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteThesaurusResult deleteThesaurus(DeleteThesaurusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -93,7 +108,22 @@ public class AbstractAWSkendra implements AWSkendra {
     }
 
     @Override
+    public DescribeQuerySuggestionsBlockListResult describeQuerySuggestionsBlockList(DescribeQuerySuggestionsBlockListRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeQuerySuggestionsConfigResult describeQuerySuggestionsConfig(DescribeQuerySuggestionsConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeThesaurusResult describeThesaurus(DescribeThesaurusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetQuerySuggestionsResult getQuerySuggestions(GetQuerySuggestionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -114,6 +144,11 @@ public class AbstractAWSkendra implements AWSkendra {
 
     @Override
     public ListIndicesResult listIndices(ListIndicesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListQuerySuggestionsBlockListsResult listQuerySuggestionsBlockLists(ListQuerySuggestionsBlockListsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -164,6 +199,16 @@ public class AbstractAWSkendra implements AWSkendra {
 
     @Override
     public UpdateIndexResult updateIndex(UpdateIndexRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateQuerySuggestionsBlockListResult updateQuerySuggestionsBlockList(UpdateQuerySuggestionsBlockListRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateQuerySuggestionsConfigResult updateQuerySuggestionsConfig(UpdateQuerySuggestionsConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

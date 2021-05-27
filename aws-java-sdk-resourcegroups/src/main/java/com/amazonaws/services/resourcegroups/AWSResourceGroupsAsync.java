@@ -515,6 +515,21 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
      * <code>resource-groups:ListGroupResources</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>cloudformation:DescribeStacks</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cloudformation:ListStackResources</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag:GetResources</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param listGroupResourcesRequest
@@ -539,6 +554,21 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
      * <li>
      * <p>
      * <code>resource-groups:ListGroupResources</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cloudformation:DescribeStacks</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cloudformation:ListStackResources</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag:GetResources</code>
      * </p>
      * </li>
      * </ul>
@@ -689,6 +719,21 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
      * <code>resource-groups:SearchResources</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>cloudformation:DescribeStacks</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cloudformation:ListStackResources</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag:GetResources</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param searchResourcesRequest
@@ -714,6 +759,21 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
      * <li>
      * <p>
      * <code>resource-groups:SearchResources</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cloudformation:DescribeStacks</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cloudformation:ListStackResources</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag:GetResources</code>
      * </p>
      * </li>
      * </ul>

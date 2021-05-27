@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the error that occured when attempting to update a detector.
+ * Information about the error that occurred when attempting to update a detector.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchUpdateDetectorErrorEntry"
@@ -37,13 +37,13 @@ public class BatchUpdateDetectorErrorEntry implements Serializable, Cloneable, S
     private String messageId;
     /**
      * <p>
-     * The code of the error.
+     * The error code.
      * </p>
      */
     private String errorCode;
     /**
      * <p>
-     * A message describing the error.
+     * A message that describes the error.
      * </p>
      */
     private String errorMessage;
@@ -96,11 +96,11 @@ public class BatchUpdateDetectorErrorEntry implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The code of the error.
+     * The error code.
      * </p>
      * 
      * @param errorCode
-     *        The code of the error.
+     *        The error code.
      * @see ErrorCode
      */
 
@@ -110,10 +110,10 @@ public class BatchUpdateDetectorErrorEntry implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The code of the error.
+     * The error code.
      * </p>
      * 
-     * @return The code of the error.
+     * @return The error code.
      * @see ErrorCode
      */
 
@@ -123,11 +123,11 @@ public class BatchUpdateDetectorErrorEntry implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The code of the error.
+     * The error code.
      * </p>
      * 
      * @param errorCode
-     *        The code of the error.
+     *        The error code.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ErrorCode
      */
@@ -139,11 +139,11 @@ public class BatchUpdateDetectorErrorEntry implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The code of the error.
+     * The error code.
      * </p>
      * 
      * @param errorCode
-     *        The code of the error.
+     *        The error code.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ErrorCode
      */
@@ -155,11 +155,11 @@ public class BatchUpdateDetectorErrorEntry implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A message describing the error.
+     * A message that describes the error.
      * </p>
      * 
      * @param errorMessage
-     *        A message describing the error.
+     *        A message that describes the error.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -168,10 +168,10 @@ public class BatchUpdateDetectorErrorEntry implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A message describing the error.
+     * A message that describes the error.
      * </p>
      * 
-     * @return A message describing the error.
+     * @return A message that describes the error.
      */
 
     public String getErrorMessage() {
@@ -180,11 +180,11 @@ public class BatchUpdateDetectorErrorEntry implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * A message describing the error.
+     * A message that describes the error.
      * </p>
      * 
      * @param errorMessage
-     *        A message describing the error.
+     *        A message that describes the error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

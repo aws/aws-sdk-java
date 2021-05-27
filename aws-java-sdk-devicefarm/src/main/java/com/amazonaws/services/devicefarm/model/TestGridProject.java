@@ -48,6 +48,12 @@ public class TestGridProject implements Serializable, Cloneable, StructuredPojo 
     private String description;
     /**
      * <p>
+     * The VPC security groups and subnets that are attached to a project.
+     * </p>
+     */
+    private TestGridVpcConfig vpcConfig;
+    /**
+     * <p>
      * When the project was created.
      * </p>
      */
@@ -175,6 +181,46 @@ public class TestGridProject implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * The VPC security groups and subnets that are attached to a project.
+     * </p>
+     * 
+     * @param vpcConfig
+     *        The VPC security groups and subnets that are attached to a project.
+     */
+
+    public void setVpcConfig(TestGridVpcConfig vpcConfig) {
+        this.vpcConfig = vpcConfig;
+    }
+
+    /**
+     * <p>
+     * The VPC security groups and subnets that are attached to a project.
+     * </p>
+     * 
+     * @return The VPC security groups and subnets that are attached to a project.
+     */
+
+    public TestGridVpcConfig getVpcConfig() {
+        return this.vpcConfig;
+    }
+
+    /**
+     * <p>
+     * The VPC security groups and subnets that are attached to a project.
+     * </p>
+     * 
+     * @param vpcConfig
+     *        The VPC security groups and subnets that are attached to a project.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TestGridProject withVpcConfig(TestGridVpcConfig vpcConfig) {
+        setVpcConfig(vpcConfig);
+        return this;
+    }
+
+    /**
+     * <p>
      * When the project was created.
      * </p>
      * 
@@ -231,6 +277,8 @@ public class TestGridProject implements Serializable, Cloneable, StructuredPojo 
             sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getVpcConfig() != null)
+            sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
         if (getCreated() != null)
             sb.append("Created: ").append(getCreated());
         sb.append("}");
@@ -259,6 +307,10 @@ public class TestGridProject implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getVpcConfig() == null ^ this.getVpcConfig() == null)
+            return false;
+        if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
+            return false;
         if (other.getCreated() == null ^ this.getCreated() == null)
             return false;
         if (other.getCreated() != null && other.getCreated().equals(this.getCreated()) == false)
@@ -274,6 +326,7 @@ public class TestGridProject implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         hashCode = prime * hashCode + ((getCreated() == null) ? 0 : getCreated().hashCode());
         return hashCode;
     }

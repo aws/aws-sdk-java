@@ -39,7 +39,7 @@ public class SalesforceChatterFeedConfiguration implements Serializable, Cloneab
     /**
      * <p>
      * The name of the column in the Salesforce FeedItem table that contains the title of the document. This is
-     * typically the <code>Title</code> collumn.
+     * typically the <code>Title</code> column.
      * </p>
      */
     private String documentTitleFieldName;
@@ -107,12 +107,12 @@ public class SalesforceChatterFeedConfiguration implements Serializable, Cloneab
     /**
      * <p>
      * The name of the column in the Salesforce FeedItem table that contains the title of the document. This is
-     * typically the <code>Title</code> collumn.
+     * typically the <code>Title</code> column.
      * </p>
      * 
      * @param documentTitleFieldName
      *        The name of the column in the Salesforce FeedItem table that contains the title of the document. This is
-     *        typically the <code>Title</code> collumn.
+     *        typically the <code>Title</code> column.
      */
 
     public void setDocumentTitleFieldName(String documentTitleFieldName) {
@@ -122,11 +122,11 @@ public class SalesforceChatterFeedConfiguration implements Serializable, Cloneab
     /**
      * <p>
      * The name of the column in the Salesforce FeedItem table that contains the title of the document. This is
-     * typically the <code>Title</code> collumn.
+     * typically the <code>Title</code> column.
      * </p>
      * 
      * @return The name of the column in the Salesforce FeedItem table that contains the title of the document. This is
-     *         typically the <code>Title</code> collumn.
+     *         typically the <code>Title</code> column.
      */
 
     public String getDocumentTitleFieldName() {
@@ -136,12 +136,12 @@ public class SalesforceChatterFeedConfiguration implements Serializable, Cloneab
     /**
      * <p>
      * The name of the column in the Salesforce FeedItem table that contains the title of the document. This is
-     * typically the <code>Title</code> collumn.
+     * typically the <code>Title</code> column.
      * </p>
      * 
      * @param documentTitleFieldName
      *        The name of the column in the Salesforce FeedItem table that contains the title of the document. This is
-     *        typically the <code>Title</code> collumn.
+     *        typically the <code>Title</code> column.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

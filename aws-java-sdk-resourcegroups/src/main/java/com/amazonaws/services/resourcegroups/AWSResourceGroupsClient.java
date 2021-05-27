@@ -778,6 +778,21 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
      * <code>resource-groups:ListGroupResources</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>cloudformation:DescribeStacks</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cloudformation:ListStackResources</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag:GetResources</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param listGroupResourcesRequest
@@ -1019,6 +1034,21 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
      * <li>
      * <p>
      * <code>resource-groups:SearchResources</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cloudformation:DescribeStacks</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cloudformation:ListStackResources</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag:GetResources</code>
      * </p>
      * </li>
      * </ul>

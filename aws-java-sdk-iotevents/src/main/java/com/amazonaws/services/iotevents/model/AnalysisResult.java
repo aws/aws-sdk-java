@@ -42,8 +42,8 @@ public class AnalysisResult implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>service-limits</code> - Resources or operations can't exceed service limits. Update your detector model or
-     * request a limit adjust.
+     * <code>service-limits</code> - Resources or API operations can't exceed service quotas (also known as limits).
+     * Update your detector model or request a quota increase.
      * </p>
      * </li>
      * <li>
@@ -82,21 +82,21 @@ public class AnalysisResult implements Serializable, Cloneable, StructuredPojo {
     private String type;
     /**
      * <p>
-     * The severity level of the analysis result. Analysis results fall into three general categories based on the
-     * severity level:
+     * The severity level of the analysis result. Based on the severity level, analysis results fall into three general
+     * categories:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>INFO</code> - An information result informs you about a significant field in your detector model. This type
+     * <code>INFO</code> - An information result tells you about a significant field in your detector model. This type
      * of result usually doesn't require immediate action.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>WARNING</code> - A warning result draws special attention to fields that are potentially damaging to your
-     * detector model. We recommend that you review warnings and take necessary actions before you use your detetor
-     * model in production environments. Otherwise, the detector model may not fully function as expected.
+     * <code>WARNING</code> - A warning result draws special attention to fields that might cause issues for your
+     * detector model. We recommend that you review warnings and take necessary actions before you use your detector
+     * model in production environments. Otherwise, the detector model might not work as expected.
      * </p>
      * </li>
      * <li>
@@ -136,8 +136,8 @@ public class AnalysisResult implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>service-limits</code> - Resources or operations can't exceed service limits. Update your detector model or
-     * request a limit adjust.
+     * <code>service-limits</code> - Resources or API operations can't exceed service quotas (also known as limits).
+     * Update your detector model or request a quota increase.
      * </p>
      * </li>
      * <li>
@@ -185,8 +185,8 @@ public class AnalysisResult implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>service-limits</code> - Resources or operations can't exceed service limits. Update your detector
-     *        model or request a limit adjust.
+     *        <code>service-limits</code> - Resources or API operations can't exceed service quotas (also known as
+     *        limits). Update your detector model or request a quota increase.
      *        </p>
      *        </li>
      *        <li>
@@ -240,8 +240,8 @@ public class AnalysisResult implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>service-limits</code> - Resources or operations can't exceed service limits. Update your detector model or
-     * request a limit adjust.
+     * <code>service-limits</code> - Resources or API operations can't exceed service quotas (also known as limits).
+     * Update your detector model or request a quota increase.
      * </p>
      * </li>
      * <li>
@@ -288,8 +288,8 @@ public class AnalysisResult implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>service-limits</code> - Resources or operations can't exceed service limits. Update your detector
-     *         model or request a limit adjust.
+     *         <code>service-limits</code> - Resources or API operations can't exceed service quotas (also known as
+     *         limits). Update your detector model or request a quota increase.
      *         </p>
      *         </li>
      *         <li>
@@ -343,8 +343,8 @@ public class AnalysisResult implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>service-limits</code> - Resources or operations can't exceed service limits. Update your detector model or
-     * request a limit adjust.
+     * <code>service-limits</code> - Resources or API operations can't exceed service quotas (also known as limits).
+     * Update your detector model or request a quota increase.
      * </p>
      * </li>
      * <li>
@@ -392,8 +392,8 @@ public class AnalysisResult implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>service-limits</code> - Resources or operations can't exceed service limits. Update your detector
-     *        model or request a limit adjust.
+     *        <code>service-limits</code> - Resources or API operations can't exceed service quotas (also known as
+     *        limits). Update your detector model or request a quota increase.
      *        </p>
      *        </li>
      *        <li>
@@ -437,21 +437,21 @@ public class AnalysisResult implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The severity level of the analysis result. Analysis results fall into three general categories based on the
-     * severity level:
+     * The severity level of the analysis result. Based on the severity level, analysis results fall into three general
+     * categories:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>INFO</code> - An information result informs you about a significant field in your detector model. This type
+     * <code>INFO</code> - An information result tells you about a significant field in your detector model. This type
      * of result usually doesn't require immediate action.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>WARNING</code> - A warning result draws special attention to fields that are potentially damaging to your
-     * detector model. We recommend that you review warnings and take necessary actions before you use your detetor
-     * model in production environments. Otherwise, the detector model may not fully function as expected.
+     * <code>WARNING</code> - A warning result draws special attention to fields that might cause issues for your
+     * detector model. We recommend that you review warnings and take necessary actions before you use your detector
+     * model in production environments. Otherwise, the detector model might not work as expected.
      * </p>
      * </li>
      * <li>
@@ -463,21 +463,20 @@ public class AnalysisResult implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param level
-     *        The severity level of the analysis result. Analysis results fall into three general categories based on
-     *        the severity level:</p>
+     *        The severity level of the analysis result. Based on the severity level, analysis results fall into three
+     *        general categories:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>INFO</code> - An information result informs you about a significant field in your detector model.
-     *        This type of result usually doesn't require immediate action.
+     *        <code>INFO</code> - An information result tells you about a significant field in your detector model. This
+     *        type of result usually doesn't require immediate action.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>WARNING</code> - A warning result draws special attention to fields that are potentially damaging to
-     *        your detector model. We recommend that you review warnings and take necessary actions before you use your
-     *        detetor model in production environments. Otherwise, the detector model may not fully function as
-     *        expected.
+     *        <code>WARNING</code> - A warning result draws special attention to fields that might cause issues for your
+     *        detector model. We recommend that you review warnings and take necessary actions before you use your
+     *        detector model in production environments. Otherwise, the detector model might not work as expected.
      *        </p>
      *        </li>
      *        <li>
@@ -495,21 +494,21 @@ public class AnalysisResult implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The severity level of the analysis result. Analysis results fall into three general categories based on the
-     * severity level:
+     * The severity level of the analysis result. Based on the severity level, analysis results fall into three general
+     * categories:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>INFO</code> - An information result informs you about a significant field in your detector model. This type
+     * <code>INFO</code> - An information result tells you about a significant field in your detector model. This type
      * of result usually doesn't require immediate action.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>WARNING</code> - A warning result draws special attention to fields that are potentially damaging to your
-     * detector model. We recommend that you review warnings and take necessary actions before you use your detetor
-     * model in production environments. Otherwise, the detector model may not fully function as expected.
+     * <code>WARNING</code> - A warning result draws special attention to fields that might cause issues for your
+     * detector model. We recommend that you review warnings and take necessary actions before you use your detector
+     * model in production environments. Otherwise, the detector model might not work as expected.
      * </p>
      * </li>
      * <li>
@@ -520,21 +519,20 @@ public class AnalysisResult implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return The severity level of the analysis result. Analysis results fall into three general categories based on
-     *         the severity level:</p>
+     * @return The severity level of the analysis result. Based on the severity level, analysis results fall into three
+     *         general categories:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>INFO</code> - An information result informs you about a significant field in your detector model.
+     *         <code>INFO</code> - An information result tells you about a significant field in your detector model.
      *         This type of result usually doesn't require immediate action.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>WARNING</code> - A warning result draws special attention to fields that are potentially damaging
-     *         to your detector model. We recommend that you review warnings and take necessary actions before you use
-     *         your detetor model in production environments. Otherwise, the detector model may not fully function as
-     *         expected.
+     *         <code>WARNING</code> - A warning result draws special attention to fields that might cause issues for
+     *         your detector model. We recommend that you review warnings and take necessary actions before you use your
+     *         detector model in production environments. Otherwise, the detector model might not work as expected.
      *         </p>
      *         </li>
      *         <li>
@@ -552,21 +550,21 @@ public class AnalysisResult implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The severity level of the analysis result. Analysis results fall into three general categories based on the
-     * severity level:
+     * The severity level of the analysis result. Based on the severity level, analysis results fall into three general
+     * categories:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>INFO</code> - An information result informs you about a significant field in your detector model. This type
+     * <code>INFO</code> - An information result tells you about a significant field in your detector model. This type
      * of result usually doesn't require immediate action.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>WARNING</code> - A warning result draws special attention to fields that are potentially damaging to your
-     * detector model. We recommend that you review warnings and take necessary actions before you use your detetor
-     * model in production environments. Otherwise, the detector model may not fully function as expected.
+     * <code>WARNING</code> - A warning result draws special attention to fields that might cause issues for your
+     * detector model. We recommend that you review warnings and take necessary actions before you use your detector
+     * model in production environments. Otherwise, the detector model might not work as expected.
      * </p>
      * </li>
      * <li>
@@ -578,21 +576,20 @@ public class AnalysisResult implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param level
-     *        The severity level of the analysis result. Analysis results fall into three general categories based on
-     *        the severity level:</p>
+     *        The severity level of the analysis result. Based on the severity level, analysis results fall into three
+     *        general categories:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>INFO</code> - An information result informs you about a significant field in your detector model.
-     *        This type of result usually doesn't require immediate action.
+     *        <code>INFO</code> - An information result tells you about a significant field in your detector model. This
+     *        type of result usually doesn't require immediate action.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>WARNING</code> - A warning result draws special attention to fields that are potentially damaging to
-     *        your detector model. We recommend that you review warnings and take necessary actions before you use your
-     *        detetor model in production environments. Otherwise, the detector model may not fully function as
-     *        expected.
+     *        <code>WARNING</code> - A warning result draws special attention to fields that might cause issues for your
+     *        detector model. We recommend that you review warnings and take necessary actions before you use your
+     *        detector model in production environments. Otherwise, the detector model might not work as expected.
      *        </p>
      *        </li>
      *        <li>
@@ -612,21 +609,21 @@ public class AnalysisResult implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The severity level of the analysis result. Analysis results fall into three general categories based on the
-     * severity level:
+     * The severity level of the analysis result. Based on the severity level, analysis results fall into three general
+     * categories:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>INFO</code> - An information result informs you about a significant field in your detector model. This type
+     * <code>INFO</code> - An information result tells you about a significant field in your detector model. This type
      * of result usually doesn't require immediate action.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>WARNING</code> - A warning result draws special attention to fields that are potentially damaging to your
-     * detector model. We recommend that you review warnings and take necessary actions before you use your detetor
-     * model in production environments. Otherwise, the detector model may not fully function as expected.
+     * <code>WARNING</code> - A warning result draws special attention to fields that might cause issues for your
+     * detector model. We recommend that you review warnings and take necessary actions before you use your detector
+     * model in production environments. Otherwise, the detector model might not work as expected.
      * </p>
      * </li>
      * <li>
@@ -638,21 +635,20 @@ public class AnalysisResult implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param level
-     *        The severity level of the analysis result. Analysis results fall into three general categories based on
-     *        the severity level:</p>
+     *        The severity level of the analysis result. Based on the severity level, analysis results fall into three
+     *        general categories:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>INFO</code> - An information result informs you about a significant field in your detector model.
-     *        This type of result usually doesn't require immediate action.
+     *        <code>INFO</code> - An information result tells you about a significant field in your detector model. This
+     *        type of result usually doesn't require immediate action.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>WARNING</code> - A warning result draws special attention to fields that are potentially damaging to
-     *        your detector model. We recommend that you review warnings and take necessary actions before you use your
-     *        detetor model in production environments. Otherwise, the detector model may not fully function as
-     *        expected.
+     *        <code>WARNING</code> - A warning result draws special attention to fields that might cause issues for your
+     *        detector model. We recommend that you review warnings and take necessary actions before you use your
+     *        detector model in production environments. Otherwise, the detector model might not work as expected.
      *        </p>
      *        </li>
      *        <li>

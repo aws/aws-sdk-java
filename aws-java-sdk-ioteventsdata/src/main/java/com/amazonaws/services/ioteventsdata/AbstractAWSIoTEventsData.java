@@ -28,7 +28,32 @@ public class AbstractAWSIoTEventsData implements AWSIoTEventsData {
     }
 
     @Override
+    public BatchAcknowledgeAlarmResult batchAcknowledgeAlarm(BatchAcknowledgeAlarmRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchDisableAlarmResult batchDisableAlarm(BatchDisableAlarmRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchEnableAlarmResult batchEnableAlarm(BatchEnableAlarmRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchPutMessageResult batchPutMessage(BatchPutMessageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchResetAlarmResult batchResetAlarm(BatchResetAlarmRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchSnoozeAlarmResult batchSnoozeAlarm(BatchSnoozeAlarmRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -38,7 +63,17 @@ public class AbstractAWSIoTEventsData implements AWSIoTEventsData {
     }
 
     @Override
+    public DescribeAlarmResult describeAlarm(DescribeAlarmRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeDetectorResult describeDetector(DescribeDetectorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAlarmsResult listAlarms(ListAlarmsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

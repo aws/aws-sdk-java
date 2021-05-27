@@ -44,6 +44,10 @@ public class UpdatePortalRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<String> NOTIFICATIONSENDEREMAIL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("notificationSenderEmail").build();
+    private static final MarshallingInfo<StructuredPojo> ALARMS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("alarms").build();
 
     private static final UpdatePortalRequestMarshaller instance = new UpdatePortalRequestMarshaller();
 
@@ -68,6 +72,8 @@ public class UpdatePortalRequestMarshaller {
             protocolMarshaller.marshall(updatePortalRequest.getPortalLogoImage(), PORTALLOGOIMAGE_BINDING);
             protocolMarshaller.marshall(updatePortalRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(updatePortalRequest.getClientToken(), CLIENTTOKEN_BINDING);
+            protocolMarshaller.marshall(updatePortalRequest.getNotificationSenderEmail(), NOTIFICATIONSENDEREMAIL_BINDING);
+            protocolMarshaller.marshall(updatePortalRequest.getAlarms(), ALARMS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

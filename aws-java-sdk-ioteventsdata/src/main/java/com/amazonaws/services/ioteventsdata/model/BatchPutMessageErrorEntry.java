@@ -37,13 +37,13 @@ public class BatchPutMessageErrorEntry implements Serializable, Cloneable, Struc
     private String messageId;
     /**
      * <p>
-     * The code associated with the error.
+     * The error code.
      * </p>
      */
     private String errorCode;
     /**
      * <p>
-     * More information about the error.
+     * A message that describes the error.
      * </p>
      */
     private String errorMessage;
@@ -96,11 +96,11 @@ public class BatchPutMessageErrorEntry implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The code associated with the error.
+     * The error code.
      * </p>
      * 
      * @param errorCode
-     *        The code associated with the error.
+     *        The error code.
      * @see ErrorCode
      */
 
@@ -110,10 +110,10 @@ public class BatchPutMessageErrorEntry implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The code associated with the error.
+     * The error code.
      * </p>
      * 
-     * @return The code associated with the error.
+     * @return The error code.
      * @see ErrorCode
      */
 
@@ -123,11 +123,11 @@ public class BatchPutMessageErrorEntry implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The code associated with the error.
+     * The error code.
      * </p>
      * 
      * @param errorCode
-     *        The code associated with the error.
+     *        The error code.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ErrorCode
      */
@@ -139,11 +139,11 @@ public class BatchPutMessageErrorEntry implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The code associated with the error.
+     * The error code.
      * </p>
      * 
      * @param errorCode
-     *        The code associated with the error.
+     *        The error code.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ErrorCode
      */
@@ -155,11 +155,11 @@ public class BatchPutMessageErrorEntry implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * More information about the error.
+     * A message that describes the error.
      * </p>
      * 
      * @param errorMessage
-     *        More information about the error.
+     *        A message that describes the error.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -168,10 +168,10 @@ public class BatchPutMessageErrorEntry implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * More information about the error.
+     * A message that describes the error.
      * </p>
      * 
-     * @return More information about the error.
+     * @return A message that describes the error.
      */
 
     public String getErrorMessage() {
@@ -180,11 +180,11 @@ public class BatchPutMessageErrorEntry implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * More information about the error.
+     * A message that describes the error.
      * </p>
      * 
      * @param errorMessage
-     *        More information about the error.
+     *        A message that describes the error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

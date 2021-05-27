@@ -48,6 +48,10 @@ public class CreatePortalRequestMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> PORTALAUTHMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("portalAuthMode").build();
+    private static final MarshallingInfo<String> NOTIFICATIONSENDEREMAIL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("notificationSenderEmail").build();
+    private static final MarshallingInfo<StructuredPojo> ALARMS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("alarms").build();
 
     private static final CreatePortalRequestMarshaller instance = new CreatePortalRequestMarshaller();
 
@@ -73,6 +77,8 @@ public class CreatePortalRequestMarshaller {
             protocolMarshaller.marshall(createPortalRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(createPortalRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createPortalRequest.getPortalAuthMode(), PORTALAUTHMODE_BINDING);
+            protocolMarshaller.marshall(createPortalRequest.getNotificationSenderEmail(), NOTIFICATIONSENDEREMAIL_BINDING);
+            protocolMarshaller.marshall(createPortalRequest.getAlarms(), ALARMS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

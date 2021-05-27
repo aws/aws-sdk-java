@@ -1,4 +1,41 @@
-# __1.11.1028__ __2021-05-27__
+# __1.11.1029__ __2021-05-27__
+## __AWS Device Farm__
+  - ### Features
+    - Introduces support for using our desktop testing service with applications hosted within your Virtual Private Cloud (VPC).
+
+## __AWS IoT Events__
+  - ### Features
+    - Releasing new APIs for AWS IoT Events Alarms
+
+## __AWS IoT Events Data__
+  - ### Features
+    - Releasing new APIs for AWS IoT Events Alarms
+
+## __AWS IoT SiteWise__
+  - ### Features
+    - IoT SiteWise Monitor Portal API updates to add alarms feature configuration.
+
+## __AWS Resource Groups__
+  - ### Features
+    - Documentation updates for Resource Groups.
+
+## __AWSKendraFrontendService__
+  - ### Features
+    - Amazon Kendra now suggests popular queries in order to help guide query typing and help overall accuracy.
+
+## __Amazon FSx__
+  - ### Features
+    - This release adds LZ4 data compression support to FSx for Lustre to reduce storage consumption of both file system storage and file system backups.
+
+## __Amazon Lightsail__
+  - ### Features
+    - Documentation updates for Lightsail
+
+## __Amazon Simple Queue Service__
+  - ### Features
+    - Documentation updates for Amazon SQS for General Availability of high throughput for FIFO queues.
+
+# __1.11.1028__ __2021-05-26__
 ## __Amazon Elastic Compute Cloud__
   - ### Features
     - This release removes resource ids and tagging support for VPC security group rules.

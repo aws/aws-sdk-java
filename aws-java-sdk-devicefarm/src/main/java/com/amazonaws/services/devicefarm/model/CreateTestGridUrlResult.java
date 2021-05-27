@@ -136,7 +136,7 @@ public class CreateTestGridUrlResult extends com.amazonaws.AmazonWebServiceResul
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUrl() != null)
-            sb.append("Url: ").append(getUrl()).append(",");
+            sb.append("Url: ").append("***Sensitive Data Redacted***").append(",");
         if (getExpires() != null)
             sb.append("Expires: ").append(getExpires());
         sb.append("}");

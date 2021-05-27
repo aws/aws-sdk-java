@@ -2825,7 +2825,7 @@ public class Upload implements Serializable, Cloneable, StructuredPojo {
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getUrl() != null)
-            sb.append("Url: ").append(getUrl()).append(",");
+            sb.append("Url: ").append("***Sensitive Data Redacted***").append(",");
         if (getMetadata() != null)
             sb.append("Metadata: ").append(getMetadata()).append(",");
         if (getContentType() != null)

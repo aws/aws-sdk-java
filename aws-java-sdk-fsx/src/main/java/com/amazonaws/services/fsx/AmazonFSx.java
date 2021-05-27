@@ -140,10 +140,10 @@ public interface AmazonFSx {
      * </p>
      * <p>
      * For more information on creating backup copies, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/copy-backups.html"> Copying backups</a> in the
-     * <i>Amazon FSx for Windows User Guide</i> and <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/copy-backups.html">Copying backups</a> in the <i>Amazon
-     * FSx for Lustre User Guide</i>.
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#copy-backups"> Copying backups</a>
+     * in the <i>Amazon FSx for Windows User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html#copy-backups">Copying backups</a>
+     * in the <i>Amazon FSx for Lustre User Guide</i>.
      * </p>
      * 
      * @param copyBackupRequest
@@ -892,6 +892,11 @@ public interface AmazonFSx {
      * <li>
      * <p>
      * DailyAutomaticBackupStartTime
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DataCompressionType
      * </p>
      * </li>
      * <li>

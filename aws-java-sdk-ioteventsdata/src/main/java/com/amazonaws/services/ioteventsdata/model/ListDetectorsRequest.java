@@ -39,13 +39,13 @@ public class ListDetectorsRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String stateName;
     /**
      * <p>
-     * The token for the next set of results.
+     * The token that you can use to return the next set of results.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The maximum number of results to return at one time.
+     * The maximum number of results to be returned per request.
      * </p>
      */
     private Integer maxResults;
@@ -132,11 +132,11 @@ public class ListDetectorsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The token for the next set of results.
+     * The token that you can use to return the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results.
+     *        The token that you can use to return the next set of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -145,10 +145,10 @@ public class ListDetectorsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The token for the next set of results.
+     * The token that you can use to return the next set of results.
      * </p>
      * 
-     * @return The token for the next set of results.
+     * @return The token that you can use to return the next set of results.
      */
 
     public String getNextToken() {
@@ -157,11 +157,11 @@ public class ListDetectorsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The token for the next set of results.
+     * The token that you can use to return the next set of results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results.
+     *        The token that you can use to return the next set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,11 +172,11 @@ public class ListDetectorsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The maximum number of results to return at one time.
+     * The maximum number of results to be returned per request.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return at one time.
+     *        The maximum number of results to be returned per request.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -185,10 +185,10 @@ public class ListDetectorsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The maximum number of results to return at one time.
+     * The maximum number of results to be returned per request.
      * </p>
      * 
-     * @return The maximum number of results to return at one time.
+     * @return The maximum number of results to be returned per request.
      */
 
     public Integer getMaxResults() {
@@ -197,11 +197,11 @@ public class ListDetectorsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The maximum number of results to return at one time.
+     * The maximum number of results to be returned per request.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return at one time.
+     *        The maximum number of results to be returned per request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

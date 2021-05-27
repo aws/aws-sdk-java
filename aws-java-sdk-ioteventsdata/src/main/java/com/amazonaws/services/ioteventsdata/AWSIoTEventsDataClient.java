@@ -52,8 +52,13 @@ import com.amazonaws.services.ioteventsdata.model.transform.*;
  * <p>
  * <p>
  * AWS IoT Events monitors your equipment or device fleets for failures or changes in operation, and triggers actions
- * when such events occur. AWS IoT Events Data API commands enable you to send inputs to detectors, list detectors, and
+ * when such events occur. You can use AWS IoT Events Data API commands to send inputs to detectors, list detectors, and
  * view or update a detector's status.
+ * </p>
+ * <p>
+ * For more information, see <a
+ * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/what-is-iotevents.html">What is AWS IoT Events?</a>
+ * in the <i>AWS IoT Events Developer Guide</i>.
  * </p>
  */
 @ThreadSafe
@@ -80,9 +85,6 @@ public class AWSIoTEventsDataClient extends AmazonWebServiceClient implements AW
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.ioteventsdata.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalFailureException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ioteventsdata.model.transform.InternalFailureExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -94,6 +96,9 @@ public class AWSIoTEventsDataClient extends AmazonWebServiceClient implements AW
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ioteventsdata.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ioteventsdata.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.ioteventsdata.model.AWSIoTEventsDataException.class));
 
     public static AWSIoTEventsDataClientBuilder builder() {
@@ -144,6 +149,197 @@ public class AWSIoTEventsDataClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Acknowledges one or more alarms. The alarms change to the <code>ACKNOWLEDGED</code> state after you acknowledge
+     * them.
+     * </p>
+     * 
+     * @param batchAcknowledgeAlarmRequest
+     * @return Result of the BatchAcknowledgeAlarm operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @sample AWSIoTEventsData.BatchAcknowledgeAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchAcknowledgeAlarm"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchAcknowledgeAlarmResult batchAcknowledgeAlarm(BatchAcknowledgeAlarmRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchAcknowledgeAlarm(request);
+    }
+
+    @SdkInternalApi
+    final BatchAcknowledgeAlarmResult executeBatchAcknowledgeAlarm(BatchAcknowledgeAlarmRequest batchAcknowledgeAlarmRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchAcknowledgeAlarmRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchAcknowledgeAlarmRequest> request = null;
+        Response<BatchAcknowledgeAlarmResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchAcknowledgeAlarmRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchAcknowledgeAlarmRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events Data");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchAcknowledgeAlarm");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchAcknowledgeAlarmResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new BatchAcknowledgeAlarmResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Disables one or more alarms. The alarms change to the <code>DISABLED</code> state after you disable them.
+     * </p>
+     * 
+     * @param batchDisableAlarmRequest
+     * @return Result of the BatchDisableAlarm operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @sample AWSIoTEventsData.BatchDisableAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchDisableAlarm"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchDisableAlarmResult batchDisableAlarm(BatchDisableAlarmRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchDisableAlarm(request);
+    }
+
+    @SdkInternalApi
+    final BatchDisableAlarmResult executeBatchDisableAlarm(BatchDisableAlarmRequest batchDisableAlarmRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchDisableAlarmRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchDisableAlarmRequest> request = null;
+        Response<BatchDisableAlarmResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchDisableAlarmRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchDisableAlarmRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events Data");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDisableAlarm");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchDisableAlarmResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchDisableAlarmResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Enables one or more alarms. The alarms change to the <code>NORMAL</code> state after you enable them.
+     * </p>
+     * 
+     * @param batchEnableAlarmRequest
+     * @return Result of the BatchEnableAlarm operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @sample AWSIoTEventsData.BatchEnableAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchEnableAlarm"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchEnableAlarmResult batchEnableAlarm(BatchEnableAlarmRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchEnableAlarm(request);
+    }
+
+    @SdkInternalApi
+    final BatchEnableAlarmResult executeBatchEnableAlarm(BatchEnableAlarmRequest batchEnableAlarmRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchEnableAlarmRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchEnableAlarmRequest> request = null;
+        Response<BatchEnableAlarmResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchEnableAlarmRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchEnableAlarmRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events Data");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchEnableAlarm");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchEnableAlarmResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchEnableAlarmResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Sends a set of messages to the AWS IoT Events system. Each message payload is transformed into the input you
      * specify (<code>"inputName"</code>) and ingested into any detectors that monitor that input. If multiple messages
      * are sent, the order in which the messages are processed isn't guaranteed. To guarantee ordering, you must send
@@ -155,7 +351,7 @@ public class AWSIoTEventsDataClient extends AmazonWebServiceClient implements AW
      * @throws InvalidRequestException
      *         The request was invalid.
      * @throws InternalFailureException
-     *         An internal failure occured.
+     *         An internal failure occurred.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @throws ThrottlingException
@@ -210,6 +406,133 @@ public class AWSIoTEventsDataClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Resets one or more alarms. The alarms return to the <code>NORMAL</code> state after you reset them.
+     * </p>
+     * 
+     * @param batchResetAlarmRequest
+     * @return Result of the BatchResetAlarm operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @sample AWSIoTEventsData.BatchResetAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchResetAlarm" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public BatchResetAlarmResult batchResetAlarm(BatchResetAlarmRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchResetAlarm(request);
+    }
+
+    @SdkInternalApi
+    final BatchResetAlarmResult executeBatchResetAlarm(BatchResetAlarmRequest batchResetAlarmRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchResetAlarmRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchResetAlarmRequest> request = null;
+        Response<BatchResetAlarmResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchResetAlarmRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchResetAlarmRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events Data");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchResetAlarm");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchResetAlarmResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchResetAlarmResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Changes one or more alarms to the snooze mode. The alarms change to the <code>SNOOZE_DISABLED</code> state after
+     * you set them to the snooze mode.
+     * </p>
+     * 
+     * @param batchSnoozeAlarmRequest
+     * @return Result of the BatchSnoozeAlarm operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @sample AWSIoTEventsData.BatchSnoozeAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchSnoozeAlarm"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchSnoozeAlarmResult batchSnoozeAlarm(BatchSnoozeAlarmRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchSnoozeAlarm(request);
+    }
+
+    @SdkInternalApi
+    final BatchSnoozeAlarmResult executeBatchSnoozeAlarm(BatchSnoozeAlarmRequest batchSnoozeAlarmRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchSnoozeAlarmRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchSnoozeAlarmRequest> request = null;
+        Response<BatchSnoozeAlarmResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchSnoozeAlarmRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchSnoozeAlarmRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events Data");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchSnoozeAlarm");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchSnoozeAlarmResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchSnoozeAlarmResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates the state, variable values, and timer settings of one or more detectors (instances) of a specified
      * detector model.
      * </p>
@@ -219,7 +542,7 @@ public class AWSIoTEventsDataClient extends AmazonWebServiceClient implements AW
      * @throws InvalidRequestException
      *         The request was invalid.
      * @throws InternalFailureException
-     *         An internal failure occured.
+     *         An internal failure occurred.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @throws ThrottlingException
@@ -274,6 +597,71 @@ public class AWSIoTEventsDataClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Retrieves information about an alarm.
+     * </p>
+     * 
+     * @param describeAlarmRequest
+     * @return Result of the DescribeAlarm operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws ResourceNotFoundException
+     *         The resource was not found.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @sample AWSIoTEventsData.DescribeAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/DescribeAlarm" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeAlarmResult describeAlarm(DescribeAlarmRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAlarm(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAlarmResult executeDescribeAlarm(DescribeAlarmRequest describeAlarmRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAlarmRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAlarmRequest> request = null;
+        Response<DescribeAlarmResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAlarmRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAlarmRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events Data");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAlarm");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAlarmResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeAlarmResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns information about the specified detector (instance).
      * </p>
      * 
@@ -286,7 +674,7 @@ public class AWSIoTEventsDataClient extends AmazonWebServiceClient implements AW
      * @throws ThrottlingException
      *         The request could not be completed due to throttling.
      * @throws InternalFailureException
-     *         An internal failure occured.
+     *         An internal failure occurred.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @sample AWSIoTEventsData.DescribeDetector
@@ -339,6 +727,71 @@ public class AWSIoTEventsDataClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Lists one or more alarms. The operation returns only the metadata associated with each alarm.
+     * </p>
+     * 
+     * @param listAlarmsRequest
+     * @return Result of the ListAlarms operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws ResourceNotFoundException
+     *         The resource was not found.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @sample AWSIoTEventsData.ListAlarms
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/ListAlarms" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListAlarmsResult listAlarms(ListAlarmsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAlarms(request);
+    }
+
+    @SdkInternalApi
+    final ListAlarmsResult executeListAlarms(ListAlarmsRequest listAlarmsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAlarmsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAlarmsRequest> request = null;
+        Response<ListAlarmsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAlarmsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAlarmsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events Data");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAlarms");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAlarmsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAlarmsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists detectors (the instances of a detector model).
      * </p>
      * 
@@ -351,7 +804,7 @@ public class AWSIoTEventsDataClient extends AmazonWebServiceClient implements AW
      * @throws ThrottlingException
      *         The request could not be completed due to throttling.
      * @throws InternalFailureException
-     *         An internal failure occured.
+     *         An internal failure occurred.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @sample AWSIoTEventsData.ListDetectors

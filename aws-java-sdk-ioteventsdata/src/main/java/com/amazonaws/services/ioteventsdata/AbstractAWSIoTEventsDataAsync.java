@@ -28,6 +28,45 @@ public class AbstractAWSIoTEventsDataAsync extends AbstractAWSIoTEventsData impl
     }
 
     @Override
+    public java.util.concurrent.Future<BatchAcknowledgeAlarmResult> batchAcknowledgeAlarmAsync(BatchAcknowledgeAlarmRequest request) {
+
+        return batchAcknowledgeAlarmAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchAcknowledgeAlarmResult> batchAcknowledgeAlarmAsync(BatchAcknowledgeAlarmRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchAcknowledgeAlarmRequest, BatchAcknowledgeAlarmResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDisableAlarmResult> batchDisableAlarmAsync(BatchDisableAlarmRequest request) {
+
+        return batchDisableAlarmAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDisableAlarmResult> batchDisableAlarmAsync(BatchDisableAlarmRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchDisableAlarmRequest, BatchDisableAlarmResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchEnableAlarmResult> batchEnableAlarmAsync(BatchEnableAlarmRequest request) {
+
+        return batchEnableAlarmAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchEnableAlarmResult> batchEnableAlarmAsync(BatchEnableAlarmRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchEnableAlarmRequest, BatchEnableAlarmResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchPutMessageResult> batchPutMessageAsync(BatchPutMessageRequest request) {
 
         return batchPutMessageAsync(request, null);
@@ -36,6 +75,32 @@ public class AbstractAWSIoTEventsDataAsync extends AbstractAWSIoTEventsData impl
     @Override
     public java.util.concurrent.Future<BatchPutMessageResult> batchPutMessageAsync(BatchPutMessageRequest request,
             com.amazonaws.handlers.AsyncHandler<BatchPutMessageRequest, BatchPutMessageResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchResetAlarmResult> batchResetAlarmAsync(BatchResetAlarmRequest request) {
+
+        return batchResetAlarmAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchResetAlarmResult> batchResetAlarmAsync(BatchResetAlarmRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchResetAlarmRequest, BatchResetAlarmResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchSnoozeAlarmResult> batchSnoozeAlarmAsync(BatchSnoozeAlarmRequest request) {
+
+        return batchSnoozeAlarmAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchSnoozeAlarmResult> batchSnoozeAlarmAsync(BatchSnoozeAlarmRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchSnoozeAlarmRequest, BatchSnoozeAlarmResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -54,6 +119,19 @@ public class AbstractAWSIoTEventsDataAsync extends AbstractAWSIoTEventsData impl
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAlarmResult> describeAlarmAsync(DescribeAlarmRequest request) {
+
+        return describeAlarmAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAlarmResult> describeAlarmAsync(DescribeAlarmRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAlarmRequest, DescribeAlarmResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeDetectorResult> describeDetectorAsync(DescribeDetectorRequest request) {
 
         return describeDetectorAsync(request, null);
@@ -62,6 +140,19 @@ public class AbstractAWSIoTEventsDataAsync extends AbstractAWSIoTEventsData impl
     @Override
     public java.util.concurrent.Future<DescribeDetectorResult> describeDetectorAsync(DescribeDetectorRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeDetectorRequest, DescribeDetectorResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAlarmsResult> listAlarmsAsync(ListAlarmsRequest request) {
+
+        return listAlarmsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAlarmsResult> listAlarmsAsync(ListAlarmsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAlarmsRequest, ListAlarmsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -666,6 +666,10 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      * 
      * @param createTestGridProjectRequest
      * @return Result of the CreateTestGridProject operation returned by the service.
+     * @throws ArgumentException
+     *         An invalid argument was specified.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
      * @throws InternalServiceException
      *         An internal exception was raised in the service. Contact <a
      *         href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this
@@ -5153,6 +5157,8 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
      *         The specified entity was not found.
      * @throws ArgumentException
      *         An invalid argument was specified.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
      * @throws InternalServiceException
      *         An internal exception was raised in the service. Contact <a
      *         href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you see this

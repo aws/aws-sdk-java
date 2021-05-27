@@ -28,6 +28,11 @@ public class AbstractAWSIoTEvents implements AWSIoTEvents {
     }
 
     @Override
+    public CreateAlarmModelResult createAlarmModel(CreateAlarmModelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateDetectorModelResult createDetectorModel(CreateDetectorModelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -38,12 +43,22 @@ public class AbstractAWSIoTEvents implements AWSIoTEvents {
     }
 
     @Override
+    public DeleteAlarmModelResult deleteAlarmModel(DeleteAlarmModelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteDetectorModelResult deleteDetectorModel(DeleteDetectorModelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteInputResult deleteInput(DeleteInputRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAlarmModelResult describeAlarmModel(DescribeAlarmModelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -73,12 +88,27 @@ public class AbstractAWSIoTEvents implements AWSIoTEvents {
     }
 
     @Override
+    public ListAlarmModelVersionsResult listAlarmModelVersions(ListAlarmModelVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAlarmModelsResult listAlarmModels(ListAlarmModelsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListDetectorModelVersionsResult listDetectorModelVersions(ListDetectorModelVersionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ListDetectorModelsResult listDetectorModels(ListDetectorModelsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListInputRoutingsResult listInputRoutings(ListInputRoutingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -109,6 +139,11 @@ public class AbstractAWSIoTEvents implements AWSIoTEvents {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAlarmModelResult updateAlarmModel(UpdateAlarmModelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

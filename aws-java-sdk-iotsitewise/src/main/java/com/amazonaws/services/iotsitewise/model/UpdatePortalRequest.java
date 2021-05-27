@@ -68,6 +68,20 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String clientToken;
+    /**
+     * <p>
+     * The email address that sends alarm notifications.
+     * </p>
+     */
+    private String notificationSenderEmail;
+    /**
+     * <p>
+     * Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal. You can use the
+     * alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
+     * For more information, see .
+     * </p>
+     */
+    private Alarms alarms;
 
     /**
      * <p>
@@ -366,6 +380,98 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The email address that sends alarm notifications.
+     * </p>
+     * 
+     * @param notificationSenderEmail
+     *        The email address that sends alarm notifications.
+     */
+
+    public void setNotificationSenderEmail(String notificationSenderEmail) {
+        this.notificationSenderEmail = notificationSenderEmail;
+    }
+
+    /**
+     * <p>
+     * The email address that sends alarm notifications.
+     * </p>
+     * 
+     * @return The email address that sends alarm notifications.
+     */
+
+    public String getNotificationSenderEmail() {
+        return this.notificationSenderEmail;
+    }
+
+    /**
+     * <p>
+     * The email address that sends alarm notifications.
+     * </p>
+     * 
+     * @param notificationSenderEmail
+     *        The email address that sends alarm notifications.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdatePortalRequest withNotificationSenderEmail(String notificationSenderEmail) {
+        setNotificationSenderEmail(notificationSenderEmail);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal. You can use the
+     * alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
+     * For more information, see .
+     * </p>
+     * 
+     * @param alarms
+     *        Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal. You can
+     *        use the alarm to monitor an asset property and get notified when the asset property value is outside a
+     *        specified range. For more information, see .
+     */
+
+    public void setAlarms(Alarms alarms) {
+        this.alarms = alarms;
+    }
+
+    /**
+     * <p>
+     * Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal. You can use the
+     * alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
+     * For more information, see .
+     * </p>
+     * 
+     * @return Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal. You can
+     *         use the alarm to monitor an asset property and get notified when the asset property value is outside a
+     *         specified range. For more information, see .
+     */
+
+    public Alarms getAlarms() {
+        return this.alarms;
+    }
+
+    /**
+     * <p>
+     * Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal. You can use the
+     * alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
+     * For more information, see .
+     * </p>
+     * 
+     * @param alarms
+     *        Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal. You can
+     *        use the alarm to monitor an asset property and get notified when the asset property value is outside a
+     *        specified range. For more information, see .
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdatePortalRequest withAlarms(Alarms alarms) {
+        setAlarms(alarms);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -390,7 +496,11 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getNotificationSenderEmail() != null)
+            sb.append("NotificationSenderEmail: ").append(getNotificationSenderEmail()).append(",");
+        if (getAlarms() != null)
+            sb.append("Alarms: ").append(getAlarms());
         sb.append("}");
         return sb.toString();
     }
@@ -433,6 +543,14 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
+        if (other.getNotificationSenderEmail() == null ^ this.getNotificationSenderEmail() == null)
+            return false;
+        if (other.getNotificationSenderEmail() != null && other.getNotificationSenderEmail().equals(this.getNotificationSenderEmail()) == false)
+            return false;
+        if (other.getAlarms() == null ^ this.getAlarms() == null)
+            return false;
+        if (other.getAlarms() != null && other.getAlarms().equals(this.getAlarms()) == false)
+            return false;
         return true;
     }
 
@@ -448,6 +566,8 @@ public class UpdatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getPortalLogoImage() == null) ? 0 : getPortalLogoImage().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getNotificationSenderEmail() == null) ? 0 : getNotificationSenderEmail().hashCode());
+        hashCode = prime * hashCode + ((getAlarms() == null) ? 0 : getAlarms().hashCode());
         return hashCode;
     }
 

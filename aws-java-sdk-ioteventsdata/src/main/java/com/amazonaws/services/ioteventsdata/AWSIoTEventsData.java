@@ -28,8 +28,13 @@ import com.amazonaws.services.ioteventsdata.model.*;
  * <p>
  * <p>
  * AWS IoT Events monitors your equipment or device fleets for failures or changes in operation, and triggers actions
- * when such events occur. AWS IoT Events Data API commands enable you to send inputs to detectors, list detectors, and
+ * when such events occur. You can use AWS IoT Events Data API commands to send inputs to detectors, list detectors, and
  * view or update a detector's status.
+ * </p>
+ * <p>
+ * For more information, see <a
+ * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/what-is-iotevents.html">What is AWS IoT Events?</a>
+ * in the <i>AWS IoT Events Developer Guide</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -45,6 +50,70 @@ public interface AWSIoTEventsData {
 
     /**
      * <p>
+     * Acknowledges one or more alarms. The alarms change to the <code>ACKNOWLEDGED</code> state after you acknowledge
+     * them.
+     * </p>
+     * 
+     * @param batchAcknowledgeAlarmRequest
+     * @return Result of the BatchAcknowledgeAlarm operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @sample AWSIoTEventsData.BatchAcknowledgeAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchAcknowledgeAlarm"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchAcknowledgeAlarmResult batchAcknowledgeAlarm(BatchAcknowledgeAlarmRequest batchAcknowledgeAlarmRequest);
+
+    /**
+     * <p>
+     * Disables one or more alarms. The alarms change to the <code>DISABLED</code> state after you disable them.
+     * </p>
+     * 
+     * @param batchDisableAlarmRequest
+     * @return Result of the BatchDisableAlarm operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @sample AWSIoTEventsData.BatchDisableAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchDisableAlarm"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchDisableAlarmResult batchDisableAlarm(BatchDisableAlarmRequest batchDisableAlarmRequest);
+
+    /**
+     * <p>
+     * Enables one or more alarms. The alarms change to the <code>NORMAL</code> state after you enable them.
+     * </p>
+     * 
+     * @param batchEnableAlarmRequest
+     * @return Result of the BatchEnableAlarm operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @sample AWSIoTEventsData.BatchEnableAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchEnableAlarm"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchEnableAlarmResult batchEnableAlarm(BatchEnableAlarmRequest batchEnableAlarmRequest);
+
+    /**
+     * <p>
      * Sends a set of messages to the AWS IoT Events system. Each message payload is transformed into the input you
      * specify (<code>"inputName"</code>) and ingested into any detectors that monitor that input. If multiple messages
      * are sent, the order in which the messages are processed isn't guaranteed. To guarantee ordering, you must send
@@ -56,7 +125,7 @@ public interface AWSIoTEventsData {
      * @throws InvalidRequestException
      *         The request was invalid.
      * @throws InternalFailureException
-     *         An internal failure occured.
+     *         An internal failure occurred.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @throws ThrottlingException
@@ -69,6 +138,49 @@ public interface AWSIoTEventsData {
 
     /**
      * <p>
+     * Resets one or more alarms. The alarms return to the <code>NORMAL</code> state after you reset them.
+     * </p>
+     * 
+     * @param batchResetAlarmRequest
+     * @return Result of the BatchResetAlarm operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @sample AWSIoTEventsData.BatchResetAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchResetAlarm" target="_top">AWS
+     *      API Documentation</a>
+     */
+    BatchResetAlarmResult batchResetAlarm(BatchResetAlarmRequest batchResetAlarmRequest);
+
+    /**
+     * <p>
+     * Changes one or more alarms to the snooze mode. The alarms change to the <code>SNOOZE_DISABLED</code> state after
+     * you set them to the snooze mode.
+     * </p>
+     * 
+     * @param batchSnoozeAlarmRequest
+     * @return Result of the BatchSnoozeAlarm operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @sample AWSIoTEventsData.BatchSnoozeAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchSnoozeAlarm"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchSnoozeAlarmResult batchSnoozeAlarm(BatchSnoozeAlarmRequest batchSnoozeAlarmRequest);
+
+    /**
+     * <p>
      * Updates the state, variable values, and timer settings of one or more detectors (instances) of a specified
      * detector model.
      * </p>
@@ -78,7 +190,7 @@ public interface AWSIoTEventsData {
      * @throws InvalidRequestException
      *         The request was invalid.
      * @throws InternalFailureException
-     *         An internal failure occured.
+     *         An internal failure occurred.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @throws ThrottlingException
@@ -88,6 +200,29 @@ public interface AWSIoTEventsData {
      *      target="_top">AWS API Documentation</a>
      */
     BatchUpdateDetectorResult batchUpdateDetector(BatchUpdateDetectorRequest batchUpdateDetectorRequest);
+
+    /**
+     * <p>
+     * Retrieves information about an alarm.
+     * </p>
+     * 
+     * @param describeAlarmRequest
+     * @return Result of the DescribeAlarm operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws ResourceNotFoundException
+     *         The resource was not found.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @sample AWSIoTEventsData.DescribeAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/DescribeAlarm" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeAlarmResult describeAlarm(DescribeAlarmRequest describeAlarmRequest);
 
     /**
      * <p>
@@ -103,7 +238,7 @@ public interface AWSIoTEventsData {
      * @throws ThrottlingException
      *         The request could not be completed due to throttling.
      * @throws InternalFailureException
-     *         An internal failure occured.
+     *         An internal failure occurred.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @sample AWSIoTEventsData.DescribeDetector
@@ -111,6 +246,29 @@ public interface AWSIoTEventsData {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeDetectorResult describeDetector(DescribeDetectorRequest describeDetectorRequest);
+
+    /**
+     * <p>
+     * Lists one or more alarms. The operation returns only the metadata associated with each alarm.
+     * </p>
+     * 
+     * @param listAlarmsRequest
+     * @return Result of the ListAlarms operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws ResourceNotFoundException
+     *         The resource was not found.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @sample AWSIoTEventsData.ListAlarms
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/ListAlarms" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListAlarmsResult listAlarms(ListAlarmsRequest listAlarmsRequest);
 
     /**
      * <p>
@@ -126,7 +284,7 @@ public interface AWSIoTEventsData {
      * @throws ThrottlingException
      *         The request could not be completed due to throttling.
      * @throws InternalFailureException
-     *         An internal failure occured.
+     *         An internal failure occurred.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @sample AWSIoTEventsData.ListDetectors

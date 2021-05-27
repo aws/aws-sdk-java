@@ -76,6 +76,39 @@ public class AWSIoTEventsAsyncClient extends AWSIoTEventsClient implements AWSIo
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAlarmModelResult> createAlarmModelAsync(CreateAlarmModelRequest request) {
+
+        return createAlarmModelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAlarmModelResult> createAlarmModelAsync(final CreateAlarmModelRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAlarmModelRequest, CreateAlarmModelResult> asyncHandler) {
+        final CreateAlarmModelRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateAlarmModelResult>() {
+            @Override
+            public CreateAlarmModelResult call() throws Exception {
+                CreateAlarmModelResult result = null;
+
+                try {
+                    result = executeCreateAlarmModel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDetectorModelResult> createDetectorModelAsync(CreateDetectorModelRequest request) {
 
         return createDetectorModelAsync(request, null);
@@ -142,6 +175,39 @@ public class AWSIoTEventsAsyncClient extends AWSIoTEventsClient implements AWSIo
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteAlarmModelResult> deleteAlarmModelAsync(DeleteAlarmModelRequest request) {
+
+        return deleteAlarmModelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAlarmModelResult> deleteAlarmModelAsync(final DeleteAlarmModelRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAlarmModelRequest, DeleteAlarmModelResult> asyncHandler) {
+        final DeleteAlarmModelRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAlarmModelResult>() {
+            @Override
+            public DeleteAlarmModelResult call() throws Exception {
+                DeleteAlarmModelResult result = null;
+
+                try {
+                    result = executeDeleteAlarmModel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDetectorModelResult> deleteDetectorModelAsync(DeleteDetectorModelRequest request) {
 
         return deleteDetectorModelAsync(request, null);
@@ -192,6 +258,39 @@ public class AWSIoTEventsAsyncClient extends AWSIoTEventsClient implements AWSIo
 
                 try {
                     result = executeDeleteInput(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAlarmModelResult> describeAlarmModelAsync(DescribeAlarmModelRequest request) {
+
+        return describeAlarmModelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAlarmModelResult> describeAlarmModelAsync(final DescribeAlarmModelRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAlarmModelRequest, DescribeAlarmModelResult> asyncHandler) {
+        final DescribeAlarmModelRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAlarmModelResult>() {
+            @Override
+            public DescribeAlarmModelResult call() throws Exception {
+                DescribeAlarmModelResult result = null;
+
+                try {
+                    result = executeDescribeAlarmModel(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -376,6 +475,72 @@ public class AWSIoTEventsAsyncClient extends AWSIoTEventsClient implements AWSIo
     }
 
     @Override
+    public java.util.concurrent.Future<ListAlarmModelVersionsResult> listAlarmModelVersionsAsync(ListAlarmModelVersionsRequest request) {
+
+        return listAlarmModelVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAlarmModelVersionsResult> listAlarmModelVersionsAsync(final ListAlarmModelVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAlarmModelVersionsRequest, ListAlarmModelVersionsResult> asyncHandler) {
+        final ListAlarmModelVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAlarmModelVersionsResult>() {
+            @Override
+            public ListAlarmModelVersionsResult call() throws Exception {
+                ListAlarmModelVersionsResult result = null;
+
+                try {
+                    result = executeListAlarmModelVersions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAlarmModelsResult> listAlarmModelsAsync(ListAlarmModelsRequest request) {
+
+        return listAlarmModelsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAlarmModelsResult> listAlarmModelsAsync(final ListAlarmModelsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAlarmModelsRequest, ListAlarmModelsResult> asyncHandler) {
+        final ListAlarmModelsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAlarmModelsResult>() {
+            @Override
+            public ListAlarmModelsResult call() throws Exception {
+                ListAlarmModelsResult result = null;
+
+                try {
+                    result = executeListAlarmModels(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDetectorModelVersionsResult> listDetectorModelVersionsAsync(ListDetectorModelVersionsRequest request) {
 
         return listDetectorModelVersionsAsync(request, null);
@@ -426,6 +591,39 @@ public class AWSIoTEventsAsyncClient extends AWSIoTEventsClient implements AWSIo
 
                 try {
                     result = executeListDetectorModels(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInputRoutingsResult> listInputRoutingsAsync(ListInputRoutingsRequest request) {
+
+        return listInputRoutingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInputRoutingsResult> listInputRoutingsAsync(final ListInputRoutingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListInputRoutingsRequest, ListInputRoutingsResult> asyncHandler) {
+        final ListInputRoutingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListInputRoutingsResult>() {
+            @Override
+            public ListInputRoutingsResult call() throws Exception {
+                ListInputRoutingsResult result = null;
+
+                try {
+                    result = executeListInputRoutings(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -624,6 +822,39 @@ public class AWSIoTEventsAsyncClient extends AWSIoTEventsClient implements AWSIo
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAlarmModelResult> updateAlarmModelAsync(UpdateAlarmModelRequest request) {
+
+        return updateAlarmModelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAlarmModelResult> updateAlarmModelAsync(final UpdateAlarmModelRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAlarmModelRequest, UpdateAlarmModelResult> asyncHandler) {
+        final UpdateAlarmModelRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateAlarmModelResult>() {
+            @Override
+            public UpdateAlarmModelResult call() throws Exception {
+                UpdateAlarmModelResult result = null;
+
+                try {
+                    result = executeUpdateAlarmModel(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

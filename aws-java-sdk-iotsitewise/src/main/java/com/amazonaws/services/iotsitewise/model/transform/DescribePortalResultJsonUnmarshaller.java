@@ -100,6 +100,14 @@ public class DescribePortalResultJsonUnmarshaller implements Unmarshaller<Descri
                     context.nextToken();
                     describePortalResult.setPortalAuthMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("notificationSenderEmail", targetDepth)) {
+                    context.nextToken();
+                    describePortalResult.setNotificationSenderEmail(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("alarms", targetDepth)) {
+                    context.nextToken();
+                    describePortalResult.setAlarms(AlarmsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

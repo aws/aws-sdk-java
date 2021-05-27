@@ -33,6 +33,8 @@ public class UpdateTestGridProjectRequestMarshaller {
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<StructuredPojo> VPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vpcConfig").build();
 
     private static final UpdateTestGridProjectRequestMarshaller instance = new UpdateTestGridProjectRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class UpdateTestGridProjectRequestMarshaller {
             protocolMarshaller.marshall(updateTestGridProjectRequest.getProjectArn(), PROJECTARN_BINDING);
             protocolMarshaller.marshall(updateTestGridProjectRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(updateTestGridProjectRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(updateTestGridProjectRequest.getVpcConfig(), VPCCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

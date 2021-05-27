@@ -108,8 +108,8 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <code>MessageDeduplicationId</code> is sent successfully, any messages sent with the same
      * <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered during the 5-minute
      * deduplication interval. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     * > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
+     * > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -775,8 +775,8 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <code>MessageDeduplicationId</code> is sent successfully, any messages sent with the same
      * <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered during the 5-minute
      * deduplication interval. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     * > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
+     * > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -857,8 +857,8 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <code>MessageDeduplicationId</code> is sent successfully, any messages sent with the same
      *        <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered during the 5-minute
      *        deduplication interval. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     *        > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
+     *        > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <ul>
      *        <li>
@@ -947,8 +947,8 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <code>MessageDeduplicationId</code> is sent successfully, any messages sent with the same
      * <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered during the 5-minute
      * deduplication interval. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     * > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
+     * > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -1028,8 +1028,8 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <code>MessageDeduplicationId</code> is sent successfully, any messages sent with the same
      *         <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered during the 5-minute
      *         deduplication interval. For more information, see <a href=
-     *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     *         > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
+     *         > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *         </p>
      *         <ul>
      *         <li>
@@ -1119,8 +1119,8 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <code>MessageDeduplicationId</code> is sent successfully, any messages sent with the same
      * <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered during the 5-minute
      * deduplication interval. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     * > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
+     * > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -1201,8 +1201,8 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <code>MessageDeduplicationId</code> is sent successfully, any messages sent with the same
      *        <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered during the 5-minute
      *        deduplication interval. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     *        > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
+     *        > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <ul>
      *        <li>

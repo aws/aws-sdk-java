@@ -101,8 +101,8 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same
      * <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered. For more information, see <a
      * href=
-     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     * > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
+     * > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -721,8 +721,8 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same
      * <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered. For more information, see <a
      * href=
-     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     * > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
+     * > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -803,8 +803,8 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *        message with a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages
      *        with the same <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered. For more
      *        information, see <a href=
-     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     *        > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
+     *        > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <ul>
      *        <li>
@@ -892,8 +892,8 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same
      * <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered. For more information, see <a
      * href=
-     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     * > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
+     * > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -973,8 +973,8 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *         message with a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages
      *         with the same <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered. For
      *         more information, see <a href=
-     *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     *         > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
+     *         > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *         </p>
      *         <ul>
      *         <li>
@@ -1063,8 +1063,8 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same
      * <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered. For more information, see <a
      * href=
-     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     * > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
+     * > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -1145,8 +1145,8 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *        message with a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages
      *        with the same <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered. For more
      *        information, see <a href=
-     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     *        > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
+     *        > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <ul>
      *        <li>

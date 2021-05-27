@@ -60,6 +60,10 @@ public class TestGridProjectJsonUnmarshaller implements Unmarshaller<TestGridPro
                     context.nextToken();
                     testGridProject.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("vpcConfig", targetDepth)) {
+                    context.nextToken();
+                    testGridProject.setVpcConfig(TestGridVpcConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("created", targetDepth)) {
                     context.nextToken();
                     testGridProject.setCreated(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

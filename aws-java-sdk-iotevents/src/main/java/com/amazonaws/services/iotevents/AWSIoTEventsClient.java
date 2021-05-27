@@ -89,23 +89,23 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
                             new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotevents.model.transform.InvalidRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iotevents.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iotevents.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotevents.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("UnsupportedOperationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotevents.model.transform.UnsupportedOperationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.iotevents.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotevents.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotevents.model.transform.ResourceAlreadyExistsExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.iotevents.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.iotevents.model.AWSIoTEventsException.class));
 
     public static AWSIoTEventsClientBuilder builder() {
@@ -152,6 +152,78 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/iotevents/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/iotevents/request.handler2s"));
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * Creates an alarm model to monitor an AWS IoT Events input attribute. You can use the alarm to get notified when
+     * the value is outside a specified range. For more information, see <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/create-alarms.html">Create an alarm model</a>
+     * in the <i>AWS IoT Events Developer Guide</i>.
+     * </p>
+     * 
+     * @param createAlarmModelRequest
+     * @return Result of the CreateAlarmModel operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws ResourceInUseException
+     *         The resource is in use.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @sample AWSIoTEvents.CreateAlarmModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/CreateAlarmModel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateAlarmModelResult createAlarmModel(CreateAlarmModelRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAlarmModel(request);
+    }
+
+    @SdkInternalApi
+    final CreateAlarmModelResult executeCreateAlarmModel(CreateAlarmModelRequest createAlarmModelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createAlarmModelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateAlarmModelRequest> request = null;
+        Response<CreateAlarmModelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAlarmModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAlarmModelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAlarmModel");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAlarmModelResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateAlarmModelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -278,6 +350,74 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateInputResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateInputResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an alarm model. Any alarm instances that were created based on this alarm model are also deleted. This
+     * action can't be undone.
+     * </p>
+     * 
+     * @param deleteAlarmModelRequest
+     * @return Result of the DeleteAlarmModel operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws ResourceInUseException
+     *         The resource is in use.
+     * @throws ResourceNotFoundException
+     *         The resource was not found.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @sample AWSIoTEvents.DeleteAlarmModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DeleteAlarmModel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteAlarmModelResult deleteAlarmModel(DeleteAlarmModelRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAlarmModel(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAlarmModelResult executeDeleteAlarmModel(DeleteAlarmModelRequest deleteAlarmModelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAlarmModelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAlarmModelRequest> request = null;
+        Response<DeleteAlarmModelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAlarmModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAlarmModelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAlarmModel");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAlarmModelResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteAlarmModelResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -424,6 +564,72 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
 
     /**
      * <p>
+     * Retrieves information about an alarm model. If you don't specify a value for the <code>alarmModelVersion</code>
+     * parameter, the latest version is returned.
+     * </p>
+     * 
+     * @param describeAlarmModelRequest
+     * @return Result of the DescribeAlarmModel operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws ResourceNotFoundException
+     *         The resource was not found.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @sample AWSIoTEvents.DescribeAlarmModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeAlarmModel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeAlarmModelResult describeAlarmModel(DescribeAlarmModelRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAlarmModel(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAlarmModelResult executeDescribeAlarmModel(DescribeAlarmModelRequest describeAlarmModelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAlarmModelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAlarmModelRequest> request = null;
+        Response<DescribeAlarmModelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAlarmModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAlarmModelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAlarmModel");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAlarmModelResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeAlarmModelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes a detector model. If the <code>version</code> parameter is not specified, information about the latest
      * version is returned.
      * </p>
@@ -491,8 +697,14 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
 
     /**
      * <p>
-     * Retrieves execution information about a detector model analysis
+     * Retrieves runtime information about a detector model analysis.
      * </p>
+     * <note>
+     * <p>
+     * After AWS IoT Events starts analyzing your detector model, you have up to 24 hours to retrieve the analysis
+     * results.
+     * </p>
+     * </note>
      * 
      * @param describeDetectorModelAnalysisRequest
      * @return Result of the DescribeDetectorModelAnalysis operation returned by the service.
@@ -693,6 +905,12 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
      * <p>
      * Retrieves one or more analysis results of the detector model.
      * </p>
+     * <note>
+     * <p>
+     * After AWS IoT Events starts analyzing your detector model, you have up to 24 hours to retrieve the analysis
+     * results.
+     * </p>
+     * </note>
      * 
      * @param getDetectorModelAnalysisResultsRequest
      * @return Result of the GetDetectorModelAnalysisResults operation returned by the service.
@@ -747,6 +965,137 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
             HttpResponseHandler<AmazonWebServiceResponse<GetDetectorModelAnalysisResultsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetDetectorModelAnalysisResultsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all the versions of an alarm model. The operation returns only the metadata associated with each alarm
+     * model version.
+     * </p>
+     * 
+     * @param listAlarmModelVersionsRequest
+     * @return Result of the ListAlarmModelVersions operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws ResourceNotFoundException
+     *         The resource was not found.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @sample AWSIoTEvents.ListAlarmModelVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListAlarmModelVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListAlarmModelVersionsResult listAlarmModelVersions(ListAlarmModelVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAlarmModelVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListAlarmModelVersionsResult executeListAlarmModelVersions(ListAlarmModelVersionsRequest listAlarmModelVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAlarmModelVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAlarmModelVersionsRequest> request = null;
+        Response<ListAlarmModelVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAlarmModelVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAlarmModelVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAlarmModelVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAlarmModelVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListAlarmModelVersionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the alarm models that you created. The operation returns only the metadata associated with each alarm
+     * model.
+     * </p>
+     * 
+     * @param listAlarmModelsRequest
+     * @return Result of the ListAlarmModels operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @sample AWSIoTEvents.ListAlarmModels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListAlarmModels" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListAlarmModelsResult listAlarmModels(ListAlarmModelsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAlarmModels(request);
+    }
+
+    @SdkInternalApi
+    final ListAlarmModelsResult executeListAlarmModels(ListAlarmModelsRequest listAlarmModelsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAlarmModelsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAlarmModelsRequest> request = null;
+        Response<ListAlarmModelsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAlarmModelsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAlarmModelsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAlarmModels");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAlarmModelsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAlarmModelsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -878,6 +1227,71 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
 
             HttpResponseHandler<AmazonWebServiceResponse<ListDetectorModelsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListDetectorModelsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists one or more input routings.
+     * </p>
+     * 
+     * @param listInputRoutingsRequest
+     * @return Result of the ListInputRoutings operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ResourceNotFoundException
+     *         The resource was not found.
+     * @sample AWSIoTEvents.ListInputRoutings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListInputRoutings" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListInputRoutingsResult listInputRoutings(ListInputRoutingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListInputRoutings(request);
+    }
+
+    @SdkInternalApi
+    final ListInputRoutingsResult executeListInputRoutings(ListInputRoutingsRequest listInputRoutingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listInputRoutingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListInputRoutingsRequest> request = null;
+        Response<ListInputRoutingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListInputRoutingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listInputRoutingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInputRoutings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListInputRoutingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListInputRoutingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1091,8 +1505,8 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
     /**
      * <p>
      * Performs an analysis of your detector model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Running detector
-     * model analyses</a> in the <i>AWS IoT Events Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Troubleshooting a
+     * detector model</a> in the <i>AWS IoT Events Developer Guide</i>.
      * </p>
      * 
      * @param startDetectorModelAnalysisRequest
@@ -1279,6 +1693,74 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an alarm model. Any alarms that were created based on the previous version are deleted and then created
+     * again as new data arrives.
+     * </p>
+     * 
+     * @param updateAlarmModelRequest
+     * @return Result of the UpdateAlarmModel operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws ResourceInUseException
+     *         The resource is in use.
+     * @throws ResourceNotFoundException
+     *         The resource was not found.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @sample AWSIoTEvents.UpdateAlarmModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/UpdateAlarmModel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateAlarmModelResult updateAlarmModel(UpdateAlarmModelRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAlarmModel(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAlarmModelResult executeUpdateAlarmModel(UpdateAlarmModelRequest updateAlarmModelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAlarmModelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAlarmModelRequest> request = null;
+        Response<UpdateAlarmModelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAlarmModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAlarmModelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAlarmModel");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAlarmModelResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateAlarmModelResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

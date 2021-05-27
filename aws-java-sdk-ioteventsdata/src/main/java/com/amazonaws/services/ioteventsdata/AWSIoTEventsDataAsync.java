@@ -27,12 +27,112 @@ import com.amazonaws.services.ioteventsdata.model.*;
  * <p>
  * <p>
  * AWS IoT Events monitors your equipment or device fleets for failures or changes in operation, and triggers actions
- * when such events occur. AWS IoT Events Data API commands enable you to send inputs to detectors, list detectors, and
+ * when such events occur. You can use AWS IoT Events Data API commands to send inputs to detectors, list detectors, and
  * view or update a detector's status.
+ * </p>
+ * <p>
+ * For more information, see <a
+ * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/what-is-iotevents.html">What is AWS IoT Events?</a>
+ * in the <i>AWS IoT Events Developer Guide</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSIoTEventsDataAsync extends AWSIoTEventsData {
+
+    /**
+     * <p>
+     * Acknowledges one or more alarms. The alarms change to the <code>ACKNOWLEDGED</code> state after you acknowledge
+     * them.
+     * </p>
+     * 
+     * @param batchAcknowledgeAlarmRequest
+     * @return A Java Future containing the result of the BatchAcknowledgeAlarm operation returned by the service.
+     * @sample AWSIoTEventsDataAsync.BatchAcknowledgeAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchAcknowledgeAlarm"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchAcknowledgeAlarmResult> batchAcknowledgeAlarmAsync(BatchAcknowledgeAlarmRequest batchAcknowledgeAlarmRequest);
+
+    /**
+     * <p>
+     * Acknowledges one or more alarms. The alarms change to the <code>ACKNOWLEDGED</code> state after you acknowledge
+     * them.
+     * </p>
+     * 
+     * @param batchAcknowledgeAlarmRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchAcknowledgeAlarm operation returned by the service.
+     * @sample AWSIoTEventsDataAsyncHandler.BatchAcknowledgeAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchAcknowledgeAlarm"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchAcknowledgeAlarmResult> batchAcknowledgeAlarmAsync(BatchAcknowledgeAlarmRequest batchAcknowledgeAlarmRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchAcknowledgeAlarmRequest, BatchAcknowledgeAlarmResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disables one or more alarms. The alarms change to the <code>DISABLED</code> state after you disable them.
+     * </p>
+     * 
+     * @param batchDisableAlarmRequest
+     * @return A Java Future containing the result of the BatchDisableAlarm operation returned by the service.
+     * @sample AWSIoTEventsDataAsync.BatchDisableAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchDisableAlarm"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDisableAlarmResult> batchDisableAlarmAsync(BatchDisableAlarmRequest batchDisableAlarmRequest);
+
+    /**
+     * <p>
+     * Disables one or more alarms. The alarms change to the <code>DISABLED</code> state after you disable them.
+     * </p>
+     * 
+     * @param batchDisableAlarmRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchDisableAlarm operation returned by the service.
+     * @sample AWSIoTEventsDataAsyncHandler.BatchDisableAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchDisableAlarm"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDisableAlarmResult> batchDisableAlarmAsync(BatchDisableAlarmRequest batchDisableAlarmRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchDisableAlarmRequest, BatchDisableAlarmResult> asyncHandler);
+
+    /**
+     * <p>
+     * Enables one or more alarms. The alarms change to the <code>NORMAL</code> state after you enable them.
+     * </p>
+     * 
+     * @param batchEnableAlarmRequest
+     * @return A Java Future containing the result of the BatchEnableAlarm operation returned by the service.
+     * @sample AWSIoTEventsDataAsync.BatchEnableAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchEnableAlarm"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchEnableAlarmResult> batchEnableAlarmAsync(BatchEnableAlarmRequest batchEnableAlarmRequest);
+
+    /**
+     * <p>
+     * Enables one or more alarms. The alarms change to the <code>NORMAL</code> state after you enable them.
+     * </p>
+     * 
+     * @param batchEnableAlarmRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchEnableAlarm operation returned by the service.
+     * @sample AWSIoTEventsDataAsyncHandler.BatchEnableAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchEnableAlarm"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchEnableAlarmResult> batchEnableAlarmAsync(BatchEnableAlarmRequest batchEnableAlarmRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchEnableAlarmRequest, BatchEnableAlarmResult> asyncHandler);
 
     /**
      * <p>
@@ -73,6 +173,70 @@ public interface AWSIoTEventsDataAsync extends AWSIoTEventsData {
 
     /**
      * <p>
+     * Resets one or more alarms. The alarms return to the <code>NORMAL</code> state after you reset them.
+     * </p>
+     * 
+     * @param batchResetAlarmRequest
+     * @return A Java Future containing the result of the BatchResetAlarm operation returned by the service.
+     * @sample AWSIoTEventsDataAsync.BatchResetAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchResetAlarm" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchResetAlarmResult> batchResetAlarmAsync(BatchResetAlarmRequest batchResetAlarmRequest);
+
+    /**
+     * <p>
+     * Resets one or more alarms. The alarms return to the <code>NORMAL</code> state after you reset them.
+     * </p>
+     * 
+     * @param batchResetAlarmRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchResetAlarm operation returned by the service.
+     * @sample AWSIoTEventsDataAsyncHandler.BatchResetAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchResetAlarm" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchResetAlarmResult> batchResetAlarmAsync(BatchResetAlarmRequest batchResetAlarmRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchResetAlarmRequest, BatchResetAlarmResult> asyncHandler);
+
+    /**
+     * <p>
+     * Changes one or more alarms to the snooze mode. The alarms change to the <code>SNOOZE_DISABLED</code> state after
+     * you set them to the snooze mode.
+     * </p>
+     * 
+     * @param batchSnoozeAlarmRequest
+     * @return A Java Future containing the result of the BatchSnoozeAlarm operation returned by the service.
+     * @sample AWSIoTEventsDataAsync.BatchSnoozeAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchSnoozeAlarm"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchSnoozeAlarmResult> batchSnoozeAlarmAsync(BatchSnoozeAlarmRequest batchSnoozeAlarmRequest);
+
+    /**
+     * <p>
+     * Changes one or more alarms to the snooze mode. The alarms change to the <code>SNOOZE_DISABLED</code> state after
+     * you set them to the snooze mode.
+     * </p>
+     * 
+     * @param batchSnoozeAlarmRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchSnoozeAlarm operation returned by the service.
+     * @sample AWSIoTEventsDataAsyncHandler.BatchSnoozeAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/BatchSnoozeAlarm"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchSnoozeAlarmResult> batchSnoozeAlarmAsync(BatchSnoozeAlarmRequest batchSnoozeAlarmRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchSnoozeAlarmRequest, BatchSnoozeAlarmResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates the state, variable values, and timer settings of one or more detectors (instances) of a specified
      * detector model.
      * </p>
@@ -106,6 +270,37 @@ public interface AWSIoTEventsDataAsync extends AWSIoTEventsData {
 
     /**
      * <p>
+     * Retrieves information about an alarm.
+     * </p>
+     * 
+     * @param describeAlarmRequest
+     * @return A Java Future containing the result of the DescribeAlarm operation returned by the service.
+     * @sample AWSIoTEventsDataAsync.DescribeAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/DescribeAlarm" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAlarmResult> describeAlarmAsync(DescribeAlarmRequest describeAlarmRequest);
+
+    /**
+     * <p>
+     * Retrieves information about an alarm.
+     * </p>
+     * 
+     * @param describeAlarmRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAlarm operation returned by the service.
+     * @sample AWSIoTEventsDataAsyncHandler.DescribeAlarm
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/DescribeAlarm" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAlarmResult> describeAlarmAsync(DescribeAlarmRequest describeAlarmRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAlarmRequest, DescribeAlarmResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about the specified detector (instance).
      * </p>
      * 
@@ -134,6 +329,37 @@ public interface AWSIoTEventsDataAsync extends AWSIoTEventsData {
      */
     java.util.concurrent.Future<DescribeDetectorResult> describeDetectorAsync(DescribeDetectorRequest describeDetectorRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeDetectorRequest, DescribeDetectorResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists one or more alarms. The operation returns only the metadata associated with each alarm.
+     * </p>
+     * 
+     * @param listAlarmsRequest
+     * @return A Java Future containing the result of the ListAlarms operation returned by the service.
+     * @sample AWSIoTEventsDataAsync.ListAlarms
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/ListAlarms" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAlarmsResult> listAlarmsAsync(ListAlarmsRequest listAlarmsRequest);
+
+    /**
+     * <p>
+     * Lists one or more alarms. The operation returns only the metadata associated with each alarm.
+     * </p>
+     * 
+     * @param listAlarmsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAlarms operation returned by the service.
+     * @sample AWSIoTEventsDataAsyncHandler.ListAlarms
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-data-2018-10-23/ListAlarms" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAlarmsResult> listAlarmsAsync(ListAlarmsRequest listAlarmsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAlarmsRequest, ListAlarmsResult> asyncHandler);
 
     /**
      * <p>
