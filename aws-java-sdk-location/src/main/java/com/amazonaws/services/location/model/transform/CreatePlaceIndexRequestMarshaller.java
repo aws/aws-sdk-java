@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.location.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +39,8 @@ public class CreatePlaceIndexRequestMarshaller {
             .marshallLocationName("IndexName").build();
     private static final MarshallingInfo<String> PRICINGPLAN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PricingPlan").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreatePlaceIndexRequestMarshaller instance = new CreatePlaceIndexRequestMarshaller();
 
@@ -59,6 +63,7 @@ public class CreatePlaceIndexRequestMarshaller {
             protocolMarshaller.marshall(createPlaceIndexRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createPlaceIndexRequest.getIndexName(), INDEXNAME_BINDING);
             protocolMarshaller.marshall(createPlaceIndexRequest.getPricingPlan(), PRICINGPLAN_BINDING);
+            protocolMarshaller.marshall(createPlaceIndexRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

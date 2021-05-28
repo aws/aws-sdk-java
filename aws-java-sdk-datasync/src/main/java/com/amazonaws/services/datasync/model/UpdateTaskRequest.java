@@ -50,8 +50,8 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * Specifies a schedule used to periodically transfer files from a source to a destination location. You can
      * configure your task to execute hourly, daily, weekly or on specific days of the week. You control when in the day
-     * or hour you want the task to execute. The time you specify is UTC time. For more information, see
-     * <a>task-scheduling</a>.
+     * or hour you want the task to execute. The time you specify is UTC time. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.
      * </p>
      */
     private TaskSchedule schedule;
@@ -236,15 +236,16 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * Specifies a schedule used to periodically transfer files from a source to a destination location. You can
      * configure your task to execute hourly, daily, weekly or on specific days of the week. You control when in the day
-     * or hour you want the task to execute. The time you specify is UTC time. For more information, see
-     * <a>task-scheduling</a>.
+     * or hour you want the task to execute. The time you specify is UTC time. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.
      * </p>
      * 
      * @param schedule
      *        Specifies a schedule used to periodically transfer files from a source to a destination location. You can
      *        configure your task to execute hourly, daily, weekly or on specific days of the week. You control when in
      *        the day or hour you want the task to execute. The time you specify is UTC time. For more information, see
-     *        <a>task-scheduling</a>.
+     *        <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your
+     *        task</a>.
      */
 
     public void setSchedule(TaskSchedule schedule) {
@@ -255,14 +256,15 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * Specifies a schedule used to periodically transfer files from a source to a destination location. You can
      * configure your task to execute hourly, daily, weekly or on specific days of the week. You control when in the day
-     * or hour you want the task to execute. The time you specify is UTC time. For more information, see
-     * <a>task-scheduling</a>.
+     * or hour you want the task to execute. The time you specify is UTC time. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.
      * </p>
      * 
      * @return Specifies a schedule used to periodically transfer files from a source to a destination location. You can
      *         configure your task to execute hourly, daily, weekly or on specific days of the week. You control when in
      *         the day or hour you want the task to execute. The time you specify is UTC time. For more information, see
-     *         <a>task-scheduling</a>.
+     *         <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your
+     *         task</a>.
      */
 
     public TaskSchedule getSchedule() {
@@ -273,15 +275,16 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * Specifies a schedule used to periodically transfer files from a source to a destination location. You can
      * configure your task to execute hourly, daily, weekly or on specific days of the week. You control when in the day
-     * or hour you want the task to execute. The time you specify is UTC time. For more information, see
-     * <a>task-scheduling</a>.
+     * or hour you want the task to execute. The time you specify is UTC time. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.
      * </p>
      * 
      * @param schedule
      *        Specifies a schedule used to periodically transfer files from a source to a destination location. You can
      *        configure your task to execute hourly, daily, weekly or on specific days of the week. You control when in
      *        the day or hour you want the task to execute. The time you specify is UTC time. For more information, see
-     *        <a>task-scheduling</a>.
+     *        <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your
+     *        task</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

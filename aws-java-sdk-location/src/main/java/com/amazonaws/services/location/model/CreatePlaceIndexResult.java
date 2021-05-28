@@ -25,7 +25,7 @@ public class CreatePlaceIndexResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The timestamp for when the Place index resource was created in <a
+     * The timestamp for when the place index resource was created in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      * </p>
@@ -33,27 +33,33 @@ public class CreatePlaceIndexResult extends com.amazonaws.AmazonWebServiceResult
     private java.util.Date createTime;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the Place index resource. Used when you need to specify a resource across all
-     * AWS.
+     * The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across all AWS.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String indexArn;
     /**
      * <p>
-     * The name for the Place index resource.
+     * The name for the place index resource.
      * </p>
      */
     private String indexName;
 
     /**
      * <p>
-     * The timestamp for when the Place index resource was created in <a
+     * The timestamp for when the place index resource was created in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      * </p>
      * 
      * @param createTime
-     *        The timestamp for when the Place index resource was created in <a
+     *        The timestamp for when the place index resource was created in <a
      *        href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      *        <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      */
@@ -64,12 +70,12 @@ public class CreatePlaceIndexResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The timestamp for when the Place index resource was created in <a
+     * The timestamp for when the place index resource was created in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      * </p>
      * 
-     * @return The timestamp for when the Place index resource was created in <a
+     * @return The timestamp for when the place index resource was created in <a
      *         href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      *         <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      */
@@ -80,13 +86,13 @@ public class CreatePlaceIndexResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The timestamp for when the Place index resource was created in <a
+     * The timestamp for when the place index resource was created in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      * </p>
      * 
      * @param createTime
-     *        The timestamp for when the Place index resource was created in <a
+     *        The timestamp for when the place index resource was created in <a
      *        href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      *        <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -99,13 +105,25 @@ public class CreatePlaceIndexResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the Place index resource. Used when you need to specify a resource across all
-     * AWS.
+     * The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across all AWS.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param indexArn
-     *        The Amazon Resource Name (ARN) for the Place index resource. Used when you need to specify a resource
-     *        across all AWS.
+     *        The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across all AWS.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code>
+     *        </p>
+     *        </li>
      */
 
     public void setIndexArn(String indexArn) {
@@ -114,12 +132,24 @@ public class CreatePlaceIndexResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the Place index resource. Used when you need to specify a resource across all
-     * AWS.
+     * The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across all AWS.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The Amazon Resource Name (ARN) for the Place index resource. Used when you need to specify a resource
-     *         across all AWS.
+     * @return The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across all AWS.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code>
+     *         </p>
+     *         </li>
      */
 
     public String getIndexArn() {
@@ -128,13 +158,25 @@ public class CreatePlaceIndexResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the Place index resource. Used when you need to specify a resource across all
-     * AWS.
+     * The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across all AWS.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param indexArn
-     *        The Amazon Resource Name (ARN) for the Place index resource. Used when you need to specify a resource
-     *        across all AWS.
+     *        The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across all AWS.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,11 +187,11 @@ public class CreatePlaceIndexResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The name for the Place index resource.
+     * The name for the place index resource.
      * </p>
      * 
      * @param indexName
-     *        The name for the Place index resource.
+     *        The name for the place index resource.
      */
 
     public void setIndexName(String indexName) {
@@ -158,10 +200,10 @@ public class CreatePlaceIndexResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The name for the Place index resource.
+     * The name for the place index resource.
      * </p>
      * 
-     * @return The name for the Place index resource.
+     * @return The name for the place index resource.
      */
 
     public String getIndexName() {
@@ -170,11 +212,11 @@ public class CreatePlaceIndexResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The name for the Place index resource.
+     * The name for the place index resource.
      * </p>
      * 
      * @param indexName
-     *        The name for the Place index resource.
+     *        The name for the place index resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

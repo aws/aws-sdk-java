@@ -26,7 +26,7 @@ import com.amazonaws.services.location.model.*;
  * </p>
  * <p>
  * <p>
- * Suite of geospatial services including Maps, Places, Tracking, and Geofencing
+ * Suite of geospatial services including Maps, Places, Routes, Tracking, and Geofencing
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -79,11 +79,46 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
+     * Deletes the position history of one or more devices from a tracker resource.
+     * </p>
+     * 
+     * @param batchDeleteDevicePositionHistoryRequest
+     * @return A Java Future containing the result of the BatchDeleteDevicePositionHistory operation returned by the
+     *         service.
+     * @sample AmazonLocationAsync.BatchDeleteDevicePositionHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchDeleteDevicePositionHistory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDeleteDevicePositionHistoryResult> batchDeleteDevicePositionHistoryAsync(
+            BatchDeleteDevicePositionHistoryRequest batchDeleteDevicePositionHistoryRequest);
+
+    /**
+     * <p>
+     * Deletes the position history of one or more devices from a tracker resource.
+     * </p>
+     * 
+     * @param batchDeleteDevicePositionHistoryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchDeleteDevicePositionHistory operation returned by the
+     *         service.
+     * @sample AmazonLocationAsyncHandler.BatchDeleteDevicePositionHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchDeleteDevicePositionHistory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDeleteDevicePositionHistoryResult> batchDeleteDevicePositionHistoryAsync(
+            BatchDeleteDevicePositionHistoryRequest batchDeleteDevicePositionHistoryRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchDeleteDevicePositionHistoryRequest, BatchDeleteDevicePositionHistoryResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a batch of geofences from a geofence collection.
      * </p>
      * <note>
      * <p>
-     * This action deletes the resource permanently. You can't undo this action.
+     * This operation deletes the resource permanently.
      * </p>
      * </note>
      * 
@@ -101,7 +136,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
      * </p>
      * <note>
      * <p>
-     * This action deletes the resource permanently. You can't undo this action.
+     * This operation deletes the resource permanently.
      * </p>
      * </note>
      * 
@@ -198,7 +233,8 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * A batch request for storing geofence geometries into a given geofence collection.
+     * A batch request for storing geofence geometries into a given geofence collection, or updates the geometry of an
+     * existing geofence if a geofence ID is included in the request.
      * </p>
      * 
      * @param batchPutGeofenceRequest
@@ -211,7 +247,8 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * A batch request for storing geofence geometries into a given geofence collection.
+     * A batch request for storing geofence geometries into a given geofence collection, or updates the geometry of an
+     * existing geofence if a geofence ID is included in the request.
      * </p>
      * 
      * @param batchPutGeofenceRequest
@@ -235,7 +272,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
      * <note>
      * <p>
      * Only one position update is stored per sample time. Location data is sampled at a fixed rate of one position per
-     * 30-second interval, and retained for one year before it is deleted.
+     * 30-second interval and retained for 30 days before it's deleted.
      * </p>
      * </note>
      * 
@@ -256,7 +293,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
      * <note>
      * <p>
      * Only one position update is stored per sample time. Location data is sampled at a fixed rate of one position per
-     * 30-second interval, and retained for one year before it is deleted.
+     * 30-second interval and retained for 30 days before it's deleted.
      * </p>
      * </note>
      * 
@@ -273,6 +310,107 @@ public interface AmazonLocationAsync extends AmazonLocation {
     java.util.concurrent.Future<BatchUpdateDevicePositionResult> batchUpdateDevicePositionAsync(
             BatchUpdateDevicePositionRequest batchUpdateDevicePositionRequest,
             com.amazonaws.handlers.AsyncHandler<BatchUpdateDevicePositionRequest, BatchUpdateDevicePositionResult> asyncHandler);
+
+    /**
+     * <p>
+     * <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html">Calculates a route</a>
+     * given the following required parameters: <code>DeparturePostiton</code> and <code>DestinationPosition</code>.
+     * Requires that you first <a
+     * href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
+     * aroute calculator resource</a>
+     * </p>
+     * <p>
+     * By default, a request that doesn't specify a departure time uses the best time of day to travel with the best
+     * traffic conditions when calculating the route.
+     * </p>
+     * <p>
+     * Additional options include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#departure-time">
+     * Specifying a departure time</a> using either <code>DepartureTime</code> or <code>DepartureNow</code>. This
+     * calculates a route based on predictive traffic data at the given time.
+     * </p>
+     * <note>
+     * <p>
+     * You can't specify both <code>DepartureTime</code> and <code>DepartureNow</code> in a single request. Specifying
+     * both parameters returns an error message.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#travel-mode">Specifying
+     * a travel mode</a> using TravelMode. This lets you specify additional route preference such as
+     * <code>CarModeOptions</code> if traveling by <code>Car</code>, or <code>TruckModeOptions</code> if traveling by
+     * <code>Truck</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * </p>
+     * 
+     * @param calculateRouteRequest
+     * @return A Java Future containing the result of the CalculateRoute operation returned by the service.
+     * @sample AmazonLocationAsync.CalculateRoute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CalculateRoute" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CalculateRouteResult> calculateRouteAsync(CalculateRouteRequest calculateRouteRequest);
+
+    /**
+     * <p>
+     * <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html">Calculates a route</a>
+     * given the following required parameters: <code>DeparturePostiton</code> and <code>DestinationPosition</code>.
+     * Requires that you first <a
+     * href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
+     * aroute calculator resource</a>
+     * </p>
+     * <p>
+     * By default, a request that doesn't specify a departure time uses the best time of day to travel with the best
+     * traffic conditions when calculating the route.
+     * </p>
+     * <p>
+     * Additional options include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#departure-time">
+     * Specifying a departure time</a> using either <code>DepartureTime</code> or <code>DepartureNow</code>. This
+     * calculates a route based on predictive traffic data at the given time.
+     * </p>
+     * <note>
+     * <p>
+     * You can't specify both <code>DepartureTime</code> and <code>DepartureNow</code> in a single request. Specifying
+     * both parameters returns an error message.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#travel-mode">Specifying
+     * a travel mode</a> using TravelMode. This lets you specify additional route preference such as
+     * <code>CarModeOptions</code> if traveling by <code>Car</code>, or <code>TruckModeOptions</code> if traveling by
+     * <code>Truck</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * </p>
+     * 
+     * @param calculateRouteRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CalculateRoute operation returned by the service.
+     * @sample AmazonLocationAsyncHandler.CalculateRoute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CalculateRoute" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CalculateRouteResult> calculateRouteAsync(CalculateRouteRequest calculateRouteRequest,
+            com.amazonaws.handlers.AsyncHandler<CalculateRouteRequest, CalculateRouteResult> asyncHandler);
 
     /**
      * <p>
@@ -310,13 +448,6 @@ public interface AmazonLocationAsync extends AmazonLocation {
      * Creates a map resource in your AWS account, which provides map tiles of different styles sourced from global
      * location data providers.
      * </p>
-     * <note>
-     * <p>
-     * By using Maps, you agree that AWS may transmit your API queries to your selected third party provider for
-     * processing, which may be outside the AWS region you are currently using. For more information, see the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.
-     * </p>
-     * </note>
      * 
      * @param createMapRequest
      * @return A Java Future containing the result of the CreateMap operation returned by the service.
@@ -331,13 +462,6 @@ public interface AmazonLocationAsync extends AmazonLocation {
      * Creates a map resource in your AWS account, which provides map tiles of different styles sourced from global
      * location data providers.
      * </p>
-     * <note>
-     * <p>
-     * By using Maps, you agree that AWS may transmit your API queries to your selected third party provider for
-     * processing, which may be outside the AWS region you are currently using. For more information, see the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.
-     * </p>
-     * </note>
      * 
      * @param createMapRequest
      * @param asyncHandler
@@ -354,20 +478,9 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Creates a Place index resource in your AWS account, which supports Places functions with geospatial data sourced
-     * from your chosen data provider.
+     * Creates a place index resource in your AWS account, which supports functions with geospatial data sourced from
+     * your chosen data provider.
      * </p>
-     * <note>
-     * <p>
-     * By using Places, you agree that AWS may transmit your API queries to your selected third party provider for
-     * processing, which may be outside the AWS region you are currently using.
-     * </p>
-     * <p>
-     * Because of licensing limitations, you may not use HERE to store results for locations in Japan. For more
-     * information, see the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location
-     * Service.
-     * </p>
-     * </note>
      * 
      * @param createPlaceIndexRequest
      * @return A Java Future containing the result of the CreatePlaceIndex operation returned by the service.
@@ -379,20 +492,9 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Creates a Place index resource in your AWS account, which supports Places functions with geospatial data sourced
-     * from your chosen data provider.
+     * Creates a place index resource in your AWS account, which supports functions with geospatial data sourced from
+     * your chosen data provider.
      * </p>
-     * <note>
-     * <p>
-     * By using Places, you agree that AWS may transmit your API queries to your selected third party provider for
-     * processing, which may be outside the AWS region you are currently using.
-     * </p>
-     * <p>
-     * Because of licensing limitations, you may not use HERE to store results for locations in Japan. For more
-     * information, see the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location
-     * Service.
-     * </p>
-     * </note>
      * 
      * @param createPlaceIndexRequest
      * @param asyncHandler
@@ -406,6 +508,45 @@ public interface AmazonLocationAsync extends AmazonLocation {
      */
     java.util.concurrent.Future<CreatePlaceIndexResult> createPlaceIndexAsync(CreatePlaceIndexRequest createPlaceIndexRequest,
             com.amazonaws.handlers.AsyncHandler<CreatePlaceIndexRequest, CreatePlaceIndexResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a route calculator resource in your AWS account.
+     * </p>
+     * <p>
+     * You can send requests to a route calculator resource to estimate travel time, distance, and get directions. A
+     * route calculator sources traffic and road network data from your chosen data provider.
+     * </p>
+     * 
+     * @param createRouteCalculatorRequest
+     * @return A Java Future containing the result of the CreateRouteCalculator operation returned by the service.
+     * @sample AmazonLocationAsync.CreateRouteCalculator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreateRouteCalculator" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRouteCalculatorResult> createRouteCalculatorAsync(CreateRouteCalculatorRequest createRouteCalculatorRequest);
+
+    /**
+     * <p>
+     * Creates a route calculator resource in your AWS account.
+     * </p>
+     * <p>
+     * You can send requests to a route calculator resource to estimate travel time, distance, and get directions. A
+     * route calculator sources traffic and road network data from your chosen data provider.
+     * </p>
+     * 
+     * @param createRouteCalculatorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateRouteCalculator operation returned by the service.
+     * @sample AmazonLocationAsyncHandler.CreateRouteCalculator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreateRouteCalculator" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRouteCalculatorResult> createRouteCalculatorAsync(CreateRouteCalculatorRequest createRouteCalculatorRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateRouteCalculatorRequest, CreateRouteCalculatorResult> asyncHandler);
 
     /**
      * <p>
@@ -446,8 +587,8 @@ public interface AmazonLocationAsync extends AmazonLocation {
      * </p>
      * <note>
      * <p>
-     * This action deletes the resource permanently. You can't undo this action. If the geofence collection is the
-     * target of a tracker resource, the devices will no longer be monitored.
+     * This operation deletes the resource permanently. If the geofence collection is the target of a tracker resource,
+     * the devices will no longer be monitored.
      * </p>
      * </note>
      * 
@@ -465,8 +606,8 @@ public interface AmazonLocationAsync extends AmazonLocation {
      * </p>
      * <note>
      * <p>
-     * This action deletes the resource permanently. You can't undo this action. If the geofence collection is the
-     * target of a tracker resource, the devices will no longer be monitored.
+     * This operation deletes the resource permanently. If the geofence collection is the target of a tracker resource,
+     * the devices will no longer be monitored.
      * </p>
      * </note>
      * 
@@ -489,8 +630,8 @@ public interface AmazonLocationAsync extends AmazonLocation {
      * </p>
      * <note>
      * <p>
-     * This action deletes the resource permanently. You cannot undo this action. If the map is being used in an
-     * application, the map may not render.
+     * This operation deletes the resource permanently. If the map is being used in an application, the map may not
+     * render.
      * </p>
      * </note>
      * 
@@ -508,8 +649,8 @@ public interface AmazonLocationAsync extends AmazonLocation {
      * </p>
      * <note>
      * <p>
-     * This action deletes the resource permanently. You cannot undo this action. If the map is being used in an
-     * application, the map may not render.
+     * This operation deletes the resource permanently. If the map is being used in an application, the map may not
+     * render.
      * </p>
      * </note>
      * 
@@ -528,11 +669,11 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Deletes a Place index resource from your AWS account.
+     * Deletes a place index resource from your AWS account.
      * </p>
      * <note>
      * <p>
-     * This action deletes the resource permanently. You cannot undo this action.
+     * This operation deletes the resource permanently.
      * </p>
      * </note>
      * 
@@ -546,11 +687,11 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Deletes a Place index resource from your AWS account.
+     * Deletes a place index resource from your AWS account.
      * </p>
      * <note>
      * <p>
-     * This action deletes the resource permanently. You cannot undo this action.
+     * This operation deletes the resource permanently.
      * </p>
      * </note>
      * 
@@ -569,12 +710,53 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
+     * Deletes a route calculator resource from your AWS account.
+     * </p>
+     * <note>
+     * <p>
+     * This operation deletes the resource permanently.
+     * </p>
+     * </note>
+     * 
+     * @param deleteRouteCalculatorRequest
+     * @return A Java Future containing the result of the DeleteRouteCalculator operation returned by the service.
+     * @sample AmazonLocationAsync.DeleteRouteCalculator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DeleteRouteCalculator" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRouteCalculatorResult> deleteRouteCalculatorAsync(DeleteRouteCalculatorRequest deleteRouteCalculatorRequest);
+
+    /**
+     * <p>
+     * Deletes a route calculator resource from your AWS account.
+     * </p>
+     * <note>
+     * <p>
+     * This operation deletes the resource permanently.
+     * </p>
+     * </note>
+     * 
+     * @param deleteRouteCalculatorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRouteCalculator operation returned by the service.
+     * @sample AmazonLocationAsyncHandler.DeleteRouteCalculator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DeleteRouteCalculator" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRouteCalculatorResult> deleteRouteCalculatorAsync(DeleteRouteCalculatorRequest deleteRouteCalculatorRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRouteCalculatorRequest, DeleteRouteCalculatorResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a tracker resource from your AWS account.
      * </p>
      * <note>
      * <p>
-     * This action deletes the resource permanently. You can't undo this action. If the tracker resource is in use, you
-     * may encounter an error. Make sure that the target resource is not a dependency for your applications.
+     * This operation deletes the resource permanently. If the tracker resource is in use, you may encounter an error.
+     * Make sure that the target resource isn't a dependency for your applications.
      * </p>
      * </note>
      * 
@@ -592,8 +774,8 @@ public interface AmazonLocationAsync extends AmazonLocation {
      * </p>
      * <note>
      * <p>
-     * This action deletes the resource permanently. You can't undo this action. If the tracker resource is in use, you
-     * may encounter an error. Make sure that the target resource is not a dependency for your applications.
+     * This operation deletes the resource permanently. If the tracker resource is in use, you may encounter an error.
+     * Make sure that the target resource isn't a dependency for your applications.
      * </p>
      * </note>
      * 
@@ -676,7 +858,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Retrieves the Place index resource details.
+     * Retrieves the place index resource details.
      * </p>
      * 
      * @param describePlaceIndexRequest
@@ -689,7 +871,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Retrieves the Place index resource details.
+     * Retrieves the place index resource details.
      * </p>
      * 
      * @param describePlaceIndexRequest
@@ -704,6 +886,37 @@ public interface AmazonLocationAsync extends AmazonLocation {
      */
     java.util.concurrent.Future<DescribePlaceIndexResult> describePlaceIndexAsync(DescribePlaceIndexRequest describePlaceIndexRequest,
             com.amazonaws.handlers.AsyncHandler<DescribePlaceIndexRequest, DescribePlaceIndexResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the route calculator resource details.
+     * </p>
+     * 
+     * @param describeRouteCalculatorRequest
+     * @return A Java Future containing the result of the DescribeRouteCalculator operation returned by the service.
+     * @sample AmazonLocationAsync.DescribeRouteCalculator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DescribeRouteCalculator"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRouteCalculatorResult> describeRouteCalculatorAsync(DescribeRouteCalculatorRequest describeRouteCalculatorRequest);
+
+    /**
+     * <p>
+     * Retrieves the route calculator resource details.
+     * </p>
+     * 
+     * @param describeRouteCalculatorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeRouteCalculator operation returned by the service.
+     * @sample AmazonLocationAsyncHandler.DescribeRouteCalculator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DescribeRouteCalculator"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRouteCalculatorResult> describeRouteCalculatorAsync(DescribeRouteCalculatorRequest describeRouteCalculatorRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeRouteCalculatorRequest, DescribeRouteCalculatorResult> asyncHandler);
 
     /**
      * <p>
@@ -787,7 +1000,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
      * </p>
      * <note>
      * <p>
-     * Device positions are deleted after one year.
+     * Device positions are deleted after 30 days.
      * </p>
      * </note>
      * 
@@ -805,7 +1018,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
      * </p>
      * <note>
      * <p>
-     * Device positions are deleted after one year.
+     * Device positions are deleted after 30 days.
      * </p>
      * </note>
      * 
@@ -828,7 +1041,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
      * </p>
      * <note>
      * <p>
-     * Device positions are deleted after 1 year.
+     * Device positions are deleted after 30 days.
      * </p>
      * </note>
      * 
@@ -846,7 +1059,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
      * </p>
      * <note>
      * <p>
-     * Device positions are deleted after 1 year.
+     * Device positions are deleted after 30 days.
      * </p>
      * </note>
      * 
@@ -1001,7 +1214,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Retrieves a vector data tile from the map resource. Map tiles are used by clients to render a map. They are
+     * Retrieves a vector data tile from the map resource. Map tiles are used by clients to render a map. they're
      * addressed using a grid arrangement with an X coordinate, Y coordinate, and Z (zoom) level.
      * </p>
      * <p>
@@ -1020,7 +1233,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Retrieves a vector data tile from the map resource. Map tiles are used by clients to render a map. They are
+     * Retrieves a vector data tile from the map resource. Map tiles are used by clients to render a map. they're
      * addressed using a grid arrangement with an X coordinate, Y coordinate, and Z (zoom) level.
      * </p>
      * <p>
@@ -1041,6 +1254,37 @@ public interface AmazonLocationAsync extends AmazonLocation {
      */
     java.util.concurrent.Future<GetMapTileResult> getMapTileAsync(GetMapTileRequest getMapTileRequest,
             com.amazonaws.handlers.AsyncHandler<GetMapTileRequest, GetMapTileResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the latest device positions for requested devices.
+     * </p>
+     * 
+     * @param listDevicePositionsRequest
+     * @return A Java Future containing the result of the ListDevicePositions operation returned by the service.
+     * @sample AmazonLocationAsync.ListDevicePositions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListDevicePositions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDevicePositionsResult> listDevicePositionsAsync(ListDevicePositionsRequest listDevicePositionsRequest);
+
+    /**
+     * <p>
+     * Lists the latest device positions for requested devices.
+     * </p>
+     * 
+     * @param listDevicePositionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDevicePositions operation returned by the service.
+     * @sample AmazonLocationAsyncHandler.ListDevicePositions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListDevicePositions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDevicePositionsResult> listDevicePositionsAsync(ListDevicePositionsRequest listDevicePositionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDevicePositionsRequest, ListDevicePositionsResult> asyncHandler);
 
     /**
      * <p>
@@ -1137,7 +1381,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Lists Place index resources in your AWS account.
+     * Lists place index resources in your AWS account.
      * </p>
      * 
      * @param listPlaceIndexesRequest
@@ -1150,7 +1394,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Lists Place index resources in your AWS account.
+     * Lists place index resources in your AWS account.
      * </p>
      * 
      * @param listPlaceIndexesRequest
@@ -1165,6 +1409,68 @@ public interface AmazonLocationAsync extends AmazonLocation {
      */
     java.util.concurrent.Future<ListPlaceIndexesResult> listPlaceIndexesAsync(ListPlaceIndexesRequest listPlaceIndexesRequest,
             com.amazonaws.handlers.AsyncHandler<ListPlaceIndexesRequest, ListPlaceIndexesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists route calculator resources in your AWS account.
+     * </p>
+     * 
+     * @param listRouteCalculatorsRequest
+     * @return A Java Future containing the result of the ListRouteCalculators operation returned by the service.
+     * @sample AmazonLocationAsync.ListRouteCalculators
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListRouteCalculators" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRouteCalculatorsResult> listRouteCalculatorsAsync(ListRouteCalculatorsRequest listRouteCalculatorsRequest);
+
+    /**
+     * <p>
+     * Lists route calculator resources in your AWS account.
+     * </p>
+     * 
+     * @param listRouteCalculatorsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListRouteCalculators operation returned by the service.
+     * @sample AmazonLocationAsyncHandler.ListRouteCalculators
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListRouteCalculators" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRouteCalculatorsResult> listRouteCalculatorsAsync(ListRouteCalculatorsRequest listRouteCalculatorsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListRouteCalculatorsRequest, ListRouteCalculatorsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the tags for the specified Amazon Location Service resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonLocationAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Returns the tags for the specified Amazon Location Service resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonLocationAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
 
     /**
      * <p>
@@ -1266,17 +1572,6 @@ public interface AmazonLocationAsync extends AmazonLocation {
      * Reverse geocodes a given coordinate and returns a legible address. Allows you to search for Places or points of
      * interest near a given position.
      * </p>
-     * <note>
-     * <p>
-     * By using Places, you agree that AWS may transmit your API queries to your selected third party provider for
-     * processing, which may be outside the AWS region you are currently using.
-     * </p>
-     * <p>
-     * Because of licensing limitations, you may not use HERE to store results for locations in Japan. For more
-     * information, see the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location
-     * Service.
-     * </p>
-     * </note>
      * 
      * @param searchPlaceIndexForPositionRequest
      * @return A Java Future containing the result of the SearchPlaceIndexForPosition operation returned by the service.
@@ -1292,17 +1587,6 @@ public interface AmazonLocationAsync extends AmazonLocation {
      * Reverse geocodes a given coordinate and returns a legible address. Allows you to search for Places or points of
      * interest near a given position.
      * </p>
-     * <note>
-     * <p>
-     * By using Places, you agree that AWS may transmit your API queries to your selected third party provider for
-     * processing, which may be outside the AWS region you are currently using.
-     * </p>
-     * <p>
-     * Because of licensing limitations, you may not use HERE to store results for locations in Japan. For more
-     * information, see the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location
-     * Service.
-     * </p>
-     * </note>
      * 
      * @param searchPlaceIndexForPositionRequest
      * @param asyncHandler
@@ -1331,17 +1615,6 @@ public interface AmazonLocationAsync extends AmazonLocation {
      * You can search for places near a given position using <code>BiasPosition</code>, or filter results within a
      * bounding box using <code>FilterBBox</code>. Providing both parameters simultaneously returns an error.
      * </p>
-     * </note> <note>
-     * <p>
-     * By using Places, you agree that AWS may transmit your API queries to your selected third party provider for
-     * processing, which may be outside the AWS region you are currently using.
-     * </p>
-     * <p>
-     * Also, when using HERE as your data provider, you may not (a) use HERE Places for Asset Management, or (b) select
-     * the <code>Storage</code> option for the <code>IntendedUse</code> parameter when requesting Places in Japan. For
-     * more information, see the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
-     * Location Service.
-     * </p>
      * </note>
      * 
      * @param searchPlaceIndexForTextRequest
@@ -1365,17 +1638,6 @@ public interface AmazonLocationAsync extends AmazonLocation {
      * You can search for places near a given position using <code>BiasPosition</code>, or filter results within a
      * bounding box using <code>FilterBBox</code>. Providing both parameters simultaneously returns an error.
      * </p>
-     * </note> <note>
-     * <p>
-     * By using Places, you agree that AWS may transmit your API queries to your selected third party provider for
-     * processing, which may be outside the AWS region you are currently using.
-     * </p>
-     * <p>
-     * Also, when using HERE as your data provider, you may not (a) use HERE Places for Asset Management, or (b) select
-     * the <code>Storage</code> option for the <code>IntendedUse</code> parameter when requesting Places in Japan. For
-     * more information, see the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
-     * Location Service.
-     * </p>
      * </note>
      * 
      * @param searchPlaceIndexForTextRequest
@@ -1390,5 +1652,75 @@ public interface AmazonLocationAsync extends AmazonLocation {
      */
     java.util.concurrent.Future<SearchPlaceIndexForTextResult> searchPlaceIndexForTextAsync(SearchPlaceIndexForTextRequest searchPlaceIndexForTextRequest,
             com.amazonaws.handlers.AsyncHandler<SearchPlaceIndexForTextRequest, SearchPlaceIndexForTextResult> asyncHandler);
+
+    /**
+     * <p>
+     * Assigns one or more tags (key-value pairs) to the specified Amazon Location Service resource.
+     * </p>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values.&lt;/p&gt; &lt;p&gt;Tags don't have any semantic meaning to AWS and are interpreted strictly as strings of characters.&lt;/p&gt; &lt;p&gt;You can use the &lt;code&gt;TagResource&lt;/code&gt; action with an Amazon Location Service resource that already has tags. If you specify a new tag key for the resource, this tag is appended to the tags already associated with the resource. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag. &lt;/p&gt; &lt;p&gt;You can associate as many as 50 tags with a resource.&lt;/p&gt; </code>
+     * </pre>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonLocationAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Assigns one or more tags (key-value pairs) to the specified Amazon Location Service resource.
+     * </p>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values.&lt;/p&gt; &lt;p&gt;Tags don't have any semantic meaning to AWS and are interpreted strictly as strings of characters.&lt;/p&gt; &lt;p&gt;You can use the &lt;code&gt;TagResource&lt;/code&gt; action with an Amazon Location Service resource that already has tags. If you specify a new tag key for the resource, this tag is appended to the tags already associated with the resource. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag. &lt;/p&gt; &lt;p&gt;You can associate as many as 50 tags with a resource.&lt;/p&gt; </code>
+     * </pre>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonLocationAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes one or more tags from the specified Amazon Location Service resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonLocationAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes one or more tags from the specified Amazon Location Service resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonLocationAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
 }

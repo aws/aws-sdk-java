@@ -35,6 +35,13 @@ public class CreateTrackerResult extends com.amazonaws.AmazonWebServiceResult<co
      * <p>
      * The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String trackerArn;
     /**
@@ -100,10 +107,23 @@ public class CreateTrackerResult extends com.amazonaws.AmazonWebServiceResult<co
      * <p>
      * The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param trackerArn
      *        The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across
-     *        all AWS.
+     *        all AWS.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
+     *        </p>
+     *        </li>
      */
 
     public void setTrackerArn(String trackerArn) {
@@ -114,9 +134,22 @@ public class CreateTrackerResult extends com.amazonaws.AmazonWebServiceResult<co
      * <p>
      * The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across
-     *         all AWS.
+     *         all AWS.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
+     *         </p>
+     *         </li>
      */
 
     public String getTrackerArn() {
@@ -127,10 +160,23 @@ public class CreateTrackerResult extends com.amazonaws.AmazonWebServiceResult<co
      * <p>
      * The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param trackerArn
      *        The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across
-     *        all AWS.
+     *        all AWS.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -33,7 +33,7 @@ public class MapConfiguration implements Serializable, Cloneable, StructuredPojo
      * Specifies the map style selected from an available data provider.
      * </p>
      * <p>
-     * Valid styles: <code>VectorEsriStreets</code>, <code>VectorEsriTopographic</code>,
+     * Valid styles: <code>RasterEsriImagery</code>, <code>VectorEsriStreets</code>, <code>VectorEsriTopographic</code>,
      * <code>VectorEsriNavigation</code>, <code>VectorEsriDarkGrayCanvas</code>, <code>VectorEsriLightGrayCanvas</code>,
      * <code>VectorHereBerlin</code>.
      * </p>
@@ -52,7 +52,7 @@ public class MapConfiguration implements Serializable, Cloneable, StructuredPojo
      * Specifies the map style selected from an available data provider.
      * </p>
      * <p>
-     * Valid styles: <code>VectorEsriStreets</code>, <code>VectorEsriTopographic</code>,
+     * Valid styles: <code>RasterEsriImagery</code>, <code>VectorEsriStreets</code>, <code>VectorEsriTopographic</code>,
      * <code>VectorEsriNavigation</code>, <code>VectorEsriDarkGrayCanvas</code>, <code>VectorEsriLightGrayCanvas</code>,
      * <code>VectorHereBerlin</code>.
      * </p>
@@ -67,9 +67,10 @@ public class MapConfiguration implements Serializable, Cloneable, StructuredPojo
      * @param style
      *        Specifies the map style selected from an available data provider.</p>
      *        <p>
-     *        Valid styles: <code>VectorEsriStreets</code>, <code>VectorEsriTopographic</code>,
-     *        <code>VectorEsriNavigation</code>, <code>VectorEsriDarkGrayCanvas</code>,
-     *        <code>VectorEsriLightGrayCanvas</code>, <code>VectorHereBerlin</code>.
+     *        Valid styles: <code>RasterEsriImagery</code>, <code>VectorEsriStreets</code>,
+     *        <code>VectorEsriTopographic</code>, <code>VectorEsriNavigation</code>,
+     *        <code>VectorEsriDarkGrayCanvas</code>, <code>VectorEsriLightGrayCanvas</code>,
+     *        <code>VectorHereBerlin</code>.
      *        </p>
      *        <note>
      *        <p>
@@ -88,7 +89,7 @@ public class MapConfiguration implements Serializable, Cloneable, StructuredPojo
      * Specifies the map style selected from an available data provider.
      * </p>
      * <p>
-     * Valid styles: <code>VectorEsriStreets</code>, <code>VectorEsriTopographic</code>,
+     * Valid styles: <code>RasterEsriImagery</code>, <code>VectorEsriStreets</code>, <code>VectorEsriTopographic</code>,
      * <code>VectorEsriNavigation</code>, <code>VectorEsriDarkGrayCanvas</code>, <code>VectorEsriLightGrayCanvas</code>,
      * <code>VectorHereBerlin</code>.
      * </p>
@@ -102,9 +103,10 @@ public class MapConfiguration implements Serializable, Cloneable, StructuredPojo
      * 
      * @return Specifies the map style selected from an available data provider.</p>
      *         <p>
-     *         Valid styles: <code>VectorEsriStreets</code>, <code>VectorEsriTopographic</code>,
-     *         <code>VectorEsriNavigation</code>, <code>VectorEsriDarkGrayCanvas</code>,
-     *         <code>VectorEsriLightGrayCanvas</code>, <code>VectorHereBerlin</code>.
+     *         Valid styles: <code>RasterEsriImagery</code>, <code>VectorEsriStreets</code>,
+     *         <code>VectorEsriTopographic</code>, <code>VectorEsriNavigation</code>,
+     *         <code>VectorEsriDarkGrayCanvas</code>, <code>VectorEsriLightGrayCanvas</code>,
+     *         <code>VectorHereBerlin</code>.
      *         </p>
      *         <note>
      *         <p>
@@ -123,7 +125,7 @@ public class MapConfiguration implements Serializable, Cloneable, StructuredPojo
      * Specifies the map style selected from an available data provider.
      * </p>
      * <p>
-     * Valid styles: <code>VectorEsriStreets</code>, <code>VectorEsriTopographic</code>,
+     * Valid styles: <code>RasterEsriImagery</code>, <code>VectorEsriStreets</code>, <code>VectorEsriTopographic</code>,
      * <code>VectorEsriNavigation</code>, <code>VectorEsriDarkGrayCanvas</code>, <code>VectorEsriLightGrayCanvas</code>,
      * <code>VectorHereBerlin</code>.
      * </p>
@@ -138,9 +140,10 @@ public class MapConfiguration implements Serializable, Cloneable, StructuredPojo
      * @param style
      *        Specifies the map style selected from an available data provider.</p>
      *        <p>
-     *        Valid styles: <code>VectorEsriStreets</code>, <code>VectorEsriTopographic</code>,
-     *        <code>VectorEsriNavigation</code>, <code>VectorEsriDarkGrayCanvas</code>,
-     *        <code>VectorEsriLightGrayCanvas</code>, <code>VectorHereBerlin</code>.
+     *        Valid styles: <code>RasterEsriImagery</code>, <code>VectorEsriStreets</code>,
+     *        <code>VectorEsriTopographic</code>, <code>VectorEsriNavigation</code>,
+     *        <code>VectorEsriDarkGrayCanvas</code>, <code>VectorEsriLightGrayCanvas</code>,
+     *        <code>VectorHereBerlin</code>.
      *        </p>
      *        <note>
      *        <p>

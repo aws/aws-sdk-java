@@ -53,6 +53,13 @@ public class DescribeMapResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * The Amazon Resource Name (ARN) for the map resource. Used when you need to specify a resource across all AWS.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String mapArn;
     /**
@@ -71,6 +78,12 @@ public class DescribeMapResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </pre>
      */
     private String pricingPlan;
+    /**
+     * <p>
+     * Tags associated with the map resource.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
     /**
      * <p>
      * The timestamp for when the map resource was last update in <a
@@ -256,10 +269,23 @@ public class DescribeMapResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * The Amazon Resource Name (ARN) for the map resource. Used when you need to specify a resource across all AWS.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param mapArn
      *        The Amazon Resource Name (ARN) for the map resource. Used when you need to specify a resource across all
-     *        AWS.
+     *        AWS.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
+     *        </p>
+     *        </li>
      */
 
     public void setMapArn(String mapArn) {
@@ -270,9 +296,22 @@ public class DescribeMapResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * The Amazon Resource Name (ARN) for the map resource. Used when you need to specify a resource across all AWS.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The Amazon Resource Name (ARN) for the map resource. Used when you need to specify a resource across all
-     *         AWS.
+     *         AWS.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
+     *         </p>
+     *         </li>
      */
 
     public String getMapArn() {
@@ -283,10 +322,23 @@ public class DescribeMapResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * The Amazon Resource Name (ARN) for the map resource. Used when you need to specify a resource across all AWS.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param mapArn
      *        The Amazon Resource Name (ARN) for the map resource. Used when you need to specify a resource across all
-     *        AWS.
+     *        AWS.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -424,6 +476,74 @@ public class DescribeMapResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
+     * Tags associated with the map resource.
+     * </p>
+     * 
+     * @return Tags associated with the map resource.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Tags associated with the map resource.
+     * </p>
+     * 
+     * @param tags
+     *        Tags associated with the map resource.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * Tags associated with the map resource.
+     * </p>
+     * 
+     * @param tags
+     *        Tags associated with the map resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeMapResult withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see DescribeMapResult#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeMapResult addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeMapResult clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * <p>
      * The timestamp for when the map resource was last update in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
@@ -500,6 +620,8 @@ public class DescribeMapResult extends com.amazonaws.AmazonWebServiceResult<com.
             sb.append("MapName: ").append(getMapName()).append(",");
         if (getPricingPlan() != null)
             sb.append("PricingPlan: ").append(getPricingPlan()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getUpdateTime() != null)
             sb.append("UpdateTime: ").append(getUpdateTime());
         sb.append("}");
@@ -544,6 +666,10 @@ public class DescribeMapResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getPricingPlan() != null && other.getPricingPlan().equals(this.getPricingPlan()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         if (other.getUpdateTime() == null ^ this.getUpdateTime() == null)
             return false;
         if (other.getUpdateTime() != null && other.getUpdateTime().equals(this.getUpdateTime()) == false)
@@ -563,6 +689,7 @@ public class DescribeMapResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getMapArn() == null) ? 0 : getMapArn().hashCode());
         hashCode = prime * hashCode + ((getMapName() == null) ? 0 : getMapName().hashCode());
         hashCode = prime * hashCode + ((getPricingPlan() == null) ? 0 : getPricingPlan().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
         return hashCode;
     }

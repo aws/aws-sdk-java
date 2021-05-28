@@ -20,8 +20,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Represents a single entry in a list of tasks. <code>TaskListEntry</code> returns an array that contains a list of
- * tasks when the <a>ListTasks</a> operation is called. A task includes the source and destination file systems to sync
- * and the options to use for the tasks.
+ * tasks when the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListTasks.html">ListTasks</a>
+ * operation is called. A task includes the source and destination file systems to sync and the options to use for the
+ * tasks.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/TaskListEntry" target="_top">AWS API

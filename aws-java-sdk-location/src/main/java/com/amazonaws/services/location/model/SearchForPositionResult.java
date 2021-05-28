@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Specifies a single point of interest, or Place as a result of a search query obtained from a dataset configured in
- * the Place index Resource.
+ * the place index resource.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/SearchForPositionResult" target="_top">AWS

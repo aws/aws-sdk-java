@@ -33,7 +33,7 @@ public class AssociateTrackerConsumerRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * Format example: <code>arn:partition:service:region:account-id:resource-type:resource-id</code>
+     * Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p>
      * </li>
      * </ul>
@@ -54,18 +54,19 @@ public class AssociateTrackerConsumerRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * Format example: <code>arn:partition:service:region:account-id:resource-type:resource-id</code>
+     * Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p>
      * </li>
      * </ul>
      * 
      * @param consumerArn
      *        The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when
-     *        you need to specify a resource across all AWS. </p>
+     *        you need to specify a resource across all AWS.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Format example: <code>arn:partition:service:region:account-id:resource-type:resource-id</code>
+     *        Format example:
+     *        <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      *        </p>
      *        </li>
      */
@@ -82,17 +83,18 @@ public class AssociateTrackerConsumerRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * Format example: <code>arn:partition:service:region:account-id:resource-type:resource-id</code>
+     * Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p>
      * </li>
      * </ul>
      * 
      * @return The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used
-     *         when you need to specify a resource across all AWS. </p>
+     *         when you need to specify a resource across all AWS.</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Format example: <code>arn:partition:service:region:account-id:resource-type:resource-id</code>
+     *         Format example:
+     *         <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      *         </p>
      *         </li>
      */
@@ -109,18 +111,19 @@ public class AssociateTrackerConsumerRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * Format example: <code>arn:partition:service:region:account-id:resource-type:resource-id</code>
+     * Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p>
      * </li>
      * </ul>
      * 
      * @param consumerArn
      *        The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when
-     *        you need to specify a resource across all AWS. </p>
+     *        you need to specify a resource across all AWS.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Format example: <code>arn:partition:service:region:account-id:resource-type:resource-id</code>
+     *        Format example:
+     *        <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

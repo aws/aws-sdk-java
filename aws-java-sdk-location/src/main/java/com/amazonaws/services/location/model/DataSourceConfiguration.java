@@ -21,18 +21,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Specifies the data storage option chosen for requesting Places.
  * </p>
- * <note>
- * <p>
- * By using Places, you agree that AWS may transmit your API queries to your selected third party provider for
- * processing, which may be outside the AWS region you are currently using.
- * </p>
- * <p>
- * Also, when using HERE as your data provider, you may not (a) use HERE Places for Asset Management, or (b) select the
- * <code>Storage</code> option for the <code>IntendedUse</code> parameter when requesting Places in Japan. For more
- * information, see the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location
- * Service.
- * </p>
- * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DataSourceConfiguration" target="_top">AWS
  *      API Documentation</a>
@@ -57,7 +45,12 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
      * <p>
      * <code>Storage</code> specifies that the result can be cached or stored in a database.
      * </p>
-     * </li>
+     * <important>
+     * <p>
+     * Place index resources using HERE as a data provider can't be configured to store results for locations in Japan
+     * when choosing <code>Storage</code> for the <code>IntendedUse</code> parameter.
+     * </p>
+     * </important></li>
      * </ul>
      * <p>
      * Default value: <code>SingleUse</code>
@@ -82,7 +75,12 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
      * <p>
      * <code>Storage</code> specifies that the result can be cached or stored in a database.
      * </p>
-     * </li>
+     * <important>
+     * <p>
+     * Place index resources using HERE as a data provider can't be configured to store results for locations in Japan
+     * when choosing <code>Storage</code> for the <code>IntendedUse</code> parameter.
+     * </p>
+     * </important></li>
      * </ul>
      * <p>
      * Default value: <code>SingleUse</code>
@@ -103,7 +101,12 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
      *        <p>
      *        <code>Storage</code> specifies that the result can be cached or stored in a database.
      *        </p>
-     *        </li>
+     *        <important>
+     *        <p>
+     *        Place index resources using HERE as a data provider can't be configured to store results for locations in
+     *        Japan when choosing <code>Storage</code> for the <code>IntendedUse</code> parameter.
+     *        </p>
+     *        </important></li>
      *        </ul>
      *        <p>
      *        Default value: <code>SingleUse</code>
@@ -131,7 +134,12 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
      * <p>
      * <code>Storage</code> specifies that the result can be cached or stored in a database.
      * </p>
-     * </li>
+     * <important>
+     * <p>
+     * Place index resources using HERE as a data provider can't be configured to store results for locations in Japan
+     * when choosing <code>Storage</code> for the <code>IntendedUse</code> parameter.
+     * </p>
+     * </important></li>
      * </ul>
      * <p>
      * Default value: <code>SingleUse</code>
@@ -151,7 +159,12 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
      *         <p>
      *         <code>Storage</code> specifies that the result can be cached or stored in a database.
      *         </p>
-     *         </li>
+     *         <important>
+     *         <p>
+     *         Place index resources using HERE as a data provider can't be configured to store results for locations in
+     *         Japan when choosing <code>Storage</code> for the <code>IntendedUse</code> parameter.
+     *         </p>
+     *         </important></li>
      *         </ul>
      *         <p>
      *         Default value: <code>SingleUse</code>
@@ -179,7 +192,12 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
      * <p>
      * <code>Storage</code> specifies that the result can be cached or stored in a database.
      * </p>
-     * </li>
+     * <important>
+     * <p>
+     * Place index resources using HERE as a data provider can't be configured to store results for locations in Japan
+     * when choosing <code>Storage</code> for the <code>IntendedUse</code> parameter.
+     * </p>
+     * </important></li>
      * </ul>
      * <p>
      * Default value: <code>SingleUse</code>
@@ -200,7 +218,12 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
      *        <p>
      *        <code>Storage</code> specifies that the result can be cached or stored in a database.
      *        </p>
-     *        </li>
+     *        <important>
+     *        <p>
+     *        Place index resources using HERE as a data provider can't be configured to store results for locations in
+     *        Japan when choosing <code>Storage</code> for the <code>IntendedUse</code> parameter.
+     *        </p>
+     *        </important></li>
      *        </ul>
      *        <p>
      *        Default value: <code>SingleUse</code>
@@ -230,7 +253,12 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
      * <p>
      * <code>Storage</code> specifies that the result can be cached or stored in a database.
      * </p>
-     * </li>
+     * <important>
+     * <p>
+     * Place index resources using HERE as a data provider can't be configured to store results for locations in Japan
+     * when choosing <code>Storage</code> for the <code>IntendedUse</code> parameter.
+     * </p>
+     * </important></li>
      * </ul>
      * <p>
      * Default value: <code>SingleUse</code>
@@ -251,7 +279,12 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
      *        <p>
      *        <code>Storage</code> specifies that the result can be cached or stored in a database.
      *        </p>
-     *        </li>
+     *        <important>
+     *        <p>
+     *        Place index resources using HERE as a data provider can't be configured to store results for locations in
+     *        Japan when choosing <code>Storage</code> for the <code>IntendedUse</code> parameter.
+     *        </p>
+     *        </important></li>
      *        </ul>
      *        <p>
      *        Default value: <code>SingleUse</code>

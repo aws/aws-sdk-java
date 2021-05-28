@@ -35,7 +35,7 @@ public class CreateGeofenceCollectionRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * Contain only alphanumeric characters (A–Z, a–z, 0-9), hyphens (-), periods (.), and underscores (_).
+     * Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).
      * </p>
      * </li>
      * <li>
@@ -59,7 +59,14 @@ public class CreateGeofenceCollectionRequest extends com.amazonaws.AmazonWebServ
     private String description;
     /**
      * <p>
-     * Specifies the pricing plan for your geofence collection.
+     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS
+     * customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
+     * </p>
+     */
+    private String kmsKeyId;
+    /**
+     * <p>
+     * Specifies the pricing plan for the geofence collection.
      * </p>
      * <p>
      * For additional details and restrictions on each pricing plan option, see the <a
@@ -69,19 +76,72 @@ public class CreateGeofenceCollectionRequest extends com.amazonaws.AmazonWebServ
     private String pricingPlan;
     /**
      * <p>
-     * Specifies the plan data source. Required if the Mobile Asset Tracking (MAT) or the Mobile Asset Management (MAM)
-     * pricing plan is selected.
+     * Specifies the data provider for the geofence collection.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Billing is determined by the resource usage, the associated pricing plan, and the data source that was specified.
-     * For more information about each pricing plan option and restrictions, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * Required value for the following pricing plans: <code>MobileAssetTracking </code>|
+     * <code>MobileAssetManagement</code>
      * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a
+     * href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location Service product page.
+     * </p>
+     * <note>
+     * <p>
+     * Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for your geofence
+     * collection. Your data won't be shared with the data provider, and will remain in your AWS account or Region
+     * unless you move it.
+     * </p>
+     * </note>
      * <p>
      * Valid Values: <code>Esri </code>| <code>Here</code>
      * </p>
      */
     private String pricingPlanDataSource;
+    /**
+     * <p>
+     * Applies one or more tags to the geofence collection. A tag is a key-value pair helps manage, identify, search,
+     * and filter your resources by labelling them.
+     * </p>
+     * <p>
+     * Format: <code>"key" : "value"</code>
+     * </p>
+     * <p>
+     * Restrictions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum 50 tags per resource
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Each resource tag must be unique with a maximum of one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length: 128 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length: 256 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -93,7 +153,7 @@ public class CreateGeofenceCollectionRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * Contain only alphanumeric characters (A–Z, a–z, 0-9), hyphens (-), periods (.), and underscores (_).
+     * Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).
      * </p>
      * </li>
      * <li>
@@ -116,7 +176,7 @@ public class CreateGeofenceCollectionRequest extends com.amazonaws.AmazonWebServ
      *        <ul>
      *        <li>
      *        <p>
-     *        Contain only alphanumeric characters (A–Z, a–z, 0-9), hyphens (-), periods (.), and underscores (_).
+     *        Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).
      *        </p>
      *        </li>
      *        <li>
@@ -145,7 +205,7 @@ public class CreateGeofenceCollectionRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * Contain only alphanumeric characters (A–Z, a–z, 0-9), hyphens (-), periods (.), and underscores (_).
+     * Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).
      * </p>
      * </li>
      * <li>
@@ -167,7 +227,7 @@ public class CreateGeofenceCollectionRequest extends com.amazonaws.AmazonWebServ
      *         <ul>
      *         <li>
      *         <p>
-     *         Contain only alphanumeric characters (A–Z, a–z, 0-9), hyphens (-), periods (.), and underscores (_).
+     *         Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).
      *         </p>
      *         </li>
      *         <li>
@@ -196,7 +256,7 @@ public class CreateGeofenceCollectionRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * Contain only alphanumeric characters (A–Z, a–z, 0-9), hyphens (-), periods (.), and underscores (_).
+     * Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).
      * </p>
      * </li>
      * <li>
@@ -219,7 +279,7 @@ public class CreateGeofenceCollectionRequest extends com.amazonaws.AmazonWebServ
      *        <ul>
      *        <li>
      *        <p>
-     *        Contain only alphanumeric characters (A–Z, a–z, 0-9), hyphens (-), periods (.), and underscores (_).
+     *        Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).
      *        </p>
      *        </li>
      *        <li>
@@ -282,7 +342,56 @@ public class CreateGeofenceCollectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies the pricing plan for your geofence collection.
+     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS
+     * customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        A key identifier for an <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed
+     *        key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS
+     * customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
+     * </p>
+     * 
+     * @return A key identifier for an <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed
+     *         key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS
+     * customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        A key identifier for an <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed
+     *        key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateGeofenceCollectionRequest withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the pricing plan for the geofence collection.
      * </p>
      * <p>
      * For additional details and restrictions on each pricing plan option, see the <a
@@ -290,7 +399,7 @@ public class CreateGeofenceCollectionRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param pricingPlan
-     *        Specifies the pricing plan for your geofence collection.</p>
+     *        Specifies the pricing plan for the geofence collection.</p>
      *        <p>
      *        For additional details and restrictions on each pricing plan option, see the <a
      *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
@@ -303,14 +412,14 @@ public class CreateGeofenceCollectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies the pricing plan for your geofence collection.
+     * Specifies the pricing plan for the geofence collection.
      * </p>
      * <p>
      * For additional details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
      * </p>
      * 
-     * @return Specifies the pricing plan for your geofence collection.</p>
+     * @return Specifies the pricing plan for the geofence collection.</p>
      *         <p>
      *         For additional details and restrictions on each pricing plan option, see the <a
      *         href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
@@ -323,7 +432,7 @@ public class CreateGeofenceCollectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies the pricing plan for your geofence collection.
+     * Specifies the pricing plan for the geofence collection.
      * </p>
      * <p>
      * For additional details and restrictions on each pricing plan option, see the <a
@@ -331,7 +440,7 @@ public class CreateGeofenceCollectionRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param pricingPlan
-     *        Specifies the pricing plan for your geofence collection.</p>
+     *        Specifies the pricing plan for the geofence collection.</p>
      *        <p>
      *        For additional details and restrictions on each pricing plan option, see the <a
      *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
@@ -346,7 +455,7 @@ public class CreateGeofenceCollectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies the pricing plan for your geofence collection.
+     * Specifies the pricing plan for the geofence collection.
      * </p>
      * <p>
      * For additional details and restrictions on each pricing plan option, see the <a
@@ -354,7 +463,7 @@ public class CreateGeofenceCollectionRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param pricingPlan
-     *        Specifies the pricing plan for your geofence collection.</p>
+     *        Specifies the pricing plan for the geofence collection.</p>
      *        <p>
      *        For additional details and restrictions on each pricing plan option, see the <a
      *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
@@ -369,26 +478,53 @@ public class CreateGeofenceCollectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies the plan data source. Required if the Mobile Asset Tracking (MAT) or the Mobile Asset Management (MAM)
-     * pricing plan is selected.
+     * Specifies the data provider for the geofence collection.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Billing is determined by the resource usage, the associated pricing plan, and the data source that was specified.
-     * For more information about each pricing plan option and restrictions, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * Required value for the following pricing plans: <code>MobileAssetTracking </code>|
+     * <code>MobileAssetManagement</code>
      * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a
+     * href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location Service product page.
+     * </p>
+     * <note>
+     * <p>
+     * Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for your geofence
+     * collection. Your data won't be shared with the data provider, and will remain in your AWS account or Region
+     * unless you move it.
+     * </p>
+     * </note>
      * <p>
      * Valid Values: <code>Esri </code>| <code>Here</code>
      * </p>
      * 
      * @param pricingPlanDataSource
-     *        Specifies the plan data source. Required if the Mobile Asset Tracking (MAT) or the Mobile Asset Management
-     *        (MAM) pricing plan is selected.</p>
+     *        Specifies the data provider for the geofence collection.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        Billing is determined by the resource usage, the associated pricing plan, and the data source that was
-     *        specified. For more information about each pricing plan option and restrictions, see the <a
-     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     *        Required value for the following pricing plans: <code>MobileAssetTracking </code>|
+     *        <code>MobileAssetManagement</code>
      *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>,
+     *        and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location Service
+     *        product page.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for your
+     *        geofence collection. Your data won't be shared with the data provider, and will remain in your AWS account
+     *        or Region unless you move it.
+     *        </p>
+     *        </note>
      *        <p>
      *        Valid Values: <code>Esri </code>| <code>Here</code>
      */
@@ -399,25 +535,52 @@ public class CreateGeofenceCollectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies the plan data source. Required if the Mobile Asset Tracking (MAT) or the Mobile Asset Management (MAM)
-     * pricing plan is selected.
+     * Specifies the data provider for the geofence collection.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Billing is determined by the resource usage, the associated pricing plan, and the data source that was specified.
-     * For more information about each pricing plan option and restrictions, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * Required value for the following pricing plans: <code>MobileAssetTracking </code>|
+     * <code>MobileAssetManagement</code>
      * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a
+     * href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location Service product page.
+     * </p>
+     * <note>
+     * <p>
+     * Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for your geofence
+     * collection. Your data won't be shared with the data provider, and will remain in your AWS account or Region
+     * unless you move it.
+     * </p>
+     * </note>
      * <p>
      * Valid Values: <code>Esri </code>| <code>Here</code>
      * </p>
      * 
-     * @return Specifies the plan data source. Required if the Mobile Asset Tracking (MAT) or the Mobile Asset
-     *         Management (MAM) pricing plan is selected.</p>
+     * @return Specifies the data provider for the geofence collection.</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         Billing is determined by the resource usage, the associated pricing plan, and the data source that was
-     *         specified. For more information about each pricing plan option and restrictions, see the <a
-     *         href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     *         Required value for the following pricing plans: <code>MobileAssetTracking </code>|
+     *         <code>MobileAssetManagement</code>
      *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>,
+     *         and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location Service
+     *         product page.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for your
+     *         geofence collection. Your data won't be shared with the data provider, and will remain in your AWS
+     *         account or Region unless you move it.
+     *         </p>
+     *         </note>
      *         <p>
      *         Valid Values: <code>Esri </code>| <code>Here</code>
      */
@@ -428,26 +591,53 @@ public class CreateGeofenceCollectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies the plan data source. Required if the Mobile Asset Tracking (MAT) or the Mobile Asset Management (MAM)
-     * pricing plan is selected.
+     * Specifies the data provider for the geofence collection.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Billing is determined by the resource usage, the associated pricing plan, and the data source that was specified.
-     * For more information about each pricing plan option and restrictions, see the <a
-     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     * Required value for the following pricing plans: <code>MobileAssetTracking </code>|
+     * <code>MobileAssetManagement</code>
      * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a
+     * href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location Service product page.
+     * </p>
+     * <note>
+     * <p>
+     * Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for your geofence
+     * collection. Your data won't be shared with the data provider, and will remain in your AWS account or Region
+     * unless you move it.
+     * </p>
+     * </note>
      * <p>
      * Valid Values: <code>Esri </code>| <code>Here</code>
      * </p>
      * 
      * @param pricingPlanDataSource
-     *        Specifies the plan data source. Required if the Mobile Asset Tracking (MAT) or the Mobile Asset Management
-     *        (MAM) pricing plan is selected.</p>
+     *        Specifies the data provider for the geofence collection.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        Billing is determined by the resource usage, the associated pricing plan, and the data source that was
-     *        specified. For more information about each pricing plan option and restrictions, see the <a
-     *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
+     *        Required value for the following pricing plans: <code>MobileAssetTracking </code>|
+     *        <code>MobileAssetManagement</code>
      *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>,
+     *        and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location Service
+     *        product page.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for your
+     *        geofence collection. Your data won't be shared with the data provider, and will remain in your AWS account
+     *        or Region unless you move it.
+     *        </p>
+     *        </note>
      *        <p>
      *        Valid Values: <code>Esri </code>| <code>Here</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -455,6 +645,275 @@ public class CreateGeofenceCollectionRequest extends com.amazonaws.AmazonWebServ
 
     public CreateGeofenceCollectionRequest withPricingPlanDataSource(String pricingPlanDataSource) {
         setPricingPlanDataSource(pricingPlanDataSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Applies one or more tags to the geofence collection. A tag is a key-value pair helps manage, identify, search,
+     * and filter your resources by labelling them.
+     * </p>
+     * <p>
+     * Format: <code>"key" : "value"</code>
+     * </p>
+     * <p>
+     * Restrictions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum 50 tags per resource
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Each resource tag must be unique with a maximum of one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length: 128 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length: 256 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Applies one or more tags to the geofence collection. A tag is a key-value pair helps manage, identify,
+     *         search, and filter your resources by labelling them.</p>
+     *         <p>
+     *         Format: <code>"key" : "value"</code>
+     *         </p>
+     *         <p>
+     *         Restrictions:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Maximum 50 tags per resource
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Each resource tag must be unique with a maximum of one value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Maximum key length: 128 Unicode characters in UTF-8
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Maximum value length: 256 Unicode characters in UTF-8
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.
+     *         </p>
+     *         </li>
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Applies one or more tags to the geofence collection. A tag is a key-value pair helps manage, identify, search,
+     * and filter your resources by labelling them.
+     * </p>
+     * <p>
+     * Format: <code>"key" : "value"</code>
+     * </p>
+     * <p>
+     * Restrictions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum 50 tags per resource
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Each resource tag must be unique with a maximum of one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length: 128 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length: 256 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param tags
+     *        Applies one or more tags to the geofence collection. A tag is a key-value pair helps manage, identify,
+     *        search, and filter your resources by labelling them.</p>
+     *        <p>
+     *        Format: <code>"key" : "value"</code>
+     *        </p>
+     *        <p>
+     *        Restrictions:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Maximum 50 tags per resource
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Each resource tag must be unique with a maximum of one value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum key length: 128 Unicode characters in UTF-8
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum value length: 256 Unicode characters in UTF-8
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.
+     *        </p>
+     *        </li>
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * Applies one or more tags to the geofence collection. A tag is a key-value pair helps manage, identify, search,
+     * and filter your resources by labelling them.
+     * </p>
+     * <p>
+     * Format: <code>"key" : "value"</code>
+     * </p>
+     * <p>
+     * Restrictions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum 50 tags per resource
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Each resource tag must be unique with a maximum of one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length: 128 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length: 256 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param tags
+     *        Applies one or more tags to the geofence collection. A tag is a key-value pair helps manage, identify,
+     *        search, and filter your resources by labelling them.</p>
+     *        <p>
+     *        Format: <code>"key" : "value"</code>
+     *        </p>
+     *        <p>
+     *        Restrictions:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Maximum 50 tags per resource
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Each resource tag must be unique with a maximum of one value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum key length: 128 Unicode characters in UTF-8
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum value length: 256 Unicode characters in UTF-8
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateGeofenceCollectionRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see CreateGeofenceCollectionRequest#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateGeofenceCollectionRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateGeofenceCollectionRequest clearTagsEntries() {
+        this.tags = null;
         return this;
     }
 
@@ -474,10 +933,14 @@ public class CreateGeofenceCollectionRequest extends com.amazonaws.AmazonWebServ
             sb.append("CollectionName: ").append(getCollectionName()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getPricingPlan() != null)
             sb.append("PricingPlan: ").append(getPricingPlan()).append(",");
         if (getPricingPlanDataSource() != null)
-            sb.append("PricingPlanDataSource: ").append(getPricingPlanDataSource());
+            sb.append("PricingPlanDataSource: ").append(getPricingPlanDataSource()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -500,6 +963,10 @@ public class CreateGeofenceCollectionRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
         if (other.getPricingPlan() == null ^ this.getPricingPlan() == null)
             return false;
         if (other.getPricingPlan() != null && other.getPricingPlan().equals(this.getPricingPlan()) == false)
@@ -507,6 +974,10 @@ public class CreateGeofenceCollectionRequest extends com.amazonaws.AmazonWebServ
         if (other.getPricingPlanDataSource() == null ^ this.getPricingPlanDataSource() == null)
             return false;
         if (other.getPricingPlanDataSource() != null && other.getPricingPlanDataSource().equals(this.getPricingPlanDataSource()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -518,8 +989,10 @@ public class CreateGeofenceCollectionRequest extends com.amazonaws.AmazonWebServ
 
         hashCode = prime * hashCode + ((getCollectionName() == null) ? 0 : getCollectionName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getPricingPlan() == null) ? 0 : getPricingPlan().hashCode());
         hashCode = prime * hashCode + ((getPricingPlanDataSource() == null) ? 0 : getPricingPlanDataSource().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

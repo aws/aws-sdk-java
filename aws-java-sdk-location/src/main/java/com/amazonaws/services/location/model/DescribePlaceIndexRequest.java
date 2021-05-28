@@ -27,18 +27,18 @@ public class DescribePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the Place index resource.
+     * The name of the place index resource.
      * </p>
      */
     private String indexName;
 
     /**
      * <p>
-     * The name of the Place index resource.
+     * The name of the place index resource.
      * </p>
      * 
      * @param indexName
-     *        The name of the Place index resource.
+     *        The name of the place index resource.
      */
 
     public void setIndexName(String indexName) {
@@ -47,10 +47,10 @@ public class DescribePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the Place index resource.
+     * The name of the place index resource.
      * </p>
      * 
-     * @return The name of the Place index resource.
+     * @return The name of the place index resource.
      */
 
     public String getIndexName() {
@@ -59,11 +59,11 @@ public class DescribePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the Place index resource.
+     * The name of the place index resource.
      * </p>
      * 
      * @param indexName
-     *        The name of the Place index resource.
+     *        The name of the place index resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

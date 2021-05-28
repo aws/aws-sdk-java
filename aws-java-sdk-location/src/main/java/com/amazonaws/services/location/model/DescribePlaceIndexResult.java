@@ -25,7 +25,7 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The timestamp for when the Place index resource was created in <a
+     * The timestamp for when the place index resource was created in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      * </p>
@@ -62,26 +62,32 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
     private DataSourceConfiguration dataSourceConfiguration;
     /**
      * <p>
-     * The optional description for the Place index resource.
+     * The optional description for the place index resource.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the Place index resource. Used when you need to specify a resource across all
-     * AWS.
+     * The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across all AWS.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String indexArn;
     /**
      * <p>
-     * The name of the Place index resource being described.
+     * The name of the place index resource being described.
      * </p>
      */
     private String indexName;
     /**
      * <p>
-     * The pricing plan selected for the specified Place index resource.
+     * The pricing plan selected for the specified place index resource.
      * </p>
      * <p>
      * For additional details and restrictions on each pricing plan option, see the <a
@@ -91,7 +97,13 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
     private String pricingPlan;
     /**
      * <p>
-     * The timestamp for when the Place index resource was last updated in <a
+     * Tags associated with place index resource.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The timestamp for when the place index resource was last updated in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      * </p>
@@ -100,13 +112,13 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The timestamp for when the Place index resource was created in <a
+     * The timestamp for when the place index resource was created in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      * </p>
      * 
      * @param createTime
-     *        The timestamp for when the Place index resource was created in <a
+     *        The timestamp for when the place index resource was created in <a
      *        href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      *        <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      */
@@ -117,12 +129,12 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The timestamp for when the Place index resource was created in <a
+     * The timestamp for when the place index resource was created in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      * </p>
      * 
-     * @return The timestamp for when the Place index resource was created in <a
+     * @return The timestamp for when the place index resource was created in <a
      *         href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      *         <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      */
@@ -133,13 +145,13 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The timestamp for when the Place index resource was created in <a
+     * The timestamp for when the place index resource was created in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      * </p>
      * 
      * @param createTime
-     *        The timestamp for when the Place index resource was created in <a
+     *        The timestamp for when the place index resource was created in <a
      *        href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      *        <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -331,11 +343,11 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The optional description for the Place index resource.
+     * The optional description for the place index resource.
      * </p>
      * 
      * @param description
-     *        The optional description for the Place index resource.
+     *        The optional description for the place index resource.
      */
 
     public void setDescription(String description) {
@@ -344,10 +356,10 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The optional description for the Place index resource.
+     * The optional description for the place index resource.
      * </p>
      * 
-     * @return The optional description for the Place index resource.
+     * @return The optional description for the place index resource.
      */
 
     public String getDescription() {
@@ -356,11 +368,11 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The optional description for the Place index resource.
+     * The optional description for the place index resource.
      * </p>
      * 
      * @param description
-     *        The optional description for the Place index resource.
+     *        The optional description for the place index resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -371,13 +383,25 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the Place index resource. Used when you need to specify a resource across all
-     * AWS.
+     * The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across all AWS.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param indexArn
-     *        The Amazon Resource Name (ARN) for the Place index resource. Used when you need to specify a resource
-     *        across all AWS.
+     *        The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across all AWS.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code>
+     *        </p>
+     *        </li>
      */
 
     public void setIndexArn(String indexArn) {
@@ -386,12 +410,24 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the Place index resource. Used when you need to specify a resource across all
-     * AWS.
+     * The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across all AWS.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The Amazon Resource Name (ARN) for the Place index resource. Used when you need to specify a resource
-     *         across all AWS.
+     * @return The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across all AWS.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code>
+     *         </p>
+     *         </li>
      */
 
     public String getIndexArn() {
@@ -400,13 +436,25 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the Place index resource. Used when you need to specify a resource across all
-     * AWS.
+     * The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across all AWS.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param indexArn
-     *        The Amazon Resource Name (ARN) for the Place index resource. Used when you need to specify a resource
-     *        across all AWS.
+     *        The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across all AWS.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -417,11 +465,11 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The name of the Place index resource being described.
+     * The name of the place index resource being described.
      * </p>
      * 
      * @param indexName
-     *        The name of the Place index resource being described.
+     *        The name of the place index resource being described.
      */
 
     public void setIndexName(String indexName) {
@@ -430,10 +478,10 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The name of the Place index resource being described.
+     * The name of the place index resource being described.
      * </p>
      * 
-     * @return The name of the Place index resource being described.
+     * @return The name of the place index resource being described.
      */
 
     public String getIndexName() {
@@ -442,11 +490,11 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The name of the Place index resource being described.
+     * The name of the place index resource being described.
      * </p>
      * 
      * @param indexName
-     *        The name of the Place index resource being described.
+     *        The name of the place index resource being described.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -457,7 +505,7 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The pricing plan selected for the specified Place index resource.
+     * The pricing plan selected for the specified place index resource.
      * </p>
      * <p>
      * For additional details and restrictions on each pricing plan option, see the <a
@@ -465,7 +513,7 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param pricingPlan
-     *        The pricing plan selected for the specified Place index resource.</p>
+     *        The pricing plan selected for the specified place index resource.</p>
      *        <p>
      *        For additional details and restrictions on each pricing plan option, see the <a
      *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
@@ -478,14 +526,14 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The pricing plan selected for the specified Place index resource.
+     * The pricing plan selected for the specified place index resource.
      * </p>
      * <p>
      * For additional details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
      * </p>
      * 
-     * @return The pricing plan selected for the specified Place index resource.</p>
+     * @return The pricing plan selected for the specified place index resource.</p>
      *         <p>
      *         For additional details and restrictions on each pricing plan option, see the <a
      *         href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
@@ -498,7 +546,7 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The pricing plan selected for the specified Place index resource.
+     * The pricing plan selected for the specified place index resource.
      * </p>
      * <p>
      * For additional details and restrictions on each pricing plan option, see the <a
@@ -506,7 +554,7 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param pricingPlan
-     *        The pricing plan selected for the specified Place index resource.</p>
+     *        The pricing plan selected for the specified place index resource.</p>
      *        <p>
      *        For additional details and restrictions on each pricing plan option, see the <a
      *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
@@ -521,7 +569,7 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The pricing plan selected for the specified Place index resource.
+     * The pricing plan selected for the specified place index resource.
      * </p>
      * <p>
      * For additional details and restrictions on each pricing plan option, see the <a
@@ -529,7 +577,7 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param pricingPlan
-     *        The pricing plan selected for the specified Place index resource.</p>
+     *        The pricing plan selected for the specified place index resource.</p>
      *        <p>
      *        For additional details and restrictions on each pricing plan option, see the <a
      *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
@@ -544,13 +592,81 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The timestamp for when the Place index resource was last updated in <a
+     * Tags associated with place index resource.
+     * </p>
+     * 
+     * @return Tags associated with place index resource.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Tags associated with place index resource.
+     * </p>
+     * 
+     * @param tags
+     *        Tags associated with place index resource.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * Tags associated with place index resource.
+     * </p>
+     * 
+     * @param tags
+     *        Tags associated with place index resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePlaceIndexResult withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see DescribePlaceIndexResult#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePlaceIndexResult addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribePlaceIndexResult clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The timestamp for when the place index resource was last updated in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      * </p>
      * 
      * @param updateTime
-     *        The timestamp for when the Place index resource was last updated in <a
+     *        The timestamp for when the place index resource was last updated in <a
      *        href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      *        <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      */
@@ -561,12 +677,12 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The timestamp for when the Place index resource was last updated in <a
+     * The timestamp for when the place index resource was last updated in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      * </p>
      * 
-     * @return The timestamp for when the Place index resource was last updated in <a
+     * @return The timestamp for when the place index resource was last updated in <a
      *         href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      *         <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      */
@@ -577,13 +693,13 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The timestamp for when the Place index resource was last updated in <a
+     * The timestamp for when the place index resource was last updated in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      * </p>
      * 
      * @param updateTime
-     *        The timestamp for when the Place index resource was last updated in <a
+     *        The timestamp for when the place index resource was last updated in <a
      *        href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      *        <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -620,6 +736,8 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
             sb.append("IndexName: ").append(getIndexName()).append(",");
         if (getPricingPlan() != null)
             sb.append("PricingPlan: ").append(getPricingPlan()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getUpdateTime() != null)
             sb.append("UpdateTime: ").append(getUpdateTime());
         sb.append("}");
@@ -664,6 +782,10 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getPricingPlan() != null && other.getPricingPlan().equals(this.getPricingPlan()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         if (other.getUpdateTime() == null ^ this.getUpdateTime() == null)
             return false;
         if (other.getUpdateTime() != null && other.getUpdateTime().equals(this.getUpdateTime()) == false)
@@ -683,6 +805,7 @@ public class DescribePlaceIndexResult extends com.amazonaws.AmazonWebServiceResu
         hashCode = prime * hashCode + ((getIndexArn() == null) ? 0 : getIndexArn().hashCode());
         hashCode = prime * hashCode + ((getIndexName() == null) ? 0 : getIndexName().hashCode());
         hashCode = prime * hashCode + ((getPricingPlan() == null) ? 0 : getPricingPlan().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
         return hashCode;
     }

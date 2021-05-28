@@ -54,7 +54,7 @@ public class ListTrackersResponseEntry implements Serializable, Cloneable, Struc
     private String pricingPlan;
     /**
      * <p>
-     * The data source selected for the tracker resource and associated pricing plan.
+     * The specified data provider for the tracker resource.
      * </p>
      */
     private String pricingPlanDataSource;
@@ -254,11 +254,11 @@ public class ListTrackersResponseEntry implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The data source selected for the tracker resource and associated pricing plan.
+     * The specified data provider for the tracker resource.
      * </p>
      * 
      * @param pricingPlanDataSource
-     *        The data source selected for the tracker resource and associated pricing plan.
+     *        The specified data provider for the tracker resource.
      */
 
     public void setPricingPlanDataSource(String pricingPlanDataSource) {
@@ -267,10 +267,10 @@ public class ListTrackersResponseEntry implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The data source selected for the tracker resource and associated pricing plan.
+     * The specified data provider for the tracker resource.
      * </p>
      * 
-     * @return The data source selected for the tracker resource and associated pricing plan.
+     * @return The specified data provider for the tracker resource.
      */
 
     public String getPricingPlanDataSource() {
@@ -279,11 +279,11 @@ public class ListTrackersResponseEntry implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The data source selected for the tracker resource and associated pricing plan.
+     * The specified data provider for the tracker resource.
      * </p>
      * 
      * @param pricingPlanDataSource
-     *        The data source selected for the tracker resource and associated pricing plan.
+     *        The specified data provider for the tracker resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

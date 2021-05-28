@@ -27,7 +27,7 @@ import com.amazonaws.services.location.model.*;
  * </p>
  * <p>
  * <p>
- * Suite of geospatial services including Maps, Places, Tracking, and Geofencing
+ * Suite of geospatial services including Maps, Places, Routes, Tracking, and Geofencing
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -76,11 +76,35 @@ public interface AmazonLocation {
 
     /**
      * <p>
+     * Deletes the position history of one or more devices from a tracker resource.
+     * </p>
+     * 
+     * @param batchDeleteDevicePositionHistoryRequest
+     * @return Result of the BatchDeleteDevicePositionHistory operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed to process because of an unknown server error, exception, or failure.
+     * @throws ResourceNotFoundException
+     *         The resource that you've entered was not found in your AWS account.
+     * @throws AccessDeniedException
+     *         The request was denied due to insufficient access or permission. Check with an administrator to verify
+     *         your permissions.
+     * @throws ValidationException
+     *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonLocation.BatchDeleteDevicePositionHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchDeleteDevicePositionHistory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchDeleteDevicePositionHistoryResult batchDeleteDevicePositionHistory(BatchDeleteDevicePositionHistoryRequest batchDeleteDevicePositionHistoryRequest);
+
+    /**
+     * <p>
      * Deletes a batch of geofences from a geofence collection.
      * </p>
      * <note>
      * <p>
-     * This action deletes the resource permanently. You can't undo this action.
+     * This operation deletes the resource permanently.
      * </p>
      * </note>
      * 
@@ -161,7 +185,8 @@ public interface AmazonLocation {
 
     /**
      * <p>
-     * A batch request for storing geofence geometries into a given geofence collection.
+     * A batch request for storing geofence geometries into a given geofence collection, or updates the geometry of an
+     * existing geofence if a geofence ID is included in the request.
      * </p>
      * 
      * @param batchPutGeofenceRequest
@@ -191,7 +216,7 @@ public interface AmazonLocation {
      * <note>
      * <p>
      * Only one position update is stored per sample time. Location data is sampled at a fixed rate of one position per
-     * 30-second interval, and retained for one year before it is deleted.
+     * 30-second interval and retained for 30 days before it's deleted.
      * </p>
      * </note>
      * 
@@ -213,6 +238,65 @@ public interface AmazonLocation {
      *      target="_top">AWS API Documentation</a>
      */
     BatchUpdateDevicePositionResult batchUpdateDevicePosition(BatchUpdateDevicePositionRequest batchUpdateDevicePositionRequest);
+
+    /**
+     * <p>
+     * <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html">Calculates a route</a>
+     * given the following required parameters: <code>DeparturePostiton</code> and <code>DestinationPosition</code>.
+     * Requires that you first <a
+     * href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
+     * aroute calculator resource</a>
+     * </p>
+     * <p>
+     * By default, a request that doesn't specify a departure time uses the best time of day to travel with the best
+     * traffic conditions when calculating the route.
+     * </p>
+     * <p>
+     * Additional options include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#departure-time">
+     * Specifying a departure time</a> using either <code>DepartureTime</code> or <code>DepartureNow</code>. This
+     * calculates a route based on predictive traffic data at the given time.
+     * </p>
+     * <note>
+     * <p>
+     * You can't specify both <code>DepartureTime</code> and <code>DepartureNow</code> in a single request. Specifying
+     * both parameters returns an error message.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#travel-mode">Specifying
+     * a travel mode</a> using TravelMode. This lets you specify additional route preference such as
+     * <code>CarModeOptions</code> if traveling by <code>Car</code>, or <code>TruckModeOptions</code> if traveling by
+     * <code>Truck</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * </p>
+     * 
+     * @param calculateRouteRequest
+     * @return Result of the CalculateRoute operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed to process because of an unknown server error, exception, or failure.
+     * @throws ResourceNotFoundException
+     *         The resource that you've entered was not found in your AWS account.
+     * @throws AccessDeniedException
+     *         The request was denied due to insufficient access or permission. Check with an administrator to verify
+     *         your permissions.
+     * @throws ValidationException
+     *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonLocation.CalculateRoute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CalculateRoute" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CalculateRouteResult calculateRoute(CalculateRouteRequest calculateRouteRequest);
 
     /**
      * <p>
@@ -243,13 +327,6 @@ public interface AmazonLocation {
      * Creates a map resource in your AWS account, which provides map tiles of different styles sourced from global
      * location data providers.
      * </p>
-     * <note>
-     * <p>
-     * By using Maps, you agree that AWS may transmit your API queries to your selected third party provider for
-     * processing, which may be outside the AWS region you are currently using. For more information, see the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.
-     * </p>
-     * </note>
      * 
      * @param createMapRequest
      * @return Result of the CreateMap operation returned by the service.
@@ -272,20 +349,9 @@ public interface AmazonLocation {
 
     /**
      * <p>
-     * Creates a Place index resource in your AWS account, which supports Places functions with geospatial data sourced
-     * from your chosen data provider.
+     * Creates a place index resource in your AWS account, which supports functions with geospatial data sourced from
+     * your chosen data provider.
      * </p>
-     * <note>
-     * <p>
-     * By using Places, you agree that AWS may transmit your API queries to your selected third party provider for
-     * processing, which may be outside the AWS region you are currently using.
-     * </p>
-     * <p>
-     * Because of licensing limitations, you may not use HERE to store results for locations in Japan. For more
-     * information, see the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location
-     * Service.
-     * </p>
-     * </note>
      * 
      * @param createPlaceIndexRequest
      * @return Result of the CreatePlaceIndex operation returned by the service.
@@ -305,6 +371,34 @@ public interface AmazonLocation {
      *      Documentation</a>
      */
     CreatePlaceIndexResult createPlaceIndex(CreatePlaceIndexRequest createPlaceIndexRequest);
+
+    /**
+     * <p>
+     * Creates a route calculator resource in your AWS account.
+     * </p>
+     * <p>
+     * You can send requests to a route calculator resource to estimate travel time, distance, and get directions. A
+     * route calculator sources traffic and road network data from your chosen data provider.
+     * </p>
+     * 
+     * @param createRouteCalculatorRequest
+     * @return Result of the CreateRouteCalculator operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed to process because of an unknown server error, exception, or failure.
+     * @throws ConflictException
+     *         The request was unsuccessful due to a conflict.
+     * @throws AccessDeniedException
+     *         The request was denied due to insufficient access or permission. Check with an administrator to verify
+     *         your permissions.
+     * @throws ValidationException
+     *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonLocation.CreateRouteCalculator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreateRouteCalculator" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateRouteCalculatorResult createRouteCalculator(CreateRouteCalculatorRequest createRouteCalculatorRequest);
 
     /**
      * <p>
@@ -337,8 +431,8 @@ public interface AmazonLocation {
      * </p>
      * <note>
      * <p>
-     * This action deletes the resource permanently. You can't undo this action. If the geofence collection is the
-     * target of a tracker resource, the devices will no longer be monitored.
+     * This operation deletes the resource permanently. If the geofence collection is the target of a tracker resource,
+     * the devices will no longer be monitored.
      * </p>
      * </note>
      * 
@@ -367,8 +461,8 @@ public interface AmazonLocation {
      * </p>
      * <note>
      * <p>
-     * This action deletes the resource permanently. You cannot undo this action. If the map is being used in an
-     * application, the map may not render.
+     * This operation deletes the resource permanently. If the map is being used in an application, the map may not
+     * render.
      * </p>
      * </note>
      * 
@@ -393,11 +487,11 @@ public interface AmazonLocation {
 
     /**
      * <p>
-     * Deletes a Place index resource from your AWS account.
+     * Deletes a place index resource from your AWS account.
      * </p>
      * <note>
      * <p>
-     * This action deletes the resource permanently. You cannot undo this action.
+     * This operation deletes the resource permanently.
      * </p>
      * </note>
      * 
@@ -422,12 +516,41 @@ public interface AmazonLocation {
 
     /**
      * <p>
+     * Deletes a route calculator resource from your AWS account.
+     * </p>
+     * <note>
+     * <p>
+     * This operation deletes the resource permanently.
+     * </p>
+     * </note>
+     * 
+     * @param deleteRouteCalculatorRequest
+     * @return Result of the DeleteRouteCalculator operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed to process because of an unknown server error, exception, or failure.
+     * @throws ResourceNotFoundException
+     *         The resource that you've entered was not found in your AWS account.
+     * @throws AccessDeniedException
+     *         The request was denied due to insufficient access or permission. Check with an administrator to verify
+     *         your permissions.
+     * @throws ValidationException
+     *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonLocation.DeleteRouteCalculator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DeleteRouteCalculator" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteRouteCalculatorResult deleteRouteCalculator(DeleteRouteCalculatorRequest deleteRouteCalculatorRequest);
+
+    /**
+     * <p>
      * Deletes a tracker resource from your AWS account.
      * </p>
      * <note>
      * <p>
-     * This action deletes the resource permanently. You can't undo this action. If the tracker resource is in use, you
-     * may encounter an error. Make sure that the target resource is not a dependency for your applications.
+     * This operation deletes the resource permanently. If the tracker resource is in use, you may encounter an error.
+     * Make sure that the target resource isn't a dependency for your applications.
      * </p>
      * </note>
      * 
@@ -500,7 +623,7 @@ public interface AmazonLocation {
 
     /**
      * <p>
-     * Retrieves the Place index resource details.
+     * Retrieves the place index resource details.
      * </p>
      * 
      * @param describePlaceIndexRequest
@@ -521,6 +644,30 @@ public interface AmazonLocation {
      *      API Documentation</a>
      */
     DescribePlaceIndexResult describePlaceIndex(DescribePlaceIndexRequest describePlaceIndexRequest);
+
+    /**
+     * <p>
+     * Retrieves the route calculator resource details.
+     * </p>
+     * 
+     * @param describeRouteCalculatorRequest
+     * @return Result of the DescribeRouteCalculator operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed to process because of an unknown server error, exception, or failure.
+     * @throws ResourceNotFoundException
+     *         The resource that you've entered was not found in your AWS account.
+     * @throws AccessDeniedException
+     *         The request was denied due to insufficient access or permission. Check with an administrator to verify
+     *         your permissions.
+     * @throws ValidationException
+     *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonLocation.DescribeRouteCalculator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DescribeRouteCalculator"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeRouteCalculatorResult describeRouteCalculator(DescribeRouteCalculatorRequest describeRouteCalculatorRequest);
 
     /**
      * <p>
@@ -582,7 +729,7 @@ public interface AmazonLocation {
      * </p>
      * <note>
      * <p>
-     * Device positions are deleted after one year.
+     * Device positions are deleted after 30 days.
      * </p>
      * </note>
      * 
@@ -611,7 +758,7 @@ public interface AmazonLocation {
      * </p>
      * <note>
      * <p>
-     * Device positions are deleted after 1 year.
+     * Device positions are deleted after 30 days.
      * </p>
      * </note>
      * 
@@ -738,7 +885,7 @@ public interface AmazonLocation {
 
     /**
      * <p>
-     * Retrieves a vector data tile from the map resource. Map tiles are used by clients to render a map. They are
+     * Retrieves a vector data tile from the map resource. Map tiles are used by clients to render a map. they're
      * addressed using a grid arrangement with an X coordinate, Y coordinate, and Z (zoom) level.
      * </p>
      * <p>
@@ -765,6 +912,28 @@ public interface AmazonLocation {
      *      Documentation</a>
      */
     GetMapTileResult getMapTile(GetMapTileRequest getMapTileRequest);
+
+    /**
+     * <p>
+     * Lists the latest device positions for requested devices.
+     * </p>
+     * 
+     * @param listDevicePositionsRequest
+     * @return Result of the ListDevicePositions operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed to process because of an unknown server error, exception, or failure.
+     * @throws AccessDeniedException
+     *         The request was denied due to insufficient access or permission. Check with an administrator to verify
+     *         your permissions.
+     * @throws ValidationException
+     *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonLocation.ListDevicePositions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListDevicePositions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListDevicePositionsResult listDevicePositions(ListDevicePositionsRequest listDevicePositionsRequest);
 
     /**
      * <p>
@@ -836,7 +1005,7 @@ public interface AmazonLocation {
 
     /**
      * <p>
-     * Lists Place index resources in your AWS account.
+     * Lists place index resources in your AWS account.
      * </p>
      * 
      * @param listPlaceIndexesRequest
@@ -855,6 +1024,52 @@ public interface AmazonLocation {
      *      Documentation</a>
      */
     ListPlaceIndexesResult listPlaceIndexes(ListPlaceIndexesRequest listPlaceIndexesRequest);
+
+    /**
+     * <p>
+     * Lists route calculator resources in your AWS account.
+     * </p>
+     * 
+     * @param listRouteCalculatorsRequest
+     * @return Result of the ListRouteCalculators operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed to process because of an unknown server error, exception, or failure.
+     * @throws AccessDeniedException
+     *         The request was denied due to insufficient access or permission. Check with an administrator to verify
+     *         your permissions.
+     * @throws ValidationException
+     *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonLocation.ListRouteCalculators
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListRouteCalculators" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListRouteCalculatorsResult listRouteCalculators(ListRouteCalculatorsRequest listRouteCalculatorsRequest);
+
+    /**
+     * <p>
+     * Returns the tags for the specified Amazon Location Service resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed to process because of an unknown server error, exception, or failure.
+     * @throws ResourceNotFoundException
+     *         The resource that you've entered was not found in your AWS account.
+     * @throws AccessDeniedException
+     *         The request was denied due to insufficient access or permission. Check with an administrator to verify
+     *         your permissions.
+     * @throws ValidationException
+     *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonLocation.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
 
     /**
      * <p>
@@ -934,17 +1149,6 @@ public interface AmazonLocation {
      * Reverse geocodes a given coordinate and returns a legible address. Allows you to search for Places or points of
      * interest near a given position.
      * </p>
-     * <note>
-     * <p>
-     * By using Places, you agree that AWS may transmit your API queries to your selected third party provider for
-     * processing, which may be outside the AWS region you are currently using.
-     * </p>
-     * <p>
-     * Because of licensing limitations, you may not use HERE to store results for locations in Japan. For more
-     * information, see the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location
-     * Service.
-     * </p>
-     * </note>
      * 
      * @param searchPlaceIndexForPositionRequest
      * @return Result of the SearchPlaceIndexForPosition operation returned by the service.
@@ -978,17 +1182,6 @@ public interface AmazonLocation {
      * You can search for places near a given position using <code>BiasPosition</code>, or filter results within a
      * bounding box using <code>FilterBBox</code>. Providing both parameters simultaneously returns an error.
      * </p>
-     * </note> <note>
-     * <p>
-     * By using Places, you agree that AWS may transmit your API queries to your selected third party provider for
-     * processing, which may be outside the AWS region you are currently using.
-     * </p>
-     * <p>
-     * Also, when using HERE as your data provider, you may not (a) use HERE Places for Asset Management, or (b) select
-     * the <code>Storage</code> option for the <code>IntendedUse</code> parameter when requesting Places in Japan. For
-     * more information, see the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
-     * Location Service.
-     * </p>
      * </note>
      * 
      * @param searchPlaceIndexForTextRequest
@@ -1009,6 +1202,58 @@ public interface AmazonLocation {
      *      target="_top">AWS API Documentation</a>
      */
     SearchPlaceIndexForTextResult searchPlaceIndexForText(SearchPlaceIndexForTextRequest searchPlaceIndexForTextRequest);
+
+    /**
+     * <p>
+     * Assigns one or more tags (key-value pairs) to the specified Amazon Location Service resource.
+     * </p>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values.&lt;/p&gt; &lt;p&gt;Tags don't have any semantic meaning to AWS and are interpreted strictly as strings of characters.&lt;/p&gt; &lt;p&gt;You can use the &lt;code&gt;TagResource&lt;/code&gt; action with an Amazon Location Service resource that already has tags. If you specify a new tag key for the resource, this tag is appended to the tags already associated with the resource. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag. &lt;/p&gt; &lt;p&gt;You can associate as many as 50 tags with a resource.&lt;/p&gt; </code>
+     * </pre>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed to process because of an unknown server error, exception, or failure.
+     * @throws ResourceNotFoundException
+     *         The resource that you've entered was not found in your AWS account.
+     * @throws AccessDeniedException
+     *         The request was denied due to insufficient access or permission. Check with an administrator to verify
+     *         your permissions.
+     * @throws ValidationException
+     *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonLocation.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes one or more tags from the specified Amazon Location Service resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed to process because of an unknown server error, exception, or failure.
+     * @throws ResourceNotFoundException
+     *         The resource that you've entered was not found in your AWS account.
+     * @throws AccessDeniedException
+     *         The request was denied due to insufficient access or permission. Check with an administrator to verify
+     *         your permissions.
+     * @throws ValidationException
+     *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonLocation.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

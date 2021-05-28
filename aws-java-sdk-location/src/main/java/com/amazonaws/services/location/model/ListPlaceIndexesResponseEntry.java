@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A Place index resource listed in your AWS account.
+ * A place index resource listed in your AWS account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListPlaceIndexesResponseEntry"
@@ -30,7 +30,7 @@ public class ListPlaceIndexesResponseEntry implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The timestamp for when the Place index resource was created in <a
+     * The timestamp for when the place index resource was created in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      * </p>
@@ -43,12 +43,12 @@ public class ListPlaceIndexesResponseEntry implements Serializable, Cloneable, S
      * <ul>
      * <li>
      * <p>
-     * Esri
+     * <code>Esri</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * HERE
+     * <code>Here</code>
      * </p>
      * </li>
      * </ul>
@@ -61,19 +61,19 @@ public class ListPlaceIndexesResponseEntry implements Serializable, Cloneable, S
     private String dataSource;
     /**
      * <p>
-     * The optional description for the Place index resource.
+     * The optional description for the place index resource.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The name of the Place index resource.
+     * The name of the place index resource.
      * </p>
      */
     private String indexName;
     /**
      * <p>
-     * The pricing plan for the specified Place index resource.
+     * The pricing plan for the specified place index resource.
      * </p>
      * <p>
      * For additional details and restrictions on each pricing plan option, see the <a
@@ -83,7 +83,7 @@ public class ListPlaceIndexesResponseEntry implements Serializable, Cloneable, S
     private String pricingPlan;
     /**
      * <p>
-     * The timestamp for when the Place index resource was last updated in <a
+     * The timestamp for when the place index resource was last updated in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      * </p>
@@ -92,13 +92,13 @@ public class ListPlaceIndexesResponseEntry implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The timestamp for when the Place index resource was created in <a
+     * The timestamp for when the place index resource was created in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      * </p>
      * 
      * @param createTime
-     *        The timestamp for when the Place index resource was created in <a
+     *        The timestamp for when the place index resource was created in <a
      *        href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      *        <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      */
@@ -109,12 +109,12 @@ public class ListPlaceIndexesResponseEntry implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The timestamp for when the Place index resource was created in <a
+     * The timestamp for when the place index resource was created in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      * </p>
      * 
-     * @return The timestamp for when the Place index resource was created in <a
+     * @return The timestamp for when the place index resource was created in <a
      *         href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      *         <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      */
@@ -125,13 +125,13 @@ public class ListPlaceIndexesResponseEntry implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The timestamp for when the Place index resource was created in <a
+     * The timestamp for when the place index resource was created in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      * </p>
      * 
      * @param createTime
-     *        The timestamp for when the Place index resource was created in <a
+     *        The timestamp for when the place index resource was created in <a
      *        href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      *        <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -149,12 +149,12 @@ public class ListPlaceIndexesResponseEntry implements Serializable, Cloneable, S
      * <ul>
      * <li>
      * <p>
-     * Esri
+     * <code>Esri</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * HERE
+     * <code>Here</code>
      * </p>
      * </li>
      * </ul>
@@ -169,12 +169,12 @@ public class ListPlaceIndexesResponseEntry implements Serializable, Cloneable, S
      *        <ul>
      *        <li>
      *        <p>
-     *        Esri
+     *        <code>Esri</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        HERE
+     *        <code>Here</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -195,12 +195,12 @@ public class ListPlaceIndexesResponseEntry implements Serializable, Cloneable, S
      * <ul>
      * <li>
      * <p>
-     * Esri
+     * <code>Esri</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * HERE
+     * <code>Here</code>
      * </p>
      * </li>
      * </ul>
@@ -214,12 +214,12 @@ public class ListPlaceIndexesResponseEntry implements Serializable, Cloneable, S
      *         <ul>
      *         <li>
      *         <p>
-     *         Esri
+     *         <code>Esri</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         HERE
+     *         <code>Here</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -240,12 +240,12 @@ public class ListPlaceIndexesResponseEntry implements Serializable, Cloneable, S
      * <ul>
      * <li>
      * <p>
-     * Esri
+     * <code>Esri</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * HERE
+     * <code>Here</code>
      * </p>
      * </li>
      * </ul>
@@ -260,12 +260,12 @@ public class ListPlaceIndexesResponseEntry implements Serializable, Cloneable, S
      *        <ul>
      *        <li>
      *        <p>
-     *        Esri
+     *        <code>Esri</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        HERE
+     *        <code>Here</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -283,11 +283,11 @@ public class ListPlaceIndexesResponseEntry implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The optional description for the Place index resource.
+     * The optional description for the place index resource.
      * </p>
      * 
      * @param description
-     *        The optional description for the Place index resource.
+     *        The optional description for the place index resource.
      */
 
     public void setDescription(String description) {
@@ -296,10 +296,10 @@ public class ListPlaceIndexesResponseEntry implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The optional description for the Place index resource.
+     * The optional description for the place index resource.
      * </p>
      * 
-     * @return The optional description for the Place index resource.
+     * @return The optional description for the place index resource.
      */
 
     public String getDescription() {
@@ -308,11 +308,11 @@ public class ListPlaceIndexesResponseEntry implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The optional description for the Place index resource.
+     * The optional description for the place index resource.
      * </p>
      * 
      * @param description
-     *        The optional description for the Place index resource.
+     *        The optional description for the place index resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -323,11 +323,11 @@ public class ListPlaceIndexesResponseEntry implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The name of the Place index resource.
+     * The name of the place index resource.
      * </p>
      * 
      * @param indexName
-     *        The name of the Place index resource.
+     *        The name of the place index resource.
      */
 
     public void setIndexName(String indexName) {
@@ -336,10 +336,10 @@ public class ListPlaceIndexesResponseEntry implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The name of the Place index resource.
+     * The name of the place index resource.
      * </p>
      * 
-     * @return The name of the Place index resource.
+     * @return The name of the place index resource.
      */
 
     public String getIndexName() {
@@ -348,11 +348,11 @@ public class ListPlaceIndexesResponseEntry implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The name of the Place index resource.
+     * The name of the place index resource.
      * </p>
      * 
      * @param indexName
-     *        The name of the Place index resource.
+     *        The name of the place index resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -363,7 +363,7 @@ public class ListPlaceIndexesResponseEntry implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The pricing plan for the specified Place index resource.
+     * The pricing plan for the specified place index resource.
      * </p>
      * <p>
      * For additional details and restrictions on each pricing plan option, see the <a
@@ -371,7 +371,7 @@ public class ListPlaceIndexesResponseEntry implements Serializable, Cloneable, S
      * </p>
      * 
      * @param pricingPlan
-     *        The pricing plan for the specified Place index resource.</p>
+     *        The pricing plan for the specified place index resource.</p>
      *        <p>
      *        For additional details and restrictions on each pricing plan option, see the <a
      *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
@@ -384,14 +384,14 @@ public class ListPlaceIndexesResponseEntry implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The pricing plan for the specified Place index resource.
+     * The pricing plan for the specified place index resource.
      * </p>
      * <p>
      * For additional details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
      * </p>
      * 
-     * @return The pricing plan for the specified Place index resource.</p>
+     * @return The pricing plan for the specified place index resource.</p>
      *         <p>
      *         For additional details and restrictions on each pricing plan option, see the <a
      *         href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
@@ -404,7 +404,7 @@ public class ListPlaceIndexesResponseEntry implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The pricing plan for the specified Place index resource.
+     * The pricing plan for the specified place index resource.
      * </p>
      * <p>
      * For additional details and restrictions on each pricing plan option, see the <a
@@ -412,7 +412,7 @@ public class ListPlaceIndexesResponseEntry implements Serializable, Cloneable, S
      * </p>
      * 
      * @param pricingPlan
-     *        The pricing plan for the specified Place index resource.</p>
+     *        The pricing plan for the specified place index resource.</p>
      *        <p>
      *        For additional details and restrictions on each pricing plan option, see the <a
      *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
@@ -427,7 +427,7 @@ public class ListPlaceIndexesResponseEntry implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The pricing plan for the specified Place index resource.
+     * The pricing plan for the specified place index resource.
      * </p>
      * <p>
      * For additional details and restrictions on each pricing plan option, see the <a
@@ -435,7 +435,7 @@ public class ListPlaceIndexesResponseEntry implements Serializable, Cloneable, S
      * </p>
      * 
      * @param pricingPlan
-     *        The pricing plan for the specified Place index resource.</p>
+     *        The pricing plan for the specified place index resource.</p>
      *        <p>
      *        For additional details and restrictions on each pricing plan option, see the <a
      *        href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing page</a>.
@@ -450,13 +450,13 @@ public class ListPlaceIndexesResponseEntry implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The timestamp for when the Place index resource was last updated in <a
+     * The timestamp for when the place index resource was last updated in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      * </p>
      * 
      * @param updateTime
-     *        The timestamp for when the Place index resource was last updated in <a
+     *        The timestamp for when the place index resource was last updated in <a
      *        href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      *        <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      */
@@ -467,12 +467,12 @@ public class ListPlaceIndexesResponseEntry implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The timestamp for when the Place index resource was last updated in <a
+     * The timestamp for when the place index resource was last updated in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      * </p>
      * 
-     * @return The timestamp for when the Place index resource was last updated in <a
+     * @return The timestamp for when the place index resource was last updated in <a
      *         href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      *         <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      */
@@ -483,13 +483,13 @@ public class ListPlaceIndexesResponseEntry implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The timestamp for when the Place index resource was last updated in <a
+     * The timestamp for when the place index resource was last updated in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      * <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      * </p>
      * 
      * @param updateTime
-     *        The timestamp for when the Place index resource was last updated in <a
+     *        The timestamp for when the place index resource was last updated in <a
      *        href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
      *        <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.
      * @return Returns a reference to this object so that method calls can be chained together.

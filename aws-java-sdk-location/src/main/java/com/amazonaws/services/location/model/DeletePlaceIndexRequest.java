@@ -27,18 +27,18 @@ public class DeletePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the Place index resource to be deleted.
+     * The name of the place index resource to be deleted.
      * </p>
      */
     private String indexName;
 
     /**
      * <p>
-     * The name of the Place index resource to be deleted.
+     * The name of the place index resource to be deleted.
      * </p>
      * 
      * @param indexName
-     *        The name of the Place index resource to be deleted.
+     *        The name of the place index resource to be deleted.
      */
 
     public void setIndexName(String indexName) {
@@ -47,10 +47,10 @@ public class DeletePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the Place index resource to be deleted.
+     * The name of the place index resource to be deleted.
      * </p>
      * 
-     * @return The name of the Place index resource to be deleted.
+     * @return The name of the place index resource to be deleted.
      */
 
     public String getIndexName() {
@@ -59,11 +59,11 @@ public class DeletePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the Place index resource to be deleted.
+     * The name of the place index resource to be deleted.
      * </p>
      * 
      * @param indexName
-     *        The name of the Place index resource to be deleted.
+     *        The name of the place index resource to be deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

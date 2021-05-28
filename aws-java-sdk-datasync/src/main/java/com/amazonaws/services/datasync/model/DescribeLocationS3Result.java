@@ -43,7 +43,9 @@ public class DescribeLocationS3Result extends com.amazonaws.AmazonWebServiceResu
      * The Amazon S3 storage class that you chose to store your files in when this location is used as a task
      * destination. For more information about S3 storage classes, see <a
      * href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have
-     * behaviors that can affect your S3 storage cost. For detailed information, see <a>using-storage-classes</a>.
+     * behaviors that can affect your S3 storage cost. For detailed information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes"
+     * >Considerations when working with S3 storage classes in DataSync</a>.
      * </p>
      */
     private String s3StorageClass;
@@ -52,7 +54,9 @@ public class DescribeLocationS3Result extends com.amazonaws.AmazonWebServiceResu
     /**
      * <p>
      * If you are using DataSync on an AWS Outpost, the Amazon Resource Name (ARNs) of the EC2 agents deployed on your
-     * Outpost. For more information about launching a DataSync agent on an AWS Outpost, see <a>outposts-agent</a>.
+     * Outpost. For more information about launching a DataSync agent on an AWS Outpost, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your
+     * DataSync agent on AWS Outposts</a>.
      * </p>
      */
     private java.util.List<String> agentArns;
@@ -148,15 +152,18 @@ public class DescribeLocationS3Result extends com.amazonaws.AmazonWebServiceResu
      * The Amazon S3 storage class that you chose to store your files in when this location is used as a task
      * destination. For more information about S3 storage classes, see <a
      * href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have
-     * behaviors that can affect your S3 storage cost. For detailed information, see <a>using-storage-classes</a>.
+     * behaviors that can affect your S3 storage cost. For detailed information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes"
+     * >Considerations when working with S3 storage classes in DataSync</a>.
      * </p>
      * 
      * @param s3StorageClass
      *        The Amazon S3 storage class that you chose to store your files in when this location is used as a task
      *        destination. For more information about S3 storage classes, see <a
      *        href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have
-     *        behaviors that can affect your S3 storage cost. For detailed information, see
-     *        <a>using-storage-classes</a>.
+     *        behaviors that can affect your S3 storage cost. For detailed information, see <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes"
+     *        >Considerations when working with S3 storage classes in DataSync</a>.
      * @see S3StorageClass
      */
 
@@ -169,14 +176,17 @@ public class DescribeLocationS3Result extends com.amazonaws.AmazonWebServiceResu
      * The Amazon S3 storage class that you chose to store your files in when this location is used as a task
      * destination. For more information about S3 storage classes, see <a
      * href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have
-     * behaviors that can affect your S3 storage cost. For detailed information, see <a>using-storage-classes</a>.
+     * behaviors that can affect your S3 storage cost. For detailed information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes"
+     * >Considerations when working with S3 storage classes in DataSync</a>.
      * </p>
      * 
      * @return The Amazon S3 storage class that you chose to store your files in when this location is used as a task
      *         destination. For more information about S3 storage classes, see <a
      *         href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have
-     *         behaviors that can affect your S3 storage cost. For detailed information, see
-     *         <a>using-storage-classes</a>.
+     *         behaviors that can affect your S3 storage cost. For detailed information, see <a href=
+     *         "https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes"
+     *         >Considerations when working with S3 storage classes in DataSync</a>.
      * @see S3StorageClass
      */
 
@@ -189,15 +199,18 @@ public class DescribeLocationS3Result extends com.amazonaws.AmazonWebServiceResu
      * The Amazon S3 storage class that you chose to store your files in when this location is used as a task
      * destination. For more information about S3 storage classes, see <a
      * href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have
-     * behaviors that can affect your S3 storage cost. For detailed information, see <a>using-storage-classes</a>.
+     * behaviors that can affect your S3 storage cost. For detailed information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes"
+     * >Considerations when working with S3 storage classes in DataSync</a>.
      * </p>
      * 
      * @param s3StorageClass
      *        The Amazon S3 storage class that you chose to store your files in when this location is used as a task
      *        destination. For more information about S3 storage classes, see <a
      *        href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have
-     *        behaviors that can affect your S3 storage cost. For detailed information, see
-     *        <a>using-storage-classes</a>.
+     *        behaviors that can affect your S3 storage cost. For detailed information, see <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes"
+     *        >Considerations when working with S3 storage classes in DataSync</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see S3StorageClass
      */
@@ -212,15 +225,18 @@ public class DescribeLocationS3Result extends com.amazonaws.AmazonWebServiceResu
      * The Amazon S3 storage class that you chose to store your files in when this location is used as a task
      * destination. For more information about S3 storage classes, see <a
      * href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have
-     * behaviors that can affect your S3 storage cost. For detailed information, see <a>using-storage-classes</a>.
+     * behaviors that can affect your S3 storage cost. For detailed information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes"
+     * >Considerations when working with S3 storage classes in DataSync</a>.
      * </p>
      * 
      * @param s3StorageClass
      *        The Amazon S3 storage class that you chose to store your files in when this location is used as a task
      *        destination. For more information about S3 storage classes, see <a
      *        href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have
-     *        behaviors that can affect your S3 storage cost. For detailed information, see
-     *        <a>using-storage-classes</a>.
+     *        behaviors that can affect your S3 storage cost. For detailed information, see <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes"
+     *        >Considerations when working with S3 storage classes in DataSync</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see S3StorageClass
      */
@@ -259,12 +275,15 @@ public class DescribeLocationS3Result extends com.amazonaws.AmazonWebServiceResu
     /**
      * <p>
      * If you are using DataSync on an AWS Outpost, the Amazon Resource Name (ARNs) of the EC2 agents deployed on your
-     * Outpost. For more information about launching a DataSync agent on an AWS Outpost, see <a>outposts-agent</a>.
+     * Outpost. For more information about launching a DataSync agent on an AWS Outpost, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your
+     * DataSync agent on AWS Outposts</a>.
      * </p>
      * 
      * @return If you are using DataSync on an AWS Outpost, the Amazon Resource Name (ARNs) of the EC2 agents deployed
-     *         on your Outpost. For more information about launching a DataSync agent on an AWS Outpost, see
-     *         <a>outposts-agent</a>.
+     *         on your Outpost. For more information about launching a DataSync agent on an AWS Outpost, see <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy
+     *         your DataSync agent on AWS Outposts</a>.
      */
 
     public java.util.List<String> getAgentArns() {
@@ -274,13 +293,16 @@ public class DescribeLocationS3Result extends com.amazonaws.AmazonWebServiceResu
     /**
      * <p>
      * If you are using DataSync on an AWS Outpost, the Amazon Resource Name (ARNs) of the EC2 agents deployed on your
-     * Outpost. For more information about launching a DataSync agent on an AWS Outpost, see <a>outposts-agent</a>.
+     * Outpost. For more information about launching a DataSync agent on an AWS Outpost, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your
+     * DataSync agent on AWS Outposts</a>.
      * </p>
      * 
      * @param agentArns
      *        If you are using DataSync on an AWS Outpost, the Amazon Resource Name (ARNs) of the EC2 agents deployed on
-     *        your Outpost. For more information about launching a DataSync agent on an AWS Outpost, see
-     *        <a>outposts-agent</a>.
+     *        your Outpost. For more information about launching a DataSync agent on an AWS Outpost, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your
+     *        DataSync agent on AWS Outposts</a>.
      */
 
     public void setAgentArns(java.util.Collection<String> agentArns) {
@@ -295,7 +317,9 @@ public class DescribeLocationS3Result extends com.amazonaws.AmazonWebServiceResu
     /**
      * <p>
      * If you are using DataSync on an AWS Outpost, the Amazon Resource Name (ARNs) of the EC2 agents deployed on your
-     * Outpost. For more information about launching a DataSync agent on an AWS Outpost, see <a>outposts-agent</a>.
+     * Outpost. For more information about launching a DataSync agent on an AWS Outpost, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your
+     * DataSync agent on AWS Outposts</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -305,8 +329,9 @@ public class DescribeLocationS3Result extends com.amazonaws.AmazonWebServiceResu
      * 
      * @param agentArns
      *        If you are using DataSync on an AWS Outpost, the Amazon Resource Name (ARNs) of the EC2 agents deployed on
-     *        your Outpost. For more information about launching a DataSync agent on an AWS Outpost, see
-     *        <a>outposts-agent</a>.
+     *        your Outpost. For more information about launching a DataSync agent on an AWS Outpost, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your
+     *        DataSync agent on AWS Outposts</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -323,13 +348,16 @@ public class DescribeLocationS3Result extends com.amazonaws.AmazonWebServiceResu
     /**
      * <p>
      * If you are using DataSync on an AWS Outpost, the Amazon Resource Name (ARNs) of the EC2 agents deployed on your
-     * Outpost. For more information about launching a DataSync agent on an AWS Outpost, see <a>outposts-agent</a>.
+     * Outpost. For more information about launching a DataSync agent on an AWS Outpost, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your
+     * DataSync agent on AWS Outposts</a>.
      * </p>
      * 
      * @param agentArns
      *        If you are using DataSync on an AWS Outpost, the Amazon Resource Name (ARNs) of the EC2 agents deployed on
-     *        your Outpost. For more information about launching a DataSync agent on an AWS Outpost, see
-     *        <a>outposts-agent</a>.
+     *        your Outpost. For more information about launching a DataSync agent on an AWS Outpost, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your
+     *        DataSync agent on AWS Outposts</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

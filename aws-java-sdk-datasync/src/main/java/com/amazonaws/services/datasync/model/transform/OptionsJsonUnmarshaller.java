@@ -100,6 +100,10 @@ public class OptionsJsonUnmarshaller implements Unmarshaller<Options, JsonUnmars
                     context.nextToken();
                     options.setTransferMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SecurityDescriptorCopyFlags", targetDepth)) {
+                    context.nextToken();
+                    options.setSecurityDescriptorCopyFlags(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

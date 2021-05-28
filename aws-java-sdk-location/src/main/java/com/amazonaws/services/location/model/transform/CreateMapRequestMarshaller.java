@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.location.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,6 +37,8 @@ public class CreateMapRequestMarshaller {
             .marshallLocationName("MapName").build();
     private static final MarshallingInfo<String> PRICINGPLAN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PricingPlan").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateMapRequestMarshaller instance = new CreateMapRequestMarshaller();
 
@@ -56,6 +60,7 @@ public class CreateMapRequestMarshaller {
             protocolMarshaller.marshall(createMapRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createMapRequest.getMapName(), MAPNAME_BINDING);
             protocolMarshaller.marshall(createMapRequest.getPricingPlan(), PRICINGPLAN_BINDING);
+            protocolMarshaller.marshall(createMapRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

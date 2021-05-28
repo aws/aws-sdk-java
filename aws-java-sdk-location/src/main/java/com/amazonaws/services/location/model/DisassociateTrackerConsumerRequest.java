@@ -33,7 +33,7 @@ public class DisassociateTrackerConsumerRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * Format example: <code>arn:partition:service:region:account-id:resource-type:resource-id</code>
+     * Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p>
      * </li>
      * </ul>
@@ -54,7 +54,7 @@ public class DisassociateTrackerConsumerRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * Format example: <code>arn:partition:service:region:account-id:resource-type:resource-id</code>
+     * Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p>
      * </li>
      * </ul>
@@ -65,7 +65,8 @@ public class DisassociateTrackerConsumerRequest extends com.amazonaws.AmazonWebS
      *        <ul>
      *        <li>
      *        <p>
-     *        Format example: <code>arn:partition:service:region:account-id:resource-type:resource-id</code>
+     *        Format example:
+     *        <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      *        </p>
      *        </li>
      */
@@ -82,7 +83,7 @@ public class DisassociateTrackerConsumerRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * Format example: <code>arn:partition:service:region:account-id:resource-type:resource-id</code>
+     * Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p>
      * </li>
      * </ul>
@@ -92,7 +93,8 @@ public class DisassociateTrackerConsumerRequest extends com.amazonaws.AmazonWebS
      *         <ul>
      *         <li>
      *         <p>
-     *         Format example: <code>arn:partition:service:region:account-id:resource-type:resource-id</code>
+     *         Format example:
+     *         <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      *         </p>
      *         </li>
      */
@@ -109,7 +111,7 @@ public class DisassociateTrackerConsumerRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * Format example: <code>arn:partition:service:region:account-id:resource-type:resource-id</code>
+     * Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      * </p>
      * </li>
      * </ul>
@@ -120,7 +122,8 @@ public class DisassociateTrackerConsumerRequest extends com.amazonaws.AmazonWebS
      *        <ul>
      *        <li>
      *        <p>
-     *        Format example: <code>arn:partition:service:region:account-id:resource-type:resource-id</code>
+     *        Format example:
+     *        <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

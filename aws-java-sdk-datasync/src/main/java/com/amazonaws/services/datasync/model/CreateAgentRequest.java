@@ -88,8 +88,9 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.List<String> subnetArns;
     /**
      * <p>
-     * The ARNs of the security groups used to protect your data transfer task subnets. See
-     * <a>CreateAgentRequest$SubnetArns</a>.
+     * The ARNs of the security groups used to protect your data transfer task subnets. See <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns"
+     * >SecurityGroupArns</a>.
      * </p>
      */
     private java.util.List<String> securityGroupArns;
@@ -536,12 +537,14 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARNs of the security groups used to protect your data transfer task subnets. See
-     * <a>CreateAgentRequest$SubnetArns</a>.
+     * The ARNs of the security groups used to protect your data transfer task subnets. See <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns"
+     * >SecurityGroupArns</a>.
      * </p>
      * 
-     * @return The ARNs of the security groups used to protect your data transfer task subnets. See
-     *         <a>CreateAgentRequest$SubnetArns</a>.
+     * @return The ARNs of the security groups used to protect your data transfer task subnets. See <a href=
+     *         "https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns"
+     *         >SecurityGroupArns</a>.
      */
 
     public java.util.List<String> getSecurityGroupArns() {
@@ -550,13 +553,15 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARNs of the security groups used to protect your data transfer task subnets. See
-     * <a>CreateAgentRequest$SubnetArns</a>.
+     * The ARNs of the security groups used to protect your data transfer task subnets. See <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns"
+     * >SecurityGroupArns</a>.
      * </p>
      * 
      * @param securityGroupArns
-     *        The ARNs of the security groups used to protect your data transfer task subnets. See
-     *        <a>CreateAgentRequest$SubnetArns</a>.
+     *        The ARNs of the security groups used to protect your data transfer task subnets. See <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns"
+     *        >SecurityGroupArns</a>.
      */
 
     public void setSecurityGroupArns(java.util.Collection<String> securityGroupArns) {
@@ -570,8 +575,9 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARNs of the security groups used to protect your data transfer task subnets. See
-     * <a>CreateAgentRequest$SubnetArns</a>.
+     * The ARNs of the security groups used to protect your data transfer task subnets. See <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns"
+     * >SecurityGroupArns</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -580,8 +586,9 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param securityGroupArns
-     *        The ARNs of the security groups used to protect your data transfer task subnets. See
-     *        <a>CreateAgentRequest$SubnetArns</a>.
+     *        The ARNs of the security groups used to protect your data transfer task subnets. See <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns"
+     *        >SecurityGroupArns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -597,13 +604,15 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARNs of the security groups used to protect your data transfer task subnets. See
-     * <a>CreateAgentRequest$SubnetArns</a>.
+     * The ARNs of the security groups used to protect your data transfer task subnets. See <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns"
+     * >SecurityGroupArns</a>.
      * </p>
      * 
      * @param securityGroupArns
-     *        The ARNs of the security groups used to protect your data transfer task subnets. See
-     *        <a>CreateAgentRequest$SubnetArns</a>.
+     *        The ARNs of the security groups used to protect your data transfer task subnets. See <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns"
+     *        >SecurityGroupArns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

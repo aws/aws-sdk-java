@@ -28,6 +28,13 @@ public class CreateGeofenceCollectionResult extends com.amazonaws.AmazonWebServi
      * The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource
      * across all AWS.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String collectionArn;
     /**
@@ -50,10 +57,23 @@ public class CreateGeofenceCollectionResult extends com.amazonaws.AmazonWebServi
      * The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource
      * across all AWS.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param collectionArn
      *        The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a
-     *        resource across all AWS.
+     *        resource across all AWS. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
+     *        </p>
+     *        </li>
      */
 
     public void setCollectionArn(String collectionArn) {
@@ -65,9 +85,22 @@ public class CreateGeofenceCollectionResult extends com.amazonaws.AmazonWebServi
      * The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource
      * across all AWS.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a
-     *         resource across all AWS.
+     *         resource across all AWS. </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
+     *         </p>
+     *         </li>
      */
 
     public String getCollectionArn() {
@@ -79,10 +112,23 @@ public class CreateGeofenceCollectionResult extends com.amazonaws.AmazonWebServi
      * The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource
      * across all AWS.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param collectionArn
      *        The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a
-     *        resource across all AWS.
+     *        resource across all AWS. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

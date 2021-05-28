@@ -61,7 +61,9 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For each individual task execution, you can override these options by specifying the <code>OverrideOptions</code>
-     * before starting the task execution. For more information, see the operation.
+     * before starting the task execution. For more information, see the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
+     * operation.
      * </p>
      */
     private Options options;
@@ -78,7 +80,8 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Specifies a schedule used to periodically transfer files from a source to a destination location. The schedule
-     * should be specified in UTC time. For more information, see <a>task-scheduling</a>.
+     * should be specified in UTC time. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.
      * </p>
      */
     private TaskSchedule schedule;
@@ -264,7 +267,9 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For each individual task execution, you can override these options by specifying the <code>OverrideOptions</code>
-     * before starting the task execution. For more information, see the operation.
+     * before starting the task execution. For more information, see the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
+     * operation.
      * </p>
      * 
      * @param options
@@ -273,7 +278,9 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        as user ID (UID) and group ID (GID), file permissions, data integrity verification, and so on.</p>
      *        <p>
      *        For each individual task execution, you can override these options by specifying the
-     *        <code>OverrideOptions</code> before starting the task execution. For more information, see the operation.
+     *        <code>OverrideOptions</code> before starting the task execution. For more information, see the <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html"
+     *        >StartTaskExecution</a> operation.
      */
 
     public void setOptions(Options options) {
@@ -288,7 +295,9 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For each individual task execution, you can override these options by specifying the <code>OverrideOptions</code>
-     * before starting the task execution. For more information, see the operation.
+     * before starting the task execution. For more information, see the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
+     * operation.
      * </p>
      * 
      * @return The set of configuration options that control the behavior of a single execution of the task that occurs
@@ -296,7 +305,9 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         as user ID (UID) and group ID (GID), file permissions, data integrity verification, and so on.</p>
      *         <p>
      *         For each individual task execution, you can override these options by specifying the
-     *         <code>OverrideOptions</code> before starting the task execution. For more information, see the operation.
+     *         <code>OverrideOptions</code> before starting the task execution. For more information, see the <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html"
+     *         >StartTaskExecution</a> operation.
      */
 
     public Options getOptions() {
@@ -311,7 +322,9 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For each individual task execution, you can override these options by specifying the <code>OverrideOptions</code>
-     * before starting the task execution. For more information, see the operation.
+     * before starting the task execution. For more information, see the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
+     * operation.
      * </p>
      * 
      * @param options
@@ -320,7 +333,9 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        as user ID (UID) and group ID (GID), file permissions, data integrity verification, and so on.</p>
      *        <p>
      *        For each individual task execution, you can override these options by specifying the
-     *        <code>OverrideOptions</code> before starting the task execution. For more information, see the operation.
+     *        <code>OverrideOptions</code> before starting the task execution. For more information, see the <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html"
+     *        >StartTaskExecution</a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -430,12 +445,15 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Specifies a schedule used to periodically transfer files from a source to a destination location. The schedule
-     * should be specified in UTC time. For more information, see <a>task-scheduling</a>.
+     * should be specified in UTC time. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.
      * </p>
      * 
      * @param schedule
      *        Specifies a schedule used to periodically transfer files from a source to a destination location. The
-     *        schedule should be specified in UTC time. For more information, see <a>task-scheduling</a>.
+     *        schedule should be specified in UTC time. For more information, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your
+     *        task</a>.
      */
 
     public void setSchedule(TaskSchedule schedule) {
@@ -445,11 +463,14 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Specifies a schedule used to periodically transfer files from a source to a destination location. The schedule
-     * should be specified in UTC time. For more information, see <a>task-scheduling</a>.
+     * should be specified in UTC time. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.
      * </p>
      * 
      * @return Specifies a schedule used to periodically transfer files from a source to a destination location. The
-     *         schedule should be specified in UTC time. For more information, see <a>task-scheduling</a>.
+     *         schedule should be specified in UTC time. For more information, see <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your
+     *         task</a>.
      */
 
     public TaskSchedule getSchedule() {
@@ -459,12 +480,15 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Specifies a schedule used to periodically transfer files from a source to a destination location. The schedule
-     * should be specified in UTC time. For more information, see <a>task-scheduling</a>.
+     * should be specified in UTC time. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.
      * </p>
      * 
      * @param schedule
      *        Specifies a schedule used to periodically transfer files from a source to a destination location. The
-     *        schedule should be specified in UTC time. For more information, see <a>task-scheduling</a>.
+     *        schedule should be specified in UTC time. For more information, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your
+     *        task</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

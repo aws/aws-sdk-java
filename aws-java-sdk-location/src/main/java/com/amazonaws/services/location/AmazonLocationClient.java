@@ -51,7 +51,7 @@ import com.amazonaws.services.location.model.transform.*;
  * return until the service call completes.
  * <p>
  * <p>
- * Suite of geospatial services including Maps, Places, Tracking, and Geofencing
+ * Suite of geospatial services including Maps, Places, Routes, Tracking, and Geofencing
  * </p>
  */
 @ThreadSafe
@@ -231,11 +231,89 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Deletes the position history of one or more devices from a tracker resource.
+     * </p>
+     * 
+     * @param batchDeleteDevicePositionHistoryRequest
+     * @return Result of the BatchDeleteDevicePositionHistory operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed to process because of an unknown server error, exception, or failure.
+     * @throws ResourceNotFoundException
+     *         The resource that you've entered was not found in your AWS account.
+     * @throws AccessDeniedException
+     *         The request was denied due to insufficient access or permission. Check with an administrator to verify
+     *         your permissions.
+     * @throws ValidationException
+     *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonLocation.BatchDeleteDevicePositionHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/BatchDeleteDevicePositionHistory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchDeleteDevicePositionHistoryResult batchDeleteDevicePositionHistory(BatchDeleteDevicePositionHistoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchDeleteDevicePositionHistory(request);
+    }
+
+    @SdkInternalApi
+    final BatchDeleteDevicePositionHistoryResult executeBatchDeleteDevicePositionHistory(
+            BatchDeleteDevicePositionHistoryRequest batchDeleteDevicePositionHistoryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchDeleteDevicePositionHistoryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchDeleteDevicePositionHistoryRequest> request = null;
+        Response<BatchDeleteDevicePositionHistoryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchDeleteDevicePositionHistoryRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(batchDeleteDevicePositionHistoryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDeleteDevicePositionHistory");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "tracking.";
+                String resolvedHostPrefix = String.format("tracking.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchDeleteDevicePositionHistoryResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new BatchDeleteDevicePositionHistoryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a batch of geofences from a geofence collection.
      * </p>
      * <note>
      * <p>
-     * This action deletes the resource permanently. You can't undo this action.
+     * This operation deletes the resource permanently.
      * </p>
      * </note>
      * 
@@ -471,7 +549,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * A batch request for storing geofence geometries into a given geofence collection.
+     * A batch request for storing geofence geometries into a given geofence collection, or updates the geometry of an
+     * existing geofence if a geofence ID is included in the request.
      * </p>
      * 
      * @param batchPutGeofenceRequest
@@ -552,7 +631,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
      * <note>
      * <p>
      * Only one position update is stored per sample time. Location data is sampled at a fixed rate of one position per
-     * 30-second interval, and retained for one year before it is deleted.
+     * 30-second interval and retained for 30 days before it's deleted.
      * </p>
      * </note>
      * 
@@ -618,6 +697,116 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             HttpResponseHandler<AmazonWebServiceResponse<BatchUpdateDevicePositionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new BatchUpdateDevicePositionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html">Calculates a route</a>
+     * given the following required parameters: <code>DeparturePostiton</code> and <code>DestinationPosition</code>.
+     * Requires that you first <a
+     * href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
+     * aroute calculator resource</a>
+     * </p>
+     * <p>
+     * By default, a request that doesn't specify a departure time uses the best time of day to travel with the best
+     * traffic conditions when calculating the route.
+     * </p>
+     * <p>
+     * Additional options include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#departure-time">
+     * Specifying a departure time</a> using either <code>DepartureTime</code> or <code>DepartureNow</code>. This
+     * calculates a route based on predictive traffic data at the given time.
+     * </p>
+     * <note>
+     * <p>
+     * You can't specify both <code>DepartureTime</code> and <code>DepartureNow</code> in a single request. Specifying
+     * both parameters returns an error message.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#travel-mode">Specifying
+     * a travel mode</a> using TravelMode. This lets you specify additional route preference such as
+     * <code>CarModeOptions</code> if traveling by <code>Car</code>, or <code>TruckModeOptions</code> if traveling by
+     * <code>Truck</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * </p>
+     * 
+     * @param calculateRouteRequest
+     * @return Result of the CalculateRoute operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed to process because of an unknown server error, exception, or failure.
+     * @throws ResourceNotFoundException
+     *         The resource that you've entered was not found in your AWS account.
+     * @throws AccessDeniedException
+     *         The request was denied due to insufficient access or permission. Check with an administrator to verify
+     *         your permissions.
+     * @throws ValidationException
+     *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonLocation.CalculateRoute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CalculateRoute" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CalculateRouteResult calculateRoute(CalculateRouteRequest request) {
+        request = beforeClientExecution(request);
+        return executeCalculateRoute(request);
+    }
+
+    @SdkInternalApi
+    final CalculateRouteResult executeCalculateRoute(CalculateRouteRequest calculateRouteRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(calculateRouteRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CalculateRouteRequest> request = null;
+        Response<CalculateRouteResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CalculateRouteRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(calculateRouteRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CalculateRoute");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "routes.";
+                String resolvedHostPrefix = String.format("routes.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CalculateRouteResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CalculateRouteResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
@@ -710,13 +899,6 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
      * Creates a map resource in your AWS account, which provides map tiles of different styles sourced from global
      * location data providers.
      * </p>
-     * <note>
-     * <p>
-     * By using Maps, you agree that AWS may transmit your API queries to your selected third party provider for
-     * processing, which may be outside the AWS region you are currently using. For more information, see the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.
-     * </p>
-     * </note>
      * 
      * @param createMapRequest
      * @return Result of the CreateMap operation returned by the service.
@@ -790,20 +972,9 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Creates a Place index resource in your AWS account, which supports Places functions with geospatial data sourced
-     * from your chosen data provider.
+     * Creates a place index resource in your AWS account, which supports functions with geospatial data sourced from
+     * your chosen data provider.
      * </p>
-     * <note>
-     * <p>
-     * By using Places, you agree that AWS may transmit your API queries to your selected third party provider for
-     * processing, which may be outside the AWS region you are currently using.
-     * </p>
-     * <p>
-     * Because of licensing limitations, you may not use HERE to store results for locations in Japan. For more
-     * information, see the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location
-     * Service.
-     * </p>
-     * </note>
      * 
      * @param createPlaceIndexRequest
      * @return Result of the CreatePlaceIndex operation returned by the service.
@@ -865,6 +1036,86 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<CreatePlaceIndexResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreatePlaceIndexResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a route calculator resource in your AWS account.
+     * </p>
+     * <p>
+     * You can send requests to a route calculator resource to estimate travel time, distance, and get directions. A
+     * route calculator sources traffic and road network data from your chosen data provider.
+     * </p>
+     * 
+     * @param createRouteCalculatorRequest
+     * @return Result of the CreateRouteCalculator operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed to process because of an unknown server error, exception, or failure.
+     * @throws ConflictException
+     *         The request was unsuccessful due to a conflict.
+     * @throws AccessDeniedException
+     *         The request was denied due to insufficient access or permission. Check with an administrator to verify
+     *         your permissions.
+     * @throws ValidationException
+     *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonLocation.CreateRouteCalculator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreateRouteCalculator" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateRouteCalculatorResult createRouteCalculator(CreateRouteCalculatorRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateRouteCalculator(request);
+    }
+
+    @SdkInternalApi
+    final CreateRouteCalculatorResult executeCreateRouteCalculator(CreateRouteCalculatorRequest createRouteCalculatorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createRouteCalculatorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateRouteCalculatorRequest> request = null;
+        Response<CreateRouteCalculatorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateRouteCalculatorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRouteCalculatorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRouteCalculator");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "routes.";
+                String resolvedHostPrefix = String.format("routes.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateRouteCalculatorResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new CreateRouteCalculatorResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
@@ -957,8 +1208,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
      * </p>
      * <note>
      * <p>
-     * This action deletes the resource permanently. You can't undo this action. If the geofence collection is the
-     * target of a tracker resource, the devices will no longer be monitored.
+     * This operation deletes the resource permanently. If the geofence collection is the target of a tracker resource,
+     * the devices will no longer be monitored.
      * </p>
      * </note>
      * 
@@ -1040,8 +1291,8 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
      * </p>
      * <note>
      * <p>
-     * This action deletes the resource permanently. You cannot undo this action. If the map is being used in an
-     * application, the map may not render.
+     * This operation deletes the resource permanently. If the map is being used in an application, the map may not
+     * render.
      * </p>
      * </note>
      * 
@@ -1117,11 +1368,11 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Deletes a Place index resource from your AWS account.
+     * Deletes a place index resource from your AWS account.
      * </p>
      * <note>
      * <p>
-     * This action deletes the resource permanently. You cannot undo this action.
+     * This operation deletes the resource permanently.
      * </p>
      * </note>
      * 
@@ -1197,12 +1448,93 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Deletes a route calculator resource from your AWS account.
+     * </p>
+     * <note>
+     * <p>
+     * This operation deletes the resource permanently.
+     * </p>
+     * </note>
+     * 
+     * @param deleteRouteCalculatorRequest
+     * @return Result of the DeleteRouteCalculator operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed to process because of an unknown server error, exception, or failure.
+     * @throws ResourceNotFoundException
+     *         The resource that you've entered was not found in your AWS account.
+     * @throws AccessDeniedException
+     *         The request was denied due to insufficient access or permission. Check with an administrator to verify
+     *         your permissions.
+     * @throws ValidationException
+     *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonLocation.DeleteRouteCalculator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DeleteRouteCalculator" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteRouteCalculatorResult deleteRouteCalculator(DeleteRouteCalculatorRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRouteCalculator(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRouteCalculatorResult executeDeleteRouteCalculator(DeleteRouteCalculatorRequest deleteRouteCalculatorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteRouteCalculatorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteRouteCalculatorRequest> request = null;
+        Response<DeleteRouteCalculatorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteRouteCalculatorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRouteCalculatorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRouteCalculator");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "routes.";
+                String resolvedHostPrefix = String.format("routes.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteRouteCalculatorResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteRouteCalculatorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a tracker resource from your AWS account.
      * </p>
      * <note>
      * <p>
-     * This action deletes the resource permanently. You can't undo this action. If the tracker resource is in use, you
-     * may encounter an error. Make sure that the target resource is not a dependency for your applications.
+     * This operation deletes the resource permanently. If the tracker resource is in use, you may encounter an error.
+     * Make sure that the target resource isn't a dependency for your applications.
      * </p>
      * </note>
      * 
@@ -1430,7 +1762,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Retrieves the Place index resource details.
+     * Retrieves the place index resource details.
      * </p>
      * 
      * @param describePlaceIndexRequest
@@ -1493,6 +1825,83 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribePlaceIndexResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribePlaceIndexResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the route calculator resource details.
+     * </p>
+     * 
+     * @param describeRouteCalculatorRequest
+     * @return Result of the DescribeRouteCalculator operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed to process because of an unknown server error, exception, or failure.
+     * @throws ResourceNotFoundException
+     *         The resource that you've entered was not found in your AWS account.
+     * @throws AccessDeniedException
+     *         The request was denied due to insufficient access or permission. Check with an administrator to verify
+     *         your permissions.
+     * @throws ValidationException
+     *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonLocation.DescribeRouteCalculator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DescribeRouteCalculator"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeRouteCalculatorResult describeRouteCalculator(DescribeRouteCalculatorRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeRouteCalculator(request);
+    }
+
+    @SdkInternalApi
+    final DescribeRouteCalculatorResult executeDescribeRouteCalculator(DescribeRouteCalculatorRequest describeRouteCalculatorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeRouteCalculatorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeRouteCalculatorRequest> request = null;
+        Response<DescribeRouteCalculatorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeRouteCalculatorRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeRouteCalculatorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRouteCalculator");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "routes.";
+                String resolvedHostPrefix = String.format("routes.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeRouteCalculatorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeRouteCalculatorResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
@@ -1667,7 +2076,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
      * </p>
      * <note>
      * <p>
-     * Device positions are deleted after one year.
+     * Device positions are deleted after 30 days.
      * </p>
      * </note>
      * 
@@ -1747,7 +2156,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
      * </p>
      * <note>
      * <p>
-     * Device positions are deleted after 1 year.
+     * Device positions are deleted after 30 days.
      * </p>
      * </note>
      * 
@@ -2132,7 +2541,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Retrieves a vector data tile from the map resource. Map tiles are used by clients to render a map. They are
+     * Retrieves a vector data tile from the map resource. Map tiles are used by clients to render a map. they're
      * addressed using a grid arrangement with an X coordinate, Y coordinate, and Z (zoom) level.
      * </p>
      * <p>
@@ -2201,6 +2610,79 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<GetMapTileResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(false).withHasStreamingSuccessResponse(false), new GetMapTileResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the latest device positions for requested devices.
+     * </p>
+     * 
+     * @param listDevicePositionsRequest
+     * @return Result of the ListDevicePositions operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed to process because of an unknown server error, exception, or failure.
+     * @throws AccessDeniedException
+     *         The request was denied due to insufficient access or permission. Check with an administrator to verify
+     *         your permissions.
+     * @throws ValidationException
+     *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonLocation.ListDevicePositions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListDevicePositions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListDevicePositionsResult listDevicePositions(ListDevicePositionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDevicePositions(request);
+    }
+
+    @SdkInternalApi
+    final ListDevicePositionsResult executeListDevicePositions(ListDevicePositionsRequest listDevicePositionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDevicePositionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDevicePositionsRequest> request = null;
+        Response<ListDevicePositionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDevicePositionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDevicePositionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDevicePositions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "tracking.";
+                String resolvedHostPrefix = String.format("tracking.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDevicePositionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListDevicePositionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
@@ -2436,7 +2918,7 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Lists Place index resources in your AWS account.
+     * Lists place index resources in your AWS account.
      * </p>
      * 
      * @param listPlaceIndexesRequest
@@ -2497,6 +2979,154 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<ListPlaceIndexesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListPlaceIndexesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists route calculator resources in your AWS account.
+     * </p>
+     * 
+     * @param listRouteCalculatorsRequest
+     * @return Result of the ListRouteCalculators operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed to process because of an unknown server error, exception, or failure.
+     * @throws AccessDeniedException
+     *         The request was denied due to insufficient access or permission. Check with an administrator to verify
+     *         your permissions.
+     * @throws ValidationException
+     *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonLocation.ListRouteCalculators
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListRouteCalculators" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListRouteCalculatorsResult listRouteCalculators(ListRouteCalculatorsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRouteCalculators(request);
+    }
+
+    @SdkInternalApi
+    final ListRouteCalculatorsResult executeListRouteCalculators(ListRouteCalculatorsRequest listRouteCalculatorsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listRouteCalculatorsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListRouteCalculatorsRequest> request = null;
+        Response<ListRouteCalculatorsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListRouteCalculatorsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRouteCalculatorsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRouteCalculators");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "routes.";
+                String resolvedHostPrefix = String.format("routes.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListRouteCalculatorsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListRouteCalculatorsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the tags for the specified Amazon Location Service resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed to process because of an unknown server error, exception, or failure.
+     * @throws ResourceNotFoundException
+     *         The resource that you've entered was not found in your AWS account.
+     * @throws AccessDeniedException
+     *         The request was denied due to insufficient access or permission. Check with an administrator to verify
+     *         your permissions.
+     * @throws ValidationException
+     *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonLocation.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "metadata.";
+                String resolvedHostPrefix = String.format("metadata.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
@@ -2738,17 +3368,6 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
      * Reverse geocodes a given coordinate and returns a legible address. Allows you to search for Places or points of
      * interest near a given position.
      * </p>
-     * <note>
-     * <p>
-     * By using Places, you agree that AWS may transmit your API queries to your selected third party provider for
-     * processing, which may be outside the AWS region you are currently using.
-     * </p>
-     * <p>
-     * Because of licensing limitations, you may not use HERE to store results for locations in Japan. For more
-     * information, see the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location
-     * Service.
-     * </p>
-     * </note>
      * 
      * @param searchPlaceIndexForPositionRequest
      * @return Result of the SearchPlaceIndexForPosition operation returned by the service.
@@ -2835,17 +3454,6 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
      * You can search for places near a given position using <code>BiasPosition</code>, or filter results within a
      * bounding box using <code>FilterBBox</code>. Providing both parameters simultaneously returns an error.
      * </p>
-     * </note> <note>
-     * <p>
-     * By using Places, you agree that AWS may transmit your API queries to your selected third party provider for
-     * processing, which may be outside the AWS region you are currently using.
-     * </p>
-     * <p>
-     * Also, when using HERE as your data provider, you may not (a) use HERE Places for Asset Management, or (b) select
-     * the <code>Storage</code> option for the <code>IntendedUse</code> parameter when requesting Places in Japan. For
-     * more information, see the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
-     * Location Service.
-     * </p>
      * </note>
      * 
      * @param searchPlaceIndexForTextRequest
@@ -2910,6 +3518,160 @@ public class AmazonLocationClient extends AmazonWebServiceClient implements Amaz
             HttpResponseHandler<AmazonWebServiceResponse<SearchPlaceIndexForTextResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new SearchPlaceIndexForTextResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Assigns one or more tags (key-value pairs) to the specified Amazon Location Service resource.
+     * </p>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values.&lt;/p&gt; &lt;p&gt;Tags don't have any semantic meaning to AWS and are interpreted strictly as strings of characters.&lt;/p&gt; &lt;p&gt;You can use the &lt;code&gt;TagResource&lt;/code&gt; action with an Amazon Location Service resource that already has tags. If you specify a new tag key for the resource, this tag is appended to the tags already associated with the resource. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag. &lt;/p&gt; &lt;p&gt;You can associate as many as 50 tags with a resource.&lt;/p&gt; </code>
+     * </pre>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed to process because of an unknown server error, exception, or failure.
+     * @throws ResourceNotFoundException
+     *         The resource that you've entered was not found in your AWS account.
+     * @throws AccessDeniedException
+     *         The request was denied due to insufficient access or permission. Check with an administrator to verify
+     *         your permissions.
+     * @throws ValidationException
+     *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonLocation.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "metadata.";
+                String resolvedHostPrefix = String.format("metadata.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes one or more tags from the specified Amazon Location Service resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InternalServerException
+     *         The request has failed to process because of an unknown server error, exception, or failure.
+     * @throws ResourceNotFoundException
+     *         The resource that you've entered was not found in your AWS account.
+     * @throws AccessDeniedException
+     *         The request was denied due to insufficient access or permission. Check with an administrator to verify
+     *         your permissions.
+     * @throws ValidationException
+     *         The input failed to meet the constraints specified by the AWS service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonLocation.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Location");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "metadata.";
+                String resolvedHostPrefix = String.format("metadata.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();

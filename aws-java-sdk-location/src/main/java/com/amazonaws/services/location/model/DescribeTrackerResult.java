@@ -39,6 +39,13 @@ public class DescribeTrackerResult extends com.amazonaws.AmazonWebServiceResult<
     private String description;
     /**
      * <p>
+     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS
+     * customer managed key</a> assigned to the Amazon Location resource.
+     * </p>
+     */
+    private String kmsKeyId;
+    /**
+     * <p>
      * The pricing plan selected for the specified tracker resource.
      * </p>
      * <p>
@@ -49,14 +56,27 @@ public class DescribeTrackerResult extends com.amazonaws.AmazonWebServiceResult<
     private String pricingPlan;
     /**
      * <p>
-     * The data source selected for the tracker resource and associated pricing plan.
+     * The specified data provider for the tracker resource.
      * </p>
      */
     private String pricingPlanDataSource;
     /**
      * <p>
+     * The tags associated with the tracker resource.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String trackerArn;
     /**
@@ -168,6 +188,55 @@ public class DescribeTrackerResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
+     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS
+     * customer managed key</a> assigned to the Amazon Location resource.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        A key identifier for an <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed
+     *        key</a> assigned to the Amazon Location resource.
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS
+     * customer managed key</a> assigned to the Amazon Location resource.
+     * </p>
+     * 
+     * @return A key identifier for an <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed
+     *         key</a> assigned to the Amazon Location resource.
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS
+     * customer managed key</a> assigned to the Amazon Location resource.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        A key identifier for an <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed
+     *        key</a> assigned to the Amazon Location resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrackerResult withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The pricing plan selected for the specified tracker resource.
      * </p>
      * <p>
@@ -255,11 +324,11 @@ public class DescribeTrackerResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The data source selected for the tracker resource and associated pricing plan.
+     * The specified data provider for the tracker resource.
      * </p>
      * 
      * @param pricingPlanDataSource
-     *        The data source selected for the tracker resource and associated pricing plan.
+     *        The specified data provider for the tracker resource.
      */
 
     public void setPricingPlanDataSource(String pricingPlanDataSource) {
@@ -268,10 +337,10 @@ public class DescribeTrackerResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The data source selected for the tracker resource and associated pricing plan.
+     * The specified data provider for the tracker resource.
      * </p>
      * 
-     * @return The data source selected for the tracker resource and associated pricing plan.
+     * @return The specified data provider for the tracker resource.
      */
 
     public String getPricingPlanDataSource() {
@@ -280,11 +349,11 @@ public class DescribeTrackerResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The data source selected for the tracker resource and associated pricing plan.
+     * The specified data provider for the tracker resource.
      * </p>
      * 
      * @param pricingPlanDataSource
-     *        The data source selected for the tracker resource and associated pricing plan.
+     *        The specified data provider for the tracker resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -295,12 +364,93 @@ public class DescribeTrackerResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
+     * The tags associated with the tracker resource.
+     * </p>
+     * 
+     * @return The tags associated with the tracker resource.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags associated with the tracker resource.
+     * </p>
+     * 
+     * @param tags
+     *        The tags associated with the tracker resource.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags associated with the tracker resource.
+     * </p>
+     * 
+     * @param tags
+     *        The tags associated with the tracker resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrackerResult withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see DescribeTrackerResult#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrackerResult addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrackerResult clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param trackerArn
      *        The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across
-     *        all AWS.
+     *        all AWS.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
+     *        </p>
+     *        </li>
      */
 
     public void setTrackerArn(String trackerArn) {
@@ -311,9 +461,22 @@ public class DescribeTrackerResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across
-     *         all AWS.
+     *         all AWS.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
+     *         </p>
+     *         </li>
      */
 
     public String getTrackerArn() {
@@ -324,10 +487,23 @@ public class DescribeTrackerResult extends com.amazonaws.AmazonWebServiceResult<
      * <p>
      * The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param trackerArn
      *        The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across
-     *        all AWS.
+     *        all AWS.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -444,10 +620,14 @@ public class DescribeTrackerResult extends com.amazonaws.AmazonWebServiceResult<
             sb.append("CreateTime: ").append(getCreateTime()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getPricingPlan() != null)
             sb.append("PricingPlan: ").append(getPricingPlan()).append(",");
         if (getPricingPlanDataSource() != null)
             sb.append("PricingPlanDataSource: ").append(getPricingPlanDataSource()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getTrackerArn() != null)
             sb.append("TrackerArn: ").append(getTrackerArn()).append(",");
         if (getTrackerName() != null)
@@ -476,6 +656,10 @@ public class DescribeTrackerResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
         if (other.getPricingPlan() == null ^ this.getPricingPlan() == null)
             return false;
         if (other.getPricingPlan() != null && other.getPricingPlan().equals(this.getPricingPlan()) == false)
@@ -483,6 +667,10 @@ public class DescribeTrackerResult extends com.amazonaws.AmazonWebServiceResult<
         if (other.getPricingPlanDataSource() == null ^ this.getPricingPlanDataSource() == null)
             return false;
         if (other.getPricingPlanDataSource() != null && other.getPricingPlanDataSource().equals(this.getPricingPlanDataSource()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         if (other.getTrackerArn() == null ^ this.getTrackerArn() == null)
             return false;
@@ -506,8 +694,10 @@ public class DescribeTrackerResult extends com.amazonaws.AmazonWebServiceResult<
 
         hashCode = prime * hashCode + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getPricingPlan() == null) ? 0 : getPricingPlan().hashCode());
         hashCode = prime * hashCode + ((getPricingPlanDataSource() == null) ? 0 : getPricingPlanDataSource().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getTrackerArn() == null) ? 0 : getTrackerArn().hashCode());
         hashCode = prime * hashCode + ((getTrackerName() == null) ? 0 : getTrackerName().hashCode());
         hashCode = prime * hashCode + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());

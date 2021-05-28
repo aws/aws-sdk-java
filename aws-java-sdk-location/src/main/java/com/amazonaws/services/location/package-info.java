@@ -13,7 +13,7 @@
 
 /**
  * <p>
- * Suite of geospatial services including Maps, Places, Tracking, and Geofencing
+ * Suite of geospatial services including Maps, Places, Routes, Tracking, and Geofencing
  * </p>
  */
 package com.amazonaws.services.location;

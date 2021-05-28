@@ -19,14 +19,17 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents the options that are available to control the behavior of a <a>StartTaskExecution</a> operation. Behavior
- * includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files
- * in the destination, data integrity verification, and so on.
+ * Represents the options that are available to control the behavior of a <a
+ * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
+ * operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and
+ * also overwriting files in the destination, data integrity verification, and so on.
  * </p>
  * <p>
- * A task has a set of default options associated with it. If you don't specify an option in <a>StartTaskExecution</a>,
- * the default value is used. You can override the defaults options on each task execution by specifying an overriding
- * <code>Options</code> value to <a>StartTaskExecution</a>.
+ * A task has a set of default options associated with it. If you don't specify an option in <a
+ * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>, the
+ * default value is used. You can override the defaults options on each task execution by specifying an overriding
+ * <code>Options</code> value to <a
+ * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/Options" target="_top">AWS API
@@ -38,7 +41,8 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A value that determines whether a data integrity verification should be performed at the end of a task execution
-     * after all data and metadata have been transferred. For more information, see <a>create-task</a>
+     * after all data and metadata have been transferred. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure task settings</a>.
      * </p>
      * <p>
      * Default value: POINT_IN_TIME_CONSISTENT.
@@ -66,7 +70,9 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Some storage classes have specific behaviors that can affect your S3 storage cost. For detailed information, see
-     * <a>using-storage-classes</a> in the <i>AWS DataSync User Guide</i>.
+     * <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">
+     * Considerations when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS DataSync User
+     * Guide</i>.
      * </p>
      */
     private String overwriteMode;
@@ -99,7 +105,7 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A value that indicates the last time that a file was modified (that is, a file was written to) before the
-     * PREPARING phase.
+     * PREPARING phase. This option is required for cases when you need to run the same task more than one time.
      * </p>
      * <p>
      * Default value: PRESERVE.
@@ -122,7 +128,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     private String mtime;
     /**
      * <p>
-     * The user ID (UID) of the file's owner.
+     * The POSIX user ID (UID) of the file's owner. This option should only be set for NFS, EFS, and S3 locations. To
+     * learn more about what metadata is copied by DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata Copied
+     * by DataSync</a>.
      * </p>
      * <p>
      * Default value: INT_VALUE. This preserves the integer value of the ID.
@@ -137,7 +146,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     private String uid;
     /**
      * <p>
-     * The group ID (GID) of the file's owners.
+     * The POSIX group ID (GID) of the file's owners. This option should only be set for NFS, EFS, and S3 locations. For
+     * more information about what metadata is copied by DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata Copied
+     * by DataSync</a>.
      * </p>
      * <p>
      * Default value: INT_VALUE. This preserves the integer value of the ID.
@@ -154,8 +166,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A value that specifies whether files in the destination that don't exist in the source file system should be
      * preserved. This option can affect your storage cost. If your task deletes objects, you might incur minimum
-     * storage duration charges for certain storage classes. For detailed information, see <a>using-storage-classes</a>
-     * in the <i>AWS DataSync User Guide</i>.
+     * storage duration charges for certain storage classes. For detailed information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes"
+     * >Considerations when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS DataSync User
+     * Guide</i>.
      * </p>
      * <p>
      * Default value: PRESERVE.
@@ -171,7 +185,8 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A value that determines whether AWS DataSync should preserve the metadata of block and character devices in the
-     * source file system, and recreate the files with that device name and metadata on the destination.
+     * source file system, and re-create the files with that device name and metadata on the destination. DataSync does
+     * not copy the contents of such devices, only the name and metadata.
      * </p>
      * <note>
      * <p>
@@ -193,7 +208,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A value that determines which users or groups can access a file for a specific purpose such as reading, writing,
-     * or execution of the file.
+     * or execution of the file. This option should only be set for NFS, EFS, and S3 locations. For more information
+     * about what metadata is copied by DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata Copied
+     * by DataSync</a>.
      * </p>
      * <p>
      * Default value: PRESERVE.
@@ -225,7 +243,8 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more information,
-     * see <a>queue-task-execution</a>.
+     * see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#queue-task-execution">Queueing
+     * task executions</a>.
      * </p>
      */
     private String taskQueueing;
@@ -256,11 +275,78 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String transferMode;
+    /**
+     * <p>
+     * A value that determines which components of the SMB security descriptor are copied from source to destination
+     * objects.
+     * </p>
+     * <p>
+     * This value is only used for transfers between SMB and Amazon FSx for Windows File Server locations, or between
+     * two Amazon FSx for Windows File Server locations. For more information about how DataSync handles metadata, see
+     * <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">How DataSync Handles Metadata
+     * and Special Files</a>.
+     * </p>
+     * <p>
+     * Default value: OWNER_DACL.
+     * </p>
+     * <p>
+     * <b>OWNER_DACL</b>: For each copied object, DataSync copies the following metadata:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Object owner.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When choosing this option, DataSync does NOT copy the NTFS system access control lists (SACLs), which are used by
+     * administrators to log attempts to access a secured object.
+     * </p>
+     * <p>
+     * <b>OWNER_DACL_SACL</b>: For each copied object, DataSync copies the following metadata:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Object owner.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NTFS system access control lists (SACLs), which are used by administrators to log attempts to access a secured
+     * object.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Copying SACLs requires granting additional permissions to the Windows user that DataSync uses to access your SMB
+     * location. For information about choosing a user that ensures sufficient permissions to files, folders, and
+     * metadata, see <a href="create-smb-location.html#SMBuser">user</a>.
+     * </p>
+     * <p>
+     * <b>NONE</b>: None of the SMB security descriptor components are copied. Destination objects are owned by the user
+     * that was provided for accessing the destination location. DACLs and SACLs are set based on the destination
+     * server’s configuration.
+     * </p>
+     */
+    private String securityDescriptorCopyFlags;
 
     /**
      * <p>
      * A value that determines whether a data integrity verification should be performed at the end of a task execution
-     * after all data and metadata have been transferred. For more information, see <a>create-task</a>
+     * after all data and metadata have been transferred. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure task settings</a>.
      * </p>
      * <p>
      * Default value: POINT_IN_TIME_CONSISTENT.
@@ -280,7 +366,8 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param verifyMode
      *        A value that determines whether a data integrity verification should be performed at the end of a task
-     *        execution after all data and metadata have been transferred. For more information, see <a>create-task</a>
+     *        execution after all data and metadata have been transferred. For more information, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure task settings</a>.
      *        </p>
      *        <p>
      *        Default value: POINT_IN_TIME_CONSISTENT.
@@ -306,7 +393,8 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A value that determines whether a data integrity verification should be performed at the end of a task execution
-     * after all data and metadata have been transferred. For more information, see <a>create-task</a>
+     * after all data and metadata have been transferred. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure task settings</a>.
      * </p>
      * <p>
      * Default value: POINT_IN_TIME_CONSISTENT.
@@ -325,8 +413,9 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @return A value that determines whether a data integrity verification should be performed at the end of a task
-     *         execution after all data and metadata have been transferred. For more information, see <a>create-task</a>
-     *         </p>
+     *         execution after all data and metadata have been transferred. For more information, see <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure task
+     *         settings</a>. </p>
      *         <p>
      *         Default value: POINT_IN_TIME_CONSISTENT.
      *         </p>
@@ -351,7 +440,8 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A value that determines whether a data integrity verification should be performed at the end of a task execution
-     * after all data and metadata have been transferred. For more information, see <a>create-task</a>
+     * after all data and metadata have been transferred. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure task settings</a>.
      * </p>
      * <p>
      * Default value: POINT_IN_TIME_CONSISTENT.
@@ -371,7 +461,8 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param verifyMode
      *        A value that determines whether a data integrity verification should be performed at the end of a task
-     *        execution after all data and metadata have been transferred. For more information, see <a>create-task</a>
+     *        execution after all data and metadata have been transferred. For more information, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure task settings</a>.
      *        </p>
      *        <p>
      *        Default value: POINT_IN_TIME_CONSISTENT.
@@ -399,7 +490,8 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A value that determines whether a data integrity verification should be performed at the end of a task execution
-     * after all data and metadata have been transferred. For more information, see <a>create-task</a>
+     * after all data and metadata have been transferred. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure task settings</a>.
      * </p>
      * <p>
      * Default value: POINT_IN_TIME_CONSISTENT.
@@ -419,7 +511,8 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param verifyMode
      *        A value that determines whether a data integrity verification should be performed at the end of a task
-     *        execution after all data and metadata have been transferred. For more information, see <a>create-task</a>
+     *        execution after all data and metadata have been transferred. For more information, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure task settings</a>.
      *        </p>
      *        <p>
      *        Default value: POINT_IN_TIME_CONSISTENT.
@@ -453,7 +546,9 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Some storage classes have specific behaviors that can affect your S3 storage cost. For detailed information, see
-     * <a>using-storage-classes</a> in the <i>AWS DataSync User Guide</i>.
+     * <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">
+     * Considerations when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS DataSync User
+     * Guide</i>.
      * </p>
      * 
      * @param overwriteMode
@@ -463,7 +558,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      *        files, you can use this value to protect against overwriting those changes. </p>
      *        <p>
      *        Some storage classes have specific behaviors that can affect your S3 storage cost. For detailed
-     *        information, see <a>using-storage-classes</a> in the <i>AWS DataSync User Guide</i>.
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes"
+     *        >Considerations when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS DataSync User
+     *        Guide</i>.
      * @see OverwriteMode
      */
 
@@ -480,7 +578,9 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Some storage classes have specific behaviors that can affect your S3 storage cost. For detailed information, see
-     * <a>using-storage-classes</a> in the <i>AWS DataSync User Guide</i>.
+     * <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">
+     * Considerations when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS DataSync User
+     * Guide</i>.
      * </p>
      * 
      * @return A value that determines whether files at the destination should be overwritten or preserved when copying
@@ -489,7 +589,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      *         files, you can use this value to protect against overwriting those changes. </p>
      *         <p>
      *         Some storage classes have specific behaviors that can affect your S3 storage cost. For detailed
-     *         information, see <a>using-storage-classes</a> in the <i>AWS DataSync User Guide</i>.
+     *         information, see <a href=
+     *         "https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes"
+     *         >Considerations when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS DataSync User
+     *         Guide</i>.
      * @see OverwriteMode
      */
 
@@ -506,7 +609,9 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Some storage classes have specific behaviors that can affect your S3 storage cost. For detailed information, see
-     * <a>using-storage-classes</a> in the <i>AWS DataSync User Guide</i>.
+     * <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">
+     * Considerations when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS DataSync User
+     * Guide</i>.
      * </p>
      * 
      * @param overwriteMode
@@ -516,7 +621,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      *        files, you can use this value to protect against overwriting those changes. </p>
      *        <p>
      *        Some storage classes have specific behaviors that can affect your S3 storage cost. For detailed
-     *        information, see <a>using-storage-classes</a> in the <i>AWS DataSync User Guide</i>.
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes"
+     *        >Considerations when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS DataSync User
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OverwriteMode
      */
@@ -535,7 +643,9 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Some storage classes have specific behaviors that can affect your S3 storage cost. For detailed information, see
-     * <a>using-storage-classes</a> in the <i>AWS DataSync User Guide</i>.
+     * <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">
+     * Considerations when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS DataSync User
+     * Guide</i>.
      * </p>
      * 
      * @param overwriteMode
@@ -545,7 +655,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      *        files, you can use this value to protect against overwriting those changes. </p>
      *        <p>
      *        Some storage classes have specific behaviors that can affect your S3 storage cost. For detailed
-     *        information, see <a>using-storage-classes</a> in the <i>AWS DataSync User Guide</i>.
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes"
+     *        >Considerations when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS DataSync User
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OverwriteMode
      */
@@ -777,7 +890,7 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A value that indicates the last time that a file was modified (that is, a file was written to) before the
-     * PREPARING phase.
+     * PREPARING phase. This option is required for cases when you need to run the same task more than one time.
      * </p>
      * <p>
      * Default value: PRESERVE.
@@ -799,7 +912,8 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param mtime
      *        A value that indicates the last time that a file was modified (that is, a file was written to) before the
-     *        PREPARING phase. </p>
+     *        PREPARING phase. This option is required for cases when you need to run the same task more than one time.
+     *        </p>
      *        <p>
      *        Default value: PRESERVE.
      *        </p>
@@ -826,7 +940,7 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A value that indicates the last time that a file was modified (that is, a file was written to) before the
-     * PREPARING phase.
+     * PREPARING phase. This option is required for cases when you need to run the same task more than one time.
      * </p>
      * <p>
      * Default value: PRESERVE.
@@ -847,7 +961,8 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * 
      * @return A value that indicates the last time that a file was modified (that is, a file was written to) before the
-     *         PREPARING phase. </p>
+     *         PREPARING phase. This option is required for cases when you need to run the same task more than one time.
+     *         </p>
      *         <p>
      *         Default value: PRESERVE.
      *         </p>
@@ -874,7 +989,7 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A value that indicates the last time that a file was modified (that is, a file was written to) before the
-     * PREPARING phase.
+     * PREPARING phase. This option is required for cases when you need to run the same task more than one time.
      * </p>
      * <p>
      * Default value: PRESERVE.
@@ -896,7 +1011,8 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param mtime
      *        A value that indicates the last time that a file was modified (that is, a file was written to) before the
-     *        PREPARING phase. </p>
+     *        PREPARING phase. This option is required for cases when you need to run the same task more than one time.
+     *        </p>
      *        <p>
      *        Default value: PRESERVE.
      *        </p>
@@ -925,7 +1041,7 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A value that indicates the last time that a file was modified (that is, a file was written to) before the
-     * PREPARING phase.
+     * PREPARING phase. This option is required for cases when you need to run the same task more than one time.
      * </p>
      * <p>
      * Default value: PRESERVE.
@@ -947,7 +1063,8 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param mtime
      *        A value that indicates the last time that a file was modified (that is, a file was written to) before the
-     *        PREPARING phase. </p>
+     *        PREPARING phase. This option is required for cases when you need to run the same task more than one time.
+     *        </p>
      *        <p>
      *        Default value: PRESERVE.
      *        </p>
@@ -975,7 +1092,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user ID (UID) of the file's owner.
+     * The POSIX user ID (UID) of the file's owner. This option should only be set for NFS, EFS, and S3 locations. To
+     * learn more about what metadata is copied by DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata Copied
+     * by DataSync</a>.
      * </p>
      * <p>
      * Default value: INT_VALUE. This preserves the integer value of the ID.
@@ -988,7 +1108,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param uid
-     *        The user ID (UID) of the file's owner. </p>
+     *        The POSIX user ID (UID) of the file's owner. This option should only be set for NFS, EFS, and S3
+     *        locations. To learn more about what metadata is copied by DataSync, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
+     *        Copied by DataSync</a>.</p>
      *        <p>
      *        Default value: INT_VALUE. This preserves the integer value of the ID.
      *        </p>
@@ -1006,7 +1129,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user ID (UID) of the file's owner.
+     * The POSIX user ID (UID) of the file's owner. This option should only be set for NFS, EFS, and S3 locations. To
+     * learn more about what metadata is copied by DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata Copied
+     * by DataSync</a>.
      * </p>
      * <p>
      * Default value: INT_VALUE. This preserves the integer value of the ID.
@@ -1018,7 +1144,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * NONE: Ignore UID and GID.
      * </p>
      * 
-     * @return The user ID (UID) of the file's owner. </p>
+     * @return The POSIX user ID (UID) of the file's owner. This option should only be set for NFS, EFS, and S3
+     *         locations. To learn more about what metadata is copied by DataSync, see <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
+     *         Copied by DataSync</a>.</p>
      *         <p>
      *         Default value: INT_VALUE. This preserves the integer value of the ID.
      *         </p>
@@ -1036,7 +1165,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user ID (UID) of the file's owner.
+     * The POSIX user ID (UID) of the file's owner. This option should only be set for NFS, EFS, and S3 locations. To
+     * learn more about what metadata is copied by DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata Copied
+     * by DataSync</a>.
      * </p>
      * <p>
      * Default value: INT_VALUE. This preserves the integer value of the ID.
@@ -1049,7 +1181,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param uid
-     *        The user ID (UID) of the file's owner. </p>
+     *        The POSIX user ID (UID) of the file's owner. This option should only be set for NFS, EFS, and S3
+     *        locations. To learn more about what metadata is copied by DataSync, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
+     *        Copied by DataSync</a>.</p>
      *        <p>
      *        Default value: INT_VALUE. This preserves the integer value of the ID.
      *        </p>
@@ -1069,7 +1204,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The user ID (UID) of the file's owner.
+     * The POSIX user ID (UID) of the file's owner. This option should only be set for NFS, EFS, and S3 locations. To
+     * learn more about what metadata is copied by DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata Copied
+     * by DataSync</a>.
      * </p>
      * <p>
      * Default value: INT_VALUE. This preserves the integer value of the ID.
@@ -1082,7 +1220,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param uid
-     *        The user ID (UID) of the file's owner. </p>
+     *        The POSIX user ID (UID) of the file's owner. This option should only be set for NFS, EFS, and S3
+     *        locations. To learn more about what metadata is copied by DataSync, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
+     *        Copied by DataSync</a>.</p>
      *        <p>
      *        Default value: INT_VALUE. This preserves the integer value of the ID.
      *        </p>
@@ -1102,7 +1243,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The group ID (GID) of the file's owners.
+     * The POSIX group ID (GID) of the file's owners. This option should only be set for NFS, EFS, and S3 locations. For
+     * more information about what metadata is copied by DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata Copied
+     * by DataSync</a>.
      * </p>
      * <p>
      * Default value: INT_VALUE. This preserves the integer value of the ID.
@@ -1115,7 +1259,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param gid
-     *        The group ID (GID) of the file's owners. </p>
+     *        The POSIX group ID (GID) of the file's owners. This option should only be set for NFS, EFS, and S3
+     *        locations. For more information about what metadata is copied by DataSync, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
+     *        Copied by DataSync</a>. </p>
      *        <p>
      *        Default value: INT_VALUE. This preserves the integer value of the ID.
      *        </p>
@@ -1133,7 +1280,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The group ID (GID) of the file's owners.
+     * The POSIX group ID (GID) of the file's owners. This option should only be set for NFS, EFS, and S3 locations. For
+     * more information about what metadata is copied by DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata Copied
+     * by DataSync</a>.
      * </p>
      * <p>
      * Default value: INT_VALUE. This preserves the integer value of the ID.
@@ -1145,7 +1295,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * NONE: Ignore UID and GID.
      * </p>
      * 
-     * @return The group ID (GID) of the file's owners. </p>
+     * @return The POSIX group ID (GID) of the file's owners. This option should only be set for NFS, EFS, and S3
+     *         locations. For more information about what metadata is copied by DataSync, see <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
+     *         Copied by DataSync</a>. </p>
      *         <p>
      *         Default value: INT_VALUE. This preserves the integer value of the ID.
      *         </p>
@@ -1163,7 +1316,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The group ID (GID) of the file's owners.
+     * The POSIX group ID (GID) of the file's owners. This option should only be set for NFS, EFS, and S3 locations. For
+     * more information about what metadata is copied by DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata Copied
+     * by DataSync</a>.
      * </p>
      * <p>
      * Default value: INT_VALUE. This preserves the integer value of the ID.
@@ -1176,7 +1332,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param gid
-     *        The group ID (GID) of the file's owners. </p>
+     *        The POSIX group ID (GID) of the file's owners. This option should only be set for NFS, EFS, and S3
+     *        locations. For more information about what metadata is copied by DataSync, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
+     *        Copied by DataSync</a>. </p>
      *        <p>
      *        Default value: INT_VALUE. This preserves the integer value of the ID.
      *        </p>
@@ -1196,7 +1355,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The group ID (GID) of the file's owners.
+     * The POSIX group ID (GID) of the file's owners. This option should only be set for NFS, EFS, and S3 locations. For
+     * more information about what metadata is copied by DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata Copied
+     * by DataSync</a>.
      * </p>
      * <p>
      * Default value: INT_VALUE. This preserves the integer value of the ID.
@@ -1209,7 +1371,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param gid
-     *        The group ID (GID) of the file's owners. </p>
+     *        The POSIX group ID (GID) of the file's owners. This option should only be set for NFS, EFS, and S3
+     *        locations. For more information about what metadata is copied by DataSync, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
+     *        Copied by DataSync</a>. </p>
      *        <p>
      *        Default value: INT_VALUE. This preserves the integer value of the ID.
      *        </p>
@@ -1231,8 +1396,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A value that specifies whether files in the destination that don't exist in the source file system should be
      * preserved. This option can affect your storage cost. If your task deletes objects, you might incur minimum
-     * storage duration charges for certain storage classes. For detailed information, see <a>using-storage-classes</a>
-     * in the <i>AWS DataSync User Guide</i>.
+     * storage duration charges for certain storage classes. For detailed information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes"
+     * >Considerations when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS DataSync User
+     * Guide</i>.
      * </p>
      * <p>
      * Default value: PRESERVE.
@@ -1247,8 +1414,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * @param preserveDeletedFiles
      *        A value that specifies whether files in the destination that don't exist in the source file system should
      *        be preserved. This option can affect your storage cost. If your task deletes objects, you might incur
-     *        minimum storage duration charges for certain storage classes. For detailed information, see
-     *        <a>using-storage-classes</a> in the <i>AWS DataSync User Guide</i>.</p>
+     *        minimum storage duration charges for certain storage classes. For detailed information, see <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes"
+     *        >Considerations when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS DataSync User
+     *        Guide</i>.</p>
      *        <p>
      *        Default value: PRESERVE.
      *        </p>
@@ -1268,8 +1437,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A value that specifies whether files in the destination that don't exist in the source file system should be
      * preserved. This option can affect your storage cost. If your task deletes objects, you might incur minimum
-     * storage duration charges for certain storage classes. For detailed information, see <a>using-storage-classes</a>
-     * in the <i>AWS DataSync User Guide</i>.
+     * storage duration charges for certain storage classes. For detailed information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes"
+     * >Considerations when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS DataSync User
+     * Guide</i>.
      * </p>
      * <p>
      * Default value: PRESERVE.
@@ -1283,8 +1454,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return A value that specifies whether files in the destination that don't exist in the source file system should
      *         be preserved. This option can affect your storage cost. If your task deletes objects, you might incur
-     *         minimum storage duration charges for certain storage classes. For detailed information, see
-     *         <a>using-storage-classes</a> in the <i>AWS DataSync User Guide</i>.</p>
+     *         minimum storage duration charges for certain storage classes. For detailed information, see <a href=
+     *         "https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes"
+     *         >Considerations when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS DataSync User
+     *         Guide</i>.</p>
      *         <p>
      *         Default value: PRESERVE.
      *         </p>
@@ -1304,8 +1477,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A value that specifies whether files in the destination that don't exist in the source file system should be
      * preserved. This option can affect your storage cost. If your task deletes objects, you might incur minimum
-     * storage duration charges for certain storage classes. For detailed information, see <a>using-storage-classes</a>
-     * in the <i>AWS DataSync User Guide</i>.
+     * storage duration charges for certain storage classes. For detailed information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes"
+     * >Considerations when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS DataSync User
+     * Guide</i>.
      * </p>
      * <p>
      * Default value: PRESERVE.
@@ -1320,8 +1495,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * @param preserveDeletedFiles
      *        A value that specifies whether files in the destination that don't exist in the source file system should
      *        be preserved. This option can affect your storage cost. If your task deletes objects, you might incur
-     *        minimum storage duration charges for certain storage classes. For detailed information, see
-     *        <a>using-storage-classes</a> in the <i>AWS DataSync User Guide</i>.</p>
+     *        minimum storage duration charges for certain storage classes. For detailed information, see <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes"
+     *        >Considerations when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS DataSync User
+     *        Guide</i>.</p>
      *        <p>
      *        Default value: PRESERVE.
      *        </p>
@@ -1343,8 +1520,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A value that specifies whether files in the destination that don't exist in the source file system should be
      * preserved. This option can affect your storage cost. If your task deletes objects, you might incur minimum
-     * storage duration charges for certain storage classes. For detailed information, see <a>using-storage-classes</a>
-     * in the <i>AWS DataSync User Guide</i>.
+     * storage duration charges for certain storage classes. For detailed information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes"
+     * >Considerations when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS DataSync User
+     * Guide</i>.
      * </p>
      * <p>
      * Default value: PRESERVE.
@@ -1359,8 +1538,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * @param preserveDeletedFiles
      *        A value that specifies whether files in the destination that don't exist in the source file system should
      *        be preserved. This option can affect your storage cost. If your task deletes objects, you might incur
-     *        minimum storage duration charges for certain storage classes. For detailed information, see
-     *        <a>using-storage-classes</a> in the <i>AWS DataSync User Guide</i>.</p>
+     *        minimum storage duration charges for certain storage classes. For detailed information, see <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes"
+     *        >Considerations when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS DataSync User
+     *        Guide</i>.</p>
      *        <p>
      *        Default value: PRESERVE.
      *        </p>
@@ -1381,7 +1562,8 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A value that determines whether AWS DataSync should preserve the metadata of block and character devices in the
-     * source file system, and recreate the files with that device name and metadata on the destination.
+     * source file system, and re-create the files with that device name and metadata on the destination. DataSync does
+     * not copy the contents of such devices, only the name and metadata.
      * </p>
      * <note>
      * <p>
@@ -1401,8 +1583,8 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param preserveDevices
      *        A value that determines whether AWS DataSync should preserve the metadata of block and character devices
-     *        in the source file system, and recreate the files with that device name and metadata on the
-     *        destination.</p> <note>
+     *        in the source file system, and re-create the files with that device name and metadata on the destination.
+     *        DataSync does not copy the contents of such devices, only the name and metadata. </p> <note>
      *        <p>
      *        AWS DataSync can't sync the actual contents of such devices, because they are nonterminal and don't return
      *        an end-of-file (EOF) marker.
@@ -1427,7 +1609,8 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A value that determines whether AWS DataSync should preserve the metadata of block and character devices in the
-     * source file system, and recreate the files with that device name and metadata on the destination.
+     * source file system, and re-create the files with that device name and metadata on the destination. DataSync does
+     * not copy the contents of such devices, only the name and metadata.
      * </p>
      * <note>
      * <p>
@@ -1446,8 +1629,8 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @return A value that determines whether AWS DataSync should preserve the metadata of block and character devices
-     *         in the source file system, and recreate the files with that device name and metadata on the
-     *         destination.</p> <note>
+     *         in the source file system, and re-create the files with that device name and metadata on the destination.
+     *         DataSync does not copy the contents of such devices, only the name and metadata. </p> <note>
      *         <p>
      *         AWS DataSync can't sync the actual contents of such devices, because they are nonterminal and don't
      *         return an end-of-file (EOF) marker.
@@ -1472,7 +1655,8 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A value that determines whether AWS DataSync should preserve the metadata of block and character devices in the
-     * source file system, and recreate the files with that device name and metadata on the destination.
+     * source file system, and re-create the files with that device name and metadata on the destination. DataSync does
+     * not copy the contents of such devices, only the name and metadata.
      * </p>
      * <note>
      * <p>
@@ -1492,8 +1676,8 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param preserveDevices
      *        A value that determines whether AWS DataSync should preserve the metadata of block and character devices
-     *        in the source file system, and recreate the files with that device name and metadata on the
-     *        destination.</p> <note>
+     *        in the source file system, and re-create the files with that device name and metadata on the destination.
+     *        DataSync does not copy the contents of such devices, only the name and metadata. </p> <note>
      *        <p>
      *        AWS DataSync can't sync the actual contents of such devices, because they are nonterminal and don't return
      *        an end-of-file (EOF) marker.
@@ -1520,7 +1704,8 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A value that determines whether AWS DataSync should preserve the metadata of block and character devices in the
-     * source file system, and recreate the files with that device name and metadata on the destination.
+     * source file system, and re-create the files with that device name and metadata on the destination. DataSync does
+     * not copy the contents of such devices, only the name and metadata.
      * </p>
      * <note>
      * <p>
@@ -1540,8 +1725,8 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param preserveDevices
      *        A value that determines whether AWS DataSync should preserve the metadata of block and character devices
-     *        in the source file system, and recreate the files with that device name and metadata on the
-     *        destination.</p> <note>
+     *        in the source file system, and re-create the files with that device name and metadata on the destination.
+     *        DataSync does not copy the contents of such devices, only the name and metadata. </p> <note>
      *        <p>
      *        AWS DataSync can't sync the actual contents of such devices, because they are nonterminal and don't return
      *        an end-of-file (EOF) marker.
@@ -1568,7 +1753,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A value that determines which users or groups can access a file for a specific purpose such as reading, writing,
-     * or execution of the file.
+     * or execution of the file. This option should only be set for NFS, EFS, and S3 locations. For more information
+     * about what metadata is copied by DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata Copied
+     * by DataSync</a>.
      * </p>
      * <p>
      * Default value: PRESERVE.
@@ -1587,7 +1775,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param posixPermissions
      *        A value that determines which users or groups can access a file for a specific purpose such as reading,
-     *        writing, or execution of the file. </p>
+     *        writing, or execution of the file. This option should only be set for NFS, EFS, and S3 locations. For more
+     *        information about what metadata is copied by DataSync, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
+     *        Copied by DataSync</a>. </p>
      *        <p>
      *        Default value: PRESERVE.
      *        </p>
@@ -1611,7 +1802,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A value that determines which users or groups can access a file for a specific purpose such as reading, writing,
-     * or execution of the file.
+     * or execution of the file. This option should only be set for NFS, EFS, and S3 locations. For more information
+     * about what metadata is copied by DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata Copied
+     * by DataSync</a>.
      * </p>
      * <p>
      * Default value: PRESERVE.
@@ -1629,7 +1823,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * 
      * @return A value that determines which users or groups can access a file for a specific purpose such as reading,
-     *         writing, or execution of the file. </p>
+     *         writing, or execution of the file. This option should only be set for NFS, EFS, and S3 locations. For
+     *         more information about what metadata is copied by DataSync, see <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
+     *         Copied by DataSync</a>. </p>
      *         <p>
      *         Default value: PRESERVE.
      *         </p>
@@ -1653,7 +1850,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A value that determines which users or groups can access a file for a specific purpose such as reading, writing,
-     * or execution of the file.
+     * or execution of the file. This option should only be set for NFS, EFS, and S3 locations. For more information
+     * about what metadata is copied by DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata Copied
+     * by DataSync</a>.
      * </p>
      * <p>
      * Default value: PRESERVE.
@@ -1672,7 +1872,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param posixPermissions
      *        A value that determines which users or groups can access a file for a specific purpose such as reading,
-     *        writing, or execution of the file. </p>
+     *        writing, or execution of the file. This option should only be set for NFS, EFS, and S3 locations. For more
+     *        information about what metadata is copied by DataSync, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
+     *        Copied by DataSync</a>. </p>
      *        <p>
      *        Default value: PRESERVE.
      *        </p>
@@ -1698,7 +1901,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A value that determines which users or groups can access a file for a specific purpose such as reading, writing,
-     * or execution of the file.
+     * or execution of the file. This option should only be set for NFS, EFS, and S3 locations. For more information
+     * about what metadata is copied by DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata Copied
+     * by DataSync</a>.
      * </p>
      * <p>
      * Default value: PRESERVE.
@@ -1717,7 +1923,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param posixPermissions
      *        A value that determines which users or groups can access a file for a specific purpose such as reading,
-     *        writing, or execution of the file. </p>
+     *        writing, or execution of the file. This option should only be set for NFS, EFS, and S3 locations. For more
+     *        information about what metadata is copied by DataSync, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata
+     *        Copied by DataSync</a>. </p>
      *        <p>
      *        Default value: PRESERVE.
      *        </p>
@@ -1793,7 +2002,8 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more information,
-     * see <a>queue-task-execution</a>.
+     * see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#queue-task-execution">Queueing
+     * task executions</a>.
      * </p>
      * 
      * @param taskQueueing
@@ -1801,7 +2011,9 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      *        <code>ENABLED</code>, the tasks will be queued. The default is <code>ENABLED</code>.</p>
      *        <p>
      *        If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more
-     *        information, see <a>queue-task-execution</a>.
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#queue-task-execution">Queueing
+     *        task executions</a>.
      * @see TaskQueueing
      */
 
@@ -1816,14 +2028,17 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more information,
-     * see <a>queue-task-execution</a>.
+     * see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#queue-task-execution">Queueing
+     * task executions</a>.
      * </p>
      * 
      * @return A value that determines whether tasks should be queued before executing the tasks. If set to
      *         <code>ENABLED</code>, the tasks will be queued. The default is <code>ENABLED</code>.</p>
      *         <p>
      *         If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more
-     *         information, see <a>queue-task-execution</a>.
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#queue-task-execution">Queueing
+     *         task executions</a>.
      * @see TaskQueueing
      */
 
@@ -1838,7 +2053,8 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more information,
-     * see <a>queue-task-execution</a>.
+     * see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#queue-task-execution">Queueing
+     * task executions</a>.
      * </p>
      * 
      * @param taskQueueing
@@ -1846,7 +2062,9 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      *        <code>ENABLED</code>, the tasks will be queued. The default is <code>ENABLED</code>.</p>
      *        <p>
      *        If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more
-     *        information, see <a>queue-task-execution</a>.
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#queue-task-execution">Queueing
+     *        task executions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TaskQueueing
      */
@@ -1863,7 +2081,8 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more information,
-     * see <a>queue-task-execution</a>.
+     * see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#queue-task-execution">Queueing
+     * task executions</a>.
      * </p>
      * 
      * @param taskQueueing
@@ -1871,7 +2090,9 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      *        <code>ENABLED</code>, the tasks will be queued. The default is <code>ENABLED</code>.</p>
      *        <p>
      *        If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more
-     *        information, see <a>queue-task-execution</a>.
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#queue-task-execution">Queueing
+     *        task executions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TaskQueueing
      */
@@ -2116,6 +2337,541 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A value that determines which components of the SMB security descriptor are copied from source to destination
+     * objects.
+     * </p>
+     * <p>
+     * This value is only used for transfers between SMB and Amazon FSx for Windows File Server locations, or between
+     * two Amazon FSx for Windows File Server locations. For more information about how DataSync handles metadata, see
+     * <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">How DataSync Handles Metadata
+     * and Special Files</a>.
+     * </p>
+     * <p>
+     * Default value: OWNER_DACL.
+     * </p>
+     * <p>
+     * <b>OWNER_DACL</b>: For each copied object, DataSync copies the following metadata:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Object owner.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When choosing this option, DataSync does NOT copy the NTFS system access control lists (SACLs), which are used by
+     * administrators to log attempts to access a secured object.
+     * </p>
+     * <p>
+     * <b>OWNER_DACL_SACL</b>: For each copied object, DataSync copies the following metadata:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Object owner.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NTFS system access control lists (SACLs), which are used by administrators to log attempts to access a secured
+     * object.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Copying SACLs requires granting additional permissions to the Windows user that DataSync uses to access your SMB
+     * location. For information about choosing a user that ensures sufficient permissions to files, folders, and
+     * metadata, see <a href="create-smb-location.html#SMBuser">user</a>.
+     * </p>
+     * <p>
+     * <b>NONE</b>: None of the SMB security descriptor components are copied. Destination objects are owned by the user
+     * that was provided for accessing the destination location. DACLs and SACLs are set based on the destination
+     * server’s configuration.
+     * </p>
+     * 
+     * @param securityDescriptorCopyFlags
+     *        A value that determines which components of the SMB security descriptor are copied from source to
+     *        destination objects. </p>
+     *        <p>
+     *        This value is only used for transfers between SMB and Amazon FSx for Windows File Server locations, or
+     *        between two Amazon FSx for Windows File Server locations. For more information about how DataSync handles
+     *        metadata, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">How
+     *        DataSync Handles Metadata and Special Files</a>.
+     *        </p>
+     *        <p>
+     *        Default value: OWNER_DACL.
+     *        </p>
+     *        <p>
+     *        <b>OWNER_DACL</b>: For each copied object, DataSync copies the following metadata:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Object owner.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        When choosing this option, DataSync does NOT copy the NTFS system access control lists (SACLs), which are
+     *        used by administrators to log attempts to access a secured object.
+     *        </p>
+     *        <p>
+     *        <b>OWNER_DACL_SACL</b>: For each copied object, DataSync copies the following metadata:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Object owner.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NTFS system access control lists (SACLs), which are used by administrators to log attempts to access a
+     *        secured object.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Copying SACLs requires granting additional permissions to the Windows user that DataSync uses to access
+     *        your SMB location. For information about choosing a user that ensures sufficient permissions to files,
+     *        folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.
+     *        </p>
+     *        <p>
+     *        <b>NONE</b>: None of the SMB security descriptor components are copied. Destination objects are owned by
+     *        the user that was provided for accessing the destination location. DACLs and SACLs are set based on the
+     *        destination server’s configuration.
+     * @see SmbSecurityDescriptorCopyFlags
+     */
+
+    public void setSecurityDescriptorCopyFlags(String securityDescriptorCopyFlags) {
+        this.securityDescriptorCopyFlags = securityDescriptorCopyFlags;
+    }
+
+    /**
+     * <p>
+     * A value that determines which components of the SMB security descriptor are copied from source to destination
+     * objects.
+     * </p>
+     * <p>
+     * This value is only used for transfers between SMB and Amazon FSx for Windows File Server locations, or between
+     * two Amazon FSx for Windows File Server locations. For more information about how DataSync handles metadata, see
+     * <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">How DataSync Handles Metadata
+     * and Special Files</a>.
+     * </p>
+     * <p>
+     * Default value: OWNER_DACL.
+     * </p>
+     * <p>
+     * <b>OWNER_DACL</b>: For each copied object, DataSync copies the following metadata:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Object owner.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When choosing this option, DataSync does NOT copy the NTFS system access control lists (SACLs), which are used by
+     * administrators to log attempts to access a secured object.
+     * </p>
+     * <p>
+     * <b>OWNER_DACL_SACL</b>: For each copied object, DataSync copies the following metadata:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Object owner.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NTFS system access control lists (SACLs), which are used by administrators to log attempts to access a secured
+     * object.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Copying SACLs requires granting additional permissions to the Windows user that DataSync uses to access your SMB
+     * location. For information about choosing a user that ensures sufficient permissions to files, folders, and
+     * metadata, see <a href="create-smb-location.html#SMBuser">user</a>.
+     * </p>
+     * <p>
+     * <b>NONE</b>: None of the SMB security descriptor components are copied. Destination objects are owned by the user
+     * that was provided for accessing the destination location. DACLs and SACLs are set based on the destination
+     * server’s configuration.
+     * </p>
+     * 
+     * @return A value that determines which components of the SMB security descriptor are copied from source to
+     *         destination objects. </p>
+     *         <p>
+     *         This value is only used for transfers between SMB and Amazon FSx for Windows File Server locations, or
+     *         between two Amazon FSx for Windows File Server locations. For more information about how DataSync handles
+     *         metadata, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">How
+     *         DataSync Handles Metadata and Special Files</a>.
+     *         </p>
+     *         <p>
+     *         Default value: OWNER_DACL.
+     *         </p>
+     *         <p>
+     *         <b>OWNER_DACL</b>: For each copied object, DataSync copies the following metadata:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Object owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         When choosing this option, DataSync does NOT copy the NTFS system access control lists (SACLs), which are
+     *         used by administrators to log attempts to access a secured object.
+     *         </p>
+     *         <p>
+     *         <b>OWNER_DACL_SACL</b>: For each copied object, DataSync copies the following metadata:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Object owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         NTFS system access control lists (SACLs), which are used by administrators to log attempts to access a
+     *         secured object.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Copying SACLs requires granting additional permissions to the Windows user that DataSync uses to access
+     *         your SMB location. For information about choosing a user that ensures sufficient permissions to files,
+     *         folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.
+     *         </p>
+     *         <p>
+     *         <b>NONE</b>: None of the SMB security descriptor components are copied. Destination objects are owned by
+     *         the user that was provided for accessing the destination location. DACLs and SACLs are set based on the
+     *         destination server’s configuration.
+     * @see SmbSecurityDescriptorCopyFlags
+     */
+
+    public String getSecurityDescriptorCopyFlags() {
+        return this.securityDescriptorCopyFlags;
+    }
+
+    /**
+     * <p>
+     * A value that determines which components of the SMB security descriptor are copied from source to destination
+     * objects.
+     * </p>
+     * <p>
+     * This value is only used for transfers between SMB and Amazon FSx for Windows File Server locations, or between
+     * two Amazon FSx for Windows File Server locations. For more information about how DataSync handles metadata, see
+     * <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">How DataSync Handles Metadata
+     * and Special Files</a>.
+     * </p>
+     * <p>
+     * Default value: OWNER_DACL.
+     * </p>
+     * <p>
+     * <b>OWNER_DACL</b>: For each copied object, DataSync copies the following metadata:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Object owner.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When choosing this option, DataSync does NOT copy the NTFS system access control lists (SACLs), which are used by
+     * administrators to log attempts to access a secured object.
+     * </p>
+     * <p>
+     * <b>OWNER_DACL_SACL</b>: For each copied object, DataSync copies the following metadata:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Object owner.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NTFS system access control lists (SACLs), which are used by administrators to log attempts to access a secured
+     * object.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Copying SACLs requires granting additional permissions to the Windows user that DataSync uses to access your SMB
+     * location. For information about choosing a user that ensures sufficient permissions to files, folders, and
+     * metadata, see <a href="create-smb-location.html#SMBuser">user</a>.
+     * </p>
+     * <p>
+     * <b>NONE</b>: None of the SMB security descriptor components are copied. Destination objects are owned by the user
+     * that was provided for accessing the destination location. DACLs and SACLs are set based on the destination
+     * server’s configuration.
+     * </p>
+     * 
+     * @param securityDescriptorCopyFlags
+     *        A value that determines which components of the SMB security descriptor are copied from source to
+     *        destination objects. </p>
+     *        <p>
+     *        This value is only used for transfers between SMB and Amazon FSx for Windows File Server locations, or
+     *        between two Amazon FSx for Windows File Server locations. For more information about how DataSync handles
+     *        metadata, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">How
+     *        DataSync Handles Metadata and Special Files</a>.
+     *        </p>
+     *        <p>
+     *        Default value: OWNER_DACL.
+     *        </p>
+     *        <p>
+     *        <b>OWNER_DACL</b>: For each copied object, DataSync copies the following metadata:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Object owner.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        When choosing this option, DataSync does NOT copy the NTFS system access control lists (SACLs), which are
+     *        used by administrators to log attempts to access a secured object.
+     *        </p>
+     *        <p>
+     *        <b>OWNER_DACL_SACL</b>: For each copied object, DataSync copies the following metadata:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Object owner.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NTFS system access control lists (SACLs), which are used by administrators to log attempts to access a
+     *        secured object.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Copying SACLs requires granting additional permissions to the Windows user that DataSync uses to access
+     *        your SMB location. For information about choosing a user that ensures sufficient permissions to files,
+     *        folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.
+     *        </p>
+     *        <p>
+     *        <b>NONE</b>: None of the SMB security descriptor components are copied. Destination objects are owned by
+     *        the user that was provided for accessing the destination location. DACLs and SACLs are set based on the
+     *        destination server’s configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SmbSecurityDescriptorCopyFlags
+     */
+
+    public Options withSecurityDescriptorCopyFlags(String securityDescriptorCopyFlags) {
+        setSecurityDescriptorCopyFlags(securityDescriptorCopyFlags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that determines which components of the SMB security descriptor are copied from source to destination
+     * objects.
+     * </p>
+     * <p>
+     * This value is only used for transfers between SMB and Amazon FSx for Windows File Server locations, or between
+     * two Amazon FSx for Windows File Server locations. For more information about how DataSync handles metadata, see
+     * <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">How DataSync Handles Metadata
+     * and Special Files</a>.
+     * </p>
+     * <p>
+     * Default value: OWNER_DACL.
+     * </p>
+     * <p>
+     * <b>OWNER_DACL</b>: For each copied object, DataSync copies the following metadata:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Object owner.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When choosing this option, DataSync does NOT copy the NTFS system access control lists (SACLs), which are used by
+     * administrators to log attempts to access a secured object.
+     * </p>
+     * <p>
+     * <b>OWNER_DACL_SACL</b>: For each copied object, DataSync copies the following metadata:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Object owner.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NTFS system access control lists (SACLs), which are used by administrators to log attempts to access a secured
+     * object.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Copying SACLs requires granting additional permissions to the Windows user that DataSync uses to access your SMB
+     * location. For information about choosing a user that ensures sufficient permissions to files, folders, and
+     * metadata, see <a href="create-smb-location.html#SMBuser">user</a>.
+     * </p>
+     * <p>
+     * <b>NONE</b>: None of the SMB security descriptor components are copied. Destination objects are owned by the user
+     * that was provided for accessing the destination location. DACLs and SACLs are set based on the destination
+     * server’s configuration.
+     * </p>
+     * 
+     * @param securityDescriptorCopyFlags
+     *        A value that determines which components of the SMB security descriptor are copied from source to
+     *        destination objects. </p>
+     *        <p>
+     *        This value is only used for transfers between SMB and Amazon FSx for Windows File Server locations, or
+     *        between two Amazon FSx for Windows File Server locations. For more information about how DataSync handles
+     *        metadata, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">How
+     *        DataSync Handles Metadata and Special Files</a>.
+     *        </p>
+     *        <p>
+     *        Default value: OWNER_DACL.
+     *        </p>
+     *        <p>
+     *        <b>OWNER_DACL</b>: For each copied object, DataSync copies the following metadata:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Object owner.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        When choosing this option, DataSync does NOT copy the NTFS system access control lists (SACLs), which are
+     *        used by administrators to log attempts to access a secured object.
+     *        </p>
+     *        <p>
+     *        <b>OWNER_DACL_SACL</b>: For each copied object, DataSync copies the following metadata:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Object owner.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NTFS discretionary access control lists (DACLs), which determine whether to grant access to an object.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NTFS system access control lists (SACLs), which are used by administrators to log attempts to access a
+     *        secured object.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Copying SACLs requires granting additional permissions to the Windows user that DataSync uses to access
+     *        your SMB location. For information about choosing a user that ensures sufficient permissions to files,
+     *        folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.
+     *        </p>
+     *        <p>
+     *        <b>NONE</b>: None of the SMB security descriptor components are copied. Destination objects are owned by
+     *        the user that was provided for accessing the destination location. DACLs and SACLs are set based on the
+     *        destination server’s configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SmbSecurityDescriptorCopyFlags
+     */
+
+    public Options withSecurityDescriptorCopyFlags(SmbSecurityDescriptorCopyFlags securityDescriptorCopyFlags) {
+        this.securityDescriptorCopyFlags = securityDescriptorCopyFlags.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2152,7 +2908,9 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
         if (getLogLevel() != null)
             sb.append("LogLevel: ").append(getLogLevel()).append(",");
         if (getTransferMode() != null)
-            sb.append("TransferMode: ").append(getTransferMode());
+            sb.append("TransferMode: ").append(getTransferMode()).append(",");
+        if (getSecurityDescriptorCopyFlags() != null)
+            sb.append("SecurityDescriptorCopyFlags: ").append(getSecurityDescriptorCopyFlags());
         sb.append("}");
         return sb.toString();
     }
@@ -2219,6 +2977,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTransferMode() != null && other.getTransferMode().equals(this.getTransferMode()) == false)
             return false;
+        if (other.getSecurityDescriptorCopyFlags() == null ^ this.getSecurityDescriptorCopyFlags() == null)
+            return false;
+        if (other.getSecurityDescriptorCopyFlags() != null && other.getSecurityDescriptorCopyFlags().equals(this.getSecurityDescriptorCopyFlags()) == false)
+            return false;
         return true;
     }
 
@@ -2240,6 +3002,7 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTaskQueueing() == null) ? 0 : getTaskQueueing().hashCode());
         hashCode = prime * hashCode + ((getLogLevel() == null) ? 0 : getLogLevel().hashCode());
         hashCode = prime * hashCode + ((getTransferMode() == null) ? 0 : getTransferMode().hashCode());
+        hashCode = prime * hashCode + ((getSecurityDescriptorCopyFlags() == null) ? 0 : getSecurityDescriptorCopyFlags().hashCode());
         return hashCode;
     }
 

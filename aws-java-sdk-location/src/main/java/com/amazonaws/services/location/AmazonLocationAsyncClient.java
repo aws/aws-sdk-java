@@ -26,7 +26,7 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Suite of geospatial services including Maps, Places, Tracking, and Geofencing
+ * Suite of geospatial services including Maps, Places, Routes, Tracking, and Geofencing
  * </p>
  */
 @ThreadSafe
@@ -93,6 +93,41 @@ public class AmazonLocationAsyncClient extends AmazonLocationClient implements A
 
                 try {
                     result = executeAssociateTrackerConsumer(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteDevicePositionHistoryResult> batchDeleteDevicePositionHistoryAsync(
+            BatchDeleteDevicePositionHistoryRequest request) {
+
+        return batchDeleteDevicePositionHistoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteDevicePositionHistoryResult> batchDeleteDevicePositionHistoryAsync(
+            final BatchDeleteDevicePositionHistoryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchDeleteDevicePositionHistoryRequest, BatchDeleteDevicePositionHistoryResult> asyncHandler) {
+        final BatchDeleteDevicePositionHistoryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchDeleteDevicePositionHistoryResult>() {
+            @Override
+            public BatchDeleteDevicePositionHistoryResult call() throws Exception {
+                BatchDeleteDevicePositionHistoryResult result = null;
+
+                try {
+                    result = executeBatchDeleteDevicePositionHistory(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -274,6 +309,39 @@ public class AmazonLocationAsyncClient extends AmazonLocationClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CalculateRouteResult> calculateRouteAsync(CalculateRouteRequest request) {
+
+        return calculateRouteAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CalculateRouteResult> calculateRouteAsync(final CalculateRouteRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CalculateRouteRequest, CalculateRouteResult> asyncHandler) {
+        final CalculateRouteRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CalculateRouteResult>() {
+            @Override
+            public CalculateRouteResult call() throws Exception {
+                CalculateRouteResult result = null;
+
+                try {
+                    result = executeCalculateRoute(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateGeofenceCollectionResult> createGeofenceCollectionAsync(CreateGeofenceCollectionRequest request) {
 
         return createGeofenceCollectionAsync(request, null);
@@ -357,6 +425,39 @@ public class AmazonLocationAsyncClient extends AmazonLocationClient implements A
 
                 try {
                     result = executeCreatePlaceIndex(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRouteCalculatorResult> createRouteCalculatorAsync(CreateRouteCalculatorRequest request) {
+
+        return createRouteCalculatorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRouteCalculatorResult> createRouteCalculatorAsync(final CreateRouteCalculatorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateRouteCalculatorRequest, CreateRouteCalculatorResult> asyncHandler) {
+        final CreateRouteCalculatorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateRouteCalculatorResult>() {
+            @Override
+            public CreateRouteCalculatorResult call() throws Exception {
+                CreateRouteCalculatorResult result = null;
+
+                try {
+                    result = executeCreateRouteCalculator(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -505,6 +606,39 @@ public class AmazonLocationAsyncClient extends AmazonLocationClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteRouteCalculatorResult> deleteRouteCalculatorAsync(DeleteRouteCalculatorRequest request) {
+
+        return deleteRouteCalculatorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRouteCalculatorResult> deleteRouteCalculatorAsync(final DeleteRouteCalculatorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteRouteCalculatorRequest, DeleteRouteCalculatorResult> asyncHandler) {
+        final DeleteRouteCalculatorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteRouteCalculatorResult>() {
+            @Override
+            public DeleteRouteCalculatorResult call() throws Exception {
+                DeleteRouteCalculatorResult result = null;
+
+                try {
+                    result = executeDeleteRouteCalculator(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteTrackerResult> deleteTrackerAsync(DeleteTrackerRequest request) {
 
         return deleteTrackerAsync(request, null);
@@ -621,6 +755,39 @@ public class AmazonLocationAsyncClient extends AmazonLocationClient implements A
 
                 try {
                     result = executeDescribePlaceIndex(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRouteCalculatorResult> describeRouteCalculatorAsync(DescribeRouteCalculatorRequest request) {
+
+        return describeRouteCalculatorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRouteCalculatorResult> describeRouteCalculatorAsync(final DescribeRouteCalculatorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeRouteCalculatorRequest, DescribeRouteCalculatorResult> asyncHandler) {
+        final DescribeRouteCalculatorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeRouteCalculatorResult>() {
+            @Override
+            public DescribeRouteCalculatorResult call() throws Exception {
+                DescribeRouteCalculatorResult result = null;
+
+                try {
+                    result = executeDescribeRouteCalculator(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -934,6 +1101,39 @@ public class AmazonLocationAsyncClient extends AmazonLocationClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<ListDevicePositionsResult> listDevicePositionsAsync(ListDevicePositionsRequest request) {
+
+        return listDevicePositionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDevicePositionsResult> listDevicePositionsAsync(final ListDevicePositionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDevicePositionsRequest, ListDevicePositionsResult> asyncHandler) {
+        final ListDevicePositionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListDevicePositionsResult>() {
+            @Override
+            public ListDevicePositionsResult call() throws Exception {
+                ListDevicePositionsResult result = null;
+
+                try {
+                    result = executeListDevicePositions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListGeofenceCollectionsResult> listGeofenceCollectionsAsync(ListGeofenceCollectionsRequest request) {
 
         return listGeofenceCollectionsAsync(request, null);
@@ -1050,6 +1250,72 @@ public class AmazonLocationAsyncClient extends AmazonLocationClient implements A
 
                 try {
                     result = executeListPlaceIndexes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRouteCalculatorsResult> listRouteCalculatorsAsync(ListRouteCalculatorsRequest request) {
+
+        return listRouteCalculatorsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRouteCalculatorsResult> listRouteCalculatorsAsync(final ListRouteCalculatorsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListRouteCalculatorsRequest, ListRouteCalculatorsResult> asyncHandler) {
+        final ListRouteCalculatorsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListRouteCalculatorsResult>() {
+            @Override
+            public ListRouteCalculatorsResult call() throws Exception {
+                ListRouteCalculatorsResult result = null;
+
+                try {
+                    result = executeListRouteCalculators(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(final ListTagsForResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+        final ListTagsForResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTagsForResourceResult>() {
+            @Override
+            public ListTagsForResourceResult call() throws Exception {
+                ListTagsForResourceResult result = null;
+
+                try {
+                    result = executeListTagsForResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1215,6 +1481,72 @@ public class AmazonLocationAsyncClient extends AmazonLocationClient implements A
 
                 try {
                     result = executeSearchPlaceIndexForText(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(final TagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+        final TagResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TagResourceResult>() {
+            @Override
+            public TagResourceResult call() throws Exception {
+                TagResourceResult result = null;
+
+                try {
+                    result = executeTagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(final UntagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+        final UntagResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UntagResourceResult>() {
+            @Override
+            public UntagResourceResult call() throws Exception {
+                UntagResourceResult result = null;
+
+                try {
+                    result = executeUntagResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

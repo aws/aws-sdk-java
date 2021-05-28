@@ -64,6 +64,10 @@ public class DescribeGeofenceCollectionResultJsonUnmarshaller implements Unmarsh
                     context.nextToken();
                     describeGeofenceCollectionResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("KmsKeyId", targetDepth)) {
+                    context.nextToken();
+                    describeGeofenceCollectionResult.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("PricingPlan", targetDepth)) {
                     context.nextToken();
                     describeGeofenceCollectionResult.setPricingPlan(context.getUnmarshaller(String.class).unmarshall(context));
@@ -71,6 +75,11 @@ public class DescribeGeofenceCollectionResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("PricingPlanDataSource", targetDepth)) {
                     context.nextToken();
                     describeGeofenceCollectionResult.setPricingPlanDataSource(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Tags", targetDepth)) {
+                    context.nextToken();
+                    describeGeofenceCollectionResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("UpdateTime", targetDepth)) {
                     context.nextToken();

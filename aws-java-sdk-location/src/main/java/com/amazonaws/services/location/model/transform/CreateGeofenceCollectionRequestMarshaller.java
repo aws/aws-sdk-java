@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.location.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,10 +33,14 @@ public class CreateGeofenceCollectionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CollectionName").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KmsKeyId").build();
     private static final MarshallingInfo<String> PRICINGPLAN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PricingPlan").build();
     private static final MarshallingInfo<String> PRICINGPLANDATASOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PricingPlanDataSource").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateGeofenceCollectionRequestMarshaller instance = new CreateGeofenceCollectionRequestMarshaller();
 
@@ -54,8 +60,10 @@ public class CreateGeofenceCollectionRequestMarshaller {
         try {
             protocolMarshaller.marshall(createGeofenceCollectionRequest.getCollectionName(), COLLECTIONNAME_BINDING);
             protocolMarshaller.marshall(createGeofenceCollectionRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createGeofenceCollectionRequest.getKmsKeyId(), KMSKEYID_BINDING);
             protocolMarshaller.marshall(createGeofenceCollectionRequest.getPricingPlan(), PRICINGPLAN_BINDING);
             protocolMarshaller.marshall(createGeofenceCollectionRequest.getPricingPlanDataSource(), PRICINGPLANDATASOURCE_BINDING);
+            protocolMarshaller.marshall(createGeofenceCollectionRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -41,6 +41,21 @@ public class AbstractAmazonLocationAsync extends AbstractAmazonLocation implemen
     }
 
     @Override
+    public java.util.concurrent.Future<BatchDeleteDevicePositionHistoryResult> batchDeleteDevicePositionHistoryAsync(
+            BatchDeleteDevicePositionHistoryRequest request) {
+
+        return batchDeleteDevicePositionHistoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteDevicePositionHistoryResult> batchDeleteDevicePositionHistoryAsync(
+            BatchDeleteDevicePositionHistoryRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchDeleteDevicePositionHistoryRequest, BatchDeleteDevicePositionHistoryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchDeleteGeofenceResult> batchDeleteGeofenceAsync(BatchDeleteGeofenceRequest request) {
 
         return batchDeleteGeofenceAsync(request, null);
@@ -106,6 +121,19 @@ public class AbstractAmazonLocationAsync extends AbstractAmazonLocation implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CalculateRouteResult> calculateRouteAsync(CalculateRouteRequest request) {
+
+        return calculateRouteAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CalculateRouteResult> calculateRouteAsync(CalculateRouteRequest request,
+            com.amazonaws.handlers.AsyncHandler<CalculateRouteRequest, CalculateRouteResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateGeofenceCollectionResult> createGeofenceCollectionAsync(CreateGeofenceCollectionRequest request) {
 
         return createGeofenceCollectionAsync(request, null);
@@ -140,6 +168,19 @@ public class AbstractAmazonLocationAsync extends AbstractAmazonLocation implemen
     @Override
     public java.util.concurrent.Future<CreatePlaceIndexResult> createPlaceIndexAsync(CreatePlaceIndexRequest request,
             com.amazonaws.handlers.AsyncHandler<CreatePlaceIndexRequest, CreatePlaceIndexResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRouteCalculatorResult> createRouteCalculatorAsync(CreateRouteCalculatorRequest request) {
+
+        return createRouteCalculatorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRouteCalculatorResult> createRouteCalculatorAsync(CreateRouteCalculatorRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateRouteCalculatorRequest, CreateRouteCalculatorResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -197,6 +238,19 @@ public class AbstractAmazonLocationAsync extends AbstractAmazonLocation implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteRouteCalculatorResult> deleteRouteCalculatorAsync(DeleteRouteCalculatorRequest request) {
+
+        return deleteRouteCalculatorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRouteCalculatorResult> deleteRouteCalculatorAsync(DeleteRouteCalculatorRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteRouteCalculatorRequest, DeleteRouteCalculatorResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteTrackerResult> deleteTrackerAsync(DeleteTrackerRequest request) {
 
         return deleteTrackerAsync(request, null);
@@ -244,6 +298,19 @@ public class AbstractAmazonLocationAsync extends AbstractAmazonLocation implemen
     @Override
     public java.util.concurrent.Future<DescribePlaceIndexResult> describePlaceIndexAsync(DescribePlaceIndexRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribePlaceIndexRequest, DescribePlaceIndexResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRouteCalculatorResult> describeRouteCalculatorAsync(DescribeRouteCalculatorRequest request) {
+
+        return describeRouteCalculatorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRouteCalculatorResult> describeRouteCalculatorAsync(DescribeRouteCalculatorRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeRouteCalculatorRequest, DescribeRouteCalculatorResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -366,6 +433,19 @@ public class AbstractAmazonLocationAsync extends AbstractAmazonLocation implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListDevicePositionsResult> listDevicePositionsAsync(ListDevicePositionsRequest request) {
+
+        return listDevicePositionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDevicePositionsResult> listDevicePositionsAsync(ListDevicePositionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDevicePositionsRequest, ListDevicePositionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListGeofenceCollectionsResult> listGeofenceCollectionsAsync(ListGeofenceCollectionsRequest request) {
 
         return listGeofenceCollectionsAsync(request, null);
@@ -413,6 +493,32 @@ public class AbstractAmazonLocationAsync extends AbstractAmazonLocation implemen
     @Override
     public java.util.concurrent.Future<ListPlaceIndexesResult> listPlaceIndexesAsync(ListPlaceIndexesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPlaceIndexesRequest, ListPlaceIndexesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRouteCalculatorsResult> listRouteCalculatorsAsync(ListRouteCalculatorsRequest request) {
+
+        return listRouteCalculatorsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRouteCalculatorsResult> listRouteCalculatorsAsync(ListRouteCalculatorsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListRouteCalculatorsRequest, ListRouteCalculatorsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -478,6 +584,32 @@ public class AbstractAmazonLocationAsync extends AbstractAmazonLocation implemen
     @Override
     public java.util.concurrent.Future<SearchPlaceIndexForTextResult> searchPlaceIndexForTextAsync(SearchPlaceIndexForTextRequest request,
             com.amazonaws.handlers.AsyncHandler<SearchPlaceIndexForTextRequest, SearchPlaceIndexForTextResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

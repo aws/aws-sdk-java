@@ -33,6 +33,11 @@ public class AbstractAmazonLocation implements AmazonLocation {
     }
 
     @Override
+    public BatchDeleteDevicePositionHistoryResult batchDeleteDevicePositionHistory(BatchDeleteDevicePositionHistoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchDeleteGeofenceResult batchDeleteGeofence(BatchDeleteGeofenceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -58,6 +63,11 @@ public class AbstractAmazonLocation implements AmazonLocation {
     }
 
     @Override
+    public CalculateRouteResult calculateRoute(CalculateRouteRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateGeofenceCollectionResult createGeofenceCollection(CreateGeofenceCollectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -69,6 +79,11 @@ public class AbstractAmazonLocation implements AmazonLocation {
 
     @Override
     public CreatePlaceIndexResult createPlaceIndex(CreatePlaceIndexRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateRouteCalculatorResult createRouteCalculator(CreateRouteCalculatorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -93,6 +108,11 @@ public class AbstractAmazonLocation implements AmazonLocation {
     }
 
     @Override
+    public DeleteRouteCalculatorResult deleteRouteCalculator(DeleteRouteCalculatorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteTrackerResult deleteTracker(DeleteTrackerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -109,6 +129,11 @@ public class AbstractAmazonLocation implements AmazonLocation {
 
     @Override
     public DescribePlaceIndexResult describePlaceIndex(DescribePlaceIndexRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeRouteCalculatorResult describeRouteCalculator(DescribeRouteCalculatorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -158,6 +183,11 @@ public class AbstractAmazonLocation implements AmazonLocation {
     }
 
     @Override
+    public ListDevicePositionsResult listDevicePositions(ListDevicePositionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListGeofenceCollectionsResult listGeofenceCollections(ListGeofenceCollectionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -174,6 +204,16 @@ public class AbstractAmazonLocation implements AmazonLocation {
 
     @Override
     public ListPlaceIndexesResult listPlaceIndexes(ListPlaceIndexesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListRouteCalculatorsResult listRouteCalculators(ListRouteCalculatorsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -199,6 +239,16 @@ public class AbstractAmazonLocation implements AmazonLocation {
 
     @Override
     public SearchPlaceIndexForTextResult searchPlaceIndexForText(SearchPlaceIndexForTextRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

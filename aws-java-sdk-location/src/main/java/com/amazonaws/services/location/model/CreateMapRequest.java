@@ -73,6 +73,46 @@ public class CreateMapRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private String pricingPlan;
+    /**
+     * <p>
+     * Applies one or more tags to the map resource. A tag is a key-value pair helps manage, identify, search, and
+     * filter your resources by labelling them.
+     * </p>
+     * <p>
+     * Format: <code>"key" : "value"</code>
+     * </p>
+     * <p>
+     * Restrictions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum 50 tags per resource
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Each resource tag must be unique with a maximum of one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length: 128 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length: 256 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -399,6 +439,275 @@ public class CreateMapRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * Applies one or more tags to the map resource. A tag is a key-value pair helps manage, identify, search, and
+     * filter your resources by labelling them.
+     * </p>
+     * <p>
+     * Format: <code>"key" : "value"</code>
+     * </p>
+     * <p>
+     * Restrictions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum 50 tags per resource
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Each resource tag must be unique with a maximum of one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length: 128 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length: 256 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Applies one or more tags to the map resource. A tag is a key-value pair helps manage, identify, search,
+     *         and filter your resources by labelling them.</p>
+     *         <p>
+     *         Format: <code>"key" : "value"</code>
+     *         </p>
+     *         <p>
+     *         Restrictions:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Maximum 50 tags per resource
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Each resource tag must be unique with a maximum of one value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Maximum key length: 128 Unicode characters in UTF-8
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Maximum value length: 256 Unicode characters in UTF-8
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.
+     *         </p>
+     *         </li>
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Applies one or more tags to the map resource. A tag is a key-value pair helps manage, identify, search, and
+     * filter your resources by labelling them.
+     * </p>
+     * <p>
+     * Format: <code>"key" : "value"</code>
+     * </p>
+     * <p>
+     * Restrictions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum 50 tags per resource
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Each resource tag must be unique with a maximum of one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length: 128 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length: 256 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param tags
+     *        Applies one or more tags to the map resource. A tag is a key-value pair helps manage, identify, search,
+     *        and filter your resources by labelling them.</p>
+     *        <p>
+     *        Format: <code>"key" : "value"</code>
+     *        </p>
+     *        <p>
+     *        Restrictions:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Maximum 50 tags per resource
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Each resource tag must be unique with a maximum of one value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum key length: 128 Unicode characters in UTF-8
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum value length: 256 Unicode characters in UTF-8
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.
+     *        </p>
+     *        </li>
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * Applies one or more tags to the map resource. A tag is a key-value pair helps manage, identify, search, and
+     * filter your resources by labelling them.
+     * </p>
+     * <p>
+     * Format: <code>"key" : "value"</code>
+     * </p>
+     * <p>
+     * Restrictions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum 50 tags per resource
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Each resource tag must be unique with a maximum of one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length: 128 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length: 256 Unicode characters in UTF-8
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param tags
+     *        Applies one or more tags to the map resource. A tag is a key-value pair helps manage, identify, search,
+     *        and filter your resources by labelling them.</p>
+     *        <p>
+     *        Format: <code>"key" : "value"</code>
+     *        </p>
+     *        <p>
+     *        Restrictions:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Maximum 50 tags per resource
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Each resource tag must be unique with a maximum of one value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum key length: 128 Unicode characters in UTF-8
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum value length: 256 Unicode characters in UTF-8
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateMapRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see CreateMapRequest#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateMapRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateMapRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -417,7 +726,9 @@ public class CreateMapRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getMapName() != null)
             sb.append("MapName: ").append(getMapName()).append(",");
         if (getPricingPlan() != null)
-            sb.append("PricingPlan: ").append(getPricingPlan());
+            sb.append("PricingPlan: ").append(getPricingPlan()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -448,6 +759,10 @@ public class CreateMapRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getPricingPlan() != null && other.getPricingPlan().equals(this.getPricingPlan()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -460,6 +775,7 @@ public class CreateMapRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getMapName() == null) ? 0 : getMapName().hashCode());
         hashCode = prime * hashCode + ((getPricingPlan() == null) ? 0 : getPricingPlan().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

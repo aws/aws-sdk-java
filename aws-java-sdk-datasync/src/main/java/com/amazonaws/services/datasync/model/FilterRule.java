@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies which files, folders and objects to include or exclude when transferring files from source to destination.
+ * Specifies which files, folders, and objects to include or exclude when transferring files from source to destination.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/FilterRule" target="_top">AWS API

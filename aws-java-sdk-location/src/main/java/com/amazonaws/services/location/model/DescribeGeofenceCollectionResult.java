@@ -28,6 +28,13 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
      * The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource
      * across all AWS.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String collectionArn;
     /**
@@ -52,6 +59,13 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
     private String description;
     /**
      * <p>
+     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS
+     * customer managed key</a> assigned to the Amazon Location resource
+     * </p>
+     */
+    private String kmsKeyId;
+    /**
+     * <p>
      * The pricing plan selected for the specified geofence collection.
      * </p>
      * <p>
@@ -62,10 +76,16 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
     private String pricingPlan;
     /**
      * <p>
-     * The data source selected for the geofence collection and associated pricing plan.
+     * The specified data provider for the geofence collection.
      * </p>
      */
     private String pricingPlanDataSource;
+    /**
+     * <p>
+     * Displays the key, value pairs of tags associated with this resource.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
     /**
      * <p>
      * The timestamp for when the geofence collection was last updated in <a
@@ -80,10 +100,23 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
      * The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource
      * across all AWS.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param collectionArn
      *        The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a
-     *        resource across all AWS.
+     *        resource across all AWS. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
+     *        </p>
+     *        </li>
      */
 
     public void setCollectionArn(String collectionArn) {
@@ -95,9 +128,22 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
      * The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource
      * across all AWS.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a
-     *         resource across all AWS.
+     *         resource across all AWS. </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
+     *         </p>
+     *         </li>
      */
 
     public String getCollectionArn() {
@@ -109,10 +155,23 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
      * The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource
      * across all AWS.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param collectionArn
      *        The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a
-     *        resource across all AWS.
+     *        resource across all AWS. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -255,6 +314,55 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
+     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS
+     * customer managed key</a> assigned to the Amazon Location resource
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        A key identifier for an <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed
+     *        key</a> assigned to the Amazon Location resource
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS
+     * customer managed key</a> assigned to the Amazon Location resource
+     * </p>
+     * 
+     * @return A key identifier for an <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed
+     *         key</a> assigned to the Amazon Location resource
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS
+     * customer managed key</a> assigned to the Amazon Location resource
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        A key identifier for an <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed
+     *        key</a> assigned to the Amazon Location resource
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeGeofenceCollectionResult withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The pricing plan selected for the specified geofence collection.
      * </p>
      * <p>
@@ -342,11 +450,11 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The data source selected for the geofence collection and associated pricing plan.
+     * The specified data provider for the geofence collection.
      * </p>
      * 
      * @param pricingPlanDataSource
-     *        The data source selected for the geofence collection and associated pricing plan.
+     *        The specified data provider for the geofence collection.
      */
 
     public void setPricingPlanDataSource(String pricingPlanDataSource) {
@@ -355,10 +463,10 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The data source selected for the geofence collection and associated pricing plan.
+     * The specified data provider for the geofence collection.
      * </p>
      * 
-     * @return The data source selected for the geofence collection and associated pricing plan.
+     * @return The specified data provider for the geofence collection.
      */
 
     public String getPricingPlanDataSource() {
@@ -367,16 +475,84 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The data source selected for the geofence collection and associated pricing plan.
+     * The specified data provider for the geofence collection.
      * </p>
      * 
      * @param pricingPlanDataSource
-     *        The data source selected for the geofence collection and associated pricing plan.
+     *        The specified data provider for the geofence collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeGeofenceCollectionResult withPricingPlanDataSource(String pricingPlanDataSource) {
         setPricingPlanDataSource(pricingPlanDataSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Displays the key, value pairs of tags associated with this resource.
+     * </p>
+     * 
+     * @return Displays the key, value pairs of tags associated with this resource.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Displays the key, value pairs of tags associated with this resource.
+     * </p>
+     * 
+     * @param tags
+     *        Displays the key, value pairs of tags associated with this resource.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * Displays the key, value pairs of tags associated with this resource.
+     * </p>
+     * 
+     * @param tags
+     *        Displays the key, value pairs of tags associated with this resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeGeofenceCollectionResult withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see DescribeGeofenceCollectionResult#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeGeofenceCollectionResult addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeGeofenceCollectionResult clearTagsEntries() {
+        this.tags = null;
         return this;
     }
 
@@ -452,10 +628,14 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
             sb.append("CreateTime: ").append(getCreateTime()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getPricingPlan() != null)
             sb.append("PricingPlan: ").append(getPricingPlan()).append(",");
         if (getPricingPlanDataSource() != null)
             sb.append("PricingPlanDataSource: ").append(getPricingPlanDataSource()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getUpdateTime() != null)
             sb.append("UpdateTime: ").append(getUpdateTime());
         sb.append("}");
@@ -488,6 +668,10 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
         if (other.getPricingPlan() == null ^ this.getPricingPlan() == null)
             return false;
         if (other.getPricingPlan() != null && other.getPricingPlan().equals(this.getPricingPlan()) == false)
@@ -495,6 +679,10 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
         if (other.getPricingPlanDataSource() == null ^ this.getPricingPlanDataSource() == null)
             return false;
         if (other.getPricingPlanDataSource() != null && other.getPricingPlanDataSource().equals(this.getPricingPlanDataSource()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         if (other.getUpdateTime() == null ^ this.getUpdateTime() == null)
             return false;
@@ -512,8 +700,10 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getCollectionName() == null) ? 0 : getCollectionName().hashCode());
         hashCode = prime * hashCode + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getPricingPlan() == null) ? 0 : getPricingPlan().hashCode());
         hashCode = prime * hashCode + ((getPricingPlanDataSource() == null) ? 0 : getPricingPlanDataSource().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode());
         return hashCode;
     }

@@ -104,7 +104,7 @@ public class SearchPlaceIndexForTextRequest extends com.amazonaws.AmazonWebServi
     private java.util.List<String> filterCountries;
     /**
      * <p>
-     * The name of the Place index resource you want to use for the search.
+     * The name of the place index resource you want to use for the search.
      * </p>
      */
     private String indexName;
@@ -801,11 +801,11 @@ public class SearchPlaceIndexForTextRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the Place index resource you want to use for the search.
+     * The name of the place index resource you want to use for the search.
      * </p>
      * 
      * @param indexName
-     *        The name of the Place index resource you want to use for the search.
+     *        The name of the place index resource you want to use for the search.
      */
 
     public void setIndexName(String indexName) {
@@ -814,10 +814,10 @@ public class SearchPlaceIndexForTextRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the Place index resource you want to use for the search.
+     * The name of the place index resource you want to use for the search.
      * </p>
      * 
-     * @return The name of the Place index resource you want to use for the search.
+     * @return The name of the place index resource you want to use for the search.
      */
 
     public String getIndexName() {
@@ -826,11 +826,11 @@ public class SearchPlaceIndexForTextRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the Place index resource you want to use for the search.
+     * The name of the place index resource you want to use for the search.
      * </p>
      * 
      * @param indexName
-     *        The name of the Place index resource you want to use for the search.
+     *        The name of the place index resource you want to use for the search.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -58,6 +58,10 @@ public class CreateLocationFsxWindowsRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The user who has the permissions to access files and folders in the FSx for Windows File Server file system.
      * </p>
+     * <p>
+     * For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata,
+     * see <a href="create-fsx-location.html#FSxWuser">user</a>.
+     * </p>
      */
     private String user;
     /**
@@ -334,10 +338,17 @@ public class CreateLocationFsxWindowsRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The user who has the permissions to access files and folders in the FSx for Windows File Server file system.
      * </p>
+     * <p>
+     * For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata,
+     * see <a href="create-fsx-location.html#FSxWuser">user</a>.
+     * </p>
      * 
      * @param user
      *        The user who has the permissions to access files and folders in the FSx for Windows File Server file
-     *        system.
+     *        system.</p>
+     *        <p>
+     *        For information about choosing a user name that ensures sufficient permissions to files, folders, and
+     *        metadata, see <a href="create-fsx-location.html#FSxWuser">user</a>.
      */
 
     public void setUser(String user) {
@@ -348,9 +359,16 @@ public class CreateLocationFsxWindowsRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The user who has the permissions to access files and folders in the FSx for Windows File Server file system.
      * </p>
+     * <p>
+     * For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata,
+     * see <a href="create-fsx-location.html#FSxWuser">user</a>.
+     * </p>
      * 
      * @return The user who has the permissions to access files and folders in the FSx for Windows File Server file
-     *         system.
+     *         system.</p>
+     *         <p>
+     *         For information about choosing a user name that ensures sufficient permissions to files, folders, and
+     *         metadata, see <a href="create-fsx-location.html#FSxWuser">user</a>.
      */
 
     public String getUser() {
@@ -361,10 +379,17 @@ public class CreateLocationFsxWindowsRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The user who has the permissions to access files and folders in the FSx for Windows File Server file system.
      * </p>
+     * <p>
+     * For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata,
+     * see <a href="create-fsx-location.html#FSxWuser">user</a>.
+     * </p>
      * 
      * @param user
      *        The user who has the permissions to access files and folders in the FSx for Windows File Server file
-     *        system.
+     *        system.</p>
+     *        <p>
+     *        For information about choosing a user name that ensures sufficient permissions to files, folders, and
+     *        metadata, see <a href="create-fsx-location.html#FSxWuser">user</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

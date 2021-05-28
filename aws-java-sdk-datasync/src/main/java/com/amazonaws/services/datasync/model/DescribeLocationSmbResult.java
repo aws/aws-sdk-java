@@ -34,7 +34,7 @@ public class DescribeLocationSmbResult extends com.amazonaws.AmazonWebServiceRes
     private String locationArn;
     /**
      * <p>
-     * The URL of the source SBM location that was described.
+     * The URL of the source SMB location that was described.
      * </p>
      */
     private String locationUri;
@@ -111,11 +111,11 @@ public class DescribeLocationSmbResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The URL of the source SBM location that was described.
+     * The URL of the source SMB location that was described.
      * </p>
      * 
      * @param locationUri
-     *        The URL of the source SBM location that was described.
+     *        The URL of the source SMB location that was described.
      */
 
     public void setLocationUri(String locationUri) {
@@ -124,10 +124,10 @@ public class DescribeLocationSmbResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The URL of the source SBM location that was described.
+     * The URL of the source SMB location that was described.
      * </p>
      * 
-     * @return The URL of the source SBM location that was described.
+     * @return The URL of the source SMB location that was described.
      */
 
     public String getLocationUri() {
@@ -136,11 +136,11 @@ public class DescribeLocationSmbResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The URL of the source SBM location that was described.
+     * The URL of the source SMB location that was described.
      * </p>
      * 
      * @param locationUri
-     *        The URL of the source SBM location that was described.
+     *        The URL of the source SMB location that was described.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

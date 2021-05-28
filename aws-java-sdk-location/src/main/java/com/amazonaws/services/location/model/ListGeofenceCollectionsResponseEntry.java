@@ -60,7 +60,7 @@ public class ListGeofenceCollectionsResponseEntry implements Serializable, Clone
     private String pricingPlan;
     /**
      * <p>
-     * The data source selected for the geofence collection and associated pricing plan.
+     * The specified data provider for the geofence collection.
      * </p>
      */
     private String pricingPlanDataSource;
@@ -294,11 +294,11 @@ public class ListGeofenceCollectionsResponseEntry implements Serializable, Clone
 
     /**
      * <p>
-     * The data source selected for the geofence collection and associated pricing plan.
+     * The specified data provider for the geofence collection.
      * </p>
      * 
      * @param pricingPlanDataSource
-     *        The data source selected for the geofence collection and associated pricing plan.
+     *        The specified data provider for the geofence collection.
      */
 
     public void setPricingPlanDataSource(String pricingPlanDataSource) {
@@ -307,10 +307,10 @@ public class ListGeofenceCollectionsResponseEntry implements Serializable, Clone
 
     /**
      * <p>
-     * The data source selected for the geofence collection and associated pricing plan.
+     * The specified data provider for the geofence collection.
      * </p>
      * 
-     * @return The data source selected for the geofence collection and associated pricing plan.
+     * @return The specified data provider for the geofence collection.
      */
 
     public String getPricingPlanDataSource() {
@@ -319,11 +319,11 @@ public class ListGeofenceCollectionsResponseEntry implements Serializable, Clone
 
     /**
      * <p>
-     * The data source selected for the geofence collection and associated pricing plan.
+     * The specified data provider for the geofence collection.
      * </p>
      * 
      * @param pricingPlanDataSource
-     *        The data source selected for the geofence collection and associated pricing plan.
+     *        The specified data provider for the geofence collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
